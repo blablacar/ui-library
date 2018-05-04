@@ -1,0 +1,6 @@
+.editorconfig
+.flowconfig
+.gitignore
+stories/
+.storybook
+docs/

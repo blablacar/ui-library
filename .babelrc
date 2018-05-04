@@ -1,0 +1,33 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "> 1%"
+          ],
+          "node": "current"
+        }
+      }
+    ],
+    "react",
+    "stage-3"
+  ],
+  "plugins": [
+    "styled-jsx/babel",
+    "transform-react-jsx",
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src",
+          "./utils",
+          "./build/src"
+        ]
+      }
+    ]
+  ]
+}

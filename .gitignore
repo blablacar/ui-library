@@ -1,0 +1,12 @@
+node_modules
+coverage
+build
+
+npm-debug.log
+.DS_Store
+.yarnclean
+*.sublime-project
+*.sublime-workspace
+docs/specs
+.vscode
+/.idea

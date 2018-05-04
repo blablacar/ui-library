@@ -1,0 +1,31 @@
+{
+  "resolution": {
+    "main": "./typings/"
+  },
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "jsx": "preserve",
+    "allowJs": true,
+    "noEmitOnError": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src"
+  },
+  "include": [
+    "node_modules/@types",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "stories/index.tsx"
+  ],
+  "exclude": [
+    "build",
+    "node_modules",
+    "src/**/*.unit.tsx"
+  ]
+}

@@ -1,0 +1,13 @@
+name: aci.blbl.cr/aci-kirk:{{.version}}
+aci:
+  app:
+    exec: [ /usr/local/bin/npm, --prefix=/app, run, "start" ]
+  dependencies:
+    - aci.blbl.cr/aci-node:8.1.4-1
+builder:
+  dependencies:
+    - aci.blbl.cr/aci-node:8.1.4-1
+    - aci.blbl.cr/aci-git:2.1-5
+  mountPoints:
+    - { from: .., to: /code }
+    - { from: ~/.npm, to: /root/.npm }

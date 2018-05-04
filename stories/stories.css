@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "gt-eesti";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/GT-Eesti-Pro-Display-Regular.woff2") format("woff2"),
+       url("fonts/GT-Eesti-Pro-Display-Regular.woff") format("woff");
+
+}
+
+@font-face {
+  font-family: "gt-eesti";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/GT-Eesti-Pro-Display-Medium.woff2") format("woff2"),
+       url("fonts/GT-Eesti-Pro-Display-Medium.woff") format("woff");
+}
+
+*,
+*::after,
+*::before {
+  /* Apply a natural box layout model to all elements */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'gt-eesti', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#root > div > div:nth-child(2) {
+  padding-top: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
