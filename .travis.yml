@@ -1,5 +1,7 @@
 language: node_js
 node_js:
   - "9.9"
+before_install:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 install:
   - npm install
