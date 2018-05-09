@@ -1,6 +1,7 @@
 node_modules
 coverage
 build
+storybook-build
 
 npm-debug.log
 .DS_Store

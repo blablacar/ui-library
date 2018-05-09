@@ -1,11 +1,12 @@
 {
   "name": "@blablacar/kirk",
-  "version": "1.3.3",
+  "version": "1.3.0",
   "description": "Lego components of Blablacar (stylekit)",
   "main": "build/index.js",
+  "homepage": "https://blablacar.github.io/kirk",
   "repository": {
     "type": "git",
-    "url": "git@git.priv.blablacar.net:7999/front/kirk.git"
+    "url": "git@github.com:blablacar/kirk.git"
   },
   "scripts": {
     "build": "rimraf build && npm-run-all build:*",
@@ -26,7 +27,9 @@
     "check-node": "bla node",
     "check-package": "bla check",
     "bla": "bla",
-    "prepublishOnly": "npm run tslint && npm run stylelint && npm run test && npm run build"
+    "prepublishOnly": "npm run tslint && npm run stylelint && npm run test && npm run build",
+    "storybook-build": "export NODE_PATH=src && build-storybook -c .storybook -o storybook-build",
+    "storybook-deploy": "npm run storybook-build && gh-pages -d storybook-build"
   },
   "author": "Blablacar front-end team",
   "keywords": [
@@ -70,6 +73,7 @@
     "caniuse-db": "1.0.30000828",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
+    "gh-pages": "1.1.0",
     "glob": "7.1.2",
     "inquirer": "5.2.0",
     "jest": "22.4.3",
