@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { color } from '_utils/branding'
 
-export default ({ className, iconColor = color.icon, size = 24, title }: Icon) => (
+export default ({ className, iconColor = color.icon, size = 24, title = '' }: Icon) => (
   <svg
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

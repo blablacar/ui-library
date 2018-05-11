@@ -1,12 +1,12 @@
 {
-  "name": "@blablacar/kirk",
-  "version": "1.3.0",
-  "description": "Lego components of Blablacar (stylekit)",
+  "name": "@blablacar/ui-library",
+  "version": "0.0.0",
+  "description": "React component library",
   "main": "build/index.js",
-  "homepage": "https://blablacar.github.io/kirk",
+  "homepage": "https://blablacar.github.io/ui-library",
   "repository": {
     "type": "git",
-    "url": "git@github.com:blablacar/kirk.git"
+    "url": "git@github.com:blablacar/ui-library.git"
   },
   "scripts": {
     "build": "rimraf build && npm-run-all build:*",
