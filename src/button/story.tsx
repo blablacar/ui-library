@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 
 import { color } from '_utils/branding'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
 
 const stories = storiesOf('Button', module)
@@ -24,7 +24,7 @@ stories.add(
   'primary',
   withInfo('')(() => (
     <Button
-      primary
+      status={Button.STATUS.PRIMARY}
       icon={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
@@ -38,7 +38,7 @@ stories.add(
   'secondary',
   withInfo('')(() => (
     <Button
-      secondary
+      status={Button.STATUS.SECONDARY}
       icon={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
@@ -51,14 +51,14 @@ stories.add(
 stories.add(
   'loading',
   withInfo('')(() => (
-    <Button loading />
+    <Button status={Button.STATUS.LOADING} />
   )),
 )
 
 stories.add(
   'valid',
   withInfo('')(() => (
-    <Button valid validated={() => action('animation done')} />
+    <Button status={Button.STATUS.CHECKED} validated={() => action('animation done')} />
   )),
 )
 
@@ -66,7 +66,7 @@ stories.add(
   'warning',
   withInfo('')(() => (
     <Button
-      warning
+      status={Button.STATUS.WARNING}
       icon={hasIcon()}
       {...commonProps}
     >
@@ -79,7 +79,7 @@ stories.add(
   'unstyled',
   withInfo('')(() => (
     <Button
-      unstyled
+      status={Button.STATUS.UNSTYLED}
       icon={hasIcon()}
       {...commonProps}
     >
@@ -95,7 +95,7 @@ stories.add(
     <Button
       {...commonProps}
       icon
-      primary
+      status={Button.STATUS.PRIMARY}
       shadowed={boolean('shadowed', true)}
     >
       <ArrowIcon right iconColor={color.white} />
@@ -109,7 +109,7 @@ stories.add(
   withInfo('')(() => (
     <Button
       icon={hasIcon()}
-      primary
+      status={Button.STATUS.PRIMARY}
       href="#"
       {...commonProps}
     >
@@ -123,7 +123,7 @@ stories.add(
   withInfo('')(() => (
     <Button
       icon={hasIcon()}
-      primary
+      status={Button.STATUS.PRIMARY}
       href={
         <a href="#1">foo</a>
       }
@@ -138,7 +138,7 @@ stories.add(
   'anchor button unstyled',
   withInfo('')(() => (
     <Button
-      unstyled
+      status={Button.STATUS.UNSTYLED}
       icon={hasIcon()}
       {...commonProps}
     >
@@ -168,11 +168,16 @@ class Validation extends React.Component {
     hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Click me to validate')
   )
   render() {
+    let status:ButtonStatus = Button.STATUS.PRIMARY
+    if (this.state.valid) {
+      status = Button.STATUS.CHECKED
+    }
+    if (this.state.loading) {
+      status = Button.STATUS.LOADING
+    }
     return (
       <Button
-        primary={!this.state.valid}
-        loading={this.state.loading}
-        valid={this.state.valid}
+        status={status}
         icon={hasIcon() || this.state.icon}
         onClick={this.validate}
         validated={() => action('animation done')}

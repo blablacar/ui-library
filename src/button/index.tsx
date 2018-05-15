@@ -9,20 +9,24 @@ import Loader from 'loader'
 import Circle from 'icon/circleIcon'
 import Check from 'icon/checkIcon'
 
+export enum ButtonStatus {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  WARNING = 'warning',
+  UNSTYLED = 'unstyled',
+  LOADING = 'loading',
+  CHECKED = 'checked',
+}
+
 export interface ButtonProps {
   readonly type?: string,
   readonly href?: string | JSX.Element,
   readonly children?: string | number | React.ReactNode,
   readonly className?: Classcat.Class,
   readonly title?: string,
-  readonly primary?: boolean,
-  readonly secondary?: boolean,
-  readonly loading?: boolean,
-  readonly valid?: boolean,
-  readonly warning?: boolean,
+  readonly status?: ButtonStatus,
   readonly focus?: boolean,
   readonly icon?: boolean,
-  readonly unstyled?: boolean,
   readonly shadowed?: boolean,
   readonly hidden?: boolean,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
@@ -64,18 +68,15 @@ export const eventHandler = (
 export default class Button extends PureComponent <ButtonProps, ButtonState> {
   private button: HTMLButtonElement
 
+  static STATUS = ButtonStatus
+
   static defaultProps: Partial<ButtonProps> = {
     type: 'button',
     href: '',
     children: '',
     className: '',
-    primary: false,
-    secondary: false,
-    loading: false,
-    valid: false,
-    warning: false,
+    status: ButtonStatus.PRIMARY,
     icon: false,
-    unstyled: false,
     shadowed: false,
     focus: false,
     disabled: false,
@@ -87,7 +88,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
   }
 
   componentDidMount() {
-    if (this.props.valid) {
+    if (this.props.status === ButtonStatus.CHECKED) {
       this.validated()
     }
     if (this.props.focus) {
@@ -95,8 +96,8 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     }
   }
 
-  componentWillReceiveProps({ valid, focus }: ButtonProps) {
-    if (valid && valid !== this.props.valid) {
+  componentWillReceiveProps({ status, focus }: ButtonProps) {
+    if (status === ButtonStatus.CHECKED && status !== this.props.status) {
       this.validated()
     }
     if (focus && focus !== this.props.focus) {
@@ -112,7 +113,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     const {
       children, className, type, href, title,
       // Modifiers
-      primary, secondary, valid, loading, warning, icon, unstyled, shadowed,
+      status, icon, shadowed,
       // Actions
       onClick, onBlur, onFocus, validated, focus,
       // Extend case of the button for the expand component
@@ -145,15 +146,15 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
         className={cc([
           prefix({ button: true }),
           prefix({
-            primary, secondary, loading, valid, warning, icon, unstyled, shadowed,
+            [status]: status, icon, shadowed,
           }, 'kirk-button'),
           className,
         ])}
         {...typeProps}
         {...attrs}
       >
-        {loading && <Loader size={48} inline />}
-        {valid && <Check validate absolute iconColor={color.white} />}
+        {status === ButtonStatus.LOADING && <Loader size={48} inline />}
+        {status === ButtonStatus.CHECKED && <Check validate absolute iconColor={color.white} />}
         <span>{children}</span>
         <style jsx>{style}</style>
       </Component>

@@ -58,7 +58,7 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     if (valid) {
       rightIcon = <Button
         className={cc(prefix({ 'itemChoice-checkmark': true }))}
-        valid
+        status={Button.STATUS.CHECKED}
         validated={validated}
       />
     }

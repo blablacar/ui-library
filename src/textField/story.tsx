@@ -147,7 +147,7 @@ stories.add(
     return (
       <TextField
         addon={
-          <Button unstyled icon tabIndex="-1">
+          <Button status={Button.STATUS.UNSTYLED} icon tabIndex="-1">
             <ArrowIcon size="18" />
           </Button>
         }

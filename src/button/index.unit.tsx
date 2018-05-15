@@ -31,8 +31,8 @@ describe('Button', () => {
     const buttonClassName = shallow(<Button className="addClass">blabla</Button>)
     expect(buttonClassName.hasClass('addClass')).toBe(true)
 
-    const button = shallow(<Button primary warning>blabla</Button>)
-    expect(button.hasClass('kirk-button-primary kirk-button-warning')).toBe(true)
+    const button = shallow(<Button status={Button.STATUS.WARNING}>blabla</Button>)
+    expect(button.hasClass('kirk-button-warning')).toBe(true)
   })
 
   it('Should allow for an icon.', () => {
@@ -42,7 +42,7 @@ describe('Button', () => {
   })
 
   it('should allow for a loading state', () => {
-    const button = shallow(<Button loading><CrossIcon /></Button>)
+    const button = shallow(<Button status={Button.STATUS.LOADING}><CrossIcon /></Button>)
     expect(button.hasClass('kirk-button-loading')).toBe(true)
   })
 
@@ -88,7 +88,7 @@ describe('Button', () => {
   it('fires the callback event when valid', () => {
     const event = jest.fn()
     const button = shallow(<Button validated={event}>blabla</Button>)
-    button.setProps({ valid: true })
+    button.setProps({ status: Button.STATUS.CHECKED })
     expect(setTimeout.mock.calls.length).toBe(1)
     expect(setTimeout.mock.calls[0][0]).toBe(event)
     expect(setTimeout.mock.calls[0][1]).toBe(500 + 1000) // duration + delay

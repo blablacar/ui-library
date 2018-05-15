@@ -129,21 +129,21 @@ export default css`
     margin-left: -24px;
   }
 
-  :global(.kirk-button-valid),
-  :global(.kirk-button-valid:focus),
-  :global(.kirk-button-valid:hover),
-  :global(.kirk-button-valid:active) {
+  :global(.kirk-button-checked),
+  :global(.kirk-button-checked:focus),
+  :global(.kirk-button-checked:hover),
+  :global(.kirk-button-checked:active) {
     background-color: ${color.success};
     color: ${color.white};
     max-width: initial;
     transition: none;
   }
 
-  :global(.kirk-button-valid[disabled]) {
+  :global(.kirk-button-checked[disabled]) {
     opacity: 1;
   }
 
-  :global(.kirk-button-valid span) {
+  :global(.kirk-button-checked span) {
     opacity: 0;
   }
 

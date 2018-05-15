@@ -188,7 +188,7 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
             <Button
               className="kirk-textField-button"
               hidden={!value}
-              unstyled
+              status={Button.STATUS.UNSTYLED}
               icon
               onClick={buttonOnClick}
               tabIndex="-1"
