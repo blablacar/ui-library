@@ -23,7 +23,7 @@ export interface ButtonProps {
   readonly focus?: boolean,
   readonly icon?: boolean,
   readonly unstyled?: boolean,
-  readonly bordered?:boolean,
+  readonly shadowed?: boolean,
   readonly hidden?: boolean,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
@@ -76,7 +76,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     warning: false,
     icon: false,
     unstyled: false,
-    bordered: false,
+    shadowed: false,
     focus: false,
     disabled: false,
   }
@@ -112,7 +112,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     const {
       children, className, type, href, title,
       // Modifiers
-      primary, secondary, valid, loading, warning, icon, unstyled, bordered,
+      primary, secondary, valid, loading, warning, icon, unstyled, shadowed,
       // Actions
       onClick, onBlur, onFocus, validated, focus,
       // Extend case of the button for the expand component
@@ -145,7 +145,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
         className={cc([
           prefix({ button: true }),
           prefix({
-            primary, secondary, loading, valid, warning, icon, unstyled, bordered,
+            primary, secondary, loading, valid, warning, icon, unstyled, shadowed,
           }, 'kirk-button'),
           className,
         ])}

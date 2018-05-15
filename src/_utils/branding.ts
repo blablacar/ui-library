@@ -83,7 +83,7 @@ export const transition = {
 export const buttonIconSize = '48px'
 
 export const shadow = {
-  default: '0 2px 4px rgba(0, 0, 0, .5)',
+  default: '0 2px 4px rgba(0, 0, 0, .3)',
 }
 
 export const color: Color = {

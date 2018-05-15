@@ -1,6 +1,8 @@
 import css from 'styled-jsx/css'
 import { color, font, space, transition, buttonIconSize, shadow } from '_utils/branding'
 
+const borderSize = '2px'
+
 export default css`
   :global(.kirk-button) {
     position: relative;
@@ -22,7 +24,7 @@ export default css`
     user-select: none;
     transition:
       max-width ${transition.duration.fast} ease-in,
-      background-color ${transition.duration.fast} ease-in;
+      background-color ${transition.duration.base} ease-in;
   }
 
   :global(.kirk-button.kirk-itemChoice) {
@@ -74,10 +76,10 @@ export default css`
     color: ${color.white};
   }
 
-  :global(.kirk-button-bordered) {
-    border: 2px solid ${color.white};
+  :global(.kirk-button-shadowed) {
+    border: ${borderSize} solid ${color.white};
     box-shadow: ${shadow.default};
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
 
   :global(.kirk-button-primary:hover),
@@ -90,6 +92,9 @@ export default css`
     background-color: ${color.white};
     border-color: ${color.border};
     color: ${color.accent};
+  }
+  :global(.kirk-button-secondary.kirk-button-shadowed) {
+    border: none;
   }
 
   :global(.kirk-button-secondary:hover),
@@ -162,6 +167,11 @@ export default css`
     justify-content: center;
     width: ${buttonIconSize};
     height: ${buttonIconSize};
+  }
+
+  :global(.kirk-button-icon.kirk-button-shadowed span) {
+    width: calc(${buttonIconSize} - ${borderSize} * 2);
+    height: calc(${buttonIconSize} - ${borderSize} * 2);
   }
 
   @media (hover:none), (hover:on-demand) {

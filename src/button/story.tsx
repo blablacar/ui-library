@@ -26,6 +26,7 @@ stories.add(
     <Button
       primary
       icon={hasIcon()}
+      shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
       { hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
@@ -39,6 +40,7 @@ stories.add(
     <Button
       secondary
       icon={hasIcon()}
+      shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
       { hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
@@ -88,13 +90,13 @@ stories.add(
 
 
 stories.add(
-  'bordered & shadowed',
+  'shadowed',
   withInfo('')(() => (
     <Button
       {...commonProps}
       icon
       primary
-      bordered={boolean('bordered', true)}
+      shadowed={boolean('shadowed', true)}
     >
       <ArrowIcon right iconColor={color.white} />
     </Button>
