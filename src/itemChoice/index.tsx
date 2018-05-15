@@ -29,7 +29,7 @@ export interface ItemChoiceProps {
   readonly highlighted?: boolean,
   readonly selected?: boolean,
   readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly onCheckingEnd?: () => void,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
@@ -41,7 +41,7 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     const {
       children, className, loading = false, highlighted = false, selected = false, valid = false,
       onClick, onBlur, onFocus, onMouseDown, href = '', label, subLabel, leftAddon, rightAddon,
-      validated, key,
+      onCheckingEnd, key,
     } = this.props
     const classNames = cc([prefix({
       itemChoice: true,
@@ -59,7 +59,7 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
       rightIcon = <Button
         className={cc(prefix({ 'itemChoice-checkmark': true }))}
         status={Button.STATUS.CHECKED}
-        validated={validated}
+        onCheckingEnd={onCheckingEnd}
       />
     }
 

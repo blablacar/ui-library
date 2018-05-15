@@ -18,7 +18,7 @@ export interface RadioProps {
   readonly icon?: JSX.Element,
   readonly loading?: boolean,
   readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly onCheckingEnd?: () => void,
 }
 
 export default class Radio extends Component <RadioProps> {
@@ -37,7 +37,7 @@ export default class Radio extends Component <RadioProps> {
 
   render() {
     const { className, name, value, subLabel, highlighted, checked, children, icon,
-      loading, valid, validated, key } = this.props
+      loading, valid, onCheckingEnd, key } = this.props
 
     return (
       <ItemChoice
@@ -49,7 +49,7 @@ export default class Radio extends Component <RadioProps> {
         className={cc([prefix({ radio: true }), className])}
         loading={loading}
         valid={valid}
-        validated={validated}
+        onCheckingEnd={onCheckingEnd}
       >
         <input
           type="radio"

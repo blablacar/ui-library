@@ -61,12 +61,12 @@ describe('AutoComplete', () => {
     expect(wrapper.find('button').prop('title')).toBe('buttonTitle')
   })
 
-  it('Can trigger validated callback', () => {
+  it('Can trigger onCheckingEnd callback', () => {
     const event = jest.fn()
     const wrapper = mount(<AutoComplete
       {...defaultProps}
       loadingItemIndex={0}
-      validated={event}
+      onCheckingEnd={event}
     />)
 
     wrapper.setProps({ isSearching: true })

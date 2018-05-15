@@ -102,12 +102,12 @@ describe('AutoCompleteList', () => {
       expect(wrapper.find('AutoCompleteListItem').last().prop('valid')).toBe(false)
     })
 
-    it('Can trigger validated callback', () => {
+    it('Can trigger onCheckingEnd callback', () => {
       const event = jest.fn()
       const wrapper = mount(<AutoCompleteList
         {...defaultProps}
         loadingItemIndex={0}
-        validated={event}
+        onCheckingEnd={event}
       />)
 
       wrapper.setProps({ valid: true })

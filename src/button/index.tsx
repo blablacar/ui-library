@@ -32,7 +32,7 @@ export interface ButtonProps {
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly validated?: (event: Event) => void,
+  readonly onCheckingEnd?: (event: Event) => void,
   readonly tabIndex?: string,
   readonly disabled?: boolean,
 }
@@ -82,14 +82,14 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     disabled: false,
   }
 
-  validated = () => {
+  validate = () => {
     const timeout = parseInt(transition.duration.fast, 10) + transition.callbackDelay
-    setTimeout(this.props.validated, timeout)
+    setTimeout(this.props.onCheckingEnd, timeout)
   }
 
   componentDidMount() {
     if (this.props.status === ButtonStatus.CHECKED) {
-      this.validated()
+      this.validate()
     }
     if (this.props.focus) {
       this.button.focus()
@@ -98,7 +98,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
 
   componentWillReceiveProps({ status, focus }: ButtonProps) {
     if (status === ButtonStatus.CHECKED && status !== this.props.status) {
-      this.validated()
+      this.validate()
     }
     if (focus && focus !== this.props.focus) {
       this.button.focus()
@@ -115,7 +115,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
       // Modifiers
       status, icon, shadowed,
       // Actions
-      onClick, onBlur, onFocus, validated, focus,
+      onClick, onBlur, onFocus, onCheckingEnd, focus,
       // Extend case of the button for the expand component
       ...attrs,
     } = this.props
@@ -141,12 +141,14 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
     typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
 
+    const iconSize = icon || status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
+
     return (
       <Component
         className={cc([
           prefix({ button: true }),
           prefix({
-            [status]: status, icon, shadowed,
+            [status]: status, icon: iconSize, shadowed,
           }, 'kirk-button'),
           className,
         ])}

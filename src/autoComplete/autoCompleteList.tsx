@@ -15,7 +15,7 @@ export interface AutoCompleteListProps {
   itemClassName?: Classcat.Class,
   loadingItemIndex?: number,
   valid?: boolean,
-  validated?: () => void,
+  onCheckingEnd?: () => void,
   itemKey?: (item:AutocompleteItem) => string,
   visible?: boolean,
 }
@@ -127,7 +127,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
             loading={index === this.props.loadingItemIndex}
             select={this.props.onSelect}
             valid={index === this.props.loadingItemIndex && this.props.valid}
-            validated={this.props.validated}
+            onCheckingEnd={this.props.onCheckingEnd}
           >
             <div>
               {this.props.renderItem({ item, index })}

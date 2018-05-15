@@ -53,7 +53,7 @@ describe('Radio', () => {
 
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const wrapper = mount(<Radio {...defaultProps} validated={event}>blabla</Radio>)
+    const wrapper = mount(<Radio {...defaultProps} onCheckingEnd={event}>blabla</Radio>)
     wrapper.setProps({ valid: true })
     expect(setTimeout.mock.calls.length).toBe(1)
     expect(setTimeout).toHaveBeenCalledTimes(1)

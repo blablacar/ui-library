@@ -43,7 +43,7 @@ interface AutoCompleteProps {
   readonly buttonTitle?: string,
   readonly showList?: boolean,
   readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly onCheckingEnd?: () => void,
 } 
 
 interface AutoCompleteState {
@@ -256,7 +256,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           loadingItemIndex={this.props.loadingItemIndex}
           itemClassName={this.props.itemClassName}
           valid={this.props.valid}
-          validated={this.props.validated}
+          onCheckingEnd={this.props.onCheckingEnd}
         />
         <style jsx>{style}</style>
       </div>

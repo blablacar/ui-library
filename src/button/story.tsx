@@ -58,7 +58,7 @@ stories.add(
 stories.add(
   'valid',
   withInfo('')(() => (
-    <Button status={Button.STATUS.CHECKED} validated={() => action('animation done')} />
+    <Button status={Button.STATUS.CHECKED} onCheckingEnd={() => action('animation done')} />
   )),
 )
 
@@ -180,7 +180,7 @@ class Validation extends React.Component {
         status={status}
         icon={hasIcon() || this.state.icon}
         onClick={this.validate}
-        validated={() => action('animation done')}
+        onCheckingEnd={() => action('animation done')}
       >
         {this.renderChildren()}
       </Button>

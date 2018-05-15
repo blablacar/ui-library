@@ -64,7 +64,7 @@ describe('ItemChoice', () => {
 
     it('fires the callback event when valid', () => {
       const event = jest.fn()
-      const wrapper = mount(<ItemChoice validated={event}>blabla</ItemChoice>)
+      const wrapper = mount(<ItemChoice onCheckingEnd={event}>blabla</ItemChoice>)
       wrapper.setProps({ valid: true })
       expect(event).not.toBeCalled()
       jest.advanceTimersByTime(1500)

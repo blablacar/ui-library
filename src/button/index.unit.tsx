@@ -87,7 +87,7 @@ describe('Button', () => {
 
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const button = shallow(<Button validated={event}>blabla</Button>)
+    const button = shallow(<Button onCheckingEnd={event}>blabla</Button>)
     button.setProps({ status: Button.STATUS.CHECKED })
     expect(setTimeout.mock.calls.length).toBe(1)
     expect(setTimeout.mock.calls[0][0]).toBe(event)

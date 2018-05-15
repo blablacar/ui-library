@@ -10,7 +10,7 @@ export interface AutoCompleteListItemProps {
   readonly highlighted?: boolean,
   readonly loading?: boolean,
   readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly onCheckingEnd?: () => void,
 }
 
 export default class AutoCompleteListItem extends Component <AutoCompleteListItemProps> {
@@ -32,7 +32,7 @@ export default class AutoCompleteListItem extends Component <AutoCompleteListIte
         className={cc(['kirk-autoComplete-item', this.props.className])}
         onMouseDown={this.onMouseDown}
         valid={this.props.valid}
-        validated={this.props.validated}
+        onCheckingEnd={this.props.onCheckingEnd}
       >
         {this.props.children}
       </ItemChoice>

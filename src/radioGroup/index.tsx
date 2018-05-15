@@ -13,7 +13,7 @@ export interface RadioGroupProps {
   readonly highlightedValue?: string,
   readonly loading?: boolean,
   readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly onCheckingEnd?: () => void,
 }
 
 export type value = string | number | boolean
@@ -46,7 +46,9 @@ class RadioGroup extends PureComponent <RadioGroupProps, RadioGroupState> {
   }
 
   render() {
-    const { className, name, highlightedValue, loading, valid, validated, children } = this.props
+    const { className, name, highlightedValue, loading, valid,
+      onCheckingEnd, children,
+    } = this.props
     return (
       <div
         className={cc(['kirk-radioGroup',
@@ -66,7 +68,7 @@ class RadioGroup extends PureComponent <RadioGroupProps, RadioGroupState> {
                 highlighted: highlightedValue === radioProps.value,
                 loading: loading && this.state.value === radioProps.value,
                 valid: valid && this.state.value === radioProps.value,
-                validated,
+                onCheckingEnd,
               }
               return cloneElement(radio as React.ReactElement<Radio>, props as Partial<Radio>)
             }

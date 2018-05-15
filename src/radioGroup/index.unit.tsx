@@ -37,7 +37,7 @@ it('should have a loading state', () => {
 it('should have a valid state & fires the callback when valid', () => {
   const event = jest.fn()
   const radio = mount((
-    <RadioGroup name="radio1" value="radioValue1" validated={event}>
+    <RadioGroup name="radio1" value="radioValue1" onCheckingEnd={event}>
       <Radio value="radioValue1">Label 1</Radio>
       <Radio value="radioValue2" subLabel="Sublabel">Label 2</Radio>
     </RadioGroup>
