@@ -95,6 +95,7 @@
     "typescript": "2.8.3"
   },
   "dependencies": {
+    "@types/react-transition-group": "2.0.9",
     "classcat": "3.1.2",
     "exenv": "1.2.2",
     "lodash.debounce": "4.0.8",
@@ -105,6 +106,7 @@
     "react-addons-shallow-compare": "15.6.2",
     "react-dates": "16.7.0",
     "react-dom": "16.3.2",
+    "react-transition-group": "2.3.1",
     "styled-jsx": "2.2.6",
     "tslint": "5.10.0",
     "tslint-config-airbnb": "5.8.0"
