@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 
 import ItemChoice from 'itemChoice'
 import StarIcon from 'icon/starIcon'
@@ -16,8 +16,6 @@ stories.add(
     <div>
       <ItemChoice
         label="Choice 1"
-        loading={boolean('loading', false)}
-        valid={boolean('valid', false)}
         highlighted={boolean('highlighted', false)}
         selected={boolean('selected', false)}
         onClick={action('onClick')}
@@ -35,12 +33,12 @@ stories.add(
     <div>
       <ItemChoice
         label="Choice 1"
-        loading
+        status={ItemChoice.STATUS.LOADING}
       />
       <ItemChoice
         label="Choice 2"
-        loading
-        valid={boolean('valid', true)}
+        status={ItemChoice.STATUS.CHECKED}
+        onDoneAnimationEnd={() => action('animation done')}
       />
     </div>
   )),

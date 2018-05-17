@@ -1,5 +1,6 @@
 import React from 'react'
 import AutoCompleteList from './autoCompleteList'
+import AutoCompleteListItem from './autoCompleteListItem'
 
 const fakeItems = [
   { title: 'title1', description: 'description1' },
@@ -92,22 +93,26 @@ describe('AutoCompleteList', () => {
   describe('#loadingItemIndex', () => {
     it('Can display an AutoCompleteListItem in loading state', () => {
       const wrapper = shallow(<AutoCompleteList {...defaultProps} loadingItemIndex={0} />)
-      expect(wrapper.find('AutoCompleteListItem').first().prop('loading')).toBe(true)
-      expect(wrapper.find('AutoCompleteListItem').last().prop('loading')).toBe(false)
+      expect(wrapper.find('AutoCompleteListItem').first().prop('status'))
+        .toBe(AutoCompleteListItem.STATUS.LOADING)
+      expect(wrapper.find('AutoCompleteListItem').last().prop('status'))
+        .toBe(AutoCompleteListItem.STATUS.DEFAULT)
     })
 
     it('Can display an AutoCompleteListItem in valid state', () => {
       const wrapper = shallow(<AutoCompleteList {...defaultProps} loadingItemIndex={0} valid />)
-      expect(wrapper.find('AutoCompleteListItem').first().prop('valid')).toBe(true)
-      expect(wrapper.find('AutoCompleteListItem').last().prop('valid')).toBe(false)
+      expect(wrapper.find('AutoCompleteListItem').first().prop('status'))
+        .toBe(AutoCompleteListItem.STATUS.CHECKED)
+      expect(wrapper.find('AutoCompleteListItem').last().prop('status'))
+        .toBe(AutoCompleteListItem.STATUS.DEFAULT)
     })
 
-    it('Can trigger onCheckingEnd callback', () => {
+    it('Can trigger onDoneAnimationEnd callback', () => {
       const event = jest.fn()
       const wrapper = mount(<AutoCompleteList
         {...defaultProps}
         loadingItemIndex={0}
-        onCheckingEnd={event}
+        onDoneAnimationEnd={event}
       />)
 
       wrapper.setProps({ valid: true })

@@ -1,11 +1,16 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import prefix from '_utils'
-import Button from 'button'
 import ChevronIcon from 'icon/chevronIcon'
 import Loader from 'loader'
 import { transition } from '_utils/branding'
 import style from './style'
+
+export enum ItemChoiceStatus {
+  DEFAULT = 'default',
+  LOADING = 'loading',
+  CHECKED = 'checked',
+}
 
 interface TypeProps {
   readonly className?: Classcat.Class,
@@ -25,11 +30,10 @@ export interface ItemChoiceProps {
   readonly children?: React.ReactNode,
   readonly leftAddon?: React.ReactNode,
   readonly rightAddon?: React.ReactNode,
-  readonly loading?: boolean,
   readonly highlighted?: boolean,
   readonly selected?: boolean,
-  readonly valid?: boolean,
-  readonly onCheckingEnd?: () => void,
+  readonly status?: ItemChoiceStatus,
+  readonly onDoneAnimationEnd?: () => void,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
@@ -37,11 +41,18 @@ export interface ItemChoiceProps {
 }
 
 class ItemChoice extends PureComponent <ItemChoiceProps> {
+  static defaultProps: Partial<ItemChoiceProps> = {
+    highlighted: false,
+    selected: false,
+    status: ItemChoiceStatus.DEFAULT,
+    href: '',
+  }
+  static STATUS = ItemChoiceStatus
   render() {
     const {
-      children, className, loading = false, highlighted = false, selected = false, valid = false,
-      onClick, onBlur, onFocus, onMouseDown, href = '', label, subLabel, leftAddon, rightAddon,
-      onCheckingEnd, key,
+      children, className, highlighted, selected, status,
+      onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
+      onDoneAnimationEnd, key,
     } = this.props
     const classNames = cc([prefix({
       itemChoice: true,
@@ -51,15 +62,22 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
 
     let rightIcon = <ChevronIcon className={cc(prefix({ chevron: true }))} />
 
-    if (loading) {
-      rightIcon = <Loader className={cc(prefix({ chevron: true }))} size={24} inline />
+    if (status === ItemChoiceStatus.LOADING) {
+      rightIcon = <Loader
+        className={cc(prefix({ chevron: true }))}
+        size={24}
+        onDoneAnimationEnd={onDoneAnimationEnd}
+        inline
+      />
     }
 
-    if (valid) {
-      rightIcon = <Button
-        className={cc(prefix({ 'itemChoice-checkmark': true }))}
-        status={Button.STATUS.CHECKED}
-        onCheckingEnd={onCheckingEnd}
+    if (status === ItemChoiceStatus.CHECKED) {
+      rightIcon = <Loader
+        className={cc(prefix({ chevron: true }))}
+        size={24}
+        onDoneAnimationEnd={onDoneAnimationEnd}
+        done
+        inline
       />
     }
 

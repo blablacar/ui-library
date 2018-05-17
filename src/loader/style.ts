@@ -1,4 +1,5 @@
 import css from 'styled-jsx/css'
+import { color, font, space, transition, buttonIconSize, shadow } from '_utils/branding'
 
 // Workaround babel and ts not being able to parse "empty" files for sourcemaps
 // https://github.com/babel/babel-loader/issues/188
@@ -19,5 +20,11 @@ export default css`
     height: 100vh;
     width: 100vw;
     z-index: 4;
+  }
+
+  .kirk-loader--done {
+    background-color: ${color.success};
+    color: ${color.white};
+    border-radius: 50%;
   }
 `

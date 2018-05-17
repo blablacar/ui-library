@@ -58,7 +58,7 @@ stories.add(
 stories.add(
   'valid',
   withInfo('')(() => (
-    <Button status={Button.STATUS.CHECKED} onCheckingEnd={() => action('animation done')} />
+    <Button status={Button.STATUS.CHECKED} onDoneAnimationEnd={() => action('animation done')} />
   )),
 )
 
@@ -169,18 +169,18 @@ class Validation extends React.Component {
   )
   render() {
     let status:ButtonStatus = Button.STATUS.PRIMARY
-    if (this.state.valid) {
-      status = Button.STATUS.CHECKED
-    }
     if (this.state.loading) {
       status = Button.STATUS.LOADING
+    }
+    if (this.state.valid) {
+      status = Button.STATUS.CHECKED
     }
     return (
       <Button
         status={status}
         icon={hasIcon() || this.state.icon}
         onClick={this.validate}
-        onCheckingEnd={() => action('animation done')}
+        onDoneAnimationEnd={() => action('animation done')}
       >
         {this.renderChildren()}
       </Button>

@@ -32,7 +32,7 @@ export interface ButtonProps {
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onCheckingEnd?: (event: Event) => void,
+  readonly onDoneAnimationEnd?: () => void,
   readonly tabIndex?: string,
   readonly disabled?: boolean,
 }
@@ -82,24 +82,13 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     disabled: false,
   }
 
-  validate = () => {
-    const timeout = parseInt(transition.duration.fast, 10) + transition.callbackDelay
-    setTimeout(this.props.onCheckingEnd, timeout)
-  }
-
   componentDidMount() {
-    if (this.props.status === ButtonStatus.CHECKED) {
-      this.validate()
-    }
     if (this.props.focus) {
       this.button.focus()
     }
   }
 
   componentWillReceiveProps({ status, focus }: ButtonProps) {
-    if (status === ButtonStatus.CHECKED && status !== this.props.status) {
-      this.validate()
-    }
     if (focus && focus !== this.props.focus) {
       this.button.focus()
     }
@@ -115,7 +104,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
       // Modifiers
       status, icon, shadowed,
       // Actions
-      onClick, onBlur, onFocus, onCheckingEnd, focus,
+      onClick, onBlur, onFocus, onDoneAnimationEnd, focus,
       // Extend case of the button for the expand component
       ...attrs,
     } = this.props
@@ -141,7 +130,8 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
     typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
 
-    const iconSize = icon || status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
+    const hasLoader = status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
+    const iconSize = icon || hasLoader
 
     return (
       <Component
@@ -155,8 +145,12 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
         {...typeProps}
         {...attrs}
       >
-        {status === ButtonStatus.LOADING && <Loader size={48} inline />}
-        {status === ButtonStatus.CHECKED && <Check validate absolute iconColor={color.white} />}
+        {hasLoader && <Loader
+          size={48}
+          inline
+          done={status === ButtonStatus.CHECKED}
+          onDoneAnimationEnd={onDoneAnimationEnd}
+        />}
         <span>{children}</span>
         <style jsx>{style}</style>
       </Component>

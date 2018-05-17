@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import style from 'radioGroup/style'
 import Radio, { RadioProps } from 'radio'
+import { ItemChoiceStatus } from 'itemChoice'
 
 export interface RadioGroupProps {
   readonly name: string,
@@ -11,9 +12,8 @@ export interface RadioGroupProps {
   readonly children?: JSX.Element[],
   readonly onChange?: (obj: onChangeParameters) => void,
   readonly highlightedValue?: string,
-  readonly loading?: boolean,
-  readonly valid?: boolean,
-  readonly onCheckingEnd?: () => void,
+  readonly status?: ItemChoiceStatus,
+  readonly onDoneAnimationEnd?: () => void,
 }
 
 export type value = string | number | boolean
@@ -46,8 +46,8 @@ class RadioGroup extends PureComponent <RadioGroupProps, RadioGroupState> {
   }
 
   render() {
-    const { className, name, highlightedValue, loading, valid,
-      onCheckingEnd, children,
+    const { className, name, highlightedValue, status,
+      onDoneAnimationEnd, children,
     } = this.props
     return (
       <div
@@ -66,9 +66,8 @@ class RadioGroup extends PureComponent <RadioGroupProps, RadioGroupState> {
                 onChange: this.onChangeGroup,
                 checked: this.state.value === radioProps.value,
                 highlighted: highlightedValue === radioProps.value,
-                loading: loading && this.state.value === radioProps.value,
-                valid: valid && this.state.value === radioProps.value,
-                onCheckingEnd,
+                status: this.state.value === radioProps.value ? status : Radio.STATUS.DEFAULT,
+                onDoneAnimationEnd,
               }
               return cloneElement(radio as React.ReactElement<Radio>, props as Partial<Radio>)
             }

@@ -29,7 +29,7 @@ it('should have a loading state', () => {
   ))
 
   expect(radio.find('.kirk-radio').first().find(Loader).exists()).toBe(false)
-  radio.setProps({ loading: true })
+  radio.setProps({ status: Radio.STATUS.LOADING })
   expect(radio.find('.kirk-radio').first().find(Loader).exists()).toBe(true)
   expect(radio.find('.kirk-radio').last().find(Loader).exists()).toBe(false)
 })
@@ -37,16 +37,16 @@ it('should have a loading state', () => {
 it('should have a valid state & fires the callback when valid', () => {
   const event = jest.fn()
   const radio = mount((
-    <RadioGroup name="radio1" value="radioValue1" onCheckingEnd={event}>
+    <RadioGroup name="radio1" value="radioValue1" onDoneAnimationEnd={event}>
       <Radio value="radioValue1">Label 1</Radio>
       <Radio value="radioValue2" subLabel="Sublabel">Label 2</Radio>
     </RadioGroup>
   ))
 
-  expect(radio.find('.kirk-radio').first().find('.kirk-itemChoice-checkmark').exists()).toBe(false)
-  radio.setProps({ valid: true })
-  expect(radio.find('.kirk-radio').first().find('.kirk-itemChoice-checkmark').exists()).toBe(true)
-  expect(radio.find('.kirk-radio').last().find('.kirk-itemChoice-checkmark').exists()).toBe(false)
+  expect(radio.find('.kirk-radio').first().find(Loader).exists()).toBe(false)
+  radio.setProps({ status: Radio.STATUS.CHECKED })
+  expect(radio.find('.kirk-radio').first().find(Loader).exists()).toBe(true)
+  expect(radio.find('.kirk-radio').last().find(Loader).exists()).toBe(false)
   expect(event).not.toBeCalled()
   jest.advanceTimersByTime(1500)
   expect(event).toBeCalled()

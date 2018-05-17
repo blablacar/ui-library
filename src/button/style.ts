@@ -106,6 +106,7 @@ export default css`
   :global(.kirk-button-loading) {
     background-color: transparent;
     max-width: initial;
+    border: 0;
   }
 
   :global(.kirk-button-loading:hover),
@@ -129,14 +130,8 @@ export default css`
     margin-left: -24px;
   }
 
-  :global(.kirk-button-checked),
-  :global(.kirk-button-checked:focus),
-  :global(.kirk-button-checked:hover),
-  :global(.kirk-button-checked:active) {
-    background-color: ${color.success};
-    color: ${color.white};
-    max-width: initial;
-    transition: none;
+  :global(.kirk-button-checked) {
+    border: 0;
   }
 
   :global(.kirk-button-checked[disabled]) {

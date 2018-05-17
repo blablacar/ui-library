@@ -42,19 +42,19 @@ describe('Radio', () => {
   })
 
   it('Can be in loading state', () => {
-    const wrapper = shallow(<Radio {...defaultProps} loading>Title</Radio>)
-    expect(wrapper.find(ItemChoice).prop('loading')).toBe(true)
+    const wrapper = shallow(<Radio {...defaultProps} status={Radio.STATUS.LOADING}>Title</Radio>)
+    expect(wrapper.find(ItemChoice).prop('status')).toBe(Radio.STATUS.LOADING)
   })
 
   it('Can be in valid state', () => {
-    const wrapper = shallow(<Radio {...defaultProps} valid>Title</Radio>)
-    expect(wrapper.find(ItemChoice).prop('valid')).toBe(true)
+    const wrapper = shallow(<Radio {...defaultProps} status={Radio.STATUS.CHECKED}>Title</Radio>)
+    expect(wrapper.find(ItemChoice).prop('status')).toBe(Radio.STATUS.CHECKED)
   })
 
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const wrapper = mount(<Radio {...defaultProps} onCheckingEnd={event}>blabla</Radio>)
-    wrapper.setProps({ valid: true })
+    const wrapper = mount(<Radio {...defaultProps} onDoneAnimationEnd={event}>blabla</Radio>)
+    wrapper.setProps({ status: Radio.STATUS.CHECKED })
     expect(setTimeout.mock.calls.length).toBe(1)
     expect(setTimeout).toHaveBeenCalledTimes(1)
   })

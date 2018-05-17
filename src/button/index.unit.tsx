@@ -4,6 +4,8 @@ import Button, { eventHandler } from 'button'
 import ItemChoice from 'itemChoice'
 import CrossIcon from 'icon/crossIcon'
 
+jest.useFakeTimers()
+
 describe('Button', () => {
   class TestLink extends React.PureComponent {
     render() {
@@ -83,16 +85,18 @@ describe('Button', () => {
     expect(secondEvent).toHaveBeenCalledTimes(1)
   })
 
-  jest.useFakeTimers()
-
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const button = shallow(<Button onCheckingEnd={event}>blabla</Button>)
-    button.setProps({ status: Button.STATUS.CHECKED })
-    expect(setTimeout.mock.calls.length).toBe(1)
-    expect(setTimeout.mock.calls[0][0]).toBe(event)
-    expect(setTimeout.mock.calls[0][1]).toBe(500 + 1000) // duration + delay
-    expect(setTimeout).toHaveBeenCalledTimes(1)
+    const button = mount(<Button
+      onDoneAnimationEnd={event}
+      status={Button.STATUS.CHECKED}
+      >
+        blabla
+      </Button>,
+    )
+    expect(event).not.toBeCalled()
+    jest.advanceTimersByTime(1500)
+    expect(event).toBeCalled()
   })
 
   describe('#href', () => {

@@ -69,6 +69,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
           loadingItemIndex={number('loadingItemIndex', -1)}
           valid={boolean('valid', false)}
+          onDoneAnimationEnd={() => console.log('HEEEEY')}
         />
       </div>
     )
