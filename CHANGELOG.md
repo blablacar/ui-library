@@ -1,5 +1,5 @@
-#Unreleased
-- [...]
+# Unreleased
+- NEW FakeTextField component
 
 #v0.1.0
 - [Transitions] Add Transitions component

@@ -6,6 +6,7 @@ import Checkbox from 'checkbox'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
+import FakeTextField from 'fakeTextField'
 import HamburgerButton from 'hamburgerButton'
 import ItemChoice from 'itemChoice'
 import Itinerary from 'itinerary'
@@ -61,6 +62,7 @@ export {
   DatePicker,
   Drawer,
   DropdownButton,
+  FakeTextField,
   HamburgerButton,
   ItemChoice,
   Itinerary,
