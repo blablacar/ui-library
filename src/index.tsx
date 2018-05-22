@@ -25,6 +25,7 @@ import TextField from 'textField'
 import TimePicker from 'timePicker'
 import Title from 'title'
 import TopBar from 'topBar'
+import Transitions from 'transitions'
 import TripCard from 'tripCard'
 import Why from 'why'
 import ArrowIcon from 'icon/arrowIcon'
@@ -79,6 +80,7 @@ export {
   TimePicker,
   Title,
   TopBar,
+  Transitions,
   TripCard,
   Why,
   ArrowIcon,

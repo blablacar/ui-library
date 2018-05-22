@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
+import TransitionGroup  from 'react-transition-group/TransitionGroup'
+import CustomTransition, { AnimationType } from 'transitions'
 import { color } from '_utils/branding'
 
 import cc from 'classcat'
@@ -13,7 +15,7 @@ const KEYCODES = {
 
 export interface ModalProps {
   readonly close: () => void,
-  readonly wrapper?: JSX.Element,
+  readonly isOpen?: boolean,
   readonly children?: JSX.Element | JSX.Element[],
   readonly className?: Classcat.Class,
   readonly closeOnEsc?: boolean,
@@ -30,13 +32,13 @@ class Modal extends Component <ModalProps> {
   private contentNode: HTMLElement
 
   static defaultProps:Partial<ModalProps> = {
+    isOpen: false,
     closeOnEsc: true,
     closeOnOutsideClick: false,
-    displayCloseButton: false,
+    displayCloseButton: true,
     large: false,
     fullscreen: false,
-    displayDimmer: false,
-    wrapper: null,
+    displayDimmer: true,
   }
 
   componentDidMount() {
@@ -90,9 +92,6 @@ class Modal extends Component <ModalProps> {
 
     if (!this.portalNode) {
       const dimmer = document.createElement('div')
-      dimmer.className =
-      `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
-      ${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}`
       this.portalNode = dimmer
       document.body.appendChild(this.portalNode)
     }
@@ -100,7 +99,6 @@ class Modal extends Component <ModalProps> {
     const classNames = cc([
       baseClassName,
       {
-        [`${baseClassName}--fullscreen`]: this.props.fullscreen,
         [`${baseClassName}--large`]: this.props.large,
         [`${baseClassName}--hasCloseButton`]: this.props.displayCloseButton,
       },
@@ -108,35 +106,35 @@ class Modal extends Component <ModalProps> {
     ])
 
     const modalElement = (
-      <div className={classNames}>
-        <div className={`${baseClassName}-dialog`} ref={this.refContent}>
-          {this.props.displayCloseButton && (
-            <Button
-              icon
-              className={`${baseClassName}-closeButton`}
-              onClick={this.props.close}
-              title={this.props.closeButtonTitle}
-            >
-              <CrossIcon size="18" iconColor={color.accent} />
-            </Button>
+      <div className={
+        `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
+        ${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}
+        ${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`}
+        >
+        <TransitionGroup component="div" className="transition-wrapper">
+          { this.props.isOpen && (
+            <CustomTransition animationName={AnimationType.SLIDE_UP}>
+              <div className={classNames}>
+                <div className={`${baseClassName}-dialog`} ref={this.refContent}>
+                  {this.props.displayCloseButton && (
+                    <Button
+                      icon
+                      className={`${baseClassName}-closeButton`}
+                      onClick={this.props.close}
+                      title={this.props.closeButtonTitle}
+                    >
+                      <CrossIcon size="18" iconColor={color.accent} />
+                    </Button>
+                  )}
+                  <div className={`${baseClassName}-body`}>{this.props.children}</div>
+                </div>
+                <style jsx>{style}</style>
+              </div>
+            </CustomTransition>
           )}
-          <div className={`${baseClassName}-body`}>{this.props.children}</div>
-        </div>
-        <style jsx>{style}</style>
+        </TransitionGroup>
       </div>
     )
-
-    // Wrapper used for motion transition
-    const { wrapper } = this.props
-    if (wrapper) {
-      const Component = wrapper.type
-      const typeProps = { ...wrapper.props }
-
-      return createPortal(
-        <Component {...typeProps}>{modalElement}</Component>,
-        this.portalNode,
-      )
-    }
 
     return createPortal(modalElement, this.portalNode)
   }
