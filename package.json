@@ -1,6 +1,6 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React component library",
   "main": "build/index.js",
   "homepage": "https://blablacar.github.io/ui-library",
@@ -116,8 +116,12 @@
       ".(ts|tsx)": "<rootDir>/bin/jest.preprocessor.js",
       "jestScript.js|utils.js": "<rootDir>/node_modules/babel-jest"
     },
-    "modulePaths": ["<rootDir>/src/"],
-    "collectCoverageFrom": ["src/**/index.{ts, js}"],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/index.{ts, js}"
+    ],
     "testRegex": "(src/.*.unit.(js|jsx|tsx)$)",
     "moduleFileExtensions": [
       "js",
