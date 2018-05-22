@@ -1,49 +1,49 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import FakeTextField from 'fakeTextField'
+import UneditableTextField from 'uneditableTextField'
 
-describe('FakeTextField', () => {
+describe('UneditableTextField', () => {
   it('Should have the proper default props', () => {
-    const wrapper = renderer.create(<FakeTextField>Hello world</FakeTextField>)
+    const wrapper = renderer.create(<UneditableTextField>Hello world</UneditableTextField>)
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
   it('Should have the text ellipsed', () => {
     const wrapper = renderer.create((
-      <FakeTextField ellipsis>
+      <UneditableTextField ellipsis>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec nec tristique sapien, eu placerat justo. Donec tempor,
         risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
         molestie sapien justo nec orci.
-      </FakeTextField>
+      </UneditableTextField>
     ))
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
   it('Should support add-ons', () => {
     const wrapper = renderer.create((
-      <FakeTextField addOn={<div>Add-on</div>}>
+      <UneditableTextField addOn={<div>Add-on</div>}>
         Hello world
-      </FakeTextField>
+      </UneditableTextField>
     ))
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
   it('Should support simple links', () => {
     const wrapper = renderer.create((
-      <FakeTextField href="#foo">
+      <UneditableTextField href="#foo">
         Click me
-      </FakeTextField>
+      </UneditableTextField>
     ))
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
   it('Should support component links', () => {
     const wrapper = renderer.create((
-      <FakeTextField href={<a href="#bar" />}>
+      <UneditableTextField href={<a href="#bar" />}>
         Click me
-      </FakeTextField>
+      </UneditableTextField>
     ))
     expect(wrapper.toJSON()).toMatchSnapshot()
   })

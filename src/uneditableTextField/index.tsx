@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import style from 'fakeTextField/style'
+import style from 'uneditableTextField/style'
 
-export interface FakeTextFieldProps {
+export interface UneditableTextFieldProps {
   readonly children: JSX.Element|string,
   readonly className?: Classcat.Class,
   readonly addOn?: JSX.Element,
@@ -11,9 +11,9 @@ export interface FakeTextFieldProps {
   readonly ellipsis?: boolean
 }
 
-export const FakeTextField = ({
+export const UneditableTextField = ({
   children, className = '', addOn = null, ellipsis = false, href,
-}:FakeTextFieldProps) => {
+}:UneditableTextFieldProps) => {
   let Component: tag
   let props = {}
   if (href && typeof href !== 'string') {
@@ -27,9 +27,12 @@ export const FakeTextField = ({
   }
 
   return (
-    <Component className={cc(['fakeTextField', className])} { ...props }>
+    <Component className={cc(['uneditableTextField', className])} { ...props }>
       { addOn }
-      <div className={cc(['fakeTextField-label', { 'fakeTextField-label--ellipsis': ellipsis }])}>
+      <div className={cc([
+        'uneditableTextField-label',
+        { 'uneditableTextField-label--ellipsis': ellipsis },
+      ])}>
         { children }
       </div>
       <style jsx>{style}</style>
@@ -37,4 +40,4 @@ export const FakeTextField = ({
   )
 }
 
-export default FakeTextField
+export default UneditableTextField

@@ -4,44 +4,44 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import FakeTextField from 'fakeTextField'
+import UneditableTextField from 'uneditableTextField'
 import IconSearch from 'icon/searchIcon'
 
-const stories = storiesOf('FakeTextField', module)
+const stories = storiesOf('UneditableTextField', module)
 stories.addDecorator(withKnobs)
 
 stories.add(
   'Basic',
   withInfo('')(() => (
-    <FakeTextField ellipsis={boolean('ellipsis', true)}>
+    <UneditableTextField ellipsis={boolean('ellipsis', true)}>
       { text('label', 'I\'m a very long text so I should be cut off at the end of the line') }
-    </FakeTextField>
+    </UneditableTextField>
   )),
 )
 
 stories.add(
   'With icon',
   withInfo('')(() => (
-    <FakeTextField addOn={<IconSearch />} ellipsis={boolean('ellipsis', true)}>
+    <UneditableTextField addOn={<IconSearch />} ellipsis={boolean('ellipsis', true)}>
       { text('label', 'Label') }
-    </FakeTextField>
+    </UneditableTextField>
   )),
 )
 
 stories.add(
   'With simple link/anchor',
   withInfo('')(() => (
-    <FakeTextField href="#foo">
+    <UneditableTextField href="#foo">
       Simple anchor
-    </FakeTextField>
+    </UneditableTextField>
   )),
 )
 
 stories.add(
   'With component link/anchor',
   withInfo('')(() => (
-    <FakeTextField href={<a href="#bar" />}>
+    <UneditableTextField href={<a href="#bar" />}>
       Simple anchor
-    </FakeTextField>
+    </UneditableTextField>
   )),
 )

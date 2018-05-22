@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UneditableTextField Should have the proper default props 1`] = `
+<div
+  className="uneditableTextField"
+>
+  <div
+    className="jsx-2152150793 uneditableTextField-label"
+  >
+    Hello world
+  </div>
+</div>
+`;
+
+exports[`UneditableTextField Should have the text ellipsed 1`] = `
+<div
+  className="uneditableTextField"
+>
+  <div
+    className="jsx-2152150793 uneditableTextField-label uneditableTextField-label--ellipsis"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel molestie sapien justo nec orci.
+  </div>
+</div>
+`;
+
+exports[`UneditableTextField Should support add-ons 1`] = `
+<div
+  className="uneditableTextField"
+>
+  <div>
+    Add-on
+  </div>
+  <div
+    className="jsx-2152150793 uneditableTextField-label"
+  >
+    Hello world
+  </div>
+</div>
+`;
+
+exports[`UneditableTextField Should support component links 1`] = `
+<a
+  className="uneditableTextField"
+  href="#bar"
+>
+  <div
+    className="jsx-2152150793 uneditableTextField-label"
+  >
+    Click me
+  </div>
+</a>
+`;
+
+exports[`UneditableTextField Should support simple links 1`] = `
+<a
+  className="uneditableTextField"
+  href="#foo"
+>
+  <div
+    className="jsx-2152150793 uneditableTextField-label"
+  >
+    Click me
+  </div>
+</a>
+`;
