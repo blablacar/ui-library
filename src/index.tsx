@@ -37,9 +37,11 @@ import ComfortIcon from 'icon/comfortIcon'
 import CrossIcon from 'icon/crossIcon'
 import CrosshairIcon from 'icon/crosshairIcon'
 import DecreaseIcon from 'icon/decreaseIcon'
+import DoubleArrowIcon from 'icon/doubleArrowIcon'
 import EyeIcon from 'icon/eyeIcon'
 import FacebookIcon from 'icon/facebookIcon'
 import IncreaseIcon from 'icon/increaseIcon'
+import InstagramIcon from 'icon/instagramIcon'
 import LadyIcon from 'icon/ladyIcon'
 import LightningIcon from 'icon/lightningIcon'
 import PinIcon from 'icon/pinIcon'
@@ -47,7 +49,10 @@ import ProximityIcon from 'icon/proximityIcon'
 import QuestionIcon from 'icon/questionIcon'
 import SearchIcon from 'icon/searchIcon'
 import StarIcon from 'icon/starIcon'
+import TrashIcon from 'icon/trashIcon'
+import TwitterIcon from 'icon/twitterIcon'
 import VkontakteIcon from 'icon/vkontakteIcon'
+import YoutubeIcon from 'icon/youtubeIcon'
 
 import branding from '_utils/branding'
 import { flush, flushToHTML } from 'styled-jsx/server'
@@ -92,9 +97,11 @@ export {
   CrossIcon,
   CrosshairIcon,
   DecreaseIcon,
+  DoubleArrowIcon,
   EyeIcon,
   FacebookIcon,
   IncreaseIcon,
+  InstagramIcon,
   LadyIcon,
   LightningIcon,
   PinIcon,
@@ -102,7 +109,10 @@ export {
   QuestionIcon,
   SearchIcon,
   StarIcon,
+  TrashIcon,
+  TwitterIcon,
   VkontakteIcon,
+  YoutubeIcon,
   branding,
   flush,
   flushToHTML,
