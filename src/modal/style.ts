@@ -11,7 +11,7 @@ const modal = {
 export default css`
   :global(.kirk-modal-dimmer),
   :global(.kirk-modal-dimmer--fullscreen) {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -30,6 +30,11 @@ export default css`
 
   :global(.kirk-modal-dimmer--fullscreen) {
     background-color: transparent;
+  }
+
+  :global(.kirk-modal-dimmer--inactive) {
+    background-color: transparent;
+    z-index: 990;
   }
 
   .kirk-modal {
@@ -60,7 +65,7 @@ export default css`
     width: ${modal.size.l};
   }
 
-  .kirk-modal--fullscreen .kirk-modal-dialog {
+  :global(.kirk-modal-dimmer--fullscreen .kirk-modal-dialog) {
     margin: 0;
     border-radius: 0;
     box-shadow: none;
