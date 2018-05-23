@@ -11,16 +11,21 @@ import CircleIcon from 'icon/circleIcon'
 import ComfortIcon from 'icon/comfortIcon'
 import CrossIcon from 'icon/crossIcon'
 import DecreaseIcon from 'icon/decreaseIcon'
+import DoubleArrowIcon from 'icon/doubleArrowIcon'
 import EyeIcon from 'icon/eyeIcon'
 import FacebookIcon from 'icon/facebookIcon'
 import IncreaseIcon from 'icon/increaseIcon'
+import InstagramIcon from 'icon/instagramIcon'
 import LadyIcon from 'icon/ladyIcon'
 import LightningIcon from 'icon/lightningIcon'
 import PinIcon from 'icon/pinIcon'
 import QuestionIcon from 'icon/questionIcon'
 import StarIcon from 'icon/starIcon'
 import SearchIcon from 'icon/searchIcon'
+import TrashIcon from 'icon/trashIcon'
+import TwitterIcon from 'icon/twitterIcon'
 import VkontakteIcon from 'icon/vkontakteIcon'
+import YoutubeIcon from 'icon/youtubeIcon'
 import ClockIcon from 'icon/clockIcon'
 import CrosshairIcon from 'icon/crosshairIcon'
 import ProximityIcon from 'icon/proximityIcon'
@@ -93,6 +98,15 @@ stories.add(
 )
 
 stories.add(
+  'Double Arrow icon',
+  withInfo('')(() => (<DoubleArrowIcon
+    iconColor={select('icon color', c)}
+    size={text('size', '24')}
+    title={text('title', 'double arrow icon')}
+  />)),
+)
+
+stories.add(
   'Eye icon',
   withInfo('')(() => (<EyeIcon
     iconColor={select('icon color', c)}
@@ -126,6 +140,15 @@ stories.add(
     iconColor={select('icon color', c)}
     size={text('size', '24')}
     title={text('title', 'increase icon')}
+  />)),
+)
+
+stories.add(
+  'Instagram icon',
+  withInfo('')(() => (<InstagramIcon
+    iconColor={select('icon color', c)}
+    size={text('size', '24')}
+    title={text('title', 'instagram icon')}
   />)),
 )
 
@@ -196,11 +219,38 @@ stories.add(
 )
 
 stories.add(
+  'Trash icon',
+  withInfo('')(() => (<TrashIcon
+    iconColor={select('icon color', c)}
+    size={text('size', '24')}
+    title={text('title', 'trash icon')}
+  />)),
+)
+
+stories.add(
+  'Twitter icon',
+  withInfo('')(() => (<TwitterIcon
+    iconColor={select('icon color', c)}
+    size={text('size', '24')}
+    title={text('title', 'twitter icon')}
+  />)),
+)
+
+stories.add(
   'Vkontakte icon',
   withInfo('')(() => (<VkontakteIcon
     iconColor={select('icon color', c)}
     size={text('size', '24')}
     title={text('title', 'vkontakte icon')}
+  />)),
+)
+
+stories.add(
+  'Youtube icon',
+  withInfo('')(() => (<YoutubeIcon
+    iconColor={select('icon color', c)}
+    size={text('size', '24')}
+    title={text('title', 'youtube icon')}
   />)),
 )
 

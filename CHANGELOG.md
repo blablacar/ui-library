@@ -1,5 +1,6 @@
 # Unreleased
 - NEW FakeTextField component
+- NEW ICONS: DoubleArrow, Youtube, Instagram, Twitter, Trash
 
 #v0.1.0
 - [Transitions] Add Transitions component
