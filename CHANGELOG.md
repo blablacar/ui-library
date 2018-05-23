@@ -1,4 +1,5 @@
-#Unreleased
+# Unreleased
+- NEW UneditableTextField component
 - NEW ICONS: DoubleArrow, Youtube, Instagram, Twitter, Trash
 
 #v0.1.0

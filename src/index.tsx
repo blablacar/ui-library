@@ -6,6 +6,7 @@ import Checkbox from 'checkbox'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
+import UneditableTextField from 'uneditableTextField'
 import HamburgerButton from 'hamburgerButton'
 import ItemChoice from 'itemChoice'
 import Itinerary from 'itinerary'
@@ -87,6 +88,7 @@ export {
   TopBar,
   Transitions,
   TripCard,
+  UneditableTextField,
   Why,
   ArrowIcon,
   CheckIcon,
