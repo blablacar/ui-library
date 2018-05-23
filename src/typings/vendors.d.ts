@@ -13,4 +13,5 @@ declare module 'styled-jsx/server' {
 }
 declare module 'exenv' {
   const canUseEventListeners: () => boolean
+  const canUseDOM: () => boolean
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup  from 'react-transition-group/TransitionGroup'
 import CustomTransition, { AnimationType } from 'transitions'
@@ -42,24 +43,24 @@ class Modal extends Component <ModalProps> {
   }
 
   componentDidMount() {
-    if (this.props.closeOnEsc) {
+    if (this.props.closeOnEsc && canUseEventListeners) {
       document.addEventListener('keydown', this.handleKeydown)
     }
-    if (this.props.closeOnOutsideClick) {
+    if (this.props.closeOnOutsideClick && canUseEventListeners) {
       document.addEventListener('mouseup', this.handleOutsideMouseClick)
       document.addEventListener('touchstart', this.handleOutsideMouseClick)
     }
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEsc) {
+    if (this.props.closeOnEsc && canUseEventListeners) {
       document.removeEventListener('keydown', this.handleKeydown)
     }
-    if (this.props.closeOnOutsideClick) {
+    if (this.props.closeOnOutsideClick && canUseEventListeners) {
       document.removeEventListener('mouseup', this.handleOutsideMouseClick)
       document.removeEventListener('touchstart', this.handleOutsideMouseClick)
     }
-    if (this.portalNode) {
+    if (this.portalNode && canUseDOM) {
       document.body.removeChild(this.portalNode)
     }
     this.portalNode = null
@@ -90,7 +91,7 @@ class Modal extends Component <ModalProps> {
   render() {
     const baseClassName = 'kirk-modal'
 
-    if (!this.portalNode) {
+    if (!this.portalNode && canUseDOM) {
       const dimmer = document.createElement('div')
       this.portalNode = dimmer
       document.body.appendChild(this.portalNode)
@@ -136,6 +137,9 @@ class Modal extends Component <ModalProps> {
       </div>
     )
 
+    if (!canUseDOM) {
+      return null
+    }
     return createPortal(modalElement, this.portalNode)
   }
 }
