@@ -1,4 +1,7 @@
-# Unreleased
+#Unreleased
+- [...]
+
+#v0.2.0
 - [Loader] Now handles the "green check" animation and callback
 - [Button & ItemChoice] API breaking changes, now use a unique `status` instead of multiple props to avoid overlaps of properties and styles
 - [Radio & AutoComplete] Repercussions from ItemChoice API changes
