@@ -46,7 +46,7 @@ const Profile = ({
     }
     { action && action.length > 0 &&
       <div>
-        <Button unstyled title={action}>
+        <Button status={Button.STATUS.UNSTYLED} title={action}>
           <ArrowIcon right />
         </Button>
       </div>

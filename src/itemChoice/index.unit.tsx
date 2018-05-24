@@ -46,7 +46,7 @@ describe('ItemChoice', () => {
     })
 
     it('Should have a loading state', () => {
-      const wrapper = shallow(<ItemChoice loading>...</ItemChoice>)
+      const wrapper = shallow(<ItemChoice status={ItemChoice.STATUS.LOADING}>...</ItemChoice>)
       expect(wrapper.find(Loader).exists()).toBe(true)
     })
   })
@@ -54,18 +54,19 @@ describe('ItemChoice', () => {
   describe('#valid', () => {
     it('Should not have a valid state by default', () => {
       const wrapper = shallow(<ItemChoice>...</ItemChoice>)
-      expect(wrapper.find('.kirk-itemChoice-checkmark').exists()).toBe(false)
+      expect(wrapper.find(Loader).exists()).toBe(false)
     })
 
     it('Should have a valid state', () => {
-      const wrapper = shallow(<ItemChoice valid>...</ItemChoice>)
-      expect(wrapper.find('.kirk-itemChoice-checkmark').exists()).toBe(true)
+      const wrapper = shallow(<ItemChoice status={ItemChoice.STATUS.CHECKED}>...</ItemChoice>)
+      expect(wrapper.find(Loader).exists()).toBe(true)
+      expect(wrapper.find(Loader).prop('done')).toBe(true)
     })
 
     it('fires the callback event when valid', () => {
       const event = jest.fn()
-      const wrapper = mount(<ItemChoice validated={event}>blabla</ItemChoice>)
-      wrapper.setProps({ valid: true })
+      const wrapper = mount(<ItemChoice onDoneAnimationEnd={event}>blabla</ItemChoice>)
+      wrapper.setProps({ status: ItemChoice.STATUS.CHECKED })
       expect(event).not.toBeCalled()
       jest.advanceTimersByTime(1500)
       expect(event).toBeCalled()

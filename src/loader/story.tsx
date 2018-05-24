@@ -15,6 +15,7 @@ stories.add(
     <Loader
       inline={boolean('inline', true)}
       size={number('size', 48)}
+      done={boolean('done', false)}
     />
   )),
 )

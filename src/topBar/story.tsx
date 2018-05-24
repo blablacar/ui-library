@@ -13,7 +13,7 @@ const stories = storiesOf('TopBar', module)
 stories.addDecorator(withKnobs)
 
 const leftAction = (
-  <Button icon unstyled onClick={() => {}} aria-label="back">
+  <Button icon status={Button.STATUS.UNSTYLED} onClick={() => {}} aria-label="back">
     <ArrowIcon size="24" iconColor={color.primary} />
   </Button>
 )

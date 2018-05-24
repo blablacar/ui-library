@@ -79,7 +79,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
         <Button
           type="button"
           className="kirk-stepper-decrement"
-          unstyled
+          status={Button.STATUS.UNSTYLED}
           disabled={isMin}
           onClick={this.decrement}
         >
@@ -95,7 +95,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
         <Button
           type="button"
           className="kirk-stepper-increment"
-          unstyled
+          status={Button.STATUS.UNSTYLED}
           disabled={isMax}
           onClick={this.increment}
         >

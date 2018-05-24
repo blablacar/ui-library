@@ -30,5 +30,7 @@ it('Should have an image', () => {
 
 it('Should display an action button', () => {
   const profile = shallow(<Profile title="Jack Sparrow" action="title" />)
-  expect(profile.contains(<Button unstyled title="title"><ArrowIcon right /></Button>)).toBe(true)
+  expect(profile.contains(
+    <Button status={Button.STATUS.UNSTYLED} title="title"><ArrowIcon right /></Button>,
+  )).toBe(true)
 })

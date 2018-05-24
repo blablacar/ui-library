@@ -62,8 +62,7 @@ stories.add(
     <RadioGroup
       name="radioName"
       onChange={action('changed')}
-      loading={boolean('loading', false)}
-      valid={boolean('valid', false)}
+      status={select('status', Radio.STATUS, Radio.STATUS.DEFAULT)}
     >
       <Radio value="radioValue1">{text('label', 'Choice 1')}</Radio>
       <Radio value="radioValue2">{text('label', 'Choice 2')}</Radio>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import style from 'radio/style'
 
 export interface RadioProps {
@@ -16,9 +16,8 @@ export interface RadioProps {
   readonly onChange?: (obj: onChangeParameters) => void,
   readonly subLabel?: string,
   readonly icon?: JSX.Element,
-  readonly loading?: boolean,
-  readonly valid?: boolean,
-  readonly validated?: () => void,
+  readonly status?: ItemChoiceStatus,
+  readonly onDoneAnimationEnd?: () => void,
 }
 
 export default class Radio extends Component <RadioProps> {
@@ -26,9 +25,10 @@ export default class Radio extends Component <RadioProps> {
     onChange() {},
     checked: false,
     highlighted: false,
-    loading: false,
-    valid: false,
+    status: ItemChoice.STATUS.DEFAULT,
   }
+
+  static STATUS = ItemChoiceStatus
 
   onChange = () => {
     const { name, value } = this.props
@@ -37,7 +37,7 @@ export default class Radio extends Component <RadioProps> {
 
   render() {
     const { className, name, value, subLabel, highlighted, checked, children, icon,
-      loading, valid, validated, key } = this.props
+      status, onDoneAnimationEnd, key } = this.props
 
     return (
       <ItemChoice
@@ -47,9 +47,8 @@ export default class Radio extends Component <RadioProps> {
         subLabel={subLabel}
         highlighted={highlighted}
         className={cc([prefix({ radio: true }), className])}
-        loading={loading}
-        valid={valid}
-        validated={validated}
+        status={status}
+        onDoneAnimationEnd={onDoneAnimationEnd}
       >
         <input
           type="radio"

@@ -2,25 +2,73 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
-import { color } from '_utils/branding'
+import { color, transition } from '_utils/branding'
 import CircleIcon from 'icon/circleIcon'
+import CheckIcon from 'icon/checkIcon'
 import style from './style'
 
-interface Loader {
+interface LoaderProps {
   className?: Classcat.Class,
   inline?: boolean,
   size?: number,
+  done?: boolean,
+  onDoneAnimationEnd?: () => void,
 }
 
-const Loader = ({ className, inline = false, size = 48 }: Loader) => (
-  <div className={cc([prefix({ loader: true, 'loader--fullScreen': !inline }), className])}>
-    <CircleIcon
-      iconColor={color.success}
-      size={size}
-      spinning
-    />
-    <style jsx>{style}</style>
-  </div>
-)
+class Loader extends PureComponent <LoaderProps> {
+  static defaultProps: Partial<LoaderProps> = {
+    className: '',
+    inline: false,
+    size: 48,
+    done: false,
+    onDoneAnimationEnd() {},
+  }
+
+  validate = () => {
+    const timeout = parseInt(transition.duration.fast, 10) + transition.callbackDelay
+    setTimeout(this.props.onDoneAnimationEnd, timeout)
+  }
+
+  componentDidMount() {
+    if (this.props.done) {
+      this.validate()
+    }
+  }
+
+  componentWillReceiveProps({ done }: LoaderProps) {
+    if (done && done !== this.props.done) {
+      this.validate()
+    }
+  }
+
+  render() {
+    const { className, inline, size, done, onDoneAnimationEnd } = this.props
+    const sizes = {
+      width: `${size}px`,
+      height: `${size}px`,
+    }
+    return (
+      <div
+        className={cc([
+          prefix({ loader: true, 'loader--fullScreen': !inline, 'loader--done': done }),
+          className,
+        ])}
+        style={inline ? sizes : null}
+      >
+        {!done && <CircleIcon
+          iconColor={color.success}
+          size={size}
+          spinning
+        />}
+        {done && <CheckIcon
+          iconColor={color.white}
+          size={size / 2}
+          validate
+        />}
+        <style jsx>{style}</style>
+      </div>
+    )
+  }
+}
 
 export default Loader

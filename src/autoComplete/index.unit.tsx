@@ -61,12 +61,12 @@ describe('AutoComplete', () => {
     expect(wrapper.find('button').prop('title')).toBe('buttonTitle')
   })
 
-  it('Can trigger validated callback', () => {
+  it('Can trigger onDoneAnimationEnd callback', () => {
     const event = jest.fn()
     const wrapper = mount(<AutoComplete
       {...defaultProps}
       loadingItemIndex={0}
-      validated={event}
+      onDoneAnimationEnd={event}
     />)
 
     wrapper.setProps({ isSearching: true })

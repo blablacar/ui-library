@@ -5,7 +5,7 @@ import Button from 'button'
 import style from 'caption/style'
 
 export const renderSecondary = (href?: string, secondaryText?: string) => href
-  ? <Button unstyled href={href}>{secondaryText}</Button>
+  ? <Button status={Button.STATUS.UNSTYLED} href={href}>{secondaryText}</Button>
   : <span>{secondaryText}</span>
 
 interface Caption {

@@ -15,7 +15,7 @@ export interface AutoCompleteListProps {
   itemClassName?: Classcat.Class,
   loadingItemIndex?: number,
   valid?: boolean,
-  validated?: () => void,
+  onDoneAnimationEnd?: () => void,
   itemKey?: (item:AutocompleteItem) => string,
   visible?: boolean,
 }
@@ -118,22 +118,30 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
         className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
         role="listbox"
       >
-        {this.props.items.slice(0, this.props.maxItems).map((item, index) => (
-          <AutoCompleteListItem
-            key={this.props.itemKey(item)}
-            item={item}
-            className={this.props.itemClassName}
-            highlighted={index === this.state.highlightedIndex}
-            loading={index === this.props.loadingItemIndex}
-            select={this.props.onSelect}
-            valid={index === this.props.loadingItemIndex && this.props.valid}
-            validated={this.props.validated}
-          >
-            <div>
-              {this.props.renderItem({ item, index })}
-            </div>
-          </AutoCompleteListItem>
-        ))}
+        {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
+          let status = AutoCompleteListItem.STATUS.DEFAULT
+          if (index === this.props.loadingItemIndex) {
+            status = AutoCompleteListItem.STATUS.LOADING
+          }
+          if (index === this.props.loadingItemIndex && this.props.valid) {
+            status = AutoCompleteListItem.STATUS.CHECKED
+          }
+          return (
+            <AutoCompleteListItem
+              key={this.props.itemKey(item)}
+              item={item}
+              className={this.props.itemClassName}
+              highlighted={index === this.state.highlightedIndex}
+              status={status}
+              select={this.props.onSelect}
+              onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+            >
+              <div>
+                {this.props.renderItem({ item, index })}
+              </div>
+            </AutoCompleteListItem>
+          )
+        })}
         <style jsx key={`${this.props.name}-style-jsx`}>{style}</style>
       </ul>
     )

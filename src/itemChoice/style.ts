@@ -98,6 +98,10 @@ export default css`
     margin-left: auto;
   }
 
+  :global(.kirk-itemChoice .kirk-chevron .kirk-icon) {
+    margin-right: auto;
+  }
+
   :global(.kirk-itemChoice .kirk-icon + .kirk-icon),
   :global(.kirk-itemChoice-rightAddon + .kirk-icon) {
     margin-left: ${space.m};
