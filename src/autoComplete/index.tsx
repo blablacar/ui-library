@@ -44,6 +44,12 @@ interface AutoCompleteProps {
   readonly showList?: boolean,
   readonly valid?: boolean,
   readonly onDoneAnimationEnd?: () => void,
+  readonly autoCorrect?: 'on' | 'off',
+  readonly autoComplete?: 'on' | 'off',
+  readonly disabled?: boolean,
+  readonly readOnly?: boolean,
+  readonly required?: boolean,
+  readonly error?: string | JSX.Element,
 }
 
 interface AutoCompleteState {
@@ -90,6 +96,12 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     defaultValue: '',
     showList: true,
     valid: false,
+    autoCorrect: 'off',
+    autoComplete: 'off',
+    disabled: false,
+    readOnly: false,
+    required: false,
+    error: null,
   }
 
   constructor(props: AutoCompleteProps) {
@@ -219,11 +231,15 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           defaultValue={String(this.state.query)}
           addon={this.props.inputAddon}
           inputRef={this.inputRef}
-          autoCorrect="off"
-          autoComplete="off"
+          autoCorrect={this.props.autoCorrect}
+          autoComplete={this.props.autoComplete}
           autoFocus={this.props.autoFocus}
           focus={this.props.focus}
           buttonTitle={this.props.buttonTitle}
+          disabled={this.props.disabled}
+          readOnly={this.props.readOnly}
+          required={this.props.required}
+          error={this.props.error}
         />
         { shouldDisplayBusyState && (
           <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>

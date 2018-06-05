@@ -168,6 +168,7 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
       this.toggleShowPassword
 
     const shouldDisplayErrorMessage = error && typeof error !== 'boolean'
+    const shouldDisplayButton = !isTextArea && !disabled
 
     return (
       <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
@@ -184,7 +185,7 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
             />
           }
           {
-            !isTextArea &&
+            shouldDisplayButton &&
             <Button
               className="kirk-textField-button"
               hidden={!value}
