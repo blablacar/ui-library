@@ -1,5 +1,5 @@
 #Unreleased
-- [...]
+- [Icon] Fix DoubleArrowIcon fillRule attribute
 
 #v0.2.0
 - [Loader] Now handles the "green check" animation and callback
