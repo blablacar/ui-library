@@ -1,5 +1,10 @@
 #Unreleased
+- [...]
+
+#v0.2.1 (05/06/2018)
 - [Icon] Fix DoubleArrowIcon fillRule attribute
+- [Autocomplete] Add `autoCorrect`, `disabled`, `readOnly`, `required`, `error` props
+- [TextField] Style for disabled state
 
 #v0.2.0
 - [Loader] Now handles the "green check" animation and callback
