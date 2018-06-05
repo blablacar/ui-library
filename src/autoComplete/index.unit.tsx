@@ -301,15 +301,6 @@ describe('AutoComplete', () => {
     })
   })
 
-  describe('#autoComplete', () => {
-    it('Can set autoComplete attribute on TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
-      expect(wrapper.find('TextField').prop('autoComplete')).toBe('off')
-      wrapper.setProps({ autoComplete: 'on' })
-      expect(wrapper.find('TextField').prop('autoComplete')).toBe('on')
-    })
-  })
-
   describe('#disabled', () => {
     it('Can set disabled attribute on TextField', () => {
       const wrapper = mount(<AutoComplete {...defaultProps} />)

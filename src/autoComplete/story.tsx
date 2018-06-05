@@ -72,7 +72,6 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
           loadingItemIndex={number('loadingItemIndex', -1)}
           autoCorrect={select('autoCorrect', { on:'on', off:'off' }, 'off')}
-          autoComplete={select('autoComplete', { on:'on', off:'off' }, 'off')}
           valid={boolean('valid', false)}
           disabled={boolean('disabled', false)}
           readOnly={boolean('readOnly', false)}

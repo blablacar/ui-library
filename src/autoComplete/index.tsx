@@ -45,7 +45,6 @@ interface AutoCompleteProps {
   readonly valid?: boolean,
   readonly onDoneAnimationEnd?: () => void,
   readonly autoCorrect?: 'on' | 'off',
-  readonly autoComplete?: 'on' | 'off',
   readonly disabled?: boolean,
   readonly readOnly?: boolean,
   readonly required?: boolean,
@@ -97,7 +96,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     showList: true,
     valid: false,
     autoCorrect: 'off',
-    autoComplete: 'off',
     disabled: false,
     readOnly: false,
     required: false,
@@ -232,7 +230,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           addon={this.props.inputAddon}
           inputRef={this.inputRef}
           autoCorrect={this.props.autoCorrect}
-          autoComplete={this.props.autoComplete}
+          autoComplete="off"
           autoFocus={this.props.autoFocus}
           focus={this.props.focus}
           buttonTitle={this.props.buttonTitle}
