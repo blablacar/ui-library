@@ -292,6 +292,42 @@ describe('AutoComplete', () => {
     })
   })
 
+  describe('#autoCorrect', () => {
+    it('Can set autoCorrect attribute on TextField', () => {
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      expect(wrapper.find('TextField').prop('autoCorrect')).toBe('off')
+      wrapper.setProps({ autoCorrect: 'on' })
+      expect(wrapper.find('TextField').prop('autoCorrect')).toBe('on')
+    })
+  })
+
+  describe('#disabled', () => {
+    it('Can set disabled attribute on TextField', () => {
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      expect(wrapper.find('TextField').prop('disabled')).toBe(false)
+      wrapper.setProps({ disabled: true })
+      expect(wrapper.find('TextField').prop('disabled')).toBe(true)
+    })
+  })
+
+  describe('#readOnly', () => {
+    it('Can set readOnly attribute on TextField', () => {
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      expect(wrapper.find('TextField').prop('readOnly')).toBe(false)
+      wrapper.setProps({ readOnly: true })
+      expect(wrapper.find('TextField').prop('readOnly')).toBe(true)
+    })
+  })
+
+  describe('#required', () => {
+    it('Can set required attribute on TextField', () => {
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      expect(wrapper.find('TextField').prop('required')).toBe(false)
+      wrapper.setProps({ required: true })
+      expect(wrapper.find('TextField').prop('required')).toBe(true)
+    })
+  })
+
   describe('#defaultValue', () => {
     it('Can have a default value in TextField when mouting', () => {
       const wrapper = mount(<AutoComplete {...defaultProps} defaultValue="bla" />)

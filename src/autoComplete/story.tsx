@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, number, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
 import CircleIcon from 'icon/circleIcon'
 import ItemChoice from 'itemChoice'
@@ -50,6 +50,8 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
   }
 
   render() {
+    const error = boolean('error', false)
+
     return (
       <div>
         <p>Type <code>Paris</code> to test auto-completion.</p>
@@ -64,11 +66,16 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           onSelect={action('onChange')}
           getItemValue={item => item.id}
           renderQuery={item => item.title}
+          error={error ? text('error message', 'something went wrong') : ''}
           maxItems={number('maxItems', 5)}
           showList={boolean('showList', true)}
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
           loadingItemIndex={number('loadingItemIndex', -1)}
+          autoCorrect={select('autoCorrect', { on:'on', off:'off' }, 'off')}
           valid={boolean('valid', false)}
+          disabled={boolean('disabled', false)}
+          readOnly={boolean('readOnly', false)}
+          required={boolean('required', false)}
         />
       </div>
     )

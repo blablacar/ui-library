@@ -80,16 +80,8 @@ export default css`
     box-shadow: none;
   }
 
-  .kirk-textField input:disabled {
-    color: ${color.disabled};
-  }
-
   .kirk-textField textarea {
     min-height: 150px;
-  }
-
-  .kirk-textField textarea:disabled {
-    color: ${color.disabled};
   }
 
   .kirk-textField input:focus,
@@ -138,6 +130,11 @@ export default css`
     /* We use visiblity hidden instead of display none to resolve a display glitch
     on Safari Mobile when clearing input value and hiding button simultaneously */
     visibility: hidden;
+  }
+
+  .kirk-disabled {
+    opacity: .5;
+    cursor: default;
   }
 
   @keyframes textFieldError {
