@@ -5,6 +5,8 @@ import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
 import PushInfo from 'pushInfo'
 
+jest.useFakeTimers()
+
 it('Should have the correct attributes and text.', () => {
   const pushInfo = renderer.create(<PushInfo
     headline={'If it\'s green it\'s a win!'}
@@ -20,4 +22,16 @@ it('Should also have the correct icon.', () => {
     content={'Green icons show meeting points closest to you!'}
   />).toJSON()
   expect(pushInfo).toMatchSnapshot()
+})
+
+it('Should call the onAnimationEnd prop after some time', () => {
+  const onAnimationEnd = jest.fn()
+  const pushInfo = mount(<PushInfo
+    headline="If it's green it's a win!"
+    content="Green icons show meeting points closest to you!"
+    onAnimationEnd={onAnimationEnd}
+  />)
+
+  expect(setTimeout).toHaveBeenCalledTimes(1)
+  expect(setTimeout).toHaveBeenLastCalledWith(onAnimationEnd, 1000)
 })
