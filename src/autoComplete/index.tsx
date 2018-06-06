@@ -31,7 +31,7 @@ interface AutoCompleteProps {
   readonly renderBusy?: ({ query }: { query: query}) => React.ReactElement<any>,
   readonly renderNoResults?: ({ query }: { query: query}) => React.ReactElement<any>,
   readonly renderQuery?: (item:AutocompleteItem) => string,
-  readonly renderEmptySearch?: JSX.Element[],
+  readonly renderEmptySearch?: AutocompleteItem[],
   readonly getItemValue?: (item:AutocompleteItem) => string,
   readonly inputAddon?: React.ReactElement<any>,
   readonly placeholder?: string,
@@ -209,10 +209,12 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
 
   render() {
     const shouldDisplayEmptyState = !this.hasMinCharsForSearch() && this.props.showList
-      && this.props.renderEmptySearch.length > 0
+    && this.props.renderEmptySearch.length > 0
     const shouldDisplayBusyState = this.state.busy && this.props.showList
-    const shouldDisplayNoResults = !this.state.busy && this.state.noResults && this.props.showList
-    const shouldDisplayAutoCompleteList = this.state.items.length > 0 && !this.state.busy
+    const shouldDisplayNoResults = this.hasMinCharsForSearch() 
+      && !this.state.busy && this.state.noResults && this.props.showList
+    const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch() 
+      && this.state.items.length > 0 && !this.state.busy
       && this.props.showList
 
     return (
@@ -249,25 +251,14 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
             { this.props.renderNoResults({ query: this.state.query }) }
           </div>
         )}
-        { shouldDisplayEmptyState && (
-          <ul>
-            { this.props.renderEmptySearch.map((item, index) => {
-              if (isValidElement(item)) {
-                const props:Partial<ItemChoiceProps> = { key: index }
-                return cloneElement(item as React.ReactElement<ItemChoiceProps>, props)
-              }
-              return null
-            })}
-          </ul>
-        )}
         <AutoCompleteList
           className={this.props.bodyClassName}
           name={`${this.props.name}-list`}
-          items={this.state.items}
+          items={shouldDisplayAutoCompleteList ? this.state.items : this.props.renderEmptySearch}
           maxItems={this.props.maxItems}
           renderItem={this.props.renderItem}
           onSelect={this.onSelectItem}
-          visible={shouldDisplayAutoCompleteList}
+          visible={shouldDisplayAutoCompleteList || shouldDisplayEmptyState}
           loadingItemIndex={this.props.loadingItemIndex}
           itemClassName={this.props.itemClassName}
           valid={this.props.valid}

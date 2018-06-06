@@ -68,6 +68,7 @@ describe('AutoComplete', () => {
       loadingItemIndex={0}
       onDoneAnimationEnd={event}
     />)
+    wrapper.instance().onInputChange({ value: 'title' })
 
     wrapper.setProps({ isSearching: true })
     wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
@@ -83,7 +84,9 @@ describe('AutoComplete', () => {
       const wrapper = mount(<AutoComplete
         {...defaultProps}
         renderItem={item => <div className="custom-item">{item.title}</div>}
-      />)
+      />)     
+      wrapper.instance().onInputChange({ value: 'title' })
+
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
       expect(wrapper.find('.custom-item')).toHaveLength(2)
@@ -96,6 +99,8 @@ describe('AutoComplete', () => {
         {...defaultProps}
         maxItems={1}
       />)
+      wrapper.instance().onInputChange({ value: 'title' })
+
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
       expect(wrapper.find('li')).toHaveLength(1)
@@ -201,6 +206,36 @@ describe('AutoComplete', () => {
     })
   })
 
+  describe('renderEmptySearch', () => {
+    const emptySearch = [
+      { id: '1', title: 'title1', description: 'description1' },
+      { id: '2', title: 'title1', description: 'description1' },
+      { id: '3', title: 'title1', description: 'description1' },
+    ]
+    it('renders empty search when query is lower than minChar', () => {
+      const wrapper = mount(<AutoComplete
+        {...defaultProps}
+        renderEmptySearch={emptySearch}
+        renderBusy={() => <div className="busy" />}
+      />)
+
+      expect(wrapper.find('li')).toHaveLength(emptySearch.length)
+    })
+
+    it('renders the result list when query is greater than minChar', () => {
+      const wrapper = mount(<AutoComplete
+        {...defaultProps}
+        renderEmptySearch={emptySearch}
+        renderBusy={() => <div className="busy" />}
+      />)
+      wrapper.instance().onInputChange({ value: 'Lyon' })
+      wrapper.setProps({ isSearching: true })
+      wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
+
+      expect(wrapper.find('li')).toHaveLength(initialFakeItems.length)
+    })
+  })
+
   describe('#onInputChange', () => {
     it('Invokes `onInputChange` when typing text in TextField', () => {
       const onInputChange = jest.fn()
@@ -221,6 +256,7 @@ describe('AutoComplete', () => {
         {...defaultProps}
         onSelect={onSelectSpy}
       />)
+      wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
       wrapper.setProps({ isSearching: true })
@@ -254,6 +290,7 @@ describe('AutoComplete', () => {
         onSelect={onSelectSpy}
         getItemValue={item => item.id}
       />)
+      wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
       wrapper.setProps({ isSearching: true })
@@ -273,6 +310,7 @@ describe('AutoComplete', () => {
         {...defaultProps}
         renderQuery={item => item.id}
       />)
+      wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
       // Simulate a "searchForItems" cycle by passing `isSearching` from `true` to `false`

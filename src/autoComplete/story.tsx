@@ -19,7 +19,7 @@ const places:AutocompleteItem[] = [
 
 interface AutoCompleteExampleProps {
   readonly searchForItemsDelay?: number
-  readonly renderEmptySearch?: JSX.Element[]
+  readonly renderEmptySearch?: AutocompleteItem[]
 }
 
 interface AutoCompleteExampleState {
@@ -96,13 +96,8 @@ stories.add(
   'AutoComplete test',
   withInfo('AutoComplete')(() => {
     const emptySearch = [
-      <ItemChoice label="Test 1" />,
-      <ItemChoice label="Test 2" />,
-      <ItemChoice
-        label="Test 3"
-        subLabel="Secondary info"
-        leftAddon={<CircleIcon />}
-      />,
+      { id: '1', title: 'Get my location', description: '' },
+      { id: '2', title: 'Favorite address', description: '' },
     ]
     return <AutoCompleteExample renderEmptySearch={emptySearch} />
   }),

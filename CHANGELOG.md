@@ -1,5 +1,5 @@
-# Unreleased
-- [...]
+#Unreleased
+- [Autocomplete] Render empty search with an autocomplete list
 
 # v0.2.2 (07/06/2018)
 - [Autocomplete] Pass down the `bodyClassName` to the AutoCompleteList
