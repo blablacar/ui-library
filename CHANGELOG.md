@@ -1,5 +1,5 @@
 #Unreleased
-- [...]
+- [PushInfo] New onAnimationEnd prop
 
 #v0.2.1 (05/06/2018)
 - [Icon] Fix DoubleArrowIcon fillRule attribute

@@ -1,6 +1,9 @@
 import css from 'styled-jsx/css'
 import { color, font, fontWeight, radius, space } from '_utils/branding'
 
+export const animationDuration = 700
+export const animationDelay = 300
+
 export default css`
   .kirk-pushInfo {
     display: flex;
@@ -14,7 +17,7 @@ export default css`
     padding: 0 ${space.l};
     max-height: 0;
     overflow-y: hidden;
-    animation: slide-down 700ms ease-out 300ms forwards;
+    animation: slide-down ${animationDuration}ms ease-out ${animationDelay}ms forwards;
   }
 
   @keyframes slide-down {
@@ -54,4 +57,3 @@ export default css`
     background-color: ${color.white};
   }
 `
-

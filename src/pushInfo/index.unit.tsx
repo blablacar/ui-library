@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer'
 import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
 import PushInfo from 'pushInfo'
+import { animationDuration, animationDelay } from 'pushInfo/style'
 
 jest.useFakeTimers()
 
@@ -33,5 +34,5 @@ it('Should call the onAnimationEnd prop after some time', () => {
   />)
 
   expect(setTimeout).toHaveBeenCalledTimes(1)
-  expect(setTimeout).toHaveBeenLastCalledWith(onAnimationEnd, 1000)
+  expect(setTimeout).toHaveBeenLastCalledWith(onAnimationEnd, animationDuration + animationDelay)
 })

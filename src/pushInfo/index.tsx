@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
-import style from 'pushInfo/style'
+import style, { animationDuration, animationDelay } from 'pushInfo/style'
 
 interface PushInfoProps {
   readonly className?: Classcat.Class
@@ -15,7 +15,7 @@ interface PushInfoProps {
 class PushInfo extends Component<PushInfoProps> {
   componentDidMount() {
     if (this.props.onAnimationEnd) {
-      setTimeout(this.props.onAnimationEnd, 1000)
+      setTimeout(this.props.onAnimationEnd, animationDuration + animationDelay)
     }
   }
   render() {
