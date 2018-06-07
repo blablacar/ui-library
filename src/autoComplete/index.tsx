@@ -261,6 +261,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           </ul>
         )}
         <AutoCompleteList
+          className={this.props.bodyClassName}
           name={`${this.props.name}-list`}
           items={this.state.items}
           maxItems={this.props.maxItems}

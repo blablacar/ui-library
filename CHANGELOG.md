@@ -1,4 +1,5 @@
 #Unreleased
+- [Autocomplete] Pass down the `bodyClassName` to the AutoCompleteList
 - [PushInfo] New onAnimationEnd prop
 
 #v0.2.1 (05/06/2018)
