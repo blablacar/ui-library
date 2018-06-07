@@ -1,4 +1,7 @@
 # Unreleased
+- [...]
+
+# v0.2.2 (07/06/2018)
 - [Autocomplete] Pass down the `bodyClassName` to the AutoCompleteList
 - [PushInfo] New onAnimationEnd prop
 - [TextField] Caret color is now blue
