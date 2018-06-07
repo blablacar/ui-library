@@ -29,6 +29,7 @@ export default css`
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     width: 100%;
+    caret-color: ${color.inputCaret}
   }
 
   .kirk-textField textarea {

@@ -103,6 +103,7 @@ export const color: Color = {
   inputBorder: palette.lightGray,
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,
+  inputCaret: palette.blue,
 
   success: palette.green,
   info: palette.blue,
