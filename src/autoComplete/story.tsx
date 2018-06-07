@@ -59,7 +59,6 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           name="city"
           placeholder="Search here…"
           defaultValue={text('defaultValue')}
-          bodyClassName="toto"
           isSearching={this.state.isSearching}
           searchForItems={this.searchForItems}
           items={this.state.items}
