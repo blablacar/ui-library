@@ -1,5 +1,5 @@
 #Unreleased
-- [...]
+- [Autocomplete] Pass down the `bodyClassName` to the AutoCompleteList
 
 #v0.2.1 (05/06/2018)
 - [Icon] Fix DoubleArrowIcon fillRule attribute
