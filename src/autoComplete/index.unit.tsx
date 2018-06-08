@@ -1,6 +1,6 @@
 import React from 'react'
 import AutoComplete from 'autoComplete'
-import AutoCompleteListItem from './AutoCompleteListItem'
+import { ItemChoiceStatus } from 'itemChoice'
 
 const initialFakeItems = [
   { id: '1', title: 'title1', description: 'description1' },
@@ -67,7 +67,7 @@ describe('AutoComplete', () => {
     const wrapper = mount(<AutoComplete
       {...defaultProps}
       onDoneAnimationEnd={event}
-      selectedItemStatus={AutoCompleteListItem.STATUS.CHECKED}
+      selectedItemStatus={ItemChoiceStatus.CHECKED}
     />)
     wrapper.instance().onInputChange({ value: 'title' })
 
