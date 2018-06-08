@@ -1,4 +1,4 @@
-#Unreleased
+# Unreleased
 Breaking changes:
 - [Autocomplete] Render empty search with an autocomplete list
 - [Autocomplete] Replace the props `loadingItemIndex` and `valid` by a new selectedItemStatus
