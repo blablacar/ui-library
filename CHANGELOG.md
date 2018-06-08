@@ -1,5 +1,7 @@
 # Unreleased
-- [...]
+Breaking changes:
+- [Autocomplete] Render empty search with an autocomplete list
+- [Autocomplete] Replace the props `loadingItemIndex` and `valid` by a new selectedItemStatus
 
 # v0.2.2 (07/06/2018)
 - [Autocomplete] Pass down the `bodyClassName` to the AutoCompleteList

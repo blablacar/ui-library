@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import prefix from '_utils'
+import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteListItem from './autoCompleteListItem'
 import style from './autoCompleteListStyle'
 
@@ -13,15 +14,15 @@ export interface AutoCompleteListProps {
   items?: AutocompleteItem[],
   maxItems?: number,
   itemClassName?: Classcat.Class,
-  loadingItemIndex?: number,
-  valid?: boolean,
   onDoneAnimationEnd?: () => void,
   itemKey?: (item:AutocompleteItem) => string,
   visible?: boolean,
+  selectedItemStatus?: ItemChoiceStatus,
 }
 
 export interface AutoCompleteListState {
-  readonly highlightedIndex: number
+  readonly highlightedIndex: number,
+  readonly selectedIndex: number
 }
 
 export default class AutoCompleteList
@@ -30,11 +31,11 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     maxItems: Infinity,
     itemKey: item => JSON.stringify(item),
     visible: false,
-    loadingItemIndex: -1,
   }
 
   state:AutoCompleteListState = {
     highlightedIndex: null,
+    selectedIndex: null,
   }
 
   componentWillReceiveProps(nextProps:AutoCompleteListProps) {
@@ -94,6 +95,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     e.preventDefault()
 
     const item = this.props.items[this.state.highlightedIndex]
+    this.setState({ selectedIndex: this.state.highlightedIndex })
     this.props.onSelect(item)
   }
 
@@ -105,6 +107,12 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     } else if (e.keyCode === 40) {
       this.onKeyboardEventArrowDown(e)
     }
+  }
+
+  onSelect = (itemIndex: number) => (item: AutocompleteItem) => {
+    this.setState({ selectedIndex: itemIndex }, () => {
+      this.props.onSelect(item)
+    })
   }
 
   render() {
@@ -119,13 +127,9 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
         role="listbox"
       >
         {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
-          let status = AutoCompleteListItem.STATUS.DEFAULT
-          if (index === this.props.loadingItemIndex) {
-            status = AutoCompleteListItem.STATUS.LOADING
-          }
-          if (index === this.props.loadingItemIndex && this.props.valid) {
-            status = AutoCompleteListItem.STATUS.CHECKED
-          }
+          const status = this.state.selectedIndex === index ? (
+            this.props.selectedItemStatus
+           ) : ItemChoiceStatus.DEFAULT
           return (
             <AutoCompleteListItem
               key={this.props.itemKey(item)}
@@ -133,7 +137,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
               className={this.props.itemClassName}
               highlighted={index === this.state.highlightedIndex}
               status={status}
-              select={this.props.onSelect}
+              select={this.onSelect(index)}
               onDoneAnimationEnd={this.props.onDoneAnimationEnd}
             >
               <div>

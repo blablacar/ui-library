@@ -4,7 +4,7 @@ import cc from 'classcat'
 import debounce from 'lodash.debounce'
 import prefix from '_utils'
 import TextField from 'textField'
-import ItemChoice, { ItemChoiceProps } from 'itemChoice'
+import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
 import AutoCompleteListItemDefault from './autoCompleteListItemDefault'
 import style from './style'
@@ -31,7 +31,7 @@ interface AutoCompleteProps {
   readonly renderBusy?: ({ query }: { query: query}) => React.ReactElement<any>,
   readonly renderNoResults?: ({ query }: { query: query}) => React.ReactElement<any>,
   readonly renderQuery?: (item:AutocompleteItem) => string,
-  readonly renderEmptySearch?: JSX.Element[],
+  readonly renderEmptySearch?: AutocompleteItem[],
   readonly getItemValue?: (item:AutocompleteItem) => string,
   readonly inputAddon?: React.ReactElement<any>,
   readonly placeholder?: string,
@@ -39,16 +39,15 @@ interface AutoCompleteProps {
   readonly debounceTimeout?: number,
   readonly autoFocus?: boolean,
   readonly focus?: boolean,
-  readonly loadingItemIndex?: number,
   readonly buttonTitle?: string,
   readonly showList?: boolean,
-  readonly valid?: boolean,
   readonly onDoneAnimationEnd?: () => void,
   readonly autoCorrect?: 'on' | 'off',
   readonly disabled?: boolean,
   readonly readOnly?: boolean,
   readonly required?: boolean,
   readonly error?: string | JSX.Element,
+  readonly selectedItemStatus?: ItemChoiceStatus,
 }
 
 interface AutoCompleteState {
@@ -91,10 +90,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     autoFocus: false,
     focus: false,
     buttonTitle: null,
-    loadingItemIndex: -1,
     defaultValue: '',
     showList: true,
-    valid: false,
     autoCorrect: 'off',
     disabled: false,
     readOnly: false,
@@ -209,12 +206,16 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
 
   render() {
     const shouldDisplayEmptyState = !this.hasMinCharsForSearch() && this.props.showList
-      && this.props.renderEmptySearch.length > 0
+    && this.props.renderEmptySearch.length > 0
     const shouldDisplayBusyState = this.state.busy && this.props.showList
-    const shouldDisplayNoResults = !this.state.busy && this.state.noResults && this.props.showList
-    const shouldDisplayAutoCompleteList = this.state.items.length > 0 && !this.state.busy
+    const shouldDisplayNoResults = this.hasMinCharsForSearch() 
+      && !this.state.busy && this.state.noResults && this.props.showList
+    const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch() 
+      && this.state.items.length > 0 && !this.state.busy
       && this.props.showList
-
+    const listItems = shouldDisplayAutoCompleteList ? (
+      this.state.items
+     ) : this.props.renderEmptySearch
     return (
       <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
@@ -249,28 +250,16 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
             { this.props.renderNoResults({ query: this.state.query }) }
           </div>
         )}
-        { shouldDisplayEmptyState && (
-          <ul>
-            { this.props.renderEmptySearch.map((item, index) => {
-              if (isValidElement(item)) {
-                const props:Partial<ItemChoiceProps> = { key: index }
-                return cloneElement(item as React.ReactElement<ItemChoiceProps>, props)
-              }
-              return null
-            })}
-          </ul>
-        )}
         <AutoCompleteList
           className={this.props.bodyClassName}
           name={`${this.props.name}-list`}
-          items={this.state.items}
+          items={listItems}
           maxItems={this.props.maxItems}
           renderItem={this.props.renderItem}
           onSelect={this.onSelectItem}
-          visible={shouldDisplayAutoCompleteList}
-          loadingItemIndex={this.props.loadingItemIndex}
+          visible={shouldDisplayAutoCompleteList || shouldDisplayEmptyState}
+          selectedItemStatus={this.props.selectedItemStatus}
           itemClassName={this.props.itemClassName}
-          valid={this.props.valid}
           onDoneAnimationEnd={this.props.onDoneAnimationEnd}
         />
         <style jsx>{style}</style>

@@ -90,35 +90,21 @@ describe('AutoCompleteList', () => {
     })
   })
 
-  describe('#loadingItemIndex', () => {
-    it('Can display an AutoCompleteListItem in loading state', () => {
-      const wrapper = shallow(<AutoCompleteList {...defaultProps} loadingItemIndex={0} />)
-      expect(wrapper.find('AutoCompleteListItem').first().prop('status'))
-        .toBe(AutoCompleteListItem.STATUS.LOADING)
-      expect(wrapper.find('AutoCompleteListItem').last().prop('status'))
-        .toBe(AutoCompleteListItem.STATUS.DEFAULT)
-    })
-
-    it('Can display an AutoCompleteListItem in valid state', () => {
-      const wrapper = shallow(<AutoCompleteList {...defaultProps} loadingItemIndex={0} valid />)
-      expect(wrapper.find('AutoCompleteListItem').first().prop('status'))
-        .toBe(AutoCompleteListItem.STATUS.CHECKED)
-      expect(wrapper.find('AutoCompleteListItem').last().prop('status'))
-        .toBe(AutoCompleteListItem.STATUS.DEFAULT)
-    })
-
-    it('Can trigger onDoneAnimationEnd callback', () => {
-      const event = jest.fn()
-      const wrapper = mount(<AutoCompleteList
+  describe('#selectedItemStatus', () => {
+    it('displays an AutoCompleteListItem in loading state', () => {
+      const onSelectSpy = jest.fn()
+      const wrapper = shallow(
+      <AutoCompleteList
         {...defaultProps}
-        loadingItemIndex={0}
-        onDoneAnimationEnd={event}
-      />)
-
-      wrapper.setProps({ valid: true })
-      expect(event).not.toBeCalled()
-      jest.advanceTimersByTime(1500)
-      expect(event).toBeCalled()
+        onSelect={onSelectSpy}
+        selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
+      />,
+    )
+      
+      wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
+      wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())
+      
+      expect(wrapper.state().selectedIndex).toBe(0)
     })
   })
 })

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
 import CircleIcon from 'icon/circleIcon'
-import ItemChoice from 'itemChoice'
 import AutoComplete from 'autoComplete'
 
 const stories = storiesOf('AutoComplete', module)
@@ -19,7 +19,7 @@ const places:AutocompleteItem[] = [
 
 interface AutoCompleteExampleProps {
   readonly searchForItemsDelay?: number
-  readonly renderEmptySearch?: JSX.Element[]
+  readonly renderEmptySearch?: AutocompleteItem[]
 }
 
 interface AutoCompleteExampleState {
@@ -70,9 +70,12 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           maxItems={number('maxItems', 5)}
           showList={boolean('showList', true)}
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
-          loadingItemIndex={number('loadingItemIndex', -1)}
+          selectedItemStatus={select(
+            'selectedItemStatus', 
+            [ItemChoiceStatus.DEFAULT, ItemChoiceStatus.LOADING, ItemChoiceStatus.CHECKED], 
+            ItemChoiceStatus.DEFAULT,
+          )}
           autoCorrect={select('autoCorrect', { on:'on', off:'off' }, 'off')}
-          valid={boolean('valid', false)}
           disabled={boolean('disabled', false)}
           readOnly={boolean('readOnly', false)}
           required={boolean('required', false)}
@@ -93,16 +96,11 @@ stories.add(
 )
 
 stories.add(
-  'AutoComplete test',
+  'AutoComplete with empty search',
   withInfo('AutoComplete')(() => {
     const emptySearch = [
-      <ItemChoice label="Test 1" />,
-      <ItemChoice label="Test 2" />,
-      <ItemChoice
-        label="Test 3"
-        subLabel="Secondary info"
-        leftAddon={<CircleIcon />}
-      />,
+      { id: '1', title: 'Get my location', description: '' },
+      { id: '2', title: 'Favorite address', description: '' },
     ]
     return <AutoCompleteExample renderEmptySearch={emptySearch} />
   }),
