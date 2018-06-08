@@ -4,7 +4,7 @@ import cc from 'classcat'
 import debounce from 'lodash.debounce'
 import prefix from '_utils'
 import TextField from 'textField'
-import ItemChoice, { ItemChoiceProps } from 'itemChoice'
+import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
 import AutoCompleteListItemDefault from './autoCompleteListItemDefault'
 import style from './style'
@@ -39,16 +39,15 @@ interface AutoCompleteProps {
   readonly debounceTimeout?: number,
   readonly autoFocus?: boolean,
   readonly focus?: boolean,
-  readonly loadingItemIndex?: number,
   readonly buttonTitle?: string,
   readonly showList?: boolean,
-  readonly valid?: boolean,
   readonly onDoneAnimationEnd?: () => void,
   readonly autoCorrect?: 'on' | 'off',
   readonly disabled?: boolean,
   readonly readOnly?: boolean,
   readonly required?: boolean,
   readonly error?: string | JSX.Element,
+  readonly selectedItemStatus?: ItemChoiceStatus,
 }
 
 interface AutoCompleteState {
@@ -91,10 +90,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     autoFocus: false,
     focus: false,
     buttonTitle: null,
-    loadingItemIndex: -1,
     defaultValue: '',
     showList: true,
-    valid: false,
     autoCorrect: 'off',
     disabled: false,
     readOnly: false,
@@ -216,7 +213,9 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch() 
       && this.state.items.length > 0 && !this.state.busy
       && this.props.showList
-
+    const listItems = shouldDisplayAutoCompleteList ? (
+      this.state.items
+     ) : this.props.renderEmptySearch
     return (
       <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
@@ -254,14 +253,13 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
         <AutoCompleteList
           className={this.props.bodyClassName}
           name={`${this.props.name}-list`}
-          items={shouldDisplayAutoCompleteList ? this.state.items : this.props.renderEmptySearch}
+          items={listItems}
           maxItems={this.props.maxItems}
           renderItem={this.props.renderItem}
           onSelect={this.onSelectItem}
           visible={shouldDisplayAutoCompleteList || shouldDisplayEmptyState}
-          loadingItemIndex={this.props.loadingItemIndex}
+          selectedItemStatus={this.props.selectedItemStatus}
           itemClassName={this.props.itemClassName}
-          valid={this.props.valid}
           onDoneAnimationEnd={this.props.onDoneAnimationEnd}
         />
         <style jsx>{style}</style>
