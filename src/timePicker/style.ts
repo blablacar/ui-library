@@ -9,7 +9,7 @@ export default css`
     align-items: center;
     width: 320px;
     max-width: 100%;
-    font-size: 82px;
+    font-size: 4em;
     font-weight: 500;
     line-height: 1;
     background-color: ${color.white};
