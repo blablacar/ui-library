@@ -1,6 +1,7 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 
-import Checkbox from 'checkbox'
+import Checkbox, { labelDisplays } from 'checkbox'
 
 it('should have the proper text & attributes', () => {
   const checkbox = shallow((
@@ -76,4 +77,20 @@ it('should trigger a change event on an async checkbox', () => {
     </Checkbox>
   ))
   checkbox.find('input').simulate('change')
+})
+
+it('should display the label on the left and the checkbox on the right', () => {
+  const checkbox = renderer.create(<Checkbox
+    labelDisplay={labelDisplays.LEFT}
+    labelFirstname="checkbox1"
+    value="value">Label</Checkbox>).toJSON()
+  expect(checkbox).toMatchSnapshot()
+})
+
+it('should not display either the label or the sublabel', () => {
+  const checkbox = renderer.create(<Checkbox
+    labelDisplay={labelDisplays.NONE}
+    labelFirstname="checkbox1"
+    value="value">Label</Checkbox>).toJSON()
+  expect(checkbox).toMatchSnapshot()
 })

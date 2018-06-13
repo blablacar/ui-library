@@ -11,7 +11,14 @@ export interface CheckboxProps {
   readonly value?: string,
   readonly checked?: boolean,
   readonly disabled?: boolean,
+  readonly labelDisplay?: labelDisplays,
   readonly onChange?: (obj:onChangeParameters) => void,
+}
+
+export enum labelDisplays {
+  LEFT = 'left',
+  RIGHT = 'right',
+  NONE = 'none',
 }
 
 export interface CheckboxState {
@@ -25,6 +32,7 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
     subLabel: '',
     checked: false,
     disabled: false,
+    labelDisplay: labelDisplays.RIGHT,
   }
   state:CheckboxState = {
     isChecked: this.props.checked,
@@ -58,9 +66,22 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
   }))
 
   render() {
-    const { className, name, children, value, subLabel } = this.props
+    const { className, name, value, children, subLabel, labelDisplay } = this.props
+
     return (
-      <label className={cc(['kirk-checkbox', className])}>
+      <label className={cc([
+        'kirk-checkbox',
+        {
+          'kirk-checkbox--labelDisplay-left': (
+            labelDisplay === labelDisplays.LEFT
+          ),
+          'kirk-checkbox--labelDisplay-none': (
+            labelDisplay === labelDisplays.NONE
+          ),
+        },
+        className,
+      ])}
+      >
         <div>
           <input
             type="checkbox"
@@ -74,7 +95,7 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
         </div>
         <div>
           <span className="kirk-label">{children}</span>
-          { subLabel && <span className="kirk-subLabel">{subLabel}</span> }
+          {subLabel && <span className="kirk-subLabel">{subLabel}</span>}
         </div>
         <style jsx>{style}</style>
       </label>
