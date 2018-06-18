@@ -71,10 +71,12 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   open = () => {
+    this.scrollReset()
     this.setState({ open: true })
   }
 
   close = () => {
+    this.scrollRestore()
     this.setState({ open: false })
   }
 
@@ -98,6 +100,20 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
 
   refContent = (contentNode: HTMLDivElement) => {
     this.contentNode = contentNode
+  }
+
+  private scrollPosition: number = 0
+
+  scrollReset = () => {
+    // store current scroll position
+    this.scrollPosition = document.documentElement.scrollTop
+    // scroll to top
+    document.documentElement.scrollTop = 0
+  }
+
+  scrollRestore = () => {
+    // restore scroll position
+    document.documentElement.scrollTop = this.scrollPosition
   }
 
   render() {
