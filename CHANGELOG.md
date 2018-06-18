@@ -2,6 +2,7 @@
 - [timePicker] Fix display on small devices
 - Remove deprecated updateColor() method
 - [itemChoice] Fix right content display
+- [Drawer] Force scroll to top and pass height for inner scroll
 
 # v0.3.0 (08/06/2018)
 Breaking changes:

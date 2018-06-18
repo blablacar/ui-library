@@ -13,6 +13,7 @@ export interface DrawerProps {
   readonly onClose?: () => void,
   readonly onChange?: (open: boolean) => void,
   readonly width?: string,
+  readonly height?: string,
 }
 
 export interface DrawerState {
@@ -23,6 +24,7 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   private contentNode: HTMLDivElement
   private contentStyles = {
     width: this.props.width,
+    height: this.props.height,
   }
 
   static defaultProps: Partial<DrawerProps> = {
@@ -109,9 +111,13 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     this.scrollPosition = document.documentElement.scrollTop
     // scroll to top
     document.documentElement.scrollTop = 0
+    // block html scroll
+    document.querySelector('html').style.overflow = 'hidden'
   }
 
   scrollRestore = () => {
+    // unblock html scroll
+    document.querySelector('html').style.overflow = 'visible'
     // restore scroll position
     document.documentElement.scrollTop = this.scrollPosition
   }
