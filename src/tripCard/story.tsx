@@ -14,22 +14,22 @@ stories.add(
   withInfo('')(() => (
     <TripCard
       href="/"
-      itinerary={{
-        departure: {
+      itinerary={[
+        {
           mainLabel: text('Departure city', 'Paris'),
           subLabel: text('Departure precise', 'Porte de Vincennes'),
           time: text('Departure time', '09:00'),
           isoDate: '2017-12-11T09:00',
           distanceFromPoint: '1,5km',
         },
-        arrival: {
+        {
           mainLabel: text('Arrival city', 'Bordeaux'),
           subLabel: text('Arrival precise', 'Gare Bordeaux Saint-Jean'),
           time: text('Arrival time', '12:00'),
           isoDate: '2017-12-11T12:00',
           distanceFromPoint: '8km',
         },
-      }}
+      ]}
       driver={{
         avatarUrl: '//placehold.it/500x500',
         firstName: text('Driver name', 'Jane'),

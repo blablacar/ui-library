@@ -113,7 +113,6 @@ export default css`
     width: 0;
     border: 1px dashed #708C91;
     left: calc(${timeWidth} + 1px);
-    top: 2px;
   }
 
   .kirk-itinerary--small .kirk-itinerary-fromDeparture::before,

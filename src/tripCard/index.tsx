@@ -10,10 +10,7 @@ import style from 'tripCard/style'
 
 export interface TripCardProps {
   href: string | JSX.Element,
-  itinerary: {
-    departure: Place,
-    arrival: Place,
-  },
+  itinerary: Place[],
   driver: {
     avatarUrl: string,
     firstName: string,
@@ -37,8 +34,10 @@ export interface TripCardProps {
 const TripCard = ({
   className, href, itinerary, driver, price, flags = {}, titles = {}, highlighted = '', metaUrl,
 }: TripCardProps) => {
+  const departure = itinerary[0]
+  const arrival = itinerary[itinerary.length - 1]
   const displayFlags = highlighted.length === 0 && Object.keys(flags).length
-  const itemPropName = `${itinerary.departure.mainLabel} → ${itinerary.arrival.mainLabel}`
+  const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
 
   let LinkComponent: tag
   let typeProps = {}
@@ -67,14 +66,13 @@ const TripCard = ({
       <LinkComponent {...typeProps}>
         <meta itemProp="url" content={metaUrl} />
         <meta itemProp="name" content={itemPropName} />
-        <meta itemProp="startDate" content={itinerary.departure.isoDate} />
-        <meta itemProp="endDate" content={itinerary.arrival.isoDate} />
+        <meta itemProp="startDate" content={departure.isoDate} />
+        <meta itemProp="endDate" content={arrival.isoDate} />
 
         <div className="kirk-tripCard-main">
           <Itinerary
             className="kirk-tripCard-itinerary"
-            departure={itinerary.departure}
-            arrival={itinerary.arrival}
+            places={itinerary}
           />
           <span className="kirk-tripCard-price">{price}</span>
         </div>

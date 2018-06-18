@@ -20,20 +20,22 @@ stories.add(
       <Itinerary
         showFromDistance={isFromDistance}
         showToDistance={isToDistance}
-        departure={{
-          mainLabel: text('Main label from', 'Paris'),
-          subLabel: text('Sublabel from', 'Porte de Vincennes'),
-          isoDate: '2017-12-11T09:00',
-          distanceFromPoint: isFromDistance && '1,5km',
-          time: text('Time from', '09:00'),
-        }}
-        arrival={{
-          mainLabel: text('Main label to', 'Bordeaux'),
-          subLabel: text('Sublabel to', 'Gare Bordeaux Saint-Jean'),
-          isoDate: '2017-12-11T12:00',
-          distanceFromPoint: isToDistance && '8km',
-          time: text('Time to', '12:00'),
-        }}
+        places={[
+          {
+            mainLabel: text('Main label from', 'Paris'),
+            subLabel: text('Sublabel from', 'Porte de Vincennes'),
+            isoDate: '2017-12-11T09:00',
+            distanceFromPoint: isFromDistance && '1,5km',
+            time: text('Time from', '09:00'),
+          },
+          {
+            mainLabel: text('Main label to', 'Bordeaux'),
+            subLabel: text('Sublabel to', 'Gare Bordeaux Saint-Jean'),
+            isoDate: '2017-12-11T12:00',
+            distanceFromPoint: isToDistance && '8km',
+            time: text('Time to', '12:00'),
+          },
+        ]}
         small={boolean('small', false)}
         headline={isHeadline && 'Mon 11 December'}
       />
@@ -52,26 +54,28 @@ stories.add(
       <Itinerary
         showFromDistance={isFromDistance}
         showToDistance={isToDistance}
-        departure={{
-          mainLabel: text('Main label from', 'Paris'),
-          subLabel: <Proximity
-            value={selectV2('Proximity from', Distances, 'FAR')}
-            title="Distance from the pick up point"
-          />,
-          isoDate: '2017-12-11T09:00',
-          distanceFromPoint: isFromDistance && '1,5km',
-          time: text('Time from', '09:00'),
-        }}
-        arrival={{
-          mainLabel: text('Main label to', 'Bordeaux'),
-          subLabel: <Proximity
-            value={selectV2('Proximity to', Distances, 'CLOSE')}
-            title="Distance from the drop off point"
-          />,
-          isoDate: '2017-12-11T12:00',
-          distanceFromPoint: isToDistance && '8km',
-          time: text('Time to', '12:00'),
-        }}
+        places={[
+          {
+            mainLabel: text('Main label from', 'Paris'),
+            subLabel: <Proximity
+              value={selectV2('Proximity from', Distances, 'FAR')}
+              title="Distance from the pick up point"
+            />,
+            isoDate: '2017-12-11T09:00',
+            distanceFromPoint: isFromDistance && '1,5km',
+            time: text('Time from', '09:00'),
+          },
+          {
+            mainLabel: text('Main label to', 'Bordeaux'),
+            subLabel: <Proximity
+              value={selectV2('Proximity to', Distances, 'CLOSE')}
+              title="Distance from the drop off point"
+            />,
+            isoDate: '2017-12-11T12:00',
+            distanceFromPoint: isToDistance && '8km',
+            time: text('Time to', '12:00'),
+          },
+        ]}
         small={boolean('small', false)}
         headline={isHeadline && 'Mon 11 December'}
       />
