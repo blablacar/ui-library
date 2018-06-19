@@ -128,7 +128,4 @@ export default {
   space,
   radius,
   shadow,
-  updateColor(colors: Color): void {
-    Object.keys(colors).forEach((key) => { color[key] = colors[key] })
-  },
 }
