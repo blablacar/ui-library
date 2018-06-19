@@ -123,10 +123,12 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
           </div>
         )}
         {children}
-        {rightAddon && (
-          <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
-        )}
-        {rightIcon}
+        <div className="kirk-itemChoice-right">
+          {rightAddon && (
+            <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
+          )}
+          {rightIcon}
+        </div>
         <style jsx>{style}</style>
       </Component>
     )

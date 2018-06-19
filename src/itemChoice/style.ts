@@ -81,6 +81,13 @@ export default css`
     margin-top: ${space.s};
   }
 
+  :global(.kirk-itemChoice-right) {
+    display: inline-flex;
+    align-items: right;
+    margin-left: auto;
+    padding-left: ${space.l};
+  }
+
   /* Addons */
   :global(.kirk-itemChoice-leftAddon) {
     display: inline-flex;
