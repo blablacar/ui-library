@@ -2,6 +2,7 @@
 - [timePicker] Fix display on small devices
 - Remove deprecated updateColor() method
 - [itemChoice] Fix right content display
+- [Checkbox] Reverse label and input and made it configurable
 
 # v0.3.0 (08/06/2018)
 Breaking changes:

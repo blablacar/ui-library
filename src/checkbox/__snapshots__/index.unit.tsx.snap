@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display the label on the left and the checkbox on the right 1`] = `
+<label
+  className="jsx-214393563 kirk-checkbox kirk-checkbox--labelDisplay-left"
+>
+  <div
+    className="jsx-214393563"
+  >
+    <input
+      checked={false}
+      className="jsx-214393563"
+      disabled={false}
+      name={undefined}
+      onChange={[Function]}
+      type="checkbox"
+      value="value"
+    />
+    <span
+      aria-hidden="true"
+      className="jsx-214393563 "
+    />
+  </div>
+  <div
+    className="jsx-214393563"
+  >
+    <span
+      className="jsx-214393563 kirk-label"
+    >
+      Label
+    </span>
+    
+  </div>
+</label>
+`;
+
+exports[`should not display either the label or the sublabel 1`] = `
+<label
+  className="jsx-214393563 kirk-checkbox kirk-checkbox--labelDisplay-none"
+>
+  <div
+    className="jsx-214393563"
+  >
+    <input
+      checked={false}
+      className="jsx-214393563"
+      disabled={false}
+      name={undefined}
+      onChange={[Function]}
+      type="checkbox"
+      value="value"
+    />
+    <span
+      aria-hidden="true"
+      className="jsx-214393563 "
+    />
+  </div>
+  <div
+    className="jsx-214393563"
+  >
+    <span
+      className="jsx-214393563 kirk-label"
+    >
+      Label
+    </span>
+    
+  </div>
+</label>
+`;

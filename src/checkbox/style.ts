@@ -8,10 +8,14 @@ export default css`
     line-height: ${font.m.lineHeight};
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     position: relative;
     color: ${color.primaryText};
     cursor: pointer;
+  }
+
+  .kirk-checkbox.kirk-checkbox--labelDisplay-left {
+    justify-content: space-between;
   }
 
   .kirk-checkbox div {
@@ -20,8 +24,31 @@ export default css`
   }
 
   .kirk-checkbox div:first-child {
+    padding-left: 0;
+    padding-right: ${space.l};
+  }
+
+  .kirk-checkbox.kirk-checkbox--labelDisplay-left div:first-child {
     padding-left: ${space.l};
+    padding-right: 0;
     order: 2;
+  }
+
+  .kirk-checkbox.kirk-checkbox--labelDisplay-none div:first-child {
+    padding-right: 0;
+  }
+
+  .kirk-checkbox.kirk-checkbox--labelDisplay-none div:last-child {
+    /* label visually hidden (webaim.org) */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip; rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
   }
 
   .kirk-subLabel {
