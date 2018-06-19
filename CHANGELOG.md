@@ -1,6 +1,7 @@
 # Unreleased
 - [timePicker] Fix display on small devices
 - Remove deprecated updateColor() method
+- [itemChoice] Fix right content display
 
 # v0.3.0 (08/06/2018)
 Breaking changes:
