@@ -47,8 +47,9 @@ class DrawerDemo extends Component {
               ref={this.refDrawer}
               onChange={this.onToggleDrawer}
               width={text('width', '400px')}
+              height={text('height', '')}
             >
-              Drawer content
+              {text('children', 'Drawer content')}
             </Drawer>
           )}
         </main>
