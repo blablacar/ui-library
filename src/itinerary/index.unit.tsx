@@ -9,30 +9,20 @@ const places = [
     distanceFromPoint: '1,5km',
     time: '09:00',
     isoDate: '2017-12-11T09:00',
-    subLabel: 'Porte de Vincennes',
-    mainLabel: 'Paris',
-  },
-  {
-    distanceFromPoint: '8km',
-    time: '12:00',
-    isoDate: '2017-12-11T12:00',
-    subLabel: 'Gare Bordeaux Saint-Jean',
-    mainLabel: 'Bordeaux',
-  },
-]
-const placesWithProximity = [
-  {
-    distanceFromPoint: '1,5km',
-    time: '09:00',
-    isoDate: '2017-12-11T09:00',
     subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
     mainLabel: 'Paris',
   },
   {
-    distanceFromPoint: '8km',
     time: '12:00',
     isoDate: '2017-12-11T12:00',
-    subLabel: 'Gare Bordeaux Saint-Jean',
+    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
+    mainLabel: 'Tours',
+  },
+  {
+    distanceFromPoint: '8km',
+    time: '15:00',
+    isoDate: '2017-12-11T15:00',
+    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
     mainLabel: 'Bordeaux',
   },
 ]
@@ -60,6 +50,13 @@ describe('Itinerary component', () => {
       itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--fromArrival'),
     ).toBe(true)
     expect(itinerary.find('.kirk-itinerary-fromArrival').exists()).toBe(true)
+  })
+
+  it('Should display stopover', () => {
+    const itinerary = shallow((
+      <Itinerary places={places} />
+    ))
+    expect(itinerary.find('.kirk-itinerary-location')).toHaveLength(places.length)
   })
 
   it('Should display proximity from departure point', () => {
