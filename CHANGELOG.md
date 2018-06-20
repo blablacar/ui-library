@@ -1,8 +1,11 @@
 # Unreleased
-- [TimePicker] Fix display on small devices
 - [Itinerary] Component now using an array to display places (no `departure` and `arrival` props anymore)
+
+# v0.3.1 (20/06/2018)
+- [TimePicker] Fix display on small devices
+- [ItemChoice] Fix right content display
+- [Checkbox] Reverse label and input and made it configurable
 - Remove deprecated updateColor() method
-- [itemChoice] Fix right content display
 
 # v0.3.0 (08/06/2018)
 Breaking changes:
