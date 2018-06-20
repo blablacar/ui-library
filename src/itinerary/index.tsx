@@ -4,8 +4,7 @@ import cc from 'classcat'
 import style from 'itinerary/style'
 
 interface ItineraryProps {
-  readonly departure: Place,
-  readonly arrival: Place,
+  readonly places: Place[],
   readonly className?: Classcat.Class,
   readonly showFromDistance?: boolean,
   readonly showToDistance?: boolean,
@@ -14,7 +13,7 @@ interface ItineraryProps {
 }
 
 const Itinerary = ({
-  className, departure, arrival, showFromDistance, showToDistance, small = false, headline = null,
+  className, places, showFromDistance, showToDistance, small = false, headline = null,
 }: ItineraryProps) => (
   <ul className={cc([className, { 'kirk-itinerary--small': small }])}>
     {
@@ -27,49 +26,42 @@ const Itinerary = ({
     {
       showFromDistance && (
         <li className="kirk-itinerary-fromDeparture">
-          <span>{departure.distanceFromPoint}</span>
+          <span>{places[0].distanceFromPoint}</span>
         </li>
       )
     }
-    <li className="kirk-itinerary-location kirk-itinerary--departure">
-      {
-        !small && (
-          <time dateTime={departure.isoDate}>{departure.time}</time>
-        )
-      }
-      <div>
-        <span>{departure.mainLabel}</span>
-        {
-          (!small && departure.subLabel) && (
-            <span className="kirk-itinerary-subtext">{departure.subLabel}</span>
-          )
-        }
-      </div>
-    </li>
-    <li
-      className={cc([
-        'kirk-itinerary-location kirk-itinerary--arrival',
-        { 'kirk-itinerary-location--fromArrival': showToDistance },
-      ])}
-    >
-      {
-        !small && (
-          <time dateTime={arrival.isoDate}>{arrival.time}</time>
-        )
-      }
-      <div>
-        <span>{arrival.mainLabel}</span>
-        {
-          (!small && arrival.subLabel) && (
-            <span className="kirk-itinerary-subtext">{arrival.subLabel}</span>
-          )
-        }
-      </div>
-    </li>
+    {
+      places.map((place, index) => (
+        <li
+          className={
+            cc(['kirk-itinerary-location', {
+              'kirk-itinerary--departure': index === 0,
+              'kirk-itinerary--arrival': index === places.length - 1,
+              'kirk-itinerary-location--fromArrival': index === places.length - 1 && showToDistance,
+            }])
+          }
+          key={`${place.mainLabel} ${place.subLabel} ${place.isoDate}`}
+        >
+          {
+            !small && (
+              <time dateTime={place.isoDate}>{place.time}</time>
+            )
+          }
+          <div>
+            <span>{place.mainLabel}</span>
+            {
+              (!small && place.subLabel) && (
+                <span className="kirk-itinerary-subtext">{place.subLabel}</span>
+              )
+            }
+          </div>
+        </li>
+      ))
+    }
     {
       showToDistance && (
         <li className="kirk-itinerary-fromArrival">
-          <span>{arrival.distanceFromPoint}</span>
+          <span>{places[places.length - 1].distanceFromPoint}</span>
         </li>
       )
     }

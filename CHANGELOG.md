@@ -1,5 +1,5 @@
 # Unreleased
-- [...]
+- [Itinerary] Component now using an array to display places (no `departure` and `arrival` props anymore)
 
 # v0.3.1 (20/06/2018)
 - [TimePicker] Fix display on small devices

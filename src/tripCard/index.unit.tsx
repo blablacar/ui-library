@@ -7,22 +7,22 @@ import LadyIcon from 'icon/ladyIcon'
 
 const mockedProps = {
   href: '#',
-  itinerary: {
-    departure: {
+  itinerary: [
+    {
       mainLabel: 'Paris',
       subLabel: 'Porte de Vincennes',
       time: '09:00',
       isoDate: '2017-12-11T09:00',
       distanceFromPoint: '1,5km',
     },
-    arrival: {
+    {
       mainLabel: 'Bordeaux',
       subLabel: 'Gare Bordeaux Saint-Jean',
       time: '12:00',
       isoDate: '2017-12-11T12:00',
       distanceFromPoint: '8km',
     },
-  },
+  ],
   driver: {
     avatarUrl: '//placehold.it/500x500',
     firstName: 'Jane',
