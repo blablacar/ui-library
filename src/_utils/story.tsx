@@ -1,14 +1,15 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
-import branding, { color, space, font } from '_utils/branding'
+import { color, space, font } from '_utils/branding'
 
 const stories = storiesOf('Brand', module)
 stories.addDecorator(withKnobs)
 
-const styles = {
+/** @type {{colorTitle: React.CSSProperties}} */
+const styles: { [name: string]: React.CSSProperties } = {
   main: {
     margin: '20px',
     overflow: 'hidden' as 'hidden',
@@ -16,8 +17,9 @@ const styles = {
   colorTile: {
     float: 'left' as 'left',
     display: 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     height: '150px',
     width: '150px',
   },
@@ -26,7 +28,7 @@ const styles = {
   },
   fontTableTile: {
     width: '100%',
-    'text-align': 'center',
+    textAlign: 'center',
   },
 }
 
@@ -45,7 +47,7 @@ const renderColors = (c: string) => {
     color: getBrightness(color[c]) < 120 ? '#FFF' : '#000',
     backgroundColor: color[c],
   }
-  return <div key={c} style={style}>{c}</div>
+  return <div key={c} style={style}>{c}<br/>{color[c]}</div>
 }
 
 const renderFonts = (f: string) => {

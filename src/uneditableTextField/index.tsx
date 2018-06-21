@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
 import style from 'uneditableTextField/style'
 
@@ -19,7 +20,7 @@ export const UneditableTextField = ({
   if (href && typeof href !== 'string') {
     Component = href.type
     props = { ...href.props }
-  } else if (typeof href === 'string' && href.length > 0) {
+  } else if (typeof href === 'string' && !isEmpty(href)) {
     Component = 'a'
     props = { href }
   } else {

@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import { ItemChoiceStatus } from 'itemChoice'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
-import CircleIcon from 'icon/circleIcon'
 import AutoComplete from 'autoComplete'
 
 const stories = storiesOf('AutoComplete', module)

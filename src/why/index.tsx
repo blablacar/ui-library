@@ -1,7 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
 import style from 'why/style'
 import QuestionIcon from 'icon/questionIcon'
 
@@ -15,7 +14,7 @@ interface WhyProps {
 const Why = ({ className, children, title, onClick }: WhyProps) => (
   <button
     type="button"
-    className={cc([prefix({ why: true }), className])}
+    className={cc(['kirk-why', className])}
     title={title}
     onClick={onClick}
   >

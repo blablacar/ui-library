@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
 import Avatar from 'avatar'
 import ComfortIcon from 'icon/comfortIcon'
@@ -36,7 +37,7 @@ const TripCard = ({
 }: TripCardProps) => {
   const departure = itinerary[0]
   const arrival = itinerary[itinerary.length - 1]
-  const displayFlags = highlighted.length === 0 && Object.keys(flags).length
+  const displayFlags = isEmpty(highlighted) && !isEmpty(flags)
   const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
 
   let LinkComponent: tag

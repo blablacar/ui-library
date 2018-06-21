@@ -16,6 +16,7 @@ interface CustomTransitionProps {
   readonly delayLeave?: number,
   readonly in?: boolean,
 }
+
 export default class CustomTransition extends PureComponent<CustomTransitionProps> {
   static TYPES = AnimationType
 

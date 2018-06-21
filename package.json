@@ -11,7 +11,7 @@
   "scripts": {
     "build": "rimraf build && npm-run-all build:*",
     "build:js": "tsc && babel build/src -x \".jsx\",\".js\" --ignore \"**/*.unit.jsx\",\"**/story.jsx\" --out-dir build && rimraf build/src && rimraf build/stories",
-    "tslint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "tslint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\" --project tsconfig.json",
     "stylelint": "grep -r -l --include=*.css \"\" ./src | xargs stylelint",
     "lint": "npm-run-all lint:*",
     "lint:js": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint",
@@ -49,7 +49,7 @@
     "@storybook/addon-knobs": "3.4.8",
     "@storybook/addons": "3.4.8",
     "@storybook/react": "3.4.8",
-    "@types/enzyme": "3.1.10",
+    "@types/enzyme": "3.1.11",
     "@types/jest": "23.1.1",
     "@types/lodash.debounce": "4.0.3",
     "@types/lodash.padstart": "4.6.3",
@@ -70,7 +70,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-3": "6.24.1",
     "babel-resolver": "1.1.0",
-    "caniuse-db": "1.0.30000856",
+    "caniuse-db": "1.0.30000858",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "gh-pages": "1.2.0",
@@ -95,10 +95,12 @@
     "typescript": "2.9.2"
   },
   "dependencies": {
+    "@types/lodash.isempty": "4.4.3",
     "@types/react-transition-group": "2.0.11",
     "classcat": "3.1.2",
     "exenv": "1.2.2",
     "lodash.debounce": "4.0.8",
+    "lodash.isempty": "4.4.0",
     "lodash.kebabcase": "4.1.1",
     "lodash.padstart": "4.6.1",
     "moment": "2.22.2",
@@ -107,7 +109,7 @@
     "react-dates": "16.7.0",
     "react-dom": "16.4.1",
     "react-transition-group": "2.3.1",
-    "styled-jsx": "2.2.6",
+    "styled-jsx": "2.2.7",
     "tslint": "5.10.0",
     "tslint-config-airbnb": "5.9.2"
   },

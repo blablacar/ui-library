@@ -1,7 +1,9 @@
-import React, { Component, isValidElement, cloneElement } from 'react'
+import React, { Component } from 'react'
 import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 import debounce from 'lodash.debounce'
+
 import prefix from '_utils'
 import TextField from 'textField'
 import { ItemChoiceStatus } from 'itemChoice'
@@ -69,7 +71,6 @@ const initialState:AutoCompleteState = {
 export default class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState> {
   private input:HTMLInputElement
   private busyTimeout:number | void
-  private isSearchingForItems:boolean
   private currentValue:query
 
   static defaultProps:Partial<AutoCompleteProps> = {
@@ -120,7 +121,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   componentWillReceiveProps(nextProps:AutoCompleteProps) {
-    const shouldRenderItems = this.props.isSearching && nextProps.isSearching === false
+    const shouldRenderItems = this.props.isSearching && !nextProps.isSearching
 
     if (this.props.defaultValue !== nextProps.defaultValue) {
       this.setState({ query: nextProps.defaultValue })
@@ -130,7 +131,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       this.clearBusyTimeout()
       this.setState({
         busy: false,
-        noResults: nextProps.items.length === 0,
+        noResults: isEmpty(nextProps.items),
         items: nextProps.items,
       })
     }
@@ -206,13 +207,12 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
 
   render() {
     const shouldDisplayEmptyState = !this.hasMinCharsForSearch() && this.props.showList
-    && this.props.renderEmptySearch.length > 0
+      && !isEmpty(this.props.renderEmptySearch)
     const shouldDisplayBusyState = this.state.busy && this.props.showList
     const shouldDisplayNoResults = this.hasMinCharsForSearch()
       && !this.state.busy && this.state.noResults && this.props.showList
     const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch()
-      && this.state.items.length > 0 && !this.state.busy
-      && this.props.showList
+      && !isEmpty(this.state.items) && !this.state.busy && this.props.showList
     const listItems = shouldDisplayAutoCompleteList ? (
       this.state.items
      ) : this.props.renderEmptySearch

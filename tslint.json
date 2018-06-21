@@ -11,6 +11,7 @@
     "align": false,
     "variable-name": false,
     "no-unused-variable": true,
+    "no-boolean-literal-compare": true,
     "trailing-comma": [
       true,
       {
