@@ -1,4 +1,7 @@
 # Unreleased
+- [...]
+
+# v0.4.0 (21/06/2018)
 - [Itinerary] Component now using an array to display places (no `departure` and `arrival` props anymore)
 
 # v0.3.1 (20/06/2018)
