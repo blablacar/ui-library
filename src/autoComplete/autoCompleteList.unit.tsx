@@ -100,10 +100,10 @@ describe('AutoCompleteList', () => {
         selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
       />,
     )
-      
+
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())
-      
+
       expect(wrapper.state().selectedIndex).toBe(0)
     })
   })

@@ -6,7 +6,6 @@ import { withKnobs, number } from '@storybook/addon-knobs'
 
 import Stars from 'stars'
 
-
 const stories = storiesOf('Stars', module)
 stories.addDecorator(withKnobs)
 

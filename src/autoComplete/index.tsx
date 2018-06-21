@@ -208,9 +208,9 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     const shouldDisplayEmptyState = !this.hasMinCharsForSearch() && this.props.showList
     && this.props.renderEmptySearch.length > 0
     const shouldDisplayBusyState = this.state.busy && this.props.showList
-    const shouldDisplayNoResults = this.hasMinCharsForSearch() 
+    const shouldDisplayNoResults = this.hasMinCharsForSearch()
       && !this.state.busy && this.state.noResults && this.props.showList
-    const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch() 
+    const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch()
       && this.state.items.length > 0 && !this.state.busy
       && this.props.showList
     const listItems = shouldDisplayAutoCompleteList ? (

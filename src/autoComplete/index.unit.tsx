@@ -86,7 +86,7 @@ describe('AutoComplete', () => {
       const wrapper = mount(<AutoComplete
         {...defaultProps}
         renderItem={item => <div className="custom-item">{item.title}</div>}
-      />)     
+      />)
       wrapper.instance().onInputChange({ value: 'title' })
 
       wrapper.setProps({ isSearching: true })

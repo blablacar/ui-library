@@ -71,8 +71,8 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           showList={boolean('showList', true)}
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
           selectedItemStatus={select(
-            'selectedItemStatus', 
-            [ItemChoiceStatus.DEFAULT, ItemChoiceStatus.LOADING, ItemChoiceStatus.CHECKED], 
+            'selectedItemStatus',
+            [ItemChoiceStatus.DEFAULT, ItemChoiceStatus.LOADING, ItemChoiceStatus.CHECKED],
             ItemChoiceStatus.DEFAULT,
           )}
           autoCorrect={select('autoCorrect', { on:'on', off:'off' }, 'off')}

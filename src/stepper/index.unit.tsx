@@ -8,7 +8,6 @@ const defaultProps = {
   decreaseLabel: 'Decrease',
 }
 
-
 it('Should have the default className', () => {
   const stepper = shallow((
     <Stepper
