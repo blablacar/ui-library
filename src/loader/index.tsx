@@ -42,7 +42,7 @@ class Loader extends PureComponent <LoaderProps> {
   }
 
   render() {
-    const { className, inline, size, done, onDoneAnimationEnd } = this.props
+    const { className, inline, size, done } = this.props
     const sizes = {
       width: `${size}px`,
       height: `${size}px`,

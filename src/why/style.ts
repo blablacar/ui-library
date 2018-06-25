@@ -14,15 +14,18 @@ export default css`
     background-color: ${color.white};
     -webkit-tap-highlight-color: ${color.tapHighlight};
   }
+
   .kirk-why:hover {
     background-color: ${color.lightBackground};
   }
+
   /* Reset hover styles on devices not supporting hover state (e.g. touch devices). */
   @media (hover:none), (hover:on-demand) {
-    :global(.kirk-why:hover) {
+    .kirk-why:hover {
       background-color: ${color.white};
     }
   }
+
   .kirk-why > span {
     max-width: 100vh;
     white-space: nowrap;

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
+import { withKnobs, text, select } from '@storybook/addon-knobs'
 
 import Title from 'title'
 
@@ -17,6 +17,7 @@ const optionHeading = {
 }
 
 stories.addDecorator(withKnobs)
+
 stories.add(
   'basic',
   withInfo('')(() => (

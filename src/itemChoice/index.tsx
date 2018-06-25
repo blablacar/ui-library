@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
+
 import prefix from '_utils'
 import ChevronIcon from 'icon/chevronIcon'
 import Loader from 'loader'
-import { transition } from '_utils/branding'
 import style from './style'
 
 export enum ItemChoiceStatus {
@@ -95,7 +96,7 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
         onMouseDown,
         className: cc([href.props.className, classNames]),
       }
-    } else if (href.length > 0) {
+    } else if (!isEmpty(href)) {
       Component = 'a'
       typeProps = { onClick, onFocus, onBlur, onMouseDown, href, className: classNames }
     } else {

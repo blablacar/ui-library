@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { withKnobs, text, number } from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import Why from 'why'

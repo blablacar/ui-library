@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
+
 import prefix from '_utils'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteListItem from './autoCompleteListItem'
@@ -61,11 +63,10 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
   onKeyboardEventArrowDown = (e:Event) => {
     e.preventDefault()
 
-    const itemsLength = this.props.items.length
-    if (!itemsLength) return
+    if (isEmpty(this.props.items)) return
 
     const { highlightedIndex } = this.state
-    const index = (highlightedIndex === null || highlightedIndex === itemsLength - 1)
+    const index = (highlightedIndex === null || highlightedIndex === this.props.items.length - 1)
       ? 0 : highlightedIndex + 1
 
     this.setState({
@@ -76,11 +77,10 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
   onKeyboardEventArrowUp = (e:Event) => {
     e.preventDefault()
 
-    const itemsLength = this.props.items.length
-    if (itemsLength) {
+    if (!isEmpty(this.props.items)) {
       const { highlightedIndex } = this.state
       const index = (highlightedIndex === null || highlightedIndex === 0)
-        ? itemsLength - 1 : highlightedIndex - 1
+        ? this.props.items.length - 1 : highlightedIndex - 1
 
       this.setState({
         highlightedIndex: index,
@@ -116,7 +116,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
   }
 
   render() {
-    if (!this.props.visible || this.props.items.length <= 0) {
+    if (!this.props.visible || isEmpty(this.props.items)) {
       return null
     }
 

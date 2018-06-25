@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 import css from 'styled-jsx/css'
 
 import { color } from '_utils/branding'
@@ -52,24 +53,33 @@ const style = css`
   }
 `
 
-export default ({
-  absolute = false,
-  className,
-  iconColor = color.icon,
-  size = 24,
-  spinning = false,
-  title = '',
-}: CircleProps) => (
-  <svg
-    viewBox="0 0 66 66"
-    xmlns="http://www.w3.org/2000/svg"
-    className={cc(['kirk-icon', className, { spinning, absolute }])}
-    width={size}
-    height={size}
-    aria-hidden={title.length === 0}
-  >
-    {title && <title>{title}</title>}
-    <circle cx="33" cy="33" r="30" fill="none" stroke={iconColor} />
-    <style jsx>{style}</style>
-  </svg>
-)
+class CircleIcon extends PureComponent<CircleProps> {
+  static defaultProps: CircleProps = {
+    absolute: false,
+    className: '',
+    iconColor: color.icon,
+    size: 24,
+    spinning: false,
+    title: '',
+  }
+
+  render() {
+    const { className, absolute, iconColor, spinning, size, title } = this.props
+    return (
+      <svg
+        viewBox="0 0 66 66"
+        xmlns="http://www.w3.org/2000/svg"
+        className={cc(['kirk-icon', className, { spinning, absolute }])}
+        width={size}
+        height={size}
+        aria-hidden={isEmpty(title)}
+      >
+        { title && <title>{title}</title> }
+        <circle cx="33" cy="33" r="30" fill="none" stroke={iconColor} />
+        <style jsx>{style}</style>
+      </svg>
+    )
+  }
+}
+
+export default CircleIcon

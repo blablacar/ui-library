@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
 import Rating from 'rating'
 import Button from 'button'
@@ -35,7 +36,7 @@ const Profile = ({
       }
       <span className="kirk-secondaryInfo">{info}</span>
     </div>
-    { picture && picture.length > 0 &&
+    { !isEmpty(picture) &&
       <Avatar
         image={picture}
         alt={alt}
@@ -44,7 +45,7 @@ const Profile = ({
         medium={medium}
       />
     }
-    { action && action.length > 0 &&
+    { !isEmpty(action) &&
       <div>
         <Button status={Button.STATUS.UNSTYLED} title={action}>
           <ArrowIcon right />

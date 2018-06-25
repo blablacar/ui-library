@@ -1,13 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
-import { color, transition } from '_utils/branding'
 import style from 'button/style'
-
 import Loader from 'loader'
-import Circle from 'icon/circleIcon'
-import Check from 'icon/checkIcon'
 
 export enum ButtonStatus {
   PRIMARY = 'primary',
@@ -116,7 +113,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     if (typeof href !== 'string') {
       Component = href.type
       typeProps = { ...href.props }
-    } else if (href.length > 0) {
+    } else if (!isEmpty(href)) {
       Component = 'a'
       typeProps = { href }
     } else {
