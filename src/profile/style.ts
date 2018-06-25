@@ -6,7 +6,6 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: ${space.l} ${space.xl};
   }
 
   .kirk-title {
