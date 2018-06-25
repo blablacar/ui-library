@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { canUseDOM } from 'exenv'
 import cc from 'classcat'
 import style from 'drawer/style'
 
@@ -107,19 +108,23 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   private scrollPosition: number = 0
 
   scrollReset = () => {
-    // store current scroll position
-    this.scrollPosition = document.documentElement.scrollTop
-    // scroll to top
-    document.documentElement.scrollTop = 0
-    // block html scroll
-    document.querySelector('html').style.overflow = 'hidden'
+    if (canUseDOM) {
+      // store current scroll position
+      this.scrollPosition = document.documentElement.scrollTop
+      // scroll to top
+      document.documentElement.scrollTop = 0
+      // block html scroll
+      document.querySelector('html').style.overflow = 'hidden'
+    }
   }
 
   scrollRestore = () => {
-    // unblock html scroll
-    document.querySelector('html').style.overflow = 'visible'
-    // restore scroll position
-    document.documentElement.scrollTop = this.scrollPosition
+    if (canUseDOM) {
+      // unblock html scroll
+      document.querySelector('html').style.overflow = 'visible'
+      // restore scroll position
+      document.documentElement.scrollTop = this.scrollPosition
+    }
   }
 
   render() {
