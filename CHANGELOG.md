@@ -1,4 +1,7 @@
 # Unreleased
+[...]
+
+# v0.4.1 (26/06/2018)
 - [Dependencies] Update external dependencies
 - [C.I.]Fix linter on dev & CI
 - [Icons] Generate automatically the icons on storybook with its knobs.
