@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { canUseDOM } from 'exenv'
 import cc from 'classcat'
 import style from 'drawer/style'
 
@@ -71,6 +72,7 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   open = () => {
+    this.scrollReset()
     this.setState({ open: true })
   }
 
@@ -98,6 +100,12 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
 
   refContent = (contentNode: HTMLDivElement) => {
     this.contentNode = contentNode
+  }
+
+  scrollReset = () => {
+    if (canUseDOM) {
+      window.scroll(0, 0)
+    }
   }
 
   render() {
