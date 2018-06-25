@@ -42,7 +42,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
   }
 
   componentDidMount() {
-    this.update(this.state.value)
+    this.update(this.state.value, undefined, false)
   }
 
   componentWillReceiveProps(nextProps: StepperProps) {
@@ -55,10 +55,12 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
     }
   }
 
-  update(newValue: number, { min, max } = this.props) {
+  update(newValue: number, { min, max } = this.props, triggerOnChange: boolean = true) {
     const value = Math.max(min, Math.min(newValue, max))
     this.setState({ value })
-    this.props.onChange({ name: this.props.name, value })
+    if (triggerOnChange) {
+      this.props.onChange({ name: this.props.name, value })
+    }
   }
 
   increment = () => {

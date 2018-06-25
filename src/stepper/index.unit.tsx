@@ -9,27 +9,27 @@ const defaultProps = {
 }
 
 it('Should have the default className', () => {
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       increaseLabel="Plus"
       decreaseLabel="Minus"
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.hasClass('kirk-stepper')).toBe(true)
 })
 
 it('Should have the default text & attributes', () => {
-  const stepper = mount((
+  const stepper = mount(
     <Stepper
       name="test"
       increaseLabel="Plus"
       decreaseLabel="Minus"
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.find('label span').text()).toBe('Amount of something')
   expect(stepper.find('input').prop('value')).toBe(0)
   expect(stepper.prop('min')).toBe(Number.MIN_SAFE_INTEGER)
@@ -40,7 +40,7 @@ it('Should have the default text & attributes', () => {
 
 it('Should be able to increment/decrement the value', () => {
   const onChange = jest.fn()
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       {...defaultProps}
       value={3}
@@ -50,8 +50,8 @@ it('Should be able to increment/decrement the value', () => {
       onChange={onChange}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.state('value')).toBe(3)
   stepper.find('.kirk-stepper-increment').simulate('click')
   expect(stepper.state('value')).toBe(6)
@@ -62,7 +62,7 @@ it('Should be able to increment/decrement the value', () => {
 })
 
 it('Should be able to have a max value', () => {
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       {...defaultProps}
       value={8}
@@ -70,14 +70,14 @@ it('Should be able to have a max value', () => {
       max={10}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   stepper.find('.kirk-stepper-increment').simulate('click')
   expect(stepper.state('value')).toBe(10)
 })
 
 it('Should be able to have a min value', () => {
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       {...defaultProps}
       value={5}
@@ -85,14 +85,14 @@ it('Should be able to have a min value', () => {
       min={3}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   stepper.find('.kirk-stepper-decrement').simulate('click')
   expect(stepper.state('value')).toBe(3)
 })
 
 it('Should have the right max value instead of wrong settings', () => {
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       {...defaultProps}
       value={10}
@@ -100,13 +100,13 @@ it('Should have the right max value instead of wrong settings', () => {
       max={5}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.state('value')).toBe(5)
 })
 
 it('Should have the right min value instead of wrong settings', () => {
-  const stepper = shallow((
+  const stepper = shallow(
     <Stepper
       {...defaultProps}
       value={-10}
@@ -114,26 +114,26 @@ it('Should have the right min value instead of wrong settings', () => {
       max={5}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.state('value')).toBe(2)
 })
 
 it('Be able to format the value', () => {
-  const stepper = mount((
+  const stepper = mount(
     <Stepper
       {...defaultProps}
       value={2}
       format={value => `${value} €`}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   expect(stepper.find('input').prop('value')).toBe('2 €')
 })
 
 it('Should be able to receive props and then update the value', () => {
-  const stepper = mount((
+  const stepper = mount(
     <Stepper
       {...defaultProps}
       value={4}
@@ -141,8 +141,8 @@ it('Should be able to receive props and then update the value', () => {
       max={10}
     >
       Amount of something
-    </Stepper>
-  ))
+    </Stepper>,
+  )
   const spyUpdateValue = jest.spyOn(Stepper.prototype, 'update')
 
   // Only change the max value
@@ -168,4 +168,21 @@ it('Should be able to receive props and then update the value', () => {
   expect(stepper.prop('min')).toBe(4)
   expect(stepper.prop('max')).toBe(8)
   expect(stepper.state('value')).toBe(4)
+})
+
+it('Should not call onChange on componentDidMount', () => {
+  const onChange = jest.fn()
+  const stepper = shallow(
+    <Stepper
+      {...defaultProps}
+      min={1}
+      value={2}
+      step={3}
+      max={5}
+      onChange={onChange}
+    >
+      Amount of something
+    </Stepper>,
+  )
+  expect(onChange).toHaveBeenCalledTimes(0)
 })
