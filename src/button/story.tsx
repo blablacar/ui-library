@@ -88,7 +88,6 @@ stories.add(
   )),
 )
 
-
 stories.add(
   'shadowed',
   withInfo('')(() => (
@@ -102,7 +101,6 @@ stories.add(
     </Button>
   )),
 )
-
 
 stories.add(
   'anchor button',

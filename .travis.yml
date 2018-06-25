@@ -7,5 +7,5 @@ before_install:
 install:
   - npm install
 scripts:
-  - npm run lint
+  - npm run tslint
   - npm test

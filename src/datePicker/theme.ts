@@ -77,7 +77,7 @@ export default css`
 :global(
   .CalendarDay__default
   :not(.CalendarDay__blocked_out_of_range)
-  :not(.CalendarDay__selected) 
+  :not(.CalendarDay__selected)
   .CalendarDay__button:hover
 ) {
   background-color: ${color.lightBackground};

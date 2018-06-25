@@ -106,7 +106,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
       // Actions
       onClick, onBlur, onFocus, onDoneAnimationEnd, focus,
       // Extend case of the button for the expand component
-      ...attrs,
+      ...attrs
     } = this.props
 
     let Component: tag

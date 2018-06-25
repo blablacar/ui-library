@@ -38,7 +38,6 @@ const c = Object.keys(color).reduce((acc, key) => ({
   [color[key]]: key,
 }), {})
 
-
 stories.add(
   'Arrow icon',
   withInfo('')(() => (<ArrowIcon
