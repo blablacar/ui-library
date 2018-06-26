@@ -53,6 +53,8 @@
     "@types/jest": "23.1.1",
     "@types/lodash.debounce": "4.0.3",
     "@types/lodash.padstart": "4.6.3",
+    "@types/lodash.isempty": "4.4.3",
+    "@types/react-transition-group": "2.0.11",
     "@types/react": "16.4.1",
     "@types/react-dates": "16.7.0",
     "@types/react-dom": "16.0.6",
@@ -95,8 +97,6 @@
     "typescript": "2.9.2"
   },
   "dependencies": {
-    "@types/lodash.isempty": "4.4.3",
-    "@types/react-transition-group": "2.0.11",
     "classcat": "3.1.2",
     "exenv": "1.2.2",
     "lodash.debounce": "4.0.8",

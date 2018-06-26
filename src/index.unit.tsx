@@ -13,9 +13,9 @@ it('Should import every component folder', () => {
   // Add the branding import manually
   expect(components).toEqual([
     ...getComponentDirectories('src'),
-    ...icons,
     'branding',
     'flush',
     'flushToHTML',
+    ...icons,
   ])
 })

@@ -11,7 +11,7 @@ class ${componentName} extends PureComponent<Icon> {
     size: 24,
     title: '',
   }
-  
+
   render() {
     const { className, iconColor, size, title } = this.props
     return (
