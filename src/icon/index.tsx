@@ -9,6 +9,7 @@ import DoubleArrowIcon from 'icon/doubleArrowIcon'
 import EyeIcon from 'icon/eyeIcon'
 import FacebookIcon from 'icon/facebookIcon'
 import IncreaseIcon from 'icon/increaseIcon'
+import InfoIcon from 'icon/InfoIcon'
 import InstagramIcon from 'icon/instagramIcon'
 import LadyIcon from 'icon/ladyIcon'
 import LightningIcon from 'icon/lightningIcon'
@@ -40,6 +41,7 @@ export {
   EyeIcon,
   FacebookIcon,
   IncreaseIcon,
+  InfoIcon,
   InstagramIcon,
   OdnoklassnikiIcon,
   LadyIcon,
