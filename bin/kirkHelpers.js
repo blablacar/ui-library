@@ -21,7 +21,7 @@ const generateStories = () => new Promise((resolve, reject) => {
   })
 })
 
-const generateDispatcher = () => new Promise((resolve) => {
+const generateComponentsDispatcher = () => new Promise((resolve) => {
   const components = getComponentDirectories(src).map(name => ({
     name,
     capitalized: capitalize(name),
@@ -32,10 +32,23 @@ const generateDispatcher = () => new Promise((resolve) => {
   resolve()
 })
 
+const generateIconDispatcher = () => new Promise((resolve) => {
+  const iconFolder = path.join(src, 'icon')
+  const icons = getIconFiles(iconFolder).map(name => ({
+    name,
+    capitalized: capitalize(name),
+    root: './',
+  }))
+
+  copy('icons.tsx', path.join(iconFolder, 'index.tsx'), { icons })
+  resolve()
+})
+
 export const generateGetters = () => {
   log('Updating the exports...')
   generateStories()
-    .then(generateDispatcher())
+    .then(generateComponentsDispatcher())
+    .then(generateIconDispatcher())
     .then(() => successLog('Global Getters regenerated'))
     .catch(error => log(error, 'red'))
 }
