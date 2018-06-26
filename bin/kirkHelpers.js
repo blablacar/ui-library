@@ -27,11 +27,6 @@ const generateDispatcher = () => new Promise((resolve) => {
     capitalized: capitalize(name),
     root: '',
   }))
-    .concat(getIconFiles('src/icon').map(name => ({
-      name,
-      capitalized: capitalize(name),
-      root: 'icon/',
-    })))
 
   copy('components.tsx', path.join(src, 'index.tsx'), { components })
   resolve()

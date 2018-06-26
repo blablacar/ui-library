@@ -13,7 +13,9 @@ import InstagramIcon from 'icon/instagramIcon'
 import LadyIcon from 'icon/ladyIcon'
 import LightningIcon from 'icon/lightningIcon'
 import PinIcon from 'icon/pinIcon'
+import PinterestIcon from 'icon/pinterestIcon'
 import QuestionIcon from 'icon/questionIcon'
+import OdnoklassnikiIcon from 'icon/odnoklassnikiIcon'
 import StarIcon from 'icon/starIcon'
 import SearchIcon from 'icon/searchIcon'
 import TrashIcon from 'icon/trashIcon'
@@ -39,9 +41,11 @@ export {
   FacebookIcon,
   IncreaseIcon,
   InstagramIcon,
+  OdnoklassnikiIcon,
   LadyIcon,
   LightningIcon,
   PinIcon,
+  PinterestIcon,
   ProximityIcon,
   QuestionIcon,
   SearchIcon,
