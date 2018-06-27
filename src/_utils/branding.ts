@@ -49,6 +49,10 @@ export const font: Font = {
     size: '30px',
     lineHeight: String(Math.floor((32 / 30) * 100) / 100),
   },
+  xxl: {
+    size: '82px',
+    lineHeight: '1',
+  },
 }
 
 export const fontWeight: defaultBranding = {
@@ -100,6 +104,7 @@ export const color: Color = {
   lightBackground: palette.lightGray,
   inputBackground: palette.lightGray,
   pushBackground: palette.midnightGreen,
+  warningBackground: palette.midnightGreen,
   inputBorder: palette.lightGray,
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,

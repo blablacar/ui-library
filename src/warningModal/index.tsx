@@ -8,47 +8,40 @@ import { color } from '_utils/branding'
 import cc from 'classcat'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
+import Title from 'title'
 import style from './style'
 
 const KEYCODES = {
   ESCAPE: 27,
 }
 
-export interface ModalProps {
+export interface WarningModalProps {
   readonly close: () => void,
   readonly isOpen?: boolean,
   readonly children?: JSX.Element | JSX.Element[],
   readonly className?: Classcat.Class,
   readonly closeOnEsc?: boolean,
-  readonly closeOnOutsideClick?: boolean,
   readonly displayCloseButton?: boolean,
-  readonly large?: boolean,
-  readonly fullscreen?: boolean,
-  readonly displayDimmer?: boolean,
   readonly closeButtonTitle?: string,
+  readonly confirm: () => void,
+  readonly confirmLabel?: string,
+  readonly title?: string,
+  readonly large?: boolean,
 }
 
-class Modal extends Component <ModalProps> {
+class WarningModal extends Component <WarningModalProps> {
   private portalNode: HTMLElement
-  private contentNode: HTMLElement
 
-  static defaultProps:Partial<ModalProps> = {
+  static defaultProps:Partial<WarningModalProps> = {
     isOpen: false,
     closeOnEsc: true,
-    closeOnOutsideClick: false,
     displayCloseButton: true,
     large: false,
-    fullscreen: false,
-    displayDimmer: true,
   }
 
   componentDidMount() {
     if (this.props.closeOnEsc && canUseEventListeners) {
       document.addEventListener('keydown', this.handleKeydown)
-    }
-    if (this.props.closeOnOutsideClick && canUseEventListeners) {
-      document.addEventListener('mouseup', this.handleOutsideMouseClick)
-      document.addEventListener('touchstart', this.handleOutsideMouseClick)
     }
   }
 
@@ -56,26 +49,10 @@ class Modal extends Component <ModalProps> {
     if (this.props.closeOnEsc && canUseEventListeners) {
       document.removeEventListener('keydown', this.handleKeydown)
     }
-    if (this.props.closeOnOutsideClick && canUseEventListeners) {
-      document.removeEventListener('mouseup', this.handleOutsideMouseClick)
-      document.removeEventListener('touchstart', this.handleOutsideMouseClick)
-    }
     if (this.portalNode && canUseDOM) {
       document.body.removeChild(this.portalNode)
     }
     this.portalNode = null
-  }
-
-  handleOutsideMouseClick = (e: MouseEvent) => {
-    const isButton = e.button && e.button !== 0
-    if (
-      !this.contentNode ||
-      this.contentNode.contains(e.target as Node) ||
-      isButton
-    ) {
-      return
-    }
-    this.props.close()
   }
 
   handleKeydown = (event: KeyboardEvent) => {
@@ -84,16 +61,15 @@ class Modal extends Component <ModalProps> {
     }
   }
 
-  refContent = (contentNode: HTMLElement) => {
-    this.contentNode = contentNode
+  onConfirm = () => {
+    this.props.confirm()
   }
 
   render() {
-    const baseClassName = 'kirk-modal'
+    const baseClassName = 'kirk-warningModal'
 
     if (!this.portalNode && canUseDOM) {
-      const dimmer = document.createElement('div')
-      this.portalNode = dimmer
+      this.portalNode = document.createElement('div')
       document.body.appendChild(this.portalNode)
     }
 
@@ -106,28 +82,39 @@ class Modal extends Component <ModalProps> {
       this.props.className,
     ])
 
-    const modalElement = (
-      <div className={
-        `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
-        ${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}
-        ${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`}
-        >
+    const warningModalElement = (
+      <div>
         <TransitionGroup component="div" className="transition-wrapper">
           { this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
               <div className={classNames}>
-                <div className={`${baseClassName}-dialog`} ref={this.refContent}>
-                  {this.props.displayCloseButton && (
+                <div className={`${baseClassName}-dialog`}>
+                  <Title className={`${baseClassName}-title`}>
+                    {this.props.title}
+                  </Title>
+                  <div className={`${baseClassName}-body`}>
+                    {this.props.children}
+                  </div>
+                  <footer className={`${baseClassName}-footer`}>
+                    {this.props.displayCloseButton && (
+                      <Button
+                        icon
+                        status={Button.STATUS.SECONDARY}
+                        className={`${baseClassName}-closeButton`}
+                        onClick={this.props.close}
+                        title={this.props.closeButtonTitle}
+                      >
+                        <CrossIcon size="24" iconColor={color.accent} />
+                      </Button>
+                    )}
                     <Button
-                      icon
-                      className={`${baseClassName}-closeButton`}
-                      onClick={this.props.close}
-                      title={this.props.closeButtonTitle}
+                        status={Button.STATUS.WARNING}
+                        className={`${baseClassName}-confirmButton`}
+                        onClick={this.onConfirm}
                     >
-                      <CrossIcon size="18" iconColor={color.accent} />
+                      {this.props.confirmLabel}
                     </Button>
-                  )}
-                  <div className={`${baseClassName}-body`}>{this.props.children}</div>
+                  </footer>
                 </div>
                 <style jsx>{style}</style>
               </div>
@@ -140,8 +127,8 @@ class Modal extends Component <ModalProps> {
     if (!canUseDOM) {
       return null
     }
-    return createPortal(modalElement, this.portalNode)
+    return createPortal(warningModalElement, this.portalNode)
   }
 }
 
-export default Modal
+export default WarningModal

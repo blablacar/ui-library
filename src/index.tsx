@@ -28,6 +28,7 @@ import TopBar from 'topBar'
 import Transitions from 'transitions'
 import TripCard from 'tripCard'
 import UneditableTextField from 'uneditableTextField'
+import WarningModal from 'warningModal'
 import Why from 'why'
 
 import branding from '_utils/branding'
@@ -66,6 +67,7 @@ export {
   Transitions,
   TripCard,
   UneditableTextField,
+  WarningModal,
   Why,
   branding,
   flush,
