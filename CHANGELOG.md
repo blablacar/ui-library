@@ -2,6 +2,7 @@
 - [Icons] Add Info
 - [Icons] Add new Pinterest & Odnoklassniki
 - [Icons] Improve the Icons import in the main file
+- [WarningModal] Add new WarningModal component
 
 # v0.4.1 (26/06/2018)
 - [Dependencies] Update external dependencies
