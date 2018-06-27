@@ -1,30 +1,31 @@
-import ArrowIcon from 'icon/arrowIcon'
-import CheckIcon from 'icon/checkIcon'
-import ChevronIcon from 'icon/chevronIcon'
-import CircleIcon from 'icon/circleIcon'
-import ComfortIcon from 'icon/comfortIcon'
-import CrossIcon from 'icon/crossIcon'
-import DecreaseIcon from 'icon/decreaseIcon'
-import DoubleArrowIcon from 'icon/doubleArrowIcon'
-import EyeIcon from 'icon/eyeIcon'
-import FacebookIcon from 'icon/facebookIcon'
-import IncreaseIcon from 'icon/increaseIcon'
-import InstagramIcon from 'icon/instagramIcon'
-import LadyIcon from 'icon/ladyIcon'
-import LightningIcon from 'icon/lightningIcon'
-import PinIcon from 'icon/pinIcon'
-import PinterestIcon from 'icon/pinterestIcon'
-import QuestionIcon from 'icon/questionIcon'
-import OdnoklassnikiIcon from 'icon/odnoklassnikiIcon'
-import StarIcon from 'icon/starIcon'
-import SearchIcon from 'icon/searchIcon'
-import TrashIcon from 'icon/trashIcon'
-import TwitterIcon from 'icon/twitterIcon'
-import VkontakteIcon from 'icon/vkontakteIcon'
-import YoutubeIcon from 'icon/youtubeIcon'
-import ClockIcon from 'icon/clockIcon'
-import CrosshairIcon from 'icon/crosshairIcon'
-import ProximityIcon from 'icon/proximityIcon'
+import ArrowIcon from './arrowIcon'
+import CheckIcon from './checkIcon'
+import ChevronIcon from './chevronIcon'
+import CircleIcon from './circleIcon'
+import ClockIcon from './clockIcon'
+import ComfortIcon from './comfortIcon'
+import CrossIcon from './crossIcon'
+import CrosshairIcon from './crosshairIcon'
+import DecreaseIcon from './decreaseIcon'
+import DoubleArrowIcon from './doubleArrowIcon'
+import EyeIcon from './eyeIcon'
+import FacebookIcon from './facebookIcon'
+import IncreaseIcon from './increaseIcon'
+import InfoIcon from './infoIcon'
+import InstagramIcon from './instagramIcon'
+import LadyIcon from './ladyIcon'
+import LightningIcon from './lightningIcon'
+import OdnoklassnikiIcon from './odnoklassnikiIcon'
+import PinIcon from './pinIcon'
+import PinterestIcon from './pinterestIcon'
+import ProximityIcon from './proximityIcon'
+import QuestionIcon from './questionIcon'
+import SearchIcon from './searchIcon'
+import StarIcon from './starIcon'
+import TrashIcon from './trashIcon'
+import TwitterIcon from './twitterIcon'
+import VkontakteIcon from './vkontakteIcon'
+import YoutubeIcon from './youtubeIcon'
 
 export {
   ArrowIcon,
@@ -40,10 +41,11 @@ export {
   EyeIcon,
   FacebookIcon,
   IncreaseIcon,
+  InfoIcon,
   InstagramIcon,
-  OdnoklassnikiIcon,
   LadyIcon,
   LightningIcon,
+  OdnoklassnikiIcon,
   PinIcon,
   PinterestIcon,
   ProximityIcon,

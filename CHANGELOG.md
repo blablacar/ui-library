@@ -1,4 +1,5 @@
 # Unreleased
+- [Icons] Add Info
 - [Icons] Add new Pinterest & Odnoklassniki
 - [Icons] Improve the Icons import in the main file
 
