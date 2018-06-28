@@ -8,6 +8,7 @@ import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
 import HamburgerButton from 'hamburgerButton'
 import ItemChoice from 'itemChoice'
+import ItemData from 'itemData'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
 import Menu from 'menu'
@@ -49,6 +50,7 @@ export {
   DropdownButton,
   HamburgerButton,
   ItemChoice,
+  ItemData,
   Itinerary,
   Loader,
   Menu,
