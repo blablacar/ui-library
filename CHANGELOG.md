@@ -1,4 +1,6 @@
 # Unreleased
+
+# v0.5.0 (28/06/2018)
 - [Icons] Add Info
 - [Icons] Add new Pinterest & Odnoklassniki
 - [Icons] Improve the Icons import in the main file
