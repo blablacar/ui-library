@@ -34,17 +34,19 @@ const Text = ({
   children,
   display = TextDisplayType.BODY,
   container = TextContainerType.SPAN,
-}: TextProps) => {
+}:TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Container = container
 
   return (
-    <Container className={cc([baseClassName, displayClassName, className])}>
+    <Container className={cc([
+      baseClassName,
+      displayClassName,
+      className,
+    ])}>
       {children}
-      <style jsx global>
-        {style}
-      </style>
+      <style jsx global>{style}</style>
     </Container>
   )
 }

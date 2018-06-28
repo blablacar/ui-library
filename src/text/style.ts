@@ -52,9 +52,16 @@ export default css`
     line-height: ${font.l.lineHeight};
   }
 
-  .kirk-text-titleStrong,
+  .kirk-text-title,
+  .kirk-text-titleStrong {
+    color: ${color.primaryText};
+    font-size: ${font.m.size};
+    line-height: ${font.m.lineHeight};
+  }
+
   .kirk-text-bodyStrong,
-  .kirk-text-subheaderStrong {
+  .kirk-text-subheaderStrong,
+  .kirk-text-titleStrong {
     font-weight: ${fontWeight.medium};
   }
 `
