@@ -5,6 +5,7 @@ const footerHeight = '96px' /* = padding + content */
 
 export default css`
   .kirk-warningModal {
+    z-index: 999;
     position: fixed;
     top: 0;
     right: 0;

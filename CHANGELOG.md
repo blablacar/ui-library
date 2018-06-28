@@ -1,4 +1,5 @@
 # Unreleased
+- [WarningModal] fix missing z-index
 
 # v0.5.0 (28/06/2018)
 - [Icons] Add Info
