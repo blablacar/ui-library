@@ -21,6 +21,7 @@ import RadioGroup from 'radioGroup'
 import Rating from 'rating'
 import Stars from 'stars'
 import Stepper from 'stepper'
+import Text from 'text'
 import TextField from 'textField'
 import TimePicker from 'timePicker'
 import Title from 'title'
@@ -60,6 +61,7 @@ export {
   Rating,
   Stars,
   Stepper,
+  Text,
   TextField,
   TimePicker,
   Title,
