@@ -2,31 +2,19 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { withKnobs, selectV2, text } from '@storybook/addon-knobs'
+import { boolean, selectV2, text, withKnobs } from '@storybook/addon-knobs'
 
-import Text from 'text'
+import Text, { TextDisplayType } from 'text'
 
 const stories = storiesOf('Text', module)
 stories.addDecorator(withKnobs)
-
-const displayTypes = [
-  'button',
-  'body',
-  'bodyStrong',
-  'caption',
-  'display1',
-  'display2',
-  'subheader',
-  'subheaderStrong',
-  'title',
-  'titleStrong',
-]
 
 stories.add(
   'basic',
   withInfo('')(() => (
     <Text
-      display={selectV2('Display', displayTypes, 'body')}
+      display={selectV2('Display', TextDisplayType, TextDisplayType.BODY)}
+      div={boolean('div', false)}
     >
       {text('Text', 'This is an example')}
     </Text>

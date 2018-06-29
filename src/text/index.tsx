@@ -1,46 +1,48 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import style from 'text/style'
 
-enum TextDisplayType {
-  'button',
-  'body',
-  'bodyStrong',
-  'caption',
-  'display1',
-  'display2',
-  'subheader',
-  'subheaderStrong',
-  'title',
-  'titleStrong',
+export enum TextDisplayType {
+  BODY = 'body',
+  BODYSTRONG = 'bodyStrong',
+  BUTTON = 'button',
+  CAPTION = 'caption',
+  DISPLAY1 = 'display1',
+  DISPLAY2 = 'display2',
+  SUBHEADER = 'subheader',
+  SUBHEADERSTRONG = 'subheaderStrong',
+  TITLE = 'title',
+  TITLESTRONG = 'titleStrong',
 }
 
 interface TextProps {
   readonly className?: Classcat.Class,
-  readonly children: string | JSX.Element,
+  readonly children: string | number | React.ReactNode,
   readonly display?: TextDisplayType,
-  readonly span?: boolean,
+  readonly div?: boolean,
 }
 
 const Text = ({
   className,
   children,
-  span = false,
-  display = 'body',
+  display = TextDisplayType.BODY,
+  div = false,
 }:TextProps) => {
-  const Tag = span ? 'span' : 'div'
+  const Tag = div ? 'div' : 'span'
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
 
-  return <Tag className={cc([
-    baseClassName,
-    displayClassName,
-    className,
-  ])}>
-    {children}
-    <style jsx>{style}</style>
-  </Tag>
+  return (
+    <Tag className={cc([
+      baseClassName,
+      displayClassName,
+      className,
+    ])}>
+      {children}
+      <style jsx global>{style}</style>
+    </Tag>
+  )
 }
 
 export default Text
