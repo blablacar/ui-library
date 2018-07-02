@@ -1,5 +1,6 @@
 # Unreleased
 - [WarningModal] fix missing z-index
+- [Avatar] fix non square pictures
 
 # v0.5.0 (28/06/2018)
 - [Icons] Add Info
