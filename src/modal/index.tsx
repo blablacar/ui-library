@@ -3,9 +3,9 @@ import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import CustomTransition, { AnimationType } from 'transitions'
-import { color } from '_utils/branding'
-
 import cc from 'classcat'
+
+import { color } from '_utils/branding'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
 import style from './style'
@@ -15,24 +15,24 @@ const KEYCODES = {
 }
 
 export interface ModalProps {
-  readonly close: () => void,
-  readonly isOpen?: boolean,
-  readonly children?: JSX.Element | JSX.Element[],
-  readonly className?: Classcat.Class,
-  readonly closeOnEsc?: boolean,
-  readonly closeOnOutsideClick?: boolean,
-  readonly displayCloseButton?: boolean,
-  readonly large?: boolean,
-  readonly fullscreen?: boolean,
-  readonly displayDimmer?: boolean,
-  readonly closeButtonTitle?: string,
+  readonly close: () => void
+  readonly isOpen?: boolean
+  readonly children?: JSX.Element | JSX.Element[]
+  readonly className?: Classcat.Class
+  readonly closeOnEsc?: boolean
+  readonly closeOnOutsideClick?: boolean
+  readonly displayCloseButton?: boolean
+  readonly large?: boolean
+  readonly fullscreen?: boolean
+  readonly displayDimmer?: boolean
+  readonly closeButtonTitle?: string
 }
 
-class Modal extends Component <ModalProps> {
+class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
   private contentNode: HTMLElement
 
-  static defaultProps:Partial<ModalProps> = {
+  static defaultProps: Partial<ModalProps> = {
     isOpen: false,
     closeOnEsc: true,
     closeOnOutsideClick: false,
@@ -42,37 +42,58 @@ class Modal extends Component <ModalProps> {
     displayDimmer: true,
   }
 
+  constructor(props: ModalProps) {
+    super(props)
+    this.portalNode = document.createElement('div')
+    document.body.appendChild(this.portalNode)
+  }
+
   componentDidMount() {
-    if (this.props.closeOnEsc && canUseEventListeners) {
-      document.addEventListener('keydown', this.handleKeydown)
+    if (this.props.isOpen) {
+      this.addListeners()
     }
-    if (this.props.closeOnOutsideClick && canUseEventListeners) {
-      document.addEventListener('mouseup', this.handleOutsideMouseClick)
-      document.addEventListener('touchstart', this.handleOutsideMouseClick)
+  }
+
+  componentDidUpdate(prevProps: ModalProps) {
+    if (!prevProps.isOpen && this.props.isOpen) {
+      this.addListeners()
+    }
+
+    if (!this.props.isOpen && prevProps.isOpen) {
+      this.removeListeners()
     }
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEsc && canUseEventListeners) {
-      document.removeEventListener('keydown', this.handleKeydown)
+    this.removeListeners()
+    document.body.removeChild(this.portalNode)
+    this.portalNode = null
+  }
+
+  addListeners() {
+    if (this.props.isOpen && canUseEventListeners) {
+      if (this.props.closeOnEsc) {
+        document.addEventListener('keydown', this.handleKeydown)
+      }
+
+      if (this.props.closeOnOutsideClick) {
+        document.addEventListener('mouseup', this.handleOutsideMouseClick)
+        document.addEventListener('touchstart', this.handleOutsideMouseClick)
+      }
     }
-    if (this.props.closeOnOutsideClick && canUseEventListeners) {
+  }
+
+  removeListeners() {
+    if (!this.props.isOpen && canUseEventListeners) {
+      document.removeEventListener('keydown', this.handleKeydown)
       document.removeEventListener('mouseup', this.handleOutsideMouseClick)
       document.removeEventListener('touchstart', this.handleOutsideMouseClick)
     }
-    if (this.portalNode && canUseDOM) {
-      document.body.removeChild(this.portalNode)
-    }
-    this.portalNode = null
   }
 
   handleOutsideMouseClick = (e: MouseEvent) => {
     const isButton = e.button && e.button !== 0
-    if (
-      !this.contentNode ||
-      this.contentNode.contains(e.target as Node) ||
-      isButton
-    ) {
+    if (!this.contentNode || this.contentNode.contains(e.target as Node) || isButton) {
       return
     }
     this.props.close()
@@ -89,13 +110,11 @@ class Modal extends Component <ModalProps> {
   }
 
   render() {
-    const baseClassName = 'kirk-modal'
-
-    if (!this.portalNode && canUseDOM) {
-      const dimmer = document.createElement('div')
-      this.portalNode = dimmer
-      document.body.appendChild(this.portalNode)
+    if (!canUseDOM || !this.portalNode) {
+      return null
     }
+
+    const baseClassName = 'kirk-modal'
 
     const classNames = cc([
       baseClassName,
@@ -107,13 +126,13 @@ class Modal extends Component <ModalProps> {
     ])
 
     const modalElement = (
-      <div className={
-        `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
+      <div
+        className={`${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
         ${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}
         ${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`}
-        >
+      >
         <TransitionGroup component="div" className="transition-wrapper">
-          { this.props.isOpen && (
+          {this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
               <div className={classNames}>
                 <div className={`${baseClassName}-dialog`} ref={this.refContent}>
@@ -137,9 +156,6 @@ class Modal extends Component <ModalProps> {
       </div>
     )
 
-    if (!canUseDOM) {
-      return null
-    }
     return createPortal(modalElement, this.portalNode)
   }
 }
