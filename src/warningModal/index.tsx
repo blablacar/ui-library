@@ -16,43 +16,69 @@ const KEYCODES = {
 }
 
 export interface WarningModalProps {
-  readonly close: () => void,
-  readonly isOpen?: boolean,
-  readonly children?: JSX.Element | JSX.Element[],
-  readonly className?: Classcat.Class,
-  readonly closeOnEsc?: boolean,
-  readonly displayCloseButton?: boolean,
-  readonly closeButtonTitle?: string,
-  readonly confirm: () => void,
-  readonly confirmLabel?: string,
-  readonly title?: string,
-  readonly large?: boolean,
+  readonly close: () => void
+  readonly isOpen?: boolean
+  readonly children?: JSX.Element | JSX.Element[]
+  readonly className?: Classcat.Class
+  readonly closeOnEsc?: boolean
+  readonly displayCloseButton?: boolean
+  readonly closeButtonTitle?: string
+  readonly confirm: () => void
+  readonly confirmLabel?: string
+  readonly title?: string
+  readonly large?: boolean
 }
 
-class WarningModal extends Component <WarningModalProps> {
+class WarningModal extends Component<WarningModalProps> {
   private portalNode: HTMLElement
 
-  static defaultProps:Partial<WarningModalProps> = {
+  static defaultProps: Partial<WarningModalProps> = {
     isOpen: false,
     closeOnEsc: true,
     displayCloseButton: true,
     large: false,
   }
 
+  constructor(props: WarningModalProps) {
+    super(props)
+    this.portalNode = document.createElement('div')
+    document.body.appendChild(this.portalNode)
+  }
+
   componentDidMount() {
-    if (this.props.closeOnEsc && canUseEventListeners) {
-      document.addEventListener('keydown', this.handleKeydown)
+    if (this.props.isOpen) {
+      this.addListeners()
+    }
+  }
+
+  componentDidUpdate(prevProps: WarningModalProps) {
+    if (!prevProps.isOpen && this.props.isOpen) {
+      this.addListeners()
+    }
+
+    if (!this.props.isOpen && prevProps.isOpen) {
+      this.removeListeners()
     }
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEsc && canUseEventListeners) {
+    this.removeListeners()
+    document.body.removeChild(this.portalNode)
+    this.portalNode = null
+  }
+
+  addListeners() {
+    if (this.props.isOpen && canUseEventListeners) {
+      if (this.props.closeOnEsc) {
+        document.addEventListener('keydown', this.handleKeydown)
+      }
+    }
+  }
+
+  removeListeners() {
+    if (!this.props.isOpen && canUseEventListeners) {
       document.removeEventListener('keydown', this.handleKeydown)
     }
-    if (this.portalNode && canUseDOM) {
-      document.body.removeChild(this.portalNode)
-    }
-    this.portalNode = null
   }
 
   handleKeydown = (event: KeyboardEvent) => {
@@ -61,17 +87,8 @@ class WarningModal extends Component <WarningModalProps> {
     }
   }
 
-  onConfirm = () => {
-    this.props.confirm()
-  }
-
   render() {
     const baseClassName = 'kirk-warningModal'
-
-    if (!this.portalNode && canUseDOM) {
-      this.portalNode = document.createElement('div')
-      document.body.appendChild(this.portalNode)
-    }
 
     const classNames = cc([
       baseClassName,
@@ -85,16 +102,12 @@ class WarningModal extends Component <WarningModalProps> {
     const warningModalElement = (
       <div>
         <TransitionGroup component="div" className="transition-wrapper">
-          { this.props.isOpen && (
+          {this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
               <div className={classNames}>
                 <div className={`${baseClassName}-dialog`}>
-                  <Title className={`${baseClassName}-title`}>
-                    {this.props.title}
-                  </Title>
-                  <div className={`${baseClassName}-body`}>
-                    {this.props.children}
-                  </div>
+                  <Title className={`${baseClassName}-title`}>{this.props.title}</Title>
+                  <div className={`${baseClassName}-body`}>{this.props.children}</div>
                   <footer className={`${baseClassName}-footer`}>
                     {this.props.displayCloseButton && (
                       <Button
@@ -108,9 +121,9 @@ class WarningModal extends Component <WarningModalProps> {
                       </Button>
                     )}
                     <Button
-                        status={Button.STATUS.WARNING}
-                        className={`${baseClassName}-confirmButton`}
-                        onClick={this.onConfirm}
+                      status={Button.STATUS.WARNING}
+                      className={`${baseClassName}-confirmButton`}
+                      onClick={this.props.confirm}
                     >
                       {this.props.confirmLabel}
                     </Button>
