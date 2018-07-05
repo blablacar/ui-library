@@ -1,4 +1,5 @@
 # Unreleased
+- [Icons] Add prefs icons
 
 # v0.5.1 (04/07/2018)
 - [WarningModal] fix missing z-index

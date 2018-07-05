@@ -68,57 +68,57 @@ class PetIcon extends PureComponent<PetIconProps> {
         )}
 
         { status === 'off' && (
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(0.000000, -1.000000)">
               <path
                 stroke={color.iconFaded}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M8.83001,7.34241 L8.83001,7.34241 C9.88878,7.02764 10.49191,5.91416 10.17714,4.85539 L9.6072,2.93832 C9.29243,1.87955 8.17895,1.27642 7.12019,1.5912 L7.12019,1.5912 C6.06142,1.90597 5.45829,3.01945 5.77307,4.07821 L6.343,5.99529 C6.65777,7.05405 7.77125,7.65718 8.83001,7.34241 Z"
               />
               <path
                 stroke={color.iconFaded}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M14.16999,7.34241 L14.16999,7.34241 C13.11122,7.02764 12.50809,5.91416 12.82286,4.85539 L13.39281,2.93832 C13.70758,1.87955 14.82106,1.27642 15.87982,1.5912 L15.87982,1.5912 C16.93859,1.90597 17.54172,3.01945 17.22694,4.07821 L16.657,5.99529 C16.34223,7.05405 15.22875,7.65718 14.16999,7.34241 Z"
               />
               <path
                 stroke={color.iconFaded}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M4.22031,11.73897 L4.22031,11.73897 C5.0601,11.02144 5.15922,9.759 4.4417,8.91922 L4.0206,8.42637 C3.30308,7.58659 2.04064,7.48747 1.20085,8.20499 L1.20085,8.20499 C0.36107,8.92251 0.26195,10.18495 0.97947,11.02474 L1.40057,11.51759 C2.11809,12.35737 3.38053,12.45649 4.22031,11.73897 Z"
               />
               <path
                 stroke={color.iconFaded}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M18.77969,11.73897 L18.77969,11.73897 C17.9399,11.02144 17.84078,9.759 18.5583,8.91922 L18.97939,8.42637 C19.69691,7.58659 20.95935,7.48747 21.79914,8.20499 L21.79914,8.20499 C22.63892,8.92251 22.73804,10.18495 22.02052,11.02474 L21.59943,11.51759 C20.88191,12.35737 19.61947,12.45649 18.77969,11.73897 Z"
               />
               <path
                 stroke={color.iconFaded}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M7.21072153,13.433605 L5.22771715,16.7064998 C3.57415038,19.4356694 6.40510877,22.6507442 9.46242974,21.5158076 L9.63430604,21.4520026 C10.8352177,21.0062074 12.1647631,21.0062074 13.3656747,21.4520026 L13.537551,21.5158076 C16.5948807,22.6507442 19.4258304,19.4356607 17.7722724,16.7064998 L15.789268,13.433605 C13.7253173,10.5221291 9.27468093,10.5221291 7.21072153,13.433605 Z"
               />
               <path
                 stroke={color.white}
                 fill={color.iconFaded}
-                fill-rule="nonzero"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                fillRule="nonzero"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M1.5,24.5 L23.5,2.5"
               />
               <path
                 stroke={color.danger}
                 fill={color.iconFaded}
-                fill-rule="nonzero"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                fillRule="nonzero"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M1.5,23.5 L23.5,1.5"
               />
             </g>
