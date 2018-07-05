@@ -68,7 +68,7 @@ class SmokeIcon extends PureComponent<SmokeIconProps> {
         )}
 
         { status === 'off' && (
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <path
               stroke={color.iconFaded}
               // tslint:disable-next-line:max-line-length
@@ -78,21 +78,21 @@ class SmokeIcon extends PureComponent<SmokeIconProps> {
             />
             <polyline
               stroke={color.iconFaded}
-              stroke-linecap="round"
+              strokeLinecap="round"
               // tslint:disable-next-line:max-line-length
               transform="translate(1.603011, 9.642054) rotate(-150.000000) translate(-1.603011, -9.642054)"
               points="1.10301136 7.64205363 1.10301136 11.6420537 1.10301136 11.6420537"
             />
             <polyline
               stroke={color.iconFaded}
-              stroke-linecap="round"
+              strokeLinecap="round"
               // tslint:disable-next-line:max-line-length
               transform="translate(3.933013, 10.982051) rotate(-150.000000) translate(-3.933013, -10.982051)"
               points="3.43301316 8.98205132 3.43301316 12.9820513 3.43301316 12.9820513"
             />
             <path
               stroke={color.iconFaded}
-              stroke-linecap="round"
+              strokeLinecap="round"
               // tslint:disable-next-line:max-line-length
               transform="translate(10.330288, 6.760456) scale(-1, 1) rotate(-30.000000) translate(-10.330288, -6.760456)"
               // tslint:disable-next-line:max-line-length
@@ -100,7 +100,7 @@ class SmokeIcon extends PureComponent<SmokeIconProps> {
             />
             <path
               stroke={color.iconFaded}
-              stroke-linecap="round"
+              strokeLinecap="round"
               // tslint:disable-next-line:max-line-length
               transform="translate(13.354646, 4.647114) scale(-1, 1) rotate(-30.000000) translate(-13.354646, -4.647114)"
               // tslint:disable-next-line:max-line-length
@@ -110,17 +110,17 @@ class SmokeIcon extends PureComponent<SmokeIconProps> {
               d="M0.5,23.5 L22.5,1.5"
               stroke={color.danger}
               fill={color.iconFaded}
-              fill-rule="nonzero"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              fillRule="nonzero"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M0.5,22.5 L22.5,0.5"
               stroke={color.white}
               fill={color.iconFaded}
-              fill-rule="nonzero"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              fillRule="nonzero"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         )}

@@ -37,11 +37,11 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
         { title && <title>{title}</title> }
 
         { status === 'default' && (
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <path
               stroke={iconColor}
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               // tslint:disable-next-line:max-line-length
               d="M20.7818182,17.4727273 C22.4545455,15.8 23.5,13.7090909 23.5,11.4090909 C23.5,6.18181818 18.3772727,2 12,2 C5.62272727,2 0.5,6.18181818 0.5,11.4090909 C0.5,16.6363636 5.62272727,20.8181818 12,20.8181818 C13.15,20.8181818 14.1954545,20.7136364 15.2409091,20.4 L21.4090909,22.9090909 L20.7818182,17.4727273 Z"
             />
@@ -60,12 +60,12 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
         )}
 
         { status === 'on' && (
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(0.000000, 2.000000)">
               <path
                 stroke={iconColor}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 // tslint:disable-next-line:max-line-length
                 d="M20.7818182,15.4727273 C22.4545455,13.8 23.5,11.7090909 23.5,9.40909091 C23.5,4.18181818 18.3772727,0 12,0 C5.62272727,0 0.5,4.18181818 0.5,9.40909091 C0.5,14.6363636 5.62272727,18.8181818 12,18.8181818 C13.15,18.8181818 14.1954545,18.7136364 15.2409091,18.4 L21.4090909,20.9090909 L20.7818182,15.4727273 Z"
               />
@@ -90,13 +90,13 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
         )}
 
         { status === 'off' && (
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(-20.000000, -21.000000)">
               <g transform="translate(20.000000, 22.000000)">
                 <path
                   stroke={iconColor}
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   // tslint:disable-next-line:max-line-length
                   d="M20.7818182,15.4727273 C22.4545455,13.8 23.5,11.7090909 23.5,9.40909091 C23.5,4.18181818 18.3772727,0 12,0 C5.62272727,0 0.5,4.18181818 0.5,9.40909091 C0.5,14.6363636 5.62272727,18.8181818 12,18.8181818 C13.15,18.8181818 14.1954545,18.7136364 15.2409091,18.4 L21.4090909,20.9090909 L20.7818182,15.4727273 Z"
                 />

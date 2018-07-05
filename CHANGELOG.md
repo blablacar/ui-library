@@ -1,4 +1,5 @@
 # Unreleased
+- [Icons] Add prefs icons
 
 - [Modal & WarningModal] Only listen to events when the modal is opened
 
