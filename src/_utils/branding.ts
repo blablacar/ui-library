@@ -100,6 +100,8 @@ export const color: Color = {
   disabled: palette.lightGray,
   divider: palette.lightGray,
   icon: palette.lightMidnightGreen,
+  iconFaded: palette.lightGray,
+  iconHighlight: palette.midnightGreen,
   link: palette.blue,
   lightBackground: palette.lightGray,
   inputBackground: palette.lightGray,

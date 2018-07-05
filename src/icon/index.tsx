@@ -15,12 +15,16 @@ import InfoIcon from './infoIcon'
 import InstagramIcon from './instagramIcon'
 import LadyIcon from './ladyIcon'
 import LightningIcon from './lightningIcon'
+import MusicIcon from './musicIcon'
 import OdnoklassnikiIcon from './odnoklassnikiIcon'
+import PetIcon from './petIcon'
 import PinIcon from './pinIcon'
 import PinterestIcon from './pinterestIcon'
 import ProximityIcon from './proximityIcon'
 import QuestionIcon from './questionIcon'
 import SearchIcon from './searchIcon'
+import SmokeIcon from './smokeIcon'
+import SpeakIcon from './speakIcon'
 import StarIcon from './starIcon'
 import TrashIcon from './trashIcon'
 import TwitterIcon from './twitterIcon'
@@ -45,7 +49,11 @@ export {
   InstagramIcon,
   LadyIcon,
   LightningIcon,
+  MusicIcon,
   OdnoklassnikiIcon,
+  SmokeIcon,
+  SpeakIcon,
+  PetIcon,
   PinIcon,
   PinterestIcon,
   ProximityIcon,
