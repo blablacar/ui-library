@@ -1,5 +1,5 @@
 
-# v0.5.1 (06/07/2018)
+# v0.5.2 (06/07/2018)
 - [Icons] Add prefs icons
 - [Modal & WarningModal] Only listen to events when the modal is opened
 
