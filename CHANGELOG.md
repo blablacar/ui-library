@@ -1,5 +1,9 @@
+# Unreleased
+
+- [Modal] Fix server side modal render
 
 # v0.5.1 (06/07/2018)
+
 - [Icons] Add prefs icons
 - [Modal & WarningModal] Only listen to events when the modal is opened
 

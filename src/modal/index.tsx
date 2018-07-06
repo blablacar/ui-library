@@ -44,8 +44,10 @@ class Modal extends Component<ModalProps> {
 
   constructor(props: ModalProps) {
     super(props)
-    this.portalNode = document.createElement('div')
-    document.body.appendChild(this.portalNode)
+    if (canUseDOM) {
+      this.portalNode = document.createElement('div')
+      document.body.appendChild(this.portalNode)
+    }
   }
 
   componentDidMount() {
