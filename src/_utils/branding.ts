@@ -35,7 +35,7 @@ export const font: Font = {
   },
   base: {
     size: '16px',
-    lineHeight: '1.25',
+    lineHeight: '20px',
   },
   m: {
     size: '18px',
@@ -51,7 +51,7 @@ export const font: Font = {
   },
   xxl: {
     size: '82px',
-    lineHeight: '1',
+    lineHeight: '82px',
   },
 }
 
