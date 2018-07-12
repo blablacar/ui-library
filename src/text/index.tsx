@@ -12,6 +12,8 @@ export enum TextDisplayType {
   DISPLAY2 = 'display2',
   SUBHEADER = 'subheader',
   SUBHEADERSTRONG = 'subheaderStrong',
+  TITLE = 'title',
+  TITLESTRONG = 'titleStrong',
 }
 
 export enum TextContainerType {
@@ -21,10 +23,10 @@ export enum TextContainerType {
 }
 
 interface TextProps {
-  readonly className?: Classcat.Class,
-  readonly children: string | number | React.ReactNode,
-  readonly display?: TextDisplayType,
-  readonly container?: TextContainerType,
+  readonly className?: Classcat.Class
+  readonly children: string | number | React.ReactNode
+  readonly display?: TextDisplayType
+  readonly container?: TextContainerType
 }
 
 const Text = ({
@@ -32,19 +34,17 @@ const Text = ({
   children,
   display = TextDisplayType.BODY,
   container = TextContainerType.SPAN,
-}:TextProps) => {
+}: TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Container = container
 
   return (
-    <Container className={cc([
-      baseClassName,
-      displayClassName,
-      className,
-    ])}>
+    <Container className={cc([baseClassName, displayClassName, className])}>
       {children}
-      <style jsx global>{style}</style>
+      <style jsx global>
+        {style}
+      </style>
     </Container>
   )
 }

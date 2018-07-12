@@ -13,6 +13,7 @@ import Loader from 'loader'
 import Menu from 'menu'
 import Message from 'message'
 import Modal from 'modal'
+import Notification from 'notification'
 import Profile from 'profile'
 import Proximity from 'proximity'
 import PushInfo from 'pushInfo'
@@ -53,6 +54,7 @@ export {
   Menu,
   Message,
   Modal,
+  Notification,
   Profile,
   Proximity,
   PushInfo,
