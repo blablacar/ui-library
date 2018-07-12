@@ -3,7 +3,8 @@ import { color, font, fontWeight } from '_utils/branding'
 
 export default css`
   .kirk-text {
-
+    margin: 0;
+    font-weight: ${fontWeight.regular};
   }
 
   .kirk-text.kirk-text-button {
