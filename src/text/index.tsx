@@ -12,8 +12,6 @@ export enum TextDisplayType {
   DISPLAY2 = 'display2',
   SUBHEADER = 'subheader',
   SUBHEADERSTRONG = 'subheaderStrong',
-  TITLE = 'title',
-  TITLESTRONG = 'titleStrong',
 }
 
 export enum TextContainerType {
