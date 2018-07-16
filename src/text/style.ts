@@ -26,6 +26,13 @@ export default css`
     line-height: ${font.s.lineHeight};
   }
 
+  .kirk-text-title,
+  .kirk-text-titleStrong {
+    color: ${color.primaryText};
+    font-size: ${font.m.size};
+    line-height: ${font.m.lineHeight};
+  }
+
   .kirk-text-display1 {
     color: ${color.primaryText};
     font-size: ${font.xxl.size};
@@ -45,6 +52,7 @@ export default css`
     line-height: ${font.l.lineHeight};
   }
 
+  .kirk-text-titleStrong,
   .kirk-text-bodyStrong,
   .kirk-text-subheaderStrong {
     font-weight: ${fontWeight.medium};

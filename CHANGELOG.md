@@ -1,15 +1,13 @@
 # Unreleased
 
-...
+- [Notification] Add the notification component
+  ...
 
 # v0.5.3 (06/07/2018)
 
 - [Modal] Fix server side modal render
 
 # v0.5.2 (06/07/2018)
-
-> > > > > > > 1906bc6... Update changelog
-> > > > > > > update changelog
 
 - [Icons] Add prefs icons
 - [Modal & WarningModal] Only listen to events when the modal is opened
