@@ -1,7 +1,9 @@
 # Unreleased
+
 [Modal] Fix double scrollbars display
 
 # v0.6.2 (24/07/2018)
+
 - [Proximity] Adjust margins
 - [PushInfo] Fixed IE11 issues
 - [UneditableTextField] Fixed IE11 issues
@@ -15,6 +17,7 @@
 # v0.6.0 (17/07/2018)
 
 - [Notification] Add the notification component
+- [Text] Add the text component
 
 # v0.5.3 (06/07/2018)
 
