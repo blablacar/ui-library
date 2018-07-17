@@ -1,13 +1,13 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import { canUseDOM } from 'exenv'
 import cc from 'classcat'
 import { CrossIcon } from 'icon'
 import { createPortal } from 'react-dom'
-import { color, space } from '_utils/branding'
+import { color } from '_utils/branding'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import CustomTransition, { AnimationType } from 'transitions'
 import Button from 'button'
-import Text, { TextContainerType, TextDisplayType } from 'text'
+import Text, { TextDisplayType } from 'text'
 
 import style from './style'
 

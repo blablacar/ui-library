@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { boolean, selectV2, text, withKnobs } from '@storybook/addon-knobs'
+import { selectV2, text, withKnobs } from '@storybook/addon-knobs'
 
 import Text, { TextContainerType, TextDisplayType } from 'text'
 
