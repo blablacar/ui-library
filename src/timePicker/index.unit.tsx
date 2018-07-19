@@ -32,8 +32,14 @@ describe('<TimePicker />', () => {
   describe('#minuteStep', () => {
     it('Can change the minutes step', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} minuteStep={240} />)
-      expect(Object.keys(wrapper.state('steps')))
-        .toEqual(['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'])
+      expect(Object.keys(wrapper.state('steps'))).toEqual([
+        '00:00',
+        '04:00',
+        '08:00',
+        '12:00',
+        '16:00',
+        '20:00',
+      ])
     })
   })
 
@@ -42,12 +48,18 @@ describe('<TimePicker />', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} minuteStep={480} />)
 
       wrapper.setProps({ locale: 'fr-FR' })
-      expect(wrapper.state('steps'))
-        .toEqual({ '00:00': '00:00', '08:00': '08:00', '16:00': '16:00' })
+      expect(wrapper.state('steps')).toEqual({
+        '00:00': '00:00',
+        '08:00': '08:00',
+        '16:00': '16:00',
+      })
 
       wrapper.setProps({ locale: 'en-US' })
-      expect(wrapper.state('steps'))
-        .toEqual({ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' })
+      expect(wrapper.state('steps')).toEqual({
+        '00:00': '12:00 AM',
+        '08:00': '8:00 AM',
+        '16:00': '4:00 PM',
+      })
     })
   })
 
@@ -63,13 +75,18 @@ describe('<TimePicker />', () => {
 
   describe('#renderTime', () => {
     it('Can render time with a custom renderer', () => {
-      const wrapper = shallow(<TimePicker
-        {...defaultProps}
-        minuteStep={480}
-        renderTime={dt => `${dt.getHours()}h ${dt.getMinutes()}m`}
-      />)
-      expect(wrapper.state('steps'))
-        .toEqual({ '00:00': '0h 0m', '08:00': '8h 0m', '16:00': '16h 0m' })
+      const wrapper = shallow(
+        <TimePicker
+          {...defaultProps}
+          minuteStep={480}
+          renderTime={dt => `${dt.getUTCHours()}h ${dt.getUTCMinutes()}m`}
+        />,
+      )
+      expect(wrapper.state('steps')).toEqual({
+        '00:00': '0h 0m',
+        '08:00': '8h 0m',
+        '16:00': '16h 0m',
+      })
     })
   })
 })
