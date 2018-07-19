@@ -26,7 +26,7 @@ const formatTimeValue = (dateTime: Date) => {
 }
 
 /**
- * Convert a date object to the equivalent date if in UTC
+ * Convert a date object to the equivalent date in UTC
  * Warning the timezone will be the one you're in
  * e.g. input: Wed Dec 31 1969 21:00:00 GMT-0300 -> Thu Jan 01 1970 00:00:00 GMT-0300
  * @param date Date object
