@@ -1,7 +1,10 @@
 # Unreleased
 
+- [Timepicker] Fixed timepicker issue in negative timezone
+
+# v0.6.0 (17/07/2018)
+
 - [Notification] Add the notification component
-  ...
 
 # v0.5.3 (06/07/2018)
 

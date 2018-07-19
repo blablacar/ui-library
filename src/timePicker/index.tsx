@@ -20,52 +20,76 @@ const toLocaleTimeStringSupportsLocales = (() => {
  * Format given dateTime in the format HH:MM.
  */
 const formatTimeValue = (dateTime: Date) => {
-  const hours = dateTime.getHours()
-  const minutes = dateTime.getMinutes()
+  const hours = dateTime.getUTCHours()
+  const minutes = dateTime.getUTCMinutes()
   return `${padStart(hours.toString(), 2, '0')}:${padStart(minutes.toString(), 2, '0')}`
 }
+
+/**
+ * Convert a date object to the equivalent date if in UTC
+ * Warning the timezone will be the one you're in
+ * e.g. input: Wed Dec 31 1969 21:00:00 GMT-0300 -> Thu Jan 01 1970 00:00:00 GMT-0300
+ * @param date Date object
+ * @return date Date object
+ *
+ */
+const convertDateToUTC = (date: Date) =>
+  new Date(
+    date.getUTCFullYear(),
+    date.getUTCMonth(),
+    date.getUTCDate(),
+    date.getUTCHours(),
+    date.getUTCMinutes(),
+    date.getUTCSeconds(),
+  )
 
 /**
  * Format given dateTime with `Date#toLocaleTimeString`.
  */
 const formatTimeLabel = (dateTime: Date, locale: string) => {
   if (toLocaleTimeStringSupportsLocales && locale) {
-    return dateTime.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' })
+    return convertDateToUTC(dateTime).toLocaleTimeString(locale, {
+      hour: '2-digit',
+      minute: '2-digit',
+    })
   }
   return formatTimeValue(dateTime)
 }
 
 interface TimePickerProps {
-  readonly name: string,
-  readonly className?: Classcat.Class,
-  readonly defaultValue?: string,
-  readonly disabled?: boolean,
-  readonly minuteStep?: number,
-  readonly renderTime?: (dt: Date, locale: string) => string,
-  readonly onChange?: (obj: onChangeParameters) => void,
-  readonly locale: string,
+  readonly name: string
+  readonly className?: Classcat.Class
+  readonly defaultValue?: string
+  readonly disabled?: boolean
+  readonly minuteStep?: number
+  readonly renderTime?: (dt: Date, locale: string) => string
+  readonly onChange?: (obj: onChangeParameters) => void
+  readonly locale: string
 }
 
 type Steps = { [propName: string]: string }
 
 interface TimePickerState {
-  readonly value: string,
-  readonly steps: Steps,
+  readonly value: string
+  readonly steps: Steps
 }
 
-export default class TimePicker extends PureComponent <TimePickerProps, TimePickerState> {
+export default class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
   /**
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.
    */
-  generateTimeSteps = ({ minuteStep = 30, locale }:{ minuteStep?: number, locale: string }) => {
-    const steps:Steps = {}
+  generateTimeSteps = ({ minuteStep = 30, locale }: { minuteStep?: number; locale: string }) => {
+    const steps: Steps = {}
+    // Taking unix time as reference to loop through hours
     const dt = new Date(0)
-    dt.setHours(0)
+    dt.setUTCHours(0)
+    dt.setUTCMinutes(0)
+
     const { renderTime = formatTimeLabel } = this.props
-    while (dt.getDate() === 1) {
+    while (dt.getUTCDate() === 1) {
       steps[formatTimeValue(dt)] = renderTime(dt, locale)
-      dt.setMinutes(dt.getMinutes() + minuteStep)
+      dt.setUTCMinutes(dt.getUTCMinutes() + minuteStep)
     }
     return steps
   }
@@ -76,8 +100,8 @@ export default class TimePicker extends PureComponent <TimePickerProps, TimePick
   }
 
   componentWillReceiveProps(newProps: TimePickerProps) {
-    const shouldRegenerateTimeSteps = newProps.locale !== this.props.locale
-      || newProps.minuteStep !== this.props.minuteStep
+    const shouldRegenerateTimeSteps =
+      newProps.locale !== this.props.locale || newProps.minuteStep !== this.props.minuteStep
 
     if (shouldRegenerateTimeSteps) {
       this.setState({ steps: this.generateTimeSteps(newProps) })
@@ -93,7 +117,7 @@ export default class TimePicker extends PureComponent <TimePickerProps, TimePick
 
   getDefaultValue() {
     if (!this.props.defaultValue) {
-      const now = new Date(Date.now())
+      const now = new Date()
       now.setMinutes(0)
       return formatTimeValue(now)
     }
@@ -104,18 +128,14 @@ export default class TimePicker extends PureComponent <TimePickerProps, TimePick
     const { className = '', disabled = false, name } = this.props
     const { steps } = this.state
     return (
-      <div
-        className={cc([prefix({ timePicker: true }), className])}
-        aria-disabled={disabled}
-      >
+      <div className={cc([prefix({ timePicker: true }), className])} aria-disabled={disabled}>
         <time>{steps[this.state.value]}</time>
-        <select
-          name={name}
-          value={this.state.value}
-          disabled={disabled}
-          onChange={this.onChange}
-        >
-          { Object.keys(steps).map(key => <option key={key} value={key}>{steps[key]}</option>) }
+        <select name={name} value={this.state.value} disabled={disabled} onChange={this.onChange}>
+          {Object.keys(steps).map(key => (
+            <option key={key} value={key}>
+              {steps[key]}
+            </option>
+          ))}
         </select>
         <style jsx>{style}</style>
       </div>
