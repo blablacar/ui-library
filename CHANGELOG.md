@@ -1,4 +1,4 @@
-# Unreleased
+# v0.6.1 (19/07/2018)
 
 - [Timepicker] Fixed timepicker issue in negative timezone
 
