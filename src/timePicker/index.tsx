@@ -46,7 +46,7 @@ const convertDateToUTC = (date: Date) =>
 /**
  * Format given dateTime with `Date#toLocaleTimeString`.
  */
-const formatTimeLabel = (dateTime: Date, locale: string) => {
+const defaultRenderTime = (dateTime: Date, locale: string) => {
   if (toLocaleTimeStringSupportsLocales && locale) {
     return convertDateToUTC(dateTime).toLocaleTimeString(locale, {
       hour: '2-digit',
@@ -86,7 +86,7 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     dt.setUTCHours(0)
     dt.setUTCMinutes(0)
 
-    const { renderTime = formatTimeLabel } = this.props
+    const { renderTime = defaultRenderTime } = this.props
     while (dt.getUTCDate() === 1) {
       steps[formatTimeValue(dt)] = renderTime(dt, locale)
       dt.setUTCMinutes(dt.getUTCMinutes() + minuteStep)
