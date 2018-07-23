@@ -71,8 +71,10 @@ class Modal extends Component<ModalProps> {
 
   componentWillUnmount() {
     this.removeListeners()
-    document.body.removeChild(this.portalNode)
-    this.portalNode = null
+    if (this.portalNode) {
+      document.body.removeChild(this.portalNode)
+      this.portalNode = null
+    }
     this.setDocumentScroll('visible')
   }
 
@@ -122,10 +124,6 @@ class Modal extends Component<ModalProps> {
   }
 
   render() {
-    if (!canUseDOM || !this.portalNode) {
-      return null
-    }
-
     const baseClassName = 'kirk-modal'
 
     const classNames = cc([
@@ -137,12 +135,14 @@ class Modal extends Component<ModalProps> {
       this.props.className,
     ])
 
+    const dimmerClassNames = cc([
+      `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}`,
+      `${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}`,
+      `${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`,
+    ])
+
     const modalElement = (
-      <div
-        className={`${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}
-        ${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}
-        ${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`}
-      >
+      <div className={dimmerClassNames}>
         <TransitionGroup component="div" className="transition-wrapper">
           {this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
@@ -167,6 +167,10 @@ class Modal extends Component<ModalProps> {
         </TransitionGroup>
       </div>
     )
+
+    if (!canUseDOM || !this.portalNode) {
+      return modalElement
+    }
 
     return createPortal(modalElement, this.portalNode)
   }
