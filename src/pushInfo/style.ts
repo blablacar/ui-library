@@ -51,8 +51,8 @@ export default css`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    min-width: 40px;
-    min-height: 40px;
+    width: 40px;
+    height: 40px;
     margin-right: ${space.l};
     background-color: ${color.white};
   }
