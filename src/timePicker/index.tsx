@@ -70,6 +70,12 @@ interface TimePickerProps {
 
 type Steps = { [propName: string]: string }
 
+type TimeSteps = {
+  minuteStep?: number,
+  locale: string,
+  timeStart?: string,
+}
+
 interface TimePickerState {
   readonly value: string
   readonly steps: Steps
@@ -84,11 +90,7 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     minuteStep = 30,
     locale,
     timeStart = '00:00',
-  }: {
-    minuteStep?: number,
-    locale: string,
-    timeStart?: string,
-  }) => {
+  }: TimeSteps) => {
     const steps: Steps = {}
     // Taking unix time as reference to loop through hours
     const dt = new Date(0)
@@ -116,10 +118,10 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
       newProps.timeStart !== this.props.timeStart
 
     if (shouldRegenerateTimeSteps) {
-      this.setState({
-        value: this.state.value < newProps.timeStart ? newProps.timeStart : this.state.value,
+      this.setState(state => ({
+        value: state.value < newProps.timeStart ? newProps.timeStart : state.value,
         steps: this.generateTimeSteps(newProps),
-      })
+      }))
     }
   }
 
