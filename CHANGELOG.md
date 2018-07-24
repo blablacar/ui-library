@@ -1,5 +1,5 @@
 # Unreleased
-[...]
+- [TopBar] Add an inner wrapper
 
 # v0.6.2 (24/07/2018)
 - [Proximity] Adjust margins
