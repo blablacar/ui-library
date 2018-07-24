@@ -37,13 +37,24 @@ export default css`
     right: -3px;
     position: absolute;
     width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: ${color.success};
   }
 
-   .kirk-medium .kirk-idCheck {
+  .kirk-medium .kirk-idCheck,
+  .kirk-large .kirk-idCheck {
+    bottom: 0;
+    right: 0;
+  }
+
+  .kirk-medium .kirk-idCheck {
     width: 24px;
+    height: 24px;
   }
 
   .kirk-large .kirk-idCheck {
     width: 36px;
+    height: 36px;
   }
 `

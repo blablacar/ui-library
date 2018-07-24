@@ -21,7 +21,7 @@ export interface AvatarInterface extends IdCheck {
 
 export const IdCheck = ({ checked = false, title = null }: IdCheck) => (
   <span className="kirk-idCheck">
-    <Check size="100%" title={title} iconColor={color.success} />
+    <Check size="100%" title={title} iconColor={color.white} />
     <style jsx>{style}</style>
   </span>
 )
