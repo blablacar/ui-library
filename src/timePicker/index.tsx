@@ -94,7 +94,6 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     const dt = new Date(0)
     dt.setUTCHours(0)
     dt.setUTCMinutes(0)
-
     const { renderTime = defaultRenderTime } = this.props
     while (dt.getUTCDate() === 1) {
       if (formatTimeValue(dt) >= timeStart) {
@@ -112,10 +111,15 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
 
   componentWillReceiveProps(newProps: TimePickerProps) {
     const shouldRegenerateTimeSteps =
-      newProps.locale !== this.props.locale || newProps.minuteStep !== this.props.minuteStep
+      newProps.locale !== this.props.locale ||
+      newProps.minuteStep !== this.props.minuteStep ||
+      newProps.timeStart !== this.props.timeStart
 
     if (shouldRegenerateTimeSteps) {
-      this.setState({ steps: this.generateTimeSteps(newProps) })
+      this.setState({
+        value: this.state.value < newProps.timeStart ? newProps.timeStart : this.state.value,
+        steps: this.generateTimeSteps(newProps),
+      })
     }
   }
 
