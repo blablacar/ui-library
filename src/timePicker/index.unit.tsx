@@ -89,4 +89,22 @@ describe('<TimePicker />', () => {
       })
     })
   })
+
+  describe('#timeStart', () => {
+    it('Can set a time start', () => {
+      const wrapper = shallow(<TimePicker {...defaultProps} minuteStep={240} timeStart="08:00" />)
+      expect(Object.keys(wrapper.state('steps'))).toEqual(['08:00', '12:00', '16:00', '20:00'])
+    })
+    it('Defaults to the first option if timeStart changes', () => {
+      const wrapper = shallow(<TimePicker
+        {...defaultProps}
+        minuteStep={240}
+        timeStart="08:00"
+        defaultValue="08:00" />)
+
+      expect(wrapper.state('value')).toEqual('08:00')
+      wrapper.setProps({ timeStart: '21:00' })
+      expect(wrapper.state('value')).toEqual('21:00')
+    })
+  })
 })
