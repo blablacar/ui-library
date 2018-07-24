@@ -65,6 +65,7 @@ interface TimePickerProps {
   readonly renderTime?: (dt: Date, locale: string) => string
   readonly onChange?: (obj: onChangeParameters) => void
   readonly locale: string
+  readonly timeStart?: string
 }
 
 type Steps = { [propName: string]: string }
@@ -79,7 +80,15 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.
    */
-  generateTimeSteps = ({ minuteStep = 30, locale }: { minuteStep?: number; locale: string }) => {
+  generateTimeSteps = ({
+    minuteStep = 30,
+    locale,
+    timeStart = '00:00',
+  }: {
+    minuteStep?: number,
+    locale: string,
+    timeStart?: string,
+  }) => {
     const steps: Steps = {}
     // Taking unix time as reference to loop through hours
     const dt = new Date(0)
@@ -88,7 +97,9 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
 
     const { renderTime = defaultRenderTime } = this.props
     while (dt.getUTCDate() === 1) {
-      steps[formatTimeValue(dt)] = renderTime(dt, locale)
+      if (formatTimeValue(dt) >= timeStart) {
+        steps[formatTimeValue(dt)] = renderTime(dt, locale)
+      }
       dt.setUTCMinutes(dt.getUTCMinutes() + minuteStep)
     }
     return steps

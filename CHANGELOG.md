@@ -1,8 +1,8 @@
-# unreleased
+# Unreleased
 - [Proximity] Adjust margins
 - [PushInfo] Fixed IE11 issues
 - [UneditableTextField] Fixed IE11 issues
-...
+- [Timepicker] Added prop `timeStart`
 
 # v0.6.1 (19/07/2018)
 
