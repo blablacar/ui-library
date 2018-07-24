@@ -1,4 +1,7 @@
 # Unreleased
+[...]
+
+# v0.6.2 (24/07/2018)
 - [Proximity] Adjust margins
 - [PushInfo] Fixed IE11 issues
 - [UneditableTextField] Fixed IE11 issues
