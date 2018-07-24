@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
@@ -12,6 +12,7 @@ interface TopBarProps {
   readonly fixed?: boolean,
   readonly bgTransparent?: boolean,
   readonly bgShadedTransparent?: boolean,
+  readonly innerWrapperClassName?: Classcat.Class,
 }
 
 const TopBar = ({
@@ -22,38 +23,51 @@ const TopBar = ({
   leftItem,
   rightItem,
   centerItem,
-}:TopBarProps) => (
-  <header
-    className={cc([prefix({
-      topBar: true,
-      'topBar--fixed': fixed,
-      'topBar--bgShadedTransparent': bgShadedTransparent,
-      'topBar--bgTransparent': bgTransparent,
-    }), className])}
-  >
-    {
-      leftItem ? (
-        <div className={cc(prefix({ 'topBar-left': true }))}>
-          {leftItem}
-        </div>
-      ) : null
-    }
-    {
-      centerItem ? (
-        <div className={cc(prefix({ 'topBar-center': true }))}>
-          {centerItem}
-        </div>
-      ) : null
-    }
-    {
-      rightItem ? (
-        <div className={cc(prefix({ 'topBar-right': true }))}>
-          {rightItem}
-        </div>
-      ) : null
-    }
-    <style jsx>{style}</style>
-  </header>
-)
+  innerWrapperClassName = null,
+}:TopBarProps) => {
+  const Wrapper = Boolean(innerWrapperClassName) ? 'div' : Fragment
+  const wrapperProps: { className?: string } = {}
+  if (Boolean(innerWrapperClassName)) {
+    wrapperProps.className = cc([innerWrapperClassName])
+  }
+  return (
+    <header
+      className={cc([
+        {
+          topBar: true,
+          'kirk-topBar--fixed': fixed,
+          'kirk-topBar--bgShadedTransparent': bgShadedTransparent,
+          'kirk-topBar--bgTransparent': bgTransparent,
+        },
+        className,
+      ])}
+    >
+      <Wrapper {...wrapperProps}>
+        {
+          leftItem ? (
+            <div className={cc({ 'kirk-topBar-left': true })}>
+              {leftItem}
+            </div>
+          ) : null
+        }
+        {
+          centerItem ? (
+            <div className={cc({ 'kirk-topBar-center': true })}>
+              {centerItem}
+            </div>
+          ) : null
+        }
+        {
+          rightItem ? (
+            <div className={cc({ 'kirk-topBar-right': true })}>
+              {rightItem}
+            </div>
+          ) : null
+        }
+      </Wrapper>
+      <style jsx>{style}</style>
+    </header>
+  )
+}
 
 export default TopBar
