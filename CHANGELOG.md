@@ -3,6 +3,7 @@
 - [PushInfo] Fixed IE11 issues
 - [UneditableTextField] Fixed IE11 issues
 - [Timepicker] Added prop `timeStart`
+- [Avatar] IdCheck display update
 
 # v0.6.1 (19/07/2018)
 
