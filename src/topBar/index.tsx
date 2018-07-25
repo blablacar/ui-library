@@ -34,7 +34,7 @@ const TopBar = ({
     <header
       className={cc([
         {
-          topBar: true,
+          'kirk-topBar': true,
           'kirk-topBar--fixed': fixed,
           'kirk-topBar--bgShadedTransparent': bgShadedTransparent,
           'kirk-topBar--bgTransparent': bgTransparent,
