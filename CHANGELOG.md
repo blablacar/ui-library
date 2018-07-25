@@ -1,5 +1,5 @@
 # Unreleased
-[...]
+[Modal] Fix double scrollbars display
 
 # v0.6.2 (24/07/2018)
 - [Proximity] Adjust margins

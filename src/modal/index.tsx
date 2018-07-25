@@ -53,16 +53,19 @@ class Modal extends Component<ModalProps> {
   componentDidMount() {
     if (this.props.isOpen) {
       this.addListeners()
+      this.setDocumentScroll('hidden')
     }
   }
 
   componentDidUpdate(prevProps: ModalProps) {
     if (!prevProps.isOpen && this.props.isOpen) {
       this.addListeners()
+      this.setDocumentScroll('hidden')
     }
 
     if (!this.props.isOpen && prevProps.isOpen) {
       this.removeListeners()
+      this.setDocumentScroll('')
     }
   }
 
@@ -70,6 +73,13 @@ class Modal extends Component<ModalProps> {
     this.removeListeners()
     document.body.removeChild(this.portalNode)
     this.portalNode = null
+    this.setDocumentScroll('')
+  }
+
+  setDocumentScroll = (cssValue: string) => {
+    if (canUseDOM) {
+      document.querySelector('html').style.overflow = cssValue
+    }
   }
 
   addListeners() {
