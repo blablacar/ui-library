@@ -1,6 +1,9 @@
 # Unreleased
 - [TopBar] Add an inner wrapper
-- [Modal] Fix double scrollbars display
+
+[...]
+# v0.6.4 (26/07/2018)
+[Modal] Fix double scrollbars display
 
 # v0.6.2 (24/07/2018)
 
