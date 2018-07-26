@@ -168,11 +168,7 @@ class Modal extends Component<ModalProps> {
       </div>
     )
 
-    if (!canUseDOM || !this.portalNode) {
-      return modalElement
-    }
-
-    return createPortal(modalElement, this.portalNode)
+    return this.portalNode ? createPortal(modalElement, this.portalNode) : modalElement
   }
 }
 
