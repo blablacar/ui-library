@@ -1,5 +1,5 @@
 # Unreleased
-
+- [TopBar] Add an inner wrapper
 - [Modal] Fix server side rendering
 - [Notification] Fix server side rendering
   [...]

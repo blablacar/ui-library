@@ -11,6 +11,11 @@ it('should not have any modifier classes', () => {
   expect(topBar.hasClass('kirk-topBar--bgShadedTransparent')).toBe(false)
 })
 
+it('should have the custom class on inner wrapper', () => {
+  const topBar = shallow(<TopBar innerWrapperClassName="test" />)
+  expect(topBar.find('.test').exists()).toBe(true)
+})
+
 it('should have the fixed modifier class', () => {
   const topBar = shallow(<TopBar fixed />)
   expect(topBar.hasClass('kirk-topBar--fixed')).toBe(true)
