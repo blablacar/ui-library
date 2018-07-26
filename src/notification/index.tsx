@@ -39,10 +39,6 @@ class Notification extends PureComponent<NotificationProps> {
   }
 
   render() {
-    if (!this.portalNode) {
-      return null
-    }
-
     const modalElement = (
       <TransitionGroup component="div" className="transition-wrapper kirk-notification-container">
         {this.props.isOpen && (
@@ -64,6 +60,10 @@ class Notification extends PureComponent<NotificationProps> {
         )}
       </TransitionGroup>
     )
+
+    if (!this.portalNode) {
+      return modalElement
+    }
 
     return createPortal(modalElement, this.portalNode)
   }

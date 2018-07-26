@@ -1,7 +1,12 @@
 # Unreleased
-[...]
+
+- [Modal] Fix server side rendering
+- [Notification] Fix server side rendering
+  [...]
+
 # v0.6.4 (26/07/2018)
-[Modal] Fix double scrollbars display
+
+- [Modal] Fix double scrollbars display
 
 # v0.6.2 (24/07/2018)
 

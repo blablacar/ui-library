@@ -1,6 +1,8 @@
 import React from 'react'
 import Modal from 'modal'
 import Button from 'button'
+import renderer from 'react-test-renderer'
+import exenv from 'exenv'
 
 const defaultProps = {
   isOpen: false,
@@ -52,5 +54,21 @@ describe('Modal', () => {
     const wrapper = mount(<Modal isOpen close={mockClose} />)
     wrapper.find(Button).simulate('click')
     expect(mockClose).toHaveBeenCalledTimes(1)
+  })
+
+  it('should render the same layout on client and server side', () => {
+    exenv.canUseDOM = false
+    const serverSide = mount(<Modal />)
+    exenv.canUseDOM = true
+    const clientSide = mount(<Modal />)
+
+    expect(serverSide.html()).toEqual(clientSide.html())
+  })
+
+  it('should not have changed', () => {
+    exenv.canUseDOM = false
+    const modalServerSide = renderer.create(<Modal isOpen large />).toJSON()
+    exenv.canUseDOM = true
+    expect(modalServerSide).toMatchSnapshot()
   })
 })
