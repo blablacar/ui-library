@@ -1,8 +1,12 @@
 # Unreleased
+
+[...]
+
+# v0.6.5 (26/07/2018)
+
 - [TopBar] Add an inner wrapper
 - [Modal] Fix server side rendering
 - [Notification] Fix server side rendering
-  [...]
 
 # v0.6.4 (26/07/2018)
 
