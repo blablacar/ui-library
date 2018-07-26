@@ -65,7 +65,7 @@ class Modal extends Component<ModalProps> {
 
     if (!this.props.isOpen && prevProps.isOpen) {
       this.removeListeners()
-      this.setDocumentScroll('')
+      this.setDocumentScroll('visible')
     }
   }
 
@@ -73,7 +73,7 @@ class Modal extends Component<ModalProps> {
     this.removeListeners()
     document.body.removeChild(this.portalNode)
     this.portalNode = null
-    this.setDocumentScroll('')
+    this.setDocumentScroll('visible')
   }
 
   setDocumentScroll = (cssValue: string) => {
