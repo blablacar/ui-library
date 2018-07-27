@@ -20,35 +20,32 @@ const toLocaleTimeStringSupportsLocales = (() => {
  * Format given dateTime in the format HH:MM.
  */
 const formatTimeValue = (dateTime: Date) => {
-  const hours = dateTime.getUTCHours()
-  const minutes = dateTime.getUTCMinutes()
+  const hours = dateTime.getHours()
+  const minutes = dateTime.getMinutes()
   return `${padStart(hours.toString(), 2, '0')}:${padStart(minutes.toString(), 2, '0')}`
 }
 
 /**
- * Convert a date object to the equivalent date in UTC
- * Warning the timezone will be the one you're in
- * e.g. input: Wed Dec 31 1969 21:00:00 GMT-0300 -> Thu Jan 01 1970 00:00:00 GMT-0300
- * @param date Date object
+ * Returns a date with the time set to 00:00:00
+ * e.g. input: Fri Jul 27 2018 10:03:29 GMT-0300 -> Fri Jul 27 2018 00:00:00 GMT-0300
  * @return date Date object
  *
  */
-const convertDateToUTC = (date: Date) =>
-  new Date(
-    date.getUTCFullYear(),
-    date.getUTCMonth(),
-    date.getUTCDate(),
-    date.getUTCHours(),
-    date.getUTCMinutes(),
-    date.getUTCSeconds(),
-  )
+export const getTodayDate = () => {
+  const date = new Date()
+  date.setHours(0)
+  date.setMinutes(0)
+  date.setSeconds(0)
+  date.setMilliseconds(0)
+  return date
+}
 
 /**
  * Format given dateTime with `Date#toLocaleTimeString`.
  */
 const defaultRenderTime = (dateTime: Date, locale: string) => {
   if (toLocaleTimeStringSupportsLocales && locale) {
-    return convertDateToUTC(dateTime).toLocaleTimeString(locale, {
+    return dateTime.toLocaleTimeString(locale, {
       hour: '2-digit',
       minute: '2-digit',
     })
@@ -86,25 +83,22 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.
    */
-  generateTimeSteps = ({
-    minuteStep = 30,
-    locale,
-    timeStart = '00:00',
-  }: TimeSteps) => {
+  generateTimeSteps = ({ minuteStep = 30, locale, timeStart = '00:00' }: TimeSteps) => {
     const steps: Steps = {}
-    // Taking unix time as reference to loop through hours
-    const dt = new Date(0)
-    dt.setUTCHours(0)
-    dt.setUTCMinutes(0)
+    // Taking today as reference to loop through hours
+    const dt = this.referenceDate
+    const day = this.referenceDate.getDate()
     const { renderTime = defaultRenderTime } = this.props
-    while (dt.getUTCDate() === 1) {
+    while (dt.getDate() === day) {
       if (formatTimeValue(dt) >= timeStart) {
         steps[formatTimeValue(dt)] = renderTime(dt, locale)
       }
-      dt.setUTCMinutes(dt.getUTCMinutes() + minuteStep)
+      dt.setMinutes(dt.getMinutes() + minuteStep)
     }
     return steps
   }
+
+  referenceDate = getTodayDate()
 
   state = {
     value: this.getDefaultValue(),
@@ -134,9 +128,7 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
 
   getDefaultValue() {
     if (!this.props.defaultValue) {
-      const now = new Date()
-      now.setMinutes(0)
-      return formatTimeValue(now)
+      return formatTimeValue(this.referenceDate)
     }
     return this.props.defaultValue
   }
