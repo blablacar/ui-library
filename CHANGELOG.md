@@ -1,4 +1,7 @@
 # Unreleased
+[...]
+
+# v0.6.6 (26/07/2018)
 - [PushInfo] Fix stretched display issue
 - [Timepicker] Fix safari issue with timezone
 
