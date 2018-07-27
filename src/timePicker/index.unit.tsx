@@ -1,5 +1,5 @@
 import React from 'react'
-import TimePicker from 'timePicker'
+import TimePicker, { getTodayDate } from 'timePicker'
 
 const defaultProps = {
   name: 'departure-time',
@@ -46,7 +46,6 @@ describe('<TimePicker />', () => {
   describe('#locale', () => {
     it('Can change the locale string representation of the time', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} minuteStep={480} />)
-
       wrapper.setProps({ locale: 'fr-FR' })
       expect(wrapper.state('steps')).toEqual({
         '00:00': '00:00',
@@ -79,7 +78,7 @@ describe('<TimePicker />', () => {
         <TimePicker
           {...defaultProps}
           minuteStep={480}
-          renderTime={dt => `${dt.getUTCHours()}h ${dt.getUTCMinutes()}m`}
+          renderTime={dt => `${dt.getHours()}h ${dt.getMinutes()}m`}
         />,
       )
       expect(wrapper.state('steps')).toEqual({
@@ -96,15 +95,31 @@ describe('<TimePicker />', () => {
       expect(Object.keys(wrapper.state('steps'))).toEqual(['08:00', '12:00', '16:00', '20:00'])
     })
     it('Defaults to the first option if timeStart changes', () => {
-      const wrapper = shallow(<TimePicker
-        {...defaultProps}
-        minuteStep={240}
-        timeStart="08:00"
-        defaultValue="08:00" />)
+      const wrapper = shallow(
+        <TimePicker {...defaultProps} minuteStep={240} timeStart="08:00" defaultValue="08:00" />,
+      )
 
       expect(wrapper.state('value')).toEqual('08:00')
       wrapper.setProps({ timeStart: '21:00' })
       expect(wrapper.state('value')).toEqual('21:00')
+    })
+  })
+
+  describe('#getTodayDate', () => {
+    it('should return today date with 00:00:00 as time', () => {
+      const today = getTodayDate()
+      expect(today.getHours()).toEqual(0)
+      expect(today.getMinutes()).toEqual(0)
+      expect(today.getSeconds()).toEqual(0)
+      expect(today.getMilliseconds()).toEqual(0)
+    })
+    it('should have `referenceDate` with time at 00:00:00', () => {
+      const wrapper = shallow(<TimePicker {...defaultProps} />)
+      const referenceDate = wrapper.instance().referenceDate
+      expect(referenceDate.getHours()).toEqual(0)
+      expect(referenceDate.getMinutes()).toEqual(0)
+      expect(referenceDate.getSeconds()).toEqual(0)
+      expect(referenceDate.getMilliseconds()).toEqual(0)
     })
   })
 })
