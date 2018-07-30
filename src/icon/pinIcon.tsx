@@ -19,7 +19,7 @@ class PinIcon extends PureComponent<PinProps> {
   }
 
   render() {
-    const { className, strokeColor, bgColor, size, title } = this.props
+    const { bgColor, className, size, strokeColor, title } = this.props
     return (
       <svg
         viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ class PinIcon extends PureComponent<PinProps> {
       >
         { title && <title>{title}</title> }
         <g
-          stroke={bgColor !== 'none' ? bgColor : strokeColor}
+          stroke={strokeColor}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"
@@ -41,7 +41,7 @@ class PinIcon extends PureComponent<PinProps> {
             d="M20 9c0 4.9-8 13-8 13S4 13.9 4 9c0-5.1 4.1-8 8-8s8 2.9 8 8z"
           />
           <circle
-            fill={bgColor !== 'none' ? color.white : 'none'}
+            fill={strokeColor}
             cx="12"
             cy="9"
             r="3"
