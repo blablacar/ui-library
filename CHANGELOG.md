@@ -1,6 +1,9 @@
 # Unreleased
 [...]
 
+# v0.7.0 (26/07/2018)
+- **[NEW]** ItemData component
+
 # v0.6.6 (26/07/2018)
 - [PushInfo] Fix stretched display issue
 - [Timepicker] Fix safari issue with timezone
