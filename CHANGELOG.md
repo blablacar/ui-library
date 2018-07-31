@@ -1,5 +1,5 @@
 # Unreleased
-[...]
+- **[FIX]** Handling of the colors on the `<PinIcon>`
 
 # v0.7.0 (26/07/2018)
 - **[NEW]** ItemData component
