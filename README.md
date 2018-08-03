@@ -30,7 +30,7 @@ Check the [changelog](https://github.com/blablacar/ui-library/blob/master/CHANGE
 You can find examples and tech documentation [here](https://blablacar.github.io/ui-library/).
 
 ## Contributing
-Wanna contribute ? [This way.](https://github.com/blablacar/ui-library/blob/master/LICENSE) :)
+Wanna contribute ? [This way.](https://github.com/blablacar/ui-library/blob/master/CONTRIBUTING.md) :)
 
 ## License
 This project is licensed under the terms of the [MIT license](https://github.com/blablacar/ui-library/blob/master/LICENSE).
