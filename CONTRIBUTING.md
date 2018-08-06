@@ -29,7 +29,11 @@ Each component is stored in the `src` folder. Each component has its own folder 
 - A unit test file
 - A story file (functional testing)
 
-The only dependency to use this library is to be in a ReactJS environment. The repository also includes ES6 + Typescript syntax but this one is compiled to ES5 in the build folder.
+The only dependency to use this library is to be in a ReactJS environment. The repository also includes Typescript syntax but this one is compiled to ES5 in the build folder.
+
+Wanna create a new component ? Check those 2 wikis:
+- First our [component guidelines](https://github.com/blablacar/ui-library/wiki/Component-guidelines)
+- Then how to [create (and delete) a UI component](https://github.com/blablacar/ui-library/wiki/Create-(and-delete)-a-UI-component)
 
 # Precommit hooks
 
