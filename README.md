@@ -1,10 +1,11 @@
 # BlaBlaCar React component library
+[![Build Status](https://travis-ci.org/blablacar/ui-library.svg?branch=master)](https://travis-ci.org/blablacar/ui-library)
 
 ## Installation
 BlaBlaCar `ui-library` is available as an [npm package](https://www.npmjs.com/package/@blablacar/ui-library)
 
 Just run this inside your project
-```
+```bash
 npm i @blablacar/ui-library
 ```
 
@@ -18,7 +19,7 @@ Import the package into your `package.json`
 }
 ```
 then all you need to do is:
-```
+```javascript
 import { Button, Input } from '@blablacar/ui-library'
 ```
 But again, don't forget that you need to have React to make it work.
