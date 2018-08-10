@@ -1,5 +1,6 @@
 # Unreleased
 - **[FIX]** Handling of the colors on the `<PinIcon>`
+- **[UPDATE]** Change name of the `container` prop on the `<Text>` component into `tag` (harmonization)
 
 # v0.7.0 (26/07/2018)
 - **[NEW]** ItemData component
