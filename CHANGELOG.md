@@ -1,5 +1,5 @@
 # Unreleased
-- [...]
+- **[NEW]** ItemInfo component
 
 # v0.8.0 (16/08/2018)
 - **[BREAKING CHANGE]** Change name of the `container` prop on the `<Text>` component into `tag` (harmonization)
