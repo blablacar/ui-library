@@ -3,9 +3,10 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
-import ChevronIcon from 'icon/chevronIcon'
 import Loader from 'loader'
 import style from './style'
+
+import Item, { ItemProps } from '_utils/item'
 
 export enum ItemChoiceStatus {
   DEFAULT = 'default',
@@ -22,15 +23,12 @@ interface TypeProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
 }
 
-export interface ItemChoiceProps {
+export interface ItemChoiceProps extends ItemProps {
   readonly className?: Classcat.Class,
   readonly href?: string | JSX.Element,
   readonly key?: string | number,
   readonly label?: string,
   readonly subLabel?: string,
-  readonly children?: React.ReactNode,
-  readonly leftAddon?: React.ReactNode,
-  readonly rightAddon?: React.ReactNode,
   readonly highlighted?: boolean,
   readonly selected?: boolean,
   readonly status?: ItemChoiceStatus,
@@ -48,46 +46,37 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     status: ItemChoiceStatus.DEFAULT,
     href: '',
   }
+
   static STATUS = ItemChoiceStatus
+
   render() {
     const {
-      children, className, highlighted, selected, status,
+      className, highlighted, selected, status,
       onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
       onDoneAnimationEnd, key,
     } = this.props
+
     const classNames = cc([prefix({
       itemChoice: true,
       'itemChoice--highlighted': highlighted,
-      'itemChoice--withSubLabel': !!subLabel,
     }), className])
 
-    let rightIcon = <ChevronIcon className={cc(prefix({ chevron: true }))} />
-
-    if (status === ItemChoiceStatus.LOADING) {
-      rightIcon = <Loader
+    const rightIcon = status !== ItemChoiceStatus.DEFAULT ?
+      <Loader
         className={cc(prefix({ chevron: true }))}
         size={24}
         onDoneAnimationEnd={onDoneAnimationEnd}
         inline
-      />
-    }
+        done={status === ItemChoiceStatus.CHECKED}
+      /> :
+      null
 
-    if (status === ItemChoiceStatus.CHECKED) {
-      rightIcon = <Loader
-        className={cc(prefix({ chevron: true }))}
-        size={24}
-        onDoneAnimationEnd={onDoneAnimationEnd}
-        done
-        inline
-      />
-    }
-
-    let Component: tag
+    let component: tag
     let typeProps: TypeProps
 
     // If we pass a component to href, we get component type and we merge props
     if (typeof href !== 'string') {
-      Component = href.type
+      component = href.type
       typeProps = {
         ...href.props,
         onClick,
@@ -97,41 +86,51 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
         className: cc([href.props.className, classNames]),
       }
     } else if (!isEmpty(href)) {
-      Component = 'a'
+      component = 'a'
       typeProps = { onClick, onFocus, onBlur, onMouseDown, href, className: classNames }
     } else {
-      Component = 'li'
+      component = 'li'
       typeProps = { onClick, onFocus, onBlur, onMouseDown, className: classNames }
     }
 
     return (
-      <Component
-        role="option"
+      // <Component
+      //   role="option"
+      //   key={key}
+      //   aria-selected={selected}
+      //   {...typeProps}
+      // >
+      //   { leftAddon && (
+      //     <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
+      //     )
+      //   }
+      //   {label && (
+      //     <div>
+      //       <div className={cc(prefix({ 'itemChoice-label': true }))}>{label}</div>
+      //       {subLabel && (
+      //         <div className={cc(prefix({ 'itemChoice-subLabel': true }))}>{subLabel}</div>
+      //       )}
+      //     </div>
+      //   )}
+      //   {children}
+      //   <div className="kirk-itemChoice-right">
+      //     {rightAddon && (
+      //       <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
+      //     )}
+      //     {rightIcon}
+      //   </div>
+      //   <style jsx>{style}</style>
+      // </Component>
+      <Item
+        chevron
         key={key}
-        aria-selected={selected}
+        leftAddon={leftAddon ? leftAddon : null}
+        leftTitle={label}
+        leftBody={subLabel ? subLabel : null}
+        rightAddon={rightIcon}
+        tag={String(component)}
         {...typeProps}
-      >
-        { leftAddon && (
-          <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
-          )
-        }
-        {label && (
-          <div>
-            <div className={cc(prefix({ 'itemChoice-label': true }))}>{label}</div>
-            {subLabel && (
-              <div className={cc(prefix({ 'itemChoice-subLabel': true }))}>{subLabel}</div>
-            )}
-          </div>
-        )}
-        {children}
-        <div className="kirk-itemChoice-right">
-          {rightAddon && (
-            <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
-          )}
-          {rightIcon}
-        </div>
-        <style jsx>{style}</style>
-      </Component>
+      />
     )
   }
 }

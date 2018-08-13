@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css'
 
-import { space } from '_utils/branding'
+import { color, space } from '_utils/branding'
 
 export default css`
   :global(.kirk-item) {
@@ -13,6 +13,17 @@ export default css`
     flex: 1;
     border: 0;
     background: none;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Button tag fixes */
+  :global(button.kirk-item) {
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
   }
 
   /* Text areas */
