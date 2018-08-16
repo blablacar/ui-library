@@ -20,7 +20,7 @@ describe('Text', () => {
   })
 
   it('Should render with the div tag', () => {
-    const wrapper = shallow(<Text container="div">{'test'}</Text>)
+    const wrapper = shallow(<Text tag="div">{'test'}</Text>)
     expect(wrapper.name()).toBe('div')
   })
 

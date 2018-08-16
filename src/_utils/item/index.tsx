@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import style from './style'
-import Text, { TextContainerType, TextDisplayType } from 'text'
+import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
 
 export interface ItemProps {
@@ -53,7 +53,7 @@ const Item = ({
           <Text
             className={leftBody ? 'kirk-item-title' : null}
             display={leftTitleDisplay}
-            container={TextContainerType.DIV}
+            container={TextTagType.DIV}
           >
             {leftTitle}
           </Text>
@@ -62,7 +62,7 @@ const Item = ({
           <Text
             className="kirk-item-body"
             display={leftBodyDisplay}
-            container={TextContainerType.DIV}
+            container={TextTagType.DIV}
           >
             {leftBody}
           </Text>
@@ -74,7 +74,7 @@ const Item = ({
             <Text
               className={rightBody ? 'kirk-item-title' : null}
               display={rightTitleDisplay}
-              container={TextContainerType.DIV}
+              container={TextTagType.DIV}
             >
               {rightTitle}
             </Text>
@@ -83,7 +83,7 @@ const Item = ({
             <Text
               className="kirk-item-body"
               display={rightBodyDisplay}
-              container={TextContainerType.DIV}
+              container={TextTagType.DIV}
             >
               {rightBody}
             </Text>
