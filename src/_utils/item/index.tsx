@@ -53,7 +53,7 @@ const Item = ({
           <Text
             className={leftBody ? 'kirk-item-title' : null}
             display={leftTitleDisplay}
-            container={TextTagType.DIV}
+            tag={TextTagType.DIV}
           >
             {leftTitle}
           </Text>
@@ -62,7 +62,7 @@ const Item = ({
           <Text
             className="kirk-item-body"
             display={leftBodyDisplay}
-            container={TextTagType.DIV}
+            tag={TextTagType.DIV}
           >
             {leftBody}
           </Text>
@@ -74,7 +74,7 @@ const Item = ({
             <Text
               className={rightBody ? 'kirk-item-title' : null}
               display={rightTitleDisplay}
-              container={TextTagType.DIV}
+              tag={TextTagType.DIV}
             >
               {rightTitle}
             </Text>
@@ -83,7 +83,7 @@ const Item = ({
             <Text
               className="kirk-item-body"
               display={rightBodyDisplay}
-              container={TextTagType.DIV}
+              tag={TextTagType.DIV}
             >
               {rightBody}
             </Text>
