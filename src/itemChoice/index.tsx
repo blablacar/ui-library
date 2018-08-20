@@ -24,14 +24,15 @@ interface TypeProps {
 }
 
 export interface ItemChoiceProps extends ItemProps {
-  readonly className?: Classcat.Class,
   readonly href?: string | JSX.Element,
   readonly key?: string | number,
   readonly label?: string,
   readonly subLabel?: string,
   readonly highlighted?: boolean,
   readonly selected?: boolean,
+  readonly disabled?: boolean,
   readonly status?: ItemChoiceStatus,
+  readonly role?: string,
   readonly onDoneAnimationEnd?: () => void,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
@@ -45,21 +46,22 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     selected: false,
     status: ItemChoiceStatus.DEFAULT,
     href: '',
+    role: 'option',
   }
 
   static STATUS = ItemChoiceStatus
 
   render() {
     const {
-      className, highlighted, selected, status,
-      onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
+      className, highlighted, selected, status, role,
+      onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon,
       onDoneAnimationEnd, key,
     } = this.props
 
-    const classNames = cc([prefix({
+    const classNames = cc([{
       itemChoice: true,
-      'itemChoice--highlighted': highlighted,
-    }), className])
+      'kirk-itemChoice--highlighted': highlighted,
+    }, className])
 
     const rightIcon = status !== ItemChoiceStatus.DEFAULT ?
       <Loader
@@ -124,8 +126,10 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
       <Item
         chevron
         key={key}
+        role={role}
+        aria-selected={selected}
         leftAddon={leftAddon ? leftAddon : null}
-        leftTitle={label}
+        leftTitle={label ? label : null}
         leftBody={subLabel ? subLabel : null}
         rightAddon={rightIcon}
         tag={String(component)}
