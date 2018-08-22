@@ -7,6 +7,7 @@ import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
 import Itinerary from 'itinerary'
+import Text, { TextDisplayType } from 'text'
 import style from 'tripCard/style'
 
 export interface TripCardProps {
@@ -75,14 +76,27 @@ const TripCard = ({
             className="kirk-tripCard-itinerary"
             places={itinerary}
           />
-          <span className="kirk-tripCard-price">{price}</span>
+          <Text className="kirk-tripCard-price" display={TextDisplayType.TITLESTRONG}>
+            {price}
+          </Text>
         </div>
         <div className="kirk-tripCard-bottom">
           <div className="kirk-tripCard-driver">
-            <Avatar image={driver.avatarUrl} alt={driver.firstName} />
-            <span>{driver.firstName}</span>
+            <div className="kirk-tripCard-avatar">
+              <Avatar
+                image={driver.avatarUrl}
+                alt={driver.firstName}
+              />
+            </div>
+            <Text display={TextDisplayType.TITLE}>
+              {driver.firstName}
+            </Text>
           </div>
-          { highlighted && <span className="kirk-tripCard-topText">{highlighted}</span> }
+          { highlighted && (
+            <Text className="kirk-tripCard-topText" display={TextDisplayType.TITLESTRONG}>
+              {highlighted}
+            </Text>
+          )}
           {
             displayFlags && (
               <div className="kirk-tripCard-flags">
