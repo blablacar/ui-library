@@ -1,3 +1,6 @@
+/**
+ * THIS FILE IS GENERATED
+ */
 import './stories.css'
 
 import '../src/_utils/story'
