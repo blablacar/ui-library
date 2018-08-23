@@ -5,13 +5,13 @@ import { withInfo } from '@storybook/addon-info'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 
 import ItemInfo from 'itemInfo'
-import PetIcon from 'icon/petIcon'
+import ClockIcon from 'icon/clockIcon'
 
 const stories = storiesOf('ItemInfo', module)
 stories.addDecorator(withKnobs)
 
 stories.add(
-  'Test',
+  'ItemInfo',
   withInfo('')(() => {
     const hasMainTitle = boolean('Title', true)
     const hasIcon = boolean('Icon', true)
@@ -20,7 +20,7 @@ stories.add(
       <ItemInfo
         mainInfo={text('Main info', 'Main information')}
         mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
-        icon={hasIcon ? <PetIcon /> : null}
+        icon={hasIcon ? <ClockIcon /> : null}
         tag="li"
       />
     )
