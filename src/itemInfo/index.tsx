@@ -2,10 +2,12 @@ import React from 'react'
 
 import Item, { ItemProps } from '_utils/item/index'
 
-interface ItemInfoProps extends ItemProps {
+interface ItemInfoProps {
   mainInfo: string,
-  mainTitle?: string,
+  className?: Classcat.Class,
   icon?: React.ReactNode,
+  mainTitle?: string,
+  tag?: string,
 }
 
 const ItemInfo = ({
