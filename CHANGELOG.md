@@ -1,5 +1,7 @@
 # Unreleased
 - **[NEW]** ItemInfo component
+- **[NEW]** Icons for Navigation (BankIcon, BellIcon, BubbleIcon, CoinIcon, CrossDiscIcon, HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon)
+- **[UPDATE]** `IncreaseIcon` and `DecreaseIcon` are now `PlusIcon` and `MinusIcon`
 
 # v0.8.0 (16/08/2018)
 - **[BREAKING CHANGE]** Change name of the `container` prop on the `<Text>` component into `tag` (harmonization)

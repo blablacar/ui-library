@@ -1,3 +1,6 @@
+/**
+ * THIS FILE IS GENERATED
+ */
 import AutoComplete from 'autoComplete'
 import Avatar from 'avatar'
 import Button from 'button'

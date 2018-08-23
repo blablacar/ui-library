@@ -4,7 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 import { color } from '_utils/branding'
 
-class DecreaseIcon extends PureComponent<Icon> {
+class PlusIcon extends PureComponent<Icon> {
   static defaultProps: Icon = {
     className: '',
     iconColor: color.icon,
@@ -32,7 +32,7 @@ class DecreaseIcon extends PureComponent<Icon> {
           strokeLinejoin="round"
           strokeMiterlimit="10"
         >
-          <path d="M17 12H7" />
+          <path d="M12 7v10M17 12H7" />
           <circle cx="12" cy="12" r="11" />
         </g>
       </svg>
@@ -40,4 +40,4 @@ class DecreaseIcon extends PureComponent<Icon> {
   }
 }
 
-export default DecreaseIcon
+export default PlusIcon
