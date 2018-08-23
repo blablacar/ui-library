@@ -1,6 +1,7 @@
 # Unreleased
 
-- [FIX] Wrong flush import from 'styled-jsx/server' (issue #42)
+- **[FIX]** Wrong flush import from 'styled-jsx/server' (issue #42)
+- **[UPDATE]** Add ref attribute on Modal using forwardRef new API
 
 # v0.9.0 (24/08/2018)
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-
 import Checkbox, { labelDisplays } from 'checkbox'
 
 it('should have the proper text & attributes', () => {
@@ -34,16 +33,13 @@ it('should have the accessibility attributes', () => {
 
 it('should be able to receive props', () => {
   const checkbox = shallow(<Checkbox name="checkbox1" value="value">Label</Checkbox>)
-  const spyReceiveProps = jest.spyOn(Checkbox.prototype, 'componentWillReceiveProps')
-  const spySetState = jest.spyOn(Checkbox.prototype, 'setState')
-  expect(spyReceiveProps).not.toHaveBeenCalled()
-  checkbox.setProps({ checked: false })
-  // Value not changed
-  expect(spyReceiveProps).toHaveBeenCalledTimes(1)
-  expect(spySetState).not.toHaveBeenCalled()
+  // Default value
+  expect(checkbox.state('isChecked')).toBe(false)
   // Value changing
   checkbox.setProps({ checked: true })
-  expect(spySetState).toHaveBeenCalledTimes(1)
+  expect(checkbox.state('isChecked')).toBe(true)
+  checkbox.setProps({ checked: false })
+  expect(checkbox.state('isChecked')).toBe(false)
 })
 
 it('should trigger a change event on a normal checkbox', () => {
