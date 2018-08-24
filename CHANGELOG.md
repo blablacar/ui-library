@@ -4,7 +4,7 @@
 - **[NEW]** Icons for Navigation (BankIcon, BellIcon, BubbleIcon, CoinIcon, CrossDiscIcon, HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon)
 - **[UPDATE]** `IncreaseIcon` and `DecreaseIcon` are now `PlusIcon` and `MinusIcon`
 - **[UPDATE]** `TripCard` is now using `Text` component
-- **[FIX]** Behavior of the bottom of the `TripCard`
+- **[FIX]** Margin between the elements when resizing on the bottom part of the `TripCard`
 
 # v0.8.0 (16/08/2018)
 
