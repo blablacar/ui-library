@@ -6,7 +6,8 @@ import prefix from '_utils'
 import Loader from 'loader'
 import style from './style'
 
-import Item, { ItemProps } from '_utils/item'
+import Item from '_utils/item'
+import ChevronIcon from 'icon/chevronIcon'
 
 export enum ItemChoiceStatus {
   DEFAULT = 'default',
@@ -14,34 +15,29 @@ export enum ItemChoiceStatus {
   CHECKED = 'checked',
 }
 
-interface TypeProps {
-  readonly className?: Classcat.Class,
-  readonly href?: string,
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
+export interface ItemChoiceProps {
+  readonly className?: Classcat.Class
+  readonly href?: string | JSX.Element
+  readonly key?: string | number
+  readonly label?: string
+  readonly subLabel?: string
+  readonly highlighted?: boolean
+  readonly selected?: boolean
+  readonly disabled?: boolean
+  readonly status?: ItemChoiceStatus
+  readonly role?: string
+  readonly leftAddon?: React.ReactNode
+  readonly rightAddon?: React.ReactNode
+  readonly onDoneAnimationEnd?: () => void
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export interface ItemChoiceProps extends ItemProps {
-  readonly href?: string | JSX.Element,
-  readonly key?: string | number,
-  readonly label?: string,
-  readonly subLabel?: string,
-  readonly highlighted?: boolean,
-  readonly selected?: boolean,
-  readonly disabled?: boolean,
-  readonly status?: ItemChoiceStatus,
-  readonly role?: string,
-  readonly onDoneAnimationEnd?: () => void,
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
-}
-
-class ItemChoice extends PureComponent <ItemChoiceProps> {
+class ItemChoice extends PureComponent<ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {
+    disabled: false,
     highlighted: false,
     selected: false,
     status: ItemChoiceStatus.DEFAULT,
@@ -53,28 +49,49 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
 
   render() {
     const {
-      className, highlighted, selected, status, role,
-      onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon,
-      onDoneAnimationEnd, key,
+      className,
+      highlighted,
+      selected,
+      disabled,
+      status,
+      role,
+      onClick,
+      onBlur,
+      onFocus,
+      onMouseDown,
+      href,
+      label,
+      subLabel,
+      leftAddon,
+      rightAddon,
+      onDoneAnimationEnd,
+      key,
     } = this.props
 
-    const classNames = cc([{
-      itemChoice: true,
-      'kirk-itemChoice--highlighted': highlighted,
-    }, className])
+    const classNames = cc([
+      {
+        'kirk-itemChoice': true,
+        'kirk-itemChoice--highlighted': highlighted,
+        'kirk-itemChoice--disabled': disabled,
+      },
+      className,
+    ])
 
-    const rightIcon = status !== ItemChoiceStatus.DEFAULT ?
-      <Loader
-        className={cc(prefix({ chevron: true }))}
-        size={24}
-        onDoneAnimationEnd={onDoneAnimationEnd}
-        inline
-        done={status === ItemChoiceStatus.CHECKED}
-      /> :
-      null
+    const chevronDisplay =
+      status === ItemChoiceStatus.DEFAULT ? (
+        <ChevronIcon />
+      ) : (
+        <Loader
+          className={cc(prefix({ chevron: true }))}
+          size={24}
+          onDoneAnimationEnd={onDoneAnimationEnd}
+          inline
+          done={status === ItemChoiceStatus.CHECKED}
+        />
+      )
 
     let component: tag
-    let typeProps: TypeProps
+    let typeProps
 
     // If we pass a component to href, we get component type and we merge props
     if (typeof href !== 'string') {
@@ -124,14 +141,14 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
       //   <style jsx>{style}</style>
       // </Component>
       <Item
-        chevron
+        chevron={chevronDisplay}
         key={key}
         role={role}
         aria-selected={selected}
         leftAddon={leftAddon ? leftAddon : null}
         leftTitle={label ? label : null}
         leftBody={subLabel ? subLabel : null}
-        rightAddon={rightIcon}
+        rightAddon={rightAddon}
         tag={String(component)}
         {...typeProps}
       />

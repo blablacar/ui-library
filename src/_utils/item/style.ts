@@ -12,14 +12,18 @@ export default css`
     align-items: center;
     flex: 1;
     border: 0;
+  }
+
+  :global(a.kirk-item) {
+    cursor: pointer;
     background: none;
     text-decoration: none;
-    cursor: pointer;
     user-select: none;
   }
 
   /* Button tag fixes */
   :global(button.kirk-item) {
+    cursor: pointer;
     text-align: left;
     width: 100%;
     font-family: inherit;

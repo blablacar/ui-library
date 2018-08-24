@@ -18,11 +18,10 @@ stories.add(
         label="Choice 1"
         highlighted={boolean('highlighted', false)}
         selected={boolean('selected', false)}
+        disabled={boolean('disabled', false)}
         onClick={action('onClick')}
       />
-      <ItemChoice
-        label="Choice 2 – A title that is so long it takes 2 lines of text"
-      />
+      <ItemChoice label="Choice 2 – A title that is so long it takes 2 lines of text" />
     </div>
   )),
 )
@@ -31,10 +30,7 @@ stories.add(
   'With loading state',
   withInfo('')(() => (
     <div>
-      <ItemChoice
-        label="Choice 1"
-        status={ItemChoice.STATUS.LOADING}
-      />
+      <ItemChoice label="Choice 1" status={ItemChoice.STATUS.LOADING} />
       <ItemChoice
         label="Choice 2"
         status={ItemChoice.STATUS.CHECKED}
@@ -73,16 +69,8 @@ stories.add(
   'With left addon',
   withInfo('')(() => (
     <div>
-      <ItemChoice
-        label="Choice 1"
-        subLabel="Secondary info"
-        leftAddon={<StarIcon />}
-      />
-      <ItemChoice
-        label="Choice 1"
-        subLabel="Secondary info"
-        leftAddon={<StarIcon />}
-      />
+      <ItemChoice label="Choice 1" subLabel="Secondary info" leftAddon={<StarIcon />} />
+      <ItemChoice label="Choice 1" subLabel="Secondary info" leftAddon={<StarIcon />} />
     </div>
   )),
 )
@@ -91,16 +79,8 @@ stories.add(
   'With right addon',
   withInfo('')(() => (
     <div>
-      <ItemChoice
-        label="Choice 1"
-        subLabel="Secondary info"
-        rightAddon={<StarIcon />}
-      />
-      <ItemChoice
-        label="Choice 1"
-        subLabel="Secondary info"
-        rightAddon="Info"
-      />
+      <ItemChoice label="Choice 1" subLabel="Secondary info" rightAddon={<StarIcon />} />
+      <ItemChoice label="Choice 1" subLabel="Secondary info" rightAddon="Info" />
     </div>
   )),
 )
@@ -109,14 +89,8 @@ stories.add(
   'With basic link',
   withInfo('')(() => (
     <div>
-      <ItemChoice
-        label="Choice 1"
-        href="#anchor"
-      />
-      <ItemChoice
-        label="Choice 2"
-        href="#anchor"
-      />
+      <ItemChoice label="Choice 1" href="#anchor" />
+      <ItemChoice label="Choice 2" href="#anchor" />
     </div>
   )),
 )
@@ -125,14 +99,8 @@ stories.add(
   'With custom tag component',
   withInfo('')(() => (
     <div>
-      <ItemChoice
-        label="Button tag"
-        href={<button type="button" />}
-      />
-      <ItemChoice
-        label="Link tag"
-        href={<a href="#anchor4" />}
-      />
+      <ItemChoice label="Button tag" href={<button type="button" />} />
+      <ItemChoice label="Link tag" href={<a href="#anchor4" />} />
     </div>
   )),
 )
