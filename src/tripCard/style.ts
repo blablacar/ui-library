@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, radius, space, fontWeight } from '_utils/branding'
+import { color, radius, space } from '_utils/branding'
 import { timeWidth } from 'itinerary/style'
 
 export default css`

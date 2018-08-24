@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Item, { ItemProps } from '_utils/item/index'
+import Item from '_utils/item/index'
 
 interface ItemInfoProps {
   mainInfo: string,
