@@ -7,16 +7,16 @@ import prefix from '_utils'
 import { color } from '_utils/branding'
 
 export interface IdCheck {
-  readonly checked?: boolean,
-  readonly title?: string,
+  readonly checked?: boolean
+  readonly title?: string
 }
 
 export interface AvatarInterface extends IdCheck {
-  readonly className?: Classcat.Class,
-  readonly image?: string,
-  readonly alt?: string,
-  readonly medium?: boolean,
-  readonly large?: boolean,
+  readonly className?: Classcat.Class
+  readonly image?: string
+  readonly alt?: string
+  readonly medium?: boolean
+  readonly large?: boolean
 }
 
 export const IdCheck = ({ checked = false, title = null }: IdCheck) => (
@@ -26,10 +26,10 @@ export const IdCheck = ({ checked = false, title = null }: IdCheck) => (
   </span>
 )
 
-const Avatar = ({ medium, large, className, checked, image, alt, title }: AvatarInterface) => (
+const Avatar = ({ medium, large, className, checked, image, alt = '', title }: AvatarInterface) => (
   <div className={cc([prefix({ medium, large, image: !!image }), className])}>
-    { image && <img src={image} alt={alt} /> }
-    { checked && <IdCheck checked={checked} title={title} /> }
+    {image && <img src={image} alt={alt} />}
+    {checked && <IdCheck checked={checked} title={title} />}
     <style jsx>{style}</style>
   </div>
 )
