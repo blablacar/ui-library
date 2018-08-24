@@ -1,10 +1,14 @@
 # Unreleased
 
+- [...]
+
+# v0.9.0 (24/08/2018)
+
 - **[NEW]** ItemInfo component
 - **[NEW]** Icons for Navigation (BankIcon, BellIcon, BubbleIcon, CoinIcon, CrossDiscIcon, HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon)
 - **[UPDATE]** `IncreaseIcon` and `DecreaseIcon` are now `PlusIcon` and `MinusIcon`
 - **[UPDATE]** `TripCard` is now using `Text` component
-- **[FIX]** Margin between the elements when resizing on the bottom part of the `TripCard`
+- **[FIX]** Margin between the elements on the bottom part of the `TripCard` when resizing
 
 # v0.8.0 (16/08/2018)
 
