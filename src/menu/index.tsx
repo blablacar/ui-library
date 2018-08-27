@@ -2,8 +2,12 @@ import React from 'react'
 import cc from 'classcat'
 import ItemChoice, { ItemChoiceProps } from 'itemChoice'
 
-export interface MenuProps {
-  items: ItemChoiceProps[],
+interface MenuItemChoiceProps extends ItemChoiceProps {
+  id?: string | number,
+}
+
+interface MenuProps {
+  items: MenuItemChoiceProps[],
   className?: Classcat.Class,
 }
 
