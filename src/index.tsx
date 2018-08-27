@@ -35,8 +35,7 @@ import WarningModal from 'warningModal'
 import Why from 'why'
 
 import branding from '_utils/branding'
-import { flushToHTML } from 'styled-jsx/server'
-import flush from 'styled-jsx/server'
+import { flush, flushToHTML } from 'styled-jsx/server'
 
 export * from 'icon/index'
 
