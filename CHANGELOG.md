@@ -2,6 +2,7 @@
 
 - **[FIX]** Wrong flush import from 'styled-jsx/server' (issue #42)
 - **[UPDATE]** Add ref attribute on Modal using forwardRef new API
+- **[UPDATE]** `Menu` component is now using `ItemChoice`
 
 # v0.9.0 (24/08/2018)
 
