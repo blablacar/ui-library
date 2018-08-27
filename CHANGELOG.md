@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- [FIX] Wrong flush import from 'styled-jsx/server' (issue #42)
 
 # v0.9.0 (24/08/2018)
 
