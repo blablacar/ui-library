@@ -1,3 +1,6 @@
+/**
+ * THIS FILE IS GENERATED
+ */
 ${components.map(component => "import " + component.capitalized + " from '" + component.root + component.name + "'").join('\n')}
 
 import branding from '_utils/branding'

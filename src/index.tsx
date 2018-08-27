@@ -1,3 +1,6 @@
+/**
+ * THIS FILE IS GENERATED
+ */
 import AutoComplete from 'autoComplete'
 import Avatar from 'avatar'
 import Button from 'button'
@@ -9,6 +12,7 @@ import DropdownButton from 'dropdownButton'
 import HamburgerButton from 'hamburgerButton'
 import ItemChoice from 'itemChoice'
 import ItemData from 'itemData'
+import ItemInfo from 'itemInfo'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
 import Menu from 'menu'
@@ -51,6 +55,7 @@ export {
   HamburgerButton,
   ItemChoice,
   ItemData,
+  ItemInfo,
   Itinerary,
   Loader,
   Menu,
