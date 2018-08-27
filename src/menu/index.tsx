@@ -1,18 +1,27 @@
 import React from 'react'
 import cc from 'classcat'
-import MenuItem, { MenuItemProps } from './menuItem'
-import style from './style'
+import ItemChoice, { ItemChoiceProps } from 'itemChoice'
 
-export interface MenuProps {
-  items: MenuItemProps[],
+interface MenuItemChoiceProps extends ItemChoiceProps {
+  id?: string | number,
+}
+
+interface MenuProps {
+  items: MenuItemChoiceProps[],
   className?: Classcat.Class,
 }
 
 const Menu = ({ className, items }: MenuProps) => (
-  <ul className={cc(className)} role="menu">
-    {items.map(item => <MenuItem {...item} key={item.id} />)}
-    <style jsx>{style}</style>
-  </ul>
+  <nav className={cc(className)} role="menu">
+    {items.map(item => (
+      <ItemChoice
+        label={item.label}
+        href={item.href}
+        leftAddon={item.leftAddon}
+        key={item.id} />
+      ),
+    )}
+  </nav>
 )
 
 export default Menu

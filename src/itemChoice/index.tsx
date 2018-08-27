@@ -25,7 +25,6 @@ interface TypeProps {
 export interface ItemChoiceProps {
   readonly className?: Classcat.Class,
   readonly href?: string | JSX.Element,
-  readonly key?: string | number,
   readonly label?: string,
   readonly subLabel?: string,
   readonly children?: React.ReactNode,
@@ -53,7 +52,7 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     const {
       children, className, highlighted, selected, status,
       onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
-      onDoneAnimationEnd, key,
+      onDoneAnimationEnd,
     } = this.props
     const classNames = cc([prefix({
       itemChoice: true,
@@ -107,7 +106,6 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     return (
       <Component
         role="option"
-        key={key}
         aria-selected={selected}
         {...typeProps}
       >
