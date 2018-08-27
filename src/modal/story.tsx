@@ -31,7 +31,7 @@ class ModalOpener extends Component<ModalProps> {
     this.setState({ modalOpen2: false })
   }
 
-  ref = React.createRef<HTMLDivElement>()
+  ref = createRef<HTMLDivElement>()
 
   render() {
     return (
