@@ -1,6 +1,9 @@
 import React from 'react'
-
 import Text from 'text'
+
+const multipleLineText = `line1
+line2
+line3`
 
 describe('Text', () => {
   it('Should have the default classes', () => {
@@ -39,13 +42,16 @@ describe('Text', () => {
   })
 
   it('Should replace \n by br tags', () => {
-    const multipleLineText = `line1
-line2
-line3`
-
     const wrapper = shallow(<Text>{multipleLineText}</Text>)
     expect(wrapper.html()).toContain(
       '<span class="kirk-text kirk-text-body">line1<br/>line2<br/>line3</span>',
+    )
+  })
+
+  it('Should not replace \n by br tags when newlineToBr is false', () => {
+    const wrapper = shallow(<Text newlineToBr={false}>{multipleLineText}</Text>)
+    expect(wrapper.html()).toContain(
+      `<span class="kirk-text kirk-text-body">${multipleLineText}</span>`,
     )
   })
 })

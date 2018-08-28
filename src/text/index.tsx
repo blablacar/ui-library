@@ -27,6 +27,7 @@ interface TextProps {
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType
   readonly tag?: TextTagType
+  readonly newlineToBr?: boolean
 }
 
 const replaceNewLineWithBR = (str: string): React.ReactNode =>
@@ -46,13 +47,14 @@ const Text = ({
   children,
   display = TextDisplayType.BODY,
   tag = TextTagType.SPAN,
+  newlineToBr = true,
 }: TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
 
   let content = children
-  if (typeof children === 'string') {
+  if (typeof children === 'string' && newlineToBr) {
     content = replaceNewLineWithBR(children)
   }
 
