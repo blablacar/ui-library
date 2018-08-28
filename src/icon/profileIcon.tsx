@@ -4,7 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 import { color } from '_utils/branding'
 
-class IcreaseIcon extends PureComponent<Icon> {
+class ProfileIcon extends PureComponent<Icon> {
   static defaultProps: Icon = {
     className: '',
     iconColor: color.icon,
@@ -24,20 +24,14 @@ class IcreaseIcon extends PureComponent<Icon> {
         aria-hidden={isEmpty(title)}
       >
         { title && <title>{title}</title> }
-        <g
-          fill="none"
-          stroke={iconColor}
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-        >
-          <path d="M12 7v10M17 12H7" />
-          <circle cx="12" cy="12" r="11" />
+        <g fill="none" stroke={iconColor} strokeWidth="1">
+          <path d="M6.67 20.5A5 5 0 0 1 11 18h2a5 5 0 0 1 4.34 2.52"/>
+          <circle cx="12" cy="12" r="10" />
+          <rect width="7" height="9" x="8.5" y="6.5" rx="3.5"/>
         </g>
       </svg>
     )
   }
 }
 
-export default IcreaseIcon
+export default ProfileIcon

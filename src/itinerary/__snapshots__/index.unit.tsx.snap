@@ -2,27 +2,27 @@
 
 exports[`Itinerary component Should display proximity from departure point 1`] = `
 <ul
-  className="jsx-2131258399 "
+  className="jsx-592133690 "
 >
   <li
-    className="jsx-2131258399 kirk-itinerary-location kirk-itinerary--departure"
+    className="jsx-592133690 kirk-itinerary-location kirk-itinerary--departure"
   >
     <time
-      className="jsx-2131258399"
+      className="jsx-592133690"
       dateTime="2017-12-11T09:00"
     >
       09:00
     </time>
     <div
-      className="jsx-2131258399"
+      className="jsx-592133690"
     >
       <span
-        className="jsx-2131258399"
+        className="jsx-592133690"
       >
         Paris
       </span>
       <span
-        className="jsx-2131258399 kirk-itinerary-subtext"
+        className="jsx-592133690 kirk-itinerary-subtext"
       >
         <div
           className="jsx-2476316531 kirk-proximity"
@@ -76,24 +76,24 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-2131258399 kirk-itinerary-location"
+    className="jsx-592133690 kirk-itinerary-location"
   >
     <time
-      className="jsx-2131258399"
+      className="jsx-592133690"
       dateTime="2017-12-11T12:00"
     >
       12:00
     </time>
     <div
-      className="jsx-2131258399"
+      className="jsx-592133690"
     >
       <span
-        className="jsx-2131258399"
+        className="jsx-592133690"
       >
         Tours
       </span>
       <span
-        className="jsx-2131258399 kirk-itinerary-subtext"
+        className="jsx-592133690 kirk-itinerary-subtext"
       >
         <div
           className="jsx-2476316531 kirk-proximity"
@@ -147,24 +147,24 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-2131258399 kirk-itinerary-location kirk-itinerary--arrival"
+    className="jsx-592133690 kirk-itinerary-location kirk-itinerary--arrival"
   >
     <time
-      className="jsx-2131258399"
+      className="jsx-592133690"
       dateTime="2017-12-11T15:00"
     >
       15:00
     </time>
     <div
-      className="jsx-2131258399"
+      className="jsx-592133690"
     >
       <span
-        className="jsx-2131258399"
+        className="jsx-592133690"
       >
         Bordeaux
       </span>
       <span
-        className="jsx-2131258399 kirk-itinerary-subtext"
+        className="jsx-592133690 kirk-itinerary-subtext"
       >
         <div
           className="jsx-2476316531 kirk-proximity"

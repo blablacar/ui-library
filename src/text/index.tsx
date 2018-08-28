@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import style from 'text/style'
@@ -27,26 +27,43 @@ interface TextProps {
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType
   readonly tag?: TextTagType
+  readonly newlineToBr?: boolean
 }
+
+const replaceNewLineWithBR = (str: string): React.ReactNode =>
+  str
+    .split('\n')
+    .map(line => <Fragment>{line}</Fragment>)
+    .reduce((acc, curr) => (
+      <Fragment>
+        {acc}
+        <br />
+        {curr}
+      </Fragment>
+    ))
 
 const Text = ({
   className,
   children,
   display = TextDisplayType.BODY,
   tag = TextTagType.SPAN,
-}:TextProps) => {
+  newlineToBr = true,
+}: TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
 
+  let content = children
+  if (typeof children === 'string' && newlineToBr) {
+    content = replaceNewLineWithBR(children)
+  }
+
   return (
-    <Tag className={cc([
-      baseClassName,
-      displayClassName,
-      className,
-    ])}>
-      {children}
-      <style jsx global>{style}</style>
+    <Tag className={cc([baseClassName, displayClassName, className])}>
+      {content}
+      <style jsx global>
+        {style}
+      </style>
     </Tag>
   )
 }

@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color, font, fontWeight, space } from '_utils/branding'
 
 const distanceFromHeight = '40px'
-const timeWidth = '64px'
+export const timeWidth = '64px'
 
 export default css`
   li {
@@ -111,7 +111,7 @@ export default css`
   .kirk-itinerary-fromDeparture::before,
   .kirk-itinerary-location.kirk-itinerary-location--fromArrival::before {
     width: 0;
-    border: 1px dashed #708C91;
+    border: 1px dashed #708c91;
     left: calc(${timeWidth} + 1px);
   }
 
@@ -133,7 +133,7 @@ export default css`
   .kirk-itinerary-location.kirk-itinerary-location--fromArrival::after {
     width: 6px;
     height: 6px;
-    background-color: #FFF;
+    background-color: #fff;
     border: 1px solid ${color.secondaryText};
     border-radius: 50%;
     left: calc(${timeWidth} - 1px);

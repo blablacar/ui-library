@@ -1,14 +1,33 @@
 # Unreleased
-- [...]
+
+- **[UPDATE]** `Text` component is now replacing \n by `<br/>` tags by default
+  [...]
+
+# v0.10.0 (27/08/2018)
+
+- **[FIX]** Wrong flush import from 'styled-jsx/server' (issue #42)
+- **[UPDATE]** Add ref attribute on Modal using forwardRef new API
+- **[BREAKING CHANGE]** `Menu` component is now using `ItemChoice`
+
+# v0.9.0 (24/08/2018)
+
+- **[NEW]** ItemInfo component
+- **[NEW]** Icons for Navigation (BankIcon, BellIcon, BubbleIcon, CoinIcon, CrossDiscIcon, HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon)
+- **[UPDATE]** `IncreaseIcon` and `DecreaseIcon` are now `PlusIcon` and `MinusIcon`
+- **[UPDATE]** `TripCard` is now using `Text` component
+- **[FIX]** Margin between the elements on the bottom part of the `TripCard` when resizing
 
 # v0.8.0 (16/08/2018)
+
 - **[BREAKING CHANGE]** Change name of the `container` prop on the `<Text>` component into `tag` (harmonization)
 - **[FIX]** Handling of the colors on the `<PinIcon>`
 
 # v0.7.0 (26/07/2018)
+
 - **[NEW]** ItemData component
 
 # v0.6.6 (26/07/2018)
+
 - [PushInfo] Fix stretched display issue
 - [Timepicker] Fix safari issue with timezone
 
