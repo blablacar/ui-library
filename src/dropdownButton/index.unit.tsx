@@ -28,6 +28,11 @@ describe('DropdownButton', () => {
     expect(wrapper.find('button').hasClass(customClassName)).toBe(true)
   })
 
+  it('Should have an attribute type button', () => {
+    const wrapper = shallow(<DropdownButton {...defaultProps} />)
+    expect(wrapper.find('button[type="button"]')).toHaveLength(1)
+  })
+
   describe('#dropdownWithPointer', () => {
     it('Should not have a pointer by default', () => {
       const wrapper = shallow(<DropdownButton {...defaultProps} />)

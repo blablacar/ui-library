@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** `Text` component is now replacing \n by `<br/>` tags by default
+- [FIX] Added type=button on DrodpdownButton
   [...]
 
 # v0.10.0 (27/08/2018)
