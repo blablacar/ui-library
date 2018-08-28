@@ -1,7 +1,10 @@
 # Unreleased
-[...]
+
+- **[UPDATE]** `Text` component is now replacing \n by `<br/>` tags by default
+  [...]
 
 # v0.10.0 (27/08/2018)
+
 - **[FIX]** Wrong flush import from 'styled-jsx/server' (issue #42)
 - **[UPDATE]** Add ref attribute on Modal using forwardRef new API
 - **[BREAKING CHANGE]** `Menu` component is now using `ItemChoice`
