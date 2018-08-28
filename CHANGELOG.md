@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** `Text` component is now replacing \n by `<br/>` tags by default
+- **[UPDATE]** Use Facebook and VK brand color as default icon color
   [...]
 
 # v0.10.0 (27/08/2018)

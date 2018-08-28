@@ -7,7 +7,7 @@ import { color } from '_utils/branding'
 class FacebookIcon extends PureComponent<Icon> {
   static defaultProps: Icon = {
     className: '',
-    iconColor: color.icon,
+    iconColor: color.facebookBrand,
     size: 24,
     title: '',
   }
@@ -23,7 +23,7 @@ class FacebookIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           fill={iconColor}
           // tslint:disable-next-line
