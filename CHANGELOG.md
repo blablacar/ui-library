@@ -1,6 +1,7 @@
 # Unreleased
 
-- [FIX] Added type=button on DrodpdownButton
+- **[FIX]** Force scroll to top on `Drawer` when opening
+- **[FIX]** Added `type=button` on `DrodpdownButton`
 
 # v0.10.1 (28/08/2018)
 

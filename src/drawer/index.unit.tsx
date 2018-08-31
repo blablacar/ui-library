@@ -12,9 +12,12 @@ describe('Drawer', () => {
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
-  it('Should call `onOpen` after open', () => {
+  it('Should call `onOpen` after open and scroll top', () => {
     const onOpen = jest.fn()
     const onChange = jest.fn()
+    const windowScroll = global.scroll
+    global.scroll = jest.fn()
+
     const wrapper = mount(
       <Drawer
         {...defaultProps}
@@ -28,6 +31,8 @@ describe('Drawer', () => {
     wrapper.find('.scrollableContent').simulate('transitionEnd')
     expect(onOpen).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(true)
+    expect(global.scroll).toHaveBeenCalledWith(0, 0)
+    global.scroll = windowScroll
   })
 
   it('Should call `onClose` after close', () => {
