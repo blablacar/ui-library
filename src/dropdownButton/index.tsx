@@ -82,7 +82,7 @@ class DropdownButton extends PureComponent <DropdownButtonProps, DropdownButtonS
 
     return (
       <div ref={this.refButton} className="dropdownButton">
-        <button className={cc(className)} onClick={this.toggle}>
+        <button type="button" className={cc(className)} onClick={this.toggle}>
           {this.props.children}
           <ChevronIcon iconColor={color.primary} down />
         </button>

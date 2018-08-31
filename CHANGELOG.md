@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- [FIX] Added type=button on DrodpdownButton
 
 # v0.10.1 (28/08/2018)
 
