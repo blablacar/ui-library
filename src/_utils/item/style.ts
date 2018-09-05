@@ -12,6 +12,7 @@ export default css`
     align-items: center;
     flex: 1;
     border: 0;
+    background-color: ${color.white}
   }
 
   :global(a.kirk-item) {
@@ -19,6 +20,8 @@ export default css`
     background: none;
     text-decoration: none;
     user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
   }
 
   /* Button tag fixes */
@@ -28,6 +31,8 @@ export default css`
     width: 100%;
     font-family: inherit;
     outline: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
   }
 
   /* Text areas */

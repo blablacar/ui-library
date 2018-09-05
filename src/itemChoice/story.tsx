@@ -20,6 +20,7 @@ stories.add(
         selected={boolean('selected', false)}
         disabled={boolean('disabled', false)}
         onClick={action('onClick')}
+        className="toto"
       />
       <ItemChoice label="Choice 2 – A title that is so long it takes 2 lines of text" />
     </div>

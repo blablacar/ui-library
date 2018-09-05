@@ -91,6 +91,7 @@ describe('AutoComplete', () => {
 
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
+      console.log(wrapper.debug())
       expect(wrapper.find('.custom-item')).toHaveLength(2)
     })
   })

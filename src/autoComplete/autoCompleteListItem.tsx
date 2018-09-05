@@ -5,7 +5,6 @@ import cc from 'classcat'
 export interface AutoCompleteListItemProps {
   readonly item: AutocompleteItem,
   readonly select: (item:AutocompleteItem) => void,
-  readonly children: React.ReactElement<any>,
   readonly className?: Classcat.Class,
   readonly highlighted?: boolean,
   readonly status?: ItemChoiceStatus,
@@ -32,9 +31,9 @@ export default class AutoCompleteListItem extends Component <AutoCompleteListIte
         className={cc(['kirk-autoComplete-item', this.props.className])}
         onMouseDown={this.onMouseDown}
         onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-      >
-        {this.props.children}
-      </ItemChoice>
+        label={this.props.item.title}
+        subLabel={this.props.item.description}
+      />
     )
   }
 }

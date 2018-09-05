@@ -17,7 +17,7 @@ export interface ItemProps {
   readonly rightBody?: string
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightAddon?: React.ReactNode
-  readonly tag?: string
+  readonly tag?: JSX.Element
 }
 
 const Item = ({
@@ -33,13 +33,13 @@ const Item = ({
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
   rightAddon,
-  tag = 'div',
+  tag = <div />,
 }: ItemProps) => {
-  const Tag = tag
+  const Tag = tag.type
   const hasRightText = rightTitle || rightBody
 
   return (
-    <Tag className={cc(['kirk-item', className])}>
+    <Tag {...tag.props} className={cc(['kirk-item', className])}>
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
       <div className="kirk-item-leftText">
         {leftTitle && (

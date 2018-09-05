@@ -78,6 +78,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     searchForItemsMinChars: 3,
     maxItems: Infinity,
     renderItem: AutoCompleteListItemDefault,
+
     renderBusy: () => <div>Loading…</div>,
     renderNoResults: () => <div>No results</div>,
     renderEmptySearch: [],
@@ -217,7 +218,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       this.state.items
      ) : this.props.renderEmptySearch
     return (
-      <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
+      <div role="search" className={cc(['kirk-autoComplete', this.props.className])}>
         <TextField
           type="search"
           className={this.props.inputClassName}
@@ -241,12 +242,12 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           error={this.props.error}
         />
         { shouldDisplayBusyState && (
-          <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
+          <div className={cc(['kirk-autoComplete-body', this.props.bodyClassName])}>
             { this.props.renderBusy({ query: this.state.query }) }
           </div>
         )}
         { shouldDisplayNoResults && (
-          <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
+          <div className={cc(['kirk-autoComplete-body', this.props.bodyClassName])}>
             { this.props.renderNoResults({ query: this.state.query }) }
           </div>
         )}

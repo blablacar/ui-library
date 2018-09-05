@@ -1,8 +1,7 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment, Component } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
 import Loader from 'loader'
 import style from './style'
 
@@ -18,16 +17,24 @@ export enum ItemChoiceStatus {
 export interface ItemChoiceProps {
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
-  readonly key?: string | number
   readonly label?: string
   readonly subLabel?: string
   readonly highlighted?: boolean
   readonly selected?: boolean
   readonly disabled?: boolean
   readonly status?: ItemChoiceStatus
-  readonly role?: string
   readonly leftAddon?: React.ReactNode
   readonly rightAddon?: React.ReactNode
+  readonly onDoneAnimationEnd?: () => void
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+}
+
+export interface ComponentProps {
+  readonly href?: string
+  readonly role?: string
   readonly onDoneAnimationEnd?: () => void
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
@@ -42,7 +49,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
     selected: false,
     status: ItemChoiceStatus.DEFAULT,
     href: '',
-    role: 'option',
   }
 
   static STATUS = ItemChoiceStatus
@@ -54,7 +60,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       selected,
       disabled,
       status,
-      role,
       onClick,
       onBlur,
       onFocus,
@@ -65,7 +70,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       leftAddon,
       rightAddon,
       onDoneAnimationEnd,
-      key,
     } = this.props
 
     const classNames = cc([
@@ -82,7 +86,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
         <ChevronIcon />
       ) : (
         <Loader
-          className={cc(prefix({ chevron: true }))}
           size={24}
           onDoneAnimationEnd={onDoneAnimationEnd}
           inline
@@ -90,26 +93,25 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
         />
       )
 
-    let component: tag
-    let typeProps
+    let Component: tag
+    let componentProps: ComponentProps = {}
 
     // If we pass a component to href, we get component type and we merge props
     if (typeof href !== 'string') {
-      component = href.type
-      typeProps = {
+      Component = href.type
+      componentProps = {
         ...href.props,
         onClick,
         onFocus,
         onBlur,
         onMouseDown,
-        className: cc([href.props.className, classNames]),
       }
     } else if (!isEmpty(href)) {
-      component = 'a'
-      typeProps = { onClick, onFocus, onBlur, onMouseDown, href, className: classNames }
+      componentProps = { onClick, onFocus, onBlur, onMouseDown, href }
+      Component = 'a'
     } else {
-      component = 'li'
-      typeProps = { onClick, onFocus, onBlur, onMouseDown, className: classNames }
+      componentProps = { onClick, onFocus, onBlur, onMouseDown }
+      Component = 'li'
     }
 
     return (
@@ -140,18 +142,19 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       //   </div>
       //   <style jsx>{style}</style>
       // </Component>
-      <Item
-        chevron={chevronDisplay}
-        key={key}
-        role={role}
-        aria-selected={selected}
-        leftAddon={leftAddon ? leftAddon : null}
-        leftTitle={label ? label : null}
-        leftBody={subLabel ? subLabel : null}
-        rightAddon={rightAddon}
-        tag={String(component)}
-        {...typeProps}
-      />
+      <Fragment>
+        <Item
+          className={classNames}
+          chevron={chevronDisplay}
+          aria-selected={selected}
+          leftAddon={leftAddon ? leftAddon : null}
+          leftTitle={label ? label : null}
+          leftBody={subLabel ? subLabel : null}
+          rightAddon={rightAddon}
+          tag={<Component {...componentProps} role="option" />}
+        />
+        <style jsx>{style}</style>
+      </Fragment>
     )
   }
 }
