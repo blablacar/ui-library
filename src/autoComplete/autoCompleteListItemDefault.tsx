@@ -1,6 +1,5 @@
 import React from 'react'
 import cc from 'classcat'
-import prefix from '_utils'
 import ItemChoice from 'itemChoice'
 
 interface AutoCompleteListItemDefaultProps {
@@ -9,6 +8,7 @@ interface AutoCompleteListItemDefaultProps {
 
 const AutoCompleteListItemDefault = ({ item }:AutoCompleteListItemDefaultProps) => (
   <ItemChoice
+    className={'kirk-autoComplete-item'}
     label={item.title}
     subLabel={item.description}
   />

@@ -115,33 +115,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
     }
 
     return (
-      // <Component
-      //   role="option"
-      //   key={key}
-      //   aria-selected={selected}
-      //   {...typeProps}
-      // >
-      //   { leftAddon && (
-      //     <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
-      //     )
-      //   }
-      //   {label && (
-      //     <div>
-      //       <div className={cc(prefix({ 'itemChoice-label': true }))}>{label}</div>
-      //       {subLabel && (
-      //         <div className={cc(prefix({ 'itemChoice-subLabel': true }))}>{subLabel}</div>
-      //       )}
-      //     </div>
-      //   )}
-      //   {children}
-      //   <div className="kirk-itemChoice-right">
-      //     {rightAddon && (
-      //       <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
-      //     )}
-      //     {rightIcon}
-      //   </div>
-      //   <style jsx>{style}</style>
-      // </Component>
       <Fragment>
         <Item
           className={classNames}

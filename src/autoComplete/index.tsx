@@ -4,7 +4,6 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import debounce from 'lodash.debounce'
 
-import prefix from '_utils'
 import TextField from 'textField'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
@@ -78,7 +77,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     searchForItemsMinChars: 3,
     maxItems: Infinity,
     renderItem: AutoCompleteListItemDefault,
-
     renderBusy: () => <div>Loading…</div>,
     renderNoResults: () => <div>No results</div>,
     renderEmptySearch: [],

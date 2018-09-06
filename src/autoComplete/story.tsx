@@ -62,6 +62,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           searchForItems={this.searchForItems}
           items={this.state.items}
           renderEmptySearch={this.props.renderEmptySearch}
+          //renderItem={({ item }) => <h1>{item.title}</h1>}
           onSelect={action('onChange')}
           getItemValue={item => item.id}
           renderQuery={item => item.title}

@@ -129,6 +129,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
           const status = this.state.selectedIndex === index ? (
             this.props.selectedItemStatus
            ) : ItemChoiceStatus.DEFAULT
+          console.log(this.props.renderItem({ item, index }))
           return (
             <AutoCompleteListItem
               key={this.props.itemKey(item)}
@@ -138,7 +139,11 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
               status={status}
               select={this.onSelect(index)}
               onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-            />
+            >
+              <div>
+                {this.props.renderItem({ item, index })}
+              </div>
+            </AutoCompleteListItem>
           )
         })}
         <style jsx key={`${this.props.name}-style-jsx`}>{style}</style>
