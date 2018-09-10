@@ -8,7 +8,7 @@ const KEYCODES = {
 }
 
 export interface DrawerProps {
-  readonly children: string,
+  readonly children: string | JSX.Element,
   readonly className?: Classcat.Class,
   readonly onOpen?: () => void,
   readonly onClose?: () => void,
@@ -72,11 +72,12 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   open = () => {
-    this.scrollReset()
+    this.scrollLock()
     this.setState({ open: true })
   }
 
   close = () => {
+    this.scrollUnlock()
     this.setState({ open: false })
   }
 
@@ -102,9 +103,15 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     this.contentNode = contentNode
   }
 
-  scrollReset = () => {
+  scrollLock = () => {
     if (canUseDOM) {
-      window.scroll(0, 0)
+      document.documentElement.classList.add('scroll-lock')
+    }
+  }
+
+  scrollUnlock = () => {
+    if (canUseDOM) {
+      document.documentElement.classList.remove('scroll-lock')
     }
   }
 
