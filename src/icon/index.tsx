@@ -11,6 +11,7 @@ import CircleIcon from './circleIcon'
 import ClockIcon from './clockIcon'
 import CoinIcon from './coinIcon'
 import ComfortIcon from './comfortIcon'
+import ConnectIcon from './connectIcon'
 import CrossDiscIcon from './crossDiscIcon'
 import CrossIcon from './crossIcon'
 import CrosshairIcon from './crosshairIcon'
@@ -54,6 +55,7 @@ export {
   ClockIcon,
   CoinIcon,
   ComfortIcon,
+  ConnectIcon,
   CrossDiscIcon,
   CrossIcon,
   CrosshairIcon,
