@@ -12,12 +12,9 @@ describe('Drawer', () => {
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
-  it('Should call `onOpen` after open and scroll top', () => {
+  it('Should call `onOpen` and `scrollLock` after open', () => {
     const onOpen = jest.fn()
     const onChange = jest.fn()
-    const windowScroll = global.scroll
-    global.scroll = jest.fn()
-
     const wrapper = mount(
       <Drawer
         {...defaultProps}
@@ -27,15 +24,15 @@ describe('Drawer', () => {
         body
       </Drawer>,
     )
+    const scrollLock = jest.spyOn(wrapper.instance(), 'scrollLock')
     wrapper.instance().open()
     wrapper.find('.scrollableContent').simulate('transitionEnd')
     expect(onOpen).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(true)
-    expect(global.scroll).toHaveBeenCalledWith(0, 0)
-    global.scroll = windowScroll
+    expect(scrollLock).toHaveBeenCalledTimes(1)
   })
 
-  it('Should call `onClose` after close', () => {
+  it('Should call `onClose` and `scrollRestore` after close', () => {
     const onClose = jest.fn()
     const onChange = jest.fn()
     const wrapper = mount(
@@ -47,9 +44,11 @@ describe('Drawer', () => {
         body
       </Drawer>,
     )
+    const scrollRestore = jest.spyOn(wrapper.instance(), 'scrollRestore')
     wrapper.instance().close()
     wrapper.find('.scrollableContent').simulate('transitionEnd')
     expect(onClose).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(false)
+    expect(scrollRestore).toHaveBeenCalledTimes(1)
   })
 })
