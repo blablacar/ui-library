@@ -77,7 +77,7 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   close = () => {
-    this.scrollRestore()
+    this.scrollUnlock()
     this.setState({ open: false })
   }
 
@@ -109,7 +109,7 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     }
   }
 
-  scrollRestore = () => {
+  scrollUnlock = () => {
     if (canUseDOM) {
       document.documentElement.classList.remove('scroll-lock')
     }
