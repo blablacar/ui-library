@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v0.10.2 (10/09/2018)
+
 - **[FIX]** Force scroll to top on `Drawer` when opening
 - **[FIX]** Added `type=button` on `DrodpdownButton`
 - **[FIX]** Lock scroll on body when `Drawer` is opened
