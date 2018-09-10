@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Connect Icon
 
 # v0.10.2 (10/09/2018)
 
