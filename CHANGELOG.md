@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** Remove wrong coloring on AutoComplete when using keyboard to navigate
 
 # v0.10.2 (10/09/2018)
 

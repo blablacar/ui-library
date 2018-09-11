@@ -31,10 +31,4 @@ export default css`
     background-color: ${color.lightBackground};
     border-radius: ${radius.l};
   }
-
-  :global(.kirk-autoComplete-item[aria-selected="true"]),
-  :global(.kirk-autoComplete-item[aria-selected="true"] .kirk-autoComplete-primaryText),
-  :global(.kirk-autoComplete-item[aria-selected="true"] .kirk-autoComplete-secondaryText) {
-    color: ${color.accent};
-  }
 `
