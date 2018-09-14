@@ -2,7 +2,6 @@ import React from 'react'
 
 import Profile from 'profile'
 import Rating from 'rating'
-import Avatar from 'avatar'
 import Button from 'button'
 import ArrowIcon from 'icon/arrowIcon'
 

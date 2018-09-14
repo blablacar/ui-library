@@ -50,6 +50,10 @@ const createIconKnobs = (props: {}) =>
       acc[name] = number(name, Number(value))
     }
 
+    if (name === 'badgeContent') {
+      acc[name] = text(name, String(value))
+    }
+
     return acc
   }, {})
 
@@ -61,6 +65,7 @@ stories.add('All', () => {
       {name}
     </div>
   ))
+
   return iconList
 })
 
