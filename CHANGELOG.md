@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[UPDATE]** Use `Badge` in `BubbleIcon` and `HomeIcon`
+- **[BREAKING CHANGE]** Use `Badge` for ID Check in `Avatar` and renamed props
+- **[NEW]** `Badge` component
 - **[FIX]** Rename `IdCardVerifiedIcon`
 
 # v0.15.0 (03/10/2018)

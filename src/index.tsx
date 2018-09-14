@@ -3,6 +3,7 @@
  */
 import AutoComplete from 'autoComplete'
 import Avatar from 'avatar'
+import Badge from 'badge'
 import Button from 'button'
 import Caption from 'caption'
 import Checkbox from 'checkbox'
@@ -46,6 +47,7 @@ export * from 'icon/index'
 export {
   AutoComplete,
   Avatar,
+  Badge,
   Button,
   Caption,
   Checkbox,

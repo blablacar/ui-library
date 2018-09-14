@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
+import Badge from 'badge'
+import style from 'icon/style'
 import { color } from '_utils/branding'
 
 class HomeIcon extends PureComponent<Icon> {
@@ -10,11 +12,12 @@ class HomeIcon extends PureComponent<Icon> {
     iconColor: color.icon,
     size: 24,
     title: '',
+    badgeContent: '',
   }
 
   render() {
-    const { className, iconColor, size, title } = this.props
-    return (
+    const { className, iconColor, size, title, badgeContent } = this.props
+    const icon = (
       // tslint:disable:max-line-length
       <svg
         viewBox="0 0 24 24"
@@ -36,6 +39,18 @@ class HomeIcon extends PureComponent<Icon> {
           C24.056,12.632,24.041,12.316,23.836,12.13z" />
       </svg>
     )
+
+    if (badgeContent) {
+      return (
+        <div className="kirk-icon-wrapper">
+          {icon}
+          <Badge className="kirk-icon-badge">{badgeContent}</Badge>
+          <style jsx>{style}</style>
+        </div>
+      )
+    }
+
+    return icon
   }
 }
 

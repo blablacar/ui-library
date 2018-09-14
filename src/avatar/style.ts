@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color } from '_utils/branding'
 
 export default css`
-  div {
+  .kirk-avatar {
     border: 2px dashed ${color.border};
     box-sizing: border-box;
     border-radius: 50%;
@@ -11,50 +11,75 @@ export default css`
     height: 48px;
   }
 
-  .kirk-medium {
+  .kirk-avatar--medium {
     height: 96px;
     width: 96px;
   }
 
-  .kirk-large {
+  .kirk-avatar--large {
     height: 156px;
     width: 156px;
   }
 
-  .kirk-image {
+  .kirk-avatar--image {
     border: none;
   }
 
-  img {
+  .kirk-avatar--image img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .kirk-idCheck {
-    bottom: -3px;
-    right: -3px;
+  :global(.kirk-avatar .kirk-avatar-badge--unreadNotifications),
+  :global(.kirk-avatar .kirk-avatar-badge--idCheck) {
+    z-index: 2;
     position: absolute;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: ${color.success};
   }
 
-  .kirk-medium .kirk-idCheck,
-  .kirk-large .kirk-idCheck {
+  :global(.kirk-avatar .kirk-avatar-badge--unreadNotifications) {
+    top: -6px;
+    right: -6px;
+  }
+
+  :global(.kirk-avatar .kirk-badge.kirk-avatar-badge--idCheck) {
+    bottom: -3px;
+    right: -3px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: ${color.success};
+  }
+
+  :global(.kirk-avatar.kirk-avatar--medium .kirk-avatar-badge--idCheck),
+  :global(.kirk-avatar.kirk-avatar--large .kirk-avatar-badge--idCheck) {
     bottom: 0;
     right: 0;
   }
 
-  .kirk-medium .kirk-idCheck {
+  :global(.kirk-avatar--medium .kirk-avatar-badge--idCheck) {
     width: 24px;
     height: 24px;
   }
 
-  .kirk-large .kirk-idCheck {
+  :global(.kirk-avatar--large .kirk-avatar-badge--idCheck) {
     width: 36px;
     height: 36px;
+  }
+
+  :global(.kirk-avatar--medium .kirk-avatar-badge--unreadNotifications) {
+    height: 24px;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 0 6px;
+  }
+
+  :global(.kirk-avatar--large .kirk-avatar-badge--unreadNotifications) {
+    height: 36px;
+    line-height: 34px;
+    font-size: 18px;
+    padding: 0 8px;
   }
 `

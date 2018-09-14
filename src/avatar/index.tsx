@@ -1,37 +1,60 @@
 import React from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
-import style from 'avatar/style'
-import Check from 'icon/checkIcon'
 import prefix from '_utils'
 import { color } from '_utils/branding'
+import Badge from 'badge'
+import CheckIcon from 'icon/checkIcon'
+import style from 'avatar/style'
 
-export interface IdCheck {
-  readonly checked?: boolean
-  readonly title?: string
-}
-
-export interface AvatarInterface extends IdCheck {
+export interface AvatarInterface {
   readonly className?: Classcat.Class
   readonly image?: string
   readonly alt?: string
-  readonly medium?: boolean
-  readonly large?: boolean
+  readonly isMedium?: boolean
+  readonly isLarge?: boolean
+  readonly isIdChecked?: boolean
+  readonly unreadNotificationsCount?: string
+  readonly unreadNotificationsCountAriaLabel?: string
 }
 
-export const IdCheck = ({ checked = false, title = null }: IdCheck) => (
-  <span className="kirk-idCheck">
-    <Check size="100%" title={title} iconColor={color.white} />
-    <style jsx>{style}</style>
-  </span>
+const IdCheckBadge = <Badge className="kirk-avatar-badge--idCheck">
+  <CheckIcon size="100%" iconColor={color.white} />
+</Badge>
+
+const unreadNotificationsBadge = (
+    unreadNotificationsCount: string,
+    unreadNotificationsCountAriaLabel: string,
+  ) => (
+  <Badge
+    className="kirk-avatar-badge--unreadNotifications"
+    ariaLabel={unreadNotificationsCountAriaLabel}>
+    {unreadNotificationsCount}
+  </Badge>
 )
 
-const Avatar = ({ medium, large, className, checked, image, alt = '', title }: AvatarInterface) => (
-  <div className={cc([prefix({ medium, large, image: !!image }), className])}>
-    {image && <img src={image} alt={alt} />}
-    {checked && <IdCheck checked={checked} title={title} />}
-    <style jsx>{style}</style>
-  </div>
-)
+const Avatar = ({
+  isMedium,
+  isLarge,
+  className,
+  image,
+  alt = '',
+  isIdChecked,
+  unreadNotificationsCount,
+  unreadNotificationsCountAriaLabel,
+}: AvatarInterface) => (
+    <div
+      className={cc([
+        prefix({ medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
+        className, 'kirk-avatar',
+      ])}>
+      {image && <img src={image} alt={alt} />}
+      {unreadNotificationsCount &&
+        unreadNotificationsBadge(unreadNotificationsCount, unreadNotificationsCountAriaLabel)}
+      {isIdChecked && IdCheckBadge}
+      <style jsx>{style}</style>
+    </div>
+  )
 
 export default Avatar
