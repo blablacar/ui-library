@@ -10,18 +10,15 @@ const KEYCODES = {
 export interface DrawerProps {
   readonly children: string | JSX.Element
   readonly className?: Classcat.Class
+  readonly innerClassName?: Classcat.Class
   readonly onOpen?: () => void
   readonly onClose?: () => void
-  readonly onChange?: (open: boolean) => void
+  readonly onTransitionEnd?: (open: boolean) => void
   readonly width?: string
   readonly open?: boolean
 }
 
-export interface DrawerState {
-  open: boolean
-}
-
-export default class Drawer extends PureComponent<DrawerProps, DrawerState> {
+export default class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
   private contentStyles = {
     width: this.props.width,
@@ -31,19 +28,14 @@ export default class Drawer extends PureComponent<DrawerProps, DrawerState> {
     width: '400px',
     onOpen: () => {},
     onClose: () => {},
-    onChange: (isOpen) => {},
+    onTransitionEnd: (isOpen) => {},
     open: false,
-  }
-
-  state: DrawerState = {
-    open: this.props.open,
   }
 
   componentDidMount() {
     document.addEventListener('mouseup', this.handleOutsideMouseClick)
     document.addEventListener('touchstart', this.handleOutsideMouseClick)
     document.addEventListener('keydown', this.handleKeydown)
-    this.props.open ? this.open() : this.close()
   }
 
   componentDidUpdate({ width, open }: DrawerProps) {
@@ -61,30 +53,14 @@ export default class Drawer extends PureComponent<DrawerProps, DrawerState> {
     document.removeEventListener('touchstart', this.handleOutsideMouseClick)
   }
 
-  onTransitionEnd = () => {
-    this.state.open ? this.props.onOpen() : this.props.onClose()
-    this.props.onChange(this.state.open)
-  }
-
   open = () => {
     this.scrollLock()
-    // Apply "open" CSS animation using requestAnimationFrame as browsers are not rerendering
-    // stuff that changed in the same animation frame.
-    requestAnimationFrame(() => {
-      // This nested requestAnimationFrame here is only needed for Firefox
-      requestAnimationFrame(() => {
-        this.setState({ open: true })
-      })
-    })
+    this.props.onOpen()
   }
 
   close = () => {
     this.scrollUnlock()
-    this.setState({ open: false })
-  }
-
-  toggle = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+    this.props.onClose()
   }
 
   handleOutsideMouseClick = (e: MouseEvent) => {
@@ -107,35 +83,36 @@ export default class Drawer extends PureComponent<DrawerProps, DrawerState> {
 
   scrollLock = () => {
     if (canUseDOM) {
-      document.documentElement.classList.add('scroll-lock')
+      document.documentElement.classList.add('kirk-scroll-lock')
     }
   }
 
   scrollUnlock = () => {
     if (canUseDOM) {
-      document.documentElement.classList.remove('scroll-lock')
+      document.documentElement.classList.remove('kirk-scroll-lock')
     }
   }
 
   render() {
+    const { open, className, innerClassName, onTransitionEnd, children } = this.props
     return (
       <aside
         className={cc([
-          'drawer',
+          'kirk-drawer',
           {
-            'drawer--open': this.state.open,
-            'drawer--close': !this.state.open,
+            'kirk-drawer--open': open,
+            'kirk-drawer--close': !open,
           },
-          this.props.className,
+          className,
         ])}
       >
         <div
           ref={this.refContent}
-          className="scrollableContent"
+          className={cc(['kirk-drawer-scrollableContent', innerClassName])}
           style={this.contentStyles}
-          onTransitionEnd={this.onTransitionEnd}
+          onTransitionEnd={() => onTransitionEnd(open)}
         >
-          {this.props.children}
+          {children}
         </div>
         <style jsx>{style}</style>
       </aside>
