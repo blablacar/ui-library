@@ -8,19 +8,20 @@ const KEYCODES = {
 }
 
 export interface DrawerProps {
-  readonly children: string | JSX.Element,
-  readonly className?: Classcat.Class,
-  readonly onOpen?: () => void,
-  readonly onClose?: () => void,
-  readonly onChange?: (open: boolean) => void,
-  readonly width?: string,
+  readonly children: string | JSX.Element
+  readonly className?: Classcat.Class
+  readonly onOpen?: () => void
+  readonly onClose?: () => void
+  readonly onChange?: (open: boolean) => void
+  readonly width?: string
+  readonly open?: boolean
 }
 
 export interface DrawerState {
   open: boolean
 }
 
-export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
+export default class Drawer extends PureComponent<DrawerProps, DrawerState> {
   private contentNode: HTMLDivElement
   private contentStyles = {
     width: this.props.width,
@@ -31,28 +32,26 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     onOpen: () => {},
     onClose: () => {},
     onChange: (isOpen) => {},
+    open: false,
   }
 
   state: DrawerState = {
-    open: false,
+    open: this.props.open,
   }
 
   componentDidMount() {
     document.addEventListener('mouseup', this.handleOutsideMouseClick)
     document.addEventListener('touchstart', this.handleOutsideMouseClick)
     document.addEventListener('keydown', this.handleKeydown)
-
-    // Apply "open" CSS animation using requestAnimationFrame as browsers are not rerendering
-    // stuff that changed in the same animation frame.
-    requestAnimationFrame(() => {
-      // This nested requestAnimationFrame here is only needed for Firefox
-      requestAnimationFrame(this.open)
-    })
+    this.props.open ? this.open() : this.close()
   }
 
-  componentWillReceiveProps({ width }: DrawerProps) {
+  componentDidUpdate({ width, open }: DrawerProps) {
     if (this.props.width !== width) {
       this.contentStyles.width = width
+    }
+    if (this.props.open !== open) {
+      this.props.open ? this.open() : this.close()
     }
   }
 
@@ -63,17 +62,20 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   onTransitionEnd = () => {
-    if (this.state.open) {
-      this.props.onOpen()
-    } else {
-      this.props.onClose()
-    }
+    this.state.open ? this.props.onOpen() : this.props.onClose()
     this.props.onChange(this.state.open)
   }
 
   open = () => {
     this.scrollLock()
-    this.setState({ open: true })
+    // Apply "open" CSS animation using requestAnimationFrame as browsers are not rerendering
+    // stuff that changed in the same animation frame.
+    requestAnimationFrame(() => {
+      // This nested requestAnimationFrame here is only needed for Firefox
+      requestAnimationFrame(() => {
+        this.setState({ open: true })
+      })
+    })
   }
 
   close = () => {
@@ -119,7 +121,8 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     return (
       <aside
         className={cc([
-          'drawer', {
+          'drawer',
+          {
             'drawer--open': this.state.open,
             'drawer--close': !this.state.open,
           },

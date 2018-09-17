@@ -6,9 +6,20 @@ const defaultProps = {
 }
 
 describe('Drawer', () => {
+  beforeEach(() => {
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => cb())
+  })
+
+  afterEach(() => {
+    window.requestAnimationFrame.mockRestore()
+  })
   it('Renders with a custom className', () => {
     const customClassName = 'custom-drawer'
-    const wrapper = shallow(<Drawer {...defaultProps} className={customClassName}>body</Drawer>)
+    const wrapper = shallow(
+      <Drawer {...defaultProps} className={customClassName}>
+        body
+      </Drawer>,
+    )
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
@@ -16,19 +27,17 @@ describe('Drawer', () => {
     const onOpen = jest.fn()
     const onChange = jest.fn()
     const wrapper = mount(
-      <Drawer
-        {...defaultProps}
-        onChange={onChange}
-        onOpen={onOpen}
-      >
+      <Drawer {...defaultProps} onChange={onChange} onOpen={onOpen}>
         body
       </Drawer>,
     )
     const scrollLock = jest.spyOn(wrapper.instance(), 'scrollLock')
-    wrapper.instance().open()
     wrapper.find('.scrollableContent').simulate('transitionEnd')
+    expect(onChange).toHaveBeenCalledWith(false)
+    wrapper.setProps({ open: true })
+    wrapper.find('.scrollableContent').simulate('transitionEnd')
+    expect(onChange).toHaveBeenCalledWith(false)
     expect(onOpen).toHaveBeenCalledTimes(1)
-    expect(onChange).toHaveBeenCalledWith(true)
     expect(scrollLock).toHaveBeenCalledTimes(1)
   })
 
@@ -36,11 +45,7 @@ describe('Drawer', () => {
     const onClose = jest.fn()
     const onChange = jest.fn()
     const wrapper = mount(
-      <Drawer
-        {...defaultProps}
-        onChange={onChange}
-        onClose={onClose}
-      >
+      <Drawer {...defaultProps} onChange={onChange} onClose={onClose}>
         body
       </Drawer>,
     )

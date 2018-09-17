@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color, transition } from '_utils/branding'
 
 export default css`
-  .drawer {
+  .drawer--open {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@ export default css`
     overflow-y: hidden;
   }
 
-  .drawer::after {
+  .drawer--open::after {
     content: '';
     position: absolute;
     top: 0;
@@ -28,7 +28,7 @@ export default css`
   }
 
   .drawer--open::after {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .drawer--close::after {
@@ -43,7 +43,6 @@ export default css`
     bottom: 0;
     overflow-y: auto;
     background-color: ${color.white};
-    box-shadow: 0 36px 36px 0 rgba(0, 0, 0, .3);
     transition: transform ${transition.duration.base} ease-in-out;
     will-change: transform;
     transform: translateX(-100%);
@@ -52,6 +51,7 @@ export default css`
   }
 
   .drawer--open .scrollableContent {
+    box-shadow: 0 36px 36px 0 rgba(0, 0, 0, 0.3);
     transform: translateX(0%);
   }
 
