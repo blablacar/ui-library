@@ -3,14 +3,12 @@ import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteListItem from './autoCompleteListItem'
 import style from './autoCompleteListStyle'
 
 export interface AutoCompleteListProps {
   name: string,
-  renderItem: (itemToRender:AutocompleteItemToRender) => React.ReactElement<any>,
   onSelect?: (item:AutocompleteItem) => void,
   className?: Classcat.Class,
   items?: AutocompleteItem[],
@@ -123,7 +121,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     return (
       <ul
         key={this.props.name}
-        className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
+        className={cc(['kirk-autoComplete-list', this.props.className])}
         role="listbox"
       >
         {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
@@ -139,11 +137,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
               status={status}
               select={this.onSelect(index)}
               onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-            >
-              <div>
-                {this.props.renderItem({ item, index })}
-              </div>
-            </AutoCompleteListItem>
+            />
           )
         })}
         <style jsx key={`${this.props.name}-style-jsx`}>{style}</style>

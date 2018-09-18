@@ -11,14 +11,18 @@ it('Should be displayed in default state without props', () => {
 })
 
 it('Should accept a custom `className`', () => {
-  const customClassName = 'custom'
-  const wrapper = shallow(<Item className={customClassName} />)
-  expect(wrapper.hasClass(customClassName)).toBe(true)
+  const wrapper = shallow(<Item className="test" />)
+  expect(wrapper.hasClass('test')).toBe(true)
 })
 
 it('Should accept a custom `tag`', () => {
-  const wrapper = shallow(<Item tag="li" />)
+  const wrapper = shallow(<Item tag={<li />} />)
   expect(wrapper.type()).toBe('li')
+})
+
+it('Should accept custom props on a custom `tag`', () => {
+  const wrapper = shallow(<Item tag={<li role="option" />} />)
+  expect(wrapper.prop('role')).toBe('option')
 })
 
 it('Should display a left add-on', () => {
@@ -52,6 +56,6 @@ it('Should display body text on the right', () => {
 })
 
 it('Should display a chevron', () => {
-  const wrapper = shallow(<Item chevron />)
-  expect(wrapper.find(ChevronIcon).exists()).toBe(true)
+  const wrapper = mount(<Item chevron={<ChevronIcon />} />)
+  expect(wrapper.find('.kirk-item-chevron').exists()).toBe(true)
 })

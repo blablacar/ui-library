@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
@@ -6,6 +6,7 @@ import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import style from 'radio/style'
 
 export interface RadioProps {
+  readonly id: string | number,
   readonly value: string,
   readonly children: string,
   readonly className?: Classcat.Class,
@@ -37,29 +38,30 @@ export default class Radio extends Component <RadioProps> {
 
   render() {
     const { className, name, value, subLabel, highlighted, checked, children, icon,
-      status, onDoneAnimationEnd, key } = this.props
+      status, onDoneAnimationEnd } = this.props
 
     return (
-      <ItemChoice
-        key={key}
-        href={<label />}
-        label={children}
-        subLabel={subLabel}
-        highlighted={highlighted}
-        className={cc([prefix({ radio: true }), className])}
-        status={status}
-        onDoneAnimationEnd={onDoneAnimationEnd}
-      >
+      <Fragment>
+        <ItemChoice
+          href={<label htmlFor={value}/>}
+          label={children}
+          subLabel={subLabel}
+          highlighted={highlighted}
+          leftAddon={icon}
+          className={cc([prefix({ radio: true }), className])}
+          status={status}
+          onDoneAnimationEnd={onDoneAnimationEnd}
+        />
         <input
+          id={value}
           type="radio"
           name={name}
           checked={checked}
           value={value}
           onChange={this.onChange}
         />
-        {icon}
         <style jsx>{style}</style>
-      </ItemChoice>
+      </Fragment>
     )
   }
 }

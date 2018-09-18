@@ -42,13 +42,6 @@ describe('AutoCompleteList', () => {
     expect(wrapper.find('li')).toHaveLength(1)
   })
 
-  it('Renders items with a custom renderer', () => {
-    const CustomItem = jest.fn(({ item }) => <h1>{item.title}</h1>)
-    const wrapper = mount(<AutoCompleteList {...defaultProps} renderItem={CustomItem} />)
-    expect(wrapper.find('h1')).toHaveLength(2)
-    expect(CustomItem).toHaveBeenCalledTimes(2)
-  })
-
   it('Renders items with a custom className', () => {
     const customClassName = 'custom-class'
     const wrapper = mount(<AutoCompleteList {...defaultProps} itemClassName={customClassName} />)

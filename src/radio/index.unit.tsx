@@ -21,7 +21,7 @@ describe('Radio', () => {
   it('Should accept a custom `className`', () => {
     const customClassName = 'custom'
     const wrapper = shallow(<Radio {...defaultProps} className={customClassName}>Title</Radio>)
-    expect(wrapper.hasClass(customClassName)).toBe(true)
+    expect(wrapper.find(ItemChoice).hasClass(customClassName)).toBe(true)
   })
 
   it('Should call `onChange` when selected', () => {

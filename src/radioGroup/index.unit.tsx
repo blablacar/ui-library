@@ -59,7 +59,8 @@ it('should be accessible via label', () => {
       <Radio value="radioValue2">Label 2</Radio>
     </RadioGroup>
   ))
-  expect(radio.find('label').first().find('input')).toHaveLength(1)
+  expect(radio.find('label').first().prop('htmlFor')).toEqual('radioValue1')
+  expect(radio.find('input').first().prop('id')).toEqual('radioValue1')
 })
 
 it('should be able to receive props', () => {

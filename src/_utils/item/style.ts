@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css'
 
-import { space } from '_utils/branding'
+import { color, space } from '_utils/branding'
 
 export default css`
   :global(.kirk-item) {
@@ -12,7 +12,27 @@ export default css`
     align-items: center;
     flex: 1;
     border: 0;
+    background-color: ${color.white}
+  }
+
+  :global(a.kirk-item) {
+    cursor: pointer;
     background: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
+
+  /* Button tag fixes */
+  :global(button.kirk-item) {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
   }
 
   /* Text areas */
@@ -32,7 +52,8 @@ export default css`
 
   /* Addons */
   :global(.kirk-item-leftAddon),
-  :global(.kirk-item-rightAddon) {
+  :global(.kirk-item-rightAddon),
+  :global(kirk-item-chevron) {
     display: inline-flex;
     min-width: 24px;
     align-items: center;
@@ -42,7 +63,8 @@ export default css`
     margin-right: ${space.l};
   }
 
-  :global(.kirk-item-rightAddon) {
+  :global(.kirk-item-rightAddon),
+  :global(kirk-item-chevron) {
     margin-left: ${space.l};
   }
 `

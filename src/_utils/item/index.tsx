@@ -3,10 +3,9 @@ import cc from 'classcat'
 
 import style from './style'
 import Text, { TextTagType, TextDisplayType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
 
 export interface ItemProps {
-  readonly chevron?: boolean
+  readonly chevron?: React.ReactNode
   readonly className?: Classcat.Class
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
@@ -18,7 +17,7 @@ export interface ItemProps {
   readonly rightBody?: string
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightAddon?: React.ReactNode
-  readonly tag?: string
+  readonly tag?: JSX.Element
 }
 
 const Item = ({
@@ -34,14 +33,13 @@ const Item = ({
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
   rightAddon,
-  tag = 'div',
+  tag = <div />,
 }: ItemProps) => {
-  const Tag = tag
-  const baseClassName = 'kirk-item'
+  const Tag = tag.type
   const hasRightText = rightTitle || rightBody
 
   return (
-    <Tag className={cc([baseClassName, className])}>
+    <Tag {...tag.props} className={cc(['kirk-item', className])}>
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
       <div className="kirk-item-leftText">
         {leftTitle && (
@@ -78,7 +76,7 @@ const Item = ({
         </div>
       )}
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && <div className="kirk-item-rightAddon">{<ChevronIcon />}</div>}
+      {chevron && <div className="kirk-item-chevron">{chevron}</div>}
       <style jsx>{style}</style>
     </Tag>
   )

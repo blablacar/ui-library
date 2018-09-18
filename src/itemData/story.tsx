@@ -21,7 +21,7 @@ stories.add(
         data={text('Data', 'Data')}
         mainTitle={isMainTitle ? text('Main title', 'Title') : null}
         dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-        tag="li"
+        tag={<li />}
       />
     )
   }),

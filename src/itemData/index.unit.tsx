@@ -19,6 +19,6 @@ it('Should accept a custom `className`', () => {
 })
 
 it('Should accept a custom `tag`', () => {
-  const wrapper = shallow(<ItemData {...defaultProps} tag="li" />)
+  const wrapper = shallow(<ItemData {...defaultProps} tag={<li />} />)
   expect(wrapper.dive().type()).toBe('li')
 })

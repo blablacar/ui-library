@@ -6,12 +6,17 @@ import { ItemChoiceStatus } from 'itemChoice'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
 import AutoComplete from 'autoComplete'
+import ClockIcon from 'icon/clockIcon'
 
 const stories = storiesOf('AutoComplete', module)
 stories.addDecorator(withKnobs)
 
 const places:AutocompleteItem[] = [
-  { id: '1', title: 'Paris Saint Lazare', description: 'Rue d’Amsterdam, Paris' },
+  {
+    id: '1', title: 'Paris Saint Lazare',
+    description: 'Rue d’Amsterdam, Paris',
+    icon: <ClockIcon />,
+  },
   { id: '2', title: 'Paris Gare de Lyon', description: 'Rue d’Amsterdam, Paris' },
   { id: '3', title: 'Paris Rive Gauche' },
 ]
