@@ -1,3 +1,6 @@
+/**
+ * THIS FILE IS GENERATED
+ */
 import './stories.css'
 
 import '../src/_utils/story'
@@ -13,6 +16,7 @@ import '../src/hamburgerButton/story'
 import '../src/icon/story'
 import '../src/itemChoice/story'
 import '../src/itemData/story'
+import '../src/itemInfo/story'
 import '../src/itinerary/story'
 import '../src/loader/story'
 import '../src/menu/story'

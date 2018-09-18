@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, forwardRef, Ref } from 'react'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
@@ -26,6 +26,7 @@ export interface ModalProps {
   readonly fullscreen?: boolean
   readonly displayDimmer?: boolean
   readonly closeButtonTitle?: string
+  readonly forwardedRef?: Ref<HTMLDivElement>
 }
 
 class Modal extends Component<ModalProps> {
@@ -40,6 +41,7 @@ class Modal extends Component<ModalProps> {
     large: false,
     fullscreen: false,
     displayDimmer: true,
+    forwardedRef: null,
   }
 
   constructor(props: ModalProps) {
@@ -146,8 +148,8 @@ class Modal extends Component<ModalProps> {
         <TransitionGroup component="div" className="transition-wrapper">
           {this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
-              <div className={classNames}>
-                <div className={`${baseClassName}-dialog`} ref={this.refContent}>
+              <div className={classNames} ref={this.props.forwardedRef}>
+                <div className={`${baseClassName}-dialog`}>
                   {this.props.displayCloseButton && (
                     <Button
                       icon
@@ -172,4 +174,6 @@ class Modal extends Component<ModalProps> {
   }
 }
 
-export default Modal
+export default forwardRef<HTMLDivElement, ModalProps>(
+  (props, ref) => <Modal {...props} forwardedRef={ref} />,
+)

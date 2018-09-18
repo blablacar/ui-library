@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 
 import Button from 'button'
-import IncreaseIcon from 'icon/increaseIcon'
-import DecreaseIcon from 'icon/decreaseIcon'
+import PlusIcon from 'icon/plusIcon'
+import MinusIcon from 'icon/minusIcon'
 
 import { color } from '_utils/branding'
 import style from 'stepper/style'
@@ -85,7 +85,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           disabled={isMin}
           onClick={this.decrement}
         >
-          <DecreaseIcon title={decreaseLabel} iconColor={isMin ? color.disabled : color.primary} />
+          <MinusIcon title={decreaseLabel} iconColor={isMin ? color.disabled : color.primary} />
         </Button>
         <div className="kirk-stepper-value">
           { format(this.state.value) }
@@ -101,7 +101,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           disabled={isMax}
           onClick={this.increment}
         >
-          <IncreaseIcon title={increaseLabel} iconColor={isMax ? color.disabled : color.primary} />
+          <PlusIcon title={increaseLabel} iconColor={isMax ? color.disabled : color.primary} />
         </Button>
         <style jsx>{style}</style>
       </div>

@@ -3,11 +3,16 @@ import { color, transition } from '_utils/branding'
 
 export default css`
   .drawer {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 1;
+  }
+
+  :global(.scroll-lock) {
+    overflow-y: hidden;
   }
 
   .drawer::after {

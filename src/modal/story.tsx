@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
@@ -31,6 +31,8 @@ class ModalOpener extends Component<ModalProps> {
     this.setState({ modalOpen2: false })
   }
 
+  ref = createRef<HTMLDivElement>()
+
   render() {
     return (
       <div>
@@ -40,6 +42,7 @@ class ModalOpener extends Component<ModalProps> {
           {...this.props}
           close={this.closeModal}
           isOpen={this.state.modalOpen}
+          ref={this.ref}
         >
           <div>
             <h1>Modal 1</h1>

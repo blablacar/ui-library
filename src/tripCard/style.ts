@@ -1,5 +1,6 @@
 import css from 'styled-jsx/css'
-import { color, font, radius, space, fontWeight } from '_utils/branding'
+import { color, radius, space } from '_utils/branding'
+import { timeWidth } from 'itinerary/style'
 
 export default css`
   li {
@@ -23,14 +24,7 @@ export default css`
     flex: 1;
   }
 
-  .kirk-tripCard-price {
-    color: ${color.primaryText};
-    font-size: ${font.m.size};
-    line-height: ${font.m.lineHeight};
-    font-weight: ${fontWeight.medium};
-  }
-
-  .kirk-tripCard--highlighted .kirk-tripCard-price {
+  .kirk-tripCard--highlighted :global(.kirk-tripCard-price) {
     color: ${color.success};
   }
 
@@ -43,14 +37,13 @@ export default css`
     display: flex;
     align-items: center;
     flex: 1;
-    color: ${color.primaryText};
-    font-size: ${font.m.size};
-    line-height: ${font.m.lineHeight};
+    margin-right: ${space.l};
   }
 
-  .kirk-tripCard :global(.kirk-tripCard-driver > div) {
-    /* Adding the width of the step point to get the right alignment */
-    margin-right: calc(${space.xl} + 6px);
+  /* To match the width of the time area of the Itinerary */
+  :global(.kirk-tripCard-avatar) {
+    min-width: ${timeWidth};
+    margin-right: ${space.l};
   }
 
   .kirk-tripCard :global(.kirk-tripCard-flags svg) {
@@ -58,8 +51,7 @@ export default css`
     margin-left: ${space.m};
   }
 
-  .kirk-tripCard-topText {
+  :global(.kirk-tripCard-topText) {
     color: ${color.success};
-    font-weight: ${fontWeight.medium};
   }
 `

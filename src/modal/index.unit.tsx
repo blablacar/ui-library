@@ -12,12 +12,17 @@ const defaultProps = {
   displayCloseButton: true,
   large: false,
   displayDimmer: true,
+  forwardedRef: null,
 }
 
 describe('Modal', () => {
   it('Should have default props with appropriate values', () => {
-    const wrapper = mount(<Modal />)
+    const wrapper = shallow(<Modal />)
     expect(wrapper.props()).toEqual(defaultProps)
+  })
+
+  it('Should have default dimmer with default props', () => {
+    const wrapper = mount(<Modal />)
     expect(wrapper.find('.kirk-modal-dimmer--visible').exists()).toBe(true)
   })
 

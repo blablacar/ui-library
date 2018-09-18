@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { canUseDOM } from 'exenv'
 import cc from 'classcat'
 import style from 'drawer/style'
 
@@ -7,7 +8,7 @@ const KEYCODES = {
 }
 
 export interface DrawerProps {
-  readonly children: string,
+  readonly children: string | JSX.Element,
   readonly className?: Classcat.Class,
   readonly onOpen?: () => void,
   readonly onClose?: () => void,
@@ -71,10 +72,12 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
   }
 
   open = () => {
+    this.scrollLock()
     this.setState({ open: true })
   }
 
   close = () => {
+    this.scrollUnlock()
     this.setState({ open: false })
   }
 
@@ -98,6 +101,18 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
 
   refContent = (contentNode: HTMLDivElement) => {
     this.contentNode = contentNode
+  }
+
+  scrollLock = () => {
+    if (canUseDOM) {
+      document.documentElement.classList.add('scroll-lock')
+    }
+  }
+
+  scrollUnlock = () => {
+    if (canUseDOM) {
+      document.documentElement.classList.remove('scroll-lock')
+    }
   }
 
   render() {

@@ -32,14 +32,22 @@ export interface ItemChoiceProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export interface ComponentProps {
-  readonly href?: string
-  readonly role?: string
-  readonly onDoneAnimationEnd?: () => void
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+export interface ItemChoiceProps {
+  readonly className?: Classcat.Class,
+  readonly href?: string | JSX.Element,
+  readonly label?: string,
+  readonly subLabel?: string,
+  readonly children?: React.ReactNode,
+  readonly leftAddon?: React.ReactNode,
+  readonly rightAddon?: React.ReactNode,
+  readonly highlighted?: boolean,
+  readonly selected?: boolean,
+  readonly status?: ItemChoiceStatus,
+  readonly onDoneAnimationEnd?: () => void,
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
 }
 
 class ItemChoice extends PureComponent<ItemChoiceProps> {
