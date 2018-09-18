@@ -84,38 +84,39 @@ class DrawerDemo extends Component {
     isOpen: false,
   }
 
-  onToggleDrawer = (open: boolean) => {
-    this.setState({ isOpen: open })
-  }
-
   toggleDrawer = () => {
-    if (this.drawer) {
-      this.drawer.close()
+    if (this.state.isOpen) {
+      this.onCloseDrawer()
     } else {
-      this.setState({ isOpen: true })
+      this.onOpenDrawer()
     }
   }
-
-  refDrawer = (node: Drawer) => {
-    this.drawer = node
+  onOpenDrawer = () => {
+    this.setState({
+      isOpen: true,
+    })
+  }
+  onCloseDrawer = () => {
+    this.setState({
+      isOpen: false,
+    })
   }
 
   render() {
     return (
-      <div style={{ overflow: 'hidden' }}>
+      <div>
         <nav>
           <HamburgerButton onClick={this.toggleDrawer} open={this.state.isOpen} />
         </nav>
-        <main style={{ position: 'relative', minHeight: '100vh' }}>
-          {this.state.isOpen && (
-            <Drawer
-              ref={this.refDrawer}
-              onChange={this.onToggleDrawer}
-              width={text('width', '400px')}
-            >
-              <Menu items={menuItems} />
-            </Drawer>
-          )}
+        <main>
+          <Drawer
+            open={this.state.isOpen}
+            onOpen={this.onOpenDrawer}
+            onClose={this.onCloseDrawer}
+            width={text('width', '400px')}
+          >
+            <Menu items={menuItems} />
+          </Drawer>
         </main>
       </div>
     )

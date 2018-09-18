@@ -8,32 +8,23 @@ const KEYCODES = {
 }
 
 export interface DrawerProps {
-  readonly children: string | JSX.Element,
-  readonly className?: Classcat.Class,
-  readonly onOpen?: () => void,
-  readonly onClose?: () => void,
-  readonly onChange?: (open: boolean) => void,
-  readonly width?: string,
+  readonly children: string | JSX.Element
+  readonly className?: Classcat.Class
+  readonly innerClassName?: Classcat.Class
+  readonly onOpen?: () => void
+  readonly onClose?: () => void
+  readonly onTransitionEnd?: (open: boolean) => void
+  readonly width?: string
+  readonly open?: boolean
 }
 
-export interface DrawerState {
-  open: boolean
-}
-
-export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
+export default class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
-  private contentStyles = {
-    width: this.props.width,
-  }
-
   static defaultProps: Partial<DrawerProps> = {
     width: '400px',
-    onOpen: () => {},
-    onClose: () => {},
-    onChange: (isOpen) => {},
-  }
-
-  state: DrawerState = {
+    onOpen() {},
+    onClose() {},
+    onTransitionEnd: (isOpen) => {},
     open: false,
   }
 
@@ -41,18 +32,11 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     document.addEventListener('mouseup', this.handleOutsideMouseClick)
     document.addEventListener('touchstart', this.handleOutsideMouseClick)
     document.addEventListener('keydown', this.handleKeydown)
-
-    // Apply "open" CSS animation using requestAnimationFrame as browsers are not rerendering
-    // stuff that changed in the same animation frame.
-    requestAnimationFrame(() => {
-      // This nested requestAnimationFrame here is only needed for Firefox
-      requestAnimationFrame(this.open)
-    })
   }
 
-  componentWillReceiveProps({ width }: DrawerProps) {
-    if (this.props.width !== width) {
-      this.contentStyles.width = width
+  componentDidUpdate({ open }: DrawerProps) {
+    if (this.props.open !== open) {
+      this.props.open ? this.open() : this.close()
     }
   }
 
@@ -62,27 +46,14 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
     document.removeEventListener('touchstart', this.handleOutsideMouseClick)
   }
 
-  onTransitionEnd = () => {
-    if (this.state.open) {
-      this.props.onOpen()
-    } else {
-      this.props.onClose()
-    }
-    this.props.onChange(this.state.open)
-  }
-
   open = () => {
     this.scrollLock()
-    this.setState({ open: true })
+    this.props.onOpen()
   }
 
   close = () => {
     this.scrollUnlock()
-    this.setState({ open: false })
-  }
-
-  toggle = () => {
-    this.setState(prevState => ({ open: !prevState.open }))
+    this.props.onClose()
   }
 
   handleOutsideMouseClick = (e: MouseEvent) => {
@@ -105,34 +76,36 @@ export default class Drawer extends PureComponent <DrawerProps, DrawerState> {
 
   scrollLock = () => {
     if (canUseDOM) {
-      document.documentElement.classList.add('scroll-lock')
+      document.documentElement.classList.add('kirk-scroll-lock')
     }
   }
 
   scrollUnlock = () => {
     if (canUseDOM) {
-      document.documentElement.classList.remove('scroll-lock')
+      document.documentElement.classList.remove('kirk-scroll-lock')
     }
   }
 
   render() {
+    const { open, className, innerClassName, onTransitionEnd, children, width } = this.props
     return (
       <aside
         className={cc([
-          'drawer', {
-            'drawer--open': this.state.open,
-            'drawer--close': !this.state.open,
+          'kirk-drawer',
+          {
+            'kirk-drawer--open': open,
+            'kirk-drawer--close': !open,
           },
-          this.props.className,
+          className,
         ])}
       >
         <div
           ref={this.refContent}
-          className="scrollableContent"
-          style={this.contentStyles}
-          onTransitionEnd={this.onTransitionEnd}
+          className={cc(['kirk-drawer-scrollableContent', innerClassName])}
+          style={{ width }}
+          onTransitionEnd={() => onTransitionEnd(open)}
         >
-          {this.props.children}
+          {children}
         </div>
         <style jsx>{style}</style>
       </aside>

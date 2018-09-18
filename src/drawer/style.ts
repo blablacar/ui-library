@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color, transition } from '_utils/branding'
 
 export default css`
-  .drawer {
+  .kirk-drawer--open {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,11 +11,11 @@ export default css`
     z-index: 1;
   }
 
-  :global(.scroll-lock) {
+  :global(.kirk-scroll-lock) {
     overflow-y: hidden;
   }
 
-  .drawer::after {
+  .kirk-drawer--open::after {
     content: '';
     position: absolute;
     top: 0;
@@ -27,15 +27,15 @@ export default css`
     transition: background-color 150ms linear;
   }
 
-  .drawer--open::after {
-    background-color: rgba(0, 0, 0, .3);
+  .kirk-drawer--open::after {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .drawer--close::after {
+  .kirk-drawer--close::after {
     background-color: rgba(0, 0, 0, 0);
   }
 
-  .scrollableContent {
+  .kirk-drawer-scrollableContent {
     position: absolute;
     z-index: 1050;
     top: 0;
@@ -43,7 +43,6 @@ export default css`
     bottom: 0;
     overflow-y: auto;
     background-color: ${color.white};
-    box-shadow: 0 36px 36px 0 rgba(0, 0, 0, .3);
     transition: transform ${transition.duration.base} ease-in-out;
     will-change: transform;
     transform: translateX(-100%);
@@ -51,11 +50,12 @@ export default css`
     -webkit-overflow-scrolling: touch;
   }
 
-  .drawer--open .scrollableContent {
+  .kirk-drawer--open .kirk-drawer-scrollableContent {
+    box-shadow: 0 36px 36px 0 rgba(0, 0, 0, 0.3);
     transform: translateX(0%);
   }
 
-  .drawer--close .scrollableContent {
+  .kirk-drawer--close .kirk-drawer-scrollableContent {
     transform: translateX(-100%);
   }
 `
