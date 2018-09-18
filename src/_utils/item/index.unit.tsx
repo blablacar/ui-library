@@ -57,5 +57,5 @@ it('Should display body text on the right', () => {
 
 it('Should display a chevron', () => {
   const wrapper = mount(<Item chevron={<ChevronIcon />} />)
-  expect(wrapper.find(ChevronIcon).exists()).toBe(true)
+  expect(wrapper.find('.kirk-item-chevron').exists()).toBe(true)
 })

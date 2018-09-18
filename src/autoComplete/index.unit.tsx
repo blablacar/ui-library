@@ -81,21 +81,6 @@ describe('AutoComplete', () => {
     expect(event).toBeCalled()
   })
 
-  describe('#renderItem', () => {
-    it('Renders each result item with a custom renderer', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        renderItem={item => <div className="custom-item">{item.title}</div>}
-      />)
-      wrapper.instance().onInputChange({ value: 'title' })
-
-      wrapper.setProps({ isSearching: true })
-      wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
-      console.log(wrapper.debug())
-      expect(wrapper.find('.custom-item')).toHaveLength(2)
-    })
-  })
-
   describe('#maxItems', () => {
     it('Renders only `maxItems` when specified', () => {
       const wrapper = mount(<AutoComplete

@@ -2,6 +2,7 @@ declare interface AutocompleteItem {
   readonly id: string,
   readonly title: string,
   readonly description?: string
+  readonly icon?: React.ReactNode
 }
 
 declare interface AutocompleteOnChange {

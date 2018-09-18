@@ -7,7 +7,6 @@ import debounce from 'lodash.debounce'
 import TextField from 'textField'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
-import AutoCompleteListItemDefault from './autoCompleteListItemDefault'
 import style from './style'
 
 type query = string | number | boolean
@@ -28,9 +27,8 @@ interface AutoCompleteProps {
   readonly bodyClassName?: Classcat.Class,
   readonly items?: AutocompleteItem[],
   readonly maxItems?: number,
-  readonly renderItem?: (itemToRender:AutocompleteItemToRender) => React.ReactElement<any>,
-  readonly renderBusy?: ({ query }: { query: query}) => React.ReactElement<any>,
-  readonly renderNoResults?: ({ query }: { query: query}) => React.ReactElement<any>,
+  readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>,
+  readonly renderNoResults?: ({ query }: { query: query }) => React.ReactElement<any>,
   readonly renderQuery?: (item:AutocompleteItem) => string,
   readonly renderEmptySearch?: AutocompleteItem[],
   readonly getItemValue?: (item:AutocompleteItem) => string,
@@ -76,7 +74,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     isSearching: false,
     searchForItemsMinChars: 3,
     maxItems: Infinity,
-    renderItem: AutoCompleteListItemDefault,
     renderBusy: () => <div>Loading…</div>,
     renderNoResults: () => <div>No results</div>,
     renderEmptySearch: [],
@@ -254,7 +251,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           name={`${this.props.name}-list`}
           items={listItems}
           maxItems={this.props.maxItems}
-          renderItem={this.props.renderItem}
           onSelect={this.onSelectItem}
           visible={shouldDisplayAutoCompleteList || shouldDisplayEmptyState}
           selectedItemStatus={this.props.selectedItemStatus}

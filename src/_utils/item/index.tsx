@@ -76,7 +76,7 @@ const Item = ({
         </div>
       )}
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && <div className="kirk-item-rightAddon">{chevron}</div>}
+      {chevron && <div className="kirk-item-chevron">{chevron}</div>}
       <style jsx>{style}</style>
     </Tag>
   )

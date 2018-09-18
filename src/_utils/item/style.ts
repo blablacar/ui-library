@@ -52,7 +52,8 @@ export default css`
 
   /* Addons */
   :global(.kirk-item-leftAddon),
-  :global(.kirk-item-rightAddon) {
+  :global(.kirk-item-rightAddon),
+  :global(kirk-item-chevron) {
     display: inline-flex;
     min-width: 24px;
     align-items: center;
@@ -62,7 +63,8 @@ export default css`
     margin-right: ${space.l};
   }
 
-  :global(.kirk-item-rightAddon) {
+  :global(.kirk-item-rightAddon),
+  :global(kirk-item-chevron) {
     margin-left: ${space.l};
   }
 `
