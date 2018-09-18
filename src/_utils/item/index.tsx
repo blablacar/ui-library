@@ -3,11 +3,12 @@ import cc from 'classcat'
 
 import style from './style'
 import Text, { TextTagType, TextDisplayType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
 
 export interface ItemProps {
-  readonly chevron?: boolean
+  readonly chevron?: React.ReactNode
   readonly className?: Classcat.Class
+  readonly narrow?: boolean
+  readonly highlighted?: boolean
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftBody?: string
@@ -18,43 +19,52 @@ export interface ItemProps {
   readonly rightBody?: string
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightAddon?: React.ReactNode
-  readonly tag?: string
+  readonly tag?: JSX.Element
 }
 
 const Item = ({
   chevron,
   className,
+  highlighted,
+  narrow,
   leftTitle,
-  leftTitleDisplay = TextDisplayType.TITLE,
   leftBody,
-  leftBodyDisplay = TextDisplayType.BODY,
   leftAddon,
   rightTitle,
   rightTitleDisplay = TextDisplayType.TITLE,
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
   rightAddon,
-  tag = 'div',
+  tag = <div />,
 }: ItemProps) => {
-  const Tag = tag
-  const baseClassName = 'kirk-item'
+  const Tag = tag.type
   const hasRightText = rightTitle || rightBody
 
   return (
-    <Tag className={cc([baseClassName, className])}>
+    <Tag
+      {...tag.props}
+      className={cc([
+        'kirk-item',
+        {
+          'kirk-item--highlighted': highlighted,
+          'kirk-item--narrow': narrow,
+        },
+        className,
+      ])}
+    >
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
       <div className="kirk-item-leftText">
         {leftTitle && (
           <Text
-            className={leftBody ? 'kirk-item-title' : null}
-            display={leftTitleDisplay}
+            className={cc(['kirk-item-title', { 'kirk-item-title--withBody': leftBody }])}
+            display={highlighted ? TextDisplayType.TITLESTRONG : TextDisplayType.TITLE}
             tag={TextTagType.DIV}
           >
             {leftTitle}
           </Text>
         )}
         {leftBody && (
-          <Text className="kirk-item-body" display={leftBodyDisplay} tag={TextTagType.DIV}>
+          <Text className="kirk-item-body" display={TextDisplayType.BODY} tag={TextTagType.DIV}>
             {leftBody}
           </Text>
         )}
@@ -63,7 +73,7 @@ const Item = ({
         <div className="kirk-item-rightText">
           {rightTitle && (
             <Text
-              className={rightBody ? 'kirk-item-title' : null}
+              className={cc(['kirk-item-title', { 'kirk-item-title--withBody': rightBody }])}
               display={rightTitleDisplay}
               tag={TextTagType.DIV}
             >
@@ -78,7 +88,7 @@ const Item = ({
         </div>
       )}
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && <div className="kirk-item-rightAddon">{<ChevronIcon />}</div>}
+      {chevron && <div className="kirk-item-chevron">{chevron}</div>}
       <style jsx>{style}</style>
     </Tag>
   )

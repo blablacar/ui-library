@@ -16,13 +16,22 @@ stories.add(
     const isDataInfo = boolean('Secondary info', false)
 
     return (
-      <ItemData
-        mainInfo={text('Main info', 'Main information')}
-        data={text('Data', 'Data')}
-        mainTitle={isMainTitle ? text('Main title', 'Title') : null}
-        dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-        tag="li"
-      />
+      <ul>
+        <ItemData
+          mainInfo={text('Main info', 'Main information')}
+          data={text('Data', 'Data')}
+          mainTitle={isMainTitle ? text('Main title', 'Title') : null}
+          dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+          tag={<li />}
+        />
+        <ItemData
+          mainTitle="Price"
+          mainInfo="Price"
+          data="24"
+          dataInfo="per seat"
+          tag={<li />}
+        />
+      </ul>
     )
   }),
 )

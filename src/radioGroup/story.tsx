@@ -16,9 +16,9 @@ stories.add(
   'Default',
   withInfo('')(() => (
     <RadioGroup name="radioName" onChange={action('changed')}>
-      <Radio value="radioValue1">{text('label', 'Choice 1')}</Radio>
-      <Radio value="radioValue2">{text('label', 'Choice 2')}</Radio>
-      <Radio value="radioValue3">{text('label', 'Choice 3')}</Radio>
+      <Radio id="radio1" value="radioValue1">{text('label', 'Choice 1')}</Radio>
+      <Radio id="radio2" value="radioValue2">{text('label', 'Choice 2')}</Radio>
+      <Radio id="radio3" value="radioValue3">{text('label', 'Choice 3')}</Radio>
     </RadioGroup>
   )),
 )
@@ -27,9 +27,21 @@ stories.add(
   'With secondary info',
   withInfo('')(() => (
     <RadioGroup name="radioName" onChange={action('changed')}>
-      <Radio value="radioValue1">{text('label', 'Choice 1')}</Radio>
-      <Radio value="radioValue2" subLabel="Secondary info">{text('label', 'Choice 2')}</Radio>
-      <Radio value="radioValue3" subLabel="Secondary info">{text('label', 'Choice 3')}</Radio>
+      <Radio id="radio1" value="radioValue1">{text('label', 'Choice 1')}</Radio>
+      <Radio
+        id="radio2"
+        value="radioValue2"
+        subLabel="Secondary info"
+      >
+        {text('label', 'Choice 2')}
+      </Radio>
+      <Radio
+        id="radio3"
+        value="radioValue3"
+        subLabel="Secondary info"
+      >
+        {text('label', 'Choice 3')}
+      </Radio>
     </RadioGroup>
   )),
 )
@@ -38,9 +50,27 @@ stories.add(
   'With recommended choice',
   withInfo('')(() => (
     <RadioGroup name="radioName" highlightedValue="radioValue2" onChange={action('changed')}>
-      <Radio value="radioValue1" subLabel="Secondary info">{text('label', 'Choice 1')}</Radio>
-      <Radio value="radioValue2" subLabel="Secondary info">{text('label', 'Choice 2')}</Radio>
-      <Radio value="radioValue3" subLabel="Secondary info">{text('label', 'Choice 3')}</Radio>
+      <Radio
+        id="radio1"
+        value="radioValue1"
+        subLabel="Secondary info"
+      >
+        {text('label', 'Choice 1')}
+      </Radio>
+      <Radio
+        id="radio2"
+        value="radioValue2"
+        subLabel="Secondary info"
+      >
+        {text('label', 'Choice 2')}
+      </Radio>
+      <Radio
+        id="radio3"
+        value="radioValue3"
+        subLabel="Secondary info"
+      >
+        {text('label', 'Choice 3')}
+      </Radio>
     </RadioGroup>
   )),
 )
@@ -49,9 +79,9 @@ stories.add(
   'With icon',
   withInfo('')(() => (
     <RadioGroup name="radioName" onChange={action('changed')}>
-      <Radio value="radioValue1" icon={<StarIcon />}>{text('label', 'Choice 1')}</Radio>
-      <Radio value="radioValue2" icon={<StarIcon />}>{text('label', 'Choice 2')}</Radio>
-      <Radio value="radioValue3" icon={<StarIcon />}>{text('label', 'Choice 3')}</Radio>
+      <Radio id="radio1" value="radioValue1" icon={<StarIcon />}>{text('label', 'Choice 1')}</Radio>
+      <Radio id="radio2" value="radioValue2" icon={<StarIcon />}>{text('label', 'Choice 2')}</Radio>
+      <Radio id="radio3" value="radioValue3" icon={<StarIcon />}>{text('label', 'Choice 3')}</Radio>
     </RadioGroup>
   )),
 )
@@ -64,9 +94,9 @@ stories.add(
       onChange={action('changed')}
       status={select('status', Radio.STATUS, Radio.STATUS.DEFAULT)}
     >
-      <Radio value="radioValue1">{text('label', 'Choice 1')}</Radio>
-      <Radio value="radioValue2">{text('label', 'Choice 2')}</Radio>
-      <Radio value="radioValue3">{text('label', 'Choice 3')}</Radio>
+      <Radio id="radio1" value="radioValue1">{text('label', 'Choice 1')}</Radio>
+      <Radio id="radio2" value="radioValue2">{text('label', 'Choice 2')}</Radio>
+      <Radio id="radio3" value="radioValue3">{text('label', 'Choice 3')}</Radio>
     </RadioGroup>
   )),
 )

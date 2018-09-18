@@ -17,12 +17,19 @@ stories.add(
     const hasIcon = boolean('Icon', true)
 
     return (
-      <ItemInfo
-        mainInfo={text('Main info', 'Main information')}
-        mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
-        icon={hasIcon ? <ClockIcon /> : null}
-        tag="li"
-      />
+      <ul>
+        <ItemInfo
+          mainInfo={text('Main info', 'Main information')}
+          mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
+          icon={hasIcon ? <ClockIcon /> : null}
+          tag={<li />}
+        />
+        <ItemInfo
+          mainInfo="Main information"
+          mainTitle="Title"
+          tag={<li />}
+        />
+      </ul>
     )
   }),
 )

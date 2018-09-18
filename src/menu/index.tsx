@@ -2,8 +2,11 @@ import React from 'react'
 import cc from 'classcat'
 import ItemChoice, { ItemChoiceProps } from 'itemChoice'
 
-interface MenuItemChoiceProps extends ItemChoiceProps {
-  id?: string | number,
+interface MenuItemChoiceProps {
+  readonly id?: string | number
+  readonly label?: string
+  readonly href: string
+  readonly leftAddon?: React.ReactNode
 }
 
 interface MenuProps {

@@ -42,17 +42,10 @@ describe('AutoCompleteList', () => {
     expect(wrapper.find('li')).toHaveLength(1)
   })
 
-  it('Renders items with a custom renderer', () => {
-    const CustomItem = jest.fn(({ item }) => <h1>{item.title}</h1>)
-    const wrapper = mount(<AutoCompleteList {...defaultProps} renderItem={CustomItem} />)
-    expect(wrapper.find('h1')).toHaveLength(2)
-    expect(CustomItem).toHaveBeenCalledTimes(2)
-  })
-
   it('Renders items with a custom className', () => {
     const customClassName = 'custom-class'
     const wrapper = mount(<AutoCompleteList {...defaultProps} itemClassName={customClassName} />)
-    expect(wrapper.find('li').every(`.${customClassName}`)).toBe(true)
+    expect(wrapper.find('li button').every(`.${customClassName}`)).toBe(true)
   })
 
   describe('Keyboard navigation', () => {
@@ -94,12 +87,12 @@ describe('AutoCompleteList', () => {
     it('displays an AutoCompleteListItem in loading state', () => {
       const onSelectSpy = jest.fn()
       const wrapper = shallow(
-      <AutoCompleteList
-        {...defaultProps}
-        onSelect={onSelectSpy}
-        selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
-      />,
-    )
+        <AutoCompleteList
+          {...defaultProps}
+          onSelect={onSelectSpy}
+          selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
+        />,
+      )
 
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())

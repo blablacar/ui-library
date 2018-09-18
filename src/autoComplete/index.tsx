@@ -4,52 +4,49 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import debounce from 'lodash.debounce'
 
-import prefix from '_utils'
 import TextField from 'textField'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
-import AutoCompleteListItemDefault from './autoCompleteListItemDefault'
 import style from './style'
 
 type query = string | number | boolean
 interface AutoCompleteProps {
-  readonly name: string
-  readonly isSearching: boolean
-  readonly searchForItems: (query: query) => void
-  readonly onInputChange?: (params: Partial<onChangeParameters>) => void
-  readonly searchForItemsMinChars?: number
-  readonly defaultValue?: string
-  readonly onSelect?: (obj: AutocompleteOnChange) => void
-  readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
-  readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-  readonly onClear?: () => void
-  readonly className?: Classcat.Class
-  readonly inputClassName?: Classcat.Class
-  readonly itemClassName?: Classcat.Class
-  readonly bodyClassName?: Classcat.Class
-  readonly items?: AutocompleteItem[]
-  readonly maxItems?: number
-  readonly renderItem?: (itemToRender: AutocompleteItemToRender) => React.ReactElement<any>
-  readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
-  readonly renderNoResults?: ({ query }: { query: query }) => React.ReactElement<any>
-  readonly renderQuery?: (item: AutocompleteItem) => string
-  readonly renderEmptySearch?: AutocompleteItem[]
-  readonly getItemValue?: (item: AutocompleteItem) => string
-  readonly inputAddon?: React.ReactElement<any>
-  readonly placeholder?: string
-  readonly busyTimeout?: number
-  readonly debounceTimeout?: number
-  readonly autoFocus?: boolean
-  readonly focus?: boolean
-  readonly buttonTitle?: string
-  readonly showList?: boolean
-  readonly onDoneAnimationEnd?: () => void
-  readonly autoCorrect?: 'on' | 'off'
-  readonly disabled?: boolean
-  readonly readOnly?: boolean
-  readonly required?: boolean
-  readonly error?: string | JSX.Element
-  readonly selectedItemStatus?: ItemChoiceStatus
+  readonly name: string,
+  readonly isSearching: boolean,
+  readonly searchForItems: (query: query) => void,
+  readonly onInputChange?: (params: Partial<onChangeParameters>) => void,
+  readonly searchForItemsMinChars?: number,
+  readonly defaultValue?: string,
+  readonly onSelect?: (obj:AutocompleteOnChange) => void,
+  readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void,
+  readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void,
+  readonly onClear?: () => void,
+  readonly className?: Classcat.Class,
+  readonly inputClassName?: Classcat.Class,
+  readonly itemClassName?: Classcat.Class,
+  readonly bodyClassName?: Classcat.Class,
+  readonly items?: AutocompleteItem[],
+  readonly maxItems?: number,
+  readonly renderBusy?: ({ query }: { query: query}) => React.ReactElement<any>,
+  readonly renderNoResults?: ({ query }: { query: query}) => React.ReactElement<any>,
+  readonly renderQuery?: (item:AutocompleteItem) => string,
+  readonly renderEmptySearch?: AutocompleteItem[],
+  readonly getItemValue?: (item:AutocompleteItem) => string,
+  readonly inputAddon?: React.ReactElement<any>,
+  readonly placeholder?: string,
+  readonly busyTimeout?: number,
+  readonly debounceTimeout?: number,
+  readonly autoFocus?: boolean,
+  readonly focus?: boolean,
+  readonly buttonTitle?: string,
+  readonly showList?: boolean,
+  readonly onDoneAnimationEnd?: () => void,
+  readonly autoCorrect?: 'on' | 'off',
+  readonly disabled?: boolean,
+  readonly readOnly?: boolean,
+  readonly required?: boolean,
+  readonly error?: string | JSX.Element,
+  readonly selectedItemStatus?: ItemChoiceStatus,
 }
 
 interface AutoCompleteState {
@@ -79,7 +76,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     isSearching: false,
     searchForItemsMinChars: 3,
     maxItems: Infinity,
-    renderItem: AutoCompleteListItemDefault,
     renderBusy: () => <div>Loading…</div>,
     renderNoResults: () => <div>No results</div>,
     renderEmptySearch: [],
@@ -234,7 +230,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       ? this.state.items
       : this.props.renderEmptySearch
     return (
-      <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
+      <div role="search" className={cc(['kirk-autoComplete', this.props.className])}>
         <TextField
           type="search"
           className={this.props.inputClassName}
@@ -257,14 +253,14 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           required={this.props.required}
           error={this.props.error}
         />
-        {shouldDisplayBusyState && (
-          <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
-            {this.props.renderBusy({ query: this.state.query })}
+        { shouldDisplayBusyState && (
+          <div className={cc(['kirk-autoComplete-body', this.props.bodyClassName])}>
+            { this.props.renderBusy({ query: this.state.query }) }
           </div>
         )}
-        {shouldDisplayNoResults && (
-          <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
-            {this.props.renderNoResults({ query: this.state.query })}
+        { shouldDisplayNoResults && (
+          <div className={cc(['kirk-autoComplete-body', this.props.bodyClassName])}>
+            { this.props.renderNoResults({ query: this.state.query }) }
           </div>
         )}
         <AutoCompleteList
@@ -272,7 +268,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           name={`${this.props.name}-list`}
           items={listItems}
           maxItems={this.props.maxItems}
-          renderItem={this.props.renderItem}
           onSelect={this.onSelectItem}
           visible={shouldDisplayAutoCompleteList || shouldDisplayEmptyState}
           selectedItemStatus={this.props.selectedItemStatus}

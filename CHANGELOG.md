@@ -1,6 +1,10 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** `<ItemChoice>` now uses `<Item>` skeleton
+- **[BREAKING CHANGE]** `<ItemChoice>` can only be a `<button>` or `<a>`
+- **[BREAKING CHANGE]** `<Radio>` now need has a mandatory `id` prop and uses the new `<ItemChoice>`
+- **[BREAKING CHANGE]** Remove `renderItem` prop from `<AutoComplete>`
+- **[UPDATE]** `<Item>` is now taking a `JSX.Element` in the `tag` prop
 
 # v0.16.2 (08/10/2018)
 

@@ -3,44 +3,44 @@ import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
 import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteListItem from './autoCompleteListItem'
 import style from './autoCompleteListStyle'
 
 export interface AutoCompleteListProps {
-  name: string,
-  renderItem: (itemToRender:AutocompleteItemToRender) => React.ReactElement<any>,
-  onSelect?: (item:AutocompleteItem) => void,
-  className?: Classcat.Class,
-  items?: AutocompleteItem[],
-  maxItems?: number,
-  itemClassName?: Classcat.Class,
-  onDoneAnimationEnd?: () => void,
-  itemKey?: (item:AutocompleteItem) => string,
-  visible?: boolean,
-  selectedItemStatus?: ItemChoiceStatus,
+  name: string
+  onSelect?: (item: AutocompleteItem) => void
+  className?: Classcat.Class
+  items?: AutocompleteItem[]
+  maxItems?: number
+  itemClassName?: Classcat.Class
+  onDoneAnimationEnd?: () => void
+  itemKey?: (item: AutocompleteItem) => string
+  visible?: boolean
+  selectedItemStatus?: ItemChoiceStatus
 }
 
 export interface AutoCompleteListState {
-  readonly highlightedIndex: number,
+  readonly highlightedIndex: number
   readonly selectedIndex: number
 }
 
-export default class AutoCompleteList
-extends Component <AutoCompleteListProps, AutoCompleteListState> {
-  static defaultProps:Partial<AutoCompleteListProps> = {
+export default class AutoCompleteList extends Component<
+  AutoCompleteListProps,
+  AutoCompleteListState
+> {
+  static defaultProps: Partial<AutoCompleteListProps> = {
     maxItems: Infinity,
     itemKey: item => JSON.stringify(item),
     visible: false,
   }
 
-  state:AutoCompleteListState = {
+  state: AutoCompleteListState = {
     highlightedIndex: null,
     selectedIndex: null,
   }
 
-  componentWillReceiveProps(nextProps:AutoCompleteListProps) {
+  componentWillReceiveProps(nextProps: AutoCompleteListProps) {
     this.setState({
       highlightedIndex: null,
     })
@@ -60,27 +60,31 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     }
   }
 
-  onKeyboardEventArrowDown = (e:Event) => {
+  onKeyboardEventArrowDown = (e: Event) => {
     e.preventDefault()
 
     if (isEmpty(this.props.items)) return
 
     const { highlightedIndex } = this.state
-    const index = (highlightedIndex === null || highlightedIndex === this.props.items.length - 1)
-      ? 0 : highlightedIndex + 1
+    const index =
+      highlightedIndex === null || highlightedIndex === this.props.items.length - 1
+        ? 0
+        : highlightedIndex + 1
 
     this.setState({
       highlightedIndex: index,
     })
   }
 
-  onKeyboardEventArrowUp = (e:Event) => {
+  onKeyboardEventArrowUp = (e: Event) => {
     e.preventDefault()
 
     if (!isEmpty(this.props.items)) {
       const { highlightedIndex } = this.state
-      const index = (highlightedIndex === null || highlightedIndex === 0)
-        ? this.props.items.length - 1 : highlightedIndex - 1
+      const index =
+        highlightedIndex === null || highlightedIndex === 0
+          ? this.props.items.length - 1
+          : highlightedIndex - 1
 
       this.setState({
         highlightedIndex: index,
@@ -88,7 +92,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     }
   }
 
-  onKeyboardEventEnter = (e:Event) => {
+  onKeyboardEventEnter = (e: Event) => {
     if (this.state.highlightedIndex == null) {
       return
     }
@@ -99,7 +103,7 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     this.props.onSelect(item)
   }
 
-  handleKeydown = (e:KeyboardEvent) => {
+  handleKeydown = (e: KeyboardEvent) => {
     if (e.keyCode === 13) {
       this.onKeyboardEventEnter(e)
     } else if (e.keyCode === 38) {
@@ -123,30 +127,34 @@ extends Component <AutoCompleteListProps, AutoCompleteListState> {
     return (
       <ul
         key={this.props.name}
-        className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
+        className={cc(['kirk-autoComplete-list', this.props.className])}
         role="listbox"
       >
         {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
-          const status = this.state.selectedIndex === index ? (
-            this.props.selectedItemStatus
-           ) : ItemChoiceStatus.DEFAULT
+          const status =
+            this.state.selectedIndex === index
+              ? this.props.selectedItemStatus
+              : ItemChoiceStatus.DEFAULT
           return (
-            <AutoCompleteListItem
+            <li
+              role="option"
               key={this.props.itemKey(item)}
-              item={item}
-              className={this.props.itemClassName}
-              highlighted={index === this.state.highlightedIndex}
-              status={status}
-              select={this.onSelect(index)}
-              onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+              aria-selected={index === this.state.highlightedIndex}
+              className="kirk-autoComplete-item"
             >
-              <div>
-                {this.props.renderItem({ item, index })}
-              </div>
-            </AutoCompleteListItem>
+              <AutoCompleteListItem
+                item={item}
+                className={this.props.itemClassName}
+                status={status}
+                select={this.onSelect(index)}
+                onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+              />
+            </li>
           )
         })}
-        <style jsx key={`${this.props.name}-style-jsx`}>{style}</style>
+        <style jsx key={`${this.props.name}-style-jsx`}>
+          {style}
+        </style>
       </ul>
     )
   }

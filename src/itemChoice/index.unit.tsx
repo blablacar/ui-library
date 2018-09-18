@@ -1,123 +1,105 @@
 import React from 'react'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import Item from '_utils/item'
 import Loader from 'loader'
 import CrossIcon from 'icon/crossIcon'
+import ChevronIcon from 'icon/chevronIcon'
 
 jest.useFakeTimers()
 
 describe('ItemChoice', () => {
-  it('Should render a React element passed as children', () => {
-    const wrapper = shallow(<ItemChoice><CrossIcon /></ItemChoice>)
-    expect(wrapper.find(CrossIcon).exists()).toBe(true)
-  })
-
   it('Should accept a custom `className`', () => {
-    const customClassName = 'custom'
-    const wrapper = shallow(<ItemChoice className={customClassName}>...</ItemChoice>)
-    expect(wrapper.hasClass(customClassName)).toBe(true)
+    const wrapper = shallow(<ItemChoice className="custom" />)
+    expect(wrapper.find(Item).hasClass('custom')).toBe(true)
   })
 
   describe('#href', () => {
-    it('Should render a <li> by default', () => {
-      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
-      expect(wrapper.type()).toBe('li')
-    })
-
     it('Should render as a link if given a simple url', () => {
-      const href = '#anchor'
-      const wrapper = shallow(<ItemChoice href={href}>...</ItemChoice>)
-      expect(wrapper.type()).toBe('a')
-      expect(wrapper.props().href).toBe('#anchor')
+      const wrapper = shallow(<ItemChoice href="#anchor" />)
+      expect(wrapper.find(Item).prop('tag')).toEqual(<a href="#anchor" />)
     })
 
-    it('Should render as any given tag, and merge props and class names', () => {
-      const href = <a className="customClassName" href="#anchor" />
-      const wrapper = shallow(<ItemChoice href={href}>...</ItemChoice>)
-      expect(wrapper.type()).toBe('a')
-      expect(wrapper.props().className).toContain('customClassName')
-      expect(wrapper.props().href).toBe('#anchor')
+    it('Should render as any given tag', () => {
+      const wrapper = shallow(<ItemChoice href={<button />} />)
+      expect(wrapper.find(Item).prop('tag').type).toEqual('button')
+    })
+  })
+
+  describe('#disabled', () => {
+    it('Should render a div when disabled', () => {
+      const wrapper = shallow(<ItemChoice href="#anchor" disabled />)
+      expect(wrapper.find(Item).prop('tag').type).toEqual('div')
+      expect(wrapper.find(Item).prop('tag').props['aria-disabled']).toEqual('true')
     })
   })
 
   describe('#loading', () => {
     it('Should not have a loading state by default', () => {
-      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
-      expect(wrapper.find(Loader).exists()).toBe(false)
+      const wrapper = shallow(<ItemChoice />)
+      expect(wrapper.find(Item).prop('chevron').type).toBe(ChevronIcon)
     })
 
     it('Should have a loading state', () => {
-      const wrapper = shallow(<ItemChoice status={ItemChoice.STATUS.LOADING}>...</ItemChoice>)
-      expect(wrapper.find(Loader).exists()).toBe(true)
+      const wrapper = shallow(<ItemChoice status={ItemChoiceStatus.LOADING} />)
+      expect(wrapper.find(Item).prop('chevron').type).toBe(Loader)
     })
   })
 
   describe('#valid', () => {
     it('Should not have a valid state by default', () => {
-      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
+      const wrapper = shallow(<ItemChoice />)
       expect(wrapper.find(Loader).exists()).toBe(false)
     })
 
     it('Should have a valid state', () => {
-      const wrapper = shallow(<ItemChoice status={ItemChoice.STATUS.CHECKED}>...</ItemChoice>)
+      const wrapper = mount(<ItemChoice status={ItemChoiceStatus.CHECKED} />)
       expect(wrapper.find(Loader).exists()).toBe(true)
       expect(wrapper.find(Loader).prop('done')).toBe(true)
     })
 
     it('fires the callback event when valid', () => {
       const event = jest.fn()
-      const wrapper = mount(<ItemChoice onDoneAnimationEnd={event}>blabla</ItemChoice>)
-      wrapper.setProps({ status: ItemChoice.STATUS.CHECKED })
+      const wrapper = mount(<ItemChoice onDoneAnimationEnd={event} />)
+      wrapper.setProps({ status: ItemChoiceStatus.CHECKED })
       expect(event).not.toBeCalled()
       jest.advanceTimersByTime(1500)
       expect(event).toBeCalled()
     })
   })
 
-  describe('#highlighted', () => {
-    it('Should not have a highlighted state by default', () => {
-      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
-      expect(wrapper.hasClass('kirk-itemChoice--highlighted')).toBe(false)
-    })
-
-    it('Should have a highlighted state', () => {
-      const wrapper = shallow(<ItemChoice highlighted>...</ItemChoice>)
-      expect(wrapper.hasClass('kirk-itemChoice--highlighted')).toBe(true)
-    })
-  })
-
   describe('#selected', () => {
     it('Should not have a selected state by default', () => {
-      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
-      expect(wrapper.prop('aria-selected')).toBe(false)
+      const wrapper = shallow(<ItemChoice />)
+      expect(wrapper.find(Item).prop('aria-selected')).toBe(false)
     })
 
     it('Should have a selected state', () => {
-      const wrapper = shallow(<ItemChoice selected>...</ItemChoice>)
-      expect(wrapper.prop('aria-selected')).toBe(true)
+      const wrapper = shallow(<ItemChoice selected />)
+      expect(wrapper.find(Item).prop('aria-selected')).toBe(true)
     })
   })
 
   describe('#leftAddon', () => {
     it('Render a left addon given a string', () => {
-      const wrapper = shallow(<ItemChoice leftAddon="Info">...</ItemChoice>)
-      expect(wrapper.find('.kirk-itemChoice-leftAddon').text()).toContain('Info')
+      const wrapper = shallow(<ItemChoice leftAddon="Info" />)
+      expect(wrapper.find(Item).prop('leftAddon')).toEqual('Info')
     })
 
     it('Render a left addon given a React element', () => {
-      const wrapper = shallow(<ItemChoice leftAddon={<CrossIcon />}>...</ItemChoice>)
-      expect(wrapper.find(CrossIcon).exists()).toBe(true)
+      const wrapper = shallow(<ItemChoice leftAddon={<CrossIcon />} />)
+      expect(wrapper.find(Item).prop('leftAddon')).toEqual(<CrossIcon />)
     })
   })
 
   describe('#rightAddon', () => {
     it('Render a right addon given a string', () => {
-      const wrapper = shallow(<ItemChoice rightAddon="Info">...</ItemChoice>)
-      expect(wrapper.find('.kirk-itemChoice-rightAddon').text()).toContain('Info')
+      const wrapper = shallow(<ItemChoice rightAddon="Info" />)
+      expect(wrapper.find(Item).prop('rightAddon')).toEqual('Info')
     })
 
     it('Render a right addon given a React element', () => {
-      const wrapper = shallow(<ItemChoice rightAddon={<CrossIcon />}>...</ItemChoice>)
-      expect(wrapper.find(CrossIcon).exists()).toBe(true)
+      const wrapper = shallow(<ItemChoice rightAddon={<CrossIcon />} />)
+      expect(wrapper.find(Item).prop('rightAddon')).toEqual(<CrossIcon />)
     })
   })
 })

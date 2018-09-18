@@ -1,13 +1,15 @@
 import React from 'react'
 
-import Item, { ItemProps } from '_utils/item/index'
+import Item from '_utils/item/index'
 import { TextDisplayType } from 'text'
 
-interface ItemDataProps extends ItemProps {
-  data: string,
-  mainInfo: string,
-  mainTitle?: string,
-  dataInfo?: string,
+interface ItemDataProps {
+  readonly data: string,
+  readonly mainInfo: string,
+  readonly className?: Classcat.Class,
+  readonly mainTitle?: string,
+  readonly dataInfo?: string,
+  readonly tag?: JSX.Element,
 }
 
 const ItemData = ({
