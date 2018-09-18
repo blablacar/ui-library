@@ -20,14 +20,10 @@ export interface DrawerProps {
 
 export default class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
-  private contentStyles = {
-    width: this.props.width,
-  }
-
   static defaultProps: Partial<DrawerProps> = {
     width: '400px',
-    onOpen: () => {},
-    onClose: () => {},
+    onOpen() {},
+    onClose() {},
     onTransitionEnd: (isOpen) => {},
     open: false,
   }
@@ -38,10 +34,7 @@ export default class Drawer extends PureComponent<DrawerProps> {
     document.addEventListener('keydown', this.handleKeydown)
   }
 
-  componentDidUpdate({ width, open }: DrawerProps) {
-    if (this.props.width !== width) {
-      this.contentStyles.width = width
-    }
+  componentDidUpdate({ open }: DrawerProps) {
     if (this.props.open !== open) {
       this.props.open ? this.open() : this.close()
     }
@@ -94,7 +87,7 @@ export default class Drawer extends PureComponent<DrawerProps> {
   }
 
   render() {
-    const { open, className, innerClassName, onTransitionEnd, children } = this.props
+    const { open, className, innerClassName, onTransitionEnd, children, width } = this.props
     return (
       <aside
         className={cc([
@@ -109,7 +102,7 @@ export default class Drawer extends PureComponent<DrawerProps> {
         <div
           ref={this.refContent}
           className={cc(['kirk-drawer-scrollableContent', innerClassName])}
-          style={this.contentStyles}
+          style={{ width }}
           onTransitionEnd={() => onTransitionEnd(open)}
         >
           {children}

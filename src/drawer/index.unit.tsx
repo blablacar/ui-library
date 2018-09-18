@@ -19,7 +19,7 @@ describe('Drawer', () => {
   it('Should call `onOpen` and `scrollLock` after open', () => {
     const onOpen = jest.fn()
     const onTransitionEnd = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <Drawer {...defaultProps} onTransitionEnd={onTransitionEnd} onOpen={onOpen}>
         body
       </Drawer>,
@@ -28,7 +28,7 @@ describe('Drawer', () => {
     expect(onOpen).toHaveBeenCalledTimes(0)
     expect(scrollLock).toHaveBeenCalledTimes(0)
     wrapper.setProps({ open: true })
-    wrapper.find('.kirk-drawer-scrollableContent').simulate('transitionEnd')
+    wrapper.instance().props.onTransitionEnd(true)
     expect(onTransitionEnd).toHaveBeenCalledWith(true)
     expect(onOpen).toHaveBeenCalledTimes(1)
     expect(scrollLock).toHaveBeenCalledTimes(1)
@@ -37,7 +37,7 @@ describe('Drawer', () => {
   it('Should call `onClose` and `scrollUnlock` after close', () => {
     const onClose = jest.fn()
     const onTransitionEnd = jest.fn()
-    const wrapper = mount(
+    const wrapper = shallow(
       <Drawer {...defaultProps} open onTransitionEnd={onTransitionEnd} onClose={onClose}>
         body
       </Drawer>,
@@ -46,7 +46,7 @@ describe('Drawer', () => {
     expect(onClose).toHaveBeenCalledTimes(0)
     expect(scrollUnlock).toHaveBeenCalledTimes(0)
     wrapper.setProps({ open: false })
-    wrapper.find('.kirk-drawer-scrollableContent').simulate('transitionEnd')
+    wrapper.instance().props.onTransitionEnd(false)
     expect(onTransitionEnd).toHaveBeenCalledWith(false)
     expect(onClose).toHaveBeenCalledTimes(1)
     expect(scrollUnlock).toHaveBeenCalledTimes(1)
