@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** `Stepper` keep the right value after min and max props changes
+- **[UPDATE]** `Stepper` component can increase/decrease value easily by keeping buttons pressed
 
 # v0.11.1 (26/09/2018)
 

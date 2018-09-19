@@ -31,8 +31,8 @@ stories.add(
   withInfo('')(() => (
     <Stepper
       name="stepper2"
-      min={number('min', Number.MIN_SAFE_INTEGER)}
-      max={number('max', Number.MAX_SAFE_INTEGER)}
+      min={number('min', 0)}
+      max={number('max', 10)}
       step={number('step', 2)}
       value={number('value', 5)}
       increaseLabel={text('increaseLabel', 'Increment')}

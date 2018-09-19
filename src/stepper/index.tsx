@@ -4,7 +4,7 @@ import Button from 'button'
 import PlusIcon from 'icon/plusIcon'
 import MinusIcon from 'icon/minusIcon'
 
-import { color } from '_utils/branding'
+import { color, delay } from '_utils/branding'
 import style from 'stepper/style'
 
 interface StepperProps {
@@ -17,11 +17,12 @@ interface StepperProps {
   max?: number,
   min?: number,
   format?: (value: string | number) => string | number,
-  onChange?: (obj:onChangeParameters) => void,
 }
 
 interface StepperState {
   value: number,
+  min: number,
+  max: number,
 }
 
 // Support IE. Same value returned with Number.MAX_SAFE_INTEGER / Number.MIN_SAFE_INTEGER
@@ -34,33 +35,54 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
     max: defaultInteger,
     min: -defaultInteger,
     format: value => value,
-    onChange: () => {},
+  }
+
+  filterValue = (value:number, min:number, max:number) => {
+    return Math.max(min, Math.min(value, max))
   }
 
   state:StepperState = {
-    value: this.props.value,
+    value: this.filterValue(this.props.value, this.props.min, this.props.max),
+    min: this.props.min,
+    max: this.props.max,
   }
 
-  componentDidMount() {
-    this.update(this.state.value, undefined, false)
-  }
+  whileMouseDown:number
+  mouseDownDelay:number
 
-  componentWillReceiveProps(nextProps: StepperProps) {
-    if (
-      nextProps.value !== this.state.value ||
-      nextProps.value <= this.props.max ||
-      nextProps.value >= this.props.min
+  componentDidUpdate(prevProps: StepperProps) {
+    if (prevProps.max !== this.props.max ||
+      prevProps.min !== this.props.min
     ) {
-      this.update(nextProps.value, nextProps)
+      this.update(this.state.value)
     }
   }
 
-  update(newValue: number, { min, max } = this.props, triggerOnChange: boolean = true) {
-    const value = Math.max(min, Math.min(newValue, max))
-    this.setState({ value })
-    if (triggerOnChange) {
-      this.props.onChange({ name: this.props.name, value })
-    }
+  update(newValue: number) {
+    this.setState(
+      { value: this.filterValue(newValue, this.props.min, this.props.max) },
+    )
+  }
+
+  handleMouseDown = (fn: () => void) => () => {
+    this.mouseDownDelay = window.setTimeout(() => {
+      this.whileMouseDown = window.setInterval(() => {
+        fn()
+        if (this.state.value >= this.props.max || this.state.value <= this.props.min) {
+          this.clearMouseDownTimers()
+        }
+      }, parseInt(delay.interval.base, 10))
+    }, parseInt(delay.timeout.base, 10))
+  }
+
+  clearMouseDownTimers = () => {
+    clearTimeout(this.mouseDownDelay)
+    clearInterval(this.whileMouseDown)
+  }
+
+  handleMouseUp = (fn: () => void) => () => {
+    this.clearMouseDownTimers()
+    fn()
   }
 
   increment = () => {
@@ -83,7 +105,8 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           className="kirk-stepper-decrement"
           status={Button.STATUS.UNSTYLED}
           disabled={isMin}
-          onClick={this.decrement}
+          onMouseDown={this.handleMouseDown(this.decrement)}
+          onMouseUp={this.handleMouseUp(this.decrement)}
         >
           <MinusIcon title={decreaseLabel} iconColor={isMin ? color.disabled : color.primary} />
         </Button>
@@ -99,7 +122,8 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           className="kirk-stepper-increment"
           status={Button.STATUS.UNSTYLED}
           disabled={isMax}
-          onClick={this.increment}
+          onMouseDown={this.handleMouseDown(this.increment)}
+          onMouseUp={this.handleMouseUp(this.increment)}
         >
           <PlusIcon title={increaseLabel} iconColor={isMax ? color.disabled : color.primary} />
         </Button>

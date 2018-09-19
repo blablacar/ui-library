@@ -47,18 +47,15 @@ it('Should be able to increment/decrement the value', () => {
       step={3}
       min={2}
       max={10}
-      onChange={onChange}
     >
       Amount of something
     </Stepper>,
   )
   expect(stepper.state('value')).toBe(3)
-  stepper.find('.kirk-stepper-increment').simulate('click')
+  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
   expect(stepper.state('value')).toBe(6)
-  expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 6 })
-  stepper.find('.kirk-stepper-decrement').simulate('click')
+  stepper.find('.kirk-stepper-decrement').simulate('mouseUp')
   expect(stepper.state('value')).toBe(3)
-  expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 3 })
 })
 
 it('Should be able to have a max value', () => {
@@ -72,7 +69,7 @@ it('Should be able to have a max value', () => {
       Amount of something
     </Stepper>,
   )
-  stepper.find('.kirk-stepper-increment').simulate('click')
+  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
   expect(stepper.state('value')).toBe(10)
 })
 
@@ -87,7 +84,7 @@ it('Should be able to have a min value', () => {
       Amount of something
     </Stepper>,
   )
-  stepper.find('.kirk-stepper-decrement').simulate('click')
+  stepper.find('.kirk-stepper-decrement').simulate('mouseUp')
   expect(stepper.state('value')).toBe(3)
 })
 
@@ -144,7 +141,6 @@ it('Should be able to receive props and then update the value', () => {
     </Stepper>,
   )
   const spyUpdateValue = jest.spyOn(Stepper.prototype, 'update')
-
   // Only change the max value
   stepper.setProps({ max: 3 })
   expect(spyUpdateValue).toHaveBeenCalledTimes(1)
@@ -168,6 +164,22 @@ it('Should be able to receive props and then update the value', () => {
   expect(stepper.prop('min')).toBe(4)
   expect(stepper.prop('max')).toBe(8)
   expect(stepper.state('value')).toBe(4)
+})
+
+it('Should be able to keep the right value after props change', () => {
+  const stepper = shallow(
+    <Stepper
+      {...defaultProps}
+      value={5}
+      step={3}
+      min={1}
+    >
+      Amount of something
+    </Stepper>,
+  )
+  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
+  stepper.setProps({ min: 2 })
+  expect(stepper.state('value')).toBe(8)
 })
 
 it('Should not call onChange on componentDidMount', () => {

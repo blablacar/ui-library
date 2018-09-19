@@ -84,6 +84,15 @@ export const transition = {
   callbackDelay: 1000,
 }
 
+export const delay = {
+  timeout: {
+    base: '400ms',
+  },
+  interval: {
+    base: '100ms',
+  },
+}
+
 export const buttonIconSize = '48px'
 
 export const shadow = {
