@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v0.11.0 (19/09/2018)
+
 - **[BREAKING CHANGE]** Added an `open` & `innerClassName` props on `<Drawer>`
 - **[FIX]** Remove wrong coloring on AutoComplete when using keyboard to navigate
 
