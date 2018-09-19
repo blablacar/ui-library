@@ -78,8 +78,6 @@ const menuItems = [
 ]
 
 class DrawerDemo extends Component {
-  private drawer: Drawer
-
   state = {
     isOpen: false,
   }
