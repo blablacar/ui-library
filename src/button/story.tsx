@@ -16,6 +16,8 @@ const hasIcon = () => boolean('icon', false)
 const validation = () => boolean('validation', false)
 const commonProps = {
   onClick: action('clicked'),
+  onMouseDown: action('mouseDown'),
+  onMouseUp: action('mouseUp'),
   onFocus: action('focused'),
   onBlur: action('blured'),
 }

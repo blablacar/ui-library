@@ -29,6 +29,8 @@ export interface ButtonProps {
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void,
   readonly tabIndex?: string,
   readonly disabled?: boolean,
@@ -52,6 +54,8 @@ type TypeProps = {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void,
   onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
   onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
+  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
+  onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void,
 }
 
 export const eventHandler = (
@@ -101,7 +105,7 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
       // Modifiers
       status, icon, shadowed,
       // Actions
-      onClick, onBlur, onFocus, onDoneAnimationEnd, focus,
+      onClick, onMouseDown, onMouseUp, onBlur, onFocus, onDoneAnimationEnd, focus,
       // Extend case of the button for the expand component
       ...attrs
     } = this.props
@@ -124,6 +128,8 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     typeProps.ref = this.ref
     typeProps.title = title
     typeProps.onClick = eventHandler(onClick, typeProps.onClick)
+    typeProps.onMouseDown = eventHandler(onMouseDown, typeProps.onMouseDown)
+    typeProps.onMouseUp = eventHandler(onMouseUp, typeProps.onMouseUp)
     typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
     typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
 
