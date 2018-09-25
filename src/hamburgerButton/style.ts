@@ -8,7 +8,7 @@ export default css`
     height: 48px;
     border: 0;
     background: transparent;
-    color: ${color.primary};
+    color: ${color.icon};
     outline: 0;
     cursor: pointer;
     user-select: none;
