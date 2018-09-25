@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Changed `<Drawer>` transition from top to bottom
 
 # v0.11.0 (19/09/2018)
 
