@@ -40,7 +40,6 @@ export default css`
     z-index: 2;
     top: 0;
     left: 0;
-    bottom: 0;
     overflow-y: auto;
     background-color: ${color.white};
     transition: transform ${transition.duration.base} ease-in-out;
