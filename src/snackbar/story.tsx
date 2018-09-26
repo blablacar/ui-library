@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
-import Notification from 'notification'
+import Snackbar from 'snackbar'
 
-const stories = storiesOf('Notification', module)
+const stories = storiesOf('Snackbar', module)
 stories.addDecorator(withKnobs)
 
 interface ErrorOpenerState {
@@ -28,9 +28,9 @@ class ErrorOpener extends Component {
     return (
       <div>
         <button onClick={this.toggleErrorDisplay}>Don't click on this button</button>
-        <Notification isOpen={this.state.isErrorOpen} close={this.toggleErrorDisplay}>
-          {text('Text', 'I told you not to click on this button !')}
-        </Notification>
+        <Snackbar isOpen={this.state.isErrorOpen} close={this.toggleErrorDisplay}>
+          {text('Text', 'I told you not to click on this button!')}
+        </Snackbar>
       </div>
     )
   }
