@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v0.11.1 (26/09/2018)
+
 - **[UPDATE]** Changed `<Drawer>` transition from top to bottom
 - **[UPDATE]** Changed `<HamburgerButton>` color
 
