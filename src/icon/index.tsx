@@ -6,6 +6,7 @@ import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'
 import BubbleIcon from './bubbleIcon'
 import CheckIcon from './checkIcon'
+import CheckShieldIcon from './checkShieldIcon'
 import ChevronIcon from './chevronIcon'
 import CircleIcon from './circleIcon'
 import ClockIcon from './clockIcon'
@@ -14,10 +15,13 @@ import ComfortIcon from './comfortIcon'
 import CrossDiscIcon from './crossDiscIcon'
 import CrossIcon from './crossIcon'
 import CrosshairIcon from './crosshairIcon'
+import DepartureIcon from './departureIcon'
+import DirectionIcon from './directionIcon'
 import DoubleArrowIcon from './doubleArrowIcon'
 import EyeIcon from './eyeIcon'
 import FacebookIcon from './facebookIcon'
 import HomeIcon from './homeIcon'
+import IdCardVerifiedIcon from './idCardVerifiedIcon'
 import InfoIcon from './infoIcon'
 import InstagramIcon from './instagramIcon'
 import LadyIcon from './ladyIcon'
@@ -49,6 +53,7 @@ export {
   BellIcon,
   BubbleIcon,
   CheckIcon,
+  CheckShieldIcon,
   ChevronIcon,
   CircleIcon,
   ClockIcon,
@@ -57,10 +62,13 @@ export {
   CrossDiscIcon,
   CrossIcon,
   CrosshairIcon,
+  DepartureIcon,
+  DirectionIcon,
   DoubleArrowIcon,
   EyeIcon,
   FacebookIcon,
   HomeIcon,
+  IdCardVerifiedIcon,
   InfoIcon,
   InstagramIcon,
   LadyIcon,
