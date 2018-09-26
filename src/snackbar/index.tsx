@@ -11,19 +11,19 @@ import Text, { TextDisplayType } from 'text'
 
 import style from './style'
 
-export interface NotificationProps {
+export interface SnackbarProps {
   readonly close: () => void
   readonly isOpen: boolean
   readonly className?: string
 }
 
-class Notification extends PureComponent<NotificationProps> {
+class Snackbar extends PureComponent<SnackbarProps> {
   private portalNode: HTMLElement
-  static defaultProps: Partial<NotificationProps> = {
+  static defaultProps: Partial<SnackbarProps> = {
     isOpen: false,
   }
 
-  constructor(props: NotificationProps) {
+  constructor(props: SnackbarProps) {
     super(props)
     if (canUseDOM) {
       this.portalNode = document.createElement('div')
@@ -40,16 +40,16 @@ class Notification extends PureComponent<NotificationProps> {
 
   render() {
     const modalElement = (
-      <TransitionGroup component="div" className="transition-wrapper kirk-notification-container">
+      <TransitionGroup component="div" className="transition-wrapper kirk-snackbar-container">
         {this.props.isOpen && (
           <CustomTransition animationName={AnimationType.SLIDE_UP}>
-            <div className={cc(['kirk-notification', this.props.className])}>
-              <Text display={TextDisplayType.TITLE} className="kirk-notification-content">
+            <div className={cc(['kirk-snackbar', this.props.className])}>
+              <Text display={TextDisplayType.TITLE} className="kirk-snackbar-content">
                 {this.props.children}
               </Text>
               <Button
                 status={Button.STATUS.UNSTYLED}
-                className="kirk-notification-cross"
+                className="kirk-snackbar-cross"
                 onClick={this.props.close}
               >
                 <CrossIcon iconColor={color.white} size="18px" />
@@ -69,4 +69,4 @@ class Notification extends PureComponent<NotificationProps> {
   }
 }
 
-export default Notification
+export default Snackbar

@@ -2,13 +2,13 @@ import css from 'styled-jsx/css'
 import { color, space } from '_utils/branding'
 
 export default css`
-  :global(.kirk-notification-container) {
+  :global(.kirk-snackbar-container) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .kirk-notification {
+  .kirk-snackbar {
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -22,13 +22,13 @@ export default css`
     z-index: 1000; /* above the modal */
   }
 
-  :global(.kirk-notification-content) {
+  :global(.kirk-snackbar-content) {
     flex: 1;
     margin: 0;
     color: ${color.white};
   }
 
-  :global(.kirk-notification-cross) {
+  :global(.kirk-snackbar-cross) {
     padding: 0 0 0 ${space.m};
     display: flex;
     flex-direction: column;

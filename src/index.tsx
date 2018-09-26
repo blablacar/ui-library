@@ -18,13 +18,13 @@ import Loader from 'loader'
 import Menu from 'menu'
 import Message from 'message'
 import Modal from 'modal'
-import Notification from 'notification'
 import Profile from 'profile'
 import Proximity from 'proximity'
 import PushInfo from 'pushInfo'
 import Radio from 'radio'
 import RadioGroup from 'radioGroup'
 import Rating from 'rating'
+import Snackbar from 'snackbar'
 import Stars from 'stars'
 import Stepper from 'stepper'
 import Text from 'text'
@@ -61,13 +61,13 @@ export {
   Menu,
   Message,
   Modal,
-  Notification,
   Profile,
   Proximity,
   PushInfo,
   Radio,
   RadioGroup,
   Rating,
+  Snackbar,
   Stars,
   Stepper,
   Text,

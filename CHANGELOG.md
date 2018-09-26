@@ -1,10 +1,10 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Rename `Notification` to `Snackbar`
 
 # v0.14.0 (03/10/2018)
 
-- **[BREAKING CHANGE]** `Dropdown` moved `className` on parent element insted of `<button>`
+- **[BREAKING CHANGE]** `Dropdown` moved `className` on parent element instead of `<button>`
 
 # v0.13.0 (02/10/2018)
 

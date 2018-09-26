@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Notification should not have changed 1`] = `
+exports[`Snackbar should not have changed 1`] = `
 <div
-  className="transition-wrapper kirk-notification-container"
+  className="transition-wrapper kirk-snackbar-container"
 >
   <div
-    className="jsx-2214296095 kirk-notification slide-up slide-up-entered"
+    className="jsx-2822186252 kirk-snackbar slide-up slide-up-entered"
   >
     <span
-      className="kirk-text kirk-text-title kirk-notification-content"
+      className="kirk-text kirk-text-title kirk-snackbar-content"
     >
       Oups
     </span>
     <button
-      className="kirk-button kirk-button-unstyled kirk-notification-cross"
+      className="kirk-button kirk-button-unstyled kirk-snackbar-cross"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
