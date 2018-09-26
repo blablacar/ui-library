@@ -1,6 +1,7 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** The autocomplete now trigger a search on mount if a defaultValue is provided
+- **[BREAKING CHANGE]** The autocomplete query doesn't change when the defaultValue change
 
 # v0.11.3 (28/09/2018)
 
