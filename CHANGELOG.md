@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.11.2 (27/09/2018)
+
 - **[FIX]** `Stepper` keep the right value after min and max props changes
 - **[UPDATE]** `Stepper` component can increase/decrease value easily by keeping buttons pressed
 - **[NEW]** Added icons: `checkShieldIcon`, `departureIcon`, `directionIcon`, `idCardVerifiedIcon`
