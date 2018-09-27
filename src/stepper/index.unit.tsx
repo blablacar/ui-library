@@ -47,6 +47,7 @@ it('Should be able to increment/decrement the value', () => {
       step={3}
       min={2}
       max={10}
+      onChange={onChange}
     >
       Amount of something
     </Stepper>,
@@ -54,8 +55,10 @@ it('Should be able to increment/decrement the value', () => {
   expect(stepper.state('value')).toBe(3)
   stepper.find('.kirk-stepper-increment').simulate('mouseUp')
   expect(stepper.state('value')).toBe(6)
+  expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 6 })
   stepper.find('.kirk-stepper-decrement').simulate('mouseUp')
   expect(stepper.state('value')).toBe(3)
+  expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 3 })
 })
 
 it('Should be able to have a max value', () => {

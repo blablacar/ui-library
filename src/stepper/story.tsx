@@ -2,6 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 import { withKnobs, text, number } from '@storybook/addon-knobs'
 
 import Stepper from 'stepper'
@@ -20,6 +21,7 @@ stories.add(
       value={number('value', 5)}
       increaseLabel={text('increaseLabel', 'Increment')}
       decreaseLabel={text('decreaseLabel', 'Decrement')}
+      onChange={action('changed')}
     >
       {text('children', 'Number of seats')}
     </Stepper>
@@ -38,6 +40,7 @@ stories.add(
       increaseLabel={text('increaseLabel', 'Increment')}
       decreaseLabel={text('decreaseLabel', 'Decrement')}
       format={value => `${value} €`}
+      onChange={action('changed')}
     >
       {text('children', 'Edit the price')}
     </Stepper>
