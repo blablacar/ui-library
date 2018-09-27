@@ -17,6 +17,7 @@ interface StepperProps {
   max?: number,
   min?: number,
   format?: (value: string | number) => string | number,
+  onChange?: (obj:onChangeParameters) => void,
 }
 
 interface StepperState {
@@ -35,6 +36,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
     max: defaultInteger,
     min: -defaultInteger,
     format: value => value,
+    onChange: () => {},
   }
 
   filterValue = (value:number, min:number, max:number) => {
@@ -59,9 +61,11 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
   }
 
   update(newValue: number) {
+    const value = this.filterValue(newValue, this.props.min, this.props.max)
     this.setState(
-      { value: this.filterValue(newValue, this.props.min, this.props.max) },
+      { value },
     )
+    this.props.onChange({ name: this.props.name, value })
   }
 
   handleMouseDown = (fn: () => void) => () => {
