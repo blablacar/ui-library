@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.11.3 (28/09/2018)
+
 - **[FIX]** `Stepper` Add onChange callback for external components
 
 # v0.11.2 (27/09/2018)
