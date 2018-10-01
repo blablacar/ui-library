@@ -38,7 +38,6 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
   }
 
   searchForItems = (query: string) => {
-    console.log(query)
     this.setState({ isSearching: true })
 
     setTimeout(() => {

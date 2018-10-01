@@ -106,8 +106,6 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     super(props)
     if (props.debounceTimeout > 0) {
       this.searchForItems = debounce(this.searchForItems, props.debounceTimeout)
-    } else {
-      this.searchForItems = this.searchForItems.bind(this)
     }
     this.currentValue = this.props.defaultValue
     this.state = {
@@ -192,7 +190,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     return String(this.currentValue).length >= this.props.searchForItemsMinChars
   }
 
-  searchForItems() {
+  searchForItems = () => {
     // If a long `debounceTimeout` is setup, it may happen that a `searchForItems`
     // is still scheduled to be called while the user has modified the query
     // during that lapse of time. Therefore, the check below verify the real input value
