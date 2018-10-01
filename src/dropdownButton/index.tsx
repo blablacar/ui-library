@@ -8,7 +8,7 @@ export interface DropdownButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   children: JSX.Element | string
   open?: boolean
-  className?: ''
+  className?: string
   iconPosition?: 'left' | 'right'
 }
 
