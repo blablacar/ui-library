@@ -18,6 +18,8 @@ const commonProps = {
   onClick: action('clicked'),
   onMouseDown: action('mouseDown'),
   onMouseUp: action('mouseUp'),
+  onTouchStart: action('touchStart'),
+  onTouchEnd: action('touchEnd'),
   onFocus: action('focused'),
   onBlur: action('blured'),
 }
