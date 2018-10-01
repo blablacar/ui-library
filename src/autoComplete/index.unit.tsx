@@ -1,6 +1,7 @@
 import React from 'react'
 import AutoComplete from 'autoComplete'
 import { ItemChoiceStatus } from 'itemChoice'
+import { shallow } from 'enzyme'
 
 const initialFakeItems = [
   { id: '1', title: 'title1', description: 'description1' },
@@ -33,11 +34,9 @@ describe('AutoComplete', () => {
   })
 
   it('Renders result items when items prop has changed', () => {
-    const wrapper = shallow(<AutoComplete
-      {...defaultProps}
-      searchForItemsMinChars={1}
-    />)
-    wrapper.instance().onInputChange({ value: 'Lyon' })
+    const wrapper = shallow(<AutoComplete {...defaultProps} searchForItemsMinChars={1} />)
+    const autocomplete: AutoComplete = wrapper.instance()
+    autocomplete.onInputChange({ value: 'Lyon' })
     wrapper.setProps({ isSearching: true })
     wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
     expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(true)
@@ -47,34 +46,33 @@ describe('AutoComplete', () => {
 
   it('Renders with a custom className', () => {
     const customClassName = 'my-search'
-    const wrapper = shallow(<AutoComplete
-      {...defaultProps}
-      className={customClassName}
-    />)
+    const wrapper = shallow(<AutoComplete {...defaultProps} className={customClassName} />)
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
   it('Renders a title on the close button', () => {
-    const wrapper = mount(<AutoComplete
-      {...defaultProps}
-      buttonTitle="buttonTitle"
-    />)
+    const wrapper = mount(<AutoComplete {...defaultProps} buttonTitle="buttonTitle" />)
     expect(wrapper.find('button').prop('title')).toBe('buttonTitle')
   })
 
   it('Can trigger onDoneAnimationEnd callback', () => {
     const event = jest.fn()
-    const wrapper = mount(<AutoComplete
-      {...defaultProps}
-      onDoneAnimationEnd={event}
-      selectedItemStatus={ItemChoiceStatus.CHECKED}
-    />)
+    const wrapper = mount(
+      <AutoComplete
+        {...defaultProps}
+        onDoneAnimationEnd={event}
+        selectedItemStatus={ItemChoiceStatus.CHECKED}
+      />,
+    )
     wrapper.instance().onInputChange({ value: 'title' })
 
     const items = fakeSearchForItems()
     wrapper.setProps({ isSearching: true })
     wrapper.setProps({ items, isSearching: false })
-    wrapper.find('li').first().simulate('mousedown')
+    wrapper
+      .find('li')
+      .first()
+      .simulate('mousedown')
 
     expect(event).not.toBeCalled()
     jest.advanceTimersByTime(1500)
@@ -83,10 +81,12 @@ describe('AutoComplete', () => {
 
   describe('#renderItem', () => {
     it('Renders each result item with a custom renderer', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        renderItem={item => <div className="custom-item">{item.title}</div>}
-      />)
+      const wrapper = mount(
+        <AutoComplete
+          {...defaultProps}
+          renderItem={item => <div className="custom-item">{item.title}</div>}
+        />,
+      )
       wrapper.instance().onInputChange({ value: 'title' })
 
       wrapper.setProps({ isSearching: true })
@@ -97,10 +97,7 @@ describe('AutoComplete', () => {
 
   describe('#maxItems', () => {
     it('Renders only `maxItems` when specified', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        maxItems={1}
-      />)
+      const wrapper = mount(<AutoComplete {...defaultProps} maxItems={1} />)
       wrapper.instance().onInputChange({ value: 'title' })
 
       wrapper.setProps({ isSearching: true })
@@ -113,24 +110,34 @@ describe('AutoComplete', () => {
     it('Do search for items when typed at least `searchForItemsMinChars` chars', () => {
       const query = 'Lyon'
       const searchForItemsSpy = jest.fn()
-      const wrapper = shallow(<AutoComplete
-        {...defaultProps}
-        searchForItems={searchForItemsSpy}
-        searchForItemsMinChars={1}
-      />)
-      wrapper.instance().onInputChange({ value: query })
+      const wrapper = shallow(
+        <AutoComplete
+          {...defaultProps}
+          searchForItems={searchForItemsSpy}
+          searchForItemsMinChars={1}
+        />,
+      )
+
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: query })
+
       expect(searchForItemsSpy).toHaveBeenCalledWith(query)
     })
 
     it('Do not search for items when typed less than `searchForItemsMinChars` chars', () => {
       const query = 'a'
       const searchForItemsSpy = jest.fn()
-      const wrapper = shallow(<AutoComplete
-        {...defaultProps}
-        searchForItems={searchForItemsSpy}
-        searchForItemsMinChars={3}
-      />)
-      wrapper.instance().onInputChange({ value: query })
+      const wrapper = shallow(
+        <AutoComplete
+          {...defaultProps}
+          searchForItems={searchForItemsSpy}
+          searchForItemsMinChars={3}
+        />,
+      )
+
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: query })
+
       expect(searchForItemsSpy).not.toHaveBeenCalled()
     })
   })
@@ -138,15 +145,14 @@ describe('AutoComplete', () => {
   describe('#renderNoResults', () => {
     it('Renders an empty state when no results', () => {
       const renderNoResults = jest.fn(() => <div className="no-results" />)
-      const wrapper = shallow(<AutoComplete
-        {...defaultProps}
-        renderNoResults={renderNoResults}
-      />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} renderNoResults={renderNoResults} />)
 
       const query = 'Lyon'
-      wrapper.instance().onInputChange({ value: query })
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: query })
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: [], isSearching: false })
+
       expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(false)
       expect(wrapper.find('.no-results')).toHaveLength(1)
       expect(renderNoResults).toHaveBeenCalledWith({ query })
@@ -155,32 +161,30 @@ describe('AutoComplete', () => {
     })
 
     it('Renders noResults with a custom Element', () => {
-      class CustomNoResults extends React.Component {
-        render() { return <div className="no-results" /> }
-      }
-      const wrapper = shallow(<AutoComplete
-        {...defaultProps}
-        renderNoResults={() => <CustomNoResults />}
-      />)
+      const CustomNoResults = () => <div className="no-results" />
+      const wrapper = shallow(
+        <AutoComplete {...defaultProps} renderNoResults={() => <CustomNoResults />} />,
+      )
 
       const query = 'Lyon'
-      wrapper.instance().onInputChange({ value: query })
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: query })
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: [], isSearching: false })
+
       expect(wrapper.find('CustomNoResults')).toHaveLength(1)
     })
 
     it('Renders no results with a custom className', () => {
       const bodyClassName = 'custom'
-      const wrapper = shallow(<AutoComplete
-        {...defaultProps}
-        bodyClassName={bodyClassName}
-      />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} bodyClassName={bodyClassName} />)
 
       const query = 'Lyon'
-      wrapper.instance().onInputChange({ value: query })
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: query })
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: [], isSearching: false })
+
       expect(wrapper.find(`.kirk-autoComplete-body.${bodyClassName}`).exists()).toBe(true)
     })
   })
@@ -188,11 +192,13 @@ describe('AutoComplete', () => {
   describe('#renderBusy', () => {
     const busyTimeout = 1
     it('Renders a busy state after `busyTimeout` milliseconds', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        busyTimeout={busyTimeout}
-        renderBusy={() => <div className="busy" />}
-      />)
+      const wrapper = mount(
+        <AutoComplete
+          {...defaultProps}
+          busyTimeout={busyTimeout}
+          renderBusy={() => <div className="busy" />}
+        />,
+      )
 
       expect(wrapper.state('busy')).toBe(false)
       wrapper.instance().onInputChange({ value: 'Lyon' })
@@ -215,21 +221,25 @@ describe('AutoComplete', () => {
       { id: '3', title: 'title1', description: 'description1' },
     ]
     it('renders empty search when query is lower than minChar', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        renderEmptySearch={emptySearch}
-        renderBusy={() => <div className="busy" />}
-      />)
+      const wrapper = mount(
+        <AutoComplete
+          {...defaultProps}
+          renderEmptySearch={emptySearch}
+          renderBusy={() => <div className="busy" />}
+        />,
+      )
 
       expect(wrapper.find('li')).toHaveLength(emptySearch.length)
     })
 
     it('renders the result list when query is greater than minChar', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        renderEmptySearch={emptySearch}
-        renderBusy={() => <div className="busy" />}
-      />)
+      const wrapper = mount(
+        <AutoComplete
+          {...defaultProps}
+          renderEmptySearch={emptySearch}
+          renderBusy={() => <div className="busy" />}
+        />,
+      )
       wrapper.instance().onInputChange({ value: 'Lyon' })
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
@@ -241,10 +251,7 @@ describe('AutoComplete', () => {
   describe('#onInputChange', () => {
     it('Invokes `onInputChange` when typing text in TextField', () => {
       const onInputChange = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        onInputChange={onInputChange}
-      />)
+      const wrapper = mount(<AutoComplete {...defaultProps} onInputChange={onInputChange} />)
       const value = 'ab'
       wrapper.find('input').simulate('change', { target: { value } })
       expect(onInputChange).toHaveBeenCalledWith({ value })
@@ -254,16 +261,16 @@ describe('AutoComplete', () => {
   describe('#onSelect', () => {
     it('Invokes `onSelect` when selecting a result item', () => {
       const onSelectSpy = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        onSelect={onSelectSpy}
-      />)
+      const wrapper = mount(<AutoComplete {...defaultProps} onSelect={onSelectSpy} />)
       wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items, isSearching: false })
-      wrapper.find('li').first().simulate('mousedown')
+      wrapper
+        .find('li')
+        .first()
+        .simulate('mousedown')
       expect(onSelectSpy).toHaveBeenCalledWith({
         name: defaultProps.name,
         value: items[0].title,
@@ -275,10 +282,7 @@ describe('AutoComplete', () => {
   describe('#onClear', () => {
     it('Invokes `onClear` when clearing the field\'s value', () => {
       const onClear = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        onClear={onClear}
-      />)
+      const wrapper = mount(<AutoComplete {...defaultProps} onClear={onClear} />)
       wrapper.find('button').simulate('click')
       expect(onClear).toHaveBeenCalledTimes(1)
     })
@@ -287,17 +291,18 @@ describe('AutoComplete', () => {
   describe('#getItemValue', () => {
     it('Can use a custom `getItemValue` when selecting a result item', () => {
       const onSelectSpy = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        onSelect={onSelectSpy}
-        getItemValue={item => item.id}
-      />)
+      const wrapper = mount(
+        <AutoComplete {...defaultProps} onSelect={onSelectSpy} getItemValue={item => item.id} />,
+      )
       wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items, isSearching: false })
-      wrapper.find('li').first().simulate('mousedown')
+      wrapper
+        .find('li')
+        .first()
+        .simulate('mousedown')
       expect(onSelectSpy).toHaveBeenCalledWith({
         name: defaultProps.name,
         value: items[0].id,
@@ -308,10 +313,7 @@ describe('AutoComplete', () => {
 
   describe('#renderQuery', () => {
     it('Can use a custom `renderQuery` when selecting a result item', () => {
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        renderQuery={item => item.id}
-      />)
+      const wrapper = mount(<AutoComplete {...defaultProps} renderQuery={item => item.id} />)
       wrapper.instance().onInputChange({ value: 'title' })
 
       const items = fakeSearchForItems()
@@ -320,21 +322,24 @@ describe('AutoComplete', () => {
       wrapper.setProps({ items, isSearching: false })
 
       // Simulate the selection of the first list item
-      wrapper.find('li').first().simulate('mousedown')
+      wrapper
+        .find('li')
+        .first()
+        .simulate('mousedown')
       expect(wrapper.find('TextField').prop('defaultValue')).toBe(items[0].id)
     })
   })
 
   describe('#focus', () => {
     it('Can add focus to TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} focus />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} focus />)
       expect(wrapper.find('TextField').prop('focus')).toBe(true)
     })
   })
 
   describe('#autoCorrect', () => {
     it('Can set autoCorrect attribute on TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('autoCorrect')).toBe('off')
       wrapper.setProps({ autoCorrect: 'on' })
       expect(wrapper.find('TextField').prop('autoCorrect')).toBe('on')
@@ -343,7 +348,7 @@ describe('AutoComplete', () => {
 
   describe('#disabled', () => {
     it('Can set disabled attribute on TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('disabled')).toBe(false)
       wrapper.setProps({ disabled: true })
       expect(wrapper.find('TextField').prop('disabled')).toBe(true)
@@ -352,7 +357,7 @@ describe('AutoComplete', () => {
 
   describe('#readOnly', () => {
     it('Can set readOnly attribute on TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('readOnly')).toBe(false)
       wrapper.setProps({ readOnly: true })
       expect(wrapper.find('TextField').prop('readOnly')).toBe(true)
@@ -361,7 +366,7 @@ describe('AutoComplete', () => {
 
   describe('#required', () => {
     it('Can set required attribute on TextField', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
+      const wrapper = shallow(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('required')).toBe(false)
       wrapper.setProps({ required: true })
       expect(wrapper.find('TextField').prop('required')).toBe(true)
@@ -369,28 +374,35 @@ describe('AutoComplete', () => {
   })
 
   describe('#defaultValue', () => {
+    const defaultValue = 'bla'
     it('Can have a default value in TextField when mouting', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} defaultValue="bla" />)
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe('bla')
+      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={defaultValue} />)
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe(defaultValue)
     })
 
-    it('Can update the default value in TextField after mouting', () => {
-      const wrapper = mount(<AutoComplete {...defaultProps} />)
-      wrapper.setProps({ defaultValue: 'bla' })
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe('bla')
+    it('Can have a default value in TextField when mouting', () => {
+      const searchForItems = jest.fn()
+      const wrapper = shallow(
+        <AutoComplete
+          {...defaultProps}
+          defaultValue={defaultValue}
+          searchForItems={searchForItems}
+        />,
+      )
+      expect(searchForItems).toHaveBeenCalledWith(defaultValue)
     })
   })
 
   describe('#debounceTimeout', () => {
     it('Do not limit the number of calls to `searchForItems` without `debounceTimeout`', () => {
       const searchForItemsSpy = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        searchForItems={searchForItemsSpy}
-        debounceTimeout={0}
-      />)
-      wrapper.instance().onInputChange({ value: 'abc' })
-      wrapper.instance().onInputChange({ value: 'abcd' })
+      const wrapper = shallow(
+        <AutoComplete {...defaultProps} searchForItems={searchForItemsSpy} debounceTimeout={0} />,
+      )
+
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: 'abc' })
+      autocomplete.onInputChange({ value: 'abcd' })
 
       expect(searchForItemsSpy).toHaveBeenCalledTimes(2)
       expect(searchForItemsSpy).toHaveBeenCalledWith('abc')
@@ -399,13 +411,13 @@ describe('AutoComplete', () => {
 
     it('Do limit the number of calls to `searchForItems` with `debounceTimeout`', () => {
       const searchForItemsSpy = jest.fn()
-      const wrapper = mount(<AutoComplete
-        {...defaultProps}
-        searchForItems={searchForItemsSpy}
-        debounceTimeout={100}
-      />)
-      wrapper.instance().onInputChange({ value: 'abc' })
-      wrapper.instance().onInputChange({ value: 'abcd' })
+      const wrapper = shallow(
+        <AutoComplete {...defaultProps} searchForItems={searchForItemsSpy} debounceTimeout={100} />,
+      )
+
+      const autocomplete: AutoComplete = wrapper.instance()
+      autocomplete.onInputChange({ value: 'abc' })
+      autocomplete.onInputChange({ value: 'abcd' })
 
       jest.runAllTimers()
       expect(searchForItemsSpy).toHaveBeenCalledTimes(1)

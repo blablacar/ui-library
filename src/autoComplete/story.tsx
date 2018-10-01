@@ -10,7 +10,7 @@ import AutoComplete from 'autoComplete'
 const stories = storiesOf('AutoComplete', module)
 stories.addDecorator(withKnobs)
 
-const places:AutocompleteItem[] = [
+const places: AutocompleteItem[] = [
   { id: '1', title: 'Paris Saint Lazare', description: 'Rue d’Amsterdam, Paris' },
   { id: '2', title: 'Paris Gare de Lyon', description: 'Rue d’Amsterdam, Paris' },
   { id: '3', title: 'Paris Rive Gauche' },
@@ -27,7 +27,7 @@ interface AutoCompleteExampleState {
 }
 
 class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoCompleteExampleState> {
-  state:AutoCompleteExampleState = {
+  state: AutoCompleteExampleState = {
     isSearching: false,
     items: [],
   }
@@ -37,7 +37,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
     renderEmptySearch: [],
   }
 
-  searchForItems = (query:string) => {
+  searchForItems = (query: string) => {
     this.setState({ isSearching: true })
 
     setTimeout(() => {
@@ -53,7 +53,9 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
 
     return (
       <div>
-        <p>Type <code>Paris</code> to test auto-completion.</p>
+        <p>
+          Type <code>Paris</code> to test auto-completion.
+        </p>
         <AutoComplete
           name="city"
           placeholder="Search here…"
@@ -74,7 +76,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
             [ItemChoiceStatus.DEFAULT, ItemChoiceStatus.LOADING, ItemChoiceStatus.CHECKED],
             ItemChoiceStatus.DEFAULT,
           )}
-          autoCorrect={select('autoCorrect', { on:'on', off:'off' }, 'off')}
+          autoCorrect={select('autoCorrect', { on: 'on', off: 'off' }, 'off')}
           disabled={boolean('disabled', false)}
           readOnly={boolean('readOnly', false)}
           required={boolean('required', false)}
@@ -84,10 +86,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
   }
 }
 
-stories.add(
-  'AutoComplete',
-  withInfo('AutoComplete')(() => <AutoCompleteExample />),
-)
+stories.add('AutoComplete', withInfo('AutoComplete')(() => <AutoCompleteExample />))
 
 stories.add(
   'AutoComplete with busy state',

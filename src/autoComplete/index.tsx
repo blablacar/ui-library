@@ -13,67 +13,69 @@ import style from './style'
 
 type query = string | number | boolean
 interface AutoCompleteProps {
-  readonly name: string,
-  readonly isSearching: boolean,
-  readonly searchForItems: (query: query) => void,
-  readonly onInputChange?: (params: Partial<onChangeParameters>) => void,
-  readonly searchForItemsMinChars?: number,
-  readonly defaultValue?: string,
-  readonly onSelect?: (obj:AutocompleteOnChange) => void,
-  readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void,
-  readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void,
-  readonly onClear?: () => void,
-  readonly className?: Classcat.Class,
-  readonly inputClassName?: Classcat.Class,
-  readonly itemClassName?: Classcat.Class,
-  readonly bodyClassName?: Classcat.Class,
-  readonly items?: AutocompleteItem[],
-  readonly maxItems?: number,
-  readonly renderItem?: (itemToRender:AutocompleteItemToRender) => React.ReactElement<any>,
-  readonly renderBusy?: ({ query }: { query: query}) => React.ReactElement<any>,
-  readonly renderNoResults?: ({ query }: { query: query}) => React.ReactElement<any>,
-  readonly renderQuery?: (item:AutocompleteItem) => string,
-  readonly renderEmptySearch?: AutocompleteItem[],
-  readonly getItemValue?: (item:AutocompleteItem) => string,
-  readonly inputAddon?: React.ReactElement<any>,
-  readonly placeholder?: string,
-  readonly busyTimeout?: number,
-  readonly debounceTimeout?: number,
-  readonly autoFocus?: boolean,
-  readonly focus?: boolean,
-  readonly buttonTitle?: string,
-  readonly showList?: boolean,
-  readonly onDoneAnimationEnd?: () => void,
-  readonly autoCorrect?: 'on' | 'off',
-  readonly disabled?: boolean,
-  readonly readOnly?: boolean,
-  readonly required?: boolean,
-  readonly error?: string | JSX.Element,
-  readonly selectedItemStatus?: ItemChoiceStatus,
+  readonly name: string
+  readonly isSearching: boolean
+  readonly searchForItems: (query: query) => void
+  readonly onInputChange?: (params: Partial<onChangeParameters>) => void
+  readonly searchForItemsMinChars?: number
+  readonly defaultValue?: string
+  readonly onSelect?: (obj: AutocompleteOnChange) => void
+  readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
+  readonly onClear?: () => void
+  readonly className?: Classcat.Class
+  readonly inputClassName?: Classcat.Class
+  readonly itemClassName?: Classcat.Class
+  readonly bodyClassName?: Classcat.Class
+  readonly items?: AutocompleteItem[]
+  readonly maxItems?: number
+  readonly renderItem?: (itemToRender: AutocompleteItemToRender) => React.ReactElement<any>
+  readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
+  readonly renderNoResults?: ({ query }: { query: query }) => React.ReactElement<any>
+  readonly renderQuery?: (item: AutocompleteItem) => string
+  readonly renderEmptySearch?: AutocompleteItem[]
+  readonly getItemValue?: (item: AutocompleteItem) => string
+  readonly inputAddon?: React.ReactElement<any>
+  readonly placeholder?: string
+  readonly busyTimeout?: number
+  readonly debounceTimeout?: number
+  readonly autoFocus?: boolean
+  readonly focus?: boolean
+  readonly buttonTitle?: string
+  readonly showList?: boolean
+  readonly onDoneAnimationEnd?: () => void
+  readonly autoCorrect?: 'on' | 'off'
+  readonly disabled?: boolean
+  readonly readOnly?: boolean
+  readonly required?: boolean
+  readonly error?: string | JSX.Element
+  readonly selectedItemStatus?: ItemChoiceStatus
 }
 
 interface AutoCompleteState {
-  readonly busy: boolean,
-  readonly items: AutocompleteItem[],
-  readonly value: string,
-  readonly query: query,
-  readonly noResults: boolean,
+  readonly busy: boolean
+  readonly items: AutocompleteItem[]
+  readonly value: string
+  readonly query: query
+  readonly noResults: boolean
+  readonly isSearching: boolean
 }
 
-const initialState:AutoCompleteState = {
+const initialState: AutoCompleteState = {
   busy: false,
   items: [],
   value: '',
   query: '',
   noResults: false,
+  isSearching: false,
 }
 
 export default class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState> {
-  private input:HTMLInputElement
-  private busyTimeout:number | void
-  private currentValue:query
+  private input: HTMLInputElement
+  private busyTimeout: number | void
+  private currentValue: query
 
-  static defaultProps:Partial<AutoCompleteProps> = {
+  static defaultProps: Partial<AutoCompleteProps> = {
     isSearching: false,
     searchForItemsMinChars: 3,
     maxItems: Infinity,
@@ -104,10 +106,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     super(props)
     if (props.debounceTimeout > 0) {
       this.searchForItems = debounce(this.searchForItems, props.debounceTimeout)
-    } else {
-      this.searchForItems = this.searchForItems.bind(this)
     }
-    this.currentValue = ''
+    this.currentValue = this.props.defaultValue
     this.state = {
       ...initialState,
       query: this.props.defaultValue,
@@ -115,25 +115,36 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   componentDidMount() {
+    // Triggers the search when the autocomplete is initialised with a default value
+    this.searchForItems()
+
     if (this.input && canUseEventListeners) {
       this.input.addEventListener('keydown', this.onInputKeydown)
     }
   }
 
-  componentWillReceiveProps(nextProps:AutoCompleteProps) {
-    const shouldRenderItems = this.props.isSearching && !nextProps.isSearching
-
-    if (this.props.defaultValue !== nextProps.defaultValue) {
-      this.setState({ query: nextProps.defaultValue })
+  static getDerivedStateFromProps(props: AutoCompleteProps, state: AutoCompleteState) {
+    if (state.isSearching && !props.isSearching) {
+      return {
+        isSearching: false,
+        busy: false,
+        noResults: isEmpty(props.items),
+        items: props.items,
+      }
     }
+
+    if (state.isSearching !== props.isSearching) {
+      return { isSearching: props.isSearching }
+    }
+
+    return null
+  }
+
+  componentDidUpdate(nextProps: AutoCompleteProps) {
+    const shouldRenderItems = this.props.isSearching && !nextProps.isSearching
 
     if (shouldRenderItems) {
       this.clearBusyTimeout()
-      this.setState({
-        busy: false,
-        noResults: isEmpty(nextProps.items),
-        items: nextProps.items,
-      })
     }
   }
 
@@ -143,7 +154,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     }
   }
 
-  onInputKeydown = (e:KeyboardEvent) => {
+  onInputKeydown = (e: KeyboardEvent) => {
     const KEY_CODE_ENTER = 13
     if (e.keyCode === KEY_CODE_ENTER) {
       e.preventDefault()
@@ -161,22 +172,25 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     this.props.onInputChange({ value })
   }
 
-  onSelectItem = (item:AutocompleteItem) => {
-    this.setState({
-      items: [],
-      query: this.props.renderQuery(item),
-      value: this.props.getItemValue(item),
-    }, () => {
-      this.input.select()
-      this.props.onSelect({ name: this.props.name, value: this.state.value, item })
-    })
+  onSelectItem = (item: AutocompleteItem) => {
+    this.setState(
+      {
+        items: [],
+        query: this.props.renderQuery(item),
+        value: this.props.getItemValue(item),
+      },
+      () => {
+        this.input.select()
+        this.props.onSelect({ name: this.props.name, value: this.state.value, item })
+      },
+    )
   }
 
   hasMinCharsForSearch() {
     return String(this.currentValue).length >= this.props.searchForItemsMinChars
   }
 
-  searchForItems() {
+  searchForItems = () => {
     // If a long `debounceTimeout` is setup, it may happen that a `searchForItems`
     // is still scheduled to be called while the user has modified the query
     // during that lapse of time. Therefore, the check below verify the real input value
@@ -197,7 +211,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     this.setState({ busy: true })
   }
 
-  inputRef = (input:HTMLInputElement) => {
+  inputRef = (input: HTMLInputElement) => {
     this.input = input
   }
 
@@ -206,16 +220,19 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   render() {
-    const shouldDisplayEmptyState = !this.hasMinCharsForSearch() && this.props.showList
-      && !isEmpty(this.props.renderEmptySearch)
+    const shouldDisplayEmptyState =
+      !this.hasMinCharsForSearch() && this.props.showList && !isEmpty(this.props.renderEmptySearch)
     const shouldDisplayBusyState = this.state.busy && this.props.showList
-    const shouldDisplayNoResults = this.hasMinCharsForSearch()
-      && !this.state.busy && this.state.noResults && this.props.showList
-    const shouldDisplayAutoCompleteList = this.hasMinCharsForSearch()
-      && !isEmpty(this.state.items) && !this.state.busy && this.props.showList
-    const listItems = shouldDisplayAutoCompleteList ? (
-      this.state.items
-     ) : this.props.renderEmptySearch
+    const shouldDisplayNoResults =
+      this.hasMinCharsForSearch() && !this.state.busy && this.state.noResults && this.props.showList
+    const shouldDisplayAutoCompleteList =
+      this.hasMinCharsForSearch() &&
+      !isEmpty(this.state.items) &&
+      !this.state.busy &&
+      this.props.showList
+    const listItems = shouldDisplayAutoCompleteList
+      ? this.state.items
+      : this.props.renderEmptySearch
     return (
       <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
@@ -240,14 +257,14 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           required={this.props.required}
           error={this.props.error}
         />
-        { shouldDisplayBusyState && (
+        {shouldDisplayBusyState && (
           <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
-            { this.props.renderBusy({ query: this.state.query }) }
+            {this.props.renderBusy({ query: this.state.query })}
           </div>
         )}
-        { shouldDisplayNoResults && (
+        {shouldDisplayNoResults && (
           <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
-            { this.props.renderNoResults({ query: this.state.query }) }
+            {this.props.renderNoResults({ query: this.state.query })}
           </div>
         )}
         <AutoCompleteList
