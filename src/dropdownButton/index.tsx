@@ -16,7 +16,7 @@ const DropdownButton = ({
   open = false,
   children,
   onClick,
-  className,
+  className = '',
   iconPosition = 'right',
 }: DropdownMenu) => (
   <div
@@ -27,7 +27,7 @@ const DropdownButton = ({
       },
     ])}>
     <button
-      aria-expanded={open ? 'true' : 'false'}
+      aria-expanded={open}
       type="button"
       className={className}
       onClick={onClick}>

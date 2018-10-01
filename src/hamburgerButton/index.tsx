@@ -6,8 +6,8 @@ export interface HamburgerMenu{
   open?: boolean,
 }
 
-const Hamburger = ({ open, onClick }: HamburgerMenu) => (
-  <button aria-expanded={open ? 'true' : 'false'} onClick={onClick}>
+const Hamburger = ({ open = false, onClick }: HamburgerMenu) => (
+  <button aria-expanded={open} onClick={onClick}>
     <i />
     <style jsx>{style}</style>
   </button>

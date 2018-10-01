@@ -10,13 +10,13 @@ const defaultProps = {
 describe('DropdownButton', () => {
   it('Should not be open by default', () => {
     const wrapper = shallow(<DropdownButton {...defaultProps} />)
-    expect(wrapper.find('button').prop('aria-expanded')).toBe('false')
+    expect(wrapper.find('button').prop('aria-expanded')).toBe(false)
     expect(wrapper.hasClass('kirk-dropdownButton--open')).toBe(false)
   })
 
   it('Should have the correct props & class when opened', () => {
     const wrapper = shallow(<DropdownButton {...defaultProps} open />)
-    expect(wrapper.find('button').prop('aria-expanded')).toBe('true')
+    expect(wrapper.find('button').prop('aria-expanded')).toBe(true)
     expect(wrapper.hasClass('kirk-dropdownButton--open')).toBe(true)
   })
 

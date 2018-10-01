@@ -8,12 +8,12 @@ const defaultProps = {
 describe('HamburgerButton', () => {
   it('Should not be open by default', () => {
     const wrapper = shallow(<HamburgerButton {...defaultProps} />)
-    expect(wrapper.prop('aria-expanded')).toBe('false')
+    expect(wrapper.prop('aria-expanded')).toBe(false)
   })
 
   it('Should be open when having prop `open`', () => {
     const wrapper = shallow(<HamburgerButton {...defaultProps} open />)
-    expect(wrapper.prop('aria-expanded')).toBe('true')
+    expect(wrapper.prop('aria-expanded')).toBe(true)
   })
 
   it('Should trigger an `onClick` event', () => {
