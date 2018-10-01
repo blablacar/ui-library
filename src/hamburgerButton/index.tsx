@@ -1,12 +1,12 @@
 import React from 'react'
 import style from './style'
 
-export interface HamburgerProps{
+export interface HamburgerButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   open?: boolean,
 }
 
-const HamburgerButton = ({ open = false, onClick }: HamburgerProps) => (
+const HamburgerButton = ({ open = false, onClick }: HamburgerButtonProps) => (
   <button aria-expanded={open} onClick={onClick}>
     <i />
     <style jsx>{style}</style>
