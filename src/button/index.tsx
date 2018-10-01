@@ -31,6 +31,8 @@ export interface ButtonProps {
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
+  readonly onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void,
   readonly tabIndex?: string,
   readonly disabled?: boolean,
@@ -43,7 +45,10 @@ export interface ButtonState {
   },
 }
 
-type ButtonActionEvents = React.MouseEvent<HTMLElement> | React.FocusEventHandler<HTMLElement>
+type ButtonActionEvents =
+  React.MouseEvent<HTMLElement> |
+  React.TouchEvent<HTMLElement> |
+  React.FocusEventHandler<HTMLElement>
 type functionEvent = (event: ButtonActionEvents) => void
 
 type TypeProps = {
@@ -56,6 +61,8 @@ type TypeProps = {
   onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
   onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
   onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void,
+  onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void,
+  onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void,
 }
 
 export const eventHandler = (
@@ -105,7 +112,8 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
       // Modifiers
       status, icon, shadowed,
       // Actions
-      onClick, onMouseDown, onMouseUp, onBlur, onFocus, onDoneAnimationEnd, focus,
+      onClick, onTouchStart, onTouchEnd, onMouseDown, onMouseUp, onBlur, onFocus,
+      onDoneAnimationEnd, focus,
       // Extend case of the button for the expand component
       ...attrs
     } = this.props
@@ -130,6 +138,8 @@ export default class Button extends PureComponent <ButtonProps, ButtonState> {
     typeProps.onClick = eventHandler(onClick, typeProps.onClick)
     typeProps.onMouseDown = eventHandler(onMouseDown, typeProps.onMouseDown)
     typeProps.onMouseUp = eventHandler(onMouseUp, typeProps.onMouseUp)
+    typeProps.onTouchStart = eventHandler(onTouchStart, typeProps.onTouchStart)
+    typeProps.onTouchEnd = eventHandler(onTouchEnd, typeProps.onTouchEnd)
     typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
     typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
 

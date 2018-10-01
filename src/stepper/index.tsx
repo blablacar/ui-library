@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react'
+import { canUseDOM } from 'exenv'
+import { isTouchEventsAvailable } from '_utils'
 
 import Button from 'button'
 import PlusIcon from 'icon/plusIcon'
@@ -28,6 +30,7 @@ interface StepperState {
 
 // Support IE. Same value returned with Number.MAX_SAFE_INTEGER / Number.MIN_SAFE_INTEGER
 const defaultInteger = (2 ** 53) - 1
+const isTouchScreen = isTouchEventsAvailable()
 
 export default class Stepper extends PureComponent <StepperProps, StepperState> {
   static defaultProps: Partial<StepperProps> = {
@@ -49,8 +52,8 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
     max: this.props.max,
   }
 
-  whileMouseDown:number
-  mouseDownDelay:number
+  whileButtonDown:number
+  buttonDownDelay:number
 
   componentDidUpdate(prevProps: StepperProps) {
     if (prevProps.max !== this.props.max ||
@@ -62,31 +65,31 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
 
   update(newValue: number) {
     const value = this.filterValue(newValue, this.props.min, this.props.max)
-    this.setState(
-      { value },
-    )
+    this.setState({ value })
     this.props.onChange({ name: this.props.name, value })
   }
 
-  handleMouseDown = (fn: () => void) => () => {
-    this.mouseDownDelay = window.setTimeout(() => {
-      this.whileMouseDown = window.setInterval(() => {
-        fn()
-        if (this.state.value >= this.props.max || this.state.value <= this.props.min) {
-          this.clearMouseDownTimers()
-        }
-      }, parseInt(delay.interval.base, 10))
-    }, parseInt(delay.timeout.base, 10))
+  handleButtonDown = (callback: () => void) => () => {
+    if (canUseDOM) {
+      this.buttonDownDelay = window.setTimeout(() => {
+        this.whileButtonDown = window.setInterval(() => {
+          callback()
+          if (this.state.value >= this.props.max || this.state.value <= this.props.min) {
+            this.clearButtonPressedTimers()
+          }
+        }, parseInt(delay.interval.base, 10))
+      }, parseInt(delay.timeout.base, 10))
+    }
   }
 
-  clearMouseDownTimers = () => {
-    clearTimeout(this.mouseDownDelay)
-    clearInterval(this.whileMouseDown)
+  clearButtonPressedTimers = () => {
+    clearTimeout(this.buttonDownDelay)
+    clearInterval(this.whileButtonDown)
   }
 
-  handleMouseUp = (fn: () => void) => () => {
-    this.clearMouseDownTimers()
-    fn()
+  handleButtonUp = (callback: () => void) => () => {
+    callback()
+    this.clearButtonPressedTimers()
   }
 
   increment = () => {
@@ -95,6 +98,16 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
 
   decrement = () => {
     this.update(this.state.value - this.props.step)
+  }
+
+  createListeners(callback: () => void) {
+    return isTouchScreen ? {
+      onTouchStart: this.handleButtonDown(callback),
+      onTouchEnd: this.handleButtonUp(callback),
+    } : {
+      onMouseDown: this.handleButtonDown(callback),
+      onMouseUp: this.handleButtonUp(callback),
+    }
   }
 
   render() {
@@ -109,8 +122,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           className="kirk-stepper-decrement"
           status={Button.STATUS.UNSTYLED}
           disabled={isMin}
-          onMouseDown={this.handleMouseDown(this.decrement)}
-          onMouseUp={this.handleMouseUp(this.decrement)}
+          {...this.createListeners(this.decrement)}
         >
           <MinusIcon title={decreaseLabel} iconColor={isMin ? color.disabled : color.primary} />
         </Button>
@@ -126,8 +138,7 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           className="kirk-stepper-increment"
           status={Button.STATUS.UNSTYLED}
           disabled={isMax}
-          onMouseDown={this.handleMouseDown(this.increment)}
-          onMouseUp={this.handleMouseUp(this.increment)}
+          {...this.createListeners(this.increment)}
         >
           <PlusIcon title={increaseLabel} iconColor={isMax ? color.disabled : color.primary} />
         </Button>

@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `Stepper` & `Button` Add touch event
 
 # v0.12.0 (01/10/2018)
 
