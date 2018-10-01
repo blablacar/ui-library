@@ -4,11 +4,11 @@ import style from './style'
 import { ChevronIcon } from 'icon'
 import { color } from '_utils/branding'
 
-export interface DropdownMenu {
+export interface DropdownButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   children: JSX.Element | string
-  open?: boolean,
-  className?: string
+  open?: boolean
+  className?: ''
   iconPosition?: 'left' | 'right'
 }
 
@@ -18,7 +18,7 @@ const DropdownButton = ({
   onClick,
   className = '',
   iconPosition = 'right',
-}: DropdownMenu) => (
+}: DropdownButtonProps) => (
   <div
     className={cc([
       'kirk-dropdownButton',
