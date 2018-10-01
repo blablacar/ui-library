@@ -1,16 +1,16 @@
 import React from 'react'
 import style from './style'
 
-export interface HamburgerMenu{
+export interface HamburgerProps{
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   open?: boolean,
 }
 
-const Hamburger = ({ open = false, onClick }: HamburgerMenu) => (
+const HamburgerButton = ({ open = false, onClick }: HamburgerProps) => (
   <button aria-expanded={open} onClick={onClick}>
     <i />
     <style jsx>{style}</style>
   </button>
 )
 
-export default Hamburger
+export default HamburgerButton
