@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v0.13.0 (02/10/2018)
+
 - **[UPDATE]** `Stepper` & `Button` Add touch event
 - **[BREAKING CHANGE]** `DropdownButton` no longer handles the dropdown content, added a `onClick()` callback
 
