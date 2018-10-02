@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, space, transition } from '_utils/branding'
+import { color, font, transition } from '_utils/branding'
 
 export default css`
   .kirk-dropdownButton {
