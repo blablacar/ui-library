@@ -1,25 +1,23 @@
 import React from 'react'
 import DropdownButton from 'dropdownButton'
-
-const dummyDropdown = () => <div />
+import ChevronIcon from 'icon/chevronIcon'
 
 const defaultProps = {
-  children: <div />,
-  dropdown: <dummyDropdown />,
+  onClick() {},
+  children: <div className="children" />,
 }
 
 describe('DropdownButton', () => {
-  it('Should not be open when mouting', () => {
+  it('Should not be open by default', () => {
     const wrapper = shallow(<DropdownButton {...defaultProps} />)
-    expect(wrapper.state('open')).toBe(false)
-    expect(wrapper.find('dummyDropdown').exists()).toBe(false)
+    expect(wrapper.find('button').prop('aria-expanded')).toBe(false)
+    expect(wrapper.hasClass('kirk-dropdownButton--open')).toBe(false)
   })
 
-  it('Should be open when clicking the button', () => {
-    const wrapper = shallow(<DropdownButton {...defaultProps} />)
-    wrapper.find('button').simulate('click')
-    expect(wrapper.state('open')).toBe(true)
-    expect(wrapper.find('dummyDropdown').exists()).toBe(true)
+  it('Should have the correct props & class when opened', () => {
+    const wrapper = shallow(<DropdownButton {...defaultProps} open />)
+    expect(wrapper.find('button').prop('aria-expanded')).toBe(true)
+    expect(wrapper.hasClass('kirk-dropdownButton--open')).toBe(true)
   })
 
   it('Should accept a custom className for the button', () => {
@@ -33,17 +31,21 @@ describe('DropdownButton', () => {
     expect(wrapper.find('button[type="button"]')).toHaveLength(1)
   })
 
-  describe('#dropdownWithPointer', () => {
-    it('Should not have a pointer by default', () => {
-      const wrapper = shallow(<DropdownButton {...defaultProps} />)
-      wrapper.setState({ open: true })
-      expect(wrapper.find('.dropdown').hasClass('dropdown--withPointer')).toBe(false)
-    })
+  it('Should always have the chevron icon', () => {
+    const wrapper = shallow(<DropdownButton {...defaultProps} />)
+    expect(wrapper.find(ChevronIcon)).toHaveLength(1)
+  })
 
-    it('Should have a pointer when having prop `dropdownWithPointer`', () => {
-      const wrapper = shallow(<DropdownButton {...defaultProps} dropdownWithPointer />)
-      wrapper.setState({ open: true })
-      expect(wrapper.find('.dropdown').hasClass('dropdown--withPointer')).toBe(true)
-    })
+  it('Should always handle the chevron icon position', () => {
+    const wrapper = shallow(<DropdownButton {...defaultProps} />)
+    expect(wrapper.find(ChevronIcon)).toHaveLength(1)
+    expect(wrapper.find('.children')).toHaveLength(1)
+
+    expect(wrapper.find('button').childAt(0).is('.children')).toBe(true)
+    expect(wrapper.find('button').childAt(1).is(ChevronIcon)).toBe(true)
+
+    wrapper.setProps({ iconPosition: 'left' })
+    expect(wrapper.find('button').childAt(0).is(ChevronIcon)).toBe(true)
+    expect(wrapper.find('button').childAt(1).is('.children')).toBe(true)
   })
 })
