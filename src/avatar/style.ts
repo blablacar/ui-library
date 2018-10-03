@@ -32,13 +32,13 @@ export default css`
     object-fit: cover;
   }
 
-  :global(.kirk-avatar .kirk-avatar-badge--unreadNotifications),
-  :global(.kirk-avatar .kirk-avatar-badge--idCheck) {
+  :global(.kirk-avatar .kirk-badge.kirk-avatar-badge--unreadNotifications),
+  :global(.kirk-avatar .kirk-badge.kirk-avatar-badge--idCheck) {
     z-index: 2;
     position: absolute;
   }
 
-  :global(.kirk-avatar .kirk-avatar-badge--unreadNotifications) {
+  :global(.kirk-avatar .kirk-badge.kirk-avatar-badge--unreadNotifications) {
     top: -6px;
     right: -6px;
   }
@@ -53,30 +53,30 @@ export default css`
     background-color: ${color.success};
   }
 
-  :global(.kirk-avatar.kirk-avatar--medium .kirk-avatar-badge--idCheck),
-  :global(.kirk-avatar.kirk-avatar--large .kirk-avatar-badge--idCheck) {
+  :global(.kirk-avatar.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck),
+  :global(.kirk-avatar.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck) {
     bottom: 0;
     right: 0;
   }
 
-  :global(.kirk-avatar--medium .kirk-avatar-badge--idCheck) {
+  :global(.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck) {
     width: 24px;
     height: 24px;
   }
 
-  :global(.kirk-avatar--large .kirk-avatar-badge--idCheck) {
+  :global(.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck) {
     width: 36px;
     height: 36px;
   }
 
-  :global(.kirk-avatar--medium .kirk-avatar-badge--unreadNotifications) {
+  :global(.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications) {
     height: 24px;
     line-height: 23px;
     font-size: 14px;
     padding: 0 6px;
   }
 
-  :global(.kirk-avatar--large .kirk-avatar-badge--unreadNotifications) {
+  :global(.kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications) {
     height: 36px;
     line-height: 34px;
     font-size: 18px;
