@@ -4,7 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 import { color } from '_utils/branding'
 
-class idCardVerifiedIcon extends PureComponent<Icon> {
+class IdCardVerifiedIcon extends PureComponent<Icon> {
   static defaultProps: Icon = {
     className: '',
     iconColor: color.icon,
@@ -56,4 +56,4 @@ class idCardVerifiedIcon extends PureComponent<Icon> {
   }
 }
 
-export default idCardVerifiedIcon
+export default IdCardVerifiedIcon
