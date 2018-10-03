@@ -1,6 +1,5 @@
 import React from 'react'
 import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { color } from '_utils/branding'
