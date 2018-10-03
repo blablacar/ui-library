@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.16.0 (03/10/2018)
+
 - **[UPDATE]** Use `Badge` in `BubbleIcon` and `HomeIcon`
 - **[BREAKING CHANGE]** Use `Badge` for ID Check in `Avatar` and renamed props
 - **[NEW]** `Badge` component
