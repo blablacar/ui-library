@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.15.0 (03/10/2018)
+
 - **[BREAKING CHANGE]** Rename `Notification` to `Snackbar`
 
 # v0.14.0 (03/10/2018)
