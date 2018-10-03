@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.15.1 (03/10/2018)
+
 - **[FIX]** Rename `IdCardVerifiedIcon`
 
 # v0.15.0 (03/10/2018)
