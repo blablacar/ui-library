@@ -23,7 +23,7 @@ describe('DropdownButton', () => {
   it('Should accept a custom className for the button', () => {
     const customClassName = 'custom'
     const wrapper = shallow(<DropdownButton {...defaultProps} className={customClassName} />)
-    expect(wrapper.find('button').hasClass(customClassName)).toBe(true)
+    expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
   it('Should have an attribute type button', () => {

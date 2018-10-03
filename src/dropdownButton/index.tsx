@@ -25,11 +25,11 @@ const DropdownButton = ({
       {
         'kirk-dropdownButton--open': open,
       },
+      className,
     ])}>
     <button
       aria-expanded={open}
       type="button"
-      className={className}
       onClick={onClick}>
         {iconPosition === 'left' && (
           <ChevronIcon iconColor={color.icon} down />
