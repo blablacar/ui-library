@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** `CheckShieldIcon` well centered
 
 # v0.16.1 (05/10/2018)
 
