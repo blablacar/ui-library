@@ -2,6 +2,10 @@
 
 - [...]
 
+# v0.16.1 (05/10/2018)
+
+- **[FIX]** Style for `Badge` in `Avatar`
+
 # v0.16.0 (03/10/2018)
 
 - **[UPDATE]** Use `Badge` in `BubbleIcon` and `HomeIcon`
