@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** `Paragraph` component
 
 # v0.16.2 (08/10/2018)
 
