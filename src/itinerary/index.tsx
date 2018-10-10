@@ -50,7 +50,11 @@ const Itinerary = ({
         >
           {
             !small && (
-              <time dateTime={place.isoDate}>{place.time}</time>
+              <time dateTime={place.isoDate}>
+                <Text display={TextDisplayType.TITLESTRONG}>
+                  {place.time}
+                </Text>
+              </time>
             )
           }
           <div>

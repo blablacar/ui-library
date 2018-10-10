@@ -11,7 +11,11 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="jsx-3270342667"
       dateTime="2017-12-11T09:00"
     >
-      09:00
+      <span
+        className="kirk-text kirk-text-titleStrong"
+      >
+        09:00
+      </span>
     </time>
     <div
       className="jsx-3270342667"
@@ -82,7 +86,11 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="jsx-3270342667"
       dateTime="2017-12-11T12:00"
     >
-      12:00
+      <span
+        className="kirk-text kirk-text-titleStrong"
+      >
+        12:00
+      </span>
     </time>
     <div
       className="jsx-3270342667"
@@ -153,7 +161,11 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="jsx-3270342667"
       dateTime="2017-12-11T15:00"
     >
-      15:00
+      <span
+        className="kirk-text kirk-text-titleStrong"
+      >
+        15:00
+      </span>
     </time>
     <div
       className="jsx-3270342667"
