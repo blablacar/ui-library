@@ -69,13 +69,13 @@ stories.add(
   'with proximity',
   withInfo('')(() => {
     const Distances = ['NONE', 'CLOSE', 'MIDDLE', 'FAR']
-    const isFromAddon = boolean('Distance from', false)
-    const isToAddon = boolean('Distance to', false)
+    const isFromAddon = boolean('From addon', false)
+    const isToAddon = boolean('To addon', false)
     const isHeadline = boolean('Headline', false)
     return (
       <Itinerary
-        fromAddon={isFromAddon}
-        toAddon={isToAddon}
+        fromAddon={isFromAddon ? 'Lille' : null}
+        toAddon={isToAddon ? 'Biarritz' : null}
         places={[
           {
             mainLabel: text('Main label from', 'Paris'),
@@ -84,7 +84,6 @@ stories.add(
               title="Distance from the pick up point"
             />,
             isoDate: '2017-12-11T09:00',
-            distanceFromPoint: isFromAddon && '1,5km',
             time: text('Time from', '09:00'),
           },
           {
@@ -94,7 +93,6 @@ stories.add(
               title="Distance from the drop off point"
             />,
             isoDate: '2017-12-11T12:00',
-            distanceFromPoint: isToAddon && '8km',
             time: text('Time to', '12:00'),
           },
         ]}
