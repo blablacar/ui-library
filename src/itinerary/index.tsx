@@ -1,32 +1,38 @@
 import React from 'react'
 import cc from 'classcat'
 
+import Text, { TextDisplayType, TextTagType } from 'text'
+
 import style from 'itinerary/style'
 
 interface ItineraryProps {
   readonly places: Place[],
   readonly className?: Classcat.Class,
-  readonly showFromDistance?: boolean,
-  readonly showToDistance?: boolean,
+  readonly fromAddon?: string,
+  readonly toAddon?: string,
   readonly small?: boolean,
   readonly headline?: string,
 }
 
 const Itinerary = ({
-  className, places, showFromDistance, showToDistance, small = false, headline = null,
+  className, places, fromAddon, toAddon, small = false, headline = null,
 }: ItineraryProps) => (
   <ul className={cc([className, { 'kirk-itinerary--small': small }])}>
     {
       headline && (
         <li className="kirk-itinerary-headline">
-          <span>{headline}</span>
+          <Text display={TextDisplayType.TITLE}>
+            {headline}
+          </Text>
         </li>
       )
     }
     {
-      showFromDistance && (
-        <li className="kirk-itinerary-fromDeparture">
-          <span>{places[0].distanceFromPoint}</span>
+      fromAddon && (
+        <li className="kirk-itinerary-fromAddon">
+          <Text display={TextDisplayType.CAPTION}>
+            {fromAddon}
+          </Text>
         </li>
       )
     }
@@ -37,21 +43,32 @@ const Itinerary = ({
             cc(['kirk-itinerary-location', {
               'kirk-itinerary--departure': index === 0,
               'kirk-itinerary--arrival': index === places.length - 1,
-              'kirk-itinerary-location--fromArrival': index === places.length - 1 && showToDistance,
+              'kirk-itinerary-location--toAddon': index === places.length - 1 && toAddon,
             }])
           }
-          key={`${place.mainLabel} ${place.subLabel} ${place.isoDate}`}
+          key={`${place.mainLabel}-${place.subLabel}-${place.isoDate}`}
         >
           {
             !small && (
-              <time dateTime={place.isoDate}>{place.time}</time>
+              <time dateTime={place.isoDate}>
+                <Text display={TextDisplayType.TITLESTRONG}>
+                  {place.time}
+                </Text>
+              </time>
             )
           }
           <div>
-            <span>{place.mainLabel}</span>
+            <Text display={TextDisplayType.TITLESTRONG}>
+              {place.mainLabel}
+            </Text>
             {
               (!small && place.subLabel) && (
-                <span className="kirk-itinerary-subtext">{place.subLabel}</span>
+                <Text
+                  tag={TextTagType.PARAGRAPH}
+                  display={TextDisplayType.CAPTION}
+                >
+                  {place.subLabel}
+                </Text>
               )
             }
           </div>
@@ -59,9 +76,11 @@ const Itinerary = ({
       ))
     }
     {
-      showToDistance && (
-        <li className="kirk-itinerary-fromArrival">
-          <span>{places[places.length - 1].distanceFromPoint}</span>
+      toAddon && (
+        <li className="kirk-itinerary-toAddon">
+          <Text display={TextDisplayType.CAPTION}>
+            {toAddon}
+          </Text>
         </li>
       )
     }

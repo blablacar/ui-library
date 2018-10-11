@@ -12,25 +12,33 @@ stories.addDecorator(withKnobs)
 
 const places = [
   {
-    distanceFromPoint: '1,5km',
     time: '09:00',
     isoDate: '2017-12-11T09:00',
     subLabel: 'Porte de Vincennes',
     mainLabel: 'Paris',
   },
   {
-    distanceFromPoint: '2km',
+    time: '15:00',
+    isoDate: '2017-12-11T15:00',
+    subLabel: 'Gare Bordeaux Saint-Jean',
+    mainLabel: 'Bordeaux',
+  },
+]
+
+const placesWithStopover = [
+  {
+    time: '09:00',
+    isoDate: '2017-12-11T09:00',
+    subLabel: 'Porte de Vincennes',
+    mainLabel: 'Paris',
+  },
+  {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
     subLabel: 'Gare de Tours',
     mainLabel: 'Tours',
   },
-]
-
-const placesWithStopover = [
-  ...places,
   {
-    distanceFromPoint: '8km',
     time: '15:00',
     isoDate: '2017-12-11T15:00',
     subLabel: 'Gare Bordeaux Saint-Jean',
@@ -41,14 +49,14 @@ const placesWithStopover = [
 stories.add(
   'default',
   withInfo('')(() => {
-    const isFromDistance = boolean('Distance from', false)
-    const isToDistance = boolean('Distance to', false)
+    const isFromAddon = boolean('top addon', false)
+    const isToAddon = boolean('bottom addon', false)
     const isHeadline = boolean('Headline', false)
     const isStopover = boolean('Stopover', false)
     return (
       <Itinerary
-        showFromDistance={isFromDistance}
-        showToDistance={isToDistance}
+        fromAddon={isFromAddon ? 'Lille' : null}
+        toAddon={isToAddon ? 'Biarritz' : null}
         places={isStopover ? placesWithStopover : places}
         small={boolean('small', false)}
         headline={isHeadline && 'Mon 11 December'}
@@ -61,13 +69,13 @@ stories.add(
   'with proximity',
   withInfo('')(() => {
     const Distances = ['NONE', 'CLOSE', 'MIDDLE', 'FAR']
-    const isFromDistance = boolean('Distance from', false)
-    const isToDistance = boolean('Distance to', false)
+    const isFromAddon = boolean('From addon', false)
+    const isToAddon = boolean('To addon', false)
     const isHeadline = boolean('Headline', false)
     return (
       <Itinerary
-        showFromDistance={isFromDistance}
-        showToDistance={isToDistance}
+        fromAddon={isFromAddon ? 'Lille' : null}
+        toAddon={isToAddon ? 'Biarritz' : null}
         places={[
           {
             mainLabel: text('Main label from', 'Paris'),
@@ -76,7 +84,6 @@ stories.add(
               title="Distance from the pick up point"
             />,
             isoDate: '2017-12-11T09:00',
-            distanceFromPoint: isFromDistance && '1,5km',
             time: text('Time from', '09:00'),
           },
           {
@@ -86,7 +93,6 @@ stories.add(
               title="Distance from the drop off point"
             />,
             isoDate: '2017-12-11T12:00',
-            distanceFromPoint: isToDistance && '8km',
             time: text('Time to', '12:00'),
           },
         ]}

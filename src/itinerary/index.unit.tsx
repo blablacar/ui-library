@@ -35,21 +35,21 @@ describe('Itinerary component', () => {
     expect(itinerary.hasClass('test')).toBe(true)
   })
 
-  it('Should display distance from departure point', () => {
+  it('Should display the top addon', () => {
     const itinerary = shallow((
-      <Itinerary showFromDistance places={places} />
+      <Itinerary fromAddon="test" places={places} />
     ))
-    expect(itinerary.find('.kirk-itinerary-fromDeparture').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
   })
 
-  it('Should display distance from arrival point', () => {
+  it('Should display the bottom addon', () => {
     const itinerary = shallow((
-      <Itinerary showToDistance places={places} />
+      <Itinerary toAddon="test" places={places} />
     ))
     expect(
-      itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--fromArrival'),
+      itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--toAddon'),
     ).toBe(true)
-    expect(itinerary.find('.kirk-itinerary-fromArrival').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(true)
   })
 
   it('Should display stopover', () => {
