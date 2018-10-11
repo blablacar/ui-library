@@ -2,13 +2,13 @@
 
 exports[`Itinerary component Should display proximity from departure point 1`] = `
 <ul
-  className="jsx-3270342667 "
+  className="jsx-2044102962 "
 >
   <li
-    className="jsx-3270342667 kirk-itinerary-location kirk-itinerary--departure"
+    className="jsx-2044102962 kirk-itinerary-location kirk-itinerary--departure"
   >
     <time
-      className="jsx-3270342667"
+      className="jsx-2044102962"
       dateTime="2017-12-11T09:00"
     >
       <span
@@ -18,7 +18,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       </span>
     </time>
     <div
-      className="jsx-3270342667"
+      className="jsx-2044102962"
     >
       <span
         className="kirk-text kirk-text-titleStrong"
@@ -80,10 +80,10 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-3270342667 kirk-itinerary-location"
+    className="jsx-2044102962 kirk-itinerary-location"
   >
     <time
-      className="jsx-3270342667"
+      className="jsx-2044102962"
       dateTime="2017-12-11T12:00"
     >
       <span
@@ -93,7 +93,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       </span>
     </time>
     <div
-      className="jsx-3270342667"
+      className="jsx-2044102962"
     >
       <span
         className="kirk-text kirk-text-titleStrong"
@@ -155,10 +155,10 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-3270342667 kirk-itinerary-location kirk-itinerary--arrival"
+    className="jsx-2044102962 kirk-itinerary-location kirk-itinerary--arrival"
   >
     <time
-      className="jsx-3270342667"
+      className="jsx-2044102962"
       dateTime="2017-12-11T15:00"
     >
       <span
@@ -168,7 +168,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       </span>
     </time>
     <div
-      className="jsx-3270342667"
+      className="jsx-2044102962"
     >
       <span
         className="kirk-text kirk-text-titleStrong"

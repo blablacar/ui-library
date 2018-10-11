@@ -20,10 +20,6 @@ export default css`
 
   .kirk-itinerary-location time {
     min-width: ${timeWidth};
-    font-size: ${font.m.size};
-    line-height: ${font.m.lineHeight};
-    font-weight: ${fontWeight.medium};
-    color: ${color.primaryText};
   }
 
   .kirk-itinerary-location div {
