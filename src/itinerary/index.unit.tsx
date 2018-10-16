@@ -59,6 +59,59 @@ describe('Itinerary component', () => {
     expect(itinerary.find('.kirk-itinerary-location')).toHaveLength(places.length)
   })
 
+  it('Should display link', () => {
+    const itinerary = shallow((
+      <Itinerary places={[
+        {
+          distanceFromPoint: '1,5km',
+          time: '09:00',
+          isoDate: '2017-12-11T09:00',
+          subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
+          mainLabel: 'Paris',
+          href: '#test',
+        },
+        {
+          distanceFromPoint: '8km',
+          time: '15:00',
+          isoDate: '2017-12-11T15:00',
+          subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
+          mainLabel: 'Bordeaux',
+        },
+      ]} />
+    ))
+    expect(itinerary.find('.kirk-itinerary-location-wrapper').first().type()).toEqual('a')
+    expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
+  })
+
+  it('Should display button', () => {
+    const itinerary = shallow((
+      <Itinerary places={[
+        {
+          distanceFromPoint: '1,5km',
+          time: '09:00',
+          isoDate: '2017-12-11T09:00',
+          subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
+          mainLabel: 'Paris',
+          href: <button type="button" />,
+        },
+        {
+          distanceFromPoint: '8km',
+          time: '15:00',
+          isoDate: '2017-12-11T15:00',
+          subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place"/>,
+          mainLabel: 'Bordeaux',
+        },
+      ]} />
+    ))
+    expect(itinerary.find('.kirk-itinerary-location-wrapper').first().type()).toEqual('button')
+    expect(itinerary
+      .find('.kirk-itinerary-location-wrapper')
+      .first()
+      .prop('type'))
+    .toEqual('button')
+    expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
+  })
+
   it('Should display proximity from departure point', () => {
     const itinerary = renderer.create(
       <Itinerary places={places} />,

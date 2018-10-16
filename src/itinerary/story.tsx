@@ -16,6 +16,7 @@ const places = [
     isoDate: '2017-12-11T09:00',
     subLabel: 'Porte de Vincennes',
     mainLabel: 'Paris',
+    href: '#',
   },
   {
     time: '15:00',
@@ -31,12 +32,14 @@ const placesWithStopover = [
     isoDate: '2017-12-11T09:00',
     subLabel: 'Porte de Vincennes',
     mainLabel: 'Paris',
+    href: '#',
   },
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
     subLabel: 'Gare de Tours',
     mainLabel: 'Tours',
+    href: <a href="lol2" className="test" />,
   },
   {
     time: '15:00',
@@ -85,6 +88,7 @@ stories.add(
             />,
             isoDate: '2017-12-11T09:00',
             time: text('Time from', '09:00'),
+            href: '#',
           },
           {
             mainLabel: text('Main label to', 'Bordeaux'),

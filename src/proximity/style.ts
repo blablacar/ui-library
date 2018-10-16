@@ -8,7 +8,7 @@ export default css`
   }
 
   :global(.kirk-proximity > svg) {
-    margin: ${space.s} 0;
+    margin-top: ${space.s};
   }
 
   :global(.kirk-proximity svg + svg) {
