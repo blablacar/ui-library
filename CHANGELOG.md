@@ -2,6 +2,7 @@
 
 - **[BREAKING CHANGE]** `fromDistance` and `toDistance` props are now `fromAddon` and `toAddon` and expect to get a string as value (no more boolean)
 - **[UPDATE]** `<Itinerary>` is now using `<Text>` component
+- **[UPDATE]** `<Itinerary>` can now display links/buttons as city steps
 - **[FIX]** Chevron in `<ItemChoice>` is now well centered vertically
 
 # v0.16.2 (08/10/2018)
