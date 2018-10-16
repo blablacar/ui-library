@@ -39,7 +39,7 @@ const placesWithStopover = [
     isoDate: '2017-12-11T12:00',
     subLabel: 'Gare de Tours',
     mainLabel: 'Tours',
-    href: <a href="lol2" className="test" />,
+    href: <button type="button" />,
   },
   {
     time: '15:00',
