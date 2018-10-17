@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 

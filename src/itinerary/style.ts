@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, font, fontWeight, space } from '_utils/branding'
+import { color, space } from '_utils/branding'
 
 const distanceFromHeight = '40px'
 export const timeWidth = '64px'
