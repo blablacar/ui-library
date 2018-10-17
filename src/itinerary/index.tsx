@@ -44,10 +44,11 @@ const Itinerary = ({
         places.map((place, index) => {
 
           let Component: tag
-          let chevron: boolean = false
+          let chevron = false
           let hrefProps
 
           const link = place.href
+          const lastPlace = places.length - 1
 
           if (!isEmpty(link) && typeof link !== 'string') {
             Component = link.type
@@ -75,8 +76,8 @@ const Itinerary = ({
               className={
                 cc(['kirk-itinerary-location', {
                   'kirk-itinerary--departure': index === 0,
-                  'kirk-itinerary--arrival': index === places.length - 1,
-                  'kirk-itinerary-location--toAddon': index === places.length - 1 && toAddon,
+                  'kirk-itinerary--arrival': index === lastPlace,
+                  'kirk-itinerary-location--toAddon': index === lastPlace && toAddon,
                 }])
               }
               key={`${place.mainLabel}-${place.subLabel}-${place.isoDate}`}
