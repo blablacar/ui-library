@@ -85,7 +85,6 @@ export default css`
     display: inline-flex;
     align-items: right;
     margin-left: auto;
-    padding-left: ${space.l};
   }
 
   /* Addons */
@@ -95,10 +94,12 @@ export default css`
     margin-right: ${space.l};
   }
 
-  :global(.kirk-itemChoice-rightAddon) {
+  :global(.kirk-itemChoice-rightAddon).
+  :global(.kirk-itemChoice-chevron) {
     display: inline-flex;
     align-items: center;
     margin-left: auto;
+    padding-left: ${space.l};
   }
 
   :global(.kirk-itemChoice .kirk-icon) {
