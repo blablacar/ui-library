@@ -48,7 +48,7 @@ const Itinerary = ({
           let hrefProps
 
           const link = place.href
-          const lastPlace = places.length - 1
+          const isLastPlace = places.length - 1 === index
 
           if (!isEmpty(link) && typeof link !== 'string') {
             Component = link.type
@@ -76,8 +76,8 @@ const Itinerary = ({
               className={
                 cc(['kirk-itinerary-location', {
                   'kirk-itinerary--departure': index === 0,
-                  'kirk-itinerary--arrival': index === lastPlace,
-                  'kirk-itinerary-location--toAddon': index === lastPlace && toAddon,
+                  'kirk-itinerary--arrival': isLastPlace,
+                  'kirk-itinerary-location--toAddon': isLastPlace && toAddon,
                 }])
               }
               key={`${place.mainLabel}-${place.subLabel}-${place.isoDate}`}
