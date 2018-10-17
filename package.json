@@ -103,6 +103,7 @@
     "lodash.kebabcase": "4.1.1",
     "lodash.padstart": "4.6.1",
     "moment": "2.22.2",
+    "polished": "2.2.0",
     "react": "16.4.1",
     "react-addons-shallow-compare": "15.6.2",
     "react-dates": "16.7.0",

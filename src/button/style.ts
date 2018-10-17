@@ -1,4 +1,5 @@
 import css from 'styled-jsx/css'
+import { transparentize } from 'polished'
 import { color, font, space, transition, buttonIconSize, shadow } from '_utils/branding'
 
 const borderSize = '2px'
@@ -22,8 +23,7 @@ export default css`
     max-width: 100%;
     overflow: hidden;
     user-select: none;
-    transition:
-      max-width ${transition.duration.fast} ease-in,
+    transition: max-width ${transition.duration.fast} ease-in,
       background-color ${transition.duration.base} ease-in;
   }
 
@@ -62,7 +62,7 @@ export default css`
   }
 
   :global(.kirk-button[disabled]) {
-    opacity: .5;
+    opacity: 0.5;
     cursor: default;
   }
 
@@ -83,9 +83,13 @@ export default css`
   }
 
   :global(.kirk-button-primary:hover),
-  :global(.kirk-button-primary:focus),
   :global(.kirk-button-primary:active) {
     background-color: ${color.primaryActive};
+  }
+
+  :global(.kirk-button-primary:focus) {
+    box-shadow: 0 0 0 0.1rem ${transparentize(0.75, color.primaryActive)};
+    transition: 0.2s box-shadow;
   }
 
   :global(.kirk-button-secondary) {
@@ -98,9 +102,13 @@ export default css`
   }
 
   :global(.kirk-button-secondary:hover),
-  :global(.kirk-button-secondary:focus),
   :global(.kirk-button-secondary:active) {
     background-color: ${color.secondaryActive};
+  }
+
+  :global(.kirk-button-secondary:focus) {
+    box-shadow: 0 0 0 0.1rem ${transparentize(0.75, color.primaryActive)};
+    transition: 0.2s box-shadow;
   }
 
   :global(.kirk-button-loading) {
@@ -169,7 +177,7 @@ export default css`
     height: calc(${buttonIconSize} - ${borderSize} * 2);
   }
 
-  @media (hover:none), (hover:on-demand) {
+  @media (hover: none), (hover: on-demand) {
     :global(.kirk-button-secondary:hover) {
       background-color: ${color.white};
     }
