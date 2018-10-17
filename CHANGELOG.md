@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.0 (17/10/2018)
+
 - **[BREAKING CHANGE]** `fromDistance` and `toDistance` props are now `fromAddon` and `toAddon` and expect to get a string as value (no more boolean)
 - **[UPDATE]** `<Itinerary>` is now using `<Text>` component
 - **[UPDATE]** `<Itinerary>` can now display links/buttons as city steps
