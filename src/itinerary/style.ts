@@ -14,8 +14,35 @@ export default css`
     padding-bottom: ${space.l};
   }
 
-  .kirk-itinerary-location {
+  :global(.kirk-itinerary-location-wrapper) {
     display: flex;
+    padding: ${space.m} 0;
+    width: 100%;
+  }
+
+  :global(a.kirk-itinerary-location-wrapper) {
+    background: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
+
+  :global(button.kirk-itinerary-location-wrapper) {
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
+
+  :global(a.kirk-itinerary-location-wrapper:hover),
+  :global(button.kirk-itinerary-location-wrapper:hover) {
+    background-color: ${color.tapHighlight}};
   }
 
   .kirk-itinerary-location time {
@@ -24,10 +51,6 @@ export default css`
 
   .kirk-itinerary-location div {
     padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
-  }
-
-  .kirk-itinerary-location:not(.kirk-itinerary--arrival) div {
-    padding-bottom: ${space.l};
   }
 
   .kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival) div {
@@ -61,7 +84,7 @@ export default css`
     background-color: ${color.white};
     border: 2px solid ${color.primaryText};
     border-radius: 50%;
-    top: 4px;
+    top: calc(4px + ${space.m});
     left: calc(${timeWidth} - 2px);
   }
 
@@ -70,12 +93,12 @@ export default css`
   }
 
   .kirk-itinerary-location.kirk-itinerary--departure div::before {
-    height: calc(100% - 6px);
-    top: 6px;
+    height: calc(100% - calc(6px + ${space.m}));
+    top: calc(6px + ${space.m});
   }
 
   .kirk-itinerary-location.kirk-itinerary--arrival div::before {
-    height: 6px;
+    height: calc(6px + ${space.m});
   }
 
   .kirk-itinerary-fromAddon,
@@ -106,7 +129,8 @@ export default css`
   }
 
   .kirk-itinerary-fromAddon::before {
-    height: 100%;
+    height: calc(100% + ${space.m});
+    top: 6px;
   }
 
   .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
@@ -147,7 +171,7 @@ export default css`
   }
 
   :global(.kirk-itinerary--small .kirk-itinerary-fromAddon span),
-    :global(.kirk-itinerary--small .kirk-itinerary-toAddon span) {
+  :global(.kirk-itinerary--small .kirk-itinerary-toAddon span) {
     left: 0;
   }
 
@@ -157,5 +181,14 @@ export default css`
 
   :global(.kirk-itinerary-toAddon span) {
     bottom: -4px;
+  }
+
+  .kirk-itinerary-location-city {
+    flex: 1;
+  }
+
+  .kirk-itinerary-location-chevron {
+    display: flex;
+    align-items: center;
   }
 `
