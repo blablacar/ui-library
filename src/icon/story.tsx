@@ -50,7 +50,7 @@ const createIconKnobs = (props: {}) =>
       acc[name] = number(name, Number(value))
     }
 
-    if (name === 'badgeContent') {
+    if (name === 'badgeAriaLabel' || 'badgeContent') {
       acc[name] = text(name, String(value))
     }
 

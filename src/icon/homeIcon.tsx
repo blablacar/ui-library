@@ -12,11 +12,12 @@ class HomeIcon extends PureComponent<Icon> {
     iconColor: color.icon,
     size: 24,
     title: '',
+    badgeAriaLabel: '',
     badgeContent: '',
   }
 
   render() {
-    const { className, iconColor, size, title, badgeContent } = this.props
+    const { className, iconColor, size, title, badgeAriaLabel, badgeContent } = this.props
     const icon = (
       // tslint:disable:max-line-length
       <svg
@@ -44,7 +45,7 @@ class HomeIcon extends PureComponent<Icon> {
       return (
         <div className="kirk-icon-wrapper">
           {icon}
-          <Badge className="kirk-icon-badge">{badgeContent}</Badge>
+          <Badge className="kirk-icon-badge" ariaLabel={badgeAriaLabel}>{badgeContent}</Badge>
           <style jsx>{style}</style>
         </div>
       )

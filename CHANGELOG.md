@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `<BubbleIcon>` and `<HomeIcon>` have `ariaLabel` prop sent to `<Badge>`
 
 # v0.17.2 (19/10/2018)
 
