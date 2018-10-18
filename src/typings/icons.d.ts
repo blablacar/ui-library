@@ -3,5 +3,6 @@ declare interface Icon {
   readonly className?: Classcat.Class,
   readonly title?: string,
   readonly iconColor?: string,
+  readonly badgeAriaLabel?: string,
   readonly badgeContent?: string,
 }
