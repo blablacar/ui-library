@@ -62,12 +62,12 @@ const Itinerary = ({
             chevron = true
             hrefProps = {
               href: place.href,
-              className: cc('kirk-itinerary-location-wrapper'),
+              className: 'kirk-itinerary-location-wrapper',
             }
           } else {
             Component = 'div'
             hrefProps = {
-              className: cc(['kirk-itinerary-location-wrapper', className]),
+              className: 'kirk-itinerary-location-wrapper',
             }
           }
 
