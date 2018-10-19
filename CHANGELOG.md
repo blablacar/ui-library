@@ -1,6 +1,7 @@
 # Unreleased
 
-- - **[FIX]** Typo in `<ItemChoice>` CSS
+- **[FIX]** Typo in `<ItemChoice>` CSS
+- **[FIX]** Remove wrong className in `<Itinerary>`
 
 # v0.17.1 (19/10/2018)
 
