@@ -94,7 +94,7 @@ export default css`
     margin-right: ${space.l};
   }
 
-  :global(.kirk-itemChoice-rightAddon).
+  :global(.kirk-itemChoice-rightAddon),
   :global(.kirk-itemChoice-chevron) {
     display: inline-flex;
     align-items: center;
