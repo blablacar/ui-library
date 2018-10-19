@@ -22,8 +22,7 @@ export default css`
     max-width: 100%;
     overflow: hidden;
     user-select: none;
-    transition:
-      max-width ${transition.duration.fast} ease-in,
+    transition: max-width ${transition.duration.fast} ease-in,
       background-color ${transition.duration.base} ease-in;
   }
 
@@ -36,9 +35,10 @@ export default css`
   :global(.kirk-button span) {
     position: relative;
     display: inline-block;
-    width: auto;
+    width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   :global(.kirk-button:hover),
@@ -62,7 +62,7 @@ export default css`
   }
 
   :global(.kirk-button[disabled]) {
-    opacity: .5;
+    opacity: 0.5;
     cursor: default;
   }
 
@@ -169,7 +169,7 @@ export default css`
     height: calc(${buttonIconSize} - ${borderSize} * 2);
   }
 
-  @media (hover:none), (hover:on-demand) {
+  @media (hover: none), (hover: on-demand) {
     :global(.kirk-button-secondary:hover) {
       background-color: ${color.white};
     }
