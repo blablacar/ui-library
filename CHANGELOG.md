@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.1 (19/10/2018)
+
 - **[Change]** Content of the `<Button>` is now taking 100% of the width
 - **[Fix]** Fix `<Button>` content ellipsis
 
