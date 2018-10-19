@@ -38,13 +38,21 @@ describe('Button', () => {
   })
 
   it('Should allow for an icon.', () => {
-    const button = shallow(<Button icon><CrossIcon /></Button>)
+    const button = shallow(
+      <Button icon>
+        <CrossIcon />
+      </Button>,
+    )
     expect(button.hasClass('kirk-button-icon')).toBe(true)
     expect(button.contains(<CrossIcon />)).toBe(true)
   })
 
   it('should allow for a loading state', () => {
-    const button = shallow(<Button status={Button.STATUS.LOADING}><CrossIcon /></Button>)
+    const button = shallow(
+      <Button status={Button.STATUS.LOADING}>
+        <CrossIcon />
+      </Button>,
+    )
     expect(button.hasClass('kirk-button-loading')).toBe(true)
   })
 
@@ -87,10 +95,8 @@ describe('Button', () => {
 
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const button = mount(<Button
-      onDoneAnimationEnd={event}
-      status={Button.STATUS.CHECKED}
-      >
+    const button = mount(
+      <Button onDoneAnimationEnd={event} status={Button.STATUS.CHECKED}>
         blabla
       </Button>,
     )
@@ -113,11 +119,18 @@ describe('Button', () => {
     })
 
     it('Should be a link if we pass it as a React element.', () => {
-      const wrapper = shallow((
-        <Button radio href={<TestLink href="/test-page">nothing</TestLink>}>link</Button>
-      ))
+      const wrapper = shallow(
+        <Button radio href={<TestLink href="/test-page">nothing</TestLink>}>
+          link
+        </Button>,
+      )
       expect(wrapper.prop('href')).toBe('/test-page')
       expect(wrapper.html()).toContain('link')
     })
+  })
+
+  it('should not add a span when there is no children', () => {
+    const wrapper = shallow(<Button />)
+    expect(wrapper.find('span').exists()).toBe(false)
   })
 })

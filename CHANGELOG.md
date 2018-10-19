@@ -2,6 +2,8 @@
 
 - **[FIX]** Typo in `<ItemChoice>` CSS
 - **[FIX]** Remove wrong className in `<Itinerary>`
+- **[FIX]** Fix regression on button display
+- [...]
 
 # v0.17.1 (19/10/2018)
 

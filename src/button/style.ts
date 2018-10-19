@@ -34,7 +34,7 @@ export default css`
 
   :global(.kirk-button span) {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
