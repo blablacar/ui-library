@@ -25,7 +25,7 @@ exports[`Snackbar should not have changed 1`] = `
       type="button"
     >
       <span
-        className="jsx-2341774513"
+        className="jsx-482395312"
       >
         <svg
           aria-hidden={true}
