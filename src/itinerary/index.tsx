@@ -98,19 +98,26 @@ const Itinerary = ({
                   </Text>
                   {
                     (!small && place.subLabel) && (
-                      <Text
-                        tag={TextTagType.PARAGRAPH}
-                        display={TextDisplayType.CAPTION}
-                      >
-                        {place.subLabel}
-                      </Text>
+                      typeof place.subLabel === 'string' ? (
+                        <Text
+                          tag={TextTagType.PARAGRAPH}
+                          display={TextDisplayType.CAPTION}
+                        >
+                          {place.subLabel}
+                        </Text>
+                      ) : (
+                        <div>
+                          {place.subLabel}
+                        </div>
+                      )
                     )
                   }
                 </div>
-                {chevron &&
-                  <div className="kirk-itinerary-location-chevron">
-                    {<ChevronIcon />}
-                  </div>
+                {
+                  chevron &&
+                    <div className="kirk-itinerary-location-chevron">
+                      {<ChevronIcon />}
+                    </div>
                 }
               </Component>
             </li>
