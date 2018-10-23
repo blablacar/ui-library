@@ -49,7 +49,7 @@ export default css`
     min-width: ${timeWidth};
   }
 
-  .kirk-itinerary-location div {
+  .kirk-itinerary-location-city {
     padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
   }
 
