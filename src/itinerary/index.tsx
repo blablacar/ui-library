@@ -116,7 +116,7 @@ const Itinerary = ({
                 {
                   chevron &&
                     <div className="kirk-itinerary-location-chevron">
-                      {<ChevronIcon />}
+                      <ChevronIcon />
                     </div>
                 }
               </Component>
