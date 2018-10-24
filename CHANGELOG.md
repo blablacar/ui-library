@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.3 (23/10/2018)
+
 - **[UPDATE]** `<BubbleIcon>` and `<HomeIcon>` have `ariaLabel` prop sent to `<Badge>`
 - **[FIX]** `<Itinerary>` subLabel bug (div inside p)
 
