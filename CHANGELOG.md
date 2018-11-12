@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `<ItemChoice>` and `<Radio>` now have a `declared` prop displaying the selected value
 
 # v0.17.3 (23/10/2018)
 

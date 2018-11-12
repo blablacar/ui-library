@@ -13,6 +13,7 @@ export interface RadioProps {
   readonly name?: string,
   readonly checked?: boolean,
   readonly highlighted?: boolean,
+  readonly declared?: boolean,
   readonly onChange?: (obj: onChangeParameters) => void,
   readonly subLabel?: string,
   readonly icon?: JSX.Element,
@@ -25,6 +26,7 @@ export default class Radio extends Component <RadioProps> {
     onChange() {},
     checked: false,
     highlighted: false,
+    declared: false,
     status: ItemChoice.STATUS.DEFAULT,
   }
 
@@ -37,7 +39,7 @@ export default class Radio extends Component <RadioProps> {
 
   render() {
     const { className, name, value, subLabel, highlighted, checked, children, icon,
-      status, onDoneAnimationEnd, key } = this.props
+      status, onDoneAnimationEnd, key, declared } = this.props
 
     return (
       <ItemChoice
@@ -48,6 +50,8 @@ export default class Radio extends Component <RadioProps> {
         highlighted={highlighted}
         className={cc([prefix({ radio: true }), className])}
         status={status}
+        declared={declared}
+        selected={checked}
         onDoneAnimationEnd={onDoneAnimationEnd}
       >
         <input
