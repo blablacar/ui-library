@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `<Checkbox>` now supports loading state
 
 # v0.17.3 (23/10/2018)
 

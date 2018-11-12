@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
+import Loader from 'loader'
 
 import style from 'checkbox/style'
 
@@ -11,14 +12,22 @@ export interface CheckboxProps {
   readonly value?: string,
   readonly checked?: boolean,
   readonly disabled?: boolean,
+  readonly status?: CheckboxStatus,
   readonly labelDisplay?: labelDisplays,
   readonly onChange?: (obj:onChangeParameters) => void,
+  readonly onDoneAnimationEnd?: () => void,
 }
 
 export enum labelDisplays {
   LEFT = 'left',
   RIGHT = 'right',
   NONE = 'none',
+}
+
+export enum CheckboxStatus {
+  DEFAULT = 'default',
+  LOADING = 'loading',
+  CHECKED = 'checked',
 }
 
 export interface CheckboxState {
@@ -34,6 +43,8 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
     disabled: false,
     labelDisplay: labelDisplays.RIGHT,
   }
+  static STATUS = CheckboxStatus
+
   state:CheckboxState = {
     isChecked: this.props.checked,
     disabled: this.props.disabled,
@@ -66,7 +77,13 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
   }))
 
   render() {
-    const { className, name, value, children, subLabel, labelDisplay } = this.props
+    const {
+      className, name, value, children, subLabel,
+      labelDisplay, status, onDoneAnimationEnd,
+    } = this.props
+
+    const isStatusLoading = status === CheckboxStatus.LOADING
+    const isStatusChecked = status === CheckboxStatus.CHECKED
 
     return (
       <label className={cc([
@@ -78,6 +95,8 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
           'kirk-checkbox--labelDisplay-none': (
             labelDisplay === labelDisplays.NONE
           ),
+          'kirk-checkbox--loading': isStatusLoading,
+          'kirk-checkbox--checked': isStatusChecked,
         },
         className,
       ])}
@@ -92,6 +111,12 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
             disabled={this.state.disabled}
           />
           <span aria-hidden="true" className={cc({ checked: this.state.isChecked })} />
+          {(isStatusLoading || isStatusChecked) && <Loader
+            size={24}
+            onDoneAnimationEnd={onDoneAnimationEnd}
+            done={isStatusChecked}
+            inline
+          />}
         </div>
         <div>
           <span className="kirk-label">{children}</span>
