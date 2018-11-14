@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.4 (14/11/2018)
+
 - **[UPDATE]** `<Checkbox>` now supports loading state
 - **[UPDATE]** `<ItemChoice>` and `<Radio>` now have a `declared` prop displaying the selected value
 
