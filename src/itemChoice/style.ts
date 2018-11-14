@@ -121,4 +121,12 @@ export default css`
     min-height: 24px;
     min-width: 24px;
   }
+
+  :global(.kirk-itemChoice.kirk-itemChoice--declared) {
+    min-height: 56px; /* icon height + vertical padding */
+  }
+
+  :global(.kirk-itemChoice.kirk-itemChoice--declared[aria-selected="true"]) {
+    background-color: transparent;
+  }
 `
