@@ -8,6 +8,7 @@ import { color } from '_utils/branding'
 interface CheckProps extends Icon {
   readonly absolute?: boolean,
   readonly validate?: boolean,
+  readonly backgroundColor?: string,
 }
 
 const style = css`.absolute {
@@ -37,6 +38,7 @@ class CheckIcon extends PureComponent<CheckProps> {
     size: 24,
     title: '',
     validate: false,
+    backgroundColor: 'transparent',
   }
 
   render() {
@@ -61,6 +63,12 @@ class CheckIcon extends PureComponent<CheckProps> {
           strokeMiterlimit="10"
         />
         <style jsx>{style}</style>
+        <style jsx>{`
+          svg {
+            background-color: ${this.props.backgroundColor};
+            border-radius: 100%;
+          }
+        `}</style>
       </svg>
     )
   }

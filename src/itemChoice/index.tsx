@@ -3,7 +3,9 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
+import { color } from '_utils/branding'
 import ChevronIcon from 'icon/chevronIcon'
+import CheckIcon from 'icon/checkIcon'
 import Loader from 'loader'
 import style from './style'
 
@@ -32,6 +34,7 @@ export interface ItemChoiceProps {
   readonly rightAddon?: React.ReactNode,
   readonly highlighted?: boolean,
   readonly selected?: boolean,
+  readonly declared?: boolean,
   readonly status?: ItemChoiceStatus,
   readonly onDoneAnimationEnd?: () => void,
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
@@ -44,13 +47,14 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {
     highlighted: false,
     selected: false,
+    declared: false,
     status: ItemChoiceStatus.DEFAULT,
     href: '',
   }
   static STATUS = ItemChoiceStatus
   render() {
     const {
-      children, className, highlighted, selected, status,
+      children, className, highlighted, selected, status, declared,
       onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
       onDoneAnimationEnd,
     } = this.props
@@ -58,9 +62,17 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
       itemChoice: true,
       'itemChoice--highlighted': highlighted,
       'itemChoice--withSubLabel': !!subLabel,
+      'itemChoice--declared': declared,
     }), className])
 
     let rightIcon = <ChevronIcon className={cc(prefix({ chevron: true }))} />
+
+    if (declared && selected) {
+      rightIcon = <CheckIcon iconColor={color.white} backgroundColor={color.primary} />
+    }
+    if (declared && !selected) {
+      rightIcon = null
+    }
 
     if (status === ItemChoiceStatus.LOADING) {
       rightIcon = <Loader

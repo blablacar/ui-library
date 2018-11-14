@@ -97,6 +97,18 @@ describe('ItemChoice', () => {
     })
   })
 
+  describe('#declared', () => {
+    it('Should not have a declared state by default', () => {
+      const wrapper = shallow(<ItemChoice>...</ItemChoice>)
+      expect(wrapper.hasClass('kirk-itemChoice--declared')).toBe(false)
+    })
+
+    it('Should have a declared state', () => {
+      const wrapper = shallow(<ItemChoice declared>...</ItemChoice>)
+      expect(wrapper.hasClass('kirk-itemChoice--declared')).toBe(true)
+    })
+  })
+
   describe('#leftAddon', () => {
     it('Render a left addon given a string', () => {
       const wrapper = shallow(<ItemChoice leftAddon="Info">...</ItemChoice>)
