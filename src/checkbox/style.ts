@@ -96,4 +96,9 @@ export default css`
     border-bottom: 2px solid ${color.white};
     transform: rotate(-45deg);
   }
+
+  .kirk-checkbox.kirk-checkbox--loading input + span,
+  .kirk-checkbox.kirk-checkbox--checked input + span {
+    display: none;
+  }
 `
