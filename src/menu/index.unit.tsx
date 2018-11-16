@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from 'menu'
 import ItemChoice from 'itemChoice'
-import { HomeIcon, NewspaperIcon } from 'icon'
+import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
 
 const defaultProps = {
   items: [
@@ -15,6 +15,7 @@ const defaultProps = {
       id: 'menu-item-2',
       label: 'Rides offered',
       leftAddon: <NewspaperIcon />,
+      rightAddon: <CheckShieldIcon />,
       href: '/rides',
     },
   ],
@@ -33,5 +34,6 @@ describe('Menu', () => {
     expect(wrapper.find(ItemChoice).first().prop('href')).toEqual('/')
     expect(wrapper.find(ItemChoice).first().text()).toEqual('Dashboard')
     expect(wrapper.find(HomeIcon)).toHaveLength(1)
+    expect(wrapper.find(CheckShieldIcon)).toHaveLength(1)
   })
 })
