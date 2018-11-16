@@ -18,6 +18,7 @@ const Menu = ({ className, items }: MenuProps) => (
         label={item.label}
         href={item.href}
         leftAddon={item.leftAddon}
+        rightAddon={item.rightAddon}
         key={item.id} />
       ),
     )}

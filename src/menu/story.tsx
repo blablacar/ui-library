@@ -3,8 +3,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { BankIcon, BellIcon, BubbleIcon, CoinIcon, CrossDiscIcon,
+import { BankIcon, BellIcon, BubbleIcon, CoinIcon, CheckShieldIcon, CrossDiscIcon,
   HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon } from 'icon'
+import Text from 'text'
 
 import Menu from 'menu'
 
@@ -50,21 +51,28 @@ const menuItems = [
   },
   {
     id: 'menu-item-7',
-    label: 'Awaiting transfers',
-    leftAddon: <CoinIcon />,
+    label: 'Profile',
+    leftAddon: <CheckShieldIcon />,
+    rightAddon: <Text>NEW</Text>,
     href: 'menu-item-7',
   },
   {
     id: 'menu-item-8',
-    label: 'Payments and refunds',
-    leftAddon: <BankIcon />,
+    label: 'Awaiting transfers',
+    leftAddon: <CoinIcon />,
     href: 'menu-item-8',
   },
   {
     id: 'menu-item-9',
+    label: 'Payments and refunds',
+    leftAddon: <BankIcon />,
+    href: 'menu-item-9',
+  },
+  {
+    id: 'menu-item-10',
     label: 'Logout',
     leftAddon: <CrossDiscIcon />,
-    href: 'menu-item-9',
+    href: 'menu-item-10',
   },
 ]
 
