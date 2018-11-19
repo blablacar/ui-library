@@ -1,8 +1,12 @@
 # Unreleased
 
+[...]
+
+# v0.17.6 (19/11/2018)
+
 - **[UPDATE]** `<Stepper>` added `className`, `valueClassName` & `buttonSize`
 
-# v0.17.4 (19/11/2018)
+# v0.17.5 (19/11/2018)
 
 - **[UPDATE]** `<ItemChoice>` `rightAddon` prop support for `<Menu>`
 
