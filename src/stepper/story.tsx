@@ -22,6 +22,7 @@ stories.add(
       increaseLabel={text('increaseLabel', 'Increment')}
       decreaseLabel={text('decreaseLabel', 'Decrement')}
       onChange={action('changed')}
+      buttonSize={number('button size', 24)}
     >
       {text('children', 'Number of seats')}
     </Stepper>
@@ -41,6 +42,7 @@ stories.add(
       decreaseLabel={text('decreaseLabel', 'Decrement')}
       format={value => `${value} €`}
       onChange={action('changed')}
+      buttonSize={number('button size', 24)}
     >
       {text('children', 'Edit the price')}
     </Stepper>
