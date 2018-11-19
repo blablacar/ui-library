@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { canUseDOM } from 'exenv'
+import cc from 'classcat'
 import { isTouchEventsAvailable } from '_utils'
 
 import Button from 'button'
@@ -10,29 +11,32 @@ import { color, delay } from '_utils/branding'
 import style from 'stepper/style'
 
 interface StepperProps {
-  name: string,
-  children: string,
-  increaseLabel: string,
-  decreaseLabel: string,
-  value?: number,
-  step?: number,
-  max?: number,
-  min?: number,
-  format?: (value: string | number) => string | number,
-  onChange?: (obj:onChangeParameters) => void,
+  name: string
+  children: string
+  increaseLabel: string
+  decreaseLabel: string
+  className?: string
+  buttonSize?: number
+  valueClassName?: string
+  value?: number
+  step?: number
+  max?: number
+  min?: number
+  format?: (value: string | number) => string | number
+  onChange?: (obj: onChangeParameters) => void
 }
 
 interface StepperState {
-  value: number,
-  min: number,
-  max: number,
+  value: number
+  min: number
+  max: number
 }
 
 // Support IE. Same value returned with Number.MAX_SAFE_INTEGER / Number.MIN_SAFE_INTEGER
-const defaultInteger = (2 ** 53) - 1
+const defaultInteger = 2 ** 53 - 1
 const isTouchScreen = isTouchEventsAvailable()
 
-export default class Stepper extends PureComponent <StepperProps, StepperState> {
+export default class Stepper extends PureComponent<StepperProps, StepperState> {
   static defaultProps: Partial<StepperProps> = {
     value: 0,
     step: 1,
@@ -42,23 +46,21 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
     onChange: () => {},
   }
 
-  filterValue = (value:number, min:number, max:number) => {
+  filterValue = (value: number, min: number, max: number) => {
     return Math.max(min, Math.min(value, max))
   }
 
-  state:StepperState = {
+  state: StepperState = {
     value: this.filterValue(this.props.value, this.props.min, this.props.max),
     min: this.props.min,
     max: this.props.max,
   }
 
-  whileButtonDown:number
-  buttonDownDelay:number
+  whileButtonDown: number
+  buttonDownDelay: number
 
   componentDidUpdate(prevProps: StepperProps) {
-    if (prevProps.max !== this.props.max ||
-      prevProps.min !== this.props.min
-    ) {
+    if (prevProps.max !== this.props.max || prevProps.min !== this.props.min) {
       this.update(this.state.value)
     }
   }
@@ -101,22 +103,29 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
   }
 
   createListeners(callback: () => void) {
-    return isTouchScreen ? {
-      onTouchStart: this.handleButtonDown(callback),
-      onTouchEnd: this.handleButtonUp(callback),
-    } : {
-      onMouseDown: this.handleButtonDown(callback),
-      onMouseUp: this.handleButtonUp(callback),
-    }
+    return isTouchScreen
+      ? { onTouchStart: this.handleButtonDown(callback), onTouchEnd: this.handleButtonUp(callback) }
+      : { onMouseDown: this.handleButtonDown(callback), onMouseUp: this.handleButtonUp(callback) }
   }
 
   render() {
-    const { children, increaseLabel, decreaseLabel, format, name, min, max } = this.props
+    const {
+      className,
+      children,
+      increaseLabel,
+      decreaseLabel,
+      format,
+      name,
+      min,
+      max,
+      valueClassName,
+      buttonSize,
+    } = this.props
     const isMax = this.state.value >= max
     const isMin = this.state.value <= min
 
     return (
-      <div className="kirk-stepper">
+      <div className={cc(['kirk-stepper', className])}>
         <Button
           type="button"
           className="kirk-stepper-decrement"
@@ -124,11 +133,13 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           disabled={isMin}
           {...this.createListeners(this.decrement)}
         >
-          <MinusIcon title={decreaseLabel} iconColor={isMin ? color.disabled : color.primary} />
+          <MinusIcon
+            title={decreaseLabel}
+            iconColor={isMin ? color.disabled : color.primary}
+            size={buttonSize}
+          />
         </Button>
-        <div className="kirk-stepper-value">
-          { format(this.state.value) }
-        </div>
+        <div className={cc(['kirk-stepper-value', valueClassName])}>{format(this.state.value)}</div>
         <label>
           <span>{children}</span>
           <input type="hidden" name={name} value={format(this.state.value)} readOnly />
@@ -140,7 +151,11 @@ export default class Stepper extends PureComponent <StepperProps, StepperState> 
           disabled={isMax}
           {...this.createListeners(this.increment)}
         >
-          <PlusIcon title={increaseLabel} iconColor={isMax ? color.disabled : color.primary} />
+          <PlusIcon
+            title={increaseLabel}
+            iconColor={isMax ? color.disabled : color.primary}
+            size={buttonSize}
+          />
         </Button>
         <style jsx>{style}</style>
       </div>

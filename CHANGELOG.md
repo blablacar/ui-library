@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `<Stepper>` added `className`, `valueClassName` & `buttonSize`
 
 # v0.17.4 (19/11/2018)
 
