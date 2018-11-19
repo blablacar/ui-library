@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.4 (19/11/2018)
+
 - **[UPDATE]** `<ItemChoice>` `rightAddon` prop support for `<Menu>`
 
 # v0.17.4 (14/11/2018)
