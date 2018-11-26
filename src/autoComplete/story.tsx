@@ -17,6 +17,7 @@ const places: AutocompleteItem[] = [
 ]
 
 interface AutoCompleteExampleProps {
+  readonly searchOnMount?: boolean
   readonly searchForItemsDelay?: number
   readonly renderEmptySearch?: AutocompleteItem[]
 }
@@ -33,6 +34,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
   }
 
   defaultProps: AutoCompleteExampleProps = {
+    searchOnMount: true,
     searchForItemsDelay: 0,
     renderEmptySearch: [],
   }
@@ -60,6 +62,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           name="city"
           placeholder="Search here…"
           defaultValue={text('defaultValue')}
+          searchOnMount={boolean('searchOnMount', true)}
           isSearching={this.state.isSearching}
           searchForItems={this.searchForItems}
           items={this.state.items}

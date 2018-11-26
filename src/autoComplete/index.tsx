@@ -14,6 +14,7 @@ import style from './style'
 type query = string | number | boolean
 interface AutoCompleteProps {
   readonly name: string
+  readonly searchOnMount: boolean
   readonly isSearching: boolean
   readonly searchForItems: (query: query) => void
   readonly onInputChange?: (params: Partial<onChangeParameters>) => void
@@ -76,6 +77,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   private currentValue: query
 
   static defaultProps: Partial<AutoCompleteProps> = {
+    searchOnMount: true,
     isSearching: false,
     searchForItemsMinChars: 3,
     maxItems: Infinity,
@@ -115,8 +117,10 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   componentDidMount() {
-    // Triggers the search when the autocomplete is initialised with a default value
-    this.searchForItems()
+    if (this.props.searchOnMount) {
+      // Triggers the search when the autocomplete is initialised with a default value
+      this.searchForItems()
+    }
 
     if (this.input && canUseEventListeners) {
       this.input.addEventListener('keydown', this.onInputKeydown)

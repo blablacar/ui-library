@@ -14,6 +14,7 @@ const fakeSearchForItems = () => initialFakeItems.slice()
 const defaultProps = {
   name: 'cities',
   items: initialFakeItems,
+  searchOnMount: true,
   isSearching: false,
   searchForItems: fakeSearchForItems,
   searchForItemsMinChars: 1,
@@ -390,6 +391,19 @@ describe('AutoComplete', () => {
         />,
       )
       expect(searchForItems).toHaveBeenCalledWith(defaultValue)
+    })
+
+    it('Does not trigger a search when mounting with a default value in TextField', () => {
+      const searchForItems = jest.fn()
+      const wrapper = shallow(
+        <AutoComplete
+          {...defaultProps}
+          defaultValue={defaultValue}
+          searchForItems={searchForItems}
+          searchOnMount={false}
+        />,
+      )
+      expect(searchForItems).not.toHaveBeenCalled()
     })
   })
 
