@@ -26,6 +26,7 @@ export default css`
     font-size: ${font.l.size};
     text-align: center;
     flex-grow: 1;
+    align-self: center;
   }
 
   div :global(.kirk-stepper-decrement),
