@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.17.7 (27/11/2018)
+
 - **[UPDATE]** `SearchOnMount` boolean added to `<AutoComplete>`
 - **[UPDATE]** `<Stepper>` added `align-self: center` to value
 
