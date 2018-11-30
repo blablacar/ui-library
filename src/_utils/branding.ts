@@ -138,6 +138,11 @@ export const color: Color = {
   primaryActive: palette.darkBlue,
   secondaryActive: palette.gray,
 
+  polylinePrimary: '#3D5C62',
+  polylineStrokePrimary: palette.midnightGreen,
+  polylineSecondary: palette.gray,
+  polylineStrokeSecondary: palette.lightMidnightGreen,
+
   tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
