@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Add `location` itemprop to `<Itinerary>`
+- **[UPDATE]** You can now set a `textColor` prop to `<Text>` (hexadecimal only)
 
 # v0.20.1 (19/12/2018)
 
