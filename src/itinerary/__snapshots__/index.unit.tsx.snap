@@ -29,6 +29,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           09:00
         </span>
@@ -38,6 +39,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           Paris
         </span>
@@ -121,6 +123,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           12:00
         </span>
@@ -130,6 +133,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           Tours
         </span>
@@ -213,6 +217,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           15:00
         </span>
@@ -222,6 +227,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       >
         <span
           className="kirk-text kirk-text-titleStrong"
+          style={null}
         >
           Bordeaux
         </span>
