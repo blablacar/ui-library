@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add brand colors for polyline
 - **[UPDATE]** `<Button>` is `disabled` while in loading or checked state
 
 # v0.17.7 (27/11/2018)
