@@ -63,6 +63,7 @@ type TypeProps = {
   onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void,
   onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void,
   onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void,
+  disabled?: boolean,
 }
 
 export const eventHandler = (
@@ -96,7 +97,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
     }
   }
 
-  componentWillReceiveProps({ status, focus }: ButtonProps) {
+  componentWillReceiveProps({ focus }: ButtonProps) {
     if (focus && focus !== this.props.focus) {
       this.button.focus()
     }
@@ -127,6 +128,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       onFocus,
       onDoneAnimationEnd,
       focus,
+      disabled,
       // Extend case of the button for the expand component
       ...attrs
     } = this.props
@@ -158,6 +160,8 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
 
     const hasLoader = status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
     const iconSize = icon || hasLoader
+
+    typeProps.disabled = hasLoader || disabled
 
     return (
       <Component
