@@ -10,7 +10,7 @@ import Text, { TextTagType, TextDisplayType } from 'text'
 const stories = storiesOf('Text', module)
 stories.addDecorator(withKnobs)
 
-const c = Object.keys(color).reduce(
+const colors = Object.keys(color).reduce(
   (acc, key) => ({
     ...acc,
     [key]: color[key],
@@ -18,15 +18,13 @@ const c = Object.keys(color).reduce(
   {},
 )
 
-console.log(c)
-
 stories.add(
   'basic',
   withInfo('')(() => (
     <Text
       display={selectV2('Display', TextDisplayType, TextDisplayType.BODY)}
       tag={selectV2('Tag', TextTagType, TextTagType.SPAN)}
-      textColor={selectV2('Color', c, 'primary')}
+      textColor={selectV2('Color', colors, 'primary')}
       newlineToBr={boolean('newlineToBr', true)}
     >
       {text('Text', 'This is an example')}

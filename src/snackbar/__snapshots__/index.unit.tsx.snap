@@ -9,7 +9,6 @@ exports[`Snackbar should not have changed 1`] = `
   >
     <span
       className="kirk-text kirk-text-title kirk-snackbar-content"
-      style={null}
     >
       Oups
     </span>
