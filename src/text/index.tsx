@@ -57,6 +57,8 @@ const Text = ({
 
   const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
 
+  const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
+
   let content = children
   if (typeof children === 'string' && newlineToBr) {
     content = replaceNewLineWithBR(children)
@@ -65,7 +67,7 @@ const Text = ({
   return (
     <Tag
       className={cc([baseClassName, displayClassName, className])}
-      style={cssColorRegex.test(textColor) ? { color: textColor } : null}
+      {...inlineStyle}
     >
       {content}
       <style jsx global>
