@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** `ToggleButton` component
+- **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
 
 # v0.18.0 (30/11/2018)
 

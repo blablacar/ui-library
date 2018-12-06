@@ -53,9 +53,9 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
     const isChecked = this.state.checked
     const isDisabled = this.props.disabled || isLoading
 
-    let rightAddon = <CircleIcon iconColor={color.primary} />
+    let rightAddon = <CircleIcon iconColor={color.primary} thin />
     if (isChecked) {
-      rightAddon = <CheckIcon iconColor={color.white} backgroundColor={color.primary}  />
+      rightAddon = <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />
     }
     if (isLoading) {
       rightAddon = <Loader size={24} inline />

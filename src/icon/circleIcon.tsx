@@ -8,6 +8,7 @@ import { color } from '_utils/branding'
 interface CircleProps extends Icon {
   readonly absolute?: boolean,
   readonly spinning?: boolean,
+  readonly thin?: boolean
 }
 
 const offset = 187
@@ -48,6 +49,10 @@ const style = css`
       dash ${duration} ease-in-out infinite;
   }
 
+  .thin circle {
+    stroke-width: 3;
+  }
+
   .absolute {
     position: absolute;
   }
@@ -61,15 +66,16 @@ class CircleIcon extends PureComponent<CircleProps> {
     size: 24,
     spinning: false,
     title: '',
+    thin: false,
   }
 
   render() {
-    const { className, absolute, iconColor, spinning, size, title } = this.props
+    const { className, absolute, iconColor, spinning, size, title, thin } = this.props
     return (
       <svg
         viewBox="0 0 66 66"
         xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className, { spinning, absolute }])}
+        className={cc(['kirk-icon', className, { spinning, absolute, thin }])}
         width={size}
         height={size}
         aria-hidden={isEmpty(title)}
