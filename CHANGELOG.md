@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** `ToggleButton` component
 
 # v0.18.0 (30/11/2018)
 
