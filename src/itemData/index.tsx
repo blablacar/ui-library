@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Item, { ItemProps } from '_utils/item/index'
+import Item, { ItemProps } from '_utils/item'
 import { TextDisplayType } from 'text'
 
 interface ItemDataProps extends ItemProps {
