@@ -9,6 +9,7 @@ interface CheckProps extends Icon {
   readonly absolute?: boolean,
   readonly validate?: boolean,
   readonly backgroundColor?: string,
+  readonly thin?: boolean,
 }
 
 const style = css`.absolute {
@@ -42,7 +43,7 @@ class CheckIcon extends PureComponent<CheckProps> {
   }
 
   render() {
-    const { absolute, className, iconColor, size, title, validate } = this.props
+    const { absolute, className, iconColor, size, title, validate, thin } = this.props
     return (
       <svg
         viewBox="0 0 24 24"
@@ -57,7 +58,7 @@ class CheckIcon extends PureComponent<CheckProps> {
           d="M6.5 12.5l4 4 8-8"
           fill="none"
           stroke={iconColor}
-          strokeWidth="2"
+          strokeWidth={thin ? '1' : '2'}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"

@@ -32,6 +32,7 @@ import Text from 'text'
 import TextField from 'textField'
 import TimePicker from 'timePicker'
 import Title from 'title'
+import ToggleButton from 'toggleButton'
 import TopBar from 'topBar'
 import Transitions from 'transitions'
 import TripCard from 'tripCard'
@@ -76,6 +77,7 @@ export {
   TextField,
   TimePicker,
   Title,
+  ToggleButton,
   TopBar,
   Transitions,
   TripCard,
