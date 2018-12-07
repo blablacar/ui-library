@@ -1,58 +1,61 @@
 import React from 'react'
-import cc from 'classcat'
 
 import Avatar from 'avatar'
-import Button from 'button'
 import Rating from 'rating'
-import ArrowIcon from 'icon/arrowIcon'
-
-import prefix from '_utils'
-import style from 'profile/style'
+import Text, { TextDisplayType } from 'text'
+import Item from '_utils/item'
 
 interface ProfileProps {
-  readonly title: string,
   readonly className?: Classcat.Class,
-  readonly isMedium?: boolean,
+  readonly title: string,
+  readonly info?: string,
+  readonly isLink?: boolean,
   readonly picture?: string,
-  readonly isIdChecked?: boolean,
   readonly alt?: string,
+  readonly isIdChecked?: boolean,
+  readonly isMedium?: boolean,
   readonly score?: number,
   readonly ratings?: number,
   readonly ratingsLabel?: string,
-  readonly info?: string,
-  readonly action?: string,
 }
 
 const Profile = ({
-  className, isMedium, title, picture, isIdChecked, alt,
-  ratingsLabel, info, action, score = 0, ratings = 0,
-}: ProfileProps) => (
-    <div className={cc(['kirk-profile', prefix({ medium: isMedium }), className])}>
-      <div className="kirk-description">
-        <span className="kirk-title">{title}</span>
-        {ratings > 0 &&
-          <Rating ratings={ratings} score={score}>{ratingsLabel}</Rating>
-        }
-        <span className="kirk-secondaryInfo">{info}</span>
-      </div>
-      {picture &&
+  className,
+  title,
+  info,
+  picture,
+  alt,
+  isIdChecked,
+  isMedium,
+  isLink,
+  score,
+  ratings,
+  ratingsLabel,
+}: ProfileProps) => {
+  const getLeftBody = (
+      ratings > 0
+        ? <Rating ratings={ratings} score={score}>{ratingsLabel}</Rating>
+        : info && <Text>{info}</Text>
+  )
+
+  return (
+    <Item
+      className={className}
+      leftTitle={title}
+      leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY2 : TextDisplayType.TITLE}
+      leftBody={getLeftBody}
+      rightAddon={picture &&
         <Avatar
           image={picture}
           alt={alt}
           isIdChecked={isIdChecked}
-          className="kirk-picture"
           isMedium={isMedium}
         />
       }
-      {action &&
-        <div>
-          <Button status={Button.STATUS.UNSTYLED} title={action}>
-            <ArrowIcon right />
-          </Button>
-        </div>
-      }
-      <style jsx>{style}</style>
-    </div>
+      chevron={isLink}
+    >
+    </Item>
   )
+}
 
 export default Profile
