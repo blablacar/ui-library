@@ -5,17 +5,17 @@ import Loader from 'loader'
 import style from 'checkbox/style'
 
 export interface CheckboxProps {
-  readonly name: string,
-  readonly children: string,
-  readonly className?: Classcat.Class,
-  readonly subLabel?: string,
-  readonly value?: string,
-  readonly checked?: boolean,
-  readonly disabled?: boolean,
-  readonly status?: CheckboxStatus,
-  readonly labelDisplay?: labelDisplays,
-  readonly onChange?: (obj:onChangeParameters) => void,
-  readonly onDoneAnimationEnd?: () => void,
+  readonly name: string
+  readonly children: string
+  readonly className?: Classcat.Class
+  readonly subLabel?: string
+  readonly value?: string
+  readonly checked?: boolean
+  readonly disabled?: boolean
+  readonly status?: CheckboxStatus
+  readonly labelDisplay?: labelDisplays
+  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onDoneAnimationEnd?: () => void
 }
 
 export enum labelDisplays {
@@ -31,11 +31,11 @@ export enum CheckboxStatus {
 }
 
 export interface CheckboxState {
-  readonly isChecked: boolean,
-  readonly disabled: boolean,
+  readonly isChecked: boolean
+  readonly disabled: boolean
 }
 
-export default class Checkbox extends PureComponent <CheckboxProps, CheckboxState> {
+export default class Checkbox extends PureComponent<CheckboxProps, CheckboxState> {
   static defaultProps: Partial<CheckboxProps> = {
     className: '',
     subLabel: '',
@@ -45,7 +45,7 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
   }
   static STATUS = CheckboxStatus
 
-  state:CheckboxState = {
+  state: CheckboxState = {
     isChecked: this.props.checked,
     disabled: this.props.disabled,
   }
@@ -60,46 +60,50 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
   }
 
   onChange = () => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       const value = !prevState.isChecked
       const props = { name: this.props.name, value }
       this.props.onChange(props)
-      return ({
+      return {
         isChecked: value,
         disabled: false,
-      })
+      }
     })
   }
 
-  updateCheckedState = () => this.setState(prevState => ({
-    isChecked: !prevState.isChecked,
-    disabled: false,
-  }))
+  updateCheckedState = () =>
+    this.setState(prevState => ({
+      isChecked: !prevState.isChecked,
+      disabled: false,
+    }))
 
   render() {
     const {
-      className, name, value, children, subLabel,
-      labelDisplay, status, onDoneAnimationEnd,
+      className,
+      name,
+      value,
+      children,
+      subLabel,
+      labelDisplay,
+      status,
+      onDoneAnimationEnd,
     } = this.props
 
     const isStatusLoading = status === CheckboxStatus.LOADING
     const isStatusChecked = status === CheckboxStatus.CHECKED
 
     return (
-      <label className={cc([
-        'kirk-checkbox',
-        {
-          'kirk-checkbox--labelDisplay-left': (
-            labelDisplay === labelDisplays.LEFT
-          ),
-          'kirk-checkbox--labelDisplay-none': (
-            labelDisplay === labelDisplays.NONE
-          ),
-          'kirk-checkbox--loading': isStatusLoading,
-          'kirk-checkbox--checked': isStatusChecked,
-        },
-        className,
-      ])}
+      <label
+        className={cc([
+          'kirk-checkbox',
+          {
+            'kirk-checkbox--labelDisplay-left': labelDisplay === labelDisplays.LEFT,
+            'kirk-checkbox--labelDisplay-none': labelDisplay === labelDisplays.NONE,
+            'kirk-checkbox--loading': isStatusLoading,
+            'kirk-checkbox--checked': isStatusChecked,
+          },
+          className,
+        ])}
       >
         <div>
           <input
@@ -111,12 +115,14 @@ export default class Checkbox extends PureComponent <CheckboxProps, CheckboxStat
             disabled={this.state.disabled}
           />
           <span aria-hidden="true" className={cc({ checked: this.state.isChecked })} />
-          {(isStatusLoading || isStatusChecked) && <Loader
-            size={24}
-            onDoneAnimationEnd={onDoneAnimationEnd}
-            done={isStatusChecked}
-            inline
-          />}
+          {(isStatusLoading || isStatusChecked) && (
+            <Loader
+              size={24}
+              onDoneAnimationEnd={onDoneAnimationEnd}
+              done={isStatusChecked}
+              inline
+            />
+          )}
         </div>
         <div>
           <span className="kirk-label">{children}</span>

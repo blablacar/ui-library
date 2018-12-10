@@ -3,9 +3,9 @@ import cc from 'classcat'
 import style from 'title/style'
 
 interface TitleProps {
-  readonly className?: Classcat.Class,
-  readonly children: string,
-  readonly headingLevel?: number,
+  readonly className?: Classcat.Class
+  readonly children: string
+  readonly headingLevel?: number
 }
 
 export const isHeadingAvailable = (level: number) => Number(level) >= 1 && Number(level) <= 6

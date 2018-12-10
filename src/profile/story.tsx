@@ -25,6 +25,6 @@ stories.add(
       score={number('score', null)}
       ratings={number('ratings', null)}
       ratingsLabel={text('ratingsLabel', null)}
-    />),
-  ),
+    />
+  )),
 )

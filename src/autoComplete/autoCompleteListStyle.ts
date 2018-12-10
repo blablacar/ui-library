@@ -27,7 +27,7 @@ export default css`
   }
 
   :global(.kirk-autoComplete-item:hover),
-  :global(.kirk-autoComplete-item[aria-selected="true"]) {
+  :global(.kirk-autoComplete-item[aria-selected='true']) {
     background-color: ${color.lightBackground};
     border-radius: ${radius.l};
   }

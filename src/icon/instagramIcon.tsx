@@ -23,7 +23,7 @@ class InstagramIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g fill="none" fillRule="evenodd">
           <path
             // tslint:disable-next-line
@@ -37,7 +37,7 @@ class InstagramIcon extends PureComponent<Icon> {
             fill={iconColor}
             fillRule="nonzero"
           />
-          <circle fill={iconColor} fillRule="nonzero" cx="17.338" cy="6.662" r="1.2"/>
+          <circle fill={iconColor} fillRule="nonzero" cx="17.338" cy="6.662" r="1.2" />
         </g>
       </svg>
     )

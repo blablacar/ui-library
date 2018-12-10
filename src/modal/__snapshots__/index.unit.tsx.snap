@@ -8,10 +8,10 @@ exports[`Modal should not have changed 1`] = `
     className="transition-wrapper"
   >
     <div
-      className="jsx-3625912054 kirk-modal kirk-modal--large kirk-modal--hasCloseButton slide-up slide-up-entered"
+      className="jsx-3447746461 kirk-modal kirk-modal--large kirk-modal--hasCloseButton slide-up slide-up-entered"
     >
       <div
-        className="jsx-3625912054 kirk-modal-dialog"
+        className="jsx-3447746461 kirk-modal-dialog"
       >
         <button
           className="kirk-button kirk-button-primary kirk-button-icon kirk-modal-closeButton"
@@ -50,7 +50,7 @@ exports[`Modal should not have changed 1`] = `
           </span>
         </button>
         <div
-          className="jsx-3625912054 kirk-modal-body"
+          className="jsx-3447746461 kirk-modal-body"
         />
       </div>
     </div>

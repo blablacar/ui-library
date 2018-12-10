@@ -33,12 +33,12 @@ const styles: { [name: string]: React.CSSProperties } = {
 }
 
 function getBrightness(hex: string) {
-  const rgb = parseInt(hex.substring(1), 16)   // convert rrggbb to decimal
-  const r = (rgb >> 16) & 0xff                 // extract red
-  const g = (rgb >> 8) & 0xff                  // extract green
-  const b = (rgb >> 0) & 0xff                  // extract blue
+  const rgb = parseInt(hex.substring(1), 16) // convert rrggbb to decimal
+  const r = (rgb >> 16) & 0xff // extract red
+  const g = (rgb >> 8) & 0xff // extract green
+  const b = (rgb >> 0) & 0xff // extract blue
 
-  return (0.2126 * r) + (0.7152 * g) + (0.0722 * b) // per ITU-R BT.709
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b // per ITU-R BT.709
 }
 
 const renderColors = (c: string) => {
@@ -47,14 +47,23 @@ const renderColors = (c: string) => {
     color: getBrightness(color[c]) < 120 ? '#FFF' : '#000',
     backgroundColor: color[c],
   }
-  return <div key={c} style={style}>{c}<br/>{color[c]}</div>
+  return (
+    <div key={c} style={style}>
+      {c}
+      <br />
+      {color[c]}
+    </div>
+  )
 }
 
 const renderFonts = (f: string) => {
-  const placeholder = text('Default text', `Lorem ipsum dolor sit amet, consectetur
+  const placeholder = text(
+    'Default text',
+    `Lorem ipsum dolor sit amet, consectetur
   adipisicing elit. Quisquam consequatur aspernatur provident minus praesentium et amet
   ab, quas architecto. Tempore vitae voluptate, harum modi temporibus! Est temporibus
-  explicabo facere, vitae!`)
+  explicabo facere, vitae!`,
+  )
   const style = {
     ...styles.fontTile,
     fontSize: font[f].size,
@@ -68,7 +77,7 @@ const renderFonts = (f: string) => {
   )
 }
 
-const renderTabFonts = (f:string) => (
+const renderTabFonts = (f: string) => (
   <tr key={f}>
     <td>{f}</td>
     <td>{font[f].size}</td>
@@ -76,7 +85,7 @@ const renderTabFonts = (f:string) => (
   </tr>
 )
 
-const renderTabSpacing = (s:string) => (
+const renderTabSpacing = (s: string) => (
   <tr key={s}>
     <td>{s}</td>
     <td>{space[s]}</td>
@@ -86,9 +95,7 @@ const renderTabSpacing = (s:string) => (
 stories.add('Colors', () => (
   <div style={styles.main}>
     <h1>Colors</h1>
-    <div>
-      { Object.keys(color).map(renderColors) }
-    </div>
+    <div>{Object.keys(color).map(renderColors)}</div>
   </div>
 ))
 
@@ -102,10 +109,10 @@ stories.add('Fonts', () => (
           <th>Font-size</th>
           <th>Line-height</th>
         </tr>
-        { Object.keys(font).map(renderTabFonts) }
+        {Object.keys(font).map(renderTabFonts)}
       </tbody>
     </table>
-    { Object.keys(font).map(renderFonts) }
+    {Object.keys(font).map(renderFonts)}
   </div>
 ))
 
@@ -118,7 +125,7 @@ stories.add('Spacing', () => (
           <th>Name</th>
           <th>Space</th>
         </tr>
-        { Object.keys(space).map(renderTabSpacing) }
+        {Object.keys(space).map(renderTabSpacing)}
       </tbody>
     </table>
   </div>

@@ -24,7 +24,7 @@ class LightningIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           fill="none"
           strokeWidth="1"

@@ -46,16 +46,16 @@ export default css`
     transform: translateY(6px);
   }
 
-  button[aria-expanded="true"] i {
+  button[aria-expanded='true'] i {
     background-color: transparent;
     transition-delay: unset;
   }
 
-  button[aria-expanded="true"] i::before {
+  button[aria-expanded='true'] i::before {
     transform: translateY(0) rotate(135deg);
   }
 
-  button[aria-expanded="true"] i::after {
+  button[aria-expanded='true'] i::after {
     transform: translateY(0) rotate(45deg);
   }
 `

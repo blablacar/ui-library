@@ -16,34 +16,34 @@ export enum ItemChoiceStatus {
 }
 
 interface TypeProps {
-  readonly className?: Classcat.Class,
-  readonly href?: string,
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
+  readonly className?: Classcat.Class
+  readonly href?: string
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 export interface ItemChoiceProps {
-  readonly className?: Classcat.Class,
-  readonly href?: string | JSX.Element,
-  readonly label?: string,
-  readonly subLabel?: string,
-  readonly children?: React.ReactNode,
-  readonly leftAddon?: React.ReactNode,
-  readonly rightAddon?: React.ReactNode,
-  readonly highlighted?: boolean,
-  readonly selected?: boolean,
-  readonly declared?: boolean,
-  readonly status?: ItemChoiceStatus,
-  readonly onDoneAnimationEnd?: () => void,
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
+  readonly className?: Classcat.Class
+  readonly href?: string | JSX.Element
+  readonly label?: string
+  readonly subLabel?: string
+  readonly children?: React.ReactNode
+  readonly leftAddon?: React.ReactNode
+  readonly rightAddon?: React.ReactNode
+  readonly highlighted?: boolean
+  readonly selected?: boolean
+  readonly declared?: boolean
+  readonly status?: ItemChoiceStatus
+  readonly onDoneAnimationEnd?: () => void
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-class ItemChoice extends PureComponent <ItemChoiceProps> {
+class ItemChoice extends PureComponent<ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {
     highlighted: false,
     selected: false,
@@ -54,16 +54,32 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
   static STATUS = ItemChoiceStatus
   render() {
     const {
-      children, className, highlighted, selected, status, declared,
-      onClick, onBlur, onFocus, onMouseDown, href, label, subLabel, leftAddon, rightAddon,
+      children,
+      className,
+      highlighted,
+      selected,
+      status,
+      declared,
+      onClick,
+      onBlur,
+      onFocus,
+      onMouseDown,
+      href,
+      label,
+      subLabel,
+      leftAddon,
+      rightAddon,
       onDoneAnimationEnd,
     } = this.props
-    const classNames = cc([prefix({
-      itemChoice: true,
-      'itemChoice--highlighted': highlighted,
-      'itemChoice--withSubLabel': !!subLabel,
-      'itemChoice--declared': declared,
-    }), className])
+    const classNames = cc([
+      prefix({
+        itemChoice: true,
+        'itemChoice--highlighted': highlighted,
+        'itemChoice--withSubLabel': !!subLabel,
+        'itemChoice--declared': declared,
+      }),
+      className,
+    ])
 
     let rightIcon = <ChevronIcon className={cc(prefix({ chevron: true }))} />
 
@@ -75,22 +91,26 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     }
 
     if (status === ItemChoiceStatus.LOADING) {
-      rightIcon = <Loader
-        className={cc(prefix({ chevron: true }))}
-        size={24}
-        onDoneAnimationEnd={onDoneAnimationEnd}
-        inline
-      />
+      rightIcon = (
+        <Loader
+          className={cc(prefix({ chevron: true }))}
+          size={24}
+          onDoneAnimationEnd={onDoneAnimationEnd}
+          inline
+        />
+      )
     }
 
     if (status === ItemChoiceStatus.CHECKED) {
-      rightIcon = <Loader
-        className={cc(prefix({ chevron: true }))}
-        size={24}
-        onDoneAnimationEnd={onDoneAnimationEnd}
-        done
-        inline
-      />
+      rightIcon = (
+        <Loader
+          className={cc(prefix({ chevron: true }))}
+          size={24}
+          onDoneAnimationEnd={onDoneAnimationEnd}
+          done
+          inline
+        />
+      )
     }
 
     let Component: tag
@@ -116,15 +136,10 @@ class ItemChoice extends PureComponent <ItemChoiceProps> {
     }
 
     return (
-      <Component
-        role="option"
-        aria-selected={selected}
-        {...typeProps}
-      >
-        { leftAddon && (
+      <Component role="option" aria-selected={selected} {...typeProps}>
+        {leftAddon && (
           <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
-          )
-        }
+        )}
         {label && (
           <div>
             <div className={cc(prefix({ 'itemChoice-label': true }))}>{label}</div>

@@ -12,7 +12,7 @@ export default css`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, 0.85);
     height: 100vh;
     width: 100vw;
     z-index: 4;

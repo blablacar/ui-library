@@ -23,7 +23,7 @@ class ClockIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g fill="none" fillRule="evenodd">
           <path d="M0 0h24v24H0z" />
           <g stroke={iconColor} strokeLinecap="round" strokeLinejoin="round">

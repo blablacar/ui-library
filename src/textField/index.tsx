@@ -11,51 +11,53 @@ import EyeIcon from 'icon/eyeIcon'
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 
 export interface CommonFormFields {
-  name: string,
-  id?: string,
-  type?: 'text' | 'password' | 'email' | 'number' | 'search',
-  placeholder?: string,
-  maxLength?: number,
-  autoCorrect?: 'on' | 'off',
-  autoComplete?: 'on' | 'off',
-  disabled?: boolean,
-  readOnly?: boolean,
-  autoFocus?: boolean,
-  required?: boolean,
-  onFocus?: (event:
-    React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => void,
-  onBlur?: (event:
-    React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => void,
+  name: string
+  id?: string
+  type?: 'text' | 'password' | 'email' | 'number' | 'search'
+  placeholder?: string
+  maxLength?: number
+  autoCorrect?: 'on' | 'off'
+  autoComplete?: 'on' | 'off'
+  disabled?: boolean
+  readOnly?: boolean
+  autoFocus?: boolean
+  required?: boolean
+  onFocus?: (
+    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
+  ) => void
+  onBlur?: (
+    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
+  ) => void
 }
 
 export interface TextFieldProps extends CommonFormFields {
-  isTextArea?: boolean,
-  defaultValue?: string,
-  labelledBy?: string,
-  onChange?: (obj:onChangeParameters) => void,
-  onClear?: () => void,
-  className?: Classcat.Class,
-  error?: string | JSX.Element,
-  addon?: JSX.Element,
-  label?: string,
-  buttonTitle?: string,
-  focus?: boolean,
-  inputRef?: (input: textfield) => void,
+  isTextArea?: boolean
+  defaultValue?: string
+  labelledBy?: string
+  onChange?: (obj: onChangeParameters) => void
+  onClear?: () => void
+  className?: Classcat.Class
+  error?: string | JSX.Element
+  addon?: JSX.Element
+  label?: string
+  buttonTitle?: string
+  focus?: boolean
+  inputRef?: (input: textfield) => void
 }
 
 interface FormAttributes extends CommonFormFields {
-  value: string,
-  ['aria-invalid']?: 'true' | 'false',
-  ['aria-labelledby']?: string,
-  inputMode?: string,
-  pattern?: string,
-  ref?: (input: textfield) => void,
-  onChange?: (event: React.ChangeEvent<textfield>) => void,
+  value: string
+  ['aria-invalid']?: 'true' | 'false'
+  ['aria-labelledby']?: string
+  inputMode?: string
+  pattern?: string
+  ref?: (input: textfield) => void
+  onChange?: (event: React.ChangeEvent<textfield>) => void
 }
 
 export interface TextFieldState {
-  readonly value: string,
-  readonly showPassword: boolean,
+  readonly value: string
+  readonly showPassword: boolean
 }
 
 const DisplayError = (error: string | JSX.Element) => {
@@ -65,11 +67,15 @@ const DisplayError = (error: string | JSX.Element) => {
       className,
     })
   }
-  return <span role="alert" className={className}>{error}</span>
+  return (
+    <span role="alert" className={className}>
+      {error}
+    </span>
+  )
 }
 
-export default class TextField extends PureComponent <TextFieldProps, TextFieldState> {
-  private input:HTMLInputElement | HTMLTextAreaElement
+export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
+  private input: HTMLInputElement | HTMLTextAreaElement
 
   static defaultProps: Partial<TextFieldProps> = {
     inputRef() {},
@@ -126,26 +132,56 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
     })
   }
 
-  ref = (input:textfield) => {
+  ref = (input: textfield) => {
     this.input = input
     this.props.inputRef(input)
   }
 
   render() {
     const {
-      isTextArea, addon, type, placeholder, name, id, labelledBy, label, className,
-      error, disabled, readOnly, onFocus, onBlur, autoFocus, required, maxLength,
-      autoCorrect, autoComplete, buttonTitle,
+      isTextArea,
+      addon,
+      type,
+      placeholder,
+      name,
+      id,
+      labelledBy,
+      label,
+      className,
+      error,
+      disabled,
+      readOnly,
+      onFocus,
+      onBlur,
+      autoFocus,
+      required,
+      maxLength,
+      autoCorrect,
+      autoComplete,
+      buttonTitle,
     } = this.props
     const value = this.state.value || ''
 
     const attrs: FormAttributes = {
-      type, placeholder, name, id, 'aria-labelledby': labelledBy,
-      value, maxLength, autoComplete, autoCorrect,
+      type,
+      placeholder,
+      name,
+      id,
+      'aria-labelledby': labelledBy,
+      value,
+      maxLength,
+      autoComplete,
+      autoCorrect,
       // modifiers
-      disabled, readOnly, required, autoFocus,
+      disabled,
+      readOnly,
+      required,
+      autoFocus,
       // actions
-      onFocus, onBlur, onChange: this.onTextFieldChange, ref: this.ref,
+      onFocus,
+      onBlur,
+      onChange: this.onTextFieldChange,
+      ref: this.ref,
     }
 
     if (error) {
@@ -163,29 +199,25 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
       attrs.inputMode = 'numeric'
     }
 
-    const buttonOnClick = type !== 'password' ?
-      this.clearValue :
-      this.toggleShowPassword
+    const buttonOnClick = type !== 'password' ? this.clearValue : this.toggleShowPassword
 
     const shouldDisplayErrorMessage = error && typeof error !== 'boolean'
     const shouldDisplayButton = !isTextArea && !disabled
 
     return (
       <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
-        { label &&
-          <label htmlFor={id}>{label}</label>
-        }
+        {label && <label htmlFor={id}>{label}</label>}
         <div className="kirk-textField-wrapper">
-          { addon }
-          { isTextArea ?
-            <textarea {...attrs} /> :
+          {addon}
+          {isTextArea ? (
+            <textarea {...attrs} />
+          ) : (
             <input
               {...attrs}
               type={type === 'password' && this.state.showPassword ? 'text' : type}
             />
-          }
-          {
-            shouldDisplayButton &&
+          )}
+          {shouldDisplayButton && (
             <Button
               className="kirk-textField-button"
               hidden={!value}
@@ -195,13 +227,13 @@ export default class TextField extends PureComponent <TextFieldProps, TextFieldS
               tabIndex="-1"
               title={buttonTitle}
             >
-              {
-                type === 'password'
-                  ? <EyeIcon {...iconProps} off={this.state.showPassword} />
-                  : <CrossIcon {...iconProps} />
-              }
+              {type === 'password' ? (
+                <EyeIcon {...iconProps} off={this.state.showPassword} />
+              ) : (
+                <CrossIcon {...iconProps} />
+              )}
             </Button>
-          }
+          )}
         </div>
         {shouldDisplayErrorMessage && DisplayError(error)}
         <style jsx>{style}</style>

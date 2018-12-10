@@ -8,14 +8,14 @@ import CheckIcon from 'icon/checkIcon'
 import style from './style'
 
 interface LoaderProps {
-  className?: Classcat.Class,
-  inline?: boolean,
-  size?: number,
-  done?: boolean,
-  onDoneAnimationEnd?: () => void,
+  className?: Classcat.Class
+  inline?: boolean
+  size?: number
+  done?: boolean
+  onDoneAnimationEnd?: () => void
 }
 
-class Loader extends PureComponent <LoaderProps> {
+class Loader extends PureComponent<LoaderProps> {
   static defaultProps: Partial<LoaderProps> = {
     className: '',
     inline: false,
@@ -55,16 +55,8 @@ class Loader extends PureComponent <LoaderProps> {
         ])}
         style={inline ? sizes : null}
       >
-        {!done && <CircleIcon
-          iconColor={color.success}
-          size={size}
-          spinning
-        />}
-        {done && <CheckIcon
-          iconColor={color.white}
-          size={size / 2}
-          validate
-        />}
+        {!done && <CircleIcon iconColor={color.success} size={size} spinning />}
+        {done && <CheckIcon iconColor={color.white} size={size / 2} validate />}
         <style jsx>{style}</style>
       </div>
     )

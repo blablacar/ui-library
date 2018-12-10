@@ -26,24 +26,18 @@ it('Should pass a title prop to Item', () => {
 
 it('Should display info if no rating is provided', () => {
   const profile = shallow(<Profile title="Jack Sparrow" info="fhtagn" />)
-  expect(profile.find(Item).prop('leftBody')).toEqual(
-    <Text>fhtagn</Text>,
-  )
+  expect(profile.find(Item).prop('leftBody')).toEqual(<Text>fhtagn</Text>)
 })
 
 it('Should display the rating over info if both are provided', () => {
   const profile = shallow(<Profile title="Jack Sparrow" ratings="2" info="fhtagn" />)
-  expect(profile.find(Item).prop('leftBody')).toEqual(
-    <Rating ratings="2" />,
-  )
+  expect(profile.find(Item).prop('leftBody')).toEqual(<Rating ratings="2" />)
 })
 
 it('Should pass a rightAddon prop to Item', () => {
   const pictureUrl = 'https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg'
   const profile = shallow(<Profile title="Jack Sparrow" picture={pictureUrl} />)
-  expect(profile.find(Item).prop('rightAddon')).toEqual(
-    <Avatar image={pictureUrl} />,
-  )
+  expect(profile.find(Item).prop('rightAddon')).toEqual(<Avatar image={pictureUrl} />)
 })
 
 it('Should pass all picture props to Avatar', () => {

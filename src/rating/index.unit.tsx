@@ -9,7 +9,11 @@ it('Should have a rating and label', () => {
 })
 
 it('Should have a rating, label and stars', () => {
-  const profile = mount(<Rating ratings={1} label="rating" score={5}>rating</Rating>)
+  const profile = mount(
+    <Rating ratings={1} label="rating" score={5}>
+      rating
+    </Rating>,
+  )
   const ratings = profile.find('span')
   expect(ratings.text()).toBe('1 rating')
   const stars = profile.find('svg')

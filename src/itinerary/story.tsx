@@ -82,20 +82,24 @@ stories.add(
         places={[
           {
             mainLabel: text('Main label from', 'Paris'),
-            subLabel: <Proximity
-              value={selectV2('Proximity from', Distances, 'FAR')}
-              title="Distance from the pick up point"
-            />,
+            subLabel: (
+              <Proximity
+                value={selectV2('Proximity from', Distances, 'FAR')}
+                title="Distance from the pick up point"
+              />
+            ),
             isoDate: '2017-12-11T09:00',
             time: text('Time from', '09:00'),
             href: '#',
           },
           {
             mainLabel: text('Main label to', 'Bordeaux'),
-            subLabel: <Proximity
-              value={selectV2('Proximity to', Distances, 'CLOSE')}
-              title="Distance from the drop off point"
-            />,
+            subLabel: (
+              <Proximity
+                value={selectV2('Proximity to', Distances, 'CLOSE')}
+                title="Distance from the drop off point"
+              />
+            ),
             isoDate: '2017-12-11T12:00',
             time: text('Time to', '12:00'),
           },

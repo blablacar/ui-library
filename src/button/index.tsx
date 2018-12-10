@@ -16,33 +16,33 @@ export enum ButtonStatus {
 }
 
 export interface ButtonProps {
-  readonly type?: string,
-  readonly href?: string | JSX.Element,
-  readonly children?: string | number | React.ReactNode,
-  readonly className?: Classcat.Class,
-  readonly title?: string,
-  readonly status?: ButtonStatus,
-  readonly focus?: boolean,
-  readonly icon?: boolean,
-  readonly shadowed?: boolean,
-  readonly hidden?: boolean,
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
+  readonly type?: string
+  readonly href?: string | JSX.Element
+  readonly children?: string | number | React.ReactNode
+  readonly className?: Classcat.Class
+  readonly title?: string
+  readonly status?: ButtonStatus
+  readonly focus?: boolean
+  readonly icon?: boolean
+  readonly shadowed?: boolean
+  readonly hidden?: boolean
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
   readonly onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
-  readonly onDoneAnimationEnd?: () => void,
-  readonly tabIndex?: string,
-  readonly disabled?: boolean,
+  readonly onDoneAnimationEnd?: () => void
+  readonly tabIndex?: string
+  readonly disabled?: boolean
 }
 
 export interface ButtonState {
   readonly value: {
-    name: string,
-    value: string,
-  },
+    name: string
+    value: string
+  }
 }
 
 type ButtonActionEvents =
@@ -52,24 +52,23 @@ type ButtonActionEvents =
 type functionEvent = (event: ButtonActionEvents) => void
 
 type TypeProps = {
-  ref?: (button: HTMLButtonElement) => void,
-  title?: string,
-  href?: string,
-  type?: string,
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void,
-  onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void,
-  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void,
-  onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void,
-  onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void,
-  onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void,
-  disabled?: boolean,
+  ref?: (button: HTMLButtonElement) => void
+  title?: string
+  href?: string
+  type?: string
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
+  onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
+  onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
+  disabled?: boolean
 }
 
-export const eventHandler = (
-  componentEvent: functionEvent,
-  childEvent: functionEvent,
-) => (event: ButtonActionEvents) => {
+export const eventHandler = (componentEvent: functionEvent, childEvent: functionEvent) => (
+  event: ButtonActionEvents,
+) => {
   componentEvent && componentEvent(event)
   childEvent && childEvent(event)
 }

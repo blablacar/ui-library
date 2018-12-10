@@ -46,8 +46,9 @@ describe('ToggleButton', () => {
     })
 
     it('Should render a CheckIcon', () => {
-      expect(toggleButton.find(Item).prop('rightAddon'))
-        .toEqual(<CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />)
+      expect(toggleButton.find(Item).prop('rightAddon')).toEqual(
+        <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />,
+      )
     })
 
     it('Should have the aria-pressed attribute to true', () => {
@@ -62,8 +63,9 @@ describe('ToggleButton', () => {
     })
 
     it('Should render a CircleIcon', () => {
-      expect(toggleButton.find(Item).prop('rightAddon'))
-        .toEqual(<CircleIcon iconColor={color.primary} thin />)
+      expect(toggleButton.find(Item).prop('rightAddon')).toEqual(
+        <CircleIcon iconColor={color.primary} thin />,
+      )
     })
 
     it('Should have the aria-pressed attribute to false', () => {
@@ -80,8 +82,7 @@ describe('ToggleButton', () => {
     })
 
     it('Should render a Loader', () => {
-      expect(toggleButton.find(Item).prop('rightAddon'))
-        .toEqual(<Loader size={24} inline />)
+      expect(toggleButton.find(Item).prop('rightAddon')).toEqual(<Loader size={24} inline />)
     })
 
     it('Should be disabled', () => {

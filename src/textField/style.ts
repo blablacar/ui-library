@@ -29,7 +29,7 @@ export default css`
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     width: 100%;
-    caret-color: ${color.inputCaret}
+    caret-color: ${color.inputCaret};
   }
 
   .kirk-textField textarea {
@@ -58,26 +58,26 @@ export default css`
   }
 
   .kirk-textField input::-ms-clear {
-      display: none;
+    display: none;
   }
 
-  .kirk-textField input[type="number"]::-webkit-outer-spin-button,
-  .kirk-textField input[type="number"]::-webkit-inner-spin-button {
-     -webkit-appearance: none;
+  .kirk-textField input[type='number']::-webkit-outer-spin-button,
+  .kirk-textField input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
 
-  .kirk-textField input[type="number"] {
-     -moz-appearance: textfield;
-     -webkit-appearance: none;
+  .kirk-textField input[type='number'] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
   }
 
-  .kirk-textField input[type="search"] {
+  .kirk-textField input[type='search'] {
     width: 100%;
     box-sizing: border-box;
   }
 
-  .kirk-textField input[type="number"],
-  .kirk-textField input[type="search"] {
+  .kirk-textField input[type='number'],
+  .kirk-textField input[type='search'] {
     box-shadow: none;
   }
 
@@ -134,7 +134,7 @@ export default css`
   }
 
   .kirk-disabled {
-    opacity: .5;
+    opacity: 0.5;
     cursor: default;
   }
 

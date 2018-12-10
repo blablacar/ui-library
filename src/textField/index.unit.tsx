@@ -54,14 +54,14 @@ it('Should have a required attr', () => {
 })
 
 it('Should have a button with title', () => {
-  const wrapper = mount((
+  const wrapper = mount(
     <TextField
       name="test"
       defaultValue="defaultValue"
       placeholder="this is a placeholder"
       buttonTitle="buttonTitle"
-    />
-  ))
+    />,
+  )
   const button = wrapper.find('button')
   expect(button.prop('title')).toBe('buttonTitle')
 })
@@ -182,14 +182,14 @@ it('Should allow for an error element passed', () => {
 it('should have a working clear button', () => {
   const onTextFieldChange = jest.fn()
   const onClear = jest.fn()
-  const wrapper = mount((
+  const wrapper = mount(
     <TextField
       name="test"
       defaultValue="some value"
       onChange={onTextFieldChange}
       onClear={onClear}
-    />
-  ))
+    />,
+  )
   expect(wrapper.find('input').prop('value')).toBe('some value')
   expect(wrapper.find('button').prop('hidden')).toBe(false)
 

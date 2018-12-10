@@ -32,8 +32,8 @@ class WarningModalOpener extends Component<WarningModalProps> {
           isOpen={this.state.warningModalOpen}
         >
           <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
           </div>
         </WarningModal>
       </div>
@@ -48,7 +48,7 @@ stories.add(
       title={text('title', 'Are you sure?')}
       isOpen={false}
       close={() => {}}
-      confirm={() => console.log('fhtagn') }
+      confirm={() => console.log('fhtagn')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       large={boolean('large', false)}
       displayCloseButton={boolean('displayCloseButton', true)}

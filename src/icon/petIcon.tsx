@@ -11,7 +11,7 @@ export enum PetType {
 }
 
 interface PetIconProps extends Icon {
-  readonly status?: PetType,
+  readonly status?: PetType
 }
 
 class PetIcon extends PureComponent<PetIconProps> {
@@ -35,9 +35,9 @@ class PetIcon extends PureComponent<PetIconProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
 
-        { (status === 'default' || status === 'on') && (
+        {(status === 'default' || status === 'on') && (
           <g>
             <path
               fill={highlightedIconColor}
@@ -67,7 +67,7 @@ class PetIcon extends PureComponent<PetIconProps> {
           </g>
         )}
 
-        { status === 'off' && (
+        {status === 'off' && (
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(0.000000, -1.000000)">
               <path

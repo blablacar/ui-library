@@ -29,7 +29,7 @@ class BubbleIcon extends PureComponent<Icon> {
         aria-hidden={isEmpty(title)}
         fill={iconColor}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           d="M21.951,10.281C21.98,10.023,22,9.764,22,9.5C22,4.813,17.29,1,11.5,1C5.71,1,1,4.813,1,9.5c0,1.801,0.691,3.52,2,4.979
           V19.5c0,0.173,0.09,0.334,0.237,0.426C3.317,19.975,3.409,20,3.5,20c0.077,0,0.153-0.018,0.224-0.053l4.431-2.215
@@ -40,7 +40,8 @@ class BubbleIcon extends PureComponent<Icon> {
           C4,14.158,3.952,14.036,3.865,13.943z M21.176,18.079C21.064,18.175,21,18.313,21,18.46v3.23l-3.561-1.78
           c-0.094-0.048-0.203-0.064-0.307-0.046C16.597,19.954,16.047,20,15.5,20c-2.334,0-4.511-0.826-5.917-2.162
           C10.219,17.935,10.858,18,11.5,18c4.962,0,9.12-2.804,10.212-6.554C22.543,12.351,23,13.411,23,14.5
-          C23,15.805,22.353,17.076,21.176,18.079z" />
+          C23,15.805,22.353,17.076,21.176,18.079z"
+        />
       </svg>
     )
 
@@ -48,7 +49,9 @@ class BubbleIcon extends PureComponent<Icon> {
       return (
         <div className="kirk-icon-wrapper">
           {icon}
-          <Badge className="kirk-icon-badge" ariaLabel={badgeAriaLabel}>{badgeContent}</Badge>
+          <Badge className="kirk-icon-badge" ariaLabel={badgeAriaLabel}>
+            {badgeContent}
+          </Badge>
           <style jsx>{style}</style>
         </div>
       )

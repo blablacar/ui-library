@@ -68,9 +68,9 @@ interface TimePickerProps {
 type Steps = { [propName: string]: string }
 
 type TimeSteps = {
-  minuteStep?: number,
-  locale: string,
-  timeStart?: string,
+  minuteStep?: number
+  locale: string
+  timeStart?: string
 }
 
 interface TimePickerState {

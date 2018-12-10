@@ -281,7 +281,7 @@ describe('AutoComplete', () => {
   })
 
   describe('#onClear', () => {
-    it('Invokes `onClear` when clearing the field\'s value', () => {
+    it("Invokes `onClear` when clearing the field's value", () => {
       const onClear = jest.fn()
       const wrapper = mount(<AutoComplete {...defaultProps} onClear={onClear} />)
       wrapper.find('button').simulate('click')
