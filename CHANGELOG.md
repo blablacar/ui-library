@@ -4,6 +4,8 @@
 - **[NEW]** `ToggleButton` component
 - **[NEW]** `Prettier` added
 - **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
+- **[UPDATE]** `Dependencies` update
+- **[UPDATE]** `ACI & ALUMCIGR` remove deprecated folders for CI
 
 # v0.18.0 (30/11/2018)
 
