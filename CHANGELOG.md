@@ -2,6 +2,7 @@
 
 - **[NEW]** `ToggleButton` component
 - **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
+- **[UPDATE]** `<Badge>` now also accepts numbers as children
 
 # v0.18.0 (30/11/2018)
 

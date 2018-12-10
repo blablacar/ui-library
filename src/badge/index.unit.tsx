@@ -8,9 +8,15 @@ it('Should read the aria-label attribute and not the children if both are provid
   expect(wrapper.find('span').prop('aria-hidden')).toBe(true)
 })
 
+it('Should display the children if this is a number', () => {
+  const value = 12
+  const wrapper = shallow(<Badge>value</Badge>)
+  expect(wrapper.find('span').prop('aria-hidden')).toBe(false)
+})
+
 it('Should read the children if aria-label is empty', () => {
   const wrapper = shallow(<Badge>12</Badge>)
-  expect(wrapper.find('span').prop('aria-hidden')).toBe(false)
+  expect(wrapper.find('span').text()).toBe('12')
 })
 
 it('Should not render if children is empty', () => {
@@ -19,6 +25,10 @@ it('Should not render if children is empty', () => {
 })
 
 it('can accept a JSX.Element as children', () => {
-  const wrapper = shallow(<Badge><CheckIcon /></Badge>)
+  const wrapper = shallow(
+    <Badge>
+      <CheckIcon />
+    </Badge>,
+  )
   expect(wrapper.find('CheckIcon').exists()).toBe(true)
 })

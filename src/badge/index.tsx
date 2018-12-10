@@ -5,9 +5,9 @@ import isEmpty from 'lodash.isempty'
 import style from 'badge/style'
 
 interface BadgeProps {
-  readonly className?: Classcat.Class,
-  readonly children: string | JSX.Element,
-  readonly ariaLabel?: string,
+  readonly className?: Classcat.Class
+  readonly children: string | JSX.Element | number
+  readonly ariaLabel?: string
 }
 
 const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
