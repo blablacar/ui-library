@@ -5,7 +5,7 @@ exports[`Snackbar should not have changed 1`] = `
   className="transition-wrapper kirk-snackbar-container"
 >
   <div
-    className="jsx-2822186252 kirk-snackbar slide-up slide-up-entered"
+    className="jsx-190474685 kirk-snackbar slide-up slide-up-entered"
   >
     <span
       className="kirk-text kirk-text-title kirk-snackbar-content"
@@ -13,7 +13,7 @@ exports[`Snackbar should not have changed 1`] = `
       Oups
     </span>
     <button
-      className="kirk-button kirk-button-unstyled kirk-snackbar-cross"
+      className="jsx-939140961 kirk-button kirk-button-unstyled kirk-snackbar-cross"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -25,7 +25,7 @@ exports[`Snackbar should not have changed 1`] = `
       type="button"
     >
       <span
-        className="jsx-482395312"
+        className="jsx-939140961"
       >
         <svg
           aria-hidden={true}
