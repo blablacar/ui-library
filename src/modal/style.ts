@@ -21,7 +21,7 @@ export default css`
   }
 
   :global(.kirk-modal-dimmer--visible) {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   :global(.kirk-modal-dimmer--hide) {

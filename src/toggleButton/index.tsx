@@ -11,17 +11,17 @@ import { color } from '_utils/branding'
 import style from 'toggleButton/style'
 
 interface ToggleButtonProps extends ItemProps {
-  readonly name: string,
-  readonly label: string,
-  readonly sublabel?: string,
-  readonly status?: ToggleButtonStatus,
-  readonly checked?: boolean,
-  readonly disabled?: boolean,
-  readonly onChange?: (obj:onChangeParameters) => void,
+  readonly name: string
+  readonly label: string
+  readonly sublabel?: string
+  readonly status?: ToggleButtonStatus
+  readonly checked?: boolean
+  readonly disabled?: boolean
+  readonly onChange?: (obj: onChangeParameters) => void
 }
 
 interface ToggleButtonState {
-  readonly checked: boolean,
+  readonly checked: boolean
 }
 
 export enum ToggleButtonStatus {
@@ -30,7 +30,7 @@ export enum ToggleButtonStatus {
 }
 
 export default class ToggleButton extends PureComponent<ToggleButtonProps> {
-  static defaultProps:Partial<ToggleButtonProps> = {
+  static defaultProps: Partial<ToggleButtonProps> = {
     status: ToggleButtonStatus.DEFAULT,
     checked: false,
     disabled: false,
@@ -38,7 +38,7 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
 
   static STATUS = ToggleButtonStatus
 
-  state:ToggleButtonState = {
+  state: ToggleButtonState = {
     checked: this.props.checked,
   }
 
@@ -69,11 +69,7 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
         onClick={this.onButtonClick}
         disabled={isDisabled}
       >
-        <Item
-          leftTitle={this.props.label}
-          leftBody={this.props.sublabel}
-          rightAddon={rightAddon}
-        />
+        <Item leftTitle={this.props.label} leftBody={this.props.sublabel} rightAddon={rightAddon} />
         <style jsx>{style}</style>
       </button>
     )

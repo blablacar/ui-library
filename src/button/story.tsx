@@ -33,7 +33,7 @@ stories.add(
       shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
-      { hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
+      {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
     </Button>
   )),
 )
@@ -47,17 +47,12 @@ stories.add(
       shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
-      { hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
     </Button>
   )),
 )
 
-stories.add(
-  'loading',
-  withInfo('')(() => (
-    <Button status={Button.STATUS.LOADING} />
-  )),
-)
+stories.add('loading', withInfo('')(() => <Button status={Button.STATUS.LOADING} />))
 
 stories.add(
   'valid',
@@ -69,12 +64,8 @@ stories.add(
 stories.add(
   'warning',
   withInfo('')(() => (
-    <Button
-      status={Button.STATUS.WARNING}
-      icon={hasIcon()}
-      {...commonProps}
-    >
-      { hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
+    <Button status={Button.STATUS.WARNING} icon={hasIcon()} {...commonProps}>
+      {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
     </Button>
   )),
 )
@@ -82,12 +73,8 @@ stories.add(
 stories.add(
   'unstyled',
   withInfo('')(() => (
-    <Button
-      status={Button.STATUS.UNSTYLED}
-      icon={hasIcon()}
-      {...commonProps}
-    >
-      { hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Unstyled button')}
+    <Button status={Button.STATUS.UNSTYLED} icon={hasIcon()} {...commonProps}>
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Unstyled button')}
     </Button>
   )),
 )
@@ -109,13 +96,8 @@ stories.add(
 stories.add(
   'anchor button',
   withInfo('')(() => (
-    <Button
-      icon={hasIcon()}
-      status={Button.STATUS.PRIMARY}
-      href="#"
-      {...commonProps}
-    >
-      { hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
+    <Button icon={hasIcon()} status={Button.STATUS.PRIMARY} href="#" {...commonProps}>
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
     </Button>
   )),
 )
@@ -126,9 +108,7 @@ stories.add(
     <Button
       icon={hasIcon()}
       status={Button.STATUS.PRIMARY}
-      href={
-        <a href="#1">foo</a>
-      }
+      href={<a href="#1">foo</a>}
       {...commonProps}
     >
       {label('Anchor button')}
@@ -139,12 +119,8 @@ stories.add(
 stories.add(
   'anchor button unstyled',
   withInfo('')(() => (
-    <Button
-      status={Button.STATUS.UNSTYLED}
-      icon={hasIcon()}
-      {...commonProps}
-    >
-      { hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
+    <Button status={Button.STATUS.UNSTYLED} icon={hasIcon()} {...commonProps}>
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
     </Button>
   )),
 )
@@ -166,11 +142,10 @@ class Validation extends React.Component {
     }, 2000)
   }
 
-  renderChildren = () => (
+  renderChildren = () =>
     hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Click me to validate')
-  )
   render() {
-    let status:ButtonStatus = Button.STATUS.PRIMARY
+    let status: ButtonStatus = Button.STATUS.PRIMARY
     if (this.state.loading) {
       status = Button.STATUS.LOADING
     }
@@ -194,6 +169,10 @@ stories.add(
   'validate on click',
   withInfo('')(() => {
     validation()
-    return <div style={{ textAlign: 'center' }}><Validation /></div>
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <Validation />
+      </div>
+    )
   }),
 )

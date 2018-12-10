@@ -2,15 +2,15 @@ import React from 'react'
 import Caption, { renderSecondary } from 'caption'
 
 it('Should have the proper text & attributes with link', () => {
-  const caption = mount((
+  const caption = mount(
     <Caption
       href="https://blablacar.com"
       secondaryText="Go to blablacar"
       isoDate="2017-08-07T14:10:40.526Z"
     >
       08th August 2017
-    </Caption>
-  ))
+    </Caption>,
+  )
   expect(caption.find('time')).toHaveLength(1)
   expect(caption.find('time').text()).toBe('08th August 2017')
   expect(caption.find('time').prop('dateTime')).toBe('2017-08-07T14:10:40.526Z')
@@ -25,15 +25,17 @@ it('Should not have a datetime attribute', () => {
 })
 
 it('Should have the proper text & attributes without a link', () => {
-  const caption = shallow((
-    <Caption
-      secondaryText="Go to blablacar"
-      isoDate="2017-08-07T14:10:40.526Z"
-    >
+  const caption = shallow(
+    <Caption secondaryText="Go to blablacar" isoDate="2017-08-07T14:10:40.526Z">
       08th August 2017
-    </Caption>
-  ))
-  expect(caption.find('span > span').first().text()).toBe('Go to blablacar')
+    </Caption>,
+  )
+  expect(
+    caption
+      .find('span > span')
+      .first()
+      .text(),
+  ).toBe('Go to blablacar')
 })
 
 it('Should not render the secondary element', () => {

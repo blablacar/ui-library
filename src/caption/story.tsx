@@ -12,9 +12,7 @@ stories.addDecorator(withKnobs)
 stories.add(
   'A basic caption',
   withInfo('')(() => (
-    <Caption isoDate="2017-08-07T14:10:40.526Z">
-      {text('date', '05 jul - 17:39')}
-    </Caption>
+    <Caption isoDate="2017-08-07T14:10:40.526Z">{text('date', '05 jul - 17:39')}</Caption>
   )),
 )
 

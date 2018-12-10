@@ -12,7 +12,7 @@ export default css`
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    background-color: rgba(5, 71, 82, .95);
+    background-color: rgba(5, 71, 82, 0.95);
     color: ${color.white};
   }
 

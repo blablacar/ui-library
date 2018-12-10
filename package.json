@@ -16,6 +16,7 @@
     "lint": "npm-run-all lint:*",
     "lint:js": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint",
     "lint:css": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.css\" | xargs stylelint",
+    "prettier": "prettier --write '**/*.{ts,tsx,js,jsx}'",
     "test": "jest",
     "test:coverage": "jest --no-cache --coverage",
     "watch": "npm-run-all --parallel watch:*",
@@ -86,6 +87,7 @@
     "onchange": "4.0.0",
     "path": "0.12.7",
     "pre-commit": "1.2.2",
+    "prettier": "1.15.3",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.4.1",
     "rimraf": "2.6.2",
@@ -110,7 +112,8 @@
     "react-transition-group": "2.3.1",
     "styled-jsx": "2.2.7",
     "tslint": "5.10.0",
-    "tslint-config-airbnb": "5.9.2"
+    "tslint-config-airbnb": "5.9.2",
+    "tslint-config-prettier": "1.17.0"
   },
   "jest": {
     "transform": {

@@ -19,7 +19,7 @@ stories.add(
 )
 
 stories.add(
-  'Current user\'s message',
+  "Current user's message",
   withInfo('')(() => (
     <Message active={boolean('Current user', true)} author={text('author', 'author')}>
       {text('text', 'A simple message')}

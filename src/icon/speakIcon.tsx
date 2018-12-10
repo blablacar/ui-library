@@ -11,7 +11,7 @@ export enum SpeakType {
 }
 
 interface SpeakIconProps extends Icon {
-  readonly status?: SpeakType,
+  readonly status?: SpeakType
 }
 
 class SpeakIcon extends PureComponent<SpeakIconProps> {
@@ -34,9 +34,9 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
 
-        { status === 'default' && (
+        {status === 'default' && (
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <path
               stroke={iconColor}
@@ -59,7 +59,7 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
           </g>
         )}
 
-        { status === 'on' && (
+        {status === 'on' && (
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(0.000000, 2.000000)">
               <path
@@ -85,11 +85,11 @@ class SpeakIcon extends PureComponent<SpeakIconProps> {
                 d="M10.914,14.2159969 C11.246,14.2679969 11.482,14.4839969 11.482,14.9079969 C11.482,15.4559969 11.062,15.6999969 10.578,15.6999969 L9.394,15.6999969 L9.394,12.8999969 L10.502,12.8999969 C10.994,12.8999969 11.342,13.1399969 11.342,13.6039969 C11.342,13.9039969 11.194,14.1199969 10.914,14.2079969 L10.914,14.2159969 Z M10.422,13.3719969 L9.906,13.3719969 L9.906,14.0439969 L10.402,14.0439969 C10.662,14.0439969 10.806,13.9199969 10.806,13.7039969 C10.806,13.4839969 10.65,13.3719969 10.422,13.3719969 Z M10.49,15.2279969 C10.77,15.2279969 10.938,15.0879969 10.938,14.8559969 C10.938,14.6239969 10.778,14.4839969 10.47,14.4839969 L9.906,14.4839969 L9.906,15.2279969 L10.49,15.2279969 Z M12.33,12.8999969 L11.838,12.8999969 L11.838,15.6999969 L12.33,15.6999969 L12.33,12.8999969 Z M13.55,15.7599969 C13.066,15.7599969 12.662,15.4079969 12.662,14.7759969 C12.662,14.1439969 13.066,13.7919969 13.55,13.7919969 C13.85,13.7919969 14.05,13.9199969 14.166,14.1119969 L14.174,14.1119969 L14.174,13.8519969 L14.662,13.8519969 L14.662,15.6999969 L14.174,15.6999969 L14.174,15.4399969 L14.166,15.4399969 C14.05,15.6319969 13.85,15.7599969 13.55,15.7599969 Z M13.674,15.2959969 C13.97,15.2959969 14.174,15.0879969 14.174,14.7759969 C14.174,14.4639969 13.97,14.2559969 13.674,14.2559969 C13.378,14.2559969 13.174,14.4639969 13.174,14.7759969 C13.174,15.0879969 13.378,15.2959969 13.674,15.2959969 Z"
               />
             </g>
-            <g transform="translate(-100.000000, -20.000000)"/>
+            <g transform="translate(-100.000000, -20.000000)" />
           </g>
         )}
 
-        { status === 'off' && (
+        {status === 'off' && (
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(-20.000000, -21.000000)">
               <g transform="translate(20.000000, 22.000000)">

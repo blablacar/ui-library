@@ -9,8 +9,6 @@ export const prefix = (
 }
 
 export const isTouchEventsAvailable = () =>
-  canUseDOM &&
-  'ontouchstart' in window &&
-  'ontouchend' in window
+  canUseDOM && 'ontouchstart' in window && 'ontouchend' in window
 
 export default prefix

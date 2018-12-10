@@ -31,8 +31,18 @@ describe('Menu', () => {
   it('Should render menu items', () => {
     const wrapper = mount(<Menu {...defaultProps} />)
     expect(wrapper.find(ItemChoice)).toHaveLength(2)
-    expect(wrapper.find(ItemChoice).first().prop('href')).toEqual('/')
-    expect(wrapper.find(ItemChoice).first().text()).toEqual('Dashboard')
+    expect(
+      wrapper
+        .find(ItemChoice)
+        .first()
+        .prop('href'),
+    ).toEqual('/')
+    expect(
+      wrapper
+        .find(ItemChoice)
+        .first()
+        .text(),
+    ).toEqual('Dashboard')
     expect(wrapper.find(HomeIcon)).toHaveLength(1)
     expect(wrapper.find(CheckShieldIcon)).toHaveLength(1)
   })

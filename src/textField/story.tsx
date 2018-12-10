@@ -16,7 +16,7 @@ const inputTypes = ['text', 'email', 'number', 'password']
 
 stories.add(
   'input',
-  withInfo('TextField with all it\'s default props')(() => {
+  withInfo("TextField with all it's default props")(() => {
     const error = boolean('error', false)
     return (
       <TextField

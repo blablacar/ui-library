@@ -18,17 +18,20 @@ export interface AvatarInterface {
   readonly unreadNotificationsCountAriaLabel?: string
 }
 
-const IdCheckBadge = <Badge className="kirk-avatar-badge--idCheck">
-  <CheckIcon size="100%" iconColor={color.white} />
-</Badge>
+const IdCheckBadge = (
+  <Badge className="kirk-avatar-badge--idCheck">
+    <CheckIcon size="100%" iconColor={color.white} />
+  </Badge>
+)
 
 const unreadNotificationsBadge = (
-    unreadNotificationsCount: string,
-    unreadNotificationsCountAriaLabel: string,
-  ) => (
+  unreadNotificationsCount: string,
+  unreadNotificationsCountAriaLabel: string,
+) => (
   <Badge
     className="kirk-avatar-badge--unreadNotifications"
-    ariaLabel={unreadNotificationsCountAriaLabel}>
+    ariaLabel={unreadNotificationsCountAriaLabel}
+  >
     {unreadNotificationsCount}
   </Badge>
 )
@@ -43,17 +46,19 @@ const Avatar = ({
   unreadNotificationsCount,
   unreadNotificationsCountAriaLabel,
 }: AvatarInterface) => (
-    <div
-      className={cc([
-        prefix({ medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
-        className, 'kirk-avatar',
-      ])}>
-      {image && <img src={image} alt={alt} />}
-      {unreadNotificationsCount &&
-        unreadNotificationsBadge(unreadNotificationsCount, unreadNotificationsCountAriaLabel)}
-      {isIdChecked && IdCheckBadge}
-      <style jsx>{style}</style>
-    </div>
-  )
+  <div
+    className={cc([
+      prefix({ medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
+      className,
+      'kirk-avatar',
+    ])}
+  >
+    {image && <img src={image} alt={alt} />}
+    {unreadNotificationsCount &&
+      unreadNotificationsBadge(unreadNotificationsCount, unreadNotificationsCountAriaLabel)}
+    {isIdChecked && IdCheckBadge}
+    <style jsx>{style}</style>
+  </div>
+)
 
 export default Avatar

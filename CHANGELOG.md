@@ -2,6 +2,7 @@
 
 - **[BREAKING CHANGE]** Refactor `<Profile>` based on `<Item>`
 - **[NEW]** `ToggleButton` component
+- **[NEW]** `Prettier` added
 - **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
 
 # v0.18.0 (30/11/2018)

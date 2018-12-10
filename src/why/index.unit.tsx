@@ -11,13 +11,21 @@ it('Should render attributes and the given text.', () => {
 })
 
 it('Should render the modifiers.', () => {
-  const wrapper = shallow(<Why className="addClass" title={title}>Text</Why>)
+  const wrapper = shallow(
+    <Why className="addClass" title={title}>
+      Text
+    </Why>,
+  )
   expect(wrapper.hasClass('kirk-why addClass')).toBe(true)
 })
 
 it('Should have a onClick behaviour.', () => {
   const onClick = jest.fn()
-  const wrapper = mount(<Why title={title} onClick={onClick}>Text</Why>)
+  const wrapper = mount(
+    <Why title={title} onClick={onClick}>
+      Text
+    </Why>,
+  )
   wrapper.simulate('click')
   expect(onClick).toHaveBeenCalledTimes(1)
 })

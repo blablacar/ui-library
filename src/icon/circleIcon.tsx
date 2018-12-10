@@ -6,8 +6,8 @@ import css from 'styled-jsx/css'
 import { color } from '_utils/branding'
 
 interface CircleProps extends Icon {
-  readonly absolute?: boolean,
-  readonly spinning?: boolean,
+  readonly absolute?: boolean
+  readonly spinning?: boolean
   readonly thin?: boolean
 }
 
@@ -16,19 +16,25 @@ const duration = '1.4s'
 
 const style = css`
   @keyframes dash {
-    0% { stroke-dashoffset: ${offset} }
+    0% {
+      stroke-dashoffset: ${offset};
+    }
     50% {
       stroke-dashoffset: ${offset / 4};
-      transform:rotate(135deg);
+      transform: rotate(135deg);
     }
     100% {
       stroke-dashoffset: ${offset};
-      transform:rotate(450deg);
+      transform: rotate(450deg);
     }
   }
   @keyframes rotator {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(270deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
   }
 
   .spinning {
@@ -45,8 +51,7 @@ const style = css`
     stroke-dasharray: ${offset};
     stroke-dashoffset: 0;
     transform-origin: center;
-    animation:
-      dash ${duration} ease-in-out infinite;
+    animation: dash ${duration} ease-in-out infinite;
   }
 
   .thin circle {
@@ -80,7 +85,7 @@ class CircleIcon extends PureComponent<CircleProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <circle cx="33" cy="33" r="30" fill="none" stroke={iconColor} />
         <style jsx>{style}</style>
       </svg>

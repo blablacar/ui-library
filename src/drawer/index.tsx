@@ -24,7 +24,7 @@ export default class Drawer extends PureComponent<DrawerProps> {
     width: '400px',
     onOpen() {},
     onClose() {},
-    onTransitionEnd: (isOpen) => {},
+    onTransitionEnd: isOpen => {},
     open: false,
   }
 

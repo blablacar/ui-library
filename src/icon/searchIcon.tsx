@@ -23,7 +23,7 @@ class SearchIcon extends PureComponent<Icon> {
         width={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g
           fill="none"
           strokeWidth="1"

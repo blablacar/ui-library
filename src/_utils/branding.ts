@@ -19,13 +19,13 @@ const palette: Color = {
 
 type Font = {
   [key: string]: {
-    size: string,
-    lineHeight: string,
-  },
+    size: string
+    lineHeight: string
+  }
 }
 
 type defaultBranding = {
-  [key: string]: string,
+  [key: string]: string
 }
 
 export const font: Font = {

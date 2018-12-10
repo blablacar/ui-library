@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color, font, space } from '_utils/branding'
 
 const separatorHeight = '16px'
-const intValue = (value:string) => parseInt(value, 10)
+const intValue = (value: string) => parseInt(value, 10)
 
 export default css`
   :global(.kirk-itemChoice) {
@@ -33,7 +33,7 @@ export default css`
     padding-bottom: ${space.m};
   }
 
-  :global(.kirk-itemChoice[aria-selected="true"]) {
+  :global(.kirk-itemChoice[aria-selected='true']) {
     background-color: ${color.lightBackground};
   }
 
@@ -42,7 +42,7 @@ export default css`
   }
 
   :global(.kirk-itemChoice + .kirk-itemChoice::before) {
-    content : '';
+    content: '';
     position: absolute;
     top: -${intValue(separatorHeight) / 2}px;
     right: 0;
@@ -126,7 +126,7 @@ export default css`
     min-height: 56px; /* icon height + vertical padding */
   }
 
-  :global(.kirk-itemChoice.kirk-itemChoice--declared[aria-selected="true"]) {
+  :global(.kirk-itemChoice.kirk-itemChoice--declared[aria-selected='true']) {
     background-color: transparent;
   }
 `

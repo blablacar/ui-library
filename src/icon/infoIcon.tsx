@@ -23,7 +23,7 @@ class InfoIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g transform="translate(-1 -1)" fill="none" fillRule="evenodd">
           <path d="M0 0h24v24H0z" />
           <path

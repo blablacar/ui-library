@@ -3,8 +3,18 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { BankIcon, BellIcon, BubbleIcon, CoinIcon, CheckShieldIcon, CrossDiscIcon,
-  HomeIcon, NewspaperIcon, ProfileIcon, TicketIcon } from 'icon'
+import {
+  BankIcon,
+  BellIcon,
+  BubbleIcon,
+  CoinIcon,
+  CheckShieldIcon,
+  CrossDiscIcon,
+  HomeIcon,
+  NewspaperIcon,
+  ProfileIcon,
+  TicketIcon,
+} from 'icon'
 import Text from 'text'
 
 import Menu from 'menu'
@@ -76,7 +86,4 @@ const menuItems = [
   },
 ]
 
-stories.add(
-  'default',
-  withInfo('')(() => <Menu items={menuItems} />),
-)
+stories.add('default', withInfo('')(() => <Menu items={menuItems} />))

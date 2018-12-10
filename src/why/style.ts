@@ -20,7 +20,7 @@ export default css`
   }
 
   /* Reset hover styles on devices not supporting hover state (e.g. touch devices). */
-  @media (hover:none), (hover:on-demand) {
+  @media (hover: none), (hover: on-demand) {
     .kirk-why:hover {
       background-color: ${color.white};
     }

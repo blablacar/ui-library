@@ -19,6 +19,10 @@ it('Should not render if children is empty', () => {
 })
 
 it('can accept a JSX.Element as children', () => {
-  const wrapper = shallow(<Badge><CheckIcon /></Badge>)
+  const wrapper = shallow(
+    <Badge>
+      <CheckIcon />
+    </Badge>,
+  )
   expect(wrapper.find('CheckIcon').exists()).toBe(true)
 })

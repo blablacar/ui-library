@@ -94,12 +94,12 @@ describe('AutoCompleteList', () => {
     it('displays an AutoCompleteListItem in loading state', () => {
       const onSelectSpy = jest.fn()
       const wrapper = shallow(
-      <AutoCompleteList
-        {...defaultProps}
-        onSelect={onSelectSpy}
-        selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
-      />,
-    )
+        <AutoCompleteList
+          {...defaultProps}
+          onSelect={onSelectSpy}
+          selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
+        />,
+      )
 
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowDown())
       wrapper.instance().handleKeydown(fakeKeyboardEventArrowEnter())

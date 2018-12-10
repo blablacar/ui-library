@@ -1,5 +1,5 @@
 {
-  "extends": "tslint-config-airbnb",
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
   "rulesDirectory": ["src/", "bin/"],
   "rules": {
     "max-line-length": {
@@ -11,14 +11,6 @@
     "align": false,
     "variable-name": false,
     "no-unused-variable": true,
-    "no-boolean-literal-compare": true,
-    "trailing-comma": [
-      true,
-      {
-        "multiline": "always",
-        "singleline": "never",
-        "esSpecCompliant": true
-      }
-    ]
+    "no-boolean-literal-compare": true
   }
 }

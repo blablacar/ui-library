@@ -5,8 +5,8 @@ import isEmpty from 'lodash.isempty'
 import { color } from '_utils/branding'
 
 interface ChevronProps extends Icon {
-  readonly down?: boolean,
-  readonly left?: boolean,
+  readonly down?: boolean
+  readonly left?: boolean
 }
 
 class ChevronIcon extends PureComponent<ChevronProps> {
@@ -30,7 +30,7 @@ class ChevronIcon extends PureComponent<ChevronProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <polyline
           fill="none"
           stroke={iconColor}
@@ -39,8 +39,8 @@ class ChevronIcon extends PureComponent<ChevronProps> {
           strokeLinejoin="round"
           strokeMiterlimit="10"
           points="9 18 15 12 9 6"
-          { ...(down && { transform: 'rotate(90 12 12)' }) }
-          { ...(left && { transform: 'rotate(180 12 12)' }) }
+          {...down && { transform: 'rotate(90 12 12)' }}
+          {...left && { transform: 'rotate(180 12 12)' }}
         />
       </svg>
     )

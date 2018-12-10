@@ -11,7 +11,7 @@ export enum MusicType {
 }
 
 interface MusicIconProps extends Icon {
-  readonly status?: MusicType,
+  readonly status?: MusicType
 }
 
 class MusicIcon extends PureComponent<MusicIconProps> {
@@ -35,9 +35,9 @@ class MusicIcon extends PureComponent<MusicIconProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
 
-        { (status === 'default' || status === 'on') && (
+        {(status === 'default' || status === 'on') && (
           <path
             fill={highlightedIconColor}
             // tslint:disable-next-line:max-line-length
@@ -45,54 +45,54 @@ class MusicIcon extends PureComponent<MusicIconProps> {
           />
         )}
 
-        { status === 'off' && (
+        {status === 'off' && (
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g transform="translate(0.000000, -1.000000)">
-            <circle
-              stroke={color.iconFaded}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              cx="19"
-              cy="18"
-              r="3.5"
-            />
-            <circle
-              stroke={color.iconFaded}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              cx="4"
-              cy="20"
-              r="3.5"
-            />
-            <path
-              stroke={color.iconFaded}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M7.5,7.5 L22.5,7.5"
-            />
-            <polyline
-              stroke={color.iconFaded}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              points="22.5 18 22.5 1.5 7.5 1.5 7.5 20"
-            />
-            <path
-              stroke={color.white}
-              fill={color.iconFaded}
-              fillRule="nonzero"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M1,24.5 L23.5,2"
-            />
-            <path
-              d="M1,23.5 L23.5,1"
-              stroke={color.danger}
-              fill={color.iconFaded}
-              fillRule="nonzero"
-              strokeLinecap="round"
-            />
+            <g transform="translate(0.000000, -1.000000)">
+              <circle
+                stroke={color.iconFaded}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                cx="19"
+                cy="18"
+                r="3.5"
+              />
+              <circle
+                stroke={color.iconFaded}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                cx="4"
+                cy="20"
+                r="3.5"
+              />
+              <path
+                stroke={color.iconFaded}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M7.5,7.5 L22.5,7.5"
+              />
+              <polyline
+                stroke={color.iconFaded}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                points="22.5 18 22.5 1.5 7.5 1.5 7.5 20"
+              />
+              <path
+                stroke={color.white}
+                fill={color.iconFaded}
+                fillRule="nonzero"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M1,24.5 L23.5,2"
+              />
+              <path
+                d="M1,23.5 L23.5,1"
+                stroke={color.danger}
+                fill={color.iconFaded}
+                fillRule="nonzero"
+                strokeLinecap="round"
+              />
+            </g>
           </g>
-        </g>
         )}
       </svg>
     )

@@ -23,7 +23,7 @@ class MinusIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g
           fill="none"
           stroke={iconColor}
