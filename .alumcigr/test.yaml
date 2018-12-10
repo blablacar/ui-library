@@ -1,7 +1,0 @@
-app: node8
-
-setup:
-  - npm install
-
-script:
-  - npm test
