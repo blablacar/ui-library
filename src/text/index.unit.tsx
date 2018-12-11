@@ -55,7 +55,7 @@ describe('Text', () => {
     )
   })
 
-  it('Should not display the text with color', () => {
+  it('Should display the text with color', () => {
     const wrapper = shallow(<Text textColor="#FFFFFF">{'test'}</Text>)
     expect(wrapper.prop('style')).toEqual({ color: '#FFFFFF' })
   })
