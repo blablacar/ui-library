@@ -19,7 +19,7 @@ const navNext = <ArrowIcon right iconColor={color.primary} />
 
 export interface DatePickerProps {
   readonly name: string
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly initialDate: moment.Moment
   readonly orientation?: string
   readonly monthFormat?: string

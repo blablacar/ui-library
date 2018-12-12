@@ -14,7 +14,7 @@ export interface CheckboxProps {
   readonly disabled?: boolean
   readonly status?: CheckboxStatus
   readonly labelDisplay?: labelDisplays
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly onDoneAnimationEnd?: () => void
 }
 

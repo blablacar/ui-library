@@ -10,7 +10,7 @@ export interface RadioGroupProps {
   readonly className?: Classcat.Class
   readonly value?: string | number | boolean
   readonly children?: JSX.Element[]
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly highlightedValue?: string
   readonly status?: ItemChoiceStatus
   readonly onDoneAnimationEnd?: () => void
@@ -40,7 +40,7 @@ class RadioGroup extends PureComponent<RadioGroupProps, RadioGroupState> {
     }
   }
 
-  onChangeGroup = ({ value }: onChangeParameters) => {
+  onChangeGroup = ({ value }: OnChangeParameters) => {
     this.setState({ value })
     this.props.onChange({ name: this.props.name, value })
   }
