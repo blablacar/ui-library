@@ -34,7 +34,7 @@ export interface TextFieldProps extends CommonFormFields {
   isTextArea?: boolean
   defaultValue?: string
   labelledBy?: string
-  onChange?: (obj: onChangeParameters) => void
+  onChange?: (obj: OnChangeParameters) => void
   onClear?: () => void
   className?: Classcat.Class
   error?: string | JSX.Element

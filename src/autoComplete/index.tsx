@@ -17,7 +17,7 @@ interface AutoCompleteProps {
   readonly searchOnMount: boolean
   readonly isSearching: boolean
   readonly searchForItems: (query: query) => void
-  readonly onInputChange?: (params: Partial<onChangeParameters>) => void
+  readonly onInputChange?: (params: Partial<OnChangeParameters>) => void
   readonly searchForItemsMinChars?: number
   readonly defaultValue?: string
   readonly onSelect?: (obj: AutocompleteOnChange) => void

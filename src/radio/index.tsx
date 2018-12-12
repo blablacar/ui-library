@@ -14,7 +14,7 @@ export interface RadioProps {
   readonly checked?: boolean
   readonly highlighted?: boolean
   readonly declared?: boolean
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly subLabel?: string
   readonly icon?: JSX.Element
   readonly status?: ItemChoiceStatus

@@ -17,7 +17,7 @@ interface ToggleButtonProps extends ItemProps {
   readonly status?: ToggleButtonStatus
   readonly checked?: boolean
   readonly disabled?: boolean
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
 }
 
 interface ToggleButtonState {
