@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.19.0 (12/12/2018)
+
 - **[BREAKING CHANGE]** Refactor `<Profile>` based on `<Item>`
 - **[NEW]** `ToggleButton` component
 - **[NEW]** `Prettier` added
