@@ -29,6 +29,7 @@ interface TextProps {
   readonly tag?: TextTagType
   readonly textColor?: string
   readonly newlineToBr?: boolean
+  readonly role?: string
 }
 
 const replaceNewLineWithBR = (str: string): React.ReactNode =>
@@ -50,6 +51,7 @@ const Text = ({
   tag = TextTagType.SPAN,
   textColor,
   newlineToBr = true,
+  role,
 }: TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
@@ -65,10 +67,7 @@ const Text = ({
   }
 
   return (
-    <Tag
-      className={cc([baseClassName, displayClassName, className])}
-      {...inlineStyle}
-    >
+    <Tag role={role} className={cc([baseClassName, displayClassName, className])} {...inlineStyle}>
       {content}
       <style jsx global>
         {style}

@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[UPDATE]** Add possibility to have a role attribute on `<Text>`
+- **[UPDATE]** Add the role "alert" on `<Snackbar>` for accessibility
+- **[UPDATE]** Add aria-hidden on the `<Textfield>` clear button
 - [...]
 - **[UPDATE]** `<Badge>` now also accepts numbers as children
 - **[UPDATE]** `Dependencies` update
