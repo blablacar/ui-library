@@ -46,6 +46,7 @@ import TrashIcon from './trashIcon'
 import TwitterIcon from './twitterIcon'
 import VkontakteIcon from './vkontakteIcon'
 import YoutubeIcon from './youtubeIcon'
+import WarningIcon from './warningIcon'
 
 export {
   ArrowIcon,
@@ -93,4 +94,5 @@ export {
   TwitterIcon,
   VkontakteIcon,
   YoutubeIcon,
+  WarningIcon,
 }

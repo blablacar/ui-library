@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** `WarningIcon` component
 
 # v0.19.0 (12/12/2018)
 
