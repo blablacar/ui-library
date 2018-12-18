@@ -4,7 +4,7 @@ import { color, space, font } from '_utils/branding'
 const footerHeight = '96px' /* = padding + content */
 
 export default css`
-  .kirk-warningModal {
+  .kirk-confirmationModal {
     z-index: 999;
     position: fixed;
     top: 0;
@@ -16,11 +16,11 @@ export default css`
     color: ${color.white};
   }
 
-  .kirk-warningModal--large {
+  .kirk-confirmationModal--large {
     text-align: center;
   }
 
-  .kirk-warningModal-dialog {
+  .kirk-confirmationModal-dialog {
     position: relative;
     margin: 0 auto;
     box-shadow: none;
@@ -30,25 +30,22 @@ export default css`
     padding-bottom: ${footerHeight};
   }
 
-  .kirk-warningModal--large .kirk-warningModal-dialog {
+  .kirk-confirmationModal--large .kirk-confirmationModal-dialog {
     max-width: 600px;
   }
 
-  .kirk-warningModal-body {
+  .kirk-confirmationModal-body {
     padding: ${space.xl};
     font-size: ${font.xl.size};
     line-height: ${font.xl.lineHeight};
   }
 
-  :global(.kirk-warningModal-title) {
-    padding: ${space.xl};
-    margin: 0;
-    font-size: ${font.xxl.size};
-    line-height: ${font.xxl.lineHeight};
-    color: ${color.white};
+  :global(.kirk-confirmationModal-icon) {
+    margin-top: ${space.xl};
+    margin-left: ${space.xl};
   }
 
-  .kirk-warningModal-footer {
+  .kirk-confirmationModal-footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -60,22 +57,26 @@ export default css`
     background-color: ${color.warningBackground};
   }
 
-  .kirk-warningModal--large .kirk-warningModal-footer {
+  .kirk-confirmationModal--large .kirk-confirmationModal-footer {
     position: relative;
     display: block;
     margin: 0 auto;
     background: none;
   }
 
-  .kirk-warningModal--hasCloseButton .kirk-warningModal-footer {
+  .kirk-confirmationModal-footer {
+    justify-content: flex-end;
+  }
+
+  .kirk-confirmationModal--hasCloseButton .kirk-confirmationModal-footer {
     justify-content: space-between;
   }
 
-  :global(.kirk-warningModal--large .kirk-warningModal-footer .kirk-button) {
+  :global(.kirk-confirmationModal--large .kirk-confirmationModal-footer .kirk-button) {
     margin: ${space.l} ${space.xl} 0;
   }
 
-  :global(.kirk-warningModal-closeButton) {
+  :global(.kirk-confirmationModal-closeButton) {
     vertical-align: bottom; /* vertical alignment to be fixed in Button */
     border: 0; /* content alignment to be fixed in Button */
   }
