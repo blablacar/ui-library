@@ -7,6 +7,7 @@ import Badge from 'badge'
 import Button from 'button'
 import Caption from 'caption'
 import Checkbox from 'checkbox'
+import ConfirmationModal from 'confirmationModal'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
@@ -37,7 +38,6 @@ import TopBar from 'topBar'
 import Transitions from 'transitions'
 import TripCard from 'tripCard'
 import UneditableTextField from 'uneditableTextField'
-import WarningModal from 'warningModal'
 import Why from 'why'
 
 import branding from '_utils/branding'
@@ -52,6 +52,7 @@ export {
   Button,
   Caption,
   Checkbox,
+  ConfirmationModal,
   DatePicker,
   Drawer,
   DropdownButton,
@@ -82,7 +83,6 @@ export {
   Transitions,
   TripCard,
   UneditableTextField,
-  WarningModal,
   Why,
   branding,
   flush,
