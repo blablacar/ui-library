@@ -34,6 +34,7 @@ const TopBar = ({
     children.push(
       <div key="leftItem" className="kirk-topBar-left">
         {leftItem}
+        <style jsx>{style}</style>
       </div>,
     )
   }
@@ -41,6 +42,7 @@ const TopBar = ({
     children.push(
       <div key="centerItem" className="kirk-topBar-center">
         {centerItem}
+        <style jsx>{style}</style>
       </div>,
     )
   }
@@ -48,6 +50,7 @@ const TopBar = ({
     children.push(
       <div key="rightItem" className="kirk-topBar-right">
         {rightItem}
+        <style jsx>{style}</style>
       </div>,
     )
   }
