@@ -110,7 +110,7 @@
     "react-dates": "16.7.0",
     "react-dom": "16.6.3",
     "react-transition-group": "2.5.0",
-    "styled-jsx": "3.1.2",
+    "styled-jsx": "2.2.7",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.17.0"
