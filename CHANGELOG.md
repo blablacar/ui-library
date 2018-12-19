@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.20.1 (19/12/2018)
+
 - **[FIX]** Revert `styled-jsx` version to 2.2.7
 
 # v0.20.0 (19/12/2018)
