@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.20.0 (19/12/2018)
+
 - **[BREAKING CHANGE]** Rename `WarningModal` to `ConfirmationModal`
 - **[BREAKING CHANGE]** `ConfirmationModal` remove `title` and `displayCloseButton` props
 - **[BREAKING CHANGE]** `ConfirmationModal` add `status` prop to display it as `WARNING/REMINDER`
