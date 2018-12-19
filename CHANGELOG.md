@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.19.1 (19/12/2018)
+
 - **[NEW]** `WarningIcon` component
 - **[FIX]** `TopBar` children styles now load correctly
 
