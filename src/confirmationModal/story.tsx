@@ -4,10 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
-import ConfirmationModal, {
-  ConfirmationModalProps,
-  ConfirmationModalStatus
-} from 'confirmationModal'
+import ConfirmationModal, { ConfirmationModalProps } from 'confirmationModal'
 
 const stories = storiesOf('ConfirmationModal', module)
 stories.addDecorator(withKnobs)
