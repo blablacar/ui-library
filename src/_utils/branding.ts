@@ -95,6 +95,8 @@ export const delay = {
 
 export const buttonIconSize = '48px'
 
+export const modalMaxWidth = '662px'
+
 export const shadow = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
 }
@@ -120,6 +122,7 @@ export const color: Color = {
   inputBackground: palette.lightGray,
   pushBackground: palette.midnightGreen,
   warningBackground: palette.midnightGreen,
+  successBackground: palette.green,
   inputBorder: palette.lightGray,
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,

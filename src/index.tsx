@@ -29,6 +29,7 @@ import Rating from 'rating'
 import Snackbar from 'snackbar'
 import Stars from 'stars'
 import Stepper from 'stepper'
+import SuccessModal from 'successModal'
 import Text from 'text'
 import TextField from 'textField'
 import TimePicker from 'timePicker'
@@ -74,6 +75,7 @@ export {
   Snackbar,
   Stars,
   Stepper,
+  SuccessModal,
   Text,
   TextField,
   TimePicker,
