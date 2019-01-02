@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Add `location` itemprop to `<Itinerary>`
 
 # v0.20.1 (19/12/2018)
 
