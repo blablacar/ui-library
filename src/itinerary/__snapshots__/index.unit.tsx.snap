@@ -6,7 +6,20 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
 >
   <li
     className="jsx-4175336312 kirk-itinerary-location kirk-itinerary--departure"
+    itemProp="location"
+    itemScope={true}
+    itemType="http://schema.org/Place"
   >
+    <meta
+      className="jsx-4175336312"
+      content="Paris"
+      itemProp="name"
+    />
+    <meta
+      className="jsx-4175336312"
+      content="Paris"
+      itemProp="address"
+    />
     <div
       className="kirk-itinerary-location-wrapper"
     >
@@ -85,7 +98,20 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
   </li>
   <li
     className="jsx-4175336312 kirk-itinerary-location"
+    itemProp="location"
+    itemScope={true}
+    itemType="http://schema.org/Place"
   >
+    <meta
+      className="jsx-4175336312"
+      content="Tours"
+      itemProp="name"
+    />
+    <meta
+      className="jsx-4175336312"
+      content="Tours"
+      itemProp="address"
+    />
     <div
       className="kirk-itinerary-location-wrapper"
     >
@@ -164,7 +190,20 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
   </li>
   <li
     className="jsx-4175336312 kirk-itinerary-location kirk-itinerary--arrival"
+    itemProp="location"
+    itemScope={true}
+    itemType="http://schema.org/Place"
   >
+    <meta
+      className="jsx-4175336312"
+      content="Bordeaux"
+      itemProp="name"
+    />
+    <meta
+      className="jsx-4175336312"
+      content="Bordeaux"
+      itemProp="address"
+    />
     <div
       className="kirk-itinerary-location-wrapper"
     >
