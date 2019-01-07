@@ -174,6 +174,6 @@ class Modal extends Component<ModalProps> {
   }
 }
 
-export default forwardRef<HTMLDivElement, ModalProps>(
-  (props, ref) => <Modal {...props} forwardedRef={ref} />,
-)
+export default forwardRef<HTMLDivElement, ModalProps>((props, ref) => (
+  <Modal {...props} forwardedRef={ref} />
+))

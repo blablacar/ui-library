@@ -23,7 +23,7 @@ class CrossIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           d="M19 5L5 19M19 19L5 5"
           fill="none"

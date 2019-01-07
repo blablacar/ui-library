@@ -23,15 +23,15 @@ class CrossHairIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g fill="none" fillRule="evenodd">
           <path d="M0 0h24v24H0z" />
           <g stroke={iconColor} strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="7.826"/>
+            <circle cx="12" cy="12" r="7.826" />
             <path d="M12 2.435v3.478M21.565 12h-3.478M12 21.565v-3.478M2.435 12h3.478" />
-            <circle cx="12" cy="12" r="1"/>
+            <circle cx="12" cy="12" r="1" />
           </g>
-          <circle fill={iconColor} fillRule="nonzero" cx="12" cy="12" r="1"/>
+          <circle fill={iconColor} fillRule="nonzero" cx="12" cy="12" r="1" />
         </g>
       </svg>
     )

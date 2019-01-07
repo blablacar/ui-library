@@ -14,10 +14,7 @@ stories.addDecorator(withKnobs)
 stories.add(
   'default',
   withInfo('')(() => (
-    <DropdownButton
-      onClick={action('onClick')}
-      open={boolean('open', false)}
-    >
+    <DropdownButton onClick={action('onClick')} open={boolean('open', false)}>
       <Avatar />
     </DropdownButton>
   )),

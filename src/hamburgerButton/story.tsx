@@ -11,10 +11,5 @@ stories.addDecorator(withKnobs)
 
 stories.add(
   'default',
-  withInfo('')(() => (
-    <HamburgerButton
-      onClick={action('onClick')}
-      open={boolean('open', false)}
-    />
-  )),
+  withInfo('')(() => <HamburgerButton onClick={action('onClick')} open={boolean('open', false)} />),
 )

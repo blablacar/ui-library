@@ -3,12 +3,12 @@ import cc from 'classcat'
 import ItemChoice, { ItemChoiceProps } from 'itemChoice'
 
 interface MenuItemChoiceProps extends ItemChoiceProps {
-  id?: string | number,
+  id?: string | number
 }
 
 interface MenuProps {
-  items: MenuItemChoiceProps[],
-  className?: Classcat.Class,
+  items: MenuItemChoiceProps[]
+  className?: Classcat.Class
 }
 
 const Menu = ({ className, items }: MenuProps) => (
@@ -19,9 +19,9 @@ const Menu = ({ className, items }: MenuProps) => (
         href={item.href}
         leftAddon={item.leftAddon}
         rightAddon={item.rightAddon}
-        key={item.id} />
-      ),
-    )}
+        key={item.id}
+      />
+    ))}
   </nav>
 )
 

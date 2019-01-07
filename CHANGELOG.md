@@ -1,8 +1,36 @@
 # Unreleased
 
-- **[NEW]** `ToggleButton` component
-- **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
+- [...]
 - **[UPDATE]** `<Badge>` now also accepts numbers as children
+- **[UPDATE]** `Dependencies` update
+- **[UPDATE]** `ACI & ALUMCIGR` remove deprecated folders for CI
+
+# v0.20.2 (02/01/2019)
+
+- **[UPDATE]** Add `location` itemprop to `<Itinerary>`
+- **[UPDATE]** You can now set a `textColor` prop to `<Text>` (hexadecimal only)
+
+# v0.20.1 (19/12/2018)
+
+- **[FIX]** Revert `styled-jsx` version to 2.2.7
+
+# v0.20.0 (19/12/2018)
+
+- **[BREAKING CHANGE]** Rename `WarningModal` to `ConfirmationModal`
+- **[BREAKING CHANGE]** `ConfirmationModal` remove `title` and `displayCloseButton` props
+- **[BREAKING CHANGE]** `ConfirmationModal` add `status` prop to display it as `WARNING/REMINDER`
+
+# v0.19.1 (19/12/2018)
+
+- **[NEW]** `WarningIcon` component
+- **[FIX]** `TopBar` children styles now load correctly
+
+# v0.19.0 (12/12/2018)
+
+- **[BREAKING CHANGE]** Refactor `<Profile>` based on `<Item>`
+- **[NEW]** `ToggleButton` component
+- **[NEW]** `Prettier` added
+- **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
 
 # v0.18.0 (30/11/2018)
 

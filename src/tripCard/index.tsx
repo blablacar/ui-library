@@ -15,18 +15,18 @@ export interface TripCardProps {
   itinerary: Place[]
   driver: {
     avatarUrl: string
-    firstName: string,
+    firstName: string
   }
   price: string
   flags?: {
     ladiesOnly?: boolean
     maxTwo?: boolean
-    autoApproval?: boolean,
+    autoApproval?: boolean
   }
   titles?: {
     ladiesOnly?: string
     maxTwo?: string
-    autoApproval?: string,
+    autoApproval?: string
   }
   metaUrl: string
   highlighted?: string

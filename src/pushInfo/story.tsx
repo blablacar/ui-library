@@ -2,10 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import {
-  withKnobs,
-  text,
-} from '@storybook/addon-knobs'
+import { withKnobs, text } from '@storybook/addon-knobs'
 
 import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
@@ -18,7 +15,7 @@ stories.add(
   'default',
   withInfo('')(() => (
     <PushInfo
-      headline={text('headline', 'If it\'s green it\'s a win!')}
+      headline={text('headline', "If it's green it's a win!")}
       content={text('content', 'Green icons show meeting points closest to you!')}
     />
   )),
@@ -29,7 +26,7 @@ stories.add(
   withInfo('')(() => (
     <PushInfo
       icon={<ProximityIcon iconColor={color.success} title="" />}
-      headline={text('headline', 'If it\'s green it\'s a win!')}
+      headline={text('headline', "If it's green it's a win!")}
       content={text('content', 'Green icons show meeting points closest to you!')}
     />
   )),

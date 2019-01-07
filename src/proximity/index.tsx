@@ -17,22 +17,28 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
   const defaultParams = { title: '', iconColor: color.disabled }
   switch (value) {
     case Distances.CLOSE:
-      return index === value ? {
-        title: title ? title : defaultParams.title,
-        iconColor: color.proximityClose,
-      } : defaultParams
+      return index === value
+        ? {
+            title: title ? title : defaultParams.title,
+            iconColor: color.proximityClose,
+          }
+        : defaultParams
 
     case Distances.MIDDLE:
-      return index === value ? {
-        title: title ? title : defaultParams.title,
-        iconColor: color.proximityMiddle,
-      } : defaultParams
+      return index === value
+        ? {
+            title: title ? title : defaultParams.title,
+            iconColor: color.proximityMiddle,
+          }
+        : defaultParams
 
     case Distances.FAR:
-      return index === value ? {
-        title: title ? title : defaultParams.title,
-        iconColor: color.proximityFar,
-      } : defaultParams
+      return index === value
+        ? {
+            title: title ? title : defaultParams.title,
+            iconColor: color.proximityFar,
+          }
+        : defaultParams
 
     default:
       return defaultParams
@@ -40,20 +46,16 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
 }
 
 interface ProximityProps {
-  readonly className?: Classcat.Class,
-  readonly value: Distances,
-  readonly title?: string,
+  readonly className?: Classcat.Class
+  readonly value: Distances
+  readonly title?: string
 }
 
 const Proximity = ({ value, title, className }: ProximityProps) => (
   <div className={cc(['kirk-proximity', className])}>
-    {[Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance =>
-      <ProximityIcon
-        key={distance}
-        size={size}
-        {...getColorAndTitle(distance, value, title)}
-      />,
-    )}
+    {[Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance => (
+      <ProximityIcon key={distance} size={size} {...getColorAndTitle(distance, value, title)} />
+    ))}
     <style jsx>{style}</style>
   </div>
 )

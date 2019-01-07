@@ -4,7 +4,9 @@ import moment from 'moment'
 import 'react-dates/initialize'
 import { DayPickerSingleDateController, isInclusivelyAfterDay } from 'react-dates'
 import {
-  HORIZONTAL_ORIENTATION, VERTICAL_ORIENTATION, VERTICAL_SCROLLABLE,
+  HORIZONTAL_ORIENTATION,
+  VERTICAL_ORIENTATION,
+  VERTICAL_SCROLLABLE,
 } from 'react-dates/constants'
 
 import { color } from '_utils/branding'
@@ -16,27 +18,27 @@ const navPrev = <ArrowIcon iconColor={color.primary} />
 const navNext = <ArrowIcon right iconColor={color.primary} />
 
 export interface DatePickerProps {
-  readonly name: string,
-  readonly onChange?: (obj: onChangeParameters) => void,
-  readonly initialDate: moment.Moment,
-  readonly orientation?: string,
-  readonly monthFormat?: string,
-  readonly className?: Classcat.Class,
-  readonly numberOfMonths?: number,
-  readonly weekDayFormat?: string,
-  readonly hideKeyboardShortcutsPanel?: boolean,
-  readonly isOutsideRange?: (day:moment.Moment) => boolean,
-  readonly daySize?: number,
-  readonly locale: string,
+  readonly name: string
+  readonly onChange?: (obj: OnChangeParameters) => void
+  readonly initialDate: moment.Moment
+  readonly orientation?: string
+  readonly monthFormat?: string
+  readonly className?: Classcat.Class
+  readonly numberOfMonths?: number
+  readonly weekDayFormat?: string
+  readonly hideKeyboardShortcutsPanel?: boolean
+  readonly isOutsideRange?: (day: moment.Moment) => boolean
+  readonly daySize?: number
+  readonly locale: string
 }
 
 export interface DatePickerState {
-  readonly focused: boolean,
-  readonly date: moment.Moment,
+  readonly focused: boolean
+  readonly date: moment.Moment
 }
 
-export default class DatePicker extends Component <DatePickerProps, DatePickerState> {
-  static defaultProps:Partial<DatePickerProps> = {
+export default class DatePicker extends Component<DatePickerProps, DatePickerState> {
+  static defaultProps: Partial<DatePickerProps> = {
     initialDate: null,
     orientation: HORIZONTAL_ORIENTATION,
     numberOfMonths: 2,
@@ -50,10 +52,12 @@ export default class DatePicker extends Component <DatePickerProps, DatePickerSt
   }
 
   static constants = {
-    HORIZONTAL_ORIENTATION, VERTICAL_ORIENTATION, VERTICAL_SCROLLABLE,
+    HORIZONTAL_ORIENTATION,
+    VERTICAL_ORIENTATION,
+    VERTICAL_SCROLLABLE,
   }
 
-  state:DatePickerState = {
+  state: DatePickerState = {
     focused: true,
     date: this.props.initialDate,
   }
@@ -69,7 +73,7 @@ export default class DatePicker extends Component <DatePickerProps, DatePickerSt
     }
   }
 
-  onDateChange = (date:moment.Moment) => {
+  onDateChange = (date: moment.Moment) => {
     this.setState({ date }, () => {
       if (this.props.onChange) {
         this.props.onChange({
@@ -90,8 +94,11 @@ export default class DatePicker extends Component <DatePickerProps, DatePickerSt
     return (
       // The default react-dates implementation is month.format('MMMM YYYY').
       // We want month.format('MMMM') for the current year.
-      month.locale(locale).format(this.props.monthFormat)
-        .replace(`${moment().year()}`, '').trim()
+      month
+        .locale(locale)
+        .format(this.props.monthFormat)
+        .replace(`${moment().year()}`, '')
+        .trim()
     )
   }
 

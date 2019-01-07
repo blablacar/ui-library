@@ -23,7 +23,7 @@ class ProximityIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           fill={iconColor}
           // tslint:disable-next-line

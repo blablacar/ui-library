@@ -2,9 +2,9 @@ import React from 'react'
 
 import Stars from 'stars'
 
-const testStars = (nbStars :number, stars: any) => {
+const testStars = (nbStars: number, stars: any) => {
   stars.forEach((star: any, index: number) => {
-    const filled = (nbStars - index)
+    const filled = nbStars - index
     const result = filled > 0 ? Math.min(1, filled) : 0
     expect(star.find('linearGradient').prop('id')).toBe(`gradient-${result}`)
   })

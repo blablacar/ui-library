@@ -60,7 +60,7 @@ interface TimePickerProps {
   readonly disabled?: boolean
   readonly minuteStep?: number
   readonly renderTime?: (dt: Date, locale: string) => string
-  readonly onChange?: (obj: onChangeParameters) => void
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly locale: string
   readonly timeStart?: string
 }
@@ -68,9 +68,9 @@ interface TimePickerProps {
 type Steps = { [propName: string]: string }
 
 type TimeSteps = {
-  minuteStep?: number,
-  locale: string,
-  timeStart?: string,
+  minuteStep?: number
+  locale: string
+  timeStart?: string
 }
 
 interface TimePickerState {

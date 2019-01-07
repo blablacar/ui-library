@@ -50,6 +50,5 @@ describe('Drawer', () => {
     expect(onTransitionEnd).toHaveBeenCalledWith(false)
     expect(onClose).toHaveBeenCalledTimes(1)
     expect(scrollUnlock).toHaveBeenCalledTimes(1)
-
   })
 })

@@ -1,35 +1,56 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 
 import Profile from 'profile'
+import Item from '_utils/item'
+import Avatar from 'avatar'
 import Rating from 'rating'
-import Button from 'button'
-import ArrowIcon from 'icon/arrowIcon'
+import Text, { TextDisplayType } from 'text'
 
-it('Should have a profile name', () => {
+const defaultProps = {
+  title: 'Jack Sparrow',
+}
+
+it('Should pass a title prop to Item', () => {
   const profile = shallow(<Profile title="Jack Sparrow" />)
-  const name = profile.find('.kirk-title')
-  expect(name.text()).toBe('Jack Sparrow')
+  expect(profile.find(Item).prop('leftTitle')).toEqual('Jack Sparrow')
 })
 
-it('Should have a rating', () => {
-  const profile = shallow(<Profile title="Jack Sparrow" ratings={123} />)
-  expect(profile.contains(<Rating ratings={123} score={0} />)).toBe(true)
+it('Should pass a title prop to Item', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" />)
+  expect(profile.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.TITLE)
+
+  const profileMedium = shallow(<Profile title="Jack Sparrow" isMedium />)
+  expect(profileMedium.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.DISPLAY2)
 })
 
-it('Should have an image', () => {
-  const picture = 'https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg'
-  const profile = mount((
-    <Profile
-      title="Jack Sparrow"
-      picture={picture}
-    />
-  ))
-  expect(profile.find('img').prop('src')).toBe(picture)
+it('Should display info if no rating is provided', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" info="fhtagn" />)
+  expect(profile.find(Item).prop('leftBody')).toEqual(<Text>fhtagn</Text>)
 })
 
-it('Should display an action button', () => {
-  const profile = shallow(<Profile title="Jack Sparrow" action="title" />)
-  expect(profile.contains(
-    <Button status={Button.STATUS.UNSTYLED} title="title"><ArrowIcon right /></Button>,
-  )).toBe(true)
+it('Should display the rating over info if both are provided', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" ratings="2" info="fhtagn" />)
+  expect(profile.find(Item).prop('leftBody')).toEqual(<Rating ratings="2" />)
+})
+
+it('Should pass a rightAddon prop to Item', () => {
+  const pictureUrl = 'https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg'
+  const profile = shallow(<Profile title="Jack Sparrow" picture={pictureUrl} />)
+  expect(profile.find(Item).prop('rightAddon')).toEqual(<Avatar image={pictureUrl} />)
+})
+
+it('Should pass all picture props to Avatar', () => {
+  const pictureUrl = 'https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg'
+  const profile = shallow(
+    <Profile title="Jack Sparrow" picture={pictureUrl} alt="fhtagn" isMedium isIdChecked />,
+  )
+  expect(profile.find(Item).prop('rightAddon')).toEqual(
+    <Avatar image={pictureUrl} alt="fhtagn" isMedium isIdChecked />,
+  )
+})
+
+it('Should pass a chevron prop to Item', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" isLink />)
+  expect(profile.find(Item).prop('chevron')).toBe(true)
 })

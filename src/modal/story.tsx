@@ -38,36 +38,17 @@ class ModalOpener extends Component<ModalProps> {
       <div>
         <button onClick={this.openModal}>Open modal 1</button>
         <button onClick={this.openModal2}>Open modal 2</button>
-        <Modal
-          {...this.props}
-          close={this.closeModal}
-          isOpen={this.state.modalOpen}
-          ref={this.ref}
-        >
+        <Modal {...this.props} close={this.closeModal} isOpen={this.state.modalOpen} ref={this.ref}>
           <div>
             <h1>Modal 1</h1>
-            <img
-              src="http://placekitten.com/g/216/144"
-              width="216"
-              height="144"
-              alt=""
-            />
+            <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="" />
           </div>
         </Modal>
 
-        <Modal
-          {...this.props}
-          close={this.closeModal2}
-          isOpen={this.state.modalOpen2}
-        >
+        <Modal {...this.props} close={this.closeModal2} isOpen={this.state.modalOpen2}>
           <div>
             <h1>Modal 2</h1>
-            <img
-              src="http://placekitten.com/g/216/144"
-              width="216"
-              height="144"
-              alt=""
-            />
+            <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="" />
           </div>
         </Modal>
       </div>
@@ -94,13 +75,13 @@ stories.add(
   'fullscreen',
   withInfo('Modal fullscreen')(() => (
     <ModalOpener
-    fullscreen={boolean('fullscreen', true)}
-    displayDimmer={boolean('displayDimmer', false)}
-    close={() => {}}
-    closeOnEsc={boolean('closeOnEsc', true)}
-    closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
-    displayCloseButton={boolean('displayCloseButton', true)}
-    isOpen={false}
+      fullscreen={boolean('fullscreen', true)}
+      displayDimmer={boolean('displayDimmer', false)}
+      close={() => {}}
+      closeOnEsc={boolean('closeOnEsc', true)}
+      closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
+      displayCloseButton={boolean('displayCloseButton', true)}
+      isOpen={false}
     />
   )),
 )

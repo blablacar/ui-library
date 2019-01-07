@@ -10,12 +10,12 @@ export interface ItemProps {
   readonly className?: Classcat.Class
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
-  readonly leftBody?: string
+  readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
   readonly leftAddon?: React.ReactNode
   readonly rightTitle?: string
   readonly rightTitleDisplay?: TextDisplayType
-  readonly rightBody?: string
+  readonly rightBody?: string | React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightAddon?: React.ReactNode
   readonly tag?: string

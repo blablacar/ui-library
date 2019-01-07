@@ -6,17 +6,13 @@ interface AutoCompleteListItemDefaultProps {
   item: AutocompleteItem
 }
 
-const AutoCompleteListItemDefault = ({ item }:AutoCompleteListItemDefaultProps) => (
+const AutoCompleteListItemDefault = ({ item }: AutoCompleteListItemDefaultProps) => (
   <div>
     {item.title && (
-      <div className={cc(prefix({ 'autoComplete-primaryText': true }))}>
-        {item.title}
-      </div>
+      <div className={cc(prefix({ 'autoComplete-primaryText': true }))}>{item.title}</div>
     )}
     {item.description && (
-      <div className={cc(prefix({ 'autoComplete-secondaryText': true }))}>
-        {item.description}
-      </div>
+      <div className={cc(prefix({ 'autoComplete-secondaryText': true }))}>{item.description}</div>
     )}
   </div>
 )

@@ -8,38 +8,44 @@ import { color } from '_utils/branding'
 import cc from 'classcat'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
-import Title from 'title'
+import WarningIcon from 'icon/warningIcon'
+import InfoIcon from 'icon/infoIcon'
 import style from './style'
 
 const KEYCODES = {
   ESCAPE: 27,
 }
 
-export interface WarningModalProps {
-  readonly close: () => void
+export enum ConfirmationModalStatus {
+  WARNING = 'warning',
+  REMINDER = 'reminder'
+}
+
+export interface ConfirmationModalProps {
+  readonly onClose: () => void
+  readonly status: ConfirmationModalStatus
   readonly isOpen?: boolean
   readonly children?: JSX.Element | JSX.Element[]
   readonly className?: Classcat.Class
   readonly closeOnEsc?: boolean
-  readonly displayCloseButton?: boolean
   readonly closeButtonTitle?: string
-  readonly confirm: () => void
+  readonly onConfirm: () => void
   readonly confirmLabel?: string
-  readonly title?: string
   readonly large?: boolean
 }
 
-class WarningModal extends Component<WarningModalProps> {
+class ConfirmationModal extends Component<ConfirmationModalProps> {
   private portalNode: HTMLElement
 
-  static defaultProps: Partial<WarningModalProps> = {
+  static STATUS = ConfirmationModalStatus
+
+  static defaultProps: Partial<ConfirmationModalProps> = {
     isOpen: false,
     closeOnEsc: true,
-    displayCloseButton: true,
     large: false,
   }
 
-  constructor(props: WarningModalProps) {
+  constructor(props: ConfirmationModalProps) {
     super(props)
     if (canUseDOM) {
       this.portalNode = document.createElement('div')
@@ -53,7 +59,7 @@ class WarningModal extends Component<WarningModalProps> {
     }
   }
 
-  componentDidUpdate(prevProps: WarningModalProps) {
+  componentDidUpdate(prevProps: ConfirmationModalProps) {
     if (!prevProps.isOpen && this.props.isOpen) {
       this.addListeners()
     }
@@ -85,49 +91,75 @@ class WarningModal extends Component<WarningModalProps> {
 
   handleKeydown = (event: KeyboardEvent) => {
     if (event.keyCode === KEYCODES.ESCAPE) {
-      this.props.close()
+      this.props.onClose()
     }
   }
 
   render() {
-    const baseClassName = 'kirk-warningModal'
+    const {
+      status,
+      isOpen,
+      children,
+      className,
+      large,
+      onClose,
+      closeButtonTitle,
+      onConfirm,
+      confirmLabel,
+    } = this.props
+
+    const isWarning = status === ConfirmationModalStatus.WARNING
+
+    const baseClassName = 'kirk-confirmationModal'
 
     const classNames = cc([
       baseClassName,
       {
-        [`${baseClassName}--large`]: this.props.large,
-        [`${baseClassName}--hasCloseButton`]: this.props.displayCloseButton,
+        [`${baseClassName}--large`]: large,
+        [`${baseClassName}--hasCloseButton`]: isWarning,
       },
-      this.props.className,
+      className,
     ])
 
-    const warningModalElement = (
+    const iconProps = {
+      className: `${baseClassName}-icon`,
+      size: "100",
+    }
+
+    const getIcon = () => {
+      if(isWarning) {
+        return <WarningIcon {...iconProps} iconColor={color.danger} />
+      }
+      return <InfoIcon {...iconProps} iconColor={color.info} />
+    }
+
+    const confirmationModalElement = (
       <div>
         <TransitionGroup component="div" className="transition-wrapper">
-          {this.props.isOpen && (
+          {isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
               <div className={classNames}>
                 <div className={`${baseClassName}-dialog`}>
-                  <Title className={`${baseClassName}-title`}>{this.props.title}</Title>
-                  <div className={`${baseClassName}-body`}>{this.props.children}</div>
+                  {getIcon()}
+                  <div className={`${baseClassName}-body`}>{children}</div>
                   <footer className={`${baseClassName}-footer`}>
-                    {this.props.displayCloseButton && (
+                    {isWarning && (
                       <Button
                         icon
                         status={Button.STATUS.SECONDARY}
                         className={`${baseClassName}-closeButton`}
-                        onClick={this.props.close}
-                        title={this.props.closeButtonTitle}
+                        onClick={onClose}
+                        title={closeButtonTitle}
                       >
                         <CrossIcon size="24" iconColor={color.accent} />
                       </Button>
                     )}
                     <Button
-                      status={Button.STATUS.WARNING}
+                      status={isWarning ? Button.STATUS.WARNING : Button.STATUS.PRIMARY}
                       className={`${baseClassName}-confirmButton`}
-                      onClick={this.props.confirm}
+                      onClick={onConfirm}
                     >
-                      {this.props.confirmLabel}
+                      {confirmLabel}
                     </Button>
                   </footer>
                 </div>
@@ -142,8 +174,8 @@ class WarningModal extends Component<WarningModalProps> {
     if (!canUseDOM) {
       return null
     }
-    return createPortal(warningModalElement, this.portalNode)
+    return createPortal(confirmationModalElement, this.portalNode)
   }
 }
 
-export default WarningModal
+export default ConfirmationModal

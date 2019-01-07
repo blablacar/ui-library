@@ -5,8 +5,8 @@ import isEmpty from 'lodash.isempty'
 import { color } from '_utils/branding'
 
 interface StarProps extends Icon {
-  readonly bgColor?: string,
-  readonly fill?: number,
+  readonly bgColor?: string
+  readonly fill?: number
 }
 
 class StarIcon extends PureComponent<StarProps> {
@@ -33,7 +33,7 @@ class StarIcon extends PureComponent<StarProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id={id}>
           <stop stopColor={iconColor} offset={offset} />
           <stop stopColor={bgColor} offset="0%" />

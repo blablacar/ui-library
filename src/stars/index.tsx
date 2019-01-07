@@ -5,8 +5,8 @@ import Star from 'icon/starIcon'
 import style from 'stars/style'
 
 interface Stars {
-  readonly className?: Classcat.Class,
-  readonly stars: number,
+  readonly className?: Classcat.Class
+  readonly stars: number
 }
 
 const ValidateStars = (star: number) => !(star < 0 || star > 5)
@@ -20,13 +20,12 @@ const StarIcon = ({ offset }: { offset: number }) => (
 
 const Stars = ({ stars, className = '' }: Stars) => (
   <div className={cc(className)}>
-    { ValidateStars(stars) &&
+    {ValidateStars(stars) &&
       Array.from({ length: 5 }, (v, index) => {
-        const filled = (stars - index)
+        const filled = stars - index
         const result = filled > 0 ? Math.min(1, filled) : 0
         return <StarIcon key={index} offset={result} />
-      })
-    }
+      })}
   </div>
 )
 

@@ -54,4 +54,14 @@ describe('Text', () => {
       `<span class="kirk-text kirk-text-body">${multipleLineText}</span>`,
     )
   })
+
+  it('Should display the text with color', () => {
+    const wrapper = shallow(<Text textColor="#FFFFFF">{'test'}</Text>)
+    expect(wrapper.prop('style')).toEqual({ color: '#FFFFFF' })
+  })
+
+  it('Should not display the text with color when color not hexa', () => {
+    const wrapper = shallow(<Text textColor="#FFFGFF">{'test'}</Text>)
+    expect(wrapper.prop('style')).toBeUndefined()
+  })
 })

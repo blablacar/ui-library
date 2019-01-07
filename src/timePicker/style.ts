@@ -25,7 +25,7 @@ export default css`
   }
 
   .kirk-timePicker::after {
-    content : '';
+    content: '';
     position: absolute;
     right: 32px;
     top: calc(50% - 8px);
@@ -37,12 +37,12 @@ export default css`
     transform: rotate(45deg);
   }
 
-  .kirk-timePicker[aria-disabled="true"] {
+  .kirk-timePicker[aria-disabled='true'] {
     color: ${color.disabled};
     border-color: transparent;
   }
 
-  .kirk-timePicker[aria-disabled="true"]::after  {
+  .kirk-timePicker[aria-disabled='true']::after {
     border-color: ${color.disabled};
   }
 

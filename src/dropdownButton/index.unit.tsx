@@ -41,11 +41,31 @@ describe('DropdownButton', () => {
     expect(wrapper.find(ChevronIcon)).toHaveLength(1)
     expect(wrapper.find('.children')).toHaveLength(1)
 
-    expect(wrapper.find('button').childAt(0).is('.children')).toBe(true)
-    expect(wrapper.find('button').childAt(1).is(ChevronIcon)).toBe(true)
+    expect(
+      wrapper
+        .find('button')
+        .childAt(0)
+        .is('.children'),
+    ).toBe(true)
+    expect(
+      wrapper
+        .find('button')
+        .childAt(1)
+        .is(ChevronIcon),
+    ).toBe(true)
 
     wrapper.setProps({ iconPosition: 'left' })
-    expect(wrapper.find('button').childAt(0).is(ChevronIcon)).toBe(true)
-    expect(wrapper.find('button').childAt(1).is('.children')).toBe(true)
+    expect(
+      wrapper
+        .find('button')
+        .childAt(0)
+        .is(ChevronIcon),
+    ).toBe(true)
+    expect(
+      wrapper
+        .find('button')
+        .childAt(1)
+        .is('.children'),
+    ).toBe(true)
   })
 })

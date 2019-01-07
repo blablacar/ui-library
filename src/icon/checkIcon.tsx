@@ -6,29 +6,30 @@ import isEmpty from 'lodash.isempty'
 import { color } from '_utils/branding'
 
 interface CheckProps extends Icon {
-  readonly absolute?: boolean,
-  readonly validate?: boolean,
-  readonly backgroundColor?: string,
-  readonly thin?: boolean,
+  readonly absolute?: boolean
+  readonly validate?: boolean
+  readonly backgroundColor?: string
+  readonly thin?: boolean
 }
 
-const style = css`.absolute {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.validate path {
-  stroke-dasharray: 24;
-  stroke-dashoffset: -24;
-  stroke-linecap: round;
-  animation: dash 0.5s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
+const style = css`
+  .absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
-}
+  .validate path {
+    stroke-dasharray: 24;
+    stroke-dashoffset: -24;
+    stroke-linecap: round;
+    animation: dash 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 `
 
 class CheckIcon extends PureComponent<CheckProps> {
@@ -53,7 +54,7 @@ class CheckIcon extends PureComponent<CheckProps> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <path
           d="M6.5 12.5l4 4 8-8"
           fill="none"

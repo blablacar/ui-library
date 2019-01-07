@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
-import Transition  from 'react-transition-group/Transition'
+import Transition from 'react-transition-group/Transition'
 import cc from 'classcat'
 import { transition } from '_utils/branding'
 import style from './style'
@@ -10,20 +10,20 @@ export enum AnimationType {
 }
 
 interface CustomTransitionProps {
-  readonly children: JSX.Element,
-  readonly animationName?: AnimationType,
-  readonly delayEnter?: number,
-  readonly delayLeave?: number,
-  readonly in?: boolean,
+  readonly children: JSX.Element
+  readonly animationName?: AnimationType
+  readonly delayEnter?: number
+  readonly delayLeave?: number
+  readonly in?: boolean
 }
 
 export default class CustomTransition extends PureComponent<CustomTransitionProps> {
   static TYPES = AnimationType
 
   static defaultProps: Partial<CustomTransitionProps> = {
-    animationName:  AnimationType.FADE,
-    delayEnter:  0,
-    delayLeave:  parseInt(transition.duration.base, 10),
+    animationName: AnimationType.FADE,
+    delayEnter: 0,
+    delayLeave: parseInt(transition.duration.base, 10),
     in: false,
   }
 
@@ -39,25 +39,24 @@ export default class CustomTransition extends PureComponent<CustomTransitionProp
 
     return (
       <Transition in={inProp} timeout={{ enter: delayEnter, exit: delayLeave }}>
-        {
-          (status:string) => {
-            if (status === 'exited') {
-              return null
-            }
+        {(status: string) => {
+          if (status === 'exited') {
+            return null
+          }
 
-            return <Fragment>
-              {
-                React.cloneElement(children, {
-                  className: cc([
-                    children.props.className,
-                    animationName,
-                    `${animationName}-${status}`]),
-                })
-              }
+          return (
+            <Fragment>
+              {React.cloneElement(children, {
+                className: cc([
+                  children.props.className,
+                  animationName,
+                  `${animationName}-${status}`,
+                ]),
+              })}
               <style jsx>{style}</style>
             </Fragment>
-          }
-        }
+          )
+        }}
       </Transition>
     )
   }

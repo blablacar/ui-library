@@ -16,24 +16,49 @@ interface TopBarProps {
 
 const TopBar = ({
   className,
-  fixed = false,
-  bgShadedTransparent = false,
-  bgTransparent = false,
   leftItem,
   rightItem,
   centerItem,
+  fixed = false,
+  bgShadedTransparent = false,
+  bgTransparent = false,
   innerWrapperClassName = null,
 }: TopBarProps) => {
-  const Wrapper = Boolean(innerWrapperClassName) ? 'div' : Fragment
-  const wrapperProps: { className?: string } = {}
-  if (Boolean(innerWrapperClassName)) {
-    wrapperProps.className = cc([innerWrapperClassName])
+  const Wrapper = Boolean(innerWrapperClassName) ? (
+    <div className={cc([innerWrapperClassName])} />
+  ) : (
+    <Fragment />
+  )
+  const children = []
+  if (leftItem) {
+    children.push(
+      <div key="leftItem" className="kirk-topBar-left">
+        {leftItem}
+        <style jsx>{style}</style>
+      </div>,
+    )
+  }
+  if (centerItem) {
+    children.push(
+      <div key="centerItem" className="kirk-topBar-center">
+        {centerItem}
+        <style jsx>{style}</style>
+      </div>,
+    )
+  }
+  if (rightItem) {
+    children.push(
+      <div key="rightItem" className="kirk-topBar-right">
+        {rightItem}
+        <style jsx>{style}</style>
+      </div>,
+    )
   }
   return (
     <header
       className={cc([
+        'kirk-topBar',
         {
-          'kirk-topBar': true,
           'kirk-topBar--fixed': fixed,
           'kirk-topBar--bgShadedTransparent': bgShadedTransparent,
           'kirk-topBar--bgTransparent': bgTransparent,
@@ -41,11 +66,7 @@ const TopBar = ({
         className,
       ])}
     >
-      <Wrapper {...wrapperProps}>
-        {leftItem ? <div className={cc({ 'kirk-topBar-left': true })}>{leftItem}</div> : null}
-        {centerItem ? <div className={cc({ 'kirk-topBar-center': true })}>{centerItem}</div> : null}
-        {rightItem ? <div className={cc({ 'kirk-topBar-right': true })}>{rightItem}</div> : null}
-      </Wrapper>
+      {React.cloneElement(Wrapper, {}, children)}
       <style jsx>{style}</style>
     </header>
   )

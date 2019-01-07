@@ -23,7 +23,7 @@ class DoubleArrowIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g fill="none" fillRule="evenodd">
           <path
             d="M7.786 16.762a.5.5 0 0 1-1 0V2.476a.5.5 0 1 1 1 0v14.286z"

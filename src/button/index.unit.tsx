@@ -135,19 +135,11 @@ describe('Button', () => {
   })
 
   it('should be disabled while status is checked', () => {
-    const wrapper = shallow(
-      <Button status={Button.STATUS.CHECKED}>
-        click me
-      </Button>,
-    )
+    const wrapper = shallow(<Button status={Button.STATUS.CHECKED}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
   })
   it('should be disabled while status is loading', () => {
-    const wrapper = shallow(
-      <Button status={Button.STATUS.LOADING}>
-        click me
-      </Button>,
-    )
+    const wrapper = shallow(<Button status={Button.STATUS.LOADING}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
   })
 })

@@ -18,7 +18,8 @@ stories.add(
       checked={boolean('Checked', false)}
       labelDisplay={selectV2('Label display', labelDisplays, labelDisplays.RIGHT)}
       subLabel={text('Sub label', 'Sublabel checkbox')}
-      status={selectV2('status', Checkbox.STATUS, Checkbox.STATUS.DEFAULT)}>
+      status={selectV2('status', Checkbox.STATUS, Checkbox.STATUS.DEFAULT)}
+    >
       {text('Label', 'Label checkbox')}
     </Checkbox>
   )),

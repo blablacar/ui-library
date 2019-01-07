@@ -19,7 +19,7 @@ export default css`
   }
   .kirk-topBar--bgShadedTransparent {
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
   }
 
   .kirk-topBar-left,

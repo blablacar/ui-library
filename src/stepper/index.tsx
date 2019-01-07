@@ -23,7 +23,7 @@ interface StepperProps {
   max?: number
   min?: number
   format?: (value: string | number) => string | number
-  onChange?: (obj: onChangeParameters) => void
+  onChange?: (obj: OnChangeParameters) => void
 }
 
 interface StepperState {

@@ -7,7 +7,11 @@ jest.useFakeTimers()
 
 describe('ItemChoice', () => {
   it('Should render a React element passed as children', () => {
-    const wrapper = shallow(<ItemChoice><CrossIcon /></ItemChoice>)
+    const wrapper = shallow(
+      <ItemChoice>
+        <CrossIcon />
+      </ItemChoice>,
+    )
     expect(wrapper.find(CrossIcon).exists()).toBe(true)
   })
 

@@ -27,6 +27,7 @@ interface TextProps {
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType
   readonly tag?: TextTagType
+  readonly textColor?: string
   readonly newlineToBr?: boolean
 }
 
@@ -47,11 +48,16 @@ const Text = ({
   children,
   display = TextDisplayType.BODY,
   tag = TextTagType.SPAN,
+  textColor,
   newlineToBr = true,
 }: TextProps) => {
   const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
+
+  const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
+
+  const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
 
   let content = children
   if (typeof children === 'string' && newlineToBr) {
@@ -59,7 +65,10 @@ const Text = ({
   }
 
   return (
-    <Tag className={cc([baseClassName, displayClassName, className])}>
+    <Tag
+      className={cc([baseClassName, displayClassName, className])}
+      {...inlineStyle}
+    >
       {content}
       <style jsx global>
         {style}

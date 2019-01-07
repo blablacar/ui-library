@@ -23,7 +23,7 @@ class TrashIcon extends PureComponent<Icon> {
         height={size}
         aria-hidden={isEmpty(title)}
       >
-        { title && <title>{title}</title> }
+        {title && <title>{title}</title>}
         <g fill="none" fillRule="evenodd">
           <path
             // tslint:disable-next-line

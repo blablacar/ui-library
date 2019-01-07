@@ -11,8 +11,10 @@ stories.addDecorator(withKnobs)
 
 stories.add(
   'default',
-  withInfo('')(() => <Proximity
-    value={selectV2('Value', Distances, Distances.FAR)}
-    title={text('Icon title', 'Distance to your position')}
-  />),
+  withInfo('')(() => (
+    <Proximity
+      value={selectV2('Value', Distances, Distances.FAR)}
+      title={text('Icon title', 'Distance to your position')}
+    />
+  )),
 )
