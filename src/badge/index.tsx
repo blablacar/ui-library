@@ -6,7 +6,7 @@ import style from 'badge/style'
 
 interface BadgeProps {
   readonly className?: Classcat.Class
-  readonly children: string | JSX.Element
+  readonly children: string | JSX.Element | number
   readonly ariaLabel?: string
 }
 

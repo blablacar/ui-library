@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+- **[UPDATE]** `<Badge>` now also accepts numbers as children
+- **[UPDATE]** `Dependencies` update
+- **[UPDATE]** `ACI & ALUMCIGR` remove deprecated folders for CI
 
 # v0.20.2 (02/01/2019)
 
@@ -28,8 +31,6 @@
 - **[NEW]** `ToggleButton` component
 - **[NEW]** `Prettier` added
 - **[UPDATE]** `thin` prop on `CircleIcon` and `CheckIcon` for thinner stroke width
-- **[UPDATE]** `Dependencies` update
-- **[UPDATE]** `ACI & ALUMCIGR` remove deprecated folders for CI
 
 # v0.18.0 (30/11/2018)
 
