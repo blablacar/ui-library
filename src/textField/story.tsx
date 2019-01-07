@@ -36,6 +36,7 @@ stories.add(
         required={boolean('required', false)}
         maxLength={number('maxLength')}
         autoComplete={select('autocomplete', ['on', 'off'])}
+        title={text('title', 'accessibility text')}
       />
     )
   }),

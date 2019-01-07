@@ -7,6 +7,7 @@ import style from 'textField/style'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
 import EyeIcon from 'icon/eyeIcon'
+import isEmpty from 'lodash.isempty'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 
@@ -22,6 +23,7 @@ export interface CommonFormFields {
   readOnly?: boolean
   autoFocus?: boolean
   required?: boolean
+  title?: string
   onFocus?: (
     event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
   ) => void
@@ -158,6 +160,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       maxLength,
       autoCorrect,
       autoComplete,
+      title,
       buttonTitle,
     } = this.props
     const value = this.state.value || ''
@@ -172,6 +175,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       maxLength,
       autoComplete,
       autoCorrect,
+      title,
       // modifiers
       disabled,
       readOnly,
@@ -226,6 +230,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
               onClick={buttonOnClick}
               tabIndex="-1"
               title={buttonTitle}
+              aria-hidden={isEmpty(buttonTitle)}
             >
               {type === 'password' ? (
                 <EyeIcon {...iconProps} off={this.state.showPassword} />

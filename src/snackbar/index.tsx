@@ -44,7 +44,7 @@ class Snackbar extends PureComponent<SnackbarProps> {
         {this.props.isOpen && (
           <CustomTransition animationName={AnimationType.SLIDE_UP}>
             <div className={cc(['kirk-snackbar', this.props.className])}>
-              <Text display={TextDisplayType.TITLE} className="kirk-snackbar-content">
+              <Text role="alert" display={TextDisplayType.TITLE} className="kirk-snackbar-content">
                 {this.props.children}
               </Text>
               <Button
