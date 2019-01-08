@@ -18,7 +18,7 @@ const KEYCODES = {
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
-  REMINDER = 'reminder'
+  REMINDER = 'reminder',
 }
 
 export interface ConfirmationModalProps {
@@ -123,11 +123,11 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
 
     const iconProps = {
       className: `${baseClassName}-icon`,
-      size: "100",
+      size: '100',
     }
 
     const getIcon = () => {
-      if(isWarning) {
+      if (isWarning) {
         return <WarningIcon {...iconProps} iconColor={color.danger} />
       }
       return <InfoIcon {...iconProps} iconColor={color.info} />

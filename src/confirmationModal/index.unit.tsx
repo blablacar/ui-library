@@ -4,7 +4,7 @@ import CrossIcon from 'icon/crossIcon'
 
 const defaultProps = {
   isOpen: false,
-  confirmLabel: 'Confirm'
+  confirmLabel: 'Confirm',
   closeOnEsc: true,
   large: false,
 }
@@ -35,7 +35,7 @@ describe('<ConfirmationModal> with warning status', () => {
         isOpen={true}
         onConfirm={mockConfirm}
         onClose={mockClose}
-      />
+      />,
     )
   })
 
@@ -67,11 +67,7 @@ describe('<ConfirmationModal> with reminder status', () => {
     mockClose = jest.fn()
     wrapperReminder = shallow(<ConfirmationModal {...defaultReminderProps} />)
     wrapperReminderOpen = mount(
-      <ConfirmationModal
-        {...defaultReminderProps}
-        isOpen={true}
-        onClose={mockClose}
-      />
+      <ConfirmationModal {...defaultReminderProps} isOpen={true} onClose={mockClose} />,
     )
   })
 
