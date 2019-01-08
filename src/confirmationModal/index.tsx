@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
 import { canUseDOM, canUseEventListeners } from 'exenv'
-import { createPortal } from 'react-dom'
+import cc from 'classcat'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
+import { createPortal } from 'react-dom'
+
 import CustomTransition, { AnimationType } from 'transitions'
 import { color } from '_utils/branding'
-
-import cc from 'classcat'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
 import InfoIcon from 'icon/infoIcon'
 import style from './style'
-
-const KEYCODES = {
-  ESCAPE: 27,
-}
+import KEYCODES from '_utils/keycodes'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
-  REMINDER = 'reminder'
+  REMINDER = 'reminder',
 }
 
 export interface ConfirmationModalProps {
@@ -123,11 +120,11 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
 
     const iconProps = {
       className: `${baseClassName}-icon`,
-      size: "100",
+      size: '100',
     }
 
     const getIcon = () => {
-      if(isWarning) {
+      if (isWarning) {
         return <WarningIcon {...iconProps} iconColor={color.danger} />
       }
       return <InfoIcon {...iconProps} iconColor={color.info} />
