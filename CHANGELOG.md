@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.20.3 (09/01/2019)
+
 - **[NEW]** `SuccessModal` component
 - **[UPDATE]** Add possibility to have a role attribute on `<Text>`
 - **[UPDATE]** Add the role "alert" on `<Snackbar>` for accessibility
