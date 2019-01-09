@@ -1,17 +1,12 @@
-import React, { Component, forwardRef, Ref } from 'react'
-import { canUseDOM, canUseEventListeners } from 'exenv'
-import { createPortal } from 'react-dom'
-import Modal, { ModalProps } from 'modal'
-import { color } from '_utils/branding'
+import React, { Component, Ref } from 'react'
+import Modal from 'modal'
 
-import cc from 'classcat'
 import Button from 'button'
 import style from './style'
 
 export interface SuccessModalProps {
   readonly isOpen?: boolean
   readonly children?: JSX.Element | JSX.Element[]
-  readonly className?: Classcat.Class
   readonly closeOnEsc?: boolean
   readonly onConfirm: () => void
   readonly confirmLabel?: string
@@ -22,8 +17,6 @@ export interface SuccessModalProps {
 }
 
 class SuccessModal extends Component<SuccessModalProps> {
-  private portalNode: HTMLElement
-
   static defaultProps: Partial<SuccessModalProps> = {
     isOpen: false,
     closeOnEsc: false,
@@ -36,7 +29,6 @@ class SuccessModal extends Component<SuccessModalProps> {
     const {
       isOpen,
       children,
-      className,
       large,
       onConfirm,
       confirmLabel,
@@ -46,14 +38,6 @@ class SuccessModal extends Component<SuccessModalProps> {
     } = this.props
 
     const baseClassName = 'kirk-successModal'
-
-    const classNames = cc([
-      baseClassName,
-      {
-        [`${baseClassName}--large`]: large,
-      },
-      className,
-    ])
 
     return (
       <Modal
