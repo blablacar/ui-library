@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react'
 import { canUseDOM } from 'exenv'
 import cc from 'classcat'
-import style from 'drawer/style'
 
-const KEYCODES = {
-  ESCAPE: 27,
-}
+import style from 'drawer/style'
+import KEYCODES from '_utils/keycodes'
 
 export interface DrawerProps {
   readonly children: string | JSX.Element

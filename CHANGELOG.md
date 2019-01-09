@@ -5,6 +5,7 @@
 # v0.20.3 (09/01/2019)
 
 - **[NEW]** `SuccessModal` component
+- **[UPDATE]** Move keycodes into a single util
 - **[UPDATE]** Add possibility to have a role attribute on `<Text>`
 - **[UPDATE]** Add the role "alert" on `<Snackbar>` for accessibility
 - **[UPDATE]** Add aria-hidden on the `<Textfield>` clear button

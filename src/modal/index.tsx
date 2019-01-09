@@ -2,17 +2,14 @@ import React, { Component, forwardRef, Ref } from 'react'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
-import CustomTransition, { AnimationType } from 'transitions'
 import cc from 'classcat'
 
+import CustomTransition, { AnimationType } from 'transitions'
 import { color } from '_utils/branding'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
 import style from './style'
-
-const KEYCODES = {
-  ESCAPE: 27,
-}
+import KEYCODES from '_utils/keycodes'
 
 export interface ModalProps {
   readonly close: () => void
