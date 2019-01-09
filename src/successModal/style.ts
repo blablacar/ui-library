@@ -16,13 +16,18 @@ export default css`
   :global(.kirk-modal.kirk-successModal .kirk-modal-dialog) {
     margin: 0 auto;
     max-width: ${modalMaxWidth};
-    width: auto;
+    height: 100%;
     padding: ${space.xl} 0 ${footerHeight} 0;
     background-color: ${color.successBackground};
   }
 
+  /* Stronger selector to override Modal component styling */
+  :global(.kirk-modal-dimmer .kirk-modal.kirk-successModal .kirk-modal-dialog.kirk-modal-dialog) {
+    width: auto;
+  }
+
   :global(.kirk-modal--large.kirk-successModal .kirk-modal-dialog) {
-    height: 100%;
+    padding: ${space.xl} 0;
   }
 
   :global(.kirk-modal.kirk-successModal .kirk-modal-body) {
@@ -30,13 +35,12 @@ export default css`
     font-size: ${font.l.size};
     line-height: ${font.l.lineHeight};
     text-align: center;
+    align-items: center;
   }
 
   :global(.kirk-modal--large.kirk-successModal .kirk-modal-body) {
-    position: absolute;
+    position: relative;
     display: flex;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   :global(.kirk-modal--large .kirk-successModal-bodyItem) {
@@ -52,7 +56,7 @@ export default css`
   }
 
   :global(.kirk-successModal-image) {
-    width: 100%;
+    width: 80%;
     margin-bottom: ${space.xl};
   }
 
