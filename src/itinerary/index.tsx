@@ -81,11 +81,14 @@ const Itinerary = ({
             itemType="http://schema.org/Place"
           >
             <meta itemProp="name" content={place.mainLabel} />
-            <meta itemProp="address" content={
-              place.subLabel && typeof place.subLabel === 'string'
-              ? place.subLabel
-              : place.mainLabel
-            } />
+            <meta
+              itemProp="address"
+              content={
+                place.subLabel && typeof place.subLabel === 'string'
+                  ? place.subLabel
+                  : place.mainLabel
+              }
+            />
             <Component {...hrefProps}>
               {!small && (
                 <time dateTime={place.isoDate}>

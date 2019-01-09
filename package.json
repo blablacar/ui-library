@@ -17,6 +17,7 @@
     "lint:js": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint",
     "lint:css": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.css\" | xargs stylelint",
     "prettier": "prettier --write '**/*.{ts,tsx,js,jsx}'",
+    "prettier:ci": "prettier --list-different '**/*.{js,jsx}'",
     "test": "jest",
     "test:coverage": "jest --no-cache --coverage",
     "watch": "npm-run-all --parallel watch:*",
