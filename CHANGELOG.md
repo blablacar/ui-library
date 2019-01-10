@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.20.4 (10/01/2019)
+
 - **[FIX]** `SuccessModal` display with small content
 
 # v0.20.3 (09/01/2019)
