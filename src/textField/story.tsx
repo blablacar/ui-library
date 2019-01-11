@@ -194,3 +194,34 @@ stories.add(
     )
   }),
 )
+
+const formatValue: (value: string) => string = value => {
+  if (value.match(/^[0-9]{2}$/) || value.match(/^[0-9]{2}\/[0-9]{2}$/)) {
+    return `${value}/`
+  }
+  return value
+}
+
+stories.add(
+  'date input ',
+  withInfo('TextField with format method')(() => {
+    const error = boolean('error', false)
+    return (
+      <TextField
+        id={text('id')}
+        name={text('name')}
+        placeholder={text('placeholder')}
+        disabled={boolean('disabled', false)}
+        readOnly={boolean('readOnly', false)}
+        label={text('label')}
+        error={error ? text('error message', 'something went wrong') : ''}
+        onChange={action('changed')}
+        onFocus={action('focused')}
+        onBlur={action('blurred')}
+        maxLength={number('maxLength')}
+        autoComplete={select('autocomplete', ['on', 'off'])}
+        format={formatValue}
+      />
+    )
+  }),
+)
