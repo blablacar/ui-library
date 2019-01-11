@@ -235,3 +235,10 @@ it('Simulates a blur event.', () => {
   wrapper.find('input').simulate('blur')
   expect(onTextFieldBlur).toHaveBeenCalledTimes(1)
 })
+
+it('Be able to format the value', () => {
+  const wrapper = mount(
+    <TextField name="test" defaultValue="Hello" format={value => `${value} world`} />,
+  )
+  expect(wrapper.find('input').prop('value')).toBe('Hello world')
+})

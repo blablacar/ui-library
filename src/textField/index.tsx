@@ -45,6 +45,7 @@ export interface TextFieldProps extends CommonFormFields {
   buttonTitle?: string
   focus?: boolean
   inputRef?: (input: textfield) => void
+  format?: (value: string) => string
 }
 
 interface FormAttributes extends CommonFormFields {
@@ -83,6 +84,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     inputRef() {},
     onClear() {},
     type: 'text',
+    format: value => value,
   }
 
   state = {
@@ -162,8 +164,9 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       autoComplete,
       title,
       buttonTitle,
+      format,
     } = this.props
-    const value = this.state.value || ''
+    const value = this.state.value ? format(this.state.value) : ''
 
     const attrs: FormAttributes = {
       type,
