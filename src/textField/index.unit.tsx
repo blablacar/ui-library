@@ -236,9 +236,15 @@ it('Simulates a blur event.', () => {
   expect(onTextFieldBlur).toHaveBeenCalledTimes(1)
 })
 
-it('Be able to format the value', () => {
+it('Should format the default value', () => {
   const wrapper = mount(
     <TextField name="test" defaultValue="Hello" format={value => `${value} world`} />,
   )
+  expect(wrapper.find('input').prop('value')).toBe('Hello world')
+})
+
+it('Should format the values when it changes', () => {
+  const wrapper = mount(<TextField name="test" format={value => `${value} world`} />)
+  wrapper.setState({ value: 'Hello' })
   expect(wrapper.find('input').prop('value')).toBe('Hello world')
 })
