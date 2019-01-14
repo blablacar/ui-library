@@ -2,10 +2,13 @@
 
 - [...]
 
+# v0.20.5 (11/01/2019)
+
+- **[UPDATE]** Allow `format` prop on TextField component
+
 # v0.20.4 (10/01/2019)
 
 - **[FIX]** `SuccessModal` display with small content
-- **[UPDATE]** Allow `format` prop on TextField component
 
 # v0.20.3 (09/01/2019)
 
