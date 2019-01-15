@@ -94,6 +94,16 @@ stories.add(
 )
 
 stories.add(
+  'icon + text',
+  withInfo('')(() => (
+    <Button status={Button.STATUS.PRIMARY} {...commonProps}>
+      <ArrowIcon right iconColor={color.white} />
+      <span style={{ marginLeft: '20px' }}>{label('Content')}</span>
+    </Button>
+  )),
+)
+
+stories.add(
   'anchor button',
   withInfo('')(() => (
     <Button icon={hasIcon()} status={Button.STATUS.PRIMARY} href="#" {...commonProps}>
