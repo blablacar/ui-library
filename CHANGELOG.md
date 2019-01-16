@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v0.20.6 (16/01/2019)
+
 - **[UPDATE]** Support icon + text in Button
 
 # v0.20.5 (11/01/2019)
