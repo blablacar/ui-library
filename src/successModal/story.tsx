@@ -31,7 +31,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
           onConfirm={this.confirmSuccessModal}
           isOpen={this.state.successModalOpen}
         >
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
         </SuccessModal>
       </div>
     )
