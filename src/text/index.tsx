@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { replaceNewLineWithBR } from '_utils'
 import cc from 'classcat'
 
 import style from 'text/style'
@@ -31,18 +32,6 @@ interface TextProps {
   readonly newlineToBr?: boolean
   readonly role?: string
 }
-
-const replaceNewLineWithBR = (str: string): React.ReactNode =>
-  str
-    .split('\n')
-    .map(line => <Fragment>{line}</Fragment>)
-    .reduce((acc, curr) => (
-      <Fragment>
-        {acc}
-        <br />
-        {curr}
-      </Fragment>
-    ))
 
 const Text = ({
   className,

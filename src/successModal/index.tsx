@@ -1,12 +1,14 @@
 import React, { Component, Ref } from 'react'
-import Modal from 'modal'
 
+import Modal from 'modal'
 import Button from 'button'
+import Text, { TextTagType, TextDisplayType } from 'text'
+import { color } from '_utils/branding'
 import style from './style'
 
 export interface SuccessModalProps {
   readonly isOpen?: boolean
-  readonly children?: JSX.Element | JSX.Element[]
+  readonly children?: string | number | React.ReactNode
   readonly closeOnEsc?: boolean
   readonly onConfirm: () => void
   readonly confirmLabel?: string
@@ -56,7 +58,13 @@ class SuccessModal extends Component<SuccessModalProps> {
           alt={imageText}
         />
         <div className={`${baseClassName}-bodyItem`}>
-          {children}
+          <Text
+            display={TextDisplayType.SUBHEADER}
+            tag={TextTagType.PARAGRAPH}
+            textColor={color.white}
+          >
+            {children}
+          </Text>
           <footer className={`${baseClassName}-footer`}>
             <Button
               status={Button.STATUS.SECONDARY}

@@ -1,6 +1,7 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `SuccessModal` Use `Text` component to display text content
+- **[UPDATE]** Move `replaceNewLineWithBR` function to utils
 
 # v0.20.6 (16/01/2019)
 
