@@ -123,4 +123,31 @@ describe('Itinerary component', () => {
     const itinerary = renderer.create(<Itinerary places={places} />).toJSON()
     expect(itinerary).toMatchSnapshot()
   })
+
+  it('Should use subLabel in key if it\'s a string', () => {
+    const places = [
+      {
+        distanceFromPoint: '1,5km',
+        time: '09:00',
+        isoDate: '2017-12-11T09:00',
+        subLabel: 'rue Ménars',
+        mainLabel: 'Paris',
+      },
+      {
+        time: '12:00',
+        isoDate: '2017-12-11T12:00',
+        subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+        mainLabel: 'Tours',
+      },
+    ]
+    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const key = itinerary.find('li.kirk-itinerary-location').at(0).key()
+    expect(key).toBe('Paris-rue Ménars-2017-12-11T09:00')
+  })
+
+  it('Should not use subLabel in key if it\'s a JSX object', () => {
+    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const key = itinerary.find('li.kirk-itinerary-location').at(0).key()
+    expect(key).toBe('Paris-2017-12-11T09:00')
+  })
 })
