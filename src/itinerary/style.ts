@@ -64,7 +64,6 @@ export default css`
     display: block;
     width: 4px;
     position: absolute;
-    z-index: 1;
   }
 
   .kirk-itinerary-location div::before {

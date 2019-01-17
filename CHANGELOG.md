@@ -5,6 +5,7 @@
 - **[FIX]** `Itinerary` component using place' subLabel object as part of keys
 - **[UPDATE]** `SuccessModal` Use `Text` component to display text content
 - **[UPDATE]** Move `replaceNewLineWithBR` function to utils
+- **[FIX]** `Itinerary` component without unnecessary z-index
 
 # v0.20.6 (16/01/2019)
 

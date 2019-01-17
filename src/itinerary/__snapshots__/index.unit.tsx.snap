@@ -2,21 +2,21 @@
 
 exports[`Itinerary component Should display proximity from departure point 1`] = `
 <ul
-  className="jsx-4175336312 "
+  className="jsx-4135352187 "
 >
   <li
-    className="jsx-4175336312 kirk-itinerary-location kirk-itinerary--departure"
+    className="jsx-4135352187 kirk-itinerary-location kirk-itinerary--departure"
     itemProp="location"
     itemScope={true}
     itemType="http://schema.org/Place"
   >
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Paris"
       itemProp="name"
     />
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Paris"
       itemProp="address"
     />
@@ -24,7 +24,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="kirk-itinerary-location-wrapper"
     >
       <time
-        className="jsx-4175336312"
+        className="jsx-4135352187"
         dateTime="2017-12-11T09:00"
       >
         <span
@@ -34,7 +34,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
         </span>
       </time>
       <div
-        className="jsx-4175336312 kirk-itinerary-location-city"
+        className="jsx-4135352187 kirk-itinerary-location-city"
       >
         <span
           className="kirk-text kirk-text-titleStrong"
@@ -42,7 +42,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           Paris
         </span>
         <div
-          className="jsx-4175336312"
+          className="jsx-4135352187"
         >
           <div
             className="jsx-510054743 kirk-proximity"
@@ -97,18 +97,18 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-4175336312 kirk-itinerary-location"
+    className="jsx-4135352187 kirk-itinerary-location"
     itemProp="location"
     itemScope={true}
     itemType="http://schema.org/Place"
   >
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Tours"
       itemProp="name"
     />
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Tours"
       itemProp="address"
     />
@@ -116,7 +116,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="kirk-itinerary-location-wrapper"
     >
       <time
-        className="jsx-4175336312"
+        className="jsx-4135352187"
         dateTime="2017-12-11T12:00"
       >
         <span
@@ -126,7 +126,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
         </span>
       </time>
       <div
-        className="jsx-4175336312 kirk-itinerary-location-city"
+        className="jsx-4135352187 kirk-itinerary-location-city"
       >
         <span
           className="kirk-text kirk-text-titleStrong"
@@ -134,7 +134,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           Tours
         </span>
         <div
-          className="jsx-4175336312"
+          className="jsx-4135352187"
         >
           <div
             className="jsx-510054743 kirk-proximity"
@@ -189,18 +189,18 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
     </div>
   </li>
   <li
-    className="jsx-4175336312 kirk-itinerary-location kirk-itinerary--arrival"
+    className="jsx-4135352187 kirk-itinerary-location kirk-itinerary--arrival"
     itemProp="location"
     itemScope={true}
     itemType="http://schema.org/Place"
   >
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Bordeaux"
       itemProp="name"
     />
     <meta
-      className="jsx-4175336312"
+      className="jsx-4135352187"
       content="Bordeaux"
       itemProp="address"
     />
@@ -208,7 +208,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
       className="kirk-itinerary-location-wrapper"
     >
       <time
-        className="jsx-4175336312"
+        className="jsx-4135352187"
         dateTime="2017-12-11T15:00"
       >
         <span
@@ -218,7 +218,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
         </span>
       </time>
       <div
-        className="jsx-4175336312 kirk-itinerary-location-city"
+        className="jsx-4135352187 kirk-itinerary-location-city"
       >
         <span
           className="kirk-text kirk-text-titleStrong"
@@ -226,7 +226,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           Bordeaux
         </span>
         <div
-          className="jsx-4175336312"
+          className="jsx-4135352187"
         >
           <div
             className="jsx-510054743 kirk-proximity"
