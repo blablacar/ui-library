@@ -45,7 +45,9 @@ const Itinerary = ({
         const link = place.href
         const isLastPlace = places.length - 1 === index
 
-        if (typeof place.subLabel === 'string') {
+        if (place.key && typeof place.key === 'string') {
+          key = place.key
+        } else if (typeof place.subLabel === 'string') {
           key = `${place.mainLabel}-${place.subLabel}-${place.isoDate}`
         } else {
           key = `${place.mainLabel}-${place.isoDate}`

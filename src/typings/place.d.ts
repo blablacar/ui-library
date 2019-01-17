@@ -5,4 +5,5 @@ declare interface Place {
   time?: string
   distanceFromPoint?: string
   href?: string | JSX.Element
+  key?: string
 }

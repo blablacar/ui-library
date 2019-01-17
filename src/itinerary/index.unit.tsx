@@ -150,4 +150,29 @@ describe('Itinerary component', () => {
     const key = itinerary.find('li.kirk-itinerary-location').at(0).key()
     expect(key).toBe('Paris-2017-12-11T09:00')
   })
+
+  it('Should use key attribute as key if provided', () => {
+    const places = [
+      {
+        distanceFromPoint: '1,5km',
+        time: '09:00',
+        isoDate: '2017-12-11T09:00',
+        subLabel: 'rue Ménars',
+        mainLabel: 'Paris',
+        key: 'route-start-paris'
+      },
+      {
+        time: '12:00',
+        isoDate: '2017-12-11T12:00',
+        subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+        mainLabel: 'Tours',
+        key: 'route-end-tours'
+      },
+    ]
+    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const key1 = itinerary.find('li.kirk-itinerary-location').at(0).key()
+    expect(key1).toBe('route-start-paris')
+    const key2 = itinerary.find('li.kirk-itinerary-location').at(1).key()
+    expect(key2).toBe('route-end-tours')
+  })
 })
