@@ -1,11 +1,14 @@
 # Unreleased
 
 - [...]
+
+# v0.20.7 (18/01/2019)
+
 - **[UPDATE]** Added optional property key in `Itinerary`'s place
+- **[FIX]** `Itinerary` component without unnecessary z-index
 - **[FIX]** `Itinerary` component using place' subLabel object as part of keys
 - **[UPDATE]** `SuccessModal` Use `Text` component to display text content
 - **[UPDATE]** Move `replaceNewLineWithBR` function to utils
-- **[FIX]** `Itinerary` component without unnecessary z-index
 
 # v0.20.6 (16/01/2019)
 
