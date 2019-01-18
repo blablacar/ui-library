@@ -1,5 +1,8 @@
 # Unreleased
 
+- [...]
+- **[UPDATE]** Added optional property key in `Itinerary`'s place
+- **[FIX]** `Itinerary` component using place' subLabel object as part of keys
 - **[UPDATE]** `SuccessModal` Use `Text` component to display text content
 - **[UPDATE]** Move `replaceNewLineWithBR` function to utils
 

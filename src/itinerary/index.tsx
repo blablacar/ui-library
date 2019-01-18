@@ -40,9 +40,18 @@ const Itinerary = ({
         let Component: tag
         let chevron = false
         let hrefProps
+        let key
 
         const link = place.href
         const isLastPlace = places.length - 1 === index
+
+        if (place.key && typeof place.key === 'string') {
+          key = place.key
+        } else if (typeof place.subLabel === 'string') {
+          key = `${place.mainLabel}-${place.subLabel}-${place.isoDate}`
+        } else {
+          key = `${place.mainLabel}-${place.isoDate}`
+        }
 
         if (!isEmpty(link) && typeof link !== 'string') {
           Component = link.type
@@ -75,7 +84,7 @@ const Itinerary = ({
                 'kirk-itinerary-location--toAddon': isLastPlace && toAddon,
               },
             ])}
-            key={`${place.mainLabel}-${place.subLabel}-${place.isoDate}`}
+            key={key}
             itemProp="location"
             itemScope
             itemType="http://schema.org/Place"
