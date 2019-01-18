@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { replaceNewLineWithBR } from '_utils'
 import cc from 'classcat'
 
