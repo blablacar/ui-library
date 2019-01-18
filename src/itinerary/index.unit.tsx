@@ -124,7 +124,7 @@ describe('Itinerary component', () => {
     expect(itinerary).toMatchSnapshot()
   })
 
-  it('Should use subLabel in key if it\'s a string', () => {
+  it("Should use subLabel in key if it's a string", () => {
     const places = [
       {
         distanceFromPoint: '1,5km',
@@ -141,11 +141,13 @@ describe('Itinerary component', () => {
       },
     ]
     const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
-    const key = itinerary.find('li.kirk-itinerary-location').at(0).key()
-    expect(key).toBe('Paris-rue Ménars-2017-12-11T09:00')
+    const key1 = itinerary.find('li.kirk-itinerary-location').at(0).key()
+    expect(key1).toBe('Paris-rue Ménars-2017-12-11T09:00')
+    const key2 = itinerary.find('li.kirk-itinerary-location').at(1).key()
+    expect(key2).toBe('Tours-2017-12-11T12:00')
   })
 
-  it('Should not use subLabel in key if it\'s a JSX object', () => {
+  it("Should not use subLabel in key if it's a JSX object", () => {
     const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
     const key = itinerary.find('li.kirk-itinerary-location').at(0).key()
     expect(key).toBe('Paris-2017-12-11T09:00')
