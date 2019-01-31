@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `SuccessModal` change children prop to contentText
 
 # v0.20.7 (18/01/2019)
 

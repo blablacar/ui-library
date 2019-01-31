@@ -30,9 +30,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
           {...this.props}
           onConfirm={this.confirmSuccessModal}
           isOpen={this.state.successModalOpen}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-        </SuccessModal>
+        />
       </div>
     )
   }
@@ -44,6 +42,7 @@ stories.add(
     <SuccessModalOpener
       isOpen={false}
       onConfirm={() => {}}
+      contentText={text('contentText', 'Content description')}
       imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
       imageText={text('imageText', 'Illustation description')}
       confirmLabel={text('confirmLabel', 'Got it!')}

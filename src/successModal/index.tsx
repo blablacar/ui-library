@@ -8,10 +8,10 @@ import style from './style'
 
 export interface SuccessModalProps {
   readonly isOpen?: boolean
-  readonly children?: string | number | React.ReactNode
   readonly closeOnEsc?: boolean
   readonly onConfirm: () => void
   readonly confirmLabel?: string
+  readonly contentText?: string
   readonly imageSrc: string
   readonly imageText?: string
   readonly large?: boolean
@@ -30,11 +30,11 @@ class SuccessModal extends Component<SuccessModalProps> {
   render() {
     const {
       isOpen,
-      children,
       large,
       onConfirm,
       confirmLabel,
       forwardedRef,
+      contentText,
       imageSrc,
       imageText,
     } = this.props
@@ -63,7 +63,7 @@ class SuccessModal extends Component<SuccessModalProps> {
             tag={TextTagType.PARAGRAPH}
             textColor={color.white}
           >
-            {children}
+            {contentText}
           </Text>
           <footer className={`${baseClassName}-footer`}>
             <Button
