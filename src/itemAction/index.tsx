@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import Item from '_utils/item'
 
-export interface ItempActionProps {
+export interface ItemActionProps {
   readonly tag?: JSX.Element
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
@@ -14,36 +14,31 @@ export interface ItempActionProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-class ItemAction extends PureComponent<ItempActionProps> {
-  render() {
-    const {
-      className,
-      action,
-      subLabel,
-      leftAddon,
-      tag,
-      href,
-      onClick,
-      onBlur,
-      onFocus,
-      onMouseDown,
-    } = this.props
-    return (
-      <Item
-        highlighted
-        className={className}
-        leftAddon={leftAddon}
-        leftTitle={action}
-        leftBody={subLabel}
-        href={href}
-        onClick={onClick}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        onMouseDown={onMouseDown}
-        tag={tag || <button />}
-      />
-    )
-  }
-}
+const ItemAction = ({
+  className,
+  action,
+  subLabel,
+  leftAddon,
+  tag,
+  href,
+  onClick,
+  onBlur,
+  onFocus,
+  onMouseDown,
+}: ItemActionProps) => (
+  <Item
+    highlighted
+    className={className}
+    leftAddon={leftAddon}
+    leftTitle={action}
+    leftBody={subLabel}
+    href={href}
+    onClick={onClick}
+    onBlur={onBlur}
+    onFocus={onFocus}
+    onMouseDown={onMouseDown}
+    tag={tag || <button />}
+  />
+)
 
 export default ItemAction

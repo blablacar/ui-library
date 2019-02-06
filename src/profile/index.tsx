@@ -17,6 +17,11 @@ interface ProfileProps {
   readonly score?: number
   readonly ratings?: number
   readonly ratingsLabel?: string
+  readonly href?: string | JSX.Element
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 const Profile = ({
@@ -31,6 +36,11 @@ const Profile = ({
   score,
   ratings,
   ratingsLabel,
+  href,
+  onClick,
+  onBlur,
+  onFocus,
+  onMouseDown,
 }: ProfileProps) => {
   const getLeftBody =
     ratings > 0 ? (
@@ -40,6 +50,8 @@ const Profile = ({
     ) : (
       info && <Text>{info}</Text>
     )
+
+  const showChevron = isLink || !!href || !!onClick
 
   return (
     <Item
@@ -52,7 +64,12 @@ const Profile = ({
           <Avatar image={picture} alt={alt} isIdChecked={isIdChecked} isMedium={isMedium} />
         )
       }
-      chevron={isLink}
+      chevron={showChevron}
+      href={href}
+      onClick={onClick}
+      onBlur={onBlur}
+      onFocus={onFocus}
+      onMouseDown={onMouseDown}
     />
   )
 }

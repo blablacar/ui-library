@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Add the ItemAction component
+- **[NEW]** Add href and onClick on Profile
 - **[UPDATE]** Add the hover state on Toggle button
 - **[UPDATE]** Add the hover state on profile
 - **[BREAKING CHANGE]** Add horizontal padding on Toggle button
