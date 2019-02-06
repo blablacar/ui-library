@@ -14,7 +14,7 @@ export default css`
     background: none;
   }
   :global(.kirk-item.kirk-item--clickable:hover) {
-    background: ${color.pressed};
+    background: ${color.hover};
   }
 
   :global(a.kirk-item) {
