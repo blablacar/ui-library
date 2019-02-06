@@ -3,11 +3,11 @@ import React from 'react'
 import Item from '_utils/item/index'
 
 interface ItemInfoProps {
-  mainInfo: string
-  className?: Classcat.Class
-  icon?: React.ReactNode
-  mainTitle?: string
-  tag?: string
+  readonly mainInfo: string
+  readonly className?: Classcat.Class
+  readonly icon?: React.ReactNode
+  readonly mainTitle?: string
+  readonly tag?: JSX.Element
 }
 
 const ItemInfo = ({ mainInfo, className, mainTitle, icon, tag }: ItemInfoProps) => {

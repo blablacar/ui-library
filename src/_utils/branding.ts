@@ -127,6 +127,7 @@ export const color: Color = {
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,
   inputCaret: palette.blue,
+  pressed: palette.lightGray,
 
   success: palette.green,
   info: palette.blue,

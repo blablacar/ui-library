@@ -2,14 +2,14 @@
 
 exports[`Checkbox should display the label on the left and the checkbox on the right 1`] = `
 <label
-  className="jsx-4006430834 kirk-checkbox kirk-checkbox--labelDisplay-left"
+  className="jsx-2066224419 kirk-checkbox kirk-checkbox--labelDisplay-left"
 >
   <div
-    className="jsx-4006430834"
+    className="jsx-2066224419"
   >
     <input
       checked={false}
-      className="jsx-4006430834"
+      className="jsx-2066224419"
       disabled={false}
       onChange={[Function]}
       type="checkbox"
@@ -17,14 +17,14 @@ exports[`Checkbox should display the label on the left and the checkbox on the r
     />
     <span
       aria-hidden="true"
-      className="jsx-4006430834 "
+      className="jsx-2066224419 "
     />
   </div>
   <div
-    className="jsx-4006430834"
+    className="jsx-2066224419"
   >
     <span
-      className="jsx-4006430834 kirk-label"
+      className="jsx-2066224419 kirk-label"
     >
       Label
     </span>
@@ -35,14 +35,14 @@ exports[`Checkbox should display the label on the left and the checkbox on the r
 
 exports[`Checkbox should not display either the label or the sublabel 1`] = `
 <label
-  className="jsx-4006430834 kirk-checkbox kirk-checkbox--labelDisplay-none"
+  className="jsx-2066224419 kirk-checkbox kirk-checkbox--labelDisplay-none"
 >
   <div
-    className="jsx-4006430834"
+    className="jsx-2066224419"
   >
     <input
       checked={false}
-      className="jsx-4006430834"
+      className="jsx-2066224419"
       disabled={false}
       onChange={[Function]}
       type="checkbox"
@@ -50,14 +50,14 @@ exports[`Checkbox should not display either the label or the sublabel 1`] = `
     />
     <span
       aria-hidden="true"
-      className="jsx-4006430834 "
+      className="jsx-2066224419 "
     />
   </div>
   <div
-    className="jsx-4006430834"
+    className="jsx-2066224419"
   >
     <span
-      className="jsx-4006430834 kirk-label"
+      className="jsx-2066224419 kirk-label"
     >
       Label
     </span>

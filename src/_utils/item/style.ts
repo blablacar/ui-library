@@ -1,18 +1,39 @@
 import css from 'styled-jsx/css'
 
-import { space } from '_utils/branding'
+import { color, space } from '_utils/branding'
 
 export default css`
   :global(.kirk-item) {
     position: relative;
     display: flex;
     padding: 0;
-    padding-top: ${space.l};
-    padding-bottom: ${space.l};
+    padding: ${space.l} ${space.xl};
     align-items: center;
     flex: 1;
     border: 0;
     background: none;
+  }
+  :global(.kirk-item.kirk-item--clickable:hover) {
+    background: ${color.pressed};
+  }
+
+  :global(a.kirk-item) {
+    background: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
+  /* Button tag fixes */
+  :global(button.kirk-item) {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
   }
 
   /* Text areas */
@@ -26,7 +47,7 @@ export default css`
   }
 
   /* Text */
-  :global(.kirk-item-title) {
+  :global(.kirk-item-title--withBody) {
     margin-bottom: ${space.s};
   }
 
@@ -44,5 +65,10 @@ export default css`
 
   :global(.kirk-item-rightAddon) {
     margin-left: ${space.l};
+  }
+
+  /* Highlighted state */
+  :global(.kirk-item--highlighted .kirk-text-title) {
+    color: ${color.primary};
   }
 `

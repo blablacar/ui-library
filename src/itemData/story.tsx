@@ -10,7 +10,7 @@ const stories = storiesOf('ItemData', module)
 stories.addDecorator(withKnobs)
 
 stories.add(
-  'Test',
+  'Default',
   withInfo('')(() => {
     const isMainTitle = boolean('Title', false)
     const isDataInfo = boolean('Secondary info', false)
@@ -21,7 +21,7 @@ stories.add(
         data={text('Data', 'Data')}
         mainTitle={isMainTitle ? text('Main title', 'Title') : null}
         dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-        tag="li"
+        tag={<li />}
       />
     )
   }),

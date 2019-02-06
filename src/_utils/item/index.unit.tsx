@@ -16,9 +16,24 @@ it('Should accept a custom `className`', () => {
   expect(wrapper.hasClass(customClassName)).toBe(true)
 })
 
+it('Should be highlighted', () => {
+  const wrapper = shallow(<Item highlighted />)
+  expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)
+})
+
 it('Should accept a custom `tag`', () => {
-  const wrapper = shallow(<Item tag="li" />)
+  const wrapper = shallow(<Item tag={<li />} />)
   expect(wrapper.type()).toBe('li')
+})
+
+it('Should return a tag A when href is present', () => {
+  const wrapper = shallow(<Item href="#" />)
+  expect(wrapper.type()).toBe('a')
+})
+
+it('Should return a tag A when href is present', () => {
+  const wrapper = shallow(<Item href={<button />} />)
+  expect(wrapper.type()).toEqual('button')
 })
 
 it('Should display a left add-on', () => {

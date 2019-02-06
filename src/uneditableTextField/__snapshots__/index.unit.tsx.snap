@@ -2,10 +2,10 @@
 
 exports[`UneditableTextField Should have the proper default props 1`] = `
 <div
-  className="uneditableTextField"
+  className="jsx-1556137228 uneditableTextField"
 >
   <div
-    className="jsx-1508129181 uneditableTextField-label"
+    className="jsx-1556137228 uneditableTextField-label"
   >
     Hello world
   </div>
@@ -14,10 +14,10 @@ exports[`UneditableTextField Should have the proper default props 1`] = `
 
 exports[`UneditableTextField Should have the text ellipsed 1`] = `
 <div
-  className="uneditableTextField"
+  className="jsx-1556137228 uneditableTextField"
 >
   <div
-    className="jsx-1508129181 uneditableTextField-label uneditableTextField-label--ellipsis"
+    className="jsx-1556137228 uneditableTextField-label uneditableTextField-label--ellipsis"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel molestie sapien justo nec orci.
   </div>
@@ -26,13 +26,13 @@ exports[`UneditableTextField Should have the text ellipsed 1`] = `
 
 exports[`UneditableTextField Should support add-ons 1`] = `
 <div
-  className="uneditableTextField"
+  className="jsx-1556137228 uneditableTextField"
 >
   <div>
     Add-on
   </div>
   <div
-    className="jsx-1508129181 uneditableTextField-label"
+    className="jsx-1556137228 uneditableTextField-label"
   >
     Hello world
   </div>
@@ -41,11 +41,11 @@ exports[`UneditableTextField Should support add-ons 1`] = `
 
 exports[`UneditableTextField Should support component links 1`] = `
 <a
-  className="uneditableTextField"
+  className="jsx-1556137228 uneditableTextField"
   href="#bar"
 >
   <div
-    className="jsx-1508129181 uneditableTextField-label"
+    className="jsx-1556137228 uneditableTextField-label"
   >
     Click me
   </div>
@@ -54,11 +54,11 @@ exports[`UneditableTextField Should support component links 1`] = `
 
 exports[`UneditableTextField Should support simple links 1`] = `
 <a
-  className="uneditableTextField"
+  className="jsx-1556137228 uneditableTextField"
   href="#foo"
 >
   <div
-    className="jsx-1508129181 uneditableTextField-label"
+    className="jsx-1556137228 uneditableTextField-label"
   >
     Click me
   </div>

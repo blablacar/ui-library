@@ -8,6 +8,8 @@ import ChevronIcon from 'icon/chevronIcon'
 export interface ItemProps {
   readonly chevron?: boolean
   readonly className?: Classcat.Class
+  readonly href?: string | JSX.Element
+  readonly highlighted?: boolean
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftBody?: string | React.ReactNode
@@ -18,12 +20,22 @@ export interface ItemProps {
   readonly rightBody?: string | React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightAddon?: React.ReactNode
-  readonly tag?: string
+  readonly tag?: JSX.Element
+  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 const Item = ({
   chevron,
   className,
+  href,
+  onClick,
+  onBlur,
+  onFocus,
+  onMouseDown,
+  highlighted,
   leftTitle,
   leftTitleDisplay = TextDisplayType.TITLE,
   leftBody,
@@ -34,14 +46,36 @@ const Item = ({
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
   rightAddon,
-  tag = 'div',
+  tag = <div />,
 }: ItemProps) => {
-  const Tag = tag
-  const baseClassName = 'kirk-item'
+  let Tag = tag.type
+  if (href) {
+    if (typeof href !== 'string') {
+      Tag = href.type
+    } else {
+      Tag = 'a'
+    }
+  }
+  const isClickable = !!href || !!onClick
   const hasRightText = rightTitle || rightBody
 
   return (
-    <Tag className={cc([baseClassName, className])}>
+    <Tag
+      {...tag.props}
+      onClick={onClick}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onMouseDown={onMouseDown}
+      href={href}
+      className={cc([
+        'kirk-item',
+        {
+          'kirk-item--highlighted': highlighted,
+          'kirk-item--clickable': isClickable,
+        },
+        className,
+      ])}
+    >
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
       <div className="kirk-item-leftText">
         {leftTitle && (
