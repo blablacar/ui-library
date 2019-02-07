@@ -50,7 +50,22 @@ it('Should pass all picture props to Avatar', () => {
   )
 })
 
-it('Should pass a chevron prop to Item', () => {
+it('Should not have a chevron by default', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" />)
+  expect(profile.find(Item).prop('chevron')).toBe(false)
+})
+
+it('Should pass a chevron prop to Item when isLink is true', () => {
   const profile = shallow(<Profile title="Jack Sparrow" isLink />)
+  expect(profile.find(Item).prop('chevron')).toBe(true)
+})
+
+it('Should pass a chevron prop to Item when href is present', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" href="#" />)
+  expect(profile.find(Item).prop('chevron')).toBe(true)
+})
+
+it('Should pass a chevron prop to Item when href is present', () => {
+  const profile = shallow(<Profile title="Jack Sparrow" onClick={() => null} />)
   expect(profile.find(Item).prop('chevron')).toBe(true)
 })

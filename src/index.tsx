@@ -12,6 +12,7 @@ import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
 import HamburgerButton from 'hamburgerButton'
+import ItemAction from 'itemAction'
 import ItemChoice from 'itemChoice'
 import ItemData from 'itemData'
 import ItemInfo from 'itemInfo'
@@ -58,6 +59,7 @@ export {
   Drawer,
   DropdownButton,
   HamburgerButton,
+  ItemAction,
   ItemChoice,
   ItemData,
   ItemInfo,

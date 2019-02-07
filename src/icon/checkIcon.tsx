@@ -26,6 +26,9 @@ const style = css`
     animation: dash 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
   }
   @keyframes dash {
+    from {
+      stroke-dashoffset: -24;
+    }
     to {
       stroke-dashoffset: 0;
     }

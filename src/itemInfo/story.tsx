@@ -21,7 +21,7 @@ stories.add(
         mainInfo={text('Main info', 'Main information')}
         mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
         icon={hasIcon ? <ClockIcon /> : null}
-        tag="li"
+        tag={<li />}
       />
     )
   }),
