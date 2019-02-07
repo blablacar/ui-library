@@ -19,7 +19,7 @@ const places = [
     href: '#',
   },
   {
-    time: '15:00',
+    time: '~15:00',
     isoDate: '2017-12-11T15:00',
     subLabel: 'Gare Bordeaux Saint-Jean',
     mainLabel: 'Bordeaux',
@@ -35,14 +35,14 @@ const placesWithStopover = [
     href: '#',
   },
   {
-    time: '12:00',
+    time: '~12:00',
     isoDate: '2017-12-11T12:00',
     subLabel: 'Gare de Tours',
     mainLabel: 'Tours',
     href: <button type="button" />,
   },
   {
-    time: '15:00',
+    time: '~15:00',
     isoDate: '2017-12-11T15:00',
     subLabel: 'Gare Bordeaux Saint-Jean',
     mainLabel: 'Bordeaux',

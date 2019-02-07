@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** `Itinerary` adjust time display to allow extra characters
 
 # v0.20.7 (18/01/2019)
 

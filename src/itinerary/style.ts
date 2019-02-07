@@ -2,7 +2,8 @@ import css from 'styled-jsx/css'
 import { color, space } from '_utils/branding'
 
 const distanceFromHeight = '40px'
-export const timeWidth = '64px'
+/* TODO: Build a scalable display for time + place */
+export const timeWidth = '74px' /* Correspond to ~00:00 max with */
 
 export default css`
   li {
@@ -46,7 +47,9 @@ export default css`
   }
 
   .kirk-itinerary-location time {
+    text-align: right;
     min-width: ${timeWidth};
+    padding-right: ${space.l};
   }
 
   .kirk-itinerary-location-city {
