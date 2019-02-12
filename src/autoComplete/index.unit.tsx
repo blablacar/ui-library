@@ -1,7 +1,8 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import AutoComplete from 'autoComplete'
 import { ItemChoiceStatus } from 'itemChoice'
-import { shallow } from 'enzyme'
 
 const initialFakeItems = [
   { id: '1', title: 'title1', description: 'description1' },
@@ -52,7 +53,9 @@ describe('AutoComplete', () => {
   })
 
   it('Renders a title on the close button', () => {
-    const wrapper = mount(<AutoComplete {...defaultProps} buttonTitle="buttonTitle" />)
+    const wrapper = mount(
+      <AutoComplete {...defaultProps} defaultValue="default" buttonTitle="buttonTitle" />,
+    )
     expect(wrapper.find('button').prop('title')).toBe('buttonTitle')
   })
 
@@ -283,7 +286,9 @@ describe('AutoComplete', () => {
   describe('#onClear', () => {
     it("Invokes `onClear` when clearing the field's value", () => {
       const onClear = jest.fn()
-      const wrapper = mount(<AutoComplete {...defaultProps} onClear={onClear} />)
+      const wrapper = mount(
+        <AutoComplete {...defaultProps} defaultValue="test" onClear={onClear} />,
+      )
       wrapper.find('button').simulate('click')
       expect(onClear).toHaveBeenCalledTimes(1)
     })

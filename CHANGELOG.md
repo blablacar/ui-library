@@ -1,5 +1,9 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `TextField` no more boolean accepted in the error field
+- **[UPDATE]** `Button` no more span in the Button
+- **[UPDATE]** `Button` no more whitespace no wrap & text-ellipsis
+- **[BREAKING CHANGE]** `Button` is now using a "isBubble" property instead of "icon" to round.
 - **[Fix]** Remove the breaking change that added horizontal padding on Toggle button and profile in the previous version
 - **[Fix]** Forward href props to the Item component
 - [...]

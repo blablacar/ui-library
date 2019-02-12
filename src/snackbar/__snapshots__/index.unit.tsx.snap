@@ -25,29 +25,25 @@ exports[`Snackbar should not have changed 1`] = `
       onTouchStart={[Function]}
       type="button"
     >
-      <span
-        className="jsx-770741165"
+      <svg
+        aria-hidden={true}
+        className="kirk-icon"
+        height="18px"
+        viewBox="0 0 24 24"
+        width="18px"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          aria-hidden={true}
-          className="kirk-icon"
-          height="18px"
-          viewBox="0 0 24 24"
-          width="18px"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          
-          <path
-            d="M19 5L5 19M19 19L5 5"
-            fill="none"
-            stroke="#FFF"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            strokeWidth="2"
-          />
-        </svg>
-      </span>
+        
+        <path
+          d="M19 5L5 19M19 19L5 5"
+          fill="none"
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        />
+      </svg>
     </button>
   </div>
 </div>

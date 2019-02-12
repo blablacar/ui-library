@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import TextField from 'textField'
 import Button from 'button'
@@ -66,32 +67,6 @@ it('Should have a button with title', () => {
   expect(button.prop('title')).toBe('buttonTitle')
 })
 
-// describe('#autoFocus', () => {
-//   it('Should handle autoFocus prop', () => {
-//     const wrapper = mount(<TextField name="autofocus_field" autoFocus />)
-//     const input = wrapper.find('input')
-//     const focusedElement = document.activeElement
-//     expect(input.matchesElement(focusedElement)).to.be.true
-//   })
-// })
-
-describe('#focus', () => {
-  // it('Should add focus when mounting', () => {
-  //   const wrapper = mount(<TextField name="test" focus />)
-  //   const input = wrapper.find('input')
-  //   const focusedElement = document.activeElement
-  //   // console.log(input, focusedElement)
-  //   expect(input.matchesElement(focusedElement)).to.be.true
-  // })
-
-  it('Should not add focus when mounting', () => {
-    const wrapper = mount(<TextField name="test" focus={false} />)
-    const input = wrapper.find('input')
-    const focusedElement = document.activeElement
-    expect(input.matchesElement(focusedElement)).toBe(false)
-  })
-})
-
 it('should have a label that has a for matching the inputs id', () => {
   const wrapper = shallow(<TextField name="test" label="label_name" id="identifier" />)
   const input = wrapper.find('input')
@@ -157,13 +132,6 @@ describe('#error', () => {
     expect(wrapper.find('span').text()).toBe(errorText)
   })
 
-  it('Should have an error state when passing a boolean `true`', () => {
-    const wrapper = shallow(<TextField name="test" error />)
-    expect(wrapper.hasClass('kirk-error')).toBe(true)
-    expect(wrapper.find('.kirk-error-message')).toHaveLength(0)
-    expect(wrapper.find('input').prop('aria-invalid')).toBe('true')
-  })
-
   it('Should not have an error state when passing a boolean `false`', () => {
     const wrapper = shallow(<TextField name="test" error={false} />)
     expect(wrapper.hasClass('kirk-error')).toBe(false)
@@ -191,11 +159,9 @@ it('should have a working clear button', () => {
     />,
   )
   expect(wrapper.find('input').prop('value')).toBe('some value')
-  expect(wrapper.find('button').prop('hidden')).toBe(false)
 
   wrapper.find('button').simulate('click')
   expect(wrapper.find('input').prop('value')).toBe('')
-  expect(wrapper.find('button').prop('hidden')).toBe(true)
   expect(onTextFieldChange).toHaveBeenCalledTimes(1)
   expect(onClear).toHaveBeenCalledTimes(1)
 })

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
@@ -23,9 +23,8 @@ export interface ButtonProps {
   readonly title?: string
   readonly status?: ButtonStatus
   readonly focus?: boolean
-  readonly icon?: boolean
+  readonly isBubble?: boolean
   readonly shadowed?: boolean
-  readonly hidden?: boolean
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
@@ -84,7 +83,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
     children: '',
     className: '',
     status: ButtonStatus.PRIMARY,
-    icon: false,
+    isBubble: false,
     shadowed: false,
     focus: false,
     disabled: false,
@@ -115,7 +114,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       title,
       // Modifiers
       status,
-      icon,
+      isBubble,
       shadowed,
       // Actions
       onClick,
@@ -132,20 +131,22 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       ...attrs
     } = this.props
 
-    let Component: tag
+    let componentType: tag
     let typeProps: TypeProps = {}
 
     // If we pass a component to href, we get component type and we merge props
     if (typeof href !== 'string') {
-      Component = href.type
+      componentType = href.type
       typeProps = { ...href.props }
     } else if (!isEmpty(href)) {
-      Component = 'a'
+      componentType = 'a'
       typeProps = { href }
     } else {
-      Component = 'button'
+      componentType = 'button'
       typeProps = { type }
     }
+
+    const hasLoader = status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
 
     typeProps.ref = this.ref
     typeProps.title = title
@@ -156,29 +157,29 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
     typeProps.onTouchEnd = eventHandler(onTouchEnd, typeProps.onTouchEnd)
     typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
     typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
-
-    const hasLoader = status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
-    const iconSize = icon || hasLoader
-
     typeProps.disabled = hasLoader || disabled
 
-    return (
-      <Component
-        className={cc([
-          prefix({ button: true }),
-          prefix(
-            {
-              [status]: status,
-              icon: iconSize,
-              shadowed,
-            },
-            'kirk-button',
-          ),
-          className,
-        ])}
-        {...typeProps}
-        {...attrs}
-      >
+    const props = {
+      className: cc([
+        prefix({ button: true }),
+        prefix(
+          {
+            [status]: status,
+            bubble: isBubble || hasLoader,
+            shadowed,
+          },
+          'kirk-button',
+        ),
+        className,
+      ]),
+      ...typeProps,
+      ...attrs,
+    }
+
+    return React.createElement(
+      componentType,
+      props,
+      <Fragment>
         {hasLoader && (
           <Loader
             size={48}
@@ -187,9 +188,9 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
             onDoneAnimationEnd={onDoneAnimationEnd}
           />
         )}
-        {children && <span>{children}</span>}
+        {children}
         <style jsx>{style}</style>
-      </Component>
+      </Fragment>,
     )
   }
 }

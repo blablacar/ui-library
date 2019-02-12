@@ -1,13 +1,13 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import Button, { eventHandler } from 'button'
-import ItemChoice from 'itemChoice'
 import CrossIcon from 'icon/crossIcon'
 
 jest.useFakeTimers()
 
 describe('Button', () => {
-  class TestLink extends React.PureComponent {
+  class TestLink extends React.PureComponent<{ readonly href?: string }> {
     render() {
       return <a href={this.props.href}>{this.props.children}</a>
     }
@@ -39,11 +39,11 @@ describe('Button', () => {
 
   it('Should allow for an icon.', () => {
     const button = shallow(
-      <Button icon>
+      <Button isBubble>
         <CrossIcon />
       </Button>,
     )
-    expect(button.hasClass('kirk-button-icon')).toBe(true)
+    expect(button.hasClass('kirk-button-bubble')).toBe(true)
     expect(button.contains(<CrossIcon />)).toBe(true)
   })
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
@@ -19,20 +19,25 @@ export const UneditableTextField = ({
   ellipsis = false,
   href,
 }: UneditableTextFieldProps) => {
-  let Component: tag
-  let props = {}
+  let componentType: tag
+  let props: any = {}
   if (href && typeof href !== 'string') {
-    Component = href.type
-    props = { ...href.props }
+    componentType = href.type
+    props = href.props
   } else if (typeof href === 'string' && !isEmpty(href)) {
-    Component = 'a'
+    componentType = 'a'
     props = { href }
   } else {
-    Component = 'div'
+    componentType = 'div'
   }
 
-  return (
-    <Component className={cc(['uneditableTextField', className])} {...props}>
+  return React.createElement(
+    componentType,
+    {
+      className: cc(['uneditableTextField', className]),
+      ...props
+    },
+    <Fragment>
       {addOn}
       <div
         className={cc([
@@ -43,7 +48,7 @@ export const UneditableTextField = ({
         {children}
       </div>
       <style jsx>{style}</style>
-    </Component>
+    </Fragment>,
   )
 }
 
