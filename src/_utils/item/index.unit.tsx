@@ -36,6 +36,12 @@ it('Should return a tag A when href is present', () => {
   expect(wrapper.type()).toEqual('button')
 })
 
+it('Should return href props when href is present', () => {
+  const wrapper = shallow(<Item href={<button role="foo" />} />)
+  expect(wrapper.type()).toEqual('button')
+  expect(wrapper.prop('role')).toBe('foo')
+})
+
 it('Should display a left add-on', () => {
   const wrapper = shallow(<Item leftAddon={<ClockIcon />} />)
   expect(wrapper.find(ClockIcon).exists()).toBe(true)

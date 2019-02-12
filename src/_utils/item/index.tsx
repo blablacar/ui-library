@@ -49,9 +49,11 @@ const Item = ({
   tag = <div />,
 }: ItemProps) => {
   let Tag = tag.type
+  let tagProps = tag.props
   if (href) {
     if (typeof href !== 'string') {
       Tag = href.type
+      tagProps = { ...tagProps, ...href.props }
     } else {
       Tag = 'a'
     }
@@ -61,7 +63,7 @@ const Item = ({
 
   return (
     <Tag
-      {...tag.props}
+      {...tagProps}
       onClick={onClick}
       onFocus={onFocus}
       onBlur={onBlur}
