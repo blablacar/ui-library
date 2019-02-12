@@ -7,7 +7,8 @@ export default css`
     position: relative;
     display: flex;
     padding: 0;
-    padding: ${space.l} ${space.xl};
+    padding-top: ${space.l};
+    padding-bottom: ${space.l};
     align-items: center;
     flex: 1;
     border: 0;

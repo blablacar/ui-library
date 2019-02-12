@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Item from '_utils/item/index'
+import Item from '_utils/item'
 
 interface ItemInfoProps {
   readonly mainInfo: string
