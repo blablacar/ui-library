@@ -28,11 +28,6 @@ export default css`
     font-family: inherit;
   }
 
-  :global(.kirk-itemChoice--withSubLabel) {
-    padding-top: ${space.m};
-    padding-bottom: ${space.m};
-  }
-
   :global(.kirk-itemChoice[aria-selected='true']) {
     background-color: ${color.lightBackground};
   }

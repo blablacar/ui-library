@@ -75,7 +75,6 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       prefix({
         itemChoice: true,
         'itemChoice--highlighted': highlighted,
-        'itemChoice--withSubLabel': !!subLabel,
         'itemChoice--declared': declared,
       }),
       className,
