@@ -1,5 +1,9 @@
 # Unreleased
 
+- **[...]**
+
+# v0.21.0 (11/02/2019)
+
 - **[BREAKING CHANGE]** `TextField` no more boolean accepted in the error field
 - **[UPDATE]** `Button` no more span in the Button
 - **[UPDATE]** `Button` no more whitespace no wrap & text-ellipsis
