@@ -142,7 +142,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
                   <footer className={`${baseClassName}-footer`}>
                     {isWarning && (
                       <Button
-                        icon
+                        isBubble
                         status={Button.STATUS.SECONDARY}
                         className={`${baseClassName}-closeButton`}
                         onClick={onClose}

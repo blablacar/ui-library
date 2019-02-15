@@ -29,7 +29,7 @@ stories.add(
   withInfo('')(() => (
     <Button
       status={Button.STATUS.PRIMARY}
-      icon={hasIcon()}
+      isBubble={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
@@ -43,7 +43,7 @@ stories.add(
   withInfo('')(() => (
     <Button
       status={Button.STATUS.SECONDARY}
-      icon={hasIcon()}
+      isBubble={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
     >
@@ -64,7 +64,7 @@ stories.add(
 stories.add(
   'warning',
   withInfo('')(() => (
-    <Button status={Button.STATUS.WARNING} icon={hasIcon()} {...commonProps}>
+    <Button status={Button.STATUS.WARNING} isBubble={hasIcon()} {...commonProps}>
       {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
     </Button>
   )),
@@ -73,7 +73,7 @@ stories.add(
 stories.add(
   'unstyled',
   withInfo('')(() => (
-    <Button status={Button.STATUS.UNSTYLED} icon={hasIcon()} {...commonProps}>
+    <Button status={Button.STATUS.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
       {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Unstyled button')}
     </Button>
   )),
@@ -84,7 +84,7 @@ stories.add(
   withInfo('')(() => (
     <Button
       {...commonProps}
-      icon
+      isBubble
       status={Button.STATUS.PRIMARY}
       shadowed={boolean('shadowed', true)}
     >
@@ -106,7 +106,7 @@ stories.add(
 stories.add(
   'anchor button',
   withInfo('')(() => (
-    <Button icon={hasIcon()} status={Button.STATUS.PRIMARY} href="#" {...commonProps}>
+    <Button isBubble={hasIcon()} status={Button.STATUS.PRIMARY} href="#" {...commonProps}>
       {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
     </Button>
   )),
@@ -116,7 +116,7 @@ stories.add(
   'anchor button with link element',
   withInfo('')(() => (
     <Button
-      icon={hasIcon()}
+      isBubble={hasIcon()}
       status={Button.STATUS.PRIMARY}
       href={<a href="#1">foo</a>}
       {...commonProps}
@@ -129,7 +129,7 @@ stories.add(
 stories.add(
   'anchor button unstyled',
   withInfo('')(() => (
-    <Button status={Button.STATUS.UNSTYLED} icon={hasIcon()} {...commonProps}>
+    <Button status={Button.STATUS.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
       {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
     </Button>
   )),
@@ -165,7 +165,7 @@ class Validation extends React.Component {
     return (
       <Button
         status={status}
-        icon={hasIcon() || this.state.icon}
+        isBubble={hasIcon() || this.state.icon}
         onClick={this.validate}
         onDoneAnimationEnd={() => action('animation done')}
       >

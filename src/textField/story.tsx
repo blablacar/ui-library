@@ -17,7 +17,6 @@ const inputTypes = ['text', 'email', 'number', 'password']
 stories.add(
   'input',
   withInfo("TextField with all it's default props")(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         type={select('type', inputTypes, 'text')}
@@ -28,7 +27,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : null}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -45,7 +44,6 @@ stories.add(
 stories.add(
   'input with default value',
   withInfo('TextField with a default value')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         type={select('type', inputTypes, 'text')}
@@ -56,7 +54,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -70,7 +68,6 @@ stories.add(
 stories.add(
   'input disabled',
   withInfo('TextField with a disabled true')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         type={select('type', inputTypes, 'text')}
@@ -81,7 +78,7 @@ stories.add(
         disabled
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -95,7 +92,6 @@ stories.add(
 stories.add(
   'input password',
   withInfo('TextField with a password')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         type={select('type', inputTypes, 'password')}
@@ -105,7 +101,7 @@ stories.add(
         placeholder={text('placeholder')}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -129,7 +125,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -144,11 +140,10 @@ stories.add(
 stories.add(
   'input with addon',
   withInfo('TextField with an addon')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         addon={
-          <Button status={Button.STATUS.UNSTYLED} icon tabIndex="-1">
+          <Button status={Button.STATUS.UNSTYLED} isBubble tabIndex="-1">
             <ArrowIcon size="18" />
           </Button>
         }
@@ -160,7 +155,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -174,7 +169,6 @@ stories.add(
 stories.add(
   'textarea',
   withInfo('TextField for multiline text(textarea)')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         isTextArea
@@ -184,7 +178,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}
@@ -205,7 +199,6 @@ const formatValue: (value: string) => string = value => {
 stories.add(
   'date input ',
   withInfo('TextField with format method')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         id={text('id')}
@@ -214,7 +207,7 @@ stories.add(
         disabled={boolean('disabled', false)}
         readOnly={boolean('readOnly', false)}
         label={text('label')}
-        error={error ? text('error message', 'something went wrong') : ''}
+        error={text('error message', '')}
         onChange={action('changed')}
         onFocus={action('focused')}
         onBlur={action('blurred')}

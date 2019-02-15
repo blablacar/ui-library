@@ -32,6 +32,8 @@ export interface CommonFormFields {
   ) => void
 }
 
+type errorField = string | JSX.Element
+
 export interface TextFieldProps extends CommonFormFields {
   isTextArea?: boolean
   defaultValue?: string
@@ -39,7 +41,7 @@ export interface TextFieldProps extends CommonFormFields {
   onChange?: (obj: OnChangeParameters) => void
   onClear?: () => void
   className?: Classcat.Class
-  error?: string | JSX.Element
+  error?: errorField
   addon?: JSX.Element
   label?: string
   buttonTitle?: string
@@ -63,18 +65,12 @@ export interface TextFieldState {
   readonly showPassword: boolean
 }
 
-const DisplayError = (error: string | JSX.Element) => {
+const DisplayError = (error: errorField) => {
   const className = 'kirk-error-message'
-  if (React.isValidElement(error)) {
-    return React.cloneElement(error as React.ReactElement<any>, {
-      className,
-    })
-  }
-  return (
-    <span role="alert" className={className}>
-      {error}
-    </span>
-  )
+
+  return React.isValidElement(error)
+    ? React.cloneElement(error, { className } as Object)
+    : <span role="alert" className={className}>{error}</span>
 }
 
 export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
@@ -207,9 +203,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     }
 
     const buttonOnClick = type !== 'password' ? this.clearValue : this.toggleShowPassword
-
-    const shouldDisplayErrorMessage = error && typeof error !== 'boolean'
-    const shouldDisplayButton = !isTextArea && !disabled
+    const shouldDisplayButton = !isTextArea && !disabled && value
 
     return (
       <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
@@ -227,9 +221,8 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
           {shouldDisplayButton && (
             <Button
               className="kirk-textField-button"
-              hidden={!value}
               status={Button.STATUS.UNSTYLED}
-              icon
+              isBubble
               onClick={buttonOnClick}
               tabIndex="-1"
               title={buttonTitle}
@@ -243,7 +236,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
             </Button>
           )}
         </div>
-        {shouldDisplayErrorMessage && DisplayError(error)}
+        {Boolean(error) && DisplayError(error)}
         <style jsx>{style}</style>
       </div>
     )

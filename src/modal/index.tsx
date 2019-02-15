@@ -149,7 +149,7 @@ class Modal extends Component<ModalProps> {
                 <div className={`${baseClassName}-dialog`}>
                   {this.props.displayCloseButton && (
                     <Button
-                      icon
+                      isBubble
                       className={`${baseClassName}-closeButton`}
                       onClick={this.props.close}
                       title={this.props.closeButtonTitle}
