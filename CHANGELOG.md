@@ -8,6 +8,12 @@
 - **[Fix]** Remove the breaking change that added horizontal padding on Toggle button and profile in the previous version
 - **[Fix]** Forward href props to the Item component
 - **[UPDATE]** Remove the `ItemChoice` padding reduced when there is a sublabel
+- [...]
+
+# v0.21.1 (12/02/2019)
+
+- **[Fix]** Remove the breaking change that added horizontal padding on Toggle button and profile in the previous version
+- **[Fix]** Forward href props to the Item component
 
 # v0.21.0 (11/02/2019)
 
