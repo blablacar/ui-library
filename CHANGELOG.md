@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Check icon animation not played correctly on Safari
 - **[BREAKING CHANGE]** `TextField` no more boolean accepted in the error field
 - **[UPDATE]** `Button` no more span in the Button
 - **[UPDATE]** `Button` no more whitespace no wrap & text-ellipsis
