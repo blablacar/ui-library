@@ -45,10 +45,10 @@ it('Should return a tag A when href is a string', () => {
   expect(wrapper.prop('href')).toBe('#')
 })
 
-it('Should return a tag button with its props when href is an object', () => {
-  const wrapper = shallow(<Item href={<button id="name" />} />)
-  expect(wrapper.type()).toEqual('button')
-  expect(wrapper.prop('id')).toEqual('name')
+it('Should return a tag of a with its href when href is a component a', () => {
+  const wrapper = shallow(<Item href={<a href="#" />} />)
+  expect(wrapper.type()).toEqual('a')
+  expect(wrapper.prop('href')).toEqual('#')
 })
 
 it('Should display a left add-on', () => {
