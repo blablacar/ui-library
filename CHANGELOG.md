@@ -2,6 +2,10 @@
 
 - [...]
 
+# v0.21.2 (20/02/2019)
+
+- **[FIX]** `Item` should not have an empty href on non A tags.
+
 # v0.21.1 (12/02/2019)
 
 - **[Fix]** Remove the breaking change that added horizontal padding on Toggle button and profile in the previous version
