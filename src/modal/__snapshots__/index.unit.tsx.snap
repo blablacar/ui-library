@@ -14,7 +14,7 @@ exports[`Modal should not have changed 1`] = `
         className="jsx-3447746461 kirk-modal-dialog"
       >
         <button
-          className="kirk-button kirk-button-primary kirk-button-icon kirk-modal-closeButton"
+          className="kirk-button kirk-button-primary kirk-button-bubble kirk-modal-closeButton"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -25,29 +25,25 @@ exports[`Modal should not have changed 1`] = `
           onTouchStart={[Function]}
           type="button"
         >
-          <span
-            className="jsx-770741165"
+          <svg
+            aria-hidden={true}
+            className="kirk-icon"
+            height="18"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              aria-hidden={true}
-              className="kirk-icon"
-              height="18"
-              viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              
-              <path
-                d="M19 5L5 19M19 19L5 5"
-                fill="none"
-                stroke="#00AFF5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeMiterlimit="10"
-                strokeWidth="2"
-              />
-            </svg>
-          </span>
+            
+            <path
+              d="M19 5L5 19M19 19L5 5"
+              fill="none"
+              stroke="#00AFF5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
           className="jsx-3447746461 kirk-modal-body"

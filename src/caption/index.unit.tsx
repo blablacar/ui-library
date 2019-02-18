@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 import Caption, { renderSecondary } from 'caption'
 
 it('Should have the proper text & attributes with link', () => {
@@ -14,7 +15,7 @@ it('Should have the proper text & attributes with link', () => {
   expect(caption.find('time')).toHaveLength(1)
   expect(caption.find('time').text()).toBe('08th August 2017')
   expect(caption.find('time').prop('dateTime')).toBe('2017-08-07T14:10:40.526Z')
-  expect(caption.find('span')).toHaveLength(2)
+  expect(caption.find('span')).toHaveLength(1)
   expect(caption.find('a')).toHaveLength(1)
   expect(caption.find('a').prop('href')).toBe('https://blablacar.com')
 })
@@ -30,12 +31,7 @@ it('Should have the proper text & attributes without a link', () => {
       08th August 2017
     </Caption>,
   )
-  expect(
-    caption
-      .find('span > span')
-      .first()
-      .text(),
-  ).toBe('Go to blablacar')
+  expect(caption.find('span > span').text()).toBe('Go to blablacar')
 })
 
 it('Should not render the secondary element', () => {

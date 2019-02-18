@@ -7,7 +7,7 @@ export default css`
   :global(.kirk-button) {
     position: relative;
     box-sizing: border-box;
-    display: inline-block;
+    display: flex;
     padding: ${space.l} ${space.xl};
     border: 1px solid transparent;
     border-radius: 48px;
@@ -22,24 +22,19 @@ export default css`
     max-width: 100%;
     overflow: hidden;
     user-select: none;
+    align-items: center;
     transition: max-width ${transition.duration.fast} ease-in,
       background-color ${transition.duration.base} ease-in;
+  }
+
+  :global(.kirk-button svg, .kirk-button img) {
+    flex-shrink: 0;
   }
 
   :global(.kirk-button.kirk-itemChoice) {
     border-radius: 0;
     overflow: visible;
     width: 100%;
-  }
-
-  :global(.kirk-button > span) {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   :global(.kirk-button:hover),
@@ -148,7 +143,7 @@ export default css`
     color: ${color.white};
   }
 
-  :global(.kirk-button-icon) {
+  :global(.kirk-button-bubble) {
     display: inline-block;
     padding: 0;
     line-height: 0;
@@ -157,13 +152,13 @@ export default css`
   }
 
   /* Note: Safari 10 can not have flex context on <button> element */
-  :global(.kirk-button-icon > span) {
+  :global(.kirk-button-bubble) {
     justify-content: center;
     width: ${buttonIconSize};
     height: ${buttonIconSize};
   }
 
-  :global(.kirk-button-icon.kirk-button-shadowed > span) {
+  :global(.kirk-button-bubble.kirk-button-shadowed) {
     width: calc(${buttonIconSize} - ${borderSize} * 2);
     height: calc(${buttonIconSize} - ${borderSize} * 2);
   }
