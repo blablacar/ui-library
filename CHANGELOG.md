@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `Item` should not have an empty href on non A tags.
 - **[BREAKING CHANGE]** `TextField` no more boolean accepted in the error field
 - **[UPDATE]** `Button` no more span in the Button
 - **[UPDATE]** `Button` no more whitespace no wrap & text-ellipsis

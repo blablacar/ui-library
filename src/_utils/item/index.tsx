@@ -56,6 +56,7 @@ const Item = ({
       tagProps = { ...tagProps, ...href.props }
     } else {
       Tag = 'a'
+      tagProps = { ...tagProps, href }
     }
   }
   const isClickable = !!href || !!onClick
@@ -68,7 +69,6 @@ const Item = ({
       onFocus={onFocus}
       onBlur={onBlur}
       onMouseDown={onMouseDown}
-      href={href}
       className={cc([
         'kirk-item',
         {
