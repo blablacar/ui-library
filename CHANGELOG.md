@@ -1,6 +1,10 @@
 # Unreleased
 
 - **[FIX]** `Item` should not have an empty href on non A tags.
+- **[FIX]** Check icon animation not played correctly on Safari
+
+# v0.22.0 (11/02/2019)
+
 - **[BREAKING CHANGE]** `TextField` no more boolean accepted in the error field
 - **[UPDATE]** `Button` no more span in the Button
 - **[UPDATE]** `Button` no more whitespace no wrap & text-ellipsis
@@ -8,7 +12,6 @@
 - **[Fix]** Remove the breaking change that added horizontal padding on Toggle button and profile in the previous version
 - **[Fix]** Forward href props to the Item component
 - **[UPDATE]** Remove the `ItemChoice` padding reduced when there is a sublabel
-- [...]
 
 # v0.21.1 (12/02/2019)
 

@@ -115,7 +115,6 @@ stories.add(
 stories.add(
   'input with autofocus',
   withInfo('TextField with autofocus')(() => {
-    const error = boolean('error', false)
     return (
       <TextField
         type={select('type', inputTypes, 'text')}
