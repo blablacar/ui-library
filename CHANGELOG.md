@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `Item` should not have an empty href on non A tags.
 - **[FIX]** Check icon animation not played correctly on Safari
 
 # v0.22.0 (11/02/2019)

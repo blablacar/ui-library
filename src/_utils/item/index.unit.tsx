@@ -1,8 +1,16 @@
 import React from 'react'
+import renderer from 'react-test-renderer'
 
 import Item from './index'
 import ClockIcon from 'icon/clockIcon'
 import ChevronIcon from 'icon/chevronIcon'
+
+it('Should not have changed', () => {
+  const item = renderer
+    .create(<Item className="custom" leftTitle="Test" leftBody="Test" rightAddon={<ClockIcon />} />)
+    .toJSON()
+  expect(item).toMatchSnapshot()
+})
 
 it('Should be displayed in default state without props', () => {
   const wrapper = shallow(<Item />)
@@ -26,20 +34,21 @@ it('Should accept a custom `tag`', () => {
   expect(wrapper.type()).toBe('li')
 })
 
-it('Should return a tag A when href is present', () => {
+it('Should not return an href prop when no href is pass to the item', () => {
+  const wrapper = shallow(<Item />)
+  expect(wrapper.prop('href')).toBeUndefined()
+})
+
+it('Should return a tag A when href is a string', () => {
   const wrapper = shallow(<Item href="#" />)
   expect(wrapper.type()).toBe('a')
+  expect(wrapper.prop('href')).toBe('#')
 })
 
-it('Should return a tag A when href is present', () => {
-  const wrapper = shallow(<Item href={<button />} />)
-  expect(wrapper.type()).toEqual('button')
-})
-
-it('Should return href props when href is present', () => {
-  const wrapper = shallow(<Item href={<button role="foo" />} />)
-  expect(wrapper.type()).toEqual('button')
-  expect(wrapper.prop('role')).toBe('foo')
+it('Should return a tag of a with its href when href is a component a', () => {
+  const wrapper = shallow(<Item href={<a href="#" />} />)
+  expect(wrapper.type()).toEqual('a')
+  expect(wrapper.prop('href')).toEqual('#')
 })
 
 it('Should display a left add-on', () => {

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should not have changed 1`] = `
+<div
+  className="kirk-item custom"
+>
+  <div
+    className="jsx-4146384086 kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-title kirk-item-title"
+    >
+      Test
+    </div>
+    <div
+      className="kirk-text kirk-text-body kirk-item-body"
+    >
+      Test
+    </div>
+  </div>
+  <div
+    className="jsx-4146384086 kirk-item-rightAddon"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <g
+        fill="none"
+        fillRule="evenodd"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+        <g
+          stroke="#708C91"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="9.565"
+          />
+          <path
+            d="M12 6.783V12h5.217"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
