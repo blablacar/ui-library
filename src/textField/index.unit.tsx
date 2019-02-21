@@ -132,6 +132,16 @@ describe('#error', () => {
     expect(wrapper.find('span').text()).toBe(errorText)
   })
 
+  it('Should have an error state when passing a JSX element', () => {
+    const errorText = 'this is an error'
+    const error = <span>{errorText}</span>
+    const wrapper = shallow(<TextField name="test" error={error} />)
+    expect(wrapper.hasClass('kirk-error')).toBe(true)
+    expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
+    expect(wrapper.find('input').prop('aria-invalid')).toBe('true')
+    expect(wrapper.find('span').text()).toBe(errorText)
+  })
+
   it('Should not have an error state when passing a boolean `false`', () => {
     const wrapper = shallow(<TextField name="test" error={false} />)
     expect(wrapper.hasClass('kirk-error')).toBe(false)

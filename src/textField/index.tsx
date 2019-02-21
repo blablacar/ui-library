@@ -68,9 +68,13 @@ export interface TextFieldState {
 const DisplayError = (error: errorField) => {
   const className = 'kirk-error-message'
 
-  return React.isValidElement(error)
-    ? React.cloneElement(error, { className } as Object)
-    : <span role="alert" className={className}>{error}</span>
+  return React.isValidElement(error) ? (
+    React.cloneElement(error, { className } as Object)
+  ) : (
+    <span role="alert" className={className}>
+      {error}
+    </span>
+  )
 }
 
 export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {

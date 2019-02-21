@@ -2,6 +2,7 @@
 
 - **[FIX]** `Item` should not have an empty href on non A tags.
 - **[FIX]** Check icon animation not played correctly on Safari
+- **[FIX]** `Button` alignment issues fixed with `inline-flex` instead of `flex`
 
 # v0.22.0 (11/02/2019)
 
