@@ -117,7 +117,7 @@ export default css`
   .kirk-itinerary-fromAddon::before,
   .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
     width: 0;
-    border: 2px solid ${color.lightBackground};
+    border: 2px solid ${color.border};
     left: ${timeWidth};
     bottom: -4px;
   }
@@ -142,7 +142,7 @@ export default css`
     width: 8px;
     height: 8px;
     background-color: #fff;
-    border: 2px solid ${color.lightBackground};
+    border: 2px solid ${color.border};
     border-radius: 50%;
     left: calc(${timeWidth} - 2px);
   }
@@ -164,7 +164,7 @@ export default css`
   :global(.kirk-itinerary-toAddon span) {
     display: inline-block;
     padding-left: ${space.l};
-    color: ${color.lightBackground};
+    color: ${color.fadedText};
     position: absolute;
     left: ${timeWidth};
   }
