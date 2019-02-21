@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Add call and send icons
+- **[UPDATE]** update `Itinerary` colors
 - [...]
 
 # v0.22.1 (22/02/2019)

@@ -106,6 +106,7 @@ export const color: Color = {
   accent: palette.blue,
   primaryText: palette.midnightGreen,
   secondaryText: palette.lightMidnightGreen,
+  fadedText: palette.gray,
 
   border: palette.gray,
   disabled: palette.lightGray,

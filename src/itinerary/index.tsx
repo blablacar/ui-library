@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
+import { color } from '_utils/branding'
 import Text, { TextDisplayType, TextTagType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
 
@@ -109,7 +110,11 @@ const Itinerary = ({
                 {!small &&
                   place.subLabel &&
                   (typeof place.subLabel === 'string' ? (
-                    <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.CAPTION}>
+                    <Text
+                      tag={TextTagType.PARAGRAPH}
+                      display={TextDisplayType.CAPTION}
+                      textColor={color.primaryText}
+                    >
                       {place.subLabel}
                     </Text>
                   ) : (
