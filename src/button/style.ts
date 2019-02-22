@@ -7,7 +7,7 @@ export default css`
   :global(.kirk-button) {
     position: relative;
     box-sizing: border-box;
-    display: flex;
+    display: inline-flex;
     padding: ${space.l} ${space.xl};
     border: 1px solid transparent;
     border-radius: 48px;
@@ -144,7 +144,7 @@ export default css`
   }
 
   :global(.kirk-button-bubble) {
-    display: inline-block;
+    display: inline-flex;
     padding: 0;
     line-height: 0;
     width: ${buttonIconSize};
