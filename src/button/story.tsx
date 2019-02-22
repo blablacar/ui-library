@@ -52,6 +52,20 @@ stories.add(
   )),
 )
 
+stories.add(
+  'tertiary',
+  withInfo('')(() => (
+    <Button
+      status={Button.STATUS.TERTIARY}
+      isBubble={hasIcon()}
+      shadowed={boolean('shadowed', false)}
+      {...commonProps}
+    >
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Tertiary button')}
+    </Button>
+  )),
+)
+
 stories.add('loading', withInfo('')(() => <Button status={Button.STATUS.LOADING} />))
 
 stories.add(

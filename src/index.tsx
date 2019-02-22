@@ -5,6 +5,7 @@ import AutoComplete from 'autoComplete'
 import Avatar from 'avatar'
 import Badge from 'badge'
 import Button from 'button'
+import ButtonGroup from 'buttonGroup'
 import Caption from 'caption'
 import Checkbox from 'checkbox'
 import ConfirmationModal from 'confirmationModal'
@@ -53,6 +54,7 @@ export {
   Avatar,
   Badge,
   Button,
+  ButtonGroup,
   Caption,
   Checkbox,
   ConfirmationModal,
