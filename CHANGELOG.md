@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add call and send icons
 - [...]
 
 # v0.22.1 (22/02/2019)

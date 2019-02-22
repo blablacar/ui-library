@@ -5,6 +5,7 @@ import ArrowIcon from './arrowIcon'
 import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'
 import BubbleIcon from './bubbleIcon'
+import CallIcon from './callIcon'
 import CheckIcon from './checkIcon'
 import CheckShieldIcon from './checkShieldIcon'
 import ChevronIcon from './chevronIcon'
@@ -38,6 +39,7 @@ import ProfileIcon from './profileIcon'
 import ProximityIcon from './proximityIcon'
 import QuestionIcon from './questionIcon'
 import SearchIcon from './searchIcon'
+import SendIcon from './sendIcon'
 import SmokeIcon from './smokeIcon'
 import SpeakIcon from './speakIcon'
 import StarIcon from './starIcon'
@@ -45,14 +47,15 @@ import TicketIcon from './ticketIcon'
 import TrashIcon from './trashIcon'
 import TwitterIcon from './twitterIcon'
 import VkontakteIcon from './vkontakteIcon'
-import YoutubeIcon from './youtubeIcon'
 import WarningIcon from './warningIcon'
+import YoutubeIcon from './youtubeIcon'
 
 export {
   ArrowIcon,
   BankIcon,
   BellIcon,
   BubbleIcon,
+  CallIcon,
   CheckIcon,
   CheckShieldIcon,
   ChevronIcon,
@@ -86,6 +89,7 @@ export {
   ProximityIcon,
   QuestionIcon,
   SearchIcon,
+  SendIcon,
   SmokeIcon,
   SpeakIcon,
   StarIcon,
@@ -93,6 +97,6 @@ export {
   TrashIcon,
   TwitterIcon,
   VkontakteIcon,
-  YoutubeIcon,
   WarningIcon,
+  YoutubeIcon,
 }
