@@ -27,6 +27,7 @@ import PushInfo from 'pushInfo'
 import Radio from 'radio'
 import RadioGroup from 'radioGroup'
 import Rating from 'rating'
+import SelectField from 'selectField'
 import Snackbar from 'snackbar'
 import Stars from 'stars'
 import Stepper from 'stepper'
@@ -74,6 +75,7 @@ export {
   Radio,
   RadioGroup,
   Rating,
+  SelectField,
   Snackbar,
   Stars,
   Stepper,
