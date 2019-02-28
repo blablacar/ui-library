@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v0.23.0 (28/02/2019)
+
 - **[NEW]** Add call and send icons
 - **[UPDATE]** update `Itinerary` colors
 - **[NEW]** Add SelectField component
-- [...]
 
 # v0.22.1 (22/02/2019)
 
