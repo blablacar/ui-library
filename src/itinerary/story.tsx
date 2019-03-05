@@ -52,17 +52,17 @@ const placesWithStopover = [
 stories.add(
   'default',
   withInfo('')(() => {
-    const isFromAddon = boolean('top addon', false)
-    const isToAddon = boolean('bottom addon', false)
-    const isHeadline = boolean('Headline', false)
+    const fromAddonLabel = text('From addon label', 'Lille')
+    const toAddonLabel = text('To addon label', 'Biarritz')
+    const headlineLabel = text('Headline label', 'Mon 11 December')
     const isStopover = boolean('Stopover', false)
     return (
       <Itinerary
-        fromAddon={isFromAddon ? 'Lille' : null}
-        toAddon={isToAddon ? 'Biarritz' : null}
+        fromAddon={fromAddonLabel}
+        toAddon={toAddonLabel}
         places={isStopover ? placesWithStopover : places}
         small={boolean('small', false)}
-        headline={isHeadline && 'Mon 11 December'}
+        headline={headlineLabel}
       />
     )
   }),
@@ -72,13 +72,13 @@ stories.add(
   'with proximity',
   withInfo('')(() => {
     const Distances = ['NONE', 'CLOSE', 'MIDDLE', 'FAR']
-    const isFromAddon = boolean('From addon', false)
-    const isToAddon = boolean('To addon', false)
-    const isHeadline = boolean('Headline', false)
+    const fromAddonLabel = text('From addon label', 'Lille')
+    const toAddonLabel = text('To addon label', 'Biarritz')
+    const headlineLabel = text('Headline label', 'Mon 11 December')
     return (
       <Itinerary
-        fromAddon={isFromAddon ? 'Lille' : null}
-        toAddon={isToAddon ? 'Biarritz' : null}
+        fromAddon={fromAddonLabel}
+        toAddon={toAddonLabel}
         places={[
           {
             mainLabel: text('Main label from', 'Paris'),
@@ -105,7 +105,7 @@ stories.add(
           },
         ]}
         small={boolean('small', false)}
-        headline={isHeadline && 'Mon 11 December'}
+        headline={headlineLabel}
       />
     )
   }),
