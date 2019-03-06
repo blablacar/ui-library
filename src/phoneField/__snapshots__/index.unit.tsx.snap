@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
+<div
+  aria-labelledby="labelId"
+  className="kirk-phoneField customClass"
+  id="selectFieldName"
+>
+  <div
+    className="kirk-selectField"
+  >
+    <select
+      aria-label="Phone Country code"
+      defaultValue="+34"
+      name="phonePrefix"
+      onChange={[Function]}
+    >
+      <option
+        value="+34"
+      >
+        Custom es label +34
+      </option>
+      <option
+        value="+33"
+      >
+        Custom fr label +33
+      </option>
+    </select>
+    <svg
+      aria-hidden={true}
+      className="kirk-icon"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+        transform="rotate(90 12 12)"
+      />
+    </svg>
+  </div>
+  <div
+    className="jsx-3265029717 kirk-textField"
+  >
+    <div
+      className="jsx-3265029717 kirk-textField-wrapper"
+    >
+      <input
+        className="jsx-3265029717 "
+        name="phoneNumber"
+        onChange={[Function]}
+        placeholder="Phone number"
+        title="Phone Number"
+        type="tel"
+        value="0765455667"
+      />
+      <button
+        aria-hidden={true}
+        className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="-1"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <path
+            d="M19 5L5 19M19 19L5 5"
+            fill="none"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
+<div
+  className="kirk-phoneField--inline"
+>
+  <div
+    className="kirk-selectField"
+  >
+    <select
+      defaultValue=""
+      name="phonePrefix"
+      onChange={[Function]}
+    >
+      <option
+        value="+33"
+      >
+        France +33
+      </option>
+      <option
+        value="+34"
+      >
+        Spain (España) +34
+      </option>
+    </select>
+    <svg
+      aria-hidden={true}
+      className="kirk-icon"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+        transform="rotate(90 12 12)"
+      />
+    </svg>
+  </div>
+  <div
+    className="jsx-3265029717 kirk-textField"
+  >
+    <div
+      className="jsx-3265029717 kirk-textField-wrapper"
+    >
+      <input
+        className="jsx-3265029717 "
+        name="phoneNumber"
+        onChange={[Function]}
+        type="tel"
+        value=""
+      />
+      
+    </div>
+  </div>
+</div>
+`;
