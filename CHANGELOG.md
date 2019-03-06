@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** `ButtonGroup` component
 - [...]
 
 # v0.23.0 (28/02/2019)

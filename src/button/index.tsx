@@ -9,6 +9,7 @@ import Loader from 'loader'
 export enum ButtonStatus {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  TERTIARY = 'tertiary',
   WARNING = 'warning',
   UNSTYLED = 'unstyled',
   LOADING = 'loading',

@@ -99,6 +99,18 @@ export default css`
     background-color: ${color.secondaryActive};
   }
 
+  :global(.kirk-button-tertiary) {
+    background-color: ${color.white};
+    border-color: transparent;
+    color: ${color.accent};
+  }
+
+  :global(.kirk-button-tertiary:hover),
+  :global(.kirk-button-tertiary:focus),
+  :global(.kirk-button-tertiary:active) {
+    background-color: ${color.secondaryActive};
+  }
+
   :global(.kirk-button-loading) {
     background-color: transparent;
     max-width: initial;
