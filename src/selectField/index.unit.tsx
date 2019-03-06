@@ -11,12 +11,11 @@ const options = [
 
 const defaultProps = {
   name: 'selectFieldName',
-  value: options[0].value,
+  defaultValue: options[0].value,
   options,
   onChange() {},
   onFocus() {},
   onblur() {},
-  forwardedRef: null,
 }
 
 const customProps = {
