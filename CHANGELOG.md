@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Fix fade-in animation for Drawer dimmer
+- [...]
 
 # v3.0.0 (12/04/2019)
 

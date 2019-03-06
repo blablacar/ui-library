@@ -15,20 +15,20 @@ export default css`
     overflow-y: hidden;
   }
 
-  .kirk-drawer--open::after {
+  .kirk-drawer::after {
     content: '';
+    font-size: 0;
+  }
+
+  .kirk-drawer--open::after {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 150ms linear;
-  }
-
-  .kirk-drawer--open::after {
     background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color ${transition.duration.base} linear;
   }
 
   .kirk-drawer--close::after {
