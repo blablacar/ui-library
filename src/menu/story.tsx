@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 import {
@@ -83,6 +84,11 @@ const menuItems = [
     label: 'Logout',
     leftAddon: <CrossDiscIcon />,
     href: 'menu-item-10',
+  },
+  {
+    id: 'menu-item-11',
+    label: 'Menu item with onClick',
+    onClick: action('onClick'),
   },
 ]
 
