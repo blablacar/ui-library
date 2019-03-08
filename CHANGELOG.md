@@ -1,7 +1,7 @@
 # Unreleased
 
 - **[NEW]** `ButtonGroup` component
-- [...]
+- **[FIX]** Do not render empty itinerary steps when its title is a string made of whitespaces.
 
 # v0.23.0 (28/02/2019)
 

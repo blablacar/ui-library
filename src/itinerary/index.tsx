@@ -1,6 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
+import isString from 'lodash.isstring'
 
 import { color } from '_utils/branding'
 import Text, { TextDisplayType, TextTagType } from 'text'
@@ -17,6 +18,8 @@ interface ItineraryProps {
   readonly headline?: string
 }
 
+const isNonEmptyString = (str: string) => isString(str) && str.trim().length > 0
+
 const Itinerary = ({
   className,
   places,
@@ -27,12 +30,12 @@ const Itinerary = ({
 }: ItineraryProps) => {
   return (
     <ul className={cc([className, { 'kirk-itinerary--small': small }])}>
-      {headline && (
+      {isNonEmptyString(headline) && (
         <li className="kirk-itinerary-headline">
           <Text display={TextDisplayType.TITLE}>{headline}</Text>
         </li>
       )}
-      {fromAddon && (
+      {isNonEmptyString(fromAddon) && (
         <li className="kirk-itinerary-fromAddon">
           <Text display={TextDisplayType.CAPTION}>{fromAddon}</Text>
         </li>
@@ -82,7 +85,7 @@ const Itinerary = ({
               {
                 'kirk-itinerary--departure': index === 0,
                 'kirk-itinerary--arrival': isLastPlace,
-                'kirk-itinerary-location--toAddon': isLastPlace && toAddon,
+                'kirk-itinerary-location--toAddon': isLastPlace && isNonEmptyString(toAddon),
               },
             ])}
             key={key}
@@ -130,7 +133,7 @@ const Itinerary = ({
           </li>
         )
       })}
-      {toAddon && (
+      {isNonEmptyString(toAddon) && (
         <li className="kirk-itinerary-toAddon">
           <Text display={TextDisplayType.CAPTION}>{toAddon}</Text>
         </li>

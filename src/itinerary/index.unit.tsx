@@ -46,6 +46,16 @@ describe('Itinerary component', () => {
     expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(true)
   })
 
+  it('Should not render top addon with blank string', () => {
+    const itinerary = shallow(<Itinerary fromAddon=" " places={places} />)
+    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(false)
+  })
+
+  it('Should not render bottom addon with blank string', () => {
+    const itinerary = shallow(<Itinerary toAddon=" " places={places} />)
+    expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(false)
+  })
+
   it('Should display stopover', () => {
     const itinerary = shallow(<Itinerary places={places} />)
     expect(itinerary.find('.kirk-itinerary-location')).toHaveLength(places.length)
