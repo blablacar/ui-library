@@ -20,6 +20,7 @@ const Menu = ({ className, items }: MenuProps) => (
         leftAddon={item.leftAddon}
         rightAddon={item.rightAddon}
         key={item.id}
+        onClick={item.onClick}
       />
     ))}
   </nav>

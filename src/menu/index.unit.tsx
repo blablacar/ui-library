@@ -46,4 +46,17 @@ describe('Menu', () => {
     expect(wrapper.find(HomeIcon)).toHaveLength(1)
     expect(wrapper.find(CheckShieldIcon)).toHaveLength(1)
   })
+
+  it('Should configure onClick listeners on nested menu items', () => {
+    // Set up the second menu item with a mocked onClick handler.
+    const onClickMock = jest.fn()
+    const props = {...defaultProps}
+    props.items[1].onClick = onClickMock
+
+    const wrapper = shallow(<Menu {...props} />)
+    wrapper.find(ItemChoice)
+      .last()
+      .simulate('click')
+    expect(onClickMock).toHaveBeenCalledTimes(1)
+  })
 })
