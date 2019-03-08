@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v0.24.0 (8/03/2019)
+
 - **[NEW]** `ButtonGroup` component
 - **[FIX]** Do not render empty itinerary steps when its title is a string made of whitespaces.
 - **[FIX]** `Menu` component configures correctly its items onClick handlers.
-- [...]
 
 # v0.23.0 (28/02/2019)
 
