@@ -19,6 +19,7 @@ import {
 import Text from 'text'
 
 import Menu from 'menu'
+import { ItemChoiceStatus } from 'itemChoice'
 
 const stories = storiesOf('Menu', module)
 stories.addDecorator(withKnobs)
@@ -32,9 +33,10 @@ const menuItems = [
   },
   {
     id: 'menu-item-2',
-    label: 'Rides offered',
+    label: 'Rides offered (loading)',
     leftAddon: <NewspaperIcon />,
     href: 'menu-item-2',
+    status: ItemChoiceStatus.LOADING,
   },
   {
     id: 'menu-item-3',
