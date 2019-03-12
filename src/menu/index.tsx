@@ -21,6 +21,7 @@ const Menu = ({ className, items }: MenuProps) => (
         rightAddon={item.rightAddon}
         key={item.id}
         onClick={item.onClick}
+        status={item.status}
       />
     ))}
   </nav>

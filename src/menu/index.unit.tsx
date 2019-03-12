@@ -1,27 +1,31 @@
 import React from 'react'
 import Menu from 'menu'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
 
-const defaultProps = {
-  items: [
-    {
-      id: 'menu-item-1',
-      label: 'Dashboard',
-      leftAddon: <HomeIcon />,
-      href: '/',
-    },
-    {
-      id: 'menu-item-2',
-      label: 'Rides offered',
-      leftAddon: <NewspaperIcon />,
-      rightAddon: <CheckShieldIcon />,
-      href: '/rides',
-    },
-  ],
-}
+let defaultProps = {}
 
 describe('Menu', () => {
+  beforeEach(() => {
+    defaultProps = {
+      items: [
+        {
+          id: 'menu-item-1',
+          label: 'Dashboard',
+          leftAddon: <HomeIcon />,
+          href: '/',
+        },
+        {
+          id: 'menu-item-2',
+          label: 'Rides offered',
+          leftAddon: <NewspaperIcon />,
+          rightAddon: <CheckShieldIcon />,
+          href: '/rides',
+        },
+      ],
+    }
+  })
+
   it('Should accept a custom className', () => {
     const customClassName = 'custom'
     const wrapper = shallow(<Menu {...defaultProps} className={customClassName} />)
@@ -50,13 +54,25 @@ describe('Menu', () => {
   it('Should configure onClick listeners on nested menu items', () => {
     // Set up the second menu item with a mocked onClick handler.
     const onClickMock = jest.fn()
-    const props = {...defaultProps}
-    props.items[1].onClick = onClickMock
+    defaultProps.items[1].onClick = onClickMock
 
-    const wrapper = shallow(<Menu {...props} />)
+    const wrapper = shallow(<Menu {...defaultProps} />)
     wrapper.find(ItemChoice)
       .last()
       .simulate('click')
     expect(onClickMock).toHaveBeenCalledTimes(1)
   })
+
+  it('Should use configured status for nested items', () => {
+    defaultProps.items[0].status = ItemChoiceStatus.LOADING
+
+    const wrapper = shallow(<Menu {...defaultProps} />)
+    expect(
+      wrapper
+        .find(ItemChoice)
+        .first()
+        .prop('status'),
+    ).toEqual('loading')
+  })
 })
+
