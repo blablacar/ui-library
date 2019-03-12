@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Pass `status` from `Menu` configuration to nested `ItemChoice` items.
 - [...]
+
+# v0.24.1 (12/03/2019)
+
+- **[FIX]** Pass `status` from `Menu` configuration to nested `ItemChoice` items.
 
 # v0.24.0 (8/03/2019)
 
