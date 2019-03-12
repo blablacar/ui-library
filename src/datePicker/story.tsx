@@ -12,30 +12,24 @@ import { VERTICAL_SCROLLABLE } from 'react-dates/constants'
 const stories = storiesOf('DatePicker', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'default',
-  withInfo('DatePicker with all it’s default props')(() => (
+stories.add('default', () => (
+  <DatePicker
+    name="datapicker-default"
+    initialDate={moment()}
+    locale={text('locale', 'en')}
+    onChange={action('onChange')}
+  />
+))
+
+stories.add('vertically scrollable', () => (
+  <div style={{ height: 568, width: 475 }}>
     <DatePicker
-      name="datapicker-default"
+      name="datapicker-vertically-scrollable"
       initialDate={moment()}
       locale={text('locale', 'en')}
       onChange={action('onChange')}
+      orientation={VERTICAL_SCROLLABLE}
+      numberOfMonths={12}
     />
-  )),
-)
-
-stories.add(
-  'vertically scrollable',
-  withInfo('DatePicker vertically scrollable with 12 months')(() => (
-    <div style={{ height: 568, width: 475 }}>
-      <DatePicker
-        name="datapicker-vertically-scrollable"
-        initialDate={moment()}
-        locale={text('locale', 'en')}
-        onChange={action('onChange')}
-        orientation={VERTICAL_SCROLLABLE}
-        numberOfMonths={12}
-      />
-    </div>
-  )),
-)
+  </div>
+))

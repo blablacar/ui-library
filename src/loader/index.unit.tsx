@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import Loader from 'loader'
 import CircleIcon from 'icon/circleIcon'
 import CheckIcon from 'icon/checkIcon'

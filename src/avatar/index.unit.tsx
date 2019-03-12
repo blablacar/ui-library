@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow } from 'enzyme'
+
 import Avatar from 'avatar'
 import Badge from 'badge'
 

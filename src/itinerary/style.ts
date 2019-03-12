@@ -1,8 +1,7 @@
 import css from 'styled-jsx/css'
-import { color, space } from '_utils/branding'
+import { color, space, componentSizes } from '_utils/branding'
 
 const distanceFromHeight = '40px'
-export const timeWidth = '64px'
 
 export default css`
   li {
@@ -46,7 +45,7 @@ export default css`
   }
 
   .kirk-itinerary-location time {
-    min-width: ${timeWidth};
+    min-width: ${componentSizes.timeWidth};
   }
 
   .kirk-itinerary-location-city {
@@ -70,7 +69,7 @@ export default css`
     height: 100%;
     background-color: ${color.primaryText};
     top: 0;
-    left: ${timeWidth};
+    left: ${componentSizes.timeWidth};
   }
 
   .kirk-itinerary--small .kirk-itinerary-location div::before {
@@ -84,7 +83,7 @@ export default css`
     border: 2px solid ${color.primaryText};
     border-radius: 50%;
     top: calc(4px + ${space.m});
-    left: calc(${timeWidth} - 2px);
+    left: calc(${componentSizes.timeWidth} - 2px);
   }
 
   .kirk-itinerary--small .kirk-itinerary-location div::after {
@@ -118,7 +117,7 @@ export default css`
   .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
     width: 0;
     border: 2px solid ${color.border};
-    left: ${timeWidth};
+    left: ${componentSizes.timeWidth};
     bottom: -4px;
   }
 
@@ -144,7 +143,7 @@ export default css`
     background-color: #fff;
     border: 2px solid ${color.border};
     border-radius: 50%;
-    left: calc(${timeWidth} - 2px);
+    left: calc(${componentSizes.timeWidth} - 2px);
   }
 
   .kirk-itinerary--small .kirk-itinerary-fromAddon::after,
@@ -166,7 +165,7 @@ export default css`
     padding-left: ${space.l};
     color: ${color.fadedText};
     position: absolute;
-    left: ${timeWidth};
+    left: ${componentSizes.timeWidth};
   }
 
   :global(.kirk-itinerary--small .kirk-itinerary-fromAddon span),

@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import Message from 'message'
 
 it('Should have the correct attributes and text.', () => {

@@ -9,7 +9,6 @@ import HamburgerButton from 'hamburgerButton'
 const stories = storiesOf('HamburgerButton', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'default',
-  withInfo('')(() => <HamburgerButton onClick={action('onClick')} open={boolean('open', false)} />),
-)
+stories.add('default', () => (
+  <HamburgerButton onClick={action('onClick')} open={boolean('open', false)} />
+))

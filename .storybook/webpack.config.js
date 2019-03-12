@@ -1,15 +1,11 @@
-// load the default config generator.
-const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js')
-
-module.exports = (baseConfig, env) => {
-  const config = genDefaultConfig(baseConfig, env)
-
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    use: ['babel-loader', 'awesome-typescript-loader'],
+    loader: require.resolve('babel-loader'),
+    options: {
+      presets: [['react-app', { flow: false, typescript: true }]],
+    },
   })
-
   config.resolve.extensions.push('.ts', '.tsx')
-
   return config
 }

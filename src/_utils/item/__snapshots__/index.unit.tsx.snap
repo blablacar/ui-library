@@ -1,25 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should not have changed 1`] = `
+exports[`Item Should not have changed 1`] = `
 <div
-  className="kirk-item custom"
+  className="jsx-1500099655 kirk-item custom"
 >
   <div
-    className="jsx-4146384086 kirk-item-leftText"
+    className="jsx-1500099655 kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title"
     >
       Test
+      <style />
     </div>
     <div
       className="kirk-text kirk-text-body kirk-item-body"
     >
       Test
+      <style />
     </div>
   </div>
   <div
-    className="jsx-4146384086 kirk-item-rightAddon"
+    className="jsx-1500099655 kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -54,5 +56,6 @@ exports[`Should not have changed 1`] = `
       </g>
     </svg>
   </div>
+  <style />
 </div>
 `;

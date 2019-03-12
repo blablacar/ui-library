@@ -9,9 +9,6 @@ import Badge from 'badge'
 const stories = storiesOf('Badge', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'Basic',
-  withInfo('')(() => (
-    <Badge ariaLabel={text('ariaLabel', 'Unread messages')}>{text('children', '456')}</Badge>
-  )),
-)
+stories.add('Basic', () => (
+  <Badge ariaLabel={text('ariaLabel', 'Unread messages')}>{text('children', '456')}</Badge>
+))

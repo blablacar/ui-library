@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 import TimePicker, { getTodayDate } from 'timePicker'
 
 const defaultProps = {

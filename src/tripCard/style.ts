@@ -1,6 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, radius, space } from '_utils/branding'
-import { timeWidth } from 'itinerary/style'
+import { color, radius, space, componentSizes } from '_utils/branding'
 
 export default css`
   li {
@@ -42,7 +41,7 @@ export default css`
 
   /* To match the width of the time area of the Itinerary */
   :global(.kirk-tripCard-avatar) {
-    min-width: ${timeWidth};
+    min-width: ${componentSizes.timeWidth};
     margin-right: ${space.l};
   }
 

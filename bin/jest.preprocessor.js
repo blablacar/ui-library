@@ -16,6 +16,7 @@ module.exports = {
         moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
       })
     }
+
     return src
   },
 }

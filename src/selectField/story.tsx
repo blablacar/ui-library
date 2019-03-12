@@ -17,21 +17,18 @@ const phoneExtensionOptions = [
 
 const ref = React.createRef<HTMLDivElement>()
 
-stories.add(
-  'Default',
-  withInfo('Phone extentions example')(() => (
-    <SelectField
-      id={text('id', 'selectFieldId')}
-      name={text('name', 'selectFieldName')}
-      className={text('className', 'additionalClass')}
-      options={phoneExtensionOptions}
-      ariaLabel={text('ariaLabel', 'selectLabel')}
-      value={phoneExtensionOptions[1].value}
-      onChange={action('changed')}
-      disabled={boolean('disabled', false)}
-      required={boolean('required', false)}
-      autoFocus={boolean('autoFocus', false)}
-      forwardedRef={ref}
-    />
-  )),
-)
+stories.add('Default', () => (
+  <SelectField
+    id={text('id', 'selectFieldId')}
+    name={text('name', 'selectFieldName')}
+    className={text('className', 'additionalClass')}
+    options={phoneExtensionOptions}
+    ariaLabel={text('ariaLabel', 'selectLabel')}
+    value={phoneExtensionOptions[1].value}
+    onChange={action('changed')}
+    disabled={boolean('disabled', false)}
+    required={boolean('required', false)}
+    autoFocus={boolean('autoFocus', false)}
+    forwardedRef={ref}
+  />
+))

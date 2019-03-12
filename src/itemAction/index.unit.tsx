@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow } from 'enzyme'
+
 import ItemAction from 'itemAction'
 import CrossIcon from 'icon/crossIcon'
 

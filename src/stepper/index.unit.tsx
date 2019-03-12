@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import Stepper from 'stepper'
 import MinusIcon from 'icon/minusIcon'

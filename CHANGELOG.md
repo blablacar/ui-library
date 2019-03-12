@@ -1,6 +1,15 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Storybook moving to V5
+- **[NEW]** Adding accessibility & viewport storybook plugins
+- **[UPDATE]** Moving to Babel 7
+- **[UPDATE]** Removing tslint deprecated warnings
+- **[UPDATE]** Removing unused libraries
+- **[UPDATE]** Removing implicit shallow & mount in UT
+- **[UPDATE]** Using husky instead of precommit for the git hooks
+- **[UPDATE]** Removing css linter (legacy, targeting CSS files which does not exist anymore on this repository)
+- **[UPDATE]** Moving to styled-jsx V3
+- **[UPDATE]** Re-organize the dependencies (dev & prod dependencies)
 
 # v0.24.1 (12/03/2019)
 

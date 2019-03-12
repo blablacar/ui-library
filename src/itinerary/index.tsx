@@ -41,7 +41,7 @@ const Itinerary = ({
         </li>
       )}
       {places.map((place, index) => {
-        let Component: tag
+        let Component
         let chevron = false
         let hrefProps
         let key

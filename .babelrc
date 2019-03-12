@@ -1,32 +1,24 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "targets": {
-          "browsers": [
-            "last 2 versions",
-            "> 1%"
-          ],
+          "browsers": ["last 2 versions", "> 1%"],
           "node": "current"
         }
       }
     ],
-    "react",
-    "stage-3"
+    "@babel/preset-react"
   ],
   "plugins": [
     "styled-jsx/babel",
-    "transform-react-jsx",
-    "transform-class-properties",
+    "@babel/plugin-transform-react-jsx",
+    "@babel/plugin-proposal-class-properties",
     [
       "module-resolver",
       {
-        "root": [
-          "./src",
-          "./utils",
-          "./build/src"
-        ]
+        "root": ["./src", "./build/src"]
       }
     ]
   ]

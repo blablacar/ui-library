@@ -19,7 +19,7 @@ export const UneditableTextField = ({
   ellipsis = false,
   href,
 }: UneditableTextFieldProps) => {
-  let componentType: tag
+  let componentType
   let props: any = {}
   if (href && typeof href !== 'string') {
     componentType = href.type
@@ -35,7 +35,7 @@ export const UneditableTextField = ({
     componentType,
     {
       className: cc(['uneditableTextField', className]),
-      ...props
+      ...props,
     },
     <Fragment>
       {addOn}

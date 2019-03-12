@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import padStart from 'lodash.padstart'
 import cc from 'classcat'
 import prefix from '_utils'
 import style from './style'
@@ -22,7 +21,7 @@ const toLocaleTimeStringSupportsLocales = (() => {
 const formatTimeValue = (dateTime: Date) => {
   const hours = dateTime.getHours()
   const minutes = dateTime.getMinutes()
-  return `${padStart(hours.toString(), 2, '0')}:${padStart(minutes.toString(), 2, '0')}`
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
 }
 
 /**

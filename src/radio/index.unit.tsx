@@ -1,7 +1,8 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import Radio from 'radio'
 import ItemChoice from 'itemChoice'
-import CrossIcon from 'icon/crossIcon'
 
 const defaultProps = {
   name: 'radioName',

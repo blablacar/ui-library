@@ -93,11 +93,13 @@ export const delay = {
   },
 }
 
-export const buttonIconSize = '48px'
+export const componentSizes = {
+  timeWidth: '64px',
+  buttonIconSize: '48px',
+  modalMaxWidth: '662px',
+}
 
-export const modalMaxWidth = '662px'
-
-export const shadow = {
+export const shadow: defaultBranding = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
 }
 

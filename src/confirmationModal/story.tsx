@@ -41,32 +41,26 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
   }
 }
 
-stories.add(
-  'Warning',
-  withInfo('ConfirmationModal with warning status')(() => (
-    <ConfirmationModalOpener
-      status={ConfirmationModal.STATUS.WARNING}
-      isOpen={false}
-      onClose={() => {}}
-      onConfirm={() => console.log('fhtagn')}
-      confirmLabel={text('confirmLabel', 'Fhtagn')}
-      large={boolean('large', false)}
-      closeOnEsc={boolean('closeOnEsc', true)}
-    />
-  )),
-)
+stories.add('Warning', () => (
+  <ConfirmationModalOpener
+    status={ConfirmationModal.STATUS.WARNING}
+    isOpen={false}
+    onClose={() => {}}
+    onConfirm={() => console.log('fhtagn')}
+    confirmLabel={text('confirmLabel', 'Fhtagn')}
+    large={boolean('large', false)}
+    closeOnEsc={boolean('closeOnEsc', true)}
+  />
+))
 
-stories.add(
-  'Reminder',
-  withInfo('ConfirmationModal with reminder status')(() => (
-    <ConfirmationModalOpener
-      status={ConfirmationModal.STATUS.REMINDER}
-      isOpen={false}
-      onClose={() => {}}
-      onConfirm={() => console.log('fhtagn')}
-      confirmLabel={text('confirmLabel', 'Fhtagn')}
-      large={boolean('large', false)}
-      closeOnEsc={boolean('closeOnEsc', true)}
-    />
-  )),
-)
+stories.add('Reminder', () => (
+  <ConfirmationModalOpener
+    status={ConfirmationModal.STATUS.REMINDER}
+    isOpen={false}
+    onClose={() => {}}
+    onConfirm={() => console.log('fhtagn')}
+    confirmLabel={text('confirmLabel', 'Fhtagn')}
+    large={boolean('large', false)}
+    closeOnEsc={boolean('closeOnEsc', true)}
+  />
+))

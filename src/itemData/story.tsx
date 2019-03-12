@@ -9,20 +9,17 @@ import ItemData from 'itemData'
 const stories = storiesOf('ItemData', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'Default',
-  withInfo('')(() => {
-    const isMainTitle = boolean('Title', false)
-    const isDataInfo = boolean('Secondary info', false)
+stories.add('Default', () => {
+  const isMainTitle = boolean('Title', false)
+  const isDataInfo = boolean('Secondary info', false)
 
-    return (
-      <ItemData
-        mainInfo={text('Main info', 'Main information')}
-        data={text('Data', 'Data')}
-        mainTitle={isMainTitle ? text('Main title', 'Title') : null}
-        dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-        tag={<li />}
-      />
-    )
-  }),
-)
+  return (
+    <ItemData
+      mainInfo={text('Main info', 'Main information')}
+      data={text('Data', 'Data')}
+      mainTitle={isMainTitle ? text('Main title', 'Title') : null}
+      dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+      tag={<li />}
+    />
+  )
+})

@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow } from 'enzyme'
+
 import HamburgerButton from 'hamburgerButton'
 
 const defaultProps = {

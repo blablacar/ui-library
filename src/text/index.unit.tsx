@@ -1,5 +1,7 @@
-import React from 'react'
+import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
+import * as React from 'react'
+
 import Text from 'text'
 
 const multipleLineText = `line1
@@ -60,14 +62,14 @@ describe('Text', () => {
     ).toBe('span')
   })
 
-  it('Should replace \n with br tags by default', () => {
+  it('Should replace \\n with br tags by default', () => {
     const wrapper = shallow(<Text>{multipleLineText}</Text>)
     expect(wrapper.html()).toContain(
       '<span class="kirk-text kirk-text-body">line1<br/>line2<br/>line3</span>',
     )
   })
 
-  it('Should not replace \n with br tags when newlineToBr is false', () => {
+  it('Should not replace \\n with br tags when newlineToBr is false', () => {
     const wrapper = shallow(<Text newlineToBr={false}>{multipleLineText}</Text>)
     expect(wrapper.html()).toContain(
       `<span class="kirk-text kirk-text-body">${multipleLineText}</span>`,

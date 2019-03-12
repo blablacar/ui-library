@@ -18,11 +18,6 @@ const optionHeading = {
 
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'basic',
-  withInfo('')(() => (
-    <Title headingLevel={select('Heading', optionHeading, '1')}>
-      {text('Title', 'Voice title')}
-    </Title>
-  )),
-)
+stories.add('basic', () => (
+  <Title headingLevel={select('Heading', optionHeading, '1')}>{text('Title', 'Voice title')}</Title>
+))

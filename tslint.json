@@ -9,8 +9,6 @@
     "import-name": false,
     "object-shorthand-properties-first": false,
     "align": false,
-    "variable-name": false,
-    "no-unused-variable": true,
-    "no-boolean-literal-compare": true
+    "variable-name": false
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { shallow, mount } from 'enzyme'
 
 import Profile from 'profile'
 import Item from '_utils/item'

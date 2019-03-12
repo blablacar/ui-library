@@ -120,9 +120,7 @@ describe('Button', () => {
 
     it('Should be a link if we pass it as a React element.', () => {
       const wrapper = shallow(
-        <Button radio href={<TestLink href="/test-page">nothing</TestLink>}>
-          link
-        </Button>,
+        <Button href={<TestLink href="/test-page">nothing</TestLink>}>link</Button>,
       )
       expect(wrapper.prop('href')).toBe('/test-page')
       expect(wrapper.html()).toContain('link')

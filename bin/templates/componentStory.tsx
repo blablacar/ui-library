@@ -11,5 +11,5 @@ stories.addDecorator(withKnobs)
 
 stories.add(
   'Test',
-  withInfo('')(() => <${componentName} />),
+  () => <${componentName} />,
 )

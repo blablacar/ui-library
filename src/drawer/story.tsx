@@ -121,4 +121,4 @@ class DrawerDemo extends Component {
   }
 }
 
-stories.add('default', withInfo('')(() => <DrawerDemo />))
+stories.add('default', () => <DrawerDemo />)

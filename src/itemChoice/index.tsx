@@ -112,7 +112,7 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       )
     }
 
-    let Component: tag
+    let Component
     let typeProps: TypeProps
 
     // If we pass a component to href, we get component type and we merge props
@@ -134,8 +134,14 @@ class ItemChoice extends PureComponent<ItemChoiceProps> {
       typeProps = { onClick, onFocus, onBlur, onMouseDown, className: classNames }
     }
 
+    const props = {
+      ...typeProps,
+      role: 'option',
+      'aria-selected': selected,
+    }
+
     return (
-      <Component role="option" aria-selected={selected} {...typeProps}>
+      <Component {...props}>
         {leftAddon && (
           <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
         )}

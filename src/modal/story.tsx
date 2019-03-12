@@ -56,32 +56,26 @@ class ModalOpener extends Component<ModalProps> {
   }
 }
 
-stories.add(
-  'default',
-  withInfo('Modal with all it’s default props')(() => (
-    <ModalOpener
-      close={() => {}}
-      closeOnEsc={boolean('closeOnEsc', true)}
-      closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
-      fullscreen={boolean('fullscreen', false)}
-      displayDimmer={boolean('displayDimmer', true)}
-      large={boolean('large', false)}
-      isOpen={false}
-    />
-  )),
-)
+stories.add('default', () => (
+  <ModalOpener
+    close={() => {}}
+    closeOnEsc={boolean('closeOnEsc', true)}
+    closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
+    fullscreen={boolean('fullscreen', false)}
+    displayDimmer={boolean('displayDimmer', true)}
+    large={boolean('large', false)}
+    isOpen={false}
+  />
+))
 
-stories.add(
-  'fullscreen',
-  withInfo('Modal fullscreen')(() => (
-    <ModalOpener
-      fullscreen={boolean('fullscreen', true)}
-      displayDimmer={boolean('displayDimmer', false)}
-      close={() => {}}
-      closeOnEsc={boolean('closeOnEsc', true)}
-      closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
-      displayCloseButton={boolean('displayCloseButton', true)}
-      isOpen={false}
-    />
-  )),
-)
+stories.add('fullscreen', () => (
+  <ModalOpener
+    fullscreen={boolean('fullscreen', true)}
+    displayDimmer={boolean('displayDimmer', false)}
+    close={() => {}}
+    closeOnEsc={boolean('closeOnEsc', true)}
+    closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
+    displayCloseButton={boolean('displayCloseButton', true)}
+    isOpen={false}
+  />
+))

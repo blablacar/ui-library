@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { shallow } from 'enzyme'
+
 import { prefix, replaceNewLineWithBR } from '_utils'
 
 const multipleLineText = `line1

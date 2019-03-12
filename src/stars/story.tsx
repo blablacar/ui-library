@@ -9,4 +9,4 @@ import Stars from 'stars'
 const stories = storiesOf('Stars', module)
 stories.addDecorator(withKnobs)
 
-stories.add('Stars', withInfo('')(() => <Stars stars={number('amount of stars', 0)} />))
+stories.add('Stars', () => <Stars stars={number('amount of stars', 0)} />)
