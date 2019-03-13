@@ -70,8 +70,7 @@ stories.add('All', () => {
 })
 
 Object.entries(icons).forEach(([name, Component]) => {
-  stories.add(
-    name.replace('Icon', ''),
-    withInfo('')(() => <Component {...createIconKnobs(Component.defaultProps)} />),
-  )
+  stories.add(name.replace('Icon', ''), () => (
+    <Component {...createIconKnobs(Component.defaultProps)} />
+  ))
 })

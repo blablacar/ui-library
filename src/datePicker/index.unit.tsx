@@ -1,5 +1,7 @@
 import React from 'react'
+import { mount } from 'enzyme'
 import moment from 'moment'
+
 import DatePicker from 'datePicker'
 
 describe('DatePicker', () => {

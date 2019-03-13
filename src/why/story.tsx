@@ -10,14 +10,11 @@ import Why from 'why'
 const stories = storiesOf('Why', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'default',
-  withInfo('')(() => (
-    <Why
-      onClick={action('clicked')}
-      title={text('Title', 'Why this is a text that is so long ? (new window)')}
-    >
-      {text('Text', 'Why this is a text that is so long ?')}
-    </Why>
-  )),
-)
+stories.add('default', () => (
+  <Why
+    onClick={action('clicked')}
+    title={text('Title', 'Why this is a text that is so long ? (new window)')}
+  >
+    {text('Text', 'Why this is a text that is so long ?')}
+  </Why>
+))

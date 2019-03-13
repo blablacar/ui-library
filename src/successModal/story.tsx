@@ -38,17 +38,14 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
   }
 }
 
-stories.add(
-  'SuccessModal',
-  withInfo('SuccessModal')(() => (
-    <SuccessModalOpener
-      isOpen={false}
-      onConfirm={() => {}}
-      imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
-      imageText={text('imageText', 'Illustation description')}
-      confirmLabel={text('confirmLabel', 'Got it!')}
-      large={boolean('large', false)}
-      closeOnEsc={boolean('closeOnEsc', false)}
-    />
-  )),
-)
+stories.add('SuccessModal', () => (
+  <SuccessModalOpener
+    isOpen={false}
+    onConfirm={() => {}}
+    imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
+    imageText={text('imageText', 'Illustation description')}
+    confirmLabel={text('confirmLabel', 'Got it!')}
+    large={boolean('large', false)}
+    closeOnEsc={boolean('closeOnEsc', false)}
+  />
+))

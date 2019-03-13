@@ -19,8 +19,9 @@ const navNext = <ArrowIcon right iconColor={color.primary} />
 
 export interface DatePickerProps {
   readonly name: string
-  readonly onChange?: (obj: OnChangeParameters) => void
+  readonly locale: string
   readonly initialDate: moment.Moment
+  readonly onChange?: (obj: OnChangeParameters) => void
   readonly orientation?: string
   readonly monthFormat?: string
   readonly className?: Classcat.Class
@@ -29,7 +30,6 @@ export interface DatePickerProps {
   readonly hideKeyboardShortcutsPanel?: boolean
   readonly isOutsideRange?: (day: moment.Moment) => boolean
   readonly daySize?: number
-  readonly locale: string
 }
 
 export interface DatePickerState {

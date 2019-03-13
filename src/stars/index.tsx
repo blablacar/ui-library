@@ -14,7 +14,7 @@ const ValidateStars = (star: number) => !(star < 0 || star > 5)
 const StarIcon = ({ offset }: { offset: number }) => (
   <div className="star">
     <Star fill={offset} size="14" />
-    <style>{style}</style>
+    <style jsx>{style}</style>
   </div>
 )
 

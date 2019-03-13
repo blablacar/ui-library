@@ -17,15 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src"
   },
-  "include": [
-    "node_modules/@types",
-    "src/**/*.tsx",
-    "src/**/*.ts",
-    "stories/index.tsx"
-  ],
-  "exclude": [
-    "build",
-    "node_modules",
-    "src/**/*.unit.tsx"
-  ]
+  "include": ["node_modules/@types", "src/**/*.tsx", "src/**/*.ts", "stories/index.tsx"],
+  "exclude": ["build", "node_modules", "src/**/*.unit.tsx"]
 }

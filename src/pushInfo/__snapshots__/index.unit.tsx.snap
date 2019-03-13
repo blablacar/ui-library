@@ -2,10 +2,10 @@
 
 exports[`Should also have the correct icon. 1`] = `
 <div
-  className="jsx-3334873755 kirk-pushInfo"
+  className="jsx-3382816266 kirk-pushInfo"
 >
   <div
-    className="jsx-3334873755 kirk-pushInfo-icon"
+    className="jsx-3382816266 kirk-pushInfo-icon"
   >
     <svg
       aria-hidden={true}
@@ -23,15 +23,15 @@ exports[`Should also have the correct icon. 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-3334873755"
+    className="jsx-3382816266"
   >
     <h2
-      className="jsx-3334873755 kirk-pushInfo-headline"
+      className="jsx-3382816266 kirk-pushInfo-headline"
     >
       If it's green it's a win!
     </h2>
     <p
-      className="jsx-3334873755 kirk-pushInfo-content"
+      className="jsx-3382816266 kirk-pushInfo-content"
     >
       Green icons show meeting points closest to you!
     </p>
@@ -41,18 +41,18 @@ exports[`Should also have the correct icon. 1`] = `
 
 exports[`Should have the correct attributes and text. 1`] = `
 <div
-  className="jsx-3334873755 kirk-pushInfo"
+  className="jsx-3382816266 kirk-pushInfo"
 >
   <div
-    className="jsx-3334873755"
+    className="jsx-3382816266"
   >
     <h2
-      className="jsx-3334873755 kirk-pushInfo-headline"
+      className="jsx-3382816266 kirk-pushInfo-headline"
     >
       If it's green it's a win!
     </h2>
     <p
-      className="jsx-3334873755 kirk-pushInfo-content"
+      className="jsx-3382816266 kirk-pushInfo-content"
     >
       Green icons show meeting points closest to you!
     </p>

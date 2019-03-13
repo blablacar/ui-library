@@ -55,21 +55,18 @@ const centerContent = (
   </div>
 )
 
-stories.add(
-  'default',
-  withInfo('')(() => {
-    const left = boolean('left element', true)
-    const right = boolean('right element', false)
-    const center = boolean('center element', false)
-    return (
-      <TopBar
-        leftItem={left ? leftAction : null}
-        centerItem={center ? centerContent : null}
-        rightItem={right ? rightAction : null}
-        fixed={boolean('fixed mode', false)}
-        bgTransparent={boolean('transparent background', false)}
-        bgShadedTransparent={boolean('shaded transparent background', false)}
-      />
-    )
-  }),
-)
+stories.add('default', () => {
+  const left = boolean('left element', true)
+  const right = boolean('right element', false)
+  const center = boolean('center element', false)
+  return (
+    <TopBar
+      leftItem={left ? leftAction : null}
+      centerItem={center ? centerContent : null}
+      rightItem={right ? rightAction : null}
+      fixed={boolean('fixed mode', false)}
+      bgTransparent={boolean('transparent background', false)}
+      bgShadedTransparent={boolean('shaded transparent background', false)}
+    />
+  )
+})

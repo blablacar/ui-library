@@ -2,7 +2,7 @@ import css from 'styled-jsx/css'
 import { color, space, font, radius } from '_utils/branding'
 
 export default css`
-  .kirk-selectField {
+  :global(.kirk-selectField) {
     display: block;
     position: relative;
     width: 100%;
@@ -15,7 +15,7 @@ export default css`
     box-shadow: none;
   }
 
-  .kirk-selectField select {
+  :global(.kirk-selectField select) {
     display: block;
     position: relative;
     width: 100%;
@@ -36,15 +36,15 @@ export default css`
   }
 
   /* Remove native select arrow on Internet Explorer 10 and 11  */
-  .kirk-selectField select::-ms-expand {
+  :global(.kirk-selectField select::-ms-expand) {
     display: none;
   }
 
-  .kirk-selectField select:focus {
+  :global(.kirk-selectField select:focus) {
     outline: none;
   }
 
-  .kirk-selectField .kirk-icon {
+  :global(.kirk-selectField .kirk-icon) {
     position: absolute;
     top: ${space.l};
     right: ${space.m};

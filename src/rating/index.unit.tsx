@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import Rating from 'rating'
 
@@ -10,7 +11,7 @@ it('Should have a rating and label', () => {
 
 it('Should have a rating, label and stars', () => {
   const profile = mount(
-    <Rating ratings={1} label="rating" score={5}>
+    <Rating ratings={1} score={5}>
       rating
     </Rating>,
   )

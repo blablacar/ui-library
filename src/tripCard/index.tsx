@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
@@ -49,19 +49,19 @@ const TripCard = ({
   const displayFlags = isEmpty(highlighted) && !isEmpty(flags)
   const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
 
-  let LinkComponent: tag
-  let typeProps = {}
+  let componentTag
+  let componentProps = {}
 
   // If we pass a component to href, we get component type and we merge props
   if (typeof href !== 'string') {
-    LinkComponent = href.type
-    typeProps = {
+    componentTag = href.type
+    componentProps = {
       ...href.props,
       rel: 'nofollow',
     }
   } else {
-    LinkComponent = 'a'
-    typeProps = {
+    componentTag = 'a'
+    componentProps = {
       href,
       rel: 'nofollow',
     }
@@ -73,39 +73,43 @@ const TripCard = ({
       itemScope
       itemType="http://schema.org/Event"
     >
-      <LinkComponent {...typeProps}>
-        <meta itemProp="url" content={metaUrl} />
-        <meta itemProp="name" content={itemPropName} />
-        <meta itemProp="startDate" content={departure.isoDate} />
-        <meta itemProp="endDate" content={arrival.isoDate} />
+      {React.createElement(
+        componentTag,
+        componentProps,
+        <Fragment>
+          <meta itemProp="url" content={metaUrl} />
+          <meta itemProp="name" content={itemPropName} />
+          <meta itemProp="startDate" content={departure.isoDate} />
+          <meta itemProp="endDate" content={arrival.isoDate} />
 
-        <div className="kirk-tripCard-main">
-          <Itinerary className="kirk-tripCard-itinerary" places={itinerary} />
-          <Text className="kirk-tripCard-price" display={TextDisplayType.TITLESTRONG}>
-            {price}
-          </Text>
-        </div>
-        <div className="kirk-tripCard-bottom">
-          <div className="kirk-tripCard-driver">
-            <div className="kirk-tripCard-avatar">
-              <Avatar image={driver.avatarUrl} alt="" />
-            </div>
-            <Text display={TextDisplayType.TITLE}>{driver.firstName}</Text>
-          </div>
-          {highlighted && (
-            <Text className="kirk-tripCard-topText" display={TextDisplayType.TITLESTRONG}>
-              {highlighted}
+          <div className="kirk-tripCard-main">
+            <Itinerary className="kirk-tripCard-itinerary" places={itinerary} />
+            <Text className="kirk-tripCard-price" display={TextDisplayType.TITLESTRONG}>
+              {price}
             </Text>
-          )}
-          {displayFlags && (
-            <div className="kirk-tripCard-flags">
-              {flags.ladiesOnly && <LadyIcon title={titles.ladiesOnly || ''} />}
-              {flags.maxTwo && <ComfortIcon title={titles.maxTwo || ''} />}
-              {flags.autoApproval && <LightningIcon title={titles.autoApproval || ''} />}
+          </div>
+          <div className="kirk-tripCard-bottom">
+            <div className="kirk-tripCard-driver">
+              <div className="kirk-tripCard-avatar">
+                <Avatar image={driver.avatarUrl} alt="" />
+              </div>
+              <Text display={TextDisplayType.TITLE}>{driver.firstName}</Text>
             </div>
-          )}
-        </div>
-      </LinkComponent>
+            {highlighted && (
+              <Text className="kirk-tripCard-topText" display={TextDisplayType.TITLESTRONG}>
+                {highlighted}
+              </Text>
+            )}
+            {displayFlags && (
+              <div className="kirk-tripCard-flags">
+                {flags.ladiesOnly && <LadyIcon title={titles.ladiesOnly || ''} />}
+                {flags.maxTwo && <ComfortIcon title={titles.maxTwo || ''} />}
+                {flags.autoApproval && <LightningIcon title={titles.autoApproval || ''} />}
+              </div>
+            )}
+          </div>
+        </Fragment>,
+      )}
       <style jsx>{style}</style>
     </li>
   )

@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import AutoCompleteList from './autoCompleteList'
 import AutoCompleteListItem from './autoCompleteListItem'
 

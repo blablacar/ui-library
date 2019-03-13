@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import TripCard from 'tripCard'
 import ComfortIcon from 'icon/comfortIcon'

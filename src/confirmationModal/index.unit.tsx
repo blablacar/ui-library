@@ -1,5 +1,7 @@
 import React from 'react'
-import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
+import { shallow, mount } from 'enzyme'
+
+import ConfirmationModal from 'confirmationModal'
 import CrossIcon from 'icon/crossIcon'
 
 const defaultProps = {

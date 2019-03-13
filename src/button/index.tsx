@@ -132,7 +132,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       ...attrs
     } = this.props
 
-    let componentType: tag
+    let componentType
     let typeProps: TypeProps = {}
 
     // If we pass a component to href, we get component type and we merge props

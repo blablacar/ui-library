@@ -5,7 +5,7 @@ exports[`Snackbar should not have changed 1`] = `
   className="transition-wrapper kirk-snackbar-container"
 >
   <div
-    className="jsx-2822186252 kirk-snackbar slide-up slide-up-entered"
+    className="jsx-190474685 kirk-snackbar slide-up slide-up-entered"
   >
     <span
       className="kirk-text kirk-text-title kirk-snackbar-content"

@@ -1,5 +1,7 @@
 import React from 'react'
+import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+
 import SelectField from 'selectField'
 
 const options = [
@@ -20,7 +22,7 @@ const defaultProps = {
 const customProps = {
   ...defaultProps,
   id: 'selectFieldId',
-  className: "customClass",
+  className: 'customClass',
   ariaLabel: 'selectLabel',
   autoFocus: true,
   disabled: false,
@@ -42,8 +44,18 @@ describe('SelectField', () => {
   })
 
   it('should have appropriate alternate label on options', () => {
-    expect(defaultWrapper.find('option').first().prop('aria-label')).toBe(options[0].ariaLabel)
-    expect(defaultWrapper.find('option').last().prop('aria-label')).toBeUndefined()
+    expect(
+      defaultWrapper
+        .find('option')
+        .first()
+        .prop('aria-label'),
+    ).toBe(options[0].ariaLabel)
+    expect(
+      defaultWrapper
+        .find('option')
+        .last()
+        .prop('aria-label'),
+    ).toBeUndefined()
   })
 
   it('should receive selected value after change', () => {
@@ -51,7 +63,7 @@ describe('SelectField', () => {
     const selectDOMNode = select.getDOMNode()
     selectDOMNode.value = '2'
     select.simulate('change', { target: selectDOMNode })
-    expect(handleOnChange).toHaveBeenCalledWith({ "name": "selectFieldName", "value": "2" })
+    expect(handleOnChange).toHaveBeenCalledWith({ name: 'selectFieldName', value: '2' })
   })
 
   it('Should have custom props', () => {

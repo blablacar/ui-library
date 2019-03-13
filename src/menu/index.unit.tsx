@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import Menu from 'menu'
 import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
@@ -57,7 +59,8 @@ describe('Menu', () => {
     defaultProps.items[1].onClick = onClickMock
 
     const wrapper = shallow(<Menu {...defaultProps} />)
-    wrapper.find(ItemChoice)
+    wrapper
+      .find(ItemChoice)
       .last()
       .simulate('click')
     expect(onClickMock).toHaveBeenCalledTimes(1)
@@ -75,4 +78,3 @@ describe('Menu', () => {
     ).toEqual('loading')
   })
 })
-

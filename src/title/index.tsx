@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 import style from 'title/style'
 
@@ -8,18 +8,21 @@ interface TitleProps {
   readonly headingLevel?: number
 }
 
-export const isHeadingAvailable = (level: number) => Number(level) >= 1 && Number(level) <= 6
+export const isHeadingAvailable = (level: number) => level >= 1 && level <= 6
 
 const Title = ({ className, children, headingLevel = 1 }: TitleProps) => {
   if (!isHeadingAvailable(headingLevel)) {
     return null
   }
-  const Heading = `h${headingLevel}`
-  return (
-    <Heading className={cc(['kirk-title', className])}>
+  return React.createElement(
+    `h${headingLevel}`,
+    {
+      className: cc(['kirk-title', className]),
+    },
+    <Fragment>
       {children}
       <style jsx>{style}</style>
-    </Heading>
+    </Fragment>,
   )
 }
 export default Title

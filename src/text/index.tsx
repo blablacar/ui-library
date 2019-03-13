@@ -1,8 +1,8 @@
 import React from 'react'
-import { replaceNewLineWithBR } from '_utils'
 import cc from 'classcat'
 
-import style from 'text/style'
+import { replaceNewLineWithBR } from '_utils'
+import style from './style'
 
 export enum TextDisplayType {
   BODY = 'body',
@@ -33,6 +33,9 @@ interface TextProps {
   readonly role?: string
 }
 
+const baseClassName = 'kirk-text'
+const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
+
 const Text = ({
   className,
   children,
@@ -42,22 +45,14 @@ const Text = ({
   newlineToBr = true,
   role,
 }: TextProps) => {
-  const baseClassName = 'kirk-text'
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
 
-  const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
-
   const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
-
-  let content = children
-  if (typeof children === 'string' && newlineToBr) {
-    content = replaceNewLineWithBR(children)
-  }
 
   return (
     <Tag role={role} className={cc([baseClassName, displayClassName, className])} {...inlineStyle}>
-      {content}
+      {typeof children === 'string' && newlineToBr ? replaceNewLineWithBR(children) : children}
       <style jsx global>
         {style}
       </style>

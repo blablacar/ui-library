@@ -1,4 +1,6 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
+
 import Why from 'why'
 
 const text = 'Why this?'

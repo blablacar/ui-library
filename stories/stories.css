@@ -1,18 +1,17 @@
 @font-face {
-  font-family: "gt-eesti";
+  font-family: 'gt-eesti';
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/GT-Eesti-Pro-Display-Regular.woff2") format("woff2"),
-       url("fonts/GT-Eesti-Pro-Display-Regular.woff") format("woff");
-
+  src: url('fonts/GT-Eesti-Pro-Display-Regular.woff2') format('woff2'),
+    url('fonts/GT-Eesti-Pro-Display-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: "gt-eesti";
+  font-family: 'gt-eesti';
   font-style: normal;
   font-weight: 500;
-  src: url("fonts/GT-Eesti-Pro-Display-Medium.woff2") format("woff2"),
-       url("fonts/GT-Eesti-Pro-Display-Medium.woff") format("woff");
+  src: url('fonts/GT-Eesti-Pro-Display-Medium.woff2') format('woff2'),
+    url('fonts/GT-Eesti-Pro-Display-Medium.woff') format('woff');
 }
 
 *,
@@ -33,7 +32,7 @@ ul {
   padding: 0;
 }
 
-#root > div > div:nth-child(2) {
+#story-root {
   padding-top: 40px;
   padding-left: 24px;
   padding-right: 24px;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow, mount } from 'enzyme'
 
 import TopBar from 'topBar'
 import Button from 'button'

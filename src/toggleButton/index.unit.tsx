@@ -1,4 +1,5 @@
 import React from 'react'
+import { shallow } from 'enzyme'
 
 import ToggleButton from 'toggleButton'
 import Item from '_utils/item/index'

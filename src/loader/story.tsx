@@ -9,13 +9,10 @@ import Loader from 'loader'
 const stories = storiesOf('Loader', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'default',
-  withInfo('')(() => (
-    <Loader
-      inline={boolean('inline', true)}
-      size={number('size', 48)}
-      done={boolean('done', false)}
-    />
-  )),
-)
+stories.add('default', () => (
+  <Loader
+    inline={boolean('inline', true)}
+    size={number('size', 48)}
+    done={boolean('done', false)}
+  />
+))

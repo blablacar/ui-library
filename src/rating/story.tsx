@@ -9,11 +9,8 @@ import Rating from 'rating'
 const stories = storiesOf('Rating', module)
 stories.addDecorator(withKnobs)
 
-stories.add(
-  'Rating',
-  withInfo('')(() => (
-    <Rating ratings={number('ratings', 0)} score={number('score', 0)}>
-      {text('ratings label', 'ratings')}
-    </Rating>
-  )),
-)
+stories.add('Rating', () => (
+  <Rating ratings={number('ratings', 0)} score={number('score', 0)}>
+    {text('ratings label', 'ratings')}
+  </Rating>
+))

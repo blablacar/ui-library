@@ -1,5 +1,5 @@
-import css from 'styled-jsx/css'
-import { color, font, space, transition, buttonIconSize, shadow } from '_utils/branding'
+import * as css from 'styled-jsx/css'
+import { color, font, space, transition, componentSizes, shadow } from '_utils/branding'
 
 const borderSize = '2px'
 
@@ -17,8 +17,8 @@ export default css`
     text-decoration: none;
     cursor: pointer;
     font-family: inherit;
-    min-height: ${buttonIconSize};
-    min-width: ${buttonIconSize};
+    min-height: ${componentSizes.buttonIconSize};
+    min-width: ${componentSizes.buttonIconSize};
     max-width: 100%;
     overflow: hidden;
     user-select: none;
@@ -159,20 +159,20 @@ export default css`
     display: inline-flex;
     padding: 0;
     line-height: 0;
-    width: ${buttonIconSize};
-    height: ${buttonIconSize};
+    width: ${componentSizes.buttonIconSize};
+    height: ${componentSizes.buttonIconSize};
   }
 
   /* Note: Safari 10 can not have flex context on <button> element */
   :global(.kirk-button-bubble) {
     justify-content: center;
-    width: ${buttonIconSize};
-    height: ${buttonIconSize};
+    width: ${componentSizes.buttonIconSize};
+    height: ${componentSizes.buttonIconSize};
   }
 
   :global(.kirk-button-bubble.kirk-button-shadowed) {
-    width: calc(${buttonIconSize} - ${borderSize} * 2);
-    height: calc(${buttonIconSize} - ${borderSize} * 2);
+    width: calc(${componentSizes.buttonIconSize} - ${borderSize} * 2);
+    height: calc(${componentSizes.buttonIconSize} - ${borderSize} * 2);
   }
 
   @media (hover: none), (hover: on-demand) {

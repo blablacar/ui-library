@@ -94,4 +94,4 @@ const menuItems = [
   },
 ]
 
-stories.add('default', withInfo('')(() => <Menu items={menuItems} />))
+stories.add('default', () => <Menu items={menuItems} />)

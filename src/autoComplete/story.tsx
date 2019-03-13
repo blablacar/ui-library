@@ -89,20 +89,14 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
   }
 }
 
-stories.add('AutoComplete', withInfo('AutoComplete')(() => <AutoCompleteExample />))
+stories.add('Basic', () => <AutoCompleteExample />)
 
-stories.add(
-  'AutoComplete with busy state',
-  withInfo('AutoComplete')(() => <AutoCompleteExample searchForItemsDelay={1500} />),
-)
+stories.add('With busy state', () => <AutoCompleteExample searchForItemsDelay={1500} />)
 
-stories.add(
-  'AutoComplete with empty search',
-  withInfo('AutoComplete')(() => {
-    const emptySearch = [
-      { id: '1', title: 'Get my location', description: '' },
-      { id: '2', title: 'Favorite address', description: '' },
-    ]
-    return <AutoCompleteExample renderEmptySearch={emptySearch} />
-  }),
-)
+stories.add('With empty search', () => {
+  const emptySearch = [
+    { id: '1', title: 'Get my location', description: '' },
+    { id: '2', title: 'Favorite address', description: '' },
+  ]
+  return <AutoCompleteExample renderEmptySearch={emptySearch} />
+})

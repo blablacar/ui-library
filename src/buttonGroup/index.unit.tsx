@@ -13,6 +13,7 @@ describe('Button Group', () => {
     )
     expect(btnGroup.prop('className')).toContain('kirk-button-group-row')
   })
+
   it('Should apply the column className if the inline prop is set to false', () => {
     const btnGroup = shallow(
       <ButtonGroup>
@@ -21,6 +22,7 @@ describe('Button Group', () => {
     )
     expect(btnGroup.prop('className')).toContain('kirk-button-group-column')
   })
+
   it('Should apply the reverse className if the reverse prop is set to true', () => {
     const btnGroup = shallow(
       <ButtonGroup isReverse>
@@ -29,6 +31,7 @@ describe('Button Group', () => {
     )
     expect(btnGroup.prop('className')).toContain('kirk-button-group-reverse')
   })
+
   it('Should allow additional class names', () => {
     const btnGroup = shallow(
       <ButtonGroup className="foo">
