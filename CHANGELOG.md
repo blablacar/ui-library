@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v1.0.0 (13/03/2019)
+
 - **[UPDATE]** Storybook moving to V5
 - **[NEW]** Adding accessibility & viewport storybook plugins
 - **[UPDATE]** Moving to Babel 7
