@@ -250,6 +250,26 @@ describe('AutoComplete', () => {
 
       expect(wrapper.find('li')).toHaveLength(initialFakeItems.length)
     })
+
+    it('empties the result list when setting a new defaultValue', () => {
+      const initialDefaultValue = 'initialDefaultValue'
+      const wrapper = mount(
+        <AutoComplete
+          {...defaultProps}
+          defaultValue={initialDefaultValue}
+          renderEmptySearch={emptySearch}
+          renderBusy={() => <div className="busy" />}
+        />,
+      )
+      wrapper.instance().onInputChange({ value: 'Lyon' })
+      wrapper.setProps({ isSearching: true })
+      wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
+
+      expect(wrapper.find('li')).toHaveLength(initialFakeItems.length)
+
+      wrapper.setProps({ defaultValue: 'pouet' })
+      expect(wrapper.find('li')).toHaveLength(0)
+    })
   })
 
   describe('#onInputChange', () => {
@@ -380,22 +400,40 @@ describe('AutoComplete', () => {
   })
 
   describe('#defaultValue', () => {
-    const defaultValue = 'bla'
+    const initialDefaultValue = 'initialDefaultValue'
     it('Can have a default value in TextField when mouting', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={defaultValue} />)
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe(defaultValue)
+      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe(initialDefaultValue)
     })
 
-    it('Can have a default value in TextField when mouting', () => {
+    it('Can update the textfield value when getting a new default value', () => {
+      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe(initialDefaultValue)
+
+      // Simulate a user typing in the textfield
+      wrapper.instance().onInputChange({ value: 'abc' })
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe('abc')
+
+      // Simulate a new defaultValue being passed to autoComplete
+      const newDefaultValue = 'coincoin'
+      wrapper.setProps({ defaultValue: newDefaultValue })
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe(newDefaultValue)
+
+      // Simulate a user typing in the textfield again
+      wrapper.instance().onInputChange({ value: 'a' })
+      expect(wrapper.find('TextField').prop('defaultValue')).toBe('a')
+    })
+
+    it('uses the default value to search for items when mouting', () => {
       const searchForItems = jest.fn()
       const wrapper = shallow(
         <AutoComplete
           {...defaultProps}
-          defaultValue={defaultValue}
+          defaultValue={initialDefaultValue}
           searchForItems={searchForItems}
         />,
       )
-      expect(searchForItems).toHaveBeenCalledWith(defaultValue)
+      expect(searchForItems).toHaveBeenCalledWith(initialDefaultValue)
     })
 
     it('Does not trigger a search when mounting with a default value in TextField', () => {
@@ -403,7 +441,7 @@ describe('AutoComplete', () => {
       const wrapper = shallow(
         <AutoComplete
           {...defaultProps}
-          defaultValue={defaultValue}
+          defaultValue={initialDefaultValue}
           searchForItems={searchForItems}
           searchOnMount={false}
         />,

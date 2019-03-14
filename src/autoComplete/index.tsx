@@ -56,7 +56,9 @@ interface AutoCompleteProps {
 interface AutoCompleteState {
   readonly busy: boolean
   readonly items: AutocompleteItem[]
-  readonly value: string
+  readonly formattedValue: string
+  readonly textfieldValue: string
+  readonly lastDefaultValue: string
   readonly query: query
   readonly noResults: boolean
   readonly isSearching: boolean
@@ -65,7 +67,9 @@ interface AutoCompleteState {
 const initialState: AutoCompleteState = {
   busy: false,
   items: [],
-  value: '',
+  formattedValue: '',
+  textfieldValue: '',
+  lastDefaultValue: '',
   query: '',
   noResults: false,
   isSearching: false,
@@ -74,7 +78,6 @@ const initialState: AutoCompleteState = {
 export default class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState> {
   private input: HTMLInputElement
   private busyTimeout: number | void
-  private currentValue: query
 
   static defaultProps: Partial<AutoCompleteProps> = {
     searchOnMount: true,
@@ -109,10 +112,11 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     if (props.debounceTimeout > 0) {
       this.searchForItems = debounce(this.searchForItems, props.debounceTimeout)
     }
-    this.currentValue = this.props.defaultValue
     this.state = {
       ...initialState,
       query: this.props.defaultValue,
+      lastDefaultValue: this.props.defaultValue,
+      textfieldValue: this.props.defaultValue,
     }
   }
 
@@ -128,8 +132,25 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   static getDerivedStateFromProps(props: AutoCompleteProps, state: AutoCompleteState) {
+    const hasDefaultValueChanged = state.lastDefaultValue !== props.defaultValue
+    const baseState = hasDefaultValueChanged
+      ? {
+          textfieldValue: props.defaultValue,
+          lastDefaultValue: props.defaultValue,
+          items: [],
+        }
+      : {}
+
+    if (hasDefaultValueChanged) {
+      return {
+        ...baseState,
+        isSearching: props.isSearching,
+      }
+    }
+
     if (state.isSearching && !props.isSearching) {
       return {
+        ...baseState,
         isSearching: false,
         busy: false,
         noResults: isEmpty(props.items),
@@ -138,7 +159,10 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     }
 
     if (state.isSearching !== props.isSearching) {
-      return { isSearching: props.isSearching }
+      return {
+        ...baseState,
+        isSearching: props.isSearching,
+      }
     }
 
     return null
@@ -166,32 +190,41 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   onInputChange = ({ value }: { value: query }) => {
-    this.currentValue = value
-    if (this.hasMinCharsForSearch()) {
-      this.setState({ noResults: false, query: value }, this.searchForItems)
+    const textfieldValue = String(value)
+    if (this.hasMinCharsForSearch(textfieldValue)) {
+      this.setState(
+        {
+          textfieldValue,
+          noResults: false,
+          query: value,
+        },
+        this.searchForItems,
+      )
     } else {
       this.clearBusyTimeout()
-      this.setState({ noResults: false, busy: false, items: [] })
+      this.setState({ textfieldValue: String(value), noResults: false, busy: false, items: [] })
     }
     this.props.onInputChange({ value })
   }
 
   onSelectItem = (item: AutocompleteItem) => {
+    const query = this.props.renderQuery(item)
     this.setState(
       {
         items: [],
-        query: this.props.renderQuery(item),
-        value: this.props.getItemValue(item),
+        textfieldValue: query,
+        query,
+        formattedValue: this.props.getItemValue(item),
       },
       () => {
         this.input.select()
-        this.props.onSelect({ name: this.props.name, value: this.state.value, item })
+        this.props.onSelect({ name: this.props.name, value: this.state.formattedValue, item })
       },
     )
   }
 
-  hasMinCharsForSearch() {
-    return String(this.currentValue).length >= this.props.searchForItemsMinChars
+  hasMinCharsForSearch(value: string) {
+    return value.length >= this.props.searchForItemsMinChars
   }
 
   searchForItems = () => {
@@ -199,7 +232,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     // is still scheduled to be called while the user has modified the query
     // during that lapse of time. Therefore, the check below verify the real input value
     // against the searchForItemsMinChars prop.
-    if (!this.hasMinCharsForSearch()) return
+    if (!this.hasMinCharsForSearch(this.state.textfieldValue)) return
 
     this.busyTimeout = window.setTimeout(this.showBusy, this.props.busyTimeout)
     this.props.searchForItems(this.state.query)
@@ -224,19 +257,18 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
   }
 
   render() {
+    const hasMinCharsForSearch = this.hasMinCharsForSearch(this.state.textfieldValue)
     const shouldDisplayEmptyState =
-      !this.hasMinCharsForSearch() && this.props.showList && !isEmpty(this.props.renderEmptySearch)
+      !hasMinCharsForSearch && this.props.showList && !isEmpty(this.props.renderEmptySearch)
     const shouldDisplayBusyState = this.state.busy && this.props.showList
     const shouldDisplayNoResults =
-      this.hasMinCharsForSearch() && !this.state.busy && this.state.noResults && this.props.showList
+      hasMinCharsForSearch && !this.state.busy && this.state.noResults && this.props.showList
     const shouldDisplayAutoCompleteList =
-      this.hasMinCharsForSearch() &&
-      !isEmpty(this.state.items) &&
-      !this.state.busy &&
-      this.props.showList
+      hasMinCharsForSearch && !isEmpty(this.state.items) && !this.state.busy && this.props.showList
     const listItems = shouldDisplayAutoCompleteList
       ? this.state.items
       : this.props.renderEmptySearch
+
     return (
       <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
@@ -248,7 +280,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           onBlur={this.props.onBlur}
           onClear={this.props.onClear}
           placeholder={this.props.placeholder}
-          defaultValue={String(this.state.query)}
+          defaultValue={String(this.state.textfieldValue)}
           addon={this.props.inputAddon}
           inputRef={this.inputRef}
           autoCorrect={this.props.autoCorrect}
