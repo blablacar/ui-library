@@ -2,9 +2,13 @@ import React from 'react'
 import { mount } from 'enzyme'
 import moment from 'moment'
 
-import DatePicker from 'datePicker'
+import DatePicker, { HORIZONTAL_ORIENTATION } from 'datePicker'
 
 describe('DatePicker', () => {
+  it('Should retrieve the react dates contants from the kirk component', () => {
+    expect(HORIZONTAL_ORIENTATION).toBe('horizontal')
+  })
+
   it('Should render the DatePicker with an initialDate', () => {
     const initialDate = moment('2020-01-01')
     const wrapper = mount(<DatePicker name="datepicker" initialDate={initialDate} />)

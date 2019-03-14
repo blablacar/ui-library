@@ -3,6 +3,7 @@ import cc from 'classcat'
 import moment from 'moment'
 import 'react-dates/initialize'
 import { DayPickerSingleDateController, isInclusivelyAfterDay } from 'react-dates'
+
 import {
   HORIZONTAL_ORIENTATION,
   VERTICAL_ORIENTATION,
@@ -36,6 +37,9 @@ export interface DatePickerState {
   readonly focused: boolean
   readonly date: moment.Moment
 }
+
+// Getter for all of the react dates constants that could be used outside of this component
+export * from 'react-dates/constants'
 
 export default class DatePicker extends Component<DatePickerProps, DatePickerState> {
   static defaultProps: Partial<DatePickerProps> = {
