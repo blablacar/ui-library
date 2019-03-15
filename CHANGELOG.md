@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Export the react dates constants in the date picker component
 
 # v1.0.0 (13/03/2019)
 
