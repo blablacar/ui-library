@@ -48,7 +48,7 @@ stories.add(
       <TextField
         type={select('type', inputTypes, 'text')}
         id={text('id')}
-        defaultValue="starting value"
+        defaultValue={text('defaultValue', 'starting value')}
         name={text('name')}
         placeholder={text('placeholder')}
         disabled={boolean('disabled', false)}

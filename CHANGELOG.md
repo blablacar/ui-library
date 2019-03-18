@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Export the react dates constants in the date picker component
+- **[FIX]** Ensure that autocomplete texfield is updated when its defaultValue props is updated.
 
 # v1.0.0 (13/03/2019)
 
