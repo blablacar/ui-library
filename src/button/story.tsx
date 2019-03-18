@@ -2,14 +2,15 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-import { withInfo } from '@storybook/addon-info'
 
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
+import primaryDoc from 'button/specifications/primary.md'
+import secondaryDoc from 'button/specifications/secondary.md'
+import tertiaryDoc from 'button/specifications/tertiary.md'
 
-const stories = storiesOf('Button', module)
-stories.addDecorator(withKnobs)
+const stories = storiesOf('Button', module).addDecorator(withKnobs)
 
 const label = (defaultValue: string) => text('Label', defaultValue)
 const hasIcon = () => boolean('icon', false)
@@ -24,38 +25,56 @@ const commonProps = {
   onBlur: action('blured'),
 }
 
-stories.add('primary', () => (
-  <Button
-    status={Button.STATUS.PRIMARY}
-    isBubble={hasIcon()}
-    shadowed={boolean('shadowed', false)}
-    {...commonProps}
-  >
-    {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
-  </Button>
-))
+stories.add(
+  'primary',
+  () => (
+    <Button
+      status={Button.STATUS.PRIMARY}
+      isBubble={hasIcon()}
+      shadowed={boolean('shadowed', false)}
+      {...commonProps}
+    >
+      {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
+    </Button>
+  ),
+  {
+    readme: { content: primaryDoc },
+  },
+)
 
-stories.add('secondary', () => (
-  <Button
-    status={Button.STATUS.SECONDARY}
-    isBubble={hasIcon()}
-    shadowed={boolean('shadowed', false)}
-    {...commonProps}
-  >
-    {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
-  </Button>
-))
+stories.add(
+  'secondary',
+  () => (
+    <Button
+      status={Button.STATUS.SECONDARY}
+      isBubble={hasIcon()}
+      shadowed={boolean('shadowed', false)}
+      {...commonProps}
+    >
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
+    </Button>
+  ),
+  {
+    readme: { content: secondaryDoc },
+  },
+)
 
-stories.add('tertiary', () => (
-  <Button
-    status={Button.STATUS.TERTIARY}
-    isBubble={hasIcon()}
-    shadowed={boolean('shadowed', false)}
-    {...commonProps}
-  >
-    {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Tertiary button')}
-  </Button>
-))
+stories.add(
+  'tertiary',
+  () => (
+    <Button
+      status={Button.STATUS.TERTIARY}
+      isBubble={hasIcon()}
+      shadowed={boolean('shadowed', false)}
+      {...commonProps}
+    >
+      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Tertiary button')}
+    </Button>
+  ),
+  {
+    readme: { content: tertiaryDoc },
+  },
+)
 
 stories.add('loading', () => <Button status={Button.STATUS.LOADING} />)
 
@@ -122,6 +141,7 @@ class Validation extends React.Component {
     valid: false,
     icon: false,
   }
+
   validate = () => {
     this.setState({ loading: true, valid: false })
     setTimeout(() => {
@@ -135,6 +155,7 @@ class Validation extends React.Component {
 
   renderChildren = () =>
     hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Click me to validate')
+
   render() {
     let status: ButtonStatus = Button.STATUS.PRIMARY
     if (this.state.loading) {
@@ -158,9 +179,5 @@ class Validation extends React.Component {
 
 stories.add('validate on click', () => {
   validation()
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <Validation />
-    </div>
-  )
+  return <Validation />
 })

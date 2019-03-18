@@ -3,7 +3,7 @@
 - **[NEW]** `PhoneField` component
 - **[UPDATE]** `SelectField` remove forwardRef prop and rename defaultValue
 - **[UPDATE]** `TextField` Add tel type
-- [...]
+- **[UPDATE]** Add a way to attach specifications to components (with the example of the Button)
 
 # v1.0.1 (19/03/2019)
 

@@ -17,9 +17,9 @@ export enum ButtonStatus {
 }
 
 export interface ButtonProps {
+  readonly children: string | number | React.ReactNode
   readonly type?: string
   readonly href?: string | JSX.Element
-  readonly children?: string | number | React.ReactNode
   readonly className?: Classcat.Class
   readonly title?: string
   readonly status?: ButtonStatus
