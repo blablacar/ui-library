@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import ConfirmationModal, { ConfirmationModalProps } from 'confirmationModal'

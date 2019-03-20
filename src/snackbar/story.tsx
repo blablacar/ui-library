@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
 import Snackbar from 'snackbar'
@@ -36,7 +35,4 @@ class ErrorOpener extends Component {
   }
 }
 
-stories.add(
-  'Error message',
-  withInfo('Global error message with a long message')(() => <ErrorOpener />),
-)
+stories.add('Error message', () => <ErrorOpener />)
