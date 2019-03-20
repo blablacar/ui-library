@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 
@@ -8,14 +7,13 @@ import { color, space, font } from '_utils/branding'
 const stories = storiesOf('Brand', module)
 stories.addDecorator(withKnobs)
 
-/** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {
   main: {
     margin: '20px',
-    overflow: 'hidden' as 'hidden',
+    overflow: 'hidden',
   },
   colorTile: {
-    float: 'left' as 'left',
+    float: 'left',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -92,16 +90,18 @@ const renderTabSpacing = (s: string) => (
   </tr>
 )
 
-stories.add('Colors', () => (
-  <div style={styles.main}>
-    <h1>Colors</h1>
-    <div>{Object.keys(color).map(renderColors)}</div>
-  </div>
-))
+stories.add(
+  'Colors',
+  () => (
+    <div style={styles.main}>
+      <div>{Object.keys(color).map(renderColors)}</div>
+    </div>
+  ),
+  { info: '☹️ no emojis' },
+)
 
 stories.add('Fonts', () => (
   <div style={styles.main}>
-    <h1>Fonts</h1>
     <table style={styles.fontTableTile}>
       <tbody>
         <tr>
@@ -118,7 +118,6 @@ stories.add('Fonts', () => (
 
 stories.add('Spacing', () => (
   <div style={styles.main}>
-    <h1>Spacing</h1>
     <table style={styles.fontTableTile}>
       <tbody>
         <tr>

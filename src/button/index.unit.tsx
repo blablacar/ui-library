@@ -105,7 +105,7 @@ describe('Button', () => {
     expect(event).toBeCalled()
   })
 
-  describe('#href', () => {
+  describe('href', () => {
     it('Should be a link.', () => {
       const button = shallow(<Button href="/test-page">link</Button>)
       expect(button.prop('href')).toBe('/test-page')
@@ -127,15 +127,11 @@ describe('Button', () => {
     })
   })
 
-  it('should not add a span when there is no children', () => {
-    const wrapper = shallow(<Button />)
-    expect(wrapper.find('span').exists()).toBe(false)
-  })
-
   it('should be disabled while status is checked', () => {
     const wrapper = shallow(<Button status={Button.STATUS.CHECKED}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
   })
+
   it('should be disabled while status is loading', () => {
     const wrapper = shallow(<Button status={Button.STATUS.LOADING}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
