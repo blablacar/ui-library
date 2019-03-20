@@ -1,72 +1,56 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
+import DayPicker, { NavbarElementProps, CaptionElementProps } from 'react-day-picker'
 import DatePicker from './index'
 
 describe('DatePicker', () => {
-  describe('snapshots', () => {
-    it('Should render a datepicker with default settings', () => {
-      const datepicker = renderer.create(<DatePicker name="datepicker" />).toJSON()
-      expect(datepicker).toMatchSnapshot()
-    })
-    it('Should render a horizontal datepicker with two months', () => {
-      const datepicker = renderer
-        .create(
-          <DatePicker
-            name="datepicker"
-            orientation={DatePicker.constants.HORIZONTAL}
-            numberOfMonths={2}
-          />,
-        )
-        .toJSON()
-      expect(datepicker).toMatchSnapshot()
+  describe('renderNavbar', () => {
+    const navbarProps: Partial<NavbarElementProps> = {
+      className: '',
+      showNextButton: true,
+      showPreviousButton: true,
+      onPreviousClick() {},
+      onNextClick() {},
+    }
+    it('Should render the weekdays in vertical mode', () => {
+      const datepicker = shallow(
+        <DatePicker name="datepicker" orientation={DatePicker.constants.VERTICAL} />,
+      )
+      const navbar = renderer.create(datepicker.instance().renderNavbar(navbarProps))
+      expect(navbar).toMatchSnapshot()
     })
 
-    it('Should render a vertical datepicker with six months', () => {
-      const datepicker = renderer
-        .create(
-          <DatePicker
-            name="datepicker"
-            orientation={DatePicker.constants.VERTICAL}
-            numberOfMonths={6}
-          />,
-        )
-        .toJSON()
-      expect(datepicker).toMatchSnapshot()
-    })
-
-    it('Should allow to override all localization properties', () => {
-      const months = [
-        'Janvier',
-        'Février',
-        'Mars',
-        'Avril',
-        'Mai',
-        'Juin',
-        'Juillet',
-        'Août',
-        'Septembre',
-        'Octobre',
-        'Novembre',
-        'Décembre',
-      ]
-      const weekdaysLong = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
-      const weekdaysShort = ['dim', 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam']
-      const firstDayOfWeek = 1
-      const datepicker = renderer
-        .create(
-          <DatePicker
-            name="datepicker"
-            months={months}
-            weekdaysLong={weekdaysLong}
-            weekdaysShort={weekdaysShort}
-            firstDayOfWeek={firstDayOfWeek}
-          />,
-        )
-        .toJSON()
-      expect(datepicker).toMatchSnapshot()
+    it('Should render the previous/next buttons in horizontal mode', () => {
+      const datepicker = shallow(
+        <DatePicker name="datepicker" orientation={DatePicker.constants.HORIZONTAL} />,
+      )
+      const navbar = renderer.create(datepicker.instance().renderNavbar(navbarProps))
+      expect(navbar).toMatchSnapshot()
     })
   })
+
+  describe('renderCaption', () => {
+    const currentYear = new Date().getFullYear()
+    const datepicker = shallow(<DatePicker name="datepicker" />)
+    const captionProps: Partial<CaptionElementProps> = {
+      date: new Date(currentYear, 0, 1),
+      localeUtils: {
+        ...DayPicker.LocaleUtils,
+        formatMonthTitle: datepicker.instance().formatMonthTitle,
+      },
+    }
+    it('Should render the given month title', () => {
+      const caption = renderer.create(datepicker.instance().renderCaption(captionProps))
+      expect(caption).toMatchSnapshot()
+    })
+    it('Should render the given month title with year if it is not the current year', () => {
+      const futureYearProps = { ...captionProps, date: new Date(2050, 0, 1) }
+      const caption = renderer.create(datepicker.instance().renderCaption(futureYearProps))
+      expect(caption).toMatchSnapshot()
+    })
+  })
+
   describe('onChange', () => {
     it('Should return the date in the format `YYYY-MM-DD`', () => {
       const onChange = jest.fn()
