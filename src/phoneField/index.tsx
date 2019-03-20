@@ -51,7 +51,8 @@ const formattedCountriesPhoneData: formattedCountriesPhoneData[] = allCountriesP
     name: countryData.name,
     iso2: countryData.iso2.toUpperCase(),
     dialCode: countryData.dialCode,
-  }))
+  }),
+)
 
 /**
  * Filter countries data according to whitelist
@@ -59,19 +60,15 @@ const formattedCountriesPhoneData: formattedCountriesPhoneData[] = allCountriesP
  * @return {formattedCountriesPhoneData}
  */
 const filterIso2 = (countriesList: string[]) =>
-  formattedCountriesPhoneData.filter(
-    country => countriesList.includes(country.iso2)
-  )
+  formattedCountriesPhoneData.filter(country => countriesList.includes(country.iso2))
 
 /**
  * Return country data according to ISO2 defaultValue
  * @param {string} countryDefault ISO2 format ex: 'FR'
  * @return {formattedCountriesPhoneData}
  */
-const findIso2 = (countryDefault: string):formattedCountriesPhoneData =>
-  formattedCountriesPhoneData.find(
-    country => country.iso2 === countryDefault
-  )
+const findIso2 = (countryDefault: string): formattedCountriesPhoneData =>
+  formattedCountriesPhoneData.find(country => country.iso2 === countryDefault)
 
 const mapCountriesPhoneData = (
   countriesData: formattedCountriesPhoneData[],
@@ -100,7 +97,7 @@ const iso2toDialCode = (iso2Value: string) => {
     return ''
   }
   const countryPhoneData = findIso2(iso2Value)
-  if(countryPhoneData) {
+  if (countryPhoneData) {
     return `+${countryPhoneData.dialCode}`
   }
   return ''

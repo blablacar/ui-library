@@ -1,6 +1,3 @@
-/**
- * THIS FILE IS GENERATED
- */
 import AutoComplete from 'autoComplete'
 import Avatar from 'avatar'
 import Badge from 'badge'
