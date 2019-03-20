@@ -2,7 +2,6 @@ import React from 'react'
 import moment from 'moment'
 
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text } from '@storybook/addon-knobs'
 

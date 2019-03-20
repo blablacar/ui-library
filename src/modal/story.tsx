@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 
 import Modal, { ModalProps } from 'modal'

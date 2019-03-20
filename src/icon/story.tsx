@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
 import { color } from '_utils/branding'

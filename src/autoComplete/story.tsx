@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
 import { ItemChoiceStatus } from 'itemChoice'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
