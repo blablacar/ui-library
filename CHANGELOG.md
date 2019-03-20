@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v1.1.1 (20/03/2019)
+
 - **[NEW]** `PhoneField` component
 - **[UPDATE]** `SelectField` remove forwardRef prop and rename defaultValue
 - **[UPDATE]** `TextField` Add tel type
-- [...]
 
 # v1.0.1 (19/03/2019)
 
