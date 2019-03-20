@@ -1,6 +1,3 @@
-/**
- * THIS FILE IS GENERATED
- */
 import ArrowIcon from './arrowIcon'
 import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'

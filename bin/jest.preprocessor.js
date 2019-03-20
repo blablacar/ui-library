@@ -2,19 +2,13 @@ const tsc = require('typescript')
 const babelJest = require('babel-jest')
 const tsConfig = require('../tsconfig.json')
 
+const moduleFileExtensions = ['ts', 'tsx']
+
 module.exports = {
   process(src, path) {
-    const isTypeScript = path.endsWith('.ts') || path.endsWith('.tsx')
-    const isJavaScript = path.endsWith('.js') || path.endsWith('.jsx')
-
-    if (isTypeScript) {
+    if (moduleFileExtensions.some(extension => path.endsWith(extension))) {
       src = tsc.transpile(src, tsConfig.compilerOptions, path, [])
-    }
-
-    if (isJavaScript || isTypeScript) {
-      src = babelJest.process(src, path, {
-        moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-      })
+      src = babelJest.process(src, path, { moduleFileExtensions })
     }
 
     return src

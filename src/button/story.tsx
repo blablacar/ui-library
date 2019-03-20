@@ -6,9 +6,10 @@ import { action } from '@storybook/addon-actions'
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
-import primaryDoc from 'button/specifications/primary.md'
-import secondaryDoc from 'button/specifications/secondary.md'
-import tertiaryDoc from 'button/specifications/tertiary.md'
+
+import primaryDoc from './specifications/primary.md'
+import secondaryDoc from './specifications/secondary.md'
+import tertiaryDoc from './specifications/tertiary.md'
 
 const stories = storiesOf('Button', module).addDecorator(withKnobs)
 
