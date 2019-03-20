@@ -2,7 +2,7 @@
 
 - [...]
 
-# v1.1.1 (20/03/2019)
+# v1.1.0 (20/03/2019)
 
 - **[NEW]** `PhoneField` component
 - **[UPDATE]** `SelectField` remove forwardRef prop and rename defaultValue
