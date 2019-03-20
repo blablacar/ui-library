@@ -1,6 +1,6 @@
 # Unreleased
 
-- ...
+- **[FIX]** `Avatar` story is now able to render its different sizes
 
 # v1.0.1 (19/03/2019)
 
