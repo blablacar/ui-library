@@ -49,5 +49,6 @@ export default css`
     top: ${space.l};
     right: ${space.m};
     background: ${color.inputBackground};
+    z-index: 1;
   }
 `

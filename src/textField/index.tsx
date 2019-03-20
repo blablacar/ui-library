@@ -14,7 +14,7 @@ export type textfield = HTMLInputElement | HTMLTextAreaElement
 export interface CommonFormFields {
   name: string
   id?: string
-  type?: 'text' | 'password' | 'email' | 'number' | 'search'
+  type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel'
   placeholder?: string
   maxLength?: number
   autoCorrect?: 'on' | 'off'

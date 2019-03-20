@@ -5,20 +5,20 @@ import { color } from '_utils/branding'
 import { CommonFieldsProps } from '_utils/interfaces'
 import style from 'selectField/style'
 
-interface SelectFieldProps extends CommonFieldsProps {
+interface SelectFieldProps extends Partial<CommonFieldsProps> {
   readonly ariaLabel?: string
   readonly options: SelectFieldItem[]
+  readonly defaultValue?: string
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
   readonly onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  readonly forwardedRef?: Ref<HTMLDivElement>
 }
 
 const SelectField = ({
   id,
   name,
   className,
-  value,
+  defaultValue,
   ariaLabel,
   options,
   onChange,
@@ -27,12 +27,11 @@ const SelectField = ({
   autoFocus,
   disabled,
   required,
-  forwardedRef,
 }: SelectFieldProps) => {
   const baseClassName = 'kirk-selectField'
 
   return (
-    <div className={cc([baseClassName, className])} ref={forwardedRef}>
+    <div className={cc([baseClassName, className])}>
       <select
         id={id}
         name={name}
@@ -40,13 +39,13 @@ const SelectField = ({
         onChange={event => onChange({ name, value: event.target.value })}
         onFocus={onFocus}
         onBlur={onBlur}
-        defaultValue={value}
+        defaultValue={defaultValue}
         disabled={disabled}
         required={required}
         autoFocus={autoFocus}
       >
         {options.map(({ value, label, ariaLabel }: SelectFieldItem) => (
-          <option key={value} value={value} aria-label={ariaLabel}>
+          <option key={`${value}${label}`} value={value} aria-label={ariaLabel}>
             {label}
           </option>
         ))}

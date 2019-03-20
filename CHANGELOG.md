@@ -1,6 +1,9 @@
 # Unreleased
 
 - **[FIX]** `Avatar` story is now able to render its different sizes
+- **[NEW]** `PhoneField` component
+- **[UPDATE]** `SelectField` remove forwardRef prop and rename defaultValue
+- **[UPDATE]** `TextField` Add tel type
 
 # v1.0.1 (19/03/2019)
 

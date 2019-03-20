@@ -52,6 +52,7 @@
     "@types/jest": "24.0.11",
     "@types/lodash.debounce": "4.0.6",
     "@types/lodash.isempty": "4.4.6",
+    "@types/lodash.isequal": "4.5.5",
     "@types/lodash.isstring": "4.0.6",
     "@types/lodash.padstart": "4.6.6",
     "@types/react": "16.8.8",
@@ -89,8 +90,10 @@
   },
   "dependencies": {
     "classcat": "3.2.5",
+    "country-telephone-data": "0.6.0",
     "lodash.debounce": "4.0.8",
     "lodash.isempty": "4.4.0",
+    "lodash.isequal": "4.5.0",
     "lodash.isstring": "4.0.1",
     "lodash.kebabcase": "4.1.1",
     "moment": "2.22.2",
