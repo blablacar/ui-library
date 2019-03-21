@@ -1,132 +1,194 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import cc from 'classcat'
-import moment from 'moment'
-import 'react-dates/initialize'
-import { DayPickerSingleDateController, isInclusivelyAfterDay } from 'react-dates'
+import DayPicker, { DayModifiers, NavbarElementProps, CaptionElementProps } from 'react-day-picker'
 
-import {
-  HORIZONTAL_ORIENTATION,
-  VERTICAL_ORIENTATION,
-  VERTICAL_SCROLLABLE,
-} from 'react-dates/constants'
-
+import prefix from '_utils'
 import { color } from '_utils/branding'
 import ArrowIcon from 'icon/arrowIcon'
-import style from './style'
-import theme from './theme'
+import Button from 'button'
 
-const navPrev = <ArrowIcon iconColor={color.primary} />
-const navNext = <ArrowIcon right iconColor={color.primary} />
+import style from 'datePicker/style'
+
+const [BASE_CLASSNAME] = prefix({ datepicker: true })
+
+const defaultWeekdaysLong = [0, 1, 2, 3, 4, 5, 6].map(weekday =>
+  DayPicker.LocaleUtils.formatWeekdayLong(weekday),
+)
+const defaultWeekdaysShort = [0, 1, 2, 3, 4, 5, 6].map(weekday =>
+  DayPicker.LocaleUtils.formatWeekdayShort(weekday),
+)
+const defaultMonths = DayPicker.LocaleUtils.getMonths()
+
+enum Orientation {
+  HORIZONTAL = 'horizontal',
+  VERTICAL = 'vertical',
+}
 
 export interface DatePickerProps {
   readonly name: string
-  readonly locale: string
-  readonly initialDate: moment.Moment
+  readonly locale?: string
+  readonly weekdaysShort?: string[]
+  readonly weekdaysLong?: string[]
+  readonly months?: string[]
   readonly onChange?: (obj: OnChangeParameters) => void
-  readonly orientation?: string
-  readonly monthFormat?: string
+  readonly initialDate?: Date
   readonly className?: Classcat.Class
   readonly numberOfMonths?: number
-  readonly weekDayFormat?: string
-  readonly hideKeyboardShortcutsPanel?: boolean
-  readonly isOutsideRange?: (day: moment.Moment) => boolean
-  readonly daySize?: number
+  readonly orientation?: Orientation
+  readonly isOutsideRange?: (day: Date) => boolean
+  readonly fromMonth?: Date
+  readonly firstDayOfWeek?: number
+  readonly stickyPositionTop?: number
 }
 
 export interface DatePickerState {
-  readonly focused: boolean
-  readonly date: moment.Moment
+  readonly date: Date
 }
 
-// Getter for all of the react dates constants that could be used outside of this component
-export * from 'react-dates/constants'
-
-export default class DatePicker extends Component<DatePickerProps, DatePickerState> {
+export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> {
   static defaultProps: Partial<DatePickerProps> = {
-    initialDate: null,
-    orientation: HORIZONTAL_ORIENTATION,
-    numberOfMonths: 2,
-    weekDayFormat: 'ddd',
-    monthFormat: 'MMMM YYYY',
-    hideKeyboardShortcutsPanel: true,
-    onChange() {},
-    isOutsideRange: day => !isInclusivelyAfterDay(day, moment()),
-    daySize: 50,
     locale: 'en',
+    weekdaysShort: defaultWeekdaysShort,
+    weekdaysLong: defaultWeekdaysLong,
+    months: defaultMonths,
+    numberOfMonths: 2,
+    initialDate: null,
+    isOutsideRange: day => DayPicker.DateUtils.isDayBefore(day, new Date()),
+    orientation: Orientation.HORIZONTAL,
+    fromMonth: new Date(),
+    firstDayOfWeek: 0,
+    stickyPositionTop: 0,
   }
 
-  static constants = {
-    HORIZONTAL_ORIENTATION,
-    VERTICAL_ORIENTATION,
-    VERTICAL_SCROLLABLE,
-  }
+  static constants = Orientation
 
-  state: DatePickerState = {
-    focused: true,
+  state = {
     date: this.props.initialDate,
   }
 
-  constructor(props: DatePickerProps) {
-    super(props)
-    moment.locale(props.locale)
+  formatMonthTitle = (date: Date): string => {
+    const currentYear = `${new Date().getFullYear()}`
+    return `${this.props.months[date.getMonth()]} ${date.getFullYear()}`.replace(currentYear, '')
   }
 
-  componentWillReceiveProps(newProps: DatePickerProps) {
-    if (newProps.locale !== this.props.locale) {
-      moment.locale(newProps.locale)
+  onDayClick = (date: Date, modifiers: DayModifiers) => {
+    if (!modifiers.disabled) {
+      this.setState({ date })
+
+      if (this.props.onChange) {
+        const yearString = `${date.getFullYear()}`
+        const monthString = `${date.getMonth() + 1}`.padStart(2, '0')
+        const dayString = `${date.getDate()}`.padStart(2, '0')
+        this.props.onChange({
+          name: this.props.name,
+          value: `${yearString}-${monthString}-${dayString}`,
+        })
+      }
     }
   }
 
-  onDateChange = (date: moment.Moment) => {
-    this.setState({ date }, () => {
-      if (this.props.onChange) {
-        this.props.onChange({
-          name: this.props.name,
-          value: this.state.date ? this.state.date.format('YYYY-MM-DD') : null,
-        })
-      }
-    })
-  }
+  renderNavbar = (props: NavbarElementProps) => {
+    if (this.props.orientation === Orientation.VERTICAL) {
+      // re-order weekdays starting from given firstDayOfWeek
+      const orderedWeekdays = [
+        ...this.props.weekdaysShort.slice(this.props.firstDayOfWeek),
+        ...this.props.weekdaysShort.slice(0, this.props.firstDayOfWeek),
+      ]
+      const style = { top: `${this.props.stickyPositionTop}px` }
+      return (
+        <div
+          className={cc(prefix({ 'sticky-weekdays': true }, BASE_CLASSNAME))}
+          style={style}
+          aria-hidden="true"
+        >
+          <div className={cc(prefix({ 'sticky-weekdaysrow': true }, BASE_CLASSNAME))}>
+            {orderedWeekdays.map(weekday => (
+              <div className={cc(prefix({ 'sticky-weekday': true }, BASE_CLASSNAME))} key={weekday}>
+                {weekday}
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
 
-  renderDayContents = (day: moment.Moment) => (
-    // Adds an extra span to day table-cell for styling purpose
-    <span className="CalendarDay__button">{day.format('D')}</span>
-  )
-
-  renderMonth = (month: moment.Moment) => {
-    const locale = this.props.locale || ''
     return (
-      // The default react-dates implementation is month.format('MMMM YYYY').
-      // We want month.format('MMMM') for the current year.
-      month
-        .locale(locale)
-        .format(this.props.monthFormat)
-        .replace(`${moment().year()}`, '')
-        .trim()
+      <div className={props.className}>
+        {props.showPreviousButton && (
+          <Button
+            status={Button.STATUS.TERTIARY}
+            className={prefix({ 'previous-month': true }, BASE_CLASSNAME)}
+            onClick={() => props.onPreviousClick()}
+            isBubble
+          >
+            <ArrowIcon iconColor={color.primary} />
+          </Button>
+        )}
+        {props.showNextButton && (
+          <Button
+            status={Button.STATUS.TERTIARY}
+            className={prefix({ 'next-month': true }, BASE_CLASSNAME)}
+            onClick={() => props.onNextClick()}
+            isBubble
+          >
+            <ArrowIcon right iconColor={color.primary} />
+          </Button>
+        )}
+      </div>
     )
   }
 
+  renderCaption = (props: CaptionElementProps) => (
+    <div className={cc([prefix({ 'month-caption': true }, BASE_CLASSNAME), 'DayPicker-Caption'])}>
+      {props.localeUtils.formatMonthTitle(props.date)}
+    </div>
+  )
+
+  renderDay = (day: Date) => <span>{day.getDate()}</span>
+
   render() {
+    const {
+      className,
+      numberOfMonths,
+      isOutsideRange,
+      orientation,
+      fromMonth,
+      weekdaysShort,
+      weekdaysLong,
+      months,
+      firstDayOfWeek,
+    } = this.props
+    const { date } = this.state
+    const layoutClassName = `months-grid-${numberOfMonths}`
     return (
-      <div className={cc(['datePicker', this.props.className])}>
-        <DayPickerSingleDateController
-          renderMonth={this.renderMonth}
-          onDateChange={this.onDateChange}
-          numberOfMonths={this.props.numberOfMonths}
-          weekDayFormat={this.props.weekDayFormat}
-          hideKeyboardShortcutsPanel={this.props.hideKeyboardShortcutsPanel}
-          isOutsideRange={this.props.isOutsideRange}
-          renderDayContents={this.renderDayContents}
-          orientation={this.props.orientation}
-          daySize={this.props.daySize}
-          focused={this.state.focused}
-          date={this.state.date}
-          navPrev={navPrev}
-          navNext={navNext}
+      <div
+        className={cc([
+          BASE_CLASSNAME,
+          className,
+          prefix({ [orientation]: true }, BASE_CLASSNAME),
+          prefix({ [layoutClassName]: true }, BASE_CLASSNAME),
+        ])}
+      >
+        <DayPicker
+          numberOfMonths={numberOfMonths}
+          onDayClick={this.onDayClick}
+          selectedDays={date}
+          disabledDays={isOutsideRange}
+          fromMonth={fromMonth}
+          pagedNavigation
+          navbarElement={this.renderNavbar}
+          captionElement={this.renderCaption}
+          renderDay={this.renderDay}
+          weekdaysShort={weekdaysShort}
+          weekdaysLong={weekdaysLong}
+          months={months}
+          firstDayOfWeek={firstDayOfWeek}
+          localeUtils={{ ...DayPicker.LocaleUtils, formatMonthTitle: this.formatMonthTitle }}
         />
         <style jsx>{style}</style>
-        <style jsx>{theme}</style>
       </div>
     )
   }
 }
+
+export default DatePicker
