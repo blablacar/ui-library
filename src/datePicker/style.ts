@@ -12,11 +12,8 @@ export default css`
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     color: ${color.primaryText};
+    background-color: ${color.white};
   }
-
-  /* .kirk-datepicker :global(*:focus) {
-    outline: 0;
-  } */
 
   .kirk-datepicker :global(.DayPicker-Month) {
     display: table;
