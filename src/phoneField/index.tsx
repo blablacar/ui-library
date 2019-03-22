@@ -46,14 +46,13 @@ interface PhoneFieldState {
 const allCountriesPhoneData: allCountriesPhoneData[] = countryTelData.allCountries
 
 /* Format and keep only used data */
-const formattedCountriesPhoneData: formattedCountriesPhoneData[] = allCountriesPhoneData.map(
+export const formattedCountriesPhoneData: formattedCountriesPhoneData[] = allCountriesPhoneData.map(
   countryData => ({
     name: countryData.name,
     iso2: countryData.iso2.toUpperCase(),
-    dialCode: countryData.dialCode,
+    dialCode: `+${countryData.dialCode}`,
   }),
 )
-
 /**
  * Filter countries data according to whitelist
  * @param {Array} countriesList in ISO2 format ex: ['FR', 'ES']
@@ -75,10 +74,10 @@ const mapCountriesPhoneData = (
   countriesName: customCountriesName,
 ): mappedCountriesPhoneData[] => {
   return countriesData.map(countryData => ({
-    value: `+${countryData.dialCode}`,
+    value: countryData.dialCode,
     label: `${
       !isEmpty(countriesName[countryData.iso2]) ? countriesName[countryData.iso2] : countryData.name
-    } +${countryData.dialCode}`,
+    } ${countryData.dialCode}`,
   }))
 }
 
@@ -98,7 +97,7 @@ const iso2toDialCode = (iso2Value: string) => {
   }
   const countryPhoneData = findIso2(iso2Value)
   if (countryPhoneData) {
-    return `+${countryPhoneData.dialCode}`
+    return countryPhoneData.dialCode
   }
   return ''
 }
