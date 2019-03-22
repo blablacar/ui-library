@@ -4,7 +4,7 @@ declare type countryTelData = {
   iso2Lookup: object
 }
 
-declare type allCountriesPhoneData = {
+declare type allCountryPhoneData = {
   name: string
   iso2: string
   dialCode: string
@@ -20,17 +20,17 @@ declare type iso2Lookup = {
   [key: string]: number
 }
 
-declare type formattedCountriesPhoneData = {
+declare type formattedCountryPhoneData = {
   name: string
   iso2: string
   dialCode: string
 }
 
-declare type mappedCountriesPhoneData = {
+declare type mappedCountryPhoneData = {
   value: string
   label: string
 }
 
-declare type customCountriesName = {
+declare type customCountryNames = {
   [key: string]: string
 }

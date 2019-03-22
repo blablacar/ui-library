@@ -1,5 +1,8 @@
 # Unreleased
+
 - **[FIX]** Update `TextField` state when the user text is formatted.
+- **[BREAKING CHANGE]** `PhoneField` Renaming API props
+- **[UPDATE]** `PhoneField` Add region countries data into state and onChange
 - [...]
 
 # v1.3.1 (26/03/2019)
