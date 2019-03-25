@@ -47,7 +47,7 @@ export interface TextFieldProps extends CommonFormFields {
   buttonTitle?: string
   focus?: boolean
   inputRef?: (input: textfield) => void
-  format?: (value: string) => string
+  format?: (value: string, previousValue: string) => string
 }
 
 interface FormAttributes extends CommonFormFields {
@@ -62,6 +62,7 @@ interface FormAttributes extends CommonFormFields {
 
 export interface TextFieldState {
   readonly value: string
+  readonly previousValue: string
   readonly showPassword: boolean
 }
 
@@ -84,11 +85,12 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     inputRef() {},
     onClear() {},
     type: 'text',
-    format: value => value,
+    format: (value, previousValue) => value,
   }
 
   state = {
     value: this.props.defaultValue,
+    previousValue: '',
     showPassword: false,
   }
 
@@ -100,7 +102,10 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
 
   componentWillReceiveProps({ defaultValue, focus }: TextFieldProps) {
     if (this.props.defaultValue !== defaultValue) {
-      this.setState({ value: defaultValue })
+      this.setState({
+        value: defaultValue,
+        previousValue: this.state.value,
+      })
     }
     if (focus && this.props.focus !== focus) {
       this.input.focus()
@@ -108,7 +113,11 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   onTextFieldChange = (event: React.ChangeEvent<textfield>) => {
-    this.setState({ value: event.target.value }, this.onChange)
+    this.setState({
+      value: event.target.value,
+      previousValue: this.state.value,
+    }, this.onChange)
+
     if (event.currentTarget.value === '') {
       this.props.onClear()
     }
@@ -122,7 +131,10 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   clearValue = () => {
-    this.setState({ value: '' }, () => {
+    this.setState({
+      value: '',
+      previousValue: this.state.value,
+    }, () => {
       this.input.focus()
       this.onChange()
       this.props.onClear()
@@ -166,7 +178,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       buttonTitle,
       format,
     } = this.props
-    const value = this.state.value ? format(this.state.value) : ''
+    const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
     const attrs: FormAttributes = {
       type,
