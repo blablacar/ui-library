@@ -7,11 +7,38 @@ import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs
 import TextField from 'textField'
 import ArrowIcon from 'icon/arrowIcon'
 import Button from 'button'
+import readme from 'textField/specifications/textField.md'
+import primaryDoc from "../button/specifications/primary.md"
 
 const stories = storiesOf('TextField', module)
 stories.addDecorator(withKnobs)
 
 const inputTypes = ['text', 'email', 'number', 'password']
+
+stories.add('specifications',
+    () => (<TextField
+        type={select('type', inputTypes, 'text')}
+        id={text('id')}
+        name={text('name', 'inputName')}
+        placeholder={text('placeholder')}
+        labelledBy={text('aria label')}
+        disabled={boolean('disabled', false)}
+        readOnly={boolean('readOnly', false)}
+        label={text('label')}
+        error={text('error message', '')}
+        onChange={action('changed')}
+        onFocus={action('focused')}
+        onBlur={action('blurred')}
+        focus={boolean('focus', false)}
+        required={boolean('required', false)}
+        maxLength={number('maxLength')}
+        autoComplete={select('autocomplete', ['on', 'off'])}
+        title={text('title', 'accessibility text')}
+    />),
+    {
+      readme: { content: readme },
+    },
+)
 
 stories.add('input', () => (
   <TextField

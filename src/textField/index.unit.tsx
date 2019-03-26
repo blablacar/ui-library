@@ -90,6 +90,9 @@ it('Should update when setting default value props', () => {
   const input = wrapper.find('input')
   expect(input.prop('value')).toBe('blablabla')
   expect(spy).toHaveBeenCalledTimes(1)
+
+  expect(wrapper.state('value')).toBe('blablabla')
+  expect(wrapper.state('previousValue')).toBe('blabla')
 })
 
 it('Should not update when setting same default value', () => {
@@ -97,6 +100,9 @@ it('Should not update when setting same default value', () => {
   wrapper.setProps({ defaultValue: 'blabla' })
   const input = wrapper.find('input')
   expect(input.prop('value')).toBe('blabla')
+
+  expect(wrapper.state('value')).toBe('blabla')
+  expect(wrapper.state('previousValue')).toBe('')
 })
 
 it('Should have the correct inputMode for type "number"', () => {
@@ -174,6 +180,9 @@ it('should have a working clear button', () => {
   expect(wrapper.find('input').prop('value')).toBe('')
   expect(onTextFieldChange).toHaveBeenCalledTimes(1)
   expect(onClear).toHaveBeenCalledTimes(1)
+
+  expect(wrapper.state('value')).toBe('')
+  expect(wrapper.state('previousValue')).toBe('some value')
 })
 
 it('should have a working show password button', () => {
@@ -214,9 +223,12 @@ it('Simulates a blur event.', () => {
 
 it('Should format the default value', () => {
   const wrapper = mount(
-    <TextField name="test" defaultValue="Hello" format={value => `${value} world`} />,
+    <TextField name="test" defaultValue="stuff"
+               format={(value, previousValue) => `current:"${value}", prev:"${previousValue}"`} />,
   )
-  expect(wrapper.find('input').prop('value')).toBe('Hello world')
+  expect(wrapper.find('input').prop('value')).toBe('current:"stuff", prev:""')
+  wrapper.setProps({ defaultValue: 'new' })
+  expect(wrapper.find('input').prop('value')).toBe('current:"new", prev:"stuff"')
 })
 
 it('Should format the values when it changes', () => {
