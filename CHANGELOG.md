@@ -1,7 +1,9 @@
 # Unreleased
+- [...]
+
+# v1.3.1 (26/03/2019)
 
 - **[UPDATE]**: Support previousValue in `TextField` format callback
-- [...]
 
 # v1.3.0 (21/03/2019)
 
