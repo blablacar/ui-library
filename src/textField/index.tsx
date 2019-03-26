@@ -113,10 +113,13 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   onTextFieldChange = (event: React.ChangeEvent<textfield>) => {
-    this.setState({
-      value: event.target.value,
-      previousValue: this.state.value,
-    }, this.onChange)
+    this.setState(
+      {
+        value: this.props.format(event.target.value, this.state.value),
+        previousValue: this.state.value,
+      },
+      this.onChange,
+    )
 
     if (event.currentTarget.value === '') {
       this.props.onClear()
@@ -131,14 +134,17 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   clearValue = () => {
-    this.setState({
-      value: '',
-      previousValue: this.state.value,
-    }, () => {
-      this.input.focus()
-      this.onChange()
-      this.props.onClear()
-    })
+    this.setState(
+      {
+        value: '',
+        previousValue: this.state.value,
+      },
+      () => {
+        this.input.focus()
+        this.onChange()
+        this.props.onClear()
+      },
+    )
   }
 
   toggleShowPassword = () => {

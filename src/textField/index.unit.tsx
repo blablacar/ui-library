@@ -223,12 +223,45 @@ it('Simulates a blur event.', () => {
 
 it('Should format the default value', () => {
   const wrapper = mount(
-    <TextField name="test" defaultValue="stuff"
-               format={(value, previousValue) => `current:"${value}", prev:"${previousValue}"`} />,
+    <TextField
+      name="test"
+      defaultValue="stuff"
+      format={(value, previousValue) => `current:"${value}", prev:"${previousValue}"`}
+    />,
   )
   expect(wrapper.find('input').prop('value')).toBe('current:"stuff", prev:""')
   wrapper.setProps({ defaultValue: 'new' })
   expect(wrapper.find('input').prop('value')).toBe('current:"new", prev:"stuff"')
+})
+
+it('Should format on user text change', () => {
+  const formatValue = (value: string, previousValue: string) => {
+    if (previousValue && value.length < previousValue.length) {
+      // Removing character, do not escape
+      return value
+    }
+    if (value.match(/^[0-9]{2}$/) || value.match(/^[0-9]{2}\/[0-9]{2}$/)) {
+      return `${value}/`
+    }
+    return value
+  }
+
+  const onTextFieldChange = jest.fn()
+  const wrapper = mount(
+    <TextField name="test" onChange={onTextFieldChange} defaultValue="" format={formatValue} />,
+  )
+  expect(wrapper.find('input').prop('value')).toBe('')
+  // User types "1"
+  wrapper.find('input').simulate('change', { target: { value: '1' } })
+  expect(wrapper.find('input').prop('value')).toBe('1')
+
+  // User types "11" => will be formatted to "11/" automatically
+  wrapper.find('input').simulate('change', { target: { value: '11' } })
+  expect(wrapper.find('input').prop('value')).toBe('11/')
+
+  // Simulate the user deletes the last / in "11/" => the formatting should not add it back.
+  wrapper.find('input').simulate('change', { target: { value: '11' } })
+  expect(wrapper.find('input').prop('value')).toBe('11')
 })
 
 it('Should format the values when it changes', () => {
