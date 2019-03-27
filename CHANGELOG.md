@@ -1,4 +1,5 @@
 # Unreleased
+- **[FIX]** Update `TextField` state when the user text is formatted.
 - [...]
 
 # v1.3.1 (26/03/2019)
