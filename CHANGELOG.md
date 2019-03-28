@@ -1,13 +1,16 @@
 # Unreleased
 
+- [...]
+
+# v2.0.0 (28/03/2019)
+
 - **[FIX]** Update `TextField` state when the user text is formatted.
 - **[BREAKING CHANGE]** `PhoneField` Renaming API props
 - **[UPDATE]** `PhoneField` Add region countries data into state and onChange
-- [...]
 
 # v1.3.1 (26/03/2019)
 
-- **[UPDATE]**: Support previousValue in `TextField` format callback
+- **[UPDATE]** Support previousValue in `TextField` format callback
 
 # v1.3.0 (21/03/2019)
 
