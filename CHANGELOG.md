@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Update the dependencies
 - **[BREAKING CHANGE]** Migrate `DatePicker` to ReactDayPicker instead of React Dates, parts of the API of the component has been changed, and it no longer supports any language by default
 - **[BREAKING CHANGE]** Remove Moment dependency
 
