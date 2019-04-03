@@ -26,7 +26,7 @@ stories.addDecorator(withKnobs)
 const c = Object.keys(color).reduce(
   (acc, key) => ({
     ...acc,
-    [color[key]]: key,
+    [color[key]]: color[key],
   }),
   {},
 )
@@ -36,6 +36,8 @@ const createIconKnobs = (props: {}) =>
     if (typeof value === 'string') {
       if (name.toLowerCase().includes('color')) {
         acc[name] = select(name, c, value)
+      } else if (name === 'status') {
+        acc[name] = select(name, ['default', 'on', 'off'], value)
       } else {
         acc[name] = text(name, String(value))
       }
@@ -52,7 +54,6 @@ const createIconKnobs = (props: {}) =>
     if (name === 'badgeAriaLabel' || 'badgeContent') {
       acc[name] = text(name, String(value))
     }
-
     return acc
   }, {})
 
