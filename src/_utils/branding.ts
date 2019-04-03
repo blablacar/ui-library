@@ -115,7 +115,6 @@ export const color: Color = {
   divider: palette.lightGray,
 
   icon: palette.lightMidnightGreen,
-  iconFaded: palette.lightGray,
   iconHighlight: palette.midnightGreen,
   facebookBrand: '#4267B2',
   vkBrand: '#4680C2',
