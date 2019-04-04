@@ -45,6 +45,7 @@ import TrashIcon from './trashIcon'
 import TwitterIcon from './twitterIcon'
 import VkontakteIcon from './vkontakteIcon'
 import WarningIcon from './warningIcon'
+import WheelchairIcon from './wheelchair'
 import YoutubeIcon from './youtubeIcon'
 
 export {
@@ -95,5 +96,6 @@ export {
   TwitterIcon,
   VkontakteIcon,
   WarningIcon,
+  WheelchairIcon,
   YoutubeIcon,
 }
