@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `WheelchairIcon`
 - [...]
 
 # v2.0.0 (28/03/2019)
