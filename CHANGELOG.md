@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Added `WheelchairIcon`
 - [...]
+
+# v2.0.1 (05/04/2019)
+
+- **[NEW]** Added `WheelchairIcon`
 - **[UPDATE]** Refactor and change disabled color for `musicIcon`, `petIcon`, `smokeIcon`
 
 # v2.0.0 (28/03/2019)
