@@ -1,6 +1,6 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "BlaBlaCar React UI component library",
   "main": "build/index.js",
   "homepage": "https://blablacar.github.io/ui-library",
