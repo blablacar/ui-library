@@ -2,6 +2,7 @@ import React, { Component, forwardRef, Ref } from 'react'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
+import createFocusTrap, { FocusTrap } from 'focus-trap'
 import cc from 'classcat'
 
 import CustomTransition, { AnimationType } from 'transitions'
@@ -24,11 +25,14 @@ export interface ModalProps {
   readonly displayDimmer?: boolean
   readonly closeButtonTitle?: string
   readonly forwardedRef?: Ref<HTMLDivElement>
+  readonly ariaLabelledBy?: string
+  readonly ariaDescribedBy?: string
 }
 
 class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
   private contentNode: HTMLElement
+  private focusTrap: FocusTrap
 
   static defaultProps: Partial<ModalProps> = {
     isOpen: false,
@@ -65,6 +69,7 @@ class Modal extends Component<ModalProps> {
     if (!this.props.isOpen && prevProps.isOpen) {
       this.removeListeners()
       this.setDocumentScroll('visible')
+      this.focusTrap.deactivate()
     }
   }
 
@@ -122,6 +127,11 @@ class Modal extends Component<ModalProps> {
     this.contentNode = contentNode
   }
 
+  onEntered = () => {
+    this.focusTrap = createFocusTrap(this.portalNode)
+    this.focusTrap.activate()
+  }
+
   render() {
     const baseClassName = 'kirk-modal'
 
@@ -144,8 +154,15 @@ class Modal extends Component<ModalProps> {
       <div className={dimmerClassNames}>
         <TransitionGroup component="div" className="transition-wrapper">
           {this.props.isOpen && (
-            <CustomTransition animationName={AnimationType.SLIDE_UP}>
-              <div className={classNames} ref={this.props.forwardedRef}>
+            <CustomTransition animationName={AnimationType.SLIDE_UP} onEntered={this.onEntered}>
+              <div
+                className={classNames}
+                ref={this.props.forwardedRef}
+                role="dialog"
+                aria-labelledby={this.props.ariaLabelledBy}
+                aria-describedby={this.props.ariaDescribedBy}
+                aria-modal="true"
+              >
                 <div className={`${baseClassName}-dialog`}>
                   {this.props.displayCloseButton && (
                     <Button

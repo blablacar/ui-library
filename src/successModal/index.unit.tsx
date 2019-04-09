@@ -47,4 +47,15 @@ describe('<SuccessModal>', () => {
     confirmButton.simulate('click')
     expect(mockConfirm).toHaveBeenCalledTimes(1)
   })
+
+  it('Should have the correct a11y attributes', () => {
+    const wrapper = mount(
+      <SuccessModal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
+    )
+    const modal = wrapper.find('[role="dialog"]')
+    expect(modal.length).toBe(1)
+    expect(modal.prop('aria-modal')).toBe('true')
+    expect(modal.prop('aria-labelledby')).toBe('labelledBy')
+    expect(modal.prop('aria-describedby')).toBe('describedBy')
+  })
 })

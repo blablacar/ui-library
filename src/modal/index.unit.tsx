@@ -28,6 +28,17 @@ describe('Modal', () => {
     expect(wrapper.find('.kirk-modal-dimmer--visible').exists()).toBe(true)
   })
 
+  it('Should have the correct a11y attributes', () => {
+    const wrapper = mount(
+      <Modal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
+    )
+    const modal = wrapper.find('[role="dialog"]')
+    expect(modal.length).toBe(1)
+    expect(modal.prop('aria-modal')).toBe('true')
+    expect(modal.prop('aria-labelledby')).toBe('labelledBy')
+    expect(modal.prop('aria-describedby')).toBe('describedBy')
+  })
+
   it('Should be not visible if isOpen is set to false', () => {
     const wrapper = mount(<Modal />)
     expect(wrapper.find('.kirk-modal-dialog').exists()).toBe(false)

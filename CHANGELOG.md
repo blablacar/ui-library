@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Added aria attributes and focus trap on Modals
 
 # v2.0.1 (05/04/2019)
 

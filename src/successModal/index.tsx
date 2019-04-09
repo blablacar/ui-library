@@ -16,6 +16,8 @@ export interface SuccessModalProps {
   readonly imageText?: string
   readonly large?: boolean
   readonly forwardedRef?: Ref<HTMLDivElement>
+  readonly ariaLabelledBy?: string
+  readonly ariaDescribedBy?: string
 }
 
 class SuccessModal extends Component<SuccessModalProps> {
@@ -37,6 +39,8 @@ class SuccessModal extends Component<SuccessModalProps> {
       forwardedRef,
       imageSrc,
       imageText,
+      ariaLabelledBy,
+      ariaDescribedBy,
     } = this.props
 
     const baseClassName = 'kirk-successModal'
@@ -51,6 +55,8 @@ class SuccessModal extends Component<SuccessModalProps> {
         displayDimmer={false}
         forwardedRef={forwardedRef}
         className={baseClassName}
+        ariaLabelledBy={ariaLabelledBy}
+        ariaDescribedBy={ariaDescribedBy}
       >
         <img
           className={`${baseClassName}-bodyItem ${baseClassName}-image`}

@@ -44,7 +44,7 @@ stories.add('SuccessModal', () => (
     imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
     imageText={text('imageText', 'Illustation description')}
     confirmLabel={text('confirmLabel', 'Got it!')}
-    large={boolean('large', false)}
+    large={boolean('large', true)}
     closeOnEsc={boolean('closeOnEsc', false)}
   />
 ))

@@ -8,7 +8,9 @@ exports[`Modal should not have changed 1`] = `
     className="transition-wrapper"
   >
     <div
+      aria-modal="true"
       className="jsx-1766843148 kirk-modal kirk-modal--large kirk-modal--hasCloseButton slide-up slide-up-entered"
+      role="dialog"
     >
       <div
         className="jsx-1766843148 kirk-modal-dialog"
