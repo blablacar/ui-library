@@ -15,6 +15,7 @@ interface CustomTransitionProps {
   readonly delayEnter?: number
   readonly delayLeave?: number
   readonly in?: boolean
+  readonly onEntered?: () => void
 }
 
 export default class CustomTransition extends PureComponent<CustomTransitionProps> {
@@ -35,10 +36,15 @@ export default class CustomTransition extends PureComponent<CustomTransitionProp
       delayEnter,
       delayLeave,
       in: inProp,
+      onEntered,
     } = this.props
 
     return (
-      <Transition in={inProp} timeout={{ enter: delayEnter, exit: delayLeave }}>
+      <Transition
+        in={inProp}
+        timeout={{ enter: delayEnter, exit: delayLeave }}
+        onEntered={onEntered}
+      >
         {(status: string) => {
           if (status === 'exited') {
             return null

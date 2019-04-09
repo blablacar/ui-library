@@ -83,6 +83,7 @@
     "classcat": "3.2.5",
     "country-telephone-data": "0.6.0",
     "exenv": "1.2.2",
+    "focus-trap": "5.0.0",
     "lodash.debounce": "4.0.8",
     "lodash.isempty": "4.4.0",
     "lodash.isequal": "4.5.0",

@@ -3,6 +3,7 @@ import { canUseDOM, canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import { createPortal } from 'react-dom'
+import createFocusTrap, { FocusTrap } from 'focus-trap'
 
 import CustomTransition, { AnimationType } from 'transitions'
 import { color } from '_utils/branding'
@@ -29,10 +30,13 @@ export interface ConfirmationModalProps {
   readonly onConfirm: () => void
   readonly confirmLabel?: string
   readonly large?: boolean
+  readonly ariaLabelledBy?: string
+  readonly ariaDescribedBy?: string
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
   private portalNode: HTMLElement
+  private focusTrap: FocusTrap
 
   static STATUS = ConfirmationModalStatus
 
@@ -63,6 +67,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
 
     if (!this.props.isOpen && prevProps.isOpen) {
       this.removeListeners()
+      this.focusTrap.deactivate()
     }
   }
 
@@ -92,6 +97,11 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
     }
   }
 
+  onEntered = () => {
+    this.focusTrap = createFocusTrap(this.portalNode)
+    this.focusTrap.activate()
+  }
+
   render() {
     const {
       status,
@@ -103,6 +113,8 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       closeButtonTitle,
       onConfirm,
       confirmLabel,
+      ariaLabelledBy,
+      ariaDescribedBy,
     } = this.props
 
     const isWarning = status === ConfirmationModalStatus.WARNING
@@ -135,7 +147,13 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
         <TransitionGroup component="div" className="transition-wrapper">
           {isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP}>
-              <div className={classNames}>
+              <div
+                className={classNames}
+                role="alertdialog"
+                aria-labelledby={ariaLabelledBy}
+                aria-describedby={ariaDescribedBy}
+                aria-modal="true"
+              >
                 <div className={`${baseClassName}-dialog`}>
                   {getIcon()}
                   <div className={`${baseClassName}-body`}>{children}</div>

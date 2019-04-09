@@ -21,6 +21,19 @@ const defaultReminderProps = {
   status: ConfirmationModal.STATUS.REMINDER,
 }
 
+describe('Confirmation modal a11y', () => {
+  it('Should have the correct a11y attributes', () => {
+    const wrapper = mount(
+      <ConfirmationModal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
+    )
+    const modal = wrapper.find('[role="alertdialog"]')
+    expect(modal.length).toBe(1)
+    expect(modal.prop('aria-modal')).toBe('true')
+    expect(modal.prop('aria-labelledby')).toBe('labelledBy')
+    expect(modal.prop('aria-describedby')).toBe('describedBy')
+  })
+})
+
 describe('<ConfirmationModal> with warning status', () => {
   let mockClose
   let mockConfirm
