@@ -13,9 +13,9 @@ import style from './style'
 import KEYCODES from '_utils/keycodes'
 
 export interface ModalProps {
-  readonly close: () => void
+  readonly onClose: () => void
   readonly isOpen?: boolean
-  readonly children?: JSX.Element | JSX.Element[]
+  readonly children?: React.ReactNode
   readonly className?: Classcat.Class
   readonly closeOnEsc?: boolean
   readonly closeOnOutsideClick?: boolean
@@ -114,12 +114,12 @@ class Modal extends Component<ModalProps> {
     if (!this.contentNode || this.contentNode.contains(e.target as Node) || isButton) {
       return
     }
-    this.props.close()
+    this.props.onClose()
   }
 
   handleKeydown = (event: KeyboardEvent) => {
     if (event.keyCode === KEYCODES.ESCAPE) {
-      this.props.close()
+      this.props.onClose()
     }
   }
 
@@ -168,7 +168,7 @@ class Modal extends Component<ModalProps> {
                     <Button
                       isBubble
                       className={`${baseClassName}-closeButton`}
-                      onClick={this.props.close}
+                      onClick={this.props.onClose}
                       title={this.props.closeButtonTitle}
                     >
                       <CrossIcon size="18" iconColor={color.accent} />

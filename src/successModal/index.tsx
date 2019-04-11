@@ -1,23 +1,15 @@
 import React, { Component, Ref } from 'react'
 
-import Modal from 'modal'
+import Modal, { ModalProps } from 'modal'
 import Button from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 import style from './style'
 
-export interface SuccessModalProps {
-  readonly isOpen?: boolean
-  readonly children?: string | number | React.ReactNode
-  readonly closeOnEsc?: boolean
-  readonly onConfirm: () => void
+export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
   readonly imageSrc: string
   readonly imageText?: string
-  readonly large?: boolean
-  readonly forwardedRef?: Ref<HTMLDivElement>
-  readonly ariaLabelledBy?: string
-  readonly ariaDescribedBy?: string
 }
 
 class SuccessModal extends Component<SuccessModalProps> {
@@ -34,7 +26,7 @@ class SuccessModal extends Component<SuccessModalProps> {
       isOpen,
       children,
       large,
-      onConfirm,
+      onClose,
       confirmLabel,
       forwardedRef,
       imageSrc,
@@ -47,7 +39,7 @@ class SuccessModal extends Component<SuccessModalProps> {
 
     return (
       <Modal
-        close={onConfirm}
+        onClose={onClose}
         isOpen={isOpen}
         large={large}
         closeOnEsc={false}
@@ -75,7 +67,7 @@ class SuccessModal extends Component<SuccessModalProps> {
             <Button
               status={Button.STATUS.SECONDARY}
               className={`${baseClassName}-confirmButton`}
-              onClick={onConfirm}
+              onClick={onClose}
             >
               {confirmLabel}
             </Button>
