@@ -123,12 +123,9 @@ export default css`
     background-color: transparent;
   }
 
-  :global(.kirk-button-loading[disabled]) {
+  :global(.kirk-button-loading[disabled]),
+  :global(.kirk-button-checked[disabled]) {
     opacity: 1;
-  }
-
-  :global(.kirk-button-loading > span) {
-    opacity: 0;
   }
 
   :global(svg.kirk-button-loader) {
@@ -140,14 +137,6 @@ export default css`
 
   :global(.kirk-button-checked) {
     border: 0;
-  }
-
-  :global(.kirk-button-checked[disabled]) {
-    opacity: 1;
-  }
-
-  :global(.kirk-button-checked > span) {
-    opacity: 0;
   }
 
   :global(.kirk-button-warning) {

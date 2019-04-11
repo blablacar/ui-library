@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Added aria attributes and focus trap on Modals
+- **[FIX]** `Button` do not display children on loading and checked status
 
 # v2.0.1 (05/04/2019)
 

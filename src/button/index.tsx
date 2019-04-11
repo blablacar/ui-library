@@ -189,7 +189,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
             onDoneAnimationEnd={onDoneAnimationEnd}
           />
         )}
-        {children}
+        {!hasLoader && children}
         <style jsx>{style}</style>
       </Fragment>,
     )
