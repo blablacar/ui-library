@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font, radius, transition } from '_utils/branding'
+import { color, space, font, radius, transition, inputBorderSize } from '_utils/branding'
 
 export default css`
   .kirk-textField {
@@ -14,8 +14,21 @@ export default css`
     color: ${color.primaryText};
     background-color: ${color.inputBackground};
     border-radius: ${radius.l};
-    border: solid 1px ${color.inputBorder};
+    border: solid ${inputBorderSize.default} ${color.inputBorder};
     box-shadow: none;
+  }
+
+  .kirk-textField-wrapper--hasFocus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+  }
+
+  .kirk-textField .kirk-textField-wrapper--hasFocus input,
+  .kirk-textField .kirk-textField-wrapper--hasFocus textarea {
+    padding: calc(${space.l} + ${inputBorderSize.default} - ${inputBorderSize.focus});
+  }
+
+  .kirk-textField .kirk-textField-wrapper--hasFocus input {
+    padding-right: 0;
   }
 
   .kirk-textField input,
@@ -30,14 +43,11 @@ export default css`
     line-height: ${font.base.lineHeight};
     width: 100%;
     caret-color: ${color.inputCaret};
-  }
-
-  .kirk-textField textarea {
     padding: ${space.l};
   }
 
   .kirk-textField input {
-    padding: ${space.l} 0 ${space.l} ${space.l};
+    padding-right: 0;
     /*
     Use margin-right instead of padding-right to fix a cursor bug
     when calling setSelectionRange on Safari Mobile [BBCSPA-1030]

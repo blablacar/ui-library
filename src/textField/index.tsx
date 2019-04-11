@@ -48,6 +48,7 @@ export interface TextFieldProps extends CommonFormFields {
   focus?: boolean
   inputRef?: (input: textfield) => void
   format?: (value: string, previousValue: string) => string
+  focusBorder?: boolean
 }
 
 interface FormAttributes extends CommonFormFields {
@@ -64,6 +65,7 @@ export interface TextFieldState {
   readonly value: string
   readonly previousValue: string
   readonly showPassword: boolean
+  readonly hasFocus: boolean
 }
 
 const DisplayError = (error: errorField) => {
@@ -84,15 +86,21 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   static defaultProps: Partial<TextFieldProps> = {
     inputRef() {},
     onClear() {},
+    onFocus() {},
+    onBlur() {},
     type: 'text',
     format: (value, previousValue) => value,
+    focusBorder: true,
   }
 
   state = {
     value: this.props.defaultValue,
     previousValue: '',
     showPassword: false,
+    hasFocus: false,
   }
+
+  clearButton: HTMLButtonElement = null
 
   componentDidMount() {
     if (this.input && this.props.focus) {
@@ -131,6 +139,22 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       name: this.props.name,
       value: this.state.value,
     })
+  }
+
+  onFocus = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
+    this.setState({
+      hasFocus: true,
+    })
+    this.props.onFocus(event)
+  }
+
+  onBlur = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
+    if (!event.relatedTarget || event.relatedTarget !== this.clearButton) {
+      this.setState({
+        hasFocus: false,
+      })
+      this.props.onBlur(event)
+    }
   }
 
   clearValue = () => {
@@ -183,6 +207,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       title,
       buttonTitle,
       format,
+      focusBorder,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
@@ -230,13 +255,22 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     return (
       <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
         {label && <label htmlFor={id}>{label}</label>}
-        <div className="kirk-textField-wrapper">
+        <div
+          className={cc([
+            'kirk-textField-wrapper',
+            {
+              'kirk-textField-wrapper--hasFocus': focusBorder && this.state.hasFocus,
+            },
+          ])}
+        >
           {addon}
           {isTextArea ? (
-            <textarea {...attrs} />
+            <textarea {...attrs} onFocus={this.onFocus} onBlur={this.onBlur} />
           ) : (
             <input
               {...attrs}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
               type={type === 'password' && this.state.showPassword ? 'text' : type}
             />
           )}
@@ -249,6 +283,9 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
               tabIndex="-1"
               title={buttonTitle}
               aria-hidden={isEmpty(buttonTitle)}
+              buttonRef={(elem: HTMLButtonElement) => {
+                this.clearButton = elem
+              }}
             >
               {type === 'password' ? (
                 <EyeIcon {...iconProps} off={this.state.showPassword} />

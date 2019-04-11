@@ -36,6 +36,7 @@ export interface ButtonProps {
   readonly onDoneAnimationEnd?: () => void
   readonly tabIndex?: string
   readonly disabled?: boolean
+  buttonRef?: (button: HTMLButtonElement) => void
 }
 
 export interface ButtonState {
@@ -88,6 +89,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
     shadowed: false,
     focus: false,
     disabled: false,
+    buttonRef() {},
   }
 
   componentDidMount() {
@@ -104,6 +106,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
 
   ref = (button: HTMLButtonElement) => {
     this.button = button
+    this.props.buttonRef(button)
   }
 
   render() {
@@ -128,6 +131,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       onDoneAnimationEnd,
       focus,
       disabled,
+      buttonRef,
       // Extend case of the button for the expand component
       ...attrs
     } = this.props

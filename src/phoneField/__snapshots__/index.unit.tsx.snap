@@ -13,7 +13,9 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       aria-label="Phone Country code"
       defaultValue="+34"
       name="phonePrefix"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
     >
       <option
         value="+34"
@@ -48,15 +50,17 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
     </svg>
   </div>
   <div
-    className="jsx-3265029717 kirk-textField"
+    className="jsx-2044813569 kirk-textField"
   >
     <div
-      className="jsx-3265029717 kirk-textField-wrapper"
+      className="jsx-2044813569 kirk-textField-wrapper"
     >
       <input
-        className="jsx-3265029717 "
+        className="jsx-2044813569 "
         name="phoneNumber"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="Phone number"
         title="Phone Number"
         type="tel"
@@ -111,7 +115,9 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
     <select
       defaultValue=""
       name="phonePrefix"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
     >
       <option
         value="+33"
@@ -146,15 +152,17 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
     </svg>
   </div>
   <div
-    className="jsx-3265029717 kirk-textField"
+    className="jsx-2044813569 kirk-textField"
   >
     <div
-      className="jsx-3265029717 kirk-textField-wrapper"
+      className="jsx-2044813569 kirk-textField-wrapper"
     >
       <input
-        className="jsx-3265029717 "
+        className="jsx-2044813569 "
         name="phoneNumber"
+        onBlur={[Function]}
         onChange={[Function]}
+        onFocus={[Function]}
         type="tel"
         value=""
       />

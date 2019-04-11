@@ -200,8 +200,16 @@ it('should have a working show password button', () => {
 it('Simulates a focus event.', () => {
   const onTextFieldFocus = jest.fn()
   const wrapper = shallow(<TextField name="test" onFocus={onTextFieldFocus} />)
+  expect(wrapper.find('.kirk-textField-wrapper--hasFocus').exists()).toBe(false)
   wrapper.find('input').simulate('focus')
+  expect(wrapper.find('.kirk-textField-wrapper--hasFocus').exists()).toBe(true)
   expect(onTextFieldFocus).toHaveBeenCalledTimes(1)
+})
+
+it('Should not display a focus border', () => {
+  const wrapper = shallow(<TextField name="test" focusBorder={false} />)
+  wrapper.find('input').simulate('focus')
+  expect(wrapper.find('.kirk-textField-wrapper--hasFocus').exists()).toBe(false)
 })
 
 it('Simulates a change event.', () => {
@@ -217,8 +225,23 @@ it('Simulates a change event.', () => {
 it('Simulates a blur event.', () => {
   const onTextFieldBlur = jest.fn()
   const wrapper = shallow(<TextField name="test" onBlur={onTextFieldBlur} />)
-  wrapper.find('input').simulate('blur')
+  wrapper.find('input').simulate('blur', {
+    relatedTarget: 'body',
+  })
   expect(onTextFieldBlur).toHaveBeenCalledTimes(1)
+})
+
+it('should not blur when clicking on clear button', () => {
+  const onTextFieldBlur = jest.fn()
+  const wrapper = mount(
+    <TextField name="test" defaultValue="some value" onBlur={onTextFieldBlur} />,
+  )
+
+  wrapper.instance().clearButton = '<button>clearButton</button>'
+  wrapper.find('input').simulate('blur', {
+    relatedTarget: '<button>clearButton</button>',
+  })
+  expect(onTextFieldBlur).not.toHaveBeenCalled()
 })
 
 it('Should format the default value', () => {

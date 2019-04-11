@@ -121,6 +121,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
     phoneRegionList: !isEmpty(this.props.defaultRegionValue) ? [this.props.defaultRegionValue] : [],
     completePhoneNumber:
       iso2toDialCode(this.props.defaultRegionValue) + this.props.defaultPhoneValue,
+    hasFocus: false,
   }
 
   onChange = ({ name, value }: OnChangeParameters) => {
@@ -160,6 +161,14 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
     return null
   }
 
+  onFocus = () => {
+    this.setState({ hasFocus: true })
+  }
+
+  onBlur = () => {
+    this.setState({ hasFocus: false })
+  }
+
   render() {
     const {
       id,
@@ -168,13 +177,15 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
       ariaLabelledBy,
       textFieldPlaceholder,
       defaultPhoneValue,
+      isInline,
     } = this.props
 
     const baseClassName = cc([prefix({ phoneField: true })])
 
     const classNames = cc([
-      this.props.isInline ? `${baseClassName}--inline` : baseClassName,
+      isInline ? `${baseClassName}--inline` : baseClassName,
       this.props.className,
+      this.state.hasFocus && `${baseClassName}--hasFocus`,
     ])
 
     return (
@@ -185,6 +196,9 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
           ariaLabel={selectFieldLabel}
           defaultValue={this.state[FIELDS.PHONEPREFIX]}
           onChange={this.onChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          focusBorder={!isInline}
         />
         <TextField
           type="tel"
@@ -193,6 +207,9 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
           defaultValue={defaultPhoneValue}
           onChange={this.onChange}
           title={textFieldTitle}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          focusBorder={!isInline}
         />
         <style jsx global>
           {style}
