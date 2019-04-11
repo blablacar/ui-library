@@ -103,6 +103,11 @@ export const shadow: defaultBranding = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
 }
 
+export const inputBorderSize = {
+  default: '1px',
+  focus: '3px',
+}
+
 export const color: Color = {
   primary: palette.blue,
   accent: palette.blue,
@@ -126,6 +131,7 @@ export const color: Color = {
   warningBackground: palette.midnightGreen,
   successBackground: palette.green,
   inputBorder: palette.lightGray,
+  inputBorderFocus: palette.blue,
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,
   inputCaret: palette.blue,

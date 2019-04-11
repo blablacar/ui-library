@@ -1,5 +1,7 @@
 import css from 'styled-jsx/css'
-import { color, space, font, radius } from '_utils/branding'
+import { color, space, font, radius, inputBorderSize } from '_utils/branding'
+
+export const selectHeight = '52px'
 
 export default css`
   :global(.kirk-selectField) {
@@ -19,7 +21,7 @@ export default css`
     display: block;
     position: relative;
     width: 100%;
-    height: calc(${space.l} * 2 + ${font.base.lineHeight});
+    height: ${selectHeight};
     margin: 0;
     padding: 0;
     font-size: ${font.base.size};
@@ -46,9 +48,19 @@ export default css`
 
   :global(.kirk-selectField .kirk-icon) {
     position: absolute;
-    top: ${space.l};
+    top: 0;
+    bottom: 0;
+    margin: auto;
     right: ${space.m};
     background: ${color.inputBackground};
     z-index: 1;
+  }
+
+  :global(.kirk-selectField--hasFocus) {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+  }
+
+  :global(.kirk-selectField--hasFocus select) {
+    height: calc(${selectHeight} - ${inputBorderSize.default} - ${inputBorderSize.focus});
   }
 `

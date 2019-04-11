@@ -361,6 +361,10 @@ describe('AutoComplete', () => {
       const wrapper = shallow(<AutoComplete {...defaultProps} focus />)
       expect(wrapper.find('TextField').prop('focus')).toBe(true)
     })
+    it('Should not add border focus on Textfield', () => {
+      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      expect(wrapper.find('TextField').prop('focusBorder')).toBe(false)
+    })
   })
 
   describe('#autoCorrect', () => {

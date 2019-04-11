@@ -270,7 +270,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       : this.props.renderEmptySearch
 
     return (
-      <div role="search" className={cc([prefix({ autoComplete: true }), this.props.className])}>
+      <div role="combobox" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
           type="search"
           className={this.props.inputClassName}
@@ -292,6 +292,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           readOnly={this.props.readOnly}
           required={this.props.required}
           error={this.props.error}
+          focusBorder={false}
         />
         {shouldDisplayBusyState && (
           <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>

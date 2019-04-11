@@ -58,6 +58,7 @@ describe('PhoneField', () => {
       phonePrefix: '',
       phoneRegionList: [],
       completePhoneNumber: '',
+      hasFocus: false,
     })
   })
 
