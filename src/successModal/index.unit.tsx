@@ -13,14 +13,14 @@ const defaultProps = {
 }
 
 describe('<SuccessModal>', () => {
-  let mockConfirm
+  let mockClose
   let wrapper
   let wrapperOpen
 
   beforeEach(() => {
-    mockConfirm = jest.fn()
+    mockClose = jest.fn()
     wrapper = shallow(<SuccessModal {...defaultProps} />)
-    wrapperOpen = mount(<SuccessModal {...defaultProps} isOpen={true} onConfirm={mockConfirm} />)
+    wrapperOpen = mount(<SuccessModal {...defaultProps} isOpen={true} onClose={mockClose} />)
   })
 
   it('Should be not visible if isOpen is set to false', () => {
@@ -45,17 +45,6 @@ describe('<SuccessModal>', () => {
     const confirmButton = wrapperOpen.find('.kirk-button-secondary')
     expect(confirmButton.text()).toBe('Confirm')
     confirmButton.simulate('click')
-    expect(mockConfirm).toHaveBeenCalledTimes(1)
-  })
-
-  it('Should have the correct a11y attributes', () => {
-    const wrapper = mount(
-      <SuccessModal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
-    )
-    const modal = wrapper.find('[role="dialog"]')
-    expect(modal.length).toBe(1)
-    expect(modal.prop('aria-modal')).toBe('true')
-    expect(modal.prop('aria-labelledby')).toBe('labelledBy')
-    expect(modal.prop('aria-describedby')).toBe('describedBy')
+    expect(mockClose).toHaveBeenCalledTimes(1)
   })
 })

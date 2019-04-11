@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 
 import SuccessModal, { SuccessModalProps } from 'successModal'
+import successModalDoc from './specifications/successModal.md'
 
 const stories = storiesOf('SuccessModal', module)
 stories.addDecorator(withKnobs)
@@ -17,8 +19,9 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
     this.setState({ successModalOpen: true })
   }
 
-  confirmSuccessModal = () => {
+  closeSuccessModal = () => {
     this.setState({ successModalOpen: false })
+    this.props.onClose()
   }
 
   render() {
@@ -27,7 +30,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
         <button onClick={this.openSuccessModal}>Open SuccessModal</button>
         <SuccessModal
           {...this.props}
-          onConfirm={this.confirmSuccessModal}
+          onClose={this.closeSuccessModal}
           isOpen={this.state.successModalOpen}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
@@ -37,14 +40,20 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
   }
 }
 
-stories.add('SuccessModal', () => (
-  <SuccessModalOpener
-    isOpen={false}
-    onConfirm={() => {}}
-    imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
-    imageText={text('imageText', 'Illustation description')}
-    confirmLabel={text('confirmLabel', 'Got it!')}
-    large={boolean('large', true)}
-    closeOnEsc={boolean('closeOnEsc', false)}
-  />
-))
+stories.add(
+  'SuccessModal',
+  () => (
+    <SuccessModalOpener
+      isOpen={false}
+      onClose={action('onClose')}
+      imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
+      imageText={text('imageText', 'Illustation description')}
+      confirmLabel={text('confirmLabel', 'Got it!')}
+      large={boolean('large', true)}
+      closeOnEsc={boolean('closeOnEsc', false)}
+    />
+  ),
+  {
+    readme: { content: successModalDoc },
+  },
+)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 
 import ConfirmationModal from 'confirmationModal'
 import CrossIcon from 'icon/crossIcon'
@@ -21,52 +21,42 @@ const defaultReminderProps = {
   status: ConfirmationModal.STATUS.REMINDER,
 }
 
-describe('Confirmation modal a11y', () => {
-  it('Should have the correct a11y attributes', () => {
-    const wrapper = mount(
-      <ConfirmationModal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
-    )
-    const modal = wrapper.find('[role="alertdialog"]')
-    expect(modal.length).toBe(1)
-    expect(modal.prop('aria-modal')).toBe('true')
-    expect(modal.prop('aria-labelledby')).toBe('labelledBy')
-    expect(modal.prop('aria-describedby')).toBe('describedBy')
-  })
-})
-
 describe('<ConfirmationModal> with warning status', () => {
   let mockClose
   let mockConfirm
-  let wrapperWarning
-  let wrapperWarningOpen
 
   beforeEach(() => {
     mockClose = jest.fn()
     mockConfirm = jest.fn()
-    wrapperWarning = shallow(<ConfirmationModal {...defaultWarningProps} />)
-    wrapperWarningOpen = mount(
+  })
+
+  it('Should have a close and confirm buttons triggering onClose & onConfirm', () => {
+    const wrapper = mount(
       <ConfirmationModal
         {...defaultWarningProps}
-        isOpen={true}
+        isOpen
         onConfirm={mockConfirm}
         onClose={mockClose}
       />,
     )
-  })
 
-  it('Should be not visible if isOpen is set to false', () => {
-    expect(wrapperWarning.find('.kirk-confirmationModal-dialog').exists()).toBe(false)
-  })
-  it('Should be visible if isOpen is set to true', () => {
-    expect(wrapperWarningOpen.find('.kirk-confirmationModal-dialog').exists()).toBe(true)
-  })
-  it('Should have a close button and hide the ConfirmationModal when click on it', () => {
-    wrapperWarningOpen.find(CrossIcon).simulate('click')
+    const modalCross = wrapper.find(CrossIcon)
+    expect(modalCross.exists()).toBe(true)
+    wrapper.find(CrossIcon).simulate('click')
     expect(mockClose).toHaveBeenCalledTimes(1)
   })
 
   it('should have a confirm button with label and action', () => {
-    const confirmButton = wrapperWarningOpen.find('.kirk-button-warning')
+    const wrapper = mount(
+      <ConfirmationModal
+        {...defaultWarningProps}
+        isOpen
+        onConfirm={mockConfirm}
+        onClose={mockClose}
+      />,
+    )
+
+    const confirmButton = wrapper.find('.kirk-button-warning')
     expect(confirmButton.text()).toBe('Confirm')
     confirmButton.simulate('click')
     expect(mockConfirm).toHaveBeenCalledTimes(1)
@@ -74,19 +64,11 @@ describe('<ConfirmationModal> with warning status', () => {
 })
 
 describe('<ConfirmationModal> with reminder status', () => {
-  let mockClose
-  let wrapperReminder
-  let wrapperReminderOpen
+  it('Should have a confirm button and no close button', () => {
+    const wrapper = mount(<ConfirmationModal {...defaultReminderProps} isOpen />)
+    const confirmButton = wrapper.find('.kirk-button-primary')
 
-  beforeEach(() => {
-    mockClose = jest.fn()
-    wrapperReminder = shallow(<ConfirmationModal {...defaultReminderProps} />)
-    wrapperReminderOpen = mount(
-      <ConfirmationModal {...defaultReminderProps} isOpen={true} onClose={mockClose} />,
-    )
-  })
-
-  it('Should have no close button', () => {
-    expect(wrapperReminderOpen.find(CrossIcon).exists()).toBe(false)
+    expect(confirmButton.text()).toBe('Confirm')
+    expect(wrapper.find(CrossIcon).exists()).toBe(false)
   })
 })

@@ -69,7 +69,7 @@ describe('Modal', () => {
 
   it('should hide the modal on close button click', () => {
     const mockClose = jest.fn()
-    const wrapper = mount(<Modal isOpen close={mockClose} />)
+    const wrapper = mount(<Modal isOpen onClose={mockClose} />)
     wrapper.find(Button).simulate('click')
     expect(mockClose).toHaveBeenCalledTimes(1)
   })

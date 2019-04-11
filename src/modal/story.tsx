@@ -39,7 +39,12 @@ class ModalOpener extends Component<ModalProps> {
       <div>
         <button onClick={this.openModal}>Open modal 1</button>
         <button onClick={this.openModal2}>Open modal 2</button>
-        <Modal {...this.props} close={this.closeModal} isOpen={this.state.modalOpen} ref={this.ref}>
+        <Modal
+          {...this.props}
+          onClose={this.closeModal}
+          isOpen={this.state.modalOpen}
+          ref={this.ref}
+        >
           <div>
             <h1 id="label1">Modal 1</h1>
             <p id="description1">This is the description of my modal</p>
@@ -52,7 +57,7 @@ class ModalOpener extends Component<ModalProps> {
           </div>
         </Modal>
 
-        <Modal {...this.props} close={this.closeModal2} isOpen={this.state.modalOpen2}>
+        <Modal {...this.props} onClose={this.closeModal2} isOpen={this.state.modalOpen2}>
           <div>
             <h1 id="label2">Modal 2</h1>
             <p id="description2">This is the description of my modal</p>
@@ -73,7 +78,7 @@ stories.add(
   'default',
   () => (
     <ModalOpener
-      close={() => {}}
+      onClose={() => {}}
       closeOnEsc={boolean('closeOnEsc', true)}
       closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
       fullscreen={boolean('fullscreen', false)}
@@ -94,7 +99,7 @@ stories.add('fullscreen', () => (
   <ModalOpener
     fullscreen={boolean('fullscreen', true)}
     displayDimmer={boolean('displayDimmer', false)}
-    close={() => {}}
+    onClose={() => {}}
     closeOnEsc={boolean('closeOnEsc', true)}
     closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
     displayCloseButton={boolean('displayCloseButton', true)}
