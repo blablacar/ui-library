@@ -47,13 +47,20 @@ describe('Button', () => {
     expect(button.contains(<CrossIcon />)).toBe(true)
   })
 
-  it('should allow for a loading state', () => {
-    const button = shallow(
+  it('Should have proper attribute on loading state', () => {
+    const button = shallow(<Button status={Button.STATUS.LOADING} />)
+    expect(button.hasClass('kirk-button-loading')).toBe(true)
+  })
+
+  it('Should have no children for a loading state', () => {
+    const button = mount(
       <Button status={Button.STATUS.LOADING}>
         <CrossIcon />
+        blabla
       </Button>,
     )
-    expect(button.hasClass('kirk-button-loading')).toBe(true)
+    expect(button.contains(<CrossIcon />)).toBe(false)
+    expect(button.text()).toEqual('')
   })
 
   it('Simulates a click action.', () => {
@@ -103,6 +110,17 @@ describe('Button', () => {
     expect(event).not.toBeCalled()
     jest.advanceTimersByTime(1500)
     expect(event).toBeCalled()
+  })
+
+  it('Should have no children for a checked state', () => {
+    const button = mount(
+      <Button status={Button.STATUS.CHECKED}>
+        <CrossIcon />
+        blabla
+      </Button>,
+    )
+    expect(button.contains(<CrossIcon />)).toBe(false)
+    expect(button.text()).toEqual('')
   })
 
   describe('href', () => {
