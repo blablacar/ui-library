@@ -4,7 +4,7 @@
 
 # v2.0.2 (12/04/2019)
 
-- **[UPDATE]** Added aria attributes and focus trap on Modals
+- **[UPDATE]** Added aria attributes and focus trap on `Modal`, `ConfirmationModal` and `SuccessModal`
 - **[FIX]** `Button` doesn't display children on LOADING and CHECKED statuses
 
 # v2.0.1 (05/04/2019)
