@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v3.0.0 (12/04/2019)
+
 - **[BREAKING CHANGE]** `ConfirmationModal` & `SuccessModal` use `Modal` (`onConfirm` on `SuccessModal` is replaced with `onClose`)
 
 # v2.0.2 (12/04/2019)
