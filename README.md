@@ -1,6 +1,6 @@
 # BlaBlaCar React component library
 [![Build Status](https://travis-ci.org/blablacar/ui-library.svg?branch=master)](https://travis-ci.org/blablacar/ui-library)
-[![npm version](https://img.shields.io/npm/v/@blablacar/ui-library.svg](https://www.npmjs.com/package/@blablacar/ui-library)
+[![npm version](https://img.shields.io/npm/v/@blablacar/ui-library.svg)](https://www.npmjs.com/package/@blablacar/ui-library)
 
 ## Installation
 BlaBlaCar `ui-library` is available as an [npm package](https://www.npmjs.com/package/@blablacar/ui-library)
