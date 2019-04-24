@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v3.1.0 (24/04/2019)
+
 - **[FIX]** Fix fade-in animation for Drawer dimmer
 - **[UPDATE]** Added border on `TextField`, `PhoneField` and `SelectField` focus
 
