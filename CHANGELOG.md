@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Moved `react` and `react-dom` to `peerDependencies`
 
 # v3.2.0 (30/04/2019)
 
