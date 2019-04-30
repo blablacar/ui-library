@@ -12,10 +12,10 @@ const customCountryNames = {
 }
 
 const whitelistMapped = [
-  { label: 'France +33', value: '+33' },
-  { label: 'Spain (España) +34', value: '+34' },
+  { label: 'France +33', value: 'FR' },
+  { label: 'Spain (España) +34', value: 'ES' },
 ]
-const whitelistMappedChange = [{ label: 'Germany (Deutschland) +49', value: '+49' }]
+const whitelistMappedChange = [{ label: 'Germany (Deutschland) +49', value: 'DE' }]
 
 const defaultProps = {
   name: 'phoneField',
@@ -56,7 +56,7 @@ describe('PhoneField', () => {
       countryWhitelist,
       phoneNumber: '',
       phonePrefix: '',
-      phoneRegionList: [],
+      phoneRegion: '',
       completePhoneNumber: '',
       hasFocus: false,
     })
@@ -73,14 +73,14 @@ describe('PhoneField', () => {
     const wrapper = mount(<PhoneField {...defaultProps} onChange={handleOnChange} />)
     const select = wrapper.find('select')
     const selectDOMNode = select.getDOMNode() as HTMLSelectElement
-    selectDOMNode.value = '+34'
+    selectDOMNode.value = 'ES'
     select.simulate('change', { target: selectDOMNode })
     expect(handleOnChange).toHaveBeenCalledWith({
       name: 'phoneField',
       value: {
         completePhoneNumber: '+34',
         phonePrefix: '+34',
-        phoneRegionList: ['es'],
+        phoneRegion: 'ES',
         phoneNumber: '',
       },
     })
@@ -92,7 +92,7 @@ describe('PhoneField', () => {
       value: {
         completePhoneNumber: '+340765455667',
         phonePrefix: '+34',
-        phoneRegionList: ['es'],
+        phoneRegion: 'ES',
         phoneNumber: '0765455667',
       },
     })

@@ -11,19 +11,19 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   >
     <select
       aria-label="Phone Country code"
-      defaultValue="+34"
+      defaultValue="ES"
       name="phonePrefix"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
     >
       <option
-        value="+34"
+        value="ES"
       >
         Custom es label +34
       </option>
       <option
-        value="+33"
+        value="FR"
       >
         Custom fr label +33
       </option>
@@ -120,12 +120,12 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       onFocus={[Function]}
     >
       <option
-        value="+33"
+        value="FR"
       >
         France +33
       </option>
       <option
-        value="+34"
+        value="ES"
       >
         Spain (España) +34
       </option>
