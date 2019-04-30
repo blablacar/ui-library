@@ -1,6 +1,11 @@
 # Unreleased
 
 [...]
+- **[NEW]** Added `AvatarIcon`
+- **[NEW]** Added `FlagsIcon`
+- **[NEW]** Added `HourglassIcon`
+- **[NEW]** Added `MapIcon`
+- **[NEW]** Added `ShareIcon`
 
 # v3.1.0 (24/04/2019)
 

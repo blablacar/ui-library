@@ -1,4 +1,5 @@
 import ArrowIcon from './arrowIcon'
+import AvatarIcon from './avatarIcon'
 import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'
 import BubbleIcon from './bubbleIcon'
@@ -18,12 +19,15 @@ import DirectionIcon from './directionIcon'
 import DoubleArrowIcon from './doubleArrowIcon'
 import EyeIcon from './eyeIcon'
 import FacebookIcon from './facebookIcon'
+import FlagsIcon from './flagsIcon'
 import HomeIcon from './homeIcon'
+import HourglassIcon from './hourglassIcon'
 import IdCardVerifiedIcon from './idCardVerifiedIcon'
 import InfoIcon from './infoIcon'
 import InstagramIcon from './instagramIcon'
 import LadyIcon from './ladyIcon'
 import LightningIcon from './lightningIcon'
+import MapIcon from './mapIcon'
 import MinusIcon from './minusIcon'
 import MusicIcon from './musicIcon'
 import NewspaperIcon from './newspaperIcon'
@@ -37,6 +41,7 @@ import ProximityIcon from './proximityIcon'
 import QuestionIcon from './questionIcon'
 import SearchIcon from './searchIcon'
 import SendIcon from './sendIcon'
+import ShareIcon from './shareIcon'
 import SmokeIcon from './smokeIcon'
 import SpeakIcon from './speakIcon'
 import StarIcon from './starIcon'
@@ -50,6 +55,7 @@ import YoutubeIcon from './youtubeIcon'
 
 export {
   ArrowIcon,
+  AvatarIcon,
   BankIcon,
   BellIcon,
   BubbleIcon,
@@ -69,12 +75,15 @@ export {
   DoubleArrowIcon,
   EyeIcon,
   FacebookIcon,
+  FlagsIcon,
   HomeIcon,
+  HourglassIcon,
   IdCardVerifiedIcon,
   InfoIcon,
   InstagramIcon,
   LadyIcon,
   LightningIcon,
+  MapIcon,
   MinusIcon,
   MusicIcon,
   NewspaperIcon,
@@ -88,6 +97,7 @@ export {
   QuestionIcon,
   SearchIcon,
   SendIcon,
+  ShareIcon,
   SmokeIcon,
   SpeakIcon,
   StarIcon,
