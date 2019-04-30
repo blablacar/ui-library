@@ -17,7 +17,7 @@ interface PhoneFieldOnChangeParameters {
   value: {
     [FIELDS.PHONENUMBER]: string
     [FIELDS.PHONEPREFIX]: string
-    phoneRegionList: string[]
+    phoneRegion: string
     completePhoneNumber: string
   }
 }
@@ -39,7 +39,7 @@ interface PhoneFieldProps {
 interface PhoneFieldState {
   countryData: mappedCountryPhoneData[]
   countryWhitelist: string[]
-  phoneRegionList: string[]
+  phoneRegion: string
   completePhoneNumber: string
   // Make the type of [key: string]: string etc... assignable for setState()
   [key: string]: any
@@ -76,7 +76,7 @@ const mapCountriesPhoneData = (
   countryNames: customCountryNames,
 ): mappedCountryPhoneData[] => {
   return countryData.map(data => ({
-    value: data.dialCode,
+    value: data.iso2,
     label: `${!isEmpty(countryNames[data.iso2]) ? countryNames[data.iso2] : data.name} ${
       data.dialCode
     }`,
@@ -118,7 +118,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
     countryWhitelist: this.props.countryWhitelist,
     [FIELDS.PHONENUMBER]: this.props.defaultPhoneValue,
     [FIELDS.PHONEPREFIX]: iso2toDialCode(this.props.defaultRegionValue),
-    phoneRegionList: !isEmpty(this.props.defaultRegionValue) ? [this.props.defaultRegionValue] : [],
+    phoneRegion: !isEmpty(this.props.defaultRegionValue) ? this.props.defaultRegionValue : '',
     completePhoneNumber:
       iso2toDialCode(this.props.defaultRegionValue) + this.props.defaultPhoneValue,
     hasFocus: false,
@@ -126,14 +126,14 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
 
   onChange = ({ name, value }: OnChangeParameters) => {
     this.setState({ [name]: value }, () => {
-      const iso2Codes = allCountryCodes[Number(this.state[FIELDS.PHONEPREFIX])]
       this.props.onChange({
         name: this.props.name,
         value: {
           [FIELDS.PHONENUMBER]: this.state[FIELDS.PHONENUMBER],
-          [FIELDS.PHONEPREFIX]: this.state[FIELDS.PHONEPREFIX],
-          phoneRegionList: !isEmpty(iso2Codes) ? iso2Codes : [],
-          completePhoneNumber: this.state[FIELDS.PHONEPREFIX] + this.state[FIELDS.PHONENUMBER],
+          [FIELDS.PHONEPREFIX]: iso2toDialCode(this.state[FIELDS.PHONEPREFIX]),
+          phoneRegion: this.state[FIELDS.PHONEPREFIX],
+          completePhoneNumber:
+            iso2toDialCode(this.state[FIELDS.PHONEPREFIX]) + this.state[FIELDS.PHONENUMBER],
         },
       })
     })
@@ -194,7 +194,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
           name={FIELDS.PHONEPREFIX}
           options={this.state.countryData}
           ariaLabel={selectFieldLabel}
-          defaultValue={this.state[FIELDS.PHONEPREFIX]}
+          defaultValue={this.props.defaultRegionValue}
           onChange={this.onChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** `PhoneField` Use region code on option to have unique value
+- [...]
 
 # v4.0.0 (02/04/2019)
 
