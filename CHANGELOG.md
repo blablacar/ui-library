@@ -1,6 +1,9 @@
 # Unreleased
 
 [...]
+
+# v3.2.0 (30/04/2019)
+
 - **[NEW]** Added `AvatarIcon`
 - **[NEW]** Added `FlagsIcon`
 - **[NEW]** Added `HourglassIcon`
