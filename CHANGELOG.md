@@ -2,7 +2,7 @@
 
 [...]
 
-# v4.0.0
+# v4.0.0 (02/04/2019)
 
 - **[BREAKING CHANGE]** Moved `react` and `react-dom` to `peerDependencies`
 
