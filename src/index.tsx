@@ -13,6 +13,8 @@ import HamburgerButton from 'hamburgerButton'
 import ItemAction from 'itemAction'
 import ItemChoice from 'itemChoice'
 import ItemData from 'itemData'
+import ItemDeclaredChoice from 'itemDeclaredChoice'
+import ItemDeclaredChoiceGroup from 'itemDeclaredChoiceGroup'
 import ItemInfo from 'itemInfo'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
@@ -63,6 +65,8 @@ export {
   ItemAction,
   ItemChoice,
   ItemData,
+  ItemDeclaredChoice,
+  ItemDeclaredChoiceGroup,
   ItemInfo,
   Itinerary,
   Loader,
