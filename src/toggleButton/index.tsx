@@ -1,12 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Loader from 'loader'
 import Item, { ItemProps } from '_utils/item/index'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
-
-import { color } from '_utils/branding'
+import Checkbox from '_utils/checkbox'
 
 import style from 'toggleButton/style'
 
@@ -53,14 +49,6 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
     const isChecked = this.state.checked
     const isDisabled = this.props.disabled || isLoading
 
-    let rightAddon = <CircleIcon iconColor={color.primary} thin />
-    if (isChecked) {
-      rightAddon = <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />
-    }
-    if (isLoading) {
-      rightAddon = <Loader size={24} inline />
-    }
-
     return (
       <button
         className={cc(['kirk-toggle-button', this.props.className])}
@@ -69,7 +57,11 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
         onClick={this.onButtonClick}
         disabled={isDisabled}
       >
-        <Item leftTitle={this.props.label} leftBody={this.props.sublabel} rightAddon={rightAddon} />
+        <Item
+          leftTitle={this.props.label}
+          leftBody={this.props.sublabel}
+          rightAddon={<Checkbox isChecked={isChecked} isLoading={isLoading} />}
+        />
         <style jsx>{style}</style>
       </button>
     )

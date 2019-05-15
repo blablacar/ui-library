@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `ItemDeclaredChoice` and `ItemDeclaredChoiceGroup`
 - **[FIX]** `PhoneField` Use region code on option to have unique value
 - [...]
 
