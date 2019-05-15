@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from 'react'
+import cc from 'classcat'
 
 import Item from '_utils/item'
-import { color } from '_utils/branding'
+import Checkbox from '_utils/checkbox'
 import { TextDisplayType } from 'text'
-import Loader from 'loader'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
 
 import style from './style'
 
@@ -56,14 +54,6 @@ class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
       status,
     } = this.props
     const isLoading = status === ItemDeclaredChoiceStatus.LOADING
-
-    let radioIcon = <CircleIcon iconColor={color.primary} thin />
-    if (checked) {
-      radioIcon = <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />
-    }
-    if (isLoading) {
-      radioIcon = <Loader size={24} inline />
-    }
     const radio = (
       <Fragment>
         <input
@@ -74,14 +64,14 @@ class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
           onChange={this.onChange}
           disabled={disabled || isLoading}
         />
-        {radioIcon}
+        <Checkbox isChecked={checked} isLoading={isLoading} />
       </Fragment>
     )
 
     return (
       <Fragment>
         <Item
-          className={className}
+          className={cc(['kirk-item-declared-choice', className])}
           leftTitle={labelTitle}
           leftBody={label}
           rightTitle={data}

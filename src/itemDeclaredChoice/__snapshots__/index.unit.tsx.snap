@@ -2,7 +2,7 @@
 
 exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked 1`] = `
 <label
-  className="jsx-1500099655 kirk-item custom-class-name"
+  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
     className="jsx-1500099655 kirk-item-leftText"
@@ -69,7 +69,7 @@ exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked
 
 exports[`ItemDeclaredChoice Should display a Loader when the component is in loading status 1`] = `
 <label
-  className="jsx-1500099655 kirk-item custom-class-name"
+  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
     className="jsx-1500099655 kirk-item-leftText"
@@ -144,7 +144,7 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
 
 exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] = `
 <label
-  className="jsx-1500099655 kirk-item custom-class-name"
+  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
     className="jsx-1500099655 kirk-item-leftText"

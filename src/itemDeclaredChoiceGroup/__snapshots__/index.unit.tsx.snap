@@ -3,7 +3,7 @@
 exports[`ItemDeclaredChoiceGroup Should map its children and render them with specific props 1`] = `
 Array [
   <label
-    className="jsx-1500099655 kirk-item"
+    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
   >
     <div
       className="jsx-1500099655 kirk-item-leftText"
@@ -46,7 +46,7 @@ Array [
     </div>
   </label>,
   <label
-    className="jsx-1500099655 kirk-item"
+    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
   >
     <div
       className="jsx-1500099655 kirk-item-leftText"
@@ -91,7 +91,7 @@ Array [
     </div>
   </label>,
   <label
-    className="jsx-1500099655 kirk-item"
+    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
   >
     <div
       className="jsx-1500099655 kirk-item-leftText"
