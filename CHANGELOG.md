@@ -1,10 +1,13 @@
 # Unreleased
 
-- **[NEW]** Added `ItemDeclaredChoice` and `ItemDeclaredChoiceGroup`
-- **[FIX]** `PhoneField` Use region code on option to have unique value
 - [...]
 
-# v4.0.0 (02/04/2019)
+# v4.1.0 (17/05/2019)
+
+- **[NEW]** Added `ItemDeclaredChoice` and `ItemDeclaredChoiceGroup`
+- **[FIX]** `PhoneField` Use region code on option to have unique value
+
+# v4.0.0 (02/05/2019)
 
 - **[BREAKING CHANGE]** Moved `react` and `react-dom` to `peerDependencies`
 
