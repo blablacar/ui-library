@@ -36,6 +36,7 @@ export interface ButtonProps {
   readonly onDoneAnimationEnd?: () => void
   readonly tabIndex?: string
   readonly disabled?: boolean
+  readonly index?: string
   buttonRef?: (button: HTMLButtonElement) => void
 }
 
@@ -65,6 +66,7 @@ type TypeProps = {
   onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
   onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
   disabled?: boolean
+  index?: string
 }
 
 export const eventHandler = (componentEvent: functionEvent, childEvent: functionEvent) => (
@@ -116,6 +118,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       type,
       href,
       title,
+      index,
       // Modifiers
       status,
       isBubble,
@@ -155,6 +158,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
 
     typeProps.ref = this.ref
     typeProps.title = title
+    typeProps.index = index
     typeProps.onClick = eventHandler(onClick, typeProps.onClick)
     typeProps.onMouseDown = eventHandler(onMouseDown, typeProps.onMouseDown)
     typeProps.onMouseUp = eventHandler(onMouseUp, typeProps.onMouseUp)

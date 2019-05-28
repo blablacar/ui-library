@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `loadingIndex` property to `ButtonGroup` to handle loading/disabled state of child `Button`
 - [...]
 
 # v5.0.0 (28/05/2019)
