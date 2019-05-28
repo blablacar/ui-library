@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[BREAKING CHANGE]** `PhoneField` Fix wrong payload value by changing prefix logic to region
 - [...]
+
+# v5.0.0 (28/05/2019)
+
+- **[BREAKING CHANGE]** `PhoneField` Fix wrong payload value by changing prefix logic to region
 
 # v4.1.0 (17/05/2019)
 
