@@ -16,6 +16,10 @@ export default css`
   .kirk-button-group.kirk-button-group-column > :global(.kirk-button + .kirk-button) {
     margin-top: ${space.m};
   }
+  .kirk-button-group.kirk-button-group-column > :global(.kirk-button.kirk-button-loading) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .kirk-button-group.kirk-button-group-column.kirk-button-group-reverse {
     flex-direction: column-reverse;
