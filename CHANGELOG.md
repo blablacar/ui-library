@@ -1,9 +1,12 @@
 # Unreleased
 
-- **[DEV]** Fixed typescript issues in `ButtonGroup`
 - [...]
 
-# v5.1.0 (29/05/2019)
+# v5.1.1 (04/06/2019)
+
+- **[DEV]** Fixed typescript issues in `ButtonGroup`
+
+# v5.1.0 (unreleased)
 
 - **[NEW]** Added `loadingIndex` property to `ButtonGroup` to handle loading/disabled state of child `Button`
 
