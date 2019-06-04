@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[DEV]** Fixed typescript issues in `ButtonGroup`
 - [...]
 
 # v5.1.0 (29/05/2019)

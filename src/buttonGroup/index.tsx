@@ -42,7 +42,7 @@ const ButtonGroup = ({
   return (
     <div className={cc(classNames)}>
       {buttons.map((button, idx) => {
-        const index: string = button.props.index || idx
+        const index: string = button.props.index || String(idx)
         const isLoading: boolean = Boolean(loadingIndex)
         const status: ButtonStatus = isLoading && index === loadingIndex
           ? Button.STATUS.LOADING
@@ -55,7 +55,7 @@ const ButtonGroup = ({
           status,
           disabled,
         }
-        return cloneElement(button as React.ReactElement<Button>, props as Partial<Button>)
+        return cloneElement(button, props)
       })}
 
       <style jsx>{style}</style>
