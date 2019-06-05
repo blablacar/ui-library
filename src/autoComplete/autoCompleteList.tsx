@@ -4,7 +4,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
-import { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
 import AutoCompleteListItem from './autoCompleteListItem'
 import style from './autoCompleteListStyle'
 
@@ -19,7 +19,7 @@ export interface AutoCompleteListProps {
   onDoneAnimationEnd?: () => void
   itemKey?: (item: AutocompleteItem) => string
   visible?: boolean
-  selectedItemStatus?: ItemChoiceStatus
+  selectedItemStatus?: ItemStatus
 }
 
 export interface AutoCompleteListState {
@@ -136,7 +136,7 @@ export default class AutoCompleteList extends Component<
           const status =
             this.state.selectedIndex === index
               ? this.props.selectedItemStatus
-              : ItemChoiceStatus.DEFAULT
+              : ItemStatus.DEFAULT
           return (
             <AutoCompleteListItem
               key={this.props.itemKey(item)}

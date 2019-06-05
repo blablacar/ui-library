@@ -6,6 +6,7 @@ import { color } from '_utils/branding'
 
 import ItemAction from 'itemAction'
 import BubbleIcon from 'icon/bubbleIcon'
+import spec from './specifications/index.md'
 
 const stories = storiesOf('ItemAction', module)
 stories.addDecorator(withKnobs)
@@ -29,6 +30,8 @@ stories.add('Default', () => {
       />
     </div>
   )
+}, {
+  readme: { content: spec },
 })
 
 stories.add('With left addon', () => {
@@ -50,3 +53,21 @@ stories.add('With left addon', () => {
     </div>
   )
 })
+
+stories.add('With loading state', () => (
+  <div>
+    <ItemAction
+      action={text('Action', 'Action')}
+      onClick={action('onClick')}
+      onBlur={action('onBlur')}
+      onFocus={action('onFocus')}
+      onMouseDown={action('onMouseDown')}
+      status={ItemAction.STATUS.LOADING}
+    />
+    <ItemAction
+      action="Action 2"
+      subLabel="with subLabel"
+      status={ItemAction.STATUS.CHECKED}
+    />
+  </div>
+))

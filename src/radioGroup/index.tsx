@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import style from 'radioGroup/style'
 import Radio, { RadioProps } from 'radio'
-import { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
 
 export interface RadioGroupProps {
   readonly name: string
@@ -12,7 +12,7 @@ export interface RadioGroupProps {
   readonly children?: JSX.Element[]
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly highlightedValue?: string
-  readonly status?: ItemChoiceStatus
+  readonly status?: ItemStatus
   readonly onDoneAnimationEnd?: () => void
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
+import ItemChoice from 'itemChoice'
 import cc from 'classcat'
 
 export interface AutoCompleteListItemProps {
@@ -8,17 +9,17 @@ export interface AutoCompleteListItemProps {
   readonly children: React.ReactElement<any>
   readonly className?: Classcat.Class
   readonly highlighted?: boolean
-  readonly status?: ItemChoiceStatus
+  readonly status?: ItemStatus
   readonly onDoneAnimationEnd?: () => void
 }
 
 export default class AutoCompleteListItem extends Component<AutoCompleteListItemProps> {
   static defaultProps: Partial<AutoCompleteListItemProps> = {
     highlighted: false,
-    status: ItemChoice.STATUS.DEFAULT,
+    status: ItemStatus.DEFAULT,
   }
 
-  static STATUS = ItemChoiceStatus
+  static STATUS = ItemStatus
 
   onMouseDown = () => {
     this.props.select(this.props.item)

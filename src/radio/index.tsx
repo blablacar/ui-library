@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
+import ItemChoice from 'itemChoice'
 import style from 'radio/style'
 
 export interface RadioProps {
@@ -17,7 +18,7 @@ export interface RadioProps {
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly subLabel?: string
   readonly icon?: JSX.Element
-  readonly status?: ItemChoiceStatus
+  readonly status?: ItemStatus
   readonly onDoneAnimationEnd?: () => void
 }
 
@@ -27,10 +28,10 @@ export default class Radio extends Component<RadioProps> {
     checked: false,
     highlighted: false,
     declared: false,
-    status: ItemChoice.STATUS.DEFAULT,
+    status: ItemStatus.DEFAULT,
   }
 
-  static STATUS = ItemChoiceStatus
+  static STATUS = ItemStatus
 
   onChange = () => {
     const { name, value } = this.props

@@ -5,8 +5,8 @@ import isEmpty from 'lodash.isempty'
 import debounce from 'lodash.debounce'
 
 import prefix from '_utils'
+import { ItemStatus } from '_utils/item'
 import TextField from 'textField'
-import { ItemChoiceStatus } from 'itemChoice'
 import AutoCompleteList from './autoCompleteList'
 import AutoCompleteListItemDefault from './autoCompleteListItemDefault'
 import style from './style'
@@ -50,7 +50,7 @@ interface AutoCompleteProps {
   readonly readOnly?: boolean
   readonly required?: boolean
   readonly error?: string | JSX.Element
-  readonly selectedItemStatus?: ItemChoiceStatus
+  readonly selectedItemStatus?: ItemStatus
 }
 
 interface AutoCompleteState {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
 import AutoComplete from 'autoComplete'
@@ -75,8 +75,8 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           searchForItemsMinChars={number('searchForItemsMinChars', 3)}
           selectedItemStatus={select(
             'selectedItemStatus',
-            [ItemChoiceStatus.DEFAULT, ItemChoiceStatus.LOADING, ItemChoiceStatus.CHECKED],
-            ItemChoiceStatus.DEFAULT,
+            [ItemStatus.DEFAULT, ItemStatus.LOADING, ItemStatus.CHECKED],
+            ItemStatus.DEFAULT,
           )}
           autoCorrect={select('autoCorrect', { on: 'on', off: 'off' }, 'off')}
           disabled={boolean('disabled', false)}
