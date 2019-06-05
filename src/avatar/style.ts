@@ -11,6 +11,11 @@ export default css`
     height: 48px;
   }
 
+  .kirk-avatar--small {
+    height: 40px;
+    width: 40px;
+  }
+
   .kirk-avatar--medium {
     height: 96px;
     width: 96px;

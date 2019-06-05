@@ -1,10 +1,12 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
+import Avatar from 'avatar'
 import TripCard from 'tripCard'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
+import WarningIcon from 'icon/warningIcon'
 
 const mockedProps = {
   href: '#',
@@ -38,32 +40,76 @@ const mockedProps = {
 
 const Div = () => <div className="divTest" />
 
-it('Should have the base class', () => {
-  const tripCard = shallow(<TripCard {...mockedProps} />)
-  expect(tripCard.hasClass('kirk-tripCard')).toBe(true)
-})
+describe('TripCard component', () => {
+  it('Should have the base class', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} />)
+    expect(tripCard.hasClass('kirk-tripCard')).toBe(true)
+  })
 
-it('Should have the test class', () => {
-  const tripCard = shallow(<TripCard {...mockedProps} className="test" />)
-  expect(tripCard.hasClass('test')).toBe(true)
-})
+  it('Should have the test class', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} className="test" />)
+    expect(tripCard.hasClass('test')).toBe(true)
+  })
 
-it('Should use the right element (specified in href prop)', () => {
-  const tripCard = mount(<TripCard {...mockedProps} href={<Div />} />)
-  expect(tripCard.find(Div).exists()).toBe(true)
-  expect(tripCard.find('.divTest').exists()).toBe(true)
-})
+  it('Should use the right element (specified in href prop)', () => {
+    const tripCard = mount(<TripCard {...mockedProps} href={<Div />} />)
+    expect(tripCard.find(Div).exists()).toBe(true)
+    expect(tripCard.find('.divTest').exists()).toBe(true)
+  })
 
-it('Should have the highlighted modifier display the highlighted string instead of flags', () => {
-  const tripCard = shallow(<TripCard {...mockedProps} highlighted="Test string" />)
-  expect(tripCard.find('.kirk-tripCard--highlighted').exists()).toBe(true)
-  expect(tripCard.find('.kirk-tripCard-flags').exists()).toBe(false)
-  expect(tripCard.find('.kirk-tripCard-topText').exists()).toBe(true)
-})
+  it('Should have the highlighted modifier display the highlighted string instead of flags', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} highlighted="Test string" />)
+    expect(tripCard.find('.kirk-tripCard--highlighted').exists()).toBe(true)
+    expect(tripCard.find('.kirk-tripCard-flags').exists()).toBe(false)
+    expect(tripCard.find('.kirk-tripCard-topText').exists()).toBe(true)
+  })
 
-it('Should have only the Ladies Only icon', () => {
-  const tripCard = shallow(<TripCard {...mockedProps} flags={{ ladiesOnly: true }} />)
-  expect(tripCard.find(LadyIcon).exists()).toBe(true)
-  expect(tripCard.find(ComfortIcon).exists()).toBe(false)
-  expect(tripCard.find(LightningIcon).exists()).toBe(false)
+  it('Should have only the Ladies Only icon', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} flags={{ ladiesOnly: true }} />)
+    expect(tripCard.find(LadyIcon).exists()).toBe(true)
+    expect(tripCard.find(ComfortIcon).exists()).toBe(false)
+    expect(tripCard.find(LightningIcon).exists()).toBe(false)
+  })
+
+  it('Should show driver avatar', () => {
+    const driver = {
+      avatarUrl: '//placehold.it/500x500',
+      firstName: 'Jane',
+    }
+
+    const component = shallow(<TripCard {...mockedProps} driver={driver} passengers={null} />)
+    expect(component.find(Avatar)).toHaveLength(1)
+  })
+
+  it('Should show passengers avatars', () => {
+    const passengers = [
+      {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'Jane',
+      },
+      {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'John',
+      },
+      {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'Matthew',
+      },
+    ]
+
+    const component = shallow(<TripCard {...mockedProps} driver={null} passengers={passengers} />)
+    expect(component.find(Avatar)).toHaveLength(3)
+  })
+
+  it('Should render status information', () => {
+    const statusInformation = { icon: <WarningIcon/>, text: 'Warning!' }
+    const component = shallow(<TripCard {...mockedProps} statusInformation={statusInformation} />)
+    expect(component.find('.kirk-tripCard-top').exists()).toBe(true)
+  })
+
+  it('Should render badge', () => {
+    const component = shallow(<TripCard {...mockedProps} badge='Cheapest!' />)
+    expect(component.hasClass('kirk-tripCard--with-badge')).toBe(true)
+    expect(component.find('.kirk-tripCard-badge').exists()).toBe(true)
+  })
 })

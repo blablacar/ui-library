@@ -11,6 +11,7 @@ export interface AvatarInterface {
   readonly className?: Classcat.Class
   readonly image?: string
   readonly alt?: string
+  readonly isSmall?: boolean
   readonly isMedium?: boolean
   readonly isLarge?: boolean
   readonly isIdChecked?: boolean
@@ -37,6 +38,7 @@ const unreadNotificationsBadge = (
 )
 
 const Avatar = ({
+  isSmall,
   isMedium,
   isLarge,
   className,
@@ -48,7 +50,7 @@ const Avatar = ({
 }: AvatarInterface) => (
   <div
     className={cc([
-      prefix({ medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
+      prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
       className,
       'kirk-avatar',
     ])}
