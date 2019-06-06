@@ -24,7 +24,18 @@ stories.add(
       )}
       className={text('className', 'custom-class-name')}
     >
-      <Button index="button_1">Hello</Button>
+      <Button
+        index="button_1"
+        status={select(
+          'First button status',
+          {
+            [Button.STATUS.PRIMARY]: Button.STATUS.PRIMARY,
+            [Button.STATUS.CHECKED]: Button.STATUS.CHECKED,
+          },
+          Button.STATUS.PRIMARY,
+        )}>
+        Hello
+      </Button>
       <Button index="button_2" status={Button.STATUS.TERTIARY}>
         there
       </Button>

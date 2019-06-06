@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fixed button with `CHECKED` status in `ButtonGroup`
 - **[DEV]** Added typescript check in pre-commit hook
 - [...]
 

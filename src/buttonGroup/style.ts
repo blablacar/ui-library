@@ -16,7 +16,8 @@ export default css`
   .kirk-button-group.kirk-button-group-column > :global(.kirk-button + .kirk-button) {
     margin-top: ${space.m};
   }
-  .kirk-button-group.kirk-button-group-column > :global(.kirk-button.kirk-button-loading) {
+  .kirk-button-group.kirk-button-group-column > :global(.kirk-button.kirk-button-loading),
+  .kirk-button-group.kirk-button-group-column > :global(.kirk-button.kirk-button-checked) {
     margin-left: auto;
     margin-right: auto;
   }
