@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v5.2.0 (06/06/2019)
+
 - **[NEW]** Added `passengers` option to `TripCard`
 - **[NEW]** Added `badge` option to `TripCard`
 - **[NEW]** Added `statusInformation` option to `TripCard`
@@ -7,7 +11,6 @@
 - **[NEW]** Added `status` prop to `ItemAction`
 - **[FIX]** Fixed button with `CHECKED` status in `ButtonGroup`
 - **[DEV]** Added typescript check in pre-commit hook
-- [...]
 
 # v5.1.1 (04/06/2019)
 
