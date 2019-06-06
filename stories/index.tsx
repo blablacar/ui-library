@@ -1,7 +1,7 @@
 import './stories.css'
 
 import '../src/_utils/story'
-import '../src/autoComplete/story'
+// import '../src/autoComplete/story'
 import '../src/avatar/story'
 import '../src/badge/story'
 import '../src/button/story'

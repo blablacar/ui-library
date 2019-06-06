@@ -1,162 +1,100 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
+import Item, { ItemStatus } from '_utils/item'
 import { color } from '_utils/branding'
-import { ItemStatus } from '_utils/item'
+import { TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
-import CheckIcon from 'icon/checkIcon'
 import Loader from 'loader'
-import style from './style'
 
-interface TypeProps {
-  readonly className?: Classcat.Class
-  readonly href?: string
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+export enum ItemChoiceStyle {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  RECOMMENDED = 'recommended',
 }
 
 export interface ItemChoiceProps {
+  readonly title: string
+  readonly titleInfo?: string
+  readonly data?: string
+  readonly dataInfo?: string
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
-  readonly label?: string
-  readonly subLabel?: string
-  readonly children?: React.ReactNode
-  readonly leftAddon?: React.ReactNode
-  readonly rightAddon?: React.ReactNode
-  readonly highlighted?: boolean
-  readonly selected?: boolean
-  readonly declared?: boolean
   readonly status?: ItemStatus
-  readonly onDoneAnimationEnd?: () => void
+  readonly style?: ItemChoiceStyle
+  readonly disabled?: boolean
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onDoneAnimationEnd?: () => void
 }
 
-class ItemChoice extends PureComponent<ItemChoiceProps> {
+export class ItemChoice extends PureComponent<ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {
-    highlighted: false,
-    selected: false,
-    declared: false,
-    status: ItemStatus.DEFAULT,
+    titleInfo: '',
+    data: '',
+    dataInfo: '',
+    className: '',
     href: '',
+    status: ItemStatus.DEFAULT,
+    style: ItemChoiceStyle.PRIMARY,
+    disabled: false,
   }
+
   static STATUS = ItemStatus
-  render() {
-    const {
-      children,
-      className,
-      highlighted,
-      selected,
-      status,
-      declared,
-      onClick,
-      onBlur,
-      onFocus,
-      onMouseDown,
-      href,
-      label,
-      subLabel,
-      leftAddon,
-      rightAddon,
-      onDoneAnimationEnd,
-    } = this.props
-    const classNames = cc([
-      prefix({
-        itemChoice: true,
-        'itemChoice--highlighted': highlighted,
-        'itemChoice--declared': declared,
-      }),
-      className,
-    ])
+  static STYLE = ItemChoiceStyle
 
-    let rightIcon = <ChevronIcon className={cc(prefix({ chevron: true }))} />
-
-    if (declared && selected) {
-      rightIcon = <CheckIcon iconColor={color.white} backgroundColor={color.primary} />
-    }
-    if (declared && !selected) {
-      rightIcon = null
-    }
-
+  get rightAddon() {
+    const { status, onDoneAnimationEnd, disabled } = this.props
     if (status === ItemStatus.LOADING) {
-      rightIcon = (
-        <Loader
-          className={cc(prefix({ chevron: true }))}
-          size={24}
-          onDoneAnimationEnd={onDoneAnimationEnd}
-          inline
-        />
-      )
+      return <Loader inline size={24} />
     }
-
     if (status === ItemStatus.CHECKED) {
-      rightIcon = (
-        <Loader
-          className={cc(prefix({ chevron: true }))}
-          size={24}
-          onDoneAnimationEnd={onDoneAnimationEnd}
-          done
-          inline
-        />
-      )
+      return <Loader inline size={24} done onDoneAnimationEnd={onDoneAnimationEnd} />
     }
+    return <ChevronIcon iconColor={disabled ? color.fadedText : color.secondaryText} />
+  }
 
-    let Component
-    let typeProps: TypeProps
+  get fullClassName() {
+    const { className } = this.props
+    return cc(['kirk-item-choice', className])
+  }
 
-    // If we pass a component to href, we get component type and we merge props
-    if (typeof href !== 'string') {
-      Component = href.type
-      typeProps = {
-        ...href.props,
-        onClick,
-        onFocus,
-        onBlur,
-        onMouseDown,
-        className: cc([href.props.className, classNames]),
-      }
-    } else if (!isEmpty(href)) {
-      Component = 'a'
-      typeProps = { onClick, onFocus, onBlur, onMouseDown, href, className: classNames }
-    } else {
-      Component = 'li'
-      typeProps = { onClick, onFocus, onBlur, onMouseDown, className: classNames }
+  get titleColor() {
+    const { style, disabled } = this.props
+    if (disabled) {
+      return color.fadedText
     }
-
-    const props = {
-      ...typeProps,
-      role: 'option',
-      'aria-selected': selected,
+    if (style === ItemChoiceStyle.RECOMMENDED) {
+      return color.primary
     }
+    if (style === ItemChoiceStyle.SECONDARY) {
+      return color.secondaryText
+    }
+    return color.primaryText
+  }
+
+  render() {
+    const { title, titleInfo, data, dataInfo, href, onClick, style, disabled } = this.props
+    const isRecommended = style === ItemChoiceStyle.RECOMMENDED
 
     return (
-      <Component {...props}>
-        {leftAddon && (
-          <div className={cc(prefix({ 'itemChoice-leftAddon': true }))}>{leftAddon}</div>
-        )}
-        {label && (
-          <div>
-            <div className={cc(prefix({ 'itemChoice-label': true }))}>{label}</div>
-            {subLabel && (
-              <div className={cc(prefix({ 'itemChoice-subLabel': true }))}>{subLabel}</div>
-            )}
-          </div>
-        )}
-        {children}
-        <div className="kirk-itemChoice-right">
-          {rightAddon && (
-            <div className={cc(prefix({ 'itemChoice-rightAddon': true }))}>{rightAddon}</div>
-          )}
-          <div className="kirk-itemChoice-chevron">{rightIcon}</div>
-        </div>
-        <style jsx>{style}</style>
-      </Component>
+      <Item
+        className={this.fullClassName}
+        leftTitle={title}
+        leftTitleDisplay={isRecommended ? TextDisplayType.SUBHEADER : TextDisplayType.TITLE}
+        leftBody={titleInfo}
+        leftBodyColor={disabled ? color.fadedText : color.secondaryText}
+        leftTitleColor={this.titleColor}
+        rightTitle={data}
+        rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+        rightTitleColor={this.titleColor}
+        rightBody={dataInfo}
+        rightBodyColor={disabled ? color.fadedText : color.secondaryText}
+        rightAddon={this.rightAddon}
+        href={!disabled ? href : ''}
+        tag={<button type="button" disabled={disabled} />}
+        onClick={!disabled ? onClick : null}
+        highlighted={isRecommended}
+      />
     )
   }
 }

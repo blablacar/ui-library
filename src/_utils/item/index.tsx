@@ -18,13 +18,17 @@ export interface ItemProps {
   readonly highlighted?: boolean
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
+  readonly leftTitleColor?: string
   readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
+  readonly leftBodyColor?: string
   readonly leftAddon?: React.ReactNode
   readonly rightTitle?: string
   readonly rightTitleDisplay?: TextDisplayType
+  readonly rightTitleColor?: string
   readonly rightBody?: string | React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
+  readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
   readonly tag?: JSX.Element
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
@@ -44,13 +48,17 @@ const Item = ({
   highlighted,
   leftTitle,
   leftTitleDisplay = TextDisplayType.TITLE,
+  leftTitleColor,
   leftBody,
   leftBodyDisplay = TextDisplayType.BODY,
+  leftBodyColor,
   leftAddon,
   rightTitle,
   rightTitleDisplay = TextDisplayType.TITLE,
+  rightTitleColor,
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
+  rightBodyColor,
   rightAddon,
   tag = <div />,
 }: ItemProps) => {
@@ -90,13 +98,19 @@ const Item = ({
           <Text
             className={leftBody ? 'kirk-item-title' : null}
             display={leftTitleDisplay}
+            textColor={leftTitleColor}
             tag={TextTagType.DIV}
           >
             {leftTitle}
           </Text>
         )}
         {leftBody && (
-          <Text className="kirk-item-body" display={leftBodyDisplay} tag={TextTagType.DIV}>
+          <Text
+            className="kirk-item-body"
+            display={leftBodyDisplay}
+            textColor={leftBodyColor}
+            tag={TextTagType.DIV}
+          >
             {leftBody}
           </Text>
         )}
@@ -107,13 +121,19 @@ const Item = ({
             <Text
               className={rightBody ? 'kirk-item-title' : null}
               display={rightTitleDisplay}
+              textColor={rightTitleColor}
               tag={TextTagType.DIV}
             >
               {rightTitle}
             </Text>
           )}
           {rightBody && (
-            <Text className="kirk-item-body" display={rightBodyDisplay} tag={TextTagType.DIV}>
+            <Text
+              className="kirk-item-body"
+              display={rightBodyDisplay}
+              textColor={rightBodyColor}
+              tag={TextTagType.DIV}
+            >
               {rightBody}
             </Text>
           )}
