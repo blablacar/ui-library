@@ -5,6 +5,12 @@ import style from './style'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
 
+export enum ItemStatus {
+  DEFAULT = 'default',
+  LOADING = 'loading',
+  CHECKED = 'checked',
+}
+
 export interface ItemProps {
   readonly chevron?: boolean
   readonly className?: Classcat.Class

@@ -16,9 +16,8 @@ import {
   TicketIcon,
 } from 'icon'
 import Text from 'text'
-
 import Menu from 'menu'
-import { ItemChoiceStatus } from 'itemChoice'
+import { ItemStatus } from '_utils/item'
 
 const stories = storiesOf('Menu', module)
 stories.addDecorator(withKnobs)
@@ -35,7 +34,7 @@ const menuItems = [
     label: 'Rides offered (loading)',
     leftAddon: <NewspaperIcon />,
     href: 'menu-item-2',
-    status: ItemChoiceStatus.LOADING,
+    status: ItemStatus.LOADING,
   },
   {
     id: 'menu-item-3',

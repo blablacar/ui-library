@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
+import { ItemStatus } from '_utils/item'
 import AutoComplete from 'autoComplete'
-import { ItemChoiceStatus } from 'itemChoice'
 
 const initialFakeItems = [
   { id: '1', title: 'title1', description: 'description1' },
@@ -65,7 +65,7 @@ describe('AutoComplete', () => {
       <AutoComplete
         {...defaultProps}
         onDoneAnimationEnd={event}
-        selectedItemStatus={ItemChoiceStatus.CHECKED}
+        selectedItemStatus={ItemStatus.CHECKED}
       />,
     )
     wrapper.instance().onInputChange({ value: 'title' })

@@ -1,8 +1,9 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
+import { ItemStatus } from '_utils/item'
 import Menu from 'menu'
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import ItemChoice from 'itemChoice'
 import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
 
 let defaultProps = {}
@@ -67,7 +68,7 @@ describe('Menu', () => {
   })
 
   it('Should use configured status for nested items', () => {
-    defaultProps.items[0].status = ItemChoiceStatus.LOADING
+    defaultProps.items[0].status = ItemStatus.LOADING
 
     const wrapper = shallow(<Menu {...defaultProps} />)
     expect(
