@@ -2,17 +2,16 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import AutoCompleteList from './autoCompleteList'
-import AutoCompleteListItem from './autoCompleteListItem'
+import ItemChoice from 'itemChoice'
 
 const fakeItems = [
-  { title: 'title1', description: 'description1' },
-  { title: 'title2', description: 'description2' },
+  { label: 'title1', labelInfo: 'description1' },
+  { label: 'title2', labelInfo: 'description2' },
 ]
 
 const defaultProps = {
   name: 'cities',
   items: fakeItems,
-  renderItem: ({ item }) => <div>{item.title}</div>,
   visible: true,
 }
 
@@ -42,13 +41,6 @@ describe('AutoCompleteList', () => {
   it('Renders `maxItems` list items', () => {
     const wrapper = mount(<AutoCompleteList {...defaultProps} maxItems={1} />)
     expect(wrapper.find('li')).toHaveLength(1)
-  })
-
-  it('Renders items with a custom renderer', () => {
-    const CustomItem = jest.fn(({ item }) => <h1>{item.title}</h1>)
-    const wrapper = mount(<AutoCompleteList {...defaultProps} renderItem={CustomItem} />)
-    expect(wrapper.find('h1')).toHaveLength(2)
-    expect(CustomItem).toHaveBeenCalledTimes(2)
   })
 
   it('Renders items with a custom className', () => {
@@ -93,13 +85,13 @@ describe('AutoCompleteList', () => {
   })
 
   describe('#selectedItemStatus', () => {
-    it('displays an AutoCompleteListItem in loading state', () => {
+    it('displays an ItemChoice in loading state', () => {
       const onSelectSpy = jest.fn()
       const wrapper = shallow(
         <AutoCompleteList
           {...defaultProps}
           onSelect={onSelectSpy}
-          selectedItemStatus={AutoCompleteListItem.STATUS.LOADING}
+          selectedItemStatus={ItemChoice.STATUS.LOADING}
         />,
       )
 

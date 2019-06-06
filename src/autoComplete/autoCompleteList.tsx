@@ -5,12 +5,11 @@ import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
-import AutoCompleteListItem from './autoCompleteListItem'
+import ItemChoice from 'itemChoice'
 import style from './autoCompleteListStyle'
 
 export interface AutoCompleteListProps {
   name: string
-  renderItem: (itemToRender: AutocompleteItemToRender) => React.ReactElement<any>
   onSelect?: (item: AutocompleteItem) => void
   className?: Classcat.Class
   items?: AutocompleteItem[]
@@ -136,19 +135,21 @@ export default class AutoCompleteList extends Component<
           const status =
             this.state.selectedIndex === index
               ? this.props.selectedItemStatus
-              : ItemStatus.DEFAULT
+              : ItemChoice.STATUS.DEFAULT
+          const isHighlighted = index === this.state.highlightedIndex
+          const { id, ...itemChoiceProps } = item
           return (
-            <AutoCompleteListItem
+            <ItemChoice
+              {...itemChoiceProps}
               key={this.props.itemKey(item)}
-              item={item}
               className={this.props.itemClassName}
-              highlighted={index === this.state.highlightedIndex}
+              style={isHighlighted ? ItemChoice.STYLE.RECOMMENDED : ItemChoice.STYLE.PRIMARY}
               status={status}
-              select={this.onSelect(index)}
+              onMouseDown={() => {
+                this.onSelect(index)
+              }}
               onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-            >
-              <div>{this.props.renderItem({ item, index })}</div>
-            </AutoCompleteListItem>
+            />
           )
         })}
         <style jsx key={`${this.props.name}-style-jsx`}>

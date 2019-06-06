@@ -1,6 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { color } from '_utils/branding'
 import style from './style'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
@@ -73,7 +74,7 @@ const Item = ({
       tagProps = { ...tagProps, href }
     }
   }
-  const isClickable = !!href || !!onClick
+  const isClickable = !!href || !!onClick || !!onMouseDown
   const hasRightText = rightTitle || rightBody
 
   return (
@@ -140,7 +141,11 @@ const Item = ({
         </div>
       )}
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && <div className="kirk-item-rightAddon">{<ChevronIcon />}</div>}
+      {chevron && (
+        <div className="kirk-item-rightAddon">
+          {<ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />}
+        </div>
+      )}
       <style jsx>{style}</style>
     </Tag>
   )

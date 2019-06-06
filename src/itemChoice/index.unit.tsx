@@ -4,14 +4,17 @@ import renderer from 'react-test-renderer'
 
 import Item from '_utils/item'
 import Loader from 'loader'
+import ComfortIcon from 'icon/comfortIcon'
 import ItemChoice, { ItemChoiceProps } from './index'
 
 describe('ItemChoice', () => {
   const defaultProps: ItemChoiceProps = {
-    title: 'Title',
-    titleInfo: 'Title infos',
+    label: 'Title',
+    labelInfo: 'Title infos',
     data: 'Data',
     dataInfo: 'Data infos',
+    leftAddon: <ComfortIcon />,
+    rightAddon: <ComfortIcon />,
     className: 'custom-class-name',
     href: <a href="#" />,
     status: ItemChoice.STATUS.DEFAULT,
@@ -28,7 +31,7 @@ describe('ItemChoice', () => {
     const itemChoice = renderer.create(<ItemChoice {...defaultProps} />).toJSON()
     expect(itemChoice).toMatchSnapshot()
   })
-  it('Should use a button tag by default', () => {
+  it('Should use a button tag if no href is given', () => {
     const itemChoice = renderer.create(<ItemChoice {...defaultProps} href="" />).toJSON()
     expect(itemChoice).toMatchSnapshot()
   })

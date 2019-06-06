@@ -5,14 +5,20 @@ import { ItemStatus } from '_utils/item'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
 import AutoComplete from 'autoComplete'
+import ComfortIcon from 'icon/comfortIcon'
 
 const stories = storiesOf('AutoComplete', module)
 stories.addDecorator(withKnobs)
 
 const places: AutocompleteItem[] = [
-  { id: '1', title: 'Paris Saint Lazare', description: 'Rue d’Amsterdam, Paris' },
-  { id: '2', title: 'Paris Gare de Lyon', description: 'Rue d’Amsterdam, Paris' },
-  { id: '3', title: 'Paris Rive Gauche' },
+  {
+    id: '1',
+    label: 'Paris Saint Lazare',
+    labelInfo: 'Rue d’Amsterdam, Paris',
+    leftAddon: <ComfortIcon />,
+  },
+  { id: '2', label: 'Paris Gare de Lyon', labelInfo: 'Rue d’Amsterdam, Paris' },
+  { id: '3', label: 'Paris Rive Gauche' },
 ]
 
 interface AutoCompleteExampleProps {
@@ -43,7 +49,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
 
     setTimeout(() => {
       this.setState({
-        items: places.filter(place => place.title.startsWith(query)),
+        items: places.filter(place => place.label.startsWith(query)),
         isSearching: false,
       })
     }, this.props.searchForItemsDelay)
@@ -68,7 +74,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           renderEmptySearch={this.props.renderEmptySearch}
           onSelect={action('onChange')}
           getItemValue={item => item.id}
-          renderQuery={item => item.title}
+          renderQuery={item => item.label}
           error={error ? text('error message', 'something went wrong') : ''}
           maxItems={number('maxItems', 5)}
           showList={boolean('showList', true)}
@@ -94,8 +100,8 @@ stories.add('With busy state', () => <AutoCompleteExample searchForItemsDelay={1
 
 stories.add('With empty search', () => {
   const emptySearch = [
-    { id: '1', title: 'Get my location', description: '' },
-    { id: '2', title: 'Favorite address', description: '' },
+    { id: '1', label: 'Get my location', labelInfo: '' },
+    { id: '2', label: 'Favorite address', labelInfo: '' },
   ]
   return <AutoCompleteExample renderEmptySearch={emptySearch} />
 })
