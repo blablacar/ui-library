@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[DEV]** Added typescript check in pre-commit hook
 - [...]
 
 # v5.1.1 (04/06/2019)
