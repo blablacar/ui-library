@@ -16,6 +16,7 @@ import ItemData from 'itemData'
 import ItemDeclaredChoice from 'itemDeclaredChoice'
 import ItemDeclaredChoiceGroup from 'itemDeclaredChoiceGroup'
 import ItemInfo from 'itemInfo'
+import ItemsList from 'itemsList'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
 import Menu from 'menu'
@@ -66,6 +67,7 @@ export {
   ItemDeclaredChoice,
   ItemDeclaredChoiceGroup,
   ItemInfo,
+  ItemsList,
   Itinerary,
   Loader,
   Menu,
