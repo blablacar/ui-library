@@ -45,6 +45,7 @@ stories.add(
         countryWhitelist={countryWhitelist}
         customCountryNames={customCountryNames}
         isInline={boolean('isInline', false)}
+        error={text('error message', 'Error message')}
       />
     </div>
   ),

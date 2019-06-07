@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Added `error` property to `PhoneField`
+- **[FIX]** Make `dropdown icon` clickable on `SelectField`
 - [...]
 
 # v5.2.0 (06/06/2019)
