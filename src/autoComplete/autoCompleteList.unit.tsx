@@ -46,7 +46,7 @@ describe('AutoCompleteList', () => {
   it('Renders items with a custom className', () => {
     const customClassName = 'custom-class'
     const wrapper = mount(<AutoCompleteList {...defaultProps} itemClassName={customClassName} />)
-    expect(wrapper.find('li').every(`.${customClassName}`)).toBe(true)
+    expect(wrapper.find(ItemChoice).every(`.${customClassName}`)).toBe(true)
   })
 
   describe('Keyboard navigation', () => {

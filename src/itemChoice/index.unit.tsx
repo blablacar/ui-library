@@ -47,13 +47,6 @@ describe('ItemChoice', () => {
       .toJSON()
     expect(itemChoice).toMatchSnapshot()
   })
-  it('Should bind the onDoneAnimationEnd callback of the Loader', () => {
-    const onDoneAnimationEndMock = jest.fn()
-    const itemChoice = mount(
-      <ItemChoice {...defaultProps} onDoneAnimationEnd={onDoneAnimationEndMock} />,
-    )
-    expect(itemChoice.find(Loader).prop('onDoneAnimationEndMock')).toEqual(onDoneAnimationEndMock)
-  })
   it('Should support a disabled state', () => {
     const itemChoice = renderer.create(<ItemChoice {...defaultProps} disabled />).toJSON()
     expect(itemChoice).toMatchSnapshot()

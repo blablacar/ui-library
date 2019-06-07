@@ -3,10 +3,10 @@
 exports[`ItemDeclaredChoiceGroup Should map its children and render them with specific props 1`] = `
 Array [
   <label
-    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
+    className="jsx-1542968643 kirk-item kirk-item-declared-choice"
   >
     <div
-      className="jsx-1500099655 kirk-item-leftText"
+      className="jsx-1542968643 kirk-item-leftText"
     >
       <div
         className="kirk-text kirk-text-body kirk-item-body"
@@ -15,7 +15,7 @@ Array [
       </div>
     </div>
     <div
-      className="jsx-1500099655 kirk-item-rightAddon"
+      className="jsx-1542968643 kirk-item-rightAddon"
     >
       <input
         checked={false}
@@ -46,10 +46,10 @@ Array [
     </div>
   </label>,
   <label
-    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
+    className="jsx-1542968643 kirk-item kirk-item-declared-choice"
   >
     <div
-      className="jsx-1500099655 kirk-item-leftText"
+      className="jsx-1542968643 kirk-item-leftText"
     >
       <div
         className="kirk-text kirk-text-body kirk-item-body"
@@ -58,7 +58,7 @@ Array [
       </div>
     </div>
     <div
-      className="jsx-1500099655 kirk-item-rightAddon"
+      className="jsx-1542968643 kirk-item-rightAddon"
     >
       <input
         checked={true}
@@ -91,10 +91,10 @@ Array [
     </div>
   </label>,
   <label
-    className="jsx-1500099655 kirk-item kirk-item-declared-choice"
+    className="jsx-1542968643 kirk-item kirk-item-declared-choice"
   >
     <div
-      className="jsx-1500099655 kirk-item-leftText"
+      className="jsx-1542968643 kirk-item-leftText"
     >
       <div
         className="kirk-text kirk-text-body kirk-item-body"
@@ -103,7 +103,7 @@ Array [
       </div>
     </div>
     <div
-      className="jsx-1500099655 kirk-item-rightAddon"
+      className="jsx-1542968643 kirk-item-rightAddon"
     >
       <input
         checked={false}

@@ -2,10 +2,10 @@
 
 exports[`Item Should not have changed 1`] = `
 <div
-  className="jsx-1500099655 kirk-item custom"
+  className="jsx-1542968643 kirk-item custom"
 >
   <div
-    className="jsx-1500099655 kirk-item-leftText"
+    className="jsx-1542968643 kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title"
@@ -21,7 +21,7 @@ exports[`Item Should not have changed 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightAddon"
+    className="jsx-1542968643 kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}

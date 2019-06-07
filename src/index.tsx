@@ -25,8 +25,6 @@ import PhoneField from 'phoneField'
 import Profile from 'profile'
 import Proximity from 'proximity'
 import PushInfo from 'pushInfo'
-import Radio from 'radio'
-import RadioGroup from 'radioGroup'
 import Rating from 'rating'
 import SelectField from 'selectField'
 import Snackbar from 'snackbar'
@@ -77,8 +75,6 @@ export {
   Profile,
   Proximity,
   PushInfo,
-  Radio,
-  RadioGroup,
   Rating,
   SelectField,
   Snackbar,

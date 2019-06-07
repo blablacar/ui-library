@@ -2,10 +2,10 @@
 
 exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked 1`] = `
 <label
-  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
-    className="jsx-1500099655 kirk-item-leftText"
+    className="jsx-1542968643 kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title"
@@ -19,7 +19,7 @@ exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightText"
+    className="jsx-1542968643 kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title"
@@ -33,7 +33,7 @@ exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightAddon"
+    className="jsx-1542968643 kirk-item-rightAddon"
   >
     <input
       checked={true}
@@ -69,10 +69,10 @@ exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked
 
 exports[`ItemDeclaredChoice Should display a Loader when the component is in loading status 1`] = `
 <label
-  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
-    className="jsx-1500099655 kirk-item-leftText"
+    className="jsx-1542968643 kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title"
@@ -86,7 +86,7 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightText"
+    className="jsx-1542968643 kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title"
@@ -100,7 +100,7 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightAddon"
+    className="jsx-1542968643 kirk-item-rightAddon"
   >
     <input
       checked={false}
@@ -144,10 +144,10 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
 
 exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] = `
 <label
-  className="jsx-1500099655 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
 >
   <div
-    className="jsx-1500099655 kirk-item-leftText"
+    className="jsx-1542968643 kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title"
@@ -161,7 +161,7 @@ exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] =
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightText"
+    className="jsx-1542968643 kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title"
@@ -175,7 +175,7 @@ exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] =
     </div>
   </div>
   <div
-    className="jsx-1500099655 kirk-item-rightAddon"
+    className="jsx-1542968643 kirk-item-rightAddon"
   >
     <input
       checked={false}

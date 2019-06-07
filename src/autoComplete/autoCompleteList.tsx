@@ -114,7 +114,7 @@ export default class AutoCompleteList extends Component<
     }
   }
 
-  onSelect = (itemIndex: number) => (item: AutocompleteItem) => {
+  onSelect = (itemIndex: number, item: AutocompleteItem) => {
     this.setState({ selectedIndex: itemIndex }, () => {
       this.props.onSelect(item)
     })
@@ -139,17 +139,18 @@ export default class AutoCompleteList extends Component<
           const isHighlighted = index === this.state.highlightedIndex
           const { id, ...itemChoiceProps } = item
           return (
-            <ItemChoice
-              {...itemChoiceProps}
-              key={this.props.itemKey(item)}
-              className={this.props.itemClassName}
-              style={isHighlighted ? ItemChoice.STYLE.RECOMMENDED : ItemChoice.STYLE.PRIMARY}
-              status={status}
-              onMouseDown={() => {
-                this.onSelect(index)
-              }}
-              onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-            />
+            <li key={this.props.itemKey(item)}>
+              <ItemChoice
+                {...itemChoiceProps}
+                className={this.props.itemClassName}
+                style={isHighlighted ? ItemChoice.STYLE.RECOMMENDED : ItemChoice.STYLE.PRIMARY}
+                status={status}
+                onMouseDown={() => {
+                  this.onSelect(index, item)
+                }}
+                onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+              />
+            </li>
           )
         })}
         <style jsx key={`${this.props.name}-style-jsx`}>

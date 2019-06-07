@@ -3,10 +3,11 @@ import { shallow, mount } from 'enzyme'
 
 import { ItemStatus } from '_utils/item'
 import AutoComplete from 'autoComplete'
+import ItemChoice from 'itemChoice'
 
 const initialFakeItems = [
-  { id: '1', title: 'title1', description: 'description1' },
-  { id: '2', title: 'title2', description: 'description2' },
+  { id: '1', label: 'title1', labelInfo: 'description1' },
+  { id: '2', label: 'title2', labelInfo: 'description2' },
 ]
 
 // Returns an array with a new reference
@@ -74,29 +75,13 @@ describe('AutoComplete', () => {
     wrapper.setProps({ isSearching: true })
     wrapper.setProps({ items, isSearching: false })
     wrapper
-      .find('li')
+      .find(ItemChoice)
       .first()
       .simulate('mousedown')
 
     expect(event).not.toBeCalled()
-    jest.advanceTimersByTime(1500)
+    jest.advanceTimersByTime(3000)
     expect(event).toBeCalled()
-  })
-
-  describe('#renderItem', () => {
-    it('Renders each result item with a custom renderer', () => {
-      const wrapper = mount(
-        <AutoComplete
-          {...defaultProps}
-          renderItem={item => <div className="custom-item">{item.title}</div>}
-        />,
-      )
-      wrapper.instance().onInputChange({ value: 'title' })
-
-      wrapper.setProps({ isSearching: true })
-      wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
-      expect(wrapper.find('.custom-item')).toHaveLength(2)
-    })
   })
 
   describe('#maxItems', () => {
@@ -292,12 +277,12 @@ describe('AutoComplete', () => {
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items, isSearching: false })
       wrapper
-        .find('li')
+        .find(ItemChoice)
         .first()
         .simulate('mousedown')
       expect(onSelectSpy).toHaveBeenCalledWith({
         name: defaultProps.name,
-        value: items[0].title,
+        value: items[0].label,
         item: items[0],
       })
     })
@@ -326,7 +311,7 @@ describe('AutoComplete', () => {
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items, isSearching: false })
       wrapper
-        .find('li')
+        .find('ItemChoice')
         .first()
         .simulate('mousedown')
       expect(onSelectSpy).toHaveBeenCalledWith({
@@ -349,7 +334,7 @@ describe('AutoComplete', () => {
 
       // Simulate the selection of the first list item
       wrapper
-        .find('li')
+        .find('ItemChoice')
         .first()
         .simulate('mousedown')
       expect(wrapper.find('TextField').prop('defaultValue')).toBe(items[0].id)
