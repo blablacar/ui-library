@@ -116,7 +116,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
         onBlur={!disabled ? onBlur : null}
         onMouseDown={!disabled ? onMouseDown : null}
         highlighted={isRecommended}
-        chevron={status === ItemChoiceStatus.DEFAULT}
+        chevron={status === ItemStatus.DEFAULT}
       />
     )
   }
