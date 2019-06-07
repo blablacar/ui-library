@@ -98,4 +98,29 @@ describe('PhoneField', () => {
     })
     expect(handleOnChange).toHaveBeenCalledTimes(2)
   })
+
+  describe('#error', () => {
+    it('Should have an error state when passing an error string', () => {
+      const errorText = 'this is an error'
+      const wrapper = shallow(<PhoneField {...defaultProps} error={errorText} />)
+      expect(wrapper.hasClass('kirk-error')).toBe(true)
+      expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
+      expect(wrapper.find('span').text()).toBe(errorText)
+    })
+
+    it('Should have an error state when passing a JSX element', () => {
+      const errorText = 'this is an error'
+      const error = <span>{errorText}</span>
+      const wrapper = shallow(<PhoneField {...defaultProps} error={error} />)
+      expect(wrapper.hasClass('kirk-error')).toBe(true)
+      expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
+      expect(wrapper.find('span').text()).toBe(errorText)
+    })
+
+    it('Should not have an error state when passing a boolean `false`', () => {
+      const wrapper = shallow(<PhoneField {...defaultProps} error={false} />)
+      expect(wrapper.hasClass('kirk-error')).toBe(false)
+      expect(wrapper.find('.kirk-error-message')).toHaveLength(0)
+    })
+  })
 })

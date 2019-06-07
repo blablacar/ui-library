@@ -5,7 +5,7 @@ import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 import SelectField from 'selectField'
 import TextField from 'textField'
-import { allCountries, allCountryCodes } from 'country-telephone-data'
+import { allCountries } from 'country-telephone-data'
 import style from 'phoneField/style'
 
 enum FIELDS {
@@ -21,6 +21,8 @@ interface PhoneFieldOnChangeParameters {
     completePhoneNumber: string
   }
 }
+
+type errorField = string | JSX.Element
 interface PhoneFieldProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
@@ -35,6 +37,7 @@ interface PhoneFieldProps {
   readonly countryWhitelist?: string[]
   readonly customCountryNames?: customCountryNames
   readonly isInline?: boolean
+  error?: errorField
 }
 interface PhoneFieldState {
   countryData: mappedCountryPhoneData[]
@@ -104,6 +107,21 @@ const iso2toDialCode = (iso2Value: string) => {
   return ''
 }
 
+const DisplayError = (error: errorField) => {
+  const className = 'kirk-error-message'
+
+  return React.isValidElement(error) ? (
+    React.cloneElement(error, { className } as Object)
+  ) : (
+    <span role="alert" className={className}>
+      {error}
+    </span>
+  )
+}
+
+/**
+ * TODO: BBCSPA-3355 Fix A11y issues on label and error state
+ */
 export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> {
   static defaultProps: Partial<PhoneFieldProps> = {
     defaultRegionValue: '',
@@ -180,39 +198,44 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
       textFieldPlaceholder,
       defaultPhoneValue,
       isInline,
+      error,
     } = this.props
 
     const baseClassName = cc([prefix({ phoneField: true })])
+    const wrapperClassName = `${baseClassName}-wrapper`
 
     const classNames = cc([
-      isInline ? `${baseClassName}--inline` : baseClassName,
+      isInline ? `${wrapperClassName}--inline` : wrapperClassName,
       this.props.className,
-      this.state.hasFocus && `${baseClassName}--hasFocus`,
+      this.state.hasFocus && `${wrapperClassName}--hasFocus`,
     ])
 
     return (
-      <div id={id} className={classNames} aria-labelledby={ariaLabelledBy}>
-        <SelectField
-          name={FIELDS.PHONEREGION}
-          options={this.state.countryData}
-          ariaLabel={selectFieldLabel}
-          defaultValue={this.props.defaultRegionValue}
-          onChange={this.handleChange}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          focusBorder={!isInline}
-        />
-        <TextField
-          type="tel"
-          name={FIELDS.PHONENUMBER}
-          placeholder={textFieldPlaceholder}
-          defaultValue={defaultPhoneValue}
-          onChange={this.handleChange}
-          title={textFieldTitle}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          focusBorder={!isInline}
-        />
+      <div className={cc([baseClassName, prefix({ error: !!error })])}>
+        <div id={id} className={classNames} aria-labelledby={ariaLabelledBy}>
+          <SelectField
+            name={FIELDS.PHONEREGION}
+            options={this.state.countryData}
+            ariaLabel={selectFieldLabel}
+            defaultValue={this.props.defaultRegionValue}
+            onChange={this.handleChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            focusBorder={!isInline}
+          />
+          <TextField
+            type="tel"
+            name={FIELDS.PHONENUMBER}
+            placeholder={textFieldPlaceholder}
+            defaultValue={defaultPhoneValue}
+            onChange={this.handleChange}
+            title={textFieldTitle}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            focusBorder={!isInline}
+          />
+        </div>
+        {!!error && DisplayError(error)}
         <style jsx global>
           {style}
         </style>

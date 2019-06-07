@@ -8,7 +8,7 @@ export default css`
     display: block;
     position: relative;
     width: 100%;
-    padding: 0 ${space.l};
+    padding: 0 0 0 ${space.l};
     box-sizing: border-box;
     color: ${color.primaryText};
     background-color: ${color.inputBackground};
@@ -23,7 +23,7 @@ export default css`
     width: 100%;
     height: ${selectHeight};
     margin: 0;
-    padding: 0;
+    padding: 0 calc(${space.m} + ${space.xl}) 0 0;
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     color: ${color.primaryText};
@@ -53,7 +53,7 @@ export default css`
     margin: auto;
     right: ${space.m};
     background: ${color.inputBackground};
-    z-index: 1;
+    z-index: 0;
   }
 
   :global(.kirk-selectField--hasFocus) {
