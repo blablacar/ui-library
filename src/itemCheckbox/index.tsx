@@ -7,15 +7,14 @@ import { TextDisplayType } from 'text'
 
 import style from './style'
 
-export enum ItemDeclaredChoiceStatus {
+export enum ItemCheckboxStatus {
   DEFAULT = 'default',
   LOADING = 'loading',
 }
 
-export interface ItemDeclaredChoiceProps {
+export interface ItemCheckboxProps {
   readonly label: string
   readonly name: string
-  readonly value: string | number
   readonly data?: string
   readonly className?: Classcat.Class
   readonly labelTitle?: string
@@ -23,28 +22,27 @@ export interface ItemDeclaredChoiceProps {
   readonly checked?: boolean
   readonly disabled?: boolean
   readonly onChange?: (obj: OnChangeParameters) => void
-  readonly status?: ItemDeclaredChoiceStatus
+  readonly status?: ItemCheckboxStatus
   readonly key?: string | number
 }
 
-class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
-  static defaultProps: Partial<ItemDeclaredChoiceProps> = {
+class ItemCheckbox extends Component<ItemCheckboxProps> {
+  static defaultProps: Partial<ItemCheckboxProps> = {
     onChange() {},
     checked: false,
   }
 
-  static STATUS = ItemDeclaredChoiceStatus
+  static STATUS = ItemCheckboxStatus
 
   onChange = () => {
-    const { name, value } = this.props
-    this.props.onChange({ name, value })
+    const { name, checked } = this.props
+    this.props.onChange({ name, value: !checked })
   }
 
   render() {
     const {
       label,
       name,
-      value,
       data,
       className,
       labelTitle,
@@ -53,13 +51,12 @@ class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
       disabled,
       status,
     } = this.props
-    const isLoading = status === ItemDeclaredChoiceStatus.LOADING
-    const radio = (
+    const isLoading = status === ItemCheckboxStatus.LOADING
+    const checkbox = (
       <Fragment>
         <input
-          type="radio"
+          type="checkbox"
           name={name}
-          value={value}
           checked={checked}
           onChange={this.onChange}
           disabled={disabled || isLoading}
@@ -71,14 +68,14 @@ class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
     return (
       <Fragment>
         <Item
-          className={cc(['kirk-item-declared-choice', className])}
+          className={cc(['kirk-item-checkbox', className])}
           leftTitle={labelTitle}
           leftBody={label}
           rightTitle={data}
           rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
           rightBody={dataInfo}
           tag={<label />}
-          rightAddon={radio}
+          rightAddon={checkbox}
         />
         <style jsx>{style}</style>
       </Fragment>
@@ -86,4 +83,4 @@ class ItemDeclaredChoice extends Component<ItemDeclaredChoiceProps> {
   }
 }
 
-export default ItemDeclaredChoice
+export default ItemCheckbox

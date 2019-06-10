@@ -1,7 +1,7 @@
-# ItemDeclaredChoice
+# ItemRadio
 
 ```js
-import { ItemDeclaredChoice } from '@blablacar/ui-library'
+import { ItemRadio } from '@blablacar/ui-library'
 ```
 
 ## Playground

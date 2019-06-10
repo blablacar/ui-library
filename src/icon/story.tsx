@@ -41,17 +41,13 @@ const createIconKnobs = (props: {}) =>
       } else {
         acc[name] = text(name, String(value))
       }
-    }
-
-    if (typeof value === 'boolean') {
+    } else if (typeof value === 'boolean') {
       acc[name] = boolean(name, Boolean(value))
-    }
-
-    if (typeof value === 'number') {
+    } else if (typeof value === 'number') {
       acc[name] = number(name, Number(value))
     }
 
-    if (name === 'badgeAriaLabel' || 'badgeContent') {
+    if (name === 'badgeAriaLabel' || name === 'badgeContent') {
       acc[name] = text(name, String(value))
     }
     return acc

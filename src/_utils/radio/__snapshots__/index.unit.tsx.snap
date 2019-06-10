@@ -3,22 +3,27 @@
 exports[`Checkbox Should render a check icon if isChecked is set to true 1`] = `
 <svg
   aria-hidden={true}
-  className="jsx-1043659059 jsx-59167708 kirk-icon"
+  className="jsx-1131348929 kirk-icon"
   height={24}
-  viewBox="0 0 24 24"
+  viewBox="0 0 66 66"
   width={24}
   xmlns="http://www.w3.org/2000/svg"
 >
   
-  <path
-    className="jsx-1043659059 jsx-59167708"
-    d="M6.5 12.5l4 4 8-8"
+  <circle
+    className="jsx-1131348929"
+    cx="33"
+    cy="33"
     fill="none"
-    stroke="#FFF"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeMiterlimit="10"
-    strokeWidth="1"
+    r="30"
+    stroke="#00AFF5"
+  />
+  <circle
+    className="jsx-1131348929 inner"
+    cx="33"
+    cy="33"
+    fill="#00AFF5"
+    r="18"
   />
 </svg>
 `;

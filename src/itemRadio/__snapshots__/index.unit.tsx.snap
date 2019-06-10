@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked 1`] = `
+exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input is checked 1`] = `
 <label
-  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
   <div
     className="jsx-1542968643 kirk-item-leftText"
@@ -45,31 +45,36 @@ exports[`ItemDeclaredChoice Should display a CheckIcon when the input is checked
     />
     <svg
       aria-hidden={true}
-      className="jsx-1043659059 jsx-59167708 kirk-icon"
+      className="jsx-1131348929 kirk-icon"
       height={24}
-      viewBox="0 0 24 24"
+      viewBox="0 0 66 66"
       width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
       
-      <path
-        className="jsx-1043659059 jsx-59167708"
-        d="M6.5 12.5l4 4 8-8"
+      <circle
+        className="jsx-1131348929"
+        cx="33"
+        cy="33"
         fill="none"
-        stroke="#FFF"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeMiterlimit="10"
-        strokeWidth="1"
+        r="30"
+        stroke="#00AFF5"
+      />
+      <circle
+        className="jsx-1131348929 inner"
+        cx="33"
+        cy="33"
+        fill="#00AFF5"
+        r="18"
       />
     </svg>
   </div>
 </label>
 `;
 
-exports[`ItemDeclaredChoice Should display a Loader when the component is in loading status 1`] = `
+exports[`ItemRadio Should display a Loader when the component is in loading status 1`] = `
 <label
-  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
   <div
     className="jsx-1542968643 kirk-item-leftText"
@@ -121,7 +126,7 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
     >
       <svg
         aria-hidden={true}
-        className="jsx-2358291114 kirk-icon spinning"
+        className="jsx-1131348929 kirk-icon spinning"
         height={24}
         viewBox="0 0 66 66"
         width={24}
@@ -129,7 +134,7 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
       >
         
         <circle
-          className="jsx-2358291114"
+          className="jsx-1131348929"
           cx="33"
           cy="33"
           fill="none"
@@ -142,9 +147,9 @@ exports[`ItemDeclaredChoice Should display a Loader when the component is in loa
 </label>
 `;
 
-exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] = `
+exports[`ItemRadio Should forward its props to the Item component 1`] = `
 <label
-  className="jsx-1542968643 kirk-item kirk-item-declared-choice custom-class-name"
+  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
   <div
     className="jsx-1542968643 kirk-item-leftText"
@@ -187,7 +192,7 @@ exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] =
     />
     <svg
       aria-hidden={true}
-      className="jsx-2358291114 kirk-icon thin"
+      className="jsx-1131348929 kirk-icon"
       height={24}
       viewBox="0 0 66 66"
       width={24}
@@ -195,7 +200,7 @@ exports[`ItemDeclaredChoice Should forward its props to the Item component 1`] =
     >
       
       <circle
-        className="jsx-2358291114"
+        className="jsx-1131348929"
         cx="33"
         cy="33"
         fill="none"

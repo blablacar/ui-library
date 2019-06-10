@@ -74,7 +74,7 @@ const Item = ({
       tagProps = { ...tagProps, href }
     }
   }
-  const isClickable = !!href || !!onClick || !!onMouseDown
+  const isClickable = !!href || !!onClick || !!onMouseDown || tag.type === 'label'
   const hasRightText = rightTitle || rightBody
 
   return (

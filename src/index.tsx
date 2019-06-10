@@ -4,18 +4,18 @@ import Badge from 'badge'
 import Button from 'button'
 import ButtonGroup from 'buttonGroup'
 import Caption from 'caption'
-import Checkbox from 'checkbox'
 import ConfirmationModal from 'confirmationModal'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
 import HamburgerButton from 'hamburgerButton'
 import ItemAction from 'itemAction'
+import ItemCheckbox from 'itemCheckbox'
 import ItemChoice from 'itemChoice'
 import ItemData from 'itemData'
-import ItemDeclaredChoice from 'itemDeclaredChoice'
-import ItemDeclaredChoiceGroup from 'itemDeclaredChoiceGroup'
 import ItemInfo from 'itemInfo'
+import ItemRadio from 'itemRadio'
+import ItemRadioGroup from 'itemRadioGroup'
 import ItemsList from 'itemsList'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
@@ -55,18 +55,18 @@ export {
   Button,
   ButtonGroup,
   Caption,
-  Checkbox,
   ConfirmationModal,
   DatePicker,
   Drawer,
   DropdownButton,
   HamburgerButton,
   ItemAction,
+  ItemCheckbox,
   ItemChoice,
   ItemData,
-  ItemDeclaredChoice,
-  ItemDeclaredChoiceGroup,
   ItemInfo,
+  ItemRadio,
+  ItemRadioGroup,
   ItemsList,
   Itinerary,
   Loader,

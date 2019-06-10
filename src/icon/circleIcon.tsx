@@ -9,6 +9,7 @@ interface CircleProps extends Icon {
   readonly absolute?: boolean
   readonly spinning?: boolean
   readonly thin?: boolean
+  readonly innerDisc?: boolean
 }
 
 const offset = 187
@@ -43,7 +44,6 @@ const style = css`
 
   circle {
     stroke-width: 6;
-    fill: none;
     stroke-linecap: round;
   }
 
@@ -61,6 +61,10 @@ const style = css`
   .absolute {
     position: absolute;
   }
+
+  circle.inner {
+    stroke-width: 0;
+  }
 `
 
 class CircleIcon extends PureComponent<CircleProps> {
@@ -72,10 +76,11 @@ class CircleIcon extends PureComponent<CircleProps> {
     spinning: false,
     title: '',
     thin: false,
+    innerDisc: false,
   }
 
   render() {
-    const { className, absolute, iconColor, spinning, size, title, thin } = this.props
+    const { className, absolute, iconColor, spinning, size, title, thin, innerDisc } = this.props
     return (
       <svg
         viewBox="0 0 66 66"
@@ -87,6 +92,7 @@ class CircleIcon extends PureComponent<CircleProps> {
       >
         {title && <title>{title}</title>}
         <circle cx="33" cy="33" r="30" fill="none" stroke={iconColor} />
+        {innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={iconColor} />}
         <style jsx>{style}</style>
       </svg>
     )

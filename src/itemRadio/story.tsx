@@ -4,13 +4,13 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
-import ItemDeclaredChoice from 'itemDeclaredChoice'
-import ItemDeclaredChoiceGroup from 'itemDeclaredChoiceGroup'
+import ItemRadio from 'itemRadio'
+import ItemRadioGroup from 'itemRadioGroup'
 
 import mainDoc from './specifications/doc.md'
 import groupDoc from './specifications/group.md'
 
-const stories = storiesOf('ItemDeclaredChoice', module)
+const stories = storiesOf('ItemRadio', module)
 stories.addDecorator(withKnobs)
 
 stories.add(
@@ -20,7 +20,7 @@ stories.add(
     const isDataInfo = boolean('Secondary info', false)
 
     return (
-      <ItemDeclaredChoice
+      <ItemRadio
         label={text('Label', 'Main information')}
         name={text('Name', 'InputName')}
         value={text('Value', 'InputValue')}
@@ -29,7 +29,7 @@ stories.add(
         dataInfo={isDataInfo ? text('Data info', 'Info') : null}
         onChange={action('changed')}
         checked={boolean('isChecked', false)}
-        status={select('status', ItemDeclaredChoice.STATUS, ItemDeclaredChoice.STATUS.DEFAULT)}
+        status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
       />
     )
   },
@@ -42,18 +42,33 @@ stories.add(
   'Multiple items',
   () => {
     return (
-      <ItemDeclaredChoiceGroup
+      <ItemRadioGroup
         name={text('Name', 'option')}
-        status={select('status', ItemDeclaredChoice.STATUS, ItemDeclaredChoice.STATUS.DEFAULT)}
+        status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
         value={2}
         onChange={action('changed group')}
       >
-        <ItemDeclaredChoice label="Option 1" value={1} />
-        <ItemDeclaredChoice label="Option 2" value={2} />
-      </ItemDeclaredChoiceGroup>
+        <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} />
+        <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} />
+      </ItemRadioGroup>
     )
   },
   {
     readme: { content: groupDoc },
   },
 )
+
+stories.add('Multiple items with chevrons (form step with auto submit)', () => {
+  return (
+    <ItemRadioGroup
+      name={text('Name', 'option')}
+      status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
+      value={2}
+      onChange={action('changed group')}
+      withSeparators
+    >
+      <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} chevron />
+      <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} chevron />
+    </ItemRadioGroup>
+  )
+})

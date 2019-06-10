@@ -2,12 +2,16 @@ import React, { Component, FunctionComponent } from 'react'
 import cc from 'classcat'
 
 import { ItemChoiceProps } from 'itemChoice'
+import { ItemRadioProps } from 'itemRadio'
 
 import style from './style'
 
 export const ItemsListDivider: FunctionComponent = () => null
 
-type ItemsListChild = React.ReactElement<ItemChoiceProps> | null
+type ItemsListChild =
+  | React.ReactElement<ItemChoiceProps>
+  | React.ReactElement<ItemRadioProps>
+  | null
 
 export interface ItemsListProps {
   readonly children: ItemsListChild[]
@@ -29,7 +33,7 @@ class ItemsList extends Component<ItemsListProps> {
 
   render() {
     const { children, className, withSeparators, keyGenerator, ...otherProps } = this.props
-    const { list } = children.reduce(
+    const { list } = React.Children.toArray(children).reduce(
       (
         acc: {
           list: ItemsListChild[]
