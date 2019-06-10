@@ -206,8 +206,8 @@ describe('AutoComplete', () => {
   describe('renderEmptySearch', () => {
     const emptySearch = [
       { id: '1', title: 'title1', description: 'description1' },
-      { id: '2', title: 'title1', description: 'description1' },
-      { id: '3', title: 'title1', description: 'description1' },
+      { id: '2', title: 'title2', description: 'description2' },
+      { id: '3', title: 'title3', description: 'description3' },
     ]
     it('renders empty search when query is lower than minChar', () => {
       const wrapper = mount(

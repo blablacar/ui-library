@@ -6,8 +6,6 @@ export default css`
   .kirk-items-list {
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
     list-style-type: none;
   }
   .kirk-items-list--withSeparators :global(.kirk-items-list-item + .kirk-items-list-item),

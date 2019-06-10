@@ -112,7 +112,7 @@ class DrawerDemo extends Component {
             onClose={this.onCloseDrawer}
             width={text('width', '400px')}
           >
-            <Menu items={menuItems} />
+            <Menu items={menuItems} withSeparators />
           </Drawer>
         </main>
       </div>

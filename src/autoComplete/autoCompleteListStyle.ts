@@ -2,9 +2,7 @@ import css from 'styled-jsx/css'
 import { color, font, radius, space } from '_utils/branding'
 
 export default css`
-  .kirk-autoComplete-list {
-    list-style: none;
-    padding: 0;
+  :global(.kirk-autoComplete-list) {
     margin-top: ${space.m};
     flex: 1;
   }

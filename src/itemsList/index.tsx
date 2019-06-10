@@ -13,18 +13,22 @@ export interface ItemsListProps {
   readonly children: ItemsListChild[]
   readonly withSeparators?: boolean
   readonly className?: Classcat.Class
+  readonly keyGenerator?: (index: number) => string | number
+  readonly role?: string
 }
 
 class ItemsList extends Component<ItemsListProps> {
   static defaultProps: Partial<ItemsListProps> = {
     withSeparators: false,
     className: '',
+    role: '',
+    keyGenerator: index => index,
   }
 
   static Divider = ItemsListDivider
 
   render() {
-    const { children, className, withSeparators } = this.props
+    const { children, className, withSeparators, keyGenerator, ...otherProps } = this.props
     const { list } = children.reduce(
       (
         acc: {
@@ -43,7 +47,7 @@ class ItemsList extends Component<ItemsListProps> {
                 'kirk-items-list-item',
                 { [`kirk-items-list-item--withSeparator`]: acc.separator },
               ])}
-              key={index}
+              key={keyGenerator(index)}
             >
               {item}
             </li>,
@@ -61,6 +65,7 @@ class ItemsList extends Component<ItemsListProps> {
           className,
           { [`kirk-items-list--withSeparators`]: withSeparators },
         ])}
+        {...otherProps}
       >
         {list}
         <style jsx>{style}</style>

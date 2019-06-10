@@ -2,7 +2,8 @@
 
 exports[`ItemsList Should render an unordered list 1`] = `
 <ul
-  className="jsx-4007634159 kirk-items-list"
+  className="jsx-1825249063 kirk-items-list"
+  role=""
 >
   <li
     className="kirk-items-list-item"
@@ -159,7 +160,8 @@ exports[`ItemsList Should render an unordered list 1`] = `
 
 exports[`ItemsList Should render an unordered list with some separators 1`] = `
 <ul
-  className="jsx-4007634159 kirk-items-list"
+  className="jsx-1825249063 kirk-items-list"
+  role=""
 >
   <li
     className="kirk-items-list-item"
@@ -316,7 +318,8 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
 
 exports[`ItemsList Should render an unordered list with the separators classname 1`] = `
 <ul
-  className="jsx-4007634159 kirk-items-list kirk-items-list--withSeparators"
+  className="jsx-1825249063 kirk-items-list kirk-items-list--withSeparators"
+  role=""
 >
   <li
     className="kirk-items-list-item"

@@ -13,7 +13,7 @@ export enum ItemChoiceStyle {
 }
 
 export interface ItemChoiceProps {
-  readonly label: string
+  readonly label?: string
   readonly labelInfo?: string
   readonly data?: string
   readonly dataInfo?: string
@@ -33,6 +33,7 @@ export interface ItemChoiceProps {
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {
+    label: '',
     labelInfo: '',
     data: '',
     dataInfo: '',
