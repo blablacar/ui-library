@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Should render a check icon if isChecked is set to true 1`] = `
+exports[`Radio Should render a check icon if isChecked is set to true 1`] = `
 <svg
   aria-hidden={true}
   className="jsx-1131348929 kirk-icon"
@@ -28,7 +28,7 @@ exports[`Checkbox Should render a check icon if isChecked is set to true 1`] = `
 </svg>
 `;
 
-exports[`Checkbox Should render a loader if isLoading and isChecked are set to true 1`] = `
+exports[`Radio Should render a loader if isLoading and isChecked are set to true 1`] = `
 <div
   className="jsx-2765694959 kirk-loader"
   style={
@@ -59,7 +59,7 @@ exports[`Checkbox Should render a loader if isLoading and isChecked are set to t
 </div>
 `;
 
-exports[`Checkbox Should render a loader if isLoading is set to true 1`] = `
+exports[`Radio Should render a loader if isLoading is set to true 1`] = `
 <div
   className="jsx-2765694959 kirk-loader"
   style={
@@ -90,7 +90,7 @@ exports[`Checkbox Should render a loader if isLoading is set to true 1`] = `
 </div>
 `;
 
-exports[`Checkbox Should render an empty circle by default 1`] = `
+exports[`Radio Should render an empty circle by default 1`] = `
 <svg
   aria-hidden={true}
   className="jsx-1131348929 kirk-icon"
