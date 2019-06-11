@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `title` option to `TripCard`
 - [...]
 
 # v5.2.1 (10/06/2019)

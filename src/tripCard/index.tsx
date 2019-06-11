@@ -42,6 +42,7 @@ export interface TripCardProps {
     highlighted?: boolean,
   }
   badge?: string
+  title?: string
 }
 
 const TripCard = ({
@@ -57,6 +58,7 @@ const TripCard = ({
   metaUrl,
   statusInformation = null,
   badge = null,
+  title = null,
 }: TripCardProps) => {
   const departure = itinerary[0]
   const arrival = itinerary[itinerary.length - 1]
@@ -119,6 +121,10 @@ const TripCard = ({
                 highlighted={statusInformation.highlighted}
               />
             </div>
+          )}
+
+          {title && (
+            <Text display={TextDisplayType.TITLE} className="kirk-tripCard-title">{title}</Text>
           )}
 
           <div className="kirk-tripCard-main">
