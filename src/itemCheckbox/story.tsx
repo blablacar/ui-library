@@ -6,23 +6,31 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
 import ItemCheckbox from 'itemCheckbox'
 
+import specs from './specifications/index.md'
+
 const stories = storiesOf('ItemCheckbox', module)
 stories.addDecorator(withKnobs)
 
-stories.add('Default', () => {
-  const isMainTitle = boolean('Title', false)
-  const isDataInfo = boolean('Secondary info', false)
+stories.add(
+  'Default',
+  () => {
+    const isMainTitle = boolean('Title', false)
+    const isDataInfo = boolean('Secondary info', false)
 
-  return (
-    <ItemCheckbox
-      label={text('Label', 'Main information')}
-      name={text('Name', 'InputName')}
-      data={text('Data', 'Data')}
-      labelTitle={isMainTitle ? text('Label title', 'Title') : null}
-      dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-      onChange={action('changed')}
-      checked={boolean('isChecked', false)}
-      status={select('status', ItemCheckbox.STATUS, ItemCheckbox.STATUS.DEFAULT)}
-    />
-  )
-})
+    return (
+      <ItemCheckbox
+        label={text('Label', 'Main information')}
+        name={text('Name', 'InputName')}
+        data={text('Data', 'Data')}
+        labelTitle={isMainTitle ? text('Label title', 'Title') : null}
+        dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+        onChange={action('changed')}
+        checked={boolean('isChecked', false)}
+        status={select('status', ItemCheckbox.STATUS, ItemCheckbox.STATUS.DEFAULT)}
+      />
+    )
+  },
+  {
+    readme: { content: specs },
+  },
+)
