@@ -47,6 +47,7 @@ stories.add('with driver', () => (
       highlighted: boolean('Status information highlighted', false),
     } : undefined}
     badge={boolean('Badge', false) ? 'The Closest' : null}
+    title={boolean('Show title', false) ? text('Title', 'Sun march 8th, 18:00') : null}
   />
 ), {
   readme: { content: specs }
@@ -99,5 +100,6 @@ stories.add('with passengers', () => (
       highlighted: boolean('Status information highlighted', false),
     } : undefined}
     badge={boolean('Badge', true) ? 'The Closest' : null}
+    title={boolean('Show title', false) ? text('Title', 'Sun march 8th, 18:00') : null}
   />
 ))

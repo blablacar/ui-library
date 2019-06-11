@@ -112,4 +112,9 @@ describe('TripCard component', () => {
     expect(component.hasClass('kirk-tripCard--with-badge')).toBe(true)
     expect(component.find('.kirk-tripCard-badge').exists()).toBe(true)
   })
+
+  it('Should render title', () => {
+    const component = shallow(<TripCard {...mockedProps} title='Sun 3 march, 18:00' />)
+    expect(component.find('.kirk-tripCard-title').exists()).toBe(true)
+  })
 })
