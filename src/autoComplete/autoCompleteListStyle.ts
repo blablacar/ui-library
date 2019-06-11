@@ -7,7 +7,7 @@ export default css`
     flex: 1;
   }
 
-  :global(.kirk-autoComplete-item) {
+  :global(.kirk-autoComplete-list .kirk-item-choice) {
     padding: ${space.m} ${space.xl};
   }
 

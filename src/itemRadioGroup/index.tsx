@@ -11,6 +11,7 @@ export interface ItemRadioGroupProps {
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly status?: ItemRadioStatus
   readonly withSeparators?: boolean
+  readonly withChevrons?: boolean
 }
 
 interface ItemRadioGroupState {
@@ -23,6 +24,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
     className: '',
     onChange() {},
     withSeparators: false,
+    withChevrons: false,
   }
 
   state: ItemRadioGroupState = {
@@ -35,7 +37,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
   }
 
   render() {
-    const { children, status, name, className, withSeparators } = this.props
+    const { children, status, name, className, withSeparators, withChevrons } = this.props
     return (
       <ItemsList withSeparators={withSeparators} className={className}>
         {children.map(item => {
@@ -48,6 +50,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
             checked,
             status: checked ? status : ItemRadioStatus.DEFAULT,
             disabled: status === ItemRadioStatus.LOADING || itemProps.disabled,
+            chevron: withChevrons,
           }
           return cloneElement(item, props)
         })}

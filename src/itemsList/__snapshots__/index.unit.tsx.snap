@@ -6,7 +6,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   role=""
 >
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -56,7 +56,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
     </a>
   </li>
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -106,7 +106,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
     </a>
   </li>
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -164,7 +164,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   role=""
 >
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -214,7 +214,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
     </a>
   </li>
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -264,7 +264,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
     </a>
   </li>
   <li
-    className="kirk-items-list-item kirk-items-list-item--withSeparator"
+    className="jsx-1825249063 kirk-items-list-item kirk-items-list-item--withSeparator"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -322,7 +322,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   role=""
 >
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -372,7 +372,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
     </a>
   </li>
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
@@ -422,7 +422,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
     </a>
   </li>
   <li
-    className="kirk-items-list-item"
+    className="jsx-1825249063 kirk-items-list-item"
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"

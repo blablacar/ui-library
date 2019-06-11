@@ -66,9 +66,10 @@ stories.add('Multiple items with chevrons (form step with auto submit)', () => {
       value={2}
       onChange={action('changed group')}
       withSeparators
+      withChevrons
     >
-      <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} chevron />
-      <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} chevron />
+      <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} />
+      <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} />
     </ItemRadioGroup>
   )
 })

@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { ItemChoiceProps } from 'itemChoice'
 import { ItemRadioProps } from 'itemRadio'
+import { ItemCheckboxProps } from 'itemCheckbox'
 
 import style from './style'
 
@@ -11,6 +12,7 @@ export const ItemsListDivider: FunctionComponent = () => null
 type ItemsListChild =
   | React.ReactElement<ItemChoiceProps>
   | React.ReactElement<ItemRadioProps>
+  | React.ReactElement<ItemCheckboxProps>
   | null
 
 export interface ItemsListProps {
@@ -33,35 +35,7 @@ class ItemsList extends Component<ItemsListProps> {
 
   render() {
     const { children, className, withSeparators, keyGenerator, ...otherProps } = this.props
-    const { list } = React.Children.toArray(children).reduce(
-      (
-        acc: {
-          list: ItemsListChild[]
-          separator: boolean
-        },
-        item: ItemsListChild,
-        index,
-      ) => {
-        if (item.type === ItemsListDivider && !withSeparators) {
-          acc.separator = true
-        } else if (item.type !== ItemsListDivider) {
-          acc.list.push(
-            <li
-              className={cc([
-                'kirk-items-list-item',
-                { [`kirk-items-list-item--withSeparator`]: acc.separator },
-              ])}
-              key={keyGenerator(index)}
-            >
-              {item}
-            </li>,
-          )
-          acc.separator = false
-        }
-        return acc
-      },
-      { list: [], separator: false },
-    )
+    let separator = false
     return (
       <ul
         className={cc([
@@ -71,7 +45,26 @@ class ItemsList extends Component<ItemsListProps> {
         ])}
         {...otherProps}
       >
-        {list}
+        {children.map((item, index) => {
+          let child = null
+          if (item.type === ItemsListDivider && !withSeparators) {
+            separator = true
+          } else if (item.type !== ItemsListDivider) {
+            child = (
+              <li
+                className={cc([
+                  'kirk-items-list-item',
+                  { [`kirk-items-list-item--withSeparator`]: separator },
+                ])}
+                key={keyGenerator(index)}
+              >
+                {item}
+              </li>
+            )
+            separator = false
+          }
+          return child
+        })}
         <style jsx>{style}</style>
       </ul>
     )
