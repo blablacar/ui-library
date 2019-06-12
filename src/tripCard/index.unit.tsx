@@ -71,6 +71,14 @@ describe('TripCard component', () => {
     expect(tripCard.find(LightningIcon).exists()).toBe(false)
   })
 
+  it('Should render metaUrl if provided', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} metaUrl={null} />)
+    expect(tripCard.find('meta')).toHaveLength(0)
+
+    const tripCardWithMetaUrl = shallow(<TripCard {...mockedProps} metaUrl="blablacar.fr" />)
+    expect(tripCardWithMetaUrl.find('meta')).toHaveLength(4)
+  })
+
   it('Should show driver avatar', () => {
     const driver = {
       avatarUrl: '//placehold.it/500x500',

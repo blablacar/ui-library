@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `metaUrl` property is now optional for `TripCard`
 - [...]
 
 # v5.3.0 (11/06/2019)

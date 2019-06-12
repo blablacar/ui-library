@@ -33,7 +33,7 @@ export interface TripCardProps {
     maxTwo?: string
     autoApproval?: string
   }
-  metaUrl: string
+  metaUrl?: string
   highlighted?: string
   className?: Classcat.Class
   statusInformation?: {
@@ -55,7 +55,7 @@ const TripCard = ({
   flags = {},
   titles = {},
   highlighted = '',
-  metaUrl,
+  metaUrl = null,
   statusInformation = null,
   badge = null,
   title = null,
@@ -96,10 +96,14 @@ const TripCard = ({
         componentTag,
         componentProps,
         <Fragment>
-          <meta itemProp="url" content={metaUrl} />
-          <meta itemProp="name" content={itemPropName} />
-          <meta itemProp="startDate" content={departure.isoDate} />
-          <meta itemProp="endDate" content={arrival.isoDate} />
+          {metaUrl && (
+            <Fragment>
+              <meta itemProp="url" content={metaUrl} />
+              <meta itemProp="name" content={itemPropName} />
+              <meta itemProp="startDate" content={departure.isoDate} />
+              <meta itemProp="endDate" content={arrival.isoDate} />
+            </Fragment>
+          )}
 
           {badge && (
             <Text
