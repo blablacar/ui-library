@@ -12,6 +12,16 @@ import Text, { TextDisplayType } from 'text'
 import style from 'tripCard/style'
 import { color } from '_utils/branding'
 
+/**
+ * Display 5 passengers max.
+ * When having more than this number, the last displayed one is replaced by a more counter.
+ *
+ * Exemples:
+ * - 5 passengers or less: we display all of them
+ * - 6 passengers: we display 4 passengers and a '+2' bubble
+ */
+const PASSENGERS_TO_DISPLAY = 5
+
 interface User {
   avatarUrl: string
   firstName: string
@@ -44,6 +54,18 @@ export interface TripCardProps {
   badge?: string
   title?: string
 }
+
+const renderPassenger = (passenger: User) => (
+  <li className="kirk-tripCard-avatar" key={`${passenger.firstName}-${passenger.avatarUrl}`}>
+    <Avatar image={passenger.avatarUrl} isSmall />
+  </li>
+)
+
+const renderMorePassengers = (count: number) => (
+  <li className="kirk-tripCard-avatar kirk-tripCard-passengers-more">
+    <Text display={TextDisplayType.BODY} textColor={color.white}>+{count}</Text>
+  </li>
+)
 
 const TripCard = ({
   className,
@@ -148,11 +170,11 @@ const TripCard = ({
             )}
             {passengers && (
               <ul className="kirk-tripCard-passengers">
-                {passengers.reverse().map(passenger => (
-                  <li className="kirk-tripCard-avatar" key={passenger.firstName}>
-                    <Avatar image={passenger.avatarUrl} isSmall />
-                  </li>
-                ))}
+                {passengers.length > PASSENGERS_TO_DISPLAY &&
+                  renderMorePassengers(passengers.length - PASSENGERS_TO_DISPLAY + 1)}
+                {passengers.length === PASSENGERS_TO_DISPLAY &&
+                  renderPassenger(passengers[PASSENGERS_TO_DISPLAY - 1])}
+                {passengers.slice(0, PASSENGERS_TO_DISPLAY - 1).reverse().map(renderPassenger)}
               </ul>
             )}
             {highlighted && (

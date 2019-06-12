@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Handle display for 5+ passengers in `TripCard`
 - **[FIX]** `metaUrl` property is now optional for `TripCard`
 - [...]
 
