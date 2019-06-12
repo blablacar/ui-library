@@ -49,7 +49,7 @@ class ItemsList extends Component<ItemsListProps> {
           let child = null
           if (item.type === ItemsListDivider && !withSeparators) {
             separator = true
-          } else if (item.type !== ItemsListDivider) {
+          } else if (item.type !== ItemsListDivider && item.type !== undefined) {
             child = (
               <li
                 className={cc([
