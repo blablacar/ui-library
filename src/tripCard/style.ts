@@ -84,6 +84,15 @@ export default css`
   .kirk-tripCard-passengers :global(.kirk-avatar) {
     border: 2px solid ${color.white};
   }
+  .kirk-tripCard-passengers :global(.kirk-tripCard-passengers-more) {
+    background: ${color.iconHighlight};
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid ${color.white};
+    line-height: 38px;
+    text-align: center;
+  }
 
   .kirk-tripCard :global(.kirk-tripCard-flags svg) {
     display: inline-block;

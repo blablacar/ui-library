@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
+import Text from 'text'
 import Avatar from 'avatar'
 import TripCard from 'tripCard'
 import ComfortIcon from 'icon/comfortIcon'
@@ -36,6 +37,14 @@ const mockedProps = {
     autoApproval: true,
   },
   price: '8,00€',
+}
+
+const createPassengers = count => {
+  let passengerIdx = 1
+  return Array(count).fill({
+    avatarUrl: '//placehold.it/500x500',
+    firstName: `Jane ${passengerIdx+=1}`,
+  })
 }
 
 const Div = () => <div className="divTest" />
@@ -89,24 +98,38 @@ describe('TripCard component', () => {
     expect(component.find(Avatar)).toHaveLength(1)
   })
 
-  it('Should show passengers avatars', () => {
-    const passengers = [
-      {
-        avatarUrl: '//placehold.it/500x500',
-        firstName: 'Jane',
-      },
-      {
-        avatarUrl: '//placehold.it/500x500',
-        firstName: 'John',
-      },
-      {
-        avatarUrl: '//placehold.it/500x500',
-        firstName: 'Matthew',
-      },
-    ]
+  it('Should render 3 passengers', () => {
+    const passengersCount = 3
+    const component = shallow(<TripCard
+      {...mockedProps}
+      driver={null}
+      passengers={createPassengers(passengersCount)}
+    />)
+    expect(component.find(Avatar)).toHaveLength(passengersCount)
+    expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(false)
+  })
 
-    const component = shallow(<TripCard {...mockedProps} driver={null} passengers={passengers} />)
-    expect(component.find(Avatar)).toHaveLength(3)
+  it('Should render 5 passengers', () => {
+    const passengersCount = 5
+    const component = shallow(<TripCard
+      {...mockedProps}
+      driver={null}
+      passengers={createPassengers(passengersCount)}
+    />)
+    expect(component.find(Avatar)).toHaveLength(passengersCount)
+    expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(false)
+  })
+
+  it('Should render 4 passengers and a +6 icon', () => {
+    const passengersCount = 10
+    const component = shallow(<TripCard
+      {...mockedProps}
+      driver={null}
+      passengers={createPassengers(passengersCount)}
+    />)
+    expect(component.find(Avatar)).toHaveLength(4)
+    expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(true)
+    expect(component.find('.kirk-tripCard-passengers-more').find(Text).html()).toMatch(/\+6/)
   })
 
   it('Should render status information', () => {
