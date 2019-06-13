@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v6.0.0 (13/06/2019)
+
 - **[NEW]** Complete refactoring of `ItemChoice` to now use `Item` as its base component.
 - **[BREAKING CHANGE]** `Checkbox`, `Radio` and `RadioGroup` have been removed.
 - **[BREAKING CHANGE]** `ItemDeclaredChoice` and `ItemDeclaredChoiceGroup` have been renamed to `ItemRadio` and `ItemRadioGroup`.
