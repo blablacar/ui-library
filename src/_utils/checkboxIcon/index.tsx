@@ -3,20 +3,21 @@ import React from 'react'
 import { color } from '_utils/branding'
 import Loader from 'loader'
 import CircleIcon from 'icon/circleIcon'
+import CheckIcon from 'icon/checkIcon'
 
-interface RadioProps {
+interface CheckboxIconProps {
   readonly isChecked?: boolean
   readonly isLoading?: boolean
 }
 
-const Radio = ({ isChecked = false, isLoading = false }: RadioProps) => {
+const CheckboxIcon = ({ isChecked = false, isLoading = false }: CheckboxIconProps) => {
   if (isLoading) {
     return <Loader size={24} inline />
   }
   if (isChecked) {
-    return <CircleIcon iconColor={color.primary} innerDisc />
+    return <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />
   }
   return <CircleIcon iconColor={color.primary} />
 }
 
-export default Radio
+export default CheckboxIcon

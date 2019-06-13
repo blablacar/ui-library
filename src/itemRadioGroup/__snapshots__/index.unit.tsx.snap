@@ -3,7 +3,7 @@
 exports[`ItemRadioGroup Should map its children and render them with specific props 1`] = `
 <ul
   className="jsx-1825249063 kirk-items-list"
-  role=""
+  role="radiogroup"
 >
   <li
     className="jsx-1825249063 kirk-items-list-item"

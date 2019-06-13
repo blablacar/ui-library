@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
 import Item from '_utils/item'
-import Checkbox from '_utils/checkbox'
+import CheckboxIcon from '_utils/checkboxIcon'
 import { TextDisplayType } from 'text'
 
 import style from './style'
@@ -61,7 +61,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
           onChange={this.onChange}
           disabled={disabled || isLoading}
         />
-        <Checkbox isChecked={checked} isLoading={isLoading} />
+        <CheckboxIcon isChecked={checked} isLoading={isLoading} />
       </Fragment>
     )
 
@@ -76,6 +76,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
           rightBody={dataInfo}
           tag={<label />}
           rightAddon={checkbox}
+          isClickable
         />
         <style jsx>{style}</style>
       </Fragment>

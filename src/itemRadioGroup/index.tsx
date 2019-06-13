@@ -39,7 +39,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
   render() {
     const { children, status, name, className, withSeparators, withChevrons } = this.props
     return (
-      <ItemsList withSeparators={withSeparators} className={className}>
+      <ItemsList withSeparators={withSeparators} className={className} role="radiogroup">
         {children.map(item => {
           const itemProps: Partial<ItemRadioProps> = item.props
           const checked = this.state.value === itemProps.value

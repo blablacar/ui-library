@@ -118,6 +118,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
         onMouseDown={!disabled ? onMouseDown : null}
         highlighted={isRecommended}
         chevron={status === ItemStatus.DEFAULT}
+        isClickable={!disabled}
       />
     )
   }

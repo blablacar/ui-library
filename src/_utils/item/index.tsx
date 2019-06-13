@@ -17,6 +17,7 @@ export interface ItemProps {
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
+  readonly isClickable?: boolean
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
@@ -47,6 +48,7 @@ const Item = ({
   onFocus,
   onMouseDown,
   highlighted,
+  isClickable,
   leftTitle,
   leftTitleDisplay = TextDisplayType.TITLE,
   leftTitleColor,
@@ -74,7 +76,6 @@ const Item = ({
       tagProps = { ...tagProps, href }
     }
   }
-  const isClickable = !!href || !!onClick || !!onMouseDown || tag.type === 'label'
   const hasRightText = rightTitle || rightBody
 
   return (

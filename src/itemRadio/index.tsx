@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
 import Item from '_utils/item'
-import Radio from '_utils/radio'
+import RadioIcon from '_utils/radioIcon'
 import { TextDisplayType } from 'text'
 
 import style from './style'
@@ -66,7 +66,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           onChange={this.onChange}
           disabled={disabled || isLoading}
         />
-        {(!chevron || isLoading) && <Radio isChecked={checked} isLoading={isLoading} />}
+        {(!chevron || isLoading) && <RadioIcon isChecked={checked} isLoading={isLoading} />}
       </Fragment>
     )
 
@@ -82,6 +82,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           tag={<label />}
           rightAddon={radio}
           chevron={chevron && !isLoading}
+          isClickable
         />
         <style jsx>{style}</style>
       </Fragment>
