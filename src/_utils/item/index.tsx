@@ -1,6 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { color } from '_utils/branding'
 import style from './style'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
@@ -16,15 +17,20 @@ export interface ItemProps {
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
+  readonly isClickable?: boolean
   readonly leftTitle?: string
   readonly leftTitleDisplay?: TextDisplayType
+  readonly leftTitleColor?: string
   readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
+  readonly leftBodyColor?: string
   readonly leftAddon?: React.ReactNode
   readonly rightTitle?: string
   readonly rightTitleDisplay?: TextDisplayType
+  readonly rightTitleColor?: string
   readonly rightBody?: string | React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
+  readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
   readonly tag?: JSX.Element
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
@@ -42,15 +48,20 @@ const Item = ({
   onFocus,
   onMouseDown,
   highlighted,
+  isClickable,
   leftTitle,
   leftTitleDisplay = TextDisplayType.TITLE,
+  leftTitleColor,
   leftBody,
   leftBodyDisplay = TextDisplayType.BODY,
+  leftBodyColor,
   leftAddon,
   rightTitle,
   rightTitleDisplay = TextDisplayType.TITLE,
+  rightTitleColor,
   rightBody,
   rightBodyDisplay = TextDisplayType.BODY,
+  rightBodyColor,
   rightAddon,
   tag = <div />,
 }: ItemProps) => {
@@ -65,7 +76,6 @@ const Item = ({
       tagProps = { ...tagProps, href }
     }
   }
-  const isClickable = !!href || !!onClick
   const hasRightText = rightTitle || rightBody
 
   return (
@@ -90,13 +100,19 @@ const Item = ({
           <Text
             className={leftBody ? 'kirk-item-title' : null}
             display={leftTitleDisplay}
+            textColor={leftTitleColor}
             tag={TextTagType.DIV}
           >
             {leftTitle}
           </Text>
         )}
         {leftBody && (
-          <Text className="kirk-item-body" display={leftBodyDisplay} tag={TextTagType.DIV}>
+          <Text
+            className="kirk-item-body"
+            display={leftBodyDisplay}
+            textColor={leftBodyColor}
+            tag={TextTagType.DIV}
+          >
             {leftBody}
           </Text>
         )}
@@ -107,20 +123,30 @@ const Item = ({
             <Text
               className={rightBody ? 'kirk-item-title' : null}
               display={rightTitleDisplay}
+              textColor={rightTitleColor}
               tag={TextTagType.DIV}
             >
               {rightTitle}
             </Text>
           )}
           {rightBody && (
-            <Text className="kirk-item-body" display={rightBodyDisplay} tag={TextTagType.DIV}>
+            <Text
+              className="kirk-item-body"
+              display={rightBodyDisplay}
+              textColor={rightBodyColor}
+              tag={TextTagType.DIV}
+            >
               {rightBody}
             </Text>
           )}
         </div>
       )}
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && <div className="kirk-item-rightAddon">{<ChevronIcon />}</div>}
+      {chevron && (
+        <div className="kirk-item-rightAddon">
+          {<ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />}
+        </div>
+      )}
       <style jsx>{style}</style>
     </Tag>
   )

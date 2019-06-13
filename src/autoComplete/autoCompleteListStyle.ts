@@ -2,14 +2,12 @@ import css from 'styled-jsx/css'
 import { color, font, radius, space } from '_utils/branding'
 
 export default css`
-  .kirk-autoComplete-list {
-    list-style: none;
-    padding: 0;
+  :global(.kirk-autoComplete-list) {
     margin-top: ${space.m};
     flex: 1;
   }
 
-  :global(.kirk-autoComplete-item) {
+  :global(.kirk-autoComplete-list .kirk-item-choice) {
     padding: ${space.m} ${space.xl};
   }
 
@@ -26,8 +24,8 @@ export default css`
     margin-top: ${space.s};
   }
 
-  :global(.kirk-autoComplete-item:hover),
-  :global(.kirk-autoComplete-item[aria-selected='true']) {
+  :global(.kirk-item-choice:hover),
+  :global(.kirk-item-choice[aria-selected='true']) {
     background-color: ${color.lightBackground};
     border-radius: ${radius.l};
   }

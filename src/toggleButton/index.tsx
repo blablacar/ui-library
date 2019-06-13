@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import Item, { ItemProps } from '_utils/item/index'
-import Checkbox from '_utils/checkbox'
+import CheckboxIcon from '_utils/checkboxIcon'
 
 import style from 'toggleButton/style'
 
@@ -60,7 +60,7 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
         <Item
           leftTitle={this.props.label}
           leftBody={this.props.sublabel}
-          rightAddon={<Checkbox isChecked={isChecked} isLoading={isLoading} />}
+          rightAddon={<CheckboxIcon isChecked={isChecked} isLoading={isLoading} />}
         />
         <style jsx>{style}</style>
       </button>

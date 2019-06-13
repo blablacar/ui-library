@@ -20,7 +20,7 @@ export interface ItemActionProps {
   readonly onDoneAnimationEnd?: () => void
 }
 
-class ItemAction extends React.PureComponent<ItemActionProps> {
+class ItemAction extends PureComponent<ItemActionProps> {
   static defaultProps: Partial<ItemActionProps> = {
     status: ItemStatus.DEFAULT,
   }
@@ -81,6 +81,7 @@ class ItemAction extends React.PureComponent<ItemActionProps> {
         onFocus={onFocus}
         onMouseDown={onMouseDown}
         tag={tag || <button />}
+        isClickable
       />
     )
   }

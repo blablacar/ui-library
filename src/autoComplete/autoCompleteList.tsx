@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
-import AutoCompleteListItem from './autoCompleteListItem'
+import ItemChoice from 'itemChoice'
+import ItemsList from 'itemsList'
 import style from './autoCompleteListStyle'
 
 export interface AutoCompleteListProps {
   name: string
-  renderItem: (itemToRender: AutocompleteItemToRender) => React.ReactElement<any>
   onSelect?: (item: AutocompleteItem) => void
   className?: Classcat.Class
   items?: AutocompleteItem[]
@@ -115,7 +115,7 @@ export default class AutoCompleteList extends Component<
     }
   }
 
-  onSelect = (itemIndex: number) => (item: AutocompleteItem) => {
+  onSelect = (itemIndex: number, item: AutocompleteItem) => {
     this.setState({ selectedIndex: itemIndex }, () => {
       this.props.onSelect(item)
     })
@@ -127,34 +127,39 @@ export default class AutoCompleteList extends Component<
     }
 
     return (
-      <ul
-        key={this.props.name}
-        className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
-        role="listbox"
-      >
-        {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
-          const status =
-            this.state.selectedIndex === index
-              ? this.props.selectedItemStatus
-              : ItemStatus.DEFAULT
-          return (
-            <AutoCompleteListItem
-              key={this.props.itemKey(item)}
-              item={item}
-              className={this.props.itemClassName}
-              highlighted={index === this.state.highlightedIndex}
-              status={status}
-              select={this.onSelect(index)}
-              onDoneAnimationEnd={this.props.onDoneAnimationEnd}
-            >
-              <div>{this.props.renderItem({ item, index })}</div>
-            </AutoCompleteListItem>
-          )
-        })}
+      <Fragment>
+        <ItemsList
+          className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
+          keyGenerator={(index: number) => this.props.itemKey(this.props.items[index])}
+          role="listbox"
+          withSeparators
+        >
+          {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
+            const status =
+              this.state.selectedIndex === index
+                ? this.props.selectedItemStatus
+                : ItemChoice.STATUS.DEFAULT
+            const isHighlighted = index === this.state.highlightedIndex
+            const { id, ...itemChoiceProps } = item
+            return (
+              <ItemChoice
+                {...itemChoiceProps}
+                className={this.props.itemClassName}
+                style={isHighlighted ? ItemChoice.STYLE.RECOMMENDED : ItemChoice.STYLE.PRIMARY}
+                status={status}
+                onMouseDown={() => {
+                  this.onSelect(index, item)
+                }}
+                onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+                key={this.props.itemKey(item)}
+              />
+            )
+          })}
+        </ItemsList>
         <style jsx key={`${this.props.name}-style-jsx`}>
           {style}
         </style>
-      </ul>
+      </Fragment>
     )
   }
 }

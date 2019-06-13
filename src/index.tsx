@@ -4,18 +4,19 @@ import Badge from 'badge'
 import Button from 'button'
 import ButtonGroup from 'buttonGroup'
 import Caption from 'caption'
-import Checkbox from 'checkbox'
 import ConfirmationModal from 'confirmationModal'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
 import HamburgerButton from 'hamburgerButton'
 import ItemAction from 'itemAction'
+import ItemCheckbox from 'itemCheckbox'
 import ItemChoice from 'itemChoice'
 import ItemData from 'itemData'
-import ItemDeclaredChoice from 'itemDeclaredChoice'
-import ItemDeclaredChoiceGroup from 'itemDeclaredChoiceGroup'
 import ItemInfo from 'itemInfo'
+import ItemRadio from 'itemRadio'
+import ItemRadioGroup from 'itemRadioGroup'
+import ItemsList from 'itemsList'
 import Itinerary from 'itinerary'
 import Loader from 'loader'
 import Menu from 'menu'
@@ -25,8 +26,6 @@ import PhoneField from 'phoneField'
 import Profile from 'profile'
 import Proximity from 'proximity'
 import PushInfo from 'pushInfo'
-import Radio from 'radio'
-import RadioGroup from 'radioGroup'
 import Rating from 'rating'
 import SelectField from 'selectField'
 import Snackbar from 'snackbar'
@@ -56,18 +55,19 @@ export {
   Button,
   ButtonGroup,
   Caption,
-  Checkbox,
   ConfirmationModal,
   DatePicker,
   Drawer,
   DropdownButton,
   HamburgerButton,
   ItemAction,
+  ItemCheckbox,
   ItemChoice,
   ItemData,
-  ItemDeclaredChoice,
-  ItemDeclaredChoiceGroup,
   ItemInfo,
+  ItemRadio,
+  ItemRadioGroup,
+  ItemsList,
   Itinerary,
   Loader,
   Menu,
@@ -77,8 +77,6 @@ export {
   Profile,
   Proximity,
   PushInfo,
-  Radio,
-  RadioGroup,
   Rating,
   SelectField,
   Snackbar,

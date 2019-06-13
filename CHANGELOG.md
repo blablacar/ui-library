@@ -1,6 +1,13 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Complete refactoring of `ItemChoice` to now use `Item` as its base component.
+- **[BREAKING CHANGE]** `Checkbox`, `Radio` and `RadioGroup` have been removed.
+- **[BREAKING CHANGE]** `ItemDeclaredChoice` and `ItemDeclaredChoiceGroup` have been renamed to `ItemRadio` and `ItemRadioGroup`.
+- **[NEW]** `ItemsList` is a new component that's in charge of handling separators and listing of `ItemChoice`-like components.
+- **[NEW]** `ItemCheckbox` replaces the old `Checkbox` component and uses `Item` as its base component. Its API is similar to `ItemRadio`.
+- **[BREAKING CHANGE]** `AutoComplete`, `Menu` and `Drawer` now use `ItemChoice` and `ItemsList`, their API have been edited accordingly to `ItemChoice` API changes.
+- **[BREAKING CHANGE]** `renderItem` prop on `AutoComplete` has been removed.
 
 # v5.3.1 (13/06/2019)
 

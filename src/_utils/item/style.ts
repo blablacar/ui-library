@@ -37,6 +37,10 @@ export default css`
     -webkit-touch-callout: none;
   }
 
+  :global(button.kirk-item:disabled) {
+    cursor: default;
+  }
+
   /* Text areas */
   .kirk-item-leftText {
     flex: 1;

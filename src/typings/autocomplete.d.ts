@@ -1,7 +1,8 @@
 declare interface AutocompleteItem {
   readonly id: string
-  readonly title: string
-  readonly description?: string
+  readonly label: string
+  readonly labelInfo?: string
+  readonly leftAddon?: JSX.Element
 }
 
 declare interface AutocompleteOnChange {

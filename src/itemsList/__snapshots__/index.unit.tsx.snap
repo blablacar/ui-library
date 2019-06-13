@@ -1,0 +1,475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemsList Should render an unordered list 1`] = `
+<ul
+  className="jsx-1825249063 kirk-items-list"
+  role=""
+>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#1"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 1
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#2"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 2
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#3"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 3
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`ItemsList Should render an unordered list with some separators 1`] = `
+<ul
+  className="jsx-1825249063 kirk-items-list"
+  role=""
+>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#1"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 1
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#2"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 2
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item kirk-items-list-item--withSeparator"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#3"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 3
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`ItemsList Should render an unordered list with the separators classname 1`] = `
+<ul
+  className="jsx-1825249063 kirk-items-list kirk-items-list--withSeparators"
+  role=""
+>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#1"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 1
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#2"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 2
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+  <li
+    className="jsx-1825249063 kirk-items-list-item"
+  >
+    <a
+      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
+      disabled={false}
+      href="#3"
+      type="button"
+    >
+      <div
+        className="jsx-1542968643 kirk-item-leftText"
+      >
+        <div
+          className="kirk-text kirk-text-title"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          Item 3
+        </div>
+        
+      </div>
+      
+      <div
+        className="jsx-1542968643 kirk-item-rightAddon"
+      >
+        <svg
+          aria-hidden={true}
+          className="kirk-icon"
+          height={24}
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <polyline
+            fill="none"
+            points="9 18 15 12 9 6"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </li>
+</ul>
+`;
