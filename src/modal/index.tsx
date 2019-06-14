@@ -50,6 +50,7 @@ class Modal extends Component<ModalProps> {
     if (canUseDOM) {
       this.portalNode = document.createElement('div')
       document.body.appendChild(this.portalNode)
+      this.focusTrap = createFocusTrap(this.portalNode)
     }
   }
 
@@ -128,7 +129,6 @@ class Modal extends Component<ModalProps> {
   }
 
   onEntered = () => {
-    this.focusTrap = createFocusTrap(this.portalNode)
     this.focusTrap.activate()
   }
 
