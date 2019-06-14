@@ -3,14 +3,13 @@ import { color, radius, space, componentSizes } from '_utils/branding'
 
 export default css`
   .kirk-tripCard {
-    border: 1px solid ${color.border};
     border-radius: ${radius.l};
-    box-shadow: 0 1pt 4pt rgba(0,0,0,0.16), 0 2pt 8pt rgba(0,0,0,0.08);
+    box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08);
     list-style-type: none;
   }
 
   .kirk-tripCard:hover {
-    box-shadow: 0 2pt 8pt rgba(0,0,0,0.08), 0 2pt 16pt rgba(0,0,0,0.08);
+    box-shadow: 0 2pt 8pt rgba(0, 0, 0, 0.08), 0 2pt 16pt rgba(0, 0, 0, 0.08);
   }
 
   .kirk-tripCard :global(a) {
