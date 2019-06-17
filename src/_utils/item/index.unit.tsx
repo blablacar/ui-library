@@ -66,6 +66,11 @@ describe('Item', () => {
     expect(wrapper.type()).toEqual('a')
     expect(wrapper.prop('href')).toEqual('#')
   })
+  it('Should return a <a /> tag without extra attribrutes when href is a string', () => {
+    const wrapper = shallow(<Item href="#" tag={<button type="button" />} />)
+    expect(wrapper.type()).toEqual('a')
+    expect(wrapper.prop('type')).toBe(undefined)
+  })
 
   it('Should display a left add-on', () => {
     const wrapper = shallow(<Item leftAddon={<ClockIcon />} />)

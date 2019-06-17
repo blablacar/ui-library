@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** Remove extra attributes on `Item`-like components when `href` attribute is a string
+
 # v6.0.1 (17/06/2019)
 
 - **[UPDATE]** Remove tripCard border
