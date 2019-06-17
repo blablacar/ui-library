@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v6.0.1 (17/06/2019)
+
 - **[UPDATE]** Remove tripCard border
 - **[FIX]** Fix `createFocusTrap` in `<Modal>` initialized in the wrong place
 
