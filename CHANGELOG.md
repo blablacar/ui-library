@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Remove tripCard border
 - [...]
 
 # v6.0.0 (13/06/2019)
