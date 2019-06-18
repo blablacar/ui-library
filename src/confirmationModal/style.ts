@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font } from '_utils/branding'
+import { color, space, font, modalSize } from '_utils/branding'
 
 const footerHeight = '96px' /* = padding + content */
 
@@ -34,7 +34,7 @@ export default css`
   }
 
   :global(.kirk-modal.kirk-confirmationModal--large .kirk-confirmationModal-dialog) {
-    max-width: 600px;
+    max-width: ${modalSize.m};
   }
 
   :global(.kirk-modal .kirk-confirmationModal-body) {

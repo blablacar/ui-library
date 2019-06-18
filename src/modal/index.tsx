@@ -12,6 +12,12 @@ import CrossIcon from 'icon/crossIcon'
 import style from './style'
 import KEYCODES from '_utils/keycodes'
 
+export enum ModalSize {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}
+
 export interface ModalProps {
   readonly onClose: () => void
   readonly isOpen?: boolean
@@ -20,7 +26,7 @@ export interface ModalProps {
   readonly closeOnEsc?: boolean
   readonly closeOnOutsideClick?: boolean
   readonly displayCloseButton?: boolean
-  readonly large?: boolean
+  readonly size?: ModalSize
   readonly fullscreen?: boolean
   readonly displayDimmer?: boolean
   readonly closeButtonTitle?: string
@@ -39,7 +45,7 @@ class Modal extends Component<ModalProps> {
     closeOnEsc: true,
     closeOnOutsideClick: false,
     displayCloseButton: true,
-    large: false,
+    size: ModalSize.MEDIUM,
     fullscreen: false,
     displayDimmer: true,
     forwardedRef: null,
@@ -138,7 +144,7 @@ class Modal extends Component<ModalProps> {
     const classNames = cc([
       baseClassName,
       {
-        [`${baseClassName}--large`]: this.props.large,
+        [`${baseClassName}--${this.props.size}`]: this.props.size,
         [`${baseClassName}--hasCloseButton`]: this.props.displayCloseButton,
       },
       this.props.className,
