@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** Fix `AutoComplete` key stringify and allow customization from outside
+
 # v6.0.1 (17/06/2019)
 
 - **[UPDATE]** Remove tripCard border

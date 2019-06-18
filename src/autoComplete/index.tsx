@@ -29,6 +29,7 @@ interface AutoCompleteProps {
   readonly bodyClassName?: Classcat.Class
   readonly items?: AutocompleteItem[]
   readonly maxItems?: number
+  readonly itemKey?: (item: AutocompleteItem) => string
   readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
   readonly renderNoResults?: ({ query }: { query: query }) => React.ReactElement<any>
   readonly renderQuery?: (item: AutocompleteItem) => string
@@ -311,6 +312,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           selectedItemStatus={this.props.selectedItemStatus}
           itemClassName={this.props.itemClassName}
           onDoneAnimationEnd={this.props.onDoneAnimationEnd}
+          itemKey={this.props.itemKey}
         />
         <style jsx>{style}</style>
       </div>
