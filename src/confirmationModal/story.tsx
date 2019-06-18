@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
+import { ModalSize } from 'modal'
 import ConfirmationModal, { ConfirmationModalProps } from 'confirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
@@ -57,7 +58,7 @@ stories.add(
       onClose={action('onClose')}
       onConfirm={action('onConfirm')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
-      large={boolean('large', false)}
+      size={select('size', ModalSize, ModalSize.MEDIUM)}
       closeOnEsc={boolean('closeOnEsc', true)}
     />
   ),
@@ -74,7 +75,7 @@ stories.add(
       onClose={action('onClose')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       onConfirm={action('onConfirm')}
-      large={boolean('large', false)}
+      size={select('size', ModalSize, ModalSize.MEDIUM)}
       closeOnEsc={boolean('closeOnEsc', true)}
     />
   ),

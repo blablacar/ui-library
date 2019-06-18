@@ -1,12 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, radius, space } from '_utils/branding'
-
-const modal = {
-  size: {
-    m: '662px',
-    l: '928px',
-  },
-}
+import { color, radius, space, modalSize } from '_utils/branding'
 
 export default css`
   :global(.kirk-modal-dimmer),
@@ -51,18 +44,21 @@ export default css`
     display: flex;
     padding: ${space.xl};
     margin: ${space.xl} auto;
-    width: ${modal.size.m};
-    max-width: 80%;
+    width: ${modalSize.m};
     background-color: ${color.white};
     border-radius: ${radius.m};
   }
 
-  .kirk-modal-body {
-    flex: 1;
+  .kirk-modal--small .kirk-modal-dialog {
+    width: ${modalSize.s};
   }
 
   .kirk-modal--large .kirk-modal-dialog {
-    width: ${modal.size.l};
+    width: ${modalSize.l};
+  }
+
+  .kirk-modal-body {
+    flex: 1;
   }
 
   :global(.kirk-modal-dimmer--fullscreen .kirk-modal-dialog) {
@@ -70,7 +66,6 @@ export default css`
     border-radius: 0;
     box-shadow: none;
     width: auto;
-    max-width: none;
     min-height: 100%;
   }
 

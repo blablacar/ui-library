@@ -1,9 +1,9 @@
 import React, { Component, createRef } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import Modal, { ModalProps } from 'modal'
+import Modal, { ModalProps, ModalSize } from 'modal'
 
 import modalDoc from './specifications/modal.md'
 
@@ -83,11 +83,11 @@ stories.add(
       closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
       fullscreen={boolean('fullscreen', false)}
       displayDimmer={boolean('displayDimmer', true)}
-      large={boolean('large', false)}
       isOpen={false}
       closeButtonTitle={text('Close icon text', 'Close modal')}
       ariaLabelledBy="label1"
       ariaDescribedBy="description1"
+      size={select('size', ModalSize, ModalSize.MEDIUM)}
     />
   ),
   {
@@ -97,14 +97,15 @@ stories.add(
 
 stories.add('fullscreen', () => (
   <ModalOpener
-    fullscreen={boolean('fullscreen', true)}
-    displayDimmer={boolean('displayDimmer', false)}
     onClose={() => {}}
     closeOnEsc={boolean('closeOnEsc', true)}
     closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
+    fullscreen={boolean('fullscreen', true)}
+    displayDimmer={boolean('displayDimmer', false)}
     displayCloseButton={boolean('displayCloseButton', true)}
     isOpen={false}
     ariaLabelledBy="label2"
     ariaDescribedBy="description2"
+    size={select('size', ModalSize, ModalSize.MEDIUM)}
   />
 ))

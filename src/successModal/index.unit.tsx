@@ -9,7 +9,6 @@ const defaultProps = {
   imageSrc: 'https://svgshare.com/i/AGz.svg',
   imageText: 'Illustration description',
   closeOnEsc: true,
-  large: false,
 }
 
 describe('<SuccessModal>', () => {

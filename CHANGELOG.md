@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Removed `Modal` large prop and added `size` with 3 preset values instead
 
 # v6.0.2 (18/06/2019)
 

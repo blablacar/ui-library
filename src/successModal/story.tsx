@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
+import { ModalSize } from 'modal'
 import SuccessModal, { SuccessModalProps } from 'successModal'
 import successModalDoc from './specifications/successModal.md'
 
@@ -49,7 +50,7 @@ stories.add(
       imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
       imageText={text('imageText', 'Illustation description')}
       confirmLabel={text('confirmLabel', 'Got it!')}
-      large={boolean('large', true)}
+      size={select('size', ModalSize, ModalSize.MEDIUM)}
       closeOnEsc={boolean('closeOnEsc', false)}
     />
   ),
