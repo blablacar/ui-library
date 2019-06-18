@@ -2,6 +2,8 @@
 
 [...]
 
+# v6.0.2 (18/06/2019)
+
 - **[FIX]** Fix `AutoComplete` key stringify and allow customization from outside
 
 # v6.0.1 (17/06/2019)
