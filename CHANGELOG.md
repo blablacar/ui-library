@@ -2,7 +2,7 @@
 
 [...]
 
-- **[FIX]** `Profile` reacquires its hovering effect (similar to other clickable items)
+- **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
 
 # v6.0.1 (17/06/2019)
 
