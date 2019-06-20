@@ -40,6 +40,8 @@ class Modal extends Component<ModalProps> {
   private contentNode: HTMLElement
   private focusTrap: FocusTrap
 
+  static MODAL_SIZE = ModalSize
+
   static defaultProps: Partial<ModalProps> = {
     isOpen: false,
     closeOnEsc: true,
