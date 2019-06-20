@@ -1,43 +1,22 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import React from 'react'
+import BaseIcon from '_utils/icon'
 
-import { color } from '_utils/branding'
+export const PlusIcon = (props: Icon) => (
+  <BaseIcon {...props}>
+    <g
+      fill="none"
+      stroke={props.iconColor}
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit="10"
+    >
+      <path d="M12 7v10M17 12H7" />
+      <circle cx="12" cy="12" r="11" />
+    </g>
+  </BaseIcon>
+)
 
-class PlusIcon extends PureComponent<Icon> {
-  static defaultProps: Icon = {
-    className: '',
-    iconColor: color.icon,
-    size: 24,
-    title: '',
-  }
+PlusIcon.defaultProps = BaseIcon.defaultProps
 
-  render() {
-    const { className, iconColor, size, title } = this.props
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className])}
-        width={size}
-        height={size}
-        aria-hidden={isEmpty(title)}
-      >
-        {title && <title>{title}</title>}
-        <g
-          fill="none"
-          stroke={iconColor}
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-        >
-          <path d="M12 7v10M17 12H7" />
-          <circle cx="12" cy="12" r="11" />
-        </g>
-      </svg>
-    )
-  }
-}
-
-export default PlusIcon
+export default React.memo(PlusIcon)

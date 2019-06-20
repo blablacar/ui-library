@@ -3,7 +3,9 @@ import { shallow, mount } from 'enzyme'
 
 import Menu from 'menu'
 import ItemChoice from 'itemChoice'
-import { HomeIcon, NewspaperIcon, CheckShieldIcon } from 'icon'
+import { HomeIcon } from 'icon/homeIcon'
+import { NewspaperIcon } from 'icon/newspaperIcon'
+import { CheckShieldIcon } from 'icon/checkShieldIcon'
 
 let children = []
 

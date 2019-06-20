@@ -4,6 +4,7 @@ import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs
 
 import { color } from '_utils/branding'
 import * as icons from 'icon/index'
+import readme from 'icon/specifications/icon.md'
 
 /** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {
@@ -53,20 +54,21 @@ const createIconKnobs = (props: {}) =>
     return acc
   }, {})
 
+
 stories.add('All', () => {
   const iconList = Object.entries(icons).map(([name, Component]) => (
     <div key={name} style={styles.iconItem}>
-      <Component {...Component.defaultProps} />
+      <Component {...Component.type.defaultProps} />
       <br />
       {name}
     </div>
   ))
 
   return iconList
-})
+}, { readme: { content: readme } })
 
 Object.entries(icons).forEach(([name, Component]) => {
   stories.add(name.replace('Icon', ''), () => (
-    <Component {...createIconKnobs(Component.defaultProps)} />
+    <Component {...createIconKnobs(Component.type.defaultProps)} />
   ))
 })

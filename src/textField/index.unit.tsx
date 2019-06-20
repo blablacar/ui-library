@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 
 import TextField from 'textField'
 import Button from 'button'
-import EyeIcon from 'icon/eyeIcon'
+import { EyeIcon } from 'icon/eyeIcon'
 
 it('Should have the proper value.', () => {
   const wrapper = shallow(<TextField name="test" defaultValue="blabla" />)

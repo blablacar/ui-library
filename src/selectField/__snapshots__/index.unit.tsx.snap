@@ -26,6 +26,7 @@ exports[`SelectField should have the expected markup in the DOM 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon"
+    fill="#708C91"
     height={24}
     viewBox="0 0 24 24"
     width={24}
