@@ -1,6 +1,6 @@
 import React, { Component, Ref } from 'react'
 
-import Modal, { ModalProps } from 'modal'
+import Modal, { ModalProps, ModalSize } from 'modal'
 import Button from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
@@ -16,7 +16,7 @@ class SuccessModal extends Component<SuccessModalProps> {
   static defaultProps: Partial<SuccessModalProps> = {
     isOpen: false,
     closeOnEsc: false,
-    large: false,
+    size: ModalSize.MEDIUM,
     forwardedRef: null,
     imageText: '',
   }
@@ -25,7 +25,7 @@ class SuccessModal extends Component<SuccessModalProps> {
     const {
       isOpen,
       children,
-      large,
+      size,
       onClose,
       confirmLabel,
       forwardedRef,
@@ -41,7 +41,7 @@ class SuccessModal extends Component<SuccessModalProps> {
       <Modal
         onClose={onClose}
         isOpen={isOpen}
-        large={large}
+        size={size}
         closeOnEsc={false}
         displayCloseButton={false}
         displayDimmer={false}

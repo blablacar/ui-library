@@ -1,6 +1,10 @@
 # Unreleased
 
-[...]
+[..]
+
+# v7.0.0 (20/06/2019)
+
+- **[BREAKING CHANGE]** Removed `Modal` large prop and added `size` with 3 preset values instead
 
 - **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
 

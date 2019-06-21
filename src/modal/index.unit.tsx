@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Modal from 'modal'
+import Modal, { ModalSize } from 'modal'
 import Button from 'button'
 import renderer from 'react-test-renderer'
 import exenv from 'exenv'
@@ -12,9 +12,9 @@ const defaultProps = {
   closeOnEsc: true,
   closeOnOutsideClick: false,
   displayCloseButton: true,
-  large: false,
   displayDimmer: true,
   forwardedRef: null,
+  size: ModalSize.MEDIUM,
 }
 
 describe('Modal', () => {
@@ -63,7 +63,7 @@ describe('Modal', () => {
   })
 
   it('Could edit the modal width', () => {
-    const wrapper = mount(<Modal isOpen large />)
+    const wrapper = mount(<Modal isOpen size={ModalSize.LARGE} />)
     expect(wrapper.find('.kirk-modal--large').exists()).toBe(true)
   })
 

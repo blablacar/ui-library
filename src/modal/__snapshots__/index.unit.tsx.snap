@@ -9,11 +9,11 @@ exports[`Modal should not have changed 1`] = `
   >
     <div
       aria-modal="true"
-      className="jsx-1766843148 kirk-modal kirk-modal--large kirk-modal--hasCloseButton slide-up slide-up-entered"
+      className="jsx-3774917761 kirk-modal kirk-modal--medium kirk-modal--hasCloseButton slide-up slide-up-entered"
       role="dialog"
     >
       <div
-        className="jsx-1766843148 kirk-modal-dialog"
+        className="jsx-3774917761 kirk-modal-dialog"
       >
         <button
           className="kirk-button kirk-button-primary kirk-button-bubble kirk-modal-closeButton"
@@ -48,7 +48,7 @@ exports[`Modal should not have changed 1`] = `
           </svg>
         </button>
         <div
-          className="jsx-1766843148 kirk-modal-body"
+          className="jsx-3774917761 kirk-modal-body"
         />
       </div>
     </div>
