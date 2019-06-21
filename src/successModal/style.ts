@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { color, space, font, componentSizes } from '_utils/branding'
+import { color, space, font, modalSize } from '_utils/branding'
 
 const footerHeight = '96px' /* = padding + content */
 
@@ -15,7 +15,7 @@ export default css`
 
   :global(.kirk-modal.kirk-successModal .kirk-modal-dialog) {
     margin: 0 auto;
-    max-width: ${componentSizes.modalMaxWidth};
+    max-width: ${modalSize.m};
     height: 100%;
     padding: ${space.xl} 0 ${footerHeight} 0;
     background-color: ${color.successBackground};

@@ -33,7 +33,7 @@ export default class AutoCompleteList extends Component<
 > {
   static defaultProps: Partial<AutoCompleteListProps> = {
     maxItems: Infinity,
-    itemKey: item => JSON.stringify(item),
+    itemKey: ({ leftAddon, ...item }) => JSON.stringify(item),
     visible: false,
   }
 

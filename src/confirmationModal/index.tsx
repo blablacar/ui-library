@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { color } from '_utils/branding'
 import Button from 'button'
-import Modal, { ModalProps } from 'modal'
+import Modal, { ModalProps, ModalSize } from 'modal'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
 import InfoIcon from 'icon/infoIcon'
@@ -29,7 +29,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       isOpen,
       children,
       className,
-      large,
+      size,
       onClose,
       closeButtonTitle,
       onConfirm,
@@ -46,7 +46,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
     const classNames = cc([
       baseClassName,
       {
-        [`${baseClassName}--large`]: large,
+        [`${baseClassName}--large`]: size === ModalSize.LARGE,
         [`${baseClassName}--hasCloseButton`]: isWarning,
       },
       className,
@@ -68,7 +68,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       <Modal
         onClose={onClose}
         isOpen={isOpen}
-        large={large}
+        size={size}
         displayCloseButton={false}
         displayDimmer={false}
         forwardedRef={forwardedRef}
