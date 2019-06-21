@@ -1,49 +1,30 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import React from 'react'
+import BaseIcon from '_utils/icon'
 
-import { color } from '_utils/branding'
-
-interface ArrowProps extends Icon {
+interface ArrowIconProps extends Icon {
   readonly right?: boolean
 }
 
-class ArrowIcon extends PureComponent<ArrowProps> {
-  static defaultProps: ArrowProps = {
-    className: '',
-    iconColor: color.icon,
-    right: false,
-    size: 24,
-    title: '',
-  }
+export const ArrowIcon = (props: ArrowIconProps) => (
+  <BaseIcon {...props}>
+    <g
+      fill="none"
+      stroke={props.iconColor}
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+      {...props.right && { transform: 'rotate(180 12 12)' }}
+    >
+      <path d="M22 12H2" />
+      <path d="M9 19l-7-7 7-7" />
+    </g>
+  </BaseIcon>
+)
 
-  render() {
-    const { className, iconColor, right, size, title } = this.props
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className])}
-        width={size}
-        height={size}
-        aria-hidden={isEmpty(title)}
-      >
-        {title && <title>{title}</title>}
-        <g
-          fill="none"
-          stroke={iconColor}
-          strokeWidth="2"
-          strokeMiterlimit="10"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          {...right && { transform: 'rotate(180 12 12)' }}
-        >
-          <path d="M22 12H2" />
-          <path d="M9 19l-7-7 7-7" />
-        </g>
-      </svg>
-    )
-  }
+ArrowIcon.defaultProps = {
+  ...BaseIcon.defaultProps,
+  right: false,
 }
 
-export default ArrowIcon
+export default React.memo(ArrowIcon)

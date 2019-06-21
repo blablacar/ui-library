@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react'
+// tslint:disable:max-line-length
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 import css from 'styled-jsx/css'
-import isEmpty from 'lodash.isempty'
-
-import { color } from '_utils/branding'
+import BaseIcon from '_utils/icon'
 
 interface CheckProps extends Icon {
   readonly absolute?: boolean
@@ -13,13 +12,13 @@ interface CheckProps extends Icon {
 }
 
 const style = css`
-  .absolute {
+  :global(.kirk-icon-check.absolute) {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
-  .validate path {
+  :global(.kirk-icon-check.validate path) {
     stroke-dasharray: 24;
     stroke-dashoffset: 24;
     stroke-linecap: round;
@@ -35,48 +34,42 @@ const style = css`
   }
 `
 
-class CheckIcon extends PureComponent<CheckProps> {
-  static defaultProps: CheckProps = {
-    absolute: false,
-    className: '',
-    iconColor: color.icon,
-    size: 24,
-    title: '',
-    validate: false,
-    backgroundColor: 'transparent',
-  }
+export const CheckIcon = (props: CheckProps) => (
+  <BaseIcon {...props} className={cc([
+    'kirk-icon-check',
+    props.className,
+    {
+      validate: props.validate,
+      absolute: props.absolute
+    }
+  ])}>
+    <Fragment>
+      <path
+        d="M6.5 12.5l4 4 8-8"
+        fill="none"
+        stroke={props.iconColor}
+        strokeWidth={props.thin ? '1' : '2'}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+      />
+      <style jsx>{style}</style>
+      <style jsx>{`
+        :global(.kirk-icon-check) {
+          background-color: ${props.backgroundColor};
+          border-radius: 100%;
+        }
+      `}</style>
+    </Fragment>
+  </BaseIcon>
+)
 
-  render() {
-    const { absolute, className, iconColor, size, title, validate, thin } = this.props
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className, { validate, absolute }])}
-        width={size}
-        height={size}
-        aria-hidden={isEmpty(title)}
-      >
-        {title && <title>{title}</title>}
-        <path
-          d="M6.5 12.5l4 4 8-8"
-          fill="none"
-          stroke={iconColor}
-          strokeWidth={thin ? '1' : '2'}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-        />
-        <style jsx>{style}</style>
-        <style jsx>{`
-          svg {
-            background-color: ${this.props.backgroundColor};
-            border-radius: 100%;
-          }
-        `}</style>
-      </svg>
-    )
-  }
+CheckIcon.defaultProps = {
+  ...BaseIcon.defaultProps,
+  absolute: false,
+  validate: false,
+  backgroundColor: 'transparent',
+  thin: false,
 }
 
-export default CheckIcon
+export default React.memo(CheckIcon)

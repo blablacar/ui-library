@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Badge from 'badge'
-import CheckIcon from 'icon/checkIcon'
+import { CheckIcon } from 'icon/checkIcon'
 
 it('Should read the aria-label attribute and not the children if both are provided', () => {
   const wrapper = shallow(<Badge ariaLabel="Unread messages">12</Badge>)

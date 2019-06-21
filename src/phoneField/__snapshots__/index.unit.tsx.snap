@@ -34,6 +34,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       <svg
         aria-hidden={true}
         className="kirk-icon"
+        fill="#708C91"
         height={24}
         viewBox="0 0 24 24"
         width={24}
@@ -86,6 +87,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
           <svg
             aria-hidden={true}
             className="kirk-icon"
+            fill="#708C91"
             height="18"
             viewBox="0 0 24 24"
             width="18"
@@ -140,6 +142,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       <svg
         aria-hidden={true}
         className="kirk-icon"
+        fill="#708C91"
         height={24}
         viewBox="0 0 24 24"
         width={24}

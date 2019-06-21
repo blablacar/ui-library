@@ -1,43 +1,22 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import React from 'react'
+import BaseIcon from '_utils/icon'
 
-import { color } from '_utils/branding'
+export const LadyIcon = (props: Icon) => (
+  <BaseIcon {...props}>
+    <g
+      fill="none"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit="10"
+      stroke={props.iconColor}
+    >
+      <path d="M12 17v6M9 21h6" />
+      <circle cx="12" cy="9" r="8" />
+    </g>
+  </BaseIcon>
+)
 
-class LadyIcon extends PureComponent<Icon> {
-  static defaultProps: Icon = {
-    className: '',
-    iconColor: color.icon,
-    size: 24,
-    title: '',
-  }
+LadyIcon.defaultProps = BaseIcon.defaultProps
 
-  render() {
-    const { className, iconColor, size, title } = this.props
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className])}
-        stroke={iconColor}
-        width={size}
-        height={size}
-        aria-hidden={isEmpty(title)}
-      >
-        {title && <title>{title}</title>}
-        <g
-          fill="none"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-        >
-          <path d="M12 17v6M9 21h6" />
-          <circle cx="12" cy="9" r="8" />
-        </g>
-      </svg>
-    )
-  }
-}
-
-export default LadyIcon
+export default React.memo(LadyIcon)

@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react'
+// tslint:disable:max-line-length
+import React, { Fragment } from 'react'
 import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
 import css from 'styled-jsx/css'
-
-import { color } from '_utils/branding'
+import BaseIcon from '_utils/icon'
 
 interface CircleProps extends Icon {
   readonly absolute?: boolean
@@ -38,65 +37,59 @@ const style = css`
     }
   }
 
-  .spinning {
+  :global(.kirk-icon-circle.spinning) {
     animation: rotator ${duration} linear infinite;
   }
 
-  circle {
+  :global(.kirk-icon-circle circle) {
     stroke-width: 6;
     stroke-linecap: round;
   }
 
-  .spinning circle {
+  :global(.kirk-icon-circle.spinning circle) {
     stroke-dasharray: ${offset};
     stroke-dashoffset: 0;
     transform-origin: center;
     animation: dash ${duration} ease-in-out infinite;
   }
 
-  .thin circle {
+  :global(.kirk-icon-circle.thin circle) {
     stroke-width: 3;
   }
 
-  .absolute {
+  :global(.kirk-icon-circle.absolute) {
     position: absolute;
   }
 
-  circle.inner {
+  :global(.kirk-icon-circle circle.inner) {
     stroke-width: 0;
   }
 `
 
-class CircleIcon extends PureComponent<CircleProps> {
-  static defaultProps: CircleProps = {
-    absolute: false,
-    className: '',
-    iconColor: color.icon,
-    size: 24,
-    spinning: false,
-    title: '',
-    thin: false,
-    innerDisc: false,
-  }
+export const CircleIcon = (props: CircleProps) => (
+  <BaseIcon {...props} viewBox="0 0 66 66" className={cc([
+    'kirk-icon-circle',
+    props.className,
+    {
+      spinning: props.spinning,
+      absolute: props.absolute,
+      thin: props.thin,
+    }
+  ])}>
+    <Fragment>
+      <circle cx="33" cy="33" r="30" fill="none" stroke={props.iconColor} />
+      {props.innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />}
+      <style jsx>{style}</style>
+    </Fragment>
+  </BaseIcon>
+)
 
-  render() {
-    const { className, absolute, iconColor, spinning, size, title, thin, innerDisc } = this.props
-    return (
-      <svg
-        viewBox="0 0 66 66"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cc(['kirk-icon', className, { spinning, absolute, thin }])}
-        width={size}
-        height={size}
-        aria-hidden={isEmpty(title)}
-      >
-        {title && <title>{title}</title>}
-        <circle cx="33" cy="33" r="30" fill="none" stroke={iconColor} />
-        {innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={iconColor} />}
-        <style jsx>{style}</style>
-      </svg>
-    )
-  }
+CircleIcon.defaultProps = {
+  ...BaseIcon.defaultProps,
+  absolute: false,
+  spinning: false,
+  thin: false,
+  innerDisc: false,
 }
 
-export default CircleIcon
+export default React.memo(CircleIcon)

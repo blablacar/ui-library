@@ -30,6 +30,7 @@ exports[`Modal should not have changed 1`] = `
           <svg
             aria-hidden={true}
             className="kirk-icon"
+            fill="#00AFF5"
             height="18"
             viewBox="0 0 24 24"
             width="18"

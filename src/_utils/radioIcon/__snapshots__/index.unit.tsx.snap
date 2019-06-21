@@ -3,7 +3,8 @@
 exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = `
 <svg
   aria-hidden={true}
-  className="jsx-1131348929 kirk-icon"
+  className="kirk-icon kirk-icon-circle"
+  fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"
   width={24}
@@ -11,7 +12,7 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 >
   
   <circle
-    className="jsx-1131348929"
+    className="jsx-2931153156"
     cx="33"
     cy="33"
     fill="none"
@@ -19,7 +20,7 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
     stroke="#00AFF5"
   />
   <circle
-    className="jsx-1131348929 inner"
+    className="jsx-2931153156 inner"
     cx="33"
     cy="33"
     fill="#00AFF5"
@@ -40,7 +41,8 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 >
   <svg
     aria-hidden={true}
-    className="jsx-1131348929 kirk-icon spinning"
+    className="kirk-icon kirk-icon-circle spinning"
+    fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
     width={24}
@@ -48,7 +50,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   >
     
     <circle
-      className="jsx-1131348929"
+      className="jsx-2931153156"
       cx="33"
       cy="33"
       fill="none"
@@ -71,7 +73,8 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="jsx-1131348929 kirk-icon spinning"
+    className="kirk-icon kirk-icon-circle spinning"
+    fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
     width={24}
@@ -79,7 +82,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   >
     
     <circle
-      className="jsx-1131348929"
+      className="jsx-2931153156"
       cx="33"
       cy="33"
       fill="none"
@@ -93,7 +96,8 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 exports[`RadioIcon Should render an empty circle by default 1`] = `
 <svg
   aria-hidden={true}
-  className="jsx-1131348929 kirk-icon"
+  className="kirk-icon kirk-icon-circle"
+  fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"
   width={24}
@@ -101,7 +105,7 @@ exports[`RadioIcon Should render an empty circle by default 1`] = `
 >
   
   <circle
-    className="jsx-1131348929"
+    className="jsx-2931153156"
     cx="33"
     cy="33"
     fill="none"
