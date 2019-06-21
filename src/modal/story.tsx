@@ -39,12 +39,7 @@ class ModalOpener extends Component<ModalProps> {
       <div>
         <button onClick={this.openModal}>Open modal 1</button>
         <button onClick={this.openModal2}>Open modal 2</button>
-        <Modal
-          {...this.props}
-          onClose={this.closeModal}
-          isOpen={this.state.modalOpen}
-          ref={this.ref}
-        >
+        <Modal {...this.props} onClose={this.closeModal} isOpen={this.state.modalOpen}>
           <div>
             <h1 id="label1">Modal 1</h1>
             <p id="description1">This is the description of my modal</p>
