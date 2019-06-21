@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `MyRidesIcon`
 - **[NEW]** Added `badgeContent` and `badgeAriaLabel` to all icons
 - **[UPDATE]** Refactored icons to have common props & options
 [...]
