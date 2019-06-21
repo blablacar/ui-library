@@ -1,6 +1,10 @@
 # Unreleased
 
-- **[FIX]** Removed forwardProps and added `SIZE` static property on `Modal`
+[...]
+
+# v8.0.0 (21/06/2019)
+
+- **[BREAKING CHANGE]** Removed forwardProps and added `SIZE` static property on `Modal`
 
 # v7.0.0 (20/06/2019)
 
