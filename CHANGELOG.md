@@ -1,6 +1,16 @@
 # Unreleased
 
-[..]
+[...]
+
+# v8.1.0 (24/06/2019)
+
+- **[NEW]** Added `MyRidesIcon`
+- **[NEW]** Added `badgeContent` and `badgeAriaLabel` to all icons
+- **[UPDATE]** Refactored icons to have common props & options
+
+# v8.0.0 (21/06/2019)
+
+- **[BREAKING CHANGE]** Removed forwardProps and added `SIZE` static property on `Modal`
 
 # v7.0.0 (20/06/2019)
 
