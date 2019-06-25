@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** Remove extra attributes on `Item`-like components when `href` attribute is a string
+
 # v8.1.0 (24/06/2019)
 
 - **[NEW]** Added `MyRidesIcon`
@@ -19,8 +21,6 @@
 # v6.0.2 (18/06/2019)
 
 - **[FIX]** Fix `AutoComplete` key stringify and allow customization from outside
-
-- **[FIX]** Remove extra attributes on `Item`-like components when `href` attribute is a string
 
 # v6.0.1 (17/06/2019)
 
