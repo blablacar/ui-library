@@ -1,9 +1,12 @@
 # Unreleased
 
+[...]
+
+# v8.2.0 (25/06/2019)
+
 - **[NEW]** Add `EmptyState` component
 - **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
 - **[FIX]** Remove extra attributes on `Item`-like components when `href` attribute is a string
-[...]
 
 # v8.1.0 (24/06/2019)
 
