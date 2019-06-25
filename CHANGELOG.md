@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Add `EmptyState` component
+- **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
 [...]
 
 # v8.1.0 (24/06/2019)
@@ -15,8 +17,6 @@
 # v7.0.0 (20/06/2019)
 
 - **[BREAKING CHANGE]** Removed `Modal` large prop and added `size` with 3 preset values instead
-
-- **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
 
 # v6.0.2 (18/06/2019)
 
