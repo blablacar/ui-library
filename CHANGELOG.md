@@ -16,6 +16,8 @@
 
 - **[BREAKING CHANGE]** Removed `Modal` large prop and added `size` with 3 preset values instead
 
+- **[FIX]** `Profile` gets back its hovering effect (similar to other clickable items)
+
 # v6.0.2 (18/06/2019)
 
 - **[FIX]** Fix `AutoComplete` key stringify and allow customization from outside
