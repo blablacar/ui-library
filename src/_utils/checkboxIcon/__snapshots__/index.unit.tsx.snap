@@ -3,7 +3,8 @@
 exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`] = `
 <svg
   aria-hidden={true}
-  className="jsx-1043659059 jsx-59167708 kirk-icon"
+  className="kirk-icon kirk-icon-check"
+  fill="#FFF"
   height={24}
   viewBox="0 0 24 24"
   width={24}
@@ -11,7 +12,7 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
 >
   
   <path
-    className="jsx-1043659059 jsx-59167708"
+    className="jsx-2416231148 jsx-3125355633"
     d="M6.5 12.5l4 4 8-8"
     fill="none"
     stroke="#FFF"
@@ -35,7 +36,8 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
 >
   <svg
     aria-hidden={true}
-    className="jsx-1131348929 kirk-icon spinning"
+    className="kirk-icon kirk-icon-circle spinning"
+    fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
     width={24}
@@ -43,7 +45,7 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
   >
     
     <circle
-      className="jsx-1131348929"
+      className="jsx-2931153156"
       cx="33"
       cy="33"
       fill="none"
@@ -66,7 +68,8 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="jsx-1131348929 kirk-icon spinning"
+    className="kirk-icon kirk-icon-circle spinning"
+    fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
     width={24}
@@ -74,7 +77,7 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
   >
     
     <circle
-      className="jsx-1131348929"
+      className="jsx-2931153156"
       cx="33"
       cy="33"
       fill="none"
@@ -88,7 +91,8 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
 exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 <svg
   aria-hidden={true}
-  className="jsx-1131348929 kirk-icon"
+  className="kirk-icon kirk-icon-circle"
+  fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"
   width={24}
@@ -96,7 +100,7 @@ exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 >
   
   <circle
-    className="jsx-1131348929"
+    className="jsx-2931153156"
     cx="33"
     cy="33"
     fill="none"

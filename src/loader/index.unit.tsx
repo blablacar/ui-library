@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import Loader from 'loader'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
+import { CircleIcon } from 'icon/circleIcon'
+import { CheckIcon } from 'icon/checkIcon'
 
 jest.useFakeTimers()
 
@@ -16,7 +16,7 @@ describe('Loader', () => {
 
   it('Should have a custom size', () => {
     const size = 100
-    const wrapper = shallow(<Loader size={size} />)
+    const wrapper = mount(<Loader size={size} />)
     expect(wrapper.find(CircleIcon).prop('size')).toBe(size)
   })
 

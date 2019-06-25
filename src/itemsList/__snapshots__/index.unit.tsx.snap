@@ -34,6 +34,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -82,6 +83,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -130,6 +132,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -186,6 +189,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -234,6 +238,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -282,6 +287,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -338,6 +344,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -386,6 +393,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}
@@ -434,6 +442,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
         <svg
           aria-hidden={true}
           className="kirk-icon"
+          fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
           width={24}

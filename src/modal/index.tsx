@@ -1,4 +1,4 @@
-import React, { Component, forwardRef, Ref } from 'react'
+import React, { Component, Ref } from 'react'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
@@ -35,10 +35,12 @@ export interface ModalProps {
   readonly ariaDescribedBy?: string
 }
 
-class Modal extends Component<ModalProps> {
+export default class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
   private contentNode: HTMLElement
   private focusTrap: FocusTrap
+
+  static SIZE = ModalSize
 
   static defaultProps: Partial<ModalProps> = {
     isOpen: false,
@@ -193,7 +195,3 @@ class Modal extends Component<ModalProps> {
     return this.portalNode ? createPortal(modalElement, this.portalNode) : modalElement
   }
 }
-
-export default forwardRef<HTMLDivElement, ModalProps>((props, ref) => (
-  <Modal {...props} forwardedRef={ref} />
-))

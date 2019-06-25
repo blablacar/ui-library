@@ -30,6 +30,7 @@ import LightningIcon from './lightningIcon'
 import MapIcon from './mapIcon'
 import MinusIcon from './minusIcon'
 import MusicIcon from './musicIcon'
+import MyRidesIcon from './myRides'
 import NewspaperIcon from './newspaperIcon'
 import OdnoklassnikiIcon from './odnoklassnikiIcon'
 import PetIcon from './petIcon'
@@ -86,6 +87,7 @@ export {
   MapIcon,
   MinusIcon,
   MusicIcon,
+  MyRidesIcon,
   NewspaperIcon,
   OdnoklassnikiIcon,
   PetIcon,
