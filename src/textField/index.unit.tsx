@@ -18,6 +18,15 @@ it('Should be able to change the type.', () => {
   expect(input.prop('type')).toBe('password')
 })
 
+it('Should be able to change the pattern and inputMode.', () => {
+  const wrapper = shallow(
+    <TextField name="test" type="text" pattern="[0-9]*" inputMode="numeric" />,
+  )
+  const input = wrapper.find('input')
+  expect(input.prop('pattern')).toBe('[0-9]*')
+  expect(input.prop('inputMode')).toBe('numeric')
+})
+
 it('Should be able to be a textarea.', () => {
   const wrapper = shallow(<TextField name="test" isTextArea />)
   const textarea = wrapper.find('textarea')

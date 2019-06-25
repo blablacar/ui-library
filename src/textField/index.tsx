@@ -11,10 +11,30 @@ import isEmpty from 'lodash.isempty'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 
+export enum inputTypes {
+  TEXT = 'text',
+  PASSWORD = 'password',
+  EMAIL = 'email',
+  NUMBER = 'number',
+  SEARCH = 'search',
+  TEL = 'tel',
+}
+
+export enum inputModes {
+  NONE = 'none',
+  TEXT = 'text',
+  DECIMAL = 'decimal',
+  NUMERIC = 'numeric',
+  TEL = 'tel',
+  SEARCH = 'search',
+  EMAIL = 'email',
+  URL = 'url',
+}
+
 export interface CommonFormFields {
   name: string
   id?: string
-  type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'tel'
+  type?: inputTypes
   placeholder?: string
   maxLength?: number
   autoCorrect?: 'on' | 'off'
@@ -46,6 +66,8 @@ export interface TextFieldProps extends CommonFormFields {
   label?: string
   buttonTitle?: string
   focus?: boolean
+  inputMode?: inputModes
+  pattern?: string
   inputRef?: (input: textfield) => void
   format?: (value: string, previousValue: string) => string
   focusBorder?: boolean
@@ -82,16 +104,18 @@ const DisplayError = (error: errorField) => {
 
 export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
   private input: HTMLInputElement | HTMLTextAreaElement
-
   static defaultProps: Partial<TextFieldProps> = {
     inputRef() {},
     onClear() {},
     onFocus() {},
     onBlur() {},
-    type: 'text',
+    type: inputTypes.TEXT,
     format: (value, previousValue) => value,
     focusBorder: true,
   }
+
+  static INPUT_TYPES = inputTypes
+  static INPUT_MODES = inputModes
 
   state = {
     value: this.props.defaultValue,
@@ -207,6 +231,8 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       title,
       buttonTitle,
       format,
+      inputMode,
+      pattern,
       focusBorder,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
@@ -222,6 +248,8 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       autoComplete,
       autoCorrect,
       title,
+      inputMode,
+      pattern,
       // modifiers
       disabled,
       readOnly,
