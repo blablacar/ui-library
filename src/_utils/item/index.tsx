@@ -73,7 +73,7 @@ const Item = ({
       tagProps = { ...tagProps, ...href.props }
     } else {
       Tag = 'a'
-      tagProps = { ...tagProps, href }
+      tagProps = { href }
     }
   }
   const hasRightText = rightTitle || rightBody

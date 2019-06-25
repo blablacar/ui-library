@@ -10,9 +10,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#1"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -61,9 +59,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#2"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -112,9 +108,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#3"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -171,9 +165,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#1"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -222,9 +214,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#2"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -273,9 +263,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#3"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -332,9 +320,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#1"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -383,9 +369,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#2"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
@@ -434,9 +418,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   >
     <a
       className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice"
-      disabled={false}
       href="#3"
-      type="button"
     >
       <div
         className="jsx-1542968643 kirk-item-leftText"
