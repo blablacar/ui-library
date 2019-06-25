@@ -4,24 +4,23 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
 
-import TextField from 'textField'
+import TextField, { inputTypes, inputModes } from 'textField'
 import ArrowIcon from 'icon/arrowIcon'
 import Button from 'button'
 import readme from 'textField/specifications/textField.md'
-import primaryDoc from '../button/specifications/primary.md'
 
 const stories = storiesOf('TextField', module)
 stories.addDecorator(withKnobs)
-
-const inputTypes = ['text', 'email', 'number', 'password']
 
 stories.add(
   'specifications',
   () => (
     <TextField
-      type={select('type', inputTypes, 'text')}
+      type={select('type', inputTypes, inputTypes.TEXT)}
       id={text('id')}
       name={text('name', 'inputName')}
+      inputMode={select('inputMode', inputModes, inputModes.TEXT)}
+      pattern={text('pattern')}
       placeholder={text('placeholder')}
       labelledBy={text('aria label')}
       disabled={boolean('disabled', false)}
@@ -45,7 +44,7 @@ stories.add(
 
 stories.add('input', () => (
   <TextField
-    type={select('type', inputTypes, 'text')}
+    type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     name={text('name', 'inputName')}
     placeholder={text('placeholder')}
@@ -67,7 +66,7 @@ stories.add('input', () => (
 
 stories.add('input with default value', () => (
   <TextField
-    type={select('type', inputTypes, 'text')}
+    type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     defaultValue={text('defaultValue', 'starting value')}
     name={text('name')}
@@ -86,7 +85,7 @@ stories.add('input with default value', () => (
 
 stories.add('input disabled', () => (
   <TextField
-    type={select('type', inputTypes, 'text')}
+    type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     defaultValue="starting value"
     name={text('name')}
@@ -105,7 +104,7 @@ stories.add('input disabled', () => (
 
 stories.add('input password', () => (
   <TextField
-    type={select('type', inputTypes, 'password')}
+    type={select('type', inputTypes, inputTypes.PASSWORD)}
     id={text('id')}
     defaultValue="starting value"
     name={text('name')}
@@ -123,7 +122,7 @@ stories.add('input password', () => (
 
 stories.add('input with autofocus', () => (
   <TextField
-    type={select('type', inputTypes, 'text')}
+    type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     name={text('name')}
     placeholder={text('placeholder')}
@@ -147,7 +146,7 @@ stories.add('input with addon', () => (
         <ArrowIcon size="18" />
       </Button>
     }
-    type={select('type', inputTypes, 'text')}
+    type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     defaultValue="starting value"
     name={text('name')}
