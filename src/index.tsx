@@ -8,6 +8,7 @@ import ConfirmationModal from 'confirmationModal'
 import DatePicker from 'datePicker'
 import Drawer from 'drawer'
 import DropdownButton from 'dropdownButton'
+import EmptyState from 'emptyState'
 import HamburgerButton from 'hamburgerButton'
 import ItemAction from 'itemAction'
 import ItemCheckbox from 'itemCheckbox'
@@ -59,6 +60,7 @@ export {
   DatePicker,
   Drawer,
   DropdownButton,
+  EmptyState,
   HamburgerButton,
   ItemAction,
   ItemCheckbox,

@@ -70,6 +70,7 @@ const Profile = ({
       onBlur={onBlur}
       onFocus={onFocus}
       onMouseDown={onMouseDown}
+      isClickable={showChevron}
     />
   )
 }
