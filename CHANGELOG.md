@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Added `pattern` and `inputMode` properties on `TextField`
 - [...]
+
+# v8.3.0 (26/06/2019)
+
+- **[NEW]** Added `pattern` and `inputMode` properties on `TextField`
 
 # v8.2.0 (25/06/2019)
 
