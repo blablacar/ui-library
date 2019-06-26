@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `TextField` Typescript validation into `PhoneField` and `AutoComplete`
 - [...]
 
 # v8.3.0 (26/06/2019)
