@@ -4,7 +4,7 @@ import prefix from '_utils'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 import SelectField from 'selectField'
-import TextField from 'textField'
+import TextField, { inputTypes } from 'textField'
 import { allCountries } from 'country-telephone-data'
 import style from 'phoneField/style'
 
@@ -224,7 +224,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
             focusBorder={!isInline}
           />
           <TextField
-            type="tel"
+            type={inputTypes.TEL}
             name={FIELDS.PHONENUMBER}
             placeholder={textFieldPlaceholder}
             defaultValue={defaultPhoneValue}
