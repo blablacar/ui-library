@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
-import TextField from 'textField'
+import TextField, { inputTypes } from 'textField'
 import AutoCompleteList from './autoCompleteList'
 import style from './style'
 
@@ -270,7 +270,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     return (
       <div role="combobox" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
-          type="search"
+          type={inputTypes.SEARCH}
           className={this.props.inputClassName}
           name={this.props.name}
           onChange={this.onInputChange}
