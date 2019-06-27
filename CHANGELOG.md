@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Added `BanIcon`
 - [...]
+
+# v8.3.2 (27/06/2019)
+
+- **[NEW]** Added `BanIcon`
 
 # v8.3.1 (26/06/2019)
 
