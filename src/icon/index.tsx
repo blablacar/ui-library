@@ -1,5 +1,6 @@
 import ArrowIcon from './arrowIcon'
 import AvatarIcon from './avatarIcon'
+import BanIcon from './banIcon'
 import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'
 import BubbleIcon from './bubbleIcon'
@@ -57,6 +58,7 @@ import YoutubeIcon from './youtubeIcon'
 export {
   ArrowIcon,
   AvatarIcon,
+  BanIcon,
   BankIcon,
   BellIcon,
   BubbleIcon,
