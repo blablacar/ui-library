@@ -28,8 +28,12 @@ const Itinerary = ({
   small = false,
   headline = null,
 }: ItineraryProps) => {
+
+  // Dislay itinerary as small if required or if we don't have time or subLabel for provided places
+  const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
+
   return (
-    <ul className={cc([className, { 'kirk-itinerary--small': small }])}>
+    <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
       {isNonEmptyString(headline) && (
         <li className="kirk-itinerary-headline">
           <Text display={TextDisplayType.TITLE}>{headline}</Text>
@@ -103,14 +107,14 @@ const Itinerary = ({
               }
             />
             <Component {...hrefProps}>
-              {!small && (
+              {!isSmall && (
                 <time dateTime={place.isoDate}>
                   <Text display={TextDisplayType.TITLESTRONG}>{place.time}</Text>
                 </time>
               )}
               <div className="kirk-itinerary-location-city">
                 <Text display={TextDisplayType.TITLESTRONG}>{place.mainLabel}</Text>
-                {!small &&
+                {!isSmall &&
                   place.subLabel &&
                   (typeof place.subLabel === 'string' ? (
                     <Text

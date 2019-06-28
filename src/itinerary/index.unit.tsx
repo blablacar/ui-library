@@ -203,4 +203,34 @@ describe('Itinerary component', () => {
       .key()
     expect(key2).toBe('route-end-tours')
   })
+
+  describe('small', () => {
+    it('Should be displayed as small if required in props', () => {
+      const itinerary = shallow(<Itinerary places={places} small />)
+      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(true)
+    })
+
+    it('Should not be displayed as small if not in props and time or sublabel exists', () => {
+      const itinerary = shallow(<Itinerary places={places} />)
+      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(false)
+    })
+
+    it('Should be displayed as small if no time nor subLabel', () => {
+      const places = [
+        {
+          isoDate: '2017-12-11T09:00',
+          mainLabel: 'Paris',
+          key: 'route-start-paris',
+        },
+        {
+          isoDate: '2017-12-11T12:00',
+          mainLabel: 'Tours',
+          key: 'route-end-tours',
+        },
+      ]
+
+      const itinerary = shallow(<Itinerary places={places} />)
+      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(true)
+    })
+  })
 })
