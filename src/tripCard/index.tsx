@@ -150,7 +150,11 @@ const TripCard = ({
           )}
 
           {title && (
-            <Text display={TextDisplayType.TITLE} className="kirk-tripCard-title">{title}</Text>
+            <Text
+              display={TextDisplayType.SUBHEADERSTRONG}
+              className="kirk-tripCard-title">
+              {title}
+            </Text>
           )}
 
           <div className="kirk-tripCard-main">
