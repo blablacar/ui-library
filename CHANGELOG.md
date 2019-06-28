@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[FIX]** Added background for transparent avatars in `TripCard`
+- **[FIX]** Update `Title` style in `TripCard`
 - [...]
 
 # v8.3.2 (27/06/2019)

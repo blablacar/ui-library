@@ -38,6 +38,10 @@ export default css`
     color: ${color.primary};
   }
 
+  :global(.kirk-tripCard-title + .kirk-tripCard-main) {
+    margin-top: ${space.m};
+  }
+
   .kirk-tripCard-main {
     display: flex;
     margin-bottom: ${space.l};
@@ -82,6 +86,7 @@ export default css`
   }
   .kirk-tripCard-passengers :global(.kirk-avatar) {
     border: 2px solid ${color.white};
+    background: ${color.white};
   }
   .kirk-tripCard-passengers :global(.kirk-tripCard-passengers-more) {
     background: ${color.iconHighlight};
