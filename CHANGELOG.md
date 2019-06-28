@@ -1,10 +1,13 @@
 # Unreleased
 
+- [...]
+
+# v8.3.3 (28/06/2019)
+
 - **[FIX]** Display `Itinerary` as small if we don't provide date or subLabel in places
 - **[FIX]** Added background for transparent avatars in `TripCard`
 - **[FIX]** Update `Title` style in `TripCard`
 - **[FIX]** Update margins in `EmptyState` component
-- [...]
 
 # v8.3.2 (27/06/2019)
 
