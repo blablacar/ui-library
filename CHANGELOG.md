@@ -2,6 +2,7 @@
 
 - **[FIX]** Added background for transparent avatars in `TripCard`
 - **[FIX]** Update `Title` style in `TripCard`
+- **[FIX]** Update margins in `EmptyState` component
 - [...]
 
 # v8.3.2 (27/06/2019)
