@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering testing should render properly 1`] = `
+<div
+  className="jsx-2657725038 kirk-tabs"
+>
+  <div
+    aria-multiselectable="false"
+    aria-orientation="horizontal"
+    className="jsx-2657725038 kirk-tablist"
+    role="tablist"
+  >
+    <button
+      aria-controls="tab1_panel"
+      aria-selected="true"
+      className="jsx-2657725038 kirk-tab kirk-tab-selected"
+      id="tab1"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={0}
+      title="Tab 1"
+    >
+      Tab 1
+    </button>
+    <button
+      aria-controls="tab2_panel"
+      aria-selected="false"
+      className="jsx-2657725038 kirk-tab"
+      id="tab2"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={-1}
+      title="Tab 2"
+    >
+      Tab 2
+    </button>
+    <button
+      aria-controls="tab3_panel"
+      aria-selected="false"
+      className="jsx-2657725038 kirk-tab"
+      id="tab3"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={-1}
+      title="Tab 3"
+    >
+      Tab 3
+    </button>
+  </div>
+  <div
+    className="jsx-2657725038 kirk-tab-panel"
+    id="tab1_panel"
+    role="tabpanel"
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for first tab
+    </div>
+  </div>
+</div>
+`;
