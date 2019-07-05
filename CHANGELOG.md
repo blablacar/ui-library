@@ -1,7 +1,10 @@
 # Unreleased
 
-**[NEW]** Added new `Tabs` Pixar component
 - [...]
+
+# v8.4.0 (05/07/2019)
+
+**[NEW]** Added new `Tabs` Pixar component
 
 # v8.3.3 (28/06/2019)
 
