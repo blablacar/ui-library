@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Added `ref` and `focus` properties on `SelectField`
+- **[NEW]** Added `focus` property on `PhoneField`
 - [...]
 
 # v8.4.0 (05/07/2019)

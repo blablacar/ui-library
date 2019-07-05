@@ -14,6 +14,8 @@ const phonePrefixOptions = [
   { value: '+34', label: 'Sp +34' },
 ]
 
+const ref = React.createRef<HTMLSelectElement>()
+
 stories.add('Default', () => (
   <SelectField
     id={text('id', 'selectFieldId')}
@@ -22,9 +24,13 @@ stories.add('Default', () => (
     options={phonePrefixOptions}
     ariaLabel={text('ariaLabel', 'selectLabel')}
     defaultValue={text('defaultValue', phonePrefixOptions[0].value)}
+    onFocus={action('focused')}
+    onBlur={action('blured')}
     onChange={action('changed')}
     disabled={boolean('disabled', false)}
     required={boolean('required', false)}
+    focus={boolean('focus', true)}
     autoFocus={boolean('autoFocus', false)}
+    ref={ref}
   />
 ))

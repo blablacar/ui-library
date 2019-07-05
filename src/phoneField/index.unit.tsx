@@ -35,6 +35,7 @@ const customProps = {
   defaultPhoneValue: '0765455667',
   customCountryNames,
   isInline: false,
+  selectAutoFocus: true,
 }
 
 describe('PhoneField', () => {
@@ -97,6 +98,21 @@ describe('PhoneField', () => {
       },
     })
     expect(handleOnChange).toHaveBeenCalledTimes(2)
+  })
+
+  describe('Focus event', () => {
+    it('Should have the appropriate display a focus event.', () => {
+      const wrapper = mount(<PhoneField name="testFocus" />)
+      expect(wrapper.find('.kirk-phoneField-wrapper--hasFocus').exists()).toBe(false)
+      wrapper.find('select').simulate('focus')
+      expect(wrapper.find('.kirk-phoneField-wrapper--hasFocus').exists()).toBe(true)
+      expect(wrapper.state('hasFocus')).toBe(true)
+    })
+
+    /* TODO: Test focus on mounting by using focus prop
+     * Enzyme doesn't support React 16 createRef
+     * https://github.com/airbnb/enzyme/issues/1704
+     */
   })
 
   describe('#error', () => {

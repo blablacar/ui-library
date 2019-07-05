@@ -23,6 +23,7 @@ const customProps = {
   id: 'selectFieldId',
   className: 'customClass',
   ariaLabel: 'selectLabel',
+  focus: true,
   autoFocus: true,
   disabled: false,
   required: true,
@@ -68,11 +69,25 @@ describe('SelectField', () => {
   it('Should have custom props', () => {
     const wrapper = mount(<SelectField {...customProps} />)
     const selectField = wrapper.find('select')
-    expect(selectField.prop('id')).toEqual('selectFieldId')
     expect(wrapper.hasClass('customClass')).toBe(true)
+    expect(wrapper.props().focus).toBe(true)
+    expect(selectField.prop('id')).toEqual('selectFieldId')
     expect(selectField.prop('aria-label')).toEqual('selectLabel')
     expect(selectField.prop('autoFocus')).toBe(true)
     expect(selectField.prop('disabled')).toBe(false)
     expect(selectField.prop('required')).toBe(true)
+  })
+
+  describe('Focus event', () => {
+    it('Simulates a focus event.', () => {
+      expect(defaultWrapper.find('.kirk-selectField--hasFocus').exists()).toBe(false)
+      defaultWrapper.find('select').simulate('focus')
+      expect(defaultWrapper.find('.kirk-selectField--hasFocus').exists()).toBe(true)
+    })
+
+    it('Focus on mounting.', () => {
+      defaultWrapper.setProps({ focus: true })
+      expect(defaultWrapper.find('.kirk-selectField--hasFocus').exists()).toBe(true)
+    })
   })
 })
