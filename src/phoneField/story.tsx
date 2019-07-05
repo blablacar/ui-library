@@ -45,7 +45,9 @@ stories.add(
         countryWhitelist={countryWhitelist}
         customCountryNames={customCountryNames}
         isInline={boolean('isInline', false)}
-        error={text('error message', 'Error message')}
+        focus={boolean('focus', true)}
+        selectAutoFocus={boolean('selectAutoFocus', true)}
+        error={text('error message', '')}
       />
     </div>
   ),

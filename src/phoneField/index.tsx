@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import prefix from '_utils'
 import isEmpty from 'lodash.isempty'
@@ -7,6 +7,8 @@ import SelectField from 'selectField'
 import TextField, { inputTypes } from 'textField'
 import { allCountries } from 'country-telephone-data'
 import style from 'phoneField/style'
+
+export type selectfield = HTMLSelectElement
 
 enum FIELDS {
   PHONENUMBER = 'phoneNumber',
@@ -37,6 +39,8 @@ interface PhoneFieldProps {
   readonly countryWhitelist?: string[]
   readonly customCountryNames?: customCountryNames
   readonly isInline?: boolean
+  readonly focus?: boolean
+  readonly selectAutoFocus?: boolean
   error?: errorField
 }
 interface PhoneFieldState {
@@ -123,6 +127,11 @@ const DisplayError = (error: errorField) => {
  * TODO: BBCSPA-3355 Fix A11y issues on label and error state
  */
 export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> {
+  private ref: RefObject<HTMLSelectElement>
+  constructor(props: PhoneFieldProps) {
+    super(props)
+    this.ref = React.createRef()
+  }
   static defaultProps: Partial<PhoneFieldProps> = {
     defaultRegionValue: '',
     defaultPhoneValue: '',
@@ -181,6 +190,18 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
     return null
   }
 
+  componentDidMount() {
+    if (this.ref && this.props.focus) {
+      this.ref.current.focus()
+    }
+  }
+
+  componentDidUpdate(prevProps: PhoneFieldProps) {
+    if (this.ref && this.props.focus && prevProps.focus !== this.props.focus) {
+      this.ref.current.focus()
+    }
+  }
+
   onFocus = () => {
     this.setState({ hasFocus: true })
   }
@@ -198,6 +219,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
       textFieldPlaceholder,
       defaultPhoneValue,
       isInline,
+      selectAutoFocus,
       error,
     } = this.props
 
@@ -222,6 +244,8 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             focusBorder={!isInline}
+            autoFocus={selectAutoFocus}
+            ref={this.ref}
           />
           <TextField
             type={inputTypes.TEL}
