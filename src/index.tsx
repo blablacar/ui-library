@@ -33,6 +33,7 @@ import Snackbar from 'snackbar'
 import Stars from 'stars'
 import Stepper from 'stepper'
 import SuccessModal from 'successModal'
+import Tabs from 'tabs'
 import Text from 'text'
 import TextField from 'textField'
 import TimePicker from 'timePicker'
@@ -85,6 +86,7 @@ export {
   Stars,
   Stepper,
   SuccessModal,
+  Tabs,
   Text,
   TextField,
   TimePicker,
