@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Title from 'title'
+import Title from './Title'
 
 describe('Title', () => {
   it('Should render the given title text', () => {
@@ -15,11 +15,6 @@ describe('Title', () => {
   describe('#headingLevel', () => {
     it('Should render the correct heading level when passing a `number`', () => {
       const wrapper = shallow(<Title headingLevel={5}>blabla</Title>)
-      expect(wrapper.name()).toBe('h5')
-    })
-
-    it('Should render the correct heading level when passing a `string`', () => {
-      const wrapper = shallow(<Title headingLevel="5">blabla</Title>)
       expect(wrapper.name()).toBe('h5')
     })
 

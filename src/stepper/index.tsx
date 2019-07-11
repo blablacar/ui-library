@@ -3,7 +3,7 @@ import { canUseDOM } from 'exenv'
 import cc from 'classcat'
 import { isTouchEventsAvailable } from '_utils'
 
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import PlusIcon from 'icon/plusIcon'
 import MinusIcon from 'icon/minusIcon'
 
@@ -129,7 +129,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
         <Button
           type="button"
           className="kirk-stepper-decrement"
-          status={Button.STATUS.UNSTYLED}
+          status={ButtonStatus.UNSTYLED}
           disabled={isMin}
           {...this.createListeners(this.decrement)}
         >
@@ -147,7 +147,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
         <Button
           type="button"
           className="kirk-stepper-increment"
-          status={Button.STATUS.UNSTYLED}
+          status={ButtonStatus.UNSTYLED}
           disabled={isMax}
           {...this.createListeners(this.increment)}
         >

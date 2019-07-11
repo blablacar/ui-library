@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom'
 import { color } from '_utils/branding'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import CustomTransition, { AnimationType } from 'transitions'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import Text, { TextDisplayType } from 'text'
 
 import style from './style'
@@ -48,7 +48,7 @@ class Snackbar extends PureComponent<SnackbarProps> {
                 {this.props.children}
               </Text>
               <Button
-                status={Button.STATUS.UNSTYLED}
+                status={ButtonStatus.UNSTYLED}
                 className="kirk-snackbar-cross"
                 onClick={this.props.close}
               >

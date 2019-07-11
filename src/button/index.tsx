@@ -1,10 +1,14 @@
 import React, { PureComponent, Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
+import styled from 'styled-components'
 
 import prefix from '_utils'
-import style from 'button/style'
+// import style from 'button/style'
 import Loader from 'loader'
+import { color, font, space, transition, componentSizes, shadow } from '_utils/branding'
+
+const borderSize = '2px'
 
 export enum ButtonStatus {
   PRIMARY = 'primary',
@@ -76,7 +80,7 @@ export const eventHandler = (componentEvent: functionEvent, childEvent: function
   childEvent && childEvent(event)
 }
 
-export default class Button extends PureComponent<ButtonProps, ButtonState> {
+class Button extends PureComponent<ButtonProps, ButtonState> {
   private button: HTMLButtonElement
 
   static STATUS = ButtonStatus
@@ -198,8 +202,64 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
           />
         )}
         {!hasLoader && children}
-        <style jsx>{style}</style>
       </Fragment>,
     )
   }
 }
+
+const StyledButton = styled(Button)`
+  & {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    padding: ${space.l} ${space.xl};
+    border: 1px solid transparent;
+    border-radius: 48px;
+    font-size: ${font.base.size};
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: ${componentSizes.buttonIconSize};
+    min-width: ${componentSizes.buttonIconSize};
+    max-width: 100%;
+    overflow: hidden;
+    user-select: none;
+    align-items: center;
+    transition: max-width ${transition.duration.fast} ease-in,
+      background-color ${transition.duration.base} ease-in;
+  }
+  & img,
+  & svg {
+    flex-shrink: 0;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+  &.kirk-button-unstyled {
+    background-color: transparent;
+    border-radius: inherit;
+    color: ${color.accent};
+    padding: inherit;
+    display: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    text-align: left;
+    min-width: inherit;
+    min-height: inherit;
+  }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+  &.kirk-button-primary {
+    background-color: ${color.primary};
+    color: ${color.white};
+  }
+`
+
+export default StyledButton

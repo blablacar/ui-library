@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
 import ButtonGroup from 'buttonGroup'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 
 import spec from './specifications/index.md'
 
@@ -29,14 +29,15 @@ stories.add(
         status={select(
           'First button status',
           {
-            [Button.STATUS.PRIMARY]: Button.STATUS.PRIMARY,
-            [Button.STATUS.CHECKED]: Button.STATUS.CHECKED,
+            [ButtonStatus.PRIMARY]: ButtonStatus.PRIMARY,
+            [ButtonStatus.CHECKED]: ButtonStatus.CHECKED,
           },
-          Button.STATUS.PRIMARY,
-        )}>
+          ButtonStatus.PRIMARY,
+        )}
+      >
         Hello
       </Button>
-      <Button index="button_2" status={Button.STATUS.TERTIARY}>
+      <Button index="button_2" status={ButtonStatus.TERTIARY}>
         there
       </Button>
     </ButtonGroup>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Button, { eventHandler } from 'button'
+import Button, { eventHandler, ButtonStatus } from 'button'
 import CrossIcon from 'icon/crossIcon'
 
 jest.useFakeTimers()
@@ -33,7 +33,7 @@ describe('Button', () => {
     const buttonClassName = shallow(<Button className="addClass">blabla</Button>)
     expect(buttonClassName.hasClass('addClass')).toBe(true)
 
-    const button = shallow(<Button status={Button.STATUS.WARNING}>blabla</Button>)
+    const button = shallow(<Button status={ButtonStatus.WARNING}>blabla</Button>)
     expect(button.hasClass('kirk-button-warning')).toBe(true)
   })
 
@@ -48,13 +48,13 @@ describe('Button', () => {
   })
 
   it('Should have proper attribute on loading state', () => {
-    const button = shallow(<Button status={Button.STATUS.LOADING} />)
+    const button = shallow(<Button status={ButtonStatus.LOADING} />)
     expect(button.hasClass('kirk-button-loading')).toBe(true)
   })
 
   it('Should have no children for a loading state', () => {
     const button = mount(
-      <Button status={Button.STATUS.LOADING}>
+      <Button status={ButtonStatus.LOADING}>
         <CrossIcon />
         blabla
       </Button>,
@@ -103,7 +103,7 @@ describe('Button', () => {
   it('fires the callback event when valid', () => {
     const event = jest.fn()
     const button = mount(
-      <Button onDoneAnimationEnd={event} status={Button.STATUS.CHECKED}>
+      <Button onDoneAnimationEnd={event} status={ButtonStatus.CHECKED}>
         blabla
       </Button>,
     )
@@ -114,7 +114,7 @@ describe('Button', () => {
 
   it('Should have no children for a checked state', () => {
     const button = mount(
-      <Button status={Button.STATUS.CHECKED}>
+      <Button status={ButtonStatus.CHECKED}>
         <CrossIcon />
         blabla
       </Button>,
@@ -146,12 +146,12 @@ describe('Button', () => {
   })
 
   it('should be disabled while status is checked', () => {
-    const wrapper = shallow(<Button status={Button.STATUS.CHECKED}>click me</Button>)
+    const wrapper = shallow(<Button status={ButtonStatus.CHECKED}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
   })
 
   it('should be disabled while status is loading', () => {
-    const wrapper = shallow(<Button status={Button.STATUS.LOADING}>click me</Button>)
+    const wrapper = shallow(<Button status={ButtonStatus.LOADING}>click me</Button>)
     expect(wrapper.prop('disabled')).toBe(true)
   })
 })

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import { color } from '_utils/branding'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import Modal, { ModalProps, ModalSize } from 'modal'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
@@ -83,7 +83,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
             {isWarning && (
               <Button
                 isBubble
-                status={Button.STATUS.SECONDARY}
+                status={ButtonStatus.SECONDARY}
                 className={`${baseClassName}-closeButton`}
                 onClick={onClose}
                 title={closeButtonTitle}
@@ -92,7 +92,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
               </Button>
             )}
             <Button
-              status={isWarning ? Button.STATUS.WARNING : Button.STATUS.PRIMARY}
+              status={isWarning ? ButtonStatus.WARNING : ButtonStatus.PRIMARY}
               className={`${baseClassName}-confirmButton`}
               onClick={onConfirm}
             >

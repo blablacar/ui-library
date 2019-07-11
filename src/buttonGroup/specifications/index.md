@@ -17,11 +17,10 @@ On small devices button group become vertical and consists of Primary and Tertia
 On large devices it's horizontal and consists of Primary and Secondary buttons placed inline with reduced spacing between them: 16pt.
 Each button occupy 50% of the available space.
 
-
 ```js
 <ButtonGroup>
   <Button>Hello</Button>
-  <Button status={Button.STATUS.TERTIARY}>there</Button>
+  <Button status={ButtonStatus.TERTIARY}>there</Button>
 </ButtonGroup>
 ```
 
