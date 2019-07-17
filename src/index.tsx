@@ -22,6 +22,7 @@ import Itinerary from 'itinerary'
 import Loader from 'loader'
 import Menu from 'menu'
 import Message from 'message'
+import MessagingSummaryItem from 'messagingSummaryItem'
 import Modal from 'modal'
 import PhoneField from 'phoneField'
 import Profile from 'profile'
@@ -75,6 +76,7 @@ export {
   Loader,
   Menu,
   Message,
+  MessagingSummaryItem,
   Modal,
   PhoneField,
   Profile,

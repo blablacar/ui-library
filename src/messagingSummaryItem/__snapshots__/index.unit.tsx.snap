@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render properly with read messages 1`] = `
+<a
+  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  href="http_test.url"
+>
+  <div
+    className="jsx-1542968643 kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-titleStrong kirk-item-title"
+      style={
+        Object {
+          "color": "#708C91",
+        }
+      }
+    >
+      A label
+    </div>
+    <div
+      className="kirk-text kirk-text-title kirk-item-body"
+      style={
+        Object {
+          "color": "#708C91",
+        }
+      }
+    >
+      A sub label
+    </div>
+    <div
+      className="kirk-text kirk-text-caption kirk-item-body-annotation"
+    >
+      3 days ago
+    </div>
+  </div>
+  <div
+    className="jsx-1542968643 kirk-item-rightAddon"
+  >
+    <div
+      className="jsx-1920606029 kirk-avatar--image kirk-avatar"
+    >
+      <img
+        alt=""
+        className="jsx-1920606029"
+        src="http_test.picture.url"
+      />
+    </div>
+  </div>
+  <div
+    className="jsx-1542968643 kirk-item-rightAddon"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon"
+      fill="#708C91"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+</a>
+`;
+
+exports[`Should render properly with unread messages 1`] = `
+<a
+  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  href="http_test.url"
+>
+  <div
+    className="jsx-1542968643 kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-titleStrong kirk-item-title"
+      style={
+        Object {
+          "color": "#054752",
+        }
+      }
+    >
+      A label
+    </div>
+    <div
+      className="kirk-text kirk-text-title kirk-item-body"
+      style={
+        Object {
+          "color": "#054752",
+        }
+      }
+    >
+      A sub label
+    </div>
+    <div
+      className="kirk-text kirk-text-caption kirk-item-body-annotation"
+    >
+      3 days ago
+    </div>
+  </div>
+  <div
+    className="jsx-1542968643 kirk-item-rightAddon"
+  >
+    <div
+      className="jsx-1920606029 kirk-avatar--image kirk-avatar"
+    >
+      <img
+        alt=""
+        className="jsx-1920606029"
+        src="http_test.picture.url"
+      />
+    </div>
+  </div>
+  <div
+    className="jsx-1542968643 kirk-item-rightAddon"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon"
+      fill="#708C91"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+</a>
+`;
