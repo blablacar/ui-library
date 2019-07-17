@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { shallow } from 'enzyme'
+import { shallow , mount } from 'enzyme'
 
 import Item from './index'
 import ClockIcon from 'icon/clockIcon'
@@ -85,5 +85,15 @@ describe('Item', () => {
   it('Should display a chevron', () => {
     const wrapper = shallow(<Item chevron />)
     expect(wrapper.find(ChevronIcon).exists()).toBe(true)
+  })
+
+  it('Should display left body annotation', () => {
+    const wrapper = mount(<Item leftBodyAnnotation='Left body annotation label' />)
+    expect(wrapper.find('.kirk-item-body-annotation').exists()).toBe(true)
+  })
+
+  it('Should display left body', () => {
+    const wrapper = mount(<Item leftBody='Left body label' />)
+    expect(wrapper.find('.kirk-item-body').exists()).toBe(true)
   })
 })
