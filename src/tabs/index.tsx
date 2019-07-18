@@ -153,7 +153,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                     role="tab"
                     aria-controls={`${generateTabPanelId(tab)}`}
                     aria-selected={isSelected ? 'true' : 'false'}
-                    title={`${tab.label}${tab.badgeAriaLabel ? ' ' + tab.badgeAriaLabel : ''}`}
+                    title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
                     tabIndex={isSelected ? 0 : -1}
                     id={tab.id}
                     ref={this.state.tabIdToRefs.get(tab.id)}
