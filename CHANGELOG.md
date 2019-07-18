@@ -1,7 +1,8 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Created new `MessagingSummaryItem`
 - **[UPDATE]** Dependencies update
+- [...]
 
 # v8.5.0 (09/07/2019)
 

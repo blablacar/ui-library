@@ -24,6 +24,9 @@ export interface ItemProps {
   readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
   readonly leftBodyColor?: string
+  readonly leftBodyAnnotation?: string | React.ReactNode
+  readonly leftBodyAnnotationDisplay?: TextDisplayType
+  readonly leftBodyAnnotationColor?: string
   readonly leftAddon?: React.ReactNode
   readonly rightTitle?: string
   readonly rightTitleDisplay?: TextDisplayType
@@ -55,6 +58,9 @@ const Item = ({
   leftBody,
   leftBodyDisplay = TextDisplayType.BODY,
   leftBodyColor,
+  leftBodyAnnotation,
+  leftBodyAnnotationDisplay,
+  leftBodyAnnotationColor,
   leftAddon,
   rightTitle,
   rightTitleDisplay = TextDisplayType.TITLE,
@@ -115,6 +121,16 @@ const Item = ({
           >
             {leftBody}
           </Text>
+        )}
+        {leftBodyAnnotation && (
+            <Text
+                className="kirk-item-body-annotation"
+                display={leftBodyAnnotationDisplay}
+                textColor={leftBodyAnnotationColor}
+                tag={TextTagType.DIV}
+            >
+              {leftBodyAnnotation}
+            </Text>
         )}
       </div>
       {hasRightText && (
