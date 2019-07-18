@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v8.6.0 (18/07/2019)
+
 - **[NEW]** Created new `MessagingSummaryItem`
 - **[UPDATE]** Dependencies update
 - **[UPDATE]** Added `onChange`, `status`, `badgeContent`, `badgeAriaLabel` props, and various UI changes to `Tabs`
