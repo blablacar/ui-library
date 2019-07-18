@@ -101,7 +101,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "bla node && bla check && tsc --noEmit && npm run lint",
-      "pre-push": "npm test"
+      "pre-push": "npm run tslint && npm test"
     }
   }
 }
