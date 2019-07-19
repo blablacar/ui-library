@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[UPDATE]** Components in Tabs panel are not rendered if not displayed
+- **[UPDATE]** Add support for HTML sub-labels for `MessaginSummaryItem`.
+- [...]
 
 # v8.6.0 (18/07/2019)
 

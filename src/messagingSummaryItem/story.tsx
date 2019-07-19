@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
+import ChevronIcon from 'icon/chevronIcon'
 import MessagingSummaryItem from 'messagingSummaryItem'
 
 const stories = storiesOf('MessagingSummaryItem', module)
 stories.addDecorator(withKnobs)
 
 const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
+const htmlSubLabel = <Fragment>Paris <ChevronIcon /> Bordeaux</Fragment>
 
 stories.add('With unread messages', () => (
   <MessagingSummaryItem
@@ -42,3 +44,16 @@ stories.add('With long sublabel', () => (
         hasUnreadMessages={boolean('hasUnreadMessages', true)}
     />
 ))
+
+stories.add('With html sublabel', () => (
+    <MessagingSummaryItem
+        url={text('url', 'http://google.com')}
+        pictureUrl={text('url', pictureUrl)}
+        label={text('Label', 'Label')}
+        subLabel={htmlSubLabel}
+        timeLabel={text('Time label', '3 hours ago')}
+        hasUnreadMessages={boolean('hasUnreadMessages', true)}
+    />
+))
+
+
