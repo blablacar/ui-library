@@ -26,7 +26,11 @@ exports[`Should render properly with read messages 1`] = `
         }
       }
     >
-      A sub label
+      <span
+        className="kirk-messaging-summary-item-sub-label"
+      >
+        A sub label
+      </span>
     </div>
     <div
       className="kirk-text kirk-text-caption kirk-item-body-annotation"
@@ -100,7 +104,11 @@ exports[`Should render properly with unread messages 1`] = `
         }
       }
     >
-      A sub label
+      <span
+        className="kirk-messaging-summary-item-sub-label"
+      >
+        A sub label
+      </span>
     </div>
     <div
       className="kirk-text kirk-text-caption kirk-item-body-annotation"

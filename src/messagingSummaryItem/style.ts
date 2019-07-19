@@ -6,4 +6,9 @@ export default css`
     padding-left: ${space.xl};
     padding-right: ${space.xl};
   }
+  
+  :global(.kirk-messaging-summary-item-sub-label) {
+    display: flex;
+    align-items: center;
+  }
 `
