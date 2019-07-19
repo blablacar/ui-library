@@ -185,7 +185,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
               aria-labelledby={tab.id}
               hidden={!isSelected}
             >
-              {tab.panelContent}
+              {isSelected ? tab.panelContent : null}
             </div>
           )
         })}

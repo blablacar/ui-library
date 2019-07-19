@@ -98,33 +98,13 @@ exports[`Rendering testing should render properly 1`] = `
     hidden={true}
     id="tab2_panel"
     role="tabpanel"
-  >
-    <div
-      style={
-        Object {
-          "padding": 30,
-        }
-      }
-    >
-      Content for second tab
-    </div>
-  </div>
+  />
   <div
     aria-labelledby="tab3"
     className="jsx-1195529549 kirk-tab-panel"
     hidden={true}
     id="tab3_panel"
     role="tabpanel"
-  >
-    <div
-      style={
-        Object {
-          "padding": 30,
-        }
-      }
-    >
-      Content for first tab3
-    </div>
-  </div>
+  />
 </div>
 `;

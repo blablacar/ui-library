@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Components in Tabs panel are not rendered if not displayed
 
 # v8.6.0 (18/07/2019)
 
