@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Add new `CreditCardIcon`, `ExclamationIcon`, `GiftIcon`, `idCheckIcon`
 
 # v8.7.0 (19/07/2019)
 

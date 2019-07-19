@@ -12,6 +12,7 @@ import CircleIcon from './circleIcon'
 import ClockIcon from './clockIcon'
 import CoinIcon from './coinIcon'
 import ComfortIcon from './comfortIcon'
+import CreditCardIcon from './creditCardIcon'
 import CrossDiscIcon from './crossDiscIcon'
 import CrossIcon from './crossIcon'
 import CrosshairIcon from './crosshairIcon'
@@ -19,11 +20,14 @@ import DepartureIcon from './departureIcon'
 import DirectionIcon from './directionIcon'
 import DoubleArrowIcon from './doubleArrowIcon'
 import EyeIcon from './eyeIcon'
+import ExclamationIcon from './exclamationIcon'
 import FacebookIcon from './facebookIcon'
 import FlagsIcon from './flagsIcon'
+import GiftIcon from './giftIcon'
 import HomeIcon from './homeIcon'
 import HourglassIcon from './hourglassIcon'
 import IdCardVerifiedIcon from './idCardVerifiedIcon'
+import IdCheckIcon from './idCheckIcon'
 import InfoIcon from './infoIcon'
 import InstagramIcon from './instagramIcon'
 import LadyIcon from './ladyIcon'
@@ -70,6 +74,7 @@ export {
   ClockIcon,
   CoinIcon,
   ComfortIcon,
+  CreditCardIcon,
   CrossDiscIcon,
   CrossIcon,
   CrosshairIcon,
@@ -77,11 +82,14 @@ export {
   DirectionIcon,
   DoubleArrowIcon,
   EyeIcon,
+  ExclamationIcon,
   FacebookIcon,
   FlagsIcon,
+  GiftIcon,
   HomeIcon,
   HourglassIcon,
   IdCardVerifiedIcon,
+  IdCheckIcon,
   InfoIcon,
   InstagramIcon,
   LadyIcon,
