@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import Button from 'button'
 
@@ -14,6 +14,7 @@ stories.add('default', () => {
   const defaultTabsConfig = {
     activeTabId: 'tab1',
     status: select('status', TabStatus, TabStatus.SCROLLABLE),
+    isWrapped: boolean('isWrapped', false),
     tabs: [
       {
         id: 'tab1',
@@ -47,13 +48,12 @@ stories.add('default', () => {
     ],
   }
   return (
-    <div style={{ width: 500 }}>
-      <Tabs
-        onChange={action('onChange')}
-        tabs={defaultTabsConfig.tabs}
-        activeTabId={defaultTabsConfig.activeTabId}
-        status={defaultTabsConfig.status}
-      />
-    </div>
+    <Tabs
+      onChange={action('onChange')}
+      tabs={defaultTabsConfig.tabs}
+      activeTabId={defaultTabsConfig.activeTabId}
+      status={defaultTabsConfig.status}
+      isWrapped={defaultTabsConfig.isWrapped}
+    />
   )
 })

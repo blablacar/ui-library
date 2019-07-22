@@ -2,6 +2,11 @@
 
 - [...]
 - **[NEW]** Add new `CreditCardIcon`, `ExclamationIcon`, `GiftIcon`, `idCheckIcon`
+- **[UPDATE]** `Badge` now contained within a `span` instead of a `div`
+- **[FIX]** Selected tab highlight correctly displayed in `Tabs` with scrollable status
+- **[UPDATE]** Extended click area for tabs in the `Tabs` component
+- **[UPDATE]** Added a new prop `isWrapped` and a second wrapper `div` to the `Tabs` component to limit width to content
+- **[UPDATE]** Added a new prop `tablistWrapperClassName` to `Tabs` component to allow for more customisation
 
 # v8.7.0 (19/07/2019)
 

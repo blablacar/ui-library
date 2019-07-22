@@ -2,82 +2,86 @@
 
 exports[`Rendering testing should render properly 1`] = `
 <div
-  className="jsx-1195529549 kirk-tabs"
+  className="jsx-3728584608 kirk-tabs"
 >
   <div
-    aria-multiselectable="false"
-    aria-orientation="horizontal"
-    className="jsx-1195529549 kirk-tablist"
-    id="tablist"
-    role="tablist"
+    className="jsx-3728584608 kirk-tablist-wrapper"
   >
     <div
-      className="jsx-1195529549 kirk-tab-container kirk-tab-selected"
+      aria-multiselectable="false"
+      aria-orientation="horizontal"
+      className="jsx-3728584608 kirk-tablist"
+      id="tablist"
+      role="tablist"
     >
       <div
-        className="jsx-1195529549 kirk-tab-relative"
+        className="jsx-3728584608 kirk-tab-container kirk-tab-selected"
       >
-        <button
-          aria-controls="tab1_panel"
-          aria-selected="true"
-          className="jsx-1195529549 kirk-tab"
-          id="tab1"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="tab"
-          tabIndex={0}
-          title="Tab 1"
+        <div
+          className="jsx-3728584608 kirk-tab-relative"
         >
-          Tab 1
-        </button>
+          <button
+            aria-controls="tab1_panel"
+            aria-selected="true"
+            className="jsx-3728584608 kirk-tab"
+            id="tab1"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            tabIndex={0}
+            title="Tab 1"
+          >
+            Tab 1
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      className="jsx-1195529549 kirk-tab-container"
-    >
       <div
-        className="jsx-1195529549 kirk-tab-relative"
+        className="jsx-3728584608 kirk-tab-container"
       >
-        <button
-          aria-controls="tab2_panel"
-          aria-selected="false"
-          className="jsx-1195529549 kirk-tab"
-          id="tab2"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="tab"
-          tabIndex={-1}
-          title="Tab 2"
+        <div
+          className="jsx-3728584608 kirk-tab-relative"
         >
-          Tab 2
-        </button>
+          <button
+            aria-controls="tab2_panel"
+            aria-selected="false"
+            className="jsx-3728584608 kirk-tab"
+            id="tab2"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            tabIndex={-1}
+            title="Tab 2"
+          >
+            Tab 2
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      className="jsx-1195529549 kirk-tab-container"
-    >
       <div
-        className="jsx-1195529549 kirk-tab-relative"
+        className="jsx-3728584608 kirk-tab-container"
       >
-        <button
-          aria-controls="tab3_panel"
-          aria-selected="false"
-          className="jsx-1195529549 kirk-tab"
-          id="tab3"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="tab"
-          tabIndex={-1}
-          title="Tab 3"
+        <div
+          className="jsx-3728584608 kirk-tab-relative"
         >
-          Tab 3
-        </button>
+          <button
+            aria-controls="tab3_panel"
+            aria-selected="false"
+            className="jsx-3728584608 kirk-tab"
+            id="tab3"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            tabIndex={-1}
+            title="Tab 3"
+          >
+            Tab 3
+          </button>
+        </div>
       </div>
     </div>
   </div>
   <div
     aria-labelledby="tab1"
-    className="jsx-1195529549 kirk-tab-panel"
+    className="jsx-3728584608 kirk-tab-panel"
     hidden={false}
     id="tab1_panel"
     role="tabpanel"
@@ -94,14 +98,14 @@ exports[`Rendering testing should render properly 1`] = `
   </div>
   <div
     aria-labelledby="tab2"
-    className="jsx-1195529549 kirk-tab-panel"
+    className="jsx-3728584608 kirk-tab-panel"
     hidden={true}
     id="tab2_panel"
     role="tabpanel"
   />
   <div
     aria-labelledby="tab3"
-    className="jsx-1195529549 kirk-tab-panel"
+    className="jsx-3728584608 kirk-tab-panel"
     hidden={true}
     id="tab3_panel"
     role="tabpanel"

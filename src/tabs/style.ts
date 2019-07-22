@@ -1,14 +1,17 @@
 import css from 'styled-jsx/css'
-import { color, space, font } from '_utils/branding'
+import { color, componentSizes, font, space } from '_utils/branding'
 
 const bottomBorderWidth = '2px'
 const bottomBorderOffset = '1px'
-const badgeOffset = '2px'
 
 export default css`
+  .kirk-tablist-wrapper {
+    border-bottom: 1px solid ${color.border};
+  }
+
   .kirk-tablist {
     display: flex;
-    border-bottom: 1px solid ${color.border};
+    margin: 0 auto -${bottomBorderOffset};
     overflow: auto; // Make tabs scrollable horizontally
     // Remove scrollbar visually
     -ms-overflow-style: none; // IE 10+
@@ -19,7 +22,12 @@ export default css`
     display: none;
   }
 
+  .kirk-tablist-wrapped {
+    width: ${componentSizes.wrapper};
+  }
+
   .kirk-tab {
+    width: 100%;
     outline: none;
     padding: ${space.m};
     padding-bottom: calc(${space.m} + ${bottomBorderWidth});
@@ -60,14 +68,17 @@ export default css`
 
   .kirk-tab-selected {
     border-bottom: 2px solid ${color.primaryText};
-    margin-bottom: -${bottomBorderOffset};
   }
 
   .kirk-tab-selected .kirk-tab {
     color: ${color.primaryText};
     // Re-position selected tab so that the active border is over the generic border
     // This is not working so far with scrollable tabs because of the overflow property
-    padding-bottom: calc(${space.m} + ${bottomBorderOffset});
+    padding-bottom: calc(${space.m});
+  }
+
+  .kirk-tab:not(.kirk-tab-selected) {
+    margin-bottom: ${bottomBorderOffset};
   }
 
   .kirk-tab:not(.kirk-tab-selected):hover {
@@ -77,7 +88,6 @@ export default css`
   :global(.kirk-tab-container .kirk-badge) {
     position: absolute;
     z-index: 1;
-    top: calc(-1 * (${space.m} + ${badgeOffset}));
-    right: calc(-1 * (${space.m} + ${badgeOffset}));
+    top: calc(-1 * (${space.m}));
   }
 `

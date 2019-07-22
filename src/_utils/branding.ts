@@ -96,6 +96,7 @@ export const delay = {
 export const componentSizes = {
   timeWidth: '64px',
   buttonIconSize: '48px',
+  wrapper: '662px',
 }
 
 export const modalSize = {

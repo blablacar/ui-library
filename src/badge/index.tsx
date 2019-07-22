@@ -16,10 +16,10 @@ const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
   }
 
   return (
-    <div className={cc(['kirk-badge', className])} aria-label={ariaLabel}>
+    <span className={cc(['kirk-badge', className])} aria-label={ariaLabel}>
       <span aria-hidden={!!ariaLabel}>{children}</span>
       <style jsx>{style}</style>
-    </div>
+    </span>
   )
 }
 
