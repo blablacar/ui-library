@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v8.8.0 (24/07/2019)
+
 - **[NEW]** Add new `CreditCardIcon`, `ExclamationIcon`, `GiftIcon`, `idCheckIcon`
 - **[UPDATE]** `Badge` now contained within a `span` instead of a `div`
 - **[FIX]** Selected tab highlight correctly displayed in `Tabs` with scrollable status
