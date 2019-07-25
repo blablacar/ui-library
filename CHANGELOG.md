@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix pointy corner on active `Message` (from top-right to bottom-right)
 - [...]
 
 # v8.8.0 (24/07/2019)
