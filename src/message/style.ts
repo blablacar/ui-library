@@ -24,7 +24,7 @@ export default css`
     background: ${color.primaryText};
     color: ${color.white};
     border-top-left-radius: 20px;
-    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .kirk-message cite {
