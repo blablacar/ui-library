@@ -8,7 +8,6 @@ import CheckIcon from 'icon/checkIcon'
 
 export interface AvatarInterface {
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly image?: string
   readonly alt?: string
   readonly isSmall?: boolean
@@ -42,7 +41,6 @@ const Avatar = ({
   isMedium,
   isLarge,
   className,
-  extraClassName,
   image,
   alt = '',
   isIdChecked,
@@ -53,7 +51,6 @@ const Avatar = ({
     className={cc([
       prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
       className,
-      extraClassName,
       'kirk-avatar',
     ])}
   >

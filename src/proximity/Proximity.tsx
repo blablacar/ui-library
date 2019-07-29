@@ -46,13 +46,12 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
 
 interface ProximityProps {
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly value: Distances
   readonly title?: string
 }
 
-const Proximity = ({ value, title, className, extraClassName }: ProximityProps) => (
-  <div className={cc(['kirk-proximity', className, extraClassName])}>
+const Proximity = ({ value, title, className }: ProximityProps) => (
+  <div className={cc(['kirk-proximity', className])}>
     {[Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance => (
       <ProximityIcon key={distance} size={size} {...getColorAndTitle(distance, value, title)} />
     ))}

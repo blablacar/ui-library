@@ -14,22 +14,14 @@ export const renderSecondary = (href?: string, secondaryText?: string) =>
 
 interface Caption {
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly children: any
   readonly isoDate: string
   readonly href?: string
   readonly secondaryText?: string
 }
 
-const Caption = ({
-  className,
-  extraClassName,
-  children,
-  href,
-  secondaryText,
-  isoDate,
-}: Caption) => (
-  <div className={cc(['kirk-caption', className, extraClassName])}>
+const Caption = ({ className, children, href, secondaryText, isoDate }: Caption) => (
+  <div className={cc(['kirk-caption', className])}>
     <time dateTime={isoDate || null}>{children}</time>
     {secondaryText && <span> - {renderSecondary(href, secondaryText)}</span>}
   </div>

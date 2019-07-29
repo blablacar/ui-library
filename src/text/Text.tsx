@@ -24,7 +24,6 @@ export enum TextTagType {
 
 interface TextProps {
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType
   readonly tag?: TextTagType
@@ -44,7 +43,6 @@ const Text = ({
   textColor,
   newlineToBr = true,
   role,
-  extraClassName,
 }: TextProps) => {
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
@@ -52,11 +50,7 @@ const Text = ({
   const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
 
   return (
-    <Tag
-      role={role}
-      className={cc([baseClassName, displayClassName, className, extraClassName])}
-      {...inlineStyle}
-    >
+    <Tag role={role} className={cc([baseClassName, displayClassName, className])} {...inlineStyle}>
       {typeof children === 'string' && newlineToBr ? replaceNewLineWithBR(children) : children}
     </Tag>
   )
