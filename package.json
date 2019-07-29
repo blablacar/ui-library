@@ -94,12 +94,12 @@
     "lodash.isstring": "4.0.1",
     "react-day-picker": "7.3.0",
     "react-transition-group": "2.6.1",
-    "styled-components": "4.3.2",
     "styled-jsx": "3.2.1"
   },
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
   },
   "husky": {
     "hooks": {
