@@ -1,66 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
 }
 
@@ -76,18 +76,18 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
     </div>
@@ -96,12 +96,12 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
     className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Data info
     </div>
@@ -125,7 +125,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
       width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
-      
+
       <path
         className="jsx-2416231148 jsx-3125355633"
         d="M6.5 12.5l4 4 8-8"
@@ -142,66 +142,66 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 `;
 
 exports[`ItemCheckbox Should display a Loader when the component is in loading status 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
 }
 
@@ -248,18 +248,18 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
     </div>
@@ -268,12 +268,12 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Data info
     </div>
@@ -306,7 +306,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
         width={24}
         xmlns="http://www.w3.org/2000/svg"
       >
-        
+
         <circle
           className="jsx-2931153156"
           cx="33"
@@ -322,66 +322,66 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 `;
 
 exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
 }
 
@@ -397,18 +397,18 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
     </div>
@@ -417,12 +417,12 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
     className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Data info
     </div>
@@ -446,7 +446,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
       width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
-      
+
       <circle
         className="jsx-2931153156"
         cx="33"
