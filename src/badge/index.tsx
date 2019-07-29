@@ -1,26 +1,23 @@
-import React from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import { color } from '_utils/branding'
+import styled from 'styled-components'
+import Badge from './Badge'
 
-import style from 'badge/style'
-
-interface BadgeProps {
-  readonly className?: Classcat.Class
-  readonly children: string | JSX.Element | number
-  readonly ariaLabel?: string
-}
-
-const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
-  if (isEmpty(children)) {
-    return null
+const StyledBadge = styled(Badge)`
+  & {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid ${color.white};
+    background-color: ${color.danger};
+    color: ${color.white};
   }
+`
 
-  return (
-    <span className={cc(['kirk-badge', className])} aria-label={ariaLabel}>
-      <span aria-hidden={!!ariaLabel}>{children}</span>
-      <style jsx>{style}</style>
-    </span>
-  )
-}
-
-export default Badge
+export default StyledBadge

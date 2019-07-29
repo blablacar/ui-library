@@ -42,11 +42,10 @@ exports[`Should render properly with read messages 1`] = `
     className="jsx-1542968643 kirk-item-rightAddon"
   >
     <div
-      className="jsx-1920606029 kirk-avatar--image kirk-avatar"
+      className="kirk-avatar--image sc-bwzfXH fylziy kirk-avatar"
     >
       <img
         alt=""
-        className="jsx-1920606029"
         src="http_test.picture.url"
       />
     </div>
@@ -120,11 +119,10 @@ exports[`Should render properly with unread messages 1`] = `
     className="jsx-1542968643 kirk-item-rightAddon"
   >
     <div
-      className="jsx-1920606029 kirk-avatar--image kirk-avatar"
+      className="kirk-avatar--image sc-bwzfXH fylziy kirk-avatar"
     >
       <img
         alt=""
-        className="jsx-1920606029"
         src="http_test.picture.url"
       />
     </div>
