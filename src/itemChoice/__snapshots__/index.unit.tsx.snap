@@ -107,14 +107,14 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name sc-bdVaJa gRXcCx"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
@@ -148,7 +148,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c1"
@@ -172,7 +172,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
@@ -196,7 +196,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
       className="kirk-loader c2"
@@ -338,14 +338,14 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name sc-bdVaJa gRXcCx"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
@@ -379,7 +379,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c1"
@@ -403,7 +403,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
@@ -427,7 +427,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
       className="kirk-loader kirk-loader--done c2"
@@ -540,14 +540,14 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name sc-bdVaJa gRXcCx"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
@@ -581,7 +581,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c1"
@@ -605,7 +605,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
@@ -629,7 +629,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -663,7 +663,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -765,7 +765,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 }
 
 <button
-  className="jsx-1542968643 kirk-item kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item-choice custom-class-name sc-bdVaJa gRXcCx"
   disabled={true}
   onBlur={null}
   onClick={null}
@@ -774,7 +774,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
@@ -808,7 +808,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c1"
@@ -832,7 +832,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
@@ -856,7 +856,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -890,7 +890,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -992,13 +992,13 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
 }
 
 <button
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name sc-bdVaJa gRXcCx"
   disabled={false}
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
@@ -1032,7 +1032,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c1"
@@ -1056,7 +1056,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
@@ -1080,7 +1080,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -1114,7 +1114,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}

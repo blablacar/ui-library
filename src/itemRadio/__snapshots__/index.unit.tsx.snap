@@ -76,10 +76,10 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-radio custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -93,7 +93,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -107,7 +107,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={true}
@@ -254,10 +254,10 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-radio custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -271,7 +271,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -285,7 +285,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={false}
@@ -404,10 +404,10 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-radio custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -421,7 +421,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -435,7 +435,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={false}

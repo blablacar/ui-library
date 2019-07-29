@@ -162,11 +162,11 @@ exports[`Should render properly with read messages 1`] = `
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item sc-bdVaJa gRXcCx"
   href="http_test.url"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-titleStrong kirk-item-title c0"
@@ -199,7 +199,7 @@ exports[`Should render properly with read messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
       className="kirk-avatar--image c1 kirk-avatar"
@@ -211,7 +211,7 @@ exports[`Should render properly with read messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
@@ -399,11 +399,11 @@ exports[`Should render properly with unread messages 1`] = `
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item sc-bdVaJa gRXcCx"
   href="http_test.url"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-titleStrong kirk-item-title c0"
@@ -436,7 +436,7 @@ exports[`Should render properly with unread messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
       className="kirk-avatar--image c1 kirk-avatar"
@@ -448,7 +448,7 @@ exports[`Should render properly with unread messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}

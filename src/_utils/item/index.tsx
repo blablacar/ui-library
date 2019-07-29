@@ -1,171 +1,83 @@
-import React from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, space } from '_utils/branding'
 
-import { color } from '_utils/branding'
-import style from './style'
-import Text, { TextTagType, TextDisplayType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
+import Item from './Item'
 
-export enum ItemStatus {
-  DEFAULT = 'default',
-  LOADING = 'loading',
-  CHECKED = 'checked',
-}
-
-export interface ItemProps {
-  readonly chevron?: boolean
-  readonly className?: Classcat.Class
-  readonly href?: string | JSX.Element
-  readonly highlighted?: boolean
-  readonly isClickable?: boolean
-  readonly leftTitle?: string
-  readonly leftTitleDisplay?: TextDisplayType
-  readonly leftTitleColor?: string
-  readonly leftBody?: string | React.ReactNode
-  readonly leftBodyDisplay?: TextDisplayType
-  readonly leftBodyColor?: string
-  readonly leftBodyAnnotation?: string | React.ReactNode
-  readonly leftBodyAnnotationDisplay?: TextDisplayType
-  readonly leftBodyAnnotationColor?: string
-  readonly leftAddon?: React.ReactNode
-  readonly rightTitle?: string
-  readonly rightTitleDisplay?: TextDisplayType
-  readonly rightTitleColor?: string
-  readonly rightBody?: string | React.ReactNode
-  readonly rightBodyDisplay?: TextDisplayType
-  readonly rightBodyColor?: string
-  readonly rightAddon?: React.ReactNode
-  readonly tag?: JSX.Element
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-}
-
-const Item = ({
-  chevron,
-  className,
-  href,
-  onClick,
-  onBlur,
-  onFocus,
-  onMouseDown,
-  highlighted,
-  isClickable,
-  leftTitle,
-  leftTitleDisplay = TextDisplayType.TITLE,
-  leftTitleColor,
-  leftBody,
-  leftBodyDisplay = TextDisplayType.BODY,
-  leftBodyColor,
-  leftBodyAnnotation,
-  leftBodyAnnotationDisplay,
-  leftBodyAnnotationColor,
-  leftAddon,
-  rightTitle,
-  rightTitleDisplay = TextDisplayType.TITLE,
-  rightTitleColor,
-  rightBody,
-  rightBodyDisplay = TextDisplayType.BODY,
-  rightBodyColor,
-  rightAddon,
-  tag = <div />,
-}: ItemProps) => {
-  let Tag = tag.type
-  let tagProps = tag.props
-  if (href) {
-    if (typeof href !== 'string') {
-      Tag = href.type
-      tagProps = { ...tagProps, ...href.props }
-    } else {
-      Tag = 'a'
-      tagProps = { href }
-    }
+const StyledItem = styled(Item)`
+  & {
+    position: relative;
+    display: flex;
+    padding: 0;
+    padding-top: ${space.l};
+    padding-bottom: ${space.l};
+    align-items: center;
+    flex: 1;
+    border: 0;
+    background: none;
   }
-  const hasRightText = rightTitle || rightBody
+  &.kirk-item--clickable:hover {
+    background: ${color.hover};
+  }
 
-  return (
-    <Tag
-      {...tagProps}
-      onClick={onClick}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onMouseDown={onMouseDown}
-      className={cc([
-        'kirk-item',
-        {
-          'kirk-item--highlighted': highlighted,
-          'kirk-item--clickable': isClickable,
-        },
-        className,
-      ])}
-    >
-      {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
-      <div className="kirk-item-leftText">
-        {leftTitle && (
-          <Text
-            className={leftBody ? 'kirk-item-title' : null}
-            display={leftTitleDisplay}
-            textColor={leftTitleColor}
-            tag={TextTagType.DIV}
-          >
-            {leftTitle}
-          </Text>
-        )}
-        {leftBody && (
-          <Text
-            className="kirk-item-body"
-            display={leftBodyDisplay}
-            textColor={leftBodyColor}
-            tag={TextTagType.DIV}
-          >
-            {leftBody}
-          </Text>
-        )}
-        {leftBodyAnnotation && (
-            <Text
-                className="kirk-item-body-annotation"
-                display={leftBodyAnnotationDisplay}
-                textColor={leftBodyAnnotationColor}
-                tag={TextTagType.DIV}
-            >
-              {leftBodyAnnotation}
-            </Text>
-        )}
-      </div>
-      {hasRightText && (
-        <div className="kirk-item-rightText">
-          {rightTitle && (
-            <Text
-              className={rightBody ? 'kirk-item-title' : null}
-              display={rightTitleDisplay}
-              textColor={rightTitleColor}
-              tag={TextTagType.DIV}
-            >
-              {rightTitle}
-            </Text>
-          )}
-          {rightBody && (
-            <Text
-              className="kirk-item-body"
-              display={rightBodyDisplay}
-              textColor={rightBodyColor}
-              tag={TextTagType.DIV}
-            >
-              {rightBody}
-            </Text>
-          )}
-        </div>
-      )}
-      {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
-      {chevron && (
-        <div className="kirk-item-rightAddon">
-          {<ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />}
-        </div>
-      )}
-      <style jsx>{style}</style>
-    </Tag>
-  )
-}
+  a& {
+    background: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
+  /* Button tag fixes */
+  button& {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
 
-export default Item
+  &:disabled {
+    cursor: default;
+  }
+
+  /* Text areas */
+  .kirk-item-leftText {
+    flex: 1;
+  }
+
+  .kirk-item-rightText {
+    margin-left: ${space.l};
+    text-align: right;
+  }
+
+  /* Text */
+  .kirk-item-title--withBody {
+    margin-bottom: ${space.s};
+  }
+
+  /* Addons */
+  .kirk-item-leftAddon,
+  .kirk-item-rightAddon {
+    display: inline-flex;
+    min-width: 24px;
+    align-items: center;
+  }
+
+  .kirk-item-leftAddon {
+    margin-right: ${space.l};
+  }
+
+  .kirk-item-rightAddon {
+    margin-left: ${space.l};
+  }
+
+  /* Highlighted state */
+  &.kirk-item--highlighted .kirk-text-title {
+    color: ${color.primary};
+  }
+`
+
+export { ItemStatus, ItemProps } from './Item'
+export default StyledItem

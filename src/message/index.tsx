@@ -47,5 +47,4 @@ const StyledMessage = styled(Message)`
   }
 `
 
-export { MessageProps } from './Message'
 export default StyledMessage

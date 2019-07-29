@@ -76,10 +76,10 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -93,7 +93,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -107,7 +107,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={true}
@@ -248,10 +248,10 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -265,7 +265,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -279,7 +279,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={false}
@@ -397,10 +397,10 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 }
 
 <label
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name sc-bdVaJa gRXcCx"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
       className="kirk-text kirk-text-title kirk-item-title c0"
@@ -414,7 +414,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
       className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
@@ -428,7 +428,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <input
       checked={false}

@@ -83,10 +83,10 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio"
+      className="kirk-item kirk-item--clickable kirk-item-radio sc-bdVaJa gRXcCx"
     >
       <div
-        className="jsx-1542968643 kirk-item-leftText"
+        className="kirk-item-leftText"
       >
         <div
           className="kirk-text kirk-text-body kirk-item-body c0"
@@ -95,7 +95,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         </div>
       </div>
       <div
-        className="jsx-1542968643 kirk-item-rightAddon"
+        className="kirk-item-rightAddon"
       >
         <input
           checked={false}
@@ -131,10 +131,10 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio"
+      className="kirk-item kirk-item--clickable kirk-item-radio sc-bdVaJa gRXcCx"
     >
       <div
-        className="jsx-1542968643 kirk-item-leftText"
+        className="kirk-item-leftText"
       >
         <div
           className="kirk-text kirk-text-body kirk-item-body c0"
@@ -143,7 +143,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         </div>
       </div>
       <div
-        className="jsx-1542968643 kirk-item-rightAddon"
+        className="kirk-item-rightAddon"
       >
         <input
           checked={true}
@@ -186,10 +186,10 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio"
+      className="kirk-item kirk-item--clickable kirk-item-radio sc-bdVaJa gRXcCx"
     >
       <div
-        className="jsx-1542968643 kirk-item-leftText"
+        className="kirk-item-leftText"
       >
         <div
           className="kirk-text kirk-text-body kirk-item-body c0"
@@ -198,7 +198,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         </div>
       </div>
       <div
-        className="jsx-1542968643 kirk-item-rightAddon"
+        className="kirk-item-rightAddon"
       >
         <input
           checked={false}
