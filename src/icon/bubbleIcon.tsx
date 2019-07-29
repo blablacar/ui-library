@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const BubbleIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -8,6 +9,6 @@ export const BubbleIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-BubbleIcon.defaultProps = BaseIcon.defaultProps
+BubbleIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(BubbleIcon)

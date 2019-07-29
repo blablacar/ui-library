@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const CreditCardIcon = (props: Icon) => (
     <BaseIcon {...props}>
@@ -29,6 +30,6 @@ export const CreditCardIcon = (props: Icon) => (
     </BaseIcon>
 )
 
-CreditCardIcon.defaultProps = BaseIcon.defaultProps
+CreditCardIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(CreditCardIcon)

@@ -64,6 +64,17 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
   font-weight: 500;
 }
 
+.c2 {
+  display: inline-block;
+  position: relative;
+}
+
+.c2 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   display: inline-block;
   line-height: 0;
@@ -125,7 +136,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           >
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -139,7 +150,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -153,7 +164,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={false}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#F78B00"
               height="20px"
               viewBox="0 0 20 20"
@@ -217,7 +228,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           >
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -231,7 +242,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -245,7 +256,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={false}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#F78B00"
               height="20px"
               viewBox="0 0 20 20"
@@ -309,7 +320,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           >
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -323,7 +334,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={true}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#EDEDED"
               height="20px"
               viewBox="0 0 20 20"
@@ -337,7 +348,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
             </svg>
             <svg
               aria-hidden={false}
-              className="kirk-icon"
+              className="kirk-icon c2"
               fill="#F78B00"
               height="20px"
               viewBox="0 0 20 20"

@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const LadyIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -17,6 +18,6 @@ export const LadyIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-LadyIcon.defaultProps = BaseIcon.defaultProps
+LadyIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(LadyIcon)

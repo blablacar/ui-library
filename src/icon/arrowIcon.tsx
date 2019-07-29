@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 interface ArrowIconProps extends Icon {
   readonly right?: boolean
@@ -23,7 +24,7 @@ export const ArrowIcon = (props: ArrowIconProps) => (
 )
 
 ArrowIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   right: false,
 }
 

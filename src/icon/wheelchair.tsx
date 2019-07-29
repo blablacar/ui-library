@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const WheelchairIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 100 100">
@@ -11,6 +12,6 @@ export const WheelchairIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-WheelchairIcon.defaultProps = BaseIcon.defaultProps
+WheelchairIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(WheelchairIcon)

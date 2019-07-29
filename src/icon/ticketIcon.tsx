@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const TicketIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 24 15">
@@ -11,6 +12,6 @@ export const TicketIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-TicketIcon.defaultProps = BaseIcon.defaultProps
+TicketIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(TicketIcon)

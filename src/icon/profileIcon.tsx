@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const ProfileIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -11,6 +12,6 @@ export const ProfileIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-ProfileIcon.defaultProps = BaseIcon.defaultProps
+ProfileIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(ProfileIcon)
