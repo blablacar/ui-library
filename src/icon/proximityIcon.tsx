@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const ProximityIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 20 20">
@@ -10,6 +11,6 @@ export const ProximityIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-ProximityIcon.defaultProps = BaseIcon.defaultProps
+ProximityIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(ProximityIcon)

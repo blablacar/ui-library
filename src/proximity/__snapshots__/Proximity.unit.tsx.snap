@@ -1,12 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should highlight CLOSE and have a title 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="kirk-proximity"
 >
   <svg
     aria-hidden={false}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#5DD167"
     height="20px"
     viewBox="0 0 20 20"
@@ -22,7 +33,7 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   </svg>
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
@@ -36,7 +47,7 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   </svg>
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
@@ -52,12 +63,23 @@ exports[`Should highlight CLOSE and have a title 1`] = `
 `;
 
 exports[`Should highlight FAR and have a title 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="kirk-proximity"
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
@@ -71,7 +93,7 @@ exports[`Should highlight FAR and have a title 1`] = `
   </svg>
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
@@ -85,7 +107,7 @@ exports[`Should highlight FAR and have a title 1`] = `
   </svg>
   <svg
     aria-hidden={false}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#F78B00"
     height="20px"
     viewBox="0 0 20 20"
@@ -103,12 +125,23 @@ exports[`Should highlight FAR and have a title 1`] = `
 `;
 
 exports[`Should highlight MIDDLE without a title 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="kirk-proximity"
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
@@ -122,7 +155,7 @@ exports[`Should highlight MIDDLE without a title 1`] = `
   </svg>
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#FFCA0C"
     height="20px"
     viewBox="0 0 20 20"
@@ -136,7 +169,7 @@ exports[`Should highlight MIDDLE without a title 1`] = `
   </svg>
   <svg
     aria-hidden={true}
-    className="kirk-icon"
+    className="kirk-icon c0"
     fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"

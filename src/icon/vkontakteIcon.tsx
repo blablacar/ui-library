@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
 export const VkontakteIcon = (props: Icon) => (
@@ -14,7 +15,7 @@ export const VkontakteIcon = (props: Icon) => (
 )
 
 VkontakteIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   iconColor: color.vkBrand,
 }
 

@@ -1,67 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemChoice Should display a Loader when the component is in loading status 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 <a
@@ -76,7 +87,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -109,7 +120,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -119,7 +130,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -133,7 +144,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -143,7 +154,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -167,7 +178,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning"
+        className="kirk-icon kirk-icon-circle spinning c0"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -190,67 +201,78 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 `;
 
 exports[`ItemChoice Should display a done Loader when the component is in checked status 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 <a
@@ -265,7 +287,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -298,7 +320,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -308,7 +330,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -322,7 +344,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -332,7 +354,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -356,7 +378,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-check validate"
+        className="kirk-icon kirk-icon-check validate c0"
         fill="#FFF"
         height={12}
         viewBox="0 0 24 24"
@@ -381,67 +403,78 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 `;
 
 exports[`ItemChoice Should forward its props to the Item component 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 <a
@@ -456,7 +489,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -489,7 +522,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -499,7 +532,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -513,7 +546,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -523,7 +556,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -538,7 +571,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -572,7 +605,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -595,67 +628,78 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 `;
 
 exports[`ItemChoice Should support a disabled state 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 <button
@@ -672,7 +716,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -705,7 +749,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
       style={
         Object {
           "color": "#DDD",
@@ -715,7 +759,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#DDD",
@@ -729,7 +773,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
       style={
         Object {
           "color": "#DDD",
@@ -739,7 +783,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#DDD",
@@ -754,7 +798,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -788,7 +832,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#DDD"
       height={24}
       viewBox="0 0 24 24"
@@ -811,67 +855,78 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 `;
 
 exports[`ItemChoice Should use a button tag if no href is given 1`] = `
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
 }
 
 <button
@@ -885,7 +940,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -918,7 +973,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c0"
+      className="kirk-text kirk-text-title kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -928,7 +983,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -942,7 +997,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -952,7 +1007,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c0"
+      className="kirk-text kirk-text-body kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -967,7 +1022,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -1001,7 +1056,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c0"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"

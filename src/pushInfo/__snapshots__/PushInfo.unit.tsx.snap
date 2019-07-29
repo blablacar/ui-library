@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should also have the correct icon. 1`] = `
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,7 +77,7 @@ exports[`Should also have the correct icon. 1`] = `
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon"
+      className="kirk-icon c1"
       fill="#5DD167"
       height={24}
       viewBox="0 0 20 20"

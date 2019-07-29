@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import css from 'styled-jsx/css'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 interface CheckProps extends Icon {
   readonly absolute?: boolean
@@ -65,7 +66,7 @@ export const CheckIcon = (props: CheckProps) => (
 )
 
 CheckIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   absolute: false,
   validate: false,
   backgroundColor: 'transparent',

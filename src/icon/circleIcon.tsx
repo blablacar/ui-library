@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import css from 'styled-jsx/css'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 interface CircleProps extends Icon {
   readonly absolute?: boolean
@@ -85,7 +86,7 @@ export const CircleIcon = (props: CircleProps) => (
 )
 
 CircleIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   absolute: false,
   spinning: false,
   thin: false,

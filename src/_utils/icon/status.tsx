@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 
-import BaseIcon, { IconProps } from '_utils/icon'
+import BaseIcon from '_utils/icon'
 import { color } from '_utils/branding'
+import { BaseIconDefaultProps, IconProps } from '_utils/icon/BaseIcon'
 
 export enum status {
   ON = 'on',
@@ -35,7 +36,7 @@ const StatusIcon = (props: StatusProps) => {
 }
 
 StatusIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   status: status.DEFAULT,
 }
 

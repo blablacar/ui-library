@@ -64,6 +64,17 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
 >
@@ -107,7 +118,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-check"
+      className="kirk-icon kirk-icon-check c1"
       fill="#FFF"
       height={24}
       viewBox="0 0 24 24"
@@ -194,6 +205,17 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
 >
@@ -246,7 +268,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning"
+        className="kirk-icon kirk-icon-circle spinning c1"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -332,6 +354,17 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name"
 >
@@ -375,7 +408,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-circle"
+      className="kirk-icon kirk-icon-circle c1"
       fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
