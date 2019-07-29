@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css'
 import { color, radius, space, inputBorderSize, transition } from '_utils/branding'
-import { selectHeight } from 'selectField/style'
+import { selectHeight } from 'selectField/SelectField'
 
 export default css`
   :global(.kirk-phoneField-wrapper--inline) {
