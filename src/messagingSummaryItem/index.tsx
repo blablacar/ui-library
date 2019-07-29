@@ -1,54 +1,19 @@
-import React, {Fragment} from 'react'
-import style from './style'
-import Avatar from 'avatar'
-import {TextDisplayType} from "text"
-import Item from '_utils/item'
-import { color } from '_utils/branding'
+import styled from 'styled-components'
+import { space } from '_utils/branding'
 
-interface MessagingSummaryItemProps {
-  readonly url: string
-  readonly pictureUrl: string
-  readonly label: string
-  readonly subLabel: string|JSX.Element
-  readonly timeLabel: string
-  readonly hasUnreadMessages: boolean
-}
+import MessagingSummaryItem from './MessagingSummaryItem'
 
-const UNREAD_COLOR = color.primaryText
-const READ_COLOR = color.secondaryText
+const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
+  /* Overrides horizontal paddings from item styles. */
+  &.kirk-messaging-summary-item {
+    padding-left: ${space.xl};
+    padding-right: ${space.xl};
+  }
+  
+  & .kirk-messaging-summary-item-sub-label {
+    display: flex;
+    align-items: center;
+  }
+`
 
-const generateSubLabel = (subLabel:string|JSX.Element) : JSX.Element => (
-    <span className="kirk-messaging-summary-item-sub-label">
-      {subLabel}
-    </span>
-)
-
-const MessagingSummaryItem = ({
-  url,
-  pictureUrl,
-  label,
-  subLabel,
-  timeLabel,
-  hasUnreadMessages,
-}: MessagingSummaryItemProps) => (
-    <Fragment>
-      <Item
-        className={'kirk-messaging-summary-item'}
-        leftTitle={label}
-        leftTitleDisplay={TextDisplayType.TITLESTRONG}
-        leftTitleColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
-        leftBody={generateSubLabel(subLabel)}
-        leftBodyDisplay={TextDisplayType.TITLE}
-        leftBodyColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
-        leftBodyAnnotation={timeLabel}
-        leftBodyAnnotationDisplay={TextDisplayType.CAPTION}
-        rightAddon={<Avatar image={pictureUrl} />}
-        chevron
-        href={url}
-        isClickable
-      />
-      <style jsx>{style}</style>
-  </Fragment>
-)
-
-export default MessagingSummaryItem
+export default StyledMessagingSummaryItem
