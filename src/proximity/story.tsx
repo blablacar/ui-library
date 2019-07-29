@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select } from '@storybook/addon-knobs'
 
-import Proximity, { Distances } from 'proximity'
+import Proximity, { Distances } from './index'
 
 const stories = storiesOf('Proximity', module)
 stories.addDecorator(withKnobs)
