@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Message from 'message'
+import Message from './Message'
 
 it('Should have the correct attributes and text.', () => {
   const message = shallow(
