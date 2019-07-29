@@ -1,331 +1,178 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, space, font, radius, transition, inputBorderSize } from '_utils/branding'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import style from 'textField/style'
-import Button from 'button'
-import CrossIcon from 'icon/crossIcon'
-import EyeIcon from 'icon/eyeIcon'
-import isEmpty from 'lodash.isempty'
+import Textfield, { inputTypes, inputModes } from './TextField'
 
-export type textfield = HTMLInputElement | HTMLTextAreaElement
-
-export enum inputTypes {
-  TEXT = 'text',
-  PASSWORD = 'password',
-  EMAIL = 'email',
-  NUMBER = 'number',
-  SEARCH = 'search',
-  TEL = 'tel',
-}
-
-export enum inputModes {
-  NONE = 'none',
-  TEXT = 'text',
-  DECIMAL = 'decimal',
-  NUMERIC = 'numeric',
-  TEL = 'tel',
-  SEARCH = 'search',
-  EMAIL = 'email',
-  URL = 'url',
-}
-
-export interface CommonFormFields {
-  name: string
-  id?: string
-  type?: inputTypes
-  placeholder?: string
-  maxLength?: number
-  autoCorrect?: 'on' | 'off'
-  autoComplete?: 'on' | 'off'
-  disabled?: boolean
-  readOnly?: boolean
-  autoFocus?: boolean
-  required?: boolean
-  title?: string
-  onFocus?: (
-    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
-  ) => void
-  onBlur?: (
-    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
-  ) => void
-}
-
-type errorField = string | JSX.Element
-
-export interface TextFieldProps extends CommonFormFields {
-  isTextArea?: boolean
-  defaultValue?: string
-  labelledBy?: string
-  onChange?: (obj: OnChangeParameters) => void
-  onClear?: () => void
-  className?: Classcat.Class
-  error?: errorField
-  addon?: JSX.Element
-  label?: string
-  buttonTitle?: string
-  focus?: boolean
-  inputMode?: inputModes
-  pattern?: string
-  inputRef?: (input: textfield) => void
-  format?: (value: string, previousValue: string) => string
-  focusBorder?: boolean
-}
-
-interface FormAttributes extends CommonFormFields {
-  value: string
-  ['aria-invalid']?: 'true' | 'false'
-  ['aria-labelledby']?: string
-  inputMode?: string
-  pattern?: string
-  ref?: (input: textfield) => void
-  onChange?: (event: React.ChangeEvent<textfield>) => void
-}
-
-export interface TextFieldState {
-  readonly value: string
-  readonly previousValue: string
-  readonly showPassword: boolean
-  readonly hasFocus: boolean
-}
-
-const DisplayError = (error: errorField) => {
-  const className = 'kirk-error-message'
-
-  return React.isValidElement(error) ? (
-    React.cloneElement(error, { className } as Object)
-  ) : (
-    <span role="alert" className={className}>
-      {error}
-    </span>
-  )
-}
-
-export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
-  private input: HTMLInputElement | HTMLTextAreaElement
-  static defaultProps: Partial<TextFieldProps> = {
-    inputRef() {},
-    onClear() {},
-    onFocus() {},
-    onBlur() {},
-    type: inputTypes.TEXT,
-    format: (value, previousValue) => value,
-    focusBorder: true,
+const StyledTextfield = styled(Textfield)`
+  & {
+    position: relative;
+    box-sizing: border-box;
   }
 
-  static INPUT_TYPES = inputTypes
-  static INPUT_MODES = inputModes
-
-  state = {
-    value: this.props.defaultValue,
-    previousValue: '',
-    showPassword: false,
-    hasFocus: false,
+  & .kirk-textField-wrapper {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    color: ${color.primaryText};
+    background-color: ${color.inputBackground};
+    border-radius: ${radius.l};
+    border: solid ${inputBorderSize.default} ${color.inputBorder};
+    box-shadow: none;
   }
 
-  clearButton: HTMLButtonElement = null
+  & .kirk-textField-wrapper--hasFocus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+  }
 
-  componentDidMount() {
-    if (this.input && this.props.focus) {
-      this.input.focus()
+  & .kirk-textField-wrapper--hasFocus input,
+  & .kirk-textField-wrapper--hasFocus textarea {
+    padding: calc(${space.l} + ${inputBorderSize.default} - ${inputBorderSize.focus});
+  }
+
+  & .kirk-textField-wrapper--hasFocus input {
+    padding-right: 0;
+  }
+
+  & input,
+  & textarea {
+    appearance: none;
+    border: 0;
+    border-radius: ${radius.l};
+    background-color: ${color.inputBackground};
+    color: ${color.primaryText};
+    flex: 1;
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+    width: 100%;
+    caret-color: ${color.inputCaret};
+    padding: ${space.l};
+  }
+
+  & input {
+    padding-right: 0;
+    /*
+    Use margin-right instead of padding-right to fix a cursor bug
+    when calling setSelectionRange on Safari Mobile [BBCSPA-1030]
+    */
+    margin-right: 48px;
+  }
+
+  & input:not(:first-child),
+  & textarea:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 0;
+  }
+
+  & input::placeholder,
+  & textarea::placeholder {
+    color: ${color.inputPlaceholder};
+  }
+
+  & input::-ms-clear {
+    display: none;
+  }
+
+  & input[type='number']::-webkit-outer-spin-button,
+  & input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  & input[type='number'] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+  }
+
+  & input[type='search'] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  & input[type='number'],
+  & input[type='search'] {
+    box-shadow: none;
+  }
+
+  & textarea {
+    min-height: 150px;
+  }
+
+  & input:focus,
+  & textarea:focus {
+    border-color: ${color.inputBorder};
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.kirk-error .kirk-textField-wrapper {
+    background: ${color.inputError};
+    border: solid 1px ${color.inputError};
+    animation: textFieldError ${transition.duration.fast} ease-in-out;
+  }
+
+  &.kirk-error input,
+  &.kirk-error textarea {
+    background-color: ${color.inputError};
+  }
+
+  &.kirk-error .kirk-error-message {
+    color: ${color.danger};
+    display: block;
+    padding: ${space.m};
+  }
+
+  & label {
+    color: ${color.primaryText};
+    padding: 0 ${space.m} ${space.s} ${space.m};
+  }
+
+  & .kirk-button {
+    background-color: transparent;
+    color: ${color.secondaryText};
+    height: auto;
+  }
+
+  & .kirk-textField-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  & .kirk-textField-button[hidden] {
+    /* we use visiblity hidden instead of display none to resolve a display glitch
+    on Safari Mobile when clearing input value and hiding button simultaneously */
+    visibility: hidden;
+  }
+
+  &.kirk-disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @keyframes textFieldError {
+    20% {
+      margin-left: -10px;
+      margin-right: 10px;
+    }
+    40% {
+      margin-left: 10px;
+      margin-right: -10px;
+    }
+    60% {
+      margin-left: -5px;
+      margin-right: 5px;
+    }
+    80% {
+      margin-left: 5px;
+      margin-right: -5px;
+    }
+    100% {
+      margin-left: 0px;
+      margin-right: 0px;
     }
   }
+`
 
-  componentWillReceiveProps({ defaultValue, focus }: TextFieldProps) {
-    if (this.props.defaultValue !== defaultValue) {
-      this.setState({
-        value: defaultValue,
-        previousValue: this.state.value,
-      })
-    }
-    if (focus && this.props.focus !== focus) {
-      this.input.focus()
-    }
-  }
-
-  onTextFieldChange = (event: React.ChangeEvent<textfield>) => {
-    this.setState(
-      {
-        value: this.props.format(event.target.value, this.state.value),
-        previousValue: this.state.value,
-      },
-      this.onChange,
-    )
-
-    if (event.currentTarget.value === '') {
-      this.props.onClear()
-    }
-  }
-
-  onChange = () => {
-    this.props.onChange({
-      name: this.props.name,
-      value: this.state.value,
-    })
-  }
-
-  onFocus = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
-    this.setState({
-      hasFocus: true,
-    })
-    this.props.onFocus(event)
-  }
-
-  onBlur = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
-    if (!event.relatedTarget || event.relatedTarget !== this.clearButton) {
-      this.setState({
-        hasFocus: false,
-      })
-      this.props.onBlur(event)
-    }
-  }
-
-  clearValue = () => {
-    this.setState(
-      {
-        value: '',
-        previousValue: this.state.value,
-      },
-      () => {
-        this.input.focus()
-        this.onChange()
-        this.props.onClear()
-      },
-    )
-  }
-
-  toggleShowPassword = () => {
-    this.setState(({ showPassword }) => {
-      this.input.focus()
-      return { showPassword: !showPassword }
-    })
-  }
-
-  ref = (input: textfield) => {
-    this.input = input
-    this.props.inputRef(input)
-  }
-
-  render() {
-    const {
-      isTextArea,
-      addon,
-      type,
-      placeholder,
-      name,
-      id,
-      labelledBy,
-      label,
-      className,
-      error,
-      disabled,
-      readOnly,
-      onFocus,
-      onBlur,
-      autoFocus,
-      required,
-      maxLength,
-      autoCorrect,
-      autoComplete,
-      title,
-      buttonTitle,
-      format,
-      inputMode,
-      pattern,
-      focusBorder,
-    } = this.props
-    const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
-
-    const attrs: FormAttributes = {
-      type,
-      placeholder,
-      name,
-      id,
-      'aria-labelledby': labelledBy,
-      value,
-      maxLength,
-      autoComplete,
-      autoCorrect,
-      title,
-      inputMode,
-      pattern,
-      // modifiers
-      disabled,
-      readOnly,
-      required,
-      autoFocus,
-      // actions
-      onFocus,
-      onBlur,
-      onChange: this.onTextFieldChange,
-      ref: this.ref,
-    }
-
-    if (error) {
-      attrs['aria-invalid'] = 'true'
-    }
-
-    const iconProps = {
-      iconColor: color.secondaryText,
-      size: '18',
-    }
-
-    if (type === 'number') {
-      // Display numeric keyboard on iOS
-      attrs.pattern = '[0-9]*'
-      attrs.inputMode = 'numeric'
-    }
-
-    const buttonOnClick = type !== 'password' ? this.clearValue : this.toggleShowPassword
-    const shouldDisplayButton = !isTextArea && !disabled && value
-
-    return (
-      <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
-        {label && <label htmlFor={id}>{label}</label>}
-        <div
-          className={cc([
-            'kirk-textField-wrapper',
-            {
-              'kirk-textField-wrapper--hasFocus': focusBorder && this.state.hasFocus,
-            },
-          ])}
-        >
-          {addon}
-          {isTextArea ? (
-            <textarea {...attrs} onFocus={this.onFocus} onBlur={this.onBlur} />
-          ) : (
-            <input
-              {...attrs}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              type={type === 'password' && this.state.showPassword ? 'text' : type}
-            />
-          )}
-          {shouldDisplayButton && (
-            <Button
-              className="kirk-textField-button"
-              status={Button.STATUS.UNSTYLED}
-              isBubble
-              onClick={buttonOnClick}
-              tabIndex="-1"
-              title={buttonTitle}
-              aria-hidden={isEmpty(buttonTitle)}
-              buttonRef={(elem: HTMLButtonElement) => {
-                this.clearButton = elem
-              }}
-            >
-              {type === 'password' ? (
-                <EyeIcon {...iconProps} off={this.state.showPassword} />
-              ) : (
-                <CrossIcon {...iconProps} />
-              )}
-            </Button>
-          )}
-        </div>
-        {Boolean(error) && DisplayError(error)}
-        <style jsx>{style}</style>
-      </div>
-    )
-  }
-}
+export { inputTypes, inputModes } from './TextField'
+export default StyledTextfield
