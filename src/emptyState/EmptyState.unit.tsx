@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import EmptyState from 'emptyState'
+import EmptyState from './EmptyState'
 import Title from 'title'
 import Button from 'button'
 
