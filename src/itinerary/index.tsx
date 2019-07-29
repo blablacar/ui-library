@@ -1,150 +1,196 @@
-import React from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
-import isString from 'lodash.isstring'
+import styled from 'styled-components'
+import { color, space, componentSizes } from '_utils/branding'
 
-import { color } from '_utils/branding'
-import Text, { TextDisplayType, TextTagType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
+import Itinerary from './Itinerary'
 
-import style from 'itinerary/style'
+const distanceFromHeight = '40px'
 
-interface ItineraryProps {
-  readonly places: Place[]
-  readonly className?: Classcat.Class
-  readonly fromAddon?: string
-  readonly toAddon?: string
-  readonly small?: boolean
-  readonly headline?: string
-}
+const StyledItinerary = styled(Itinerary)`
+  li {
+    position: relative;
+    list-style-type: none;
+  }
 
-const isNonEmptyString = (str: string) => isString(str) && str.trim().length > 0
+  & .kirk-itinerary-headline {
+    padding-bottom: ${space.l};
+  }
 
-const Itinerary = ({
-  className,
-  places,
-  fromAddon,
-  toAddon,
-  small = false,
-  headline = null,
-}: ItineraryProps) => {
+  & .kirk-itinerary-location-wrapper {
+    display: flex;
+    padding: ${space.m} 0;
+    width: 100%;
+  }
 
-  // Dislay itinerary as small if required or if we don't have time or subLabel for provided places
-  const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
+  & a.kirk-itinerary-location-wrapper {
+    background: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
 
-  return (
-    <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
-      {isNonEmptyString(headline) && (
-        <li className="kirk-itinerary-headline">
-          <Text display={TextDisplayType.TITLE}>{headline}</Text>
-        </li>
-      )}
-      {isNonEmptyString(fromAddon) && (
-        <li className="kirk-itinerary-fromAddon">
-          <Text display={TextDisplayType.CAPTION}>{fromAddon}</Text>
-        </li>
-      )}
-      {places.map((place, index) => {
-        let Component
-        let chevron = false
-        let hrefProps
-        let key
+  & button.kirk-itinerary-location-wrapper {
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    outline: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+    -webkit-touch-callout: none;
+  }
 
-        const link = place.href
-        const isLastPlace = places.length - 1 === index
+  & a.kirk-itinerary-location-wrapper:hover,
+  & button.kirk-itinerary-location-wrapper:hover {
+    background-color: ${color.tapHighlight}};
+  }
 
-        if (place.key && typeof place.key === 'string') {
-          key = place.key
-        } else if (typeof place.subLabel === 'string') {
-          key = `${place.mainLabel}-${place.subLabel}-${place.isoDate}`
-        } else {
-          key = `${place.mainLabel}-${place.isoDate}`
-        }
+  & .kirk-itinerary-location time {
+    min-width: ${componentSizes.timeWidth};
+  }
 
-        if (!isEmpty(link) && typeof link !== 'string') {
-          Component = link.type
-          chevron = true
-          hrefProps = {
-            ...link.props,
-            className: cc(['kirk-itinerary-location-wrapper', link.props.className]),
-          }
-        } else if (typeof link === 'string') {
-          Component = 'a'
-          chevron = true
-          hrefProps = {
-            href: place.href,
-            className: 'kirk-itinerary-location-wrapper',
-          }
-        } else {
-          Component = 'div'
-          hrefProps = {
-            className: 'kirk-itinerary-location-wrapper',
-          }
-        }
+  & .kirk-itinerary-location-city {
+    padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
+  }
 
-        return (
-          <li
-            className={cc([
-              'kirk-itinerary-location',
-              {
-                'kirk-itinerary--departure': index === 0,
-                'kirk-itinerary--arrival': isLastPlace,
-                'kirk-itinerary-location--toAddon': isLastPlace && isNonEmptyString(toAddon),
-              },
-            ])}
-            key={key}
-            itemProp="location"
-            itemScope
-            itemType="http://schema.org/Place"
-          >
-            <meta itemProp="name" content={place.mainLabel} />
-            <meta
-              itemProp="address"
-              content={
-                place.subLabel && typeof place.subLabel === 'string'
-                  ? place.subLabel
-                  : place.mainLabel
-              }
-            />
-            <Component {...hrefProps}>
-              {!isSmall && (
-                <time dateTime={place.isoDate}>
-                  <Text display={TextDisplayType.TITLESTRONG}>{place.time}</Text>
-                </time>
-              )}
-              <div className="kirk-itinerary-location-city">
-                <Text display={TextDisplayType.TITLESTRONG}>{place.mainLabel}</Text>
-                {!isSmall &&
-                  place.subLabel &&
-                  (typeof place.subLabel === 'string' ? (
-                    <Text
-                      tag={TextTagType.PARAGRAPH}
-                      display={TextDisplayType.CAPTION}
-                      textColor={color.primaryText}
-                    >
-                      {place.subLabel}
-                    </Text>
-                  ) : (
-                    <div>{place.subLabel}</div>
-                  ))}
-              </div>
-              {chevron && (
-                <div className="kirk-itinerary-location-chevron">
-                  <ChevronIcon />
-                </div>
-              )}
-            </Component>
-          </li>
-        )
-      })}
-      {isNonEmptyString(toAddon) && (
-        <li className="kirk-itinerary-toAddon">
-          <Text display={TextDisplayType.CAPTION}>{toAddon}</Text>
-        </li>
-      )}
-      <style jsx>{style}</style>
-    </ul>
-  )
-}
+  &.kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival) div {
+    padding-bottom: 0;
+  }
 
-export default Itinerary
+  & .kirk-itinerary-location div::before,
+  & .kirk-itinerary-location div::after {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    width: 4px;
+    position: absolute;
+  }
+
+  & .kirk-itinerary-location div::before {
+    height: 100%;
+    background-color: ${color.primaryText};
+    top: 0;
+    left: ${componentSizes.timeWidth};
+  }
+
+  &.kirk-itinerary--small .kirk-itinerary-location div::before {
+    left: 2px;
+  }
+
+  & .kirk-itinerary-location div::after {
+    width: 8px;
+    height: 8px;
+    background-color: ${color.white};
+    border: 2px solid ${color.primaryText};
+    border-radius: 50%;
+    top: calc(4px + ${space.m});
+    left: calc(${componentSizes.timeWidth} - 2px);
+  }
+
+  &.kirk-itinerary--small .kirk-itinerary-location div::after {
+    left: 0;
+  }
+
+  & .kirk-itinerary-location.kirk-itinerary--departure div::before {
+    height: calc(100% - calc(6px + ${space.m}));
+    top: calc(6px + ${space.m});
+  }
+
+  & .kirk-itinerary-location.kirk-itinerary--arrival div::before {
+    height: calc(6px + ${space.m});
+  }
+
+  & .kirk-itinerary-fromAddon,
+  & .kirk-itinerary-toAddon {
+    height: ${distanceFromHeight};
+  }
+
+  & .kirk-itinerary-fromAddon::before,
+  & .kirk-itinerary-fromAddon::after,
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::before,
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  & .kirk-itinerary-fromAddon::before,
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
+    width: 0;
+    border: 2px solid ${color.border};
+    left: ${componentSizes.timeWidth};
+    bottom: -4px;
+  }
+
+  &.kirk-itinerary--small .kirk-itinerary-fromAddon::before,
+  &.kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
+    left: 2px;
+  }
+
+  & .kirk-itinerary-fromAddon::before {
+    height: calc(100% + ${space.m});
+    top: 6px;
+  }
+
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
+    height: calc(100% + ${distanceFromHeight});
+    bottom: -${distanceFromHeight};
+  }
+
+  & .kirk-itinerary-fromAddon::after,
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 2px solid ${color.border};
+    border-radius: 50%;
+    left: calc(${componentSizes.timeWidth} - 2px);
+  }
+
+  &.kirk-itinerary--small .kirk-itinerary-fromAddon::after,
+  &.kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
+    left: 0;
+  }
+
+  & .kirk-itinerary-fromAddon::after {
+    top: 0;
+  }
+
+  & .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
+    bottom: -${distanceFromHeight};
+  }
+
+  & .kirk-itinerary-fromAddon span,
+  & .kirk-itinerary-toAddon span {
+    display: inline-block;
+    padding-left: ${space.l};
+    color: ${color.fadedText};
+    position: absolute;
+    left: ${componentSizes.timeWidth};
+  }
+
+  &.kirk-itinerary--small .kirk-itinerary-fromAddon span,
+  &.kirk-itinerary--small .kirk-itinerary-toAddon span {
+    left: 0;
+  }
+
+  & .kirk-itinerary-fromAddon span {
+    top: -4px;
+  }
+
+  & .kirk-itinerary-toAddon span {
+    bottom: -4px;
+  }
+
+  & .kirk-itinerary-location-city {
+    flex: 1;
+  }
+
+  & .kirk-itinerary-location-chevron {
+    display: flex;
+    align-items: center;
+  }
+`
+
+export default StyledItinerary

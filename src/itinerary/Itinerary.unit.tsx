@@ -1,8 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
 
-import Itinerary from 'itinerary'
+import Itinerary from './Itinerary'
 import Proximity from 'proximity'
 
 const places = [
@@ -16,14 +15,14 @@ const places = [
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value="MIDDLE" title="Pick up point is not that far fom your place" />,
     mainLabel: 'Tours',
   },
   {
     distanceFromPoint: '8km',
     time: '15:00',
     isoDate: '2017-12-11T15:00',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value="CLOSE" title="Pick up point is close to your place" />,
     mainLabel: 'Bordeaux',
   },
 ]
@@ -130,9 +129,11 @@ describe('Itinerary component', () => {
     expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
   })
 
-  it('Should display proximity from departure point', () => {
-    const itinerary = renderer.create(<Itinerary places={places} />).toJSON()
-    expect(itinerary).toMatchSnapshot()
+  it('Should display proximity pills for all points', () => {
+    const itinerary = shallow(<Itinerary places={places} />)
+    const proxi = itinerary.find(Proximity)
+    expect(proxi).toHaveLength(3)
+    expect(proxi.first().prop('value')).toBe('FAR')
   })
 
   it("Should use subLabel in key if it's a string", () => {
