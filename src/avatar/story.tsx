@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import Avatar from 'avatar'
+import Avatar from './index'
 
 const sizes = {
   default: '',
