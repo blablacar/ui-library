@@ -64,6 +64,19 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  line-height: 0;
+}
+
+.c1 svg {
+  margin-top: 4px;
+}
+
+.c1 svg + svg {
+  margin-left: 4px;
+}
+
 <ul
   className="jsx-1448366035 "
 >
@@ -108,7 +121,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           className="jsx-1448366035"
         >
           <div
-            className="jsx-555764934 kirk-proximity"
+            className="kirk-proximity c1"
           >
             <svg
               aria-hidden={true}
@@ -200,7 +213,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           className="jsx-1448366035"
         >
           <div
-            className="jsx-555764934 kirk-proximity"
+            className="kirk-proximity c1"
           >
             <svg
               aria-hidden={true}
@@ -292,7 +305,7 @@ exports[`Itinerary component Should display proximity from departure point 1`] =
           className="jsx-1448366035"
         >
           <div
-            className="jsx-555764934 kirk-proximity"
+            className="kirk-proximity c1"
           >
             <svg
               aria-hidden={true}
