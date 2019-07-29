@@ -73,6 +73,169 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   height: calc(52px - 1px - 3px);
 }
 
+.c2 {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.c2 .kirk-textField-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c2 .kirk-textField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c2 .kirk-textField-wrapper--hasFocus input,
+.c2 .kirk-textField-wrapper--hasFocus textarea {
+  padding: calc(16px + 1px - 3px);
+}
+
+.c2 .kirk-textField-wrapper--hasFocus input {
+  padding-right: 0;
+}
+
+.c2 input,
+.c2 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  background-color: #EDEDED;
+  color: #054752;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  caret-color: #00AFF5;
+  padding: 16px;
+}
+
+.c2 input {
+  padding-right: 0;
+  margin-right: 48px;
+}
+
+.c2 input:not(:first-child),
+.c2 textarea:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+
+.c2 input::-webkit-input-placeholder,
+.c2 textarea::-webkit-input-placeholder {
+  color: #708C91;
+}
+
+.c2 input::-moz-placeholder,
+.c2 textarea::-moz-placeholder {
+  color: #708C91;
+}
+
+.c2 input:-ms-input-placeholder,
+.c2 textarea:-ms-input-placeholder {
+  color: #708C91;
+}
+
+.c2 input::placeholder,
+.c2 textarea::placeholder {
+  color: #708C91;
+}
+
+.c2 input::-ms-clear {
+  display: none;
+}
+
+.c2 input[type='number']::-webkit-outer-spin-button,
+.c2 input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.c2 input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.c2 input[type='search'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c2 input[type='number'],
+.c2 input[type='search'] {
+  box-shadow: none;
+}
+
+.c2 textarea {
+  min-height: 150px;
+}
+
+.c2 input:focus,
+.c2 textarea:focus {
+  border-color: #EDEDED;
+  box-shadow: none;
+  outline: none;
+}
+
+.c2.kirk-error .kirk-textField-wrapper {
+  background: #FDD8DE;
+  border: solid 1px #FDD8DE;
+  -webkit-animation: textFieldError 500ms ease-in-out;
+  animation: textFieldError 500ms ease-in-out;
+}
+
+.c2.kirk-error input,
+.c2.kirk-error textarea {
+  background-color: #FDD8DE;
+}
+
+.c2.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+.c2 label {
+  color: #054752;
+  padding: 0 8px 4px 8px;
+}
+
+.c2 .kirk-button {
+  background-color: transparent;
+  color: #708C91;
+  height: auto;
+}
+
+.c2 .kirk-textField-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c2 .kirk-textField-button[hidden] {
+  visibility: hidden;
+}
+
+.c2.kirk-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 <div
   className="kirk-phoneField"
 >
@@ -127,13 +290,12 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       </svg>
     </div>
     <div
-      className="jsx-2044813569 kirk-textField"
+      className="kirk-textField c2"
     >
       <div
-        className="jsx-2044813569 kirk-textField-wrapper"
+        className="kirk-textField-wrapper"
       >
         <input
-          className="jsx-2044813569 "
           name="phoneNumber"
           onBlur={[Function]}
           onChange={[Function]}
@@ -257,6 +419,169 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   height: calc(52px - 1px - 3px);
 }
 
+.c2 {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.c2 .kirk-textField-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c2 .kirk-textField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c2 .kirk-textField-wrapper--hasFocus input,
+.c2 .kirk-textField-wrapper--hasFocus textarea {
+  padding: calc(16px + 1px - 3px);
+}
+
+.c2 .kirk-textField-wrapper--hasFocus input {
+  padding-right: 0;
+}
+
+.c2 input,
+.c2 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  background-color: #EDEDED;
+  color: #054752;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  caret-color: #00AFF5;
+  padding: 16px;
+}
+
+.c2 input {
+  padding-right: 0;
+  margin-right: 48px;
+}
+
+.c2 input:not(:first-child),
+.c2 textarea:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+
+.c2 input::-webkit-input-placeholder,
+.c2 textarea::-webkit-input-placeholder {
+  color: #708C91;
+}
+
+.c2 input::-moz-placeholder,
+.c2 textarea::-moz-placeholder {
+  color: #708C91;
+}
+
+.c2 input:-ms-input-placeholder,
+.c2 textarea:-ms-input-placeholder {
+  color: #708C91;
+}
+
+.c2 input::placeholder,
+.c2 textarea::placeholder {
+  color: #708C91;
+}
+
+.c2 input::-ms-clear {
+  display: none;
+}
+
+.c2 input[type='number']::-webkit-outer-spin-button,
+.c2 input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.c2 input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.c2 input[type='search'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c2 input[type='number'],
+.c2 input[type='search'] {
+  box-shadow: none;
+}
+
+.c2 textarea {
+  min-height: 150px;
+}
+
+.c2 input:focus,
+.c2 textarea:focus {
+  border-color: #EDEDED;
+  box-shadow: none;
+  outline: none;
+}
+
+.c2.kirk-error .kirk-textField-wrapper {
+  background: #FDD8DE;
+  border: solid 1px #FDD8DE;
+  -webkit-animation: textFieldError 500ms ease-in-out;
+  animation: textFieldError 500ms ease-in-out;
+}
+
+.c2.kirk-error input,
+.c2.kirk-error textarea {
+  background-color: #FDD8DE;
+}
+
+.c2.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+.c2 label {
+  color: #054752;
+  padding: 0 8px 4px 8px;
+}
+
+.c2 .kirk-button {
+  background-color: transparent;
+  color: #708C91;
+  height: auto;
+}
+
+.c2 .kirk-textField-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c2 .kirk-textField-button[hidden] {
+  visibility: hidden;
+}
+
+.c2.kirk-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 <div
   className="kirk-phoneField"
 >
@@ -307,13 +632,12 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       </svg>
     </div>
     <div
-      className="jsx-2044813569 kirk-textField"
+      className="kirk-textField c2"
     >
       <div
-        className="jsx-2044813569 kirk-textField-wrapper"
+        className="kirk-textField-wrapper"
       >
         <input
-          className="jsx-2044813569 "
           name="phoneNumber"
           onBlur={[Function]}
           onChange={[Function]}

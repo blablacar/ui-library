@@ -343,18 +343,18 @@ describe('AutoComplete', () => {
 
   describe('#focus', () => {
     it('Can add focus to TextField', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} focus />)
+      const wrapper = mount(<AutoComplete {...defaultProps} focus />)
       expect(wrapper.find('TextField').prop('focus')).toBe(true)
     })
     it('Should not add border focus on Textfield', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('focusBorder')).toBe(false)
     })
   })
 
   describe('#autoCorrect', () => {
     it('Can set autoCorrect attribute on TextField', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('autoCorrect')).toBe('off')
       wrapper.setProps({ autoCorrect: 'on' })
       expect(wrapper.find('TextField').prop('autoCorrect')).toBe('on')
@@ -363,7 +363,7 @@ describe('AutoComplete', () => {
 
   describe('#disabled', () => {
     it('Can set disabled attribute on TextField', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('disabled')).toBe(false)
       wrapper.setProps({ disabled: true })
       expect(wrapper.find('TextField').prop('disabled')).toBe(true)
@@ -372,7 +372,7 @@ describe('AutoComplete', () => {
 
   describe('#readOnly', () => {
     it('Can set readOnly attribute on TextField', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('readOnly')).toBe(false)
       wrapper.setProps({ readOnly: true })
       expect(wrapper.find('TextField').prop('readOnly')).toBe(true)
@@ -381,7 +381,7 @@ describe('AutoComplete', () => {
 
   describe('#required', () => {
     it('Can set required attribute on TextField', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} />)
       expect(wrapper.find('TextField').prop('required')).toBe(false)
       wrapper.setProps({ required: true })
       expect(wrapper.find('TextField').prop('required')).toBe(true)
@@ -391,31 +391,31 @@ describe('AutoComplete', () => {
   describe('#defaultValue', () => {
     const initialDefaultValue = 'initialDefaultValue'
     it('Can have a default value in TextField when mouting', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
       expect(wrapper.find('TextField').prop('defaultValue')).toBe(initialDefaultValue)
     })
 
     it('Can update the textfield value when getting a new default value', () => {
-      const wrapper = shallow(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} defaultValue={initialDefaultValue} />)
       expect(wrapper.find('TextField').prop('defaultValue')).toBe(initialDefaultValue)
 
       // Simulate a user typing in the textfield
       wrapper.instance().onInputChange({ value: 'abc' })
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe('abc')
+      expect(wrapper.find('TextField').state('value')).toBe('abc')
 
       // Simulate a new defaultValue being passed to autoComplete
       const newDefaultValue = 'coincoin'
       wrapper.setProps({ defaultValue: newDefaultValue })
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe(newDefaultValue)
+      expect(wrapper.find('TextField').state('value')).toBe(newDefaultValue)
 
       // Simulate a user typing in the textfield again
       wrapper.instance().onInputChange({ value: 'a' })
-      expect(wrapper.find('TextField').prop('defaultValue')).toBe('a')
+      expect(wrapper.find('TextField').state('value')).toBe('a')
     })
 
     it('uses the default value to search for items when mouting', () => {
       const searchForItems = jest.fn()
-      const wrapper = shallow(
+      shallow(
         <AutoComplete
           {...defaultProps}
           defaultValue={initialDefaultValue}
@@ -427,7 +427,7 @@ describe('AutoComplete', () => {
 
     it('Does not trigger a search when mounting with a default value in TextField', () => {
       const searchForItems = jest.fn()
-      const wrapper = shallow(
+      shallow(
         <AutoComplete
           {...defaultProps}
           defaultValue={initialDefaultValue}

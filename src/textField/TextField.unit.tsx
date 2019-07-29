@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import TextField from 'textField'
+import TextField from './TextField'
 import Button from 'button'
 import { EyeIcon } from 'icon/eyeIcon'
 
