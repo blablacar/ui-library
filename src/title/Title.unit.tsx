@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Title from 'title'
+import Title from './Title'
 
 describe('Title', () => {
   it('Should render the given title text', () => {
