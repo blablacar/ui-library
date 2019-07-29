@@ -2,7 +2,7 @@ import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 import * as React from 'react'
 
-import Text from 'text'
+import Text, { TextTagType } from './Text'
 
 const multipleLineText = `line1
 line2
@@ -35,7 +35,7 @@ describe('Text', () => {
   })
 
   it('Should render with the div tag', () => {
-    const wrapper = shallow(<Text tag="div">{'test'}</Text>)
+    const wrapper = shallow(<Text tag={TextTagType.DIV}>{'test'}</Text>)
     expect(wrapper.name()).toBe('div')
   })
 
@@ -50,7 +50,7 @@ describe('Text', () => {
 
   it('Should accept ReactNode as children', () => {
     const wrapper = shallow(
-      <Text tag="div">
+      <Text tag={TextTagType.DIV}>
         <span>test</span>
       </Text>,
     )

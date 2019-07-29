@@ -1,63 +1,71 @@
-import React from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, font, fontWeight } from '_utils/branding'
 
-import { replaceNewLineWithBR } from '_utils'
-import style from './style'
+import Text from './Text'
 
-export enum TextDisplayType {
-  BODY = 'body',
-  BODYSTRONG = 'bodyStrong',
-  BUTTON = 'button',
-  CAPTION = 'caption',
-  DISPLAY1 = 'display1',
-  DISPLAY2 = 'display2',
-  SUBHEADER = 'subheader',
-  SUBHEADERSTRONG = 'subheaderStrong',
-  TITLE = 'title',
-  TITLESTRONG = 'titleStrong',
-}
+const StyledText = styled(Text)`
+  & {
+    margin: 0;
+    font-weight: ${fontWeight.regular};
+  }
 
-export enum TextTagType {
-  DIV = 'div',
-  PARAGRAPH = 'p',
-  SPAN = 'span',
-}
+  &.kirk-text-button {
+    color: ${color.primaryText};
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+  }
 
-interface TextProps {
-  readonly className?: Classcat.Class
-  readonly children: string | number | React.ReactNode
-  readonly display?: TextDisplayType
-  readonly tag?: TextTagType
-  readonly textColor?: string
-  readonly newlineToBr?: boolean
-  readonly role?: string
-}
+  &.kirk-text-body,
+  &.kirk-text-bodyStrong {
+    color: ${color.secondaryText};
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+  }
 
-const baseClassName = 'kirk-text'
-const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
+  &.kirk-text-caption {
+    color: ${color.secondaryText};
+    font-size: ${font.s.size};
+    line-height: ${font.s.lineHeight};
+  }
 
-const Text = ({
-  className,
-  children,
-  display = TextDisplayType.BODY,
-  tag = TextTagType.SPAN,
-  textColor,
-  newlineToBr = true,
-  role,
-}: TextProps) => {
-  const displayClassName = `${baseClassName}-${display}`
-  const Tag = tag
+  &.kirk-text-title,
+  &.kirk-text-titleStrong {
+    color: ${color.primaryText};
+    font-size: ${font.m.size};
+    line-height: ${font.m.lineHeight};
+  }
 
-  const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
+  &.kirk-text-display1 {
+    color: ${color.primaryText};
+    font-size: ${font.xxl.size};
+    line-height: ${font.xxl.lineHeight};
+  }
 
-  return (
-    <Tag role={role} className={cc([baseClassName, displayClassName, className])} {...inlineStyle}>
-      {typeof children === 'string' && newlineToBr ? replaceNewLineWithBR(children) : children}
-      <style jsx global>
-        {style}
-      </style>
-    </Tag>
-  )
-}
+  &.kirk-text-display2 {
+    color: ${color.primaryText};
+    font-size: ${font.xl.size};
+    line-height: ${font.xl.lineHeight};
+  }
 
-export default Text
+  &.kirk-text-subheader,
+  &.kirk-text-subheaderStrong {
+    color: ${color.primaryText};
+    font-size: ${font.l.size};
+    line-height: ${font.l.lineHeight};
+  }
+
+  &.kirk-text-title,
+  &.kirk-text-titleStrong {
+    color: ${color.primaryText};
+    font-size: ${font.m.size};
+    line-height: ${font.m.lineHeight};
+  }
+
+  &.kirk-text-bodyStrong,
+  &.kirk-text-subheaderStrong,
+  &.kirk-text-titleStrong {
+    font-weight: ${fontWeight.medium};
+  }
+`
+export { TextDisplayType, TextTagType } from './Text'
+export default StyledText
