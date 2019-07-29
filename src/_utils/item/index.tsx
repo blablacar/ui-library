@@ -79,5 +79,5 @@ const StyledItem = styled(Item)`
   }
 `
 
-export { ItemStatus, ItemProps } from './Item'
+export { ItemStatus } from './Item'
 export default StyledItem
