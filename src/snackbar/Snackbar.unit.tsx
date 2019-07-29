@@ -3,8 +3,9 @@ import exenv from 'exenv'
 import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
 
-import Snackbar from 'snackbar'
 import Button from 'button'
+import Snackbar from './Snackbar'
+import StyledSnackbar from './index'
 
 const close = jest.fn()
 
@@ -13,9 +14,9 @@ describe('Snackbar', () => {
     exenv.canUseDOM = false
     const snackbarServerSide = renderer
       .create(
-        <Snackbar isOpen close={close}>
+        <StyledSnackbar isOpen close={close}>
           Oups
-        </Snackbar>,
+        </StyledSnackbar>,
       )
       .toJSON()
     exenv.canUseDOM = true
