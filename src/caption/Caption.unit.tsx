@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Caption, { renderSecondary } from 'caption'
+import Caption, { renderSecondary } from './Caption'
 
 it('Should have the proper text & attributes with link', () => {
   const caption = mount(
