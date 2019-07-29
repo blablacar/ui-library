@@ -6,7 +6,6 @@ export const animationDelay = 300
 
 interface PushInfoProps {
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly icon?: React.ReactNode
   readonly headline: string
   readonly content?: string
@@ -21,9 +20,9 @@ class PushInfo extends Component<PushInfoProps> {
   }
 
   render() {
-    const { className, extraClassName, icon, headline, content } = this.props
+    const { className, icon, headline, content } = this.props
     return (
-      <div className={cc(['kirk-pushInfo', className, extraClassName])}>
+      <div className={cc(['kirk-pushInfo', className])}>
         {icon && <div className="kirk-pushInfo-icon">{icon}</div>}
         <div>
           <h2

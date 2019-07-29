@@ -14,7 +14,6 @@ export interface MessageProps {
   readonly active?: boolean
   readonly author?: string | JSX.Element
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
 }
 
 const Message = ({
@@ -26,9 +25,8 @@ const Message = ({
   secondaryText,
   children,
   className,
-  extraClassName,
 }: MessageProps) => (
-  <blockquote className={cc(['kirk-message', prefix({ active }), className, extraClassName])}>
+  <blockquote className={cc(['kirk-message', prefix({ active }), className])}>
     {author && <cite>{author}</cite>}
     <div className="kirk-label">
       <p>{children}</p>
