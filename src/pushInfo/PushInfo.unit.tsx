@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer'
 
 import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
-import PushInfo from 'pushInfo'
-import { animationDuration, animationDelay } from 'pushInfo/style'
+import { animationDuration, animationDelay } from './PushInfo'
+import PushInfo from './index'
 
 jest.useFakeTimers()
 
@@ -36,7 +36,7 @@ it('Should also have the correct icon.', () => {
 
 it('Should call the onAnimationEnd prop after some time', () => {
   const onAnimationEnd = jest.fn()
-  const pushInfo = mount(
+  mount(
     <PushInfo
       headline="If it's green it's a win!"
       content="Green icons show meeting points closest to you!"
