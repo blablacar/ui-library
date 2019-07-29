@@ -43,33 +43,33 @@ const StyledItem = styled(Item)`
   }
 
   /* Text areas */
-  .kirk-item-leftText {
+  & .kirk-item-leftText {
     flex: 1;
   }
 
-  .kirk-item-rightText {
+  & .kirk-item-rightText {
     margin-left: ${space.l};
     text-align: right;
   }
 
   /* Text */
-  .kirk-item-title--withBody {
+  & .kirk-item-title--withBody {
     margin-bottom: ${space.s};
   }
 
   /* Addons */
-  .kirk-item-leftAddon,
-  .kirk-item-rightAddon {
+  & .kirk-item-leftAddon,
+  & .kirk-item-rightAddon {
     display: inline-flex;
     min-width: 24px;
     align-items: center;
   }
 
-  .kirk-item-leftAddon {
+  & .kirk-item-leftAddon {
     margin-right: ${space.l};
   }
 
-  .kirk-item-rightAddon {
+  & .kirk-item-rightAddon {
     margin-left: ${space.l};
   }
 

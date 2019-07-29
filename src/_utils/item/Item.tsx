@@ -14,7 +14,6 @@ export enum ItemStatus {
 export interface ItemProps {
   readonly chevron?: boolean
   readonly className?: Classcat.Class
-  readonly extraClassName?: Classcat.Class
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean
@@ -45,7 +44,6 @@ export interface ItemProps {
 const Item = ({
   chevron,
   className,
-  extraClassName,
   href,
   onClick,
   onBlur,
@@ -99,7 +97,6 @@ const Item = ({
           'kirk-item--clickable': isClickable,
         },
         className,
-        extraClassName,
       ])}
     >
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
