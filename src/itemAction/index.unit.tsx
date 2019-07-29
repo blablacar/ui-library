@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Loader from 'loader'
+import Loader from 'loader/Loader'
 import ItemAction from 'itemAction'
 import CrossIcon from 'icon/crossIcon'
 
