@@ -23,12 +23,10 @@ it('Should render the kirk library', () => {
   expect(components.length).toBeGreaterThan(0)
 })
 
-it('Should import every component folder', () => {
-  expect(components).toEqual([
-    ...getComponentDirectories('src'),
-    'branding',
-    'flush',
-    'flushToHTML',
-    ...icons,
-  ])
+it('Should export every component folder', () => {
+  expect(components).toEqual(expect.arrayContaining([...getComponentDirectories('src'), ...icons]))
+})
+
+it('Should export the branding object', () => {
+  expect(components).toContain('branding')
 })

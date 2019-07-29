@@ -1,42 +1,51 @@
-import React from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, space, font } from '_utils/branding'
 
-import prefix from '_utils'
-import style from 'message/style'
+import Message from './Message'
 
-import Caption from 'caption'
+const StyledMessage = styled(Message)`
+  & {
+    margin: 0;
+  }
+  & .kirk-label {
+    position: relative;
+    padding: ${space.l};
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    background: ${color.lightBackground};
+    color: ${color.primaryText};
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+  }
 
-interface MessageProps {
-  readonly children: string
-  readonly isoDate?: string
-  readonly date?: string
-  readonly secondaryLink?: string
-  readonly secondaryText?: string
-  readonly active?: boolean
-  readonly author?: string | JSX.Element
-  readonly className?: Classcat.Class
-}
+  & .kirk-label p {
+    margin: 0;
+  }
 
-const Message = ({
-  active,
-  author,
-  date,
-  isoDate,
-  secondaryLink,
-  secondaryText,
-  children,
-  className,
-}: MessageProps) => (
-  <blockquote className={cc(['kirk-message', prefix({ active }), className])}>
-    {author && <cite>{author}</cite>}
-    <div className="kirk-label">
-      <p>{children}</p>
-      <Caption href={secondaryLink} secondaryText={secondaryText} isoDate={isoDate}>
-        {date}
-      </Caption>
-    </div>
-    <style jsx>{style}</style>
-  </blockquote>
-)
+  &.kirk-active .kirk-label {
+    background: ${color.primaryText};
+    color: ${color.white};
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0;
+  }
 
-export default Message
+  & cite {
+    display: block;
+    margin-bottom: ${space.m};
+    color: ${color.secondaryText};
+    font-style: normal;
+  }
+
+  &.active cite {
+    text-align: right;
+  }
+
+  & .kirk-date {
+    font-size: ${font.s.size};
+    line-height: ${font.s.lineHeight};
+    color: ${color.secondaryText};
+  }
+`
+
+export { MessageProps } from './Message'
+export default StyledMessage
