@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar should not have changed 1`] = `
+.c1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c1.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c1.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-snackbar {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  max-width: 614px;
+  margin: 0 auto;
+  bottom: 0;
+  overflow: hidden;
+  background-color: #F53F5B;
+  padding: 16px 24px;
+  z-index: 1000;
+}
+
+.c0 .kirk-snackbar-content {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0;
+  color: #FFF;
+}
+
+.c0 .kirk-snackbar-cross {
+  padding: 0 0 0 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  algin-items: flex-start;
+}
+
+<div
+  className="transition-wrapper kirk-snackbar-container c0"
+>
+  <div
+    className="kirk-snackbar slide-up slide-up-entered"
+  >
+    <span
+      className="kirk-text kirk-text-title kirk-snackbar-content c1"
+      role="alert"
+    >
+      Oups
+    </span>
+    <button
+      className="kirk-button kirk-button-unstyled kirk-snackbar-cross"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="kirk-icon"
+        fill="#FFF"
+        height="18px"
+        viewBox="0 0 24 24"
+        width="18px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <path
+          d="M19 5L5 19M19 19L5 5"
+          fill="none"
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
