@@ -1,6 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input is checked 1`] = `
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -8,12 +71,12 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title"
+      className="kirk-text kirk-text-title kirk-item-title c0"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Label
     </div>
@@ -22,12 +85,12 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Data info
     </div>
@@ -74,6 +137,69 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
 `;
 
 exports[`ItemRadio Should display a Loader when the component is in loading status 1`] = `
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -81,12 +207,12 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title"
+      className="kirk-text kirk-text-title kirk-item-title c0"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Label
     </div>
@@ -95,12 +221,12 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Data info
     </div>
@@ -150,6 +276,69 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 `;
 
 exports[`ItemRadio Should forward its props to the Item component 1`] = `
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -157,12 +346,12 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title"
+      className="kirk-text kirk-text-title kirk-item-title c0"
     >
       Label title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Label
     </div>
@@ -171,12 +360,12 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
     className="jsx-1542968643 kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c0"
     >
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body"
+      className="kirk-text kirk-text-body kirk-item-body c0"
     >
       Data info
     </div>

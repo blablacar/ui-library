@@ -1,6 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snackbar should not have changed 1`] = `
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
 <div
   className="transition-wrapper kirk-snackbar-container"
 >
@@ -8,7 +71,7 @@ exports[`Snackbar should not have changed 1`] = `
     className="jsx-190474685 kirk-snackbar slide-up slide-up-entered"
   >
     <span
-      className="kirk-text kirk-text-title kirk-snackbar-content"
+      className="kirk-text kirk-text-title kirk-snackbar-content c0"
       role="alert"
     >
       Oups

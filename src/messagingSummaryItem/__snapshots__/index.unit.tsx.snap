@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render properly with read messages 1`] = `
-.c0 {
+.c1 {
   border: 2px dashed #DDD;
   box-sizing: border-box;
   border-radius: 50%;
@@ -10,44 +10,44 @@ exports[`Should render properly with read messages 1`] = `
   height: 48px;
 }
 
-.c0.kirk-avatar--small {
+.c1.kirk-avatar--small {
   height: 40px;
   width: 40px;
 }
 
-.c0.kirk-avatar--medium {
+.c1.kirk-avatar--medium {
   height: 96px;
   width: 96px;
 }
 
-.c0.kirk-avatar--large {
+.c1.kirk-avatar--large {
   height: 156px;
   width: 156px;
 }
 
-.c0.kirk-avatar--image {
+.c1.kirk-avatar--image {
   border: none;
 }
 
-.c0.kirk-avatar--image img {
+.c1.kirk-avatar--image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--unreadNotifications,
-.c0 .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c1 .kirk-badge.kirk-avatar-badge--idCheck {
   z-index: 2;
   position: absolute;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications {
   top: -6px;
   right: -6px;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: -3px;
   right: -3px;
   width: 18px;
@@ -57,34 +57,97 @@ exports[`Should render properly with read messages 1`] = `
   background-color: #5DD167;
 }
 
-.c0.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
-.c0.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c1.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c1.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: 0;
   right: 0;
 }
 
-.c0 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
   width: 24px;
   height: 24px;
 }
 
-.c0 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   width: 36px;
   height: 36px;
 }
 
-.c0 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 24px;
   line-height: 23px;
   font-size: 14px;
   padding: 0 6px;
 }
 
-.c0 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 36px;
   line-height: 34px;
   font-size: 18px;
   padding: 0 8px;
+}
+
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
 }
 
 <a
@@ -95,7 +158,7 @@ exports[`Should render properly with read messages 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-titleStrong kirk-item-title"
+      className="kirk-text kirk-text-titleStrong kirk-item-title c0"
       style={
         Object {
           "color": "#708C91",
@@ -105,7 +168,7 @@ exports[`Should render properly with read messages 1`] = `
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body"
+      className="kirk-text kirk-text-title kirk-item-body c0"
       style={
         Object {
           "color": "#708C91",
@@ -119,7 +182,7 @@ exports[`Should render properly with read messages 1`] = `
       </span>
     </div>
     <div
-      className="kirk-text kirk-text-caption kirk-item-body-annotation"
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c0"
     >
       3 days ago
     </div>
@@ -128,7 +191,7 @@ exports[`Should render properly with read messages 1`] = `
     className="jsx-1542968643 kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c0 kirk-avatar"
+      className="kirk-avatar--image c1 kirk-avatar"
     >
       <img
         alt=""
@@ -164,7 +227,7 @@ exports[`Should render properly with read messages 1`] = `
 `;
 
 exports[`Should render properly with unread messages 1`] = `
-.c0 {
+.c1 {
   border: 2px dashed #DDD;
   box-sizing: border-box;
   border-radius: 50%;
@@ -173,44 +236,44 @@ exports[`Should render properly with unread messages 1`] = `
   height: 48px;
 }
 
-.c0.kirk-avatar--small {
+.c1.kirk-avatar--small {
   height: 40px;
   width: 40px;
 }
 
-.c0.kirk-avatar--medium {
+.c1.kirk-avatar--medium {
   height: 96px;
   width: 96px;
 }
 
-.c0.kirk-avatar--large {
+.c1.kirk-avatar--large {
   height: 156px;
   width: 156px;
 }
 
-.c0.kirk-avatar--image {
+.c1.kirk-avatar--image {
   border: none;
 }
 
-.c0.kirk-avatar--image img {
+.c1.kirk-avatar--image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--unreadNotifications,
-.c0 .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c1 .kirk-badge.kirk-avatar-badge--idCheck {
   z-index: 2;
   position: absolute;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications {
   top: -6px;
   right: -6px;
 }
 
-.c0 .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: -3px;
   right: -3px;
   width: 18px;
@@ -220,34 +283,97 @@ exports[`Should render properly with unread messages 1`] = `
   background-color: #5DD167;
 }
 
-.c0.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
-.c0.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c1.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c1.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: 0;
   right: 0;
 }
 
-.c0 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
   width: 24px;
   height: 24px;
 }
 
-.c0 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   width: 36px;
   height: 36px;
 }
 
-.c0 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 24px;
   line-height: 23px;
   font-size: 14px;
   padding: 0 6px;
 }
 
-.c0 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 36px;
   line-height: 34px;
   font-size: 18px;
   padding: 0 8px;
+}
+
+.c0 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c0.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-body,
+.c0.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c0.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0.kirk-text-subheader,
+.c0.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c0.kirk-text-title,
+.c0.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c0.kirk-text-bodyStrong,
+.c0.kirk-text-subheaderStrong,
+.c0.kirk-text-titleStrong {
+  font-weight: 500;
 }
 
 <a
@@ -258,7 +384,7 @@ exports[`Should render properly with unread messages 1`] = `
     className="jsx-1542968643 kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-titleStrong kirk-item-title"
+      className="kirk-text kirk-text-titleStrong kirk-item-title c0"
       style={
         Object {
           "color": "#054752",
@@ -268,7 +394,7 @@ exports[`Should render properly with unread messages 1`] = `
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body"
+      className="kirk-text kirk-text-title kirk-item-body c0"
       style={
         Object {
           "color": "#054752",
@@ -282,7 +408,7 @@ exports[`Should render properly with unread messages 1`] = `
       </span>
     </div>
     <div
-      className="kirk-text kirk-text-caption kirk-item-body-annotation"
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c0"
     >
       3 days ago
     </div>
@@ -291,7 +417,7 @@ exports[`Should render properly with unread messages 1`] = `
     className="jsx-1542968643 kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c0 kirk-avatar"
+      className="kirk-avatar--image c1 kirk-avatar"
     >
       <img
         alt=""
