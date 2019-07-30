@@ -1,55 +1,37 @@
-import React, { Fragment } from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import styled from 'styled-components'
+import { color, radius, space, font } from '_utils/branding'
 
-import style from 'uneditableTextField/style'
+import uneditableTextField from './UneditableTextField'
 
-export interface UneditableTextFieldProps {
-  readonly children: JSX.Element | string
-  readonly className?: Classcat.Class
-  readonly addOn?: JSX.Element
-  readonly href?: JSX.Element | string
-  readonly ellipsis?: boolean
-}
+const inputHeight = '54px'
 
-export const UneditableTextField = ({
-  children,
-  className = '',
-  addOn = null,
-  ellipsis = false,
-  href,
-}: UneditableTextFieldProps) => {
-  let componentType
-  let props: any = {}
-  if (href && typeof href !== 'string') {
-    componentType = href.type
-    props = href.props
-  } else if (typeof href === 'string' && !isEmpty(href)) {
-    componentType = 'a'
-    props = { href }
-  } else {
-    componentType = 'div'
+const StyledUneditableTextField = styled(uneditableTextField)`
+  & {
+    display: flex;
+    align-items: center;
+    min-height: ${inputHeight};
+    padding: 0 ${space.l};
+    background-color: ${color.inputBackground};
+    border-radius: ${radius.l};
+    color: ${color.primaryText};
+    font-size: ${font.base.size};
+    line-height: ${inputHeight};
+    text-decoration: none;
   }
 
-  return React.createElement(
-    componentType,
-    {
-      className: cc(['uneditableTextField', className]),
-      ...props,
-    },
-    <Fragment>
-      {addOn}
-      <div
-        className={cc([
-          'uneditableTextField-label',
-          { 'uneditableTextField-label--ellipsis': ellipsis },
-        ])}
-      >
-        {children}
-      </div>
-      <style jsx>{style}</style>
-    </Fragment>,
-  )
-}
+  & .uneditableTextField-label:not(:first-child) {
+    margin-left: ${space.l};
+  }
 
-export default UneditableTextField
+  & .uneditableTextField-label--ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & .kirk-icon {
+    height: ${space.xl};
+  }
+`
+
+export default StyledUneditableTextField
