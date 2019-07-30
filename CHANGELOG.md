@@ -1,7 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix pointy corner on active `Message` (from top-right to bottom-right)
-- [...]
+- **[BREAKING CHANGE]** `<Text>`: changed export for `TextDisplayType` `TextTagType`
 
 # v8.8.0 (24/07/2019)
 
