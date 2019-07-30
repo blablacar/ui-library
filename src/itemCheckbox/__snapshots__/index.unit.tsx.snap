@@ -64,12 +64,12 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   font-weight: 500;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   position: relative;
 }
 
-.c2 .kirk-icon-badge {
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -166,6 +166,28 @@ button.c0 {
   color: #00AFF5;
 }
 
+.c2 {
+  background-color: #00AFF5;
+  border-radius: 100%;
+}
+
+.c2.absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c2.validate path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  stroke-linecap: round;
+  -webkit-animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+  animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+}
+
 <label
   className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
@@ -209,7 +231,7 @@ button.c0 {
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-check c2"
+      className="kirk-icon kirk-icon-check c2 c3"
       fill="#FFF"
       height={24}
       viewBox="0 0 24 24"
@@ -218,7 +240,6 @@ button.c0 {
     >
       
       <path
-        className="jsx-2416231148 jsx-3125355633"
         d="M6.5 12.5l4 4 8-8"
         fill="none"
         stroke="#FFF"
@@ -233,6 +254,308 @@ button.c0 {
 `;
 
 exports[`ItemCheckbox Should display a Loader when the component is in loading status 1`] = `
+.c1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c1.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c1.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c4 {
+  display: inline-block;
+  position: relative;
+}
+
+.c4 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+.c3.spinning {
+  -webkit-animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
+}
+
+.c3 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c3.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+.c3.thin circle {
+  stroke-width: 3;
+}
+
+.c3.absolute {
+  position: absolute;
+}
+
+.c3 circle.inner {
+  stroke-width: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2.kirk-loader--fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.85);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}
+
+.c2.kirk-loader--done {
+  background-color: #5DD167;
+  color: #FFF;
+  border-radius: 50%;
+}
+
+<label
+  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+>
+  <div
+    className="kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-title kirk-item-title c1"
+    >
+      Label title
+    </div>
+    <div
+      className="kirk-text kirk-text-body kirk-item-body c1"
+    >
+      Label
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightText"
+  >
+    <div
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+    >
+      Data
+    </div>
+    <div
+      className="kirk-text kirk-text-body kirk-item-body c1"
+    >
+      Data info
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightAddon"
+  >
+    <input
+      checked={false}
+      disabled={true}
+      name="name"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="kirk-loader c2"
+      style={
+        Object {
+          "height": "24px",
+          "width": "24px",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="kirk-icon kirk-icon-circle c3 spinning c4"
+        fill="#5DD167"
+        height={24}
+        viewBox="0 0 66 66"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <circle
+          cx="33"
+          cy="33"
+          fill="none"
+          r="30"
+          stroke="#5DD167"
+        />
+      </svg>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -398,275 +721,36 @@ button.c0 {
   color: #00AFF5;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.c2.spinning {
+  -webkit-animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
 }
 
-.c2.kirk-loader--fullScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,255,255,0.85);
-  height: 100vh;
-  width: 100vw;
-  z-index: 4;
+.c2 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
 }
 
-.c2.kirk-loader--done {
-  background-color: #5DD167;
-  color: #FFF;
-  border-radius: 50%;
+.c2.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite;
 }
 
-<label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
->
-  <div
-    className="kirk-item-leftText"
-  >
-    <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
-    >
-      Label title
-    </div>
-    <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
-    >
-      Label
-    </div>
-  </div>
-  <div
-    className="kirk-item-rightText"
-  >
-    <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
-    >
-      Data
-    </div>
-    <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
-    >
-      Data info
-    </div>
-  </div>
-  <div
-    className="kirk-item-rightAddon"
-  >
-    <input
-      checked={false}
-      disabled={true}
-      name="name"
-      onChange={[Function]}
-      type="checkbox"
-    />
-    <div
-      className="kirk-loader c2"
-      style={
-        Object {
-          "height": "24px",
-          "width": "24px",
-        }
-      }
-    >
-      <svg
-        aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c3"
-        fill="#5DD167"
-        height={24}
-        viewBox="0 0 66 66"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        
-        <circle
-          className="jsx-2931153156"
-          cx="33"
-          cy="33"
-          fill="none"
-          r="30"
-          stroke="#5DD167"
-        />
-      </svg>
-    </div>
-  </div>
-</label>
-`;
-
-exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
-.c1 {
-  margin: 0;
-  font-weight: 400;
+.c2.thin circle {
+  stroke-width: 3;
 }
 
-.c1.kirk-text-button {
-  color: #054752;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
-  color: #708C91;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-caption {
-  color: #708C91;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-display1 {
-  color: #054752;
-  font-size: 82px;
-  line-height: 82px;
-}
-
-.c1.kirk-text-display2 {
-  color: #054752;
-  font-size: 30px;
-  line-height: 1.06;
-}
-
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
-  color: #054752;
-  font-size: 22px;
-  line-height: 24px;
-}
-
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
-  font-weight: 500;
-}
-
-.c2 {
-  display: inline-block;
-  position: relative;
-}
-
-.c2 .kirk-icon-badge {
+.c2.absolute {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  border: 0;
-  background: none;
-}
-
-.c0.kirk-item--clickable:hover {
-  background: #EDEDED;
-}
-
-a.c0 {
-  background: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(221,221,221,.4);
-  -webkit-touch-callout: none;
-}
-
-button.c0 {
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  font-family: inherit;
-  outline: none;
-  background-color: transparent;
-  -webkit-tap-highlight-color: rgba(221,221,221,.4);
-  -webkit-touch-callout: none;
-}
-
-.c0:disabled {
-  cursor: default;
-}
-
-.c0 .kirk-item-leftText {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c0 .kirk-item-rightText {
-  margin-left: 16px;
-  text-align: right;
-}
-
-.c0 .kirk-item-title--withBody {
-  margin-bottom: 4px;
-}
-
-.c0 .kirk-item-leftAddon,
-.c0 .kirk-item-rightAddon {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  min-width: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 .kirk-item-leftAddon {
-  margin-right: 16px;
-}
-
-.c0 .kirk-item-rightAddon {
-  margin-left: 16px;
-}
-
-.c0.kirk-item--highlighted .kirk-text-title {
-  color: #00AFF5;
+.c2 circle.inner {
+  stroke-width: 0;
 }
 
 <label
@@ -712,7 +796,7 @@ button.c0 {
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-circle c2"
+      className="kirk-icon kirk-icon-circle c2 c3"
       fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
@@ -721,7 +805,6 @@ button.c0 {
     >
       
       <circle
-        className="jsx-2931153156"
         cx="33"
         cy="33"
         fill="none"
