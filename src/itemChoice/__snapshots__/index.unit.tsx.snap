@@ -166,6 +166,38 @@ button.c0 {
   color: #00AFF5;
 }
 
+.c4.spinning {
+  -webkit-animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
+}
+
+.c4 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c4.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+.c4.thin circle {
+  stroke-width: 3;
+}
+
+.c4.absolute {
+  position: absolute;
+}
+
+.c4 circle.inner {
+  stroke-width: 0;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -300,7 +332,7 @@ button.c0 {
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c1"
+        className="kirk-icon kirk-icon-circle c4 spinning c1"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -309,7 +341,6 @@ button.c0 {
       >
         
         <circle
-          className="jsx-2931153156"
           cx="33"
           cy="33"
           fill="none"
@@ -488,6 +519,28 @@ button.c0 {
   color: #00AFF5;
 }
 
+.c4 {
+  background-color: transparent;
+  border-radius: 100%;
+}
+
+.c4.absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c4.validate path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  stroke-linecap: round;
+  -webkit-animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+  animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -622,7 +675,7 @@ button.c0 {
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-check validate c1"
+        className="kirk-icon kirk-icon-check c4 validate c1"
         fill="#FFF"
         height={12}
         viewBox="0 0 24 24"
@@ -631,7 +684,6 @@ button.c0 {
       >
         
         <path
-          className="jsx-2416231148 jsx-2189919872"
           d="M6.5 12.5l4 4 8-8"
           fill="none"
           stroke="#FFF"
