@@ -45,7 +45,7 @@ it('Should render a <span> element if no href is passed', () => {
 })
 
 it('Should render a <button> if href is passed', () => {
-  const caption = shallow(renderSecondary('https://m.blablacar.fr', 'Delivered'))
+  const caption = mount(renderSecondary('https://m.blablacar.fr', 'Delivered'))
   expect(caption.find('a')).toHaveLength(1)
   expect(caption.find('a').prop('href')).toBe('https://m.blablacar.fr')
 })

@@ -1,7 +1,7 @@
 export { default as AutoComplete } from 'autoComplete'
 export { default as Avatar } from 'avatar'
 export { default as Badge } from 'badge'
-export { default as Button } from 'button'
+export { default as Button, ButtonStatus } from 'button'
 export { default as ButtonGroup } from 'buttonGroup'
 export { default as Caption } from 'caption'
 export { default as ConfirmationModal } from 'confirmationModal'

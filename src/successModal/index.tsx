@@ -1,7 +1,7 @@
 import React, { Component, Ref } from 'react'
 
 import Modal, { ModalProps, ModalSize } from 'modal'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 import style from './style'
@@ -65,7 +65,7 @@ class SuccessModal extends Component<SuccessModalProps> {
           </Text>
           <footer className={`${baseClassName}-footer`}>
             <Button
-              status={Button.STATUS.SECONDARY}
+              status={ButtonStatus.SECONDARY}
               className={`${baseClassName}-confirmButton`}
               onClick={onClose}
             >

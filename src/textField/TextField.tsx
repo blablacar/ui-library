@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import prefix from '_utils'
 import { color } from '_utils/branding'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import CrossIcon from 'icon/crossIcon'
 import EyeIcon from 'icon/eyeIcon'
 import isEmpty from 'lodash.isempty'
@@ -304,7 +304,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
           {shouldDisplayButton && (
             <Button
               className="kirk-textField-button"
-              status={Button.STATUS.UNSTYLED}
+              status={ButtonStatus.UNSTYLED}
               isBubble
               onClick={buttonOnClick}
               tabIndex="-1"

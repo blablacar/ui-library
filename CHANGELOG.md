@@ -5,6 +5,7 @@
 - **[BREAKING CHANGE]** Removed locale props from TimePicker
 - **[BREAKING CHANGE]** `<Text>`: changed export for `TextDisplayType` `TextTagType`
 - **[BREAKING CHANGE]** `<Tabs>`: changed export for `TabsStatus`
+- **[BREAKING CHANGE]** `Button`: changed export for `Button.STATUS` to new `ButtonStatus`
 
 # v8.8.0 (24/07/2019)
 
