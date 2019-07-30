@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { boolean, text, withKnobs, number } from '@storybook/addon-knobs'
 
 import WarningIcon from 'icon/warningIcon'
-import TripCard from 'tripCard'
+import TripCard from './index'
 import specs from './specifications/index.md'
 
 const stories = storiesOf('TripCard', module)
@@ -12,7 +12,7 @@ stories.addDecorator(withKnobs)
 
 const tripCardConfig = () => ({
   href: '/',
-  itinerary:[
+  itinerary: [
     {
       mainLabel: text('Departure city', 'Paris'),
       subLabel: text('Departure precise', 'Porte de Vincennes'),
@@ -36,35 +36,39 @@ const tripCardConfig = () => ({
   },
   highlighted: boolean('Top of search', false) ? 'Closest match' : '',
   metaUrl: text('Meta URL'),
-  statusInformation: boolean('Status information', true) ? {
-    icon: <WarningIcon/>,
-    text: 'Warning',
-    highlighted: boolean('Status information highlighted', false),
-  } : undefined,
+  statusInformation: boolean('Status information', true)
+    ? {
+        icon: <WarningIcon />,
+        text: 'Warning',
+        highlighted: boolean('Status information highlighted', false),
+      }
+    : undefined,
   badge: boolean('Badge', false) ? 'The Closest' : null,
   title: boolean('Show title', false) ? text('Title', 'Sun march 8th, 18:00') : null,
 })
 
-stories.add('with driver', () => (
-  <TripCard
-    {...tripCardConfig()}
-    driver={{
-      avatarUrl: '//placehold.it/500x500',
-      firstName: text('Driver name', 'Jane'),
-    }}
-  />
-), {
-  readme: { content: specs }
-})
+stories.add(
+  'with driver',
+  () => (
+    <TripCard
+      {...tripCardConfig()}
+      driver={{
+        avatarUrl: '//placehold.it/500x500',
+        firstName: text('Driver name', 'Jane'),
+      }}
+    />
+  ),
+  {
+    readme: { content: specs },
+  },
+)
 
 stories.add('with passengers', () => (
   <TripCard
     {...tripCardConfig()}
-    passengers={Array(number('passengers count', 3)).fill(
-      {
-        avatarUrl: '//placehold.it/500x500',
-        firstName: 'Jane',
-      })
-    }
+    passengers={Array(number('passengers count', 3)).fill({
+      avatarUrl: '//placehold.it/500x500',
+      firstName: 'Jane',
+    })}
   />
 ))
