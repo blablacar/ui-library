@@ -77,6 +77,7 @@
     "react-test-renderer": "16.8.6",
     "rimraf": "2.6.3",
     "storybook-readme": "5.0.2",
+    "styled-components": "4.3.2",
     "tslint": "5.14.0",
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
