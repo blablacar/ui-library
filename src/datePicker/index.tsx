@@ -5,7 +5,7 @@ import DayPicker, { DayModifiers, NavbarElementProps, CaptionElementProps } from
 import prefix from '_utils'
 import { color } from '_utils/branding'
 import ArrowIcon from 'icon/arrowIcon'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 
 import style from 'datePicker/style'
 
@@ -116,7 +116,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       <div className={props.className}>
         {props.showPreviousButton && (
           <Button
-            status={Button.STATUS.TERTIARY}
+            status={ButtonStatus.TERTIARY}
             className={prefix({ 'previous-month': true }, BASE_CLASSNAME)}
             onClick={() => props.onPreviousClick()}
             isBubble
@@ -126,7 +126,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
         )}
         {props.showNextButton && (
           <Button
-            status={Button.STATUS.TERTIARY}
+            status={ButtonStatus.TERTIARY}
             className={prefix({ 'next-month': true }, BASE_CLASSNAME)}
             onClick={() => props.onNextClick()}
             isBubble

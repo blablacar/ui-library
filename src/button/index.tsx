@@ -1,205 +1,177 @@
-import React, { PureComponent, Fragment } from 'react'
-import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import styled from 'styled-components'
+import { color, font, space, transition, componentSizes, shadow } from '_utils/branding'
 
-import prefix from '_utils'
-import style from 'button/style'
-import Loader from 'loader'
+import Button from './Button'
 
-export enum ButtonStatus {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary',
-  WARNING = 'warning',
-  UNSTYLED = 'unstyled',
-  LOADING = 'loading',
-  CHECKED = 'checked',
-}
+const borderSize = '2px'
 
-export interface ButtonProps {
-  readonly children: string | number | React.ReactNode
-  readonly type?: string
-  readonly href?: string | JSX.Element
-  readonly className?: Classcat.Class
-  readonly title?: string
-  readonly status?: ButtonStatus
-  readonly focus?: boolean
-  readonly isBubble?: boolean
-  readonly shadowed?: boolean
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
-  readonly onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
-  readonly onDoneAnimationEnd?: () => void
-  readonly tabIndex?: string
-  readonly disabled?: boolean
-  readonly index?: string
-  buttonRef?: (button: HTMLButtonElement) => void
-}
-
-export interface ButtonState {
-  readonly value: {
-    name: string
-    value: string
-  }
-}
-
-type ButtonActionEvents =
-  | React.MouseEvent<HTMLElement>
-  | React.TouchEvent<HTMLElement>
-  | React.FocusEventHandler<HTMLElement>
-type functionEvent = (event: ButtonActionEvents) => void
-
-type TypeProps = {
-  ref?: (button: HTMLButtonElement) => void
-  title?: string
-  href?: string
-  type?: string
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
-  onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
-  onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
-  disabled?: boolean
-  index?: string
-}
-
-export const eventHandler = (componentEvent: functionEvent, childEvent: functionEvent) => (
-  event: ButtonActionEvents,
-) => {
-  componentEvent && componentEvent(event)
-  childEvent && childEvent(event)
-}
-
-export default class Button extends PureComponent<ButtonProps, ButtonState> {
-  private button: HTMLButtonElement
-
-  static STATUS = ButtonStatus
-
-  static defaultProps: Partial<ButtonProps> = {
-    type: 'button',
-    href: '',
-    children: '',
-    className: '',
-    status: ButtonStatus.PRIMARY,
-    isBubble: false,
-    shadowed: false,
-    focus: false,
-    disabled: false,
-    buttonRef() {},
+const StyledButton = styled(Button)`
+  & {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    padding: ${space.l} ${space.xl};
+    border: 1px solid transparent;
+    border-radius: 48px;
+    font-size: ${font.base.size};
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    min-height: ${componentSizes.buttonIconSize};
+    min-width: ${componentSizes.buttonIconSize};
+    max-width: 100%;
+    overflow: hidden;
+    user-select: none;
+    align-items: center;
+    transition: max-width ${transition.duration.fast} ease-in,
+      background-color ${transition.duration.base} ease-in;
   }
 
-  componentDidMount() {
-    if (this.props.focus) {
-      this.button.focus()
+  & svg, & img {
+    flex-shrink: 0;
+  }
+
+  &.kirk-itemChoice {
+    border-radius: 0;
+    overflow: visible;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &.kirk-button-unstyled {
+    background-color: transparent;
+    border-radius: inherit;
+    color: ${color.accent};
+    padding: inherit;
+    display: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    text-align: left;
+    min-width: inherit;
+    min-height: inherit;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  /* for unstyled disabled buttons, no opacity decrease (mainly icon buttons) */
+  &.kirk-button-unstyled[disabled] {
+    opacity: 1;
+  }
+
+  &.kirk-button-primary {
+    background-color: ${color.primary};
+    color: ${color.white};
+  }
+
+  &.kirk-button-shadowed {
+    border: ${borderSize} solid ${color.white};
+    box-shadow: ${shadow.default};
+    box-sizing: border-box;
+  }
+
+  &.kirk-button-primary:hover,
+  &.kirk-button-primary:focus,
+  &.kirk-button-primary:active {
+    background-color: ${color.primaryActive};
+  }
+
+  &.kirk-button-secondary {
+    background-color: ${color.white};
+    border-color: ${color.border};
+    color: ${color.accent};
+  }
+  &.kirk-button-secondary.kirk-button-shadowed {
+    border: none;
+  }
+
+  &.kirk-button-secondary:hover,
+  &.kirk-button-secondary:focus,
+  &.kirk-button-secondary:active {
+    background-color: ${color.secondaryActive};
+  }
+
+  &.kirk-button-tertiary {
+    background-color: ${color.white};
+    border-color: transparent;
+    color: ${color.accent};
+  }
+
+  &.kirk-button-tertiary:hover,
+  &.kirk-button-tertiary:focus,
+  &.kirk-button-tertiary:active {
+    background-color: ${color.secondaryActive};
+  }
+
+  &.kirk-button-loading {
+    background-color: transparent;
+    max-width: initial;
+    border: 0;
+  }
+
+  &.kirk-button-loading:hover,
+  &.kirk-button-loading:focus,
+  &.kirk-button-loading:active {
+    background-color: transparent;
+  }
+
+  &.kirk-button-loading[disabled],
+  &.kirk-button-checked[disabled] {
+    opacity: 1;
+  }
+
+  & svg.kirk-button-loader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -24px;
+  }
+
+  &.kirk-button-checked {
+    border: 0;
+  }
+
+  &.kirk-button-warning {
+    background-color: ${color.danger};
+    color: ${color.white};
+  }
+
+  &.kirk-button-bubble {
+    display: inline-flex;
+    padding: 0;
+    line-height: 0;
+    width: ${componentSizes.buttonIconSize};
+    height: ${componentSizes.buttonIconSize};
+  }
+
+  /* Note: Safari 10 can not have flex context on <button> element */
+  &.kirk-button-bubble {
+    justify-content: center;
+    width: ${componentSizes.buttonIconSize};
+    height: ${componentSizes.buttonIconSize};
+  }
+
+  &.kirk-button-bubble.kirk-button-shadowed {
+    width: calc(${componentSizes.buttonIconSize} - ${borderSize} * 2);
+    height: calc(${componentSizes.buttonIconSize} - ${borderSize} * 2);
+  }
+
+  @media (hover: none), (hover: on-demand) {
+    &.kirk-button-secondary:hover {
+      background-color: ${color.white};
     }
   }
+`
 
-  componentWillReceiveProps({ focus }: ButtonProps) {
-    if (focus && focus !== this.props.focus) {
-      this.button.focus()
-    }
-  }
-
-  ref = (button: HTMLButtonElement) => {
-    this.button = button
-    this.props.buttonRef(button)
-  }
-
-  render() {
-    const {
-      children,
-      className,
-      type,
-      href,
-      title,
-      index,
-      // Modifiers
-      status,
-      isBubble,
-      shadowed,
-      // Actions
-      onClick,
-      onTouchStart,
-      onTouchEnd,
-      onMouseDown,
-      onMouseUp,
-      onBlur,
-      onFocus,
-      onDoneAnimationEnd,
-      focus,
-      disabled,
-      buttonRef,
-      // Extend case of the button for the expand component
-      ...attrs
-    } = this.props
-
-    let componentType
-    let typeProps: TypeProps = {}
-
-    // If we pass a component to href, we get component type and we merge props
-    if (typeof href !== 'string') {
-      componentType = href.type
-      typeProps = { ...href.props }
-    } else if (!isEmpty(href)) {
-      componentType = 'a'
-      typeProps = { href }
-    } else {
-      componentType = 'button'
-      typeProps = { type }
-    }
-
-    const hasLoader = status === ButtonStatus.LOADING || status === ButtonStatus.CHECKED
-
-    typeProps.ref = this.ref
-    typeProps.title = title
-    typeProps.index = index
-    typeProps.onClick = eventHandler(onClick, typeProps.onClick)
-    typeProps.onMouseDown = eventHandler(onMouseDown, typeProps.onMouseDown)
-    typeProps.onMouseUp = eventHandler(onMouseUp, typeProps.onMouseUp)
-    typeProps.onTouchStart = eventHandler(onTouchStart, typeProps.onTouchStart)
-    typeProps.onTouchEnd = eventHandler(onTouchEnd, typeProps.onTouchEnd)
-    typeProps.onFocus = eventHandler(onFocus, typeProps.onFocus)
-    typeProps.onBlur = eventHandler(onBlur, typeProps.onBlur)
-    typeProps.disabled = hasLoader || disabled
-
-    const props = {
-      className: cc([
-        prefix({ button: true }),
-        prefix(
-          {
-            [status]: status,
-            bubble: isBubble || hasLoader,
-            shadowed,
-          },
-          'kirk-button',
-        ),
-        className,
-      ]),
-      ...typeProps,
-      ...attrs,
-    }
-
-    return React.createElement(
-      componentType,
-      props,
-      <Fragment>
-        {hasLoader && (
-          <Loader
-            size={48}
-            inline
-            done={status === ButtonStatus.CHECKED}
-            onDoneAnimationEnd={onDoneAnimationEnd}
-          />
-        )}
-        {!hasLoader && children}
-        <style jsx>{style}</style>
-      </Fragment>,
-    )
-  }
-}
+export { ButtonStatus } from './Button'
+export default StyledButton

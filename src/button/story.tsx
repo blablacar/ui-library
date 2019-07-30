@@ -30,7 +30,7 @@ stories.add(
   'primary',
   () => (
     <Button
-      status={Button.STATUS.PRIMARY}
+      status={ButtonStatus.PRIMARY}
       isBubble={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
@@ -47,7 +47,7 @@ stories.add(
   'secondary',
   () => (
     <Button
-      status={Button.STATUS.SECONDARY}
+      status={ButtonStatus.SECONDARY}
       isBubble={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
@@ -64,7 +64,7 @@ stories.add(
   'tertiary',
   () => (
     <Button
-      status={Button.STATUS.TERTIARY}
+      status={ButtonStatus.TERTIARY}
       isBubble={hasIcon()}
       shadowed={boolean('shadowed', false)}
       {...commonProps}
@@ -77,20 +77,20 @@ stories.add(
   },
 )
 
-stories.add('loading', () => <Button status={Button.STATUS.LOADING} />)
+stories.add('loading', () => <Button status={ButtonStatus.LOADING} />)
 
 stories.add('valid', () => (
-  <Button status={Button.STATUS.CHECKED} onDoneAnimationEnd={() => action('animation done')} />
+  <Button status={ButtonStatus.CHECKED} onDoneAnimationEnd={() => action('animation done')} />
 ))
 
 stories.add('warning', () => (
-  <Button status={Button.STATUS.WARNING} isBubble={hasIcon()} {...commonProps}>
+  <Button status={ButtonStatus.WARNING} isBubble={hasIcon()} {...commonProps}>
     {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
   </Button>
 ))
 
 stories.add('unstyled', () => (
-  <Button status={Button.STATUS.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
+  <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
     {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Unstyled button')}
   </Button>
 ))
@@ -99,7 +99,7 @@ stories.add('shadowed', () => (
   <Button
     {...commonProps}
     isBubble
-    status={Button.STATUS.PRIMARY}
+    status={ButtonStatus.PRIMARY}
     shadowed={boolean('shadowed', true)}
   >
     <ArrowIcon right iconColor={color.white} />
@@ -107,14 +107,14 @@ stories.add('shadowed', () => (
 ))
 
 stories.add('icon + text', () => (
-  <Button status={Button.STATUS.PRIMARY} {...commonProps}>
+  <Button status={ButtonStatus.PRIMARY} {...commonProps}>
     <ArrowIcon right iconColor={color.white} />
     <span style={{ marginLeft: '20px' }}>{label('Content')}</span>
   </Button>
 ))
 
 stories.add('anchor button', () => (
-  <Button isBubble={hasIcon()} status={Button.STATUS.PRIMARY} href="#" {...commonProps}>
+  <Button isBubble={hasIcon()} status={ButtonStatus.PRIMARY} href="#" {...commonProps}>
     {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
   </Button>
 ))
@@ -122,7 +122,7 @@ stories.add('anchor button', () => (
 stories.add('anchor button with link element', () => (
   <Button
     isBubble={hasIcon()}
-    status={Button.STATUS.PRIMARY}
+    status={ButtonStatus.PRIMARY}
     href={<a href="#1">foo</a>}
     {...commonProps}
   >
@@ -131,7 +131,7 @@ stories.add('anchor button with link element', () => (
 ))
 
 stories.add('anchor button unstyled', () => (
-  <Button status={Button.STATUS.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
+  <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
     {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
   </Button>
 ))
@@ -158,12 +158,12 @@ class Validation extends React.Component {
     hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Click me to validate')
 
   render() {
-    let status: ButtonStatus = Button.STATUS.PRIMARY
+    let status: ButtonStatus = ButtonStatus.PRIMARY
     if (this.state.loading) {
-      status = Button.STATUS.LOADING
+      status = ButtonStatus.LOADING
     }
     if (this.state.valid) {
-      status = Button.STATUS.CHECKED
+      status = ButtonStatus.CHECKED
     }
     return (
       <Button

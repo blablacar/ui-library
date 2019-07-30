@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 
 export const renderSecondary = (href?: string, secondaryText?: string) =>
   href ? (
-    <Button status={Button.STATUS.UNSTYLED} href={href}>
+    <Button status={ButtonStatus.UNSTYLED} href={href}>
       {secondaryText}
     </Button>
   ) : (

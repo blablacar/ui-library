@@ -19,7 +19,7 @@ After tapping if request is already loaded we either go to the next page or clos
 If request is not loaded we display the loading state of these buttons. When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 
 ```js
-<Button status={Button.STATUS.PRIMARY}>content</Button>
+<Button status={ButtonStatus.PRIMARY}>content</Button>
 ```
 
 > With an icon
@@ -32,7 +32,7 @@ After tapping if request is already loaded we go to the next page.
 If request is not loaded we display the loading state of these buttons. When loaded, we go to the next page. There’s no validated state for this component as it’s never a final decision button.
 
 ```js
-<Button status={Button.STATUS.PRIMARY} isBubble>
+<Button status={ButtonStatus.PRIMARY} isBubble>
   <ArrowIcon right iconColor={color.primary} />
 </Button>
 ```
