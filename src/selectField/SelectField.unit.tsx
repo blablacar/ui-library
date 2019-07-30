@@ -2,7 +2,8 @@ import React from 'react'
 import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import SelectField from 'selectField'
+import SelectField from './SelectField'
+import StyledSelectField from './index'
 
 const options = [
   { value: '1', label: 'val 1', ariaLabel: 'value 1' },
@@ -34,8 +35,8 @@ describe('SelectField', () => {
   const defaultWrapper = mount(<SelectField {...defaultProps} onChange={handleOnChange} />)
 
   it('should have the expected markup in the DOM', () => {
-    const selectField = renderer.create(<SelectField {...defaultProps} />).toJSON()
-    expect(selectField).toMatchSnapshot()
+    const styledSelectField = renderer.create(<StyledSelectField {...defaultProps} />).toJSON()
+    expect(styledSelectField).toMatchSnapshot()
   })
 
   it('should have proper initial value and number of options', () => {

@@ -1,90 +1,68 @@
-import React, { useState, RefObject, useEffect } from 'react'
-import cc from 'classcat'
-import { ChevronIcon } from 'icon'
-import { color } from '_utils/branding'
-import { CommonFieldsProps } from '_utils/interfaces'
-import style from 'selectField/style'
+import styled from 'styled-components'
 
-interface SelectFieldProps extends Partial<CommonFieldsProps> {
-  readonly ariaLabel?: string
-  readonly options: SelectFieldItem[]
-  readonly defaultValue?: string
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  readonly onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  readonly focus?: boolean
-  readonly focusBorder?: boolean
-}
+import SelectField, { selectHeight } from './SelectField'
+import { color, space, font, radius, inputBorderSize } from '_utils/branding'
 
-const SelectField = React.forwardRef(
-  (
-    {
-      id,
-      name,
-      className,
-      defaultValue,
-      ariaLabel,
-      options,
-      onChange,
-      onFocus = () => {},
-      onBlur = () => {},
-      disabled,
-      required,
-      focus,
-      autoFocus,
-      focusBorder = true,
-    }: SelectFieldProps,
-    ref: RefObject<HTMLSelectElement>,
-  ) => {
-    const baseClassName = 'kirk-selectField'
-    const [hasFocus, setFocus] = useState(false)
+const StyledSelectField = styled(SelectField)`
+  & {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0 0 0 ${space.l};
+    box-sizing: border-box;
+    color: ${color.primaryText};
+    background-color: ${color.inputBackground};
+    border-radius: ${radius.l};
+    border: solid 1px ${color.inputBorder};
+    box-shadow: none;
+  }
 
-    useEffect(() => {
-      if (ref && !disabled && focus) {
-        ref.current.focus()
-      }
-    }, [disabled, focus])
+  & select {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: ${selectHeight};
+    margin: 0;
+    padding: 0 calc(${space.m} + ${space.xl}) 0 0;
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+    color: ${color.primaryText};
+    box-shadow: none;
+    background: transparent;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+  }
 
-    return (
-      <div
-        className={cc([
-          baseClassName,
-          className,
-          hasFocus && focusBorder && `${baseClassName}--hasFocus`,
-        ])}
-      >
-        <select
-          id={id}
-          name={name}
-          aria-label={ariaLabel}
-          onChange={event => onChange({ name, value: event.target.value })}
-          onFocus={event => {
-            setFocus(true)
-            onFocus(event)
-          }}
-          onBlur={event => {
-            setFocus(false)
-            onBlur(event)
-          }}
-          defaultValue={defaultValue}
-          disabled={disabled}
-          required={required}
-          autoFocus={autoFocus}
-          ref={ref}
-        >
-          {options.map(({ value, label, ariaLabel }: SelectFieldItem) => (
-            <option key={`${value}${label}`} value={value} aria-label={ariaLabel}>
-              {label}
-            </option>
-          ))}
-        </select>
-        <ChevronIcon iconColor={color.icon} down />
-        <style jsx global>
-          {style}
-        </style>
-      </div>
-    )
-  },
-)
+  /* Remove native select arrow on Internet Explorer 10 and 11  */
+  & select::-ms-expand {
+    display: none;
+  }
 
-export default SelectField
+  & select:focus {
+    outline: none;
+  }
+
+  & .kirk-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: ${space.m};
+    background: ${color.inputBackground};
+    z-index: 0;
+  }
+
+  .kirk-selectField--hasFocus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+  }
+
+  .kirk-selectField--hasFocus select {
+    height: calc(${selectHeight} - ${inputBorderSize.default} - ${inputBorderSize.focus});
+  }
+`
+
+export default StyledSelectField
