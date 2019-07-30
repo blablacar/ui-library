@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import Loader from 'loader/Loader'
 import ItemAction from 'itemAction'
@@ -54,26 +54,26 @@ describe('ItemAction', () => {
 
   describe('status', () => {
     it('Should not render Loader when status is not defined', () => {
-      const wrapper = shallow(<ItemAction>...</ItemAction>).dive()
+      const wrapper = mount(<ItemAction>...</ItemAction>)
       expect(wrapper.find(Loader).exists()).toBe(false)
     })
 
     it('Should not render Loader when status is DEFAULT', () => {
       const props = { status: ItemAction.STATUS.DEFAULT }
-      const wrapper = shallow(<ItemAction {...props}>...</ItemAction>).dive()
+      const wrapper = mount(<ItemAction {...props}>...</ItemAction>)
       expect(wrapper.find(Loader).exists()).toBe(false)
     })
 
     it('Should render Loader when status is LOADING', () => {
       const props = { status: ItemAction.STATUS.LOADING }
-      const wrapper = shallow(<ItemAction {...props}>...</ItemAction>).dive()
+      const wrapper = mount(<ItemAction {...props}>...</ItemAction>)
       expect(wrapper.find(Loader).exists()).toBe(true)
       expect(wrapper.find(Loader).prop('done')).toBe(false)
     })
 
     it('Should render Loader when status is CHECKED', () => {
       const props = { status: ItemAction.STATUS.CHECKED }
-      const wrapper = shallow(<ItemAction {...props}>...</ItemAction>).dive()
+      const wrapper = mount(<ItemAction {...props}>...</ItemAction>)
       expect(wrapper.find(Loader).exists()).toBe(true)
       expect(wrapper.find(Loader).prop('done')).toBe(true)
     })

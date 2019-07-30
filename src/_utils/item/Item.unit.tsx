@@ -1,8 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { shallow , mount } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
-import Item from './index'
+import Item from './Item'
+import StyledItem from './index'
 import ClockIcon from 'icon/clockIcon'
 import ChevronIcon from 'icon/chevronIcon'
 
@@ -22,7 +23,12 @@ describe('Item', () => {
   it('Should not have changed', () => {
     const item = renderer
       .create(
-        <Item className="custom" leftTitle="Test" leftBody="Test" rightAddon={<ClockIcon />} />,
+        <StyledItem
+          className="custom"
+          leftTitle="Test"
+          leftBody="Test"
+          rightAddon={<ClockIcon />}
+        />,
       )
       .toJSON()
     expect(item).toMatchSnapshot()
@@ -88,12 +94,12 @@ describe('Item', () => {
   })
 
   it('Should display left body annotation', () => {
-    const wrapper = mount(<Item leftBodyAnnotation='Left body annotation label' />)
+    const wrapper = mount(<Item leftBodyAnnotation="Left body annotation label" />)
     expect(wrapper.find('.kirk-item-body-annotation').exists()).toBe(true)
   })
 
   it('Should display left body', () => {
-    const wrapper = mount(<Item leftBody='Left body label' />)
+    const wrapper = mount(<Item leftBody="Left body label" />)
     expect(wrapper.find('.kirk-item-body').exists()).toBe(true)
   })
 })

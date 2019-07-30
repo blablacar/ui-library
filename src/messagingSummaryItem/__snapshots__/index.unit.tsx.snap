@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render properly with read messages 1`] = `
-.c2 {
+.c3 {
   display: inline-block;
   position: relative;
 }
 
-.c2 .kirk-icon-badge {
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c1 {
+.c2 {
   border: 2px dashed #DDD;
   box-sizing: border-box;
   border-radius: 50%;
@@ -21,44 +21,44 @@ exports[`Should render properly with read messages 1`] = `
   height: 48px;
 }
 
-.c1.kirk-avatar--small {
+.c2.kirk-avatar--small {
   height: 40px;
   width: 40px;
 }
 
-.c1.kirk-avatar--medium {
+.c2.kirk-avatar--medium {
   height: 96px;
   width: 96px;
 }
 
-.c1.kirk-avatar--large {
+.c2.kirk-avatar--large {
   height: 156px;
   width: 156px;
 }
 
-.c1.kirk-avatar--image {
+.c2.kirk-avatar--image {
   border: none;
 }
 
-.c1.kirk-avatar--image img {
+.c2.kirk-avatar--image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications,
-.c1 .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
   z-index: 2;
   position: absolute;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications {
   top: -6px;
   right: -6px;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: -3px;
   right: -3px;
   width: 18px;
@@ -68,108 +68,199 @@ exports[`Should render properly with read messages 1`] = `
   background-color: #5DD167;
 }
 
-.c1.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
-.c1.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c2.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c2.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: 0;
   right: 0;
 }
 
-.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
   width: 24px;
   height: 24px;
 }
 
-.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   width: 36px;
   height: 36px;
 }
 
-.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 24px;
   line-height: 23px;
   font-size: 14px;
   padding: 0 6px;
 }
 
-.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 36px;
   line-height: 34px;
   font-size: 18px;
   padding: 0 8px;
 }
 
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
 }
 
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-titleStrong kirk-item-title c0"
+      className="kirk-text kirk-text-titleStrong kirk-item-title c1"
       style={
         Object {
           "color": "#708C91",
@@ -179,7 +270,7 @@ exports[`Should render properly with read messages 1`] = `
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body c0"
+      className="kirk-text kirk-text-title kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -193,16 +284,16 @@ exports[`Should render properly with read messages 1`] = `
       </span>
     </div>
     <div
-      className="kirk-text kirk-text-caption kirk-item-body-annotation c0"
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
     >
       3 days ago
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c1 kirk-avatar"
+      className="kirk-avatar--image c2 kirk-avatar"
     >
       <img
         alt=""
@@ -211,11 +302,11 @@ exports[`Should render properly with read messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c2"
+      className="kirk-icon c3"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -238,18 +329,18 @@ exports[`Should render properly with read messages 1`] = `
 `;
 
 exports[`Should render properly with unread messages 1`] = `
-.c2 {
+.c3 {
   display: inline-block;
   position: relative;
 }
 
-.c2 .kirk-icon-badge {
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c1 {
+.c2 {
   border: 2px dashed #DDD;
   box-sizing: border-box;
   border-radius: 50%;
@@ -258,44 +349,44 @@ exports[`Should render properly with unread messages 1`] = `
   height: 48px;
 }
 
-.c1.kirk-avatar--small {
+.c2.kirk-avatar--small {
   height: 40px;
   width: 40px;
 }
 
-.c1.kirk-avatar--medium {
+.c2.kirk-avatar--medium {
   height: 96px;
   width: 96px;
 }
 
-.c1.kirk-avatar--large {
+.c2.kirk-avatar--large {
   height: 156px;
   width: 156px;
 }
 
-.c1.kirk-avatar--image {
+.c2.kirk-avatar--image {
   border: none;
 }
 
-.c1.kirk-avatar--image img {
+.c2.kirk-avatar--image img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications,
-.c1 .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
   z-index: 2;
   position: absolute;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications {
   top: -6px;
   right: -6px;
 }
 
-.c1 .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: -3px;
   right: -3px;
   width: 18px;
@@ -305,108 +396,199 @@ exports[`Should render properly with unread messages 1`] = `
   background-color: #5DD167;
 }
 
-.c1.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
-.c1.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c2.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c2.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   bottom: 0;
   right: 0;
 }
 
-.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
   width: 24px;
   height: 24px;
 }
 
-.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
   width: 36px;
   height: 36px;
 }
 
-.c1 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 24px;
   line-height: 23px;
   font-size: 14px;
   padding: 0 6px;
 }
 
-.c1 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
   height: 36px;
   line-height: 34px;
   font-size: 18px;
   padding: 0 8px;
 }
 
-.c0 {
+.c1 {
   margin: 0;
   font-weight: 400;
 }
 
-.c0.kirk-text-button {
+.c1.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-body,
-.c0.kirk-text-bodyStrong {
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c0.kirk-text-caption {
+.c1.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-display1 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c0.kirk-text-display2 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c0.kirk-text-subheader,
-.c0.kirk-text-subheaderStrong {
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c0.kirk-text-title,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c0.kirk-text-bodyStrong,
-.c0.kirk-text-subheaderStrong,
-.c0.kirk-text-titleStrong {
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
   font-weight: 500;
 }
 
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-messaging-summary-item"
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-titleStrong kirk-item-title c0"
+      className="kirk-text kirk-text-titleStrong kirk-item-title c1"
       style={
         Object {
           "color": "#054752",
@@ -416,7 +598,7 @@ exports[`Should render properly with unread messages 1`] = `
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body c0"
+      className="kirk-text kirk-text-title kirk-item-body c1"
       style={
         Object {
           "color": "#054752",
@@ -430,16 +612,16 @@ exports[`Should render properly with unread messages 1`] = `
       </span>
     </div>
     <div
-      className="kirk-text kirk-text-caption kirk-item-body-annotation c0"
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
     >
       3 days ago
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c1 kirk-avatar"
+      className="kirk-avatar--image c2 kirk-avatar"
     >
       <img
         alt=""
@@ -448,11 +630,11 @@ exports[`Should render properly with unread messages 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c2"
+      className="kirk-icon c3"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
