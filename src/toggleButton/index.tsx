@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Item, { ItemProps } from '_utils/item/index'
+import Item from '_utils/item/index'
+import { ItemProps } from '_utils/item/Item'
 import CheckboxIcon from '_utils/checkboxIcon'
 
 import style from 'toggleButton/style'
@@ -9,6 +10,7 @@ import style from 'toggleButton/style'
 interface ToggleButtonProps extends ItemProps {
   readonly name: string
   readonly label: string
+  readonly className?: Classcat.Class
   readonly sublabel?: string
   readonly status?: ToggleButtonStatus
   readonly checked?: boolean

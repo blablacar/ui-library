@@ -1,81 +1,172 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemChoice Should display a Loader when the component is in loading status 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c2 {
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -90,7 +181,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   justify-content: center;
 }
 
-.c2.kirk-loader--fullScreen {
+.c3.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -100,25 +191,25 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   z-index: 4;
 }
 
-.c2.kirk-loader--done {
+.c3.kirk-loader--done {
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -148,10 +239,10 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -161,7 +252,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -172,10 +263,10 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -185,7 +276,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -196,10 +287,10 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-loader c2"
+      className="kirk-loader c3"
       style={
         Object {
           "height": "24px",
@@ -209,7 +300,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c0"
+        className="kirk-icon kirk-icon-circle spinning c1"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -232,81 +323,172 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 `;
 
 exports[`ItemChoice Should display a done Loader when the component is in checked status 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c2 {
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -321,7 +503,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   justify-content: center;
 }
 
-.c2.kirk-loader--fullScreen {
+.c3.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -331,25 +513,25 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   z-index: 4;
 }
 
-.c2.kirk-loader--done {
+.c3.kirk-loader--done {
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
 }
 
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -379,10 +561,10 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -392,7 +574,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -403,10 +585,10 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -416,7 +598,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -427,10 +609,10 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-loader kirk-loader--done c2"
+      className="kirk-loader kirk-loader--done c3"
       style={
         Object {
           "height": "24px",
@@ -440,7 +622,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-check validate c0"
+        className="kirk-icon kirk-icon-check validate c1"
         fill="#FFF"
         height={12}
         viewBox="0 0 24 24"
@@ -465,93 +647,184 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 `;
 
 exports[`ItemChoice Should forward its props to the Item component 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
 <a
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -581,10 +854,10 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -594,7 +867,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -605,10 +878,10 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -618,7 +891,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -629,11 +902,11 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -663,11 +936,11 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -690,82 +963,173 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 `;
 
 exports[`ItemChoice Should support a disabled state 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
 <button
-  className="jsx-1542968643 kirk-item kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item-choice custom-class-name c0"
   disabled={true}
   onBlur={null}
   onClick={null}
@@ -774,11 +1138,11 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -808,10 +1172,10 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title kirk-item-title c2"
       style={
         Object {
           "color": "#DDD",
@@ -821,7 +1185,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#DDD",
@@ -832,10 +1196,10 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c2"
       style={
         Object {
           "color": "#DDD",
@@ -845,7 +1209,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#DDD",
@@ -856,11 +1220,11 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -890,11 +1254,11 @@ exports[`ItemChoice Should support a disabled state 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#DDD"
       height={24}
       viewBox="0 0 24 24"
@@ -917,92 +1281,183 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 `;
 
 exports[`ItemChoice Should use a button tag if no href is given 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
 <button
-  className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-choice custom-class-name"
+  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   onClick={[Function]}
   type="button"
 >
   <div
-    className="jsx-1542968643 kirk-item-leftAddon"
+    className="kirk-item-leftAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -1032,10 +1487,10 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-leftText"
+    className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -1045,7 +1500,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
       Title
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -1056,10 +1511,10 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightText"
+    className="kirk-item-rightText"
   >
     <div
-      className="kirk-text kirk-text-subheaderStrong kirk-item-title c1"
+      className="kirk-text kirk-text-subheaderStrong kirk-item-title c2"
       style={
         Object {
           "color": "#054752",
@@ -1069,7 +1524,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
       Data
     </div>
     <div
-      className="kirk-text kirk-text-body kirk-item-body c1"
+      className="kirk-text kirk-text-body kirk-item-body c2"
       style={
         Object {
           "color": "#708C91",
@@ -1080,11 +1535,11 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </div>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -1114,11 +1569,11 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
     </svg>
   </div>
   <div
-    className="jsx-1542968643 kirk-item-rightAddon"
+    className="kirk-item-rightAddon"
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c0"
+      className="kirk-icon c1"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
