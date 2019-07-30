@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ToggleButton from 'toggleButton'
+import ToggleButton, { ToggleButtonStatus } from './ToggleButton'
 
 const defaultProps = {
   name: 'foo',
@@ -59,9 +59,7 @@ describe('ToggleButton', () => {
 
   describe('loading status', () => {
     beforeEach(() => {
-      toggleButton = shallow(
-        <ToggleButton {...defaultProps} status={ToggleButton.STATUS.LOADING} />,
-      )
+      toggleButton = shallow(<ToggleButton {...defaultProps} status={ToggleButtonStatus.LOADING} />)
     })
 
     it('Should be disabled', () => {
