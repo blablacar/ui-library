@@ -64,15 +64,106 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   font-weight: 500;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
 }
 
-.c1 .kirk-icon-badge {
+.c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
 }
 
 <label
@@ -118,14 +209,14 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-check c1"
+      className="kirk-icon kirk-icon-check c2"
       fill="#FFF"
       height={24}
       viewBox="0 0 24 24"
       width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
-
+      
       <path
         className="jsx-2416231148 jsx-3125355633"
         d="M6.5 12.5l4 4 8-8"
@@ -205,18 +296,109 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   font-weight: 500;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   position: relative;
 }
 
-.c2 .kirk-icon-badge {
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c1 {
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -231,7 +413,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   justify-content: center;
 }
 
-.c1.kirk-loader--fullScreen {
+.c2.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -241,7 +423,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   z-index: 4;
 }
 
-.c1.kirk-loader--done {
+.c2.kirk-loader--done {
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
@@ -289,7 +471,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
       type="checkbox"
     />
     <div
-      className="kirk-loader c1"
+      className="kirk-loader c2"
       style={
         Object {
           "height": "24px",
@@ -299,14 +481,14 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c2"
+        className="kirk-icon kirk-icon-circle spinning c3"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
         width={24}
         xmlns="http://www.w3.org/2000/svg"
       >
-
+        
         <circle
           className="jsx-2931153156"
           cx="33"
@@ -385,15 +567,106 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
 }
 
-.c1 .kirk-icon-badge {
+.c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
 }
 
 <label
@@ -439,14 +712,14 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-circle c1"
+      className="kirk-icon kirk-icon-circle c2"
       fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
       width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
-
+      
       <circle
         className="jsx-2931153156"
         cx="33"
