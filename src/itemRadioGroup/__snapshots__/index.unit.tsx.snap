@@ -1,81 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadioGroup Should map its children and render them with specific props 1`] = `
-.c1 {
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c1.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c1.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
 }
 
-.c1.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
 }
 
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   position: relative;
 }
 
-.c3 .kirk-icon-badge {
+.c4 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c0 {
+.c1 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -95,11 +95,11 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   background: none;
 }
 
-.c0.kirk-item--clickable:hover {
+.c1.kirk-item--clickable:hover {
   background: #EDEDED;
 }
 
-a.c0 {
+a.c1 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -111,7 +111,7 @@ a.c0 {
   -webkit-touch-callout: none;
 }
 
-button.c0 {
+button.c1 {
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -122,27 +122,27 @@ button.c0 {
   -webkit-touch-callout: none;
 }
 
-.c0:disabled {
+.c1:disabled {
   cursor: default;
 }
 
-.c0 .kirk-item-leftText {
+.c1 .kirk-item-leftText {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c0 .kirk-item-rightText {
+.c1 .kirk-item-rightText {
   margin-left: 16px;
   text-align: right;
 }
 
-.c0 .kirk-item-title--withBody {
+.c1 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
 
-.c0 .kirk-item-leftAddon,
-.c0 .kirk-item-rightAddon {
+.c1 .kirk-item-leftAddon,
+.c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -154,29 +154,29 @@ button.c0 {
   align-items: center;
 }
 
-.c0 .kirk-item-leftAddon {
+.c1 .kirk-item-leftAddon {
   margin-right: 16px;
 }
 
-.c0 .kirk-item-rightAddon {
+.c1 .kirk-item-rightAddon {
   margin-left: 16px;
 }
 
-.c0.kirk-item--highlighted .kirk-text-title {
+.c1.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
 }
 
-.c2.spinning {
+.c3.spinning {
   -webkit-animation: rotator 1.4s linear infinite;
   animation: rotator 1.4s linear infinite;
 }
 
-.c2 circle {
+.c3 circle {
   stroke-width: 6;
   stroke-linecap: round;
 }
 
-.c2.spinning circle {
+.c3.spinning circle {
   stroke-dasharray: 187;
   stroke-dashoffset: 0;
   -webkit-transform-origin: center;
@@ -186,16 +186,26 @@ button.c0 {
   animation: dash 1.4s ease-in-out infinite;
 }
 
-.c2.thin circle {
+.c3.thin circle {
   stroke-width: 3;
 }
 
-.c2.absolute {
+.c3.absolute {
   position: absolute;
 }
 
-.c2 circle.inner {
+.c3 circle.inner {
   stroke-width: 0;
+}
+
+.c0 input {
+  position: absolute;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c0 {
+  cursor: pointer;
 }
 
 <ul
@@ -206,13 +216,13 @@ button.c0 {
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c0"
+      className="kirk-item kirk-item--clickable kirk-item-radio c0 c1"
     >
       <div
         className="kirk-item-leftText"
       >
         <div
-          className="kirk-text kirk-text-body kirk-item-body c1"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           1
         </div>
@@ -230,7 +240,7 @@ button.c0 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c2 c3"
+          className="kirk-icon kirk-icon-circle c3 c4"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"
@@ -253,13 +263,13 @@ button.c0 {
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c0"
+      className="kirk-item kirk-item--clickable kirk-item-radio c0 c1"
     >
       <div
         className="kirk-item-leftText"
       >
         <div
-          className="kirk-text kirk-text-body kirk-item-body c1"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           2
         </div>
@@ -277,7 +287,7 @@ button.c0 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c2 c3"
+          className="kirk-icon kirk-icon-circle c3 c4"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"
@@ -307,13 +317,13 @@ button.c0 {
     className="jsx-1825249063 kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c0"
+      className="kirk-item kirk-item--clickable kirk-item-radio c0 c1"
     >
       <div
         className="kirk-item-leftText"
       >
         <div
-          className="kirk-text kirk-text-body kirk-item-body c1"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           3
         </div>
@@ -331,7 +341,7 @@ button.c0 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c2 c3"
+          className="kirk-icon kirk-icon-circle c3 c4"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"

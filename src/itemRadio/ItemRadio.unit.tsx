@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import Item from '_utils/item'
-import ItemRadio, { ItemRadioProps } from './index'
+import ItemRadio, { ItemRadioProps, ItemRadioStatus } from './ItemRadio'
 
 describe('ItemRadio', () => {
   const defaultProps: ItemRadioProps = {
@@ -17,7 +17,7 @@ describe('ItemRadio', () => {
     checked: false,
     disabled: false,
     onChange() {},
-    status: ItemRadio.STATUS.DEFAULT,
+    status: ItemRadioStatus.DEFAULT,
     key: 0,
   }
 
@@ -35,7 +35,7 @@ describe('ItemRadio', () => {
   })
   it('Should display a Loader when the component is in loading status', () => {
     const itemRadio = renderer
-      .create(<ItemRadio {...defaultProps} status={ItemRadio.STATUS.LOADING} />)
+      .create(<ItemRadio {...defaultProps} status={ItemRadioStatus.LOADING} />)
       .toJSON()
     expect(itemRadio).toMatchSnapshot()
   })

@@ -2,7 +2,7 @@ import React, { Component, FunctionComponent } from 'react'
 import cc from 'classcat'
 
 import { ItemChoiceProps } from 'itemChoice'
-import { ItemRadioProps } from 'itemRadio'
+import { ItemRadioProps } from 'itemRadio/itemRadio'
 import { ItemCheckboxProps } from 'itemCheckbox'
 
 import style from './style'
