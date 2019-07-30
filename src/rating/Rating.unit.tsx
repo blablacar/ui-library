@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Rating from 'rating'
+import Rating from './Rating'
 
 it('Should have a rating and label', () => {
   const ratings = shallow(<Rating ratings={1}>rating</Rating>)
