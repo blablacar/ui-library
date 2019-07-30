@@ -1,7 +1,8 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Modal, { ModalSize } from 'modal'
+import Modal, { ModalSize } from './Modal'
+import StyledModal from './index'
 import Button from 'button'
 import renderer from 'react-test-renderer'
 import exenv from 'exenv'
@@ -80,7 +81,7 @@ describe('Modal', () => {
 
   it('should not have changed', () => {
     exenv.canUseDOM = false
-    const modalServerSide = renderer.create(<Modal isOpen large />).toJSON()
+    const modalServerSide = renderer.create(<StyledModal isOpen large />).toJSON()
     exenv.canUseDOM = true
     expect(modalServerSide).toMatchSnapshot()
   })

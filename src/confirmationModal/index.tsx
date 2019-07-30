@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { color } from '_utils/branding'
 import Button from 'button'
-import Modal, { ModalProps, ModalSize } from 'modal'
+import Modal, { ModalProps, ModalSize } from 'modal/Modal'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
 import InfoIcon from 'icon/infoIcon'

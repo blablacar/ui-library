@@ -1,6 +1,6 @@
 import React, { Component, Ref } from 'react'
 
-import Modal, { ModalProps, ModalSize } from 'modal'
+import Modal, { ModalProps, ModalSize } from 'modal/Modal'
 import Button from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
