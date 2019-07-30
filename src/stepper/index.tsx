@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import css from 'styled-jsx/css'
 import { color, font, space } from '_utils/branding'
 import Stepper from './Stepper'
 

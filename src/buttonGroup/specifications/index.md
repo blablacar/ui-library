@@ -21,7 +21,7 @@ Each button occupy 50% of the available space.
 ```js
 <ButtonGroup>
   <Button>Hello</Button>
-  <Button status={Button.STATUS.TERTIARY}>there</Button>
+  <Button status={ButtonStatus.TERTIARY}>there</Button>
 </ButtonGroup>
 ```
 

@@ -3,7 +3,8 @@ import cc from 'classcat'
 
 import prefix from '_utils'
 import style from 'buttonGroup/style'
-import Button, { ButtonProps, ButtonStatus } from 'button'
+import Button, { ButtonStatus } from 'button'
+import { ButtonProps } from 'button/Button'
 
 export interface ButtonGroupProps {
   readonly children: React.ReactElement<ButtonProps>[]
@@ -45,7 +46,7 @@ const ButtonGroup = ({
         const index: string = button.props.index || String(idx)
         const isLoading: boolean = Boolean(loadingIndex)
         const status: ButtonStatus = isLoading && index === loadingIndex
-          ? Button.STATUS.LOADING
+          ? ButtonStatus.LOADING
           : button.props.status
         const disabled = isLoading && index !== loadingIndex ? true : button.props.disabled
 
