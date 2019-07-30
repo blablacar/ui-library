@@ -9,6 +9,8 @@
 - **[BREAKING CHANGE]** `DatePicker`: changed export of `DatePicker.constants` to `DatePickerOrientation`
 - **[BREAKING CHANGE]** `<ItemRadio>`: changed export for `ItemRadioStatus`
 - **[BREAKING CHANGE]** `<ToggleButton>`: changed export for `ToggleButtonStatus`
+- **[BREAKING CHANGE]** `ItemCheckbox`: changed export of `ItemCheckbox.STATUS ` to `ItemCheckboxStatus`
+- [...]
 
 # v8.8.0 (24/07/2019)
 
