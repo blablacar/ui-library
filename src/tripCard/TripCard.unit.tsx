@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 
 import Text from 'text'
 import Avatar from 'avatar'
-import TripCard from 'tripCard'
+import TripCard from './TripCard'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
@@ -43,7 +43,7 @@ const createPassengers = count => {
   let passengerIdx = 1
   return Array(count).fill({
     avatarUrl: '//placehold.it/500x500',
-    firstName: `Jane ${passengerIdx+=1}`,
+    firstName: `Jane ${(passengerIdx += 1)}`,
   })
 }
 
@@ -100,52 +100,51 @@ describe('TripCard component', () => {
 
   it('Should render 3 passengers', () => {
     const passengersCount = 3
-    const component = shallow(<TripCard
-      {...mockedProps}
-      driver={null}
-      passengers={createPassengers(passengersCount)}
-    />)
+    const component = shallow(
+      <TripCard {...mockedProps} driver={null} passengers={createPassengers(passengersCount)} />,
+    )
     expect(component.find(Avatar)).toHaveLength(passengersCount)
     expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(false)
   })
 
   it('Should render 5 passengers', () => {
     const passengersCount = 5
-    const component = shallow(<TripCard
-      {...mockedProps}
-      driver={null}
-      passengers={createPassengers(passengersCount)}
-    />)
+    const component = shallow(
+      <TripCard {...mockedProps} driver={null} passengers={createPassengers(passengersCount)} />,
+    )
     expect(component.find(Avatar)).toHaveLength(passengersCount)
     expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(false)
   })
 
   it('Should render 4 passengers and a +6 icon', () => {
     const passengersCount = 10
-    const component = shallow(<TripCard
-      {...mockedProps}
-      driver={null}
-      passengers={createPassengers(passengersCount)}
-    />)
+    const component = shallow(
+      <TripCard {...mockedProps} driver={null} passengers={createPassengers(passengersCount)} />,
+    )
     expect(component.find(Avatar)).toHaveLength(4)
     expect(component.find('.kirk-tripCard-passengers-more').exists()).toBe(true)
-    expect(component.find('.kirk-tripCard-passengers-more').find(Text).html()).toMatch(/\+6/)
+    expect(
+      component
+        .find('.kirk-tripCard-passengers-more')
+        .find(Text)
+        .html(),
+    ).toMatch(/\+6/)
   })
 
   it('Should render status information', () => {
-    const statusInformation = { icon: <WarningIcon/>, text: 'Warning!' }
+    const statusInformation = { icon: <WarningIcon />, text: 'Warning!' }
     const component = shallow(<TripCard {...mockedProps} statusInformation={statusInformation} />)
     expect(component.find('.kirk-tripCard-top').exists()).toBe(true)
   })
 
   it('Should render badge', () => {
-    const component = shallow(<TripCard {...mockedProps} badge='Cheapest!' />)
+    const component = shallow(<TripCard {...mockedProps} badge="Cheapest!" />)
     expect(component.hasClass('kirk-tripCard--with-badge')).toBe(true)
     expect(component.find('.kirk-tripCard-badge').exists()).toBe(true)
   })
 
   it('Should render title', () => {
-    const component = shallow(<TripCard {...mockedProps} title='Sun 3 march, 18:00' />)
+    const component = shallow(<TripCard {...mockedProps} title="Sun 3 march, 18:00" />)
     expect(component.find('.kirk-tripCard-title').exists()).toBe(true)
   })
 })
