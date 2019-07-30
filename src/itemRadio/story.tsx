@@ -4,11 +4,12 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
-import ItemRadio from 'itemRadio'
+import ItemRadio from '.'
 import ItemRadioGroup from 'itemRadioGroup'
 
 import mainDoc from './specifications/doc.md'
 import groupDoc from './specifications/group.md'
+import { ItemRadioStatus } from './ItemRadio'
 
 const stories = storiesOf('ItemRadio', module)
 stories.addDecorator(withKnobs)
@@ -29,7 +30,7 @@ stories.add(
         dataInfo={isDataInfo ? text('Data info', 'Info') : null}
         onChange={action('changed')}
         checked={boolean('isChecked', false)}
-        status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
+        status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
       />
     )
   },
@@ -44,7 +45,7 @@ stories.add(
     return (
       <ItemRadioGroup
         name={text('Name', 'option')}
-        status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
+        status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
         value={2}
         onChange={action('changed group')}
       >
@@ -62,7 +63,7 @@ stories.add('Multiple items with chevrons (form step with auto submit)', () => {
   return (
     <ItemRadioGroup
       name={text('Name', 'option')}
-      status={select('status', ItemRadio.STATUS, ItemRadio.STATUS.DEFAULT)}
+      status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
       value={2}
       onChange={action('changed group')}
       withSeparators
