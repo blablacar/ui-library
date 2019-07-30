@@ -1,8 +1,7 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import MessagingSummaryItem from 'messagingSummaryItem'
+import MessagingSummaryItem from './MessagingSummaryItem'
 
 const defaultProps = {
   url: 'http_test.url',

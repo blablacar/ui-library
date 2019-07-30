@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import ChevronIcon from 'icon/chevronIcon'
-import MessagingSummaryItem from 'messagingSummaryItem'
+import MessagingSummaryItem from './index'
 
 const stories = storiesOf('MessagingSummaryItem', module)
 stories.addDecorator(withKnobs)
