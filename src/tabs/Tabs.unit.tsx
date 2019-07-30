@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Tabs from 'tabs'
+import Tabs from './Tabs'
 import renderer from 'react-test-renderer'
 
 const defaultTabsConfig = {
