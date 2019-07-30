@@ -1,112 +1,62 @@
-import React, { PureComponent } from 'react'
-import { canUseDOM } from 'exenv'
-import cc from 'classcat'
+import styled from 'styled-components'
 
-import style from 'drawer/style'
-import KEYCODES from '_utils/keycodes'
+import Drawer from './Drawer'
+import { color, transition } from '_utils/branding'
 
-export interface DrawerProps {
-  readonly children: string | JSX.Element
-  readonly className?: Classcat.Class
-  readonly innerClassName?: Classcat.Class
-  readonly onOpen?: () => void
-  readonly onClose?: () => void
-  readonly onTransitionEnd?: (open: boolean) => void
-  readonly width?: string
-  readonly open?: boolean
-}
 
-export default class Drawer extends PureComponent<DrawerProps> {
-  private contentNode: HTMLDivElement
-  static defaultProps: Partial<DrawerProps> = {
-    width: '400px',
-    onOpen() {},
-    onClose() {},
-    onTransitionEnd: isOpen => {},
-    open: false,
+
+const StyledDrawer = styled(Drawer)`
+  &.kirk-drawer--open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
   }
 
-  componentDidMount() {
-    document.addEventListener('mouseup', this.handleOutsideMouseClick)
-    document.addEventListener('touchstart', this.handleOutsideMouseClick)
-    document.addEventListener('keydown', this.handleKeydown)
+  &::after {
+    content: '';
+    font-size: 0;
   }
 
-  componentDidUpdate({ open }: DrawerProps) {
-    if (this.props.open !== open) {
-      this.props.open ? this.open() : this.close()
-    }
+  &.kirk-drawer--open::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color ${transition.duration.base} linear;
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeydown)
-    document.removeEventListener('mouseup', this.handleOutsideMouseClick)
-    document.removeEventListener('touchstart', this.handleOutsideMouseClick)
+  &.kirk-drawer--close::after {
+    background-color: rgba(0, 0, 0, 0);
   }
 
-  open = () => {
-    this.scrollLock()
-    this.props.onOpen()
+  & .kirk-drawer-scrollableContent {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    background-color: ${color.white};
+    transition: transform ${transition.duration.base} ease-in-out;
+    will-change: transform;
+    transform: translateY(-100%);
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
-  close = () => {
-    this.scrollUnlock()
-    this.props.onClose()
+  &.kirk-drawer--open .kirk-drawer-scrollableContent {
+    box-shadow: 0 36px 36px 0 rgba(0, 0, 0, 0.3);
+    transform: translateY(0%);
   }
 
-  handleOutsideMouseClick = (e: MouseEvent) => {
-    const isButton = e.button && e.button !== 0
-    if (!this.contentNode || (e.target as Element).tagName !== 'ASIDE' || isButton) {
-      return
-    }
-    this.close()
-  }
+  &.kirk-drawer--close .kirk-drawer-scrollableContent {
+    transform: translateY(-100%);
+  }  
+`
 
-  handleKeydown = (e: KeyboardEvent) => {
-    if (e.keyCode === KEYCODES.ESCAPE) {
-      this.close()
-    }
-  }
-
-  refContent = (contentNode: HTMLDivElement) => {
-    this.contentNode = contentNode
-  }
-
-  scrollLock = () => {
-    if (canUseDOM) {
-      document.documentElement.classList.add('kirk-scroll-lock')
-    }
-  }
-
-  scrollUnlock = () => {
-    if (canUseDOM) {
-      document.documentElement.classList.remove('kirk-scroll-lock')
-    }
-  }
-
-  render() {
-    const { open, className, innerClassName, onTransitionEnd, children, width } = this.props
-    return (
-      <aside
-        className={cc([
-          'kirk-drawer',
-          {
-            'kirk-drawer--open': open,
-            'kirk-drawer--close': !open,
-          },
-          className,
-        ])}
-      >
-        <div
-          ref={this.refContent}
-          className={cc(['kirk-drawer-scrollableContent', innerClassName])}
-          style={{ width }}
-          onTransitionEnd={() => onTransitionEnd(open)}
-        >
-          {children}
-        </div>
-        <style jsx>{style}</style>
-      </aside>
-    )
-  }
-}
+export default StyledDrawer
