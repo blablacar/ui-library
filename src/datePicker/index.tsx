@@ -1,194 +1,134 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
-import DayPicker, { DayModifiers, NavbarElementProps, CaptionElementProps } from 'react-day-picker'
+import styled from 'styled-components'
+import { space, font, color } from '_utils/branding'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import ArrowIcon from 'icon/arrowIcon'
-import Button, { ButtonStatus } from 'button'
+import DatePicker from './DatePicker'
 
-import style from 'datePicker/style'
+const horizontalMonthsGutter = parseInt(space.xl, 10)
 
-const [BASE_CLASSNAME] = prefix({ datepicker: true })
-
-const defaultWeekdaysLong = [0, 1, 2, 3, 4, 5, 6].map(weekday =>
-  DayPicker.LocaleUtils.formatWeekdayLong(weekday),
-)
-const defaultWeekdaysShort = [0, 1, 2, 3, 4, 5, 6].map(weekday =>
-  DayPicker.LocaleUtils.formatWeekdayShort(weekday),
-)
-const defaultMonths = DayPicker.LocaleUtils.getMonths()
-
-enum Orientation {
-  HORIZONTAL = 'horizontal',
-  VERTICAL = 'vertical',
-}
-
-export interface DatePickerProps {
-  readonly name: string
-  readonly locale?: string
-  readonly weekdaysShort?: string[]
-  readonly weekdaysLong?: string[]
-  readonly months?: string[]
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly initialDate?: Date
-  readonly className?: Classcat.Class
-  readonly numberOfMonths?: number
-  readonly orientation?: Orientation
-  readonly isOutsideRange?: (day: Date) => boolean
-  readonly fromMonth?: Date
-  readonly firstDayOfWeek?: number
-  readonly stickyPositionTop?: number
-}
-
-export interface DatePickerState {
-  readonly date: Date
-}
-
-export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> {
-  static defaultProps: Partial<DatePickerProps> = {
-    locale: 'en',
-    weekdaysShort: defaultWeekdaysShort,
-    weekdaysLong: defaultWeekdaysLong,
-    months: defaultMonths,
-    numberOfMonths: 2,
-    initialDate: null,
-    isOutsideRange: day => DayPicker.DateUtils.isDayBefore(day, new Date()),
-    orientation: Orientation.HORIZONTAL,
-    fromMonth: new Date(),
-    firstDayOfWeek: 0,
-    stickyPositionTop: 0,
+const StyledDatePicker = styled(DatePicker)`
+  & {
+    display: block;
+    text-align: center;
+    position: relative;
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+    color: ${color.primaryText};
+    background-color: ${color.white};
   }
 
-  static constants = Orientation
-
-  state = {
-    date: this.props.initialDate,
+  & .DayPicker-Month {
+    display: table;
+    margin-bottom: ${space.xl};
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+  & .DayPicker-Caption {
+    display: table-caption;
+    padding: 0 ${space.m} ${space.l};
+    font-size: ${font.l.size};
+    line-height: ${font.l.lineHeight};
+    text-align: left;
+  }
+  & .DayPicker-Caption:first-letter {
+    text-transform: uppercase;
+  }
+  & .DayPicker-Weekdays {
+    display: table-header-group;
+  }
+  & .DayPicker-WeekdaysRow {
+    display: table-row;
+  }
+  & .DayPicker-Weekday {
+    display: table-cell;
+    padding: ${space.m} 0;
+  }
+  & .DayPicker-Weekday abbr[title] {
+    border-bottom: 0;
+    text-decoration: none;
+    cursor: inherit;
+  }
+  & .DayPicker-Body {
+    display: table-row-group;
+  }
+  & .DayPicker-Week {
+    display: table-row;
+  }
+  & .DayPicker-Day {
+    display: table-cell;
+    padding: ${space.s} 0;
+    cursor: pointer;
+    color: ${color.secondaryText};
+  }
+  & .DayPicker-Day--disabled {
+    color: ${color.fadedText};
+    cursor: default;
+  }
+  & .DayPicker-Day--selected span {
+    background-color: ${color.primary};
+    color: ${color.white};
+  }
+  & .DayPicker-Day span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
   }
 
-  formatMonthTitle = (date: Date): string => {
-    const currentYear = `${new Date().getFullYear()}`
-    return `${this.props.months[date.getMonth()]} ${date.getFullYear()}`.replace(currentYear, '')
+  &.kirk-datepicker-horizontal .DayPicker-Months {
+    display: flex;
+  }
+  &.kirk-datepicker-horizontal .DayPicker-Month {
+    flex-grow: 1;
+  }
+  &.kirk-datepicker-horizontal.kirk-datepicker-months-grid-2 .DayPicker-Month {
+    width: calc(50% - ${horizontalMonthsGutter / 2}px);
+  }
+  &.kirk-datepicker-horizontal.kirk-datepicker-months-grid-3 .DayPicker-Month {
+    width: calc(33.33% - ${horizontalMonthsGutter / 2}px);
+  }
+  &.kirk-datepicker-horizontal .DayPicker-Month + .DayPicker-Month {
+    margin-left: ${horizontalMonthsGutter}px;
+  }
+  &.kirk-datepicker-horizontal .DayPicker-Caption {
+    text-align: center;
+  }
+  &.kirk-datepicker-horizontal .kirk-datepicker-previous-month {
+    position: absolute;
+    top: -12px;
+    left: 0;
+  }
+  &.kirk-datepicker-horizontal .kirk-datepicker-next-month {
+    position: absolute;
+    top: -12px;
+    right: 0;
   }
 
-  onDayClick = (date: Date, modifiers: DayModifiers) => {
-    if (!modifiers.disabled) {
-      this.setState({ date })
-
-      if (this.props.onChange) {
-        const yearString = `${date.getFullYear()}`
-        const monthString = `${date.getMonth() + 1}`.padStart(2, '0')
-        const dayString = `${date.getDate()}`.padStart(2, '0')
-        this.props.onChange({
-          name: this.props.name,
-          value: `${yearString}-${monthString}-${dayString}`,
-        })
-      }
-    }
+  &.kirk-datepicker-vertical .DayPicker-Weekdays {
+    display: none;
   }
-
-  renderNavbar = (props: NavbarElementProps) => {
-    if (this.props.orientation === Orientation.VERTICAL) {
-      // re-order weekdays starting from given firstDayOfWeek
-      const orderedWeekdays = [
-        ...this.props.weekdaysShort.slice(this.props.firstDayOfWeek),
-        ...this.props.weekdaysShort.slice(0, this.props.firstDayOfWeek),
-      ]
-      const style = { top: `${this.props.stickyPositionTop}px` }
-      return (
-        <div
-          className={cc(prefix({ 'sticky-weekdays': true }, BASE_CLASSNAME))}
-          style={style}
-          aria-hidden="true"
-        >
-          <div className={cc(prefix({ 'sticky-weekdaysrow': true }, BASE_CLASSNAME))}>
-            {orderedWeekdays.map(weekday => (
-              <div className={cc(prefix({ 'sticky-weekday': true }, BASE_CLASSNAME))} key={weekday}>
-                {weekday}
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    }
-
-    return (
-      <div className={props.className}>
-        {props.showPreviousButton && (
-          <Button
-            status={ButtonStatus.TERTIARY}
-            className={prefix({ 'previous-month': true }, BASE_CLASSNAME)}
-            onClick={() => props.onPreviousClick()}
-            isBubble
-          >
-            <ArrowIcon iconColor={color.primary} />
-          </Button>
-        )}
-        {props.showNextButton && (
-          <Button
-            status={ButtonStatus.TERTIARY}
-            className={prefix({ 'next-month': true }, BASE_CLASSNAME)}
-            onClick={() => props.onNextClick()}
-            isBubble
-          >
-            <ArrowIcon right iconColor={color.primary} />
-          </Button>
-        )}
-      </div>
-    )
+  &.kirk-datepicker-vertical .DayPicker-Caption {
+    padding-top: ${space.l};
   }
-
-  renderCaption = (props: CaptionElementProps) => (
-    <div className={cc([prefix({ 'month-caption': true }, BASE_CLASSNAME), 'DayPicker-Caption'])}>
-      {props.localeUtils.formatMonthTitle(props.date)}
-    </div>
-  )
-
-  renderDay = (day: Date) => <span>{day.getDate()}</span>
-
-  render() {
-    const {
-      className,
-      numberOfMonths,
-      isOutsideRange,
-      orientation,
-      fromMonth,
-      weekdaysShort,
-      weekdaysLong,
-      months,
-      firstDayOfWeek,
-    } = this.props
-    const { date } = this.state
-    const layoutClassName = `months-grid-${numberOfMonths}`
-    return (
-      <div
-        className={cc([
-          BASE_CLASSNAME,
-          className,
-          prefix({ [orientation]: true }, BASE_CLASSNAME),
-          prefix({ [layoutClassName]: true }, BASE_CLASSNAME),
-        ])}
-      >
-        <DayPicker
-          numberOfMonths={numberOfMonths}
-          onDayClick={this.onDayClick}
-          selectedDays={date}
-          disabledDays={isOutsideRange}
-          fromMonth={fromMonth}
-          pagedNavigation
-          navbarElement={this.renderNavbar}
-          captionElement={this.renderCaption}
-          renderDay={this.renderDay}
-          weekdaysShort={weekdaysShort}
-          weekdaysLong={weekdaysLong}
-          months={months}
-          firstDayOfWeek={firstDayOfWeek}
-          localeUtils={{ ...DayPicker.LocaleUtils, formatMonthTitle: this.formatMonthTitle }}
-        />
-        <style jsx>{style}</style>
-      </div>
-    )
+  &.kirk-datepicker-vertical .kirk-datepicker-sticky-weekdays {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    position: sticky;
+    top: 0;
+    background-color: ${color.white};
   }
-}
+  &.kirk-datepicker-vertical .kirk-datepicker-sticky-weekdaysrow {
+    display: table-row;
+  }
+  &.kirk-datepicker-vertical .kirk-datepicker-sticky-weekday {
+    display: table-cell;
+    padding: ${space.m} 0;
+  }
+`
 
-export default DatePicker
+export { DatePickerOrientation } from './DatePicker'
+export default StyledDatePicker

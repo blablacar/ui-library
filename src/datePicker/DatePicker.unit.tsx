@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 import DayPicker, { NavbarElementProps, CaptionElementProps } from 'react-day-picker'
-import DatePicker from './index'
+import DatePicker, { DatePickerOrientation } from './DatePicker'
 
 describe('DatePicker', () => {
   describe('renderNavbar', () => {
@@ -15,7 +15,7 @@ describe('DatePicker', () => {
     }
     it('Should render the weekdays in vertical mode', () => {
       const datepicker = shallow(
-        <DatePicker name="datepicker" orientation={DatePicker.constants.VERTICAL} />,
+        <DatePicker name="datepicker" orientation={DatePickerOrientation.VERTICAL} />,
       )
       const navbar = renderer.create(datepicker.instance().renderNavbar(navbarProps))
       expect(navbar).toMatchSnapshot()
@@ -23,7 +23,7 @@ describe('DatePicker', () => {
 
     it('Should render the previous/next buttons in horizontal mode', () => {
       const datepicker = shallow(
-        <DatePicker name="datepicker" orientation={DatePicker.constants.HORIZONTAL} />,
+        <DatePicker name="datepicker" orientation={DatePickerOrientation.HORIZONTAL} />,
       )
       const navbar = renderer.create(datepicker.instance().renderNavbar(navbarProps))
       expect(navbar).toMatchSnapshot()
