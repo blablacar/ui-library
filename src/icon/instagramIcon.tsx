@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const InstagramIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -12,6 +13,6 @@ export const InstagramIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-InstagramIcon.defaultProps = BaseIcon.defaultProps
+InstagramIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(InstagramIcon)

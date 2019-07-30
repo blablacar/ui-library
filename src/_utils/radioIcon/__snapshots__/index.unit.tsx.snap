@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <svg
   aria-hidden={true}
-  className="kirk-icon kirk-icon-circle"
+  className="kirk-icon kirk-icon-circle c0"
   fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"
@@ -30,6 +41,17 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading and isChecked are set to true 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="jsx-2765694959 kirk-loader"
   style={
@@ -41,7 +63,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning"
+    className="kirk-icon kirk-icon-circle spinning c0"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
@@ -62,6 +84,17 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="jsx-2765694959 kirk-loader"
   style={
@@ -73,7 +106,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning"
+    className="kirk-icon kirk-icon-circle spinning c0"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
@@ -94,9 +127,20 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 `;
 
 exports[`RadioIcon Should render an empty circle by default 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <svg
   aria-hidden={true}
-  className="kirk-icon kirk-icon-circle"
+  className="kirk-icon kirk-icon-circle c0"
   fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"

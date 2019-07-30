@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
 interface PinProps extends Icon {
@@ -22,7 +23,7 @@ export const PinIcon = (props: PinProps) => (
 )
 
 PinIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   bgColor: 'none',
   strokeColor: color.icon,
 }

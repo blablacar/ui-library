@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const SendIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 21 22">
@@ -21,6 +22,6 @@ export const SendIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-SendIcon.defaultProps = BaseIcon.defaultProps
+SendIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(SendIcon)

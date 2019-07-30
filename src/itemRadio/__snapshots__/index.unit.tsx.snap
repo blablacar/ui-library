@@ -64,6 +64,17 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -108,7 +119,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-circle"
+      className="kirk-icon kirk-icon-circle c1"
       fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
@@ -200,6 +211,17 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -253,7 +275,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning"
+        className="kirk-icon kirk-icon-circle spinning c1"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -339,6 +361,17 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <label
   className="jsx-1542968643 kirk-item kirk-item--clickable kirk-item-radio custom-class-name"
 >
@@ -383,7 +416,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
     />
     <svg
       aria-hidden={true}
-      className="kirk-icon kirk-icon-circle"
+      className="kirk-icon kirk-icon-circle c1"
       fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"

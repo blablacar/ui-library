@@ -64,6 +64,17 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <ul
   className="jsx-1825249063 kirk-items-list"
   role="radiogroup"
@@ -96,7 +107,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle"
+          className="kirk-icon kirk-icon-circle c1"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"
@@ -144,7 +155,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle"
+          className="kirk-icon kirk-icon-circle c1"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"
@@ -199,7 +210,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle"
+          className="kirk-icon kirk-icon-circle c1"
           fill="#00AFF5"
           height={24}
           viewBox="0 0 66 66"

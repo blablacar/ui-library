@@ -64,6 +64,17 @@ exports[`ItemsList Should render an unordered list 1`] = `
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <ul
   className="jsx-1825249063 kirk-items-list"
   role=""
@@ -96,7 +107,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -145,7 +156,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -194,7 +205,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -282,6 +293,17 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <ul
   className="jsx-1825249063 kirk-items-list"
   role=""
@@ -314,7 +336,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -363,7 +385,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -412,7 +434,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -500,6 +522,17 @@ exports[`ItemsList Should render an unordered list with the separators classname
   font-weight: 500;
 }
 
+.c1 {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <ul
   className="jsx-1825249063 kirk-items-list kirk-items-list--withSeparators"
   role=""
@@ -532,7 +565,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -581,7 +614,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"
@@ -630,7 +663,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon"
+          className="kirk-icon c1"
           fill="#708C91"
           height={24}
           viewBox="0 0 24 24"

@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="kirk-phoneField"
 >
@@ -34,7 +45,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       </select>
       <svg
         aria-hidden={true}
-        className="kirk-icon"
+        className="kirk-icon c0"
         fill="#708C91"
         height={24}
         viewBox="0 0 24 24"
@@ -87,7 +98,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
         >
           <svg
             aria-hidden={true}
-            className="kirk-icon"
+            className="kirk-icon c0"
             fill="#708C91"
             height="18"
             viewBox="0 0 24 24"
@@ -113,6 +124,17 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 `;
 
 exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
+.c0 {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 <div
   className="kirk-phoneField"
 >
@@ -142,7 +164,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       </select>
       <svg
         aria-hidden={true}
-        className="kirk-icon"
+        className="kirk-icon c0"
         fill="#708C91"
         height={24}
         viewBox="0 0 24 24"

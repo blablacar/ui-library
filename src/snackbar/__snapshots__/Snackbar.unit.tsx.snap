@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snackbar should not have changed 1`] = `
+.c2 {
+  display: inline-block;
+  position: relative;
+}
+
+.c2 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -143,7 +154,7 @@ exports[`Snackbar should not have changed 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon"
+        className="kirk-icon c2"
         fill="#FFF"
         height="18px"
         viewBox="0 0 24 24"

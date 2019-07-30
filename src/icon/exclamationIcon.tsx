@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 // tslint:disable:max-line-length
 export const ExclamationIcon = (props: Icon) => (
@@ -27,6 +28,6 @@ export const ExclamationIcon = (props: Icon) => (
     </BaseIcon>
 )
 
-ExclamationIcon.defaultProps = BaseIcon.defaultProps
+ExclamationIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(ExclamationIcon)
