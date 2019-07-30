@@ -205,15 +205,46 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   font-weight: 500;
 }
 
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
 }
 
-.c1 .kirk-icon-badge {
+.c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1.kirk-loader--fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.85);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}
+
+.c1.kirk-loader--done {
+  background-color: #5DD167;
+  color: #FFF;
+  border-radius: 50%;
 }
 
 <label
@@ -258,7 +289,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
       type="checkbox"
     />
     <div
-      className="jsx-2765694959 kirk-loader"
+      className="kirk-loader c1"
       style={
         Object {
           "height": "24px",
@@ -268,7 +299,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c1"
+        className="kirk-icon kirk-icon-circle spinning c2"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"

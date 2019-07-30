@@ -41,19 +41,50 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading and isChecked are set to true 1`] = `
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0.kirk-loader--fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.85);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}
+
+.c0.kirk-loader--done {
+  background-color: #5DD167;
+  color: #FFF;
+  border-radius: 50%;
+}
+
 <div
-  className="jsx-2765694959 kirk-loader"
+  className="kirk-loader c0"
   style={
     Object {
       "height": "24px",
@@ -63,7 +94,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning c0"
+    className="kirk-icon kirk-icon-circle spinning c1"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
@@ -84,19 +115,50 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
-.c0 {
+.c1 {
   display: inline-block;
   position: relative;
 }
 
-.c0 .kirk-icon-badge {
+.c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0.kirk-loader--fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.85);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}
+
+.c0.kirk-loader--done {
+  background-color: #5DD167;
+  color: #FFF;
+  border-radius: 50%;
+}
+
 <div
-  className="jsx-2765694959 kirk-loader"
+  className="kirk-loader c0"
   style={
     Object {
       "height": "24px",
@@ -106,7 +168,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning c0"
+    className="kirk-icon kirk-icon-circle spinning c1"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
