@@ -4,6 +4,7 @@
 - **[UPDATE]** Update Node version to 10.15.0
 - **[BREAKING CHANGE]** Removed locale props from TimePicker
 - **[BREAKING CHANGE]** `<Text>`: changed export for `TextDisplayType` `TextTagType`
+- **[BREAKING CHANGE]** `<Tabs>`: changed export for `TabsStatus`
 
 # v8.8.0 (24/07/2019)
 
