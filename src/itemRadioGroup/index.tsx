@@ -1,6 +1,6 @@
 import React, { PureComponent, cloneElement } from 'react'
 
-import { ItemRadioStatus, ItemRadioProps } from 'itemRadio'
+import { ItemRadioStatus, ItemRadioProps } from 'itemRadio/ItemRadio'
 import ItemsList from 'itemsList'
 
 export interface ItemRadioGroupProps {

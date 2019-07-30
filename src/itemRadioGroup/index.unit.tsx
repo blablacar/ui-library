@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import ItemRadio from 'itemRadio'
+import { ItemRadioStatus } from 'itemRadio/ItemRadio'
 
 import ItemRadioGroup, { ItemRadioGroupProps } from './index'
 
@@ -11,7 +12,7 @@ describe('ItemRadioGroup', () => {
     name: 'name',
     value: 2,
     onChange() {},
-    status: ItemRadio.STATUS.DEFAULT,
+    status: ItemRadioStatus.DEFAULT,
     children: [
       <ItemRadio label="1" value={1} />,
       <ItemRadio label="2" value={2} />,
@@ -19,9 +20,7 @@ describe('ItemRadioGroup', () => {
     ],
   }
   it('Should map its children and render them with specific props', () => {
-    const itemRadioGroup = renderer
-      .create(<ItemRadioGroup {...defaultProps} />)
-      .toJSON()
+    const itemRadioGroup = renderer.create(<ItemRadioGroup {...defaultProps} />).toJSON()
     expect(itemRadioGroup).toMatchSnapshot()
   })
   it('Should listen to all children ItemRadio changes', () => {
@@ -38,9 +37,7 @@ describe('ItemRadioGroup', () => {
   })
   it('Should call the onChange prop when an ItemRadio triggers a change', () => {
     const onChangeMock = jest.fn()
-    const itemRadioGroup = shallow(
-      <ItemRadioGroup {...defaultProps} onChange={onChangeMock} />,
-    )
+    const itemRadioGroup = shallow(<ItemRadioGroup {...defaultProps} onChange={onChangeMock} />)
     itemRadioGroup.instance().onChange({ name: 'name', value: 'foo' })
     expect(onChangeMock).toHaveBeenCalledWith({ name: defaultProps.name, value: 'foo' })
   })
