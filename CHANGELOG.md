@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[FIX]** Fix pointy corner on active `Message` (from top-right to bottom-right)
+- **[UPDATE]** Update Node version to 10.15.0
+- **[BREAKING CHANGE]** Removed locale props from TimePicker
 - [...]
 
 # v8.8.0 (24/07/2019)

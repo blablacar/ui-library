@@ -39,28 +39,14 @@ export const getTodayDate = () => {
   return date
 }
 
-/**
- * Format given dateTime with `Date#toLocaleTimeString`.
- */
-const defaultRenderTime = (dateTime: Date, locale: string) => {
-  if (toLocaleTimeStringSupportsLocales && locale) {
-    return dateTime.toLocaleTimeString(locale, {
-      hour: '2-digit',
-      minute: '2-digit',
-    })
-  }
-  return formatTimeValue(dateTime)
-}
-
 interface TimePickerProps {
   readonly name: string
   readonly className?: Classcat.Class
   readonly defaultValue?: string
   readonly disabled?: boolean
   readonly minuteStep?: number
-  readonly renderTime?: (dt: Date, locale: string) => string
+  readonly renderTime?: (dt: Date) => string
   readonly onChange?: (obj: OnChangeParameters) => void
-  readonly locale: string
   readonly timeStart?: string
 }
 
@@ -68,7 +54,6 @@ type Steps = { [propName: string]: string }
 
 type TimeSteps = {
   minuteStep?: number
-  locale: string
   timeStart?: string
 }
 
@@ -82,15 +67,15 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.
    */
-  generateTimeSteps = ({ minuteStep = 30, locale, timeStart = '00:00' }: TimeSteps) => {
+  generateTimeSteps = ({ minuteStep = 30, timeStart = '00:00' }: TimeSteps) => {
     const steps: Steps = {}
     // Taking today as reference to loop through hours
     const dt = this.referenceDate
     const day = this.referenceDate.getDate()
-    const { renderTime = defaultRenderTime } = this.props
+    const { renderTime = formatTimeValue } = this.props
     while (dt.getDate() === day) {
       if (formatTimeValue(dt) >= timeStart) {
-        steps[formatTimeValue(dt)] = renderTime(dt, locale)
+        steps[formatTimeValue(dt)] = renderTime(dt)
       }
       dt.setMinutes(dt.getMinutes() + minuteStep)
     }
@@ -106,7 +91,6 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
 
   componentWillReceiveProps(newProps: TimePickerProps) {
     const shouldRegenerateTimeSteps =
-      newProps.locale !== this.props.locale ||
       newProps.minuteStep !== this.props.minuteStep ||
       newProps.timeStart !== this.props.timeStart
 
