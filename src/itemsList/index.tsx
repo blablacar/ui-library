@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { ItemChoiceProps } from 'itemChoice'
 import { ItemRadioProps } from 'itemRadio/itemRadio'
-import { ItemCheckboxProps } from 'itemCheckbox'
+import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
 
 import style from './style'
 

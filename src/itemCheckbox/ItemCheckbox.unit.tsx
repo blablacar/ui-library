@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import Item from '_utils/item'
-import ItemCheckbox, { ItemCheckboxProps } from './index'
+import ItemCheckbox, { ItemCheckboxStatus, ItemCheckboxProps } from './ItemCheckbox'
 
 describe('ItemCheckbox', () => {
   const defaultProps: ItemCheckboxProps = {
@@ -16,7 +16,7 @@ describe('ItemCheckbox', () => {
     checked: false,
     disabled: false,
     onChange() {},
-    status: ItemCheckbox.STATUS.DEFAULT,
+    status: ItemCheckboxStatus.DEFAULT,
     key: 0,
   }
 
@@ -34,7 +34,7 @@ describe('ItemCheckbox', () => {
   })
   it('Should display a Loader when the component is in loading status', () => {
     const itemCheckbox = renderer
-      .create(<ItemCheckbox {...defaultProps} status={ItemCheckbox.STATUS.LOADING} />)
+      .create(<ItemCheckbox {...defaultProps} status={ItemCheckboxStatus.LOADING} />)
       .toJSON()
     expect(itemCheckbox).toMatchSnapshot()
   })
