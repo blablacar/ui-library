@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import TimePicker from 'timePicker'
+import TimePicker from '.'
 
 const stories = storiesOf('TimePicker', module)
 stories.addDecorator(withKnobs)

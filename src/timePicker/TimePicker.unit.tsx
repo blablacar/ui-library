@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import TimePicker, { getTodayDate } from 'timePicker'
+import TimePicker, { getTodayDate } from './TimePicker'
 
 const defaultProps = {
   name: 'departure-time',
