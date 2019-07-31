@@ -12,6 +12,8 @@ export enum ItemChoiceStyle {
   RECOMMENDED = 'recommended',
 }
 
+export const ItemChoiceStatus = ItemStatus
+
 export interface ItemChoiceProps {
   readonly label?: string
   readonly labelInfo?: string
@@ -43,9 +45,6 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
     style: ItemChoiceStyle.PRIMARY,
     disabled: false,
   }
-
-  static STATUS = ItemStatus
-  static STYLE = ItemChoiceStyle
 
   get rightAddon() {
     const { status, rightAddon, onDoneAnimationEnd } = this.props

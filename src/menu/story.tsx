@@ -6,7 +6,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { BellIcon, BubbleIcon, CheckShieldIcon, HomeIcon, NewspaperIcon, TicketIcon } from 'icon'
 import Text from 'text'
 import Menu from 'menu'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 
 const stories = storiesOf('Menu', module)
 stories.addDecorator(withKnobs)
@@ -17,7 +17,7 @@ stories.add('With all separators', () => (
     <ItemChoice
       label="Rides offered (loading)"
       leftAddon={<NewspaperIcon />}
-      status={ItemChoice.STATUS.LOADING}
+      status={ItemChoiceStatus.LOADING}
       href="#"
     />
     <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
@@ -40,7 +40,7 @@ stories.add('With custom separators', () => (
     <ItemChoice
       label="Rides offered (loading)"
       leftAddon={<NewspaperIcon />}
-      status={ItemChoice.STATUS.LOADING}
+      status={ItemChoiceStatus.LOADING}
       href="#"
     />
     <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
