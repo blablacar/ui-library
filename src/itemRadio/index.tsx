@@ -12,4 +12,5 @@ const StyledItemRadio = styled(ItemRadio)`
   }
 `
 
+export { ItemRadioStatus } from './ItemRadio'
 export default StyledItemRadio
