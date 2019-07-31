@@ -49,5 +49,3 @@ export { default as Why } from 'why'
 export { default as branding } from '_utils/branding'
 
 export * from 'icon/index'
-
-export { default as flush, flushToHTML } from 'styled-jsx/server'
