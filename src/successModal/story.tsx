@@ -5,7 +5,8 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { ModalSize } from 'modal'
-import SuccessModal, { SuccessModalProps } from 'successModal'
+import SuccessModal from 'successModal'
+import { SuccessModalProps } from './SuccessModal'
 import successModalDoc from './specifications/successModal.md'
 
 const stories = storiesOf('SuccessModal', module)
