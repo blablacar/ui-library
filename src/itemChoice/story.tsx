@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus, ItemChoiceStyle } from 'itemChoice'
 import ComfortIcon from 'icon/comfortIcon'
 
 import specs from './specifications/index.md'
@@ -27,8 +27,8 @@ stories.add(
         dataInfo={text('Data Info', 'Info')}
         leftAddon={withLeftIcon ? <ComfortIcon /> : null}
         rightAddon={withRightIcon ? <ComfortIcon /> : null}
-        status={select('Status', ItemChoice.STATUS, ItemChoice.STATUS.DEFAULT)}
-        style={select('Style', ItemChoice.STYLE, ItemChoice.STYLE.PRIMARY)}
+        status={select('Status', ItemChoiceStatus, ItemChoiceStatus.DEFAULT)}
+        style={select('Style', ItemChoiceStyle, ItemChoiceStyle.PRIMARY)}
         onDoneAnimationEnd={action('onDoneAnimationEnd')}
         onClick={action('onClick')}
         href={isLink ? <a href="#" /> : ''}

@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import AutoCompleteList from './AutoCompleteList'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 
 const fakeItems = [
   { label: 'title1', labelInfo: 'description1' },
@@ -91,7 +91,7 @@ describe('AutoCompleteList', () => {
         <AutoCompleteList
           {...defaultProps}
           onSelect={onSelectSpy}
-          selectedItemStatus={ItemChoice.STATUS.LOADING}
+          selectedItemStatus={ItemChoiceStatus.LOADING}
         />,
       )
 
