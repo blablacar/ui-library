@@ -1,269 +1,94 @@
-import React, { PureComponent, RefObject } from 'react'
-import cc from 'classcat'
-import prefix from '_utils'
-import isEmpty from 'lodash.isempty'
-import isEqual from 'lodash.isequal'
-import SelectField from 'selectField'
-import TextField, { inputTypes } from 'textField'
-import { allCountries } from 'country-telephone-data'
-import style from 'phoneField/style'
+import styled from 'styled-components'
+import { color, radius, space, inputBorderSize, transition } from '_utils/branding'
+import { selectHeight } from 'selectField/SelectField'
 
-export type selectfield = HTMLSelectElement
+import PhoneField from './PhoneField'
 
-enum FIELDS {
-  PHONENUMBER = 'phoneNumber',
-  PHONEREGION = 'phoneRegion',
-}
-interface PhoneFieldOnChangeParameters {
-  name: string
-  value: {
-    [FIELDS.PHONENUMBER]: string
-    [FIELDS.PHONEREGION]: string
-    phonePrefix: string
-    completePhoneNumber: string
-  }
-}
-
-type errorField = string | JSX.Element
-interface PhoneFieldProps {
-  readonly name: string
-  readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
-  readonly id?: string
-  readonly className?: string
-  readonly ariaLabelledBy?: string
-  readonly selectFieldLabel?: string
-  readonly textFieldTitle?: string
-  readonly textFieldPlaceholder?: string
-  readonly defaultRegionValue?: string
-  readonly defaultPhoneValue?: string
-  readonly countryWhitelist?: string[]
-  readonly customCountryNames?: customCountryNames
-  readonly isInline?: boolean
-  readonly focus?: boolean
-  readonly selectAutoFocus?: boolean
-  error?: errorField
-}
-interface PhoneFieldState {
-  countryData: mappedCountryPhoneData[]
-  countryWhitelist: string[]
-  phonePrefix: string
-  completePhoneNumber: string
-  // Make the type of [key: string]: string etc. assignable for setState()
-  [key: string]: any
-}
-
-const allCountryPhoneData: allCountryPhoneData[] = allCountries
-
-/* Format and keep only used data */
-const formattedCountryPhoneData: formattedCountryPhoneData[] = allCountryPhoneData.map(
-  countryData => ({
-    name: countryData.name,
-    iso2: countryData.iso2.toUpperCase(),
-    dialCode: `+${countryData.dialCode}`,
-  }),
-)
-/**
- * Filter countries data according to whitelist
- * @param {Array} countryList in ISO2 format ex: ['FR', 'ES']
- * @return {formattedCountriesPhoneData}
- */
-const filterIso2 = (countryList: string[]) =>
-  formattedCountryPhoneData.filter(country => countryList.includes(country.iso2))
-
-/**
- * Return country data according to ISO2 defaultValue
- * @param {string} countryDefault ISO2 format ex: 'FR'
- * @return {formattedCountriesPhoneData}
- */
-const findIso2 = (countryDefault: string): formattedCountryPhoneData =>
-  formattedCountryPhoneData.find(country => country.iso2 === countryDefault)
-
-const mapCountriesPhoneData = (
-  countryData: formattedCountryPhoneData[],
-  countryNames: customCountryNames,
-): mappedCountryPhoneData[] => {
-  return countryData.map(data => ({
-    value: data.iso2,
-    label: `${!isEmpty(countryNames[data.iso2]) ? countryNames[data.iso2] : data.name} ${
-      data.dialCode
-    }`,
-  }))
-}
-
-/* Alphabetically sorted */
-const sortCountriesPhoneData = (
-  mappedCountryPhoneData: mappedCountryPhoneData[],
-): mappedCountryPhoneData[] =>
-  mappedCountryPhoneData.sort((a, b) => {
-    if (a.label < b.label) return -1
-    if (a.label > b.label) return 1
-    return 0
-  })
-
-const iso2toDialCode = (iso2Value: string) => {
-  if (isEmpty(iso2Value)) {
-    return ''
-  }
-  const countryPhoneData = findIso2(iso2Value)
-  if (countryPhoneData) {
-    return countryPhoneData.dialCode
-  }
-  return ''
-}
-
-const DisplayError = (error: errorField) => {
-  const className = 'kirk-error-message'
-
-  return React.isValidElement(error) ? (
-    React.cloneElement(error, { className } as Object)
-  ) : (
-    <span role="alert" className={className}>
-      {error}
-    </span>
-  )
-}
-
-/**
- * TODO: BBCSPA-3355 Fix A11y issues on label and error state
- */
-export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> {
-  private ref: RefObject<HTMLSelectElement>
-  constructor(props: PhoneFieldProps) {
-    super(props)
-    this.ref = React.createRef()
-  }
-  static defaultProps: Partial<PhoneFieldProps> = {
-    defaultRegionValue: '',
-    defaultPhoneValue: '',
-    countryWhitelist: [],
-    customCountryNames: {},
-    isInline: true,
+const StyledPhoneField = styled(PhoneField)`
+  & .kirk-phoneField-wrapper--inline {
+    display: flex;
+    border-radius: ${radius.l};
+    background-color: ${color.inputBackground};
   }
 
-  state = {
-    countryData: PhoneField.countryData(this.props.countryWhitelist, this.props.customCountryNames),
-    countryWhitelist: this.props.countryWhitelist,
-    [FIELDS.PHONENUMBER]: this.props.defaultPhoneValue,
-    [FIELDS.PHONEREGION]: !isEmpty(this.props.defaultRegionValue)
-      ? this.props.defaultRegionValue
-      : '',
-    phonePrefix: iso2toDialCode(this.props.defaultRegionValue),
-    completePhoneNumber:
-      iso2toDialCode(this.props.defaultRegionValue) + this.props.defaultPhoneValue,
-    hasFocus: false,
+  & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
   }
 
-  handleChange = ({ name, value }: OnChangeParameters) => {
-    this.setState({ [name]: value }, () => {
-      this.props.onChange({
-        name: this.props.name,
-        value: {
-          [FIELDS.PHONENUMBER]: this.state[FIELDS.PHONENUMBER],
-          [FIELDS.PHONEREGION]: this.state[FIELDS.PHONEREGION],
-          phonePrefix: iso2toDialCode(this.state[FIELDS.PHONEREGION]),
-          completePhoneNumber:
-            iso2toDialCode(this.state[FIELDS.PHONEREGION]) + this.state[FIELDS.PHONENUMBER],
-        },
-      })
-    })
+  & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+    height: calc(${selectHeight} - ${inputBorderSize.focus} * 2);
   }
 
-  static countryData(whitelist: string[], countryNames: customCountryNames) {
-    if (!isEmpty(whitelist)) {
-      const whiteListCountriesPhoneData = filterIso2(whitelist)
-      const whitelistMapped = mapCountriesPhoneData(whiteListCountriesPhoneData, countryNames)
+  &
+    .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus
+    .kirk-textField-wrapper
+    input {
+    padding-top: calc(${space.l} - ${inputBorderSize.focus});
+    padding-bottom: calc(${space.l} - ${inputBorderSize.focus});
+  }
 
-      return sortCountriesPhoneData(whitelistMapped)
+  & .kirk-phoneField-wrapper--inline .kirk-selectField,
+  & .kirk-phoneField-wrapper--inline .kirk-textField {
+    flex: 1;
+  }
+
+  & .kirk-phoneField-wrapper--inline .kirk-selectField {
+    flex-grow: 1;
+  }
+
+  & .kirk-phoneField-wrapper--inline .kirk-textField {
+    flex-grow: 2;
+  }
+
+  & .kirk-phoneField-wrapper--inline .kirk-textField input {
+    padding-left: 0 !important;
+  }
+
+  & .kirk-phoneField-wrapper .kirk-textField {
+    margin-top: ${space.l};
+  }
+
+  &.kirk-error .kirk-phoneField-wrapper--inline {
+    background: ${color.inputError};
+    animation: phoneFieldError ${transition.duration.fast} ease-in-out;
+  }
+
+  &.kirk-error .kirk-selectField,
+  &.kirk-error .kirk-selectField .kirk-icon,
+  &.kirk-error .kirk-textField-wrapper,
+  &.kirk-error .kirk-textField .kirk-textField-wrapper input {
+    background: ${color.inputError};
+    border-color: ${color.inputError};
+  }
+
+  &.kirk-error .kirk-error-message {
+    color: ${color.danger};
+    display: block;
+    padding: ${space.m};
+  }
+
+  @keyframes phoneFieldError {
+    20% {
+      margin-left: -10px;
+      margin-right: 10px;
     }
-    const countriesDatasMapped = mapCountriesPhoneData(formattedCountryPhoneData, countryNames)
-    return sortCountriesPhoneData(countriesDatasMapped)
-  }
-
-  static getDerivedStateFromProps(props: PhoneFieldProps, state: PhoneFieldState) {
-    if (!isEqual(props.countryWhitelist, state.countryWhitelist)) {
-      return {
-        countryData: PhoneField.countryData(props.countryWhitelist, props.customCountryNames),
-        countryWhitelist: props.countryWhitelist,
-      }
+    40% {
+      margin-left: 10px;
+      margin-right: -10px;
     }
-
-    return null
-  }
-
-  componentDidMount() {
-    if (this.ref && this.props.focus) {
-      this.ref.current.focus()
+    60% {
+      margin-left: -5px;
+      margin-right: 5px;
+    }
+    80% {
+      margin-left: 5px;
+      margin-right: -5px;
+    }
+    100% {
+      margin-left: 0px;
+      margin-right: 0px;
     }
   }
+`
 
-  componentDidUpdate(prevProps: PhoneFieldProps) {
-    if (this.ref && this.props.focus && prevProps.focus !== this.props.focus) {
-      this.ref.current.focus()
-    }
-  }
-
-  onFocus = () => {
-    this.setState({ hasFocus: true })
-  }
-
-  onBlur = () => {
-    this.setState({ hasFocus: false })
-  }
-
-  render() {
-    const {
-      id,
-      selectFieldLabel,
-      textFieldTitle,
-      ariaLabelledBy,
-      textFieldPlaceholder,
-      defaultPhoneValue,
-      isInline,
-      selectAutoFocus,
-      error,
-    } = this.props
-
-    const baseClassName = cc([prefix({ phoneField: true })])
-    const wrapperClassName = `${baseClassName}-wrapper`
-
-    const classNames = cc([
-      isInline ? `${wrapperClassName}--inline` : wrapperClassName,
-      this.props.className,
-      this.state.hasFocus && `${wrapperClassName}--hasFocus`,
-    ])
-
-    return (
-      <div className={cc([baseClassName, prefix({ error: !!error })])}>
-        <div id={id} className={classNames} aria-labelledby={ariaLabelledBy}>
-          <SelectField
-            name={FIELDS.PHONEREGION}
-            options={this.state.countryData}
-            ariaLabel={selectFieldLabel}
-            defaultValue={this.props.defaultRegionValue}
-            onChange={this.handleChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            focusBorder={!isInline}
-            autoFocus={selectAutoFocus}
-            ref={this.ref}
-          />
-          <TextField
-            type={inputTypes.TEL}
-            name={FIELDS.PHONENUMBER}
-            placeholder={textFieldPlaceholder}
-            defaultValue={defaultPhoneValue}
-            onChange={this.handleChange}
-            title={textFieldTitle}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            focusBorder={!isInline}
-          />
-        </div>
-        {!!error && DisplayError(error)}
-        <style jsx global>
-          {style}
-        </style>
-      </div>
-    )
-  }
-}
+export default StyledPhoneField
