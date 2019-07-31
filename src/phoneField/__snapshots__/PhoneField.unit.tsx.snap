@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
 }
 
-.c1 .kirk-icon-badge {
+.c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c0 {
+.c1 {
   display: block;
   position: relative;
   width: 100%;
@@ -25,7 +25,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   box-shadow: none;
 }
 
-.c0 select {
+.c1 select {
   display: block;
   position: relative;
   width: 100%;
@@ -47,15 +47,15 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   z-index: 1;
 }
 
-.c0 select::-ms-expand {
+.c1 select::-ms-expand {
   display: none;
 }
 
-.c0 select:focus {
+.c1 select:focus {
   outline: none;
 }
 
-.c0 .kirk-icon {
+.c1 .kirk-icon {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -65,15 +65,15 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   z-index: 0;
 }
 
-.c0 .kirk-selectField--hasFocus {
+.c1 .kirk-selectField--hasFocus {
   border: 3px solid #00AFF5;
 }
 
-.c0 .kirk-selectField--hasFocus select {
+.c1 .kirk-selectField--hasFocus select {
   height: calc(52px - 1px - 3px);
 }
 
-.c3 {
+.c4 {
   position: relative;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -106,28 +106,28 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   transition: max-width 500ms ease-in, background-color 200ms ease-in;
 }
 
-.c3 svg,
-.c3 img {
+.c4 svg,
+.c4 img {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c3.kirk-itemChoice {
+.c4.kirk-itemChoice {
   border-radius: 0;
   overflow: visible;
   width: 100%;
 }
 
-.c3:hover,
-.c3:focus,
-.c3:active {
+.c4:hover,
+.c4:focus,
+.c4:active {
   -webkit-text-decoration: none;
   text-decoration: none;
   outline: 0;
 }
 
-.c3.kirk-button-unstyled {
+.c4.kirk-button-unstyled {
   background-color: transparent;
   border-radius: inherit;
   color: #00AFF5;
@@ -140,94 +140,94 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   min-height: inherit;
 }
 
-.c3[disabled] {
+.c4[disabled] {
   opacity: 0.5;
   cursor: default;
 }
 
-.c3.kirk-button-unstyled[disabled] {
+.c4.kirk-button-unstyled[disabled] {
   opacity: 1;
 }
 
-.c3.kirk-button-primary {
+.c4.kirk-button-primary {
   background-color: #00AFF5;
   color: #FFF;
 }
 
-.c3.kirk-button-shadowed {
+.c4.kirk-button-shadowed {
   border: 2px solid #FFF;
   box-shadow: 0 2px 4px rgba(0,0,0,.3);
   box-sizing: border-box;
 }
 
-.c3.kirk-button-primary:hover,
-.c3.kirk-button-primary:focus,
-.c3.kirk-button-primary:active {
+.c4.kirk-button-primary:hover,
+.c4.kirk-button-primary:focus,
+.c4.kirk-button-primary:active {
   background-color: #008FC1;
 }
 
-.c3.kirk-button-secondary {
+.c4.kirk-button-secondary {
   background-color: #FFF;
   border-color: #DDD;
   color: #00AFF5;
 }
 
-.c3.kirk-button-secondary.kirk-button-shadowed {
+.c4.kirk-button-secondary.kirk-button-shadowed {
   border: none;
 }
 
-.c3.kirk-button-secondary:hover,
-.c3.kirk-button-secondary:focus,
-.c3.kirk-button-secondary:active {
+.c4.kirk-button-secondary:hover,
+.c4.kirk-button-secondary:focus,
+.c4.kirk-button-secondary:active {
   background-color: #DDD;
 }
 
-.c3.kirk-button-tertiary {
+.c4.kirk-button-tertiary {
   background-color: #FFF;
   border-color: transparent;
   color: #00AFF5;
 }
 
-.c3.kirk-button-tertiary:hover,
-.c3.kirk-button-tertiary:focus,
-.c3.kirk-button-tertiary:active {
+.c4.kirk-button-tertiary:hover,
+.c4.kirk-button-tertiary:focus,
+.c4.kirk-button-tertiary:active {
   background-color: #DDD;
 }
 
-.c3.kirk-button-loading {
+.c4.kirk-button-loading {
   background-color: transparent;
   max-width: initial;
   border: 0;
 }
 
-.c3.kirk-button-loading:hover,
-.c3.kirk-button-loading:focus,
-.c3.kirk-button-loading:active {
+.c4.kirk-button-loading:hover,
+.c4.kirk-button-loading:focus,
+.c4.kirk-button-loading:active {
   background-color: transparent;
 }
 
-.c3.kirk-button-loading[disabled],
-.c3.kirk-button-checked[disabled] {
+.c4.kirk-button-loading[disabled],
+.c4.kirk-button-checked[disabled] {
   opacity: 1;
 }
 
-.c3 svg.kirk-button-loader {
+.c4 svg.kirk-button-loader {
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -24px;
 }
 
-.c3.kirk-button-checked {
+.c4.kirk-button-checked {
   border: 0;
 }
 
-.c3.kirk-button-warning {
+.c4.kirk-button-warning {
   background-color: #F53F5B;
   color: #FFF;
 }
 
-.c3.kirk-button-bubble {
+.c4.kirk-button-bubble {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -238,7 +238,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   height: 48px;
 }
 
-.c3.kirk-button-bubble {
+.c4.kirk-button-bubble {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -247,17 +247,17 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   height: 48px;
 }
 
-.c3.kirk-button-bubble.kirk-button-shadowed {
+.c4.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
 }
 
-.c2 {
+.c3 {
   position: relative;
   box-sizing: border-box;
 }
 
-.c2 .kirk-textField-wrapper {
+.c3 .kirk-textField-wrapper {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -271,21 +271,21 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   box-shadow: none;
 }
 
-.c2 .kirk-textField-wrapper--hasFocus {
+.c3 .kirk-textField-wrapper--hasFocus {
   border: 3px solid #00AFF5;
 }
 
-.c2 .kirk-textField-wrapper--hasFocus input,
-.c2 .kirk-textField-wrapper--hasFocus textarea {
+.c3 .kirk-textField-wrapper--hasFocus input,
+.c3 .kirk-textField-wrapper--hasFocus textarea {
   padding: calc(16px + 1px - 3px);
 }
 
-.c2 .kirk-textField-wrapper--hasFocus input {
+.c3 .kirk-textField-wrapper--hasFocus input {
   padding-right: 0;
 }
 
-.c2 input,
-.c2 textarea {
+.c3 input,
+.c3 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -303,134 +303,205 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   padding: 16px;
 }
 
-.c2 input {
+.c3 input {
   padding-right: 0;
   margin-right: 48px;
 }
 
-.c2 input:not(:first-child),
-.c2 textarea:not(:first-child) {
+.c3 input:not(:first-child),
+.c3 textarea:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0;
 }
 
-.c2 input::-webkit-input-placeholder,
-.c2 textarea::-webkit-input-placeholder {
+.c3 input::-webkit-input-placeholder,
+.c3 textarea::-webkit-input-placeholder {
   color: #708C91;
 }
 
-.c2 input::-moz-placeholder,
-.c2 textarea::-moz-placeholder {
+.c3 input::-moz-placeholder,
+.c3 textarea::-moz-placeholder {
   color: #708C91;
 }
 
-.c2 input:-ms-input-placeholder,
-.c2 textarea:-ms-input-placeholder {
+.c3 input:-ms-input-placeholder,
+.c3 textarea:-ms-input-placeholder {
   color: #708C91;
 }
 
-.c2 input::placeholder,
-.c2 textarea::placeholder {
+.c3 input::placeholder,
+.c3 textarea::placeholder {
   color: #708C91;
 }
 
-.c2 input::-ms-clear {
+.c3 input::-ms-clear {
   display: none;
 }
 
-.c2 input[type='number']::-webkit-outer-spin-button,
-.c2 input[type='number']::-webkit-inner-spin-button {
+.c3 input[type='number']::-webkit-outer-spin-button,
+.c3 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.c2 input[type='number'] {
+.c3 input[type='number'] {
   -moz-appearance: textfield;
   -webkit-appearance: none;
 }
 
-.c2 input[type='search'] {
+.c3 input[type='search'] {
   width: 100%;
   box-sizing: border-box;
 }
 
-.c2 input[type='number'],
-.c2 input[type='search'] {
+.c3 input[type='number'],
+.c3 input[type='search'] {
   box-shadow: none;
 }
 
-.c2 textarea {
+.c3 textarea {
   min-height: 150px;
 }
 
-.c2 input:focus,
-.c2 textarea:focus {
+.c3 input:focus,
+.c3 textarea:focus {
   border-color: #EDEDED;
   box-shadow: none;
   outline: none;
 }
 
-.c2.kirk-error .kirk-textField-wrapper {
+.c3.kirk-error .kirk-textField-wrapper {
   background: #FDD8DE;
   border: solid 1px #FDD8DE;
   -webkit-animation: textFieldError 500ms ease-in-out;
   animation: textFieldError 500ms ease-in-out;
 }
 
-.c2.kirk-error input,
-.c2.kirk-error textarea {
+.c3.kirk-error input,
+.c3.kirk-error textarea {
   background-color: #FDD8DE;
 }
 
-.c2.kirk-error .kirk-error-message {
+.c3.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
   padding: 8px;
 }
 
-.c2 label {
+.c3 label {
   color: #054752;
   padding: 0 8px 4px 8px;
 }
 
-.c2 .kirk-button {
+.c3 .kirk-button {
   background-color: transparent;
   color: #708C91;
   height: auto;
 }
 
-.c2 .kirk-textField-button {
+.c3 .kirk-textField-button {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
 }
 
-.c2 .kirk-textField-button[hidden] {
+.c3 .kirk-textField-button[hidden] {
   visibility: hidden;
 }
 
-.c2.kirk-disabled {
+.c3.kirk-disabled {
   opacity: 0.5;
   cursor: default;
 }
 
+.c0 .kirk-phoneField-wrapper--inline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 16px;
+  background-color: #EDEDED;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+  height: calc(52px - 3px * 2);
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-textField-wrapper input {
+  padding-top: calc(16px - 3px);
+  padding-bottom: calc(16px - 3px);
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField,
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField input {
+  padding-left: 0 !important;
+}
+
+.c0 .kirk-phoneField-wrapper .kirk-textField {
+  margin-top: 16px;
+}
+
+.c0.kirk-error .kirk-phoneField-wrapper--inline {
+  background: #FDD8DE;
+  -webkit-animation: phoneFieldError 500ms ease-in-out;
+  animation: phoneFieldError 500ms ease-in-out;
+}
+
+.c0.kirk-error .kirk-selectField,
+.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-textField-wrapper,
+.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+  background: #FDD8DE;
+  border-color: #FDD8DE;
+}
+
+.c0.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
 @media (hover:none),(hover:on-demand) {
-  .c3.kirk-button-secondary:hover {
+  .c4.kirk-button-secondary:hover {
     background-color: #FFF;
   }
 }
 
 <div
-  className="kirk-phoneField"
+  className="kirk-phoneField customClass c0"
 >
   <div
     aria-labelledby="labelId"
-    className="kirk-phoneField-wrapper customClass"
+    className="kirk-phoneField-wrapper"
     id="selectFieldName"
   >
     <div
-      className="kirk-selectField c0"
+      className="kirk-selectField c1"
     >
       <select
         aria-label="Phone Country code"
@@ -454,7 +525,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       </select>
       <svg
         aria-hidden={true}
-        className="kirk-icon c1"
+        className="kirk-icon c2"
         fill="#708C91"
         height={24}
         viewBox="0 0 24 24"
@@ -475,7 +546,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
       </svg>
     </div>
     <div
-      className="kirk-textField c2"
+      className="kirk-textField c3"
     >
       <div
         className="kirk-textField-wrapper"
@@ -492,7 +563,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
         />
         <button
           aria-hidden={true}
-          className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button c3"
+          className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button c4"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -506,7 +577,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
         >
           <svg
             aria-hidden={true}
-            className="kirk-icon c1"
+            className="kirk-icon c2"
             fill="#708C91"
             height="18"
             viewBox="0 0 24 24"
@@ -532,18 +603,18 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 `;
 
 exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
-.c1 {
+.c2 {
   display: inline-block;
   position: relative;
 }
 
-.c1 .kirk-icon-badge {
+.c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c0 {
+.c1 {
   display: block;
   position: relative;
   width: 100%;
@@ -556,7 +627,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   box-shadow: none;
 }
 
-.c0 select {
+.c1 select {
   display: block;
   position: relative;
   width: 100%;
@@ -578,15 +649,15 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   z-index: 1;
 }
 
-.c0 select::-ms-expand {
+.c1 select::-ms-expand {
   display: none;
 }
 
-.c0 select:focus {
+.c1 select:focus {
   outline: none;
 }
 
-.c0 .kirk-icon {
+.c1 .kirk-icon {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -596,20 +667,20 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   z-index: 0;
 }
 
-.c0 .kirk-selectField--hasFocus {
+.c1 .kirk-selectField--hasFocus {
   border: 3px solid #00AFF5;
 }
 
-.c0 .kirk-selectField--hasFocus select {
+.c1 .kirk-selectField--hasFocus select {
   height: calc(52px - 1px - 3px);
 }
 
-.c2 {
+.c3 {
   position: relative;
   box-sizing: border-box;
 }
 
-.c2 .kirk-textField-wrapper {
+.c3 .kirk-textField-wrapper {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -623,21 +694,21 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   box-shadow: none;
 }
 
-.c2 .kirk-textField-wrapper--hasFocus {
+.c3 .kirk-textField-wrapper--hasFocus {
   border: 3px solid #00AFF5;
 }
 
-.c2 .kirk-textField-wrapper--hasFocus input,
-.c2 .kirk-textField-wrapper--hasFocus textarea {
+.c3 .kirk-textField-wrapper--hasFocus input,
+.c3 .kirk-textField-wrapper--hasFocus textarea {
   padding: calc(16px + 1px - 3px);
 }
 
-.c2 .kirk-textField-wrapper--hasFocus input {
+.c3 .kirk-textField-wrapper--hasFocus input {
   padding-right: 0;
 }
 
-.c2 input,
-.c2 textarea {
+.c3 input,
+.c3 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -655,126 +726,197 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   padding: 16px;
 }
 
-.c2 input {
+.c3 input {
   padding-right: 0;
   margin-right: 48px;
 }
 
-.c2 input:not(:first-child),
-.c2 textarea:not(:first-child) {
+.c3 input:not(:first-child),
+.c3 textarea:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0;
 }
 
-.c2 input::-webkit-input-placeholder,
-.c2 textarea::-webkit-input-placeholder {
+.c3 input::-webkit-input-placeholder,
+.c3 textarea::-webkit-input-placeholder {
   color: #708C91;
 }
 
-.c2 input::-moz-placeholder,
-.c2 textarea::-moz-placeholder {
+.c3 input::-moz-placeholder,
+.c3 textarea::-moz-placeholder {
   color: #708C91;
 }
 
-.c2 input:-ms-input-placeholder,
-.c2 textarea:-ms-input-placeholder {
+.c3 input:-ms-input-placeholder,
+.c3 textarea:-ms-input-placeholder {
   color: #708C91;
 }
 
-.c2 input::placeholder,
-.c2 textarea::placeholder {
+.c3 input::placeholder,
+.c3 textarea::placeholder {
   color: #708C91;
 }
 
-.c2 input::-ms-clear {
+.c3 input::-ms-clear {
   display: none;
 }
 
-.c2 input[type='number']::-webkit-outer-spin-button,
-.c2 input[type='number']::-webkit-inner-spin-button {
+.c3 input[type='number']::-webkit-outer-spin-button,
+.c3 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.c2 input[type='number'] {
+.c3 input[type='number'] {
   -moz-appearance: textfield;
   -webkit-appearance: none;
 }
 
-.c2 input[type='search'] {
+.c3 input[type='search'] {
   width: 100%;
   box-sizing: border-box;
 }
 
-.c2 input[type='number'],
-.c2 input[type='search'] {
+.c3 input[type='number'],
+.c3 input[type='search'] {
   box-shadow: none;
 }
 
-.c2 textarea {
+.c3 textarea {
   min-height: 150px;
 }
 
-.c2 input:focus,
-.c2 textarea:focus {
+.c3 input:focus,
+.c3 textarea:focus {
   border-color: #EDEDED;
   box-shadow: none;
   outline: none;
 }
 
-.c2.kirk-error .kirk-textField-wrapper {
+.c3.kirk-error .kirk-textField-wrapper {
   background: #FDD8DE;
   border: solid 1px #FDD8DE;
   -webkit-animation: textFieldError 500ms ease-in-out;
   animation: textFieldError 500ms ease-in-out;
 }
 
-.c2.kirk-error input,
-.c2.kirk-error textarea {
+.c3.kirk-error input,
+.c3.kirk-error textarea {
   background-color: #FDD8DE;
 }
 
-.c2.kirk-error .kirk-error-message {
+.c3.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
   padding: 8px;
 }
 
-.c2 label {
+.c3 label {
   color: #054752;
   padding: 0 8px 4px 8px;
 }
 
-.c2 .kirk-button {
+.c3 .kirk-button {
   background-color: transparent;
   color: #708C91;
   height: auto;
 }
 
-.c2 .kirk-textField-button {
+.c3 .kirk-textField-button {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
 }
 
-.c2 .kirk-textField-button[hidden] {
+.c3 .kirk-textField-button[hidden] {
   visibility: hidden;
 }
 
-.c2.kirk-disabled {
+.c3.kirk-disabled {
   opacity: 0.5;
   cursor: default;
 }
 
+.c0 .kirk-phoneField-wrapper--inline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 16px;
+  background-color: #EDEDED;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+  height: calc(52px - 3px * 2);
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-textField-wrapper input {
+  padding-top: calc(16px - 3px);
+  padding-bottom: calc(16px - 3px);
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField,
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField input {
+  padding-left: 0 !important;
+}
+
+.c0 .kirk-phoneField-wrapper .kirk-textField {
+  margin-top: 16px;
+}
+
+.c0.kirk-error .kirk-phoneField-wrapper--inline {
+  background: #FDD8DE;
+  -webkit-animation: phoneFieldError 500ms ease-in-out;
+  animation: phoneFieldError 500ms ease-in-out;
+}
+
+.c0.kirk-error .kirk-selectField,
+.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-textField-wrapper,
+.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+  background: #FDD8DE;
+  border-color: #FDD8DE;
+}
+
+.c0.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
 <div
-  className="kirk-phoneField"
+  className="kirk-phoneField c0"
 >
   <div
     className="kirk-phoneField-wrapper--inline"
   >
     <div
-      className="kirk-selectField c0"
+      className="kirk-selectField c1"
     >
       <select
         defaultValue=""
@@ -796,7 +938,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       </select>
       <svg
         aria-hidden={true}
-        className="kirk-icon c1"
+        className="kirk-icon c2"
         fill="#708C91"
         height={24}
         viewBox="0 0 24 24"
@@ -817,7 +959,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       </svg>
     </div>
     <div
-      className="kirk-textField c2"
+      className="kirk-textField c3"
     >
       <div
         className="kirk-textField-wrapper"

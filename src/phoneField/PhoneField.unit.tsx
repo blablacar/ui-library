@@ -1,7 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
-import PhoneField from 'phoneField'
+import StyledPhoneField from '.'
+import PhoneField from './PhoneField'
 
 const countryWhitelist = ['FR', 'ES']
 const countryWhitelistUpdated = ['DE']
@@ -42,12 +43,12 @@ describe('PhoneField', () => {
   const defaultWrapper = shallow(<PhoneField {...defaultProps} />)
 
   it('should have the expected markup in the DOM with default settings', () => {
-    const phoneField = renderer.create(<PhoneField {...defaultProps} />).toJSON()
+    const phoneField = renderer.create(<StyledPhoneField {...defaultProps} />).toJSON()
     expect(phoneField).toMatchSnapshot()
   })
 
   it('should have the expected markup in the DOM with custom settings', () => {
-    const phoneField = renderer.create(<PhoneField {...customProps} />).toJSON()
+    const phoneField = renderer.create(<StyledPhoneField {...customProps} />).toJSON()
     expect(phoneField).toMatchSnapshot()
   })
 
