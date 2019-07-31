@@ -20,7 +20,7 @@ const StyledAutoComplete = styled(AutoComplete)`
    * Address appearance set to searchfield in Safari and Chrome.
    * Address box-sizing set to border-box in Safari and Chrome
    */
-  & .kirk-autoComplete input[type='search'] {
+  & input[type='search'] {
     -webkit-appearance: textfield;
     box-sizing: content-box;
   }
@@ -30,8 +30,8 @@ const StyledAutoComplete = styled(AutoComplete)`
    * Safari (but not Chrome) clips the cancel button when the search input has
    * padding (and textfield appearance).
    */
-  & .kirk-autoComplete input[type='search']::-webkit-search-cancel-button,
-  & .kirk-autoComplete input[type='search']::-webkit-search-decoration {
+  & input[type='search']::-webkit-search-cancel-button,
+  & input[type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 `
