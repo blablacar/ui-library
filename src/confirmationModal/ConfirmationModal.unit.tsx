@@ -1,8 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
-
-import ConfirmationModal from 'confirmationModal'
 import { CrossIcon } from 'icon/crossIcon'
+import ConfirmationModal, { ConfirmationModalStatus } from './ConfirmationModal'
 
 const defaultProps = {
   isOpen: false,
@@ -13,12 +12,12 @@ const defaultProps = {
 
 const defaultWarningProps = {
   ...defaultProps,
-  status: ConfirmationModal.STATUS.WARNING,
+  status: ConfirmationModalStatus.WARNING,
 }
 
 const defaultReminderProps = {
   ...defaultProps,
-  status: ConfirmationModal.STATUS.REMINDER,
+  status: ConfirmationModalStatus.REMINDER,
 }
 
 describe('<ConfirmationModal> with warning status', () => {
