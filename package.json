@@ -59,7 +59,6 @@
     "@types/react-transition-group": "2.0.16",
     "@types/storybook__react": "4.0.1",
     "@types/styled-components": "4.1.8",
-    "@types/styled-jsx": "2.2.8",
     "babel-jest": "24.8.0",
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-typescript-to-proptypes": "0.17.1",
@@ -94,8 +93,7 @@
     "lodash.isequal": "4.5.0",
     "lodash.isstring": "4.0.1",
     "react-day-picker": "7.3.0",
-    "react-transition-group": "2.6.1",
-    "styled-jsx": "3.2.1"
+    "react-transition-group": "2.6.1"
   },
   "peerDependencies": {
     "react": "^16.8.6",
