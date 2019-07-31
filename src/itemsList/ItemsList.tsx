@@ -2,7 +2,7 @@ import React, { Component, FunctionComponent } from 'react'
 import cc from 'classcat'
 
 import { ItemChoiceProps } from 'itemChoice'
-import { ItemRadioProps } from 'itemRadio/itemRadio'
+import { ItemRadioProps } from 'itemRadio/ItemRadio'
 import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
 
 export const ItemsListDivider: FunctionComponent = () => null
