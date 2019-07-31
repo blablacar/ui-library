@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import ItemChoice from 'itemChoice'
-import ItemsList from 'itemsList'
+import ItemsList, { ItemsListDivider } from 'itemsList'
 
 import specs from './specifications/index.md'
 
@@ -33,7 +33,7 @@ stories.add(
         <ItemChoice label="Item 1" href="#1" />
         <ItemChoice label="Item 2" href="#2" />
         <ItemChoice label="Item 3" href="#3" />
-        <ItemsList.Divider />
+        <ItemsListDivider />
         <ItemChoice label="Item 4" href="#4" />
       </ItemsList>
     )
