@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Stars from 'stars'
+import Stars from './Stars'
 
 const testStars = (nbStars: number, stars: any) => {
   stars.forEach((star: any, index: number) => {
