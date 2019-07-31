@@ -9,6 +9,7 @@
 - **[BREAKING CHANGE]** `<ToggleButton>`: changed export for `ToggleButtonStatus`
 - **[BREAKING CHANGE]** `ItemCheckbox`: changed export of `ItemCheckbox.STATUS` to `ItemCheckboxStatus`
 - **[BREAKING CHANGE]** `Transitions`: changed export for `CustomTransition.TYPES` to new `AnimationType`
+- **[BREAKING CHANGE]** `ConfirmationModal`: changed export of `ConfirmationModal.STATUS` to `ConfirmationModalStatus`
 - [...]
 
 # v8.8.0 (24/07/2019)

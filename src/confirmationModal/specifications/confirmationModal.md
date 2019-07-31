@@ -1,7 +1,7 @@
 # ConfirmationModal
 
 ```js
-import { confirmationModal } from '@blablacar/ui-library'
+import { confirmationModal, ConfirmationModalStatus } from '@blablacar/ui-library'
 ```
 
 ## Playground
