@@ -1,22 +1,39 @@
-import React from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, space, font, radius } from '_utils/branding'
+import Why from './Why'
 
-import style from 'why/style'
-import QuestionIcon from 'icon/questionIcon'
+const StyledWhy = styled(Why)`
+  & {
+    padding: ${space.m} ${space.l} ${space.m} ${space.m};
+    border: 1px solid ${color.border};
+    border-radius: ${radius.xl};
+    display: inline-flex;
+    align-items: center;
+    font-size: ${font.base.size};
+    cursor: pointer;
+    color: ${color.secondaryText};
+    background-color: ${color.white};
+    -webkit-tap-highlight-color: ${color.tapHighlight};
+  }
 
-interface WhyProps {
-  readonly children: string
-  readonly title: string
-  readonly className?: Classcat.Class
-  readonly onClick?: () => void
-}
+  &:hover {
+    background-color: ${color.lightBackground};
+  }
 
-const Why = ({ className, children, title, onClick }: WhyProps) => (
-  <button type="button" className={cc(['kirk-why', className])} title={title} onClick={onClick}>
-    <QuestionIcon />
-    <span>{children}</span>
-    <style jsx>{style}</style>
-  </button>
-)
+  /* Reset hover styles on devices not supporting hover state (e.g. touch devices). */
+  @media (hover: none), (hover: on-demand) {
+    &:hover {
+      background-color: ${color.white};
+    }
+  }
 
-export default Why
+  & > span {
+    max-width: 100vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: ${space.m};
+  }
+`
+
+export default StyledWhy
