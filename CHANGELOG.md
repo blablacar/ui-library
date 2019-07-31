@@ -16,6 +16,7 @@
 - **[BREAKING CHANGE]** `<ItemChoice>`: changed export for `ItemChoice.STATUS` to `ItemChoiceStatus` and `ItemChoice.STYLE` to `ItemChoiceStyle`
 - **[BREAKING CHANGE]** `<Modal>`: changed export for `Modal.SIZE` to `ModalSize`
 - **[BREAKING CHANGE]** `<Modal>`: rename `className` props to `modalContentClassName`
+- **[BREAKING CHANGE]** `<PhoneField>`: changed `className` prop position to the root element, added `innerWrapperClassName` prop as replacement
 - [...]
 
 # v8.8.0 (24/07/2019)
