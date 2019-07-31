@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, select, number } from '@storybook/addon-knobs'
 
-import DatePicker from 'datePicker'
+import DatePicker, { DatePickerOrientation } from 'datePicker'
 import readme from 'datePicker/specifications/datepicker.md'
 
 const stories = storiesOf('DatePicker', module)
@@ -49,7 +49,7 @@ stories.add(
     <DatePicker
       name="datepicker"
       onChange={action('onChange')}
-      orientation={select('Orientation', DatePicker.constants, DatePicker.constants.HORIZONTAL)}
+      orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
       locale={select('Locale', testLocales, 'en-GB')}
       weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
       weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
@@ -68,7 +68,7 @@ stories.add('example horizontal (2 months)', () => (
   <DatePicker
     name="datepicker"
     onChange={action('onChange')}
-    orientation={DatePicker.constants.HORIZONTAL}
+    orientation={DatePickerOrientation.HORIZONTAL}
     numberOfMonths={2}
   />
 ))
@@ -77,7 +77,7 @@ stories.add('example vertical (6 months)', () => (
   <DatePicker
     name="datepicker"
     onChange={action('onChange')}
-    orientation={DatePicker.constants.VERTICAL}
+    orientation={DatePickerOrientation.VERTICAL}
     numberOfMonths={6}
   />
 ))
