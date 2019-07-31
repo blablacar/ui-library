@@ -3,7 +3,8 @@ import React, { Component, createRef } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import Modal, { ModalProps, ModalSize } from 'modal'
+import Modal, { ModalSize } from 'modal'
+import { ModalProps } from './Modal'
 
 import modalDoc from './specifications/modal.md'
 
