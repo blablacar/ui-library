@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import Menu from 'menu'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import { BellIcon, BubbleIcon, HomeIcon, NewspaperIcon, TicketIcon } from 'icon'
 import Drawer from 'drawer'
 import HamburgerButton from 'hamburgerButton'
@@ -51,7 +51,7 @@ class DrawerDemo extends Component {
               <ItemChoice
                 label="Rides offered (loading)"
                 leftAddon={<NewspaperIcon />}
-                status={ItemChoice.STATUS.LOADING}
+                status={ItemChoiceStatus.LOADING}
                 href="#"
               />
               <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />

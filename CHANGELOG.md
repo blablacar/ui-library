@@ -13,7 +13,7 @@
 - **[BREAKING CHANGE]** `Transitions`: changed export for `CustomTransition.TYPES` to new `AnimationType`
 - **[BREAKING CHANGE]** `ConfirmationModal`: changed export of `ConfirmationModal.STATUS` to `ConfirmationModalStatus`
 - **[BREAKING CHANGE]** `ItemsList`: changed export of `ItemsList.Divider` to `ItemsListDivider`
-- [...]
+- **[BREAKING CHANGE]** `<ItemChoice>`: changed export for `ItemChoice.STATUS` to `ItemChoiceStatus` and `ItemChoice.STYLE` to `ItemChoiceStyle`
 
 # v8.8.0 (24/07/2019)
 
