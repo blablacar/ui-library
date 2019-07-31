@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import { ItemStatus } from '_utils/item'
-import AutoComplete from 'autoComplete'
 import ItemChoice from 'itemChoice'
+import AutoComplete from './AutoComplete'
 
 const initialFakeItems = [
   { id: '1', label: 'title1', labelInfo: 'description1' },
@@ -27,7 +27,7 @@ jest.useFakeTimers()
 
 describe('AutoComplete', () => {
   it('Renders no result items when mouting', () => {
-    const wrapper = shallow(<AutoComplete {...defaultProps} />)
+    const wrapper = mount(<AutoComplete {...defaultProps} />)
     expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(false)
   })
 
@@ -37,7 +37,7 @@ describe('AutoComplete', () => {
   })
 
   it('Renders result items when items prop has changed', () => {
-    const wrapper = shallow(<AutoComplete {...defaultProps} searchForItemsMinChars={1} />)
+    const wrapper = mount(<AutoComplete {...defaultProps} searchForItemsMinChars={1} />)
     const autocomplete: AutoComplete = wrapper.instance()
     autocomplete.onInputChange({ value: 'Lyon' })
     wrapper.setProps({ isSearching: true })
@@ -134,7 +134,7 @@ describe('AutoComplete', () => {
   describe('#renderNoResults', () => {
     it('Renders an empty state when no results', () => {
       const renderNoResults = jest.fn(() => <div className="no-results" />)
-      const wrapper = shallow(<AutoComplete {...defaultProps} renderNoResults={renderNoResults} />)
+      const wrapper = mount(<AutoComplete {...defaultProps} renderNoResults={renderNoResults} />)
 
       const query = 'Lyon'
       const autocomplete: AutoComplete = wrapper.instance()
