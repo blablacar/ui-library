@@ -4,7 +4,6 @@ import TimePicker, { getTodayDate } from 'timePicker'
 
 const defaultProps = {
   name: 'departure-time',
-  locale: 'en-US',
 }
 
 describe('<TimePicker />', () => {
@@ -41,25 +40,6 @@ describe('<TimePicker />', () => {
         '16:00',
         '20:00',
       ])
-    })
-  })
-
-  describe('#locale', () => {
-    it('Can change the locale string representation of the time', () => {
-      const wrapper = shallow(<TimePicker {...defaultProps} minuteStep={480} />)
-      wrapper.setProps({ locale: 'fr-FR' })
-      expect(wrapper.state('steps')).toEqual({
-        '00:00': '00:00',
-        '08:00': '08:00',
-        '16:00': '16:00',
-      })
-
-      wrapper.setProps({ locale: 'en-US' })
-      expect(wrapper.state('steps')).toEqual({
-        '00:00': '12:00 AM',
-        '08:00': '8:00 AM',
-        '16:00': '4:00 PM',
-      })
     })
   })
 
