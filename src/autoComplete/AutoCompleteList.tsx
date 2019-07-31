@@ -5,9 +5,8 @@ import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
-import ItemChoice from 'itemChoice'
+import ItemChoice, { ItemChoiceStyle } from 'itemChoice'
 import ItemsList from 'itemsList'
-import style from './autoCompleteListStyle'
 
 export interface AutoCompleteListProps {
   name: string
@@ -138,14 +137,14 @@ export default class AutoCompleteList extends Component<
             const status =
               this.state.selectedIndex === index
                 ? this.props.selectedItemStatus
-                : ItemChoice.STATUS.DEFAULT
+                : ItemStatus.DEFAULT
             const isHighlighted = index === this.state.highlightedIndex
             const { id, ...itemChoiceProps } = item
             return (
               <ItemChoice
                 {...itemChoiceProps}
                 className={this.props.itemClassName}
-                style={isHighlighted ? ItemChoice.STYLE.RECOMMENDED : ItemChoice.STYLE.PRIMARY}
+                style={isHighlighted ? ItemChoiceStyle.RECOMMENDED : ItemChoiceStyle.PRIMARY}
                 status={status}
                 onMouseDown={() => {
                   this.onSelect(index, item)
@@ -156,9 +155,6 @@ export default class AutoCompleteList extends Component<
             )
           })}
         </ItemsList>
-        <style jsx key={`${this.props.name}-style-jsx`}>
-          {style}
-        </style>
       </Fragment>
     )
   }
