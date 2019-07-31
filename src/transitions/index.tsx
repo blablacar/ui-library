@@ -1,69 +1,44 @@
-import React, { Fragment, PureComponent } from 'react'
-import Transition from 'react-transition-group/Transition'
-import cc from 'classcat'
+import styled from 'styled-components'
 import { transition } from '_utils/branding'
-import style from './style'
+import Transitions from './Transitions'
 
-export enum AnimationType {
-  FADE = 'fade',
-  SLIDE_UP = 'slide-up',
-}
-
-interface CustomTransitionProps {
-  readonly children: JSX.Element
-  readonly animationName?: AnimationType
-  readonly delayEnter?: number
-  readonly delayLeave?: number
-  readonly in?: boolean
-  readonly onEntered?: () => void
-}
-
-export default class CustomTransition extends PureComponent<CustomTransitionProps> {
-  static TYPES = AnimationType
-
-  static defaultProps: Partial<CustomTransitionProps> = {
-    animationName: AnimationType.FADE,
-    delayEnter: 0,
-    delayLeave: parseInt(transition.duration.base, 10),
-    in: false,
+const StyledTransitions = styled(Transitions)`
+  &.fade {
+    transition: ease-in-out ${transition.duration.base};
+    transition-property: opacity;
   }
 
-  render() {
-    const {
-      // Rename "in" props from Transition component cause of private naming
-      children,
-      animationName,
-      delayEnter,
-      delayLeave,
-      in: inProp,
-      onEntered,
-    } = this.props
-
-    return (
-      <Transition
-        in={inProp}
-        timeout={{ enter: delayEnter, exit: delayLeave }}
-        onEntered={onEntered}
-      >
-        {(status: string) => {
-          if (status === 'exited') {
-            return null
-          }
-
-          return (
-            <Fragment>
-              {React.cloneElement(children, {
-                className: cc([
-                  children.props.className,
-                  animationName,
-                  `${animationName}-${status}`,
-                ]),
-              })}
-              <style jsx>{style}</style>
-            </Fragment>
-          )
-        }}
-      </Transition>
-    )
+  &.fade-entering {
+    opacity: 0;
   }
-}
+
+  &.fade-entered {
+    opacity: 1;
+  }
+
+  &.fade-exiting {
+    opacity: 0;
+  }
+
+  &.slide-up {
+    transition: ease-in-out ${transition.duration.base};
+    transition-property: opacity, transform;
+  }
+
+  &.slide-up-entering {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  &.slide-up-entered {
+    opacity: 1;
+  }
+
+  &.slide-up-exiting {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+`
+
+export { AnimationType } from './Transitions'
+export default StyledTransitions
