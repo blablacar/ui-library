@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ButtonGroup from 'buttonGroup'
+import ButtonGroup from './ButtonGroup'
 import Button, { ButtonStatus } from 'button'
 
 describe('Button Group', () => {
