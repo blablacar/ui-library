@@ -69,7 +69,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
         displayCloseButton={false}
         displayDimmer={false}
         forwardedRef={forwardedRef}
-        className={classNames}
+        modalContentClassName={classNames}
         ariaLabelledBy={ariaLabelledBy}
         ariaDescribedBy={ariaDescribedBy}
       >
