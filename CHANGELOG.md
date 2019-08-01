@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Non-valid CSS property on Snackbar
 
 # v9.0.0 (01/08/2019)
 
