@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 interface CircleProps extends Icon {
   readonly absolute?: boolean
@@ -16,9 +16,9 @@ const offset = 187
 const duration = '1.4s'
 
 const CircleIcon = (props: CircleProps) => (
-    <BaseIcon {...props} viewBox="0 0 66 66" className={cc([
+    <BaseIcon {...props} viewBox="0 0 66 66" iconClassName={cc([
       'kirk-icon-circle',
-      props.className,
+      props.iconClassName,
       {
         spinning: props.spinning,
         absolute: props.absolute,
@@ -32,31 +32,34 @@ const CircleIcon = (props: CircleProps) => (
     </BaseIcon>
 )
 
-export const StyledCircleIcon = styled(CircleIcon)`
-  @keyframes dash {
-    0% {
-      stroke-dashoffset: ${offset};
-    }
-    50% {
-      stroke-dashoffset: ${offset / 4};
-      transform: rotate(135deg);
-    }
-    100% {
-      stroke-dashoffset: ${offset};
-      transform: rotate(450deg);
-    }
-  }
-  @keyframes rotator {
+const dashKeyframesBuilder = (offset: number) => {
+    return keyframes`
+        0% {
+          stroke-dashoffset: ${offset};
+        }
+        50% {
+          stroke-dashoffset: ${offset / 4};
+          transform: rotate(135deg);
+        }
+        100% {
+          stroke-dashoffset: ${offset};
+          transform: rotate(450deg);
+        }
+      `
+}
+
+const rotatorKeyframes = keyframes`
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(270deg);
     }
-  }
+  `
 
+export const StyledCircleIcon = styled(CircleIcon)`
   &.spinning {
-    animation: rotator ${duration} linear infinite;
+    animation: ${rotatorKeyframes} ${duration} linear infinite;
   }
 
   & circle {
@@ -68,7 +71,7 @@ export const StyledCircleIcon = styled(CircleIcon)`
     stroke-dasharray: ${offset};
     stroke-dashoffset: 0;
     transform-origin: center;
-    animation: dash ${duration} ease-in-out infinite;
+    animation: ${dashKeyframesBuilder(offset)} ${duration} ease-in-out infinite;
   }
 
   &.thin circle {

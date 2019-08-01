@@ -12,6 +12,7 @@ export interface IconProps extends Icon {
 
 export const BaseIconDefaultProps = {
   className: '',
+  iconClassName: '',
   iconColor: color.icon,
   size: 24,
   title: '',
@@ -21,6 +22,7 @@ export const BaseIconDefaultProps = {
 
 const BaseIcon = ({
   className,
+  iconClassName,
   iconColor,
   size,
   title,
@@ -29,11 +31,19 @@ const BaseIcon = ({
   badgeContent,
   badgeAriaLabel,
 }: IconProps) => {
+
+  const iconClasses = ['kirk-icon', iconClassName]
+  if (!badgeContent) {
+    // When there is no badge, the icon is not wrapped and is the root element.
+    // Therefore className classes needs to be added to the icon itself.
+    iconClasses.push(className)
+  }
+
   const icon = (
     <svg
       viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
-      className={cc(['kirk-icon', className])}
+      className={cc(iconClasses)}
       width={size}
       height={size}
       aria-hidden={isEmpty(title)}
@@ -46,7 +56,7 @@ const BaseIcon = ({
 
   if (badgeContent) {
     return (
-      <div className="kirk-icon-wrapper">
+      <div className={cc(['kirk-icon-wrapper', className])}>
         {icon}
         <Badge className="kirk-icon-badge" ariaLabel={badgeAriaLabel}>
           {badgeContent}

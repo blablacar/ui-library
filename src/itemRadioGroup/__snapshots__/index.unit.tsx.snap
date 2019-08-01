@@ -64,7 +64,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   font-weight: 500;
 }
 
-.c5 {
+.c5.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -167,8 +167,8 @@ button.c2 {
 }
 
 .c4.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c4 circle {
@@ -182,8 +182,8 @@ button.c2 {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c4.thin circle {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = `
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -13,8 +13,8 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 }
 
 .c0.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c0 circle {
@@ -28,8 +28,8 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c0.thin circle {
@@ -72,7 +72,7 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading and isChecked are set to true 1`] = `
-.c2 {
+.c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -84,8 +84,8 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 }
 
 .c1.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c1 circle {
@@ -99,8 +99,8 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c1.thin circle {
@@ -157,7 +157,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle c1 spinning c2"
+    className="kirk-icon kirk-icon-circle spinning c1 c2"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
@@ -177,7 +177,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
-.c2 {
+.c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -189,8 +189,8 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 }
 
 .c1.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c1 circle {
@@ -204,8 +204,8 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c1.thin circle {
@@ -262,7 +262,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="kirk-icon kirk-icon-circle c1 spinning c2"
+    className="kirk-icon kirk-icon-circle spinning c1 c2"
     fill="#5DD167"
     height={24}
     viewBox="0 0 66 66"
@@ -282,7 +282,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 `;
 
 exports[`RadioIcon Should render an empty circle by default 1`] = `
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -294,8 +294,8 @@ exports[`RadioIcon Should render an empty circle by default 1`] = `
 }
 
 .c0.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c0 circle {
@@ -309,8 +309,8 @@ exports[`RadioIcon Should render an empty circle by default 1`] = `
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c0.thin circle {

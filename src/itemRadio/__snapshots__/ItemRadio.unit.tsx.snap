@@ -64,7 +64,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   font-weight: 500;
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -167,8 +167,8 @@ button.c0 {
 }
 
 .c2.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c2 circle {
@@ -182,8 +182,8 @@ button.c0 {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c2.thin circle {
@@ -333,7 +333,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
   font-weight: 500;
 }
 
-.c4 {
+.c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -436,8 +436,8 @@ button.c0 {
 }
 
 .c3.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c3 circle {
@@ -451,8 +451,8 @@ button.c0 {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c3.thin circle {
@@ -551,7 +551,7 @@ button.c0 {
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle c3 spinning c4"
+        className="kirk-icon kirk-icon-circle spinning c3 c4"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -636,7 +636,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -739,8 +739,8 @@ button.c0 {
 }
 
 .c2.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c2 circle {
@@ -754,8 +754,8 @@ button.c0 {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c2.thin circle {
