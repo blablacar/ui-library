@@ -13,9 +13,9 @@ interface CheckProps extends Icon {
 }
 
 const CheckIcon = (props: CheckProps) => (
-  <BaseIcon {...props} className={cc([
+  <BaseIcon {...props} iconClassName={cc([
     'kirk-icon-check',
-    props.className,
+    props.iconClassName,
     {
       validate: props.validate,
       absolute: props.absolute

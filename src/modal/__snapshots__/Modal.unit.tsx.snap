@@ -46,7 +46,7 @@ exports[`Modal should not have changed 1`] = `
   transform: translateY(50%);
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }

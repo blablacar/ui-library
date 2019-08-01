@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
-.c2 {
+.c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -603,7 +603,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 `;
 
 exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
-.c2 {
+.c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render properly with read messages 1`] = `
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -329,7 +329,7 @@ button.c0 {
 `;
 
 exports[`Should render properly with unread messages 1`] = `
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }

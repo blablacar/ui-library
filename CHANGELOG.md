@@ -18,6 +18,7 @@
 - **[BREAKING CHANGE]** `<Modal>`: rename `className` props to `modalContentClassName`
 - **[BREAKING CHANGE]** `<PhoneField>`: changed `className` prop position to the root element, added `innerWrapperClassName` prop as replacement
 - **[BREAKING CHANGE]** Migrated every component to Styled Components which is now a peer dependency of this project
+- **[BREAKING CHANGE]** `<BaseIcon>`: rename `className` props to `iconClassName`
 - [...]
 
 # v8.8.0 (24/07/2019)

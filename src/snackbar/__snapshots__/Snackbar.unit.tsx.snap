@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snackbar should not have changed 1`] = `
-.c4 {
+.c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }

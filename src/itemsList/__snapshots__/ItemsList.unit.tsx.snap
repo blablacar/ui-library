@@ -64,7 +64,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   font-weight: 500;
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -411,7 +411,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   font-weight: 500;
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -758,7 +758,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   font-weight: 500;
 }
 
-.c3 {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }

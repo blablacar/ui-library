@@ -64,7 +64,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   font-weight: 500;
 }
 
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -167,8 +167,8 @@ button.c0 {
 }
 
 .c4.spinning {
-  -webkit-animation: rotator 1.4s linear infinite;
-  animation: rotator 1.4s linear infinite;
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
 }
 
 .c4 circle {
@@ -182,8 +182,8 @@ button.c0 {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: dash 1.4s ease-in-out infinite;
-  animation: dash 1.4s ease-in-out infinite;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
 .c4.thin circle {
@@ -332,7 +332,7 @@ button.c0 {
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-circle c4 spinning c1"
+        className="kirk-icon kirk-icon-circle spinning c4 c1"
         fill="#5DD167"
         height={24}
         viewBox="0 0 66 66"
@@ -417,7 +417,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   font-weight: 500;
 }
 
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -675,7 +675,7 @@ button.c0 {
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon kirk-icon-check c4 validate c1"
+        className="kirk-icon kirk-icon-check validate c4 c1"
         fill="#FFF"
         height={12}
         viewBox="0 0 24 24"
@@ -762,7 +762,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -1078,7 +1078,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   font-weight: 500;
 }
 
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -1396,7 +1396,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   font-weight: 500;
 }
 
-.c1 {
+.c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
