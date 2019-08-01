@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Loader from 'loader'
+import Loader from 'loader/Loader'
 import Item, { ItemStatus } from '_utils/item'
 import prefix from '_utils'
 

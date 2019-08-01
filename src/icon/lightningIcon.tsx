@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const LightningIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -15,6 +16,6 @@ export const LightningIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-LightningIcon.defaultProps = BaseIcon.defaultProps
+LightningIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(LightningIcon)

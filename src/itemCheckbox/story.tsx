@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
-import ItemCheckbox from 'itemCheckbox'
+import ItemCheckbox, { ItemCheckboxStatus } from 'itemCheckbox'
 
 import specs from './specifications/index.md'
 
@@ -26,7 +26,7 @@ stories.add(
         dataInfo={isDataInfo ? text('Data info', 'Info') : null}
         onChange={action('changed')}
         checked={boolean('isChecked', false)}
-        status={select('status', ItemCheckbox.STATUS, ItemCheckbox.STATUS.DEFAULT)}
+        status={select('status', ItemCheckboxStatus, ItemCheckboxStatus.DEFAULT)}
       />
     )
   },

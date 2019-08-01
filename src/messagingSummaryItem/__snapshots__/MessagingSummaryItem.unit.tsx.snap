@@ -1,0 +1,657 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render properly with read messages 1`] = `
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c2 {
+  border: 2px dashed #DDD;
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.c2.kirk-avatar--small {
+  height: 40px;
+  width: 40px;
+}
+
+.c2.kirk-avatar--medium {
+  height: 96px;
+  width: 96px;
+}
+
+.c2.kirk-avatar--large {
+  height: 156px;
+  width: 156px;
+}
+
+.c2.kirk-avatar--image {
+  border: none;
+}
+
+.c2.kirk-avatar--image img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
+  z-index: 2;
+  position: absolute;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  top: -6px;
+  right: -6px;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
+  bottom: -3px;
+  right: -3px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #5DD167;
+}
+
+.c2.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c2.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+  bottom: 0;
+  right: 0;
+}
+
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+  width: 24px;
+  height: 24px;
+}
+
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+  width: 36px;
+  height: 36px;
+}
+
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  height: 24px;
+  line-height: 23px;
+  font-size: 14px;
+  padding: 0 6px;
+}
+
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  height: 36px;
+  line-height: 34px;
+  font-size: 18px;
+  padding: 0 8px;
+}
+
+.c1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c1.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c1.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+<a
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
+  href="http_test.url"
+>
+  <div
+    className="kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-titleStrong kirk-item-title c1"
+      style={
+        Object {
+          "color": "#708C91",
+        }
+      }
+    >
+      A label
+    </div>
+    <div
+      className="kirk-text kirk-text-title kirk-item-body c1"
+      style={
+        Object {
+          "color": "#708C91",
+        }
+      }
+    >
+      <span
+        className="kirk-messaging-summary-item-sub-label"
+      >
+        A sub label
+      </span>
+    </div>
+    <div
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
+    >
+      3 days ago
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightAddon"
+  >
+    <div
+      className="kirk-avatar--image c2 kirk-avatar"
+    >
+      <img
+        alt=""
+        src="http_test.picture.url"
+      />
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightAddon"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c3"
+      fill="#708C91"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+</a>
+`;
+
+exports[`Should render properly with unread messages 1`] = `
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c2 {
+  border: 2px dashed #DDD;
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.c2.kirk-avatar--small {
+  height: 40px;
+  width: 40px;
+}
+
+.c2.kirk-avatar--medium {
+  height: 96px;
+  width: 96px;
+}
+
+.c2.kirk-avatar--large {
+  height: 156px;
+  width: 156px;
+}
+
+.c2.kirk-avatar--image {
+  border: none;
+}
+
+.c2.kirk-avatar--image img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications,
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
+  z-index: 2;
+  position: absolute;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  top: -6px;
+  right: -6px;
+}
+
+.c2 .kirk-badge.kirk-avatar-badge--idCheck {
+  bottom: -3px;
+  right: -3px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #5DD167;
+}
+
+.c2.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,
+.c2.kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+  bottom: 0;
+  right: 0;
+}
+
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck {
+  width: 24px;
+  height: 24px;
+}
+
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--idCheck {
+  width: 36px;
+  height: 36px;
+}
+
+.c2 .kirk-avatar--medium .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  height: 24px;
+  line-height: 23px;
+  font-size: 14px;
+  padding: 0 6px;
+}
+
+.c2 .kirk-avatar--large .kirk-badge.kirk-avatar-badge--unreadNotifications {
+  height: 36px;
+  line-height: 34px;
+  font-size: 18px;
+  padding: 0 8px;
+}
+
+.c1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c1.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-display1 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+}
+
+.c1.kirk-text-display2 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  background: #EDEDED;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+<a
+  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
+  href="http_test.url"
+>
+  <div
+    className="kirk-item-leftText"
+  >
+    <div
+      className="kirk-text kirk-text-titleStrong kirk-item-title c1"
+      style={
+        Object {
+          "color": "#054752",
+        }
+      }
+    >
+      A label
+    </div>
+    <div
+      className="kirk-text kirk-text-title kirk-item-body c1"
+      style={
+        Object {
+          "color": "#054752",
+        }
+      }
+    >
+      <span
+        className="kirk-messaging-summary-item-sub-label"
+      >
+        A sub label
+      </span>
+    </div>
+    <div
+      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
+    >
+      3 days ago
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightAddon"
+  >
+    <div
+      className="kirk-avatar--image c2 kirk-avatar"
+    >
+      <img
+        alt=""
+        src="http_test.picture.url"
+      />
+    </div>
+  </div>
+  <div
+    className="kirk-item-rightAddon"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c3"
+      fill="#708C91"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+</a>
+`;

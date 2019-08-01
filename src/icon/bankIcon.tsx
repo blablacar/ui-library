@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const BankIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -16,6 +17,6 @@ export const BankIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-BankIcon.defaultProps = BaseIcon.defaultProps
+BankIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(BankIcon)

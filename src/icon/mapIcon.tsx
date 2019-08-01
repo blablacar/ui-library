@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const MapIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 22 20">
@@ -16,6 +17,6 @@ export const MapIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-MapIcon.defaultProps = BaseIcon.defaultProps
+MapIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(MapIcon)

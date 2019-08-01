@@ -1,22 +1,26 @@
-import React from 'react'
-import cc from 'classcat'
-import Title from 'title'
-import style from './style'
+import styled from 'styled-components'
 
-interface EmptyState {
-  readonly className?: Classcat.Class
-  readonly image: string
-  readonly text: string
-  readonly button?: JSX.Element
-}
+import EmptyState from './EmptyState'
+import { space } from '_utils/branding'
 
-const EmptyState = ({ className, image, text, button}: EmptyState) => (
-  <div className={cc(['kirk-empty-state', className])}>
-    <img src={image} alt="" />
-    <Title>{text}</Title>
-    {button}
-    <style jsx>{style}</style>
-  </div>
-)
+const StyledEmptyState = styled(EmptyState)`
+  & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
 
-export default EmptyState
+  & .kirk-title {
+    margin: ${space.xl} 0;
+  }
+
+  & img {
+    max-height: 33vh;
+    width: 100%;
+    object-fit: contain;
+  }
+`
+
+export default StyledEmptyState

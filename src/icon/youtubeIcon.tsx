@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const YoutubeIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -10,6 +11,6 @@ export const YoutubeIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-YoutubeIcon.defaultProps = BaseIcon.defaultProps
+YoutubeIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(YoutubeIcon)

@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const CoinIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -21,6 +22,6 @@ export const CoinIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-CoinIcon.defaultProps = BaseIcon.defaultProps
+CoinIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(CoinIcon)

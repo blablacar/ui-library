@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
 interface StarProps extends Icon {
@@ -33,7 +34,7 @@ export const StarIcon = (props: StarProps) => {
 }
 
 StarIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   bgColor: color.white,
   fill: 0,
 }

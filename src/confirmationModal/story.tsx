@@ -5,7 +5,8 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { ModalSize } from 'modal'
-import ConfirmationModal, { ConfirmationModalProps } from 'confirmationModal'
+import { ConfirmationModalProps } from './ConfirmationModal'
+import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
 const stories = storiesOf('ConfirmationModal', module)
@@ -54,7 +55,7 @@ stories.add(
   'Warning',
   () => (
     <ConfirmationModalOpener
-      status={ConfirmationModal.STATUS.WARNING}
+      status={ConfirmationModalStatus.WARNING}
       onClose={action('onClose')}
       onConfirm={action('onConfirm')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
@@ -71,7 +72,7 @@ stories.add(
   'Reminder',
   () => (
     <ConfirmationModalOpener
-      status={ConfirmationModal.STATUS.REMINDER}
+      status={ConfirmationModalStatus.REMINDER}
       onClose={action('onClose')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       onConfirm={action('onConfirm')}

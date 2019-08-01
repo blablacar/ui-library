@@ -1,66 +1,30 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color } from '_utils/branding'
 
-import prefix from '_utils'
-import { color, transition } from '_utils/branding'
-import CircleIcon from 'icon/circleIcon'
-import CheckIcon from 'icon/checkIcon'
-import style from './style'
+import Loader from './Loader'
 
-interface LoaderProps {
-  className?: Classcat.Class
-  inline?: boolean
-  size?: number
-  done?: boolean
-  onDoneAnimationEnd?: () => void
-}
-
-class Loader extends PureComponent<LoaderProps> {
-  static defaultProps: Partial<LoaderProps> = {
-    className: '',
-    inline: false,
-    size: 48,
-    done: false,
-    onDoneAnimationEnd() {},
+const StyledLoader = styled(Loader)`
+  & {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  validate = () => {
-    const timeout = parseInt(transition.duration.fast, 10) + transition.callbackDelay
-    setTimeout(this.props.onDoneAnimationEnd, timeout)
+  &.kirk-loader--fullScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    height: 100vh;
+    width: 100vw;
+    z-index: 4;
   }
 
-  componentDidMount() {
-    if (this.props.done) {
-      this.validate()
-    }
+  &.kirk-loader--done {
+    background-color: ${color.success};
+    color: ${color.white};
+    border-radius: 50%;
   }
+`
 
-  componentWillReceiveProps({ done }: LoaderProps) {
-    if (done && done !== this.props.done) {
-      this.validate()
-    }
-  }
-
-  render() {
-    const { className, inline, size, done } = this.props
-    const sizes = {
-      width: `${size}px`,
-      height: `${size}px`,
-    }
-    return (
-      <div
-        className={cc([
-          prefix({ loader: true, 'loader--fullScreen': !inline, 'loader--done': done }),
-          className,
-        ])}
-        style={inline ? sizes : null}
-      >
-        {!done && <CircleIcon iconColor={color.success} size={size} spinning />}
-        {done && <CheckIcon iconColor={color.white} size={size / 2} validate />}
-        <style jsx>{style}</style>
-      </div>
-    )
-  }
-}
-
-export default Loader
+export default StyledLoader

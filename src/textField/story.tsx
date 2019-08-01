@@ -6,7 +6,7 @@ import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs
 
 import TextField, { inputTypes, inputModes } from 'textField'
 import ArrowIcon from 'icon/arrowIcon'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import readme from 'textField/specifications/textField.md'
 
 const stories = storiesOf('TextField', module)
@@ -142,7 +142,7 @@ stories.add('input with autofocus', () => (
 stories.add('input with addon', () => (
   <TextField
     addon={
-      <Button status={Button.STATUS.UNSTYLED} isBubble tabIndex="-1">
+      <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1">
         <ArrowIcon size="18" />
       </Button>
     }

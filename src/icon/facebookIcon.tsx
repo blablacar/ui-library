@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
 export const FacebookIcon = (props: Icon) => (
@@ -10,7 +11,7 @@ export const FacebookIcon = (props: Icon) => (
 )
 
 FacebookIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   iconColor: color.facebookBrand,
 }
 

@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker renderCaption Should render the given month title 1`] = `
+<div
+  className="kirk-datepicker-month-caption DayPicker-Caption"
+>
+  January 
+</div>
+`;
+
+exports[`DatePicker renderCaption Should render the given month title with year if it is not the current year 1`] = `
+<div
+  className="kirk-datepicker-month-caption DayPicker-Caption"
+>
+  January 2050
+</div>
+`;
+
+exports[`DatePicker renderNavbar Should render the previous/next buttons in horizontal mode 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c0 {
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 48px;
+  min-width: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  transition: max-width 500ms ease-in, background-color 200ms ease-in;
+}
+
+.c0 svg,
+.c0 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c0.kirk-itemChoice {
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
+}
+
+.c0:hover,
+.c0:focus,
+.c0:active {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0;
+}
+
+.c0.kirk-button-unstyled {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #00AFF5;
+  padding: inherit;
+  display: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+.c0[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c0.kirk-button-unstyled[disabled] {
+  opacity: 1;
+}
+
+.c0.kirk-button-primary {
+  background-color: #00AFF5;
+  color: #FFF;
+}
+
+.c0.kirk-button-shadowed {
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+
+.c0.kirk-button-primary:hover,
+.c0.kirk-button-primary:focus,
+.c0.kirk-button-primary:active {
+  background-color: #008FC1;
+}
+
+.c0.kirk-button-secondary {
+  background-color: #FFF;
+  border-color: #DDD;
+  color: #00AFF5;
+}
+
+.c0.kirk-button-secondary.kirk-button-shadowed {
+  border: none;
+}
+
+.c0.kirk-button-secondary:hover,
+.c0.kirk-button-secondary:focus,
+.c0.kirk-button-secondary:active {
+  background-color: #DDD;
+}
+
+.c0.kirk-button-tertiary {
+  background-color: #FFF;
+  border-color: transparent;
+  color: #00AFF5;
+}
+
+.c0.kirk-button-tertiary:hover,
+.c0.kirk-button-tertiary:focus,
+.c0.kirk-button-tertiary:active {
+  background-color: #DDD;
+}
+
+.c0.kirk-button-loading {
+  background-color: transparent;
+  max-width: initial;
+  border: 0;
+}
+
+.c0.kirk-button-loading:hover,
+.c0.kirk-button-loading:focus,
+.c0.kirk-button-loading:active {
+  background-color: transparent;
+}
+
+.c0.kirk-button-loading[disabled],
+.c0.kirk-button-checked[disabled] {
+  opacity: 1;
+}
+
+.c0 svg.kirk-button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.c0.kirk-button-checked {
+  border: 0;
+}
+
+.c0.kirk-button-warning {
+  background-color: #F53F5B;
+  color: #FFF;
+}
+
+.c0.kirk-button-bubble {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.c0.kirk-button-bubble {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.c0.kirk-button-bubble.kirk-button-shadowed {
+  width: calc(48px - 2px * 2);
+  height: calc(48px - 2px * 2);
+}
+
+@media (hover:none),(hover:on-demand) {
+  .c0.kirk-button-secondary:hover {
+    background-color: #FFF;
+  }
+}
+
+<div
+  className=""
+>
+  <button
+    className="kirk-button kirk-button-tertiary kirk-button-bubble kirk-datepicker-previous-month c0"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c1"
+      fill="#00AFF5"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <g
+        fill="none"
+        stroke="#00AFF5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+      >
+        <path
+          d="M22 12H2"
+        />
+        <path
+          d="M9 19l-7-7 7-7"
+        />
+      </g>
+    </svg>
+  </button>
+  <button
+    className="kirk-button kirk-button-tertiary kirk-button-bubble kirk-datepicker-next-month c0"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c1"
+      fill="#00AFF5"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <g
+        fill="none"
+        stroke="#00AFF5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+        transform="rotate(180 12 12)"
+      >
+        <path
+          d="M22 12H2"
+        />
+        <path
+          d="M9 19l-7-7 7-7"
+        />
+      </g>
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`DatePicker renderNavbar Should render the weekdays in vertical mode 1`] = `
+<div
+  aria-hidden="true"
+  className="kirk-datepicker-sticky-weekdays"
+  style={
+    Object {
+      "top": "0px",
+    }
+  }
+>
+  <div
+    className="kirk-datepicker-sticky-weekdaysrow"
+  >
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Su
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Mo
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Tu
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      We
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Th
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Fr
+    </div>
+    <div
+      className="kirk-datepicker-sticky-weekday"
+    >
+      Sa
+    </div>
+  </div>
+</div>
+`;

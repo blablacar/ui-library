@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 interface EyeProps extends Icon {
   readonly off?: boolean
@@ -26,7 +27,7 @@ export const EyeIcon = (props: EyeProps) => (
 )
 
 EyeIcon.defaultProps = {
-  ...BaseIcon.defaultProps,
+  ...BaseIconDefaultProps,
   off: false,
 }
 

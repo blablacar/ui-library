@@ -1,109 +1,91 @@
-import React, { Component } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, space, font, modalSize } from '_utils/branding'
 
-import { color } from '_utils/branding'
-import Button from 'button'
-import Modal, { ModalProps, ModalSize } from 'modal'
-import CrossIcon from 'icon/crossIcon'
-import WarningIcon from 'icon/warningIcon'
-import InfoIcon from 'icon/infoIcon'
-import style from './style'
+const footerHeight = '96px' /* = padding + content */
 
-export enum ConfirmationModalStatus {
-  WARNING = 'warning',
-  REMINDER = 'reminder',
-}
+import ConfirmationModal from './ConfirmationModal'
 
-export interface ConfirmationModalProps extends ModalProps {
-  readonly status: ConfirmationModalStatus
-  readonly onConfirm?: () => void
-  readonly confirmLabel?: string
-}
-
-class ConfirmationModal extends Component<ConfirmationModalProps> {
-  static STATUS = ConfirmationModalStatus
-
-  render() {
-    const {
-      status,
-      isOpen,
-      children,
-      className,
-      size,
-      onClose,
-      closeButtonTitle,
-      onConfirm,
-      confirmLabel,
-      ariaLabelledBy,
-      ariaDescribedBy,
-      forwardedRef,
-    } = this.props
-
-    const isWarning = status === ConfirmationModalStatus.WARNING
-
-    const baseClassName = 'kirk-confirmationModal'
-
-    const classNames = cc([
-      baseClassName,
-      {
-        [`${baseClassName}--large`]: size === ModalSize.LARGE,
-        [`${baseClassName}--hasCloseButton`]: isWarning,
-      },
-      className,
-    ])
-
-    const iconProps = {
-      className: `${baseClassName}-icon`,
-      size: '100',
-    }
-
-    const getIcon = () => {
-      if (isWarning) {
-        return <WarningIcon {...iconProps} iconColor={color.danger} />
-      }
-      return <InfoIcon {...iconProps} iconColor={color.info} />
-    }
-
-    return (
-      <Modal
-        onClose={onClose}
-        isOpen={isOpen}
-        size={size}
-        displayCloseButton={false}
-        displayDimmer={false}
-        forwardedRef={forwardedRef}
-        className={classNames}
-        ariaLabelledBy={ariaLabelledBy}
-        ariaDescribedBy={ariaDescribedBy}
-      >
-        <div className={`${baseClassName}-dialog`}>
-          {getIcon()}
-          <div className={`${baseClassName}-body`}>{children}</div>
-          <footer className={`${baseClassName}-footer`}>
-            {isWarning && (
-              <Button
-                isBubble
-                status={Button.STATUS.SECONDARY}
-                className={`${baseClassName}-closeButton`}
-                onClick={onClose}
-                title={closeButtonTitle}
-              >
-                <CrossIcon size="24" iconColor={color.accent} />
-              </Button>
-            )}
-            <Button
-              status={isWarning ? Button.STATUS.WARNING : Button.STATUS.PRIMARY}
-              className={`${baseClassName}-confirmButton`}
-              onClick={onConfirm}
-            >
-              {confirmLabel}
-            </Button>
-          </footer>
-        </div>
-        <style jsx>{style}</style>
-      </Modal>
-    )
+const StyledConfirmationModal = styled(ConfirmationModal)`
+  &.kirk-confirmationModal {
+    background-color: rgba(5, 71, 82, 0.95);
+    color: ${color.white};
   }
-}
 
-export default ConfirmationModal
+  &.kirk-confirmationModal .kirk-modal-dialog {
+    background: transparent;
+    width: auto !important;
+    padding: 0;
+    max-width: initial;
+    margin: 0;
+    display: flex;
+    height: 100%;
+  }
+
+  &.kirk-confirmationModal--large {
+    text-align: center;
+  }
+
+  & .kirk-confirmationModal-dialog {
+    position: relative;
+    margin: 0 auto;
+    box-shadow: none;
+    width: auto;
+    min-height: 100%;
+    padding-top: ${space.xl};
+    padding-bottom: ${footerHeight};
+  }
+
+  &.kirk-confirmationModal--large .kirk-confirmationModal-dialog {
+    max-width: ${modalSize.m};
+  }
+
+  & .kirk-confirmationModal-body {
+    padding: ${space.xl};
+    font-size: ${font.xl.size};
+    line-height: ${font.xl.lineHeight};
+  }
+
+  & .kirk-confirmationModal-icon {
+    margin-top: ${space.xl};
+    margin-left: ${space.xl};
+  }
+
+  & .kirk-confirmationModal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: ${footerHeight};
+    display: flex;
+    justify-content: flex-end;
+    padding: ${space.xl};
+    background-color: ${color.warningBackground};
+  }
+
+  &.kirk-confirmationModal--large .kirk-confirmationModal-footer {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    background: none;
+  }
+
+  & .kirk-confirmationModal-footer {
+    justify-content: flex-end;
+  }
+
+  &.kirk-confirmationModal--hasCloseButton .kirk-confirmationModal-footer {
+    justify-content: space-between;
+  }
+
+  &.kirk-confirmationModal--large .kirk-confirmationModal-footer .kirk-button {
+    margin: ${space.l} ${space.xl} 0;
+  }
+
+  & .kirk-confirmationModal-closeButton {
+    vertical-align: bottom; /* vertical alignment to be fixed in Button */
+    border: 0; /* content alignment to be fixed in Button */
+  }
+`
+
+export { ConfirmationModalStatus } from './ConfirmationModal'
+export default StyledConfirmationModal

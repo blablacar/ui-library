@@ -1,43 +1,60 @@
-import React, { Component } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color, font, fontWeight, radius, space } from '_utils/branding'
 
-import style, { animationDuration, animationDelay } from 'pushInfo/style'
+import PushInfo, { animationDuration, animationDelay } from './PushInfo'
 
-interface PushInfoProps {
-  readonly className?: Classcat.Class
-  readonly icon?: React.ReactNode
-  readonly headline: string
-  readonly content?: string
-  readonly onAnimationEnd?: Function
-}
+const StyledPushInfo = styled(PushInfo)`
+  & {
+    display: flex;
+    align-items: center;
+    background: ${color.pushBackground};
+    color: ${color.white};
+    border-radius: ${radius.l};
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+    font-weight: ${fontWeight.regular};
+    padding: 0 ${space.l};
+    max-height: 0;
+    overflow-y: hidden;
+    animation: slide-down ${animationDuration}ms ease-out ${animationDelay}ms forwards;
+  }
 
-class PushInfo extends Component<PushInfoProps> {
-  componentDidMount() {
-    if (this.props.onAnimationEnd) {
-      setTimeout(this.props.onAnimationEnd, animationDuration + animationDelay)
+  @keyframes slide-down {
+    0% {
+      max-height: 0;
+    }
+    100% {
+      max-height: 300px;
+      padding-top: ${space.l};
+      padding-bottom: ${space.l};
     }
   }
 
-  render() {
-    const { className, icon, headline, content } = this.props
-    return (
-      <div className={cc(['kirk-pushInfo', className])}>
-        {icon && <div className="kirk-pushInfo-icon">{icon}</div>}
-        <div>
-          <h2
-            className={cc([
-              'kirk-pushInfo-headline',
-              { 'kirk-pushInfo-headline--standalone': !content },
-            ])}
-          >
-            {headline}
-          </h2>
-          {content && <p className="kirk-pushInfo-content">{content}</p>}
-        </div>
-        <style jsx>{style}</style>
-      </div>
-    )
+  .kirk-pushInfo-headline {
+    font-size: ${font.m.size};
+    line-height: ${font.m.lineHeight};
+    font-weight: ${fontWeight.medium};
+    margin: 0 0 ${space.m};
   }
-}
 
-export default PushInfo
+  .kirk-pushInfo-headline--standalone {
+    margin: 0;
+  }
+
+  .kirk-pushInfo-content {
+    margin: 0;
+  }
+
+  .kirk-pushInfo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    min-width: 40px;
+    height: 40px;
+    margin-right: ${space.l};
+    background-color: ${color.white};
+  }
+`
+
+export default StyledPushInfo

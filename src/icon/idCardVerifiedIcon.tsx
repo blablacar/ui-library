@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const IdCardVerifiedIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -14,6 +15,6 @@ export const IdCardVerifiedIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-IdCardVerifiedIcon.defaultProps = BaseIcon.defaultProps
+IdCardVerifiedIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(IdCardVerifiedIcon)

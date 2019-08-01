@@ -1,75 +1,51 @@
-import React, { Fragment } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { color } from '_utils/branding'
 
-import style from 'topBar/style'
+import TopBar from './TopBar'
+import StyledAutoCompleteList from 'autoComplete/AutoCompleteListStyle'
 
-interface TopBarProps {
-  readonly className?: Classcat.Class
-  readonly leftItem?: JSX.Element
-  readonly rightItem?: JSX.Element
-  readonly centerItem?: JSX.Element
-  readonly fixed?: boolean
-  readonly bgTransparent?: boolean
-  readonly bgShadedTransparent?: boolean
-  readonly innerWrapperClassName?: Classcat.Class
-}
-
-const TopBar = ({
-  className,
-  leftItem,
-  rightItem,
-  centerItem,
-  fixed = false,
-  bgShadedTransparent = false,
-  bgTransparent = false,
-  innerWrapperClassName = null,
-}: TopBarProps) => {
-  const Wrapper = Boolean(innerWrapperClassName) ? (
-    <div className={cc([innerWrapperClassName])} />
-  ) : (
-    <Fragment />
-  )
-  const children = []
-  if (leftItem) {
-    children.push(
-      <div key="leftItem" className="kirk-topBar-left">
-        {leftItem}
-        <style jsx>{style}</style>
-      </div>,
-    )
+const StyledTopBar = styled(TopBar)`
+  & {
+    position: relative;
+    width: 100%;
+    background-color: ${color.white};
+    display: flex;
+    align-items: center;
   }
-  if (centerItem) {
-    children.push(
-      <div key="centerItem" className="kirk-topBar-center">
-        {centerItem}
-        <style jsx>{style}</style>
-      </div>,
-    )
-  }
-  if (rightItem) {
-    children.push(
-      <div key="rightItem" className="kirk-topBar-right">
-        {rightItem}
-        <style jsx>{style}</style>
-      </div>,
-    )
-  }
-  return (
-    <header
-      className={cc([
-        'kirk-topBar',
-        {
-          'kirk-topBar--fixed': fixed,
-          'kirk-topBar--bgShadedTransparent': bgShadedTransparent,
-          'kirk-topBar--bgTransparent': bgTransparent,
-        },
-        className,
-      ])}
-    >
-      {React.cloneElement(Wrapper, {}, children)}
-      <style jsx>{style}</style>
-    </header>
-  )
-}
 
-export default TopBar
+  &.kirk-topBar--fixed {
+    position: fixed;
+  }
+
+  &.kirk-topBar--bgTransparent {
+    background-color: transparent;
+  }
+  &.kirk-topBar--bgShadedTransparent {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  }
+
+  & .kirk-topBar-left,
+  & .kirk-topBar-right {
+    flex: 1;
+    display: flex;
+  }
+
+  & .kirk-topBar-left {
+    justify-content: flex-start;
+  }
+
+  & .kirk-topBar-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  & .kirk-topBar-right {
+    justify-content: flex-end;
+  }
+`
+
+export default StyledTopBar

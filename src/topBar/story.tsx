@@ -5,14 +5,14 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { color } from '_utils/branding'
 
 import TopBar from 'topBar'
-import Button from 'button'
+import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
 
 const stories = storiesOf('TopBar', module)
 stories.addDecorator(withKnobs)
 
 const leftAction = (
-  <Button isBubble status={Button.STATUS.UNSTYLED} onClick={() => {}} aria-label="back">
+  <Button isBubble status={ButtonStatus.UNSTYLED} onClick={() => {}} aria-label="back">
     <ArrowIcon size="24" iconColor={color.primary} />
   </Button>
 )

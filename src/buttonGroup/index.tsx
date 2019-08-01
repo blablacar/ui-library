@@ -1,66 +1,55 @@
-import React, { cloneElement } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
+import { space } from '_utils/branding'
 
-import prefix from '_utils'
-import style from 'buttonGroup/style'
-import Button, { ButtonProps, ButtonStatus } from 'button'
+import ButtonGroup from './ButtonGroup'
 
-export interface ButtonGroupProps {
-  readonly children: React.ReactElement<ButtonProps>[]
-  readonly className?: Classcat.Class
-  readonly isInline?: boolean
-  readonly isReverse?: boolean
-  readonly loadingIndex?: string
-}
+const StyledButtonGroup = styled(ButtonGroup)`
+  & {
+    display: flex;
+  }
 
-const [BASE_CLASSNAME] = prefix({ 'button-group': true })
+  &.kirk-button-group-column {
+    flex-direction: column;
+  }
+  &.kirk-button-group-column .kirk-button {
+    justify-content: center;
+  }
+  &.kirk-button-group-column > .kirk-button + .kirk-button {
+    margin-top: ${space.m};
+  }
+  &.kirk-button-group-column > .kirk-button.kirk-button-loading,
+  &.kirk-button-group-column > .kirk-button.kirk-button-checked {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-const ButtonGroup = ({
-  children,
-  className = '',
-  isInline = false,
-  isReverse = false,
-  loadingIndex = null,
-}: ButtonGroupProps) => {
-  const classNames = [
-    BASE_CLASSNAME,
-    className,
-    prefix(
-      {
-        row: isInline,
-        column: !isInline,
-        reverse: isReverse,
-      },
-      BASE_CLASSNAME,
-    ),
-  ]
+  &.kirk-button-group-column.kirk-button-group-reverse {
+    flex-direction: column-reverse;
+  }
+  &.kirk-button-group-column.kirk-button-group-reverse > .kirk-button + .kirk-button {
+    margin-bottom: ${space.m};
+    margin-top: 0;
+  }
 
-  const buttons = React.Children
-    .toArray(children)
-    .filter(button => React.isValidElement(button))
+  &.kirk-button-group-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &.kirk-button-group-row > .kirk-button {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  &.kirk-button-group-row > .kirk-button + .kirk-button {
+    margin-left: ${space.l};
+  }
 
-  return (
-    <div className={cc(classNames)}>
-      {buttons.map((button, idx) => {
-        const index: string = button.props.index || String(idx)
-        const isLoading: boolean = Boolean(loadingIndex)
-        const status: ButtonStatus = isLoading && index === loadingIndex
-          ? Button.STATUS.LOADING
-          : button.props.status
-        const disabled = isLoading && index !== loadingIndex ? true : button.props.disabled
+  &.kirk-button-group-row.kirk-button-group-reverse {
+    flex-direction: row-reverse;
+  }
+  &.kirk-button-group-row.kirk-button-group-reverse > .kirk-button + .kirk-button {
+    margin-right: ${space.l};
+    margin-left: 0;
+  }
+`
 
-        const props: Partial<ButtonProps> = {
-          ...button.props,
-          index,
-          status,
-          disabled,
-        }
-        return cloneElement(button, props)
-      })}
-
-      <style jsx>{style}</style>
-    </div>
-  )
-}
-
-export default ButtonGroup
+export default StyledButtonGroup

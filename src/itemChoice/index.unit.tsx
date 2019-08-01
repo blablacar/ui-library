@@ -3,9 +3,8 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
 import Item from '_utils/item'
-import Loader from 'loader'
 import ComfortIcon from 'icon/comfortIcon'
-import ItemChoice, { ItemChoiceProps } from './index'
+import ItemChoice, { ItemChoiceProps, ItemChoiceStatus, ItemChoiceStyle } from './index'
 
 describe('ItemChoice', () => {
   const defaultProps: ItemChoiceProps = {
@@ -17,8 +16,8 @@ describe('ItemChoice', () => {
     rightAddon: <ComfortIcon />,
     className: 'custom-class-name',
     href: <a href="#" />,
-    status: ItemChoice.STATUS.DEFAULT,
-    style: ItemChoice.STYLE.PRIMARY,
+    status: ItemChoiceStatus.DEFAULT,
+    style: ItemChoiceStyle.PRIMARY,
     disabled: false,
     onClick() {},
   }
@@ -37,13 +36,13 @@ describe('ItemChoice', () => {
   })
   it('Should display a Loader when the component is in loading status', () => {
     const itemChoice = renderer
-      .create(<ItemChoice {...defaultProps} status={ItemChoice.STATUS.LOADING} />)
+      .create(<ItemChoice {...defaultProps} status={ItemChoiceStatus.LOADING} />)
       .toJSON()
     expect(itemChoice).toMatchSnapshot()
   })
   it('Should display a done Loader when the component is in checked status', () => {
     const itemChoice = renderer
-      .create(<ItemChoice {...defaultProps} status={ItemChoice.STATUS.CHECKED} />)
+      .create(<ItemChoice {...defaultProps} status={ItemChoiceStatus.CHECKED} />)
       .toJSON()
     expect(itemChoice).toMatchSnapshot()
   })

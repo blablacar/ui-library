@@ -1,69 +1,26 @@
-import React, { PureComponent } from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
 
-import Item, { ItemProps } from '_utils/item/index'
-import CheckboxIcon from '_utils/checkboxIcon'
+import ToggleButton from './ToggleButton'
 
-import style from 'toggleButton/style'
-
-interface ToggleButtonProps extends ItemProps {
-  readonly name: string
-  readonly label: string
-  readonly sublabel?: string
-  readonly status?: ToggleButtonStatus
-  readonly checked?: boolean
-  readonly disabled?: boolean
-  readonly onChange?: (obj: OnChangeParameters) => void
-}
-
-interface ToggleButtonState {
-  readonly checked: boolean
-}
-
-export enum ToggleButtonStatus {
-  DEFAULT = 'default',
-  LOADING = 'loading',
-}
-
-export default class ToggleButton extends PureComponent<ToggleButtonProps> {
-  static defaultProps: Partial<ToggleButtonProps> = {
-    status: ToggleButtonStatus.DEFAULT,
-    checked: false,
-    disabled: false,
+const StyledToggleButton = styled(ToggleButton)`
+  & {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: none;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
   }
 
-  static STATUS = ToggleButtonStatus
-
-  state: ToggleButtonState = {
-    checked: this.props.checked,
+  &:focus,
+  &:active {
+    outline: 0;
   }
-
-  onButtonClick = () => {
-    const checked = !this.state.checked
-    this.props.onChange({ name: this.props.name, value: checked })
-    this.setState({ checked })
-  }
-
-  render() {
-    const isLoading = this.props.status === ToggleButtonStatus.LOADING
-    const isChecked = this.state.checked
-    const isDisabled = this.props.disabled || isLoading
-
-    return (
-      <button
-        className={cc(['kirk-toggle-button', this.props.className])}
-        type="button"
-        aria-pressed={isChecked}
-        onClick={this.onButtonClick}
-        disabled={isDisabled}
-      >
-        <Item
-          leftTitle={this.props.label}
-          leftBody={this.props.sublabel}
-          rightAddon={<CheckboxIcon isChecked={isChecked} isLoading={isLoading} />}
-        />
-        <style jsx>{style}</style>
-      </button>
-    )
-  }
-}
+`
+export { ToggleButtonStatus } from './ToggleButton'
+export default StyledToggleButton

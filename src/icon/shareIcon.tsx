@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const ShareIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 22 22">
@@ -13,6 +14,6 @@ export const ShareIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-ShareIcon.defaultProps = BaseIcon.defaultProps
+ShareIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(ShareIcon)

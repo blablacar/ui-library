@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import PhoneField from 'phoneField'
 import defaultDoc from './specifications/default.md'
 import customDoc from './specifications/custom.md'
+import PhoneField from '.'
 
 const stories = storiesOf('PhoneField', module)
 stories.addDecorator(withKnobs)
@@ -34,7 +34,7 @@ stories.add(
       <PhoneField
         id={text('id', 'phoneFieldId')}
         name={text('name', 'phoneField')}
-        className={text('className', 'additionalClass')}
+        innerWrapperClassName={text('className', 'additionalClass')}
         ariaLabelledBy={text('ariaLabelledBy', 'labelId')}
         selectFieldLabel={text('selectFieldLabel', 'Phone country code')}
         textFieldTitle={text('textFieldTitle', 'Phone number')}

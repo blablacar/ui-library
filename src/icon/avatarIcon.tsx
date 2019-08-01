@@ -1,6 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
+import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const AvatarIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 19 20">
@@ -13,6 +14,6 @@ export const AvatarIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-AvatarIcon.defaultProps = BaseIcon.defaultProps
+AvatarIcon.defaultProps = BaseIconDefaultProps
 
 export default React.memo(AvatarIcon)

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { ItemStatus } from '_utils/item'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
-import AutoComplete from 'autoComplete'
+import AutoComplete from '.'
 import ComfortIcon from 'icon/comfortIcon'
 
 const stories = storiesOf('AutoComplete', module)

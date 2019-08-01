@@ -1,204 +1,98 @@
-import React, { createRef, PureComponent, RefObject } from 'react'
-import style from './style'
-import cc from 'classcat'
-import Badge from 'badge'
+import styled from 'styled-components'
+import { color, componentSizes, font, space } from '_utils/branding'
 
-export enum TabStatus {
-  SCROLLABLE = 'scrollable',
-  FIXED = 'fixed',
-}
+import Tabs from './Tabs'
 
-interface Tab {
-  readonly id: string
-  readonly label: string
-  readonly panelContent: JSX.Element
-  readonly badgeContent?: string
-  readonly badgeAriaLabel?: string
-}
+const bottomBorderWidth = '2px'
+const bottomBorderOffset = '1px'
 
-interface TabsProps {
-  readonly tabs: Tab[]
-  readonly activeTabId: string
-  readonly onChange?: Function
-  readonly status?: TabStatus
-  readonly className?: Classcat.Class
-  readonly tablistWrapperClassName?: Classcat.Class
-  readonly isWrapped?: boolean
-}
-
-interface TabsState {
-  // The currently selected tab id
-  activeTabId: string
-  // A map from tab ids to refs, this is to allow focusing the next or previous tab when
-  // keyboard navigating the tabs.
-  tabIdToRefs: Map<string, RefObject<HTMLButtonElement>>
-}
-
-const getPreviousTabId = (tabId: string, tabIds: string[]): string => {
-  const idIndex = tabIds.findIndex(currentTabId => currentTabId === tabId)
-  if (idIndex !== null && idIndex >= 1) {
-    return tabIds[idIndex - 1]
-  }
-  // User went left after the first tab, return id from the last tab.
-  return tabIds[tabIds.length - 1]
-}
-
-const getNextTabId = (tabId: string, tabIds: string[]): string => {
-  const idIndex = tabIds.findIndex(currentTabId => currentTabId === tabId)
-  if (idIndex !== null && idIndex < tabIds.length - 1) {
-    return tabIds[idIndex + 1]
-  }
-  // User went right after the last tab, return id from the first tab.
-  return tabIds[0]
-}
-
-const createTabIdToRefMap = (tabs: Tab[]): Map<string, RefObject<HTMLButtonElement>> => {
-  const tabIdToRef = new Map()
-  tabs.forEach(tab => {
-    tabIdToRef.set(tab.id, createRef())
-  })
-  return tabIdToRef
-}
-
-const generateTabPanelId = (tab: Tab): string => {
-  return `${tab.id}_panel`
-}
-
-/**
- * A basic Tabs component made of:
- *  - a list of selectable tabs (only one can be selected at a time)
- *  - one panel: its content is controlled by the selected tab
- *
- * It follows most of the ARIA authoring recommendations for a Tabs component from:
- * https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel
- * In particular, it implements most of the recommended shortcuts, role structure and is using
- * a roving tabindex for the focus management.
- */
-export class Tabs extends PureComponent<TabsProps, TabsState> {
-  static defaultProps: Partial<TabsProps> = {
-    onChange() {},
-    status: TabStatus.SCROLLABLE,
-    className: '',
-    tablistWrapperClassName: '',
-    isWrapped: false,
+const StyledTabs = styled(Tabs)`
+  & .kirk-tablist-wrapper {
+    border-bottom: 1px solid ${color.border};
   }
 
-  state: TabsState = {
-    activeTabId: this.props.activeTabId,
-    tabIdToRefs: createTabIdToRefMap(this.props.tabs),
+  & .kirk-tablist {
+    display: flex;
+    margin: 0 auto -${bottomBorderOffset};
+    overflow: auto; // Make tabs scrollable horizontally
+    // Remove scrollbar visually
+    -ms-overflow-style: none; // IE 10+
+    scrollbar-width: none; // Firefox
+  }
+  // Remove scrollbar visually
+  & .kirk-tablist::-webkit-scrollbar {
+    display: none;
   }
 
-  static STATUS = TabStatus
-
-  handleTabClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
-    this.activateTabById((e.target as HTMLButtonElement).id)
+  & .kirk-tablist-wrapped {
+    width: ${componentSizes.wrapper};
   }
 
-  handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    const tabId = (e.target as HTMLButtonElement).id
-    const tabIds = this.props.tabs.map(tab => tab.id)
-    let nextTabId = null
-    switch (e.key) {
-      case 'ArrowLeft':
-        nextTabId = getPreviousTabId(tabId, tabIds)
-        break
-      case 'ArrowRight':
-        nextTabId = getNextTabId(tabId, tabIds)
-        break
-      case 'Home':
-        nextTabId = '0'
-        break
-      case 'End':
-        nextTabId = tabIds[tabIds.length - 1]
-        break
-    }
-
-    if (nextTabId) {
-      this.activateTabById(nextTabId)
-      const tabRef = this.state.tabIdToRefs.get(nextTabId)
-      tabRef.current.focus()
-    }
+  & .kirk-tab {
+    width: 100%;
+    outline: none;
+    padding: ${space.m};
+    padding-bottom: calc(${space.m} + ${bottomBorderWidth});
+    background: none;
+    border: none;
+    background-color: ${color.white};
+    color: ${color.primary};
+    font-size: ${font.base.size};
+    white-space: nowrap;
   }
 
-  activateTabById = (activeTabId: string) => {
-    this.setState({ activeTabId })
-    this.props.onChange(activeTabId)
+  & .kirk-tab-container {
+    margin-left: ${space.l};
   }
 
-  render() {
-    const { tabs, className, tablistWrapperClassName, isWrapped } = this.props
-
-    if (tabs.length === 0) {
-      return null
-    }
-
-    const { activeTabId } = this.state
-    const selectedTab = tabs.find(tab => activeTabId === tab.id)
-    const isFixedTabs = this.props.status === TabStatus.FIXED
-
-    return (
-      <div className={cc(['kirk-tabs', { 'kirk-tabs-fixed': isFixedTabs }, className])}>
-        <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
-          <div
-            id="tablist"
-            role="tablist"
-            aria-orientation="horizontal"
-            aria-multiselectable="false"
-            className={cc(['kirk-tablist', { 'kirk-tablist-wrapped': isWrapped }])}
-          >
-            {tabs.map(tab => {
-              const isSelected = selectedTab.id === tab.id
-              return (
-                <div
-                  className={cc(['kirk-tab-container', { 'kirk-tab-selected': isSelected }])}
-                  key={tab.id}
-                >
-                  <div className="kirk-tab-relative">
-                    <button
-                      role="tab"
-                      aria-controls={`${generateTabPanelId(tab)}`}
-                      aria-selected={isSelected ? 'true' : 'false'}
-                      title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
-                      tabIndex={isSelected ? 0 : -1}
-                      id={tab.id}
-                      ref={this.state.tabIdToRefs.get(tab.id)}
-                      onClick={this.handleTabClicked}
-                      onKeyDown={this.handleTabKeyDown}
-                      className={cc(['kirk-tab'])}
-                    >
-                      {tab.label}
-                      {tab.badgeContent && (
-                        <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
-                          {tab.badgeContent}
-                        </Badge>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {tabs.map(tab => {
-          const isSelected = selectedTab.id === tab.id
-          return (
-            <div
-              role="tabpanel"
-              className="kirk-tab-panel"
-              id={`${generateTabPanelId(tab)}`}
-              key={tab.id}
-              aria-labelledby={tab.id}
-              hidden={!isSelected}
-            >
-              {isSelected ? tab.panelContent : null}
-            </div>
-          )
-        })}
-        <style jsx>{style}</style>
-      </div>
-    )
+  & .kirk-tab-relative {
+    display: inline;
+    position: relative;
   }
-}
 
-export default Tabs
+  &.kirk-tabs-fixed .kirk-tablist {
+    overflow: initial;
+  }
+
+  &.kirk-tabs-fixed .kirk-tab-container {
+    margin-left: 0;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    text-align: center;
+    align-self: flex-end;
+  }
+
+  &.kirk-tabs-fixed .kirk-tab {
+    white-space: normal;
+  }
+
+  & .kirk-tab-selected {
+    border-bottom: 2px solid ${color.primaryText};
+  }
+
+  & .kirk-tab-selected .kirk-tab {
+    color: ${color.primaryText};
+    // Re-position selected tab so that the active border is over the generic border
+    // This is not working so far with scrollable tabs because of the overflow property
+    padding-bottom: calc(${space.m});
+  }
+
+  & .kirk-tab:not(.kirk-tab-selected) {
+    margin-bottom: ${bottomBorderOffset};
+  }
+
+  & .kirk-tab:not(.kirk-tab-selected):hover {
+    cursor: pointer;
+  }
+
+  & .kirk-tab-container .kirk-badge {
+    position: absolute;
+    z-index: 1;
+    top: calc(-1 * (${space.m}));
+  }
+`
+
+export { TabStatus } from './Tabs'
+export default StyledTabs

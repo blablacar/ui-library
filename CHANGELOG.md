@@ -3,6 +3,22 @@
 - **[FIX]** Fix pointy corner on active `Message` (from top-right to bottom-right)
 - **[UPDATE]** Update Node version to 10.15.0
 - **[BREAKING CHANGE]** Removed locale props from TimePicker
+- **[BREAKING CHANGE]** `<Text>`: changed export for `TextDisplayType` `TextTagType`
+- **[BREAKING CHANGE]** `<Tabs>`: changed export for `TabsStatus`
+- **[BREAKING CHANGE]** `Button`: changed export for `Button.STATUS` to new `ButtonStatus`
+- **[BREAKING CHANGE]** `DatePicker`: changed export of `DatePicker.constants` to `DatePickerOrientation`
+- **[BREAKING CHANGE]** `<ItemRadio>`: changed export for `ItemRadioStatus`
+- **[BREAKING CHANGE]** `<ToggleButton>`: changed export for `ToggleButtonStatus`
+- **[BREAKING CHANGE]** `ItemCheckbox`: changed export of `ItemCheckbox.STATUS` to `ItemCheckboxStatus`
+- **[BREAKING CHANGE]** `Transitions`: changed export for `CustomTransition.TYPES` to new `AnimationType`
+- **[BREAKING CHANGE]** `ConfirmationModal`: changed export of `ConfirmationModal.STATUS` to `ConfirmationModalStatus`
+- **[BREAKING CHANGE]** `ItemsList`: changed export of `ItemsList.Divider` to `ItemsListDivider`
+- **[BREAKING CHANGE]** `<ItemChoice>`: changed export for `ItemChoice.STATUS` to `ItemChoiceStatus` and `ItemChoice.STYLE` to `ItemChoiceStyle`
+- **[BREAKING CHANGE]** `<Modal>`: changed export for `Modal.SIZE` to `ModalSize`
+- **[BREAKING CHANGE]** `<Modal>`: rename `className` props to `modalContentClassName`
+- **[BREAKING CHANGE]** `<PhoneField>`: changed `className` prop position to the root element, added `innerWrapperClassName` prop as replacement
+- **[BREAKING CHANGE]** Migrated every component to Styled Components which is now a peer dependency of this project
+- **[BREAKING CHANGE]** `<BaseIcon>`: rename `className` props to `iconClassName`
 - [...]
 
 # v8.8.0 (24/07/2019)

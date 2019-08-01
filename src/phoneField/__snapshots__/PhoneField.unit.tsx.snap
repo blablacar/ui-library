@@ -1,0 +1,980 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
+.c2.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c2 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c1 {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 16px;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c1 select {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  padding: 0 calc(8px + 24px) 0 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #054752;
+  box-shadow: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c1 select::-ms-expand {
+  display: none;
+}
+
+.c1 select:focus {
+  outline: none;
+}
+
+.c1 .kirk-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 8px;
+  background: #EDEDED;
+  z-index: 0;
+}
+
+.c1 .kirk-selectField--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c1 .kirk-selectField--hasFocus select {
+  height: calc(52px - 1px - 3px);
+}
+
+.c4 {
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 48px;
+  min-width: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  transition: max-width 500ms ease-in, background-color 200ms ease-in;
+}
+
+.c4 svg,
+.c4 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c4.kirk-itemChoice {
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
+}
+
+.c4:hover,
+.c4:focus,
+.c4:active {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0;
+}
+
+.c4.kirk-button-unstyled {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #00AFF5;
+  padding: inherit;
+  display: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+.c4[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c4.kirk-button-unstyled[disabled] {
+  opacity: 1;
+}
+
+.c4.kirk-button-primary {
+  background-color: #00AFF5;
+  color: #FFF;
+}
+
+.c4.kirk-button-shadowed {
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+
+.c4.kirk-button-primary:hover,
+.c4.kirk-button-primary:focus,
+.c4.kirk-button-primary:active {
+  background-color: #008FC1;
+}
+
+.c4.kirk-button-secondary {
+  background-color: #FFF;
+  border-color: #DDD;
+  color: #00AFF5;
+}
+
+.c4.kirk-button-secondary.kirk-button-shadowed {
+  border: none;
+}
+
+.c4.kirk-button-secondary:hover,
+.c4.kirk-button-secondary:focus,
+.c4.kirk-button-secondary:active {
+  background-color: #DDD;
+}
+
+.c4.kirk-button-tertiary {
+  background-color: #FFF;
+  border-color: transparent;
+  color: #00AFF5;
+}
+
+.c4.kirk-button-tertiary:hover,
+.c4.kirk-button-tertiary:focus,
+.c4.kirk-button-tertiary:active {
+  background-color: #DDD;
+}
+
+.c4.kirk-button-loading {
+  background-color: transparent;
+  max-width: initial;
+  border: 0;
+}
+
+.c4.kirk-button-loading:hover,
+.c4.kirk-button-loading:focus,
+.c4.kirk-button-loading:active {
+  background-color: transparent;
+}
+
+.c4.kirk-button-loading[disabled],
+.c4.kirk-button-checked[disabled] {
+  opacity: 1;
+}
+
+.c4 svg.kirk-button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.c4.kirk-button-checked {
+  border: 0;
+}
+
+.c4.kirk-button-warning {
+  background-color: #F53F5B;
+  color: #FFF;
+}
+
+.c4.kirk-button-bubble {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.c4.kirk-button-bubble {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.c4.kirk-button-bubble.kirk-button-shadowed {
+  width: calc(48px - 2px * 2);
+  height: calc(48px - 2px * 2);
+}
+
+.c3 {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.c3 .kirk-textField-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c3 .kirk-textField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c3 .kirk-textField-wrapper--hasFocus input,
+.c3 .kirk-textField-wrapper--hasFocus textarea {
+  padding: calc(16px + 1px - 3px);
+}
+
+.c3 .kirk-textField-wrapper--hasFocus input {
+  padding-right: 0;
+}
+
+.c3 input,
+.c3 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  background-color: #EDEDED;
+  color: #054752;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  caret-color: #00AFF5;
+  padding: 16px;
+}
+
+.c3 input {
+  padding-right: 0;
+  margin-right: 48px;
+}
+
+.c3 input:not(:first-child),
+.c3 textarea:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+
+.c3 input::-webkit-input-placeholder,
+.c3 textarea::-webkit-input-placeholder {
+  color: #708C91;
+}
+
+.c3 input::-moz-placeholder,
+.c3 textarea::-moz-placeholder {
+  color: #708C91;
+}
+
+.c3 input:-ms-input-placeholder,
+.c3 textarea:-ms-input-placeholder {
+  color: #708C91;
+}
+
+.c3 input::placeholder,
+.c3 textarea::placeholder {
+  color: #708C91;
+}
+
+.c3 input::-ms-clear {
+  display: none;
+}
+
+.c3 input[type='number']::-webkit-outer-spin-button,
+.c3 input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.c3 input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.c3 input[type='search'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c3 input[type='number'],
+.c3 input[type='search'] {
+  box-shadow: none;
+}
+
+.c3 textarea {
+  min-height: 150px;
+}
+
+.c3 input:focus,
+.c3 textarea:focus {
+  border-color: #EDEDED;
+  box-shadow: none;
+  outline: none;
+}
+
+.c3.kirk-error .kirk-textField-wrapper {
+  background: #FDD8DE;
+  border: solid 1px #FDD8DE;
+  -webkit-animation: textFieldError 500ms ease-in-out;
+  animation: textFieldError 500ms ease-in-out;
+}
+
+.c3.kirk-error input,
+.c3.kirk-error textarea {
+  background-color: #FDD8DE;
+}
+
+.c3.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+.c3 label {
+  color: #054752;
+  padding: 0 8px 4px 8px;
+}
+
+.c3 .kirk-button {
+  background-color: transparent;
+  color: #708C91;
+  height: auto;
+}
+
+.c3 .kirk-textField-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c3 .kirk-textField-button[hidden] {
+  visibility: hidden;
+}
+
+.c3.kirk-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c0 .kirk-phoneField-wrapper--inline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 16px;
+  background-color: #EDEDED;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+  height: calc(52px - 3px * 2);
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-textField-wrapper input {
+  padding-top: calc(16px - 3px);
+  padding-bottom: calc(16px - 3px);
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField,
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField input {
+  padding-left: 0 !important;
+}
+
+.c0 .kirk-phoneField-wrapper .kirk-textField {
+  margin-top: 16px;
+}
+
+.c0.kirk-error .kirk-phoneField-wrapper--inline {
+  background: #FDD8DE;
+  -webkit-animation: phoneFieldError 500ms ease-in-out;
+  animation: phoneFieldError 500ms ease-in-out;
+}
+
+.c0.kirk-error .kirk-selectField,
+.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-textField-wrapper,
+.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+  background: #FDD8DE;
+  border-color: #FDD8DE;
+}
+
+.c0.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+@media (hover:none),(hover:on-demand) {
+  .c4.kirk-button-secondary:hover {
+    background-color: #FFF;
+  }
+}
+
+<div
+  className="kirk-phoneField customClass c0"
+>
+  <div
+    aria-labelledby="labelId"
+    className="kirk-phoneField-wrapper"
+    id="selectFieldName"
+  >
+    <div
+      className="kirk-selectField c1"
+    >
+      <select
+        aria-label="Phone Country code"
+        autoFocus={true}
+        defaultValue="ES"
+        name="phoneRegion"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+      >
+        <option
+          value="ES"
+        >
+          Custom es label +34
+        </option>
+        <option
+          value="FR"
+        >
+          Custom fr label +33
+        </option>
+      </select>
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c2"
+        fill="#708C91"
+        height={24}
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <polyline
+          fill="none"
+          points="9 18 15 12 9 6"
+          stroke="#708C91"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          transform="rotate(90 12 12)"
+        />
+      </svg>
+    </div>
+    <div
+      className="kirk-textField c3"
+    >
+      <div
+        className="kirk-textField-wrapper"
+      >
+        <input
+          name="phoneNumber"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          placeholder="Phone number"
+          title="Phone Number"
+          type="tel"
+          value="0765455667"
+        />
+        <button
+          aria-hidden={true}
+          className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button c4"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          tabIndex="-1"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="kirk-icon c2"
+            fill="#708C91"
+            height="18"
+            viewBox="0 0 24 24"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+            <path
+              d="M19 5L5 19M19 19L5 5"
+              fill="none"
+              stroke="#708C91"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
+.c2.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c2 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c1 {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 16px;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c1 select {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  padding: 0 calc(8px + 24px) 0 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #054752;
+  box-shadow: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c1 select::-ms-expand {
+  display: none;
+}
+
+.c1 select:focus {
+  outline: none;
+}
+
+.c1 .kirk-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 8px;
+  background: #EDEDED;
+  z-index: 0;
+}
+
+.c1 .kirk-selectField--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c1 .kirk-selectField--hasFocus select {
+  height: calc(52px - 1px - 3px);
+}
+
+.c3 {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.c3 .kirk-textField-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  color: #054752;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  border: solid 1px #EDEDED;
+  box-shadow: none;
+}
+
+.c3 .kirk-textField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c3 .kirk-textField-wrapper--hasFocus input,
+.c3 .kirk-textField-wrapper--hasFocus textarea {
+  padding: calc(16px + 1px - 3px);
+}
+
+.c3 .kirk-textField-wrapper--hasFocus input {
+  padding-right: 0;
+}
+
+.c3 input,
+.c3 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  background-color: #EDEDED;
+  color: #054752;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  caret-color: #00AFF5;
+  padding: 16px;
+}
+
+.c3 input {
+  padding-right: 0;
+  margin-right: 48px;
+}
+
+.c3 input:not(:first-child),
+.c3 textarea:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+
+.c3 input::-webkit-input-placeholder,
+.c3 textarea::-webkit-input-placeholder {
+  color: #708C91;
+}
+
+.c3 input::-moz-placeholder,
+.c3 textarea::-moz-placeholder {
+  color: #708C91;
+}
+
+.c3 input:-ms-input-placeholder,
+.c3 textarea:-ms-input-placeholder {
+  color: #708C91;
+}
+
+.c3 input::placeholder,
+.c3 textarea::placeholder {
+  color: #708C91;
+}
+
+.c3 input::-ms-clear {
+  display: none;
+}
+
+.c3 input[type='number']::-webkit-outer-spin-button,
+.c3 input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.c3 input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.c3 input[type='search'] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c3 input[type='number'],
+.c3 input[type='search'] {
+  box-shadow: none;
+}
+
+.c3 textarea {
+  min-height: 150px;
+}
+
+.c3 input:focus,
+.c3 textarea:focus {
+  border-color: #EDEDED;
+  box-shadow: none;
+  outline: none;
+}
+
+.c3.kirk-error .kirk-textField-wrapper {
+  background: #FDD8DE;
+  border: solid 1px #FDD8DE;
+  -webkit-animation: textFieldError 500ms ease-in-out;
+  animation: textFieldError 500ms ease-in-out;
+}
+
+.c3.kirk-error input,
+.c3.kirk-error textarea {
+  background-color: #FDD8DE;
+}
+
+.c3.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+.c3 label {
+  color: #054752;
+  padding: 0 8px 4px 8px;
+}
+
+.c3 .kirk-button {
+  background-color: transparent;
+  color: #708C91;
+  height: auto;
+}
+
+.c3 .kirk-textField-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c3 .kirk-textField-button[hidden] {
+  visibility: hidden;
+}
+
+.c3.kirk-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c0 .kirk-phoneField-wrapper--inline {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 16px;
+  background-color: #EDEDED;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+  border: 3px solid #00AFF5;
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+  height: calc(52px - 3px * 2);
+}
+
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-textField-wrapper input {
+  padding-top: calc(16px - 3px);
+  padding-bottom: calc(16px - 3px);
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField,
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-textField input {
+  padding-left: 0 !important;
+}
+
+.c0 .kirk-phoneField-wrapper .kirk-textField {
+  margin-top: 16px;
+}
+
+.c0.kirk-error .kirk-phoneField-wrapper--inline {
+  background: #FDD8DE;
+  -webkit-animation: phoneFieldError 500ms ease-in-out;
+  animation: phoneFieldError 500ms ease-in-out;
+}
+
+.c0.kirk-error .kirk-selectField,
+.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-textField-wrapper,
+.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+  background: #FDD8DE;
+  border-color: #FDD8DE;
+}
+
+.c0.kirk-error .kirk-error-message {
+  color: #F53F5B;
+  display: block;
+  padding: 8px;
+}
+
+<div
+  className="kirk-phoneField c0"
+>
+  <div
+    className="kirk-phoneField-wrapper--inline"
+  >
+    <div
+      className="kirk-selectField c1"
+    >
+      <select
+        defaultValue=""
+        name="phoneRegion"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+      >
+        <option
+          value="FR"
+        >
+          France +33
+        </option>
+        <option
+          value="ES"
+        >
+          Spain (España) +34
+        </option>
+      </select>
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c2"
+        fill="#708C91"
+        height={24}
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <polyline
+          fill="none"
+          points="9 18 15 12 9 6"
+          stroke="#708C91"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          transform="rotate(90 12 12)"
+        />
+      </svg>
+    </div>
+    <div
+      className="kirk-textField c3"
+    >
+      <div
+        className="kirk-textField-wrapper"
+      >
+        <input
+          name="phoneNumber"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="tel"
+          value=""
+        />
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;

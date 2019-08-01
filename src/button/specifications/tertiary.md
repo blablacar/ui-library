@@ -19,7 +19,7 @@ If request is not loaded we display the loading state of these buttons.
 When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 
 ```js
-<Button status={Button.STATUS.TERTIARY}>content</Button>
+<Button status={ButtonStatus.TERTIARY}>content</Button>
 ```
 
 ## When should I use it?

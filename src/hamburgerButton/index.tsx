@@ -1,16 +1,65 @@
-import React from 'react'
-import style from './style'
+import styled from 'styled-components'
 
-export interface HamburgerButtonProps {
-  onClick: (event: React.MouseEvent<HTMLElement>) => void
-  open?: boolean
-}
+import HamburgerButton from './HamburgerButton'
+import { color } from '_utils/branding'
 
-const HamburgerButton = ({ open = false, onClick }: HamburgerButtonProps) => (
-  <button aria-expanded={open} onClick={onClick}>
-    <i />
-    <style jsx>{style}</style>
-  </button>
-)
+const StyledHamburgerButton = styled(HamburgerButton)`
+  & {
+    position: relative;
+    min-width: 40px;
+    height: 48px;
+    border: 0;
+    background: transparent;
+    color: ${color.icon};
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+  }
 
-export default HamburgerButton
+  & i {
+    display: block;
+    margin: 0 auto;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    transition: background-color 50ms linear;
+    transition-delay: 50ms;
+    pointer-events: none;
+  }
+
+  & i::before,
+  & i::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background-color: currentColor;
+    transition: transform 100ms linear;
+    z-index: inherit;
+  }
+
+  & i::before {
+    transform: translateY(-6px);
+  }
+
+  & i::after {
+    transform: translateY(6px);
+  }
+
+  &[aria-expanded='true'] i {
+    background-color: transparent;
+    transition-delay: unset;
+  }
+
+  &[aria-expanded='true'] i::before {
+    transform: translateY(0) rotate(135deg);
+  }
+
+  &[aria-expanded='true'] i::after {
+    transform: translateY(0) rotate(45deg);
+  }
+`
+
+export default StyledHamburgerButton
