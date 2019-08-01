@@ -15,7 +15,6 @@ stories.add('default', () => (
     minuteStep={number('minuteStep', 30)}
     onChange={action('onChange')}
     disabled={boolean('disabled', false)}
-    locale={select('locale', ['fr-FR', 'en-US', 'ru-RU'], 'fr-FR')}
     timeStart={select('timeStart', ['00:00', '08:00', '12:00', '21:00'], '00:00')}
   />
 ))

@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v9.0.0 (01/08/2019)
+
 - **[FIX]** Fix pointy corner on active `Message` (from top-right to bottom-right)
 - **[UPDATE]** Update Node version to 10.15.0
 - **[BREAKING CHANGE]** Removed locale props from TimePicker
@@ -19,7 +23,6 @@
 - **[BREAKING CHANGE]** `<PhoneField>`: changed `className` prop position to the root element, added `innerWrapperClassName` prop as replacement
 - **[BREAKING CHANGE]** Migrated every component to Styled Components which is now a peer dependency of this project
 - **[BREAKING CHANGE]** `<BaseIcon>`: rename `className` props to `iconClassName`
-- [...]
 
 # v8.8.0 (24/07/2019)
 
