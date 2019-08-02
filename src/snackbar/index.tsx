@@ -33,7 +33,7 @@ const StyledSnackbar = styled(Snackbar)`
     padding: 0 0 0 ${space.m};
     display: flex;
     flex-direction: column;
-    algin-items: flex-start;
+    align-items: flex-start;
   }
 `
 

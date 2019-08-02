@@ -349,7 +349,10 @@ exports[`Snackbar should not have changed 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  algin-items: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
 }
 
 @media (hover:none),(hover:on-demand) {
