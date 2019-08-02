@@ -4,6 +4,7 @@
 - **[BREAKING CHANGE]** `DISPLAY1` and `DISPLAY2` css has been inverted to comply to the design specification names
 
 - [...]
+- **[FIX]** Non-valid CSS property on Snackbar
 
 # v9.0.0 (01/08/2019)
 
