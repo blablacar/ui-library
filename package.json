@@ -11,6 +11,7 @@
   "scripts": {
     "start": "export NODE_PATH=src && start-storybook",
     "build": "rimraf build && tsc && babel build/src -x \".jsx\",\".js\" --ignore \"**/*.unit.jsx\",\"**/story.jsx\" --out-dir build && rimraf build/src && rimraf build/stories",
+    "rollup": "rollup -c",
     "tslint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\" --project tsconfig.json",
     "lint": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
@@ -76,6 +77,10 @@
     "react-dom": "16.8.6",
     "react-test-renderer": "16.8.6",
     "rimraf": "2.6.3",
+    "rollup": "1.17.0",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-typescript": "1.0.1",
     "storybook-readme": "5.0.2",
     "styled-components": "4.3.2",
     "tslint": "5.14.0",
