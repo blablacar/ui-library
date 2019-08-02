@@ -32,16 +32,18 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,
@@ -385,16 +387,18 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,
@@ -730,16 +734,18 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,
@@ -1046,16 +1052,18 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,
@@ -1364,16 +1372,18 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,

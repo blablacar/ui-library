@@ -267,16 +267,18 @@ exports[`Snackbar should not have changed 1`] = `
   line-height: 20px;
 }
 
-.c2.kirk-text-display1 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c2.kirk-text-display2 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c2.kirk-text-subheader,
