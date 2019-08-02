@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** `<Itinerary>`: Change font weight of the headline to medium
 - [...]
 
 # v9.0.0 (01/08/2019)
