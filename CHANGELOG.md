@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `<Profile>`: will have medium font weight when isMedium is true
+- **[BREAKING CHANGE]** `DISPLAY1` and `DISPLAY2` css has been inverted to comply to the design specification names
+
 - [...]
 - **[FIX]** Non-valid CSS property on Snackbar
 

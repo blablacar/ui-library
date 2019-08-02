@@ -32,16 +32,18 @@ exports[`Item Should not have changed 1`] = `
   line-height: 20px;
 }
 
-.c1.kirk-text-display1 {
+.c1.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
+  font-weight: 500;
 }
 
-.c1.kirk-text-display2 {
+.c1.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
+  font-weight: 500;
 }
 
 .c1.kirk-text-subheader,

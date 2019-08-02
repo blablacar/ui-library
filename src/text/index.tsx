@@ -35,16 +35,18 @@ const StyledText = styled(Text)`
     line-height: ${font.m.lineHeight};
   }
 
-  &.kirk-text-display1 {
+  &.kirk-text-display2 {
     color: ${color.primaryText};
     font-size: ${font.xxl.size};
     line-height: ${font.xxl.lineHeight};
+    font-weight: ${fontWeight.medium};
   }
 
-  &.kirk-text-display2 {
+  &.kirk-text-display1 {
     color: ${color.primaryText};
     font-size: ${font.xl.size};
     line-height: ${font.xl.lineHeight};
+    font-weight: ${fontWeight.medium};
   }
 
   &.kirk-text-subheader,
