@@ -33,7 +33,7 @@ const Itinerary = ({
     <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
       {isNonEmptyString(headline) && (
         <li className="kirk-itinerary-headline">
-          <Text display={TextDisplayType.TITLE}>{headline}</Text>
+          <Text display={TextDisplayType.TITLESTRONG}>{headline}</Text>
         </li>
       )}
       {isNonEmptyString(fromAddon) && (
