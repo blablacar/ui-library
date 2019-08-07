@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** `<Profile>`: name should be display in DISPLAY1 instead of DISPLAY2 when medium
 - [...]
+
+# v10.0.1 (07/08/2019)
+
+- **[FIX]** `<Profile>`: name should be display in DISPLAY1 instead of DISPLAY2 when medium
 
 # v10.0.0 (07/08/2019)
 
