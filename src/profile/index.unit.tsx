@@ -21,7 +21,7 @@ it('Should pass a title prop to Item', () => {
   expect(profile.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.TITLE)
 
   const profileMedium = shallow(<Profile title="Jack Sparrow" isMedium />)
-  expect(profileMedium.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.DISPLAY2)
+  expect(profileMedium.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.DISPLAY1)
 })
 
 it('Should display info if no rating is provided', () => {

@@ -57,7 +57,7 @@ const Profile = ({
     <Item
       className={className}
       leftTitle={title}
-      leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY2 : TextDisplayType.TITLE}
+      leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY1 : TextDisplayType.TITLE}
       leftBody={getLeftBody}
       rightAddon={
         picture && (

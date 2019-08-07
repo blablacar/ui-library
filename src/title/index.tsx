@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, font } from '_utils/branding'
+import { color, font, fontWeight } from '_utils/branding'
 
 import Title from './Title'
 
@@ -7,7 +7,7 @@ const StyledTitle = styled(Title)`
   & {
     color: ${color.primaryText};
     font-size: ${font.xl.size};
-    font-weight: 500;
+    font-weight: ${fontWeight.medium};
     line-height: ${font.xl.lineHeight};
   }
 `
