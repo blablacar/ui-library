@@ -2,6 +2,10 @@
 
 - [...]
 
+# v10.0.2 (16/08/2019)
+
+- **[FIX]** `<Snackbar>`: Reinforce style cibling to avoid children component to override it 
+
 # v10.0.1 (07/08/2019)
 
 - **[FIX]** `<Profile>`: name should be display in DISPLAY1 instead of DISPLAY2 when medium
