@@ -23,13 +23,13 @@ const StyledSnackbar = styled(Snackbar)`
     z-index: 1000; /* above the modal */
   }
 
-  & .kirk-snackbar-content {
+  & .kirk-snackbar .kirk-snackbar-content {
     flex: 1;
     margin: 0;
     color: ${color.white};
   }
 
-  & .kirk-snackbar-cross {
+  & .kirk-snackbar .kirk-snackbar-cross {
     padding: 0 0 0 ${space.m};
     display: flex;
     flex-direction: column;
