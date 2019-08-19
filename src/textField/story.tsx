@@ -163,24 +163,6 @@ stories.add('input with addon', () => (
   />
 ))
 
-stories.add('textarea', () => (
-  <TextField
-    isTextArea
-    id={text('id')}
-    name={text('name')}
-    placeholder={text('placeholder')}
-    disabled={boolean('disabled', false)}
-    readOnly={boolean('readOnly', false)}
-    label={text('label')}
-    error={text('error message', '')}
-    onChange={action('changed')}
-    onFocus={action('focused')}
-    onBlur={action('blurred')}
-    maxLength={number('maxLength')}
-    autoComplete={select('autocomplete', ['on', 'off'])}
-  />
-))
-
 const formatValue = (value: string, previousValue: string) => {
   if (previousValue && value.length < previousValue.length) {
     // Removing character, do not escape
