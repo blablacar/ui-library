@@ -4,7 +4,7 @@
 
 # v10.0.2 (16/08/2019)
 
-- **[FIX]** `<Snackbar>`: Reinforce style specificities to avoid children component to override text color and padding
+- **[FIX]** `<Snackbar>`: Reinforce style specificities to avoid children components to override text color and padding
 
 # v10.0.1 (07/08/2019)
 
