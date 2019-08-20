@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v11.0.0 (20/08/2019)
+
 - **[BREAKING CHANGE]** Extract `Textarea` from `TextField`
 - **[NEW]** Add ability to add a bottom/right button icon to `Textarea`
 - **[NEW]** Add fitContent feature to `Textarea` which allow the textarea to grow/shrink with its content.
-- [...]
 
 # v10.0.2 (16/08/2019)
 
