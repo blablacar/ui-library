@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** `<TripCard>`: Fix hover style.
+- **[FIX]** `<Textarea>`: Fix on focus exception.
 - [...]
 
 # v11.0.0 (20/08/2019)

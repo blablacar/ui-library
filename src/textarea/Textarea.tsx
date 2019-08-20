@@ -89,8 +89,8 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
   textareaRef: RefObject<HTMLTextAreaElement> = React.createRef()
 
   componentDidMount() {
-    if (this.textarea && this.props.focus) {
-      this.textarea.focus()
+    if (this.textareaRef && this.textareaRef.current && this.props.focus) {
+      this.textareaRef.current.focus()
     }
   }
 
@@ -101,8 +101,9 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
         value: defaultValue,
       })
     }
-    if (focus && this.props.focus !== focus) {
-      this.textarea.focus()
+    if (focus && this.props.focus !== focus &&
+        this.textareaRef && this.textareaRef.current) {
+      this.textareaRef.current.focus()
     }
   }
 
