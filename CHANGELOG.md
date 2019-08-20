@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `<TripCard>`: Fix hover style.
 - [...]
 
 # v11.0.0 (20/08/2019)

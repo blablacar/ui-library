@@ -81,6 +81,9 @@ export const transition = {
     base: '200ms',
     fast: '500ms',
   },
+  easing: {
+    default: 'ease-in',
+  },
   callbackDelay: 1000,
 }
 
