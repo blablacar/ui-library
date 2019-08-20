@@ -27,12 +27,6 @@ it('Should be able to change the pattern and inputMode.', () => {
   expect(input.prop('inputMode')).toBe('numeric')
 })
 
-it('Should be able to be a textarea.', () => {
-  const wrapper = shallow(<TextField name="test" isTextArea />)
-  const textarea = wrapper.find('textarea')
-  expect(textarea).toHaveLength(1)
-})
-
 it('Should have a placeholder', () => {
   const wrapper = shallow(<TextField name="test" placeholder="this is a placeholder" />)
   const input = wrapper.find('input')

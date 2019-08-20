@@ -284,8 +284,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   padding-right: 0;
 }
 
-.c3 input,
-.c3 textarea {
+.c3 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -308,30 +307,25 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   margin-right: 48px;
 }
 
-.c3 input:not(:first-child),
-.c3 textarea:not(:first-child) {
+.c3 input:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0;
 }
 
-.c3 input::-webkit-input-placeholder,
-.c3 textarea::-webkit-input-placeholder {
+.c3 input::-webkit-input-placeholder {
   color: #708C91;
 }
 
-.c3 input::-moz-placeholder,
-.c3 textarea::-moz-placeholder {
+.c3 input::-moz-placeholder {
   color: #708C91;
 }
 
-.c3 input:-ms-input-placeholder,
-.c3 textarea:-ms-input-placeholder {
+.c3 input:-ms-input-placeholder {
   color: #708C91;
 }
 
-.c3 input::placeholder,
-.c3 textarea::placeholder {
+.c3 input::placeholder {
   color: #708C91;
 }
 
@@ -359,12 +353,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   box-shadow: none;
 }
 
-.c3 textarea {
-  min-height: 150px;
-}
-
-.c3 input:focus,
-.c3 textarea:focus {
+.c3 input:focus {
   border-color: #EDEDED;
   box-shadow: none;
   outline: none;
@@ -377,8 +366,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   animation: textFieldError 500ms ease-in-out;
 }
 
-.c3.kirk-error input,
-.c3.kirk-error textarea {
+.c3.kirk-error input {
   background-color: #FDD8DE;
 }
 
@@ -707,8 +695,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   padding-right: 0;
 }
 
-.c3 input,
-.c3 textarea {
+.c3 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -731,30 +718,25 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   margin-right: 48px;
 }
 
-.c3 input:not(:first-child),
-.c3 textarea:not(:first-child) {
+.c3 input:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0;
 }
 
-.c3 input::-webkit-input-placeholder,
-.c3 textarea::-webkit-input-placeholder {
+.c3 input::-webkit-input-placeholder {
   color: #708C91;
 }
 
-.c3 input::-moz-placeholder,
-.c3 textarea::-moz-placeholder {
+.c3 input::-moz-placeholder {
   color: #708C91;
 }
 
-.c3 input:-ms-input-placeholder,
-.c3 textarea:-ms-input-placeholder {
+.c3 input:-ms-input-placeholder {
   color: #708C91;
 }
 
-.c3 input::placeholder,
-.c3 textarea::placeholder {
+.c3 input::placeholder {
   color: #708C91;
 }
 
@@ -782,12 +764,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   box-shadow: none;
 }
 
-.c3 textarea {
-  min-height: 150px;
-}
-
-.c3 input:focus,
-.c3 textarea:focus {
+.c3 input:focus {
   border-color: #EDEDED;
   box-shadow: none;
   outline: none;
@@ -800,8 +777,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   animation: textFieldError 500ms ease-in-out;
 }
 
-.c3.kirk-error input,
-.c3.kirk-error textarea {
+.c3.kirk-error input {
   background-color: #FDD8DE;
 }
 
