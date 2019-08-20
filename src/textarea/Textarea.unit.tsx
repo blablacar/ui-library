@@ -11,6 +11,17 @@ it('Should have the proper value.', () => {
   expect(textarea.prop('value')).toBe('blabla')
 })
 
+it('Should set focus properly initially', () => {
+  // Verify that focus is initially set without throwing.
+  mount(<Textarea name="test" defaultValue="blabla" focus={true} />)
+})
+
+it('Should set focus properly dynamically', () => {
+  // Verify that focus is dynamically set without throwing.
+  const wrapper = mount(<Textarea name="test" defaultValue="blabla" focus={false} />)
+  wrapper.setProps({ focus: true })
+})
+
 it('Should have a valid button with title', () => {
   const mockOnButtonClick = jest.fn()
   const props = {
