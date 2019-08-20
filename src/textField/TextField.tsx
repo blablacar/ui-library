@@ -44,17 +44,16 @@ export interface CommonFormFields {
   required?: boolean
   title?: string
   onFocus?: (
-    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
+    event: React.FocusEvent<HTMLInputElement>,
   ) => void
   onBlur?: (
-    event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>,
+    event: React.FocusEvent<HTMLInputElement>,
   ) => void
 }
 
 type errorField = string | JSX.Element
 
 export interface TextFieldProps extends CommonFormFields {
-  isTextArea?: boolean
   defaultValue?: string
   labelledBy?: string
   onChange?: (obj: OnChangeParameters) => void
@@ -164,14 +163,14 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     })
   }
 
-  onFocus = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
+  onFocus = (event: React.FocusEvent<HTMLInputElement>) => {
     this.setState({
       hasFocus: true,
     })
     this.props.onFocus(event)
   }
 
-  onBlur = (event: React.FocusEvent<HTMLTextAreaElement> | React.FocusEvent<HTMLInputElement>) => {
+  onBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     if (!event.relatedTarget || event.relatedTarget !== this.clearButton) {
       this.setState({
         hasFocus: false,
@@ -208,7 +207,6 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
 
   render() {
     const {
-      isTextArea,
       addon,
       type,
       placeholder,
@@ -277,7 +275,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     }
 
     const buttonOnClick = type !== 'password' ? this.clearValue : this.toggleShowPassword
-    const shouldDisplayButton = !isTextArea && !disabled && value
+    const shouldDisplayButton = !disabled && value
 
     return (
       <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
@@ -291,16 +289,12 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
           ])}
         >
           {addon}
-          {isTextArea ? (
-            <textarea {...attrs} onFocus={this.onFocus} onBlur={this.onBlur} />
-          ) : (
-            <input
+          <input
               {...attrs}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
               type={type === 'password' && this.state.showPassword ? 'text' : type}
-            />
-          )}
+          />
           {shouldDisplayButton && (
             <Button
               className="kirk-textField-button"

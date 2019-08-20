@@ -1,15 +1,23 @@
 import styled from 'styled-components'
-import { color, space, font, radius, transition, inputBorderSize } from '_utils/branding'
+import {
+    color,
+    space,
+    font,
+    radius,
+    transition,
+    inputBorderSize,
+    componentSizes,
+} from '_utils/branding'
 
-import Textfield, { inputTypes, inputModes } from './TextField'
+import Textarea from './Textarea'
 
-const StyledTextfield = styled(Textfield)`
+const StyledTextarea = styled(Textarea)`
   & {
     position: relative;
     box-sizing: border-box;
   }
 
-  & .kirk-textField-wrapper {
+  & .kirk-textarea-wrapper { 
     position: relative;
     display: flex;
     box-sizing: border-box;
@@ -20,20 +28,15 @@ const StyledTextfield = styled(Textfield)`
     box-shadow: none;
   }
 
-  & .kirk-textField-wrapper--hasFocus {
+  & .kirk-textarea-wrapper--hasFocus {
     border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
   }
 
-  & .kirk-textField-wrapper--hasFocus input,
-  & .kirk-textField-wrapper--hasFocus textarea {
+  & .kirk-textarea-wrapper--hasFocus textarea {
     padding: calc(${space.l} + ${inputBorderSize.default} - ${inputBorderSize.focus});
   }
 
-  & .kirk-textField-wrapper--hasFocus input {
-    padding-right: 0;
-  }
-
-  & input {
+  & textarea {
     appearance: none;
     border: 0;
     border-radius: ${radius.l};
@@ -45,64 +48,48 @@ const StyledTextfield = styled(Textfield)`
     width: 100%;
     caret-color: ${color.inputCaret};
     padding: ${space.l};
+    box-sizing: content-box;
+    height: ${font.base.lineHeight};
+  }
+  
+  & textarea.kirk-textarea-hasButton {
+    /* Ensure the content of the textarea is not overlapped by the button. */
+    padding-right: calc(${space.s} + ${componentSizes.buttonIconSize});
+    
   }
 
-  & input {
-    padding-right: 0;
-    /*
-    Use margin-right instead of padding-right to fix a cursor bug
-    when calling setSelectionRange on Safari Mobile [BBCSPA-1030]
-    */
-    margin-right: 48px;
-  }
-
-  & input:not(:first-child) {
+  & textarea:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     padding-left: 0;
   }
 
-  & input::placeholder {
+  & textarea::placeholder {
     color: ${color.inputPlaceholder};
   }
 
-  & input::-ms-clear {
-    display: none;
+  & textarea {
+    min-height: 150px;
   }
 
-  & input[type='number']::-webkit-outer-spin-button,
-  & input[type='number']::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  & textarea.kirk-textarea-fitContent {
+    min-height: ${font.base.lineHeight};
+    resize: none;
   }
-
-  & input[type='number'] {
-    -moz-appearance: textfield;
-    -webkit-appearance: none;
-  }
-
-  & input[type='search'] {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  & input[type='number'],
-  & input[type='search'] {
-    box-shadow: none;
-  }
-
-  & input:focus {
+  
+  & textarea:focus {
     border-color: ${color.inputBorder};
     box-shadow: none;
     outline: none;
   }
 
-  &.kirk-error .kirk-textField-wrapper {
+  &.kirk-error .kirk-textarea-wrapper {
     background: ${color.inputError};
     border: solid 1px ${color.inputError};
     animation: textFieldError ${transition.duration.fast} ease-in-out;
   }
 
-  &.kirk-error input {
+  &.kirk-error textarea {
     background-color: ${color.inputError};
   }
 
@@ -120,20 +107,12 @@ const StyledTextfield = styled(Textfield)`
   & .kirk-button {
     background-color: transparent;
     color: ${color.secondaryText};
-    height: auto;
   }
 
-  & .kirk-textField-button {
+  & .kirk-textarea-button {
     position: absolute;
-    top: 0;
     bottom: 0;
     right: 0;
-  }
-
-  & .kirk-textField-button[hidden] {
-    /* we use visiblity hidden instead of display none to resolve a display glitch
-    on Safari Mobile when clearing input value and hiding button simultaneously */
-    visibility: hidden;
   }
 
   &.kirk-disabled {
@@ -165,5 +144,4 @@ const StyledTextfield = styled(Textfield)`
   }
 `
 
-export { inputTypes, inputModes } from './TextField'
-export default StyledTextfield
+export default StyledTextarea
