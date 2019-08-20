@@ -1,9 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v11.0.1 (26/08/2019)
 - **[FIX]** `<Tabs>`: Added padding on tab when `isWrapped` is true
 - **[FIX]** `<TripCard>`: Fix hover style.
 - **[FIX]** `<Textarea>`: Fix on focus exception.
-- [...]
 
 # v11.0.0 (20/08/2019)
 
