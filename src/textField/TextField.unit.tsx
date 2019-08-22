@@ -134,19 +134,25 @@ it('Can have addon element', () => {
 describe('#error', () => {
   it('Should have an error state when passing an error string', () => {
     const errorText = 'this is an error'
-    const wrapper = shallow(<TextField name="test" error={errorText} />)
+    const errorClassName = 'custom-error-class'
+    const wrapper = shallow(
+      <TextField name="test" error={errorText} errorClassName={errorClassName} />,
+    )
     expect(wrapper.hasClass('kirk-error')).toBe(true)
     expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
+    expect(wrapper.find('.kirk-error-message').prop('className')).toContain(errorClassName)
     expect(wrapper.find('input').prop('aria-invalid')).toBe('true')
     expect(wrapper.find('span').text()).toBe(errorText)
   })
 
   it('Should have an error state when passing a JSX element', () => {
     const errorText = 'this is an error'
+    const errorClassName = 'custom-error-class'
     const error = <span>{errorText}</span>
-    const wrapper = shallow(<TextField name="test" error={error} />)
+    const wrapper = shallow(<TextField name="test" error={error} errorClassName={errorClassName} />)
     expect(wrapper.hasClass('kirk-error')).toBe(true)
     expect(wrapper.find('.kirk-error-message')).toHaveLength(1)
+    expect(wrapper.find('.kirk-error-message').prop('className')).toContain(errorClassName)
     expect(wrapper.find('input').prop('aria-invalid')).toBe('true')
     expect(wrapper.find('span').text()).toBe(errorText)
   })

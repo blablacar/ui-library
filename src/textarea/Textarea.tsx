@@ -32,6 +32,7 @@ export interface TextAreaProps extends CommonFormFields {
   labelledBy?: string
   onChange?: (obj: OnChangeParameters) => void
   className?: Classcat.Class
+  errorClassName?: Classcat.Class
   error?: errorField
   label?: string
   focus?: boolean
@@ -57,18 +58,6 @@ interface TextAreaAttributes extends CommonFormFields {
 export interface TextAreaState {
   readonly value: string
   readonly hasFocus: boolean
-}
-
-const DisplayError = (error: errorField) => {
-  const className = 'kirk-error-message'
-
-  return React.isValidElement(error) ? (
-    React.cloneElement(error, { className } as Object)
-  ) : (
-    <span role="alert" className={className}>
-      {error}
-    </span>
-  )
 }
 
 export default class Textarea extends PureComponent<TextAreaProps, TextAreaState> {
@@ -151,6 +140,19 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
   ref = (textarea: HTMLTextAreaElement) => {
     this.textarea = textarea
     this.props.fieldRef(textarea)
+  }
+
+  renderError = () => {
+    const { error, errorClassName } = this.props
+    const className = cc(['kirk-error-message', errorClassName])
+
+    return React.isValidElement(error) ? (
+      React.cloneElement(error, { className } as Object)
+    ) : (
+      <span role="alert" className={className}>
+        {error}
+      </span>
+    )
   }
 
   render() {
@@ -246,7 +248,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
             </Button>
           )}
         </div>
-        {Boolean(error) && DisplayError(error)}
+        {Boolean(error) && this.renderError()}
       </div>
     )
   }
