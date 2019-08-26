@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `<Tabs>`: Added padding on tab when `isWrapped` is true
 - **[FIX]** `<TripCard>`: Fix hover style.
 - **[FIX]** `<Textarea>`: Fix on focus exception.
 - [...]
