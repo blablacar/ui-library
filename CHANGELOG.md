@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `<DatePicker>`: add highlight for today's date.
 - [...]
 
 # v11.0.2 (26/08/2019)
