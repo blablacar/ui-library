@@ -1,6 +1,8 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Add new `CarIcon`, `MailIcon`, `PhotoIcon`
+- **[UPDATE]** Update visual of `SendIcon`
 
 # v11.0.3 (30/08/2019)
 
