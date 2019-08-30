@@ -2,7 +2,7 @@
 
 - [...]
 
-# v11.0.3 (30n/08/2019)
+# v11.0.3 (30/08/2019)
 
 - **[FIX]** `<DatePicker>`: add highlight for today's date.
 
