@@ -24,19 +24,15 @@ const StyledTextarea = styled(Textarea)`
     color: ${color.primaryText};
     background-color: ${color.inputBackground};
     border-radius: ${radius.l};
-    border: solid ${inputBorderSize.default} ${color.inputBorder};
-    box-shadow: none;
+    border: solid ${inputBorderSize.focus} transparent;
   }
 
-  & .kirk-textarea-wrapper--hasFocus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
-  }
-
-  & .kirk-textarea-wrapper--hasFocus textarea {
-    padding: calc(${space.l} + ${inputBorderSize.default} - ${inputBorderSize.focus});
+  & .kirk-textarea-wrapper.kirk-textarea-wrapper--hasFocus {
+    border-color: ${color.inputBorderFocus};
   }
 
   & textarea {
+    outline: none;
     appearance: none;
     border: 0;
     border-radius: ${radius.l};
@@ -47,7 +43,7 @@ const StyledTextarea = styled(Textarea)`
     line-height: ${font.base.lineHeight};
     width: 100%;
     caret-color: ${color.inputCaret};
-    padding: ${space.l};
+    padding: calc(${space.l} + 1px - ${inputBorderSize.focus});
     box-sizing: content-box;
     height: ${font.base.lineHeight};
   }
@@ -75,12 +71,6 @@ const StyledTextarea = styled(Textarea)`
   & textarea.kirk-textarea-fitContent {
     min-height: ${font.base.lineHeight};
     resize: none;
-  }
-  
-  & textarea:focus {
-    border-color: ${color.inputBorder};
-    box-shadow: none;
-    outline: none;
   }
 
   &.kirk-error .kirk-textarea-wrapper {

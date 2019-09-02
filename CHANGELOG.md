@@ -4,6 +4,7 @@
 - **[NEW]** Add new `CarIcon`, `MailIcon`, `PhotoIcon`
 - **[UPDATE]** Update visual of `SendIcon`
 - **[FIX]** Update height of `Textarea` when its content is changed programmatically while using the `fitContent` behavior.
+- **[FIX]** Fix icon jump when focusing `Textarea`
 
 # v11.0.3 (30/08/2019)
 
