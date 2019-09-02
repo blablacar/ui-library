@@ -100,6 +100,11 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
       this.setState({
         value: defaultValue,
       })
+      // Update height in next tick to give a chance to the contained text to
+      // give a proper layout to the surrounding parents.
+      setTimeout(() => {
+        this.maybeAdaptHeightToContent()
+      }, 0)
     }
     if (focus && this.props.focus !== focus &&
         this.textareaRef && this.textareaRef.current) {
@@ -132,20 +137,27 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     )
   }
 
+  maybeAdaptHeightToContent = () => {
+    if (!this.props.fitContent) {
+      return
+    }
+
+    // Fit height to content.
+    if (this.textareaRef && this.textareaRef.current) {
+      this.textareaRef.current.style.height = '0'
+      const verticalPadding = 16
+      this.textareaRef.current.style.height =
+          `${this.textareaRef.current.scrollHeight - 2 * verticalPadding}px`
+    }
+  }
+
   onChange = () => {
     this.props.onChange({
       name: this.props.name,
       value: this.state.value,
     })
 
-    // Fit to content.
-    if (this.props.fitContent && this.textareaRef && this.textareaRef.current) {
-      this.textareaRef.current.style.height = '0'
-      const verticalPadding = 16
-      this.textareaRef.current.style.height =
-          `${this.textareaRef.current.scrollHeight - 2 * verticalPadding}px`
-
-    }
+    this.maybeAdaptHeightToContent()
   }
 
   ref = (textarea: HTMLTextAreaElement) => {
