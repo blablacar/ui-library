@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v11.1.0 (3/09/2019)
+
 - **[NEW]** Add new `CarIcon`, `MailIcon`, `PhotoIcon`
 - **[UPDATE]** Update visual of `SendIcon`
 - **[FIX]** Update height of `Textarea` when its content is changed programmatically while using the `fitContent` behavior.
