@@ -60,6 +60,21 @@ describe('<ConfirmationModal> with warning status', () => {
     confirmButton.simulate('click')
     expect(mockConfirm).toHaveBeenCalledTimes(1)
   })
+
+  it('should have a loading button if confirmIsLoading is set to true', () => {
+    const wrapper = mount(
+      <ConfirmationModal
+        {...defaultWarningProps}
+        isOpen
+        onConfirm={mockConfirm}
+        onClose={mockClose}
+        confirmIsLoading
+      />,
+    )
+
+    const confirmButton = wrapper.find('.kirk-button-loading')
+    expect(confirmButton).toHaveLength(1)
+  })
 })
 
 describe('<ConfirmationModal> with reminder status', () => {

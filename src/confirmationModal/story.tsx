@@ -40,6 +40,7 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
           onClose={this.closeConfirmationModal}
           onConfirm={this.confirmConfirmationModal}
           isOpen={this.state.confirmationModalOpen}
+          confirmIsLoading={this.props.confirmIsLoading}
         >
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -61,6 +62,7 @@ stories.add(
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       size={select('size', ModalSize, ModalSize.MEDIUM)}
       closeOnEsc={boolean('closeOnEsc', true)}
+      confirmIsLoading={boolean('confirmIsLoading', false)}
     />
   ),
   {
