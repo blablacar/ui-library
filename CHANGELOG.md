@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Loading state for `ConfirmationModal` confirm button
 
 # v11.2.0 (04/09/2019)
 
