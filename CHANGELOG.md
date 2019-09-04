@@ -3,7 +3,11 @@
 - **[FIX]** `<Snackbar>`: Fix alignment on IE11.
 - [...]
 
-# v11.1.0 (3/09/2019)
+# v11.2.0 (04/09/2019)
+
+- **[NEW]** Add `DetourIcon`
+
+# v11.1.0 (03/09/2019)
 
 - **[NEW]** Add new `CarIcon`, `MailIcon`, `PhotoIcon`
 - **[UPDATE]** Update visual of `SendIcon`
