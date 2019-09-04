@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `DetourIcon`
 - [...]
 
 # v11.1.0 (3/09/2019)
