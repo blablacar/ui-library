@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[FIX]** `<Snackbar>`: Fix alignment on IE11.
+- **[NEW]** New prop `errorClassName` on `<TextField>` and `<Textarea>`
 - [...]
 - **[NEW]** Loading state for `ConfirmationModal` confirm button
 
