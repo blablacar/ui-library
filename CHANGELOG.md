@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `<Snackbar>`: Fix alignment on IE11.
 - [...]
 
 # v11.2.0 (04/09/2019)
