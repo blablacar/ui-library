@@ -64,6 +64,7 @@ stories.add('Text area with icon and fit to content', () => (
         <TextArea
             fitContent={boolean('fitContent', true)}
             id={text('id')}
+            defaultValue={text('Value', '')}
             name={text('name', 'inputName')}
             placeholder={text('placeholder', 'Some placeholder text')}
             labelledBy={text('aria label')}

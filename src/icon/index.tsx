@@ -5,6 +5,7 @@ import BankIcon from './bankIcon'
 import BellIcon from './bellIcon'
 import BubbleIcon from './bubbleIcon'
 import CallIcon from './callIcon'
+import CarIcon from './carIcon'
 import CheckIcon from './checkIcon'
 import CheckShieldIcon from './checkShieldIcon'
 import ChevronIcon from './chevronIcon'
@@ -17,6 +18,7 @@ import CrossDiscIcon from './crossDiscIcon'
 import CrossIcon from './crossIcon'
 import CrosshairIcon from './crosshairIcon'
 import DepartureIcon from './departureIcon'
+import DetourIcon from './detourIcon'
 import DirectionIcon from './directionIcon'
 import DoubleArrowIcon from './doubleArrowIcon'
 import EyeIcon from './eyeIcon'
@@ -32,6 +34,7 @@ import InfoIcon from './infoIcon'
 import InstagramIcon from './instagramIcon'
 import LadyIcon from './ladyIcon'
 import LightningIcon from './lightningIcon'
+import MailIcon from './mailIcon'
 import MapIcon from './mapIcon'
 import MinusIcon from './minusIcon'
 import MusicIcon from './musicIcon'
@@ -39,6 +42,7 @@ import MyRidesIcon from './myRides'
 import NewspaperIcon from './newspaperIcon'
 import OdnoklassnikiIcon from './odnoklassnikiIcon'
 import PetIcon from './petIcon'
+import PhotoIcon from './photoIcon'
 import PinIcon from './pinIcon'
 import PinterestIcon from './pinterestIcon'
 import PlusIcon from './plusIcon'
@@ -66,6 +70,7 @@ export {
   BankIcon,
   BellIcon,
   BubbleIcon,
+  CarIcon,
   CallIcon,
   CheckIcon,
   CheckShieldIcon,
@@ -79,6 +84,7 @@ export {
   CrossIcon,
   CrosshairIcon,
   DepartureIcon,
+  DetourIcon,
   DirectionIcon,
   DoubleArrowIcon,
   EyeIcon,
@@ -94,6 +100,7 @@ export {
   InstagramIcon,
   LadyIcon,
   LightningIcon,
+  MailIcon,
   MapIcon,
   MinusIcon,
   MusicIcon,
@@ -101,6 +108,7 @@ export {
   NewspaperIcon,
   OdnoklassnikiIcon,
   PetIcon,
+  PhotoIcon,
   PinIcon,
   PinterestIcon,
   PlusIcon,

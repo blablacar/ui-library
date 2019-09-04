@@ -7,20 +7,22 @@ const StyledSnackbar = styled(Snackbar)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* above the modal */
   }
 
   & .kirk-snackbar {
-    position: fixed;
     display: flex;
     flex-direction: row;
+    align-self: center; /* fix centering on IE11 */
     width: 100%;
     max-width: 614px;
-    margin: 0 auto;
-    bottom: 0;
     overflow: hidden;
     background-color: ${color.danger};
     padding: ${space.l} ${space.xl};
-    z-index: 1000; /* above the modal */
   }
 
   & .kirk-snackbar .kirk-snackbar-content {

@@ -26,6 +26,7 @@ const StyledTabs = styled(Tabs)`
 
   & .kirk-tablist-wrapped {
     width: ${componentSizes.wrapper};
+    padding: 0 ${space.xl};
   }
 
   & .kirk-tab {
