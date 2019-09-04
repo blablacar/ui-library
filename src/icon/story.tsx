@@ -9,10 +9,9 @@ import readme from 'icon/specifications/icon.md'
 /** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {
   iconItem: {
-    float: 'left',
+    display: 'inline-flex',
     height: '150px',
     width: '150px',
-    display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',

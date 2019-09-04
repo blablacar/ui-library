@@ -1,9 +1,27 @@
 # Unreleased
 
-- **[FIX]** `<TripCard>`: Fix hover style.
-- **[FIX]** `<Textarea>`: Fix on focus exception.
 - **[FIX]** `<Snackbar>`: Fix alignment on IE11.
 - [...]
+
+# v11.1.0 (3/09/2019)
+
+- **[NEW]** Add new `CarIcon`, `MailIcon`, `PhotoIcon`
+- **[UPDATE]** Update visual of `SendIcon`
+- **[FIX]** Update height of `Textarea` when its content is changed programmatically while using the `fitContent` behavior.
+- **[FIX]** Fix icon jump when focusing `Textarea`
+
+# v11.0.3 (30/08/2019)
+
+- **[FIX]** `<DatePicker>`: add highlight for today's date.
+
+# v11.0.2 (26/08/2019)
+
+- **[FIX]** `<Tabs>`: Added padding on tab when `isWrapped` is true
+
+# v11.0.1 (21/08/2019)
+
+- **[FIX]** `<TripCard>`: Fix hover style.
+- **[FIX]** `<Textarea>`: Fix on focus exception.
 
 # v11.0.0 (20/08/2019)
 

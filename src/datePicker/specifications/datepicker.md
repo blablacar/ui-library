@@ -27,6 +27,15 @@ We display past days (days before the actual one) in light grey (#EDEDED). These
 
 When user scrolls from one year to another we display the year next to the month for every month of the next year.
 
+> User selected date
+
+The selected date by the user is decorated with a blue disc.
+
+> Today's date
+
+Today's date cell has a light gray circle decoration.
+If today's date is selected by the user, we only show the blue disc, not the light gray circle.
+
 ## Localization
 
 The DatePicker component comes with a default english configuration, but if you need to use it with other languages, you can override all names through props: `locale`, `months`, `weekdaysShort`, `weekdaysLong` and `firstDayOfWeek`.
