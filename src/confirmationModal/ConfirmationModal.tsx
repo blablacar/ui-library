@@ -18,6 +18,7 @@ export interface ConfirmationModalProps extends ModalProps {
   readonly status: ConfirmationModalStatus
   readonly onConfirm?: () => void
   readonly confirmLabel?: string
+  readonly confirmIsLoading?: boolean
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
@@ -35,6 +36,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       ariaLabelledBy,
       ariaDescribedBy,
       forwardedRef,
+      confirmIsLoading,
     } = this.props
 
     const isWarning = status === ConfirmationModalStatus.WARNING
@@ -61,6 +63,9 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       }
       return <InfoIcon {...iconProps} iconColor={color.info} />
     }
+
+    let confirmButtonStatus = isWarning ? ButtonStatus.WARNING : ButtonStatus.PRIMARY
+    confirmButtonStatus = confirmIsLoading ? ButtonStatus.LOADING : confirmButtonStatus
 
     return (
       <Modal
@@ -90,7 +95,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
               </Button>
             )}
             <Button
-              status={isWarning ? ButtonStatus.WARNING : ButtonStatus.PRIMARY}
+              status={confirmButtonStatus}
               className={`${baseClassName}-confirmButton`}
               onClick={onConfirm}
             >
