@@ -18,6 +18,7 @@ import CrossDiscIcon from './crossDiscIcon'
 import CrossIcon from './crossIcon'
 import CrosshairIcon from './crosshairIcon'
 import DepartureIcon from './departureIcon'
+import DetourIcon from './detourIcon'
 import DirectionIcon from './directionIcon'
 import DoubleArrowIcon from './doubleArrowIcon'
 import EyeIcon from './eyeIcon'
@@ -83,6 +84,7 @@ export {
   CrossIcon,
   CrosshairIcon,
   DepartureIcon,
+  DetourIcon,
   DirectionIcon,
   DoubleArrowIcon,
   EyeIcon,
