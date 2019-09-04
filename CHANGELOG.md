@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[FIX]** Fix viewbox for `DetourIcon`
+- **[FIX]** `<Snackbar>`: Fix alignment on IE11.
+- **[NEW]** New prop `errorClassName` on `<TextField>` and `<Textarea>`
 - [...]
 
 # v11.2.0 (04/09/2019)

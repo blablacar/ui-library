@@ -59,6 +59,7 @@ export interface TextFieldProps extends CommonFormFields {
   onChange?: (obj: OnChangeParameters) => void
   onClear?: () => void
   className?: Classcat.Class
+  errorClassName?: Classcat.Class
   error?: errorField
   addon?: JSX.Element
   label?: string
@@ -88,18 +89,6 @@ export interface TextFieldState {
   readonly hasFocus: boolean
 }
 
-const DisplayError = (error: errorField) => {
-  const className = 'kirk-error-message'
-
-  return React.isValidElement(error) ? (
-    React.cloneElement(error, { className } as Object)
-  ) : (
-    <span role="alert" className={className}>
-      {error}
-    </span>
-  )
-}
-
 export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
   private input: HTMLInputElement | HTMLTextAreaElement
   static defaultProps: Partial<TextFieldProps> = {
@@ -108,7 +97,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     onFocus() {},
     onBlur() {},
     type: inputTypes.TEXT,
-    format: (value, previousValue) => value,
+    format: (value) => value,
     focusBorder: true,
   }
 
@@ -203,6 +192,19 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   ref = (input: textfield) => {
     this.input = input
     this.props.inputRef(input)
+  }
+
+  renderError = () => {
+    const { error, errorClassName } = this.props
+    const className = cc(['kirk-error-message', errorClassName])
+
+    return React.isValidElement(error) ? (
+      React.cloneElement(error, { className } as Object)
+    ) : (
+      <span role="alert" className={className}>
+        {error}
+      </span>
+    )
   }
 
   render() {
@@ -316,7 +318,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
             </Button>
           )}
         </div>
-        {Boolean(error) && DisplayError(error)}
+        {Boolean(error) && this.renderError()}
       </div>
     )
   }
