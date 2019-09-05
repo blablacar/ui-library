@@ -1,14 +1,22 @@
-// tslint:disable:max-line-length
 import React from 'react'
 import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const SendIcon = (props: Icon) => (
-  <BaseIcon {...props}>
+  <BaseIcon {...props} viewBox="0 0 21 22">
     <g fill="none" fillRule="evenodd">
+      <path d="M-2-1h24v24H-2z" />
       <path
-        d="M3.825 2.83l18.172 8.26a1 1 0 0 1 0 1.82L3.825 21.17a1 1 0 0 1-1.39-1.127l1.402-6.309a1 1 0 0 1 .914-.78L12 12.5a.501.501 0 0 0 0-1l-7.25-.453a1 1 0 0 1-.913-.781l-1.402-6.31a1 1 0 0 1 1.39-1.127z"
-        fill={props.iconColor}
+        stroke={props.iconColor}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.52 1.48L5.24 12.9v6.67l3.43-4.1"
+      />
+      <path
+        stroke={props.iconColor}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M.48 9.1l19.04-7.62-3.8 19.04z"
       />
     </g>
   </BaseIcon>
