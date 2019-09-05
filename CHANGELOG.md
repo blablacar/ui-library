@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Restore `SendIcon` and add separate `SendMessageIcon`
 
 # v11.2.1 (04/09/2019)
 

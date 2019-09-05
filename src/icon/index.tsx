@@ -51,6 +51,7 @@ import ProximityIcon from './proximityIcon'
 import QuestionIcon from './questionIcon'
 import SearchIcon from './searchIcon'
 import SendIcon from './sendIcon'
+import SendMessageIcon from './sendMessageIcon'
 import ShareIcon from './shareIcon'
 import SmokeIcon from './smokeIcon'
 import SpeakIcon from './speakIcon'
@@ -117,6 +118,7 @@ export {
   QuestionIcon,
   SearchIcon,
   SendIcon,
+  SendMessageIcon,
   ShareIcon,
   SmokeIcon,
   SpeakIcon,

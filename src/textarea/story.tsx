@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
-import SendIcon from 'icon/sendIcon'
+import SendMessageIcon from 'icon/sendMessageIcon'
 
 import TextArea from 'textarea'
 
@@ -52,7 +52,7 @@ stories.add('Text area with icon', () => (
             maxLength={number('maxLength')}
             autoComplete={select('autocomplete', ['on', 'off'])}
             title={text('title', 'accessibility text')}
-            buttonIcon={<SendIcon />}
+            buttonIcon={<SendMessageIcon />}
             buttonTitle='Button action'
             onButtonClick={() => { window.alert('button clicked')}}
         />
@@ -80,7 +80,7 @@ stories.add('Text area with icon and fit to content', () => (
             maxLength={number('maxLength')}
             autoComplete={select('autocomplete', ['on', 'off'])}
             title={text('title', 'accessibility text')}
-            buttonIcon={<SendIcon />}
+            buttonIcon={<SendMessageIcon />}
             buttonTitle='Send'
             onButtonClick={() => { window.alert('button clicked')}}
         />
