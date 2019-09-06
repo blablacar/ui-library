@@ -83,9 +83,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -338,9 +336,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -642,9 +638,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;

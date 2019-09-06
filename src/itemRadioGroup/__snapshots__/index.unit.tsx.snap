@@ -83,9 +83,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;

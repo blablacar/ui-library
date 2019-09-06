@@ -7,9 +7,7 @@ const StyledItem = styled(Item)`
   & {
     position: relative;
     display: flex;
-    padding: 0;
-    padding-top: ${space.l};
-    padding-bottom: ${space.l};
+    padding: ${space.l} ${space.xl};
     align-items: center;
     flex: 1;
     border: 0;

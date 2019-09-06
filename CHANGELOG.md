@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Add default horizontal padding in base `Item`.
 - [...]
 
 # v11.2.2 (05/09/2019)

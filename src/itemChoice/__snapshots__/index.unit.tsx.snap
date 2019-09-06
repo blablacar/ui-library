@@ -83,9 +83,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -438,9 +436,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -785,9 +781,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1103,9 +1097,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1423,9 +1415,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 24px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
