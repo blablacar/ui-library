@@ -1,6 +1,7 @@
 import React, { createRef, PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import Badge from 'badge'
+import { space } from '_utils/branding'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
@@ -87,6 +88,8 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     tabIdToRefs: createTabIdToRefMap(this.props.tabs),
   }
 
+  highlightRef: RefObject<HTMLDivElement> = React.createRef()
+
   static STATUS = TabStatus
 
   handleTabClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -119,9 +122,39 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
   }
 
+  moveHighlight = (activeTabId: string) => {
+    const currentTab = this.state.tabIdToRefs.get(activeTabId).current
+    const tabBounds = currentTab.getBoundingClientRect()
+
+    // tablist-wrapper parent needed to get the height of the whole component
+    // because tabs can have different heights.
+    // Casted as HTMLElement to use offsetHeight,
+    // not available with the standard Element returned by closest()
+    const parentTabWrapper = currentTab.closest('.kirk-tablist-wrapper') as HTMLElement
+
+    // adapt to current tab width
+    this.highlightRef.current.style.width = `${tabBounds.width}px`
+    // top position, tablist-wrapper height - tablist-wrapper border height
+    this.highlightRef.current.style.top = `${parentTabWrapper.clientHeight -
+      (parentTabWrapper.offsetHeight - parentTabWrapper.clientHeight)}px`
+    // left position, tab left position - parent wrapper left position
+    this.highlightRef.current.style.left = `${tabBounds.left -
+      parentTabWrapper.getBoundingClientRect().left}px`
+  }
+
   activateTabById = (activeTabId: string) => {
     this.setState({ activeTabId })
     this.props.onChange(activeTabId)
+  }
+
+  componentDidUpdate() {
+    this.moveHighlight(this.state.activeTabId)
+  }
+
+  componentDidMount() {
+    if (this.highlightRef && this.highlightRef.current) {
+      this.moveHighlight(this.props.activeTabId)
+    }
   }
 
   render() {
@@ -138,8 +171,8 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     return (
       <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
         <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
+          <div className="kirk-tab-highlight" ref={this.highlightRef} />
           <div
-            id="tablist"
             role="tablist"
             aria-orientation="horizontal"
             aria-multiselectable="false"

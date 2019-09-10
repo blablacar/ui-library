@@ -8,10 +8,12 @@ exports[`Rendering testing should render properly 1`] = `
     className="kirk-tablist-wrapper"
   >
     <div
+      className="kirk-tab-highlight"
+    />
+    <div
       aria-multiselectable="false"
       aria-orientation="horizontal"
       className="kirk-tablist"
-      id="tablist"
       role="tablist"
     >
       <div
