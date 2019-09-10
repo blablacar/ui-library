@@ -24,7 +24,7 @@ stories.add('default', () => {
       },
       {
         id: 'tab2',
-        label: text('Tab label 2', 'Tab 2'),
+        label: text('Tab label 2', 'Very Very Long Tab 2'),
         panelContent: (
           <div style={{ padding: 30 }}>
             <Button

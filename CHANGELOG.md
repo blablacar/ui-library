@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Add highlight animation on `Tabs`
 
 # v11.2.2 (05/09/2019)
 

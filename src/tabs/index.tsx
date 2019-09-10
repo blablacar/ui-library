@@ -1,25 +1,27 @@
 import styled from 'styled-components'
-import { color, componentSizes, font, space } from '_utils/branding'
+import { color, componentSizes, font, space, transition } from '_utils/branding'
 
 import Tabs from './Tabs'
 
-const bottomBorderWidth = '2px'
-const bottomBorderOffset = '1px'
+const highlightHeight = '2px'
 
 const StyledTabs = styled(Tabs)`
+  & {
+    position: relative;
+  }
+
   & .kirk-tablist-wrapper {
     border-bottom: 1px solid ${color.border};
   }
 
   & .kirk-tablist {
     display: flex;
-    margin: 0 auto -${bottomBorderOffset};
-    overflow: auto; // Make tabs scrollable horizontally
-    // Remove scrollbar visually
-    -ms-overflow-style: none; // IE 10+
-    scrollbar-width: none; // Firefox
+    margin: 0 auto;
+    overflow: auto; /* Make tabs scrollable horizontally */
+    -ms-overflow-style: none; /* Remove scrollbar visually IE 10+ */
+    scrollbar-width: none; /* Remove scrollbar visually Firefox */
   }
-  // Remove scrollbar visually
+  /* Remove scrollbar */
   & .kirk-tablist::-webkit-scrollbar {
     display: none;
   }
@@ -32,8 +34,7 @@ const StyledTabs = styled(Tabs)`
   & .kirk-tab {
     width: 100%;
     outline: none;
-    padding: ${space.m};
-    padding-bottom: calc(${space.m} + ${bottomBorderWidth});
+    padding: ${space.l};
     background: none;
     border: none;
     background-color: ${color.white};
@@ -69,19 +70,8 @@ const StyledTabs = styled(Tabs)`
     white-space: normal;
   }
 
-  & .kirk-tab-selected {
-    border-bottom: 2px solid ${color.primaryText};
-  }
-
   & .kirk-tab-selected .kirk-tab {
     color: ${color.primaryText};
-    // Re-position selected tab so that the active border is over the generic border
-    // This is not working so far with scrollable tabs because of the overflow property
-    padding-bottom: calc(${space.m});
-  }
-
-  & .kirk-tab:not(.kirk-tab-selected) {
-    margin-bottom: ${bottomBorderOffset};
   }
 
   & .kirk-tab:not(.kirk-tab-selected):hover {
@@ -92,6 +82,19 @@ const StyledTabs = styled(Tabs)`
     position: absolute;
     z-index: 1;
     top: calc(-1 * (${space.m}));
+  }
+
+  & .kirk-tab-highlight {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: ${highlightHeight};
+    background-color: ${color.primaryText};
+    transition-property: width, left;
+    transition-duration: ${transition.duration.base};
+    transition-timing-function: ease-in-out;
   }
 `
 
