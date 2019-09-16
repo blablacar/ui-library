@@ -126,11 +126,10 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     const currentTab = this.state.tabIdToRefs.get(activeTabId).current
     const tabBounds = currentTab.getBoundingClientRect()
 
-    // tablist-wrapper parent needed to get the height of the whole component
+    // .kirk-tablist-wrapper needed to get the height of the whole component
     // because tabs can have different heights.
-    // Casted as HTMLElement to use offsetHeight,
-    // not available with the standard Element returned by closest()
-    const parentTabWrapper = currentTab.closest('.kirk-tablist-wrapper') as HTMLElement
+    // Casted as HTMLElement to use offsetHeight (parentNode returns an Element).
+    const parentTabWrapper = this.highlightRef.current.parentNode as HTMLElement
 
     // adapt to current tab width
     this.highlightRef.current.style.width = `${tabBounds.width}px`

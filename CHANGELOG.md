@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** Replace IE11 unsupported property closest() used in `Tabs`
 
 # v11.2.3 (16/09/2019)
 
