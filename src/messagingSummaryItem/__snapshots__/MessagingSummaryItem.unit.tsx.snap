@@ -272,7 +272,7 @@ button.c0 {
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body c1"
+      className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
       style={
         Object {
           "color": "#708C91",
@@ -602,7 +602,7 @@ button.c0 {
       A label
     </div>
     <div
-      className="kirk-text kirk-text-title kirk-item-body c1"
+      className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
       style={
         Object {
           "color": "#054752",

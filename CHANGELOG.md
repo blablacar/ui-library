@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix font-size for `MessagingSummaryItem` sublabel.
 - [...]
 
 # v11.2.4 (16/09/2019)
