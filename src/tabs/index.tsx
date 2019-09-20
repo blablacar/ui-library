@@ -32,7 +32,12 @@ const StyledTabs = styled(Tabs)`
   }
 
   & .kirk-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     width: 100%;
+    height: 100%;
     outline: none;
     padding: ${space.l};
     background: none;
@@ -43,13 +48,20 @@ const StyledTabs = styled(Tabs)`
     white-space: nowrap;
   }
 
-  & .kirk-tab-container {
-    margin-left: ${space.l};
+  & .kirk-tab > .kirk-icon {
+    flex-shrink: 0;
   }
 
-  & .kirk-tab-relative {
-    display: inline;
-    position: relative;
+  & .kirk-tab-text--with-icon {
+    margin-left: ${space.l};
+    text-align: left;
+  }
+
+  & .kirk-tab-container {
+    margin-left: ${space.l};
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
   }
 
   &.kirk-tabs-fixed .kirk-tablist {
@@ -58,12 +70,8 @@ const StyledTabs = styled(Tabs)`
 
   &.kirk-tabs-fixed .kirk-tab-container {
     margin-left: 0;
-    flex: 1;
     flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
     text-align: center;
-    align-self: flex-end;
   }
 
   &.kirk-tabs-fixed .kirk-tab {
@@ -79,9 +87,10 @@ const StyledTabs = styled(Tabs)`
   }
 
   & .kirk-tab-container .kirk-badge {
-    position: absolute;
-    z-index: 1;
-    top: calc(-1 * (${space.m}));
+    position: relative;
+    left: 0;
+    top: calc(-1 * ${space.s});
+    align-self: flex-start;
   }
 
   & .kirk-tab-highlight {

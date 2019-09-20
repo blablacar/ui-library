@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import Button from 'button'
+import CarpoolIcon from 'icon/carpoolIcon'
+import BusIcon from 'icon/busIcon'
 
 import Tabs, { TabStatus } from 'tabs'
 
 const stories = storiesOf('Tabs', module)
 stories.addDecorator(withKnobs)
+
+const panels = [
+  <div style={{ padding: 30 }}>Content for first tab</div>,
+  <div style={{ padding: 30 }}>
+    <Button
+      onClick={() => {
+        action('onClickButton')
+      }}
+    >
+      Button inside panel 2.
+    </Button>
+  </div>,
+  <div style={{ padding: 30 }}>Content for tab3</div>,
+]
 
 stories.add('default', () => {
   const defaultTabsConfig = {
@@ -19,30 +35,20 @@ stories.add('default', () => {
       {
         id: 'tab1',
         label: text('Tab label 1', 'Tab 1'),
-        panelContent: <div style={{ padding: 30 }}>Content for first tab</div>,
+        panelContent: panels[0],
         badgeContent: text('Badge content 1', ''),
       },
       {
         id: 'tab2',
         label: text('Tab label 2', 'Very Very Long Tab 2'),
-        panelContent: (
-          <div style={{ padding: 30 }}>
-            <Button
-              onClick={() => {
-                action('onClickButton')
-              }}
-            >
-              Button inside panel 2.
-            </Button>
-          </div>
-        ),
+        panelContent: panels[1],
         badgeContent: text('Badge content 2', '2'),
         badgeAriaLabel: 'Unread Message',
       },
       {
         id: 'tab3',
         label: text('Tab label 3', 'Tab 3'),
-        panelContent: <div style={{ padding: 30 }}>Content for first tab3</div>,
+        panelContent: panels[2],
         badgeContent: text('Badge content 3', ''),
       },
     ],
@@ -54,6 +60,48 @@ stories.add('default', () => {
       activeTabId={defaultTabsConfig.activeTabId}
       status={defaultTabsConfig.status}
       isWrapped={defaultTabsConfig.isWrapped}
+    />
+  )
+})
+
+stories.add('with icons', () => {
+  const iconTabsConfig = {
+    activeTabId: 'tab1',
+    status: select('status', TabStatus, TabStatus.FIXED),
+    isWrapped: boolean('isWrapped', false),
+    tabs: [
+      {
+        id: 'tab1',
+        label: text('Tab label 1', 'Tab 1'),
+        panelContent: panels[0],
+        badgeContent: text('Badge content 1', ''),
+      },
+      {
+        id: 'tab2',
+        label: text('Tab label 2', 'Very long Tab 2'),
+        icon: <CarpoolIcon size="32" />,
+        showIconOnly: boolean('showIconOnly Tab 2', false),
+        panelContent: panels[1],
+        badgeContent: text('Badge content 2', '2'),
+        badgeAriaLabel: 'Unread Message',
+      },
+      {
+        id: 'tab3',
+        label: text('Tab label 3', 'Tab 3'),
+        icon: <BusIcon size="32" />,
+        showIconOnly: boolean('showIconOnly Tab 3', true),
+        panelContent: panels[2],
+        badgeContent: text('Badge content 3', ''),
+      },
+    ],
+  }
+  return (
+    <Tabs
+      onChange={action('onChange')}
+      tabs={iconTabsConfig.tabs}
+      activeTabId={iconTabsConfig.activeTabId}
+      status={iconTabsConfig.status}
+      isWrapped={iconTabsConfig.isWrapped}
     />
   )
 })

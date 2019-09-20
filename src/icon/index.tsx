@@ -56,6 +56,8 @@ import ShareIcon from './shareIcon'
 import SmokeIcon from './smokeIcon'
 import SpeakIcon from './speakIcon'
 import StarIcon from './starIcon'
+import BusIcon from './busIcon'
+import CarpoolIcon from './carpoolIcon'
 import TicketIcon from './ticketIcon'
 import TrashIcon from './trashIcon'
 import TwitterIcon from './twitterIcon'
@@ -123,6 +125,8 @@ export {
   SmokeIcon,
   SpeakIcon,
   StarIcon,
+  BusIcon,
+  CarpoolIcon,
   TicketIcon,
   TrashIcon,
   TwitterIcon,

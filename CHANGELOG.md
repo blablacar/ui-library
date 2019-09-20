@@ -1,7 +1,8 @@
 # Unreleased
 
 - **[FIX]** Fix font-size for `MessagingSummaryItem` sublabel.
-- [...]
+- **[UPDATE]** Add possibility to use icons in `Tabs`
+- **[NEW]** Add `BusIcon` and `CarpoolIcon`
 
 # v11.2.4 (16/09/2019)
 

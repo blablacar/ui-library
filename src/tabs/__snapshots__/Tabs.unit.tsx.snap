@@ -19,65 +19,65 @@ exports[`Rendering testing should render properly 1`] = `
       <div
         className="kirk-tab-container kirk-tab-selected"
       >
-        <div
-          className="kirk-tab-relative"
+        <button
+          aria-controls="tab1_panel"
+          aria-selected="true"
+          className="kirk-tab"
+          id="tab1"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={0}
+          title="Tab 1"
         >
-          <button
-            aria-controls="tab1_panel"
-            aria-selected="true"
-            className="kirk-tab"
-            id="tab1"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="tab"
-            tabIndex={0}
-            title="Tab 1"
+          <span
+            className="kirk-tab-text"
           >
             Tab 1
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
       <div
         className="kirk-tab-container"
       >
-        <div
-          className="kirk-tab-relative"
+        <button
+          aria-controls="tab2_panel"
+          aria-selected="false"
+          className="kirk-tab"
+          id="tab2"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={-1}
+          title="Tab 2"
         >
-          <button
-            aria-controls="tab2_panel"
-            aria-selected="false"
-            className="kirk-tab"
-            id="tab2"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="tab"
-            tabIndex={-1}
-            title="Tab 2"
+          <span
+            className="kirk-tab-text"
           >
             Tab 2
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
       <div
         className="kirk-tab-container"
       >
-        <div
-          className="kirk-tab-relative"
+        <button
+          aria-controls="tab3_panel"
+          aria-selected="false"
+          className="kirk-tab"
+          id="tab3"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={-1}
+          title="Tab 3"
         >
-          <button
-            aria-controls="tab3_panel"
-            aria-selected="false"
-            className="kirk-tab"
-            id="tab3"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="tab"
-            tabIndex={-1}
-            title="Tab 3"
+          <span
+            className="kirk-tab-text"
           >
             Tab 3
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -110,6 +110,171 @@ exports[`Rendering testing should render properly 1`] = `
     className="kirk-tab-panel"
     hidden={true}
     id="tab3_panel"
+    role="tabpanel"
+  />
+</div>
+`;
+
+exports[`Rendering testing should render properly with icons 1`] = `
+.c0.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c0 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+<div
+  className="kirk-tabs"
+>
+  <div
+    className="kirk-tablist-wrapper"
+  >
+    <div
+      className="kirk-tab-highlight"
+    />
+    <div
+      aria-multiselectable="false"
+      aria-orientation="horizontal"
+      className="kirk-tablist"
+      role="tablist"
+    >
+      <div
+        className="kirk-tab-container kirk-tab-selected"
+      >
+        <button
+          aria-controls="iconTab1_panel"
+          aria-selected="true"
+          className="kirk-tab"
+          id="iconTab1"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={0}
+          title="Tab 1"
+        >
+          <svg
+            aria-hidden={true}
+            className="kirk-icon c0"
+            fill="#708C91"
+            height={24}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+            <g
+              fill="none"
+              fillRule="evenodd"
+              stroke="none"
+              strokeWidth="1"
+            >
+              <path
+                d="M21.5,4 C21.7761424,4 22,4.22385763 22,4.5 L22,20.5 C22,20.7454599 21.8231248,20.9496084 21.5898756,20.9919443 L21.5,21 L2.5,21 C2.22385763,21 2,20.7761424 2,20.5 L2,4.5 C2,4.22385763 2.22385763,4 2.5,4 L21.5,4 Z M21,9.366 L12.7515544,14.1426395 C12.2866634,14.4117869 11.7133366,14.4117869 11.2484456,14.1426395 L2.99991707,9.367 L2.99991707,20 L21,20 L21,9.366 Z M21,5 L2.99991707,5 L2.99991707,8.212 L11.7494819,13.2772132 C11.8786183,13.3519764 12.0328555,13.3644369 12.1703589,13.3145948 L12.2505181,13.2772132 L21,8.211 L21,5 Z"
+                fill="#708C91"
+              />
+            </g>
+          </svg>
+          <span
+            className="kirk-tab-text kirk-tab-text--with-icon"
+          >
+            Tab 1
+          </span>
+        </button>
+      </div>
+      <div
+        className="kirk-tab-container"
+      >
+        <button
+          aria-controls="iconTab2_panel"
+          aria-selected="false"
+          className="kirk-tab"
+          id="iconTab2"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={-1}
+          title="Tab 2"
+        >
+          <span
+            className="kirk-tab-text"
+          >
+            Tab 2
+          </span>
+        </button>
+      </div>
+      <div
+        className="kirk-tab-container"
+      >
+        <button
+          aria-controls="iconTab3_panel"
+          aria-selected="false"
+          className="kirk-tab"
+          id="iconTab3"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="tab"
+          tabIndex={-1}
+          title="Tab 3"
+        >
+          <svg
+            aria-hidden={true}
+            className="kirk-icon c0"
+            fill="#708C91"
+            height={24}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+            <g
+              fill="none"
+              fillRule="evenodd"
+              stroke="none"
+              strokeWidth="1"
+            >
+              <path
+                d="M21.5,4 C21.7761424,4 22,4.22385763 22,4.5 L22,20.5 C22,20.7454599 21.8231248,20.9496084 21.5898756,20.9919443 L21.5,21 L2.5,21 C2.22385763,21 2,20.7761424 2,20.5 L2,4.5 C2,4.22385763 2.22385763,4 2.5,4 L21.5,4 Z M21,9.366 L12.7515544,14.1426395 C12.2866634,14.4117869 11.7133366,14.4117869 11.2484456,14.1426395 L2.99991707,9.367 L2.99991707,20 L21,20 L21,9.366 Z M21,5 L2.99991707,5 L2.99991707,8.212 L11.7494819,13.2772132 C11.8786183,13.3519764 12.0328555,13.3644369 12.1703589,13.3145948 L12.2505181,13.2772132 L21,8.211 L21,5 Z"
+                fill="#708C91"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    aria-labelledby="iconTab1"
+    className="kirk-tab-panel"
+    hidden={false}
+    id="iconTab1_panel"
+    role="tabpanel"
+  >
+    <div
+      style={
+        Object {
+          "padding": 30,
+        }
+      }
+    >
+      Content for first tab
+    </div>
+  </div>
+  <div
+    aria-labelledby="iconTab2"
+    className="kirk-tab-panel"
+    hidden={true}
+    id="iconTab2_panel"
+    role="tabpanel"
+  />
+  <div
+    aria-labelledby="iconTab3"
+    className="kirk-tab-panel"
+    hidden={true}
+    id="iconTab3_panel"
     role="tabpanel"
   />
 </div>
