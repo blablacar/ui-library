@@ -1,7 +1,6 @@
 import React, { createRef, PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import Badge from 'badge'
-import { space } from '_utils/branding'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
@@ -11,6 +10,8 @@ export enum TabStatus {
 interface Tab {
   readonly id: string
   readonly label: string
+  readonly icon?: React.ReactElement<Icon>
+  readonly showIconOnly?: boolean
   readonly panelContent: JSX.Element
   readonly badgeContent?: string
   readonly badgeAriaLabel?: string
@@ -93,11 +94,11 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
   static STATUS = TabStatus
 
   handleTabClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
-    this.activateTabById((e.target as HTMLButtonElement).id)
+    this.activateTabById((e.currentTarget as HTMLButtonElement).id)
   }
 
   handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    const tabId = (e.target as HTMLButtonElement).id
+    const tabId = (e.currentTarget as HTMLButtonElement).id
     const tabIds = this.props.tabs.map(tab => tab.id)
     let nextTabId = null
     switch (e.key) {
@@ -184,27 +185,35 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                   className={cc(['kirk-tab-container', { 'kirk-tab-selected': isSelected }])}
                   key={tab.id}
                 >
-                  <div className="kirk-tab-relative">
-                    <button
-                      role="tab"
-                      aria-controls={`${generateTabPanelId(tab)}`}
-                      aria-selected={isSelected ? 'true' : 'false'}
-                      title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
-                      tabIndex={isSelected ? 0 : -1}
-                      id={tab.id}
-                      ref={this.state.tabIdToRefs.get(tab.id)}
-                      onClick={this.handleTabClicked}
-                      onKeyDown={this.handleTabKeyDown}
-                      className={cc(['kirk-tab'])}
-                    >
-                      {tab.label}
-                      {tab.badgeContent && (
-                        <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
-                          {tab.badgeContent}
-                        </Badge>
-                      )}
-                    </button>
-                  </div>
+                  <button
+                    role="tab"
+                    aria-controls={`${generateTabPanelId(tab)}`}
+                    aria-selected={isSelected ? 'true' : 'false'}
+                    title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
+                    tabIndex={isSelected ? 0 : -1}
+                    id={tab.id}
+                    ref={this.state.tabIdToRefs.get(tab.id)}
+                    onClick={this.handleTabClicked}
+                    onKeyDown={this.handleTabKeyDown}
+                    className="kirk-tab"
+                  >
+                    {tab.icon}
+                    {!tab.showIconOnly && (
+                      <span
+                        className={cc([
+                          'kirk-tab-text',
+                          { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
+                        ])}
+                      >
+                        {tab.label}
+                      </span>
+                    )}
+                    {tab.badgeContent && (
+                      <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
+                        {tab.badgeContent}
+                      </Badge>
+                    )}
+                  </button>
                 </div>
               )
             })}

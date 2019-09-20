@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 
 import Tabs from './Tabs'
+import MailIcon from 'icon/mailIcon'
 import renderer from 'react-test-renderer'
 
 const defaultTabsConfig = {
@@ -20,7 +21,28 @@ const defaultTabsConfig = {
     {
       id: 'tab3',
       label: 'Tab 3',
-      panelContent: <div style={{ padding: 30 }}>Content for first tab3</div>,
+      panelContent: <div style={{ padding: 30 }}>Content for third tab3</div>,
+    },
+  ],
+}
+
+const iconTabsConfig = {
+  activeTabId: 'iconTab1',
+  tabs: [
+    {
+      ...defaultTabsConfig.tabs[0],
+      id: 'iconTab1',
+      icon: <MailIcon />,
+    },
+    {
+      ...defaultTabsConfig.tabs[1],
+      id: 'iconTab2',
+    },
+    {
+      ...defaultTabsConfig.tabs[2],
+      id: 'iconTab3',
+      icon: <MailIcon />,
+      showIconOnly: true,
     },
   ],
 }
@@ -29,6 +51,13 @@ describe('Rendering testing', () => {
   it('should render properly', () => {
     const tabsAsJson = renderer
       .create(<Tabs tabs={defaultTabsConfig.tabs} activeTabId={defaultTabsConfig.activeTabId} />)
+      .toJSON()
+    expect(tabsAsJson).toMatchSnapshot()
+  })
+
+  it('should render properly with icons', () => {
+    const tabsAsJson = renderer
+      .create(<Tabs tabs={iconTabsConfig.tabs} activeTabId={iconTabsConfig.activeTabId} />)
       .toJSON()
     expect(tabsAsJson).toMatchSnapshot()
   })
