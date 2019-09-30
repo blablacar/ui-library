@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
@@ -63,7 +63,7 @@ stories.add('All', () => {
     </div>
   ))
 
-  return iconList
+  return <Fragment>{iconList}</Fragment>
 }, { readme: { content: readme } })
 
 Object.entries(icons).forEach(([name, Component]) => {
