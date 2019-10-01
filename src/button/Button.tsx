@@ -97,8 +97,9 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
     }
   }
 
-  componentWillReceiveProps({ focus }: ButtonProps) {
-    if (focus && focus !== this.props.focus) {
+  componentDidUpdate(prevProps: ButtonProps) {
+    const focusChanged = prevProps.focus !== this.props.focus
+    if (focusChanged && this.props.focus) {
       this.button.focus()
     }
   }
