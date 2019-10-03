@@ -66,6 +66,7 @@ export const space: defaultBranding = {
   m: '8px',
   l: '16px',
   xl: '24px',
+  xxl: '48px',
 }
 
 export const radius: defaultBranding = {
@@ -115,6 +116,10 @@ export const shadow: defaultBranding = {
 export const inputBorderSize = {
   default: '1px',
   focus: '3px',
+}
+
+export const responsiveBreakpoints = {
+  small: '800px',
 }
 
 export const color: Color = {
