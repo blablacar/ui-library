@@ -12,7 +12,7 @@ stories.addDecorator(withKnobs)
 stories.add('default', () => (
   <TimePicker
     name="departure-time"
-    minuteStep={number('minuteStep', 30)}
+    minuteStep={30}
     onChange={action('onChange')}
     disabled={boolean('disabled', false)}
     timeStart={select('timeStart', ['00:00', '08:00', '12:00', '21:00'], '00:00')}

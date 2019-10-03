@@ -88,11 +88,9 @@ it('should have a labelled by attribute', () => {
 
 it('Should update when setting default value props', () => {
   const wrapper = mount(<TextField name="test" defaultValue="blabla" />)
-  const spy = jest.spyOn(TextField.prototype, 'componentWillReceiveProps')
   wrapper.setProps({ defaultValue: 'blablabla' })
   const input = wrapper.find('input')
   expect(input.prop('value')).toBe('blablabla')
-  expect(spy).toHaveBeenCalledTimes(1)
 
   expect(wrapper.state('value')).toBe('blablabla')
   expect(wrapper.state('previousValue')).toBe('blabla')

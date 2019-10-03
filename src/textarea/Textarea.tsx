@@ -17,12 +17,8 @@ export interface CommonFormFields {
   autoFocus?: boolean
   required?: boolean
   title?: string
-  onFocus?: (
-    event: React.FocusEvent<HTMLTextAreaElement>,
-  ) => void
-  onBlur?: (
-    event: React.FocusEvent<HTMLTextAreaElement>,
-  ) => void
+  onFocus?: (event: React.FocusEvent<HTMLTextAreaElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void
 }
 
 type errorField = string | JSX.Element
@@ -57,6 +53,7 @@ interface TextAreaAttributes extends CommonFormFields {
 
 export interface TextAreaState {
   readonly value: string
+  readonly defaultValue: string
   readonly hasFocus: boolean
 }
 
@@ -71,6 +68,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
 
   state = {
     value: this.props.defaultValue,
+    defaultValue: this.props.defaultValue,
     hasFocus: false,
   }
 
@@ -83,22 +81,28 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     }
   }
 
-  // TODO(BBC-498): Remove deprecated method.
-  componentWillReceiveProps({ defaultValue, focus }: TextAreaProps) {
-    if (this.props.defaultValue !== defaultValue) {
-      this.setState({
-        value: defaultValue,
-      })
-      // Update height in next tick to give a chance to the contained text to
-      // give a proper layout to the surrounding parents.
-      setTimeout(() => {
-        this.maybeAdaptHeightToContent()
-      }, 0)
+  static getDerivedStateFromProps(props: TextAreaProps, state: TextAreaState) {
+    if (props.defaultValue !== state.defaultValue) {
+      return {
+        ...state,
+        value: props.defaultValue,
+        defaultValue: props.defaultValue,
+      }
     }
-    if (focus && this.props.focus !== focus &&
-        this.textareaRef && this.textareaRef.current) {
+    return null
+  }
+
+  componentDidUpdate(prevProps: TextAreaProps) {
+    if (
+      this.props.focus &&
+      this.props.focus !== prevProps.focus &&
+      this.textareaRef &&
+      this.textareaRef.current
+    ) {
       this.textareaRef.current.focus()
     }
+
+    this.maybeAdaptHeightToContent()
   }
 
   onFocus = (event: React.FocusEvent<HTMLTextAreaElement>) => {
@@ -119,10 +123,10 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
 
   onTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     this.setState(
-        {
-          value: event.target.value,
-        },
-        this.onChange,
+      {
+        value: event.target.value,
+      },
+      this.onChange,
     )
   }
 
@@ -135,8 +139,8 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     if (this.textareaRef && this.textareaRef.current) {
       this.textareaRef.current.style.height = '0'
       const verticalPadding = 16
-      this.textareaRef.current.style.height =
-          `${this.textareaRef.current.scrollHeight - 2 * verticalPadding}px`
+      this.textareaRef.current.style.height = `${this.textareaRef.current.scrollHeight -
+        2 * verticalPadding}px`
     }
   }
 
@@ -243,7 +247,11 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
           ])}
         >
           <textarea
-              {...attributes} ref={this.textareaRef} onFocus={this.onFocus} onBlur={this.onBlur} />
+            {...attributes}
+            ref={this.textareaRef}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+          />
           {shouldDisplayButton && (
             <Button
               className="kirk-textarea-button"

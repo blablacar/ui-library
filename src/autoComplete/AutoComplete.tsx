@@ -165,8 +165,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     return null
   }
 
-  componentDidUpdate(nextProps: AutoCompleteProps) {
-    const shouldRenderItems = this.props.isSearching && !nextProps.isSearching
+  componentDidUpdate(prevProps: AutoCompleteProps) {
+    const shouldRenderItems = this.props.isSearching && !prevProps.isSearching
 
     if (shouldRenderItems) {
       this.clearBusyTimeout()
