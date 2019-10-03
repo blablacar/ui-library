@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
+import isEqual from 'lodash.isequal'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
@@ -41,17 +42,18 @@ export default class AutoCompleteList extends Component<
     selectedIndex: null,
   }
 
-  componentWillReceiveProps(nextProps: AutoCompleteListProps) {
-    this.setState({
-      highlightedIndex: null,
-    })
-
-    if (canUseEventListeners && nextProps.visible !== this.props.visible) {
-      if (nextProps.visible) {
+  componentDidUpdate(prevProps: AutoCompleteListProps) {
+    if (canUseEventListeners && prevProps.visible !== this.props.visible) {
+      if (this.props.visible) {
         document.addEventListener('keydown', this.handleKeydown)
       } else {
         document.removeEventListener('keydown', this.handleKeydown)
       }
+    }
+    if (!isEqual(prevProps.items, this.props.items)) {
+      this.setState({
+        highlightedIndex: null,
+      })
     }
   }
 

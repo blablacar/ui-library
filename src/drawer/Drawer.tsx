@@ -37,8 +37,8 @@ export default class Drawer extends PureComponent<DrawerProps> {
     document.addEventListener('keydown', this.handleKeydown)
   }
 
-  componentDidUpdate({ open }: DrawerProps) {
-    if (this.props.open !== open) {
+  componentDidUpdate(prevProps: DrawerProps) {
+    if (this.props.open !== prevProps.open) {
       this.props.open ? this.open() : this.close()
     }
   }

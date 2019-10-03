@@ -43,12 +43,8 @@ export interface CommonFormFields {
   autoFocus?: boolean
   required?: boolean
   title?: string
-  onFocus?: (
-    event: React.FocusEvent<HTMLInputElement>,
-  ) => void
-  onBlur?: (
-    event: React.FocusEvent<HTMLInputElement>,
-  ) => void
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
 }
 
 type errorField = string | JSX.Element
@@ -85,6 +81,7 @@ interface FormAttributes extends CommonFormFields {
 export interface TextFieldState {
   readonly value: string
   readonly previousValue: string
+  readonly defaultValue: string
   readonly showPassword: boolean
   readonly hasFocus: boolean
 }
@@ -97,7 +94,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     onFocus() {},
     onBlur() {},
     type: inputTypes.TEXT,
-    format: (value) => value,
+    format: value => value,
     focusBorder: true,
   }
 
@@ -106,6 +103,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
 
   state = {
     value: this.props.defaultValue,
+    defaultValue: this.props.defaultValue,
     previousValue: '',
     showPassword: false,
     hasFocus: false,
@@ -119,14 +117,20 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     }
   }
 
-  componentWillReceiveProps({ defaultValue, focus }: TextFieldProps) {
-    if (this.props.defaultValue !== defaultValue) {
-      this.setState({
-        value: defaultValue,
-        previousValue: this.state.value,
-      })
+  static getDerivedStateFromProps(props: TextFieldProps, state: TextFieldState) {
+    if (props.defaultValue !== state.defaultValue) {
+      return {
+        ...state,
+        value: props.defaultValue,
+        defaultValue: props.defaultValue,
+        previousValue: state.value,
+      }
     }
-    if (focus && this.props.focus !== focus) {
+    return null
+  }
+
+  componentDidUpdate(prevProps: TextFieldProps) {
+    if (this.props.focus && this.props.focus !== prevProps.focus) {
       this.input.focus()
     }
   }
@@ -292,10 +296,10 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
         >
           {addon}
           <input
-              {...attrs}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              type={type === 'password' && this.state.showPassword ? 'text' : type}
+            {...attrs}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            type={type === 'password' && this.state.showPassword ? 'text' : type}
           />
           {shouldDisplayButton && (
             <Button

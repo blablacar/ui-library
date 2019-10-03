@@ -1,6 +1,9 @@
 # Unreleased
 
 - **[UPDATE]** Force equal width among fixed `Tabs`
+- **[UPDATE]** Upgraded React to 16.9.0
+- **[UPDATE]** Downgraded storybook breaking knobs
+- **[UPDATE]** Removed deprecated `componentWillReceiveProps`
 
 # v11.3.0 (04/10/2019)
 

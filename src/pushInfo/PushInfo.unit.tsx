@@ -7,8 +7,6 @@ import ProximityIcon from 'icon/proximityIcon'
 import { animationDuration, animationDelay } from './PushInfo'
 import PushInfo from './index'
 
-jest.useFakeTimers()
-
 it('Should have the correct attributes and text.', () => {
   const pushInfo = renderer
     .create(
@@ -35,6 +33,7 @@ it('Should also have the correct icon.', () => {
 })
 
 it('Should call the onAnimationEnd prop after some time', () => {
+  jest.useFakeTimers()
   const onAnimationEnd = jest.fn()
   mount(
     <PushInfo

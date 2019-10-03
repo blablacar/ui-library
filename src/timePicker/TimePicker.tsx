@@ -88,17 +88,14 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     steps: this.generateTimeSteps(this.props),
   }
 
-  componentWillReceiveProps(newProps: TimePickerProps) {
-    const shouldRegenerateTimeSteps =
-      newProps.minuteStep !== this.props.minuteStep ||
-      newProps.timeStart !== this.props.timeStart
-
-    if (shouldRegenerateTimeSteps) {
-      this.setState(state => ({
-        value: state.value < newProps.timeStart ? newProps.timeStart : state.value,
-        steps: this.generateTimeSteps(newProps),
-      }))
+  static getDerivedStateFromProps(props: TimePickerProps, state: TimePickerState) {
+    if (state.value < props.timeStart) {
+      return {
+        ...state,
+        value: props.timeStart,
+      }
     }
+    return null
   }
 
   onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

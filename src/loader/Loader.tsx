@@ -34,8 +34,8 @@ class Loader extends PureComponent<LoaderProps> {
     }
   }
 
-  componentWillReceiveProps({ done }: LoaderProps) {
-    if (done && done !== this.props.done) {
+  componentDidUpdate(prevProps: LoaderProps) {
+    if (this.props.done && prevProps.done !== this.props.done) {
       this.validate()
     }
   }
