@@ -72,13 +72,13 @@ stories.add('with icons', () => {
     tabs: [
       {
         id: 'tab1',
-        label: text('Tab label 1', 'Tab 1'),
+        label: text('Tab label 1', 'Text only'),
         panelContent: panels[0],
         badgeContent: text('Badge content 1', ''),
       },
       {
         id: 'tab2',
-        label: text('Tab label 2', 'Very long Tab 2'),
+        label: text('Tab label 2', 'Multiple words with an icon'),
         icon: <CarpoolIcon size="32" />,
         showIconOnly: boolean('showIconOnly Tab 2', false),
         panelContent: panels[1],
@@ -87,11 +87,19 @@ stories.add('with icons', () => {
       },
       {
         id: 'tab3',
-        label: text('Tab label 3', 'Tab 3'),
+        label: text('Tab label 3', 'Tremendouslylongwording'),
         icon: <BusIcon size="32" />,
-        showIconOnly: boolean('showIconOnly Tab 3', true),
+        showIconOnly: boolean('showIconOnly Tab 3', false),
         panelContent: panels[2],
         badgeContent: text('Badge content 3', ''),
+      },
+      {
+        id: 'tab4',
+        label: text('Tab label 4', 'Icon only'),
+        icon: <BusIcon size="32" />,
+        showIconOnly: boolean('showIconOnly Tab 4', true),
+        panelContent: panels[2],
+        badgeContent: text('Badge content 4', ''),
       },
     ],
   }

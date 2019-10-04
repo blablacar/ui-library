@@ -167,6 +167,9 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     const { activeTabId } = this.state
     const selectedTab = tabs.find(tab => activeTabId === tab.id)
     const isFixedTabs = this.props.status === TabStatus.FIXED
+    const fixedTabContainerStyle: React.CSSProperties = {
+      width: `calc(100% / ${tabs.length})`,
+    }
 
     return (
       <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
@@ -183,6 +186,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
               return (
                 <div
                   className={cc(['kirk-tab-container', { 'kirk-tab-selected': isSelected }])}
+                  style={isFixedTabs ? fixedTabContainerStyle : null}
                   key={tab.id}
                 >
                   <button
