@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v11.3.0 (04/10/2019)
+
 - **[NEW]** Add `Disclaimer` component
 - **[NEW]** Add `TheVoice` widget.
 - **[NEW]** Add a breakpoint for responsive design in branding.
-- [...]
 
 # v11.2.5 (24/09/2019)
 
