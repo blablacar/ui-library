@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `Disclaimer` component
 - [...]
 
 # v11.2.5 (24/09/2019)
