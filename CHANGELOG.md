@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Force equal width among fixed `Tabs`
 
 # v11.3.0 (04/10/2019)
 

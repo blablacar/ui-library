@@ -18,6 +18,7 @@ exports[`Rendering testing should render properly 1`] = `
     >
       <div
         className="kirk-tab-container kirk-tab-selected"
+        style={null}
       >
         <button
           aria-controls="tab1_panel"
@@ -39,6 +40,7 @@ exports[`Rendering testing should render properly 1`] = `
       </div>
       <div
         className="kirk-tab-container"
+        style={null}
       >
         <button
           aria-controls="tab2_panel"
@@ -60,6 +62,7 @@ exports[`Rendering testing should render properly 1`] = `
       </div>
       <div
         className="kirk-tab-container"
+        style={null}
       >
         <button
           aria-controls="tab3_panel"
@@ -144,6 +147,7 @@ exports[`Rendering testing should render properly with icons 1`] = `
     >
       <div
         className="kirk-tab-container kirk-tab-selected"
+        style={null}
       >
         <button
           aria-controls="iconTab1_panel"
@@ -187,6 +191,7 @@ exports[`Rendering testing should render properly with icons 1`] = `
       </div>
       <div
         className="kirk-tab-container"
+        style={null}
       >
         <button
           aria-controls="iconTab2_panel"
@@ -208,6 +213,7 @@ exports[`Rendering testing should render properly with icons 1`] = `
       </div>
       <div
         className="kirk-tab-container"
+        style={null}
       >
         <button
           aria-controls="iconTab3_panel"

@@ -4,6 +4,7 @@ import { color, componentSizes, font, space, transition } from '_utils/branding'
 import Tabs from './Tabs'
 
 const highlightHeight = '2px'
+const iconSize = '32px'
 
 const StyledTabs = styled(Tabs)`
   & {
@@ -55,6 +56,9 @@ const StyledTabs = styled(Tabs)`
   & .kirk-tab-text--with-icon {
     margin-left: ${space.l};
     text-align: left;
+    width: calc(100% - ${iconSize});
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   & .kirk-tab-container {
