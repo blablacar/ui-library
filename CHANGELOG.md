@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v11.3.1 (07/10/2019)
+
 - **[UPDATE]** Force equal width among fixed `Tabs`
 - **[UPDATE]** Upgraded React to 16.9.0
 - **[UPDATE]** Downgraded storybook breaking knobs
