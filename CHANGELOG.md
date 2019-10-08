@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** - Replaced `fullscreen` prop from `Modal` with new entry in enum `ModalSize`
 
 # v11.4.0 (09/10/2019)
 

@@ -32,3 +32,7 @@ Confirmation button closes the screen and resumes the original action that promp
 If text is too long there’s no limit on the number of lines. The title can go on 2, 3 or more lines, as for the subtitles.
 
 If it goes over the height of the screen, then it’s scrollable while the CTAs are still sticky.
+
+### Layout
+
+This modal is always being displayed in fullscren. Use `size` prop to change the layout depending on the screen size.

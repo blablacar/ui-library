@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 
 import { ModalSize } from 'modal'
 import SuccessModal from 'successModal'
-import { SuccessModalProps } from './SuccessModal'
+import { SuccessModalProps, SuccessModalSize } from './SuccessModal'
 import successModalDoc from './specifications/successModal.md'
 
 const stories = storiesOf('SuccessModal', module)
@@ -51,7 +51,7 @@ stories.add(
       imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
       imageText={text('imageText', 'Illustation description')}
       confirmLabel={text('confirmLabel', 'Got it!')}
-      size={select('size', ModalSize, ModalSize.MEDIUM)}
+      size={select('size', SuccessModalSize, SuccessModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', false)}
     />
   ),

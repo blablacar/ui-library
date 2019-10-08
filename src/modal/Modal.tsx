@@ -10,11 +10,13 @@ import { color } from '_utils/branding'
 import Button from 'button'
 import CrossIcon from 'icon/crossIcon'
 import KEYCODES from '_utils/keycodes'
+import { assertModalSizes } from '_utils/assert'
 
 export enum ModalSize {
   SMALL = 'small',
   MEDIUM = 'medium',
   LARGE = 'large',
+  FULLSCREEN = 'fullscreen',
 }
 
 export interface ModalProps {
@@ -27,7 +29,6 @@ export interface ModalProps {
   readonly closeOnOutsideClick?: boolean
   readonly displayCloseButton?: boolean
   readonly size?: ModalSize
-  readonly fullscreen?: boolean
   readonly displayDimmer?: boolean
   readonly closeButtonTitle?: string
   readonly forwardedRef?: Ref<HTMLDivElement>
@@ -46,7 +47,6 @@ export default class Modal extends Component<ModalProps> {
     closeOnOutsideClick: false,
     displayCloseButton: true,
     size: ModalSize.MEDIUM,
-    fullscreen: false,
     displayDimmer: true,
     forwardedRef: null,
   }
@@ -143,7 +143,7 @@ export default class Modal extends Component<ModalProps> {
 
     const dimmerClassNames = cc([
       this.props.className,
-      `${baseClassName}-dimmer${this.props.fullscreen ? '--fullscreen' : ''}`,
+      `${baseClassName}-dimmer${this.props.size === ModalSize.FULLSCREEN ? '--fullscreen' : ''}`,
       `${baseClassName}-dimmer${this.props.displayDimmer ? '--visible' : '--hide'}`,
       `${baseClassName}-dimmer${this.props.isOpen ? '--active' : '--inactive'}`,
     ])
@@ -156,6 +156,9 @@ export default class Modal extends Component<ModalProps> {
       },
       this.props.modalContentClassName,
     ])
+
+    // Will throw if we use a non allowed modal size
+    assertModalSizes(ModalSize, this.props.size)
 
     const modalElement = (
       <div className={dimmerClassNames}>

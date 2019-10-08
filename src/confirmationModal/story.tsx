@@ -5,7 +5,7 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { ModalSize } from 'modal'
-import { ConfirmationModalProps } from './ConfirmationModal'
+import { ConfirmationModalProps, ConfirmationModalSize } from './ConfirmationModal'
 import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
@@ -60,7 +60,7 @@ stories.add(
       onClose={action('onClose')}
       onConfirm={action('onConfirm')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
-      size={select('size', ModalSize, ModalSize.MEDIUM)}
+      size={select('size', ConfirmationModalSize, ConfirmationModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', true)}
       confirmIsLoading={boolean('confirmIsLoading', false)}
     />
@@ -78,7 +78,7 @@ stories.add(
       onClose={action('onClose')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       onConfirm={action('onConfirm')}
-      size={select('size', ModalSize, ModalSize.MEDIUM)}
+      size={select('size', ConfirmationModalSize, ConfirmationModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', true)}
     />
   ),

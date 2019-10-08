@@ -8,10 +8,16 @@ import { ModalProps } from 'modal/Modal'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
 import InfoIcon from 'icon/infoIcon'
+import { assertModalSizes } from '_utils/assert'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
   REMINDER = 'reminder',
+}
+
+export enum ConfirmationModalSize {
+  SMALL = 'small',
+  LARGE = 'large',
 }
 
 export interface ConfirmationModalProps extends ModalProps {
@@ -19,9 +25,17 @@ export interface ConfirmationModalProps extends ModalProps {
   readonly onConfirm?: () => void
   readonly confirmLabel?: string
   readonly confirmIsLoading?: boolean
+  readonly size?: ModalSize
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
+  static defaultProps: Partial<ConfirmationModalProps> = {
+    onConfirm() {},
+    confirmLabel: '',
+    confirmIsLoading: false,
+    size: ModalSize.SMALL,
+  }
+
   render() {
     const {
       status,
@@ -38,6 +52,9 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       forwardedRef,
       confirmIsLoading,
     } = this.props
+
+    // Will throw if we use a non allowed modal size
+    assertModalSizes(ConfirmationModalSize, this.props.size)
 
     const isWarning = status === ConfirmationModalStatus.WARNING
 
