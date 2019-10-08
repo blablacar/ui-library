@@ -4,6 +4,7 @@
 - **[UPDATE]** Fix `Tabs` content aligned to the left
 - **[NEW]** Add `Divider` Pixar widget.
 - **[NEW]** Add `BlankSeparator` Pixar widget.
+- **[UPDATE]** Add new display modes for `Disclaimer` widget (isCaption and deprecatedHelpUrl).
 - [...]
 
 # v11.3.1 (07/10/2019)

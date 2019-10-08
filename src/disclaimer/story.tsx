@@ -22,6 +22,10 @@ stories.add('With info icon', () => (
         </Disclaimer>
 
         <Disclaimer useInfoIcon >Some short text disclaimer</Disclaimer>
+
+        <Disclaimer isCaption={false} useInfoIcon >
+            Some short text disclaimer, not styled as a caption
+        </Disclaimer>
     </div>
 
 
@@ -33,6 +37,14 @@ stories.add('Without info icon', () => (
         <Disclaimer useInfoIcon={false} >Some short text disclaimer</Disclaimer>
         <Disclaimer useInfoIcon={false} >
             {longDisclaimer}
+        </Disclaimer>
+    </div>
+))
+
+stories.add('With deprecated help url', () => (
+    <div style={{width: '400px'}}>
+        <Disclaimer useInfoIcon={false} deprecatedHelpUrl={'http://google.fr'}>
+            Some disclaimer with help button icon.
         </Disclaimer>
     </div>
 ))
