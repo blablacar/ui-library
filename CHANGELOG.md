@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Fix `Tabs` content aligned to the left
 
 # v11.3.1 (07/10/2019)
 
