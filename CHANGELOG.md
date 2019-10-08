@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Fix `Tabs` content aligned to the left
 - **[NEW]** Add `Divider` Pixar widget.
 - **[NEW]** Add `BlankSeparator` Pixar widget.
 - [...]
