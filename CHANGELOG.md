@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add `highlighted` option to `ItemRadio`
 - [...]
 
 # v11.3.1 (07/10/2019)

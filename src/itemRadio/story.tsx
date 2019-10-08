@@ -69,8 +69,20 @@ stories.add('Multiple items with chevrons (form step with auto submit)', () => {
       withSeparators
       withChevrons
     >
-      <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} />
-      <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} />
+      <ItemRadio
+        labelTitle="Title 1"
+        label="Option 1"
+        value={1}
+        name={text('Name', 'option')}
+        highlighted={boolean('highlighted option 1', false)}
+      />
+      <ItemRadio
+        labelTitle="Title 2"
+        label="Multiline text that should be correctly displayed"
+        value={2}
+        name={text('Name', 'option')}
+        highlighted={boolean('highlighted option 2', false)}
+      />
     </ItemRadioGroup>
   )
 })
