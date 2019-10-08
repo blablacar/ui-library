@@ -5,6 +5,7 @@ import { ModalProps } from 'modal/Modal'
 import Button, { ButtonStatus } from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
+import { assertModalSizes } from '_utils/assert'
 
 export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
@@ -12,11 +13,16 @@ export interface SuccessModalProps extends ModalProps {
   readonly imageText?: string
 }
 
+export enum SuccessModalSize {
+  SMALL = 'small',
+  LARGE = 'large',
+}
+
 class SuccessModal extends Component<SuccessModalProps> {
   static defaultProps: Partial<SuccessModalProps> = {
     isOpen: false,
     closeOnEsc: false,
-    size: ModalSize.MEDIUM,
+    size: ModalSize.SMALL,
     forwardedRef: null,
     imageText: '',
   }
@@ -35,6 +41,9 @@ class SuccessModal extends Component<SuccessModalProps> {
       ariaDescribedBy,
       className,
     } = this.props
+
+    // Will throw if we use a non allowed modal size
+    assertModalSizes(SuccessModalSize, this.props.size)
 
     const baseClassName = 'kirk-successModal'
 

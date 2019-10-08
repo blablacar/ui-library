@@ -23,3 +23,7 @@ There’s no top bar in a success screen so user can’t go back. If the user is
 ### Animation
 
 No animation specs yet but for now let’s make it appear with a fade in and disappear with a fade out.
+
+### Layout
+
+This modal is always being displayed in fullscren. Use `size` prop to change the layout depending on the screen size.

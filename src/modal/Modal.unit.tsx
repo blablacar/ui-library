@@ -47,7 +47,7 @@ describe('Modal', () => {
   })
 
   it('Could be fullscreen displayed', () => {
-    const wrapper = mount(<Modal isOpen fullscreen />)
+    const wrapper = mount(<Modal isOpen size={ModalSize.FULLSCREEN} />)
     expect(wrapper.find('.kirk-modal-dimmer--fullscreen').exists()).toBe(true)
   })
 
