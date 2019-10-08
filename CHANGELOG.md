@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Add `Divider` Pixar widget.
+- **[NEW]** Add `BlankSeparator` Pixar widget.
 - [...]
 
 # v11.3.1 (07/10/2019)
