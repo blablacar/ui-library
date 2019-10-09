@@ -62,14 +62,14 @@ const StyledDatePicker = styled(DatePicker)`
     color: ${color.secondaryText};
     outline: none;
   }
-  
+
   & .DayPicker-Day--today span {
     /**
      * Position context needed for today's date circle decoration.
      */
     position: relative;
   }
-  
+
   /**
    * Shows a circle around today's date if it's not selected.
    */
@@ -85,7 +85,7 @@ const StyledDatePicker = styled(DatePicker)`
     height: 36px;
     border-radius: 50%;
   }
-  
+
   & .DayPicker-Day--disabled {
     color: ${color.fadedText};
     cursor: default;

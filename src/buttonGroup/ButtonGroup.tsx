@@ -35,18 +35,15 @@ const ButtonGroup = ({
     ),
   ]
 
-  const buttons = React.Children
-    .toArray(children)
-    .filter(button => React.isValidElement(button))
+  const buttons = React.Children.toArray(children).filter(button => React.isValidElement(button))
 
   return (
     <div className={cc(classNames)}>
       {buttons.map((button, idx) => {
         const index: string = button.props.index || String(idx)
         const isLoading: boolean = Boolean(loadingIndex)
-        const status: ButtonStatus = isLoading && index === loadingIndex
-          ? ButtonStatus.LOADING
-          : button.props.status
+        const status: ButtonStatus =
+          isLoading && index === loadingIndex ? ButtonStatus.LOADING : button.props.status
         const disabled = isLoading && index !== loadingIndex ? true : button.props.disabled
 
         const props: Partial<ButtonProps> = {
@@ -57,7 +54,6 @@ const ButtonGroup = ({
         }
         return cloneElement(button, props)
       })}
-
     </div>
   )
 }

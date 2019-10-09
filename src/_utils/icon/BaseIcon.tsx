@@ -31,7 +31,6 @@ const BaseIcon = ({
   badgeContent,
   badgeAriaLabel,
 }: IconProps) => {
-
   const iconClasses = ['kirk-icon', iconClassName]
   if (!badgeContent) {
     // When there is no badge, the icon is not wrapped and is the root element.

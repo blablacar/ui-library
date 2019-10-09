@@ -13,14 +13,17 @@ interface CheckProps extends Icon {
 }
 
 const CheckIcon = (props: CheckProps) => (
-  <BaseIcon {...props} iconClassName={cc([
-    'kirk-icon-check',
-    props.iconClassName,
-    {
-      validate: props.validate,
-      absolute: props.absolute
-    }
-  ])}>
+  <BaseIcon
+    {...props}
+    iconClassName={cc([
+      'kirk-icon-check',
+      props.iconClassName,
+      {
+        validate: props.validate,
+        absolute: props.absolute,
+      },
+    ])}
+  >
     <Fragment>
       <path
         d="M6.5 12.5l4 4 8-8"
@@ -36,7 +39,7 @@ const CheckIcon = (props: CheckProps) => (
 )
 
 export const StyledCheckIcon = styled(CheckIcon)`
-  &  {
+  & {
     background-color: ${props => props.backgroundColor};
     border-radius: 100%;
   }

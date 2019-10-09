@@ -9,7 +9,7 @@ const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
     padding-left: ${space.xl};
     padding-right: ${space.xl};
   }
-  
+
   & .kirk-messaging-summary-item-sub-label {
     display: flex;
     align-items: center;

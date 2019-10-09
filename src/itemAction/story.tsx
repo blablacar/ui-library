@@ -11,28 +11,32 @@ import spec from './specifications/index.md'
 const stories = storiesOf('ItemAction', module)
 stories.addDecorator(withKnobs)
 
-stories.add('Default', () => {
-  const isSubLabel = boolean('Secondary info', false)
-  return (
-    <div>
-      <ItemAction
-        action={text('Action', 'Action')}
-        subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
-        onClick={action('onClick')}
-        onBlur={action('onBlur')}
-        onFocus={action('onFocus')}
-        onMouseDown={action('onMouseDown')}
-      />
-      <ItemAction
-        action="Action 2 – A title that is so long it takes 2 lines of text"
-        subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
-        href="#"
-      />
-    </div>
-  )
-}, {
-  readme: { content: spec },
-})
+stories.add(
+  'Default',
+  () => {
+    const isSubLabel = boolean('Secondary info', false)
+    return (
+      <div>
+        <ItemAction
+          action={text('Action', 'Action')}
+          subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
+          onClick={action('onClick')}
+          onBlur={action('onBlur')}
+          onFocus={action('onFocus')}
+          onMouseDown={action('onMouseDown')}
+        />
+        <ItemAction
+          action="Action 2 – A title that is so long it takes 2 lines of text"
+          subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
+          href="#"
+        />
+      </div>
+    )
+  },
+  {
+    readme: { content: spec },
+  },
+)
 
 stories.add('With left addon', () => {
   const isSubLabel = boolean('Secondary info', false)
@@ -64,10 +68,6 @@ stories.add('With loading state', () => (
       onMouseDown={action('onMouseDown')}
       status={ItemAction.STATUS.LOADING}
     />
-    <ItemAction
-      action="Action 2"
-      subLabel="with subLabel"
-      status={ItemAction.STATUS.CHECKED}
-    />
+    <ItemAction action="Action 2" subLabel="with subLabel" status={ItemAction.STATUS.CHECKED} />
   </div>
 ))

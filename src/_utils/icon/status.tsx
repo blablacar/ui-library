@@ -17,7 +17,7 @@ export interface StatusProps extends IconProps {
 const StatusIcon = (props: StatusProps) => {
   const finalProps = {
     ...props,
-    iconColor: props.status === status.ON ? color.iconHighlight : props.iconColor
+    iconColor: props.status === status.ON ? color.iconHighlight : props.iconColor,
   }
 
   return (

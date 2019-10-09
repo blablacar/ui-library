@@ -122,14 +122,14 @@ const Item = ({
           </Text>
         )}
         {leftBodyAnnotation && (
-            <Text
-                className="kirk-item-body-annotation"
-                display={leftBodyAnnotationDisplay}
-                textColor={leftBodyAnnotationColor}
-                tag={TextTagType.DIV}
-            >
-              {leftBodyAnnotation}
-            </Text>
+          <Text
+            className="kirk-item-body-annotation"
+            display={leftBodyAnnotationDisplay}
+            textColor={leftBodyAnnotationColor}
+            tag={TextTagType.DIV}
+          >
+            {leftBodyAnnotation}
+          </Text>
         )}
       </div>
       {hasRightText && (

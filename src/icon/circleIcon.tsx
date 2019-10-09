@@ -16,24 +16,30 @@ const offset = 187
 const duration = '1.4s'
 
 const CircleIcon = (props: CircleProps) => (
-    <BaseIcon {...props} viewBox="0 0 66 66" iconClassName={cc([
+  <BaseIcon
+    {...props}
+    viewBox="0 0 66 66"
+    iconClassName={cc([
       'kirk-icon-circle',
       props.iconClassName,
       {
         spinning: props.spinning,
         absolute: props.absolute,
         thin: props.thin,
-      }
-    ])}>
-      <Fragment>
-        <circle cx="33" cy="33" r="30" fill="none" stroke={props.iconColor} />
-        {props.innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />}
-      </Fragment>
-    </BaseIcon>
+      },
+    ])}
+  >
+    <Fragment>
+      <circle cx="33" cy="33" r="30" fill="none" stroke={props.iconColor} />
+      {props.innerDisc && (
+        <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />
+      )}
+    </Fragment>
+  </BaseIcon>
 )
 
 const dashKeyframesBuilder = (offset: number) => {
-    return keyframes`
+  return keyframes`
         0% {
           stroke-dashoffset: ${offset};
         }

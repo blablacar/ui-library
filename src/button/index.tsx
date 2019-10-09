@@ -29,7 +29,8 @@ const StyledButton = styled(Button)`
       background-color ${transition.duration.base} ease-in;
   }
 
-  & svg, & img {
+  & svg,
+  & img {
     flex-shrink: 0;
   }
 
