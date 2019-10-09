@@ -24,6 +24,7 @@ export interface ItemRadioProps {
   readonly status?: ItemRadioStatus
   readonly key?: string | number
   readonly chevron?: boolean
+  readonly highlighted?: boolean
 }
 
 class ItemRadio extends Component<ItemRadioProps> {
@@ -50,6 +51,7 @@ class ItemRadio extends Component<ItemRadioProps> {
       disabled,
       status,
       chevron,
+      highlighted,
     } = this.props
     const isLoading = status === ItemRadioStatus.LOADING
     const radio = (
@@ -78,6 +80,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           tag={<label />}
           rightAddon={radio}
           chevron={chevron && !isLoading}
+          highlighted={highlighted}
           isClickable
         />
       </Fragment>
