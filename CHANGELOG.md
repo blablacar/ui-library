@@ -1,11 +1,14 @@
 # Unreleased
 
-- **[UPDATE]** Add `highlighted` option to `ItemRadio`
-- **[UPDATE]** Fix `Tabs` content aligned to the left
+- [...]
+
+# v11.4.0 (09/10/2019)
+
 - **[NEW]** Add `Divider` Pixar widget.
 - **[NEW]** Add `BlankSeparator` Pixar widget.
+- **[UPDATE]** Add `highlighted` option to `ItemRadio`
+- **[UPDATE]** Fix `Tabs` content aligned to the left
 - **[UPDATE]** Add new display modes for `Disclaimer` widget (isCaption and deprecatedHelpUrl).
-- [...]
 
 # v11.3.1 (07/10/2019)
 
