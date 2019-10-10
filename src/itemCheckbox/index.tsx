@@ -6,7 +6,7 @@ const StyledItemCheckbox = styled(ItemCheckbox)`
   & {
     cursor: pointer;
   }
-  
+
   & input {
     position: absolute;
     clip: rect(0, 0, 0, 0);

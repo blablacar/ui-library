@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import {
-    color,
-    space,
-    font,
-    radius,
-    transition,
-    inputBorderSize,
-    componentSizes,
+  color,
+  space,
+  font,
+  radius,
+  transition,
+  inputBorderSize,
+  componentSizes,
 } from '_utils/branding'
 
 import Textarea from './Textarea'
@@ -17,7 +17,7 @@ const StyledTextarea = styled(Textarea)`
     box-sizing: border-box;
   }
 
-  & .kirk-textarea-wrapper { 
+  & .kirk-textarea-wrapper {
     position: relative;
     display: flex;
     box-sizing: border-box;
@@ -47,11 +47,10 @@ const StyledTextarea = styled(Textarea)`
     box-sizing: content-box;
     height: ${font.base.lineHeight};
   }
-  
+
   & textarea.kirk-textarea-hasButton {
     /* Ensure the content of the textarea is not overlapped by the button. */
     padding-right: calc(${space.s} + ${componentSizes.buttonIconSize});
-    
   }
 
   & textarea:not(:first-child) {

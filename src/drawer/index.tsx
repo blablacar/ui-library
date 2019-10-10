@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import Drawer from './Drawer'
 import { color, transition } from '_utils/branding'
 
-
-
 const StyledDrawer = styled(Drawer)`
   &.kirk-drawer--open {
     position: fixed;
@@ -56,7 +54,7 @@ const StyledDrawer = styled(Drawer)`
 
   &.kirk-drawer--close .kirk-drawer-scrollableContent {
     transform: translateY(-100%);
-  }  
+  }
 `
 
 export default StyledDrawer

@@ -33,7 +33,8 @@ stories.add(
             [ButtonStatus.CHECKED]: ButtonStatus.CHECKED,
           },
           ButtonStatus.PRIMARY,
-        )}>
+        )}
+      >
         Hello
       </Button>
       <Button index="button_2" status={ButtonStatus.TERTIARY}>

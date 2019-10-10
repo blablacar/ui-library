@@ -7,13 +7,12 @@ import Divider from 'divider'
 
 const stories = storiesOf('Divider', module)
 stories.addDecorator(withKnobs)
-stories.add('Specifications',
-    () => (<Divider />), {readme: spec})
+stories.add('Specifications', () => <Divider />, { readme: spec })
 
 stories.add('default', () => (
-    <div>
-        Some content to divide...
-        <Divider />
-        ...Rest of the divided content.
-    </div>
+  <div>
+    Some content to divide...
+    <Divider />
+    ...Rest of the divided content.
+  </div>
 ))

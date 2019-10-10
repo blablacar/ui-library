@@ -5,6 +5,7 @@
 # v12.0.0 (09/10/2019)
 
 - **[BREAKING CHANGE]** - Replaced `fullscreen` prop from `Modal` with new entry in enum `ModalSize`
+- **[NEW]** Add `SubHeader` Pixar widget.
 
 # v11.4.0 (09/10/2019)
 

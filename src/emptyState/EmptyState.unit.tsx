@@ -7,7 +7,7 @@ import Button from 'button'
 
 const defaultProps = {
   image: 'my-image-url',
-  text: 'Explanation text.'
+  text: 'Explanation text.',
 }
 
 describe('EmptyState', () => {

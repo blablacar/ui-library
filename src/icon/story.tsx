@@ -53,18 +53,21 @@ const createIconKnobs = (props: {}) =>
     return acc
   }, {})
 
+stories.add(
+  'All',
+  () => {
+    const iconList = Object.entries(icons).map(([name, Component]) => (
+      <div key={name} style={styles.iconItem}>
+        <Component {...Component.type.defaultProps} />
+        <br />
+        {name}
+      </div>
+    ))
 
-stories.add('All', () => {
-  const iconList = Object.entries(icons).map(([name, Component]) => (
-    <div key={name} style={styles.iconItem}>
-      <Component {...Component.type.defaultProps} />
-      <br />
-      {name}
-    </div>
-  ))
-
-  return <Fragment>{iconList}</Fragment>
-}, { readme: { content: readme } })
+    return <Fragment>{iconList}</Fragment>
+  },
+  { readme: { content: readme } },
+)
 
 Object.entries(icons).forEach(([name, Component]) => {
   stories.add(name.replace('Icon', ''), () => (

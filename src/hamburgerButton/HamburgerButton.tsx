@@ -1,5 +1,5 @@
 import React from 'react'
-import cc from "classcat"
+import cc from 'classcat'
 
 export interface HamburgerButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void

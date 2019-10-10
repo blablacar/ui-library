@@ -9,7 +9,7 @@ interface EmptyState {
   readonly button?: JSX.Element
 }
 
-const EmptyState = ({ className, image, text, button}: EmptyState) => (
+const EmptyState = ({ className, image, text, button }: EmptyState) => (
   <div className={cc(['kirk-empty-state', className])}>
     <img src={image} alt="" />
     <Title>{text}</Title>
