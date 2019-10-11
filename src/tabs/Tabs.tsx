@@ -1,4 +1,4 @@
-import React, { createRef, PureComponent, RefObject } from 'react'
+import React, { createRef, PureComponent, RefObject, Fragment } from 'react'
 import cc from 'classcat'
 import Badge from 'badge'
 
@@ -172,58 +172,59 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
 
     return (
-      <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
-        <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
-          <div className="kirk-tab-highlight" ref={this.highlightRef} />
-          <div
-            role="tablist"
-            aria-orientation="horizontal"
-            aria-multiselectable="false"
-            className={cc(['kirk-tablist', { 'kirk-tablist-wrapped': isWrapped }])}
-          >
-            {tabs.map(tab => {
-              const isSelected = selectedTab.id === tab.id
-              return (
-                <div
-                  className={cc(['kirk-tab-container', { 'kirk-tab-selected': isSelected }])}
-                  style={isFixedTabs ? fixedTabContainerStyle : null}
-                  key={tab.id}
-                >
-                  <button
-                    role="tab"
-                    aria-controls={`${generateTabPanelId(tab)}`}
-                    aria-selected={isSelected ? 'true' : 'false'}
-                    title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
-                    tabIndex={isSelected ? 0 : -1}
-                    id={tab.id}
-                    ref={this.state.tabIdToRefs.get(tab.id)}
-                    onClick={this.handleTabClicked}
-                    onKeyDown={this.handleTabKeyDown}
-                    className="kirk-tab"
+      <Fragment>
+        <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
+          <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
+            <div className="kirk-tab-highlight" ref={this.highlightRef} />
+            <div
+              role="tablist"
+              aria-orientation="horizontal"
+              aria-multiselectable="false"
+              className={cc(['kirk-tablist', { 'kirk-tablist-wrapped': isWrapped }])}
+            >
+              {tabs.map(tab => {
+                const isSelected = selectedTab.id === tab.id
+                return (
+                  <div
+                    className={cc(['kirk-tab-container', { 'kirk-tab-selected': isSelected }])}
+                    style={isFixedTabs ? fixedTabContainerStyle : null}
+                    key={tab.id}
                   >
-                    {tab.icon}
-                    {!tab.showIconOnly && (
-                      <span
-                        className={cc([
-                          'kirk-tab-text',
-                          { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
-                        ])}
-                      >
-                        {tab.label}
-                      </span>
-                    )}
-                    {tab.badgeContent && (
-                      <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
-                        {tab.badgeContent}
-                      </Badge>
-                    )}
-                  </button>
-                </div>
-              )
-            })}
+                    <button
+                      role="tab"
+                      aria-controls={`${generateTabPanelId(tab)}`}
+                      aria-selected={isSelected ? 'true' : 'false'}
+                      title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
+                      tabIndex={isSelected ? 0 : -1}
+                      id={tab.id}
+                      ref={this.state.tabIdToRefs.get(tab.id)}
+                      onClick={this.handleTabClicked}
+                      onKeyDown={this.handleTabKeyDown}
+                      className="kirk-tab"
+                    >
+                      {tab.icon}
+                      {!tab.showIconOnly && (
+                        <span
+                          className={cc([
+                            'kirk-tab-text',
+                            { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
+                          ])}
+                        >
+                          {tab.label}
+                        </span>
+                      )}
+                      {tab.badgeContent && (
+                        <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
+                          {tab.badgeContent}
+                        </Badge>
+                      )}
+                    </button>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
-
         {tabs.map(tab => {
           const isSelected = selectedTab.id === tab.id
           return (
@@ -239,7 +240,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
             </div>
           )
         })}
-      </div>
+      </Fragment>
     )
   }
 }
