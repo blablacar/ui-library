@@ -23,10 +23,10 @@ addParameters({
   },
 })
 
-const req = require.context('../stories', true)
+const widgetStories = require.context('../stories', true)
 
 function loadStories() {
-  req.keys().forEach(req)
+  widgetStories.keys().forEach(widgetStories)
 }
 
 configure(loadStories, module)

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
+import { KirkTile } from '_utils/layout'
 
 interface TitleProps {
   readonly className?: Classcat.Class
@@ -13,12 +14,8 @@ const Title = ({ className, children, headingLevel = 1 }: TitleProps) => {
   if (!isHeadingAvailable(Number(headingLevel))) {
     return null
   }
-  return React.createElement(
-    `h${headingLevel}`,
-    {
-      className: cc(['kirk-title', className]),
-    },
-    <Fragment>{children}</Fragment>,
-  )
+  return <KirkTile tag={`h${headingLevel}`} className={cc(['kirk-title', className])}>
+    <Fragment>{children}</Fragment>
+  </KirkTile>
 }
 export default Title

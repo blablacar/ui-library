@@ -8,6 +8,7 @@ import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
 import Itinerary from 'itinerary'
 import Item from '_utils/item'
+import { KirkCard } from '_utils/layout'
 import Text, { TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 
@@ -107,7 +108,7 @@ const TripCard = ({
   }
 
   return (
-    <li
+    <KirkCard tag='li'
       className={cc([
         'kirk-tripCard',
         {
@@ -200,7 +201,7 @@ const TripCard = ({
           </div>
         </Fragment>,
       )}
-    </li>
+    </KirkCard>
   )
 }
 

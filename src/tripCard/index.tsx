@@ -3,6 +3,7 @@ import { color, radius, space, componentSizes, transition } from '_utils/brandin
 
 import TripCard from './TripCard'
 
+
 const StyledTripCard = styled(TripCard)`
   & {
     border-radius: ${radius.l};

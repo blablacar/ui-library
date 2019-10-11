@@ -6,6 +6,7 @@ import isString from 'lodash.isstring'
 import { color } from '_utils/branding'
 import Text, { TextDisplayType, TextTagType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
+import { KirkTile } from '_utils/layout'
 
 interface ItineraryProps {
   readonly places: Place[]
@@ -30,7 +31,7 @@ const Itinerary = ({
   const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
 
   return (
-    <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
+    <KirkTile tag='ul' className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
       {isNonEmptyString(headline) && (
         <li className="kirk-itinerary-headline">
           <Text display={TextDisplayType.TITLESTRONG}>{headline}</Text>
@@ -139,7 +140,7 @@ const Itinerary = ({
           <Text display={TextDisplayType.CAPTION}>{toAddon}</Text>
         </li>
       )}
-    </ul>
+    </KirkTile>
   )
 }
 

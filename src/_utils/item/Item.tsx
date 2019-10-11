@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import cc from 'classcat'
 
 import { color } from '_utils/branding'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
+import {KirkTile} from "../layout"
 
 export enum ItemStatus {
   DEFAULT = 'default',
@@ -82,9 +83,9 @@ const Item = ({
     }
   }
   const hasRightText = rightTitle || rightBody
-
   return (
-    <Tag
+    <KirkTile
+      tag={Tag}
       {...tagProps}
       onClick={onClick}
       onFocus={onFocus}
@@ -162,7 +163,7 @@ const Item = ({
           {<ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />}
         </div>
       )}
-    </Tag>
+    </KirkTile>
   )
 }
 

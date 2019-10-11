@@ -130,6 +130,7 @@ stories.add('anchor button with link element', () => (
   </Button>
 ))
 
+
 stories.add('anchor button unstyled', () => (
   <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
     {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}

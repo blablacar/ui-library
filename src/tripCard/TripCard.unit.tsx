@@ -39,7 +39,7 @@ const mockedProps = {
   price: '8,00€',
 }
 
-const createPassengers = count => {
+const createPassengers = (count: number) => {
   let passengerIdx = 1
   return Array(count).fill({
     avatarUrl: '//placehold.it/500x500',
