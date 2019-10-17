@@ -134,7 +134,7 @@ describe('TripCard component', () => {
   it('Should render status information', () => {
     const statusInformation = { icon: <WarningIcon />, text: 'Warning!' }
     const component = shallow(<TripCard {...mockedProps} statusInformation={statusInformation} />)
-    expect(component.find('.kirk-tripCard-top').exists()).toBe(true)
+    expect(component.find('.kirk-tripCard-top-item').exists()).toBe(true)
   })
 
   it('Should render badge', () => {

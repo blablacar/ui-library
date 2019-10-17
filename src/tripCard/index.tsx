@@ -80,7 +80,7 @@ const StyledTripCard = styled(TripCard)`
 
   /* To match the width of the time area of the Itinerary */
   .kirk-tripCard-driver .kirk-tripCard-avatar {
-    min-width: ${componentSizes.timeWidth};
+    min-width: calc(${componentSizes.timeWidth} + ${space.m});
     margin-right: ${space.l};
   }
 

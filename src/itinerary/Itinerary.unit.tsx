@@ -30,7 +30,8 @@ const places = [
 describe('Itinerary component', () => {
   it('Render with custom className', () => {
     const itinerary = shallow(<Itinerary className="test" places={places} />)
-    expect(itinerary.hasClass('test')).toBe(true)
+    const ul = itinerary.find('ul')
+    expect(ul.hasClass('test')).toBe(true)
   })
 
   it('Should display the top addon', () => {
@@ -208,12 +209,14 @@ describe('Itinerary component', () => {
   describe('small', () => {
     it('Should be displayed as small if required in props', () => {
       const itinerary = shallow(<Itinerary places={places} small />)
-      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(true)
+      const ul = itinerary.find('ul')
+      expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
     })
 
     it('Should not be displayed as small if not in props and time or sublabel exists', () => {
       const itinerary = shallow(<Itinerary places={places} />)
-      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(false)
+      const ul = itinerary.find('ul')
+      expect(ul.hasClass('kirk-itinerary--small')).toBe(false)
     })
 
     it('Should be displayed as small if no time nor subLabel', () => {
@@ -231,7 +234,8 @@ describe('Itinerary component', () => {
       ]
 
       const itinerary = shallow(<Itinerary places={places} />)
-      expect(itinerary.hasClass('kirk-itinerary--small')).toBe(true)
+      const ul = itinerary.find('ul')
+      expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
     })
   })
 })

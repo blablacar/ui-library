@@ -4,15 +4,13 @@ import { color, space, componentSizes } from '_utils/branding'
 import Itinerary from './Itinerary'
 
 const distanceFromHeight = '40px'
+const gutterPaddingStart = space.m
+const gutterTopOffset = '2px'
 
 const StyledItinerary = styled(Itinerary)`
   li {
     position: relative;
     list-style-type: none;
-  }
-
-  & .kirk-itinerary-headline {
-    padding-bottom: ${space.l};
   }
 
   & .kirk-itinerary-location-wrapper {
@@ -47,19 +45,20 @@ const StyledItinerary = styled(Itinerary)`
   }
 
   & .kirk-itinerary-location time {
-    min-width: ${componentSizes.timeWidth};
+    min-width: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
   & .kirk-itinerary-location-city {
     padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival) div {
+  &.kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival)
+      .kirk-itinerary-location-city {
     padding-bottom: 0;
   }
 
-  & .kirk-itinerary-location div::before,
-  & .kirk-itinerary-location div::after {
+  & .kirk-itinerary-location .kirk-itinerary-location-city::before,
+  & .kirk-itinerary-location .kirk-itinerary-location-city::after {
     box-sizing: border-box;
     content: '';
     display: block;
@@ -67,38 +66,43 @@ const StyledItinerary = styled(Itinerary)`
     position: absolute;
   }
 
-  & .kirk-itinerary-location div::before {
+  & .kirk-itinerary-location .kirk-itinerary-location-city::before {
     height: 100%;
     background-color: ${color.primaryText};
     top: 0;
-    left: ${componentSizes.timeWidth};
+    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location div::before {
+  &.kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::before {
     left: 2px;
   }
 
-  & .kirk-itinerary-location div::after {
+  & .kirk-itinerary-location .kirk-itinerary-location-city::after {
     width: 8px;
     height: 8px;
     background-color: ${color.white};
     border: 2px solid ${color.primaryText};
     border-radius: 50%;
-    top: calc(4px + ${space.m});
-    left: calc(${componentSizes.timeWidth} - 2px);
+    top: calc(4px + ${space.m} + ${gutterTopOffset});
+    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth} - 2px);
+  }
+  
+  & .kirk-itinerary-location.kirk-itinerary--departure .kirk-itinerary-location-city::after,
+  & .kirk-itinerary-location.kirk-itinerary--arrival .kirk-itinerary-location-city::after {
+    top: calc(4px + ${space.m} + ${gutterTopOffset});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location div::after {
+  &.kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::after {
     left: 0;
   }
 
-  & .kirk-itinerary-location.kirk-itinerary--departure div::before {
+  & .kirk-itinerary-location.kirk-itinerary--departure .kirk-itinerary-location-city::before {
     height: calc(100% - calc(6px + ${space.m}));
-    top: calc(6px + ${space.m});
+    top: calc(6px + ${space.m} + ${gutterTopOffset});
   }
 
-  & .kirk-itinerary-location.kirk-itinerary--arrival div::before {
-    height: calc(6px + ${space.m});
+  & .kirk-itinerary-location.kirk-itinerary--arrival .kirk-itinerary-location-city::before {
+    height: calc(6px + ${space.m} + ${gutterTopOffset});
   }
 
   & .kirk-itinerary-fromAddon,
@@ -119,7 +123,7 @@ const StyledItinerary = styled(Itinerary)`
   & .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
     width: 0;
     border: 2px solid ${color.border};
-    left: ${componentSizes.timeWidth};
+    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
     bottom: -4px;
   }
 
@@ -129,7 +133,7 @@ const StyledItinerary = styled(Itinerary)`
   }
 
   & .kirk-itinerary-fromAddon::before {
-    height: calc(100% + ${space.m});
+    height: calc(100% + ${space.m} + 4px);
     top: 6px;
   }
 
@@ -145,7 +149,7 @@ const StyledItinerary = styled(Itinerary)`
     background-color: #fff;
     border: 2px solid ${color.border};
     border-radius: 50%;
-    left: calc(${componentSizes.timeWidth} - 2px);
+    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth} - 2px);
   }
 
   &.kirk-itinerary--small .kirk-itinerary-fromAddon::after,
@@ -161,25 +165,25 @@ const StyledItinerary = styled(Itinerary)`
     bottom: -${distanceFromHeight};
   }
 
-  & .kirk-itinerary-fromAddon span,
-  & .kirk-itinerary-toAddon span {
+  & .kirk-itinerary-fromAddon .kirk-itinerary-addon-content,
+  & .kirk-itinerary-toAddon .kirk-itinerary-addon-content {
     display: inline-block;
     padding-left: ${space.l};
     color: ${color.fadedText};
     position: absolute;
-    left: ${componentSizes.timeWidth};
+    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-fromAddon span,
-  &.kirk-itinerary--small .kirk-itinerary-toAddon span {
+  &.kirk-itinerary--small .kirk-itinerary-fromAddon .kirk-itinerary-addon-content,
+  &.kirk-itinerary--small .kirk-itinerary-toAddon .kirk-itinerary-addon-content {
     left: 0;
   }
 
-  & .kirk-itinerary-fromAddon span {
+  & .kirk-itinerary-fromAddon .kirk-itinerary-addon-content {
     top: -4px;
   }
 
-  & .kirk-itinerary-toAddon span {
+  & .kirk-itinerary-toAddon .kirk-itinerary-addon-content {
     bottom: -4px;
   }
 
