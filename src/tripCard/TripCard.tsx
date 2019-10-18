@@ -139,17 +139,15 @@ const TripCard = ({
           )}
 
           {statusInformation && (
-            <div className="kirk-tripCard-top">
-              <Item
-                className="kirk-tripCard-top-item"
-                leftAddon={React.cloneElement(statusInformation.icon, {
-                  iconColor: statusInformation.highlighted ? color.primary : color.icon,
-                })}
-                leftTitle={statusInformation.text}
-                leftTitleDisplay={TextDisplayType.BODY}
-                highlighted={statusInformation.highlighted}
-              />
-            </div>
+            <Item
+              className="kirk-tripCard-top-item"
+              leftAddon={React.cloneElement(statusInformation.icon, {
+                iconColor: statusInformation.highlighted ? color.primary : color.icon,
+              })}
+              leftTitle={statusInformation.text}
+              leftTitleDisplay={TextDisplayType.BODY}
+              highlighted={statusInformation.highlighted}
+            />
           )}
 
           {title && (
