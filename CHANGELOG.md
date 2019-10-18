@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** - Make `Tabs` and their panels layouts independent at DOM level.
 [...]
 
 # v12.0.0 (09/10/2019)
