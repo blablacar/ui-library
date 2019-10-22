@@ -1,9 +1,12 @@
 # Unreleased
 
+[...]
+
+# v13.0.0 (22/10/2019)
+
 - **[NEW]** Add `MarketingMessage` Pixar widget.
 - **[BREAKING CHANGE]** - Make `Tabs` and their panels layouts independent at DOM level.
 - **[FIX]** Fix various alignment issues and some a11y for `Itinerary` and `TripCard`.
-[...]
 
 # v12.0.0 (09/10/2019)
 
