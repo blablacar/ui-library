@@ -5,22 +5,23 @@ import Message from './Message'
 
 it('Should have the correct attributes and text.', () => {
   const message = shallow(
-    <Message active author="The author">
+    <Message active>
       blabla
     </Message>,
   )
   expect(message.find('p').text()).toContain('blabla')
   expect(message.prop('className')).toContain('kirk-message kirk-active')
-  expect(message.find('cite').text()).toContain('The author')
 })
 
-it('Should have the date.', () => {
-  const message = mount(
-    <Message active author="The author" isoDate="2017-08-07T14:10:40.526Z" date="05 jul - 17:39">
-      blabla
+it('Should have an annotation.', () => {
+  const message = shallow(
+    <Message active messageAnnotation="Delivered - 15:00">
+      some message with an annotation
     </Message>,
   )
-  expect(message.find('time')).toHaveLength(1)
-  expect(message.find('time').text()).toBe('05 jul - 17:39')
-  expect(message.find('time').prop('dateTime')).toBe('2017-08-07T14:10:40.526Z')
+
+  const annotation = message.find('.kirk-message-annotation')
+  expect(annotation).toHaveLength(1)
+  expect(annotation.exists()).toBe(true)
+  expect(annotation.text()).toBe('Delivered - 15:00')
 })
