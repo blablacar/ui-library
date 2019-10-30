@@ -1,6 +1,7 @@
 # Unreleased
 
 [...]
+- **[FIX]** Restore focus and click when Modal component unmounts.
 
 # v13.0.0 (22/10/2019)
 

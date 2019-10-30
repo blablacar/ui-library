@@ -87,6 +87,7 @@ export default class Modal extends Component<ModalProps> {
       this.portalNode = null
     }
     this.setDocumentScroll('visible')
+    this.focusTrap.deactivate()
   }
 
   setDocumentScroll = (cssValue: string) => {
