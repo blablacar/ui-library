@@ -161,6 +161,10 @@ export const color: Color = {
   proximityFar: palette.orange,
   proximityDisabled: palette.lightGray,
 
+  priceLow: palette.green,
+  priceMedium: palette.orange,
+  priceHigh: palette.red,
+
   primaryActive: palette.darkBlue,
   secondaryActive: palette.gray,
 
