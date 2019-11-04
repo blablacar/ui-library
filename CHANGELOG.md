@@ -1,7 +1,13 @@
 # Unreleased
 
 [...]
+
+# v13.0.2 (04/11/2019)
+
 - **[NEW]** Export new colors
+
+# v13.0.1 (30/10/2019)
+
 - **[FIX]** Restore focus and click when Modal component unmounts.
 
 # v13.0.0 (22/10/2019)
