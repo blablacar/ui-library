@@ -35,7 +35,6 @@ const StyledTextarea = styled(Textarea)`
     outline: none;
     appearance: none;
     border: 0;
-    border-radius: ${radius.l};
     background-color: ${color.inputBackground};
     color: ${color.primaryText};
     flex: 1;
@@ -43,9 +42,11 @@ const StyledTextarea = styled(Textarea)`
     line-height: ${font.base.lineHeight};
     width: 100%;
     caret-color: ${color.inputCaret};
-    padding: calc(${space.l} + 1px - ${inputBorderSize.focus});
+    padding: 0 calc(${space.l} + 1px - ${inputBorderSize.focus}); 
+    margin: calc(${space.l} + 1px - ${inputBorderSize.focus}) 0;
     box-sizing: content-box;
     height: ${font.base.lineHeight};
+    scrollbar-width: thin;
   }
 
   & textarea.kirk-textarea-hasButton {
