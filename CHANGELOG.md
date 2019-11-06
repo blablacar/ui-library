@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix scrolling visual for `Textarea`.
 [...]
+
+# v13.0.3 (06/11/2019)
+
+- **[FIX]** Fix scrolling visual for `Textarea`.
 
 # v13.0.2 (04/11/2019)
 
