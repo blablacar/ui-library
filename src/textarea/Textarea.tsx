@@ -138,9 +138,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     // Fit height to content.
     if (this.textareaRef && this.textareaRef.current) {
       this.textareaRef.current.style.height = '0'
-      const verticalPadding = 16
-      this.textareaRef.current.style.height = `${this.textareaRef.current.scrollHeight -
-        2 * verticalPadding}px`
+      this.textareaRef.current.style.height = `${this.textareaRef.current.scrollHeight}px`
     }
   }
 
