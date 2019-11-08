@@ -59,10 +59,7 @@ exports[`Snackbar should not have changed 1`] = `
 }
 
 .c3:hover,
-.c3:focus,
 .c3:active {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   outline: 0;
 }
 

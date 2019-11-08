@@ -16,7 +16,6 @@ const StyledDropdownButton = styled(DropdownButton)`
     color: ${color.primary};
     background: none;
     border: 0;
-    outline: 0;
     font-size: ${font.base.size};
     cursor: pointer;
   }

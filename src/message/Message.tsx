@@ -1,40 +1,45 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
 
-import Caption from 'caption'
+import BlankSeparator, { BlankSeparatorSize } from "blankSeparator"
+import Text, { TextDisplayType } from "text"
 
 export interface MessageProps {
   readonly children: string
-  readonly isoDate?: string
   readonly date?: string
-  readonly secondaryLink?: string
-  readonly secondaryText?: string
   readonly active?: boolean
   readonly author?: string | JSX.Element
   readonly className?: Classcat.Class
+  readonly messageAnnotation?: string
 }
 
 const Message = ({
   active,
-  author,
   date,
-  isoDate,
-  secondaryLink,
-  secondaryText,
   children,
+  messageAnnotation,
   className,
 }: MessageProps) => (
-  <blockquote className={cc(['kirk-message', prefix({ active }), className])}>
-    {author && <cite>{author}</cite>}
-    <div className="kirk-label">
-      <p>{children}</p>
-      <Caption href={secondaryLink} secondaryText={secondaryText} isoDate={isoDate}>
-        {date}
-      </Caption>
+  <div className={cc(['kirk-message', prefix({ active }), className])}>
+    <div className="kirk-message-content">
+      <blockquote>
+        <div className="kirk-label">
+          <p>{children}</p>
+        </div>
+      </blockquote>
     </div>
-  </blockquote>
+    {messageAnnotation &&
+      <Fragment>
+        <Text className='kirk-message-annotation' display={TextDisplayType.CAPTION}>
+          {messageAnnotation}
+        </Text>
+        <BlankSeparator size={BlankSeparatorSize.MEDIUM} />
+      </Fragment>
+    }
+  </div>
+
 )
 
 export default Message

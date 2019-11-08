@@ -1,33 +1,72 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Message from 'message'
+import {JSXElement} from "@babel/types"
 
 const stories = storiesOf('Message', module)
 stories.addDecorator(withKnobs)
 
+const wrapInContainer = (content: JSX.Element) => {
+  return <div style={{width: '600px', border: '1px solid lightgray'}}>
+    {content}
+  </div>
+}
+
+const veryLongMessage = "long message ".repeat(10)
+const veryLongMessageWithoutBreaks = "longmessage_".repeat(10)
+stories.add('Conversation', () => (
+    wrapInContainer(
+        <Fragment>
+          <Message messageAnnotation="Delivered - 15:29" active={false}>Msg</Message>
+          <Message messageAnnotation="Delivered - 15:29" active={false}>
+              {veryLongMessage}
+          </Message>
+          <Message messageAnnotation="Delivered - 15:30" active={false}>
+              {veryLongMessageWithoutBreaks}
+          </Message>
+          <Message messageAnnotation="Delivered - 15:32" active={false}>Msg</Message>
+          <Message messageAnnotation="Delivered - 15:35" active={true}>
+              {veryLongMessageWithoutBreaks}
+          </Message>
+          <Message active={true}>Msg</Message>
+          <Message active={true}>{veryLongMessage}</Message>
+          <Message messageAnnotation="Sent - 15:40" active={true}>Msg 2</Message>
+          <Message
+              messageAnnotation="Delivered - 15:45" active={true}>
+            Msg 1
+          </Message>
+        </Fragment>)
+))
+
 stories.add('Basic message', () => (
-  <Message author={text('author', 'author')} active={boolean('Current user', false)}>
+  wrapInContainer(<Message active={boolean('Current user', false)}>
     {text('text', 'A simple message')}
-  </Message>
+  </Message>)
 ))
 
 stories.add("Current user's message", () => (
-  <Message active={boolean('Current user', true)} author={text('author', 'author')}>
+    wrapInContainer(<Message active={boolean('Current user', true)} >
     {text('text', 'A simple message')}
-  </Message>
+  </Message>)
 ))
 
-stories.add('Message with date', () => (
-  <Message
-    author={text('author', 'author')}
-    isoDate="2017-08-07T14:10:40.526Z"
-    date={text('date', '05 jul - 17:39')}
-    secondaryText={text('secondary text', 'Report')}
-    secondaryLink="/message"
+stories.add('Message from author with message annotation', () => (
+    wrapInContainer(<Message
+      active={true}
+      messageAnnotation="Sent - 15:00"
   >
     {text('text', 'A simple message')}
-  </Message>
+  </Message>)
+))
+
+stories.add('Message to author with message annotation', () => (
+    wrapInContainer(<Message
+        active={false}
+        messageAnnotation="Delivered - 15:00"
+    >
+      {text('text', 'A simple message')}
+    </Message>)
 ))

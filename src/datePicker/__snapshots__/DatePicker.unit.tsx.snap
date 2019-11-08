@@ -75,10 +75,7 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
 }
 
 .c0:hover,
-.c0:focus,
 .c0:active {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   outline: 0;
 }
 
