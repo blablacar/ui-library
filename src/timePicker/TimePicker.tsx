@@ -3,18 +3,6 @@ import cc from 'classcat'
 import prefix from '_utils'
 
 /**
- * Whether or not Date#toLocaleTimeString supports arguments `locales` et `options`.
- */
-const toLocaleTimeStringSupportsLocales = (() => {
-  try {
-    new Date().toLocaleTimeString('i')
-  } catch (e) {
-    return e.name === 'RangeError'
-  }
-  return false
-})()
-
-/**
  * Format given dateTime in the format HH:MM.
  */
 const formatTimeValue = (dateTime: Date) => {
@@ -47,6 +35,7 @@ interface TimePickerProps {
   readonly renderTime?: (dt: Date) => string
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly timeStart?: string
+  readonly focus?: boolean
 }
 
 type Steps = { [propName: string]: string }
@@ -59,6 +48,7 @@ type TimeSteps = {
 interface TimePickerState {
   readonly value: string
   readonly steps: Steps
+  readonly isFocused: boolean
 }
 
 export default class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
@@ -86,7 +76,10 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
   state = {
     value: this.getDefaultValue(),
     steps: this.generateTimeSteps(this.props),
+    isFocused: false,
   }
+
+  selectRef = React.createRef<HTMLSelectElement>()
 
   static getDerivedStateFromProps(props: TimePickerProps, state: TimePickerState) {
     if (state.value < props.timeStart) {
@@ -105,6 +98,12 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     this.props.onChange({ name, value })
   }
 
+  componentDidMount() {
+    if (this.selectRef && this.props.focus) {
+      this.selectRef.current.focus()
+    }
+  }
+
   getDefaultValue() {
     if (!this.props.defaultValue) {
       return formatTimeValue(this.referenceDate)
@@ -112,13 +111,28 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     return this.props.defaultValue
   }
 
+  onSelectFocus = () => this.setState({ isFocused: true })
+
+  onSelectBlur = () => this.setState({ isFocused: false })
+
   render() {
     const { className = '', disabled = false, name } = this.props
     const { steps } = this.state
     return (
-      <div className={cc([prefix({ timePicker: true }), className])} aria-disabled={disabled}>
+      <div
+        className={cc([prefix({ timePicker: true }), { focus: this.state.isFocused }, className])}
+        aria-disabled={disabled}
+      >
         <time>{steps[this.state.value]}</time>
-        <select name={name} value={this.state.value} disabled={disabled} onChange={this.onChange}>
+        <select
+          name={name}
+          value={this.state.value}
+          disabled={disabled}
+          onChange={this.onChange}
+          onFocus={this.onSelectFocus}
+          onBlur={this.onSelectBlur}
+          ref={this.selectRef}
+        >
           {Object.keys(steps).map(key => (
             <option key={key} value={key}>
               {steps[key]}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import TimePicker from '.'
@@ -16,5 +16,6 @@ stories.add('default', () => (
     onChange={action('onChange')}
     disabled={boolean('disabled', false)}
     timeStart={select('timeStart', ['00:00', '08:00', '12:00', '21:00'], '00:00')}
+    focus
   />
 ))
