@@ -1,6 +1,6 @@
 # Unreleased
 
-- **[NEW]** `focus` prop on `TimePicker` to focus the select on mount
+- **[NEW]** `focus` prop on `TimePicker`
 
 # v13.0.3 (06/11/2019)
 

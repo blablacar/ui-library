@@ -17,9 +17,10 @@ export const StyledTimePicker = styled(TimePicker)`
     background-color: ${color.white};
     color: ${color.primaryText};
     border: 1px solid ${color.border};
-    border-radius: 66px;
+    border-radius: 2em;
     box-sizing: border-box;
     cursor: pointer;
+    padding: ${inputBorderSize.focus};
   }
 
   &:hover {
@@ -28,6 +29,7 @@ export const StyledTimePicker = styled(TimePicker)`
 
   &.focus {
     border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    padding: 1px;
   }
 
   &::after {
@@ -41,6 +43,10 @@ export const StyledTimePicker = styled(TimePicker)`
     border-width: 0 2px 2px 0;
     vertical-align: middle;
     transform: rotate(45deg);
+  }
+
+  &.focus::after {
+    right: 30px;
   }
 
   &[aria-disabled='true'] {
