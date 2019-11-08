@@ -112,10 +112,12 @@ describe('<TimePicker />', () => {
       })
       const instance = wrapper.instance() as InstanceType<typeof TimePicker>
       instance.selectRef = {
-        focus: jest.fn(),
+        current: {
+          focus: jest.fn(),
+        },
       }
       instance.componentDidMount()
-      expect(instance.selectRef.focus).toHaveBeenCalledTimes(1)
+      expect(instance.selectRef.current.focus).toHaveBeenCalledTimes(1)
     })
   })
 })
