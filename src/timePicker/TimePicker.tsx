@@ -48,6 +48,7 @@ type TimeSteps = {
 interface TimePickerState {
   readonly value: string
   readonly steps: Steps
+  readonly isFocused: boolean
 }
 
 export default class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
@@ -75,6 +76,7 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
   state = {
     value: this.getDefaultValue(),
     steps: this.generateTimeSteps(this.props),
+    isFocused: false,
   }
 
   selectRef = React.createRef<HTMLSelectElement>()
@@ -109,17 +111,26 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     return this.props.defaultValue
   }
 
+  onSelectFocus = () => this.setState({ isFocused: true })
+
+  onSelectBlur = () => this.setState({ isFocused: false })
+
   render() {
     const { className = '', disabled = false, name } = this.props
     const { steps } = this.state
     return (
-      <div className={cc([prefix({ timePicker: true }), className])} aria-disabled={disabled}>
+      <div
+        className={cc([prefix({ timePicker: true }), { focus: this.state.isFocused }, className])}
+        aria-disabled={disabled}
+      >
         <time>{steps[this.state.value]}</time>
         <select
           name={name}
           value={this.state.value}
           disabled={disabled}
           onChange={this.onChange}
+          onFocus={this.onSelectFocus}
+          onBlur={this.onSelectBlur}
           ref={this.selectRef}
         >
           {Object.keys(steps).map(key => (

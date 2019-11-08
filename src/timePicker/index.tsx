@@ -22,7 +22,8 @@ export const StyledTimePicker = styled(TimePicker)`
     cursor: pointer;
   }
 
-  &:hover {
+  &:hover,
+  &.focus {
     background-color: ${color.lightBackground};
   }
 
