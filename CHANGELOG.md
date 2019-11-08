@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v14.0.1 (08/11/2019)
+
 - **[NEW]** `focus` prop on `TimePicker`
 
 # v14.0.0 (08/11/2019)
