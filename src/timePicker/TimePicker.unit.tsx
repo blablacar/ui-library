@@ -96,11 +96,26 @@ describe('<TimePicker />', () => {
     })
     it('should have `referenceDate` with time at 00:00:00', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} />)
-      const referenceDate = wrapper.instance().referenceDate
+      const instance = wrapper.instance() as InstanceType<typeof TimePicker>
+      const referenceDate = instance.referenceDate
       expect(referenceDate.getHours()).toEqual(0)
       expect(referenceDate.getMinutes()).toEqual(0)
       expect(referenceDate.getSeconds()).toEqual(0)
       expect(referenceDate.getMilliseconds()).toEqual(0)
+    })
+  })
+
+  describe('focus prop', () => {
+    it('should focus the select on mount', () => {
+      const wrapper = shallow(<TimePicker {...defaultProps} focus />, {
+        disableLifecycleMethods: true,
+      })
+      const instance = wrapper.instance() as InstanceType<typeof TimePicker>
+      instance.selectRef = {
+        focus: jest.fn(),
+      }
+      instance.componentDidMount()
+      expect(instance.selectRef.focus).toHaveBeenCalledTimes(1)
     })
   })
 })

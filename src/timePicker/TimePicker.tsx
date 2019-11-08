@@ -3,18 +3,6 @@ import cc from 'classcat'
 import prefix from '_utils'
 
 /**
- * Whether or not Date#toLocaleTimeString supports arguments `locales` et `options`.
- */
-const toLocaleTimeStringSupportsLocales = (() => {
-  try {
-    new Date().toLocaleTimeString('i')
-  } catch (e) {
-    return e.name === 'RangeError'
-  }
-  return false
-})()
-
-/**
  * Format given dateTime in the format HH:MM.
  */
 const formatTimeValue = (dateTime: Date) => {
@@ -47,6 +35,7 @@ interface TimePickerProps {
   readonly renderTime?: (dt: Date) => string
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly timeStart?: string
+  readonly focus?: boolean
 }
 
 type Steps = { [propName: string]: string }
@@ -88,6 +77,8 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     steps: this.generateTimeSteps(this.props),
   }
 
+  selectRef = React.createRef<HTMLSelectElement>()
+
   static getDerivedStateFromProps(props: TimePickerProps, state: TimePickerState) {
     if (state.value < props.timeStart) {
       return {
@@ -105,6 +96,12 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     this.props.onChange({ name, value })
   }
 
+  componentDidMount() {
+    if (this.selectRef && this.props.focus) {
+      this.selectRef.current.focus()
+    }
+  }
+
   getDefaultValue() {
     if (!this.props.defaultValue) {
       return formatTimeValue(this.referenceDate)
@@ -118,7 +115,13 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     return (
       <div className={cc([prefix({ timePicker: true }), className])} aria-disabled={disabled}>
         <time>{steps[this.state.value]}</time>
-        <select name={name} value={this.state.value} disabled={disabled} onChange={this.onChange}>
+        <select
+          name={name}
+          value={this.state.value}
+          disabled={disabled}
+          onChange={this.onChange}
+          ref={this.selectRef}
+        >
           {Object.keys(steps).map(key => (
             <option key={key} value={key}>
               {steps[key]}
