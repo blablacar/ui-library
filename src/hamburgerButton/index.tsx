@@ -11,7 +11,6 @@ const StyledHamburgerButton = styled(HamburgerButton)`
     border: 0;
     background: transparent;
     color: ${color.icon};
-    outline: 0;
     cursor: pointer;
     user-select: none;
   }

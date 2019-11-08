@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Restore outline on Button, Dropdown, HamburgerButton and ToggleButton
+  [...]
 
 # v13.0.3 (06/11/2019)
 

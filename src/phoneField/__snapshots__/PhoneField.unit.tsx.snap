@@ -120,10 +120,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 }
 
 .c4:hover,
-.c4:focus,
 .c4:active {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   outline: 0;
 }
 

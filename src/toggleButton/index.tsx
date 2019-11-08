@@ -17,7 +17,6 @@ const StyledToggleButton = styled(ToggleButton)`
     overflow: hidden;
   }
 
-  &:focus,
   &:active {
     outline: 0;
   }

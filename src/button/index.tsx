@@ -41,9 +41,7 @@ const StyledButton = styled(Button)`
   }
 
   &:hover,
-  &:focus,
   &:active {
-    text-decoration: none;
     outline: 0;
   }
 
