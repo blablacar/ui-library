@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, font } from '_utils/branding'
+import { color, inputBorderSize, font } from '_utils/branding'
 
 import TimePicker from './TimePicker'
 
@@ -22,9 +22,12 @@ export const StyledTimePicker = styled(TimePicker)`
     cursor: pointer;
   }
 
-  &:hover,
-  &.focus {
+  &:hover {
     background-color: ${color.lightBackground};
+  }
+
+  &.focus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
   }
 
   &::after {
@@ -49,7 +52,8 @@ export const StyledTimePicker = styled(TimePicker)`
     border-color: ${color.disabled};
   }
 
-  & > select {
+  & > select,
+  & > select:focus {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,6 +64,7 @@ export const StyledTimePicker = styled(TimePicker)`
     /* Required to have <select /> with height 100% in Safari  */
     -webkit-appearance: menulist-button;
     cursor: pointer;
+    outline: none;
   }
 
   & > time {
