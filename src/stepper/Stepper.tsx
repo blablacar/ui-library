@@ -109,7 +109,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
   }
 
   handleFontSize() {
-    if (!this.ref.current) {
+    if (!this.ref.current || this.props.display === StepperDisplay.SMALL) {
       return
     }
 
