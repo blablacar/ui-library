@@ -119,5 +119,17 @@ describe('<TimePicker />', () => {
       instance.componentDidMount()
       expect(instance.selectRef.current.focus).toHaveBeenCalledTimes(1)
     })
+
+    it('should focus when changing from false to true', () => {
+      const wrapper = shallow(<TimePicker {...defaultProps} />)
+      const instance = wrapper.instance() as InstanceType<typeof TimePicker>
+      instance.selectRef = {
+        current: {
+          focus: jest.fn(),
+        },
+      }
+      wrapper.setProps({ focus: true })
+      expect(instance.selectRef.current.focus).toHaveBeenCalledTimes(1)
+    })
   })
 })
