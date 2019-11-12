@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Disable `Stepper` autoresize when `display` is `StepperDisplay.SMALL`
 [...]
+
+# v15.0.1 (12/11/2019)
+
+- **[FIX]** Disable `Stepper` autoresize when `display` is `StepperDisplay.SMALL`
 
 # v15.0.0 (12/11/2019)
 
