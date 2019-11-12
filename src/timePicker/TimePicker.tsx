@@ -104,6 +104,12 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
     }
   }
 
+  componentDidUpdate(prevProps: TimePickerProps) {
+    if (this.props.focus && this.props.focus !== prevProps.focus) {
+      this.selectRef.current.focus()
+    }
+  }
+
   getDefaultValue() {
     if (!this.props.defaultValue) {
       return formatTimeValue(this.referenceDate)
