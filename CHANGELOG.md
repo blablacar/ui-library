@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix right margin on `MarketingMessage`
 [...]
 
 # v14.0.1 (08/11/2019)
