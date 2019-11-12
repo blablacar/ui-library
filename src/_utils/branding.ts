@@ -176,6 +176,10 @@ export const color: Color = {
   tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
+export const pxToInteger = (size:string):number => {
+  return parseInt(size.replace('px', ''), 10)
+}
+
 export default {
   color,
   font,

@@ -7,6 +7,10 @@ const StyledStepper = styled(Stepper)`
     display: flex;
   }
 
+  & button {
+    flex-shrink: 0;
+  }
+
   & label {
     border: 0;
     clip: rect(0 0 0 0);
@@ -24,7 +28,6 @@ const StyledStepper = styled(Stepper)`
     margin: 0;
     border: none;
     color: ${color.primaryText};
-    font-size: ${font.l.size};
     text-align: center;
     flex-grow: 1;
     align-self: center;
@@ -36,4 +39,5 @@ const StyledStepper = styled(Stepper)`
   }
 `
 
+export { StepperDisplay } from './Stepper'
 export default StyledStepper
