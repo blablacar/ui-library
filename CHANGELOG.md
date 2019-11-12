@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Focus the select when `focus` prop changes on `TimePicker`
+- **[FIX]** Fix right margin on `MarketingMessage`
 
 # v14.0.1 (08/11/2019)
 
