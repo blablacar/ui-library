@@ -12,6 +12,8 @@
 - **[NEW]** `Stepper` component now renders its value depending on available space
 - **[NEW]** Focus the select when `focus` prop changes on `TimePicker`
 - **[FIX]** Fix right margin on `MarketingMessage`
+- **[FIX]** Fix text wrapping and clamping in `MessageSummaryItem`
+- ...
 
 # v14.0.1 (08/11/2019)
 

@@ -12,7 +12,10 @@ const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
 
   & .kirk-messaging-summary-item-sub-label {
     display: flex;
-    align-items: center;
+    word-break: break-word;
+    /* Truncate sublabel to max 2 lines. */
+    max-height: 2.5em;
+    overflow: hidden;
   }
 `
 

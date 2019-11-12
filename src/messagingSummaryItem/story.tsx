@@ -12,7 +12,7 @@ stories.addDecorator(withKnobs)
 const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
 const htmlSubLabel = (
   <Fragment>
-    Paris <ChevronIcon /> Bordeaux
+    Paris <ChevronIcon size='20'/> Bordeaux
   </Fragment>
 )
 
@@ -50,6 +50,20 @@ stories.add('With long sublabel', () => (
     timeLabel={text('Time label', '3 hours ago')}
     hasUnreadMessages={boolean('hasUnreadMessages', true)}
   />
+))
+
+stories.add('With long sublabel without breaks', () => (
+    <MessagingSummaryItem
+        url={text('url', 'http://google.com')}
+        pictureUrl={text('url', pictureUrl)}
+        label={text('Label', 'Label')}
+        subLabel={text(
+            'Sublabel',
+            'verylongsublabel'.repeat(30),
+        )}
+        timeLabel={text('Time label', '3 hours ago')}
+        hasUnreadMessages={boolean('hasUnreadMessages', true)}
+    />
 ))
 
 stories.add('With html sublabel', () => (
