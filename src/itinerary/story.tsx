@@ -13,13 +13,16 @@ const places = [
   {
     time: '09:00',
     isoDate: '2017-12-11T09:00',
+    stepAriaLabel: 'Pickup location',
     subLabel: 'Porte de Vincennes',
     mainLabel: 'Paris',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
   {
     time: '15:00',
     isoDate: '2017-12-11T15:00',
+    stepAriaLabel: 'Dropoff location',
     subLabel: 'Gare Bordeaux Saint-Jean',
     mainLabel: 'Bordeaux',
   },
@@ -28,59 +31,80 @@ const places = [
 const placesWithStopover = [
   {
     time: '09:00',
+    stepAriaLabel: 'Pickup location',
     isoDate: '2017-12-11T09:00',
     subLabel: 'Porte de Vincennes',
     mainLabel: 'Paris',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Pick up/drop off location',
     subLabel: 'Gare de Tours',
     mainLabel: 'Tours',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
   {
     time: '15:00',
     isoDate: '2017-12-11T15:00',
+    stepAriaLabel: 'Pick up/drop off location',
     mainLabel: 'Nogent-le-Rotrou',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
   {
     time: '19 :00',
     isoDate: '2017-12-11T19:00',
+    stepAriaLabel: 'Pick up/drop off location',
     subLabel: 'Gare Bordeaux Saint-Jean',
     mainLabel: 'Bordeaux',
   },
 ]
 
 stories.add('default', () => {
-  const fromAddonLabel = text('From addon label', 'Lille')
-  const toAddonLabel = text('To addon label', 'Biarritz')
-  const headlineLabel = text('Headline label', 'Mon 11 December')
+  const ariaLabelledBy = text('ariaLabelledBy', 'titleId')
+  const fromAddon = text('From addon', 'Lille')
+  const fromAddonLabel = text('From addon label', 'Driver departure')
+  const toAddon = text('To addon', 'Biarritz')
+  const toAddonLabel = text('To addon label', 'Driver arrival')
+  const headline = text('Headline', 'Mon 11 December')
   const isStopover = boolean('Stopover', false)
   return (
-    <Itinerary
-      fromAddon={fromAddonLabel}
-      toAddon={toAddonLabel}
-      places={isStopover ? placesWithStopover : places}
-      small={boolean('small', false)}
-      headline={headlineLabel}
-    />
+    <div>
+      <h1 id="titleId">Title example</h1>
+      <Itinerary
+        ariaLabelledBy={ariaLabelledBy}
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={isStopover ? placesWithStopover : places}
+        small={boolean('small', false)}
+        headline={headline}
+      />
+    </div>
   )
 })
 
 stories.add('with proximity', () => {
   const Distances = ['NONE', 'CLOSE', 'MIDDLE', 'FAR']
-  const fromAddonLabel = text('From addon label', 'Lille')
-  const toAddonLabel = text('To addon label', 'Biarritz')
-  const headlineLabel = text('Headline label', 'Mon 11 December')
+  const fromAddon = text('From addon', 'Lille')
+  const fromAddonLabel = text('From addon label', 'Driver departure')
+  const toAddon = text('To addon', 'Biarritz')
+  const toAddonLabel = text('To addon label', 'Driver arrival')
+  const headline = text('Headline', 'Mon 11 December')
   return (
     <Itinerary
-      fromAddon={fromAddonLabel}
-      toAddon={toAddonLabel}
+      fromAddon={fromAddon}
+      fromAddonAriaLabel={fromAddonLabel}
+      toAddon={toAddon}
+      toAddonAriaLabel={toAddonLabel}
       places={[
         {
+          stepAriaLabel: text('Step label from', 'Pick up location'),
           mainLabel: text('Main label from', 'Paris'),
           subLabel: (
             <Proximity
@@ -93,6 +117,7 @@ stories.add('with proximity', () => {
           href: '#',
         },
         {
+          stepAriaLabel: text('Step label from', 'Drop off location'),
           mainLabel: text('Main label to', 'Bordeaux'),
           subLabel: (
             <Proximity
@@ -105,30 +130,36 @@ stories.add('with proximity', () => {
         },
       ]}
       small={boolean('small', false)}
-      headline={headlineLabel}
+      headline={headline}
     />
   )
 })
 
 stories.add('with stopovers', () => {
-  const fromAddonLabel = text('From addon label', 'Lille')
-  const toAddonLabel = text('To addon label', 'Biarritz')
-  const headlineLabel = text('Headline label', 'Mon 11 December')
+  const ariaLabel = text('ariaLabel', 'Ride plan')
+  const fromAddon = text('From addon', 'Lille')
+  const fromAddonLabel = text('From addon label', 'Driver departure')
+  const toAddon = text('To addon', 'Biarritz')
+  const toAddonLabel = text('To addon label', 'Driver arrival')
+  const headline = text('Headline', 'Mon 11 December')
   return (
       <Itinerary
-          fromAddon={fromAddonLabel}
-          toAddon={toAddonLabel}
-          places={placesWithStopover}
-          small={boolean('small', false)}
-          headline={headlineLabel}
+        ariaLabel={ariaLabel}
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={placesWithStopover}
+        small={boolean('small', false)}
+        headline={headline}
       />
   )
 })
 
 stories.add('with button tiles', () => {
-  const fromAddonLabel = text('From addon label', 'Lille')
-  const toAddonLabel = text('To addon label', 'Biarritz')
-  const headlineLabel = text('Headline label', 'Mon 11 December')
+  const fromAddon = text('From addon', 'Lille')
+  const toAddon = text('To addon', 'Biarritz')
+  const headline = text('Headline', 'Mon 11 December')
   const placesWithButton = [
     {
       time: '09:00',
@@ -153,11 +184,11 @@ stories.add('with button tiles', () => {
   ]
   return (
       <Itinerary
-          fromAddon={fromAddonLabel}
-          toAddon={toAddonLabel}
-          places={placesWithButton}
-          small={boolean('small', false)}
-          headline={headlineLabel}
+        fromAddon={fromAddon}
+        toAddon={toAddon}
+        places={placesWithButton}
+        small={boolean('small', false)}
+        headline={headline}
       />
   )
 })
