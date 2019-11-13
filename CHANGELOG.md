@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix a11y by adding labels with aria attributes on `Itinerary`
 [...]
 
 # v15.0.2 (12/11/2019)

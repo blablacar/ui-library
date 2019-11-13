@@ -9,12 +9,14 @@ const places = [
     distanceFromPoint: '1,5km',
     time: '09:00',
     isoDate: '2017-12-11T09:00',
+    stepAriaLabel: 'Pick up/drop off location',
     subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
     mainLabel: 'Paris',
   },
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Pick up/drop off location',
     subLabel: <Proximity value="MIDDLE" title="Pick up point is not that far fom your place" />,
     mainLabel: 'Tours',
   },
@@ -22,6 +24,7 @@ const places = [
     distanceFromPoint: '8km',
     time: '15:00',
     isoDate: '2017-12-11T15:00',
+    stepAriaLabel: 'Pick up/drop off location',
     subLabel: <Proximity value="CLOSE" title="Pick up point is close to your place" />,
     mainLabel: 'Bordeaux',
   },
@@ -34,17 +37,30 @@ describe('Itinerary component', () => {
     expect(ul.hasClass('test')).toBe(true)
   })
 
-  it('Should display the top addon', () => {
-    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
-    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
+  it('Render with aria-labelledby', () => {
+    const itinerary = shallow(<Itinerary ariaLabelledBy="id" places={places} />)
+    expect(itinerary.prop('aria-labelledby')).toEqual('id')
   })
 
-  it('Should display the bottom addon', () => {
-    const itinerary = shallow(<Itinerary toAddon="test" places={places} />)
+  it('Render with aria-label', () => {
+    const itinerary = shallow(<Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />)
+    expect(itinerary.prop('aria-label')).toEqual('testLabel')
+    expect(itinerary.prop('aria-labelledby')).toEqual(null)
+  })
+
+  it('Should display the top addon with a11y label', () => {
+    const itinerary = shallow(<Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />)
+    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-fromAddon').prop('aria-label')).toEqual('testLabel')
+  })
+
+  it('Should display the bottom addon with a11y label', () => {
+    const itinerary = shallow(<Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />)
     expect(
       itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--toAddon'),
     ).toBe(true)
     expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-toAddon').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should not render top addon with blank string', () => {
@@ -57,12 +73,18 @@ describe('Itinerary component', () => {
     expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(false)
   })
 
-  it('Should display stopover', () => {
+  it('Should display stopover with a11y label', () => {
     const itinerary = shallow(<Itinerary places={places} />)
     expect(itinerary.find('.kirk-itinerary-location')).toHaveLength(places.length)
+    expect(
+      itinerary
+        .find('.kirk-itinerary-location')
+        .first()
+        .prop('aria-label')
+      ).toEqual('Pick up/drop off location')
   })
 
-  it('Should display link', () => {
+  it('Should display link with a11y label', () => {
     const itinerary = shallow(
       <Itinerary
         places={[
@@ -72,6 +94,7 @@ describe('Itinerary component', () => {
             isoDate: '2017-12-11T09:00',
             subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
             mainLabel: 'Paris',
+            actionAriaLabel: 'New page with a map',
             href: '#test',
           },
           {
@@ -90,6 +113,12 @@ describe('Itinerary component', () => {
         .first()
         .type(),
     ).toEqual('a')
+    expect(
+      itinerary
+        .find('.kirk-itinerary-location-wrapper')
+        .first()
+        .prop('aria-label')
+      ).toEqual('New page with a map')
     expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
   })
 
@@ -103,6 +132,7 @@ describe('Itinerary component', () => {
             isoDate: '2017-12-11T09:00',
             subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
             mainLabel: 'Paris',
+            actionAriaLabel: 'New page with a map',
             href: <button type="button" />,
           },
           {
@@ -121,6 +151,12 @@ describe('Itinerary component', () => {
         .first()
         .type(),
     ).toEqual('button')
+    expect(
+      itinerary
+        .find('.kirk-itinerary-location-wrapper')
+        .first()
+        .prop('aria-label')
+      ).toEqual('New page with a map')
     expect(
       itinerary
         .find('.kirk-itinerary-location-wrapper')

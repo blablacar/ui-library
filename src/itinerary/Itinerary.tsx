@@ -10,10 +10,14 @@ import SubHeader from 'subHeader'
 import BlankSeparator from 'blankSeparator'
 
 interface ItineraryProps {
+  readonly ariaLabelledBy?: string
+  readonly ariaLabel?: string
   readonly places: Place[]
   readonly className?: Classcat.Class
   readonly fromAddon?: string
   readonly toAddon?: string
+  readonly fromAddonAriaLabel?: string
+  readonly toAddonAriaLabel?: string
   readonly small?: boolean
   readonly headline?: string
 }
@@ -32,18 +36,24 @@ const computeKeyFromPlace = (place: Place) => {
 }
 
 const Itinerary = ({
+  ariaLabelledBy,
+  ariaLabel,
   className,
   places,
   fromAddon,
   toAddon,
+  fromAddonAriaLabel,
+  toAddonAriaLabel,
   small = false,
   headline = null,
 }: ItineraryProps) => {
   // Dislay itinerary as small if required or if we don't have time or subLabel for provided places
   const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
+  // Remove aria-labelledby attribute if aria-label already used
+  const ariaLabelledByValue = isNonEmptyString(ariaLabel) ? null : ariaLabelledBy
 
   return (
-    <Fragment>
+    <div aria-labelledby={ariaLabelledByValue} aria-label={ariaLabel}>
       {isNonEmptyString(headline) && (
           <Fragment>
             <SubHeader>{headline}</SubHeader>
@@ -52,7 +62,7 @@ const Itinerary = ({
       )}
       <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
         {isNonEmptyString(fromAddon) && (
-          <li className="kirk-itinerary-fromAddon">
+          <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
             <Text className="kirk-itinerary-addon-content"
                   display={TextDisplayType.CAPTION}>{fromAddon}</Text>
           </li>
@@ -100,6 +110,7 @@ const Itinerary = ({
               itemProp="location"
               itemScope
               itemType="http://schema.org/Place"
+              aria-label={place.stepAriaLabel}
             >
               <meta itemProp="name" content={place.mainLabel} />
               <meta
@@ -110,7 +121,7 @@ const Itinerary = ({
                     : place.mainLabel
                 }
               />
-              <Component {...hrefProps}>
+              <Component {...hrefProps} aria-label={place.actionAriaLabel}>
                 {!isSmall && (
                   <time dateTime={place.isoDate}>
                     <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
@@ -146,13 +157,13 @@ const Itinerary = ({
           )
         })}
         {isNonEmptyString(toAddon) && (
-          <li className="kirk-itinerary-toAddon">
+          <li className="kirk-itinerary-toAddon" aria-label={toAddonAriaLabel}>
             <Text className="kirk-itinerary-addon-content"
                   display={TextDisplayType.CAPTION}>{toAddon}</Text>
           </li>
         )}
       </ul>
-    </Fragment>
+    </div>
   )
 }
 

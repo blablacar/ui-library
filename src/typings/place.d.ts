@@ -1,4 +1,6 @@
 declare interface Place {
+  stepAriaLabel?: string
+  actionAriaLabel?: string
   mainLabel: string
   subLabel?: React.ReactNode
   isoDate?: string
