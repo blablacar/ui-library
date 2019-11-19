@@ -1,4 +1,4 @@
-import React, { Component, Ref } from 'react'
+import React, { Component } from 'react'
 
 import Modal, { ModalSize } from 'modal'
 import { ModalProps } from 'modal/Modal'
@@ -6,6 +6,7 @@ import Button, { ButtonStatus } from 'button'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 import { assertModalSizes } from '_utils/assert'
+import uuidv4 from 'uuid/v4'
 
 export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
@@ -37,8 +38,6 @@ class SuccessModal extends Component<SuccessModalProps> {
       forwardedRef,
       imageSrc,
       imageText,
-      ariaLabelledBy,
-      ariaDescribedBy,
       className,
     } = this.props
 
@@ -46,6 +45,7 @@ class SuccessModal extends Component<SuccessModalProps> {
     assertModalSizes(SuccessModalSize, this.props.size)
 
     const baseClassName = 'kirk-successModal'
+    const successContentId = `${baseClassName}-bodyItem-${uuidv4()}`
 
     return (
       <Modal
@@ -58,15 +58,16 @@ class SuccessModal extends Component<SuccessModalProps> {
         forwardedRef={forwardedRef}
         className={className}
         modalContentClassName={baseClassName}
-        ariaLabelledBy={ariaLabelledBy}
-        ariaDescribedBy={ariaDescribedBy}
+        ariaLabelledBy={successContentId}
       >
         <img
           className={`${baseClassName}-bodyItem ${baseClassName}-image`}
           src={imageSrc}
           alt={imageText}
+          // This image is always decorative
+          aria-hidden={true}
         />
-        <div className={`${baseClassName}-bodyItem`}>
+        <div id={successContentId} className={`${baseClassName}-bodyItem`}>
           <Text
             display={TextDisplayType.SUBHEADER}
             tag={TextTagType.PARAGRAPH}

@@ -19,7 +19,7 @@ describe('<SuccessModal>', () => {
   beforeEach(() => {
     mockClose = jest.fn()
     wrapper = shallow(<SuccessModal {...defaultProps} />)
-    wrapperOpen = mount(<SuccessModal {...defaultProps} isOpen={true} onClose={mockClose} />)
+    wrapperOpen = mount(<SuccessModal {...defaultProps} isOpen={true} onClose={mockClose} >Success description</SuccessModal>)
   })
 
   it('Should be not visible if isOpen is set to false', () => {
@@ -30,6 +30,11 @@ describe('<SuccessModal>', () => {
     expect(wrapperOpen.find('.kirk-modal-dialog').exists()).toBe(true)
   })
 
+  it('Should have proper linked id to the content text', () => {
+    const ariaLabelledByValue = wrapperOpen.find('.kirk-successModal').prop('aria-labelledby')
+    expect(wrapperOpen.find(`#${ariaLabelledByValue} p`).text()).toEqual('Success description')
+  })
+
   it('Should have a confirmation button and call the according function when click on it', () => {
     expect(wrapperOpen.find('.kirk-button-secondary').text()).toBe('Confirm')
   })
@@ -38,6 +43,11 @@ describe('<SuccessModal>', () => {
     const image = wrapperOpen.find('.kirk-successModal-image')
     expect(image.prop('src')).toBe('https://svgshare.com/i/AGz.svg')
     expect(image.prop('alt')).toBe('Illustration description')
+  })
+
+  it('Shouldn\'t access the image with screen readers', () => {
+    const image = wrapperOpen.find('.kirk-successModal-image')
+    expect(image.prop('aria-hidden')).toBe(true)
   })
 
   it('Should have a confirmation button and call the according function when click on it', () => {
