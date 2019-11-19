@@ -1,5 +1,10 @@
 # Unreleased
 
+- **[NEW]** Add `id` prop to `Title`
+- **[NEW]** Add `id` prop to `TheVoice`
+- **[NEW]** Add focus styles to `ItemRadio` (a11y)
+- **[NEW]** Add `ariaLabelledBy` prop to `ItemRadioGroup` (a11y)
+
 [...]
 
 # v15.0.3 (18/11/2019)

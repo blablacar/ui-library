@@ -2,13 +2,14 @@ import React from 'react'
 import Title from 'title'
 
 interface TheVoiceProps {
+  readonly id?: string
   readonly className?: Classcat.Class
   readonly children: string
 }
 
-const TheVoice = ({ className, children }: TheVoiceProps) => {
+const TheVoice = ({ id, className, children }: TheVoiceProps) => {
   return (
-    <Title className={className} headingLevel="1">
+    <Title id={id} className={className} headingLevel="1">
       {children}
     </Title>
   )

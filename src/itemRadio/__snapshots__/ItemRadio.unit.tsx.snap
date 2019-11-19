@@ -238,7 +238,9 @@ button.c0 {
       checked={true}
       disabled={false}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="radio"
       value={0}
     />
@@ -540,7 +542,9 @@ button.c0 {
       checked={false}
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="radio"
       value={0}
     />
@@ -814,7 +818,9 @@ button.c0 {
       checked={false}
       disabled={false}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="radio"
       value={0}
     />
