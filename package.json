@@ -61,6 +61,7 @@
     "@types/react-transition-group": "2.0.16",
     "@types/storybook__react": "4.0.2",
     "@types/styled-components": "4.1.8",
+    "@types/uuid": "3.4.6",
     "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
     "babel-plugin-module-resolver": "3.2.0",
@@ -96,7 +97,8 @@
     "lodash.isequal": "4.5.0",
     "lodash.isstring": "4.0.1",
     "react-day-picker": "7.3.0",
-    "react-transition-group": "2.6.1"
+    "react-transition-group": "2.6.1",
+    "uuid": "3.3.3"
   },
   "peerDependencies": {
     "react": "16.8.6",
