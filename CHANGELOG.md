@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Enhance a11y by adding optional labels with aria attributes on `ItemData`
+- [...]
 
 # v15.0.3 (18/11/2019)
 
