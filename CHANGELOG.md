@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v15.0.4 (20/11/2019)
+
 - **[FIX]** Fix missing classname on `Itinerary` root element
 - **[FIX]** Enhance a11y by adding optional labels with aria attributes on `ItemData`
-- [...]
 
 # v15.0.3 (18/11/2019)
 
