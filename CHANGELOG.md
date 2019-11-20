@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix random font-size issue in `Stepper` using `StepperDisplay.LARGE`
 [...]
 
 # v15.0.3 (18/11/2019)
