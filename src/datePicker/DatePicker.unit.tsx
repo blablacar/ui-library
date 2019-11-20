@@ -60,4 +60,25 @@ describe('DatePicker', () => {
       expect(onChange).toHaveBeenCalledWith({ name: 'datepicker', value: '2020-01-01' })
     })
   })
+
+  describe('react-day-picker', () => {
+    it('Should forward props to the DayPicker component', () => {
+      const now = new Date()
+      const wrapper = shallow(<DatePicker
+        name="datepicker"
+        initialDate={now}
+        numberOfMonths={12}
+      />)
+      const instance = wrapper.instance()
+
+      expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(12)
+      expect(wrapper.find(DayPicker).prop('selectedDays')).toEqual(now)
+      expect(wrapper.find(DayPicker).prop('initialMonth')).toEqual(now)
+      expect(wrapper.find(DayPicker).prop('onDayClick')).toEqual(instance.onDayClick)
+      expect(wrapper.find(DayPicker).prop('navbarElement')).toEqual(instance.renderNavbar)
+      expect(wrapper.find(DayPicker).prop('captionElement')).toEqual(instance.renderCaption)
+      expect(wrapper.find(DayPicker).prop('renderDay')).toEqual(instance.renderDay)
+      expect(wrapper.find(DayPicker).prop('firstDayOfWeek')).toEqual(0)
+    })
+  })
 })

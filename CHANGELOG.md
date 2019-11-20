@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Show month corresponding to `initialDate` in `DatePicker`
 - [...]
 
 # v15.0.4 (20/11/2019)
