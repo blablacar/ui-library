@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix missing classname on `Itinerary` root element
 - **[FIX]** Enhance a11y by adding optional labels with aria attributes on `ItemData`
 - [...]
 
