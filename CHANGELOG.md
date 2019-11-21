@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix random font-size issue in `Stepper` using `StepperDisplay.LARGE`
 - **[NEW]** Add `id` prop to `Title`
 - **[NEW]** Add `id` prop to `TheVoice`
 - **[NEW]** Add focus styles to `ItemRadio` (a11y)

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { color, font, space } from '_utils/branding'
-import Stepper from './Stepper'
+import Stepper, { StepperDisplay, StepperButtonSize } from './Stepper'
 
 const StyledStepper = styled(Stepper)`
   & {
@@ -36,6 +36,11 @@ const StyledStepper = styled(Stepper)`
   & div .kirk-stepper-decrement,
   & div .kirk-stepper-increment {
     min-width: 24px;
+  }
+
+  &.kirk-stepper-large .kirk-stepper-value {
+    width: calc(100% - ${StepperButtonSize[StepperDisplay.LARGE]}px * 2);
+    flex-grow: 0;
   }
 `
 
