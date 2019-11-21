@@ -208,6 +208,12 @@ button.c2 {
 
 .c1 {
   cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) 0;
+}
+
+.c1.focus {
+  border: 3px solid #00AFF5;
 }
 
 .c0 {
@@ -238,6 +244,7 @@ button.c2 {
 }
 
 <ul
+  aria-labelledby="my-div-id"
   className="kirk-items-list c0"
   role="radiogroup"
 >
@@ -263,7 +270,9 @@ button.c2 {
           checked={false}
           disabled={false}
           name="name"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value={1}
         />
@@ -310,7 +319,9 @@ button.c2 {
           checked={true}
           disabled={false}
           name="name"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value={2}
         />
@@ -364,7 +375,9 @@ button.c2 {
           checked={false}
           disabled={false}
           name="name"
+          onBlur={[Function]}
           onChange={[Function]}
+          onFocus={[Function]}
           type="radio"
           value={3}
         />

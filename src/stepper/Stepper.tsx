@@ -19,7 +19,7 @@ const StepperValueSize = {
   [StepperDisplay.LARGE]: pxToInteger(font.xxl.size),
 }
 
-const StepperButtonSize = {
+export const StepperButtonSize = {
   [StepperDisplay.SMALL]: 24,
   [StepperDisplay.LARGE]: 48,
 }
@@ -98,14 +98,13 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     if (prevProps.value !== this.props.value) {
       this.update(this.props.value)
     }
-
-    this.handleFontSize()
   }
 
   update(newValue: number) {
     const value = this.filterValue(newValue, this.props.min, this.props.max)
     this.setState({ value })
     this.props.onChange({ name: this.props.name, value })
+    this.handleFontSize()
   }
 
   handleFontSize() {
