@@ -52,7 +52,7 @@ const StyledItinerary = styled(Itinerary)`
     padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival)
+  & .kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival)
       .kirk-itinerary-location-city {
     padding-bottom: 0;
   }
@@ -73,7 +73,7 @@ const StyledItinerary = styled(Itinerary)`
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::before {
+  & .kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::before {
     left: 2px;
   }
 
@@ -92,7 +92,7 @@ const StyledItinerary = styled(Itinerary)`
     top: calc(4px + ${space.m} + ${gutterTopOffset});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::after {
+  & .kirk-itinerary--small .kirk-itinerary-location .kirk-itinerary-location-city::after {
     left: 0;
   }
 
@@ -127,8 +127,8 @@ const StyledItinerary = styled(Itinerary)`
     bottom: -4px;
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-fromAddon::before,
-  &.kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
+  & .kirk-itinerary--small .kirk-itinerary-fromAddon::before,
+  & .kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::before {
     left: 2px;
   }
 
@@ -152,8 +152,8 @@ const StyledItinerary = styled(Itinerary)`
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth} - 2px);
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-fromAddon::after,
-  &.kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
+  & .kirk-itinerary--small .kirk-itinerary-fromAddon::after,
+  & .kirk-itinerary--small .kirk-itinerary-location.kirk-itinerary-location--toAddon::after {
     left: 0;
   }
 
@@ -174,8 +174,8 @@ const StyledItinerary = styled(Itinerary)`
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
-  &.kirk-itinerary--small .kirk-itinerary-fromAddon .kirk-itinerary-addon-content,
-  &.kirk-itinerary--small .kirk-itinerary-toAddon .kirk-itinerary-addon-content {
+  & .kirk-itinerary--small .kirk-itinerary-fromAddon .kirk-itinerary-addon-content,
+  & .kirk-itinerary--small .kirk-itinerary-toAddon .kirk-itinerary-addon-content {
     left: 0;
   }
 
