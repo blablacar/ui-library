@@ -33,8 +33,8 @@ const places = [
 describe('Itinerary component', () => {
   it('Render with custom className', () => {
     const itinerary = shallow(<Itinerary className="test" places={places} />)
-    const ul = itinerary.find('ul')
-    expect(ul.hasClass('test')).toBe(true)
+    const root = itinerary.find('.kirk-itinerary-root')
+    expect(root.hasClass('test')).toBe(true)
   })
 
   it('Render with aria-labelledby', () => {
@@ -45,7 +45,7 @@ describe('Itinerary component', () => {
   it('Render with aria-label', () => {
     const itinerary = shallow(<Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />)
     expect(itinerary.prop('aria-label')).toEqual('testLabel')
-    expect(itinerary.prop('aria-labelledby')).toEqual(null)
+    expect(itinerary.prop('aria-labelledby')).toEqual(undefined)
   })
 
   it('Should display the top addon with a11y label', () => {

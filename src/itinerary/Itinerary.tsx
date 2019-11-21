@@ -22,6 +22,10 @@ interface ItineraryProps {
   readonly headline?: string
 }
 
+interface RootA11yProps {
+  'aria-label'?: string,
+  'aria-labelledby'?: string,
+}
 
 const isNonEmptyString = (str: string) => isString(str) && str.trim().length > 0
 
@@ -33,6 +37,19 @@ const computeKeyFromPlace = (place: Place) => {
     return `${place.mainLabel}-${place.subLabel}-${place.isoDate}`
   }
   return `${place.mainLabel}-${place.isoDate}`
+}
+
+const computeRootA11yProps =
+    (ariaLabel?: string, ariaLabelledBy?: string): RootA11yProps => {
+    const rootA11yProps : RootA11yProps = {}
+    if (ariaLabel) {
+      rootA11yProps['aria-label'] = ariaLabel
+    }
+    const ariaLabelledByValue = isNonEmptyString(ariaLabel) ? null : ariaLabelledBy
+    if (ariaLabelledByValue) {
+      rootA11yProps['aria-labelledby'] = ariaLabelledByValue
+    }
+    return rootA11yProps
 }
 
 const Itinerary = ({
@@ -50,17 +67,16 @@ const Itinerary = ({
   // Dislay itinerary as small if required or if we don't have time or subLabel for provided places
   const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
   // Remove aria-labelledby attribute if aria-label already used
-  const ariaLabelledByValue = isNonEmptyString(ariaLabel) ? null : ariaLabelledBy
-
+  const rootA11yProps = computeRootA11yProps(ariaLabel, ariaLabelledBy)
   return (
-    <div aria-labelledby={ariaLabelledByValue} aria-label={ariaLabel}>
+    <div className={cc(['kirk-itinerary-root', className])} {...rootA11yProps}>
       {isNonEmptyString(headline) && (
           <Fragment>
             <SubHeader>{headline}</SubHeader>
             <BlankSeparator />
           </Fragment>
       )}
-      <ul className={cc([className, { 'kirk-itinerary--small': isSmall }])}>
+      <ul className={cc([{ 'kirk-itinerary--small': isSmall }])}>
         {isNonEmptyString(fromAddon) && (
           <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
             <Text className="kirk-itinerary-addon-content"
