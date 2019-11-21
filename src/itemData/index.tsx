@@ -10,9 +10,19 @@ interface ItemDataProps {
   readonly mainTitle?: string
   readonly dataInfo?: string
   readonly tag?: JSX.Element
+  readonly ariaLabel?: string
 }
 
-const ItemData = ({ mainInfo, data, className, mainTitle, dataInfo, tag }: ItemDataProps) => {
+const ItemData = (
+  {
+    mainInfo,
+    data,
+    className,
+    mainTitle,
+    dataInfo,
+    tag,
+    ariaLabel,
+  }: ItemDataProps) => {
   return (
     <Item
       className={className}
@@ -22,6 +32,7 @@ const ItemData = ({ mainInfo, data, className, mainTitle, dataInfo, tag }: ItemD
       rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
       rightBody={dataInfo}
       tag={tag}
+      ariaLabel={ariaLabel}
     />
   )
 }

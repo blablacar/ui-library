@@ -34,6 +34,11 @@ describe('Item', () => {
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
+  it('Should accept `ariaLabel`', () => {
+    const wrapper = shallow(<Item ariaLabel="testLabel" />)
+    expect(wrapper.prop('aria-label')).toEqual('testLabel')
+  })
+
   it('Should be highlighted', () => {
     const wrapper = shallow(<Item highlighted />)
     expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)

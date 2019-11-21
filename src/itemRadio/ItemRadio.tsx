@@ -27,15 +27,31 @@ export interface ItemRadioProps {
   readonly highlighted?: boolean
 }
 
+interface ItemRadioState {
+  readonly focus: boolean
+}
+
 class ItemRadio extends Component<ItemRadioProps> {
   static defaultProps: Partial<ItemRadioProps> = {
     onChange() {},
     checked: false,
   }
 
+  state: ItemRadioState = {
+    focus: false,
+  }
+
   onChange = () => {
     const { name, value } = this.props
     this.props.onChange({ name, value })
+  }
+
+  onFocus = () => {
+    this.setState({ focus: true })
+  }
+
+  onBlur = () => {
+    this.setState({ focus: false })
   }
 
   render() {
@@ -62,6 +78,8 @@ class ItemRadio extends Component<ItemRadioProps> {
           value={value}
           checked={checked}
           onChange={this.onChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
           disabled={disabled || isLoading}
         />
         {(!chevron || isLoading) && <RadioIcon isChecked={checked} isLoading={isLoading} />}
@@ -71,7 +89,7 @@ class ItemRadio extends Component<ItemRadioProps> {
     return (
       <Fragment>
         <Item
-          className={cc(['kirk-item-radio', className])}
+          className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
           leftTitle={labelTitle}
           leftBody={label}
           rightTitle={data}

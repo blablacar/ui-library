@@ -1,7 +1,16 @@
 # Unreleased
 
 - **[FIX]** Fix random font-size issue in `Stepper` using `StepperDisplay.LARGE`
-[...]
+- **[NEW]** Add `id` prop to `Title`
+- **[NEW]** Add `id` prop to `TheVoice`
+- **[NEW]** Add focus styles to `ItemRadio` (a11y)
+- **[NEW]** Add `ariaLabelledBy` prop to `ItemRadioGroup` (a11y)
+- [...]
+
+# v15.0.4 (20/11/2019)
+
+- **[FIX]** Fix missing classname on `Itinerary` root element
+- **[FIX]** Enhance a11y by adding optional labels with aria attributes on `ItemData`
 
 # v15.0.3 (18/11/2019)
 

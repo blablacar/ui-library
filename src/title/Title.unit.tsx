@@ -30,4 +30,9 @@ describe('Title', () => {
       consoleErrorSpy.mockRestore()
     })
   })
+
+  it('Should add id if provided', () => {
+    const wrapper = shallow(<Title id="my-id">blabla</Title>)
+    expect(wrapper.prop('id')).toBe('my-id')
+  })
 })

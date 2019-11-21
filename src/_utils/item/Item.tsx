@@ -35,6 +35,7 @@ export interface ItemProps {
   readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
   readonly tag?: JSX.Element
+  readonly ariaLabel?: string
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
@@ -69,6 +70,7 @@ const Item = ({
   rightBodyColor,
   rightAddon,
   tag = <div />,
+  ariaLabel,
 }: ItemProps) => {
   let Tag = tag.type
   let tagProps = tag.props
@@ -98,6 +100,7 @@ const Item = ({
         },
         className,
       ])}
+      aria-label={ariaLabel}
     >
       {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
       <div className="kirk-item-leftText">

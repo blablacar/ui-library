@@ -14,6 +14,7 @@ stories.add('Default', () => {
 
   return (
     <ItemData
+      ariaLabel={text('Aria label', 'Complementary info')}
       mainInfo={text('Main info', 'Main information')}
       data={text('Data', 'Data')}
       mainTitle={isMainTitle ? text('Main title', 'Title') : null}
