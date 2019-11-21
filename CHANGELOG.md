@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Show month corresponding to `initialDate` in `DatePicker`
 - **[FIX]** Fix random font-size issue in `Stepper` using `StepperDisplay.LARGE`
 - **[NEW]** Add `id` prop to `Title`
 - **[NEW]** Add `id` prop to `TheVoice`

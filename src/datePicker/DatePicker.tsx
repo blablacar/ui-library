@@ -153,6 +153,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       weekdaysLong,
       months,
       firstDayOfWeek,
+      initialDate,
     } = this.props
     const { date } = this.state
     const layoutClassName = `months-grid-${numberOfMonths}`
@@ -180,6 +181,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
           months={months}
           firstDayOfWeek={firstDayOfWeek}
           localeUtils={{ ...DayPicker.LocaleUtils, formatMonthTitle: this.formatMonthTitle }}
+          initialMonth={initialDate}
         />
       </div>
     )
