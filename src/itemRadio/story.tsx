@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 
+import TheVoice from '../theVoice'
 import ItemRadio from '.'
 import ItemRadioGroup from 'itemRadioGroup'
 
@@ -61,28 +62,32 @@ stories.add(
 
 stories.add('Multiple items with chevrons (form step with auto submit)', () => {
   return (
-    <ItemRadioGroup
-      name={text('Name', 'option')}
-      status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
-      value={2}
-      onChange={action('changed group')}
-      withSeparators
-      withChevrons
-    >
-      <ItemRadio
-        labelTitle="Title 1"
-        label="Option 1"
-        value={1}
+    <Fragment>
+      <TheVoice id="id-title">Select your option</TheVoice>
+      <ItemRadioGroup
         name={text('Name', 'option')}
-        highlighted={boolean('highlighted option 1', false)}
-      />
-      <ItemRadio
-        labelTitle="Title 2"
-        label="Multiline text that should be correctly displayed"
+        status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
         value={2}
-        name={text('Name', 'option')}
-        highlighted={boolean('highlighted option 2', false)}
-      />
-    </ItemRadioGroup>
+        onChange={action('changed group')}
+        withSeparators
+        withChevrons
+        ariaLabelledBy="id-title"
+      >
+        <ItemRadio
+          labelTitle="Title 1"
+          label="Option 1"
+          value={1}
+          name={text('Name', 'option')}
+          highlighted={boolean('highlighted option 1', false)}
+        />
+        <ItemRadio
+          labelTitle="Title 2"
+          label="Multiline text that should be correctly displayed"
+          value={2}
+          name={text('Name', 'option')}
+          highlighted={boolean('highlighted option 2', false)}
+        />
+      </ItemRadioGroup>
+    </Fragment>
   )
 })

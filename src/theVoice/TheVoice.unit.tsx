@@ -1,5 +1,6 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
+import Title from '../title'
 import TheVoice from './TheVoice'
 
 describe('TheVoice', () => {
@@ -9,5 +10,11 @@ describe('TheVoice', () => {
     const heading = wrapper.find('h1')
     expect(heading.exists()).toBe(true)
     expect(heading.text()).toBe('the voice content')
+  })
+
+  it('Should forward id to Title if provided', () => {
+    const wrapper = shallow(<TheVoice id="my-id">My title</TheVoice>)
+    expect(wrapper.find(Title).exists()).toBe(true)
+    expect(wrapper.find(Title).prop('id')).toBe('my-id')
   })
 })

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import { color, inputBorderSize, space } from '_utils/branding'
 import ItemRadio from './ItemRadio'
 
 const StyledItemRadio = styled(ItemRadio)`
@@ -9,6 +10,11 @@ const StyledItemRadio = styled(ItemRadio)`
   }
   & {
     cursor: pointer;
+    border: ${inputBorderSize.focus} solid transparent;
+    padding: calc(${space.l} - ${inputBorderSize.focus}) 0;
+  }
+  &.focus {
+    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
   }
 `
 
