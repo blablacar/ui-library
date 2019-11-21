@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix styles targeting for `Itinerary` with small mode
 - [...]
+
+# v15.1.1 (21/11/2019)
+
+- **[FIX]** Fix styles targeting for `Itinerary` with small mode
 
 # v15.1.0 (21/11/2019)
 
