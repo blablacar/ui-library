@@ -1,12 +1,15 @@
 # Unreleased
 
+- [...]
+
+# v15.1.0 (21/11/2019)
+
 - **[NEW]** Show month corresponding to `initialDate` in `DatePicker`
 - **[FIX]** Fix random font-size issue in `Stepper` using `StepperDisplay.LARGE`
 - **[NEW]** Add `id` prop to `Title`
 - **[NEW]** Add `id` prop to `TheVoice`
 - **[NEW]** Add focus styles to `ItemRadio` (a11y)
 - **[NEW]** Add `ariaLabelledBy` prop to `ItemRadioGroup` (a11y)
-- [...]
 
 # v15.0.4 (20/11/2019)
 
