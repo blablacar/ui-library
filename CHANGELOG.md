@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Fix `Tabs` state not updated in situations such as back navigation
 
 # v15.1.1 (21/11/2019)
 
