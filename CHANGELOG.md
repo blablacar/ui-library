@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Ensure that image in `SuccessModal` doesn't take more than a third of screen height
 - [...]
 - **[FIX]** Fix `Tabs` state not updated in situations such as back navigation
 
