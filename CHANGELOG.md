@@ -2,7 +2,12 @@
 
 - **[BREAKING CHANGE]** `AutoComplete` prop `renderNoResults` now expects a string
 - **[FIX]** Update no-results rendering for `AutoComplete`
+- **[FIX]** `Button` alignment issues on Safari 10
 - [...]
+
+# v15.1.3 (25/11/2019)
+
+- **[NEW]** Add `ariaLabel` prop to `Profile` (a11y)
 
 # v15.1.2 (25/11/2019)
 
