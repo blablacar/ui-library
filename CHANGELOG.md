@@ -1,8 +1,11 @@
 # Unreleased
 
 - **[FIX]** `Button` alignment issues on Safari 10
-- **[NEW]** Add `ariaLabel` prop to `Profile` (a11y)
 - [...]
+
+# v15.1.3 (25/11/2019)
+
+- **[NEW]** Add `ariaLabel` prop to `Profile` (a11y)
 
 # v15.1.2 (25/11/2019)
 
