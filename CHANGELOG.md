@@ -1,6 +1,13 @@
 # Unreleased
 
 - **[FIX]** `Button` alignment issues on Safari 10
+- **[NEW]** Add `ariaLabel` prop to `Profile` (a11y)
+- [...]
+
+# v15.1.2 (25/11/2019)
+
+- **[FIX]** Fix `Tabs` state not updated in situations such as back navigation
+- **[FIX]** Ensure that image in `SuccessModal` doesn't take more than a third of screen height
 
 # v15.1.1 (21/11/2019)
 

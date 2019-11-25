@@ -147,7 +147,11 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     this.props.onChange(activeTabId)
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: TabsProps) {
+    if (prevProps.activeTabId !== this.props.activeTabId) {
+      this.activateTabById(this.props.activeTabId)
+    }
+
     this.moveHighlight(this.state.activeTabId)
   }
 
