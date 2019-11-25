@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `AutoComplete` prop `renderNoResults` now expects a string
+- **[FIX]** Update no-results rendering for `AutoComplete`
 - [...]
 
 # v15.1.2 (25/11/2019)
