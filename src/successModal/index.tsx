@@ -61,6 +61,11 @@ const StyledSuccessModal = styled(SuccessModal)`
     margin-bottom: ${space.xl};
   }
 
+  & .kirk-modal--small .kirk-successModal-image {
+    max-height: 33vh;
+    object-fit: contain;
+  }
+
   & .kirk-modal--large .kirk-successModal-image {
     margin-bottom: 0;
   }

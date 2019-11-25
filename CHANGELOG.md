@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Ensure that image in `SuccessModal` doesn't take more than a third of screen height
 - [...]
 
 # v15.1.1 (21/11/2019)
