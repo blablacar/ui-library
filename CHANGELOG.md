@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `AutoComplete` prop `renderNoResults` now expects a string
+- **[FIX]** Update no-results rendering for `AutoComplete`
 - **[FIX]** `Button` alignment issues on Safari 10
 - [...]
 

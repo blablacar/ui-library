@@ -6,6 +6,7 @@ import debounce from 'lodash.debounce'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
+import ItemInfo from 'itemInfo'
 import TextField, { inputTypes } from 'textField'
 import AutoCompleteList from './AutoCompleteListStyle'
 
@@ -30,7 +31,7 @@ interface AutoCompleteProps {
   readonly maxItems?: number
   readonly itemKey?: (item: AutocompleteItem) => string
   readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
-  readonly renderNoResults?: ({ query }: { query: query }) => React.ReactElement<any>
+  readonly renderNoResults?: ({ query }: { query: query }) => string
   readonly renderQuery?: (item: AutocompleteItem) => string
   readonly renderEmptySearch?: AutocompleteItem[]
   readonly getItemValue?: (item: AutocompleteItem) => string
@@ -83,7 +84,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     searchForItemsMinChars: 3,
     maxItems: Infinity,
     renderBusy: () => <div>Loading…</div>,
-    renderNoResults: () => <div>No results</div>,
+    renderNoResults: () => 'No results',
     renderEmptySearch: [],
     onInputChange() {},
     onSelect() {},
@@ -297,8 +298,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           </div>
         )}
         {shouldDisplayNoResults && (
-          <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
-            {this.props.renderNoResults({ query: this.state.query })}
+          <div className={cc([this.props.bodyClassName])}>
+            <ItemInfo mainInfo={this.props.renderNoResults({ query: this.state.query })} />
           </div>
         )}
         <AutoCompleteList

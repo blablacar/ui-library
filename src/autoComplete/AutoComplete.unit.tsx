@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme'
 
 import { ItemStatus } from '_utils/item'
 import ItemChoice from 'itemChoice'
+import ItemInfo from 'itemInfo'
 import AutoComplete from './AutoComplete'
 
 const initialFakeItems = [
@@ -133,7 +134,7 @@ describe('AutoComplete', () => {
 
   describe('#renderNoResults', () => {
     it('Renders an empty state when no results', () => {
-      const renderNoResults = jest.fn(() => <div className="no-results" />)
+      const renderNoResults = jest.fn(() => 'No results found')
       const wrapper = mount(<AutoComplete {...defaultProps} renderNoResults={renderNoResults} />)
 
       const query = 'Lyon'
@@ -143,25 +144,11 @@ describe('AutoComplete', () => {
       wrapper.setProps({ items: [], isSearching: false })
 
       expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(false)
-      expect(wrapper.find('.no-results')).toHaveLength(1)
+      expect(wrapper.find(ItemInfo)).toHaveLength(1)
+      expect(wrapper.find(ItemInfo).prop('mainInfo')).toBe('No results found')
       expect(renderNoResults).toHaveBeenCalledWith({ query })
       wrapper.setProps({ showList: false })
-      expect(wrapper.find('.no-results')).toHaveLength(0)
-    })
-
-    it('Renders noResults with a custom Element', () => {
-      const CustomNoResults = () => <div className="no-results" />
-      const wrapper = shallow(
-        <AutoComplete {...defaultProps} renderNoResults={() => <CustomNoResults />} />,
-      )
-
-      const query = 'Lyon'
-      const autocomplete: AutoComplete = wrapper.instance()
-      autocomplete.onInputChange({ value: query })
-      wrapper.setProps({ isSearching: true })
-      wrapper.setProps({ items: [], isSearching: false })
-
-      expect(wrapper.find('CustomNoResults')).toHaveLength(1)
+      expect(wrapper.find(ItemInfo)).toHaveLength(0)
     })
 
     it('Renders no results with a custom className', () => {
@@ -174,7 +161,7 @@ describe('AutoComplete', () => {
       wrapper.setProps({ isSearching: true })
       wrapper.setProps({ items: [], isSearching: false })
 
-      expect(wrapper.find(`.kirk-autoComplete-body.${bodyClassName}`).exists()).toBe(true)
+      expect(wrapper.find(`.${bodyClassName}`).exists()).toBe(true)
     })
   })
 
