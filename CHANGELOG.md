@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `Button` alignment issues on Safari 10
 - [...]
 
 # v15.1.3 (25/11/2019)

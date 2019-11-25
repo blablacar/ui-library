@@ -146,16 +146,10 @@ const StyledButton = styled(Button)`
   }
 
   &.kirk-button-bubble {
-    display: inline-flex;
+    display: inline-block;
+    text-align: center;
     padding: 0;
     line-height: 0;
-    width: ${componentSizes.buttonIconSize};
-    height: ${componentSizes.buttonIconSize};
-  }
-
-  /* Note: Safari 10 can not have flex context on <button> element */
-  &.kirk-button-bubble {
-    justify-content: center;
     width: ${componentSizes.buttonIconSize};
     height: ${componentSizes.buttonIconSize};
   }
