@@ -7,6 +7,7 @@ import Item from '_utils/item'
 
 interface ProfileProps {
   readonly className?: Classcat.Class
+  readonly ariaLabel?: string
   readonly title: string
   readonly info?: string
   readonly isLink?: boolean
@@ -26,6 +27,7 @@ interface ProfileProps {
 
 const Profile = ({
   className,
+  ariaLabel,
   title,
   info,
   picture,
@@ -56,6 +58,7 @@ const Profile = ({
   return (
     <Item
       className={className}
+      ariaLabel={ariaLabel}
       leftTitle={title}
       leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY1 : TextDisplayType.TITLE}
       leftBody={getLeftBody}
