@@ -11,6 +11,7 @@ stories.addDecorator(withKnobs)
 stories.add('default', () => (
   <Profile
     title={text('name', 'Pepe le Pew')}
+    ariaLabel={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
     info={text('info (if no rating)', 'Charism +10')}
     picture={text(
       'picture',
@@ -18,7 +19,8 @@ stories.add('default', () => (
     )}
     isIdChecked={boolean('isIdChecked', false)}
     isMedium={boolean('isMedium', false)}
-    isLink={boolean('isLink', false)}
+    isLink={boolean('isLink', true)}
+    href={text('href', '#')}
     score={number('score', null)}
     ratings={number('ratings', null)}
     ratingsLabel={text('ratingsLabel', null)}
