@@ -164,21 +164,10 @@ exports[`Snackbar should not have changed 1`] = `
 }
 
 .c3.kirk-button-bubble {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
+  text-align: center;
   padding: 0;
   line-height: 0;
-  width: 48px;
-  height: 48px;
-}
-
-.c3.kirk-button-bubble {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   width: 48px;
   height: 48px;
 }
