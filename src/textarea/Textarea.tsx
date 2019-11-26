@@ -105,6 +105,16 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     this.maybeAdaptHeightToContent()
   }
 
+  // To ensure a proper scrolling behavior for the textarea when growing with content, we need to
+  // have a wrapper independent from the native textarea. This wrapper is bigger that the
+  // the textarea but still looks like the textarea (same background color). When activating the
+  // wrapper, the focus should set the focus on the native textarea.
+  onWrapperClick = () => {
+    if (this.textareaRef && this.textareaRef.current) {
+      this.textareaRef.current.focus()
+    }
+  }
+
   onFocus = (event: React.FocusEvent<HTMLTextAreaElement>) => {
     this.setState({
       hasFocus: true,
@@ -237,6 +247,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
       <div className={cc(['kirk-textarea', prefix({ error: !!error, disabled }), className])}>
         {label && <label htmlFor={id}>{label}</label>}
         <div
+          onClick={this.onWrapperClick}
           className={cc([
             'kirk-textarea-wrapper',
             {
