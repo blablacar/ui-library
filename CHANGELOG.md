@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix focus behavior for`Textarea` when clicking its margins.
 - [...]
 
 # v16.0.0 (25/11/2019)
