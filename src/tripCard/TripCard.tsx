@@ -27,6 +27,7 @@ interface User {
 }
 
 export interface TripCardProps {
+  ariaLabel?: string
   href: string | JSX.Element
   itinerary: Place[]
   driver?: User
@@ -70,6 +71,7 @@ const renderMorePassengers = (count: number) => (
 
 const TripCard = ({
   className,
+  ariaLabel,
   href,
   itinerary,
   driver,
@@ -97,12 +99,14 @@ const TripCard = ({
     componentProps = {
       ...href.props,
       rel: 'nofollow',
+      'aria-label': ariaLabel,
     }
   } else {
     componentTag = 'a'
     componentProps = {
       href,
       rel: 'nofollow',
+      'aria-label': ariaLabel,
     }
   }
 

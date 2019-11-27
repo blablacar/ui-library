@@ -50,9 +50,15 @@ const createPassengers = count => {
 const Div = () => <div className="divTest" />
 
 describe('TripCard component', () => {
-  it('Should have the base class', () => {
+  it('Should have the base class and no aria attribute', () => {
     const tripCard = shallow(<TripCard {...mockedProps} />)
     expect(tripCard.hasClass('kirk-tripCard')).toBe(true)
+    expect(tripCard.prop('ariaLabel')).toBeFalsy()
+  })
+
+  it("Should have `aria-label` attribute on the wrapper link", () => {
+    const tripCard = shallow(<TripCard {...mockedProps} ariaLabel="testLabel" />)
+    expect(tripCard.find('a').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should have the test class', () => {

@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix focus behavior for`Textarea` when clicking its margins.
+- **[NEW]** Add `ariaLabel` prop to `TripCard` (a11y)
 - [...]
 
 # v16.0.0 (25/11/2019)
