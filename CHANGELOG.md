@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add new default transition to `Tabs` panel. Disabled by default.
 - [...]
 
 # v16.0.1 (28/11/2019)

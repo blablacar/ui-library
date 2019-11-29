@@ -64,6 +64,45 @@ stories.add('default', () => {
   )
 })
 
+stories.add('with default panel transition', () => {
+  const defaultTabsConfig = {
+    activeTabId: 'tab1',
+    status: select('status', TabStatus, TabStatus.SCROLLABLE),
+    isWrapped: boolean('isWrapped', false),
+    tabs: [
+      {
+        id: 'tab1',
+        label: text('Tab label 1', 'Tab 1'),
+        panelContent: panels[0],
+        badgeContent: text('Badge content 1', ''),
+      },
+      {
+        id: 'tab2',
+        label: text('Tab label 2', 'Very Very Long Tab 2'),
+        panelContent: panels[1],
+        badgeContent: text('Badge content 2', '2'),
+        badgeAriaLabel: 'Unread Message',
+      },
+      {
+        id: 'tab3',
+        label: text('Tab label 3', 'Tab 3'),
+        panelContent: panels[2],
+        badgeContent: text('Badge content 3', ''),
+      },
+    ],
+  }
+  return (
+      <Tabs
+          onChange={action('onChange')}
+          tabs={defaultTabsConfig.tabs}
+          activeTabId={defaultTabsConfig.activeTabId}
+          status={defaultTabsConfig.status}
+          isWrapped={defaultTabsConfig.isWrapped}
+          useDefaultPanelTransition={true}
+      />
+  )
+})
+
 stories.add('with icons', () => {
   const iconTabsConfig = {
     activeTabId: 'tab1',

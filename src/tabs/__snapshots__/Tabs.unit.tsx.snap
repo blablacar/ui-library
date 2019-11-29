@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Rendering testing should render properly 1`] = `
-Array [
+<div
+  className=""
+>
   <div
     className="kirk-tabs"
   >
@@ -85,11 +87,11 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
+    aria-hidden={false}
     aria-labelledby="tab1"
-    className="kirk-tab-panel"
-    hidden={false}
+    className="kirk-tab-panel kirk-tab-panel-entered"
     id="tab1_panel"
     role="tabpanel"
   >
@@ -102,27 +104,26 @@ Array [
     >
       Content for first tab
     </div>
-  </div>,
+  </div>
   <div
+    aria-hidden={true}
     aria-labelledby="tab2"
     className="kirk-tab-panel"
-    hidden={true}
     id="tab2_panel"
     role="tabpanel"
-  />,
+  />
   <div
+    aria-hidden={true}
     aria-labelledby="tab3"
     className="kirk-tab-panel"
-    hidden={true}
     id="tab3_panel"
     role="tabpanel"
-  />,
-]
+  />
+</div>
 `;
 
 exports[`Rendering testing should render properly with icons 1`] = `
-Array [
-  .c0.kirk-icon-wrapper {
+.c0.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -134,6 +135,9 @@ Array [
 }
 
 <div
+  className=""
+>
+  <div
     className="kirk-tabs"
   >
     <div
@@ -255,11 +259,11 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
+    aria-hidden={false}
     aria-labelledby="iconTab1"
-    className="kirk-tab-panel"
-    hidden={false}
+    className="kirk-tab-panel kirk-tab-panel-entered"
     id="iconTab1_panel"
     role="tabpanel"
   >
@@ -272,20 +276,20 @@ Array [
     >
       Content for first tab
     </div>
-  </div>,
+  </div>
   <div
+    aria-hidden={true}
     aria-labelledby="iconTab2"
     className="kirk-tab-panel"
-    hidden={true}
     id="iconTab2_panel"
     role="tabpanel"
-  />,
+  />
   <div
+    aria-hidden={true}
     aria-labelledby="iconTab3"
     className="kirk-tab-panel"
-    hidden={true}
     id="iconTab3_panel"
     role="tabpanel"
-  />,
-]
+  />
+</div>
 `;

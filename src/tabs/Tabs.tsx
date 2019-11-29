@@ -25,6 +25,7 @@ interface TabsProps {
   readonly className?: Classcat.Class
   readonly tablistWrapperClassName?: Classcat.Class
   readonly isWrapped?: boolean
+  readonly useDefaultPanelTransition?: boolean
 }
 
 interface TabsState {
@@ -162,7 +163,8 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
   }
 
   render() {
-    const { tabs, className, tablistWrapperClassName, isWrapped } = this.props
+    const { tabs, className, tablistWrapperClassName, isWrapped, useDefaultPanelTransition } =
+        this.props
 
     if (tabs.length === 0) {
       return null
@@ -176,8 +178,8 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
 
     return (
-      <Fragment>
-        <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
+      <div className={cc([className])}>
+        <div className={cc(['kirk-tabs', { 'kirk-tabs-fixed': isFixedTabs }])}>
           <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
             <div className="kirk-tab-highlight" ref={this.highlightRef} />
             <div
@@ -234,17 +236,22 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
           return (
             <div
               role="tabpanel"
-              className="kirk-tab-panel"
+              className={cc(['kirk-tab-panel',
+                {
+                  'kirk-tab-panel-entered': isSelected,
+                },
+                {'kirk-use-default-tab-panel-transition': useDefaultPanelTransition,
+                }])}
               id={`${generateTabPanelId(tab)}`}
               key={tab.id}
               aria-labelledby={tab.id}
-              hidden={!isSelected}
+              aria-hidden={!isSelected}
             >
               {isSelected ? tab.panelContent : null}
             </div>
           )
         })}
-      </Fragment>
+      </div>
     )
   }
 }

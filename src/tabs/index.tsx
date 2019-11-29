@@ -5,6 +5,9 @@ import Tabs from './Tabs'
 
 const highlightHeight = '2px'
 
+// Some arbitrary delay to build the panel before starting the revealing transition.
+const delayBeforeShowingTabPanel = '450ms'
+
 const StyledTabs = styled(Tabs)`
   & {
     position: relative;
@@ -48,6 +51,15 @@ const StyledTabs = styled(Tabs)`
     white-space: nowrap;
   }
 
+  & .kirk-use-default-tab-panel-transition.kirk-tab-panel {
+    opacity: 0;
+    transition: opacity ${transition.duration.base} ${delayBeforeShowingTabPanel};
+  }
+  
+  & .kirk-use-default-tab-panel-transition.kirk-tab-panel.kirk-tab-panel-entered {
+    opacity: 1;
+  }
+  
   & .kirk-tab > .kirk-icon {
     flex-shrink: 0;
   }
@@ -69,17 +81,17 @@ const StyledTabs = styled(Tabs)`
     align-items: last baseline;
   }
 
-  &.kirk-tabs-fixed .kirk-tablist {
+  & .kirk-tabs-fixed .kirk-tablist {
     overflow: initial;
   }
 
-  &.kirk-tabs-fixed .kirk-tab-container {
+  & .kirk-tabs-fixed .kirk-tab-container {
     margin-left: 0;
     flex-grow: 1;
     text-align: center;
   }
 
-  &.kirk-tabs-fixed .kirk-tab {
+  & .kirk-tabs-fixed .kirk-tab {
     white-space: normal;
   }
 
