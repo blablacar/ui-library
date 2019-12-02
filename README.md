@@ -11,11 +11,14 @@ npm i @blablacar/ui-library
 ```
 
 ## Usage
-Import the package into your `package.json`
+Import the package into your `package.json`. You will also need the following peer dependencies:
 ```
 "dependencies": {
     ...
     "@blablacar/ui-library": "<CURRENT_VERSION>",
+    "react": "<CURRENT_VERSION>",
+    "react-dom": "<CURRENT_VERSION>",
+    "styled-components": "<CURRENT_VERSION>"
     ...
 }
 ```
