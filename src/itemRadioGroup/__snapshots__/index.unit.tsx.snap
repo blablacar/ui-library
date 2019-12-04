@@ -272,6 +272,7 @@ button.c2 {
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           type="radio"
           value={1}
@@ -321,6 +322,7 @@ button.c2 {
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           type="radio"
           value={2}
@@ -377,6 +379,7 @@ button.c2 {
           name="name"
           onBlur={[Function]}
           onChange={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           type="radio"
           value={3}

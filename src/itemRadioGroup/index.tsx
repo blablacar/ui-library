@@ -9,6 +9,7 @@ export interface ItemRadioGroupProps {
   readonly className?: Classcat.Class
   readonly value?: string | number | boolean
   readonly onChange?: (obj: OnChangeParameters) => void
+  readonly onClick?: (obj: OnChangeParameters) => void
   readonly status?: ItemRadioStatus
   readonly withSeparators?: boolean
   readonly withChevrons?: boolean
@@ -24,6 +25,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
     value: '',
     className: '',
     onChange() {},
+    onClick() {},
     withSeparators: false,
     withChevrons: false,
   }
@@ -35,6 +37,10 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
   onChange = ({ name, value }: OnChangeParameters) => {
     this.props.onChange({ name, value })
     this.setState({ value })
+  }
+
+  onClick = ({ name, value }: OnChangeParameters) => {
+    this.props.onClick({ name, value })
   }
 
   render() {
@@ -61,6 +67,7 @@ class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupSt
             key: `${name}${itemProps.value}`,
             name,
             onChange: this.onChange,
+            onClick: this.onClick,
             checked,
             status: checked ? status : ItemRadioStatus.DEFAULT,
             disabled: status === ItemRadioStatus.LOADING || itemProps.disabled,
