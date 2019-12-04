@@ -21,6 +21,7 @@ export interface ItemRadioProps {
   readonly checked?: boolean
   readonly disabled?: boolean
   readonly onChange?: (obj: OnChangeParameters) => void
+  readonly onClick?: (obj: OnChangeParameters) => void
   readonly status?: ItemRadioStatus
   readonly key?: string | number
   readonly chevron?: boolean
@@ -34,6 +35,7 @@ interface ItemRadioState {
 class ItemRadio extends Component<ItemRadioProps> {
   static defaultProps: Partial<ItemRadioProps> = {
     onChange() {},
+    onClick() {},
     checked: false,
   }
 
@@ -44,6 +46,11 @@ class ItemRadio extends Component<ItemRadioProps> {
   onChange = () => {
     const { name, value } = this.props
     this.props.onChange({ name, value })
+  }
+
+  onClick = () => {
+    const { name, value } = this.props
+    this.props.onClick({ name, value })
   }
 
   onFocus = () => {
@@ -78,6 +85,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           value={value}
           checked={checked}
           onChange={this.onChange}
+          onClick={this.onClick}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
           disabled={disabled || isLoading}

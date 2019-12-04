@@ -17,6 +17,7 @@ describe('ItemRadio', () => {
     checked: false,
     disabled: false,
     onChange() {},
+    onClick() {},
     status: ItemRadioStatus.DEFAULT,
     key: 0,
   }
@@ -39,17 +40,38 @@ describe('ItemRadio', () => {
       .toJSON()
     expect(itemRadio).toMatchSnapshot()
   })
-  it('Should bind the onChange callback of the input', () => {
-    const itemRadio = mount(<ItemRadio {...defaultProps} />)
-    expect(itemRadio.find('input').prop('onChange')).toEqual(itemRadio.instance().onChange)
+
+  describe('onChange', () => {
+    it('Should bind the onChange callback of the input', () => {
+      const itemRadio = mount(<ItemRadio {...defaultProps} />)
+      expect(itemRadio.find('input').prop('onChange')).toEqual(itemRadio.instance().onChange)
+    })
+
+    it('Should call the onChange prop with name and value when the input changes', () => {
+      const onChangeMock = jest.fn()
+      const itemRadio = shallow(<ItemRadio {...defaultProps} onChange={onChangeMock} />)
+      itemRadio.instance().onChange()
+      expect(onChangeMock).toHaveBeenCalledWith({
+        name: defaultProps.name,
+        value: defaultProps.value,
+      })
+    })
   })
-  it('Should call the onChange prop with name and value when the input changes', () => {
-    const onChangeMock = jest.fn()
-    const itemRadio = shallow(<ItemRadio {...defaultProps} onChange={onChangeMock} />)
-    itemRadio.instance().onChange()
-    expect(onChangeMock).toHaveBeenCalledWith({
-      name: defaultProps.name,
-      value: defaultProps.value,
+
+  describe('onClick', () => {
+    it('Should bind the onClick callback of the input', () => {
+      const itemRadio = mount(<ItemRadio {...defaultProps} />)
+      expect(itemRadio.find('input').prop('onClick')).toEqual(itemRadio.instance().onClick)
+    })
+
+    it('Should call the onClick prop with name and value when the input changes', () => {
+      const onClickMock = jest.fn()
+      const itemRadio = shallow(<ItemRadio {...defaultProps} onClick={onClickMock} />)
+      itemRadio.instance().onClick()
+      expect(onClickMock).toHaveBeenCalledWith({
+        name: defaultProps.name,
+        value: defaultProps.value,
+      })
     })
   })
 })

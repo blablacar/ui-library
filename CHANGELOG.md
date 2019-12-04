@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `onClick` prop to `ItemRadio` and `ItemRadioGroup`
 - [...]
 
 # v16.0.1 (28/11/2019)
