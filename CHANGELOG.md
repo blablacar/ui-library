@@ -1,7 +1,7 @@
 # Unreleased
 
-- [...]
 - **[FIX]** Add `type="button"` to `ItemAction` default tag to avoid form submission
+- **[NEW]** Add `TopTripCardList` component
 
 # v16.0.4 (09/12/2019)
 
