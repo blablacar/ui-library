@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Allow rendering of non-highlighted `ItemAction`.
 - [...]
+
+# v16.0.4 (09/12/2019)
+
+- **[NEW]** Allow rendering of non-highlighted `ItemAction`.
 
 # v16.0.3 (09/12/2019)
 
