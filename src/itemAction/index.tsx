@@ -6,6 +6,7 @@ import Item, { ItemStatus } from '_utils/item'
 import prefix from '_utils'
 
 export interface ItemActionProps {
+  readonly highlighted?: boolean
   readonly tag?: JSX.Element
   readonly className?: Classcat.Class
   readonly href?: string | JSX.Element
@@ -22,6 +23,7 @@ export interface ItemActionProps {
 
 class ItemAction extends PureComponent<ItemActionProps> {
   static defaultProps: Partial<ItemActionProps> = {
+    highlighted: true,
     status: ItemStatus.DEFAULT,
   }
 
@@ -29,6 +31,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
 
   render() {
     const {
+      highlighted,
       className,
       action,
       subLabel,
@@ -69,7 +72,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
 
     return (
       <Item
-        highlighted
+        highlighted={highlighted}
         className={className}
         leftAddon={leftAddon}
         leftTitle={action}
