@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Add `ariaLabel` prop to `ItemChoice`
 
 # v16.0.2 (04/12/2019)
 
