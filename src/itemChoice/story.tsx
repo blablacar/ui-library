@@ -33,6 +33,7 @@ stories.add(
         onClick={action('onClick')}
         href={isLink ? <a href="#" /> : ''}
         disabled={boolean('Disabled', false)}
+        ariaLabel={text('Aria label', 'Aria label')}
       />
     )
   },
