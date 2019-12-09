@@ -71,3 +71,16 @@ stories.add('With loading state', () => (
     <ItemAction action="Action 2" subLabel="with subLabel" status={ItemAction.STATUS.CHECKED} />
   </div>
 ))
+
+stories.add('With/without highlight', () => (
+    <div>
+        <ItemAction
+            action={text('Action', 'Highlighted by default')}
+        />
+
+        <ItemAction
+            highlighted={boolean('Highlighted', false)}
+            action={text('Action', 'Not highlighted')}
+        />
+    </div>
+))
