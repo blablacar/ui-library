@@ -8,6 +8,7 @@ interface ItemDataProps {
   readonly mainInfo: string
   readonly className?: Classcat.Class
   readonly mainTitle?: string
+  readonly dataStrikeThrough?: boolean
   readonly dataInfo?: string
   readonly tag?: JSX.Element
   readonly ariaLabel?: string
@@ -17,6 +18,7 @@ const ItemData = (
   {
     mainInfo,
     data,
+    dataStrikeThrough,
     className,
     mainTitle,
     dataInfo,
@@ -29,6 +31,7 @@ const ItemData = (
       leftTitle={mainTitle}
       leftBody={mainInfo}
       rightTitle={data}
+      rightTitleStrikeThrough={dataStrikeThrough}
       rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
       rightBody={dataInfo}
       tag={tag}

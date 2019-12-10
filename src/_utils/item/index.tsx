@@ -57,6 +57,10 @@ const StyledItem = styled(Item)`
     margin-bottom: ${space.s};
   }
 
+  & .kirk-item--strikethrough {
+    text-decoration: line-through;
+  }
+
   /* Addons */
   & .kirk-item-leftAddon,
   & .kirk-item-rightAddon {

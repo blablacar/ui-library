@@ -95,4 +95,14 @@ describe('Item', () => {
     const wrapper = mount(<Item leftBody="Left body label" />)
     expect(wrapper.find('.kirk-item-body').exists()).toBe(true)
   })
+
+  it('Should display strickthrough right title', () => {
+    const wrapper = mount(<Item rightTitle="Right title" rightTitleStrikeThrough />)
+    expect(wrapper.find('.kirk-item--strikethrough').exists()).toBe(true)
+  })
+
+  it("Shouldn't display strickthrough right title", () => {
+    const wrapper = mount(<Item rightTitleStrikeThrough />)
+    expect(wrapper.find('.kirk-item--strikethrough').exists()).toBe(false)
+  })
 })

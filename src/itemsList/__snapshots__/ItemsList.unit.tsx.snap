@@ -143,6 +143,11 @@ button.c1 {
   margin-bottom: 4px;
 }
 
+.c1 .kirk-item--strikethrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+}
+
 .c1 .kirk-item-leftAddon,
 .c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -492,6 +497,11 @@ button.c1 {
   margin-bottom: 4px;
 }
 
+.c1 .kirk-item--strikethrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+}
+
 .c1 .kirk-item-leftAddon,
 .c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -839,6 +849,11 @@ button.c1 {
 
 .c1 .kirk-item-title--withBody {
   margin-bottom: 4px;
+}
+
+.c1 .kirk-item--strikethrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .c1 .kirk-item-leftAddon,
