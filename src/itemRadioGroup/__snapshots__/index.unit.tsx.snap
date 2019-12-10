@@ -143,6 +143,11 @@ button.c2 {
   margin-bottom: 4px;
 }
 
+.c2 .kirk-item--strikethrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+}
+
 .c2 .kirk-item-leftAddon,
 .c2 .kirk-item-rightAddon {
   display: -webkit-inline-box;
