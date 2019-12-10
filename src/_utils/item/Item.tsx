@@ -141,16 +141,15 @@ const Item = ({
         <div className="kirk-item-rightText">
           {rightTitle && (
             <Text
-              // className={rightBody ? 'kirk-item-title' : null}
-              display={rightTitleDisplay}
-              textColor={rightTitleColor}
-              tag={TextTagType.DIV}
               className={cc([
                 {
                   'kirk-item-title': rightBody,
                   'kirk-item--strikethrough': rightTitleStrikeThrough,
                 },
               ])}
+              display={rightTitleDisplay}
+              textColor={rightTitleColor}
+              tag={TextTagType.DIV}
             >
               {rightTitle}
             </Text>
