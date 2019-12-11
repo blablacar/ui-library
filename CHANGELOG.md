@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Add `type="button"` to `ItemAction` default tag to avoid form submission
 
 # v16.0.4 (09/12/2019)
 
