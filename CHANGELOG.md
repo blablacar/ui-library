@@ -1,6 +1,9 @@
 # Unreleased
 
 [...]
+
+# v16.1.1 (12/12/2019)
+
 - **[FIX]** Remove `type="button"` from `ItemAction` (caused <a> to have the prop)
 
 # v16.1.0 (12/12/2019)
