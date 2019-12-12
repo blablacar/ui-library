@@ -43,7 +43,7 @@ describe('ItemAction', () => {
   it('Should set tag to button by default', () => {
     const wrapper = shallow(<ItemAction {...defaultProps} />)
 
-    expect(wrapper.prop('tag')).toEqual(<button type="button"/>)
+    expect(wrapper.prop('tag')).toEqual(<button />)
   })
 
   it('Should forward the tag to item', () => {
