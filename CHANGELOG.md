@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[FIX]** Fix layout issue on `TopTripCardList`
 
 # v16.1.1 (12/12/2019)
 

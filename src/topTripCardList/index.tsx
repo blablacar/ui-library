@@ -29,9 +29,10 @@ const StyledTopTripCardList = styled(TopTripCardList)`
   }
 
   & .kirk-tripCard {
-    flex-grow: 1;
+    flex: 1;
     margin-right: ${space.m};
     background-color: ${color.white};
+    position: relative;
   }
 
   & .kirk-tripCard:last-child {
