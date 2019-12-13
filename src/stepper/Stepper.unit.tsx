@@ -34,7 +34,7 @@ it('Should have the default text & attributes', () => {
     </Stepper>,
   )
   expect(stepper.find('label span').text()).toBe('Amount of something')
-  expect(stepper.find('input').prop('value')).toBe(0)
+  expect(stepper.find('input[type="hidden"]').prop('value')).toBe(0)
   expect(stepper.prop('min')).toBe(Number.MIN_SAFE_INTEGER)
   expect(stepper.prop('max')).toBe(Number.MAX_SAFE_INTEGER)
   expect(stepper.prop('step')).toBe(1)
@@ -101,7 +101,7 @@ it('Be able to format the value', () => {
       Amount of something
     </Stepper>,
   )
-  expect(stepper.find('input').prop('value')).toBe('2 €')
+  expect(stepper.find('input[type="hidden"]').prop('value')).toBe('2 €')
 })
 
 it('Should be able to receive props and then update the value', () => {

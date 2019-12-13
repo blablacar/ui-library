@@ -5,6 +5,7 @@ import Stepper, { StepperDisplay, StepperButtonSize } from './Stepper'
 const StyledStepper = styled(Stepper)`
   & {
     display: flex;
+    position: relative;
   }
 
   & button {
@@ -41,6 +42,39 @@ const StyledStepper = styled(Stepper)`
   &.kirk-stepper-large .kirk-stepper-value {
     width: calc(100% - ${StepperButtonSize[StepperDisplay.LARGE]}px * 2);
     flex-grow: 0;
+  }
+
+  /* https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
+  & .kirk-stepper-range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+
+  & input[type='range'].kirk-stepper-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  & input[type='range'].kirk-stepper-range::-moz-range-thumb {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  & .kirk-stepper-range::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
   }
 `
 
