@@ -118,7 +118,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     // Compute available space without paddings
     const availableSpace = this.ref.current.offsetWidth - pxToInteger(space.l) * 2
     const valueLength = String(format(value)).length
-    const optimalSize = Math.trunc(availableSpace/(valueLength*0.5))
+    const optimalSize = Math.trunc(availableSpace / (valueLength * 0.5))
     const maxSize = StepperValueSize[display]
 
     this.setState({ fontSize: Math.min(optimalSize, maxSize) })
@@ -155,10 +155,40 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     this.update(this.state.value - this.props.step)
   }
 
-  createListeners(callback: () => void) {
+  setMinimum = () => {
+    this.update(this.props.min)
+  }
+
+  setMaximum = () => {
+    this.update(this.props.max)
+  }
+
+  createButtonListeners(callback: () => void) {
     return isTouchScreen
       ? { onTouchStart: this.handleButtonDown(callback), onTouchEnd: this.handleButtonUp(callback) }
       : { onMouseDown: this.handleButtonDown(callback), onMouseUp: this.handleButtonUp(callback) }
+  }
+
+  // Keyboard events used on <input type="range">
+  // Cannot be used on buttons since they can be "disabled" and thus unresponsive to events
+  // Note: ideally this would trigger a visually different active state on controls for feedback
+  handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'ArrowDown':
+        this.decrement()
+        break
+      case 'ArrowRight':
+      case 'ArrowUp':
+        this.increment()
+        break
+      case 'Home':
+        this.setMinimum()
+        break
+      case 'End':
+        this.setMaximum()
+        break
+    }
   }
 
   render() {
@@ -180,12 +210,26 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
 
     return (
       <div className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
+        <input
+          tabIndex={0}
+          className="kirk-stepper-range"
+          type="range"
+          min={this.props.min}
+          max={this.props.max}
+          defaultValue={`${this.state.value}`}
+          step={this.props.step}
+          aria-valuemin={this.props.min}
+          aria-valuemax={this.props.max}
+          aria-valuenow={this.state.value}
+          onKeyDown={this.handleKeyDown}
+        />
         <Button
+          tabIndex="-1"
           type="button"
           className="kirk-stepper-decrement"
           status={ButtonStatus.UNSTYLED}
           disabled={isMin}
-          {...this.createListeners(this.decrement)}
+          {...this.createButtonListeners(this.decrement)}
         >
           <MinusIcon
             title={decreaseLabel}
@@ -205,11 +249,12 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           <input type="hidden" name={name} value={format(this.state.value)} readOnly />
         </label>
         <Button
+          tabIndex="-1"
           type="button"
           className="kirk-stepper-increment"
           status={ButtonStatus.UNSTYLED}
           disabled={isMax}
-          {...this.createListeners(this.increment)}
+          {...this.createButtonListeners(this.increment)}
         >
           <PlusIcon
             title={increaseLabel}
