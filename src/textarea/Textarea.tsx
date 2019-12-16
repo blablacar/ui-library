@@ -4,6 +4,7 @@ import cc from 'classcat'
 import prefix from '_utils'
 import Button, { ButtonStatus } from 'button'
 import isEmpty from 'lodash.isempty'
+import { KIRK_LAYOUT_SOLID_ITEM_CLASS } from '_utils/layout'
 
 export interface CommonFormFields {
   name: string
@@ -244,7 +245,9 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     attributes.className = cc(textareaFieldClassNames)
 
     return (
-      <div className={cc(['kirk-textarea', prefix({ error: !!error, disabled }), className])}>
+      <div className={cc([
+          KIRK_LAYOUT_SOLID_ITEM_CLASS,
+          'kirk-textarea', prefix({ error: !!error, disabled }), className])}>
         {label && <label htmlFor={id}>{label}</label>}
         <div
           onClick={this.onWrapperClick}

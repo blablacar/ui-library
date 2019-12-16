@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { TripCardProps } from 'tripCard/TripCard'
+import {KIRK_LAYOUT_FLUID_ITEM_CLASS} from "../_utils/layout"
 
 interface TopTripCardListProps {
   readonly children: React.ReactElement<TripCardProps>[]

@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 
 import Why from 'why'
 
-const stories = storiesOf('Why', module)
+const stories = storiesOf('Widgets|Why', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

@@ -44,8 +44,8 @@ const StyledItinerary = styled(Itinerary)`
     background-color: ${color.tapHighlight}};
   }
 
-  & .kirk-itinerary-location time {
-    min-width: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
+  & .kirk-itinerary-time-cell {
+    width: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
   }
 
   & .kirk-itinerary-location-city {

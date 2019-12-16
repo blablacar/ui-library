@@ -3,7 +3,7 @@
 exports[`Rendering testing should render properly 1`] = `
 Array [
   <div
-    className="kirk-tabs"
+    className="kirk-layout-solid-item kirk-tabs"
   >
     <div
       className="kirk-tablist-wrapper"
@@ -134,7 +134,7 @@ Array [
 }
 
 <div
-    className="kirk-tabs"
+    className="kirk-layout-solid-item kirk-tabs"
   >
     <div
       className="kirk-tablist-wrapper"

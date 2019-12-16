@@ -15,7 +15,8 @@ const StyledDivider = styled(Divider)`
     top: ${space.m};
     content: ' ';
     border-top: solid ${color.divider} 1px;
-    width: 100%;
+    left: 0;
+    right: 0;
   }
 `
 export default StyledDivider

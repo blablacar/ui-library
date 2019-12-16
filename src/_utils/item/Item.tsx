@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { color } from '_utils/branding'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
+import { KIRK_LAYOUT_FLUID_ITEM_CLASS } from '_utils/layout'
 
 export enum ItemStatus {
   DEFAULT = 'default',
@@ -96,6 +97,7 @@ const Item = ({
       onMouseDown={onMouseDown}
       className={cc([
         'kirk-item',
+        KIRK_LAYOUT_FLUID_ITEM_CLASS,
         {
           'kirk-item--highlighted': highlighted,
           'kirk-item--clickable': isClickable,

@@ -6,7 +6,7 @@ import { select, text, withKnobs, boolean } from '@storybook/addon-knobs'
 import { color } from '_utils/branding'
 import Text, { TextTagType, TextDisplayType } from 'text'
 
-const stories = storiesOf('Text', module)
+const stories = storiesOf('Widgets|Text', module)
 stories.addDecorator(withKnobs)
 
 stories.add('basic', () => (

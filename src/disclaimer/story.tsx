@@ -6,7 +6,7 @@ import spec from 'disclaimer/specifications/disclaimer.md'
 import Disclaimer from 'disclaimer'
 import Button, { ButtonStatus } from 'button'
 
-const stories = storiesOf('Disclaimer', module)
+const stories = storiesOf('Widgets|Disclaimer', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Specifications', () => <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>, {

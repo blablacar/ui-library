@@ -9,7 +9,7 @@ import ComfortIcon from 'icon/comfortIcon'
 
 import specs from './specifications/index.md'
 
-const stories = storiesOf('ItemChoice', module)
+const stories = storiesOf('Widgets|ItemChoice', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

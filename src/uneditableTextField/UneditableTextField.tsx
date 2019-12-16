@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
+import { KIRK_LAYOUT_SOLID_ITEM_CLASS } from '_utils/layout'
 
 export interface UneditableTextFieldProps {
   readonly children: JSX.Element | string
@@ -32,7 +33,11 @@ export const UneditableTextField = ({
   return React.createElement(
     componentType,
     {
-      className: cc(['uneditableTextField', className]),
+      className: cc([
+        KIRK_LAYOUT_SOLID_ITEM_CLASS,
+        'uneditableTextField',
+        className
+      ]),
       ...props,
     },
     <Fragment>

@@ -257,7 +257,7 @@ button.c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-radio c1 c2"
     >
       <div
         className="kirk-item-leftText"
@@ -307,7 +307,7 @@ button.c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-radio c1 c2"
     >
       <div
         className="kirk-item-leftText"
@@ -364,7 +364,7 @@ button.c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-radio c1 c2"
     >
       <div
         className="kirk-item-leftText"

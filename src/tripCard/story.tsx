@@ -7,7 +7,7 @@ import WarningIcon from 'icon/warningIcon'
 import TripCard from './index'
 import specs from './specifications/index.md'
 
-const stories = storiesOf('TripCard', module)
+const stories = storiesOf('Widgets|TripCard', module)
 stories.addDecorator(withKnobs)
 
 const tripCardConfig = () => ({

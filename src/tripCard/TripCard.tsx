@@ -8,6 +8,7 @@ import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
 import Itinerary from 'itinerary'
 import Item from '_utils/item'
+import { KIRK_LAYOUT_SOLID_ITEM_CLASS } from '_utils/layout'
 import Text, { TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 
@@ -53,6 +54,9 @@ export interface TripCardProps {
   }
   badge?: string
   title?: string
+  // Whether the trip card should behave as a column item if nested in a <column> element.
+  // This is useful when nesting column item inside other column items like the topTripList.
+  enableColumnLayout?: boolean
 }
 
 const renderPassenger = (passenger: User) => (
@@ -84,6 +88,7 @@ const TripCard = ({
   statusInformation = null,
   badge = null,
   title = null,
+  enableColumnLayout = true,
 }: TripCardProps) => {
   const departure = itinerary[0]
   const arrival = itinerary[itinerary.length - 1]
@@ -115,6 +120,7 @@ const TripCard = ({
       className={cc([
         'kirk-tripCard',
         {
+          [KIRK_LAYOUT_SOLID_ITEM_CLASS]: enableColumnLayout,
           'kirk-tripCard--highlighted': !!highlighted,
           'kirk-tripCard--with-badge': badge && badge.length,
         },

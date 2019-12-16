@@ -9,7 +9,7 @@ import BlankSeparator, { BlankSeparatorSize } from 'blankSeparator'
 import MarketingMessage from 'marketingMessage'
 import SubHeader from 'subHeader'
 
-const stories = storiesOf('MarketingMessage', module)
+const stories = storiesOf('Widgets|MarketingMessage', module)
 stories.addDecorator(withKnobs)
 
 const longContent = 'Long content.'.repeat(50)

@@ -9,7 +9,7 @@ import BusIcon from 'icon/busIcon'
 
 import Tabs, { TabStatus } from 'tabs'
 
-const stories = storiesOf('Tabs', module)
+const stories = storiesOf('Widgets|Tabs', module)
 stories.addDecorator(withKnobs)
 
 const panels = [

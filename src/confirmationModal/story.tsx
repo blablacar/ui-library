@@ -9,7 +9,7 @@ import { ConfirmationModalProps, ConfirmationModalSize } from './ConfirmationMod
 import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
-const stories = storiesOf('ConfirmationModal', module)
+const stories = storiesOf('Widgets|ConfirmationModal', module)
 stories.addDecorator(withKnobs)
 
 class ConfirmationModalOpener extends Component<ConfirmationModalProps> {

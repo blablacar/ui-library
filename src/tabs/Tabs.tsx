@@ -1,6 +1,7 @@
 import React, { createRef, PureComponent, RefObject, Fragment } from 'react'
 import cc from 'classcat'
 import Badge from 'badge'
+import { KIRK_LAYOUT_SOLID_ITEM_CLASS } from '_utils/layout'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
@@ -177,7 +178,8 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
 
     return (
       <Fragment>
-        <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
+        <div className={cc([
+            KIRK_LAYOUT_SOLID_ITEM_CLASS, 'kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
           <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
             <div className="kirk-tab-highlight" ref={this.highlightRef} />
             <div
@@ -232,16 +234,16 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
         {tabs.map(tab => {
           const isSelected = selectedTab.id === tab.id
           return (
-            <div
-              role="tabpanel"
-              className="kirk-tab-panel"
-              id={`${generateTabPanelId(tab)}`}
-              key={tab.id}
-              aria-labelledby={tab.id}
-              hidden={!isSelected}
-            >
-              {isSelected ? tab.panelContent : null}
-            </div>
+              <div
+                  role="tabpanel"
+                  className="kirk-tab-panel"
+                  id={`${generateTabPanelId(tab)}`}
+                  key={tab.id}
+                  aria-labelledby={tab.id}
+                  hidden={!isSelected}
+              >
+                {isSelected ? tab.panelContent : null}
+              </div>
           )
         })}
       </Fragment>

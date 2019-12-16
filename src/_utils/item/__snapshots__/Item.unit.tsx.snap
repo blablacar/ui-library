@@ -174,7 +174,7 @@ button.c0 {
 }
 
 <div
-  className="kirk-item custom c0"
+  className="kirk-item kirk-layout-fluid-item custom c0"
 >
   <div
     className="kirk-item-leftText"

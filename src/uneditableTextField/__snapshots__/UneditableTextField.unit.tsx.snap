@@ -36,7 +36,7 @@ exports[`UneditableTextField Should have the proper default props 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-layout-solid-item uneditableTextField c0"
 >
   <div
     className="uneditableTextField-label"
@@ -82,7 +82,7 @@ exports[`UneditableTextField Should have the text ellipsed 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-layout-solid-item uneditableTextField c0"
 >
   <div
     className="uneditableTextField-label uneditableTextField-label--ellipsis"
@@ -128,7 +128,7 @@ exports[`UneditableTextField Should support add-ons 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-layout-solid-item uneditableTextField c0"
 >
   <div>
     Add-on
@@ -177,7 +177,7 @@ exports[`UneditableTextField Should support component links 1`] = `
 }
 
 <a
-  className="uneditableTextField c0"
+  className="kirk-layout-solid-item uneditableTextField c0"
   href="#bar"
 >
   <div
@@ -224,7 +224,7 @@ exports[`UneditableTextField Should support simple links 1`] = `
 }
 
 <a
-  className="uneditableTextField c0"
+  className="kirk-layout-solid-item uneditableTextField c0"
   href="#foo"
 >
   <div

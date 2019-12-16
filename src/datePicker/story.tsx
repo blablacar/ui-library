@@ -7,7 +7,7 @@ import { withKnobs, select, number } from '@storybook/addon-knobs'
 import DatePicker, { DatePickerOrientation } from 'datePicker'
 import readme from 'datePicker/specifications/datepicker.md'
 
-const stories = storiesOf('DatePicker', module)
+const stories = storiesOf('Widgets|DatePicker', module)
 stories.addDecorator(withKnobs)
 
 const weekdaysShort = (locale: string): string[] => {

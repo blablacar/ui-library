@@ -7,7 +7,7 @@ import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
 import PushInfo from './index'
 
-const stories = storiesOf('PushInfo', module)
+const stories = storiesOf('Widgets|PushInfo', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

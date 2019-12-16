@@ -208,7 +208,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#1"
     >
       <div
@@ -257,7 +257,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#2"
     >
       <div
@@ -306,7 +306,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#3"
     >
       <div
@@ -562,7 +562,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#1"
     >
       <div
@@ -611,7 +611,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#2"
     >
       <div
@@ -660,7 +660,7 @@ button.c1 {
     className="kirk-items-list-item kirk-items-list-item--withSeparator"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#3"
     >
       <div
@@ -916,7 +916,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#1"
     >
       <div
@@ -965,7 +965,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#2"
     >
       <div
@@ -1014,7 +1014,7 @@ button.c1 {
     className="kirk-items-list-item"
   >
     <a
-      className="kirk-item kirk-item--clickable kirk-item-choice c1"
+      className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice c1"
       href="#3"
     >
       <div

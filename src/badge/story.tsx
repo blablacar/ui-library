@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import Badge from './index'
 
-const stories = storiesOf('Badge', module)
+const stories = storiesOf('Widgets|Badge', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => (

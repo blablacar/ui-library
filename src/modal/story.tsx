@@ -8,7 +8,7 @@ import { ModalProps } from './Modal'
 
 import modalDoc from './specifications/modal.md'
 
-const stories = storiesOf('Modal', module)
+const stories = storiesOf('Widgets|Modal', module)
 stories.addDecorator(withKnobs)
 
 class ModalOpener extends Component<ModalProps> {

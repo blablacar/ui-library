@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+import { KIRK_LAYOUT_SOLID_ITEM_CLASS } from '_utils/layout'
 
 interface BlankSeparatorProps {
   readonly className?: Classcat.Class
@@ -13,7 +14,7 @@ export enum BlankSeparatorSize {
 }
 
 const BlankSeparator = ({ className }: BlankSeparatorProps) => (
-  <div className={cc(className)} aria-hidden="true" />
+  <div className={cc([KIRK_LAYOUT_SOLID_ITEM_CLASS, className])} aria-hidden="true" />
 )
 
 export default BlankSeparator

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
+import { KIRK_LAYOUT_FLUID_ITEM_CLASS } from '_utils/layout'
 
 interface TitleProps {
   readonly id?: string
@@ -15,12 +16,12 @@ const Title = ({ id, className, children, headingLevel = 1 }: TitleProps) => {
     return null
   }
   return React.createElement(
-    `h${headingLevel}`,
-    {
-      id,
-      className: cc(['kirk-title', className]),
-    },
-    <Fragment>{children}</Fragment>,
+      `h${headingLevel}`,
+      {
+        id,
+        className: cc([KIRK_LAYOUT_FLUID_ITEM_CLASS, 'kirk-title', className]),
+      },
+      <Fragment>{children}</Fragment>,
   )
 }
 export default Title

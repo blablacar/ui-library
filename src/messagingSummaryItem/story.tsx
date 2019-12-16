@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import ChevronIcon from 'icon/chevronIcon'
 import MessagingSummaryItem from './index'
 
-const stories = storiesOf('MessagingSummaryItem', module)
+const stories = storiesOf('Widgets|MessagingSummaryItem', module)
 stories.addDecorator(withKnobs)
 
 const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'

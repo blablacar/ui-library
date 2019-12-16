@@ -6,7 +6,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import ItemInfo from 'itemInfo'
 import ClockIcon from 'icon/clockIcon'
 
-const stories = storiesOf('ItemInfo', module)
+const stories = storiesOf('Widgets|ItemInfo', module)
 stories.addDecorator(withKnobs)
 
 stories.add('ItemInfo', () => {

@@ -6,7 +6,7 @@ import spec from 'blankSeparator/specifications/blankSeparator.md'
 import BlankSeparator from 'blankSeparator'
 import { BlankSeparatorSize } from './BlankSeparator'
 
-const stories = storiesOf('BlankSeparator', module)
+const stories = storiesOf('Widgets|BlankSeparator', module)
 stories.addDecorator(withKnobs)
 stories.add('Specifications', () => <BlankSeparator />, { readme: spec })
 

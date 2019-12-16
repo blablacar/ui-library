@@ -196,7 +196,7 @@ button.c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"
@@ -497,7 +497,7 @@ button.c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"
@@ -775,7 +775,7 @@ button.c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
   <div
     className="kirk-item-leftText"

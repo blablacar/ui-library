@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 import TheVoice from '.'
 import readme from 'theVoice/specifications/theVoice.md'
 
-const stories = storiesOf('TheVoice', module)
+const stories = storiesOf('Widgets|TheVoice', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Specifications', () => null, {

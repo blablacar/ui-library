@@ -5,7 +5,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import spec from 'divider/specifications/divider.md'
 import Divider from 'divider'
 
-const stories = storiesOf('Divider', module)
+const stories = storiesOf('Widgets|Divider', module)
 stories.addDecorator(withKnobs)
 stories.add('Specifications', () => <Divider />, { readme: spec })
 

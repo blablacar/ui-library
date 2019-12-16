@@ -11,7 +11,7 @@ import primaryDoc from './specifications/primary.md'
 import secondaryDoc from './specifications/secondary.md'
 import tertiaryDoc from './specifications/tertiary.md'
 
-const stories = storiesOf('Button', module).addDecorator(withKnobs)
+const stories = storiesOf('Widgets|Button', module).addDecorator(withKnobs)
 
 const label = (defaultValue: string) => text('Label', defaultValue)
 const hasIcon = () => boolean('icon', false)
@@ -129,6 +129,7 @@ stories.add('anchor button with link element', () => (
     {label('Anchor button')}
   </Button>
 ))
+
 
 stories.add('anchor button unstyled', () => (
   <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>

@@ -237,7 +237,7 @@ button.c0 {
 }
 
 <a
-  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
@@ -587,7 +587,7 @@ button.c0 {
 }
 
 <a
-  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
@@ -886,7 +886,7 @@ button.c0 {
 }
 
 <a
-  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   href="#"
   onClick={[Function]}
@@ -1209,7 +1209,7 @@ button.c0 {
 }
 
 <button
-  className="kirk-item kirk-item-choice custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item-choice custom-class-name c0"
   disabled={true}
   onBlur={null}
   onClick={null}
@@ -1534,7 +1534,7 @@ button.c0 {
 }
 
 <button
-  className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   onClick={[Function]}
   type="button"

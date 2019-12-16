@@ -8,6 +8,7 @@ import Text, { TextDisplayType, TextTagType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
 import SubHeader from 'subHeader'
 import BlankSeparator from 'blankSeparator'
+import { KIRK_LAYOUT_FLUID_ITEM_CLASS } from '_utils/layout'
 
 interface ItineraryProps {
   readonly ariaLabelledBy?: string
@@ -79,7 +80,8 @@ const Itinerary = ({
       <ul className={cc([{ 'kirk-itinerary--small': isSmall }])}>
         {isNonEmptyString(fromAddon) && (
           <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content"
+              <div className="kirk-itinerary-time-cell" aria-hidden='true'></div>
+              <Text className="kirk-itinerary-addon-content"
                   display={TextDisplayType.CAPTION}>{fromAddon}</Text>
           </li>
         )}
@@ -90,25 +92,27 @@ const Itinerary = ({
 
           const link = place.href
           const isLastPlace = places.length - 1 === index
+          const classes = [KIRK_LAYOUT_FLUID_ITEM_CLASS, 'kirk-itinerary-location-wrapper']
 
           if (!isEmpty(link) && typeof link !== 'string') {
             Component = link.type
             chevron = true
+            classes.push(link.props.className)
             hrefProps = {
               ...link.props,
-              className: cc(['kirk-itinerary-location-wrapper', link.props.className]),
+              className: cc(classes),
             }
           } else if (typeof link === 'string') {
             Component = 'a'
             chevron = true
             hrefProps = {
               href: place.href,
-              className: 'kirk-itinerary-location-wrapper',
+              className: cc(classes),
             }
           } else {
             Component = 'div'
             hrefProps = {
-              className: 'kirk-itinerary-location-wrapper',
+              className: cc(classes),
             }
           }
 
@@ -139,7 +143,7 @@ const Itinerary = ({
               />
               <Component {...hrefProps} aria-label={place.actionAriaLabel}>
                 {!isSmall && (
-                  <time dateTime={place.isoDate}>
+                  <time className="kirk-itinerary-time-cell" dateTime={place.isoDate}>
                     <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
                       {place.time}
                     </Text>
@@ -174,7 +178,8 @@ const Itinerary = ({
         })}
         {isNonEmptyString(toAddon) && (
           <li className="kirk-itinerary-toAddon" aria-label={toAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content"
+              <div className="kirk-itinerary-time-cell" aria-hidden='true'></div>
+              <Text className="kirk-itinerary-addon-content"
                   display={TextDisplayType.CAPTION}>{toAddon}</Text>
           </li>
         )}

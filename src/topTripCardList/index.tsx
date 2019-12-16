@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { color, space, responsiveBreakpoints, componentSizes } from '_utils/branding'
+import { columnItemHorizontalSpacing } from '_utils/layout'
 
 import TopTripCardList from './TopTripCardList'
 
@@ -13,7 +14,7 @@ const StyledTopTripCardList = styled(TopTripCardList)`
   & .kirk-topTripCardList {
     margin: auto;
     display: flex;
-    padding: ${space.l} ${wrapperHorizontalPadding};
+    padding: ${columnItemHorizontalSpacing} ${wrapperHorizontalPadding};
     box-sizing: border-box;
     overflow: auto; /* Make TripCards scrollable horizontally */
     -ms-overflow-style: none; /* Remove scrollbar visually IE 10+ */

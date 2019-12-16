@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 
 import Snackbar from 'snackbar'
 
-const stories = storiesOf('Snackbar', module)
+const stories = storiesOf('Widgets|Snackbar', module)
 stories.addDecorator(withKnobs)
 
 interface ErrorOpenerState {

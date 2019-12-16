@@ -8,7 +8,7 @@ import Button, { ButtonStatus } from 'button'
 
 import spec from './specifications/index.md'
 
-const stories = storiesOf('ButtonGroup', module)
+const stories = storiesOf('Widgets|ButtonGroup', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

@@ -260,7 +260,7 @@ button.c0 {
 }
 
 <a
-  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
   <div
@@ -595,7 +595,7 @@ button.c0 {
 }
 
 <a
-  className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
+  className="kirk-item kirk-layout-fluid-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
   <div

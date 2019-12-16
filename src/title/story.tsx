@@ -5,7 +5,7 @@ import { withKnobs, text, select } from '@storybook/addon-knobs'
 
 import Title from 'title'
 
-const stories = storiesOf('Title', module)
+const stories = storiesOf('Widgets|Title', module)
 const optionHeading = {
   1: '1',
   2: '2',

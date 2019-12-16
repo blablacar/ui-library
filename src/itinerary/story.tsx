@@ -6,7 +6,7 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import Itinerary from 'itinerary'
 import Proximity from 'proximity'
 
-const stories = storiesOf('Itinerary', module)
+const stories = storiesOf('Widgets|Itinerary', module)
 stories.addDecorator(withKnobs)
 
 const places = [

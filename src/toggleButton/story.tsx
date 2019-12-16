@@ -6,7 +6,7 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 
 import ToggleButton, { ToggleButtonStatus } from '.'
 
-const stories = storiesOf('ToggleButton', module)
+const stories = storiesOf('Widgets|ToggleButton', module)
 stories.addDecorator(withKnobs)
 
 stories.add('ToggleButton', () => (
