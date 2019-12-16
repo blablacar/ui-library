@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v16.2.0 (16/12/2019)
+
 - **[FIX]** Fix layout issue on `TopTripCardList`
 - **[NEW]** Add `rightTitleStrikeThrough` prop to `Item` and `ItemData`
-- [...]
 
 # v16.1.1 (12/12/2019)
 
