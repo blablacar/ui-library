@@ -69,6 +69,7 @@
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-typescript-to-proptypes": "0.17.1",
     "caniuse-db": "1.0.30001016",
+    "classcat": "4.0.2",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.15.1",
     "eslint": "6.7.2",
@@ -95,7 +96,6 @@
     "typescript": "3.7.3"
   },
   "dependencies": {
-    "classcat": "3.2.5",
     "country-telephone-data": "0.6.0",
     "exenv": "1.2.2",
     "focus-trap": "5.0.0",
@@ -110,7 +110,8 @@
   "peerDependencies": {
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "styled-components": "4.3.2"
+    "styled-components": "4.3.2",
+    "classcat": "4.0.2"
   },
   "husky": {
     "hooks": {

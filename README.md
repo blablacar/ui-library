@@ -18,7 +18,8 @@ Import the package into your `package.json`. You will also need the following pe
     "@blablacar/ui-library": "<CURRENT_VERSION>",
     "react": "<CURRENT_VERSION>",
     "react-dom": "<CURRENT_VERSION>",
-    "styled-components": "<CURRENT_VERSION>"
+    "styled-components": "<CURRENT_VERSION>",
+    "classcat": "<CURRENT_VERSION>",
     ...
 }
 ```
