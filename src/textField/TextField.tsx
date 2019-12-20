@@ -72,7 +72,7 @@ interface FormAttributes extends CommonFormFields {
   value: string
   ['aria-invalid']?: 'true' | 'false'
   ['aria-labelledby']?: string
-  inputMode?: string
+  inputMode?: inputModes
   pattern?: string
   ref?: (input: textfield) => void
   onChange?: (event: React.ChangeEvent<textfield>) => void
@@ -274,13 +274,13 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       size: '18',
     }
 
-    if (type === 'number') {
+    if (type === inputTypes.NUMBER) {
       // Display numeric keyboard on iOS
       attrs.pattern = '[0-9]*'
-      attrs.inputMode = 'numeric'
+      attrs.inputMode = inputModes.NUMERIC
     }
 
-    const buttonOnClick = type !== 'password' ? this.clearValue : this.toggleShowPassword
+    const buttonOnClick = type !== inputTypes.PASSWORD ? this.clearValue : this.toggleShowPassword
     const shouldDisplayButton = !disabled && value
 
     return (
@@ -299,7 +299,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
             {...attrs}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            type={type === 'password' && this.state.showPassword ? 'text' : type}
+            type={type === inputTypes.PASSWORD && this.state.showPassword ? inputTypes.TEXT : type}
           />
           {shouldDisplayButton && (
             <Button

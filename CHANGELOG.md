@@ -2,6 +2,7 @@
 
 - **[UPDATE]** Add keyboard controls to `Stepper`
 - [...]
+- **[UPDATE]** Dependencies update
 
 # v16.2.0 (16/12/2019)
 
