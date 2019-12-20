@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add keyboard controls to `Stepper`
 - [...]
 - **[UPDATE]** Dependencies update
 

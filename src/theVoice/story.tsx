@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, number, select } from '@storybook/addon-knobs'
-import { action } from '@storybook/addon-actions'
+import { withKnobs } from '@storybook/addon-knobs'
 import TheVoice from '.'
 import readme from 'theVoice/specifications/theVoice.md'
 

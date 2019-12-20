@@ -1,7 +1,6 @@
 // tslint:disable:max-line-length
 import React, { Fragment } from 'react'
 import BaseIcon from '_utils/icon'
-import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import StatusIcon, { status, StatusProps } from '_utils/icon/status'
 
 export const SpeakIcon = (props: StatusProps) => (
