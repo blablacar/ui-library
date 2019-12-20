@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 
 import Button from 'button'
 import Text from 'text'
@@ -28,4 +28,3 @@ stories.add('Basic message', () => (
     </Fragment>
   </MarketingMessage>
 ))
-

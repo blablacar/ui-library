@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Message from 'message'
-import {JSXElement} from "@babel/types"
 
 const stories = storiesOf('Message', module)
 stories.addDecorator(withKnobs)

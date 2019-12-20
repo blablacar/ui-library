@@ -12,7 +12,7 @@
     "start": "export NODE_PATH=src && start-storybook",
     "build": "rimraf build && tsc && babel build/src -x \".jsx\",\".js\" --ignore \"**/*.unit.jsx\",\"**/story.jsx\" --out-dir build && rimraf build/src && rimraf build/stories",
     "tslint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\" --project tsconfig.json",
-    "lint": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint",
+    "lint": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs tslint  --project tsconfig.json",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
     "prettier:ci": "prettier --list-different '**/*.{ts,tsx}'",
     "test": "jest",
