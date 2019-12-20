@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add keyboard controls to `Stepper`
 - [...]
 
 # v16.2.0 (16/12/2019)
