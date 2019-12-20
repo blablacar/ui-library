@@ -58,7 +58,6 @@ export interface TextAreaState {
 }
 
 export default class Textarea extends PureComponent<TextAreaProps, TextAreaState> {
-  private textarea: HTMLInputElement | HTMLTextAreaElement
   static defaultProps: Partial<TextAreaProps> = {
     fieldRef() {},
     onFocus() {},
@@ -162,7 +161,6 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
   }
 
   ref = (textarea: HTMLTextAreaElement) => {
-    this.textarea = textarea
     this.props.fieldRef(textarea)
   }
 

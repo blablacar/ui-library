@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, font, space } from '_utils/branding'
+import { color, space } from '_utils/branding'
 import Stepper, { StepperDisplay, StepperButtonSize } from './Stepper'
 
 const StyledStepper = styled(Stepper)`

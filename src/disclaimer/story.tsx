@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import spec from 'disclaimer/specifications/disclaimer.md'
 import Disclaimer from 'disclaimer'
 import Button, { ButtonStatus } from 'button'
