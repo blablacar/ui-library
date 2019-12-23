@@ -64,11 +64,9 @@ describe('DatePicker', () => {
   describe('react-day-picker', () => {
     it('Should forward props to the DayPicker component', () => {
       const now = new Date()
-      const wrapper = shallow(<DatePicker
-        name="datepicker"
-        initialDate={now}
-        numberOfMonths={12}
-      />)
+      const wrapper = shallow(
+        <DatePicker name="datepicker" initialDate={now} numberOfMonths={12} />,
+      )
       const instance = wrapper.instance()
 
       expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(12)

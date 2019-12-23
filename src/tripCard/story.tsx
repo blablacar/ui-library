@@ -12,9 +12,9 @@ stories.addDecorator(withKnobs)
 
 const tripCardConfig = () => ({
   ariaLabel: text(
-      'aria-label',
-      'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning'
-    ),
+    'aria-label',
+    'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',
+  ),
   href: '/',
   itinerary: [
     {

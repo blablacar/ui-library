@@ -14,17 +14,16 @@ interface ItemDataProps {
   readonly ariaLabel?: string
 }
 
-const ItemData = (
-  {
-    mainInfo,
-    data,
-    dataStrikeThrough,
-    className,
-    mainTitle,
-    dataInfo,
-    tag,
-    ariaLabel,
-  }: ItemDataProps) => {
+const ItemData = ({
+  mainInfo,
+  data,
+  dataStrikeThrough,
+  className,
+  mainTitle,
+  dataInfo,
+  tag,
+  ariaLabel,
+}: ItemDataProps) => {
   return (
     <Item
       className={className}

@@ -4,11 +4,7 @@ import { shallow, mount } from 'enzyme'
 import Message from './Message'
 
 it('Should have the correct attributes and text.', () => {
-  const message = shallow(
-    <Message active>
-      blabla
-    </Message>,
-  )
+  const message = shallow(<Message active>blabla</Message>)
   expect(message.find('p').text()).toContain('blabla')
   expect(message.prop('className')).toContain('kirk-message kirk-active')
 })

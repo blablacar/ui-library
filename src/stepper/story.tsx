@@ -10,23 +10,27 @@ import Stepper, { StepperDisplay } from 'stepper'
 const stories = storiesOf('Stepper', module)
 stories.addDecorator(withKnobs)
 
-stories.add('Default stepper', () => (
-  <Stepper
-    name="stepper1"
-    min={number('min', Number.MIN_SAFE_INTEGER)}
-    max={number('max', Number.MAX_SAFE_INTEGER)}
-    step={number('step', 2)}
-    value={number('value', 5)}
-    increaseLabel={text('increaseLabel', 'Increment')}
-    decreaseLabel={text('decreaseLabel', 'Decrement')}
-    onChange={action('changed')}
-    display={select('display', StepperDisplay, StepperDisplay.SMALL)}
-  >
-    {text('children', 'Number of seats')}
-  </Stepper>
-), {
-  readme: { content: spec },
-},)
+stories.add(
+  'Default stepper',
+  () => (
+    <Stepper
+      name="stepper1"
+      min={number('min', Number.MIN_SAFE_INTEGER)}
+      max={number('max', Number.MAX_SAFE_INTEGER)}
+      step={number('step', 2)}
+      value={number('value', 5)}
+      increaseLabel={text('increaseLabel', 'Increment')}
+      decreaseLabel={text('decreaseLabel', 'Decrement')}
+      onChange={action('changed')}
+      display={select('display', StepperDisplay, StepperDisplay.SMALL)}
+    >
+      {text('children', 'Number of seats')}
+    </Stepper>
+  ),
+  {
+    readme: { content: spec },
+  },
+)
 
 stories.add('Stepper with formatted value', () => (
   <Stepper

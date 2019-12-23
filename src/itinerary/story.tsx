@@ -143,16 +143,16 @@ stories.add('with stopovers', () => {
   const toAddonLabel = text('To addon label', 'Driver arrival')
   const headline = text('Headline', 'Mon 11 December')
   return (
-      <Itinerary
-        ariaLabel={ariaLabel}
-        fromAddon={fromAddon}
-        fromAddonAriaLabel={fromAddonLabel}
-        toAddon={toAddon}
-        toAddonAriaLabel={toAddonLabel}
-        places={placesWithStopover}
-        small={boolean('small', false)}
-        headline={headline}
-      />
+    <Itinerary
+      ariaLabel={ariaLabel}
+      fromAddon={fromAddon}
+      fromAddonAriaLabel={fromAddonLabel}
+      toAddon={toAddon}
+      toAddonAriaLabel={toAddonLabel}
+      places={placesWithStopover}
+      small={boolean('small', false)}
+      headline={headline}
+    />
   )
 })
 
@@ -183,14 +183,12 @@ stories.add('with button tiles', () => {
     },
   ]
   return (
-      <Itinerary
-        fromAddon={fromAddon}
-        toAddon={toAddon}
-        places={placesWithButton}
-        small={boolean('small', false)}
-        headline={headline}
-      />
+    <Itinerary
+      fromAddon={fromAddon}
+      toAddon={toAddon}
+      places={placesWithButton}
+      small={boolean('small', false)}
+      headline={headline}
+    />
   )
 })
-
-

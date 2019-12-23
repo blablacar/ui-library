@@ -6,6 +6,8 @@
   },
   "extends": [
     "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
     "airbnb"
   ],
   "parser": "@typescript-eslint/parser",
@@ -22,10 +24,22 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "trailingComma": "all",
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
+    "function-paren-newline": 0,
+    "implicit-arrow-linebreak": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "import/order": 0,
+    "lines-between-class-members": 0,
     "object-curly-newline": 0,
     "semi": ["error", "never"],
     "react/destructuring-assignment": 0,

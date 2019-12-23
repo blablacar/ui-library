@@ -43,19 +43,25 @@ describe('Itinerary component', () => {
   })
 
   it('Render with aria-label', () => {
-    const itinerary = shallow(<Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />,
+    )
     expect(itinerary.prop('aria-label')).toEqual('testLabel')
     expect(itinerary.prop('aria-labelledby')).toEqual(undefined)
   })
 
   it('Should display the top addon with a11y label', () => {
-    const itinerary = shallow(<Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />,
+    )
     expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
     expect(itinerary.find('.kirk-itinerary-fromAddon').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should display the bottom addon with a11y label', () => {
-    const itinerary = shallow(<Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />,
+    )
     expect(
       itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--toAddon'),
     ).toBe(true)
@@ -80,8 +86,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location')
         .first()
-        .prop('aria-label')
-      ).toEqual('Pick up/drop off location')
+        .prop('aria-label'),
+    ).toEqual('Pick up/drop off location')
   })
 
   it('Should display link with a11y label', () => {
@@ -117,8 +123,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location-wrapper')
         .first()
-        .prop('aria-label')
-      ).toEqual('New page with a map')
+        .prop('aria-label'),
+    ).toEqual('New page with a map')
     expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
   })
 
@@ -155,8 +161,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location-wrapper')
         .first()
-        .prop('aria-label')
-      ).toEqual('New page with a map')
+        .prop('aria-label'),
+    ).toEqual('New page with a map')
     expect(
       itinerary
         .find('.kirk-itinerary-location-wrapper')

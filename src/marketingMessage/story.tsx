@@ -22,7 +22,7 @@ stories.add('Basic message', () => (
         {longContent}
       </Text>
       <BlankSeparator size={BlankSeparatorSize.LARGE} />
-      <div style={{textAlign: 'center'}}>
+      <div style={{ textAlign: 'center' }}>
         <Button>Marketing button</Button>
       </div>
     </Fragment>

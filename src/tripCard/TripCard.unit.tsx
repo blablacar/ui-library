@@ -56,7 +56,7 @@ describe('TripCard component', () => {
     expect(tripCard.prop('ariaLabel')).toBeFalsy()
   })
 
-  it("Should have `aria-label` attribute on the wrapper link", () => {
+  it('Should have `aria-label` attribute on the wrapper link', () => {
     const tripCard = shallow(<TripCard {...mockedProps} ariaLabel="testLabel" />)
     expect(tripCard.find('a').prop('aria-label')).toEqual('testLabel')
   })

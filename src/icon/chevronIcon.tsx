@@ -17,8 +17,8 @@ export const ChevronIcon = (props: ChevronProps) => (
       strokeLinejoin="round"
       strokeMiterlimit="10"
       points="9 18 15 12 9 6"
-      {...props.down && { transform: 'rotate(90 12 12)' }}
-      {...props.left && { transform: 'rotate(180 12 12)' }}
+      {...(props.down && { transform: 'rotate(90 12 12)' })}
+      {...(props.left && { transform: 'rotate(180 12 12)' })}
     />
   </BaseIcon>
 )

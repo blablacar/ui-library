@@ -38,7 +38,6 @@ describe('Profile default', () => {
 })
 
 describe('Profile', () => {
-
   it('Should have `ariaLabel`', () => {
     const profile = shallow(<Profile {...defaultProps} ariaLabel="testLabel" />)
     expect(profile.find(Item).prop('ariaLabel')).toEqual('testLabel')

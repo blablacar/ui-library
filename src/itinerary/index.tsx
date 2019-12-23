@@ -52,8 +52,10 @@ const StyledItinerary = styled(Itinerary)`
     padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
   }
 
-  & .kirk-itinerary--small .kirk-itinerary-location:not(.kirk-itinerary--arrival)
-      .kirk-itinerary-location-city {
+  &
+    .kirk-itinerary--small
+    .kirk-itinerary-location:not(.kirk-itinerary--arrival)
+    .kirk-itinerary-location-city {
     padding-bottom: 0;
   }
 
@@ -86,7 +88,7 @@ const StyledItinerary = styled(Itinerary)`
     top: calc(4px + ${space.m} + ${gutterTopOffset});
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth} - 2px);
   }
-  
+
   & .kirk-itinerary-location.kirk-itinerary--departure .kirk-itinerary-location-city::after,
   & .kirk-itinerary-location.kirk-itinerary--arrival .kirk-itinerary-location-city::after {
     top: calc(4px + ${space.m} + ${gutterTopOffset});

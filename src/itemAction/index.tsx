@@ -25,7 +25,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
   static defaultProps: Partial<ItemActionProps> = {
     highlighted: true,
     status: ItemStatus.DEFAULT,
-    tag: (<button />),
+    tag: <button />,
   }
 
   static STATUS = ItemStatus
