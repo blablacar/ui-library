@@ -155,9 +155,9 @@ describe('ARIA roles', () => {
     expect(tabs.get(1).props['aria-selected']).toBe('false')
     expect(tabs.get(2).props['aria-selected']).toBe('false')
     // Verify tabIndexes
-    expect(tabs.get(0).props['tabIndex']).toBe(0)
-    expect(tabs.get(1).props['tabIndex']).toBe(-1)
-    expect(tabs.get(2).props['tabIndex']).toBe(-1)
+    expect(tabs.get(0).props.tabIndex).toBe(0)
+    expect(tabs.get(1).props.tabIndex).toBe(-1)
+    expect(tabs.get(2).props.tabIndex).toBe(-1)
 
     // Verify that the current tabpanel id is correct.
     let tabpanel = wrapper.find('[role="tabpanel"]')
@@ -176,9 +176,9 @@ describe('ARIA roles', () => {
     expect(tabs.get(1).props['aria-selected']).toBe('true')
     expect(tabs.get(2).props['aria-selected']).toBe('false')
     // Verify tabIndexes
-    expect(tabs.get(0).props['tabIndex']).toBe(-1)
-    expect(tabs.get(1).props['tabIndex']).toBe(0)
-    expect(tabs.get(2).props['tabIndex']).toBe(-1)
+    expect(tabs.get(0).props.tabIndex).toBe(-1)
+    expect(tabs.get(1).props.tabIndex).toBe(0)
+    expect(tabs.get(2).props.tabIndex).toBe(-1)
 
     // Verify that the current tabpanel id is correct.
     tabpanel = wrapper.find('[role="tabpanel"]')

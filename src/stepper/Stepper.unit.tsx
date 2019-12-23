@@ -145,7 +145,7 @@ it('Should be able to keep the right value after props change', () => {
 
 it('Should not call onChange on componentDidMount', () => {
   const onChange = jest.fn()
-  const stepper = shallow(
+  shallow(
     <Stepper {...defaultProps} min={1} value={2} step={3} max={5} onChange={onChange}>
       Amount of something
     </Stepper>,
@@ -188,7 +188,7 @@ describe('handleFontSize', () => {
   })
 
   it('should call handleFontSize() on window.resize()', () => {
-    const stepper = shallow(<Stepper {...defaultProps}>Amount of something</Stepper>)
+    shallow(<Stepper {...defaultProps}>Amount of something</Stepper>)
     const spyHandleFontSize = jest.spyOn(Stepper.prototype, 'handleFontSize')
 
     spyHandleFontSize.mockClear()

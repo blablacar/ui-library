@@ -10,14 +10,12 @@ interface TopTripCardListProps {
   readonly isWrapped?: boolean
 }
 
-const TopTripCardList = ({ children, className = '', isWrapped = false }: TopTripCardListProps) => {
-  return (
-    <div className={cc(['kirk-topTripCardList-wrapper', className])}>
-      <ul className={cc(['kirk-topTripCardList', { 'kirk-topTripCardList-wrapped': isWrapped }])}>
-        {children}
-      </ul>
-    </div>
-  )
-}
+const TopTripCardList = ({ children, className = '', isWrapped = false }: TopTripCardListProps) => (
+  <div className={cc(['kirk-topTripCardList-wrapper', className])}>
+    <ul className={cc(['kirk-topTripCardList', { 'kirk-topTripCardList-wrapped': isWrapped }])}>
+      {children}
+    </ul>
+  </div>
+)
 
 export default TopTripCardList

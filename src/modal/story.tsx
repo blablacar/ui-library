@@ -44,12 +44,7 @@ class ModalOpener extends Component<ModalProps> {
           <div>
             <h1 id="label1">Modal 1</h1>
             <p id="description1">This is the description of my modal</p>
-            <img
-              src="http://placekitten.com/g/216/144"
-              width="216"
-              height="144"
-              alt="The picture of a cat"
-            />
+            <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="A kitten" />
           </div>
         </Modal>
 
@@ -57,12 +52,7 @@ class ModalOpener extends Component<ModalProps> {
           <div>
             <h1 id="label2">Modal 2</h1>
             <p id="description2">This is the description of my modal</p>
-            <img
-              src="http://placekitten.com/g/216/144"
-              width="216"
-              height="144"
-              alt="The picture of a cat"
-            />
+            <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="A kitten" />
           </div>
         </Modal>
       </div>

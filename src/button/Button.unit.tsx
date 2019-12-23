@@ -102,7 +102,7 @@ describe('Button', () => {
 
   it('fires the callback event when valid', () => {
     const event = jest.fn()
-    const button = mount(
+    mount(
       <Button onDoneAnimationEnd={event} status={ButtonStatus.CHECKED}>
         blabla
       </Button>,

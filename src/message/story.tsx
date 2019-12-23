@@ -8,9 +8,9 @@ import Message from 'message'
 const stories = storiesOf('Message', module)
 stories.addDecorator(withKnobs)
 
-const wrapInContainer = (content: JSX.Element) => {
-  return <div style={{ width: '600px', border: '1px solid lightgray' }}>{content}</div>
-}
+const wrapInContainer = (content: JSX.Element) => (
+  <div style={{ width: '600px', border: '1px solid lightgray' }}>{content}</div>
+)
 
 const veryLongMessage = 'long message '.repeat(10)
 const veryLongMessageWithoutBreaks = 'longmessage_'.repeat(10)
@@ -29,15 +29,15 @@ stories.add('Conversation', () =>
       <Message messageAnnotation="Delivered - 15:32" active={false}>
         Msg
       </Message>
-      <Message messageAnnotation="Delivered - 15:35" active={true}>
+      <Message messageAnnotation="Delivered - 15:35" active>
         {veryLongMessageWithoutBreaks}
       </Message>
-      <Message active={true}>Msg</Message>
-      <Message active={true}>{veryLongMessage}</Message>
-      <Message messageAnnotation="Sent - 15:40" active={true}>
+      <Message active>Msg</Message>
+      <Message active>{veryLongMessage}</Message>
+      <Message messageAnnotation="Sent - 15:40" active>
         Msg 2
       </Message>
-      <Message messageAnnotation="Delivered - 15:45" active={true}>
+      <Message messageAnnotation="Delivered - 15:45" active>
         Msg 1
       </Message>
     </Fragment>,
@@ -58,7 +58,7 @@ stories.add("Current user's message", () =>
 
 stories.add('Message from author with message annotation', () =>
   wrapInContainer(
-    <Message active={true} messageAnnotation="Sent - 15:00">
+    <Message active messageAnnotation="Sent - 15:00">
       {text('text', 'A simple message')}
     </Message>,
   ),

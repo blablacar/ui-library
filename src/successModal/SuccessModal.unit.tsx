@@ -20,7 +20,7 @@ describe('<SuccessModal>', () => {
     mockClose = jest.fn()
     wrapper = shallow(<SuccessModal {...defaultProps} />)
     wrapperOpen = mount(
-      <SuccessModal {...defaultProps} isOpen={true} onClose={mockClose}>
+      <SuccessModal {...defaultProps} isOpen onClose={mockClose}>
         Success description
       </SuccessModal>,
     )

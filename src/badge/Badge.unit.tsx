@@ -10,8 +10,7 @@ it('Should read the aria-label attribute and not the children if both are provid
 })
 
 it('Should display the children if this is a number', () => {
-  const value = 12
-  const wrapper = shallow(<Badge>value</Badge>)
+  const wrapper = shallow(<Badge>12</Badge>)
   expect(wrapper.find('span > span').prop('aria-hidden')).toBe(false)
 })
 

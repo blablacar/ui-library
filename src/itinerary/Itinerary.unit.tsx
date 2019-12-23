@@ -180,7 +180,7 @@ describe('Itinerary component', () => {
   })
 
   it("Should use subLabel in key if it's a string", () => {
-    const places = [
+    const placesList = [
       {
         distanceFromPoint: '1,5km',
         time: '09:00',
@@ -195,7 +195,7 @@ describe('Itinerary component', () => {
         mainLabel: 'Tours',
       },
     ]
-    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
       .at(0)
@@ -218,7 +218,7 @@ describe('Itinerary component', () => {
   })
 
   it('Should use key attribute as key if provided', () => {
-    const places = [
+    const placesList = [
       {
         distanceFromPoint: '1,5km',
         time: '09:00',
@@ -235,7 +235,7 @@ describe('Itinerary component', () => {
         key: 'route-end-tours',
       },
     ]
-    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
       .at(0)
@@ -262,7 +262,7 @@ describe('Itinerary component', () => {
     })
 
     it('Should be displayed as small if no time nor subLabel', () => {
-      const places = [
+      const placesList = [
         {
           isoDate: '2017-12-11T09:00',
           mainLabel: 'Paris',
@@ -275,7 +275,7 @@ describe('Itinerary component', () => {
         },
       ]
 
-      const itinerary = shallow(<Itinerary places={places} />)
+      const itinerary = shallow(<Itinerary places={placesList} />)
       const ul = itinerary.find('ul')
       expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
     })

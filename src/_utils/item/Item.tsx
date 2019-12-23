@@ -169,7 +169,7 @@ const Item = ({
       {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
       {chevron && (
         <div className="kirk-item-rightAddon">
-          {<ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />}
+          <ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />
         </div>
       )}
     </Tag>

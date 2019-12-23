@@ -42,8 +42,6 @@ interface StepperProps {
 
 interface StepperState {
   value: number
-  min: number
-  max: number
   fontSize?: number
 }
 
@@ -64,14 +62,10 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     display: StepperDisplay.SMALL,
   }
 
-  filterValue = (value: number, min: number, max: number) => {
-    return Math.max(min, Math.min(value, max))
-  }
+  filterValue = (value: number, min: number, max: number) => Math.max(min, Math.min(value, max))
 
   state: StepperState = {
     value: this.filterValue(this.props.value, this.props.min, this.props.max),
-    min: this.props.min,
-    max: this.props.max,
   }
 
   whileButtonDown: number

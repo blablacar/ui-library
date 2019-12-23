@@ -65,7 +65,7 @@ class SuccessModal extends Component<SuccessModalProps> {
           src={imageSrc}
           alt={imageText}
           // This image is always decorative
-          aria-hidden={true}
+          aria-hidden
         />
         <div id={successContentId} className={`${baseClassName}-bodyItem`}>
           <Text

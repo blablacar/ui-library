@@ -11,8 +11,8 @@ it('Should have the correct attributes and text.', () => {
   const pushInfo = renderer
     .create(
       <PushInfo
-        headline={"If it's green it's a win!"}
-        content={'Green icons show meeting points closest to you!'}
+        headline="If it's green it's a win!"
+        content="Green icons show meeting points closest to you!"
       />,
     )
     .toJSON()
@@ -24,8 +24,8 @@ it('Should also have the correct icon.', () => {
     .create(
       <PushInfo
         icon={<ProximityIcon iconColor={color.success} title="" />}
-        headline={"If it's green it's a win!"}
-        content={'Green icons show meeting points closest to you!'}
+        headline="If it's green it's a win!"
+        content="Green icons show meeting points closest to you!"
       />,
     )
     .toJSON()

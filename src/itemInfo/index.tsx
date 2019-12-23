@@ -10,16 +10,14 @@ interface ItemInfoProps {
   readonly tag?: JSX.Element
 }
 
-const ItemInfo = ({ mainInfo, className, mainTitle, icon, tag }: ItemInfoProps) => {
-  return (
-    <Item
-      className={className}
-      leftTitle={mainTitle}
-      leftBody={mainInfo}
-      leftAddon={icon}
-      tag={tag}
-    />
-  )
-}
+const ItemInfo = ({ mainInfo, className, mainTitle, icon, tag }: ItemInfoProps) => (
+  <Item
+    className={className}
+    leftTitle={mainTitle}
+    leftBody={mainInfo}
+    leftAddon={icon}
+    tag={tag}
+  />
+)
 
 export default ItemInfo

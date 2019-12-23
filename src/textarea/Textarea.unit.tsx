@@ -13,7 +13,7 @@ it('Should have the proper value.', () => {
 
 it('Should set focus properly initially', () => {
   // Verify that focus is initially set without throwing.
-  mount(<Textarea name="test" defaultValue="blabla" focus={true} />)
+  mount(<Textarea name="test" defaultValue="blabla" focus />)
 })
 
 it('Should set focus properly dynamically', () => {

@@ -38,21 +38,19 @@ const CircleIcon = (props: CircleProps) => (
   </BaseIcon>
 )
 
-const dashKeyframesBuilder = (offset: number) => {
-  return keyframes`
-        0% {
-          stroke-dashoffset: ${offset};
-        }
-        50% {
-          stroke-dashoffset: ${offset / 4};
-          transform: rotate(135deg);
-        }
-        100% {
-          stroke-dashoffset: ${offset};
-          transform: rotate(450deg);
-        }
-      `
-}
+const dashKeyframes = keyframes`
+    0% {
+      stroke-dashoffset: ${offset};
+    }
+    50% {
+      stroke-dashoffset: ${offset / 4};
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: ${offset};
+      transform: rotate(450deg);
+    }
+  `
 
 const rotatorKeyframes = keyframes`
     0% {
@@ -77,7 +75,7 @@ export const StyledCircleIcon = styled(CircleIcon)`
     stroke-dasharray: ${offset};
     stroke-dashoffset: 0;
     transform-origin: center;
-    animation: ${dashKeyframesBuilder(offset)} ${duration} ease-in-out infinite;
+    animation: ${dashKeyframes} ${duration} ease-in-out infinite;
   }
 
   &.thin circle {

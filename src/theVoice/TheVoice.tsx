@@ -7,11 +7,10 @@ interface TheVoiceProps {
   readonly children: string
 }
 
-const TheVoice = ({ id, className, children }: TheVoiceProps) => {
-  return (
-    <Title id={id} className={className} headingLevel="1">
-      {children}
-    </Title>
-  )
-}
+const TheVoice = ({ id, className, children }: TheVoiceProps) => (
+  <Title id={id} className={className} headingLevel="1">
+    {children}
+  </Title>
+)
+
 export default TheVoice

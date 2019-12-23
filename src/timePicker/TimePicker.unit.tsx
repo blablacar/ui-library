@@ -97,7 +97,7 @@ describe('<TimePicker />', () => {
     it('should have `referenceDate` with time at 00:00:00', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} />)
       const instance = wrapper.instance() as InstanceType<typeof TimePicker>
-      const referenceDate = instance.referenceDate
+      const { referenceDate } = instance
       expect(referenceDate.getHours()).toEqual(0)
       expect(referenceDate.getMinutes()).toEqual(0)
       expect(referenceDate.getSeconds()).toEqual(0)

@@ -15,7 +15,7 @@ export interface MessageProps {
   readonly messageAnnotation?: string
 }
 
-const Message = ({ active, date, children, messageAnnotation, className }: MessageProps) => (
+const Message = ({ active, children, messageAnnotation, className }: MessageProps) => (
   <div className={cc(['kirk-message', prefix({ active }), className])}>
     <div className="kirk-message-content">
       <blockquote>

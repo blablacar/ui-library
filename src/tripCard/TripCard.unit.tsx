@@ -41,10 +41,12 @@ const mockedProps = {
 
 const createPassengers = count => {
   let passengerIdx = 1
-  return Array(count).fill({
+  const passengers = Array(count).fill({
     avatarUrl: '//placehold.it/500x500',
     firstName: `Jane ${(passengerIdx += 1)}`,
   })
+
+  return passengers
 }
 
 const Div = () => <div className="divTest" />
