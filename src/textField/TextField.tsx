@@ -136,10 +136,11 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   onTextFieldChange = (event: React.ChangeEvent<textfield>) => {
+    const { value } = this.state
     this.setState(
       {
-        value: this.props.format(event.target.value, this.state.value),
-        previousValue: this.state.value,
+        value: this.props.format(event.target.value, value),
+        previousValue: value,
       },
       this.onChange,
     )
@@ -173,10 +174,11 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
   }
 
   clearValue = () => {
+    const { value } = this.state
     this.setState(
       {
         value: '',
-        previousValue: this.state.value,
+        previousValue: value,
       },
       () => {
         this.input.focus()

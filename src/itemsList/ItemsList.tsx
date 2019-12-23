@@ -37,7 +37,7 @@ class ItemsList extends Component<ItemsListProps> {
         className={cc([
           'kirk-items-list',
           className,
-          { [`kirk-items-list--withSeparators`]: withSeparators },
+          { 'kirk-items-list--withSeparators': withSeparators },
         ])}
         {...otherProps}
       >
@@ -50,7 +50,7 @@ class ItemsList extends Component<ItemsListProps> {
               <li
                 className={cc([
                   'kirk-items-list-item',
-                  { [`kirk-items-list-item--withSeparator`]: separator },
+                  { 'kirk-items-list-item--withSeparator': separator },
                 ])}
                 key={keyGenerator(index)}
               >

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 import { color, space, font, modalSize, fontWeight } from '_utils/branding'
+import ConfirmationModal from './ConfirmationModal'
 
 const footerHeight = '96px' /* = padding + content */
-
-import ConfirmationModal from './ConfirmationModal'
 
 const StyledConfirmationModal = styled(ConfirmationModal)`
   &.kirk-confirmationModal {

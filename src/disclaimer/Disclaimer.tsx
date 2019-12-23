@@ -19,13 +19,11 @@ interface DisclaimerProps {
   readonly deprecatedHelpUrl?: string
 }
 
-const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => {
-  return (
-    <Button href={deprecatedHelpUrl} status={ButtonStatus.UNSTYLED} isBubble>
-      <QuestionIcon iconColor={color.primary} />
-    </Button>
-  )
-}
+const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => (
+  <Button href={deprecatedHelpUrl} status={ButtonStatus.UNSTYLED} isBubble>
+    <QuestionIcon iconColor={color.primary} />
+  </Button>
+)
 
 const Disclaimer = ({
   useInfoIcon = true,

@@ -81,13 +81,13 @@ describe('ItemAction', () => {
     it('Should render an highlighted ItemAction by default', () => {
       const props = { action: 'test' }
       const wrapper = mount(<ItemAction {...props}>...</ItemAction>)
-      expect( wrapper.find('.kirk-item--highlighted').exists()).toBe(true)
+      expect(wrapper.find('.kirk-item--highlighted').exists()).toBe(true)
     })
 
     it('Can render a non-highlighted ItemAction', () => {
       const props = { action: 'test', highlighted: false }
       const wrapper = mount(<ItemAction {...props}>...</ItemAction>)
-      expect( wrapper.find('.kirk-item--highlighted').exists()).toBe(false)
+      expect(wrapper.find('.kirk-item--highlighted').exists()).toBe(false)
     })
   })
 })

@@ -73,8 +73,8 @@ const SelectField = React.forwardRef(
           autoFocus={autoFocus}
           ref={ref}
         >
-          {options.map(({ value, label, ariaLabel }: SelectFieldItem) => (
-            <option key={`${value}${label}`} value={value} aria-label={ariaLabel}>
+          {options.map(({ value, label, ariaLabel: optionAriaLabel }: SelectFieldItem) => (
+            <option key={`${value}${label}`} value={value} aria-label={optionAriaLabel}>
               {label}
             </option>
           ))}

@@ -43,19 +43,25 @@ describe('Itinerary component', () => {
   })
 
   it('Render with aria-label', () => {
-    const itinerary = shallow(<Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />,
+    )
     expect(itinerary.prop('aria-label')).toEqual('testLabel')
     expect(itinerary.prop('aria-labelledby')).toEqual(undefined)
   })
 
   it('Should display the top addon with a11y label', () => {
-    const itinerary = shallow(<Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />,
+    )
     expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
     expect(itinerary.find('.kirk-itinerary-fromAddon').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should display the bottom addon with a11y label', () => {
-    const itinerary = shallow(<Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />)
+    const itinerary = shallow(
+      <Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />,
+    )
     expect(
       itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--toAddon'),
     ).toBe(true)
@@ -80,8 +86,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location')
         .first()
-        .prop('aria-label')
-      ).toEqual('Pick up/drop off location')
+        .prop('aria-label'),
+    ).toEqual('Pick up/drop off location')
   })
 
   it('Should display link with a11y label', () => {
@@ -117,8 +123,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location-wrapper')
         .first()
-        .prop('aria-label')
-      ).toEqual('New page with a map')
+        .prop('aria-label'),
+    ).toEqual('New page with a map')
     expect(itinerary.find('.kirk-itinerary-location-chevron').exists()).toBe(true)
   })
 
@@ -155,8 +161,8 @@ describe('Itinerary component', () => {
       itinerary
         .find('.kirk-itinerary-location-wrapper')
         .first()
-        .prop('aria-label')
-      ).toEqual('New page with a map')
+        .prop('aria-label'),
+    ).toEqual('New page with a map')
     expect(
       itinerary
         .find('.kirk-itinerary-location-wrapper')
@@ -174,7 +180,7 @@ describe('Itinerary component', () => {
   })
 
   it("Should use subLabel in key if it's a string", () => {
-    const places = [
+    const placesList = [
       {
         distanceFromPoint: '1,5km',
         time: '09:00',
@@ -189,7 +195,7 @@ describe('Itinerary component', () => {
         mainLabel: 'Tours',
       },
     ]
-    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
       .at(0)
@@ -212,7 +218,7 @@ describe('Itinerary component', () => {
   })
 
   it('Should use key attribute as key if provided', () => {
-    const places = [
+    const placesList = [
       {
         distanceFromPoint: '1,5km',
         time: '09:00',
@@ -229,7 +235,7 @@ describe('Itinerary component', () => {
         key: 'route-end-tours',
       },
     ]
-    const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
+    const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
       .at(0)
@@ -256,7 +262,7 @@ describe('Itinerary component', () => {
     })
 
     it('Should be displayed as small if no time nor subLabel', () => {
-      const places = [
+      const placesList = [
         {
           isoDate: '2017-12-11T09:00',
           mainLabel: 'Paris',
@@ -269,7 +275,7 @@ describe('Itinerary component', () => {
         },
       ]
 
-      const itinerary = shallow(<Itinerary places={places} />)
+      const itinerary = shallow(<Itinerary places={placesList} />)
       const ul = itinerary.find('ul')
       expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
     })

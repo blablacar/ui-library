@@ -41,10 +41,12 @@ const mockedProps = {
 
 const createPassengers = count => {
   let passengerIdx = 1
-  return Array(count).fill({
+  const passengers = Array(count).fill({
     avatarUrl: '//placehold.it/500x500',
     firstName: `Jane ${(passengerIdx += 1)}`,
   })
+
+  return passengers
 }
 
 const Div = () => <div className="divTest" />
@@ -56,7 +58,7 @@ describe('TripCard component', () => {
     expect(tripCard.prop('ariaLabel')).toBeFalsy()
   })
 
-  it("Should have `aria-label` attribute on the wrapper link", () => {
+  it('Should have `aria-label` attribute on the wrapper link', () => {
     const tripCard = shallow(<TripCard {...mockedProps} ariaLabel="testLabel" />)
     expect(tripCard.find('a').prop('aria-label')).toEqual('testLabel')
   })

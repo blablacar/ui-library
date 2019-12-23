@@ -22,7 +22,7 @@ const TopBar = ({
   bgTransparent = false,
   innerWrapperClassName = null,
 }: TopBarProps) => {
-  const Wrapper = Boolean(innerWrapperClassName) ? (
+  const Wrapper = innerWrapperClassName ? (
     <div className={cc([innerWrapperClassName])} />
   ) : (
     <Fragment />

@@ -7,9 +7,7 @@ export interface MarketingMessageProps {
 }
 
 const MarketingMessage = ({ children, className }: MarketingMessageProps) => (
-  <div className={cc(className)}>
-    {children}
-  </div>
+  <div className={cc(className)}>{children}</div>
 )
 
 export default MarketingMessage

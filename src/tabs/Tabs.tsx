@@ -61,9 +61,7 @@ const createTabIdToRefMap = (tabs: Tab[]): Map<string, RefObject<HTMLButtonEleme
   return tabIdToRef
 }
 
-const generateTabPanelId = (tab: Tab): string => {
-  return `${tab.id}_panel`
-}
+const generateTabPanelId = (tab: Tab): string => `${tab.id}_panel`
 
 /**
  * A basic Tabs component made of:

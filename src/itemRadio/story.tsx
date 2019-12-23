@@ -42,52 +42,48 @@ stories.add(
 
 stories.add(
   'Multiple items',
-  () => {
-    return (
-      <ItemRadioGroup
-        name={text('Name', 'option')}
-        status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
-        value={2}
-        onChange={action('changed group')}
-      >
-        <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} />
-        <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} />
-      </ItemRadioGroup>
-    )
-  },
+  () => (
+    <ItemRadioGroup
+      name={text('Name', 'option')}
+      status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
+      value={2}
+      onChange={action('changed group')}
+    >
+      <ItemRadio label="Option 1" value={1} name={text('Name', 'option')} />
+      <ItemRadio label="Option 2" value={2} name={text('Name', 'option')} />
+    </ItemRadioGroup>
+  ),
   {
     readme: { content: groupDoc },
   },
 )
 
-stories.add('Multiple items with chevrons (form step with auto submit)', () => {
-  return (
-    <Fragment>
-      <TheVoice id="id-title">Select your option</TheVoice>
-      <ItemRadioGroup
+stories.add('Multiple items with chevrons (form step with auto submit)', () => (
+  <Fragment>
+    <TheVoice id="id-title">Select your option</TheVoice>
+    <ItemRadioGroup
+      name={text('Name', 'option')}
+      status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
+      value={2}
+      onChange={action('changed group')}
+      withSeparators
+      withChevrons
+      ariaLabelledBy="id-title"
+    >
+      <ItemRadio
+        labelTitle="Title 1"
+        label="Option 1"
+        value={1}
         name={text('Name', 'option')}
-        status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
+        highlighted={boolean('highlighted option 1', false)}
+      />
+      <ItemRadio
+        labelTitle="Title 2"
+        label="Multiline text that should be correctly displayed"
         value={2}
-        onChange={action('changed group')}
-        withSeparators
-        withChevrons
-        ariaLabelledBy="id-title"
-      >
-        <ItemRadio
-          labelTitle="Title 1"
-          label="Option 1"
-          value={1}
-          name={text('Name', 'option')}
-          highlighted={boolean('highlighted option 1', false)}
-        />
-        <ItemRadio
-          labelTitle="Title 2"
-          label="Multiline text that should be correctly displayed"
-          value={2}
-          name={text('Name', 'option')}
-          highlighted={boolean('highlighted option 2', false)}
-        />
-      </ItemRadioGroup>
-    </Fragment>
-  )
-})
+        name={text('Name', 'option')}
+        highlighted={boolean('highlighted option 2', false)}
+      />
+    </ItemRadioGroup>
+  </Fragment>
+))

@@ -42,7 +42,7 @@ stories.add('Without info icon', () => (
 
 stories.add('With deprecated help url', () => (
   <div style={{ width: '400px' }}>
-    <Disclaimer useInfoIcon={false} deprecatedHelpUrl={'http://google.fr'}>
+    <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
       Some disclaimer with help button icon.
     </Disclaimer>
   </div>

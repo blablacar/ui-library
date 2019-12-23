@@ -96,13 +96,16 @@ export default class AutoCompleteList extends Component<
   }
 
   onKeyboardEventEnter = (e: Event) => {
-    if (this.state.highlightedIndex == null) {
-      return
-    }
     e.preventDefault()
 
-    const item = this.props.items[this.state.highlightedIndex]
-    this.setState({ selectedIndex: this.state.highlightedIndex })
+    const { highlightedIndex } = this.state
+
+    if (highlightedIndex == null) {
+      return
+    }
+
+    const item = this.props.items[highlightedIndex]
+    this.setState({ selectedIndex: highlightedIndex })
     this.props.onSelect(item)
   }
 

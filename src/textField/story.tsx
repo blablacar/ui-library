@@ -139,13 +139,15 @@ stories.add('input with autofocus', () => (
   />
 ))
 
+const button = (
+  <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1">
+    <ArrowIcon size="18" />
+  </Button>
+)
+
 stories.add('input with addon', () => (
   <TextField
-    addon={
-      <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1">
-        <ArrowIcon size="18" />
-      </Button>
-    }
+    addon={button}
     type={select('type', inputTypes, inputTypes.TEXT)}
     id={text('id')}
     defaultValue="starting value"

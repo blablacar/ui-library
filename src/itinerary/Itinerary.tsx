@@ -23,8 +23,8 @@ interface ItineraryProps {
 }
 
 interface RootA11yProps {
-  'aria-label'?: string,
-  'aria-labelledby'?: string,
+  'aria-label'?: string
+  'aria-labelledby'?: string
 }
 
 const isNonEmptyString = (str: string) => isString(str) && str.trim().length > 0
@@ -39,17 +39,16 @@ const computeKeyFromPlace = (place: Place) => {
   return `${place.mainLabel}-${place.isoDate}`
 }
 
-const computeRootA11yProps =
-    (ariaLabel?: string, ariaLabelledBy?: string): RootA11yProps => {
-    const rootA11yProps : RootA11yProps = {}
-    if (ariaLabel) {
-      rootA11yProps['aria-label'] = ariaLabel
-    }
-    const ariaLabelledByValue = isNonEmptyString(ariaLabel) ? null : ariaLabelledBy
-    if (ariaLabelledByValue) {
-      rootA11yProps['aria-labelledby'] = ariaLabelledByValue
-    }
-    return rootA11yProps
+const computeRootA11yProps = (ariaLabel?: string, ariaLabelledBy?: string): RootA11yProps => {
+  const rootA11yProps: RootA11yProps = {}
+  if (ariaLabel) {
+    rootA11yProps['aria-label'] = ariaLabel
+  }
+  const ariaLabelledByValue = isNonEmptyString(ariaLabel) ? null : ariaLabelledBy
+  if (ariaLabelledByValue) {
+    rootA11yProps['aria-labelledby'] = ariaLabelledByValue
+  }
+  return rootA11yProps
 }
 
 const Itinerary = ({
@@ -71,16 +70,17 @@ const Itinerary = ({
   return (
     <div className={cc(['kirk-itinerary-root', className])} {...rootA11yProps}>
       {isNonEmptyString(headline) && (
-          <Fragment>
-            <SubHeader>{headline}</SubHeader>
-            <BlankSeparator />
-          </Fragment>
+        <Fragment>
+          <SubHeader>{headline}</SubHeader>
+          <BlankSeparator />
+        </Fragment>
       )}
       <ul className={cc([{ 'kirk-itinerary--small': isSmall }])}>
         {isNonEmptyString(fromAddon) && (
           <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content"
-                  display={TextDisplayType.CAPTION}>{fromAddon}</Text>
+            <Text className="kirk-itinerary-addon-content" display={TextDisplayType.CAPTION}>
+              {fromAddon}
+            </Text>
           </li>
         )}
         {places.map((place, index) => {
@@ -174,8 +174,9 @@ const Itinerary = ({
         })}
         {isNonEmptyString(toAddon) && (
           <li className="kirk-itinerary-toAddon" aria-label={toAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content"
-                  display={TextDisplayType.CAPTION}>{toAddon}</Text>
+            <Text className="kirk-itinerary-addon-content" display={TextDisplayType.CAPTION}>
+              {toAddon}
+            </Text>
           </li>
         )}
       </ul>

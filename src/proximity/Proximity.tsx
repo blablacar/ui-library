@@ -18,7 +18,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
     case Distances.CLOSE:
       return index === value
         ? {
-            title: title ? title : defaultParams.title,
+            title: title || defaultParams.title,
             iconColor: color.proximityClose,
           }
         : defaultParams
@@ -26,7 +26,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
     case Distances.MIDDLE:
       return index === value
         ? {
-            title: title ? title : defaultParams.title,
+            title: title || defaultParams.title,
             iconColor: color.proximityMiddle,
           }
         : defaultParams
@@ -34,7 +34,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
     case Distances.FAR:
       return index === value
         ? {
-            title: title ? title : defaultParams.title,
+            title: title || defaultParams.title,
             iconColor: color.proximityFar,
           }
         : defaultParams

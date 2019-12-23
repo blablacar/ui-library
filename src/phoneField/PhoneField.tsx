@@ -81,14 +81,13 @@ const findIso2 = (countryDefault: string): formattedCountryPhoneData =>
 const mapCountriesPhoneData = (
   countryData: formattedCountryPhoneData[],
   countryNames: customCountryNames,
-): mappedCountryPhoneData[] => {
-  return countryData.map(data => ({
+): mappedCountryPhoneData[] =>
+  countryData.map(data => ({
     value: data.iso2,
     label: `${!isEmpty(countryNames[data.iso2]) ? countryNames[data.iso2] : data.name} ${
       data.dialCode
     }`,
   }))
-}
 
 /* Alphabetically sorted */
 const sortCountriesPhoneData = (

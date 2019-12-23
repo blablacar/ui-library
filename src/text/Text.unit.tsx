@@ -25,22 +25,22 @@ describe('Text', () => {
   })
 
   it('Should have the custom class', () => {
-    const wrapper = shallow(<Text className="testClass">{'test'}</Text>)
+    const wrapper = shallow(<Text className="testClass">test</Text>)
     expect(wrapper.hasClass('testClass')).toBe(true)
   })
 
   it('Should render with the default span tag', () => {
-    const wrapper = shallow(<Text>{'test'}</Text>)
+    const wrapper = shallow(<Text>test</Text>)
     expect(wrapper.name()).toBe('span')
   })
 
   it('Should render with the div tag', () => {
-    const wrapper = shallow(<Text tag={TextTagType.DIV}>{'test'}</Text>)
+    const wrapper = shallow(<Text tag={TextTagType.DIV}>test</Text>)
     expect(wrapper.name()).toBe('div')
   })
 
   it('Should have role attribute when present and undefined otherwise', () => {
-    const wrapper = shallow(<Text>{'test'}</Text>)
+    const wrapper = shallow(<Text>test</Text>)
     expect(wrapper.prop('role')).toBeUndefined()
 
     wrapper.setProps({ role: 'alert' })
@@ -77,12 +77,12 @@ describe('Text', () => {
   })
 
   it('Should display the text with color', () => {
-    const wrapper = shallow(<Text textColor="#FFFFFF">{'test'}</Text>)
+    const wrapper = shallow(<Text textColor="#FFFFFF">test</Text>)
     expect(wrapper.prop('style')).toEqual({ color: '#FFFFFF' })
   })
 
   it('Should not display the text with color when color not hexa', () => {
-    const wrapper = shallow(<Text textColor="#FFFGFF">{'test'}</Text>)
+    const wrapper = shallow(<Text textColor="#FFFGFF">test</Text>)
     expect(wrapper.prop('style')).toBeUndefined()
   })
 })

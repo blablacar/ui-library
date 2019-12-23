@@ -14,30 +14,27 @@ interface ItemDataProps {
   readonly ariaLabel?: string
 }
 
-const ItemData = (
-  {
-    mainInfo,
-    data,
-    dataStrikeThrough,
-    className,
-    mainTitle,
-    dataInfo,
-    tag,
-    ariaLabel,
-  }: ItemDataProps) => {
-  return (
-    <Item
-      className={className}
-      leftTitle={mainTitle}
-      leftBody={mainInfo}
-      rightTitle={data}
-      rightTitleStrikeThrough={dataStrikeThrough}
-      rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
-      rightBody={dataInfo}
-      tag={tag}
-      ariaLabel={ariaLabel}
-    />
-  )
-}
+const ItemData = ({
+  mainInfo,
+  data,
+  dataStrikeThrough,
+  className,
+  mainTitle,
+  dataInfo,
+  tag,
+  ariaLabel,
+}: ItemDataProps) => (
+  <Item
+    className={className}
+    leftTitle={mainTitle}
+    leftBody={mainInfo}
+    rightTitle={data}
+    rightTitleStrikeThrough={dataStrikeThrough}
+    rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+    rightBody={dataInfo}
+    tag={tag}
+    ariaLabel={ariaLabel}
+  />
+)
 
 export default ItemData

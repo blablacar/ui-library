@@ -33,7 +33,9 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
   render() {
     return (
       <div>
-        <button onClick={this.openConfirmationModal}>Open ConfirmationModal</button>
+        <button type="button" onClick={this.openConfirmationModal}>
+          Open ConfirmationModal
+        </button>
         <ConfirmationModal
           {...this.props}
           onClose={this.closeConfirmationModal}

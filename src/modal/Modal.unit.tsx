@@ -1,21 +1,10 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 
 import Modal, { ModalSize } from 'modal'
 import Button from 'button'
 import renderer from 'react-test-renderer'
 import exenv from 'exenv'
-
-const defaultProps = {
-  isOpen: false,
-  fullscreen: false,
-  closeOnEsc: true,
-  closeOnOutsideClick: false,
-  displayCloseButton: true,
-  displayDimmer: true,
-  forwardedRef: null,
-  size: ModalSize.MEDIUM,
-}
 
 describe('Modal', () => {
   it('Should have default dimmer with default props', () => {

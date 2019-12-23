@@ -19,7 +19,11 @@ describe('<SuccessModal>', () => {
   beforeEach(() => {
     mockClose = jest.fn()
     wrapper = shallow(<SuccessModal {...defaultProps} />)
-    wrapperOpen = mount(<SuccessModal {...defaultProps} isOpen={true} onClose={mockClose} >Success description</SuccessModal>)
+    wrapperOpen = mount(
+      <SuccessModal {...defaultProps} isOpen onClose={mockClose}>
+        Success description
+      </SuccessModal>,
+    )
   })
 
   it('Should be not visible if isOpen is set to false', () => {
@@ -45,7 +49,7 @@ describe('<SuccessModal>', () => {
     expect(image.prop('alt')).toBe('Illustration description')
   })
 
-  it('Shouldn\'t access the image with screen readers', () => {
+  it("Shouldn't access the image with screen readers", () => {
     const image = wrapperOpen.find('.kirk-successModal-image')
     expect(image.prop('aria-hidden')).toBe(true)
   })

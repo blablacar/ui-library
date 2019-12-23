@@ -36,9 +36,9 @@ export default class ToggleButton extends PureComponent<ToggleButtonProps> {
   }
 
   onButtonClick = () => {
-    const checked = !this.state.checked
-    this.props.onChange({ name: this.props.name, value: checked })
-    this.setState({ checked })
+    const { checked } = this.state
+    this.props.onChange({ name: this.props.name, value: !checked })
+    this.setState({ checked: !checked })
   }
 
   render() {

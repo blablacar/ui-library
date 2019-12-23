@@ -16,7 +16,7 @@ it('Should show a Badge if there are unread notifications.', () => {
 })
 
 it('Should show a Badge if ID checked.', () => {
-  const avatar = shallow(<Avatar image="//placehold.it/80x80" isIdChecked={true} />)
+  const avatar = shallow(<Avatar image="//placehold.it/80x80" isIdChecked />)
   expect(avatar.find(Badge).hasClass('kirk-avatar-badge--idCheck')).toBe(true)
 })
 
