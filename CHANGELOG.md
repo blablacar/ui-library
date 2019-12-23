@@ -2,6 +2,7 @@
 
 - **[UPDATE]** Add keyboard controls to `Stepper`
 - [...]
+- **[BREAKING CHANGE]** Moved `classcat` to `peerDependencies`
 - **[UPDATE]** Dependencies update
 - **[DEV]** Migrated from `tslint` to `eslint`
 - **[DEV]** Fix code analysis not run in travis
