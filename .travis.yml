@@ -6,7 +6,7 @@ before_install:
   - dpkg --compare-versions `npm -v` ge 6.0 || npm i -g npm@^6.0
 install:
   - travis_wait 30 npm install
-scripts:
-  - travis_wait 30 npm run eslint
-  - travis_wait 30 npm run prettier:ci
-  - travis_wait 30 npm test
+script:
+  - npm run eslint
+  - npm run prettier:ci
+  - npm test
