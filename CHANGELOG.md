@@ -4,6 +4,7 @@
 - [...]
 - **[UPDATE]** Dependencies update
 - **[DEV]** Migrated from `tslint` to `eslint`
+- **[DEV]** Fix code analysis not run in travis
 
 # v16.2.0 (16/12/2019)
 
