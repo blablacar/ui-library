@@ -1,8 +1,11 @@
 # Unreleased
 
-- **[UPDATE]** Add keyboard controls to `Stepper`
 - [...]
+
+# V17.0.0 (24/12/2019)
+
 - **[BREAKING CHANGE]** Moved `classcat` to `peerDependencies`
+- **[UPDATE]** Add keyboard controls to `Stepper`
 - **[UPDATE]** Dependencies update
 - **[DEV]** Migrated from `tslint` to `eslint`
 - **[DEV]** Fix code analysis not run in travis
