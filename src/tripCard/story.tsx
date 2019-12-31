@@ -59,6 +59,7 @@ stories.add(
       driver={{
         avatarUrl: '//placehold.it/500x500',
         firstName: text('Driver name', 'Jane'),
+        rating: text('Driver Rating', '4.9'),
       }}
     />
   ),

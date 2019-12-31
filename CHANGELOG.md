@@ -3,6 +3,7 @@
 - **[FIX]** Fix `Itinerary` component display with only one stopover
 - **[FIX]** Fix `Itinerary` component display without time
 - [...]
+- **[NEW]** Added rating prop to `TripCard`
 
 # V17.0.0 (24/12/2019)
 

@@ -6,6 +6,7 @@ import Avatar from 'avatar'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
+import Star from 'icon/starIcon'
 import Itinerary from 'itinerary'
 import Item from '_utils/item'
 import Text, { TextDisplayType } from 'text'
@@ -24,6 +25,7 @@ const PASSENGERS_TO_DISPLAY = 5
 interface User {
   avatarUrl: string
   firstName: string
+  rating?: string
 }
 
 export interface TripCardProps {
@@ -172,7 +174,15 @@ const TripCard = ({
                 <div className="kirk-tripCard-avatar">
                   <Avatar image={driver.avatarUrl} />
                 </div>
-                <Text display={TextDisplayType.TITLE}>{driver.firstName}</Text>
+                <div>
+                  <Text display={TextDisplayType.TITLE}>{driver.firstName}</Text>
+                  {driver.rating && (
+                    <div className="kirk-tripCard-ratingContainer">
+                      <Star fill={1} size={16} />
+                      <Text className="kirk-tripCard-rating">{driver.rating}</Text>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
             {passengers && (

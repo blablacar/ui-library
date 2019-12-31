@@ -71,6 +71,15 @@ const StyledTripCard = styled(TripCard)`
     margin-right: ${space.l};
   }
 
+  .kirk-tripCard-ratingContainer {
+    display: flex;
+    margin-top: ${space.m};
+  }
+
+  .kirk-tripCard-rating {
+    margin-left: ${space.m};
+  }
+
   /* We reverse the passengers array to display the 1st one on top without touching z-indexes */
   .kirk-tripCard-passengers {
     flex-direction: row-reverse;
