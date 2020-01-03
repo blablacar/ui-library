@@ -107,6 +107,13 @@ const StyledItinerary = styled(Itinerary)`
     height: calc(6px + ${space.m} + ${gutterTopOffset});
   }
 
+  /* Only one step */
+  &
+    .kirk-itinerary-location.kirk-itinerary--departure.kirk-itinerary--arrival
+    .kirk-itinerary-location-city::before {
+    display: none;
+  }
+
   & .kirk-itinerary-fromAddon,
   & .kirk-itinerary-toAddon {
     height: ${distanceFromHeight};
