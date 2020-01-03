@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Add `leftTitleButtonAddon` prop to `Item`
+- **[NEW]** Add `mainTitleButtonAddon` prop to `ItemData`
 - [...]
 
 # v17.1.0 (06/01/2020)

@@ -148,6 +148,10 @@ button.c1 {
   text-decoration: line-through;
 }
 
+.c1 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c1 .kirk-item-leftAddon,
 .c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -171,6 +175,14 @@ button.c1 {
 
 .c1.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c1 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c0 {
@@ -502,6 +514,10 @@ button.c1 {
   text-decoration: line-through;
 }
 
+.c1 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c1 .kirk-item-leftAddon,
 .c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -525,6 +541,14 @@ button.c1 {
 
 .c1.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c1 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c0 {
@@ -856,6 +880,10 @@ button.c1 {
   text-decoration: line-through;
 }
 
+.c1 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c1 .kirk-item-leftAddon,
 .c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -879,6 +907,14 @@ button.c1 {
 
 .c1.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c1 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c0 {

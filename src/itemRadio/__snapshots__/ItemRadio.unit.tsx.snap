@@ -148,6 +148,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -171,6 +175,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c2.spinning {
@@ -212,7 +224,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title c1"
     >
       Label title
     </div>
@@ -427,6 +439,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -450,6 +466,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c3.spinning {
@@ -522,7 +546,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title c1"
     >
       Label title
     </div>
@@ -740,6 +764,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -763,6 +791,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c2.spinning {
@@ -804,7 +840,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title c1"
     >
       Label title
     </div>

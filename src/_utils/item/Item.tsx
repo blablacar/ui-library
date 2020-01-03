@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { color } from '_utils/branding'
 import Text, { TextTagType, TextDisplayType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
+import Button from 'button/Button'
 
 export enum ItemStatus {
   DEFAULT = 'default',
@@ -18,6 +19,7 @@ export interface ItemProps {
   readonly highlighted?: boolean
   readonly isClickable?: boolean
   readonly leftTitle?: string
+  readonly leftTitleButtonAddon?: React.ReactElement<Button>
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
   readonly leftBody?: string | React.ReactNode
@@ -54,6 +56,7 @@ const Item = ({
   highlighted,
   isClickable,
   leftTitle,
+  leftTitleButtonAddon,
   rightTitleStrikeThrough,
   leftTitleDisplay = TextDisplayType.TITLE,
   leftTitleColor,
@@ -108,12 +111,14 @@ const Item = ({
       <div className="kirk-item-leftText">
         {leftTitle && (
           <Text
-            className={leftBody ? 'kirk-item-title' : null}
+            className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
             display={leftTitleDisplay}
             textColor={leftTitleColor}
             tag={TextTagType.DIV}
           >
             {leftTitle}
+            {/* In case of a clickable Item don't display the addon button */}
+            {!href && leftTitleButtonAddon}
           </Text>
         )}
         {leftBody && (
