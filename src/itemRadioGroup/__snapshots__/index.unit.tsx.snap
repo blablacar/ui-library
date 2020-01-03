@@ -148,6 +148,10 @@ button.c2 {
   text-decoration: line-through;
 }
 
+.c2 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c2 .kirk-item-leftAddon,
 .c2 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -171,6 +175,14 @@ button.c2 {
 
 .c2.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c2 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c4.spinning {

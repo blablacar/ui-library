@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
 
 import Item from './Item'
+import Button from 'button'
 import StyledItem from './index'
 import ClockIcon from 'icon/clockIcon'
 import ChevronIcon from 'icon/chevronIcon'
@@ -42,6 +43,36 @@ describe('Item', () => {
   it('Should be highlighted', () => {
     const wrapper = shallow(<Item highlighted />)
     expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)
+  })
+
+  it('Should trigger click on button info', () => {
+    const onButtonClick = jest.fn()
+    const wrapper = mount(
+      <Item
+        leftTitle="Left title"
+        leftTitleButtonAddon={<Button onClick={onButtonClick}>More info"</Button>}
+      />,
+    )
+    wrapper.find('.kirk-item-title--withButtonAddon button').simulate('click')
+    expect(onButtonClick).toHaveBeenCalledTimes(1)
+  })
+
+  it("Should't display left button addon if no title", () => {
+    const wrapper = mount(
+      <Item leftTitleButtonAddon={<Button onClick={() => {}}>More info</Button>} />,
+    )
+    expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
+  })
+
+  it("Should't display left button addon if Item is clickable", () => {
+    const wrapper = mount(
+      <Item
+        href={<a href="#" />}
+        leftTitle="Left title"
+        leftTitleButtonAddon={<Button onClick={() => {}}>More info</Button>}
+      />,
+    )
+    expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
   })
 
   it('Should accept a custom `tag`', () => {

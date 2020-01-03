@@ -61,6 +61,10 @@ const StyledItem = styled(Item)`
     text-decoration: line-through;
   }
 
+  & .kirk-item-title--withButtonAddon {
+    position: relative;
+  }
+
   /* Addons */
   & .kirk-item-leftAddon,
   & .kirk-item-rightAddon {
@@ -80,6 +84,15 @@ const StyledItem = styled(Item)`
   /* Highlighted state */
   &.kirk-item--highlighted .kirk-text-title {
     color: ${color.primary};
+  }
+
+  /* Button info */
+  & .kirk-item-title--withButtonAddon button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: ${space.s};
+    bottom: 0;
   }
 `
 

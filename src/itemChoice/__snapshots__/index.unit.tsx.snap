@@ -148,6 +148,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -171,6 +175,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c4.spinning {
@@ -281,7 +293,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c2"
+      className="kirk-text kirk-text-title c2"
       style={
         Object {
           "color": "#054752",
@@ -508,6 +520,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -531,6 +547,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 .c4 {
@@ -631,7 +655,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c2"
+      className="kirk-text kirk-text-title c2"
       style={
         Object {
           "color": "#054752",
@@ -860,6 +884,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -883,6 +911,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 <a
@@ -930,7 +966,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c2"
+      className="kirk-text kirk-text-title c2"
       style={
         Object {
           "color": "#054752",
@@ -1183,6 +1219,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -1206,6 +1246,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 <button
@@ -1255,7 +1303,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c2"
+      className="kirk-text kirk-text-title c2"
       style={
         Object {
           "color": "#DDD",
@@ -1508,6 +1556,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -1531,6 +1583,14 @@ button.c0 {
 
 .c0.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
 }
 
 <button
@@ -1577,7 +1637,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c2"
+      className="kirk-text kirk-text-title c2"
       style={
         Object {
           "color": "#054752",

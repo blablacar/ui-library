@@ -148,6 +148,10 @@ button.c0 {
   text-decoration: line-through;
 }
 
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -173,6 +177,14 @@ button.c0 {
   color: #00AFF5;
 }
 
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
+}
+
 <div
   className="kirk-item custom c0"
 >
@@ -180,7 +192,7 @@ button.c0 {
     className="kirk-item-leftText"
   >
     <div
-      className="kirk-text kirk-text-title kirk-item-title c1"
+      className="kirk-text kirk-text-title c1"
     >
       Test
     </div>
