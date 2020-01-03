@@ -56,7 +56,7 @@ const placesWithStopover = [
     href: '#',
   },
   {
-    time: '19 :00',
+    time: '19:00',
     isoDate: '2017-12-11T19:00',
     stepAriaLabel: 'Pick up/drop off location',
     subLabel: 'Gare Bordeaux Saint-Jean',
@@ -188,6 +188,33 @@ stories.add('with button tiles', () => {
       toAddon={toAddon}
       places={placesWithButton}
       small={boolean('small', false)}
+      headline={headline}
+    />
+  )
+})
+
+stories.add('without time', () => {
+  const fromAddon = text('From addon', 'Lille')
+  const toAddon = text('To addon', 'Biarritz')
+  const headline = text('Headline', 'Mon 11 December')
+  const placesWithButton = [
+    {
+      isoDate: '2017-12-11T09:00',
+      subLabel: 'Porte de Vincennes',
+      mainLabel: 'Paris',
+    },
+    {
+      isoDate: '2017-12-11T15:00',
+      subLabel: 'Gare Bordeaux Saint-Jean',
+      mainLabel: 'Bordeaux',
+    },
+  ]
+  return (
+    <Itinerary
+      fromAddon={fromAddon}
+      toAddon={toAddon}
+      places={placesWithButton}
+      small={false}
       headline={headline}
     />
   )
