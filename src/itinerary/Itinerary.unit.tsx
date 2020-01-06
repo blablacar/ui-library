@@ -252,20 +252,21 @@ describe('Itinerary component', () => {
     it('Should be displayed as small if required in props', () => {
       const itinerary = shallow(<Itinerary places={places} small />)
       const ul = itinerary.find('ul')
-      expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
+      expect(ul.hasClass('kirk-itinerary--noTime')).toBe(true)
     })
 
-    it('Should not be displayed as small if not in props and time or sublabel exists', () => {
+    it('Should not be displayed as small if not in props and time exists', () => {
       const itinerary = shallow(<Itinerary places={places} />)
       const ul = itinerary.find('ul')
-      expect(ul.hasClass('kirk-itinerary--small')).toBe(false)
+      expect(ul.hasClass('kirk-itinerary--noTime')).toBe(false)
     })
 
-    it('Should be displayed as small if no time nor subLabel', () => {
+    it('Should be displayed as small if no time', () => {
       const placesList = [
         {
           isoDate: '2017-12-11T09:00',
           mainLabel: 'Paris',
+          subLabel: 'Place de Clichy',
           key: 'route-start-paris',
         },
         {
@@ -277,7 +278,7 @@ describe('Itinerary component', () => {
 
       const itinerary = shallow(<Itinerary places={placesList} />)
       const ul = itinerary.find('ul')
-      expect(ul.hasClass('kirk-itinerary--small')).toBe(true)
+      expect(ul.hasClass('kirk-itinerary--noTime')).toBe(true)
     })
   })
 })
