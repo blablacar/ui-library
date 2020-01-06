@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `Itinerary` component display with only one stopover
 - **[FIX]** Fix `Itinerary` component display without time
 - [...]
 

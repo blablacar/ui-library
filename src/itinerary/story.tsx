@@ -193,6 +193,22 @@ stories.add('with button tiles', () => {
   )
 })
 
+stories.add('with single stopover', () => {
+  const fromAddon = text('From addon', 'Lille')
+  const toAddon = text('To addon', 'Biarritz')
+  const headline = text('Headline', 'Mon 11 December')
+  const stops = [
+    {
+      time: '09:00',
+      isoDate: '2017-12-11T09:00',
+      subLabel: 'Porte de Vincennes',
+      mainLabel: 'Paris',
+    },
+  ]
+
+  return <Itinerary fromAddon={fromAddon} toAddon={toAddon} places={stops} headline={headline} />
+})
+
 stories.add('without time', () => {
   const fromAddon = text('From addon', 'Lille')
   const toAddon = text('To addon', 'Biarritz')
