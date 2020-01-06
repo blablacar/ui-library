@@ -1,11 +1,14 @@
 # Unreleased
 
+- [...]
+
+# v17.1.0 (06/01/2020)
+
 - **[FIX]** Fix `Itinerary` component display with only one stopover
 - **[FIX]** Fix `Itinerary` component display without time
-- [...]
 - **[NEW]** Added rating prop to `TripCard`
 
-# V17.0.0 (24/12/2019)
+# v17.0.0 (24/12/2019)
 
 - **[BREAKING CHANGE]** Moved `classcat` to `peerDependencies`
 - **[UPDATE]** Add keyboard controls to `Stepper`
