@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix `Itinerary` component display with only one stopover
+- **[FIX]** Fix `Itinerary` component display without time
 - [...]
 
 # V17.0.0 (24/12/2019)

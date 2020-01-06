@@ -63,8 +63,9 @@ const Itinerary = ({
   small = false,
   headline = null,
 }: ItineraryProps) => {
-  // Dislay itinerary as small if required or if we don't have time or subLabel for provided places
-  const isSmall = small || places.filter(p => !isEmpty(p.time) || !isEmpty(p.subLabel)).length === 0
+  // Add the small class if we don't have times to prevent empty content
+  const withTime = places.filter(p => !isEmpty(p.time)).length > 0
+
   // Remove aria-labelledby attribute if aria-label already used
   const rootA11yProps = computeRootA11yProps(ariaLabel, ariaLabelledBy)
   return (
@@ -75,7 +76,7 @@ const Itinerary = ({
           <BlankSeparator />
         </Fragment>
       )}
-      <ul className={cc([{ 'kirk-itinerary--small': isSmall }])}>
+      <ul className={cc([{ 'kirk-itinerary--noTime': small || !withTime }])}>
         {isNonEmptyString(fromAddon) && (
           <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
             <Text className="kirk-itinerary-addon-content" display={TextDisplayType.CAPTION}>
@@ -138,7 +139,7 @@ const Itinerary = ({
                 }
               />
               <Component {...hrefProps} aria-label={place.actionAriaLabel}>
-                {!isSmall && (
+                {!small && withTime && (
                   <time dateTime={place.isoDate}>
                     <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
                       {place.time}
@@ -149,7 +150,7 @@ const Itinerary = ({
                   <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
                     {place.mainLabel}
                   </Text>
-                  {!isSmall &&
+                  {!small &&
                     place.subLabel &&
                     (typeof place.subLabel === 'string' ? (
                       <Text
