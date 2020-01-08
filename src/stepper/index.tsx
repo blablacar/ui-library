@@ -55,7 +55,6 @@ const StyledStepper = styled(Stepper)`
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
     background: transparent; /* Otherwise white in Chrome */
-    border: transparent;
   }
 
   & input[type='range'].kirk-stepper-range::-webkit-slider-thumb,
