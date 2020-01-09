@@ -57,8 +57,12 @@ const StyledStepper = styled(Stepper)`
     background: transparent; /* Otherwise white in Chrome */
   }
 
-  & input[type='range'].kirk-stepper-range::-webkit-slider-thumb {
+  & input[type='range'].kirk-stepper-range::-webkit-slider-thumb,
+  & input[type='range'].kirk-stepper-range::-webkit-slider-runnable-track {
     -webkit-appearance: none;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
   }
 
   & input[type='range'].kirk-stepper-range::-moz-range-thumb {

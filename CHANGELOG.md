@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Hide input range track on Safari for `Stepper` component
 
 # v17.2.0 (07/01/2020)
 
