@@ -36,6 +36,7 @@ import LadyIcon from './ladyIcon'
 import LightningIcon from './lightningIcon'
 import MailIcon from './mailIcon'
 import MapIcon from './mapIcon'
+import MeetingPointIcon from './meetingPoint'
 import MinusIcon from './minusIcon'
 import MusicIcon from './musicIcon'
 import MyRidesIcon from './myRides'
@@ -105,6 +106,7 @@ export {
   LightningIcon,
   MailIcon,
   MapIcon,
+  MeetingPointIcon,
   MinusIcon,
   MusicIcon,
   MyRidesIcon,
