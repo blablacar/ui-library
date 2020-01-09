@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v17.3.0 (09/01/2020)
+
 - **[NEW]** Add `MeetingPointIcon`
 - **[FIX]** Hide input range track on Safari for `Stepper` component
 
