@@ -18,5 +18,5 @@ const StyledBlankSeparator = styled(BlankSeparator)`
     }};
   }
 `
-export { BlankSeparatorSize } from './BlankSeparator'
+export { BlankSeparatorSize, BlankSeparatorProps } from './BlankSeparator'
 export default StyledBlankSeparator

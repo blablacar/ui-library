@@ -112,5 +112,5 @@ const StyledTabs = styled(Tabs)`
   }
 `
 
-export { TabStatus } from './Tabs'
+export { TabStatus, TabsProps, Tab } from './Tabs'
 export default StyledTabs

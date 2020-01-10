@@ -9,11 +9,11 @@ import { allCountries } from 'country-telephone-data'
 
 export type selectfield = HTMLSelectElement
 
-enum FIELDS {
+export enum FIELDS {
   PHONENUMBER = 'phoneNumber',
   PHONEREGION = 'phoneRegion',
 }
-interface PhoneFieldOnChangeParameters {
+export interface PhoneFieldOnChangeParameters {
   name: string
   value: {
     [FIELDS.PHONENUMBER]: string
@@ -24,7 +24,7 @@ interface PhoneFieldOnChangeParameters {
 }
 
 type errorField = string | JSX.Element
-interface PhoneFieldProps {
+export interface PhoneFieldProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
   readonly id?: string

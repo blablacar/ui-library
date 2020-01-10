@@ -7,7 +7,7 @@ import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
 
 export const ItemsListDivider: FunctionComponent = () => null
 
-type ItemsListChild =
+export type ItemsListChild =
   | React.ReactElement<ItemChoiceProps>
   | React.ReactElement<ItemRadioProps>
   | React.ReactElement<ItemCheckboxProps>

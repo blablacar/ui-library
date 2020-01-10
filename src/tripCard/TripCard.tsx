@@ -22,7 +22,7 @@ import { color } from '_utils/branding'
  */
 const PASSENGERS_TO_DISPLAY = 5
 
-interface User {
+export interface User {
   avatarUrl: string
   firstName: string
   rating?: string

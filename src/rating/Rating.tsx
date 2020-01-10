@@ -3,14 +3,19 @@ import cc from 'classcat'
 
 import Stars from 'stars'
 
-interface Rating {
+export interface RatingProps {
   className?: Classcat.Class
   score?: number
   ratings: number
   children: string
 }
 
-const Rating = ({ className = '', score = 0, ratings = 0, children = '' }: Rating): JSX.Element => (
+const Rating = ({
+  className = '',
+  score = 0,
+  ratings = 0,
+  children = '',
+}: RatingProps): JSX.Element => (
   <div className={cc(['kirk-rating', className])}>
     <Stars stars={score} />
     <span>

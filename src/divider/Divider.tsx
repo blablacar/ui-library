@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-interface DividerProps {
+export interface DividerProps {
   readonly className?: Classcat.Class
 }
 

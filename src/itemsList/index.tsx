@@ -25,5 +25,5 @@ const StyledItemsList = styled(ItemsList)`
   }
 `
 
-export { ItemsListDivider } from './ItemsList'
+export { ItemsListDivider, ItemsListProps, ItemsListChild } from './ItemsList'
 export default StyledItemsList

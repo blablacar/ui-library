@@ -6,7 +6,7 @@ import { CommonFieldsProps } from '_utils/interfaces'
 
 export const selectHeight = '52px'
 
-interface SelectFieldProps extends Partial<CommonFieldsProps> {
+export interface SelectFieldProps extends Partial<CommonFieldsProps> {
   readonly ariaLabel?: string
   readonly options: SelectFieldItem[]
   readonly defaultValue?: string

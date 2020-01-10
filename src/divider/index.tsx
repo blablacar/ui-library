@@ -18,4 +18,6 @@ const StyledDivider = styled(Divider)`
     width: 100%;
   }
 `
+
+export { DividerProps } from './Divider'
 export default StyledDivider

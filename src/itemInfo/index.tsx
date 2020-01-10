@@ -2,7 +2,7 @@ import React from 'react'
 
 import Item from '_utils/item'
 
-interface ItemInfoProps {
+export interface ItemInfoProps {
   readonly mainInfo: string
   readonly className?: Classcat.Class
   readonly icon?: React.ReactNode

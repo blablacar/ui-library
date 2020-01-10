@@ -91,4 +91,5 @@ const StyledPhoneField = styled(PhoneField)`
   }
 `
 
+export { PhoneFieldProps, PhoneFieldOnChangeParameters, FIELDS } from './PhoneField'
 export default StyledPhoneField

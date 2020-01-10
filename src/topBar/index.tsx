@@ -47,4 +47,5 @@ const StyledTopBar = styled(TopBar)`
   }
 `
 
+export { TopBarProps } from './TopBar'
 export default StyledTopBar

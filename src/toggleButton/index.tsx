@@ -21,5 +21,5 @@ const StyledToggleButton = styled(ToggleButton)`
     outline: 0;
   }
 `
-export { ToggleButtonStatus } from './ToggleButton'
+export { ToggleButtonProps, ToggleButtonStatus } from './ToggleButton'
 export default StyledToggleButton

@@ -2,14 +2,14 @@ import React from 'react'
 import cc from 'classcat'
 import Title from 'title'
 
-interface EmptyState {
+export interface EmptyStateProps {
   readonly className?: Classcat.Class
   readonly image: string
   readonly text: string
   readonly button?: JSX.Element
 }
 
-const EmptyState = ({ className, image, text, button }: EmptyState) => (
+const EmptyState = ({ className, image, text, button }: EmptyStateProps) => (
   <div className={cc(['kirk-empty-state', className])}>
     <img src={image} alt="" />
     <Title>{text}</Title>

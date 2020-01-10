@@ -11,7 +11,7 @@ import TextField, { inputTypes } from 'textField'
 import AutoCompleteList from './AutoCompleteListStyle'
 
 type query = string | number | boolean
-interface AutoCompleteProps {
+export interface AutoCompleteProps {
   readonly name: string
   readonly searchOnMount: boolean
   readonly isSearching: boolean

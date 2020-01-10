@@ -5,7 +5,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import styled, { keyframes } from 'styled-components'
 
-interface CircleProps extends Icon {
+export interface CircleProps extends Icon {
   readonly absolute?: boolean
   readonly spinning?: boolean
   readonly thin?: boolean

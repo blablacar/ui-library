@@ -52,4 +52,5 @@ const StyledButtonGroup = styled(ButtonGroup)`
   }
 `
 
+export { ButtonGroupProps } from './ButtonGroup'
 export default StyledButtonGroup

@@ -6,7 +6,7 @@ import { color, transition } from '_utils/branding'
 import CircleIcon from 'icon/circleIcon'
 import CheckIcon from 'icon/checkIcon'
 
-interface LoaderProps {
+export interface LoaderProps {
   className?: Classcat.Class
   inline?: boolean
   size?: number

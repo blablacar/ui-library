@@ -9,7 +9,7 @@ import ChevronIcon from 'icon/chevronIcon'
 import SubHeader from 'subHeader'
 import BlankSeparator from 'blankSeparator'
 
-interface ItineraryProps {
+export interface ItineraryProps {
   readonly ariaLabelledBy?: string
   readonly ariaLabel?: string
   readonly places: Place[]

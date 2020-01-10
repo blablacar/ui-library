@@ -96,4 +96,5 @@ const StyledSuccessModal = styled(SuccessModal)`
   }
 `
 
+export { SuccessModalProps } from './SuccessModal'
 export default StyledSuccessModal

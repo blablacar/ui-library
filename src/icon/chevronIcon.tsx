@@ -2,7 +2,7 @@ import React from 'react'
 import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
-interface ChevronProps extends Icon {
+export interface ChevronProps extends Icon {
   readonly down?: boolean
   readonly left?: boolean
 }

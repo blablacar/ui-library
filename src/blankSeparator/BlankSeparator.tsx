@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-interface BlankSeparatorProps {
+export interface BlankSeparatorProps {
   readonly className?: Classcat.Class
   readonly size?: BlankSeparatorSize
 }

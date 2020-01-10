@@ -3,7 +3,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
-interface PinProps extends Icon {
+export interface PinProps extends Icon {
   readonly bgColor?: string
   readonly strokeColor?: string
 }

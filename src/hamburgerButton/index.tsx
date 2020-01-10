@@ -61,4 +61,5 @@ const StyledHamburgerButton = styled(HamburgerButton)`
   }
 `
 
+export { HamburgerButtonProps } from './HamburgerButton'
 export default StyledHamburgerButton

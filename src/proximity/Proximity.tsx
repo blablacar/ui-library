@@ -44,7 +44,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
   }
 }
 
-interface ProximityProps {
+export interface ProximityProps {
   readonly className?: Classcat.Class
   readonly value: Distances
   readonly title?: string

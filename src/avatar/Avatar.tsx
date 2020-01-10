@@ -6,7 +6,7 @@ import { color } from '_utils/branding'
 import Badge from 'badge'
 import CheckIcon from 'icon/checkIcon'
 
-export interface AvatarInterface {
+export interface AvatarProps {
   readonly className?: Classcat.Class
   readonly image?: string
   readonly alt?: string
@@ -46,7 +46,7 @@ const Avatar = ({
   isIdChecked,
   unreadNotificationsCount,
   unreadNotificationsCountAriaLabel,
-}: AvatarInterface) => (
+}: AvatarProps) => (
   <div
     className={cc([
       prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),

@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from 'title'
 
-interface TheVoiceProps {
+export interface TheVoiceProps {
   readonly id?: string
   readonly className?: Classcat.Class
   readonly children: string

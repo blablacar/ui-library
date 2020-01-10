@@ -69,5 +69,5 @@ const StyledText = styled(Text)`
     font-weight: ${fontWeight.medium};
   }
 `
-export { TextDisplayType, TextTagType } from './Text'
+export { TextProps, TextDisplayType, TextTagType } from './Text'
 export default StyledText

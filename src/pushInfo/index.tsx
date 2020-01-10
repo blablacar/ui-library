@@ -57,4 +57,5 @@ const StyledPushInfo = styled(PushInfo)`
   }
 `
 
+export { PushInfoProps } from './PushInfo'
 export default StyledPushInfo

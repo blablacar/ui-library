@@ -17,5 +17,5 @@ const StyledProximity = styled(Proximity)`
     margin-left: ${space.s};
   }
 `
-export { Distances } from './Proximity'
+export { Distances, ProximityProps } from './Proximity'
 export default StyledProximity

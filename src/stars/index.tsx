@@ -7,4 +7,5 @@ const StyledStars = styled(Stars)`
     margin-right: 2px;
   }
 `
+export { StarsProps } from './Stars'
 export default StyledStars

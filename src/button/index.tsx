@@ -166,5 +166,5 @@ const StyledButton = styled(Button)`
   }
 `
 
-export { ButtonStatus } from './Button'
+export { ButtonStatus, ButtonProps } from './Button'
 export default StyledButton

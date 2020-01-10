@@ -165,5 +165,5 @@ const StyledTextfield = styled(Textfield)`
   }
 `
 
-export { inputTypes, inputModes } from './TextField'
+export { TextFieldProps, inputTypes, inputModes } from './TextField'
 export default StyledTextfield

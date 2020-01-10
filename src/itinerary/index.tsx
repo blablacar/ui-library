@@ -206,4 +206,5 @@ const StyledItinerary = styled(Itinerary)`
   }
 `
 
+export { ItineraryProps } from './Itinerary'
 export default StyledItinerary

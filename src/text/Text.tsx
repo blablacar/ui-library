@@ -22,7 +22,7 @@ export enum TextTagType {
   SPAN = 'span',
 }
 
-interface TextProps {
+export interface TextProps {
   readonly className?: Classcat.Class
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType

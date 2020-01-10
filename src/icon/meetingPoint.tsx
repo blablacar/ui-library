@@ -4,7 +4,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
-interface MeetingPointIconProps extends Icon {
+export interface MeetingPointIconProps extends Icon {
   readonly active?: boolean
 }
 

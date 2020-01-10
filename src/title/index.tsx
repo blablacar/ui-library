@@ -12,4 +12,5 @@ const StyledTitle = styled(Title)`
   }
 `
 
+export { TitleProps } from './Title'
 export default StyledTitle

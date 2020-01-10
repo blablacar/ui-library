@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import QuestionIcon from 'icon/questionIcon'
 
-interface WhyProps {
+export interface WhyProps {
   readonly children: string
   readonly title: string
   readonly className?: Classcat.Class

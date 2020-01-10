@@ -19,4 +19,5 @@ const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
   }
 `
 
+export { MessagingSummaryItemProps } from './MessagingSummaryItem'
 export default StyledMessagingSummaryItem

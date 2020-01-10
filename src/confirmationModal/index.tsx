@@ -87,5 +87,9 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
   }
 `
 
-export { ConfirmationModalStatus } from './ConfirmationModal'
+export {
+  ConfirmationModalProps,
+  ConfirmationModalSize,
+  ConfirmationModalStatus,
+} from './ConfirmationModal'
 export default StyledConfirmationModal

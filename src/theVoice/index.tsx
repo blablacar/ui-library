@@ -17,4 +17,5 @@ const StyledTheVoice = styled(TheVoice)`
   }
 `
 
+export { TheVoiceProps } from './TheVoice'
 export default StyledTheVoice
