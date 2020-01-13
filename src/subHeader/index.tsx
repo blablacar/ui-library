@@ -11,4 +11,6 @@ const StyledSubHeader = styled(SubHeader)`
     margin: 0;
   }
 `
+
+export { SubHeaderProps } from './SubHeader'
 export default StyledSubHeader

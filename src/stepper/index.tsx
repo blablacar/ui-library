@@ -82,5 +82,5 @@ const StyledStepper = styled(Stepper)`
   }
 `
 
-export { StepperDisplay } from './Stepper'
+export { StepperDisplay, StepperProps } from './Stepper'
 export default StyledStepper

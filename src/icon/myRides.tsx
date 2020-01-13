@@ -4,7 +4,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import { color } from '_utils/branding'
 
-interface MyRidesIconProps extends Icon {
+export interface MyRidesIconProps extends Icon {
   readonly active?: boolean
 }
 

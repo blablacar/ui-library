@@ -15,4 +15,5 @@ const StyledRating = styled(Rating)`
   }
 `
 
+export { RatingProps } from './Rating'
 export default StyledRating

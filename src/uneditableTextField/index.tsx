@@ -34,4 +34,5 @@ const StyledUneditableTextField = styled(uneditableTextField)`
   }
 `
 
+export { UneditableTextFieldProps } from './UneditableTextField'
 export default StyledUneditableTextField

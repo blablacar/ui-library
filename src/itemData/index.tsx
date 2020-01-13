@@ -4,7 +4,7 @@ import Item from '_utils/item'
 import { TextDisplayType } from 'text'
 import Button from 'button/Button'
 
-interface ItemDataProps {
+export interface ItemDataProps {
   readonly data: string
   readonly mainInfo: string
   readonly className?: Classcat.Class

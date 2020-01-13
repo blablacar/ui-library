@@ -15,4 +15,5 @@ const StyledCaption = styled(Caption)`
   }
 `
 
+export { CaptionProps } from './Caption'
 export default StyledCaption

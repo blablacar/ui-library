@@ -29,4 +29,5 @@ const StyledDropdownButton = styled(DropdownButton)`
   }
 `
 
+export { DropdownButtonProps } from './DropdownButton'
 export default StyledDropdownButton

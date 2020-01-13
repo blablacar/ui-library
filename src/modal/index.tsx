@@ -83,5 +83,5 @@ const StyledModal = styled(Modal)`
   }
 `
 
-export { ModalSize } from './Modal'
+export { ModalSize, ModalProps } from './Modal'
 export default StyledModal

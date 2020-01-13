@@ -3,7 +3,7 @@ import cc from 'classcat'
 import { ItemChoiceProps } from 'itemChoice'
 import ItemsList, { ItemsListDivider } from 'itemsList'
 
-interface MenuProps {
+export interface MenuProps {
   readonly children: React.ReactElement<ItemChoiceProps>[]
   readonly className?: Classcat.Class
   readonly withSeparators?: boolean

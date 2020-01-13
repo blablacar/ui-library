@@ -20,4 +20,5 @@ const StyledBadge = styled(Badge)`
   }
 `
 
+export { BadgeProps } from './Badge'
 export default StyledBadge

@@ -26,7 +26,7 @@ export const getTodayDate = () => {
   return date
 }
 
-interface TimePickerProps {
+export interface TimePickerProps {
   readonly name: string
   readonly className?: Classcat.Class
   readonly defaultValue?: string

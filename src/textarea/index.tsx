@@ -134,4 +134,5 @@ const StyledTextarea = styled(Textarea)`
   }
 `
 
+export { TextAreaProps } from './Textarea'
 export default StyledTextarea

@@ -8,7 +8,7 @@ export enum AnimationType {
   SLIDE_UP = 'slide-up',
 }
 
-interface CustomTransitionProps {
+export interface CustomTransitionProps {
   readonly className?: Classcat.Class
   readonly children: JSX.Element
   readonly animationName?: AnimationType

@@ -155,5 +155,5 @@ const StyledDatePicker = styled(DatePicker)`
   }
 `
 
-export { DatePickerOrientation } from './DatePicker'
+export { DatePickerProps, DatePickerOrientation } from './DatePicker'
 export default StyledDatePicker

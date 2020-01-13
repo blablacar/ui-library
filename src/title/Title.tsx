@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
-interface TitleProps {
+export interface TitleProps {
   readonly id?: string
   readonly className?: Classcat.Class
   readonly children: string

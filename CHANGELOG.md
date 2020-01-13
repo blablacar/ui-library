@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Export Typscript interfaces :tada:
 - [...]
 
 # v17.3.0 (09/01/2020)

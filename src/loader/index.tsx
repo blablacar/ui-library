@@ -27,4 +27,5 @@ const StyledLoader = styled(Loader)`
   }
 `
 
+export { LoaderProps } from './Loader'
 export default StyledLoader

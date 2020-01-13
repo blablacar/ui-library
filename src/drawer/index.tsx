@@ -57,4 +57,5 @@ const StyledDrawer = styled(Drawer)`
   }
 `
 
+export { DrawerProps } from './Drawer'
 export default StyledDrawer

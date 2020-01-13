@@ -4,7 +4,7 @@ import cc from 'classcat'
 export const animationDuration = 700
 export const animationDelay = 300
 
-interface PushInfoProps {
+export interface PushInfoProps {
   readonly className?: Classcat.Class
   readonly icon?: React.ReactNode
   readonly headline: string

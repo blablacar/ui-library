@@ -80,4 +80,5 @@ export const StyledTimePicker = styled(TimePicker)`
   }
 `
 
+export { TimePickerProps } from './TimePicker'
 export default StyledTimePicker

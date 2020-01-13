@@ -5,7 +5,7 @@ import Item from '_utils/item'
 import { color } from '_utils/branding'
 import cc from 'classcat'
 
-interface MessagingSummaryItemProps {
+export interface MessagingSummaryItemProps {
   readonly className?: Classcat.Class
   readonly url: string
   readonly pictureUrl: string

@@ -7,7 +7,7 @@ export enum TabStatus {
   FIXED = 'fixed',
 }
 
-interface Tab {
+export interface Tab {
   readonly id: string
   readonly label: string
   readonly icon?: React.ReactElement<Icon>
@@ -17,7 +17,7 @@ interface Tab {
   readonly badgeAriaLabel?: string
 }
 
-interface TabsProps {
+export interface TabsProps {
   readonly tabs: Tab[]
   readonly activeTabId: string
   readonly onChange?: Function

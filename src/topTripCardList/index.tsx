@@ -58,4 +58,5 @@ const StyledTopTripCardList = styled(TopTripCardList)`
   }
 `
 
+export { TopTripCardListProps } from './TopTripCardList'
 export default StyledTopTripCardList

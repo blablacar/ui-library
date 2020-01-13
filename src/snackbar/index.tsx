@@ -39,4 +39,5 @@ const StyledSnackbar = styled(Snackbar)`
   }
 `
 
+export { SnackbarProps } from './Snackbar'
 export default StyledSnackbar

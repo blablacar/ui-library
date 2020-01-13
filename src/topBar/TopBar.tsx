@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
-interface TopBarProps {
+export interface TopBarProps {
   readonly className?: Classcat.Class
   readonly leftItem?: JSX.Element
   readonly rightItem?: JSX.Element

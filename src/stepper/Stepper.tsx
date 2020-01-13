@@ -24,7 +24,7 @@ export const StepperButtonSize = {
   [StepperDisplay.LARGE]: 48,
 }
 
-interface StepperProps {
+export interface StepperProps {
   name: string
   children: string
   increaseLabel: string

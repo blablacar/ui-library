@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import Star from 'icon/starIcon'
 
-interface Stars {
+export interface StarsProps {
   readonly className?: Classcat.Class
   readonly stars: number
 }
@@ -18,7 +18,7 @@ const StarIcon = ({ offset }: { offset: number }) => (
   </div>
 )
 
-const Stars = ({ stars, className }: Stars) => (
+const Stars = ({ stars, className }: StarsProps) => (
   <div className={cc(className)}>
     {ValidateStars(stars) &&
       Array.from({ length: 5 }, (v, index) => {

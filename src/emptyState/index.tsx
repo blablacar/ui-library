@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import EmptyState from './EmptyState'
 import { space } from '_utils/branding'
+import EmptyState from './EmptyState'
 
 const StyledEmptyState = styled(EmptyState)`
   & {
@@ -23,4 +23,5 @@ const StyledEmptyState = styled(EmptyState)`
   }
 `
 
+export { EmptyStateProps } from './EmptyState'
 export default StyledEmptyState

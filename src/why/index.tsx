@@ -36,4 +36,5 @@ const StyledWhy = styled(Why)`
   }
 `
 
+export { WhyProps } from './Why'
 export default StyledWhy

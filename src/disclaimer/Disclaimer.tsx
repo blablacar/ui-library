@@ -6,7 +6,7 @@ import Button, { ButtonStatus } from 'button'
 import { TextDisplayType } from 'text'
 import { color } from '_utils/branding'
 
-interface DisclaimerProps {
+export interface DisclaimerProps {
   // Whether to use a decoration Info icon on the left side of the Disclaimer or not.
   readonly useInfoIcon?: boolean
   readonly children: string | JSX.Element

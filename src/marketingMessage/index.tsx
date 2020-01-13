@@ -14,4 +14,5 @@ const StyledMarketingMessage = styled(MarketingMessage)`
   }
 `
 
+export { MarketingMessageProps } from './MarketingMessage'
 export default StyledMarketingMessage

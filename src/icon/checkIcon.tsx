@@ -5,7 +5,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 import styled from 'styled-components'
 
-interface CheckProps extends Icon {
+export interface CheckProps extends Icon {
   readonly absolute?: boolean
   readonly validate?: boolean
   readonly backgroundColor?: string

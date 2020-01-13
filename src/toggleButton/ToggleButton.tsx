@@ -5,7 +5,7 @@ import Item from '_utils/item/index'
 import { ItemProps } from '_utils/item/Item'
 import CheckboxIcon from '_utils/checkboxIcon'
 
-interface ToggleButtonProps extends ItemProps {
+export interface ToggleButtonProps extends ItemProps {
   readonly name: string
   readonly label: string
   readonly sublabel?: string

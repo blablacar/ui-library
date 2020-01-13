@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-interface BadgeProps {
+export interface BadgeProps {
   readonly className?: Classcat.Class
   readonly children: string | JSX.Element | number
   readonly ariaLabel?: string

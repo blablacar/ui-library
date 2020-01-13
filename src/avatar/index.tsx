@@ -90,4 +90,5 @@ const StyledAvatar = styled(Avatar)`
   }
 `
 
+export { AvatarProps } from './Avatar'
 export default StyledAvatar

@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { TripCardProps } from 'tripCard/TripCard'
 
-interface TopTripCardListProps {
+export interface TopTripCardListProps {
   readonly children: React.ReactElement<TripCardProps>[]
   readonly className?: Classcat.Class
   readonly width?: string

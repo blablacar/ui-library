@@ -120,4 +120,5 @@ const StyledTripCard = styled(TripCard)`
   }
 `
 
+export { TripCardProps, User } from './TripCard'
 export default StyledTripCard

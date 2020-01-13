@@ -65,4 +65,5 @@ const StyledSelectField = styled(SelectField)`
   }
 `
 
+export { SelectFieldProps } from './SelectField'
 export default StyledSelectField

@@ -5,7 +5,7 @@ import Rating from 'rating'
 import Text, { TextDisplayType } from 'text'
 import Item from '_utils/item'
 
-interface ProfileProps {
+export interface ProfileProps {
   readonly className?: Classcat.Class
   readonly ariaLabel?: string
   readonly title: string

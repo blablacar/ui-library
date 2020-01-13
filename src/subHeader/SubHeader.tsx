@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from 'title'
 
-interface SubHeaderProps {
+export interface SubHeaderProps {
   readonly className?: Classcat.Class
   readonly children: string
 }

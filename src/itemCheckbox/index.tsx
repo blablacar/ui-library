@@ -13,5 +13,5 @@ const StyledItemCheckbox = styled(ItemCheckbox)`
   }
 `
 
-export { ItemCheckboxStatus } from './ItemCheckbox'
+export { ItemCheckboxProps, ItemCheckboxStatus } from './ItemCheckbox'
 export default StyledItemCheckbox
