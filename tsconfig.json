@@ -12,11 +12,12 @@
     "target": "es6",
     "lib": ["es2017", "dom"],
     "jsx": "preserve",
-    "allowJs": true,
+    "allowJs": false,
+    "declaration": true,
     "noEmitOnError": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src"
   },
-  "include": ["node_modules/@types", "src/**/*.tsx", "src/**/*.ts", "stories/index.tsx"],
+  "include": ["node_modules/@types", "src/**/*.tsx", "src/**/*.ts"],
   "exclude": ["build", "node_modules", "src/**/*.unit.tsx"]
 }

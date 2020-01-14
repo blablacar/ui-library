@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add d.ts declaration and sourcemaps
 - **[NEW]** Export Typscript interfaces :tada:
 - [...]
 
