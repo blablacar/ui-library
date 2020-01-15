@@ -8,6 +8,7 @@ import Text, { TextDisplayType, TextTagType } from 'text'
 import ChevronIcon from 'icon/chevronIcon'
 import SubHeader from 'subHeader'
 import BlankSeparator from 'blankSeparator'
+import Bullet, { BulletTypes } from 'bullet'
 
 export interface ItineraryProps {
   readonly ariaLabelledBy?: string
@@ -78,30 +79,43 @@ const Itinerary = ({
       )}
       <ul className={cc([{ 'kirk-itinerary--noTime': small || !withTime }])}>
         {isNonEmptyString(fromAddon) && (
-          <li className="kirk-itinerary-fromAddon" aria-label={fromAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content" display={TextDisplayType.CAPTION}>
-              {fromAddon}
-            </Text>
+          <li
+            className="kirk-itinerary-location kirk-itinerary-addon kirk-itinerary-addon--from"
+            aria-label={fromAddonAriaLabel}
+          >
+            <Bullet type={BulletTypes.ADDON} />
+            <div className="kirk-itinerary-road" aria-hidden="true" />
+            <div className="kirk-itinerary-location-city">
+              <Text
+                tag={TextTagType.PARAGRAPH}
+                display={TextDisplayType.CAPTION}
+                textColor={color.fadedText}
+              >
+                {fromAddon}
+              </Text>
+            </div>
           </li>
         )}
         {places.map((place, index) => {
           let Component
-          let chevron = false
+          let hasChevron = false
           let hrefProps
 
           const link = place.href
           const isLastPlace = places.length - 1 === index
+          const hasTime = !small && withTime
+          const hasSubLabel = !small && place.subLabel
 
           if (!isEmpty(link) && typeof link !== 'string') {
             Component = link.type
-            chevron = true
+            hasChevron = true
             hrefProps = {
               ...link.props,
               className: cc(['kirk-itinerary-location-wrapper', link.props.className]),
             }
           } else if (typeof link === 'string') {
             Component = 'a'
-            chevron = true
+            hasChevron = true
             hrefProps = {
               href: place.href,
               className: 'kirk-itinerary-location-wrapper',
@@ -118,9 +132,8 @@ const Itinerary = ({
               className={cc([
                 'kirk-itinerary-location',
                 {
-                  'kirk-itinerary--departure': index === 0,
                   'kirk-itinerary--arrival': isLastPlace,
-                  'kirk-itinerary-location--toAddon': isLastPlace && isNonEmptyString(toAddon),
+                  'kirk-itinerary-location--withToAddon': isLastPlace && isNonEmptyString(toAddon),
                 },
               ])}
               key={computeKeyFromPlace(place)}
@@ -139,7 +152,7 @@ const Itinerary = ({
                 }
               />
               <Component {...hrefProps} aria-label={place.actionAriaLabel}>
-                {!small && withTime && (
+                {hasTime && (
                   <time dateTime={place.isoDate}>
                     <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
                       {place.time}
@@ -147,11 +160,12 @@ const Itinerary = ({
                   </time>
                 )}
                 <div className="kirk-itinerary-location-city">
-                  <Text tag={TextTagType.DIV} display={TextDisplayType.TITLESTRONG}>
+                  <Bullet />
+                  <div className="kirk-itinerary-road" aria-hidden="true" />
+                  <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.TITLESTRONG}>
                     {place.mainLabel}
                   </Text>
-                  {!small &&
-                    place.subLabel &&
+                  {hasSubLabel &&
                     (typeof place.subLabel === 'string' ? (
                       <Text
                         tag={TextTagType.PARAGRAPH}
@@ -164,7 +178,7 @@ const Itinerary = ({
                       <div>{place.subLabel}</div>
                     ))}
                 </div>
-                {chevron && (
+                {hasChevron && (
                   <div className="kirk-itinerary-location-chevron">
                     <ChevronIcon />
                   </div>
@@ -174,10 +188,20 @@ const Itinerary = ({
           )
         })}
         {isNonEmptyString(toAddon) && (
-          <li className="kirk-itinerary-toAddon" aria-label={toAddonAriaLabel}>
-            <Text className="kirk-itinerary-addon-content" display={TextDisplayType.CAPTION}>
-              {toAddon}
-            </Text>
+          <li
+            className="kirk-itinerary-location kirk-itinerary-addon kirk-itinerary-addon--to"
+            aria-label={toAddonAriaLabel}
+          >
+            <Bullet type={BulletTypes.ADDON} />
+            <div className="kirk-itinerary-location-city">
+              <Text
+                tag={TextTagType.PARAGRAPH}
+                display={TextDisplayType.CAPTION}
+                textColor={color.fadedText}
+              >
+                {toAddon}
+              </Text>
+            </div>
           </li>
         )}
       </ul>

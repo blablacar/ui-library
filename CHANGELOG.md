@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** `Bullet` component
+- **[UPDATE]** Refactor `Itinerary`
 - [...]
 
 # v17.4.1 (20/01/2020)
