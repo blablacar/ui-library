@@ -54,8 +54,8 @@ describe('Itinerary component', () => {
     const itinerary = shallow(
       <Itinerary fromAddon="test" fromAddonAriaLabel="testLabel" places={places} />,
     )
-    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(true)
-    expect(itinerary.find('.kirk-itinerary-fromAddon').prop('aria-label')).toEqual('testLabel')
+    expect(itinerary.find('.kirk-itinerary-addon--from').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-addon--from').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should display the bottom addon with a11y label', () => {
@@ -63,20 +63,20 @@ describe('Itinerary component', () => {
       <Itinerary toAddon="test" toAddonAriaLabel="testLabel" places={places} />,
     )
     expect(
-      itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--toAddon'),
+      itinerary.find('.kirk-itinerary--arrival').hasClass('kirk-itinerary-location--withToAddon'),
     ).toBe(true)
-    expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(true)
-    expect(itinerary.find('.kirk-itinerary-toAddon').prop('aria-label')).toEqual('testLabel')
+    expect(itinerary.find('.kirk-itinerary-addon--to').exists()).toBe(true)
+    expect(itinerary.find('.kirk-itinerary-addon--to').prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should not render top addon with blank string', () => {
     const itinerary = shallow(<Itinerary fromAddon=" " places={places} />)
-    expect(itinerary.find('.kirk-itinerary-fromAddon').exists()).toBe(false)
+    expect(itinerary.find('.kirk-itinerary-addon--from').exists()).toBe(false)
   })
 
   it('Should not render bottom addon with blank string', () => {
     const itinerary = shallow(<Itinerary toAddon=" " places={places} />)
-    expect(itinerary.find('.kirk-itinerary-toAddon').exists()).toBe(false)
+    expect(itinerary.find('.kirk-itinerary-addon--to').exists()).toBe(false)
   })
 
   it('Should display stopover with a11y label', () => {
@@ -198,12 +198,12 @@ describe('Itinerary component', () => {
     const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
-      .at(0)
+      .at(1)
       .key()
     expect(key1).toBe('Paris-rue Ménars-2017-12-11T09:00')
     const key2 = itinerary
       .find('li.kirk-itinerary-location')
-      .at(1)
+      .at(2)
       .key()
     expect(key2).toBe('Tours-2017-12-11T12:00')
   })
@@ -212,7 +212,7 @@ describe('Itinerary component', () => {
     const itinerary = shallow(<Itinerary fromAddon="test" places={places} />)
     const key = itinerary
       .find('li.kirk-itinerary-location')
-      .at(0)
+      .at(1)
       .key()
     expect(key).toBe('Paris-2017-12-11T09:00')
   })
@@ -238,12 +238,12 @@ describe('Itinerary component', () => {
     const itinerary = shallow(<Itinerary fromAddon="test" places={placesList} />)
     const key1 = itinerary
       .find('li.kirk-itinerary-location')
-      .at(0)
+      .at(1)
       .key()
     expect(key1).toBe('route-start-paris')
     const key2 = itinerary
       .find('li.kirk-itinerary-location')
-      .at(1)
+      .at(2)
       .key()
     expect(key2).toBe('route-end-tours')
   })
