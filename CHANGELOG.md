@@ -1,10 +1,12 @@
 # Unreleased
 
+- **[FIX]** Fix the font size of `TheVoice` component on small screens
 - [...]
 
 # v17.4.0 (15/01/2020)
+
 - **[NEW]** Add d.ts declaration and sourcemaps
-- **[NEW]** Export TypeScript interfaces :tada:
+- **[NEW]** Export TypeScript interfaces
 
 # v17.3.0 (09/01/2020)
 
