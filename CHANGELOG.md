@@ -1,8 +1,10 @@
 # Unreleased
 
-- **[NEW]** Add d.ts declaration and sourcemaps
-- **[NEW]** Export Typscript interfaces :tada:
 - [...]
+
+# v17.4.0 (15/01/2020)
+- **[NEW]** Add d.ts declaration and sourcemaps
+- **[NEW]** Export TypeScript interfaces :tada:
 
 # v17.3.0 (09/01/2020)
 
