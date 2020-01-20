@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix the font size of `TheVoice` component on small screens
 - [...]
+
+# v17.4.1 (20/01/2020)
+
+- **[FIX]** Fix the font size of `TheVoice` component on small screens
 
 # v17.4.0 (15/01/2020)
 
