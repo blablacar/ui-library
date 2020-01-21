@@ -1,8 +1,10 @@
 # Unreleased
 
+- [...]
 - **[NEW]** `Bullet` component
 - **[UPDATE]** Refactor `Itinerary`
-- [...]
+- **[NEW]** Added `plugUsbSocket`, `priorityService`, `quiet`, `qrCode`, `recliningSeat`, `seatBelt`, `seatWithTable`, `snack`, `airConditioning`, `audio`, `bikeArea`, `blanket`, `child`, `comfortSeat`, `crew`, `drink`, `genericAmenity`, `handLuggage`, `holdLuggage`, `legRest`, `legRoom`, `light`, `magazine`, `meal`, `seatSliding`, `sleep`, `standardSeat`, `videoSystem`, `vipLounge`, `wc`, `wifi` icons
+- **[BREAKING CHANGE]** Change `petIcon` filename
 
 # v17.4.1 (20/01/2020)
 
