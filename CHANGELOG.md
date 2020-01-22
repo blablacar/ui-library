@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Added scrolling snap on `topTripCardList`
 
 # v18.0.0 (22/01/2020)
 
