@@ -18,7 +18,13 @@ const StyledTopTripCardList = styled(TopTripCardList)`
     overflow: auto; /* Make TripCards scrollable horizontally */
     -ms-overflow-style: none; /* Remove scrollbar visually IE 10+ */
     scrollbar-width: none; /* Remove scrollbar visually Firefox */
+    scroll-snap-type: x mandatory;
   }
+
+  & .kirk-topTripCardList .kirk-tripCard {
+    scroll-snap-align: start;
+  }
+
   /* Remove scrollbar webkit */
   & .kirk-topTripCardList::-webkit-scrollbar {
     display: none;
