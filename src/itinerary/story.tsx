@@ -86,6 +86,9 @@ stories.add('default', () => {
         small={boolean('small', false)}
         headline={headline}
         highlightRoad={highlightRoad}
+        isCollapsible={boolean('isCollapsible', false)}
+        collapsedLabel={text('collapsed label', `${placesWithStopover.length} stops`)}
+        collapsedAriaLabel={text('collapsed aria label', 'Show or hide all stops')}
       />
     </div>
   )
@@ -155,45 +158,6 @@ stories.add('with stopovers', () => {
       toAddon={toAddon}
       toAddonAriaLabel={toAddonLabel}
       places={placesWithStopover}
-      small={boolean('small', false)}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
-  )
-})
-
-stories.add('with button tiles', () => {
-  const fromAddon = text('From addon', 'Lille')
-  const toAddon = text('To addon', 'Biarritz')
-  const headline = text('Headline', 'Mon 11 December')
-  const highlightRoad = boolean('Highlight road', true)
-  const placesWithButton = [
-    {
-      time: '09:00',
-      isoDate: '2017-12-11T09:00',
-      subLabel: 'Porte de Vincennes',
-      mainLabel: 'Paris',
-      href: <button type="button" />,
-    },
-    {
-      time: '15:00',
-      isoDate: '2017-12-11T15:00',
-      subLabel: 'Gare Bordeaux Saint-Jean',
-      mainLabel: 'Bordeaux',
-    },
-    {
-      time: '12:00',
-      isoDate: '2017-12-11T12:00',
-      subLabel: 'Gare de Tours',
-      mainLabel: 'Tours',
-      href: <button type="button" />,
-    },
-  ]
-  return (
-    <Itinerary
-      fromAddon={fromAddon}
-      toAddon={toAddon}
-      places={placesWithButton}
       small={boolean('small', false)}
       headline={headline}
       highlightRoad={highlightRoad}

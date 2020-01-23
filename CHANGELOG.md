@@ -1,9 +1,12 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Refactored `Itinerary` to use `ItineraryLocation` and `ItineraryCollapsible`
+- **[UPDATE]** `Bullet` component size is no longer based on 'content-box' but 'border-box'
 - **[NEW]** Added `ClockMapIcon`
+- [...]
 
 # v18.2.0 (03/02/2020)
+
 - **[NEW]** Create new `HeroSection` section.
 
 # v18.1.0 (30/01/2020)
