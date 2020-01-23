@@ -1,6 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
-import { ChevronIcon } from 'icon'
+import ChevronIcon from 'icon/chevronIcon'
 import { color } from '_utils/branding'
 
 export interface DropdownButtonProps {

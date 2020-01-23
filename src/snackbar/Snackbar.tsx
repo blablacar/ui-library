@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { canUseDOM } from 'exenv'
 import cc from 'classcat'
-import { CrossIcon } from 'icon'
+import CrossIcon from 'icon/crossIcon'
 import { createPortal } from 'react-dom'
 import { color } from '_utils/branding'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
