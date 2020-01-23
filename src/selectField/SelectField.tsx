@@ -1,6 +1,6 @@
 import React, { useState, RefObject, useEffect } from 'react'
 import cc from 'classcat'
-import { ChevronIcon } from 'icon'
+import ChevronIcon from 'icon/chevronIcon'
 import { color } from '_utils/branding'
 import { CommonFieldsProps } from '_utils/interfaces'
 

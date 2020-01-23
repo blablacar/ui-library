@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Added scrolling snap on `topTripCardList`
+- **[FIX]** Removed icon imports which were directly importing from icon/index. This fixes code splitting on Icon in the SPA.
 
 # v18.0.0 (22/01/2020)
 
