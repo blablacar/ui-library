@@ -21,11 +21,21 @@ const StyledBullet = styled(Bullet)`
     height: 4px;
   }
 
-  &.kirk-bullet--map {
-    width: 12px;
-    height: 12px;
+  &.kirk-bullet--map-active,
+  &.kirk-bullet--map-inactive {
+    width: 11px;
+    height: 11px;
     border-width: 3px;
+  }
+
+  &.kirk-bullet--map-active {
     border-color: ${color.polylinePrimary};
+    box-shadow: 0 0 0 1px ${color.polylineStrokePrimary};
+  }
+
+  &.kirk-bullet--map-inactive {
+    border-color: ${color.polylineSecondary};
+    box-shadow: 0 0 0 1px ${color.polylineStrokeSecondary};
   }
 `
 export { BulletTypes, BulletProps } from './Bullet'

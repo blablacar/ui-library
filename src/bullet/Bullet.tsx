@@ -5,7 +5,8 @@ export enum BulletTypes {
   DEFAULT = 'default',
   SMALL = 'small',
   ADDON = 'addon',
-  MAP = 'map',
+  MAP_ACTIVE = 'map-active',
+  MAP_INACTIVE = 'map-inactive',
 }
 
 export interface BulletProps {

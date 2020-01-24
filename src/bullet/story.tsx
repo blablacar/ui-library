@@ -12,15 +12,6 @@ stories.addDecorator(withKnobs)
 stories.add('Basic', () => (
   <Bullet
     className={text('className', 'custom-class')}
-    type={select(
-      'type',
-      {
-        [BulletTypes.DEFAULT]: BulletTypes.DEFAULT,
-        [BulletTypes.ADDON]: BulletTypes.ADDON,
-        [BulletTypes.SMALL]: BulletTypes.SMALL,
-        [BulletTypes.MAP]: BulletTypes.MAP,
-      },
-      BulletTypes.DEFAULT,
-    )}
+    type={select('type', BulletTypes, BulletTypes.DEFAULT)}
   />
 ))
