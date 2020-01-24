@@ -1,6 +1,7 @@
 # Unreleased
 
 [...]
+- **[UPDATE]** Add `MAP_ACTIVE` and `MAP_INACTIVE` types for `Bullet` component
 
 # v18.0.1 (23/01/2020)
 
