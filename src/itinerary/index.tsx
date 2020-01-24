@@ -70,7 +70,6 @@ const StyledItinerary = styled(Itinerary)`
 
   /* bullet */
   & .kirk-bullet {
-    z-index: 2;
     position: absolute;
     top: calc(${lineHeightAdjustment} + ${space.m} + ${gutterTopOffset});
     left: calc(${componentSizes.timeWidth} + (${bulletOuterSize} / 2));
@@ -109,7 +108,6 @@ const StyledItinerary = styled(Itinerary)`
 
   /* road */
   & .kirk-itinerary-road {
-    z-index: 1;
     position: absolute;
     top: calc(${bulletOuterSize} + ${space.m} + ${lineHeightAdjustment});
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});

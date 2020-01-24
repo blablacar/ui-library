@@ -1,7 +1,7 @@
 # Unreleased
 
-[...]
 - **[UPDATE]** Add `MAP_ACTIVE` and `MAP_INACTIVE` types for `Bullet` component
+- **[UPDATE]** Removed z-index rules from `Itinerary`
 
 # v18.0.1 (23/01/2020)
 

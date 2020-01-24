@@ -83,8 +83,8 @@ const Itinerary = ({
             className="kirk-itinerary-location kirk-itinerary-addon kirk-itinerary-addon--from"
             aria-label={fromAddonAriaLabel}
           >
-            <Bullet type={BulletTypes.ADDON} />
             <div className="kirk-itinerary-road" aria-hidden="true" />
+            <Bullet type={BulletTypes.ADDON} />
             <div className="kirk-itinerary-location-city">
               <Text
                 tag={TextTagType.PARAGRAPH}
@@ -160,8 +160,8 @@ const Itinerary = ({
                   </time>
                 )}
                 <div className="kirk-itinerary-location-city">
-                  <Bullet />
                   <div className="kirk-itinerary-road" aria-hidden="true" />
+                  <Bullet />
                   <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.TITLESTRONG}>
                     {place.mainLabel}
                   </Text>
