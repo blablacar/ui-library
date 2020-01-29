@@ -71,6 +71,11 @@ exports[`Item Should not have changed 1`] = `
   position: relative;
 }
 
+.c2.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;

@@ -111,6 +111,7 @@ export const modalSize = {
 
 export const shadow: defaultBranding = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
+  icon: '0 0 2px rgba(0, 0, 0, .3)',
 }
 
 export const inputBorderSize = {

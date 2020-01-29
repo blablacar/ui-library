@@ -22,6 +22,11 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
   position: relative;
 }
 
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;

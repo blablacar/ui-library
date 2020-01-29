@@ -1,6 +1,8 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Add `shadowed` prop `MeetingPointIcon`
+- **[UPDATE]** Changed `MeetingPointIcon` active display
 
 # v18.0.2 (24/01/2020)
 
