@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[UPDATE]** Add `highlightRoad` prop to `Itinerary`
 
 # v18.0.2 (24/01/2020)
 

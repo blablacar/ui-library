@@ -72,6 +72,7 @@ stories.add('default', () => {
   const toAddonLabel = text('To addon label', 'Driver arrival')
   const headline = text('Headline', 'Mon 11 December')
   const isStopover = boolean('Stopover', false)
+  const highlightRoad = boolean('Highlight road', true)
   return (
     <div>
       <h1 id="titleId">Title example</h1>
@@ -84,6 +85,7 @@ stories.add('default', () => {
         places={isStopover ? placesWithStopover : places}
         small={boolean('small', false)}
         headline={headline}
+        highlightRoad={highlightRoad}
       />
     </div>
   )
@@ -96,6 +98,7 @@ stories.add('with proximity', () => {
   const toAddon = text('To addon', 'Biarritz')
   const toAddonLabel = text('To addon label', 'Driver arrival')
   const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
   return (
     <Itinerary
       fromAddon={fromAddon}
@@ -131,6 +134,7 @@ stories.add('with proximity', () => {
       ]}
       small={boolean('small', false)}
       headline={headline}
+      highlightRoad={highlightRoad}
     />
   )
 })
@@ -142,6 +146,7 @@ stories.add('with stopovers', () => {
   const toAddon = text('To addon', 'Biarritz')
   const toAddonLabel = text('To addon label', 'Driver arrival')
   const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
   return (
     <Itinerary
       ariaLabel={ariaLabel}
@@ -152,6 +157,7 @@ stories.add('with stopovers', () => {
       places={placesWithStopover}
       small={boolean('small', false)}
       headline={headline}
+      highlightRoad={highlightRoad}
     />
   )
 })
@@ -160,6 +166,7 @@ stories.add('with button tiles', () => {
   const fromAddon = text('From addon', 'Lille')
   const toAddon = text('To addon', 'Biarritz')
   const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
   const placesWithButton = [
     {
       time: '09:00',
@@ -189,6 +196,7 @@ stories.add('with button tiles', () => {
       places={placesWithButton}
       small={boolean('small', false)}
       headline={headline}
+      highlightRoad={highlightRoad}
     />
   )
 })
@@ -197,6 +205,7 @@ stories.add('with single stopover', () => {
   const fromAddon = text('From addon', 'Lille')
   const toAddon = text('To addon', 'Biarritz')
   const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
   const stops = [
     {
       time: '09:00',
@@ -206,13 +215,22 @@ stories.add('with single stopover', () => {
     },
   ]
 
-  return <Itinerary fromAddon={fromAddon} toAddon={toAddon} places={stops} headline={headline} />
+  return (
+    <Itinerary
+      fromAddon={fromAddon}
+      toAddon={toAddon}
+      places={stops}
+      headline={headline}
+      highlightRoad={highlightRoad}
+    />
+  )
 })
 
 stories.add('without time', () => {
   const fromAddon = text('From addon', 'Lille')
   const toAddon = text('To addon', 'Biarritz')
   const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
   const placesWithButton = [
     {
       isoDate: '2017-12-11T09:00',
@@ -232,6 +250,7 @@ stories.add('without time', () => {
       places={placesWithButton}
       small={false}
       headline={headline}
+      highlightRoad={highlightRoad}
     />
   )
 })
