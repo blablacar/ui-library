@@ -113,6 +113,10 @@ const StyledItinerary = styled(Itinerary)`
     left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
     width: ${roadWidth};
     height: calc(100% - (${space.m}));
+    background-color: ${color.fadedText};
+  }
+
+  & .kirk-itinerary--highlightRoad .kirk-itinerary-road {
     background-color: ${color.primaryText};
   }
 

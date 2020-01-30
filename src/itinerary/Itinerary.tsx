@@ -21,6 +21,7 @@ export interface ItineraryProps {
   readonly toAddonAriaLabel?: string
   readonly small?: boolean
   readonly headline?: string
+  readonly highlightRoad?: boolean
 }
 
 interface RootA11yProps {
@@ -63,6 +64,7 @@ const Itinerary = ({
   toAddonAriaLabel,
   small = false,
   headline = null,
+  highlightRoad = true,
 }: ItineraryProps) => {
   // Add the small class if we don't have times to prevent empty content
   const withTime = places.filter(p => !isEmpty(p.time)).length > 0
@@ -77,7 +79,14 @@ const Itinerary = ({
           <BlankSeparator />
         </Fragment>
       )}
-      <ul className={cc([{ 'kirk-itinerary--noTime': small || !withTime }])}>
+      <ul
+        className={cc([
+          {
+            'kirk-itinerary--noTime': small || !withTime,
+            'kirk-itinerary--highlightRoad': highlightRoad,
+          },
+        ])}
+      >
         {isNonEmptyString(fromAddon) && (
           <li
             className="kirk-itinerary-location kirk-itinerary-addon kirk-itinerary-addon--from"
