@@ -71,6 +71,11 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   position: relative;
 }
 
+.c5.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c5 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
