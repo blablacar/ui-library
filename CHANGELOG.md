@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v18.1.0 (30/01/2020)
+
 - **[NEW]** Add `shadowed` prop `MeetingPointIcon`
 - **[UPDATE]** Changed `MeetingPointIcon` active display
 - **[UPDATE]** Add `highlightRoad` prop to `Itinerary`
