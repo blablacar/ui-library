@@ -71,6 +71,11 @@ exports[`ItemsList Should render an unordered list 1`] = `
   position: relative;
 }
 
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -437,6 +442,11 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   position: relative;
 }
 
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -801,6 +811,11 @@ exports[`ItemsList Should render an unordered list with the separators classname
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c3 .kirk-icon-badge {

@@ -6,6 +6,11 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   position: relative;
 }
 
+.c0.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c0 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -68,6 +73,11 @@ exports[`Should highlight FAR and have a title 1`] = `
   position: relative;
 }
 
+.c0.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c0 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -128,6 +138,11 @@ exports[`Should highlight MIDDLE without a title 1`] = `
 .c0.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c0.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c0 .kirk-icon-badge {

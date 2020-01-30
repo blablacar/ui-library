@@ -71,6 +71,11 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   position: relative;
 }
 
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -360,6 +365,11 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 .c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c4.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c4 .kirk-icon-badge {
@@ -685,6 +695,11 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c3 .kirk-icon-badge {

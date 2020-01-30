@@ -6,6 +6,11 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
   position: relative;
 }
 
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c1 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -60,6 +65,11 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
 .c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c2.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c2 .kirk-icon-badge {
@@ -167,6 +177,11 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
   position: relative;
 }
 
+.c2.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
 .c2 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
@@ -270,6 +285,11 @@ exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
 .c1 .kirk-icon-badge {
