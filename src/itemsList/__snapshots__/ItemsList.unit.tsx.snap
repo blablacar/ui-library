@@ -106,6 +106,10 @@ exports[`ItemsList Should render an unordered list 1`] = `
   background: #EDEDED;
 }
 
+.c1.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c1 {
   background: none;
   -webkit-text-decoration: none;
@@ -477,6 +481,10 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   background: #EDEDED;
 }
 
+.c1.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c1 {
   background: none;
   -webkit-text-decoration: none;
@@ -846,6 +854,10 @@ exports[`ItemsList Should render an unordered list with the separators classname
 
 .c1.kirk-item--clickable:hover {
   background: #EDEDED;
+}
+
+.c1.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
 }
 
 a.c1 {

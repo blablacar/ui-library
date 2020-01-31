@@ -192,6 +192,10 @@ exports[`Should render properly with read messages 1`] = `
   background: #EDEDED;
 }
 
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -542,6 +546,10 @@ exports[`Should render properly with unread messages 1`] = `
 
 .c0.kirk-item--clickable:hover {
   background: #EDEDED;
+}
+
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
 }
 
 a.c0 {

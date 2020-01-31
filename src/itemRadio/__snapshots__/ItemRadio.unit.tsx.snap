@@ -106,6 +106,10 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   background: #EDEDED;
 }
 
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -400,6 +404,10 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 
 .c0.kirk-item--clickable:hover {
   background: #EDEDED;
+}
+
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
 }
 
 a.c0 {
@@ -730,6 +738,10 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 
 .c0.kirk-item--clickable:hover {
   background: #EDEDED;
+}
+
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
 }
 
 a.c0 {
