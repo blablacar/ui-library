@@ -101,6 +101,7 @@ export const componentSizes = {
   timeWidth: '48px',
   buttonIconSize: '48px',
   wrapper: '662px',
+  largeWrapper: '1016px',
 }
 
 export const modalSize = {
@@ -129,6 +130,7 @@ export const color: Color = {
   primaryText: palette.midnightGreen,
   secondaryText: palette.lightMidnightGreen,
   fadedText: palette.gray,
+  textWithBackground: palette.white,
 
   border: palette.gray,
   disabled: palette.lightGray,
@@ -140,6 +142,7 @@ export const color: Color = {
   vkBrand: '#4680C2',
 
   link: palette.blue,
+  defaultBackground: palette.white,
   lightBackground: palette.lightGray,
   inputBackground: palette.lightGray,
   pushBackground: palette.midnightGreen,

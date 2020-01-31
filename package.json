@@ -17,6 +17,7 @@
     "build-cleanup": "rimraf build/src && del \"build/**/story.*\" && del \"build/**/*.unit.*\"",
     "eslint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
     "lint": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs eslint",
+    "lint-fix": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs eslint --fix",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
     "prettier:ci": "prettier --list-different '**/*.{ts,tsx}'",
     "test": "jest",

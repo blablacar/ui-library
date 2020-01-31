@@ -3,30 +3,37 @@ import fs from 'fs'
 import * as kirk from './index'
 import * as icon from './icon/index'
 
-const lowercase = string => string.charAt(0).toLowerCase() + string.slice(1)
+const lowercase = (str: string) => str.charAt(0).toLowerCase() + str.slice(1)
 
-const getComponentDirectories = srcpath =>
-  fs
-    .readdirSync(srcpath)
-    .filter(
-      file =>
-        fs.statSync(`src/${file}`).isDirectory() &&
-        !file.startsWith('_') &&
-        !file.startsWith('icon') &&
-        !file.startsWith('typings'),
-    )
+const getComponentDirectoriesInFolder = (folder: string) =>
+  fs.readdirSync(folder).filter(file => fs.statSync(`${folder}/${file}`).isDirectory())
 
-const components = Object.keys(kirk).map(lowercase)
+const getSrcComponentDirectories = () =>
+  getComponentDirectoriesInFolder('src').filter(
+    file =>
+      !file.startsWith('_') &&
+      !file.startsWith('icon') &&
+      !file.startsWith('typings') &&
+      !file.startsWith('layout'),
+  )
+
+const exportedComponents = Object.keys(kirk).map(lowercase)
 const icons = Object.keys(icon).map(lowercase)
 
 it('Should render the kirk library', () => {
-  expect(components.length).toBeGreaterThan(0)
+  expect(exportedComponents.length).toBeGreaterThan(0)
 })
 
 it('Should export every component folder', () => {
-  expect(components).toEqual(expect.arrayContaining([...getComponentDirectories('src'), ...icons]))
+  expect(exportedComponents).toEqual(
+    expect.arrayContaining([
+      ...getSrcComponentDirectories(),
+      ...getComponentDirectoriesInFolder('src/layout/section'),
+      ...icons,
+    ]),
+  )
 })
 
 it('Should export the branding object', () => {
-  expect(components).toContain('branding')
+  expect(exportedComponents).toContain('branding')
 })
