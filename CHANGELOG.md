@@ -1,7 +1,9 @@
 # Unreleased
 
-- **[NEW]** Create new `HeroSection` section.
 - [...]
+
+# v18.2.0 (03/02/2020)
+- **[NEW]** Create new `HeroSection` section.
 
 # v18.1.0 (30/01/2020)
 
