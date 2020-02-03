@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[NEW]** Added `ClockMapIcon`
 
 # v18.2.0 (03/02/2020)
 - **[NEW]** Create new `HeroSection` section.

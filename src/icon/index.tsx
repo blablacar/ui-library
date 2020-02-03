@@ -18,6 +18,7 @@ import ChevronIcon from './chevronIcon'
 import ChildIcon from './child'
 import CircleIcon from './circleIcon'
 import ClockIcon from './clockIcon'
+import ClockMapIcon from './clockMapIcon'
 import CoinIcon from './coinIcon'
 import ComfortIcon from './comfortIcon'
 import ComfortSeatIcon from './comfortSeat'
@@ -119,6 +120,7 @@ export {
   ChildIcon,
   CircleIcon,
   ClockIcon,
+  ClockMapIcon,
   CoinIcon,
   ComfortIcon,
   ComfortSeatIcon,
