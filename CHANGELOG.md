@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v18.3.0 (04/02/2020)
+
 - **[UPDATE]** Refactored `Itinerary` to use `ItineraryLocation` and `ItineraryCollapsible`
 - **[UPDATE]** `Bullet` component size is no longer based on 'content-box' but 'border-box'
 - **[NEW]** Added `ClockMapIcon`
-- [...]
 
 # v18.2.0 (03/02/2020)
 
