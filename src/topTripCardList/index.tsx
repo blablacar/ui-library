@@ -31,7 +31,7 @@ const StyledTopTripCardList = styled(TopTripCardList)`
   }
 
   & .kirk-topTripCardList-wrapped {
-    max-width: ${componentSizes.wrapper};
+    max-width: ${componentSizes.smallSectionWidth};
   }
 
   & .kirk-tripCard {
@@ -57,7 +57,7 @@ const StyledTopTripCardList = styled(TopTripCardList)`
     height: 1px;
   }
 
-  @media (max-width: ${responsiveBreakpoints.small}) {
+  @media (${responsiveBreakpoints.isMediaSmall}) {
     & .kirk-tripCard {
       min-width: calc(100% - ${space.m});
     }

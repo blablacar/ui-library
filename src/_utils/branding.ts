@@ -100,12 +100,12 @@ export const delay = {
 export const componentSizes = {
   timeWidth: '48px',
   buttonIconSize: '48px',
-  wrapper: '662px',
-  largeWrapper: '1016px',
   bulletSize: '10px',
   bulletSizeSmall: '8px',
   bulletSizeMap: '18px',
   roadWidth: '4px',
+  smallSectionWidth: '662px',
+  largeSectionWidth: '1016px',
 }
 
 export const modalSize = {
@@ -124,8 +124,11 @@ export const inputBorderSize = {
   focus: '3px',
 }
 
+const smallBreakPointThreshold = '800px'
 export const responsiveBreakpoints = {
-  small: '800px',
+  small: smallBreakPointThreshold,
+  isMediaLarge: `min-width: ${smallBreakPointThreshold}`,
+  isMediaSmall: `max-width: ${smallBreakPointThreshold}`,
 }
 
 export const color: Color = {

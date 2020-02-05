@@ -23,7 +23,7 @@ const StyledHeroSection = styled(HeroSection)`
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: ${componentSizes.largeWrapper};
+    max-width: ${componentSizes.largeSectionWidth};
     padding: ${space.xl};
     padding-top: 0;
   }
@@ -47,7 +47,7 @@ const StyledHeroSection = styled(HeroSection)`
     margin-top: ${space.xl};
   }
 
-  @media (min-width: ${responsiveBreakpoints.small}) {
+  @media (${responsiveBreakpoints.isMediaLarge}) {
     & {
       height: 75vh;
       margin-bottom: ${space.xl};
