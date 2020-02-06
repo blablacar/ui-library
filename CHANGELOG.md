@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix background for `HighlightSection`
 - [...]
 
 # v19.0.0 (06/02/2020)
