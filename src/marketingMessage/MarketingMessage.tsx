@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 export interface MarketingMessageProps {
-  readonly children: JSX.Element
+  readonly children: React.ReactNode
   readonly className?: Classcat.Class
 }
 

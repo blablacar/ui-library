@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, select, number } from '@storybook/addon-knobs'
-
+import Section from 'layout/section/baseSection'
 import DatePicker, { DatePickerOrientation } from 'datePicker'
 import readme from 'datePicker/specifications/datepicker.md'
 
@@ -46,18 +46,20 @@ const testLocales = ['en-GB', 'fr-FR', 'ru-RU']
 stories.add(
   'default',
   () => (
-    <DatePicker
-      name="datepicker"
-      onChange={action('onChange')}
-      orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
-      locale={select('Locale', testLocales, 'en-GB')}
-      weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
-      weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
-      months={months(select('Locale', testLocales, 'en-GB'))}
-      firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
-      numberOfMonths={number('Number of months', 1)}
-      stickyPositionTop={number('Top position of sticky weekdays', 0)}
-    />
+    <Section>
+      <DatePicker
+        name="datepicker"
+        onChange={action('onChange')}
+        orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
+        locale={select('Locale', testLocales, 'en-GB')}
+        weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
+        weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
+        months={months(select('Locale', testLocales, 'en-GB'))}
+        firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
+        numberOfMonths={number('Number of months', 1)}
+        stickyPositionTop={number('Top position of sticky weekdays', 0)}
+      />
+    </Section>
   ),
   {
     readme: { content: readme },
@@ -65,19 +67,23 @@ stories.add(
 )
 
 stories.add('example horizontal (2 months)', () => (
-  <DatePicker
-    name="datepicker"
-    onChange={action('onChange')}
-    orientation={DatePickerOrientation.HORIZONTAL}
-    numberOfMonths={2}
-  />
+  <Section>
+    <DatePicker
+      name="datepicker"
+      onChange={action('onChange')}
+      orientation={DatePickerOrientation.HORIZONTAL}
+      numberOfMonths={2}
+    />
+  </Section>
 ))
 
 stories.add('example vertical (6 months)', () => (
-  <DatePicker
-    name="datepicker"
-    onChange={action('onChange')}
-    orientation={DatePickerOrientation.VERTICAL}
-    numberOfMonths={6}
-  />
+  <Section>
+    <DatePicker
+      name="datepicker"
+      onChange={action('onChange')}
+      orientation={DatePickerOrientation.VERTICAL}
+      numberOfMonths={6}
+    />
+  </Section>
 ))
