@@ -2,6 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Itinerary from './Itinerary'
+import ItineraryCollapsible from '_utils/itineraryCollapsible'
+import ItineraryLocation from '_utils/itineraryLocation'
 import Proximity from 'proximity'
 
 const places = [
@@ -124,6 +126,31 @@ describe('Itinerary component', () => {
     it('Should not add kirk-itinerary--highlightRoad class highighlightRoad is false', () => {
       const itinerary = shallow(<Itinerary places={places} highlightRoad={false} />)
       expect(itinerary.find('.kirk-itinerary--highlightRoad').exists()).toBe(false)
+    })
+  })
+
+  describe('Collapsible', () => {
+    it('should not render ItineraryCollapsible when only has 1 stopover', () => {
+      const itinerary = shallow(<Itinerary places={places} isCollapsible />)
+      expect(itinerary.find(ItineraryCollapsible).exists()).toBe(false)
+      expect(itinerary.find(ItineraryLocation).exists()).toBe(true)
+    })
+    it('should render ItineraryCollapsible when more than 1 stopover', () => {
+      const placesWithMultipleStopover = [
+        ...places,
+        {
+          time: '12:00',
+          isoDate: '2017-12-11T12:00',
+          stepAriaLabel: 'Pick up/drop off location',
+          subLabel: (
+            <Proximity value="MIDDLE" title="Pick up point is not that far fom your place" />
+          ),
+          mainLabel: 'Tours',
+        },
+      ]
+
+      const itinerary = shallow(<Itinerary places={placesWithMultipleStopover} isCollapsible />)
+      expect(itinerary.find(ItineraryCollapsible).exists()).toBe(true)
     })
   })
 })

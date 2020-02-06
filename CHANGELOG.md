@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Itinerary is no longer collapsed when we have only one stopover
 
 # v19.1.0 (07/02/2020)
 

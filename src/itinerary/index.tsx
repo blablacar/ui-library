@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, space, componentSizes } from '_utils/branding'
+import { color, space, componentSizes, font } from '_utils/branding'
 
 import Itinerary from './Itinerary'
 
@@ -67,6 +67,14 @@ const StyledItinerary = styled(Itinerary)`
   /* road, only for -addon--from */
   & .kirk-itinerary-addon--from .kirk-itineraryLocation-road {
     background-color: ${color.fadedText};
+  }
+
+  & .kirk-itineraryLocation-smallLabel .kirk-text {
+    font-size: ${font.s.size};
+  }
+
+  & .kirk-itineraryLocation-smallLabel {
+    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionLeft});
   }
 
   /* isCollapsible */

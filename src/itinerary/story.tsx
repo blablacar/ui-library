@@ -27,8 +27,35 @@ const places = [
     mainLabel: 'Bordeaux',
   },
 ]
+const placesWithOneStopover = [
+  {
+    time: '09:00',
+    stepAriaLabel: 'Pickup location',
+    isoDate: '2017-12-11T09:00',
+    subLabel: 'Porte de Vincennes',
+    mainLabel: 'Paris',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
+    href: '#',
+  },
+  {
+    time: '12:00',
+    isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Pick up/drop off location',
+    subLabel: 'Gare de Tours',
+    mainLabel: 'Tours',
+    actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
+    href: '#',
+  },
+  {
+    time: '19:00',
+    isoDate: '2017-12-11T19:00',
+    stepAriaLabel: 'Pick up/drop off location',
+    subLabel: 'Gare Bordeaux Saint-Jean',
+    mainLabel: 'Bordeaux',
+  },
+]
 
-const placesWithStopover = [
+const placesWithStopovers = [
   {
     time: '09:00',
     stepAriaLabel: 'Pickup location',
@@ -71,7 +98,15 @@ stories.add('default', () => {
   const toAddon = text('To addon', 'Biarritz')
   const toAddonLabel = text('To addon label', 'Driver arrival')
   const headline = text('Headline', 'Mon 11 December')
-  const isStopover = boolean('Stopover', false)
+  const placesSelect = select(
+    'Stopover',
+    {
+      default: places,
+      withOneStopover: placesWithOneStopover,
+      withMultipleStopovers: placesWithStopovers,
+    },
+    placesWithOneStopover,
+  )
   const highlightRoad = boolean('Highlight road', true)
   return (
     <Section>
@@ -82,12 +117,12 @@ stories.add('default', () => {
         fromAddonAriaLabel={fromAddonLabel}
         toAddon={toAddon}
         toAddonAriaLabel={toAddonLabel}
-        places={isStopover ? placesWithStopover : places}
+        places={placesSelect}
         small={boolean('small', false)}
         headline={headline}
         highlightRoad={highlightRoad}
         isCollapsible={boolean('isCollapsible', false)}
-        collapsedLabel={text('collapsed label', `${placesWithStopover.length} stops`)}
+        collapsedLabel={text('collapsed label', `${placesWithStopovers.length} stops`)}
         collapsedAriaLabel={text('collapsed aria label', 'Show or hide all stops')}
       />
     </Section>
@@ -153,19 +188,17 @@ stories.add('with stopovers', () => {
   const headline = text('Headline', 'Mon 11 December')
   const highlightRoad = boolean('Highlight road', true)
   return (
-    <Section>
-      <Itinerary
-        ariaLabel={ariaLabel}
-        fromAddon={fromAddon}
-        fromAddonAriaLabel={fromAddonLabel}
-        toAddon={toAddon}
-        toAddonAriaLabel={toAddonLabel}
-        places={placesWithStopover}
-        small={boolean('small', false)}
-        headline={headline}
-        highlightRoad={highlightRoad}
-      />
-    </Section>
+    <Itinerary
+      ariaLabel={ariaLabel}
+      fromAddon={fromAddon}
+      fromAddonAriaLabel={fromAddonLabel}
+      toAddon={toAddon}
+      toAddonAriaLabel={toAddonLabel}
+      places={placesWithStopovers}
+      small={boolean('small', false)}
+      headline={headline}
+      highlightRoad={highlightRoad}
+    />
   )
 })
 
