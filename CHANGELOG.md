@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v19.0.0 (06/02/2020)
+
 - **[NEW]** Added `BaseSection`, the core section for layouts.
 - **[NEW]** Added `HighlightSection`, a specialized section with a green background.
 - **[BREAKING CHANGE]** Rename our section branding sizes to use better names.
-- [...]
 
 # v18.3.0 (04/02/2020)
 
