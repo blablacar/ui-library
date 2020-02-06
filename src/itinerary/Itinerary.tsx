@@ -50,6 +50,8 @@ const computeRootA11yProps = (ariaLabel?: string, ariaLabelledBy?: string): Root
 // Get places between departure and arrival
 const getIntermediatePlaces = (places: Place[]) => places.slice(1, -1)
 
+const STOPOVER_COUNT_TO_COLLAPSE_FROM = 1
+
 const renderLocation = (
   places: Place[],
   isArrival: boolean,
@@ -144,15 +146,26 @@ const Itinerary = ({
       >
         {renderAddon('from', fromAddon, fromAddonAriaLabel)}
         {renderLocation(places, false, small, withTime, false)}
-        {isCollapsible && intermediatePlaces.length > 0 && (
-          <ItineraryCollapsible
-            places={intermediatePlaces}
-            label={collapsedLabel}
-            ariaLabel={collapsedAriaLabel}
-          />
-        )}
+
+        {isCollapsible &&
+          (intermediatePlaces.length > STOPOVER_COUNT_TO_COLLAPSE_FROM ? (
+            <ItineraryCollapsible
+              places={intermediatePlaces}
+              label={collapsedLabel}
+              ariaLabel={collapsedAriaLabel}
+            />
+          ) : (
+            intermediatePlaces.map(place => (
+              <ItineraryLocation
+                place={place}
+                isSmall
+                className="kirk-itineraryLocation-smallLabel"
+                key={`${computeKeyFromPlace(place)}`}
+              />
+            ))
+          ))}
+
         {!isCollapsible &&
-          intermediatePlaces.length > 0 &&
           intermediatePlaces.map(place => (
             <ItineraryLocation
               place={place}

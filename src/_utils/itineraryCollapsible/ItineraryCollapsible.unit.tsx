@@ -26,6 +26,7 @@ const places = [
     mainLabel: 'Bordeaux',
   },
 ]
+
 describe('ItineraryCollapsible component', () => {
   it('Should render with a label if provided', () => {
     const wrapper = shallow(<ItineraryCollapsible places={places} label="unit test" />)
