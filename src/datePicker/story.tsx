@@ -48,6 +48,7 @@ stories.add(
   () => (
     <Section>
       <DatePicker
+        initialDate={new Date()}
         name="datepicker"
         onChange={action('onChange')}
         orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
@@ -69,6 +70,7 @@ stories.add(
 stories.add('example horizontal (2 months)', () => (
   <Section>
     <DatePicker
+      initialDate={new Date()}
       name="datepicker"
       onChange={action('onChange')}
       orientation={DatePickerOrientation.HORIZONTAL}
@@ -80,6 +82,7 @@ stories.add('example horizontal (2 months)', () => (
 stories.add('example vertical (6 months)', () => (
   <Section>
     <DatePicker
+      initialDate={new Date()}
       name="datepicker"
       onChange={action('onChange')}
       orientation={DatePickerOrientation.VERTICAL}
