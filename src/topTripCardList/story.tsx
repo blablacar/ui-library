@@ -6,7 +6,7 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import TopTripCardList from 'topTripCardList'
 import TripCard from 'tripCard'
 
-const stories = storiesOf('TopTripCardList', module)
+const stories = storiesOf('Widgets|TopTripCardList', module)
 stories.addDecorator(withKnobs)
 
 const tripCardConfig = {

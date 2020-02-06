@@ -8,7 +8,7 @@ import TopBar from 'topBar'
 import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
 
-const stories = storiesOf('TopBar', module)
+const stories = storiesOf('Widgets|TopBar', module)
 stories.addDecorator(withKnobs)
 
 const leftAction = (

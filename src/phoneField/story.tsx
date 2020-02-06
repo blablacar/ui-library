@@ -8,7 +8,7 @@ import defaultDoc from './specifications/default.md'
 import customDoc from './specifications/custom.md'
 import PhoneField from '.'
 
-const stories = storiesOf('PhoneField', module)
+const stories = storiesOf('Widgets|PhoneField', module)
 stories.addDecorator(withKnobs)
 
 const countryWhitelist = ['FR', 'ES']

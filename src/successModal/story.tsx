@@ -8,7 +8,7 @@ import SuccessModal from 'successModal'
 import { SuccessModalProps, SuccessModalSize } from './SuccessModal'
 import successModalDoc from './specifications/successModal.md'
 
-const stories = storiesOf('SuccessModal', module)
+const stories = storiesOf('Widgets|SuccessModal', module)
 stories.addDecorator(withKnobs)
 
 class SuccessModalOpener extends Component<SuccessModalProps> {

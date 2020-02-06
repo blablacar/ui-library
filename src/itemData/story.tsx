@@ -9,7 +9,7 @@ import Button, { ButtonStatus } from 'button'
 import InfoIcon from 'icon/infoIcon'
 import { action } from '@storybook/addon-actions'
 
-const stories = storiesOf('ItemData', module)
+const stories = storiesOf('Widgets|ItemData', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Default', () => {

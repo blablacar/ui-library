@@ -7,7 +7,7 @@ import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs
 import AutoComplete from '.'
 import ComfortIcon from 'icon/comfortIcon'
 
-const stories = storiesOf('AutoComplete', module)
+const stories = storiesOf('Widgets|AutoComplete', module)
 stories.addDecorator(withKnobs)
 
 const places: AutocompleteItem[] = [

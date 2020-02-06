@@ -7,7 +7,7 @@ import spec from 'emptyState/specifications/emptystate.md'
 import EmptyState from 'emptyState'
 import Button from 'button'
 
-const stories = storiesOf('EmptyState', module)
+const stories = storiesOf('Widgets|EmptyState', module)
 stories.addDecorator(withKnobs)
 
 const button = <Button>Do something</Button>

@@ -5,7 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import spec from 'subHeader/specifications/subHeader.md'
 import SubHeader from 'subHeader'
 
-const stories = storiesOf('SubHeader', module)
+const stories = storiesOf('Widgets|SubHeader', module)
 stories.addDecorator(withKnobs)
 const specTemplateFn = () => <SubHeader>SubHeader content</SubHeader>
 stories.add('Specifications', specTemplateFn, { readme: spec })

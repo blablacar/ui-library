@@ -5,7 +5,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 import Profile from 'profile'
 
-const stories = storiesOf('Profile', module)
+const stories = storiesOf('Widgets|Profile', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

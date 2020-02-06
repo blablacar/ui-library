@@ -8,7 +8,7 @@ import Text from 'text'
 import Menu from 'menu'
 import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 
-const stories = storiesOf('Menu', module)
+const stories = storiesOf('Widgets|Menu', module)
 stories.addDecorator(withKnobs)
 
 stories.add('With all separators', () => (

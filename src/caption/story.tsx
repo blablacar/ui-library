@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 
 import Caption from 'caption'
 
-const stories = storiesOf('Caption', module)
+const stories = storiesOf('Widgets|Caption', module)
 stories.addDecorator(withKnobs)
 
 stories.add('A basic caption', () => (

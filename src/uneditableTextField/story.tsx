@@ -6,7 +6,7 @@ import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import UneditableTextField from 'uneditableTextField'
 import IconSearch from 'icon/searchIcon'
 
-const stories = storiesOf('UneditableTextField', module)
+const stories = storiesOf('Widgets|UneditableTextField', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => (

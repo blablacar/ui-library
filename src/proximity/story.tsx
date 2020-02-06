@@ -5,7 +5,7 @@ import { withKnobs, text, select } from '@storybook/addon-knobs'
 
 import Proximity, { Distances } from './index'
 
-const stories = storiesOf('Proximity', module)
+const stories = storiesOf('Widgets|Proximity', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
