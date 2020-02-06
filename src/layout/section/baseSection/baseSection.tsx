@@ -12,7 +12,7 @@ export interface BaseSectionProps {
   readonly backgroundStyle?: object
   readonly tagName?: string
   readonly role?: string
-  readonly children: JSX.Element | string
+  readonly children: JSX.Element | string | React.ReactNode
   readonly contentSize?: SectionContentSize
 }
 

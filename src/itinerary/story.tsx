@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
-
+import Section from 'layout/section/baseSection'
 import Itinerary from 'itinerary'
 import Proximity from 'proximity'
 
@@ -74,7 +74,7 @@ stories.add('default', () => {
   const isStopover = boolean('Stopover', false)
   const highlightRoad = boolean('Highlight road', true)
   return (
-    <div>
+    <Section>
       <h1 id="titleId">Title example</h1>
       <Itinerary
         ariaLabelledBy={ariaLabelledBy}
@@ -90,7 +90,7 @@ stories.add('default', () => {
         collapsedLabel={text('collapsed label', `${placesWithStopover.length} stops`)}
         collapsedAriaLabel={text('collapsed aria label', 'Show or hide all stops')}
       />
-    </div>
+    </Section>
   )
 })
 
@@ -103,42 +103,44 @@ stories.add('with proximity', () => {
   const headline = text('Headline', 'Mon 11 December')
   const highlightRoad = boolean('Highlight road', true)
   return (
-    <Itinerary
-      fromAddon={fromAddon}
-      fromAddonAriaLabel={fromAddonLabel}
-      toAddon={toAddon}
-      toAddonAriaLabel={toAddonLabel}
-      places={[
-        {
-          stepAriaLabel: text('Step label from', 'Pick up location'),
-          mainLabel: text('Main label from', 'Paris'),
-          subLabel: (
-            <Proximity
-              value={select('Proximity from', Distances, 'FAR')}
-              title="Distance from the pick up point"
-            />
-          ),
-          isoDate: '2017-12-11T09:00',
-          time: text('Time from', '09:00'),
-          href: '#',
-        },
-        {
-          stepAriaLabel: text('Step label from', 'Drop off location'),
-          mainLabel: text('Main label to', 'Bordeaux'),
-          subLabel: (
-            <Proximity
-              value={select('Proximity to', Distances, 'CLOSE')}
-              title="Distance from the drop off point"
-            />
-          ),
-          isoDate: '2017-12-11T12:00',
-          time: text('Time to', '12:00'),
-        },
-      ]}
-      small={boolean('small', false)}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
+    <Section>
+      <Itinerary
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={[
+          {
+            stepAriaLabel: text('Step label from', 'Pick up location'),
+            mainLabel: text('Main label from', 'Paris'),
+            subLabel: (
+              <Proximity
+                value={select('Proximity from', Distances, 'FAR')}
+                title="Distance from the pick up point"
+              />
+            ),
+            isoDate: '2017-12-11T09:00',
+            time: text('Time from', '09:00'),
+            href: '#',
+          },
+          {
+            stepAriaLabel: text('Step label from', 'Drop off location'),
+            mainLabel: text('Main label to', 'Bordeaux'),
+            subLabel: (
+              <Proximity
+                value={select('Proximity to', Distances, 'CLOSE')}
+                title="Distance from the drop off point"
+              />
+            ),
+            isoDate: '2017-12-11T12:00',
+            time: text('Time to', '12:00'),
+          },
+        ]}
+        small={boolean('small', false)}
+        headline={headline}
+        highlightRoad={highlightRoad}
+      />
+    </Section>
   )
 })
 
@@ -151,17 +153,19 @@ stories.add('with stopovers', () => {
   const headline = text('Headline', 'Mon 11 December')
   const highlightRoad = boolean('Highlight road', true)
   return (
-    <Itinerary
-      ariaLabel={ariaLabel}
-      fromAddon={fromAddon}
-      fromAddonAriaLabel={fromAddonLabel}
-      toAddon={toAddon}
-      toAddonAriaLabel={toAddonLabel}
-      places={placesWithStopover}
-      small={boolean('small', false)}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
+    <Section>
+      <Itinerary
+        ariaLabel={ariaLabel}
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={placesWithStopover}
+        small={boolean('small', false)}
+        headline={headline}
+        highlightRoad={highlightRoad}
+      />
+    </Section>
   )
 })
 
@@ -180,13 +184,15 @@ stories.add('with single stopover', () => {
   ]
 
   return (
-    <Itinerary
-      fromAddon={fromAddon}
-      toAddon={toAddon}
-      places={stops}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
+    <Section>
+      <Itinerary
+        fromAddon={fromAddon}
+        toAddon={toAddon}
+        places={stops}
+        headline={headline}
+        highlightRoad={highlightRoad}
+      />
+    </Section>
   )
 })
 
@@ -208,13 +214,15 @@ stories.add('without time', () => {
     },
   ]
   return (
-    <Itinerary
-      fromAddon={fromAddon}
-      toAddon={toAddon}
-      places={placesWithButton}
-      small={false}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
+    <Section>
+      <Itinerary
+        fromAddon={fromAddon}
+        toAddon={toAddon}
+        places={placesWithButton}
+        small={false}
+        headline={headline}
+        highlightRoad={highlightRoad}
+      />
+    </Section>
   )
 })
