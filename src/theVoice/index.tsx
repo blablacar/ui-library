@@ -10,7 +10,7 @@ const StyledTheVoice = styled(TheVoice)`
     margin: ${space.xxl} 0;
   }
 
-  @media (max-width: ${responsiveBreakpoints.small}) {
+  @media (${responsiveBreakpoints.isMediaSmall}) {
     text-align: left;
     margin: ${space.xl} 0;
   }
