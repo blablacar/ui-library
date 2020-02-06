@@ -14,7 +14,8 @@ const getSrcComponentDirectories = () =>
       !file.startsWith('_') &&
       !file.startsWith('icon') &&
       !file.startsWith('typings') &&
-      !file.startsWith('layout'),
+      !file.startsWith('layout') &&
+      !file.startsWith('pages'),
   )
 
 const exportedComponents = Object.keys(kirk).map(lowercase)
