@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `RotateIcon`
 - **[FIX]** Fix background for `HighlightSection`
 - **[UPDATE]** Rename left nav widget section from 'Others' to 'Widgets'
 - [...]

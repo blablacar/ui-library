@@ -74,6 +74,7 @@ import QrCodeIcon from './qrCode'
 import QuestionIcon from './questionIcon'
 import QuietIcon from './quiet'
 import RecliningSeatIcon from './recliningSeat'
+import RotateIcon from './rotateIcon'
 import SearchIcon from './searchIcon'
 import SeatBeltIcon from './seatBelt'
 import SeatSlidingIcon from './seatSliding'
@@ -176,6 +177,7 @@ export {
   QuestionIcon,
   QuietIcon,
   RecliningSeatIcon,
+  RotateIcon,
   SearchIcon,
   SeatBeltIcon,
   SeatSlidingIcon,
