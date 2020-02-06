@@ -9,7 +9,7 @@ import ArrowIcon from 'icon/arrowIcon'
 import Button, { ButtonStatus } from 'button'
 import readme from 'textField/specifications/textField.md'
 
-const stories = storiesOf('TextField', module)
+const stories = storiesOf('Widgets|TextField', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

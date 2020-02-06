@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import HamburgerButton from 'hamburgerButton'
 
-const stories = storiesOf('HamburgerButton', module)
+const stories = storiesOf('Widgets|HamburgerButton', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

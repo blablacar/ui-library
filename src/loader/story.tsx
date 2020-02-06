@@ -5,7 +5,7 @@ import { withKnobs, boolean, number } from '@storybook/addon-knobs'
 
 import Loader from './index'
 
-const stories = storiesOf('Loader', module)
+const stories = storiesOf('Widgets|Loader', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

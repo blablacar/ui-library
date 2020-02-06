@@ -8,7 +8,7 @@ import ItemCheckbox, { ItemCheckboxStatus } from 'itemCheckbox'
 
 import specs from './specifications/index.md'
 
-const stories = storiesOf('ItemCheckbox', module)
+const stories = storiesOf('Widgets|ItemCheckbox', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

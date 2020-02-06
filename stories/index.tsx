@@ -1,5 +1,11 @@
 import './stories.css'
 
+// Sections
+import '../src/layout/section/baseSection/story'
+import '../src/layout/section/heroSection/story'
+import '../src/layout/section/highlightSection/story'
+
+// Widgets
 import '../src/_utils/story'
 import '../src/autoComplete/story'
 import '../src/avatar/story'
@@ -37,9 +43,6 @@ import '../src/profile/story'
 import '../src/proximity/story'
 import '../src/pushInfo/story'
 import '../src/rating/story'
-import '../src/layout/section/baseSection/story'
-import '../src/layout/section/heroSection/story'
-import '../src/layout/section/highlightSection/story'
 import '../src/selectField/story'
 import '../src/snackbar/story'
 import '../src/stars/story'

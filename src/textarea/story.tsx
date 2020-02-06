@@ -7,7 +7,7 @@ import SendMessageIcon from 'icon/sendMessageIcon'
 
 import TextArea from 'textarea'
 
-const stories = storiesOf('Textarea', module)
+const stories = storiesOf('Widgets|Textarea', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic text area', () => (

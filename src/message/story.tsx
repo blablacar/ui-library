@@ -5,7 +5,7 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 import Message from 'message'
 
-const stories = storiesOf('Message', module)
+const stories = storiesOf('Widgets|Message', module)
 stories.addDecorator(withKnobs)
 
 const wrapInContainer = (content: JSX.Element) => (

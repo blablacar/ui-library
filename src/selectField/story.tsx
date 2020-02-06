@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 
 import SelectField from 'selectField'
 
-const stories = storiesOf('SelectField', module)
+const stories = storiesOf('Widgets|SelectField', module)
 stories.addDecorator(withKnobs)
 
 const phonePrefixOptions = [

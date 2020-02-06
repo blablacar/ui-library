@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix background for `HighlightSection`
+- **[UPDATE]** Rename left nav widget section from 'Others' to 'Widgets'
 - [...]
 
 # v19.0.0 (06/02/2020)

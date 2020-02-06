@@ -20,7 +20,7 @@ const styles: { [name: string]: React.CSSProperties } = {
   },
 }
 
-const stories = storiesOf('Icons', module)
+const stories = storiesOf('Widgets|Icons', module)
 stories.addDecorator(withKnobs)
 
 const c = Object.keys(color).reduce(

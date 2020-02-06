@@ -7,7 +7,7 @@ import { withKnobs, text, number, select } from '@storybook/addon-knobs'
 import spec from './specifications/stepper.md'
 import Stepper, { StepperDisplay } from 'stepper'
 
-const stories = storiesOf('Stepper', module)
+const stories = storiesOf('Widgets|Stepper', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

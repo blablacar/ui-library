@@ -8,7 +8,7 @@ import ItemAction from 'itemAction'
 import BubbleIcon from 'icon/bubbleIcon'
 import spec from './specifications/index.md'
 
-const stories = storiesOf('ItemAction', module)
+const stories = storiesOf('Widgets|ItemAction', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

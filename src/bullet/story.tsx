@@ -6,7 +6,7 @@ import { text, select, withKnobs } from '@storybook/addon-knobs'
 import Bullet from './index'
 import { BulletTypes } from './Bullet'
 
-const stories = storiesOf('Bullet', module)
+const stories = storiesOf('Widgets|Bullet', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => (

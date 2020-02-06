@@ -11,7 +11,7 @@ const sizes = {
   isLarge: 'isLarge',
 }
 
-const stories = storiesOf('Avatar', module)
+const stories = storiesOf('Widgets|Avatar', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => {

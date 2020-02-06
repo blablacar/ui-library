@@ -12,7 +12,7 @@ import mainDoc from './specifications/doc.md'
 import groupDoc from './specifications/group.md'
 import { ItemRadioStatus } from './ItemRadio'
 
-const stories = storiesOf('ItemRadio', module)
+const stories = storiesOf('Widgets|ItemRadio', module)
 stories.addDecorator(withKnobs)
 
 stories.add(

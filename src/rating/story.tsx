@@ -5,7 +5,7 @@ import { withKnobs, text, number } from '@storybook/addon-knobs'
 
 import Rating from 'rating'
 
-const stories = storiesOf('Rating', module)
+const stories = storiesOf('Widgets|Rating', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Rating', () => (

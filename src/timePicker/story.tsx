@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 
 import TimePicker from '.'
 
-const stories = storiesOf('TimePicker', module)
+const stories = storiesOf('Widgets|TimePicker', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (

@@ -7,7 +7,7 @@ import ItemsList, { ItemsListDivider } from 'itemsList'
 
 import specs from './specifications/index.md'
 
-const stories = storiesOf('ItemsList', module)
+const stories = storiesOf('Widgets|ItemsList', module)
 
 stories.add(
   'With separators between each item',
