@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 import Button from 'button'
 import CarpoolIcon from 'icon/carpoolIcon'
 import BusIcon from 'icon/busIcon'
-
+import Section from 'layout/section/baseSection'
 import Tabs, { TabStatus } from 'tabs'
 
 const stories = storiesOf('Widgets|Tabs', module)
@@ -54,13 +54,15 @@ stories.add('default', () => {
     ],
   }
   return (
-    <Tabs
-      onChange={action('onChange')}
-      tabs={defaultTabsConfig.tabs}
-      activeTabId={defaultTabsConfig.activeTabId}
-      status={defaultTabsConfig.status}
-      isWrapped={defaultTabsConfig.isWrapped}
-    />
+    <Section>
+      <Tabs
+        onChange={action('onChange')}
+        tabs={defaultTabsConfig.tabs}
+        activeTabId={defaultTabsConfig.activeTabId}
+        status={defaultTabsConfig.status}
+        isWrapped={defaultTabsConfig.isWrapped}
+      />
+    </Section>
   )
 })
 
@@ -104,12 +106,14 @@ stories.add('with icons', () => {
     ],
   }
   return (
-    <Tabs
-      onChange={action('onChange')}
-      tabs={iconTabsConfig.tabs}
-      activeTabId={iconTabsConfig.activeTabId}
-      status={iconTabsConfig.status}
-      isWrapped={iconTabsConfig.isWrapped}
-    />
+    <Section>
+      <Tabs
+        onChange={action('onChange')}
+        tabs={iconTabsConfig.tabs}
+        activeTabId={iconTabsConfig.activeTabId}
+        status={iconTabsConfig.status}
+        isWrapped={iconTabsConfig.isWrapped}
+      />
+    </Section>
   )
 })

@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
-
+import Section from 'layout/section/baseSection'
 import Modal, { ModalSize } from 'modal'
 import { ModalProps } from './Modal'
 
@@ -37,7 +37,7 @@ class ModalOpener extends Component<ModalProps> {
 
   render() {
     return (
-      <div>
+      <Section>
         <button onClick={this.openModal}>Open modal 1</button>
         <button onClick={this.openModal2}>Open modal 2</button>
         <Modal {...this.props} onClose={this.closeModal} isOpen={this.state.modalOpen}>
@@ -55,7 +55,7 @@ class ModalOpener extends Component<ModalProps> {
             <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="A kitten" />
           </div>
         </Modal>
-      </div>
+      </Section>
     )
   }
 }

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import { color } from '_utils/branding'
-
+import Section from 'layout/section/baseSection'
 import ItemAction from 'itemAction'
 import BubbleIcon from 'icon/bubbleIcon'
 import spec from './specifications/index.md'
@@ -16,7 +16,7 @@ stories.add(
   () => {
     const isSubLabel = boolean('Secondary info', false)
     return (
-      <div>
+      <Section>
         <ItemAction
           action={text('Action', 'Action')}
           subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
@@ -30,7 +30,7 @@ stories.add(
           subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
           href="#"
         />
-      </div>
+      </Section>
     )
   },
   {
@@ -41,7 +41,7 @@ stories.add(
 stories.add('With left addon', () => {
   const isSubLabel = boolean('Secondary info', false)
   return (
-    <div>
+    <Section>
       <ItemAction
         action={text('Action', 'Action')}
         subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
@@ -54,12 +54,12 @@ stories.add('With left addon', () => {
         leftAddon={<BubbleIcon />}
         href="#"
       />
-    </div>
+    </Section>
   )
 })
 
 stories.add('With loading state', () => (
-  <div>
+  <Section>
     <ItemAction
       action={text('Action', 'Action')}
       onClick={action('onClick')}
@@ -69,16 +69,16 @@ stories.add('With loading state', () => (
       status={ItemAction.STATUS.LOADING}
     />
     <ItemAction action="Action 2" subLabel="with subLabel" status={ItemAction.STATUS.CHECKED} />
-  </div>
+  </Section>
 ))
 
 stories.add('With/without highlight', () => (
-  <div>
+  <Section>
     <ItemAction action={text('Action', 'Highlighted by default')} />
 
     <ItemAction
       highlighted={boolean('Highlighted', false)}
       action={text('Action', 'Not highlighted')}
     />
-  </div>
+  </Section>
 ))

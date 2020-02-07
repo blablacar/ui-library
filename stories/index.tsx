@@ -3,6 +3,7 @@ import './stories.css'
 // Sections
 import '../src/layout/section/baseSection/story'
 import '../src/layout/section/heroSection/story'
+import '../src/layout/section/tabsSection/story'
 import '../src/layout/section/highlightSection/story'
 
 // Widgets
