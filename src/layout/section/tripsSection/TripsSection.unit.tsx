@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import TopTripCardList from './TopTripCardList'
+import TripsSection from './TripsSection'
 import TripCard from 'tripCard'
 
 const tripCardConfig = {
@@ -33,27 +33,15 @@ const tripCardConfig = {
   title: '',
 }
 
-describe('TopTripCardList component', () => {
+describe('TripsSection component', () => {
   it('Should render as many TripCards as passed', () => {
     const wrapper = mount(
-      <TopTripCardList>
+      <TripsSection>
         <TripCard {...tripCardConfig} />
         <TripCard {...tripCardConfig} />
         <TripCard {...tripCardConfig} />
-      </TopTripCardList>,
+      </TripsSection>,
     )
     expect(wrapper.find(TripCard).length).toEqual(3)
-  })
-  it('Should have the wrapped class', () => {
-    const wrapper = mount(
-      <TopTripCardList isWrapped>
-        <TripCard {...tripCardConfig} />
-        <TripCard {...tripCardConfig} />
-        <TripCard {...tripCardConfig} />
-      </TopTripCardList>,
-    )
-    expect(wrapper.find('.kirk-topTripCardList-wrapped').exists()).toBe(true)
-    wrapper.setProps({ isWrapped: false })
-    expect(wrapper.find('.kirk-topTripCardList-wrapped').exists()).toBe(false)
   })
 })

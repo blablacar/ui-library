@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 
-import TopTripCardList from 'topTripCardList'
+import TripsSection from 'layout/section/tripsSection'
 import TripCard from 'tripCard'
 
-const stories = storiesOf('Widgets|TopTripCardList', module)
+const stories = storiesOf('Sections|TripsSection', module)
 stories.addDecorator(withKnobs)
 
 const tripCardConfig = {
@@ -39,8 +39,8 @@ const tripCardConfig = {
   title: '',
 }
 
-stories.add('TopTripCardList - default', () => (
-  <TopTripCardList isWrapped={boolean('isWrapped', false)}>
+stories.add('TripsSection - default', () => (
+  <TripsSection>
     <TripCard {...tripCardConfig} />
     <TripCard
       {...tripCardConfig}
@@ -50,11 +50,11 @@ stories.add('TopTripCardList - default', () => (
       }}
       badge="Closest"
     />
-  </TopTripCardList>
+  </TripsSection>
 ))
 
-stories.add('TopTripCardList - 4 trip cards', () => (
-  <TopTripCardList isWrapped={boolean('isWrapped', false)}>
+stories.add('TripsSection - 4 trip cards', () => (
+  <TripsSection>
     <TripCard {...tripCardConfig} />
     <TripCard
       {...tripCardConfig}
@@ -73,5 +73,5 @@ stories.add('TopTripCardList - 4 trip cards', () => (
       }}
       badge="Closest"
     />
-  </TopTripCardList>
+  </TripsSection>
 ))
