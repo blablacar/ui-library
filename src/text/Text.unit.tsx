@@ -48,6 +48,15 @@ describe('Text', () => {
     expect(wrapper.prop('role')).toBe('alert')
   })
 
+  it('Should have aria-label attribute when present and undefined otherwise', () => {
+    const wrapper = shallow(<Text>test</Text>)
+    expect(wrapper.prop('ariaLabel')).toBeUndefined()
+
+    wrapper.setProps({ ariaLabel: 'Complementary description' })
+
+    expect(wrapper.prop('aria-label')).toBe('Complementary description')
+  })
+
   it('Should accept ReactNode as children', () => {
     const wrapper = shallow(
       <Text tag={TextTagType.DIV}>
