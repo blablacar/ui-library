@@ -5,6 +5,10 @@
 # v19.1.1 (07/02/2020)
 
 - **[UPDATE]** Itinerary is no longer collapsed when we have only one stopover
+- **[NEW]** Add `ariaLabel` prop to `Text`
+- **[NEW]** Add `rightTitleAriaLabel` prop to `Item`
+- **[NEW]** Add `dataAriaLabel` prop to `ItemData`
+- [...]
 
 # v19.1.0 (07/02/2020)
 

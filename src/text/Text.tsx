@@ -30,6 +30,7 @@ export interface TextProps {
   readonly textColor?: string
   readonly newlineToBr?: boolean
   readonly role?: string
+  readonly ariaLabel?: string
 }
 
 const baseClassName = 'kirk-text'
@@ -43,6 +44,7 @@ const Text = ({
   textColor,
   newlineToBr = true,
   role,
+  ariaLabel,
 }: TextProps) => {
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
@@ -50,7 +52,12 @@ const Text = ({
   const inlineStyle = cssColorRegex.test(textColor) ? { style: { color: textColor } } : null
 
   return (
-    <Tag role={role} className={cc([baseClassName, displayClassName, className])} {...inlineStyle}>
+    <Tag
+      role={role}
+      aria-label={ariaLabel}
+      className={cc([baseClassName, displayClassName, className])}
+      {...inlineStyle}
+    >
       {typeof children === 'string' && newlineToBr ? replaceNewLineWithBR(children) : children}
     </Tag>
   )

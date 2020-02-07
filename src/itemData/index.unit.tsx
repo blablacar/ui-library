@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme'
 
 import ItemData from 'itemData'
 import Button from 'button'
+import Text from 'text'
 
 const defaultProps = {
   mainInfo: 'Main information',
@@ -28,7 +29,7 @@ it('Should trigger click on addon button', () => {
   expect(onButtonClick).toHaveBeenCalledTimes(1)
 })
 
-it("Should't display left addon button if no main title", () => {
+it("Shouldn't display left addon button if no main title", () => {
   const wrapper = mount(
     <ItemData
       {...defaultProps}
@@ -36,4 +37,11 @@ it("Should't display left addon button if no main title", () => {
     />,
   )
   expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
+})
+
+it('Should display right data with aria-label attribute', () => {
+  const wrapper = mount(<ItemData data="Data" dataAriaLabel="Data aria-label" />)
+  const text = wrapper.find(Text)
+  expect(text.hasClass('kirk-item-title')).toBe(true)
+  expect(text.prop('ariaLabel')).toBe('Data aria-label')
 })

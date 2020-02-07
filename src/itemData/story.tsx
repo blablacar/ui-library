@@ -26,6 +26,7 @@ stories.add('Default', () => {
         mainInfo={text('Main info', 'Main information')}
         data={text('Data', 'Data')}
         dataStrikeThrough={dataStrikeThrough}
+        dataAriaLabel={text('Data aria label', 'Data aria label')}
         mainTitle={isMainTitle ? text('Main title', 'Title') : null}
         mainTitleButtonAddon={
           ismainTitleButtonAddon ? (

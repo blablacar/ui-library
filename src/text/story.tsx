@@ -16,6 +16,7 @@ stories.add('basic', () => (
       tag={select('Tag', TextTagType, TextTagType.SPAN)}
       textColor={select('Color', color, 'primary')}
       newlineToBr={boolean('newlineToBr', true)}
+      ariaLabel={text('Aria label', 'Aria label')}
     >
       {text('Text', 'This is an example')}
     </Text>
