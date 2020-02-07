@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v19.1.0 (07/02/2020)
+
 - **[NEW]** Add `RotateIcon`
 - **[FIX]** Fix background for `HighlightSection`
 - **[UPDATE]** Rename left nav widget section from 'Others' to 'Widgets'
@@ -7,7 +11,6 @@
 - **[UPDATE]** Fix children type for `BaseSection` to allow list of React elements.
 - **[UPDATE]** Improve widgets story visual display (by wrapping in Section)
 - **[FIX]** Fix broken `Datepicker` stories
-- [...]
 
 # v19.0.0 (06/02/2020)
 
