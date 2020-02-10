@@ -9,4 +9,14 @@ describe('HighlightSection', () => {
     const renderedSection = renderer.create(section).toJSON()
     expect(renderedSection).toMatchSnapshot()
   })
+
+  it('should add a classname to the content', () => {
+    const section = (
+      <HighlightSection contentClassName="some-content-class-name">
+        default highlight section
+      </HighlightSection>
+    )
+    const renderedSection = renderer.create(section).toJSON()
+    expect(renderedSection).toMatchSnapshot()
+  })
 })
