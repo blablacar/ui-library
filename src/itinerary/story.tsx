@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import Section from 'layout/section/baseSection'
 import Itinerary from 'itinerary'
-import Proximity from 'proximity'
+import Proximity, { Distances } from 'proximity'
 
 const stories = storiesOf('Widgets|Itinerary', module)
 stories.addDecorator(withKnobs)
@@ -14,8 +14,8 @@ const places = [
     time: '09:00',
     isoDate: '2017-12-11T09:00',
     stepAriaLabel: 'Pickup location',
-    subLabel: 'Porte de Vincennes',
-    mainLabel: 'Paris',
+    mainLabel: 'Porte de Vincennes',
+    subLabel: 'Paris',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
@@ -23,8 +23,8 @@ const places = [
     time: '15:00',
     isoDate: '2017-12-11T15:00',
     stepAriaLabel: 'Dropoff location',
-    subLabel: 'Gare Bordeaux Saint-Jean',
-    mainLabel: 'Bordeaux',
+    mainLabel: 'Gare Bordeaux Saint-Jean',
+    subLabel: 'Bordeaux',
   },
 ]
 const placesWithOneStopover = [
@@ -32,8 +32,8 @@ const placesWithOneStopover = [
     time: '09:00',
     stepAriaLabel: 'Pickup location',
     isoDate: '2017-12-11T09:00',
-    subLabel: 'Porte de Vincennes',
-    mainLabel: 'Paris',
+    mainLabel: 'Porte de Vincennes',
+    subLabel: 'Paris',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
@@ -41,8 +41,8 @@ const placesWithOneStopover = [
     time: '12:00',
     isoDate: '2017-12-11T12:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: 'Gare de Tours',
-    mainLabel: 'Tours',
+    mainLabel: 'Gare de Tours',
+    subLabel: 'Tours',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
@@ -50,8 +50,8 @@ const placesWithOneStopover = [
     time: '19:00',
     isoDate: '2017-12-11T19:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: 'Gare Bordeaux Saint-Jean',
-    mainLabel: 'Bordeaux',
+    mainLabel: 'Gare Bordeaux Saint-Jean',
+    subLabel: 'Bordeaux',
   },
 ]
 
@@ -60,8 +60,8 @@ const placesWithStopovers = [
     time: '09:00',
     stepAriaLabel: 'Pickup location',
     isoDate: '2017-12-11T09:00',
-    subLabel: 'Porte de Vincennes',
-    mainLabel: 'Paris',
+    mainLabel: 'Porte de Vincennes',
+    subLabel: 'Paris',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
@@ -69,8 +69,8 @@ const placesWithStopovers = [
     time: '12:00',
     isoDate: '2017-12-11T12:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: 'Gare de Tours',
-    mainLabel: 'Tours',
+    mainLabel: 'Gare de Tours',
+    subLabel: 'Tours',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
     href: '#',
   },
@@ -86,8 +86,8 @@ const placesWithStopovers = [
     time: '19:00',
     isoDate: '2017-12-11T19:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: 'Gare Bordeaux Saint-Jean',
-    mainLabel: 'Bordeaux',
+    mainLabel: 'Gare Bordeaux Saint-Jean',
+    subLabel: 'Bordeaux',
   },
 ]
 
@@ -130,7 +130,6 @@ stories.add('default', () => {
 })
 
 stories.add('with proximity', () => {
-  const Distances = ['NONE', 'CLOSE', 'MIDDLE', 'FAR']
   const fromAddon = text('From addon', 'Lille')
   const fromAddonLabel = text('From addon label', 'Driver departure')
   const toAddon = text('To addon', 'Biarritz')
@@ -150,7 +149,7 @@ stories.add('with proximity', () => {
             mainLabel: text('Main label from', 'Paris'),
             subLabel: (
               <Proximity
-                value={select('Proximity from', Distances, 'FAR')}
+                value={select('Proximity from', Distances, Distances.FAR)}
                 title="Distance from the pick up point"
               />
             ),
@@ -163,7 +162,7 @@ stories.add('with proximity', () => {
             mainLabel: text('Main label to', 'Bordeaux'),
             subLabel: (
               <Proximity
-                value={select('Proximity to', Distances, 'CLOSE')}
+                value={select('Proximity to', Distances, Distances.CLOSE)}
                 title="Distance from the drop off point"
               />
             ),

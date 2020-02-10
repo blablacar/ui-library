@@ -70,6 +70,9 @@ const renderSubLabel = (label: ReactNode) =>
     <div>{label}</div>
   )
 
+const renderSmallLabel = (mainLabel: string, subLabel: ReactNode) =>
+  typeof subLabel === 'string' ? renderMainLabel(subLabel) : renderMainLabel(mainLabel)
+
 const ItineraryLocation = ({
   place,
   className = '',
@@ -136,8 +139,9 @@ const ItineraryLocation = ({
           {hasRoad && <div className="kirk-itineraryLocation-road" />}
         </div>
         <div className="kirk-itineraryLocation-label">
-          {renderMainLabel(place.mainLabel)}
-          {hasSubLabel && renderSubLabel(place.subLabel)}
+          {isSmall && renderSmallLabel(place.mainLabel, place.subLabel)}
+          {!isSmall && renderMainLabel(place.mainLabel)}
+          {!isSmall && hasSubLabel && renderSubLabel(place.subLabel)}
         </div>
         {hasChevron && (
           <div className="kirk-itineraryLocation-chevron">

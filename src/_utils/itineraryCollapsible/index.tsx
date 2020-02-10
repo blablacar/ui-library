@@ -68,6 +68,10 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
     left: 0;
   }
 
+  & .kirk-itineraryCollapsible-extended .kirk-bullet {
+    top: 1px; /* +1px to better align small Bullets with text */
+  }
+
   & .kirk-itineraryCollapsible-collapsed .kirk-text {
     padding-left: ${space.m};
     height: ${font.m.lineHeight};
