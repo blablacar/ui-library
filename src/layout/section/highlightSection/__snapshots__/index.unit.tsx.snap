@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HighlightSection should add a classname to the content 1`] = `
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 {
+  background-color: #5DD167;
+}
+
+@media (min-width:800px) {
+  .c1 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c1 .section-content.section-content--large {
+    max-width: 1016px;
+  }
+}
+
+<div
+  className="c0 c1"
+  role="presentation"
+>
+  <div
+    className="section-content some-content-class-name section-content--large"
+  >
+    default highlight section
+  </div>
+</div>
+`;
+
 exports[`HighlightSection should render default highlight section 1`] = `
 .c1 .section-content {
   padding-left: 24px;

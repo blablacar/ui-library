@@ -8,7 +8,7 @@ export enum SectionContentSize {
 
 export interface BaseSectionProps {
   readonly className?: Classcat.Class
-  readonly backgroundClassName?: Classcat.Class
+  readonly contentClassName?: Classcat.Class
   readonly backgroundStyle?: object
   readonly tagName?: string
   readonly role?: string
@@ -23,7 +23,7 @@ export interface BaseSectionProps {
 const BaseSection = (props: BaseSectionProps) => {
   const {
     className,
-    backgroundClassName,
+    contentClassName,
     backgroundStyle,
     tagName: ContentElement = 'div',
     children,
@@ -33,6 +33,7 @@ const BaseSection = (props: BaseSectionProps) => {
 
   const contentClassNames = cc([
     'section-content',
+    contentClassName,
     {
       'section-content--large': contentSize === SectionContentSize.LARGE,
     },
@@ -46,11 +47,7 @@ const BaseSection = (props: BaseSectionProps) => {
   }
 
   return (
-    <div
-      role="presentation"
-      className={cc([className, backgroundClassName])}
-      style={backgroundStyle}
-    >
+    <div role="presentation" className={cc([className])} style={backgroundStyle}>
       <ContentElement {...contentProps}>{children}</ContentElement>
     </div>
   )
