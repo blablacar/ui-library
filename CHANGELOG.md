@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v20.0.0 (10/02/2020)
+
 - **[BREAKING CHANGE]** Replace `TopTripCardList` component with `TripsSection` section.
 - **[UPDATE]** Add new Pages leftnav category and a few messaging & ridedetails pages
 - **[BREAKING CHANGE]** Fix background/content classname props on `BaseSection` and `HighlightSection`
-- [...]
 
 # v19.1.1 (07/02/2020)
 
