@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Replace `TopTripCardList` component with `TripsSection` section.
 - **[UPDATE]** Add new Pages leftnav category and a few messaging & ridedetails pages
 - [...]
 
