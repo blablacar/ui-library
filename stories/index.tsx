@@ -6,6 +6,11 @@ import '../src/layout/section/heroSection/story'
 import '../src/layout/section/tabsSection/story'
 import '../src/layout/section/highlightSection/story'
 
+// Pages
+import '../src/pages/messaging/inbox.story'
+import '../src/pages/messaging/brazemarketing.story'
+import '../src/pages/ridedetails/carpool.story'
+
 // Widgets
 import '../src/_utils/story'
 import '../src/autoComplete/story'

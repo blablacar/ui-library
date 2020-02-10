@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add new Pages leftnav category and a few messaging & ridedetails pages
 - [...]
 
 # v19.1.1 (07/02/2020)
@@ -8,7 +9,6 @@
 - **[NEW]** Add `ariaLabel` prop to `Text`
 - **[NEW]** Add `rightTitleAriaLabel` prop to `Item`
 - **[NEW]** Add `dataAriaLabel` prop to `ItemData`
-- [...]
 
 # v19.1.0 (07/02/2020)
 
