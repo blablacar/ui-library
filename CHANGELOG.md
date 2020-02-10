@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** `Itinerary` displays `subLabel` instead of `mainLabel` when collapsed
 - [...]
 
 # v20.0.0 (10/02/2020)

@@ -10,8 +10,8 @@ const place: Place = {
   time: '09:00',
   isoDate: '2017-12-11T09:00',
   stepAriaLabel: 'Pick up/drop off location',
-  mainLabel: 'Paris',
-  subLabel: '21 Jump Street',
+  mainLabel: '21 Jump Street',
+  subLabel: 'Paris',
 }
 
 const placeWithProximity: Place = {
@@ -71,6 +71,11 @@ describe('ItineraryLocation', () => {
   it('Should display a small Bullet if "isSmall"', () => {
     const wrapper = shallow(<ItineraryLocation place={placeWithKey} isSmall hasTime />)
     expect(wrapper.find(Bullet).prop('type')).toBe(BulletTypes.SMALL)
+  })
+
+  it('Should display subLabel instead of mainLabel "isSmall"', () => {
+    const wrapper = shallow(<ItineraryLocation place={placeWithKey} isSmall hasTime />)
+    expect(wrapper.find('.kirk-itineraryLocation-label').text()).toBe('Paris')
   })
 
   it('Should not display road if "isArrival"', () => {
