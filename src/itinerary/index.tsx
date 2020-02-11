@@ -7,7 +7,7 @@ const distanceFromHeight = '48px'
 const totalTimeWidth = `${Math.ceil(
   parseInt(componentSizes.timeWidth, 10) + parseInt(componentSizes.bulletSize, 10),
 )}px`
-const smallBulletPositionLeft = `${Math.ceil(
+const smallBulletPositionDifference = `${Math.ceil(
   (parseInt(componentSizes.bulletSize, 10) - parseInt(componentSizes.bulletSizeSmall, 10)) / 2,
 )}px`
 
@@ -74,16 +74,21 @@ const StyledItinerary = styled(Itinerary)`
   }
 
   & .kirk-itineraryLocation-smallLabel {
-    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionLeft});
+    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionDifference});
   }
 
   /* isCollapsible */
   & .kirk-itineraryCollapsible {
-    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionLeft});
+    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionDifference});
   }
 
-  & .kirk-itinerary--noTime .kirk-itineraryCollapsible {
-    margin-left: ${smallBulletPositionLeft};
+  & .kirk-itinerary--noTime .kirk-itineraryCollapsible,
+  & .kirk-itinerary--noTime .kirk-itineraryLocation-smallLabel {
+    margin-left: ${smallBulletPositionDifference};
+  }
+
+  & .kirk-itinerary--noTime .kirk-itineraryLocation-smallLabel .kirk-bullet {
+    top: ${smallBulletPositionDifference};
   }
 
   & .kirk-itineraryLocation-wrapper {
