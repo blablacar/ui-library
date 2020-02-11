@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix `Itinerary` margin with only one stopover and no time
 - [...]
+
+# v20.0.2 (11/02/2020)
+
+- **[FIX]** Fix `Itinerary` margin with only one stopover and no time
 
 # v20.0.1 (11/02/2020)
 
