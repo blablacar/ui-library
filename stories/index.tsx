@@ -6,6 +6,7 @@ import '../src/layout/section/heroSection/story'
 import '../src/layout/section/tabsSection/story'
 import '../src/layout/section/highlightSection/story'
 import '../src/layout/section/tripsSection/story'
+import '../src/layout/section/mediaContentSection/story'
 
 // Pages
 import '../src/pages/messaging/inbox.story'
