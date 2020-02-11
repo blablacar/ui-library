@@ -381,7 +381,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
           className="kirk-media-content-wrapper"
         >
           <h2
-            className="kirk-title kirk-media-content-title c4 c5"
+            className="kirk-title kirk-subheader kirk-media-content-title c4 c5"
           >
             section title
           </h2>

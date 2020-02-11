@@ -8,5 +8,8 @@ describe('SubHeader', () => {
     const heading = wrapper.find('h2')
     expect(heading.exists()).toBe(true)
     expect(heading.text()).toBe('SubHeader content')
+
+    const headingClass = wrapper.find('.kirk-subheader')
+    expect(headingClass.exists()).toBe(true)
   })
 })

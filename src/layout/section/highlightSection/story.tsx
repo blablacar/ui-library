@@ -12,7 +12,13 @@ stories.addDecorator(withKnobs)
 stories.add('default', () => (
   <Fragment>
     <BlankSeparator />
-    <HighlightSection>This a highlighted section!</HighlightSection>
+    <HighlightSection title="Section title">
+      This some content for the highlighted section!
+      <br />
+      Some more content.
+      <br />
+      Some more more content.
+    </HighlightSection>
     <BlankSeparator />
   </Fragment>
 ))
