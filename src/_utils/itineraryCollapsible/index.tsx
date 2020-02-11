@@ -4,6 +4,9 @@ import { color, font, radius, space, componentSizes, transition } from '_utils/b
 import ItineraryCollapsible from './ItineraryCollapsible'
 
 const minHeight = '32px' // space.l for the minimum content + 2*space.m for vertical padding
+const smallBulletPositionDifference = `${Math.ceil(
+  (parseInt(componentSizes.bulletSize, 10) - parseInt(componentSizes.bulletSizeSmall, 10)) / 2,
+)}px`
 
 const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
   & {
@@ -69,7 +72,7 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
   }
 
   & .kirk-itineraryCollapsible-extended .kirk-bullet {
-    top: 1px; /* +1px to better align small Bullets with text */
+    top: ${smallBulletPositionDifference};
   }
 
   & .kirk-itineraryCollapsible-collapsed .kirk-text {
