@@ -7,13 +7,13 @@
 - **[BREAKING CHANGE]** Replace `TopTripCardList` component with `TripsSection` section.
 - **[UPDATE]** Add new Pages leftnav category and a few messaging & ridedetails pages
 - **[BREAKING CHANGE]** Fix background/content classname props on `BaseSection` and `HighlightSection`
+- **[NEW]** Add `ariaLabel` prop to `Text`
+- **[NEW]** Add `rightTitleAriaLabel` prop to `Item`
+- **[NEW]** Add `dataAriaLabel` prop to `ItemData`
 
 # v19.1.1 (07/02/2020)
 
 - **[UPDATE]** Itinerary is no longer collapsed when we have only one stopover
-- **[NEW]** Add `ariaLabel` prop to `Text`
-- **[NEW]** Add `rightTitleAriaLabel` prop to `Item`
-- **[NEW]** Add `dataAriaLabel` prop to `ItemData`
 
 # v19.1.0 (07/02/2020)
 
