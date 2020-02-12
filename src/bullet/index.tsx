@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { color } from '_utils/branding'
+import { color, componentSizes } from '_utils/branding'
 import Bullet from './Bullet'
 
 const StyledBullet = styled(Bullet)`
   & {
-    box-sizing: content-box;
-    width: 6px;
-    height: 6px;
+    box-sizing: border-box;
+    width: ${componentSizes.bulletSize};
+    height: ${componentSizes.bulletSize};
     background-color: ${color.white};
     border: 2px solid ${color.primaryText};
     border-radius: 50%;
@@ -17,14 +17,14 @@ const StyledBullet = styled(Bullet)`
   }
 
   &.kirk-bullet--small {
-    width: 4px;
-    height: 4px;
+    width: ${componentSizes.bulletSizeSmall};
+    height: ${componentSizes.bulletSizeSmall};
   }
 
   &.kirk-bullet--map-active,
   &.kirk-bullet--map-inactive {
-    width: 11px;
-    height: 11px;
+    width: ${componentSizes.bulletSizeMap};
+    height: ${componentSizes.bulletSizeMap};
     border-width: 3px;
   }
 

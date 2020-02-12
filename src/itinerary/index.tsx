@@ -1,14 +1,15 @@
 import styled from 'styled-components'
-import { color, space, componentSizes } from '_utils/branding'
+import { color, space, componentSizes, font } from '_utils/branding'
 
 import Itinerary from './Itinerary'
 
-const distanceFromHeight = '40px'
-const gutterPaddingStart = space.m
-const gutterTopOffset = '1px'
-const lineHeightAdjustment = '4px'
-const bulletOuterSize = '10px'
-const roadWidth = '4px'
+const distanceFromHeight = '48px'
+const totalTimeWidth = `${Math.ceil(
+  parseInt(componentSizes.timeWidth, 10) + parseInt(componentSizes.bulletSize, 10),
+)}px`
+const smallBulletPositionDifference = `${Math.ceil(
+  (parseInt(componentSizes.bulletSize, 10) - parseInt(componentSizes.bulletSizeSmall, 10)) / 2,
+)}px`
 
 const StyledItinerary = styled(Itinerary)`
   li {
@@ -16,130 +17,86 @@ const StyledItinerary = styled(Itinerary)`
     list-style-type: none;
   }
 
-  & .kirk-itinerary-location-wrapper {
-    display: flex;
-    padding: ${space.m} 0;
-    width: 100%;
+  & .kirk-itinerary--highlightRoad .kirk-itineraryLocation-road {
+    background-color: ${color.primaryText};
   }
 
-  & a.kirk-itinerary-location-wrapper {
-    background: none;
-    text-decoration: none;
-    user-select: none;
-    -webkit-tap-highlight-color: ${color.tapHighlight};
-    -webkit-touch-callout: none;
+  & .kirk-itineraryLocation-road {
+    display: block;
+    width: ${componentSizes.roadWidth};
+    height: calc(
+      100% - ${componentSizes.bulletSize} + 4px
+    ); /* +4px to better hide behind small Bullets */
+    position: relative;
+    top: -1px; /* -1px to better hide behind small Bullets */
+    background-color: ${color.fadedText};
+    margin: 0 auto;
   }
 
-  & button.kirk-itinerary-location-wrapper {
-    border: 0;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    font-family: inherit;
-    outline: none;
-    background-color: transparent;
-    -webkit-tap-highlight-color: ${color.tapHighlight};
-    -webkit-touch-callout: none;
-  }
-
-  & a.kirk-itinerary-location-wrapper:hover,
-  & button.kirk-itinerary-location-wrapper:hover {
-    background-color: ${color.tapHighlight};
-  }
-
-  & .kirk-itinerary-location time {
-    min-width: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
-  }
-
-  & .kirk-itinerary-location-chevron {
-    display: flex;
-    align-items: center;
-  }
-
-  & .kirk-itinerary-location-city {
-    padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
-    flex: 1;
-  }
-
-  &
-    .kirk-itinerary--noTime
-    .kirk-itinerary-location:not(.kirk-itinerary--arrival)
-    .kirk-itinerary-location-city {
-    padding-bottom: 0;
-  }
-
-  /* bullet */
-  & .kirk-bullet {
-    position: absolute;
-    top: calc(${lineHeightAdjustment} + ${space.m} + ${gutterTopOffset});
-    left: calc(${componentSizes.timeWidth} + (${bulletOuterSize} / 2));
-  }
-
-  & .kirk-itinerary-addon--from .kirk-bullet {
-    top: calc(-1 * ${gutterTopOffset});
-  }
-
-  & .kirk-itinerary-addon--to .kirk-bullet {
-    top: auto;
-    bottom: calc(-1 * ${gutterTopOffset});
-  }
-
-  & .kirk-itinerary--noTime .kirk-bullet {
-    left: 0;
+  & .kirk-itinerary--noTime .kirk-itinerary-addon {
+    margin-left: 0;
   }
 
   /* addons */
   & .kirk-itinerary-addon {
+    padding-left: ${space.l}; /* Adding the width of the step points to the regular spacing */
     height: ${distanceFromHeight};
+    display: flex;
+    padding-left: 0;
+    margin-left: ${totalTimeWidth};
   }
 
-  & :not(.kirk-itinerary--noTime) .kirk-itinerary-addon .kirk-itinerary-location-city {
-    margin-left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
-  }
-
-  & .kirk-itinerary-addon .kirk-itinerary-location-city .kirk-text {
+  & .kirk-itinerary-addon .kirk-itineraryLocation-roadContainer {
     position: relative;
-    top: calc(-1 * ${lineHeightAdjustment});
+    top: ${space.s};
+    margin-right: ${space.m};
   }
 
-  & .kirk-itinerary-addon--to .kirk-itinerary-location-city .kirk-text {
-    top: calc(${distanceFromHeight} - ${bulletOuterSize} - 2px); /* Magic */
+  & .kirk-itinerary-addon--to .kirk-itineraryLocation-label {
+    padding-bottom: 0;
   }
 
-  /* road */
-  & .kirk-itinerary-road {
-    position: absolute;
-    top: calc(${bulletOuterSize} + ${space.m} + ${lineHeightAdjustment});
-    left: calc(${gutterPaddingStart} + ${componentSizes.timeWidth});
-    width: ${roadWidth};
-    height: calc(100% - (${space.m}));
+  & .kirk-itinerary-addon--to .kirk-itineraryLocation-roadContainer {
+    position: static;
+  }
+
+  & :not(.kirk-itinerary--noTime) .kirk-itinerary-addon .kirk-itineraryLocation-city {
+    margin-left: calc(${space.m} + ${componentSizes.timeWidth});
+  }
+
+  /* road, only for -addon--from */
+  & .kirk-itinerary-addon--from .kirk-itineraryLocation-road {
     background-color: ${color.fadedText};
   }
 
-  & .kirk-itinerary--highlightRoad .kirk-itinerary-road {
-    background-color: ${color.primaryText};
+  & .kirk-itineraryLocation-smallLabel .kirk-text {
+    font-size: ${font.s.size};
   }
 
-  & .kirk-itinerary--noTime .kirk-itinerary-road {
-    left: calc((${bulletOuterSize} - ${roadWidth}) / 2);
+  & .kirk-itineraryLocation-smallLabel {
+    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionDifference});
   }
 
-  & .kirk-itinerary-addon--from .kirk-itinerary-road,
-  & .kirk-itinerary--arrival .kirk-itinerary-road {
-    background-color: ${color.fadedText};
+  /* isCollapsible */
+  & .kirk-itineraryCollapsible {
+    margin-left: calc(${totalTimeWidth} + ${smallBulletPositionDifference});
   }
 
-  & .kirk-itinerary-addon--from .kirk-itinerary-road {
-    top: calc(${bulletOuterSize} - (${lineHeightAdjustment} / 2));
-    height: calc(100% + (${bulletOuterSize} / 2));
+  & .kirk-itinerary--noTime .kirk-itineraryCollapsible,
+  & .kirk-itinerary--noTime .kirk-itineraryLocation-smallLabel {
+    margin-left: ${smallBulletPositionDifference};
   }
 
-  & .kirk-itinerary--arrival .kirk-itinerary-road {
-    height: calc(100% + (${bulletOuterSize}));
+  & .kirk-itinerary--noTime .kirk-itineraryLocation-smallLabel .kirk-bullet {
+    top: ${smallBulletPositionDifference};
   }
 
-  & .kirk-itinerary--arrival:not(.kirk-itinerary-location--withToAddon) .kirk-itinerary-road {
-    display: none;
+  & .kirk-itineraryLocation-wrapper {
+    padding: 0;
+  }
+
+  & .kirk-itineraryLocation-label {
+    padding-bottom: ${space.l};
   }
 `
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
@@ -8,14 +8,15 @@ import Text from 'text'
 import BlankSeparator, { BlankSeparatorSize } from 'blankSeparator'
 import MarketingMessage from 'marketingMessage'
 import SubHeader from 'subHeader'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('MarketingMessage', module)
+const stories = storiesOf('Widgets|MarketingMessage', module)
 stories.addDecorator(withKnobs)
 
 const longContent = 'Long content.'.repeat(50)
 stories.add('Basic message', () => (
-  <MarketingMessage>
-    <Fragment>
+  <Section>
+    <MarketingMessage>
       <SubHeader>Marketing message title</SubHeader>
       <Text>
         This is a simple multiline marketing message.
@@ -25,6 +26,6 @@ stories.add('Basic message', () => (
       <div style={{ textAlign: 'center' }}>
         <Button>Marketing button</Button>
       </div>
-    </Fragment>
-  </MarketingMessage>
+    </MarketingMessage>
+  </Section>
 ))

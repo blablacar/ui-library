@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 import { color, space, responsiveBreakpoints, componentSizes } from '_utils/branding'
 
-import TopTripCardList from './TopTripCardList'
+import TripsSection from './TripsSection'
 
 const wrapperHorizontalPadding = space.xl
 
-const StyledTopTripCardList = styled(TopTripCardList)`
+const StyledTripsSection = styled(TripsSection)`
   & {
     background-color: ${color.lightBackground};
   }
 
-  & .kirk-topTripCardList {
+  & .kirk-tripsSection {
     margin: auto;
     display: flex;
     padding: ${space.l} ${wrapperHorizontalPadding};
@@ -21,17 +21,13 @@ const StyledTopTripCardList = styled(TopTripCardList)`
     scroll-snap-type: x mandatory;
   }
 
-  & .kirk-topTripCardList .kirk-tripCard {
+  & .kirk-tripsSection .kirk-tripCard {
     scroll-snap-align: start;
   }
 
   /* Remove scrollbar webkit */
-  & .kirk-topTripCardList::-webkit-scrollbar {
+  & .kirk-tripsSection::-webkit-scrollbar {
     display: none;
-  }
-
-  & .kirk-topTripCardList-wrapped {
-    max-width: ${componentSizes.wrapper};
   }
 
   & .kirk-tripCard {
@@ -57,12 +53,18 @@ const StyledTopTripCardList = styled(TopTripCardList)`
     height: 1px;
   }
 
-  @media (max-width: ${responsiveBreakpoints.small}) {
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    & .kirk-tripsSection {
+      max-width: ${componentSizes.smallSectionWidth};
+    }
+  }
+
+  @media (${responsiveBreakpoints.isMediaSmall}) {
     & .kirk-tripCard {
       min-width: calc(100% - ${space.m});
     }
   }
 `
 
-export { TopTripCardListProps } from './TopTripCardList'
-export default StyledTopTripCardList
+export { TripsSectionProps } from './TripsSection'
+export default StyledTripsSection

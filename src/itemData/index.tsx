@@ -6,11 +6,12 @@ import Button from 'button/Button'
 
 export interface ItemDataProps {
   readonly data: string
+  readonly dataStrikeThrough?: boolean
+  readonly dataAriaLabel?: string
   readonly mainInfo: string
   readonly className?: Classcat.Class
   readonly mainTitle?: string
   readonly mainTitleButtonAddon?: React.ReactElement<Button>
-  readonly dataStrikeThrough?: boolean
   readonly dataInfo?: string
   readonly tag?: JSX.Element
   readonly ariaLabel?: string
@@ -20,6 +21,7 @@ const ItemData = ({
   mainInfo,
   data,
   dataStrikeThrough,
+  dataAriaLabel,
   className,
   mainTitle,
   mainTitleButtonAddon,
@@ -34,6 +36,7 @@ const ItemData = ({
     leftBody={mainInfo}
     rightTitle={data}
     rightTitleStrikeThrough={dataStrikeThrough}
+    rightTitleAriaLabel={dataAriaLabel}
     rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
     rightBody={dataInfo}
     tag={tag}

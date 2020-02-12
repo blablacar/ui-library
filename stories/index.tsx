@@ -1,5 +1,18 @@
 import './stories.css'
 
+// Sections
+import '../src/layout/section/baseSection/story'
+import '../src/layout/section/heroSection/story'
+import '../src/layout/section/tabsSection/story'
+import '../src/layout/section/highlightSection/story'
+import '../src/layout/section/tripsSection/story'
+
+// Pages
+import '../src/pages/messaging/inbox.story'
+import '../src/pages/messaging/brazemarketing.story'
+import '../src/pages/ridedetails/carpool.story'
+
+// Widgets
 import '../src/_utils/story'
 import '../src/autoComplete/story'
 import '../src/avatar/story'
@@ -52,7 +65,6 @@ import '../src/timePicker/story'
 import '../src/title/story'
 import '../src/toggleButton/story'
 import '../src/topBar/story'
-import '../src/topTripCardList/story'
 import '../src/tripCard/story'
 import '../src/uneditableTextField/story'
 import '../src/why/story'

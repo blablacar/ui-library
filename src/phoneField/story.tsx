@@ -3,12 +3,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-
+import Section from 'layout/section/baseSection'
 import defaultDoc from './specifications/default.md'
 import customDoc from './specifications/custom.md'
 import PhoneField from '.'
 
-const stories = storiesOf('PhoneField', module)
+const stories = storiesOf('Widgets|PhoneField', module)
 stories.addDecorator(withKnobs)
 
 const countryWhitelist = ['FR', 'ES']
@@ -20,7 +20,11 @@ const customCountryNames = {
 
 stories.add(
   'Default',
-  () => <PhoneField name={text('name', 'phoneField')} onChange={action('changed')} />,
+  () => (
+    <Section>
+      <PhoneField name={text('name', 'phoneField')} onChange={action('changed')} />
+    </Section>
+  ),
   {
     readme: { content: defaultDoc },
   },
@@ -29,7 +33,7 @@ stories.add(
 stories.add(
   'Custom content',
   () => (
-    <div>
+    <Section>
       <h1 id="labelId">Accessibility label</h1>
       <PhoneField
         id={text('id', 'phoneFieldId')}
@@ -49,7 +53,7 @@ stories.add(
         selectAutoFocus={boolean('selectAutoFocus', true)}
         error={text('error message', '')}
       />
-    </div>
+    </Section>
   ),
   {
     readme: { content: customDoc },

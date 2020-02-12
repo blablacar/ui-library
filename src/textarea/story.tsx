@@ -4,14 +4,14 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
 import SendMessageIcon from 'icon/sendMessageIcon'
-
+import Section from 'layout/section/baseSection'
 import TextArea from 'textarea'
 
-const stories = storiesOf('Textarea', module)
+const stories = storiesOf('Widgets|Textarea', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Basic text area', () => (
-  <div style={{ width: '300px' }}>
+  <Section>
     <TextArea
       id={text('id')}
       name={text('name', 'inputName')}
@@ -30,11 +30,11 @@ stories.add('Basic text area', () => (
       autoComplete={select('autocomplete', ['on', 'off'])}
       title={text('title', 'accessibility text')}
     />
-  </div>
+  </Section>
 ))
 
 stories.add('Text area with icon', () => (
-  <div style={{ width: '300px' }}>
+  <Section>
     <TextArea
       id={text('id')}
       name={text('name', 'inputName')}
@@ -58,11 +58,11 @@ stories.add('Text area with icon', () => (
         window.alert('button clicked')
       }}
     />
-  </div>
+  </Section>
 ))
 
 stories.add('Text area with icon and fit to content', () => (
-  <div style={{ width: '300px' }}>
+  <Section>
     <TextArea
       fitContent={boolean('fitContent', true)}
       id={text('id')}
@@ -88,5 +88,5 @@ stories.add('Text area with icon and fit to content', () => (
         window.alert('button clicked')
       }}
     />
-  </div>
+  </Section>
 ))

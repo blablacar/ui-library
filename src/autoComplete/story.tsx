@@ -6,8 +6,9 @@ import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs
 
 import AutoComplete from '.'
 import ComfortIcon from 'icon/comfortIcon'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('AutoComplete', module)
+const stories = storiesOf('Widgets|AutoComplete', module)
 stories.addDecorator(withKnobs)
 
 const places: AutocompleteItem[] = [
@@ -59,7 +60,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
     const error = boolean('error', false)
 
     return (
-      <div>
+      <Section>
         <p>
           Type <code>Paris</code> to test auto-completion.
         </p>
@@ -89,7 +90,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
           readOnly={boolean('readOnly', false)}
           required={boolean('required', false)}
         />
-      </div>
+      </Section>
     )
   }
 }

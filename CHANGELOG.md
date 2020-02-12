@@ -3,6 +3,53 @@
 - **[NEW]** Allow to disable the backgroundhover color for `ItemAction`
 - [...]
 
+# v20.0.2 (11/02/2020)
+
+- **[FIX]** Fix `Itinerary` margin with only one stopover and no time
+
+# v20.0.1 (11/02/2020)
+
+- **[UPDATE]** `Itinerary` displays `subLabel` instead of `mainLabel` when collapsed
+
+# v20.0.0 (10/02/2020)
+
+- **[BREAKING CHANGE]** Replace `TopTripCardList` component with `TripsSection` section.
+- **[UPDATE]** Add new Pages leftnav category and a few messaging & ridedetails pages
+- **[BREAKING CHANGE]** Fix background/content classname props on `BaseSection` and `HighlightSection`
+- **[NEW]** Add `ariaLabel` prop to `Text`
+- **[NEW]** Add `rightTitleAriaLabel` prop to `Item`
+- **[NEW]** Add `dataAriaLabel` prop to `ItemData`
+
+# v19.1.1 (07/02/2020)
+
+- **[UPDATE]** Itinerary is no longer collapsed when we have only one stopover
+
+# v19.1.0 (07/02/2020)
+
+- **[NEW]** Add `RotateIcon`
+- **[FIX]** Fix background for `HighlightSection`
+- **[UPDATE]** Rename left nav widget section from 'Others' to 'Widgets'
+- **[NEW]** Create new `TabsSection` (a full-width `Tabs` section)
+- **[UPDATE]** Fix children type for `BaseSection` to allow list of React elements.
+- **[UPDATE]** Improve widgets story visual display (by wrapping in Section)
+- **[FIX]** Fix broken `Datepicker` stories
+
+# v19.0.0 (06/02/2020)
+
+- **[NEW]** Added `BaseSection`, the core section for layouts.
+- **[NEW]** Added `HighlightSection`, a specialized section with a green background.
+- **[BREAKING CHANGE]** Rename our section branding sizes to use better names.
+
+# v18.3.0 (04/02/2020)
+
+- **[UPDATE]** Refactored `Itinerary` to use `ItineraryLocation` and `ItineraryCollapsible`
+- **[UPDATE]** `Bullet` component size is no longer based on 'content-box' but 'border-box'
+- **[NEW]** Added `ClockMapIcon`
+
+# v18.2.0 (03/02/2020)
+
+- **[NEW]** Create new `HeroSection` section.
+
 # v18.1.0 (30/01/2020)
 
 - **[NEW]** Add `shadowed` prop `MeetingPointIcon`

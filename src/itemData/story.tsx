@@ -8,8 +8,9 @@ import ItemData from 'itemData'
 import Button, { ButtonStatus } from 'button'
 import InfoIcon from 'icon/infoIcon'
 import { action } from '@storybook/addon-actions'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('ItemData', module)
+const stories = storiesOf('Widgets|ItemData', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Default', () => {
@@ -19,21 +20,24 @@ stories.add('Default', () => {
   const dataStrikeThrough = boolean('Data strikethrough', false)
 
   return (
-    <ItemData
-      ariaLabel={text('Aria label', 'Complementary info')}
-      mainInfo={text('Main info', 'Main information')}
-      data={text('Data', 'Data')}
-      dataStrikeThrough={dataStrikeThrough}
-      mainTitle={isMainTitle ? text('Main title', 'Title') : null}
-      mainTitleButtonAddon={
-        ismainTitleButtonAddon ? (
-          <Button status={ButtonStatus.UNSTYLED} isBubble onClick={action('Info clicked')}>
-            <InfoIcon iconColor={color.primary} title="More info" />
-          </Button>
-        ) : null
-      }
-      dataInfo={isDataInfo ? text('Data info', 'Info') : null}
-      tag={<li />}
-    />
+    <Section>
+      <ItemData
+        ariaLabel={text('Aria label', 'Complementary info')}
+        mainInfo={text('Main info', 'Main information')}
+        data={text('Data', 'Data')}
+        dataStrikeThrough={dataStrikeThrough}
+        dataAriaLabel={text('Data aria label', 'Data aria label')}
+        mainTitle={isMainTitle ? text('Main title', 'Title') : null}
+        mainTitleButtonAddon={
+          ismainTitleButtonAddon ? (
+            <Button status={ButtonStatus.UNSTYLED} isBubble onClick={action('Info clicked')}>
+              <InfoIcon iconColor={color.primary} title="More info" />
+            </Button>
+          ) : null
+        }
+        dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+        tag={<li />}
+      />
+    </Section>
   )
 })

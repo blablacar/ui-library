@@ -7,7 +7,7 @@ import { BellIcon, BubbleIcon, HomeIcon, NewspaperIcon, TicketIcon } from 'icon'
 import Drawer from 'drawer'
 import HamburgerButton from 'hamburgerButton'
 
-const stories = storiesOf('Drawer', module)
+const stories = storiesOf('Widgets|Drawer', module)
 stories.addDecorator(withKnobs)
 
 class DrawerDemo extends Component {

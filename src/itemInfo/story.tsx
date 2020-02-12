@@ -5,8 +5,9 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 
 import ItemInfo from 'itemInfo'
 import ClockIcon from 'icon/clockIcon'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('ItemInfo', module)
+const stories = storiesOf('Widgets|ItemInfo', module)
 stories.addDecorator(withKnobs)
 
 stories.add('ItemInfo', () => {
@@ -14,11 +15,13 @@ stories.add('ItemInfo', () => {
   const hasIcon = boolean('Icon', true)
 
   return (
-    <ItemInfo
-      mainInfo={text('Main info', 'Main information')}
-      mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
-      icon={hasIcon ? <ClockIcon /> : null}
-      tag={<li />}
-    />
+    <Section>
+      <ItemInfo
+        mainInfo={text('Main info', 'Main information')}
+        mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
+        icon={hasIcon ? <ClockIcon /> : null}
+        tag={<li />}
+      />
+    </Section>
   )
 })

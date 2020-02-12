@@ -32,6 +32,7 @@ export interface ItemProps {
   readonly rightTitle?: string
   readonly rightTitleDisplay?: TextDisplayType
   readonly rightTitleStrikeThrough?: boolean
+  readonly rightTitleAriaLabel?: string
   readonly rightTitleColor?: string
   readonly rightBody?: string | React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
@@ -59,6 +60,7 @@ const Item = ({
   leftTitle,
   leftTitleButtonAddon,
   rightTitleStrikeThrough,
+  rightTitleAriaLabel,
   leftTitleDisplay = TextDisplayType.TITLE,
   leftTitleColor,
   leftBody,
@@ -150,14 +152,15 @@ const Item = ({
           {rightTitle && (
             <Text
               className={cc([
+                'kirk-item-title',
                 {
-                  'kirk-item-title': rightBody,
                   'kirk-item--strikethrough': rightTitleStrikeThrough,
                 },
               ])}
               display={rightTitleDisplay}
               textColor={rightTitleColor}
               tag={TextTagType.DIV}
+              ariaLabel={rightTitleAriaLabel}
             >
               {rightTitle}
             </Text>

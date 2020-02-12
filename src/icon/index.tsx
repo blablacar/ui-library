@@ -18,6 +18,7 @@ import ChevronIcon from './chevronIcon'
 import ChildIcon from './child'
 import CircleIcon from './circleIcon'
 import ClockIcon from './clockIcon'
+import ClockMapIcon from './clockMapIcon'
 import CoinIcon from './coinIcon'
 import ComfortIcon from './comfortIcon'
 import ComfortSeatIcon from './comfortSeat'
@@ -73,6 +74,7 @@ import QrCodeIcon from './qrCode'
 import QuestionIcon from './questionIcon'
 import QuietIcon from './quiet'
 import RecliningSeatIcon from './recliningSeat'
+import RotateIcon from './rotateIcon'
 import SearchIcon from './searchIcon'
 import SeatBeltIcon from './seatBelt'
 import SeatSlidingIcon from './seatSliding'
@@ -119,6 +121,7 @@ export {
   ChildIcon,
   CircleIcon,
   ClockIcon,
+  ClockMapIcon,
   CoinIcon,
   ComfortIcon,
   ComfortSeatIcon,
@@ -174,6 +177,7 @@ export {
   QuestionIcon,
   QuietIcon,
   RecliningSeatIcon,
+  RotateIcon,
   SearchIcon,
   SeatBeltIcon,
   SeatSlidingIcon,

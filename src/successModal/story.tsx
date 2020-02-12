@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
-
+import Section from 'layout/section/baseSection'
 import SuccessModal from 'successModal'
 import { SuccessModalProps, SuccessModalSize } from './SuccessModal'
 import successModalDoc from './specifications/successModal.md'
 
-const stories = storiesOf('SuccessModal', module)
+const stories = storiesOf('Widgets|SuccessModal', module)
 stories.addDecorator(withKnobs)
 
 class SuccessModalOpener extends Component<SuccessModalProps> {
@@ -27,7 +27,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
 
   render() {
     return (
-      <div>
+      <Section>
         <button onClick={this.openSuccessModal}>Open SuccessModal</button>
         <SuccessModal
           {...this.props}
@@ -36,7 +36,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
         </SuccessModal>
-      </div>
+      </Section>
     )
   }
 }

@@ -6,12 +6,15 @@ import { action } from '@storybook/addon-actions'
 
 import DropdownButton from 'dropdownButton'
 import Avatar from 'avatar'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('DropdownButton', module)
+const stories = storiesOf('Widgets|DropdownButton', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
-  <DropdownButton onClick={action('onClick')} open={boolean('open', false)}>
-    <Avatar />
-  </DropdownButton>
+  <Section>
+    <DropdownButton onClick={action('onClick')} open={boolean('open', false)}>
+      <Avatar />
+    </DropdownButton>
+  </Section>
 ))

@@ -5,8 +5,9 @@ import { withKnobs } from '@storybook/addon-knobs'
 import spec from 'disclaimer/specifications/disclaimer.md'
 import Disclaimer from 'disclaimer'
 import Button, { ButtonStatus } from 'button'
+import Section from 'layout/section/baseSection'
 
-const stories = storiesOf('Disclaimer', module)
+const stories = storiesOf('Widgets|Disclaimer', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Specifications', () => <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>, {
@@ -14,7 +15,7 @@ stories.add('Specifications', () => <Disclaimer useInfoIcon>My disclaimer text h
 })
 
 stories.add('With info icon', () => (
-  <div>
+  <Section>
     <Disclaimer useInfoIcon>
       <span>
         Some short disclaimer and&nbsp;
@@ -29,21 +30,21 @@ stories.add('With info icon', () => (
     <Disclaimer isCaption={false} useInfoIcon>
       Some short text disclaimer, not styled as a caption
     </Disclaimer>
-  </div>
+  </Section>
 ))
 
 const longDisclaimer = 'Some long disclaimer text'.repeat(10)
 stories.add('Without info icon', () => (
-  <div>
+  <Section>
     <Disclaimer useInfoIcon={false}>Some short text disclaimer</Disclaimer>
     <Disclaimer useInfoIcon={false}>{longDisclaimer}</Disclaimer>
-  </div>
+  </Section>
 ))
 
 stories.add('With deprecated help url', () => (
-  <div style={{ width: '400px' }}>
+  <Section>
     <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
       Some disclaimer with help button icon.
     </Disclaimer>
-  </div>
+  </Section>
 ))

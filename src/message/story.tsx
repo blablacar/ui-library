@@ -2,15 +2,13 @@ import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-
+import Section from 'layout/section/baseSection'
 import Message from 'message'
 
-const stories = storiesOf('Message', module)
+const stories = storiesOf('Widgets|Message', module)
 stories.addDecorator(withKnobs)
 
-const wrapInContainer = (content: JSX.Element) => (
-  <div style={{ width: '600px', border: '1px solid lightgray' }}>{content}</div>
-)
+const wrapInContainer = (content: React.ReactNode) => <Section>{content}</Section>
 
 const veryLongMessage = 'long message '.repeat(10)
 const veryLongMessageWithoutBreaks = 'longmessage_'.repeat(10)
