@@ -19,7 +19,7 @@ interface ItineraryCollapsibleState {
   readonly collapsed: boolean
 }
 
-const collapsibleLocationSize = 36 // default size of a collapsible ItineraryLocation
+const collapsibleLocationSize = 32 // default size of a collapsible ItineraryLocation
 
 export default class ItineraryCollapsible extends PureComponent<ItineraryCollapsibleProps> {
   static defaultProps: Partial<ItineraryCollapsibleProps> = {
@@ -86,11 +86,7 @@ export default class ItineraryCollapsible extends PureComponent<ItineraryCollaps
       >
         <div aria-hidden={!this.state.collapsed} className="kirk-itineraryCollapsible-collapsed">
           <Bullet type={BulletTypes.SMALL} />
-          <Text
-            tag={TextTagType.PARAGRAPH}
-            display={TextDisplayType.CAPTION}
-            textColor={color.link}
-          >
+          <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.BODY} textColor={color.link}>
             {label}
           </Text>
         </div>
@@ -104,6 +100,7 @@ export default class ItineraryCollapsible extends PureComponent<ItineraryCollaps
           {places.map(place => (
             <ItineraryLocation
               place={place}
+              displaySubLabelOnly
               isSmall
               key={`${computeKeyFromPlace(place)}-collapsible`}
             />

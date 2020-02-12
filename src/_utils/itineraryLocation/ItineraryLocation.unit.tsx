@@ -73,8 +73,8 @@ describe('ItineraryLocation', () => {
     expect(wrapper.find(Bullet).prop('type')).toBe(BulletTypes.SMALL)
   })
 
-  it('Should display subLabel instead of mainLabel "isSmall"', () => {
-    const wrapper = shallow(<ItineraryLocation place={placeWithKey} isSmall hasTime />)
+  it('Should display subLabel instead of mainLabel with displaySubLabelOnly', () => {
+    const wrapper = shallow(<ItineraryLocation place={placeWithKey} displaySubLabelOnly hasTime />)
     expect(wrapper.find('.kirk-itineraryLocation-label').text()).toBe('Paris')
   })
 

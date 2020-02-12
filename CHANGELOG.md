@@ -1,8 +1,9 @@
 # Unreleased
 
-- [...]
+- **[FIX]** `Itinerary` subLabel rendered in case of stopovers
 
 # v20.1.0 (12/02/2020)
+
 - **[NEW]** Allow to disable the backgroundhover color for `ItemAction`
 - **[UPDATE]** Create new `MediaContentSection` section based on `Columns` and `Column` private components.
 - **[UPDATE]** Move more rendering logic to `HighlightSection`
