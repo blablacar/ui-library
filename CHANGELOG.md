@@ -4,7 +4,7 @@
 
 # v20.1.2 (12/02/2020)
 
-- **[FIX]** Fix text alignment and image covering for  `MediaContentSection`
+- **[FIX]** Fix text alignment and image covering for `MediaContentSection`
 
 # v20.1.1 (12/02/2020)
 
