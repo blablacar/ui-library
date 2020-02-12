@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { responsiveBreakpoints, space, font } from '_utils/branding'
+import { responsiveBreakpoints, space, font, radius } from '_utils/branding'
 
 import MediaContentSection from './mediaContentSection'
 
@@ -28,6 +28,7 @@ const StyledMediaContentSection = styled(MediaContentSection)`
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: ${space.xl};
+    border-radius: ${radius.s};
   }
 
   & .kirk-media-content-button {
@@ -38,6 +39,7 @@ const StyledMediaContentSection = styled(MediaContentSection)`
     & .kirk-media-content-title {
       /* Remove padding top from subheader to allow proper vertical centering. */
       padding-top: 0;
+      align-self: flex-start;
     }
   }
 
@@ -47,6 +49,7 @@ const StyledMediaContentSection = styled(MediaContentSection)`
       min-height: 0;
       margin-left: -${space.xl};
       margin-right: -${space.xl};
+      background-position: center;
     }
   }
 `

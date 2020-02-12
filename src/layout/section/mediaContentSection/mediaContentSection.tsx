@@ -23,7 +23,7 @@ const MediaContentSection = (props: MediaContentSectionProps) => {
   const showButton = Boolean(buttonHref && buttonLabel)
   const showParagraph = Boolean(content)
   return (
-    <BaseSection className={className} contentSize={SectionContentSize.LARGE}>
+    <BaseSection tagName="article" className={className} contentSize={SectionContentSize.LARGE}>
       <Columns>
         <Column>
           <div className="kirk-media-content-img" style={{ backgroundImage: `url(${mediaUrl})` }} />
