@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Columns should render default columns 1`] = `
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@media (max-width:800px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+<div
+  className="c0"
+  role="presentation"
+>
+  <div
+    className="kirk-column c1"
+    role="presentation"
+  >
+    column 1
+  </div>
+  <div
+    className="kirk-column c1"
+    role="presentation"
+  >
+    column 2
+  </div>
+  <div
+    className="kirk-column c1"
+    role="presentation"
+  >
+    column 3
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Allow to disable the backgroundhover color for `ItemAction`
+- **[UPDATE]** Create new `MediaContentSection` section based on `Columns` and `Column` private components.
 - [...]
 
 # v20.0.2 (11/02/2020)
