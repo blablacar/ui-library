@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix text alignment and image covering for  `MediaContentSection`
 - [...]
 
 # v20.1.1 (12/02/2020)
