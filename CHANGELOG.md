@@ -1,8 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v20.1.1 (12/02/2020)
+
 - **[FIX]** `Itinerary` subLabel rendered in case of stopovers
 - **[FIX]** Add border radius, article tag name, proper image position and title alignment for `MediaContentSection` section.
-- [...]
+
 
 # v20.1.0 (12/02/2020)
 
