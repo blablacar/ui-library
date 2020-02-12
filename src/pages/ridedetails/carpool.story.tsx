@@ -27,20 +27,23 @@ stories.add('Default', () => (
         toAddon="Marseille"
         places={[
           {
-            mainLabel: 'Paris',
+            mainLabel: 'Gare routière de Bercy',
+            subLabel: 'Paris',
             isoDate: '2017-12-11T09:00',
             time: '09:00',
             href: '#',
           },
           {
-            mainLabel: 'Marseille',
-            isoDate: '2017-12-11T12:00',
-            time: '17:00',
+            mainLabel: 'Gare de Marseille Saint Charles',
+            subLabel: 'Marseille',
+            isoDate: '2017-12-11T20:00',
+            time: '20:00',
+            href: '#',
           },
         ]}
         small={false}
       />
-      <ItemData data="17,50 €" dataInfo="Par place" mainInfo="3 places restantes" />
+      <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
       <Divider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
       <ItemAction action="Contacter Vince" leftAddon={<BubbleIcon />} href="#" />

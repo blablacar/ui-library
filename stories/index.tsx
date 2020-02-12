@@ -12,6 +12,7 @@ import '../src/layout/section/mediaContentSection/story'
 import '../src/pages/messaging/inbox.story'
 import '../src/pages/messaging/brazemarketing.story'
 import '../src/pages/ridedetails/carpool.story'
+import '../src/pages/ridedetails/bus.story'
 
 // Widgets
 import '../src/_utils/story'
