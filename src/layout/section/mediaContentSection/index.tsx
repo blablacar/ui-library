@@ -18,7 +18,7 @@ const StyledMediaContentSection = styled(MediaContentSection)`
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -39,7 +39,6 @@ const StyledMediaContentSection = styled(MediaContentSection)`
     & .kirk-media-content-title {
       /* Remove padding top from subheader to allow proper vertical centering. */
       padding-top: 0;
-      align-self: flex-start;
     }
   }
 
@@ -49,7 +48,10 @@ const StyledMediaContentSection = styled(MediaContentSection)`
       min-height: 0;
       margin-left: -${space.xl};
       margin-right: -${space.xl};
-      background-position: center;
+    }
+
+    & .kirk-media-content-wrapper {
+      align-items: center;
     }
   }
 `

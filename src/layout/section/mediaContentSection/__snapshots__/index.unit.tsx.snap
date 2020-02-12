@@ -286,10 +286,10 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -338,9 +338,6 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 @media (min-width:800px) {
   .c0 .kirk-media-content-title {
     padding-top: 0;
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
   }
 }
 
@@ -350,7 +347,13 @@ exports[`MediaContentSection should render default MediaContentSection section 1
     min-height: 0;
     margin-left: -24px;
     margin-right: -24px;
-    background-position: center;
+  }
+
+  .c0 .kirk-media-content-wrapper {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
