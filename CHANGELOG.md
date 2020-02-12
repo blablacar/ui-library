@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Allow to disable the backgroundhover color for `ItemAction`
 - [...]
 
 # v20.0.2 (11/02/2020)

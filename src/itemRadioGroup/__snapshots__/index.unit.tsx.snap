@@ -106,6 +106,10 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   background: #EDEDED;
 }
 
+.c2.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c2 {
   background: none;
   -webkit-text-decoration: none;

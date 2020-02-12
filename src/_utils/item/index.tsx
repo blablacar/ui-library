@@ -19,6 +19,10 @@ const StyledItem = styled(Item)`
     background: ${color.hover};
   }
 
+  &.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+    background: none;
+  }
+
   a& {
     background: none;
     text-decoration: none;

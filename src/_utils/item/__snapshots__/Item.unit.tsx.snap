@@ -106,6 +106,10 @@ exports[`Item Should not have changed 1`] = `
   background: #EDEDED;
 }
 
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;

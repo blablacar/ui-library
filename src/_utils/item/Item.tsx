@@ -44,6 +44,7 @@ export interface ItemProps {
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  readonly hideHoverBackground?: boolean
 }
 
 const Item = ({
@@ -78,6 +79,7 @@ const Item = ({
   rightAddon,
   tag = <div />,
   ariaLabel,
+  hideHoverBackground = false,
 }: ItemProps) => {
   let Tag = tag.type
   let tagProps = tag.props
@@ -104,6 +106,7 @@ const Item = ({
         {
           'kirk-item--highlighted': highlighted,
           'kirk-item--clickable': isClickable,
+          'kirk-item--hideHoverBackground': hideHoverBackground,
         },
         className,
       ])}

@@ -46,6 +46,14 @@ describe('Item', () => {
     expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)
   })
 
+  it('Should deactivate background hover color properly', () => {
+    const wrapperWithHoverBackground = shallow(<Item />)
+    expect(wrapperWithHoverBackground.hasClass('kirk-item--hideHoverBackground')).toBe(false)
+
+    const wrapperWithoutHoverBackground = shallow(<Item hideHoverBackground />)
+    expect(wrapperWithoutHoverBackground.hasClass('kirk-item--hideHoverBackground')).toBe(true)
+  })
+
   it('Should trigger click on button info', () => {
     const onButtonClick = jest.fn()
     const wrapper = mount(

@@ -19,6 +19,7 @@ export interface ItemActionProps {
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void
+  readonly hideHoverBackground?: boolean
 }
 
 class ItemAction extends PureComponent<ItemActionProps> {
@@ -45,6 +46,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
       onFocus,
       onMouseDown,
       onDoneAnimationEnd,
+      hideHoverBackground = false,
     } = this.props
 
     let rightAddon
@@ -86,6 +88,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
         onMouseDown={onMouseDown}
         tag={tag}
         isClickable
+        hideHoverBackground={hideHoverBackground}
       />
     )
   }

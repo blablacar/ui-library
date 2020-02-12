@@ -30,6 +30,11 @@ stories.add(
           subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
           href="#"
         />
+        <ItemAction
+          action="Action 3 - An action without hover color."
+          href="#"
+          hideHoverBackground
+        />
       </Section>
     )
   },
