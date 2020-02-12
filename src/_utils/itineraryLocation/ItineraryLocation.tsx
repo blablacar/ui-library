@@ -15,6 +15,7 @@ export interface ItineraryLocationProps {
   readonly hasBottomAddon?: boolean
   readonly hasTime?: boolean
   readonly hasSubLabel?: boolean
+  readonly displaySubLabelOnly?: boolean
 }
 
 export const computeKeyFromPlace = (place: Place) => {
@@ -70,9 +71,6 @@ const renderSubLabel = (label: ReactNode) =>
     <div>{label}</div>
   )
 
-const renderSmallLabel = (mainLabel: string, subLabel: ReactNode) =>
-  typeof subLabel === 'string' ? renderMainLabel(subLabel) : renderMainLabel(mainLabel)
-
 const ItineraryLocation = ({
   place,
   className = '',
@@ -81,6 +79,7 @@ const ItineraryLocation = ({
   hasBottomAddon = false,
   hasTime = false,
   hasSubLabel = false,
+  displaySubLabelOnly = false,
 }: ItineraryLocationProps) => {
   const baseClassName = 'kirk-itineraryLocation'
   const classNames = cc([
@@ -120,6 +119,18 @@ const ItineraryLocation = ({
     }
   }
 
+  const renderLabel = (mainLabel: string, subLabel: ReactNode): ReactNode => {
+    if (!displaySubLabelOnly) {
+      return (
+        <Fragment>
+          {renderMainLabel(mainLabel)}
+          {hasSubLabel && renderSubLabel(subLabel)}
+        </Fragment>
+      )
+    }
+    return renderSubLabel(subLabel)
+  }
+
   return (
     <li
       className={classNames}
@@ -139,9 +150,7 @@ const ItineraryLocation = ({
           {hasRoad && <div className="kirk-itineraryLocation-road" />}
         </div>
         <div className="kirk-itineraryLocation-label">
-          {isSmall && renderSmallLabel(place.mainLabel, place.subLabel)}
-          {!isSmall && renderMainLabel(place.mainLabel)}
-          {!isSmall && hasSubLabel && renderSubLabel(place.subLabel)}
+          {renderLabel(place.mainLabel, place.subLabel)}
         </div>
         {hasChevron && (
           <div className="kirk-itineraryLocation-chevron">

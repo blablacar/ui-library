@@ -3,7 +3,7 @@ import { color, font, radius, space, componentSizes, transition } from '_utils/b
 
 import ItineraryCollapsible from './ItineraryCollapsible'
 
-const minHeight = '32px' // space.l for the minimum content + 2*space.m for vertical padding
+const minHeight = '40px'
 const smallBulletPositionDifference = `${Math.ceil(
   (parseInt(componentSizes.bulletSize, 10) - parseInt(componentSizes.bulletSizeSmall, 10)) / 2,
 )}px`
@@ -78,12 +78,6 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
   & .kirk-itineraryCollapsible-collapsed .kirk-text {
     padding-left: ${space.m};
     height: ${font.m.lineHeight};
-  }
-
-  & .kirk-itineraryLocation-label .kirk-text,
-  & .kirk-itineraryCollapsible-collapsed .kirk-text {
-    font-size: ${font.s.size};
-    line-height: ${font.m.lineHeight};
   }
 
   & .kirk-itineraryLocation-wrapper .kirk-itineraryLocation-road {

@@ -158,6 +158,7 @@ const Itinerary = ({
             intermediatePlaces.map(place => (
               <ItineraryLocation
                 place={place}
+                displaySubLabelOnly
                 isSmall
                 className="kirk-itineraryLocation-smallLabel"
                 key={`${computeKeyFromPlace(place)}`}
