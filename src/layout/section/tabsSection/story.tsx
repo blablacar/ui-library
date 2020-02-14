@@ -12,8 +12,8 @@ const stories = storiesOf('Sections|TabsSection', module)
 stories.addDecorator(withKnobs)
 
 const panels = [
-  <div style={{ padding: 30 }}>Content for first tab</div>,
-  <div style={{ padding: 30 }}>
+  <div>Content for first tab</div>,
+  <div>
     <Button
       onClick={() => {
         action('onClickButton')
@@ -22,12 +22,12 @@ const panels = [
       Button inside panel 2.
     </Button>
   </div>,
-  <div style={{ padding: 30 }}>Content for tab3</div>,
+  <div>Content for tab3</div>,
 ]
 
 const tabs = {
   activeTabId: 'tab1',
-  status: select('status', TabStatus, TabStatus.SCROLLABLE),
+  status: select('status', TabStatus, TabStatus.FIXED),
   isWrapped: boolean('isWrapped', false),
   tabs: [
     {

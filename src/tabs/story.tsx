@@ -13,8 +13,8 @@ const stories = storiesOf('Widgets|Tabs', module)
 stories.addDecorator(withKnobs)
 
 const panels = [
-  <div style={{ padding: 30 }}>Content for first tab</div>,
-  <div style={{ padding: 30 }}>
+  <div>Content for first tab</div>,
+  <div>
     <Button
       onClick={() => {
         action('onClickButton')
@@ -23,14 +23,13 @@ const panels = [
       Button inside panel 2.
     </Button>
   </div>,
-  <div style={{ padding: 30 }}>Content for tab3</div>,
+  <div>Content for tab3</div>,
 ]
 
 stories.add('default', () => {
   const defaultTabsConfig = {
     activeTabId: 'tab1',
     status: select('status', TabStatus, TabStatus.SCROLLABLE),
-    isWrapped: boolean('isWrapped', false),
     tabs: [
       {
         id: 'tab1',
@@ -60,7 +59,6 @@ stories.add('default', () => {
         tabs={defaultTabsConfig.tabs}
         activeTabId={defaultTabsConfig.activeTabId}
         status={defaultTabsConfig.status}
-        isWrapped={defaultTabsConfig.isWrapped}
       />
     </Section>
   )
@@ -70,7 +68,6 @@ stories.add('with icons', () => {
   const iconTabsConfig = {
     activeTabId: 'tab1',
     status: select('status', TabStatus, TabStatus.FIXED),
-    isWrapped: boolean('isWrapped', false),
     tabs: [
       {
         id: 'tab1',
@@ -112,7 +109,6 @@ stories.add('with icons', () => {
         tabs={iconTabsConfig.tabs}
         activeTabId={iconTabsConfig.activeTabId}
         status={iconTabsConfig.status}
-        isWrapped={iconTabsConfig.isWrapped}
       />
     </Section>
   )

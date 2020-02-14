@@ -1,4 +1,4 @@
-import React, { createRef, PureComponent, RefObject, Fragment } from 'react'
+import React, { createRef, PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import Badge from 'badge'
 
@@ -23,8 +23,7 @@ export interface TabsProps {
   readonly onChange?: Function
   readonly status?: TabStatus
   readonly className?: Classcat.Class
-  readonly tablistWrapperClassName?: Classcat.Class
-  readonly isWrapped?: boolean
+  readonly tabsClassName?: Classcat.Class
 }
 
 interface TabsState {
@@ -78,8 +77,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     onChange() {},
     status: TabStatus.SCROLLABLE,
     className: '',
-    tablistWrapperClassName: '',
-    isWrapped: false,
+    tabsClassName: '',
   }
 
   state: TabsState = {
@@ -88,6 +86,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
   }
 
   highlightRef: RefObject<HTMLDivElement> = React.createRef()
+  tabsGroupRef: RefObject<HTMLDivElement> = React.createRef()
 
   static STATUS = TabStatus
 
@@ -127,17 +126,16 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
 
     // .kirk-tablist-wrapper needed to get the height of the whole component
     // because tabs can have different heights.
-    // Casted as HTMLElement to use offsetHeight (parentNode returns an Element).
-    const parentTabWrapper = this.highlightRef.current.parentNode as HTMLElement
+    const tabsGroup = this.tabsGroupRef.current
 
     // adapt to current tab width
     this.highlightRef.current.style.width = `${tabBounds.width}px`
     // top position, tablist-wrapper height - tablist-wrapper border height
-    this.highlightRef.current.style.top = `${parentTabWrapper.clientHeight -
-      (parentTabWrapper.offsetHeight - parentTabWrapper.clientHeight)}px`
+    this.highlightRef.current.style.top = `${tabsGroup.clientHeight -
+      (tabsGroup.offsetHeight - tabsGroup.clientHeight)}px`
     // left position, tab left position - parent wrapper left position
     this.highlightRef.current.style.left = `${tabBounds.left -
-      parentTabWrapper.getBoundingClientRect().left}px`
+      tabsGroup.getBoundingClientRect().left}px`
   }
 
   activateTabById = (activeTabId: string) => {
@@ -160,7 +158,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
   }
 
   render() {
-    const { tabs, className, tablistWrapperClassName, isWrapped } = this.props
+    const { tabs, className, tabsClassName } = this.props
 
     if (tabs.length === 0) {
       return null
@@ -174,15 +172,18 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
 
     return (
-      <Fragment>
-        <div className={cc(['kirk-tabs', className, { 'kirk-tabs-fixed': isFixedTabs }])}>
-          <div className={cc(['kirk-tablist-wrapper', tablistWrapperClassName])}>
+      <div role="presentation" className={cc(className)}>
+        <div
+          ref={this.tabsGroupRef}
+          className={cc(['kirk-tabs', tabsClassName, { 'kirk-tabs-fixed': isFixedTabs }])}
+        >
+          <div className={cc(['kirk-tablist-wrapper'])}>
             <div className="kirk-tab-highlight" ref={this.highlightRef} />
             <div
               role="tablist"
               aria-orientation="horizontal"
               aria-multiselectable="false"
-              className={cc(['kirk-tablist', { 'kirk-tablist-wrapped': isWrapped }])}
+              className={cc('kirk-tablist')}
             >
               {tabs.map(tab => {
                 const isSelected = selectedTab.id === tab.id
@@ -194,7 +195,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                   >
                     <button
                       role="tab"
-                      aria-controls={`${generateTabPanelId(tab)}`}
+                      aria-controls={generateTabPanelId(tab)}
                       aria-selected={isSelected ? 'true' : 'false'}
                       title={`${tab.label}${tab.badgeAriaLabel ? ` ${tab.badgeAriaLabel}` : ''}`}
                       tabIndex={isSelected ? 0 : -1}
@@ -227,22 +228,24 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
             </div>
           </div>
         </div>
-        {tabs.map(tab => {
-          const isSelected = selectedTab.id === tab.id
-          return (
-            <div
-              role="tabpanel"
-              className="kirk-tab-panel"
-              id={`${generateTabPanelId(tab)}`}
-              key={tab.id}
-              aria-labelledby={tab.id}
-              hidden={!isSelected}
-            >
-              {isSelected ? tab.panelContent : null}
-            </div>
-          )
-        })}
-      </Fragment>
+        <div className="kirk-panels-section" role="presentation">
+          {tabs.map(tab => {
+            const isSelected = selectedTab.id === tab.id
+            return (
+              <div
+                role="tabpanel"
+                className="kirk-tab-panel"
+                id={generateTabPanelId(tab)}
+                key={tab.id}
+                aria-labelledby={tab.id}
+                hidden={!isSelected}
+              >
+                {isSelected ? tab.panelContent : null}
+              </div>
+            )
+          })}
+        </div>
+      </div>
     )
   }
 }

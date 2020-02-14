@@ -1,12 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabsSection should render default TabsSection 1`] = `
-.c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c3 {
+.c2 {
   box-sizing: border-box;
   display: inline-block;
   min-width: 18px;
@@ -22,15 +17,16 @@ exports[`TabsSection should render default TabsSection 1`] = `
   color: #FFF;
 }
 
-.c2 {
+.c1 {
   position: relative;
 }
 
-.c2 .kirk-tablist-wrapper {
+.c1 .kirk-tabs {
+  margin-bottom: 16px;
   border-bottom: 1px solid #DDD;
 }
 
-.c2 .kirk-tablist {
+.c1 .kirk-tablist {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -44,16 +40,11 @@ exports[`TabsSection should render default TabsSection 1`] = `
   scrollbar-width: none;
 }
 
-.c2 .kirk-tablist::-webkit-scrollbar {
+.c1 .kirk-tablist::-webkit-scrollbar {
   display: none;
 }
 
-.c2 .kirk-tablist-wrapped {
-  width: 662px;
-  padding: 0 24px;
-}
-
-.c2 .kirk-tab {
+.c1 .kirk-tab {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,7 +61,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   width: 100%;
   height: 100%;
   outline: none;
-  padding: 16px;
+  padding: 16px 24px;
   background: none;
   border: none;
   background-color: #FFF;
@@ -79,24 +70,23 @@ exports[`TabsSection should render default TabsSection 1`] = `
   white-space: nowrap;
 }
 
-.c2 .kirk-tab > .kirk-icon {
+.c1 .kirk-tab > .kirk-icon {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c2 .kirk-tab-text {
+.c1 .kirk-tab-text {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.c2 .kirk-tab-text--with-icon {
+.c1 .kirk-tab-text--with-icon {
   margin-left: 16px;
   text-align: left;
 }
 
-.c2 .kirk-tab-container {
-  margin-left: 16px;
+.c1 .kirk-tab-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,11 +101,11 @@ exports[`TabsSection should render default TabsSection 1`] = `
   align-items: last baseline;
 }
 
-.c2.kirk-tabs-fixed .kirk-tablist {
+.c1.kirk-tabs-fixed .kirk-tablist {
   overflow: initial;
 }
 
-.c2.kirk-tabs-fixed .kirk-tab-container {
+.c1.kirk-tabs-fixed .kirk-tab-container {
   margin-left: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -124,19 +114,19 @@ exports[`TabsSection should render default TabsSection 1`] = `
   text-align: center;
 }
 
-.c2.kirk-tabs-fixed .kirk-tab {
+.c1.kirk-tabs-fixed .kirk-tab {
   white-space: normal;
 }
 
-.c2 .kirk-tab-selected .kirk-tab {
+.c1 .kirk-tab-selected .kirk-tab {
   color: #054752;
 }
 
-.c2 .kirk-tab:not(.kirk-tab-selected):hover {
+.c1 .kirk-tab:not(.kirk-tab-selected):hover {
   cursor: pointer;
 }
 
-.c2 .kirk-tab-container .kirk-badge {
+.c1 .kirk-tab-container .kirk-badge {
   position: relative;
   left: 0;
   top: calc(-1 * 4px);
@@ -145,7 +135,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   align-self: flex-start;
 }
 
-.c2 .kirk-tab-highlight {
+.c1 .kirk-tab-highlight {
   position: absolute;
   z-index: 2;
   left: 0;
@@ -161,24 +151,18 @@ exports[`TabsSection should render default TabsSection 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c0 .kirk-tabs:after {
-  content: ' ';
-  position: absolute;
-  left: -100vw;
-  right: -100vw;
-  bottom: 0;
-  border-bottom: 1px solid #DDD;
+@media (max-width:800px) {
+  .c0 .kirk-panels-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 @media (min-width:800px) {
-  .c1 .section-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 662px;
-  }
-
-  .c1 .section-content.section-content--large {
-    max-width: 1016px;
+  .c0 .kirk-panels-section,
+  .c0 .kirk-tablist-wrapper {
+    width: calc(662px - 2 * 24px);
+    margin: 0 auto;
   }
 }
 
@@ -187,89 +171,90 @@ exports[`TabsSection should render default TabsSection 1`] = `
   role="presentation"
 >
   <div
-    className="section-content"
+    className="kirk-tabs"
   >
     <div
-      className="kirk-tabs c2"
+      className="kirk-tablist-wrapper"
     >
       <div
-        className="kirk-tablist-wrapper"
+        className="kirk-tab-highlight"
+      />
+      <div
+        aria-multiselectable="false"
+        aria-orientation="horizontal"
+        className="kirk-tablist"
+        role="tablist"
       >
         <div
-          className="kirk-tab-highlight"
-        />
-        <div
-          aria-multiselectable="false"
-          aria-orientation="horizontal"
-          className="kirk-tablist"
-          role="tablist"
+          className="kirk-tab-container kirk-tab-selected"
+          style={null}
         >
-          <div
-            className="kirk-tab-container kirk-tab-selected"
-            style={null}
+          <button
+            aria-controls="tab1_panel"
+            aria-selected="true"
+            className="kirk-tab"
+            id="tab1"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            tabIndex={0}
+            title="Tab label 1"
           >
-            <button
-              aria-controls="tab1_panel"
-              aria-selected="true"
-              className="kirk-tab"
-              id="tab1"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="tab"
-              tabIndex={0}
-              title="Tab label 1"
+            <span
+              className="kirk-tab-text"
+            >
+              Tab label 1
+            </span>
+            <span
+              className="kirk-badge kirk-tab-badge c2"
             >
               <span
-                className="kirk-tab-text"
+                aria-hidden={false}
               >
-                Tab label 1
+                Badge content 1
               </span>
-              <span
-                className="kirk-badge kirk-tab-badge c3"
-              >
-                <span
-                  aria-hidden={false}
-                >
-                  Badge content 1
-                </span>
-              </span>
-            </button>
-          </div>
-          <div
-            className="kirk-tab-container"
-            style={null}
+            </span>
+          </button>
+        </div>
+        <div
+          className="kirk-tab-container"
+          style={null}
+        >
+          <button
+            aria-controls="tab2_panel"
+            aria-selected="false"
+            className="kirk-tab"
+            id="tab2"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="tab"
+            tabIndex={-1}
+            title="Tab label 2 Unread Message"
           >
-            <button
-              aria-controls="tab2_panel"
-              aria-selected="false"
-              className="kirk-tab"
-              id="tab2"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="tab"
-              tabIndex={-1}
-              title="Tab label 2 Unread Message"
+            <span
+              className="kirk-tab-text"
+            >
+              Tab label 2
+            </span>
+            <span
+              aria-label="Unread Message"
+              className="kirk-badge kirk-tab-badge c2"
             >
               <span
-                className="kirk-tab-text"
+                aria-hidden={true}
               >
-                Tab label 2
+                2
               </span>
-              <span
-                aria-label="Unread Message"
-                className="kirk-badge kirk-tab-badge c3"
-              >
-                <span
-                  aria-hidden={true}
-                >
-                  2
-                </span>
-              </span>
-            </button>
-          </div>
+            </span>
+          </button>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    className="kirk-panels-section"
+    role="presentation"
+  >
     <div
       aria-labelledby="tab1"
       className="kirk-tab-panel"

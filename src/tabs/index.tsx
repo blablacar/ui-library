@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, componentSizes, font, space, transition } from '_utils/branding'
+import { color, font, space, transition } from '_utils/branding'
 
 import Tabs from './Tabs'
 
@@ -10,7 +10,8 @@ const StyledTabs = styled(Tabs)`
     position: relative;
   }
 
-  & .kirk-tablist-wrapper {
+  & .kirk-tabs {
+    margin-bottom: ${space.l};
     border-bottom: 1px solid ${color.border};
   }
 
@@ -26,11 +27,6 @@ const StyledTabs = styled(Tabs)`
     display: none;
   }
 
-  & .kirk-tablist-wrapped {
-    width: ${componentSizes.smallSectionWidth};
-    padding: 0 ${space.xl};
-  }
-
   & .kirk-tab {
     display: flex;
     align-items: center;
@@ -39,7 +35,7 @@ const StyledTabs = styled(Tabs)`
     width: 100%;
     height: 100%;
     outline: none;
-    padding: ${space.l};
+    padding: ${space.l} ${space.xl};
     background: none;
     border: none;
     background-color: ${color.white};
@@ -63,7 +59,6 @@ const StyledTabs = styled(Tabs)`
   }
 
   & .kirk-tab-container {
-    margin-left: ${space.l};
     display: flex;
     justify-content: center;
     align-items: last baseline;
