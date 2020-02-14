@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Implement `Paragraph` widget
 - [...]
 
 # v20.1.2 (12/02/2020)
