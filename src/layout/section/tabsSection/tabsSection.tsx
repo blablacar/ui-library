@@ -1,6 +1,5 @@
 import React from 'react'
 import cc from 'classcat'
-import BaseSection from 'layout/section/baseSection'
 import Tabs, { TabsProps } from 'tabs'
 
 export interface TabsSectionProps {
@@ -18,11 +17,7 @@ export interface TabsSectionProps {
  */
 const TabsSection = (props: TabsSectionProps) => {
   const { className, tabsProps } = props
-  return (
-    <BaseSection className={cc(className)}>
-      <Tabs {...tabsProps} />
-    </BaseSection>
-  )
+  return <Tabs className={cc(className)} {...tabsProps} />
 }
 
 export default TabsSection

@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Rendering testing should render properly 1`] = `
-Array [
+<div
+  className=""
+  role="presentation"
+>
   <div
     className="kirk-tabs"
   >
@@ -85,44 +88,48 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
-    aria-labelledby="tab1"
-    className="kirk-tab-panel"
-    hidden={false}
-    id="tab1_panel"
-    role="tabpanel"
+    className="kirk-panels-section"
+    role="presentation"
   >
     <div
-      style={
-        Object {
-          "padding": 30,
-        }
-      }
+      aria-labelledby="tab1"
+      className="kirk-tab-panel"
+      hidden={false}
+      id="tab1_panel"
+      role="tabpanel"
     >
-      Content for first tab
+      <div
+        style={
+          Object {
+            "padding": 30,
+          }
+        }
+      >
+        Content for first tab
+      </div>
     </div>
-  </div>,
-  <div
-    aria-labelledby="tab2"
-    className="kirk-tab-panel"
-    hidden={true}
-    id="tab2_panel"
-    role="tabpanel"
-  />,
-  <div
-    aria-labelledby="tab3"
-    className="kirk-tab-panel"
-    hidden={true}
-    id="tab3_panel"
-    role="tabpanel"
-  />,
-]
+    <div
+      aria-labelledby="tab2"
+      className="kirk-tab-panel"
+      hidden={true}
+      id="tab2_panel"
+      role="tabpanel"
+    />
+    <div
+      aria-labelledby="tab3"
+      className="kirk-tab-panel"
+      hidden={true}
+      id="tab3_panel"
+      role="tabpanel"
+    />
+  </div>
+</div>
 `;
 
 exports[`Rendering testing should render properly with icons 1`] = `
-Array [
-  .c0.kirk-icon-wrapper {
+.c0.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
@@ -139,6 +146,10 @@ Array [
 }
 
 <div
+  className=""
+  role="presentation"
+>
+  <div
     className="kirk-tabs"
   >
     <div
@@ -260,37 +271,42 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
-    aria-labelledby="iconTab1"
-    className="kirk-tab-panel"
-    hidden={false}
-    id="iconTab1_panel"
-    role="tabpanel"
+    className="kirk-panels-section"
+    role="presentation"
   >
     <div
-      style={
-        Object {
-          "padding": 30,
-        }
-      }
+      aria-labelledby="iconTab1"
+      className="kirk-tab-panel"
+      hidden={false}
+      id="iconTab1_panel"
+      role="tabpanel"
     >
-      Content for first tab
+      <div
+        style={
+          Object {
+            "padding": 30,
+          }
+        }
+      >
+        Content for first tab
+      </div>
     </div>
-  </div>,
-  <div
-    aria-labelledby="iconTab2"
-    className="kirk-tab-panel"
-    hidden={true}
-    id="iconTab2_panel"
-    role="tabpanel"
-  />,
-  <div
-    aria-labelledby="iconTab3"
-    className="kirk-tab-panel"
-    hidden={true}
-    id="iconTab3_panel"
-    role="tabpanel"
-  />,
-]
+    <div
+      aria-labelledby="iconTab2"
+      className="kirk-tab-panel"
+      hidden={true}
+      id="iconTab2_panel"
+      role="tabpanel"
+    />
+    <div
+      aria-labelledby="iconTab3"
+      className="kirk-tab-panel"
+      hidden={true}
+      id="iconTab3_panel"
+      role="tabpanel"
+    />
+  </div>
+</div>
 `;

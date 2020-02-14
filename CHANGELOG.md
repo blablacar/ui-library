@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Implement `Paragraph` widget
+- **[BREAKING CHANGE]** `Tabs` and `TabsSection` layout/spacing overhaul
 - [...]
 
 # v20.1.2 (12/02/2020)
