@@ -10,7 +10,7 @@ const StyledButton = styled(Button)`
     position: relative;
     box-sizing: border-box;
     display: inline-flex;
-    padding: ${space.l} ${space.xl};
+    padding: 0 ${space.xl};
     border: 1px solid transparent;
     border-radius: 48px;
     font-size: ${font.base.size};
@@ -19,7 +19,7 @@ const StyledButton = styled(Button)`
     text-decoration: none;
     cursor: pointer;
     font-family: inherit;
-    min-height: ${componentSizes.buttonIconSize};
+    height: ${componentSizes.buttonIconSize};
     min-width: ${componentSizes.buttonIconSize};
     max-width: 100%;
     overflow: hidden;
@@ -27,11 +27,21 @@ const StyledButton = styled(Button)`
     align-items: center;
     transition: max-width ${transition.duration.fast} ease-in,
       background-color ${transition.duration.base} ease-in;
+    white-space: nowrap;
   }
 
   & svg,
   & img {
     flex-shrink: 0;
+  }
+
+  & svg {
+    margin-right: ${space.s};
+    margin-left: -${space.m};
+  }
+
+  &.kirk-button-bubble svg {
+    margin: 0;
   }
 
   &.kirk-itemChoice {

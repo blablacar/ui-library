@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions'
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
+import LockIcon from 'icon/lockIcon'
 import Section from 'layout/section/baseSection'
 import primaryDoc from './specifications/primary.md'
 import secondaryDoc from './specifications/secondary.md'
@@ -127,8 +128,8 @@ stories.add('shadowed', () => (
 stories.add('icon + text', () => (
   <Section>
     <Button status={ButtonStatus.PRIMARY} {...commonProps}>
-      <ArrowIcon right iconColor={color.white} />
-      <span style={{ marginLeft: '20px' }}>{label('Content')}</span>
+      <LockIcon iconColor={color.white} />
+      {label('Content')}
     </Button>
   </Section>
 ))

@@ -24,7 +24,7 @@ exports[`Snackbar should not have changed 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding: 16px 24px;
+  padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 48px;
   font-size: 16px;
@@ -34,7 +34,7 @@ exports[`Snackbar should not have changed 1`] = `
   text-decoration: none;
   cursor: pointer;
   font-family: inherit;
-  min-height: 48px;
+  height: 48px;
   min-width: 48px;
   max-width: 100%;
   overflow: hidden;
@@ -48,6 +48,7 @@ exports[`Snackbar should not have changed 1`] = `
   align-items: center;
   -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
   transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  white-space: nowrap;
 }
 
 .c3 svg,
@@ -55,6 +56,15 @@ exports[`Snackbar should not have changed 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.c3 svg {
+  margin-right: 4px;
+  margin-left: -8px;
+}
+
+.c3.kirk-button-bubble svg {
+  margin: 0;
 }
 
 .c3.kirk-itemChoice {
