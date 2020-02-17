@@ -5,6 +5,7 @@ import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import Modal, { ModalSize } from 'modal'
 import { ModalProps } from 'modal/Modal'
+import TheVoice from 'theVoice'
 import CrossIcon from 'icon/crossIcon'
 import WarningIcon from 'icon/warningIcon'
 import InfoIcon from 'icon/infoIcon'
@@ -26,6 +27,7 @@ export interface ConfirmationModalProps extends ModalProps {
   readonly confirmLabel?: string
   readonly confirmIsLoading?: boolean
   readonly size?: ModalSize
+  readonly children?: string
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
@@ -98,7 +100,9 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       >
         <div className={`${baseClassName}-dialog`}>
           {getIcon()}
-          <div className={`${baseClassName}-body`}>{children}</div>
+          <div className={`${baseClassName}-body`}>
+            <TheVoice isInverted>{children}</TheVoice>
+          </div>
           <footer className={`${baseClassName}-footer`}>
             {isWarning && (
               <Button

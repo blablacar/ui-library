@@ -43,10 +43,8 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
           isOpen={this.state.confirmationModalOpen}
           confirmIsLoading={this.props.confirmIsLoading}
         >
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
         </ConfirmationModal>
       </Section>
     )
