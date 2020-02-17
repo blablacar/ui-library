@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Fix `RotateIcon` viewbox
 
 # v21.0.0 (14/02/2020)
 - **[NEW]** Implement `Paragraph` widget
