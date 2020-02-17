@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import Modal, { ModalSize } from 'modal'
 import { ModalProps } from 'modal/Modal'
 import Button, { ButtonStatus } from 'button'
-import Text, { TextTagType, TextDisplayType } from 'text'
-import { color } from '_utils/branding'
+import TheVoice from 'theVoice'
 import { assertModalSizes } from '_utils/assert'
 import uuidv4 from 'uuid/v4'
 
@@ -12,6 +11,7 @@ export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
   readonly imageSrc: string
   readonly imageText?: string
+  readonly children?: string
 }
 
 export enum SuccessModalSize {
@@ -68,13 +68,7 @@ class SuccessModal extends Component<SuccessModalProps> {
           aria-hidden
         />
         <div id={successContentId} className={`${baseClassName}-bodyItem`}>
-          <Text
-            display={TextDisplayType.SUBHEADER}
-            tag={TextTagType.PARAGRAPH}
-            textColor={color.white}
-          >
-            {children}
-          </Text>
+          <TheVoice>{children}</TheVoice>
           <footer className={`${baseClassName}-footer`}>
             <Button
               status={ButtonStatus.SECONDARY}
