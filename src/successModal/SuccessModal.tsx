@@ -68,7 +68,7 @@ class SuccessModal extends Component<SuccessModalProps> {
           aria-hidden
         />
         <div id={successContentId} className={`${baseClassName}-bodyItem`}>
-          <TheVoice>{children}</TheVoice>
+          <TheVoice isInverted>{children}</TheVoice>
           <footer className={`${baseClassName}-footer`}>
             <Button
               status={ButtonStatus.SECONDARY}
