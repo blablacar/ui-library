@@ -4,7 +4,7 @@ import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
 export const RotateIcon = (props: Icon) => (
-  <BaseIcon {...props}>
+  <BaseIcon {...props} viewBox="0 0 20 20">
     <g
       fill="none"
       fillRule="evenodd"
