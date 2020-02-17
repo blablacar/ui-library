@@ -36,7 +36,7 @@ describe('<SuccessModal>', () => {
 
   it('Should have proper linked id to the content text', () => {
     const ariaLabelledByValue = wrapperOpen.find('.kirk-successModal').prop('aria-labelledby')
-    expect(wrapperOpen.find(`#${ariaLabelledByValue} p`).text()).toEqual('Success description')
+    expect(wrapperOpen.find(`#${ariaLabelledByValue} h1`).text()).toEqual('Success description')
   })
 
   it('Should have a confirmation button and call the according function when click on it', () => {
