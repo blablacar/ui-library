@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v21.0.1 (17/02/2020)
+
 - **[FIX]** Fix `RotateIcon` viewbox
 
 # v21.0.0 (14/02/2020)
