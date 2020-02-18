@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { boolean } from '@storybook/addon-knobs'
 import Section from 'layout/section/baseSection'
 import TheVoice from 'theVoice'
 import Itinerary from 'itinerary'
@@ -12,11 +13,13 @@ import ItemAction from 'itemAction'
 import ItemInfo from 'itemInfo'
 import { PetIcon, SmokeIcon, BubbleIcon } from 'icon'
 import SubHeader from 'subHeader'
+import LayoutNormalizer from 'layout/layoutNormalizer'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 
 stories.add('Default', () => (
   <Fragment>
+    <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
     <Section>
       <TheVoice>Ven. 11 octobre</TheVoice>
       <Itinerary

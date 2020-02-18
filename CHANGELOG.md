@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Introduce `LayoutNormalizer` with legacy global layout overrides. Not activated by default.
 - [...]
 
 # v21.1.0 (19/02/2020)
