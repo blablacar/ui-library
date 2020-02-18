@@ -1,4 +1,4 @@
-# ConfirmationModal
+# `ConfirmationModal`
 
 ```js
 import { confirmationModal, ConfirmationModalStatus } from '@blablacar/ui-library'

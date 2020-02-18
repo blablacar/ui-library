@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, space, font, modalSize, fontWeight } from '_utils/branding'
+import { color, space, modalSize } from '_utils/branding'
 import ConfirmationModal from './ConfirmationModal'
 
 const footerHeight = '96px' /* = padding + content */
@@ -40,9 +40,6 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
 
   & .kirk-confirmationModal-body {
     padding: ${space.xl};
-    font-size: ${font.xl.size};
-    line-height: ${font.xl.lineHeight};
-    font-weight: ${fontWeight.medium};
   }
 
   & .kirk-confirmationModal-icon {

@@ -1,4 +1,4 @@
-# Modal
+# Success Modal
 
 ```js
 import { successModal } from '@blablacar/ui-library'

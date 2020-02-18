@@ -8,7 +8,7 @@ import { ConfirmationModalProps, ConfirmationModalSize } from './ConfirmationMod
 import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
-const stories = storiesOf('Widgets|ConfirmationModal', module)
+const stories = storiesOf('Widgets|Modal|ConfirmationModal', module)
 stories.addDecorator(withKnobs)
 
 class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
@@ -43,10 +43,8 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
           isOpen={this.state.confirmationModalOpen}
           confirmIsLoading={this.props.confirmIsLoading}
         >
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
         </ConfirmationModal>
       </Section>
     )
@@ -54,7 +52,7 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
 }
 
 stories.add(
-  'Warning',
+  'warning',
   () => (
     <ConfirmationModalOpener
       status={ConfirmationModalStatus.WARNING}
@@ -72,7 +70,7 @@ stories.add(
 )
 
 stories.add(
-  'Reminder',
+  'reminder',
   () => (
     <ConfirmationModalOpener
       status={ConfirmationModalStatus.REMINDER}
