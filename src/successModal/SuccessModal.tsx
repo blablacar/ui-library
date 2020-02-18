@@ -11,7 +11,6 @@ export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
   readonly imageSrc: string
   readonly imageText?: string
-  readonly children?: string
 }
 
 export enum SuccessModalSize {

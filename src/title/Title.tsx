@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import cc from 'classcat'
 
 export interface TitleProps {
   readonly id?: string
   readonly className?: Classcat.Class
-  readonly children: string
+  readonly children: ReactNode
   readonly headingLevel?: number | string
 }
 

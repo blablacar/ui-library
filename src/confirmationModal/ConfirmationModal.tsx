@@ -27,7 +27,6 @@ export interface ConfirmationModalProps extends ModalProps {
   readonly confirmLabel?: string
   readonly confirmIsLoading?: boolean
   readonly size?: ModalSize
-  readonly children?: string
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
