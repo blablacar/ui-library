@@ -1,12 +1,13 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Update `TheVoice` component to be applied on dark backgrounds. `ConfirmationModal` and `SuccessModal` now use `TheVoice` component.
 
 # v21.0.1 (17/02/2020)
 
 - **[FIX]** Fix `RotateIcon` viewbox
 
 # v21.0.0 (14/02/2020)
+
 - **[NEW]** Implement `Paragraph` widget
 - **[BREAKING CHANGE]** `Tabs` and `TabsSection` layout/spacing overhaul
 
@@ -18,7 +19,6 @@
 
 - **[FIX]** `Itinerary` subLabel rendered in case of stopovers
 - **[FIX]** Add border radius, article tag name, proper image position and title alignment for `MediaContentSection` section.
-
 
 # v20.1.0 (12/02/2020)
 
