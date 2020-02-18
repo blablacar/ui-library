@@ -61,7 +61,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   width: 100%;
   height: 100%;
   outline: none;
-  padding: 16px 24px;
+  padding: 16px;
   background: none;
   border: none;
   background-color: #FFF;
@@ -101,20 +101,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   align-items: last baseline;
 }
 
-.c1.kirk-tabs-fixed .kirk-tablist {
-  overflow: initial;
-}
-
-.c1.kirk-tabs-fixed .kirk-tab-container {
-  margin-left: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.c1.kirk-tabs-fixed .kirk-tab {
+.c1 .kirk-tabs-fixed .kirk-tab {
   white-space: normal;
 }
 

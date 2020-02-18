@@ -35,7 +35,7 @@ const StyledTabs = styled(Tabs)`
     width: 100%;
     height: 100%;
     outline: none;
-    padding: ${space.l} ${space.xl};
+    padding: ${space.l};
     background: none;
     border: none;
     background-color: ${color.white};
@@ -64,17 +64,7 @@ const StyledTabs = styled(Tabs)`
     align-items: last baseline;
   }
 
-  &.kirk-tabs-fixed .kirk-tablist {
-    overflow: initial;
-  }
-
-  &.kirk-tabs-fixed .kirk-tab-container {
-    margin-left: 0;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  &.kirk-tabs-fixed .kirk-tab {
+  & .kirk-tabs-fixed .kirk-tab {
     white-space: normal;
   }
 
