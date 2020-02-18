@@ -7,6 +7,11 @@ const StyledColumns = styled(Columns)`
   & {
     display: flex;
     flex-direction: row;
+
+    /** Reset styles from <ul> */
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {

@@ -7,6 +7,7 @@ import '../src/layout/section/tabsSection/story'
 import '../src/layout/section/highlightSection/story'
 import '../src/layout/section/tripsSection/story'
 import '../src/layout/section/mediaContentSection/story'
+import '../src/layout/section/columnedContentSection/story'
 
 // Pages
 import '../src/pages/messaging/inbox.story'

@@ -4,6 +4,7 @@ import cc from 'classcat'
 export interface ColumnProps {
   readonly className?: Classcat.Class
   readonly children?: React.ReactNode
+  readonly key?: string
 }
 
 /**
@@ -11,12 +12,12 @@ export interface ColumnProps {
  * See <Columns> component for details.
  */
 const Column = (props: ColumnProps) => {
-  const { className, children } = props
+  const { className, children, key } = props
 
   return (
-    <div role="presentation" className={cc(['kirk-column', className])}>
+    <li key={key} className={cc(['kirk-column', className])}>
       {children}
-    </div>
+    </li>
   )
 }
 

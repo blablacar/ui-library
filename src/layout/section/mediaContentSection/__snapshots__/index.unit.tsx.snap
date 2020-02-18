@@ -14,12 +14,18 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .c3 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  text-indent: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -364,13 +370,11 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   <article
     className="section-content section-content--large"
   >
-    <div
+    <ul
       className="c2"
-      role="presentation"
     >
-      <div
+      <li
         className="kirk-column c3"
-        role="presentation"
       >
         <div
           className="kirk-media-content-img"
@@ -380,10 +384,9 @@ exports[`MediaContentSection should render default MediaContentSection section 1
             }
           }
         />
-      </div>
-      <div
+      </li>
+      <li
         className="kirk-column c3"
-        role="presentation"
       >
         <div
           className="kirk-media-content-wrapper"
@@ -413,8 +416,8 @@ exports[`MediaContentSection should render default MediaContentSection section 1
             button label
           </a>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </article>
 </div>
 `;
