@@ -30,7 +30,7 @@ When screen width is less than 800px:
 
 **COLORS**
 
-It can switch colors when applyed to darker backgrounds.
+It can switch colors when applied to darker backgrounds.
 
 > Long texts
 
