@@ -85,9 +85,6 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
       100% - ${componentSizes.bulletSizeSmall} + 4px
     ); /* +4px to better hide behind small Bullets */
   }
-  & .kirk-itineraryLocation-label {
-    padding-bottom: ${space.m};
-  }
 
   & .kirk-itineraryLocation-roadContainer {
     margin-top: 0;
