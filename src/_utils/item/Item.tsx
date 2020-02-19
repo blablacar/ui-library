@@ -29,7 +29,7 @@ export interface ItemProps {
   readonly leftBodyAnnotationDisplay?: TextDisplayType
   readonly leftBodyAnnotationColor?: string
   readonly leftAddon?: React.ReactNode
-  readonly rightTitle?: string
+  readonly rightTitle?: string | JSX.Element
   readonly rightTitleDisplay?: TextDisplayType
   readonly rightTitleStrikeThrough?: boolean
   readonly rightTitleAriaLabel?: string

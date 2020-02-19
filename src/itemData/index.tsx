@@ -5,7 +5,7 @@ import { TextDisplayType } from 'text'
 import Button from 'button/Button'
 
 export interface ItemDataProps {
-  readonly data: string
+  readonly data: string | JSX.Element
   readonly dataStrikeThrough?: boolean
   readonly dataAriaLabel?: string
   readonly mainInfo: string
