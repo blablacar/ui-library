@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v21.1.0 (19/02/2020)
+
 - **[UPDATE]** Update `TheVoice` component to be applied on dark backgrounds. `ConfirmationModal` and `SuccessModal` now use `TheVoice` component.
 - **[FIX]** Removed `ItineraryCollapsible` useless css rules
 - **[FIX]** Restore multiline text on `Tabs` when `fixed`
-- [...]
 
 # v21.0.1 (17/02/2020)
 
