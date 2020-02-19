@@ -2,6 +2,8 @@
 
 - **[NEW]** Introduce `LayoutNormalizer` with legacy global layout overrides. Not activated by default.
 - **[NEW]** Add Bus Ride Details story page
+- **[NEW]** Implement `ColumnedContentSection` widget.
+- **[UPDATE]** Use semantic html (ul/li) for `Columns` and `Column` widgets.
 - [...]
 
 # v21.1.0 (19/02/2020)
