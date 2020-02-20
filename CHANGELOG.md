@@ -2,6 +2,15 @@
 
 - **[NEW]** `MainContent` and children components to handle layout vertical composition
 
+# v21.2.0 (20/02/2020)
+
+- **[NEW]** Introduce `LayoutNormalizer` with legacy global layout overrides. Not activated by default.
+- **[NEW]** Add Bus Ride Details story page
+- **[NEW]** Implement `ColumnedContentSection` widget.
+- **[UPDATE]** Use semantic html (ul/li) for `Columns` and `Column` widgets.
+- **[UPDATE]** Add new `Your rides`, `Ride history` and `Search result` pages
+- **[UPDATE]** Make price props on `TripCard` non-mandatory
+
 # v21.1.0 (19/02/2020)
 
 - **[UPDATE]** Update `TheVoice` component to be applied on dark backgrounds. `ConfirmationModal` and `SuccessModal` now use `TheVoice` component.

@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { boolean } from '@storybook/addon-knobs'
 import Section from 'layout/section/baseSection'
 import TabsSection from 'layout/section/tabsSection'
 import TheVoice from 'theVoice'
 import ClockIcon from 'icon/clockIcon'
 import ItemAction from 'itemAction'
 import MessagingSummaryItem from 'messagingSummaryItem'
+import LayoutNormalizer from 'layout/layoutNormalizer'
 
 const stories = storiesOf('Pages|Messaging/Inbox', module)
 
@@ -67,6 +69,7 @@ const defaultTabsConfig = {
 
 stories.add('Default', () => (
   <Fragment>
+    <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
     <Section>
       <TheVoice>Inbox</TheVoice>
     </Section>

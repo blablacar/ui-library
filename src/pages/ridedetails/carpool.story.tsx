@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
+import { boolean } from '@storybook/addon-knobs'
 import Section from 'layout/section/baseSection'
 import TheVoice from 'theVoice'
 import Itinerary from 'itinerary'
@@ -12,11 +13,13 @@ import ItemAction from 'itemAction'
 import ItemInfo from 'itemInfo'
 import { PetIcon, SmokeIcon, BubbleIcon } from 'icon'
 import SubHeader from 'subHeader'
+import LayoutNormalizer from 'layout/layoutNormalizer'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 
 stories.add('Default', () => (
   <Fragment>
+    <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
     <Section>
       <TheVoice>Ven. 11 octobre</TheVoice>
       <Itinerary
@@ -24,20 +27,23 @@ stories.add('Default', () => (
         toAddon="Marseille"
         places={[
           {
-            mainLabel: 'Paris',
+            mainLabel: 'Gare routière de Bercy',
+            subLabel: 'Paris',
             isoDate: '2017-12-11T09:00',
             time: '09:00',
             href: '#',
           },
           {
-            mainLabel: 'Marseille',
-            isoDate: '2017-12-11T12:00',
-            time: '17:00',
+            mainLabel: 'Gare de Marseille Saint Charles',
+            subLabel: 'Marseille',
+            isoDate: '2017-12-11T20:00',
+            time: '20:00',
+            href: '#',
           },
         ]}
         small={false}
       />
-      <ItemData data="17,50 €" dataInfo="Par place" mainInfo="3 places restantes" />
+      <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
       <Divider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
       <ItemAction action="Contacter Vince" leftAddon={<BubbleIcon />} href="#" />

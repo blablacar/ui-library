@@ -7,11 +7,16 @@ import '../src/layout/section/tabsSection/story'
 import '../src/layout/section/highlightSection/story'
 import '../src/layout/section/tripsSection/story'
 import '../src/layout/section/mediaContentSection/story'
+import '../src/layout/section/columnedContentSection/story'
 
 // Pages
 import '../src/pages/messaging/inbox.story'
 import '../src/pages/messaging/brazemarketing.story'
 import '../src/pages/ridedetails/carpool.story'
+import '../src/pages/ridedetails/bus.story'
+import '../src/pages/searchResults/tabs.story'
+import '../src/pages/yourrides/rides.story'
+import '../src/pages/yourrides/history.story'
 import '../src/pages/login/email.story'
 
 // Widgets

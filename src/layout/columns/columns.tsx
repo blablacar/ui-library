@@ -4,7 +4,7 @@ import { ColumnProps } from 'layout/column'
 
 export interface ColumnsProps {
   readonly className?: Classcat.Class
-  readonly children?: React.ReactElement<ColumnProps>[]
+  readonly children: React.ReactElement<ColumnProps>[]
 }
 
 /**
@@ -17,11 +17,7 @@ export interface ColumnsProps {
 const Columns = (props: ColumnsProps) => {
   const { className, children } = props
 
-  return (
-    <div role="presentation" className={cc([className])}>
-      {children}
-    </div>
-  )
+  return <ul className={cc([className])}>{children}</ul>
 }
 
 export default Columns
