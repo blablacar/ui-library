@@ -17,6 +17,7 @@ import '../src/pages/ridedetails/bus.story'
 import '../src/pages/searchResults/tabs.story'
 import '../src/pages/yourrides/rides.story'
 import '../src/pages/yourrides/history.story'
+import '../src/pages/login/email.story'
 
 // Widgets
 import '../src/_utils/story'

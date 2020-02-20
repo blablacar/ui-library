@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** `MainContent` and children components to handle layout vertical composition
 
 # v21.2.0 (20/02/2020)
 
