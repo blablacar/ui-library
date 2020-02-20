@@ -34,7 +34,7 @@ export interface TripCardProps {
   itinerary: Place[]
   driver?: User
   passengers?: User[]
-  price: string
+  price?: string
   flags?: {
     ladiesOnly?: boolean
     maxTwo?: boolean

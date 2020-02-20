@@ -4,6 +4,8 @@
 - **[NEW]** Add Bus Ride Details story page
 - **[NEW]** Implement `ColumnedContentSection` widget.
 - **[UPDATE]** Use semantic html (ul/li) for `Columns` and `Column` widgets.
+- **[UPDATE]** Add new `Your rides`, `Ride history` and `Search result` pages
+- **[UPDATE]** Make price props on `TripCard` non-mandatory
 - [...]
 
 # v21.1.0 (19/02/2020)
