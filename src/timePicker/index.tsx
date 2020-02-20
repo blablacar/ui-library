@@ -60,6 +60,7 @@ export const StyledTimePicker = styled(TimePicker)`
 
   & > select,
   & > select:focus {
+    z-index: 1; /* Needs to be above ::after so the arrow symbol appears clickable */
     position: absolute;
     top: 0;
     left: 0;
