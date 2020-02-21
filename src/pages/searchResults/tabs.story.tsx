@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
 import BlankSeparator from 'blankSeparator'
+import Section from 'layout/section/baseSection'
 import TripCard from 'tripCard'
 import TabsSection from 'layout/section/tabsSection'
 import { TabStatus } from 'tabs'
@@ -10,6 +11,7 @@ import Button, { ButtonStatus } from 'button'
 import Disclaimer from 'disclaimer'
 import Item from '_utils/item'
 import { CarpoolIcon, BusIcon } from 'icon'
+import SearchRecap from 'searchRecap'
 import SubHeader from 'subHeader'
 import TripsSection from 'layout/section/tripsSection'
 import LayoutNormalizer from 'layout/layoutNormalizer'
@@ -43,6 +45,12 @@ const createTripCardConfig = ({ highlighted = false } = {}) => ({
   highlighted: highlighted ? 'Closest match' : '',
   metaUrl: 'Meta URL',
 })
+
+const defaultSearchRecapConfig = {
+  from: 'Bordeaux',
+  to: 'Toulouse, centre ville',
+  info: "Aujourd'hui 14h30, 2 passagers",
+}
 
 const filterButton = (
   <Button status={ButtonStatus.UNSTYLED} href="#">
@@ -108,6 +116,9 @@ stories.add('Default', () => (
   <Fragment>
     <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
 
+    <Section>
+      <SearchRecap {...defaultSearchRecapConfig} />
+    </Section>
     <TripsSection>
       <TripCard {...createTripCardConfig()} />
       <TripCard {...createTripCardConfig()} />

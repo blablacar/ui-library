@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`searchRecap Should display searchRecap component 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 54px;
+  padding: 0 16px;
+  background-color: #EDEDED;
+  border-radius: 16px;
+  color: #054752;
+  font-size: 16px;
+  line-height: 54px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
+  margin-left: 16px;
+}
+
+.c0 .kirk-uneditableTextField-label--ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c0 .kirk-icon {
+  height: 24px;
+}
+
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c2 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c2.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c2.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c2.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c2.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+<div
+  className="kirk-searchRecap"
+>
+  <div
+    className="kirk-uneditableTextField c0"
+  >
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c1"
+      fill="#708C91"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <g
+        fill="none"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="1"
+      >
+        <line
+          x1="22"
+          x2="16.4"
+          y1="22"
+          y2="16.4"
+        />
+        <circle
+          cx="10"
+          cy="10"
+          r="9"
+        />
+      </g>
+    </svg>
+    <div
+      className="kirk-uneditableTextField-label kirk-uneditableTextField-label--ellipsis"
+    >
+      <p
+        className="kirk-text kirk-text-body kirk-requestRecap-route c2"
+        style={
+          Object {
+            "color": "#054752",
+          }
+        }
+      >
+        <span
+          className="kirk-requestRecap-location"
+        >
+          Middlesbrough
+        </span>
+        <svg
+          aria-hidden={true}
+          className="kirk-icon kirk-requestRecap-locationSeparator c1"
+          fill="#708C91"
+          height={14}
+          viewBox="0 0 24 24"
+          width={14}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <g
+            fill="none"
+            stroke="#708C91"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+            transform="rotate(180 12 12)"
+          >
+            <path
+              d="M22 12H2"
+            />
+            <path
+              d="M9 19l-7-7 7-7"
+            />
+          </g>
+        </svg>
+        <span
+          className="kirk-requestRecap-location"
+        >
+          Stoke-on-Trent, city center
+        </span>
+      </p>
+      <span
+        className="kirk-text kirk-text-body kirk-requestRecap-info c2"
+      >
+        Today 2:30pm, 2 passengers
+      </span>
+    </div>
+  </div>
+</div>
+`;
