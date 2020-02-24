@@ -29,4 +29,15 @@ function loadStories() {
   req.keys().forEach(req)
 }
 
-configure(loadStories, module)
+const loaderFn = () => {
+  // manual loading
+  require('../src/typography/display2/story.tsx')
+
+  // dynamic loading
+  const req = require.context('../stories', true)
+  req.keys().forEach(fname => req(fname))
+}
+
+configure(loaderFn, module)
+
+// configure(loadStories, module)
