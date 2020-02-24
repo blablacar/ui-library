@@ -25,10 +25,6 @@ addParameters({
 
 const req = require.context('../stories', true)
 
-function loadStories() {
-  req.keys().forEach(req)
-}
-
 const loaderFn = () => {
   // manual loading
   require('../src/typography/display2/story.tsx')
@@ -39,5 +35,3 @@ const loaderFn = () => {
 }
 
 configure(loaderFn, module)
-
-// configure(loadStories, module)
