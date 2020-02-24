@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Storybook dependency
 - **[FIX]** Fix unclickable arrow in `TimePicker`
 - **[NEW]** `MainContent` and children components to handle layout vertical composition
 
