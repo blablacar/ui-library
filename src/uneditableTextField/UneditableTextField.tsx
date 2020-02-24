@@ -32,15 +32,15 @@ export const UneditableTextField = ({
   return React.createElement(
     componentType,
     {
-      className: cc(['uneditableTextField', className]),
+      className: cc(['kirk-uneditableTextField', className]),
       ...props,
     },
     <Fragment>
       {addOn}
       <div
         className={cc([
-          'uneditableTextField-label',
-          { 'uneditableTextField-label--ellipsis': ellipsis },
+          'kirk-uneditableTextField-label',
+          { 'kirk-uneditableTextField-label--ellipsis': ellipsis },
         ])}
       >
         {children}

@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[NEW]** Add `SearchRecap` component
+- **[BREAKING CHANGE]** Add `kirk-` prefix to classNames in `UneditableTextField`
 - **[UPDATE]** Storybook dependency
 - **[FIX]** Fix unclickable arrow in `TimePicker`
 - **[NEW]** `MainContent` and children components to handle layout vertical composition
