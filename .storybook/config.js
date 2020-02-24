@@ -1,8 +1,10 @@
-import { configure, addDecorator, addParameters } from '@storybook/react'
+import { addDecorator, addParameters } from '@storybook/react'
 
 import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 import { addReadme } from 'storybook-readme'
+
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
 
 import props from './props.md'
 
@@ -13,6 +15,11 @@ addDecorator(withKnobs)
 addParameters({
   options: {
     name: 'BlaBlaCar UI',
+    showPanel: true,
+  },
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
   },
   knobs: {
     escapeHTML: false, // Escapes strings to be safe for inserting as innerHTML. This option is true by default. It's safe to set it to `false` with frameworks like React which do escaping on their side.
@@ -23,10 +30,10 @@ addParameters({
   },
 })
 
-const req = require.context('../stories', true)
+// const req = require.context('../stories', true)
 
-function loadStories() {
-  req.keys().forEach(req)
-}
+// function loadStories() {
+//   req.keys().forEach(req)
+// }
 
-configure(loadStories, module)
+// configure(loadStories, module)
