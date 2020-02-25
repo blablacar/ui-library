@@ -20,6 +20,7 @@ addParameters({
   },
   readme: {
     sidebar: props,
+    codeTheme: 'xonokai',
   },
 })
 
