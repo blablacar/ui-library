@@ -4,17 +4,18 @@ interface Color {
 
 const palette: Color = {
   white: '#FFF',
-  gray: '#DDD',
-  lightGray: '#EDEDED',
-  midnightGreen: '#054752',
+  lightGrey: '#EDEDED',
+  grey: '#DDD',
   lightMidnightGreen: '#708C91',
-  blue: '#00AFF5',
-  darkBlue: '#008FC1',
-  green: '#5DD167',
+  midnightGreenDetail: '#3D5C62',
+  midnightGreen: '#054752',
+  lightRed: '#FDD8DE',
+  red: '#F53F5B',
   orange: '#F78B00',
   yellow: '#FFCA0C',
-  red: '#F53F5B',
-  lightRed: '#FDD8DE',
+  green: '#5DD167',
+  darkBlue: '#008FC1',
+  blue: '#00AFF5',
 }
 
 type Font = {
@@ -132,16 +133,29 @@ export const responsiveBreakpoints = {
 }
 
 export const color: Color = {
+  grey: palette.grey,
+  lightGrey: palette.lightGrey,
+  midnightGreen: palette.midnightGreen,
+  midnightGreenDetail: palette.midnightGreenDetail,
+  lightMidnightGreen: palette.lightMidnightGreen,
+  blue: palette.blue,
+  darkBlue: palette.darkBlue,
+  green: palette.green,
+  orange: palette.orange,
+  yellow: palette.yellow,
+  red: palette.red,
+  lightRed: palette.lightRed,
+
   primary: palette.blue,
   accent: palette.blue,
   primaryText: palette.midnightGreen,
   secondaryText: palette.lightMidnightGreen,
-  fadedText: palette.gray,
+  fadedText: palette.grey,
   textWithBackground: palette.white,
 
-  border: palette.gray,
-  disabled: palette.lightGray,
-  divider: palette.lightGray,
+  border: palette.grey,
+  disabled: palette.lightGrey,
+  divider: palette.lightGrey,
 
   icon: palette.lightMidnightGreen,
   iconHighlight: palette.midnightGreen,
@@ -150,17 +164,17 @@ export const color: Color = {
 
   link: palette.blue,
   defaultBackground: palette.white,
-  lightBackground: palette.lightGray,
-  inputBackground: palette.lightGray,
+  lightBackground: palette.lightGrey,
+  inputBackground: palette.lightGrey,
   pushBackground: palette.midnightGreen,
   warningBackground: palette.midnightGreen,
   successBackground: palette.green,
-  inputBorder: palette.lightGray,
+  inputBorder: palette.lightGrey,
   inputBorderFocus: palette.blue,
   inputError: palette.lightRed,
   inputPlaceholder: palette.lightMidnightGreen,
   inputCaret: palette.blue,
-  hover: palette.lightGray,
+  hover: palette.lightGrey,
 
   success: palette.green,
   info: palette.blue,
@@ -170,21 +184,21 @@ export const color: Color = {
   proximityClose: palette.green,
   proximityMiddle: palette.yellow,
   proximityFar: palette.orange,
-  proximityDisabled: palette.lightGray,
+  proximityDisabled: palette.lightGrey,
 
   priceLow: palette.green,
   priceMedium: palette.orange,
   priceHigh: palette.red,
 
   primaryActive: palette.darkBlue,
-  secondaryActive: palette.gray,
+  secondaryActive: palette.grey,
 
   polylinePrimary: '#3D5C62',
   polylineStrokePrimary: palette.midnightGreen,
-  polylineSecondary: palette.gray,
+  polylineSecondary: palette.grey,
   polylineStrokeSecondary: palette.lightMidnightGreen,
 
-  tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
+  tapHighlight: 'rgba(221, 221, 221, .4)', // grey, 40%
 }
 
 export const pxToInteger = (size: string): number => parseInt(size.replace('px', ''), 10)

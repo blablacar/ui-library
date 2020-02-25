@@ -71,8 +71,8 @@ const renderFonts = (f: string) => {
   }
   return (
     <div key={f} style={style}>
-      <strong style={{ backgroundColor: color.lightGray }}>{f}</strong>
-      <p style={{ backgroundColor: color.lightGray }}>{placeholder}</p>
+      <strong style={{ backgroundColor: color.lightGrey }}>{f}</strong>
+      <p style={{ backgroundColor: color.lightGrey }}>{placeholder}</p>
     </div>
   )
 }
