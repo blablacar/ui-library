@@ -6,7 +6,7 @@ import { color } from '_utils/branding'
 
 import Section from 'layout/section/baseSection'
 import TextDisplay2 from './index'
-import readme from './readme.md'
+import readme from './specification/display2.md'
 
 const stories = storiesOf('Brand|typography', module)
 stories.addDecorator(withKnobs)
