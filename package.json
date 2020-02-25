@@ -1,7 +1,8 @@
 {
   "name": "@blablacar/ui-library",
   "version": "21.2.0",
-  "description": "BlaBlaCar React UI component library",
+  "description": "BlaBlaCar Component Library for React",
+  "author": "BlaBlaCar front-end team",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "homepage": "https://blablacar.github.io/ui-library",
@@ -30,7 +31,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "BlaBlaCar front-end team",
   "keywords": [
     "blablacar",
     "design-system",

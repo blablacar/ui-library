@@ -14,7 +14,7 @@ addDecorator(withKnobs)
 
 addParameters({
   options: {
-    name: 'BlaBlaCar UI',
+    name: 'BlaBlaCar',
     showPanel: true,
   },
   docs: {
