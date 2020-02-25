@@ -1,6 +1,8 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
 
 # v22.1.0 (27/02/2020)
 
