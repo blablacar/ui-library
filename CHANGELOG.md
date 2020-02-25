@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** New typographic components (`TextDisplay2`, `TextDisplay1`, ...) on top of `Text`
 - **[NEW]** Add `SearchRecap` component
 - **[BREAKING CHANGE]** Add `kirk-` prefix to classNames in `UneditableTextField`
 - **[UPDATE]** Storybook dependency
