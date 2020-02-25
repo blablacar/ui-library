@@ -21,11 +21,11 @@ exports[`UneditableTextField Should have the proper default props 1`] = `
   text-decoration: none;
 }
 
-.c0 .uneditableTextField-label:not(:first-child) {
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c0 .uneditableTextField-label--ellipsis {
+.c0 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -36,10 +36,10 @@ exports[`UneditableTextField Should have the proper default props 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-uneditableTextField c0"
 >
   <div
-    className="uneditableTextField-label"
+    className="kirk-uneditableTextField-label"
   >
     Hello world
   </div>
@@ -67,11 +67,11 @@ exports[`UneditableTextField Should have the text ellipsed 1`] = `
   text-decoration: none;
 }
 
-.c0 .uneditableTextField-label:not(:first-child) {
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c0 .uneditableTextField-label--ellipsis {
+.c0 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -82,10 +82,10 @@ exports[`UneditableTextField Should have the text ellipsed 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-uneditableTextField c0"
 >
   <div
-    className="uneditableTextField-label uneditableTextField-label--ellipsis"
+    className="kirk-uneditableTextField-label kirk-uneditableTextField-label--ellipsis"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel molestie sapien justo nec orci.
   </div>
@@ -113,11 +113,11 @@ exports[`UneditableTextField Should support add-ons 1`] = `
   text-decoration: none;
 }
 
-.c0 .uneditableTextField-label:not(:first-child) {
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c0 .uneditableTextField-label--ellipsis {
+.c0 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -128,13 +128,13 @@ exports[`UneditableTextField Should support add-ons 1`] = `
 }
 
 <div
-  className="uneditableTextField c0"
+  className="kirk-uneditableTextField c0"
 >
   <div>
     Add-on
   </div>
   <div
-    className="uneditableTextField-label"
+    className="kirk-uneditableTextField-label"
   >
     Hello world
   </div>
@@ -162,11 +162,11 @@ exports[`UneditableTextField Should support component links 1`] = `
   text-decoration: none;
 }
 
-.c0 .uneditableTextField-label:not(:first-child) {
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c0 .uneditableTextField-label--ellipsis {
+.c0 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -177,11 +177,11 @@ exports[`UneditableTextField Should support component links 1`] = `
 }
 
 <a
-  className="uneditableTextField c0"
+  className="kirk-uneditableTextField c0"
   href="#bar"
 >
   <div
-    className="uneditableTextField-label"
+    className="kirk-uneditableTextField-label"
   >
     Click me
   </div>
@@ -209,11 +209,11 @@ exports[`UneditableTextField Should support simple links 1`] = `
   text-decoration: none;
 }
 
-.c0 .uneditableTextField-label:not(:first-child) {
+.c0 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c0 .uneditableTextField-label--ellipsis {
+.c0 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -224,11 +224,11 @@ exports[`UneditableTextField Should support simple links 1`] = `
 }
 
 <a
-  className="uneditableTextField c0"
+  className="kirk-uneditableTextField c0"
   href="#foo"
 >
   <div
-    className="uneditableTextField-label"
+    className="kirk-uneditableTextField-label"
   >
     Click me
   </div>

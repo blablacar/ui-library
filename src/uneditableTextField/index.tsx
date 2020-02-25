@@ -19,11 +19,11 @@ const StyledUneditableTextField = styled(uneditableTextField)`
     text-decoration: none;
   }
 
-  & .uneditableTextField-label:not(:first-child) {
+  & .kirk-uneditableTextField-label:not(:first-child) {
     margin-left: ${space.l};
   }
 
-  & .uneditableTextField-label--ellipsis {
+  & .kirk-uneditableTextField-label--ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
