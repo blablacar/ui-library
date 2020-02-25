@@ -26,13 +26,8 @@ addParameters({
 
 const req = require.context('../stories', true)
 
-const loaderFn = () => {
-  // manual loading
-  require('../src/typography/display2/story.tsx')
-
-  // dynamic loading
-  const req = require.context('../stories', true)
-  req.keys().forEach(fname => req(fname))
+function loadStories() {
+  req.keys().forEach(req)
 }
 
-configure(loaderFn, module)
+configure(loadStories, module)
