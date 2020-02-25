@@ -1,8 +1,8 @@
 {
   "name": "@blablacar/ui-library",
   "version": "21.2.0",
-  "description": "BlaBlaCar Component Library for React",
-  "author": "BlaBlaCar front-end team",
+  "description": "BlaBlaCar's Component Library for React",
+  "author": "BlaBlaCar SPA Team",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "homepage": "https://blablacar.github.io/ui-library",

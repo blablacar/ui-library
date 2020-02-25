@@ -1,7 +1,7 @@
 // const babelConfig = require('../.babelrc')
 
 module.exports = {
-  stories: ['../src/**/story.js'],
+  stories: ['../src/colors/story.(mdx|tsx)'],
   addons: [
     '@storybook/addon-knobs/register',
     '@storybook/addon-actions/register',
