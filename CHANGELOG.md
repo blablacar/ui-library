@@ -1,5 +1,9 @@
 # Unreleased
 
+- [...]
+
+# v22.0.0 (26/02/2020)
+
 - **[NEW]** Add `SearchRecap` component
 - **[BREAKING CHANGE]** Add `kirk-` prefix to classNames in `UneditableTextField`
 - **[UPDATE]** Storybook dependency
