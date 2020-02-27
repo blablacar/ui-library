@@ -8,6 +8,7 @@ import '../src/layout/section/highlightSection/story'
 import '../src/layout/section/tripsSection/story'
 import '../src/layout/section/mediaContentSection/story'
 import '../src/layout/section/columnedContentSection/story'
+import '../src/layout/section/illustratedSection/story'
 
 // Pages
 import '../src/pages/messaging/inbox.story'

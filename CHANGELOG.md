@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `IllustratedSection` component
 - **[NEW]** Add `LockIcon`
 - **[UPDATE]** Fix `Button` with `Icon` display case
 - [...]
