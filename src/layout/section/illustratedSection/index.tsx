@@ -31,6 +31,7 @@ const StyledIllustratedSection = styled(IllustratedSection)`
       margin-left: 0;
       margin-right: 0;
       width: 33.33%;
+      padding-top: ${space.xl};
     }
 
     & .kirk-illustratedSection-content {
