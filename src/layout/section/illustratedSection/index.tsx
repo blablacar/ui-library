@@ -12,7 +12,10 @@ const StyledIllustratedSection = styled(IllustratedSection)`
   & .kirk-illustratedSection-illustration {
     margin-left: -${space.xl};
     margin-right: -${space.xl};
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   & .kirk-illustratedSection-illustration img {

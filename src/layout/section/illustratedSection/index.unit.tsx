@@ -8,8 +8,18 @@ const defaultProps = {
 }
 
 describe('IllustratedSection', () => {
-  it('should render default MediaContentSection section', () => {
+  it('should render default IllustratedSection section', () => {
     const section = <IllustratedSection {...defaultProps}>Hello World</IllustratedSection>
+    const renderedSection = renderer.create(section).toJSON()
+    expect(renderedSection).toMatchSnapshot()
+  })
+
+  it('should render an IllustratedSection section with an Avatar', () => {
+    const section = (
+      <IllustratedSection {...defaultProps} isAvatar>
+        Hello World
+      </IllustratedSection>
+    )
     const renderedSection = renderer.create(section).toJSON()
     expect(renderedSection).toMatchSnapshot()
   })

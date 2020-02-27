@@ -20,3 +20,16 @@ stories.add('default', () => (
     </ItemRadioGroup>
   </IllustratedSection>
 ))
+
+stories.add('avatar version', () => (
+  <IllustratedSection
+    illustrationUrl="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg"
+    isAvatar
+  >
+    <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
+    <ItemRadioGroup name="2mitb" withSeparators withChevrons>
+      <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
+      <ItemRadio name="2mitb" value="false" labelTitle="No, I'll squeeze in 3." />
+    </ItemRadioGroup>
+  </IllustratedSection>
+))
