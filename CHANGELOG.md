@@ -1,6 +1,12 @@
 # Unreleased
 
 - **[NEW]** New typographic components (`TextDisplay2`, `TextDisplay1`, ...) on top of `Text`
+- **[NEW]** Add `LockIcon`
+- **[UPDATE]** Fix `Button` with `Icon` display case
+- [...]
+
+# v22.0.0 (26/02/2020)
+
 - **[NEW]** Add `SearchRecap` component
 - **[BREAKING CHANGE]** Add `kirk-` prefix to classNames in `UneditableTextField`
 - **[UPDATE]** Storybook dependency
