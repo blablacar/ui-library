@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Add `IllustratedSection` component
 
 # v22.0.0 (26/02/2020)
 
