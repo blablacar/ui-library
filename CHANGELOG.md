@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v22.1.0 (27/02/2020)
+
 - **[NEW]** Add `IllustratedSection` component
 - **[NEW]** Add `LockIcon`
 - **[UPDATE]** Fix `Button` with `Icon` display case
-- [...]
 
 # v22.0.0 (26/02/2020)
 
