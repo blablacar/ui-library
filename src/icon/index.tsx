@@ -51,6 +51,7 @@ import LegRestIcon from './legRest'
 import LegRoomIcon from './legRoom'
 import LightIcon from './light'
 import LightningIcon from './lightningIcon'
+import LockIcon from './lockIcon'
 import MagazineIcon from './magazine'
 import MailIcon from './mailIcon'
 import MapIcon from './mapIcon'
@@ -154,6 +155,7 @@ export {
   LegRoomIcon,
   LightIcon,
   LightningIcon,
+  LockIcon,
   MagazineIcon,
   MailIcon,
   MapIcon,
