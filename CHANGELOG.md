@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
 - **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
 - **[FIX]** Improve a11y on `Stepper` for keyboard navigation and screen readers
 - **[NEW]** New typographic components
