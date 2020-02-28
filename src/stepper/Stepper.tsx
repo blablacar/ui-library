@@ -160,29 +160,12 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
   createButtonListeners(callback: () => void) {
     return isTouchScreen
       ? { onTouchStart: this.handleButtonDown(callback), onTouchEnd: this.handleButtonUp(callback) }
-      : { onMouseDown: this.handleButtonDown(callback), onMouseUp: this.handleButtonUp(callback) }
-  }
-
-  // Keyboard events used on <input type="range">
-  // Cannot be used on buttons since they can be "disabled" and thus unresponsive to events
-  // Note: ideally this would trigger a visually different active state on controls for feedback
-  handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    switch (e.key) {
-      case 'ArrowLeft':
-      case 'ArrowDown':
-        this.decrement()
-        break
-      case 'ArrowRight':
-      case 'ArrowUp':
-        this.increment()
-        break
-      case 'Home':
-        this.setMinimum()
-        break
-      case 'End':
-        this.setMaximum()
-        break
-    }
+      : {
+          onMouseDown: this.handleButtonDown(callback),
+          // Use onClick and not mouseDown so that the event is triggered
+          // even when pressing ENTER and SPACEBAR
+          onClick: this.handleButtonUp(callback),
+        }
   }
 
   render() {
@@ -192,7 +175,6 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
       increaseLabel,
       decreaseLabel,
       format,
-      name,
       min,
       max,
       valueClassName,
@@ -203,22 +185,12 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     const buttonSize = StepperButtonSize[display]
 
     return (
-      <div className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
-        <input
-          tabIndex={0}
-          className="kirk-stepper-range"
-          type="range"
-          min={this.props.min}
-          max={this.props.max}
-          defaultValue={`${this.state.value}`}
-          step={this.props.step}
-          aria-valuemin={this.props.min}
-          aria-valuemax={this.props.max}
-          aria-valuenow={this.state.value}
-          onKeyDown={this.handleKeyDown}
-        />
+      <div
+        className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}
+        aria-label={children}
+      >
         <Button
-          tabIndex="-1"
+          aria-label={decreaseLabel}
           type="button"
           className="kirk-stepper-decrement"
           status={ButtonStatus.UNSTYLED}
@@ -226,25 +198,18 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           isBubble
           {...this.createButtonListeners(this.decrement)}
         >
-          <MinusIcon
-            title={decreaseLabel}
-            iconColor={isMin ? color.disabled : color.primary}
-            size={buttonSize}
-          />
+          <MinusIcon iconColor={isMin ? color.disabled : color.primary} size={buttonSize} />
         </Button>
         <div
+          aria-live="polite"
           className={cc(['kirk-stepper-value', valueClassName])}
           style={{ fontSize: `${this.state.fontSize}px` }}
           ref={this.ref}
         >
           {format(this.state.value)}
         </div>
-        <label>
-          <span>{children}</span>
-          <input type="hidden" name={name} value={format(this.state.value)} readOnly />
-        </label>
         <Button
-          tabIndex="-1"
+          aria-label={increaseLabel}
           type="button"
           className="kirk-stepper-increment"
           status={ButtonStatus.UNSTYLED}
@@ -252,11 +217,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           isBubble
           {...this.createButtonListeners(this.increment)}
         >
-          <PlusIcon
-            title={increaseLabel}
-            iconColor={isMax ? color.disabled : color.primary}
-            size={buttonSize}
-          />
+          <PlusIcon iconColor={isMax ? color.disabled : color.primary} size={buttonSize} />
         </Button>
       </div>
     )

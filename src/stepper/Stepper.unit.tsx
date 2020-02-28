@@ -1,9 +1,11 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 
-import Stepper, { StepperDisplay } from './Stepper'
+import Button from 'button'
 import MinusIcon from 'icon/minusIcon'
 import PlusIcon from 'icon/plusIcon'
+
+import Stepper, { StepperDisplay } from './Stepper'
 
 const defaultProps = {
   name: 'testName',
@@ -30,11 +32,26 @@ it('Should have classNames', () => {
 it('Should have the default text & attributes', () => {
   const stepper = mount(
     <Stepper name="test" increaseLabel="Plus" decreaseLabel="Minus">
-      Amount of something
+      Choose the number of passengers
     </Stepper>,
   )
-  expect(stepper.find('label span').text()).toBe('Amount of something')
-  expect(stepper.find('input[type="hidden"]').prop('value')).toBe(0)
+
+  expect(stepper.find('.kirk-stepper').prop('aria-label')).toEqual(
+    'Choose the number of passengers',
+  )
+  expect(
+    stepper
+      .find(Button)
+      .at(0)
+      .prop('aria-label'),
+  ).toBe('Minus')
+  expect(
+    stepper
+      .find(Button)
+      .at(1)
+      .prop('aria-label'),
+  ).toBe('Plus')
+
   expect(stepper.prop('min')).toBe(Number.MIN_SAFE_INTEGER)
   expect(stepper.prop('max')).toBe(Number.MAX_SAFE_INTEGER)
   expect(stepper.prop('step')).toBe(1)
@@ -49,10 +66,10 @@ it('Should be able to increment/decrement the value', () => {
     </Stepper>,
   )
   expect(stepper.state('value')).toBe(3)
-  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
+  stepper.find('.kirk-stepper-increment').simulate('click')
   expect(stepper.state('value')).toBe(6)
   expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 6 })
-  stepper.find('.kirk-stepper-decrement').simulate('mouseUp')
+  stepper.find('.kirk-stepper-decrement').simulate('click')
   expect(stepper.state('value')).toBe(3)
   expect(onChange).toHaveBeenCalledWith({ name: 'testName', value: 3 })
 })
@@ -63,7 +80,7 @@ it('Should be able to have a max value', () => {
       Amount of something
     </Stepper>,
   )
-  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
+  stepper.find('.kirk-stepper-increment').simulate('click')
   expect(stepper.state('value')).toBe(10)
 })
 
@@ -73,7 +90,7 @@ it('Should be able to have a min value', () => {
       Amount of something
     </Stepper>,
   )
-  stepper.find('.kirk-stepper-decrement').simulate('mouseUp')
+  stepper.find('.kirk-stepper-decrement').simulate('click')
   expect(stepper.state('value')).toBe(3)
 })
 
@@ -101,7 +118,7 @@ it('Be able to format the value', () => {
       Amount of something
     </Stepper>,
   )
-  expect(stepper.find('input[type="hidden"]').prop('value')).toBe('2 €')
+  expect(stepper.find('.kirk-stepper-value').prop('children')).toBe('2 €')
 })
 
 it('Should be able to receive props and then update the value', () => {
@@ -138,7 +155,7 @@ it('Should be able to keep the right value after props change', () => {
       Amount of something
     </Stepper>,
   )
-  stepper.find('.kirk-stepper-increment').simulate('mouseUp')
+  stepper.find('.kirk-stepper-increment').simulate('click')
   stepper.setProps({ min: 2 })
   expect(stepper.state('value')).toBe(8)
 })
