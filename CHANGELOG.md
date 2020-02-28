@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** Fix `Stepper` button visual issue
 
 # v22.1.0 (27/02/2020)
 

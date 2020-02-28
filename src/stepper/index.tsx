@@ -34,9 +34,10 @@ const StyledStepper = styled(Stepper)`
     align-self: center;
   }
 
-  & div .kirk-stepper-decrement,
-  & div .kirk-stepper-increment {
-    min-width: 24px;
+  & .kirk-stepper-decrement,
+  & .kirk-stepper-increment {
+    align-self: center;
+    border: none;
   }
 
   &.kirk-stepper-large .kirk-stepper-value {
