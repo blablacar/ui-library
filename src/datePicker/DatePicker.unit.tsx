@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import DayPicker, { NavbarElementProps, CaptionElementProps } from 'react-day-picker'
 import DatePicker, { DatePickerOrientation } from './DatePicker'
@@ -64,19 +64,69 @@ describe('DatePicker', () => {
   describe('react-day-picker', () => {
     it('Should forward props to the DayPicker component', () => {
       const now = new Date()
-      const wrapper = shallow(
-        <DatePicker name="datepicker" initialDate={now} numberOfMonths={12} />,
-      )
+      const wrapper = mount(<DatePicker name="datepicker" initialDate={now} />)
       const instance = wrapper.instance()
 
-      expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(12)
+      expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(2)
       expect(wrapper.find(DayPicker).prop('selectedDays')).toEqual(now)
-      expect(wrapper.find(DayPicker).prop('initialMonth')).toEqual(now)
       expect(wrapper.find(DayPicker).prop('onDayClick')).toEqual(instance.onDayClick)
       expect(wrapper.find(DayPicker).prop('navbarElement')).toEqual(instance.renderNavbar)
       expect(wrapper.find(DayPicker).prop('captionElement')).toEqual(instance.renderCaption)
       expect(wrapper.find(DayPicker).prop('renderDay')).toEqual(instance.renderDay)
       expect(wrapper.find(DayPicker).prop('firstDayOfWeek')).toEqual(0)
+    })
+
+    it('Should forward same value for selectedDays and initialMonth props to the DayPicker component', () => {
+      const initialDate = new Date()
+      initialDate.setMonth(initialDate.getMonth() + 6)
+      const wrapper = mount(
+        <DatePicker
+          name="datepicker"
+          initialDate={initialDate}
+          initialMonth={initialDate}
+          numberOfMonths={12}
+        />,
+      )
+
+      expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(12)
+      expect(wrapper.find(DayPicker).prop('selectedDays')).toEqual(initialDate)
+      expect(wrapper.find(DayPicker).prop('initialMonth')).toEqual(initialDate)
+    })
+
+    it('Should forward only selectedDays and keep default initialMonth props to the DayPicker component', () => {
+      const offsetTop = 1000
+      const stickyPositionTop = 50
+      window.scrollTo = jest.fn()
+      Object.defineProperty(HTMLElement.prototype, 'offsetTop', {
+        configurable: true,
+        value: offsetTop,
+      })
+
+      const initialDate = new Date()
+      initialDate.setMonth(initialDate.getMonth() + 6)
+      const wrapper = mount(
+        <DatePicker
+          name="datepicker"
+          initialDate={initialDate}
+          numberOfMonths={12}
+          stickyPositionTop={stickyPositionTop}
+        />,
+      )
+
+      expect(wrapper.find(DayPicker).prop('numberOfMonths')).toEqual(12)
+      expect(wrapper.find(DayPicker).prop('selectedDays')).toEqual(initialDate)
+      expect(wrapper.find(DayPicker).prop('initialMonth')).not.toEqual(initialDate)
+      expect(window.scrollTo).toHaveBeenCalledWith(0, offsetTop + stickyPositionTop)
+    })
+
+    afterEach(() => {
+      // Reset offsetTop
+      Object.defineProperty(HTMLElement.prototype, 'offsetTop', {
+        configurable: true,
+        value: 0,
+      })
+
+      jest.clearAllMocks()
     })
   })
 })

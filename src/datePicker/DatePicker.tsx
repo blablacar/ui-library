@@ -30,6 +30,7 @@ export interface DatePickerProps {
   readonly months?: string[]
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly initialDate?: Date
+  readonly initialMonth?: Date
   readonly className?: Classcat.Class
   readonly numberOfMonths?: number
   readonly orientation?: DatePickerOrientation
@@ -51,6 +52,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
     months: defaultMonths,
     numberOfMonths: 2,
     initialDate: null,
+    initialMonth: new Date(),
     isOutsideRange: day => DayPicker.DateUtils.isDayBefore(day, new Date()),
     orientation: DatePickerOrientation.HORIZONTAL,
     fromMonth: new Date(),
@@ -61,6 +63,8 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
   state = {
     date: this.props.initialDate,
   }
+
+  dayPickerContainer = React.createRef<HTMLDivElement>()
 
   formatMonthTitle = (date: Date): string => {
     const currentYear = `${new Date().getFullYear()}`
@@ -142,6 +146,38 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
 
   renderDay = (day: Date) => <span>{day.getDate()}</span>
 
+  scrollToSelectedMonth = () => {
+    const { initialDate, initialMonth } = this.props
+
+    if (initialDate === null) return
+
+    // Get the number of months between initialMonth (first month) and initialDate (selected date)
+    // This gives us the index to select the right month in '.DayPicker-Month' array
+    const month =
+      (initialDate.getFullYear() - initialMonth.getFullYear()) * 12 +
+      initialDate.getMonth() -
+      initialMonth.getMonth()
+
+    const selectedMonth = this.dayPickerContainer.current.querySelectorAll('.DayPicker-Month')[
+      month
+    ] as HTMLElement
+
+    if (typeof selectedMonth === 'undefined') return
+
+    const top = selectedMonth.offsetTop + this.props.stickyPositionTop
+    if (top > window.innerHeight + window.pageYOffset) {
+      window.scrollTo(0, top)
+    }
+  }
+
+  componentDidMount() {
+    this.scrollToSelectedMonth()
+  }
+
+  componentDidUpdate() {
+    this.scrollToSelectedMonth()
+  }
+
   render() {
     const {
       className,
@@ -153,12 +189,14 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       weekdaysLong,
       months,
       firstDayOfWeek,
-      initialDate,
+      initialMonth,
     } = this.props
     const { date } = this.state
     const layoutClassName = `months-grid-${numberOfMonths}`
+
     return (
       <div
+        ref={this.dayPickerContainer}
         className={cc([
           BASE_CLASSNAME,
           className,
@@ -181,7 +219,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
           months={months}
           firstDayOfWeek={firstDayOfWeek}
           localeUtils={{ ...DayPicker.LocaleUtils, formatMonthTitle: this.formatMonthTitle }}
-          initialMonth={initialDate}
+          initialMonth={initialMonth}
         />
       </div>
     )

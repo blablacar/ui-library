@@ -90,3 +90,20 @@ stories.add('example vertical (6 months)', () => (
     />
   </Section>
 ))
+
+stories.add('example vertical (12 months - selected date in 6 months)', () => {
+  const initialeDate = new Date()
+  initialeDate.setMonth(initialeDate.getMonth() + 6)
+
+  return (
+    <Section>
+      <DatePicker
+        initialDate={initialeDate}
+        name="datepicker"
+        onChange={action('onChange')}
+        orientation={DatePickerOrientation.VERTICAL}
+        numberOfMonths={12}
+      />
+    </Section>
+  )
+})
