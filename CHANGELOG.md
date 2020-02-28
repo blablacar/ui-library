@@ -6,7 +6,20 @@
 - **[NEW]** Add `DatePickerOverlay` component
 - **[NEW]** Add `DatePickerFullScreen` component
 - **[NEW]** Add `CalendarIcon` component
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
 - [..]
+
+# v22.4.0 (11/03/2020)
+
+- **[NEW]** Add an `ItemsSection` to display two `ItemInfo` in a row
+- **[UPDATE]** Improve `TripCard` layout to allow text to truncate.
+- **[FIX]** Add vertical padding to `Paragraph`
+- **[FIX]** Fix padding for title in `ColumnedContentSection`
+- **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
+- **[NEW]** `MediaSizeProvider` component
+- [...]
 
 # v22.3.1 (10/03/2020)
 

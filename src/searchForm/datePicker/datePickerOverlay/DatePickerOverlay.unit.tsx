@@ -12,7 +12,7 @@ describe('DatePickerOverlay', () => {
     expect(wrapper.find(Item).prop('leftAddon')).toEqual(<CalendarIcon />)
   })
 
-  it('should have a DatePicker with 1 month displayed and  in horizontal orientation', () => {
+  it('should have a DatePicker with 1 month displayed and  in horizontal orienation', () => {
     const wrapper = shallow(<DatePickerOverlay title="Today" />)
     expect(wrapper.find(DatePicker).prop('numberOfMonths')).toEqual(1)
     expect(wrapper.find(DatePicker).prop('orientation')).toEqual(DatePickerOrientation.HORIZONTAL)
