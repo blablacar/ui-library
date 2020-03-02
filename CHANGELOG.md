@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `TripsSection` left scroll padding issue
 - [..]
 
 # v22.1.1 (28/02/2020)
