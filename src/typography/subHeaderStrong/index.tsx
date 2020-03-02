@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextDisplay2 from './TextDisplay2'
+import TextSubHeaderStrong from './SubHeader'
 
-const StyledTextDisplay2 = styled(TextDisplay2)`
+const StyledTextSubHeaderStrong = styled(TextSubHeaderStrong)`
   color: ${color.primaryText};
-  font-size: ${font.xxl.size};
-  line-height: ${font.xxl.lineHeight};
+  font-size: ${font.l.size};
   font-weight: ${fontWeight.medium};
+  line-height: ${font.l.lineHeight};
 
   &.kirk-text--inverse {
     color: ${color.textWithBackground};
   }
 `
-export default StyledTextDisplay2
+export default StyledTextSubHeaderStrong

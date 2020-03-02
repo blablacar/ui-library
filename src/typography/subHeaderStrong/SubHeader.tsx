@@ -8,7 +8,7 @@ export interface TextProps {
   readonly isInverted?: boolean
 }
 
-const TextDiplay2 = ({ children, className, isInverted = false, ...props }: TextProps) => {
+const TextSubHeaderStrong = ({ children, className, isInverted = false, ...props }: TextProps) => {
   const classes = isInverted ? `kirk-text--inverse ${className}` : className
   const content = typeof children === 'string' ? replaceNewLineWithBR(children) : children
 
@@ -19,4 +19,4 @@ const TextDiplay2 = ({ children, className, isInverted = false, ...props }: Text
   )
 }
 
-export default TextDiplay2
+export default TextSubHeaderStrong

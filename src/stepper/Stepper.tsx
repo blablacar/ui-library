@@ -223,6 +223,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           className="kirk-stepper-decrement"
           status={ButtonStatus.UNSTYLED}
           disabled={isMin}
+          isBubble
           {...this.createButtonListeners(this.decrement)}
         >
           <MinusIcon
@@ -248,6 +249,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           className="kirk-stepper-increment"
           status={ButtonStatus.UNSTYLED}
           disabled={isMax}
+          isBubble
           {...this.createButtonListeners(this.increment)}
         >
           <PlusIcon

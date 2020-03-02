@@ -1,9 +1,26 @@
 # Unreleased
 
-- **[NEW]** New typographic components (`TextDisplay2`, `TextDisplay1`, ...) on top of `Text`
+- **[NEW]** New typographic components on top of `Text`
+  --`TextDisplay1`
+  --`TextDisplay2`
+  --`TextBody`
+  --`TextBodyStrong`
+  --`TextButton`
+  --`TextCaption`
+  --`TextSubHeader`
+  --`TextSubHeaderStrong`
+  --`TextTitle`
+  --`TextTitleStrong`
+
+# v22.1.1 (28/02/2020)
+
+- **[FIX]** Fix `Stepper` button visual issue
+
+# v22.1.0 (27/02/2020)
+
+- **[NEW]** Add `IllustratedSection` component
 - **[NEW]** Add `LockIcon`
 - **[UPDATE]** Fix `Button` with `Icon` display case
-- [...]
 
 # v22.0.0 (26/02/2020)
 
@@ -20,6 +37,8 @@
 - **[NEW]** Implement `ColumnedContentSection` widget.
 - **[UPDATE]** Use semantic html (ul/li) for `Columns` and `Column` widgets.
 - **[UPDATE]** Add new `Your rides`, `Ride history` and `Search result` pages
+- **[UPDATE]** Add new `Your rides`
+- `Ride history` and `Search result` pages
 - **[UPDATE]** Make price props on `TripCard` non-mandatory
 
 # v21.1.0 (19/02/2020)
