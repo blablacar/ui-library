@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextDisplay2 from './TextDisplay2'
+import Text from '../index'
 
-const StyledTextDisplay2 = styled(TextDisplay2)`
+const StyledTextDisplay2 = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.xxl.size};
   line-height: ${font.xxl.lineHeight};

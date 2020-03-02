@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextBody from './Body'
+import TextStyle from '../index'
 
-const StyledTextBody = styled(TextBody)`
+const StyledTextBody = styled(TextStyle)`
   color: ${color.secondaryText};
   font-size: ${font.base.size};
   font-weight: ${fontWeight.regular} 
   line-height: ${font.base.lineHeight};
-
-  &.kirk-text--inverse {
-    color: ${color.textWithBackground};
-  }
 `
 export default StyledTextBody

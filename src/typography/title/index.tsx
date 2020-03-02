@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextTitle from './Title'
+import Text from '../index'
 
-const StyledTextTitle = styled(TextTitle)`
+const StyledTextTitle = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.m.size};
   font-weight: ${fontWeight.regular} 
   line-height: ${font.m.lineHeight};
-
-  &.kirk-text--inverse {
-    color: ${color.textWithBackground};
-  }
 `
 export default StyledTextTitle

@@ -1,17 +1,13 @@
 import styled from 'styled-components'
 import { color, font, fontWeight, responsiveBreakpoints } from '_utils/branding'
 
-import TextDisplay1 from './TextDisplay1'
+import Text from '../index'
 
-const StyledTextDisplay1 = styled(TextDisplay1)`
+const StyledTextDisplay1 = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.l.size};
   line-height: ${font.l.lineHeight};
   font-weight: ${fontWeight.medium};
-
-  &.kirk-text--inverse {
-    color: ${color.textWithBackground};
-  }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     & {

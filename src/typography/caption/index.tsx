@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextCaption from './Caption'
+import Text from '../index'
 
-const StyledTextCaption = styled(TextCaption)`
+const StyledTextCaption = styled(Text)`
   color: ${color.secondaryText};
   font-size: ${font.s.size};
   font-weight: ${fontWeight.regular};
   line-height: ${font.s.lineHeight};
-
-  &.kirk-text--inverse {
-    color: ${color.textWithBackground};
-  }
 `
 export default StyledTextCaption

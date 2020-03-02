@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { color, font, fontWeight } from '_utils/branding'
 
-import TextSubHeader from './SubHeader'
+import Text from '../index'
 
-const StyledTextSubHeader = styled(TextSubHeader)`
+const StyledTextSubHeader = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.l.size};
   font-weight: ${fontWeight.regular} 
   line-height: ${font.l.lineHeight};
-
-  &.kirk-text--inverse {
-    color: ${color.textWithBackground};
-  }
 `
 export default StyledTextSubHeader
