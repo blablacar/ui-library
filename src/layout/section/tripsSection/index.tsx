@@ -19,6 +19,7 @@ const StyledTripsSection = styled(TripsSection)`
     -ms-overflow-style: none; /* Remove scrollbar visually IE 10+ */
     scrollbar-width: none; /* Remove scrollbar visually Firefox */
     scroll-snap-type: x mandatory;
+    scroll-padding: ${space.xl};
   }
 
   & .kirk-tripsSection .kirk-tripCard {
