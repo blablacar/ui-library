@@ -1,11 +1,11 @@
 # Unreleased
 
-- **[NEW]** New typographic components on top of `Text`
+- **[NEW]** New typographic components
   --`TextDisplay1`
   --`TextDisplay2`
   --`TextBody`
   --`TextBodyStrong`
-  --`TextButton`
+  <!-- --`TextButton` -->
   --`TextCaption`
   --`TextSubHeader`
   --`TextSubHeaderStrong`
