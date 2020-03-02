@@ -494,6 +494,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
     >
       <select
         aria-label="Phone Country code"
+        autoComplete="tel-country-code"
         autoFocus={true}
         defaultValue="ES"
         name="phoneRegion"
@@ -541,6 +542,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
         className="kirk-textField-wrapper"
       >
         <input
+          autoComplete="tel-national"
           name="phoneNumber"
           onBlur={[Function]}
           onChange={[Function]}
@@ -901,6 +903,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
       className="kirk-selectField c1"
     >
       <select
+        autoComplete="tel-country-code"
         defaultValue=""
         name="phoneRegion"
         onBlur={[Function]}
@@ -947,6 +950,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
         className="kirk-textField-wrapper"
       >
         <input
+          autoComplete="tel-national"
           name="phoneNumber"
           onBlur={[Function]}
           onChange={[Function]}

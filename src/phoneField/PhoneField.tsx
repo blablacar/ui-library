@@ -244,6 +244,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
             onBlur={this.onBlur}
             focusBorder={!isInline}
             autoFocus={selectAutoFocus}
+            autoComplete="tel-country-code"
             ref={this.ref}
           />
           <TextField
@@ -256,6 +257,7 @@ export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFiel
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             focusBorder={!isInline}
+            autoComplete="tel-national"
           />
         </div>
         {!!error && DisplayError(error)}

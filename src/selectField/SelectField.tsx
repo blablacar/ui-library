@@ -15,6 +15,7 @@ export interface SelectFieldProps extends Partial<CommonFieldsProps> {
   readonly onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
   readonly focus?: boolean
   readonly focusBorder?: boolean
+  readonly autoComplete?: string
 }
 
 const SelectField = React.forwardRef(
@@ -33,6 +34,7 @@ const SelectField = React.forwardRef(
       required,
       focus,
       autoFocus,
+      autoComplete,
       focusBorder = true,
     }: SelectFieldProps,
     ref: RefObject<HTMLSelectElement>,
@@ -71,6 +73,7 @@ const SelectField = React.forwardRef(
           disabled={disabled}
           required={required}
           autoFocus={autoFocus}
+          autoComplete={autoComplete}
           ref={ref}
         >
           {options.map(({ value, label, ariaLabel: optionAriaLabel }: SelectFieldItem) => (

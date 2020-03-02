@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[UPDATE]** Add autoComplete attribute on `SelectField` and `PhoneField` components.
+- **[UPDATE]** Change autoComplete type on `TextField` to allow other values than `on` and `off`.
 - [..]
 
 # v22.1.1 (28/02/2020)
