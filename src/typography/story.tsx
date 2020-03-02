@@ -11,7 +11,6 @@ import TextSubHeader from './subHeader'
 import TextSubHeaderStrong from './subHeaderStrong'
 import TextDisplay2 from './display2'
 import TextDisplay1 from './display1'
-// import TextButton from './button'
 
 import { space } from '_utils/branding'
 
@@ -95,17 +94,6 @@ stories.add('ALL', () => (
           Regular 13px <br /> Height 16px
         </TextCaption>
       </figcaption>
-
-      {/* <hr style={{ marginBottom: space.xxl, marginTop: space.xxl }} />
-
-      <p style={{ marginBottom: 0 }}>
-        <TextBody>Button</TextBody>
-      </p>
-        <p>
-        <TextButton>
-          Medium 16px <br /> Height 20px
-        </TextButton>
-      </p> */}
     </Section>
   </Fragment>
 ))
