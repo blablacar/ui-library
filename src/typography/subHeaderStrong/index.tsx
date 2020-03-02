@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-import { color, font, fontWeight } from '_utils/branding'
+import { fontWeight } from '_utils/branding'
 
-import Text from '../index'
+import TextSubHeader from '../subHeader'
 
-const StyledTextSubHeaderStrong = styled(Text)`
-  color: ${color.primaryText};
-  font-size: ${font.l.size};
+const TextSubHeaderStrong = styled(TextSubHeader)`
   font-weight: ${fontWeight.medium};
-  line-height: ${font.l.lineHeight};
 `
-export default StyledTextSubHeaderStrong
+export default TextSubHeaderStrong

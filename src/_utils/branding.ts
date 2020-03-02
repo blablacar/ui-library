@@ -47,7 +47,7 @@ export const font: Font = {
   },
   xl: {
     size: '30px',
-    lineHeight: '32px',
+    lineHeight: String(Math.floor((32 / 30) * 100) / 100),
   },
   xxl: {
     size: '82px',

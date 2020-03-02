@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-import { color, font, fontWeight } from '_utils/branding'
+import { fontWeight } from '_utils/branding'
 
-import TextStyle from '../index'
+import TextBody from '../body'
 
-const StyledTextBodyStrong = styled(TextStyle)`
-  color: ${color.secondaryText};
-  font-size: ${font.base.size};
+const TextBodyStrong = styled(TextBody)`
   font-weight: ${fontWeight.medium};
-  line-height: ${font.base.lineHeight};
 `
-export default StyledTextBodyStrong
+export default TextBodyStrong

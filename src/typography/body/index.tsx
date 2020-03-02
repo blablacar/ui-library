@@ -3,10 +3,10 @@ import { color, font, fontWeight } from '_utils/branding'
 
 import TextStyle from '../index'
 
-const StyledTextBody = styled(TextStyle)`
+const TextBody = styled(TextStyle)`
   color: ${color.secondaryText};
   font-size: ${font.base.size};
   font-weight: ${fontWeight.regular} 
   line-height: ${font.base.lineHeight};
 `
-export default StyledTextBody
+export default TextBody

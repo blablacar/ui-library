@@ -3,7 +3,7 @@ import { color, font, fontWeight, responsiveBreakpoints } from '_utils/branding'
 
 import Text from '../index'
 
-const StyledTextDisplay1 = styled(Text)`
+const TextDisplay1 = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.l.size};
   line-height: ${font.l.lineHeight};
@@ -16,4 +16,4 @@ const StyledTextDisplay1 = styled(Text)`
     }
   }
 `
-export default StyledTextDisplay1
+export default TextDisplay1

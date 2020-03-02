@@ -1,12 +1,9 @@
 import styled from 'styled-components'
-import { color, font, fontWeight } from '_utils/branding'
+import { fontWeight } from '_utils/branding'
 
-import Text from '../index'
+import Title from '../title'
 
-const StyledTextTitleStrongStrong = styled(Text)`
-  color: ${color.primaryText};
-  font-size: ${font.m.size};
-  line-height: ${font.m.lineHeight};
+const TextTitleStrong = styled(Title)`
   font-weight: ${fontWeight.medium};
 `
-export default StyledTextTitleStrongStrong
+export default TextTitleStrong
