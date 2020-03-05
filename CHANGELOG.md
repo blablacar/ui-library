@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
 - **[UPDATE]** Add autoComplete attribute on `SelectField` and `PhoneField` components.
 - **[UPDATE]** Change autoComplete type on `TextField` to allow other values than `on` and `off`.
 - **[FIX]** Fix `TripsSection` left scroll padding issue
