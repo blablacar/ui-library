@@ -37,7 +37,7 @@ export interface CommonFormFields {
   placeholder?: string
   maxLength?: number
   autoCorrect?: 'on' | 'off'
-  autoComplete?: 'on' | 'off'
+  autoComplete?: string
   disabled?: boolean
   readOnly?: boolean
   autoFocus?: boolean
