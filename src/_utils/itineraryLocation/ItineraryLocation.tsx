@@ -50,6 +50,7 @@ const renderTime = (isoDate: string, time: string) => (
 
 const renderMainLabel = (label: string) => (
   <Text
+    className="kirk-itineraryLocation-label-text"
     tag={TextTagType.PARAGRAPH}
     display={TextDisplayType.TITLESTRONG}
     textColor={color.primaryText}
@@ -61,6 +62,7 @@ const renderMainLabel = (label: string) => (
 const renderSubLabel = (label: ReactNode) =>
   typeof label === 'string' ? (
     <Text
+      className="kirk-itineraryLocation-label-text"
       tag={TextTagType.PARAGRAPH}
       display={TextDisplayType.CAPTION}
       textColor={color.primaryText}

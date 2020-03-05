@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Improve `TripCard` layout to allow text to truncate.
 - [...]
 
 # v22.3.1 (10/03/2020)
