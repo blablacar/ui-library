@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
 - [..]
 
 # v22.2.0 (06/03/2020)

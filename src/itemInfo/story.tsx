@@ -21,6 +21,7 @@ stories.add('ItemInfo', () => {
         mainTitle={hasMainTitle ? text('Main title', 'Title') : null}
         icon={hasIcon ? <ClockIcon /> : null}
         tag={<li />}
+        ariaLabel={text('Aria Label', 'Custom aria label')}
       />
     </Section>
   )

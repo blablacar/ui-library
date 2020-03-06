@@ -8,15 +8,17 @@ export interface ItemInfoProps {
   readonly icon?: React.ReactNode
   readonly mainTitle?: string
   readonly tag?: JSX.Element
+  readonly ariaLabel?: string
 }
 
-const ItemInfo = ({ mainInfo, className, mainTitle, icon, tag }: ItemInfoProps) => (
+const ItemInfo = ({ mainInfo, className, mainTitle, icon, tag, ariaLabel }: ItemInfoProps) => (
   <Item
     className={className}
     leftTitle={mainTitle}
     leftBody={mainInfo}
     leftAddon={icon}
     tag={tag}
+    ariaLabel={ariaLabel}
   />
 )
 
