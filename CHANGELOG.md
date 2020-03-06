@@ -1,10 +1,13 @@
 # Unreleased
 
+- [..]
+
+# v22.2.0 (06/03/2020)
+
 - **[UPDATE]** Add autoComplete attribute on `SelectField` and `PhoneField` components.
 - **[UPDATE]** Change autoComplete type on `TextField` to allow other values than `on` and `off`.
 - **[FIX]** Fix `TripsSection` left scroll padding issue
 - **[FIX]** Fix `Datepicker` previous month selection on vertical mode if selected date is far in the future
-- [..]
 
 # v22.1.1 (28/02/2020)
 
