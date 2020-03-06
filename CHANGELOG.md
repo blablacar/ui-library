@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `StepperOverlay` component
+- **[NEW]** Add `StepperFullScreen` component
 - **[NEW]** Add `DatePickerOverlay` component
 - **[NEW]** Add `DatePickerFullScreen` component
 - **[NEW]** Add `CalendarIcon` component
