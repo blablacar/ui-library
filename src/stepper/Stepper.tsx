@@ -26,9 +26,9 @@ export const StepperButtonSize = {
 
 export interface StepperProps {
   name: string
-  children: string
   increaseLabel: string
   decreaseLabel: string
+  title: string
   className?: string
   valueClassName?: string
   value?: number
@@ -171,7 +171,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
   render() {
     const {
       className,
-      children,
+      title,
       increaseLabel,
       decreaseLabel,
       format,
@@ -187,7 +187,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     return (
       <div
         className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}
-        aria-label={children}
+        aria-label={title}
       >
         <Button
           aria-label={decreaseLabel}

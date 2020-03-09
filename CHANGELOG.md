@@ -1,5 +1,11 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `StepperOverlay` component
+- **[NEW]** Add `StepperFullScreen` component
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
 - [...]
 
 # v23.1.0 (13/03/2020)
@@ -20,7 +26,6 @@
 - **[FIX]** Fix padding for title in `ColumnedContentSection`
 - **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
 - **[NEW]** `MediaSizeProvider` component
-- [...]
 
 # v22.3.1 (10/03/2020)
 
