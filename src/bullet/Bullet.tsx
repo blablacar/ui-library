@@ -7,6 +7,7 @@ export enum BulletTypes {
   ADDON = 'addon',
   MAP_ACTIVE = 'map-active',
   MAP_INACTIVE = 'map-inactive',
+  SEARCH = 'search',
 }
 
 export interface BulletProps {
