@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
+- **[FIX]** Improve a11y on `Stepper` for keyboard navigation and screen readers
 - **[NEW]** New typographic components
   --`TextDisplay1`
   --`TextDisplay2`
@@ -10,10 +12,14 @@
   --`TextSubHeaderStrong`
   --`TextTitle`
   --`TextTitleStrong`
+- [..]
+
+# v22.2.0 (06/03/2020)
+
 - **[UPDATE]** Add autoComplete attribute on `SelectField` and `PhoneField` components.
 - **[UPDATE]** Change autoComplete type on `TextField` to allow other values than `on` and `off`.
 - **[FIX]** Fix `TripsSection` left scroll padding issue
-- [..]
+- **[FIX]** Fix `Datepicker` previous month selection on vertical mode if selected date is far in the future
 
 # v22.1.1 (28/02/2020)
 
