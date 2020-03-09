@@ -7,6 +7,8 @@ import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
 import AutoCompleteOverlay from './autoComplete/overlay'
 
+const today = new Date().toISOString()
+
 const defaultProps = {
   onSubmit: () => {},
   autocompleteFromProps: {
@@ -16,8 +18,8 @@ const defaultProps = {
     placeholder: 'Going to',
   },
   datepickerProps: {
-    defaultValue: '2020-03-31',
-    format: value => new Date(value).toLocaleDateString(),
+    defaultValue: today,
+    format: value => `Date: ${new Date(value).toISOString()}`,
   },
   stepperProps: {
     defaultValue: 1,
@@ -79,21 +81,21 @@ describe('searchForm', () => {
           .find('.kirk-searchForm-date')
           .find(TextBody)
           .text(),
-      ).toEqual('3/31/2020')
+      ).toEqual(`Date: ${today}`)
     })
 
     it('should update the datepicker value after changing it', () => {
       // Expected date is the first day of next month
-      const currentMonth = new Date().getMonth()
-      const dateNextMonth = new Date().setMonth(currentMonth + 1)
-      const firstDayOfNextMonth = new Date(dateNextMonth).setDate(1)
-      const expectedDate = new Date(firstDayOfNextMonth).toLocaleDateString()
+      const todayDate = new Date(today)
+
+      const expectedDate = new Date(
+        Date.UTC(todayDate.getFullYear(), todayDate.getMonth() + 1, 1, 0, 0, 0),
+      ).toISOString()
 
       wrapper = mount(<SearchForm {...defaultProps} />)
       wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
 
       wrapper
-        .find(DatePickerOverlay)
         .find('.kirk-datepicker-next-month')
         .at(0)
         .simulate('click')
@@ -108,7 +110,7 @@ describe('searchForm', () => {
           .find('.kirk-searchForm-date')
           .find(TextBody)
           .text(),
-      ).toEqual(expectedDate)
+      ).toEqual(`Date: ${expectedDate}`)
     })
 
     it('should update the stepper value after changing it', () => {
