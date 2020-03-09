@@ -12,6 +12,8 @@ import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
 import SearchForm from '.'
 import MediaSizeProvider from '_utils/mediaSizeProvider/MediaSizeProvider'
+import searchFormDocumentation from './specifications/searchForm.md'
+import BaseSection, { SectionContentSize } from 'layout/section/baseSection/'
 
 const stories = storiesOf('Widgets|SearchForm', module)
 stories.addDecorator(withKnobs)
@@ -118,8 +120,30 @@ stories.add('StepperSection', () => (
 stories.add('AutoCompleteOverlay', () => <AutoCompleteExample component={AutoCompleteOverlay} />)
 stories.add('AutoCompleteSection', () => <AutoCompleteExample component={AutoCompleteSection} />)
 
-stories.add('SearchForm', () => (
-  <MediaSizeProvider>
-    <SearchForm />
-  </MediaSizeProvider>
-))
+stories.add(
+  'SearchForm',
+  () => (
+    <MediaSizeProvider>
+      <BaseSection contentSize={SectionContentSize.LARGE}>
+        <SearchForm
+          onSubmit={() => {}}
+          autocompleteFromProps={{
+            placeholder: 'Leaving From',
+          }}
+          autocompleteToProps={{
+            placeholder: 'Going to',
+          }}
+          datepickerProps={{
+            placeholder: 'Today',
+          }}
+          stepperProps={{
+            placeholder: '1 seat',
+          }}
+        />
+      </BaseSection>
+    </MediaSizeProvider>
+  ),
+  {
+    readme: { content: searchFormDocumentation },
+  },
+)

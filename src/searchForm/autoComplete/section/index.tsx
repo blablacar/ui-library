@@ -13,8 +13,8 @@ const StyledAutoComplete = styled(autoComplete)`
       border: 0;
 
       input {
-        font-size: ${font.m.size}
-        line-height: ${font.m.lineHeight}
+        font-size: ${font.m.size};
+        line-height: ${font.m.lineHeight};
         background: transparent;
         border-radius: 0;
       }

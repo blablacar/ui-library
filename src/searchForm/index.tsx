@@ -17,6 +17,9 @@ const primaryFieldsWidth = '240px'
 const secondaryFieldsWidth = '160px'
 const buttonHeight = '48px'
 const submitButtonWidth = '88px'
+const positionAutocompleteFrom = '-8px'
+const positionAutocompleteTo = '268px'
+const positionDateStepper = '473px'
 
 const StyledSearchForm = styled(SearchForm)`
   & {
@@ -30,6 +33,7 @@ const StyledSearchForm = styled(SearchForm)`
     height: ${formHeight};
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   & .kirk-searchForm-from-container,
@@ -71,13 +75,13 @@ const StyledSearchForm = styled(SearchForm)`
     font-family: inherit;
     color: ${color.secondaryText};
     background: none;
-    display: flex;
     height: ${buttonHeight};
     box-sizing: border-box;
     line-height: ${font.l.lineHeight};
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
+    align-items: center;
   }
 
   & .kirk-searchForm-from .kirk-search-button,
@@ -86,6 +90,10 @@ const StyledSearchForm = styled(SearchForm)`
     border-right: 1px solid ${color.inputBorder};
     padding-left: ${space.m};
     line-height: ${componentSizes.bulletSizeSearch};
+  }
+
+  & .kirk-searchForm-invert .kirk-search-button {
+    padding: 0;
   }
 
   & .kirk-searchForm-date .kirk-search-button,
@@ -107,6 +115,7 @@ const StyledSearchForm = styled(SearchForm)`
     height: ${formHeight};
     border-radius: 0 ${radius.l} ${radius.l} 0;
     background-color: ${color.primary};
+    padding: 0;
   }
 
   & .kirk-searchForm-submit .kirk-icon {
@@ -120,6 +129,24 @@ const StyledSearchForm = styled(SearchForm)`
 
   & .kirk-searchForm-submit .kirk-icon {
     flex: 1;
+  }
+
+  & .kirk-searchForm-overlay {
+    position: absolute;
+    top: -${space.m};
+  }
+
+  & .kirk-searchForm-autocomplete-from {
+    left: ${positionAutocompleteFrom};
+  }
+
+  & .kirk-searchForm-autocomplete-to {
+    left: ${positionAutocompleteTo};
+  }
+
+  & .kirk-searchForm-datepicker,
+  & .kirk-searchForm-stepper {
+    left: ${positionDateStepper};
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {

@@ -12,27 +12,29 @@ const StyledAutoComplete = styled(autoComplete)`
     border: 1px solid ${color.border};
     border-radius: ${radius.l};
     padding: ${space.xl};
+    padding-top: ${space.s};
     /* Same as TripCard, we might need to have box-shadow specs so that we can move it to branding file */
     box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08);
+    background: ${color.defaultBackground};
 
     .kirk-textField-wrapper {
       background: transparent;
       border-radius: 0;
       border: 0;
+      padding-top: ${space.s};
 
       .kirk-autoComplete-icon {
         padding: 0;
-        line-height: 0;
-        width: 48px;
         height: auto;
         display: flex;
+        margin-right: ${space.m};
         justify-content: center;
         align-items: center;
       }
 
       input {
-        font-size: ${font.m.size}
-        line-height: ${font.m.lineHeight}
+        font-size: ${font.m.size};
+        line-height: ${font.m.lineHeight};
         background: transparent;
         border-radius: 0;
       }
