@@ -1,6 +1,8 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `CalendarIcon` component
+- **[NEW]** Add `SearchForm` component
 
 # v24.1.1 (01/04/2020)
 
