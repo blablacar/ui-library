@@ -1,5 +1,9 @@
 # Unreleased
 
+- [..]
+
+# v22.3.0 (09/03/2020)
+
 - **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
 - **[FIX]** Improve a11y on `Stepper` for keyboard navigation and screen readers
 - **[NEW]** New typographic components
@@ -12,7 +16,6 @@
   --`TextSubHeaderStrong`
   --`TextTitle`
   --`TextTitleStrong`
-- [..]
 
 # v22.2.0 (06/03/2020)
 
