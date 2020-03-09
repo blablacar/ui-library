@@ -2,12 +2,16 @@ import React from 'react'
 import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
 
-export const SearchIcon = (props: Icon) => (
+export interface SearchIconProps extends Icon {
+  readonly strokeWidth?: string
+}
+
+export const SearchIcon = (props: SearchIconProps) => (
   <BaseIcon {...props}>
     <g
       fill="none"
       stroke={props.iconColor}
-      strokeWidth="1"
+      strokeWidth={props.strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeMiterlimit="10"
@@ -18,6 +22,9 @@ export const SearchIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-SearchIcon.defaultProps = BaseIconDefaultProps
+SearchIcon.defaultProps = {
+  ...BaseIconDefaultProps,
+  strokeWidth: '1',
+}
 
 export default React.memo(SearchIcon)

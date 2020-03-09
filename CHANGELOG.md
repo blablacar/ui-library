@@ -11,6 +11,14 @@
 - **[UPDATE]** Add explicit support for generic aria attributes on `Item`-like components and `Button`
 - **[FIX]** Fix `MainContent` height when inside a `Modal` with close button
 - **[FIX]** Fix `MediaSection` display inside a `Modal`
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `StepperOverlay` component
+- **[NEW]** Add `StepperFullScreen` component
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
+- **[NEW]** Add `SearchForm` component
+  [...]
 
 # v24.0.0 (23/03/2020)
 
