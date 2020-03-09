@@ -1,6 +1,7 @@
 # Unreleased
 
-- [..]
+- **[FIX]** Set explicit vertical margins on `ColumnedContentSection` main title.
+- [...]
 
 # v22.3.0 (09/03/2020)
 
