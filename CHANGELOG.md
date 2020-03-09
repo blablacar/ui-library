@@ -1,5 +1,14 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `AutoCompleteOverlay` component
+- **[NEW]** Add `AutoCompleteSection` component
+- **[NEW]** Add `StepperOverlay` component
+- **[NEW]** Add `StepperSection` component
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerSection` component
+- **[NEW]** Add `CalendarIcon` component
+- **[NEW]** Add `SearchForm` component
 - **[FIX]** Fix `Profile` medium size rendering
 - **[FIX]** Fix `TextDisplay1` scale
 - **[UPDATE]** Import `icons` as default instead of named export for a better code splitting

@@ -66,6 +66,7 @@ export interface TextFieldProps extends CommonFormFields {
   inputRef?: (input: textfield) => void
   format?: (value: string, previousValue: string) => string
   focusBorder?: boolean
+  loader?: JSX.Element
 }
 
 interface FormAttributes extends CommonFormFields {
@@ -239,6 +240,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
       inputMode,
       pattern,
       focusBorder,
+      loader,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
@@ -303,7 +305,8 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
             onBlur={this.onBlur}
             type={type === inputTypes.PASSWORD && this.state.showPassword ? inputTypes.TEXT : type}
           />
-          {shouldDisplayButton && (
+          {loader}
+          {!loader && shouldDisplayButton && (
             <Button
               className="kirk-textField-button"
               status={ButtonStatus.UNSTYLED}
