@@ -8,6 +8,10 @@ const StyledColumnedContentSection = styled(ColumnedContentSection)`
     margin: ${space.xl} 0;
   }
 
+  & .kirk-columned-content-section-title {
+    margin: ${space.l} 0;
+  }
+
   & .kirk-columned-content-section-content {
     position: relative;
   }
