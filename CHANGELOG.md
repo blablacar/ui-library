@@ -2,6 +2,16 @@
 
 - **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
 - **[FIX]** Improve a11y on `Stepper` for keyboard navigation and screen readers
+- **[NEW]** New typographic components
+  --`TextDisplay1`
+  --`TextDisplay2`
+  --`TextBody`
+  --`TextBodyStrong`
+  --`TextCaption`
+  --`TextSubHeader`
+  --`TextSubHeaderStrong`
+  --`TextTitle`
+  --`TextTitleStrong`
 - [..]
 
 # v22.2.0 (06/03/2020)
@@ -36,6 +46,8 @@
 - **[NEW]** Implement `ColumnedContentSection` widget.
 - **[UPDATE]** Use semantic html (ul/li) for `Columns` and `Column` widgets.
 - **[UPDATE]** Add new `Your rides`, `Ride history` and `Search result` pages
+- **[UPDATE]** Add new `Your rides`
+- `Ride history` and `Search result` pages
 - **[UPDATE]** Make price props on `TripCard` non-mandatory
 
 # v21.1.0 (19/02/2020)
