@@ -103,6 +103,7 @@ export const componentSizes = {
   bulletSize: '10px',
   bulletSizeSmall: '8px',
   bulletSizeMap: '18px',
+  bulletSizeSearch: '18px',
   roadWidth: '4px',
   smallSectionWidth: '662px',
   largeSectionWidth: '1016px',
@@ -119,6 +120,7 @@ export const shadow: defaultBranding = {
   icon: '0 0 2px rgba(0, 0, 0, .3)',
   card: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
   cardHover: '0 2pt 8pt rgba(0, 0, 0, 0.08), 0 2pt 16pt rgba(0, 0, 0, 0.08)',
+  searchForm: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
 }
 
 export const inputBorderSize = {

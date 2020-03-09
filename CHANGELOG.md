@@ -1,7 +1,14 @@
 # Unreleased
 
 - **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
-- [...]
+- **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `StepperOverlay` component
+- **[NEW]** Add `StepperFullScreen` component
+- **[NEW]** Add `DatePickerOverlay` component
+- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `CalendarIcon` component
+- **[NEW]** Add `SearchForm` component
+  [...]
 
 # v23.2.0 (20/03/2020)
 
