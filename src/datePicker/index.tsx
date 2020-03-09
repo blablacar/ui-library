@@ -90,7 +90,8 @@ const StyledDatePicker = styled(DatePicker)`
     color: ${color.fadedText};
     cursor: default;
   }
-  & .DayPicker-Day--selected span {
+  & .DayPicker-Day--selected span,
+  & .DayPicker-Day:focus span {
     background-color: ${color.primary};
     color: ${color.white};
   }
