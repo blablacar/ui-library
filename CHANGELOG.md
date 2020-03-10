@@ -8,6 +8,10 @@
 - **[NEW]** Add `CalendarIcon` component
 - [..]
 
+# v22.3.1 (10/03/2020)
+
+- **[FIX]** Set explicit vertical margins on `ColumnedContentSection` main title.
+
 # v22.3.0 (09/03/2020)
 
 - **[UPDATE]** Add ariaLabel attribute to `ItemInfo` and `Item`.
