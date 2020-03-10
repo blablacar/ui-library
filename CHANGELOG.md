@@ -9,6 +9,8 @@
 - **[FIX]** Add vertical padding to `Paragraph`
 - **[FIX]** Fix padding for title in `ColumnedContentSection`
 - **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
+- **[NEW]** `MediaSizeProvider` component
+- [...]
 
 # v22.3.1 (10/03/2020)
 
