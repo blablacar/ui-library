@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
 - **[FIX]** Set explicit vertical margins on `ColumnedContentSection` main title.
 - [...]
 
