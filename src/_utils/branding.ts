@@ -103,6 +103,7 @@ export const componentSizes = {
   bulletSize: '10px',
   bulletSizeSmall: '8px',
   bulletSizeMap: '18px',
+  bulletSizeSearch: '18px',
   roadWidth: '4px',
   smallSectionWidth: '662px',
   largeSectionWidth: '1016px',
@@ -117,6 +118,7 @@ export const modalSize = {
 export const shadow: defaultBranding = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
   icon: '0 0 2px rgba(0, 0, 0, .3)',
+  searchForm: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
 }
 
 export const inputBorderSize = {

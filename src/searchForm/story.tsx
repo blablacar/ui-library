@@ -10,6 +10,8 @@ import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
 import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
+import SearchForm from '.'
+import MediaSizeProvider from '_utils/mediaSizeProvider/MediaSizeProvider'
 
 const stories = storiesOf('Widgets|SearchForm', module)
 stories.addDecorator(withKnobs)
@@ -115,3 +117,9 @@ stories.add('StepperSection', () => (
 ))
 stories.add('AutoCompleteOverlay', () => <AutoCompleteExample component={AutoCompleteOverlay} />)
 stories.add('AutoCompleteSection', () => <AutoCompleteExample component={AutoCompleteSection} />)
+
+stories.add('SearchForm', () => (
+  <MediaSizeProvider>
+    <SearchForm />
+  </MediaSizeProvider>
+))

@@ -6,7 +6,8 @@
 - **[NEW]** Add `DatePickerOverlay` component
 - **[NEW]** Add `DatePickerFullScreen` component
 - **[NEW]** Add `CalendarIcon` component
-- [...]
+- **[NEW]** Add `SearchForm` component
+  [...]
 
 # v23.1.0 (13/03/2020)
 
