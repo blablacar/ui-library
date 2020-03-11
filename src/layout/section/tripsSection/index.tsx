@@ -24,6 +24,7 @@ const StyledTripsSection = styled(TripsSection)`
 
   & .kirk-tripsSection .kirk-tripCard {
     scroll-snap-align: start;
+    overflow: hidden;
   }
 
   /* Remove scrollbar webkit */
