@@ -46,7 +46,6 @@ export interface TripCardProps {
     autoApproval?: string
   }
   metaUrl?: string
-  highlighted?: string
   className?: Classcat.Class
   statusInformation?: {
     icon: JSX.Element
@@ -81,7 +80,6 @@ const TripCard = ({
   price,
   flags = {},
   titles = {},
-  highlighted = '',
   metaUrl = null,
   statusInformation = null,
   badge = null,
@@ -91,7 +89,7 @@ const TripCard = ({
   const arrival = itinerary[itinerary.length - 1]
   const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
   const shouldDisplayBottomLeft = driver || !isEmpty(passengers)
-  const shouldDisplayBottomRight = !isEmpty(highlighted) || !isEmpty(flags)
+  const shouldDisplayBottomRight = !isEmpty(flags)
   const shouldDisplayBottom = shouldDisplayBottomLeft || shouldDisplayBottomRight
 
   let componentTag
@@ -119,7 +117,6 @@ const TripCard = ({
       className={cc([
         'kirk-tripCard',
         {
-          'kirk-tripCard--highlighted': !!highlighted,
           'kirk-tripCard--with-badge': badge && badge.length,
           'kirk-tripCard--with-price': price && price.length,
         },
@@ -218,18 +215,11 @@ const TripCard = ({
 
                 {shouldDisplayBottomRight && (
                   <div className="kirk-tripCard-bottom-right">
-                    {!isEmpty(highlighted) && (
-                      <Text className="kirk-tripCard-topText" display={TextDisplayType.TITLESTRONG}>
-                        {highlighted}
-                      </Text>
-                    )}
-                    {isEmpty(highlighted) && !isEmpty(flags) && (
-                      <div className="kirk-tripCard-flags">
-                        {flags.ladiesOnly && <LadyIcon title={titles.ladiesOnly || ''} />}
-                        {flags.maxTwo && <ComfortIcon title={titles.maxTwo || ''} />}
-                        {flags.autoApproval && <LightningIcon title={titles.autoApproval || ''} />}
-                      </div>
-                    )}
+                    <div className="kirk-tripCard-flags">
+                      {flags.ladiesOnly && <LadyIcon title={titles.ladiesOnly || ''} />}
+                      {flags.maxTwo && <ComfortIcon title={titles.maxTwo || ''} />}
+                      {flags.autoApproval && <LightningIcon title={titles.autoApproval || ''} />}
+                    </div>
                   </div>
                 )}
               </div>
