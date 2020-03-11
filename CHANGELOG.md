@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add an `ItemsSection` to display two `ItemInfo` in a row
 - **[UPDATE]** Improve `TripCard` layout to allow text to truncate.
 - **[FIX]** Add vertical padding to `Paragraph`
 - **[FIX]** Fix padding for title in `ColumnedContentSection`
