@@ -17,7 +17,6 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
   & .kirk-itineraryLocation-wrapper {
     display: flex;
     padding: ${space.m} 0;
-    width: 100%;
   }
 
   & a.kirk-itineraryLocation-wrapper {
@@ -61,6 +60,12 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
 
   & .kirk-itineraryLocation-label {
     flex: 1;
+    min-width: 0; /* reset flex default to allow shrinking below content width */
+  }
+
+  & .kirk-itineraryLocation-label-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &:not(.kirk-itineraryLocation--arrival) .kirk-itineraryLocation-city {
