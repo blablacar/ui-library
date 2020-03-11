@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[UPDATE]** Improve `TripCard` layout to allow text to truncate.
+- **[FIX]** Add vertical padding to `Paragraph`
+- **[FIX]** Fix padding for title in `ColumnedContentSection`
 - [...]
 
 # v22.3.1 (10/03/2020)
