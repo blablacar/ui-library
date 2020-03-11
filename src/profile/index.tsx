@@ -9,7 +9,7 @@ export interface ProfileProps {
   readonly className?: Classcat.Class
   readonly ariaLabel?: string
   readonly title: string
-  readonly info?: string
+  readonly info?: string | JSX.Element
   readonly isLink?: boolean
   readonly picture?: string
   readonly alt?: string
