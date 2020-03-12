@@ -3,12 +3,12 @@ import { color, radius, space } from '_utils/branding'
 
 import StepperOverlay from './StepperOverlay'
 
-const stepperOverlayWidth = '375px'
+const overlayWidth = '375px'
 
 const StyledStepperOverlay = styled(StepperOverlay)`
   & {
     box-sizing: border-box;
-    width: ${stepperOverlayWidth};
+    width: ${overlayWidth};
     border: 1px solid ${color.border};
     border-radius: ${radius.l};
     padding: ${space.xl};

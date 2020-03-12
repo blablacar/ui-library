@@ -5,17 +5,17 @@ import Section from 'layout/section/baseSection'
 import ChevronIcon from 'icon/chevronIcon'
 import Item from '_utils/item'
 
-export interface StepperFullScreenProps extends StepperProps {
+export interface StepperSectionProps extends StepperProps {
   readonly itemTitle: string
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export const StepperFullScreen = ({
+export const StepperSection = ({
   itemTitle,
   className,
   onClick,
   ...props
-}: StepperFullScreenProps) => (
+}: StepperSectionProps) => (
   <Section className={className}>
     <Item
       leftAddon={<ChevronIcon left />}
@@ -28,4 +28,4 @@ export const StepperFullScreen = ({
   </Section>
 )
 
-export default StepperFullScreen
+export default StepperSection

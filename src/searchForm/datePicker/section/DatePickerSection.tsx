@@ -5,12 +5,12 @@ import Section from 'layout/section/baseSection'
 import ChevronIcon from 'icon/chevronIcon'
 import Item from '_utils/item'
 
-export interface DatePickerFullScreenProps extends DatePickerProps {
+export interface DatePickerSectionProps extends DatePickerProps {
   readonly title: string
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export const DatePickerFullScreen = (props: DatePickerFullScreenProps) => (
+export const DatePickerSection = (props: DatePickerSectionProps) => (
   <Section className={props.className}>
     <Item
       leftAddon={<ChevronIcon left />}
@@ -21,10 +21,10 @@ export const DatePickerFullScreen = (props: DatePickerFullScreenProps) => (
     <Divider />
     <Datepicker
       {...props}
-      className="kirk-datePickerFullScreen-datepicker"
+      className="kirk-datePickerSection-datepicker"
       orientation={DatePickerOrientation.VERTICAL}
     />
   </Section>
 )
 
-export default DatePickerFullScreen
+export default DatePickerSection
