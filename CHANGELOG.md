@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Remove horizontal padding override in `MessagingSummaryItem`
 - [...]
 
 # v22.4.0 (11/03/2020)
