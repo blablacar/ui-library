@@ -5,9 +5,8 @@
 - **[NEW]** Add `StepperFullScreen` component
 - **[NEW]** Add `DatePickerOverlay` component
 - **[NEW]** Add `DatePickerFullScreen` component
-- **[NEW]** Add `CalendarIcon` component
-- **[NEW]** Add `DatePickerOverlay` component
-- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `AutoCompleteOverlay` component
+- **[NEW]** Add `AutoCompleteSection` component
 - **[NEW]** Add `CalendarIcon` component
 - [..]
 
