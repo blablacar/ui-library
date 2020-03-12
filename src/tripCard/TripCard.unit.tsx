@@ -74,13 +74,6 @@ describe('TripCard component', () => {
     expect(tripCard.find('.divTest').exists()).toBe(true)
   })
 
-  it('Should have the highlighted modifier display the highlighted string instead of flags', () => {
-    const tripCard = shallow(<TripCard {...mockedProps} highlighted="Test string" />)
-    expect(tripCard.find('.kirk-tripCard--highlighted').exists()).toBe(true)
-    expect(tripCard.find('.kirk-tripCard-flags').exists()).toBe(false)
-    expect(tripCard.find('.kirk-tripCard-topText').exists()).toBe(true)
-  })
-
   it('Should have only the Ladies Only icon', () => {
     const tripCard = shallow(<TripCard {...mockedProps} flags={{ ladiesOnly: true }} />)
     expect(tripCard.find(LadyIcon).exists()).toBe(true)

@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Remove horizontal padding override in `MessagingSummaryItem`
+- **[BREAKING CHANGE]** Remove `highlighted` prop from `TripCard` component.
 - [...]
 
 # v22.4.0 (11/03/2020)
