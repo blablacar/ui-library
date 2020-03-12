@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add new `Review` widget.
 - [...]
 
 # v23.0.0 (12/03/2020)
