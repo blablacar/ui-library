@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaSection should render MediaSection 1`] = `
+@media (min-width:800px) {
+  .c0 {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+}
+
+<div
+  className="media-section c0"
+  role="presentation"
+>
+  default section
+</div>
+`;

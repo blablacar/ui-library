@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `MediaSection`, a fullscreen without spacing on small devices section
 - [...]
 
 # v22.4.0 (11/03/2020)
