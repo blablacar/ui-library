@@ -1,6 +1,12 @@
 # Unreleased
 
+- **[NEW]** Add new `Review` widget.
 - [...]
+
+# v23.0.0 (12/03/2020)
+
+- **[FIX]** Remove horizontal padding override in `MessagingSummaryItem`
+- **[BREAKING CHANGE]** Remove `highlighted` prop from `TripCard` component.
 
 # v22.4.0 (11/03/2020)
 
@@ -9,6 +15,8 @@
 - **[FIX]** Add vertical padding to `Paragraph`
 - **[FIX]** Fix padding for title in `ColumnedContentSection`
 - **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
+- **[NEW]** `MediaSizeProvider` component
+- [...]
 
 # v22.3.1 (10/03/2020)
 
