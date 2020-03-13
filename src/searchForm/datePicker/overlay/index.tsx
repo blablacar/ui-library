@@ -3,12 +3,12 @@ import { color, radius, space } from '_utils/branding'
 
 import DatePickerOverlay from './DatePickerOverlay'
 
-const datePickerOverlayWidth = '375px'
+const overlayWidth = '375px'
 
 const StyledDatePickerOverlay = styled(DatePickerOverlay)`
   & {
     box-sizing: border-box;
-    width: ${datePickerOverlayWidth};
+    width: ${overlayWidth};
     border: 1px solid ${color.border};
     border-radius: ${radius.l};
     padding: ${space.xl};
