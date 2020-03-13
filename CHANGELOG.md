@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v23.1.0 (13/03/2020)
+
 - **[NEW]** Add `MediaSection`, a fullscreen without spacing on small devices section
 - **[NEW]** Add new `Review` widget.
-- [...]
 
 # v23.0.0 (12/03/2020)
 
