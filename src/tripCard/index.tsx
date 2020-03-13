@@ -39,7 +39,7 @@ const StyledTripCard = styled(TripCard)`
     padding-top: 0;
   }
 
-  &.kirk-item--highlighted .kirk-text-body {
+  & .kirk-item--highlighted .kirk-text-body {
     color: ${color.primary};
   }
 
@@ -72,10 +72,6 @@ const StyledTripCard = styled(TripCard)`
   & .kirk-tripCard-price {
     display: block;
     flex-shrink: 0;
-  }
-
-  &.kirk-tripCard--highlighted .kirk-tripCard-price {
-    color: ${color.success};
   }
 
   & .kirk-tripCard-bottom {
@@ -162,10 +158,6 @@ const StyledTripCard = styled(TripCard)`
   & .kirk-tripCard-flags svg {
     display: inline-block;
     margin-left: ${space.m};
-  }
-
-  & .kirk-tripCard-topText {
-    color: ${color.success};
   }
 `
 

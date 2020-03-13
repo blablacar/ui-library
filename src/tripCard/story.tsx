@@ -38,7 +38,6 @@ const tripCardConfig = () => ({
     maxTwo: boolean('Max 2 in the back', true),
     autoApproval: boolean('Auto approval', true),
   },
-  highlighted: boolean('Top of search', false) ? 'Closest match' : '',
   metaUrl: text('Meta URL'),
   statusInformation: boolean('Status information', true)
     ? {
