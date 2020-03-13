@@ -39,6 +39,12 @@ const StyledAutoComplete = styled(autoComplete)`
     border-radius: 0;
   }
 
+  & .kirk-textField-wrapper .kirk-loader {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
   & .kirk-items-list {
     padding: 0;
   }

@@ -4,6 +4,7 @@ import AutoComplete from 'autoComplete'
 import AutoCompleteOverlay from './AutoCompleteOverlay'
 import Bullet from 'bullet'
 import Divider from 'divider'
+import Loader from 'loader'
 
 const initialFakeItems = [
   { id: '1', label: 'title1', labelInfo: 'description1' },
@@ -28,5 +29,15 @@ describe('AutoCompleteOverlay', () => {
 
     expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(true)
     expect(wrapper.find(Divider)).toHaveLength(1)
+  })
+
+  it('should display Loader and then hide it when list is loaded', () => {
+    const wrapper = mount(<AutoCompleteOverlay defaultValue="Paris" />)
+    wrapper.setProps({ isSearching: true })
+
+    expect(wrapper.find(Loader)).toHaveLength(1)
+    wrapper.setProps({ items: fakeSearchForItems(), isSearching: false })
+    expect(wrapper.find(Loader)).toHaveLength(0)
+    expect(wrapper.find('AutoCompleteList').prop('visible')).toBe(true)
   })
 })

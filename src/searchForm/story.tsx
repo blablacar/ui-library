@@ -38,7 +38,7 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
 
   static defaultProps: AutoCompleteExampleProps = {
     component: AutoCompleteOverlay,
-    searchForItemsDelay: 0,
+    searchForItemsDelay: number('searchForItemsDelay', 2000),
   }
 
   searchForItems = (query: string) => {

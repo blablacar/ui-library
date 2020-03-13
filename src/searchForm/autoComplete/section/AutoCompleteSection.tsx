@@ -13,7 +13,7 @@ export const AutoCompleteSection = (props: AutoCompleteProps) => {
 
   return (
     <Section className={props.className}>
-      <AutoComplete {...props} inputAddon={backButton} shouldDisplayDivider />
+      <AutoComplete {...props} inputAddon={backButton} embeddedInSearchForm />
     </Section>
   )
 }

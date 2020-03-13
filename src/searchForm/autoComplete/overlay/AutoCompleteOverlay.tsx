@@ -9,7 +9,7 @@ export const AutoCompleteOverlay = (props: AutoCompleteProps) => {
     </div>
   )
 
-  return <AutoComplete {...props} inputAddon={icon} shouldDisplayDivider />
+  return <AutoComplete {...props} inputAddon={icon} embeddedInSearchForm />
 }
 
 export default AutoCompleteOverlay

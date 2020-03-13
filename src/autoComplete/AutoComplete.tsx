@@ -10,6 +10,7 @@ import ItemInfo from 'itemInfo'
 import TextField, { inputTypes } from 'textField'
 import AutoCompleteList from './AutoCompleteListStyle'
 import Divider from 'divider'
+import Loader from 'loader'
 
 type query = string | number | boolean
 export interface AutoCompleteProps {
@@ -51,7 +52,7 @@ export interface AutoCompleteProps {
   readonly required?: boolean
   readonly error?: string | JSX.Element
   readonly selectedItemStatus?: ItemStatus
-  readonly shouldDisplayDivider?: boolean
+  readonly embeddedInSearchForm?: boolean
 }
 
 interface AutoCompleteState {
@@ -105,7 +106,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     readOnly: false,
     required: false,
     error: null,
-    shouldDisplayDivider: false,
+    embeddedInSearchForm: false,
   }
 
   constructor(props: AutoCompleteProps) {
@@ -270,7 +271,9 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       ? this.state.items
       : this.props.renderEmptySearch
     const shouldDisplayDivider =
-      this.props.shouldDisplayDivider && (listItems.length > 0 || shouldDisplayNoResults)
+      this.props.embeddedInSearchForm && (listItems.length > 0 || shouldDisplayNoResults)
+    const loader =
+      this.props.embeddedInSearchForm && this.state.isSearching ? <Loader size={24} inline /> : null
 
     return (
       <div role="combobox" className={cc([prefix({ autoComplete: true }), this.props.className])}>
@@ -296,6 +299,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           required={this.props.required}
           error={this.props.error}
           focusBorder={false}
+          loader={loader}
         />
         {shouldDisplayDivider && <Divider />}
         {shouldDisplayBusyState && (
