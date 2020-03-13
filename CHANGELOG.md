@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `MediaSection`, a fullscreen without spacing on small devices section
 - **[NEW]** Add new `Review` widget.
 - [...]
 
