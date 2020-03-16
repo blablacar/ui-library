@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { mount } from 'enzyme'
+import renderer from 'react-test-renderer'
 
 import Review from './index'
 
@@ -35,4 +36,15 @@ it('Should render basic review', () => {
 it('Should render review response', () => {
   const review = mount(<Review {...defaultReviewProps} isResponse />)
   assertReview(review, 'Review title', 'Review content', '05 jul - 17:39', true)
+})
+
+it('Should render review microdata annotations and HTML', () => {
+  const reviewAndResponse = (
+    <Fragment>
+      <Review {...defaultReviewProps} />
+      <Review {...defaultReviewProps} isResponse />
+    </Fragment>
+  )
+  const component = renderer.create(reviewAndResponse).toJSON()
+  expect(component).toMatchSnapshot()
 })

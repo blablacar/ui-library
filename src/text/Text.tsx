@@ -31,6 +31,7 @@ export interface TextProps {
   readonly newlineToBr?: boolean
   readonly role?: string
   readonly ariaLabel?: string
+  readonly itemProp?: string
 }
 
 const baseClassName = 'kirk-text'
@@ -45,6 +46,7 @@ const Text = ({
   newlineToBr = true,
   role,
   ariaLabel,
+  itemProp = null,
 }: TextProps) => {
   const displayClassName = `${baseClassName}-${display}`
   const Tag = tag
@@ -57,6 +59,7 @@ const Text = ({
       aria-label={ariaLabel}
       className={cc([baseClassName, displayClassName, className])}
       {...inlineStyle}
+      {...(itemProp && { itemProp })}
     >
       {typeof children === 'string' && newlineToBr ? replaceNewLineWithBR(children) : children}
     </Tag>
