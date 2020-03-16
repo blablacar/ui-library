@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix story for `Review` widget
 - [...]
 
 # v23.1.0 (13/03/2020)
@@ -20,7 +21,6 @@
 - **[FIX]** Fix padding for title in `ColumnedContentSection`
 - **[FIX]** Update `Profile` component type for `info` prop (`string | JSX.Element`)
 - **[NEW]** `MediaSizeProvider` component
-- [...]
 
 # v22.3.1 (10/03/2020)
 

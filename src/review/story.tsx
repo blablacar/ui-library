@@ -21,7 +21,7 @@ const reviewResponseProps = {
   text: 'Thanks for the comment !',
   formattedDatetime: '06 jul - 18:39',
   isoDatetime: '2017-08-07T18:39:40.526Z',
-  isReviewResponse: true,
+  isResponse: true,
 }
 
 stories.add('default', () => (
