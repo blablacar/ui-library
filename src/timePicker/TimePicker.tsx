@@ -36,6 +36,7 @@ export interface TimePickerProps {
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly timeStart?: string
   readonly focus?: boolean
+  readonly small?: boolean
 }
 
 type Steps = { [propName: string]: string }
@@ -122,11 +123,16 @@ export default class TimePicker extends PureComponent<TimePickerProps, TimePicke
   onSelectBlur = () => this.setState({ isFocused: false })
 
   render() {
-    const { className = '', disabled = false, name } = this.props
+    const { className = '', disabled = false, name, small = false } = this.props
     const { steps } = this.state
     return (
       <div
-        className={cc([prefix({ timePicker: true }), { focus: this.state.isFocused }, className])}
+        className={cc([
+          prefix({ timePicker: true }),
+          { focus: this.state.isFocused },
+          { small },
+          className,
+        ])}
         aria-disabled={disabled}
       >
         <time>{steps[this.state.value]}</time>
