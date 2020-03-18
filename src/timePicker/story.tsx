@@ -18,6 +18,7 @@ stories.add('default', () => (
       disabled={boolean('disabled', false)}
       timeStart={select('timeStart', ['00:00', '08:00', '12:00', '21:00'], '00:00')}
       focus
+      small={boolean('small', false)}
     />
   </Section>
 ))

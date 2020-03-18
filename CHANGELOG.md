@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix story for `Review` widget
+- **[FIX]** Add `small` prop to `TimePicker` component
 - [...]
 
 # v23.1.0 (13/03/2020)
