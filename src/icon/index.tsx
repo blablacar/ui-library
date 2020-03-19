@@ -100,6 +100,8 @@ import WcIcon from './wc'
 import WheelchairIcon from './wheelchair'
 import WifiIcon from './wifi'
 import YoutubeIcon from './youtubeIcon'
+import ZoomInIcon from './zoomIn'
+import ZoomOutIcon from './zoomOut'
 
 export {
   AirConditioningIcon,
@@ -204,4 +206,6 @@ export {
   WheelchairIcon,
   WifiIcon,
   YoutubeIcon,
+  ZoomInIcon,
+  ZoomOutIcon,
 }

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `ZoomIn` and `ZoomOut` icons
 - **[FIX]** Fix story for `Review` widget
 - **[FIX]** Add `small` prop to `TimePicker` component
 - [...]
