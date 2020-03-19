@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
+- **[FIX]** Fix `Item` Button focus visual indicator
 - [...]
 
 # v23.2.0 (20/03/2020)
