@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
+import Card from '_utils/card'
 import Avatar from 'avatar'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
@@ -113,7 +114,7 @@ const TripCard = ({
   }
 
   return (
-    <li
+    <Card
       className={cc([
         'kirk-tripCard',
         {
@@ -122,12 +123,14 @@ const TripCard = ({
         },
         className,
       ])}
-      itemScope
-      itemType="http://schema.org/Event"
     >
       {React.createElement(
         componentTag,
-        componentProps,
+        {
+          ...componentProps,
+          itemScope: true,
+          itemType: 'http://schema.org/Event',
+        },
         <Fragment>
           {metaUrl && (
             <Fragment>
@@ -227,7 +230,7 @@ const TripCard = ({
           </div>
         </Fragment>,
       )}
-    </li>
+    </Card>
   )
 }
 

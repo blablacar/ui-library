@@ -1,20 +1,9 @@
 import styled from 'styled-components'
-import { color, font, radius, space, transition } from '_utils/branding'
+import { color, font, radius, space } from '_utils/branding'
 
 import TripCard from './TripCard'
 
 const StyledTripCard = styled(TripCard)`
-  & {
-    border-radius: ${radius.l};
-    box-shadow: 0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08);
-    list-style-type: none;
-    transition: box-shadow ${transition.duration.base} ${transition.easing.default};
-  }
-
-  &:hover {
-    box-shadow: 0 2pt 8pt rgba(0, 0, 0, 0.08), 0 2pt 16pt rgba(0, 0, 0, 0.08);
-  }
-
   & a {
     display: block;
     height: 100%;

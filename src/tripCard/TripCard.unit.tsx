@@ -8,6 +8,7 @@ import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
 import WarningIcon from 'icon/warningIcon'
+import Card from '_utils/card'
 
 const mockedProps = {
   href: '#',
@@ -52,6 +53,12 @@ const createPassengers = count => {
 const Div = () => <div className="divTest" />
 
 describe('TripCard component', () => {
+  it('Should wrap the content in a Card', () => {
+    const tripCard = shallow(<TripCard {...mockedProps} />)
+
+    expect(tripCard.first().type()).toBe(Card)
+  })
+
   it('Should have the base class and no aria attribute', () => {
     const tripCard = shallow(<TripCard {...mockedProps} />)
     expect(tripCard.hasClass('kirk-tripCard')).toBe(true)
