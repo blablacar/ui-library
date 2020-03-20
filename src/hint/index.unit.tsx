@@ -2,13 +2,12 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
+import { A11yProps } from '_utils/interfaces'
 import StyledHint, { HintBubblePosition } from './index'
 import Hint from './Hint'
 import HintBubble from './HintBubble'
 
-const testChild = (hintBubbleId: string): React.ReactNode => (
-  <p aria-describedby={hintBubbleId}>I have an hint.</p>
-)
+const testChild = (a11yAttrs: A11yProps): React.ReactNode => <p {...a11yAttrs}>I have an hint.</p>
 
 const defaultProps = {
   title: 'Hint Title',

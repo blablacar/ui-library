@@ -31,12 +31,12 @@ stories.add('default', () => (
         )}
         closeButtonTitle="Close"
       >
-        {hintBubbleId => (
+        {a11yAttrs => (
           <ItemChoice
             label="Extra passengers"
             labelInfo="Manage booking requests from extra passengers along your way."
             href="#"
-            aria-describedby={hintBubbleId}
+            {...a11yAttrs}
           />
         )}
       </Hint>

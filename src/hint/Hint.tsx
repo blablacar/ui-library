@@ -6,7 +6,7 @@ import { A11yProps } from '_utils/interfaces'
 import HintBubble, { HintBubblePosition } from './HintBubble'
 
 export interface HintProps extends A11yProps {
-  children: (id: string) => React.ReactNode
+  children: (a11yAttrs: A11yProps) => React.ReactNode
   title: string
   closeButtonTitle?: string
   description?: string
@@ -59,7 +59,7 @@ class Hint extends Component<HintProps, HintState> {
     } = this.props
     return (
       <div className={cc([className, { 'hidden-bubble': this.state.hiddenBubble }])} {...props}>
-        {children(this.id)}
+        {children(this.state.hiddenBubble ? {} : { 'aria-describedby': this.id })}
         {!this.state.hiddenBubble && (
           <HintBubble
             title={title}
