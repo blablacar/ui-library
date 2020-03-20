@@ -326,6 +326,13 @@ exports[`Modal should not have changed 1`] = `
   }
 }
 
+@media (max-width:800px) {
+  .c0 .media-section {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+}
+
 <div
   className="c0 kirk-modal-dimmer kirk-modal-dimmer--visible kirk-modal-dimmer--active"
 >

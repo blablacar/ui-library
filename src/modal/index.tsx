@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, modalSize, color, radius } from '_utils/branding'
+import { responsiveBreakpoints, space, modalSize, color, radius } from '_utils/branding'
 
 import Modal from './Modal'
 
@@ -80,6 +80,15 @@ const StyledModal = styled(Modal)`
     top: 8px;
     left: 8px;
     background-color: transparent;
+  }
+
+  /* MediaSection is fullwith on small media. Counter the default padding with this */
+  /* Ideally, the Modal should not define any internal paddings and let the contained sections take care of the horizontal layout. */
+  @media (${responsiveBreakpoints.isMediaSmall}) {
+    & .media-section {
+      margin-left: -${space.xl};
+      margin-right: -${space.xl};
+    }
   }
 `
 
