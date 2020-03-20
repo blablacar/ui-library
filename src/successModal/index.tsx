@@ -5,13 +5,11 @@ import SuccessModal from './SuccessModal'
 const footerHeight = '96px' /* = padding + content */
 
 const StyledSuccessModal = styled(SuccessModal)`
+  text-align: center;
+
   & .kirk-successModal {
     background-color: ${color.successBackground};
     color: ${color.white};
-  }
-
-  & .kirk-modal--large {
-    text-align: center;
   }
 
   & .kirk-modal.kirk-successModal .kirk-modal-dialog {

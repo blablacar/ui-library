@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
+import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+
 import Section from 'layout/section/baseSection'
-import SuccessModal from 'successModal'
-import { SuccessModalProps, SuccessModalSize } from './SuccessModal'
-import successModalDoc from './specifications/successModal.md'
+import SuccessModal, { SuccessModalProps } from './SuccessModal'
+
+import spec from './specifications/successModal.md'
 
 const stories = storiesOf('Widgets|Modal|SuccessModal', module)
 
@@ -51,11 +51,10 @@ stories.add(
       imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
       imageText={text('imageText', 'Illustation description')}
       confirmLabel={text('confirmLabel', 'Got it!')}
-      size={select('size', SuccessModalSize, SuccessModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', false)}
     />
   ),
   {
-    readme: { content: successModalDoc },
+    readme: { content: spec },
   },
 )
