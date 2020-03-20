@@ -106,6 +106,7 @@ export const componentSizes = {
   roadWidth: '4px',
   smallSectionWidth: '662px',
   largeSectionWidth: '1016px',
+  modalTopPadding: '70px',
 }
 
 export const modalSize = {

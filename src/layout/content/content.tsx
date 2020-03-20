@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { componentSizes, pxToInteger } from '_utils/branding'
+import '_utils/closest'
 
 export interface MainContentProps {
   readonly children: React.ReactNode
@@ -17,11 +19,17 @@ export class MainContent extends Component<MainContentProps> {
     if (!contentElement) {
       return null
     }
-    const topBar: HTMLElement = document.querySelector(this.props.topBarSelector)
-    const height = topBar
-      ? Math.floor(window.innerHeight - topBar.offsetHeight)
-      : window.innerHeight
 
+    const topBar: HTMLElement = document.querySelector(this.props.topBarSelector)
+    let minus = 0
+
+    if (this.mainContentRef.current.closest('.kirk-modal--hasCloseButton')) {
+      minus = pxToInteger(componentSizes.modalTopPadding)
+    } else if (topBar) {
+      minus = topBar.offsetHeight
+    }
+
+    const height = Math.floor(window.innerHeight - minus)
     contentElement.style.minHeight = `${height}px`
     contentElement.style.height = 'auto'
 

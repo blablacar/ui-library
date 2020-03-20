@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { space, modalSize, color, radius } from '_utils/branding'
+import { space, modalSize, color, radius, componentSizes } from '_utils/branding'
 
 import Modal from './Modal'
 
@@ -72,7 +72,7 @@ const StyledModal = styled(Modal)`
   }
 
   & .kirk-modal--hasCloseButton .kirk-modal-dialog {
-    padding-top: 70px;
+    padding-top: ${componentSizes.modalTopPadding};
   }
 
   & .kirk-modal--hasCloseButton .kirk-modal-closeButton {
