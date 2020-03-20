@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import Item, { ItemStatus } from '_utils/item'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import { color } from '_utils/branding'
 import { TextDisplayType } from 'text'
 import Loader from 'loader'
@@ -14,7 +15,7 @@ export enum ItemChoiceStyle {
 
 export const ItemChoiceStatus = ItemStatus
 
-export interface ItemChoiceProps {
+export interface ItemChoiceProps extends A11yProps {
   readonly label?: string
   readonly labelInfo?: string
   readonly data?: string
@@ -32,6 +33,7 @@ export interface ItemChoiceProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void
   readonly ariaLabel?: string
+  readonly ariaDescribedby?: string
 }
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {
@@ -94,6 +96,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
       disabled,
       ariaLabel,
     } = this.props
+    const a11yAttrs = pickA11yProps<ItemChoiceProps>(this.props)
     const isRecommended = style === ItemChoiceStyle.RECOMMENDED
 
     return (
@@ -121,6 +124,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
         chevron={status === ItemStatus.DEFAULT}
         isClickable={!disabled}
         ariaLabel={ariaLabel}
+        {...a11yAttrs}
       />
     )
   }
