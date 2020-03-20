@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v23.2.0 (20/03/2020)
+
 - **[NEW]** Add `ZoomIn` and `ZoomOut` icons
 - **[FIX]** Fix story for `Review` widget
 - **[FIX]** Add `small` prop to `TimePicker` component
-- [...]
 
 # v23.1.0 (13/03/2020)
 
