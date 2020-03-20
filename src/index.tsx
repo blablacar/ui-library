@@ -18,7 +18,7 @@ export { default as BaseSection, SectionContentSize } from 'layout/section/baseS
 export { default as HeroSection } from 'layout/section/heroSection'
 export { default as HighlightSection } from 'layout/section/highlightSection'
 export { default as TabsSection } from 'layout/section/tabsSection'
-export { default as TripsSection } from 'layout/section/tripsSection'
+export { default as CardsSection } from 'layout/section/cardsSection'
 export { default as MediaContentSection } from 'layout/section/mediaContentSection'
 export { default as ColumnedContentSection } from 'layout/section/columnedContentSection'
 export { default as IllustratedSection } from 'layout/section/illustratedSection'

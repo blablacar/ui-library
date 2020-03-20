@@ -13,7 +13,7 @@ import Item from '_utils/item'
 import { CarpoolIcon, BusIcon } from 'icon'
 import SearchRecap from 'searchRecap'
 import SubHeader from 'subHeader'
-import TripsSection from 'layout/section/tripsSection'
+import CardsSection from 'layout/section/cardsSection'
 import LayoutNormalizer from 'layout/layoutNormalizer'
 
 const stories = storiesOf('Pages|Search results/With tabs', module)
@@ -119,10 +119,10 @@ stories.add('Default', () => (
     <Section>
       <SearchRecap {...defaultSearchRecapConfig} />
     </Section>
-    <TripsSection>
+    <CardsSection>
       <TripCard {...createTripCardConfig()} />
       <TripCard {...createTripCardConfig()} />
-    </TripsSection>
+    </CardsSection>
     <TabsSection tabsProps={defaultTabsConfig} />
   </Fragment>
 ))

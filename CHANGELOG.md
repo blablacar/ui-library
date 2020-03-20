@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Improve & rename `TripSection` as `CardsSection` to be able to handle `TripCard` and `QrCard` elements
 - [...]
 
 # v23.2.1 (23/03/2020)
