@@ -117,6 +117,8 @@ export const modalSize = {
 export const shadow: defaultBranding = {
   default: '0 2px 4px rgba(0, 0, 0, .3)',
   icon: '0 0 2px rgba(0, 0, 0, .3)',
+  card: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
+  cardHover: '0 2pt 8pt rgba(0, 0, 0, 0.08), 0 2pt 16pt rgba(0, 0, 0, 0.08)',
 }
 
 export const inputBorderSize = {
