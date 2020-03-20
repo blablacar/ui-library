@@ -1,9 +1,62 @@
 import React, { Component } from 'react'
 import uuidv4 from 'uuid/v4'
+import styled from 'styled-components'
+
+import { color, space, responsiveBreakpoints } from '_utils/branding'
 
 import Modal, { ModalProps } from 'modal'
 import Button, { ButtonStatus } from 'button'
 import TextDisplay1 from 'typography/display1'
+
+const footerHeight = '96px' /* = padding + content */
+
+const StyledSuccessModal = styled(Modal)`
+  text-align: center;
+  background-color: ${color.successBackground};
+`
+
+const Body = styled.div`
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    width: 50%;
+
+    &:nth-child(odd) {
+      padding-right: ${space.xl};
+    }
+
+    &:nth-child(even) {
+      padding-left: ${space.xl};
+    }
+  }
+`
+
+const Media = styled.img`
+  width: 80%;
+  margin-bottom: ${space.xl};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    margin-bottom: 0;
+  }
+`
+
+const Footer = styled.footer`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: ${footerHeight};
+  padding: ${space.xl};
+  text-align: center;
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    .kirk-button {
+      margin: ${space.l} ${space.xl} 0;
+    }
+  }
+`
 
 export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
@@ -31,11 +84,10 @@ class SuccessModal extends Component<SuccessModalProps> {
       className,
     } = this.props
 
-    const baseClassName = 'kirk-successModal'
-    const successContentId = `${baseClassName}-bodyItem-${uuidv4()}`
+    const successContentId = `kirk-successModal-bodyItem-${uuidv4()}`
 
     return (
-      <Modal
+      <StyledSuccessModal
         onClose={onClose}
         isOpen={isOpen}
         closeOnEsc={false}
@@ -43,28 +95,22 @@ class SuccessModal extends Component<SuccessModalProps> {
         displayDimmer={false}
         forwardedRef={forwardedRef}
         className={className}
-        modalContentClassName={baseClassName}
         ariaLabelledBy={successContentId}
       >
-        <img
-          className={`${baseClassName}-bodyItem ${baseClassName}-image`}
+        <Media
           src={imageSrc}
           alt={imageText}
           aria-hidden // This image is always decorative
         />
-        <div id={successContentId} className={`${baseClassName}-bodyItem`}>
+        <Body id={successContentId}>
           <TextDisplay1 isInverted>{children}</TextDisplay1>
-          <footer className={`${baseClassName}-footer`}>
-            <Button
-              status={ButtonStatus.SECONDARY}
-              className={`${baseClassName}-confirmButton`}
-              onClick={onClose}
-            >
+          <Footer>
+            <Button status={ButtonStatus.SECONDARY} onClick={onClose}>
               {confirmLabel}
             </Button>
-          </footer>
-        </div>
-      </Modal>
+          </Footer>
+        </Body>
+      </StyledSuccessModal>
     )
   }
 }

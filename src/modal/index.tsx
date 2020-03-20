@@ -19,9 +19,9 @@ const StyledModal = styled(Modal)`
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  &.kirk-modal-dimmer--hide {
+  /* &.kirk-modal-dimmer--hide {
     background-color: ${color.white};
-  }
+  } */
 
   &.kirk-modal-dimmer--fullscreen {
     background-color: transparent;
@@ -47,7 +47,7 @@ const StyledModal = styled(Modal)`
     padding: ${space.xl};
     margin: ${space.xl} auto;
     width: ${modalSize.m};
-    background-color: ${color.white};
+    /* background-color: ${color.white}; */
     border-radius: ${radius.m};
   }
 
