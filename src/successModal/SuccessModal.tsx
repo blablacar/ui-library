@@ -2,60 +2,54 @@ import React, { Component } from 'react'
 import uuidv4 from 'uuid/v4'
 import styled from 'styled-components'
 
-import { color, space, responsiveBreakpoints } from '_utils/branding'
+import { color, space, modalSize, responsiveBreakpoints } from '_utils/branding'
 
 import Modal, { ModalProps } from 'modal'
 import Button, { ButtonStatus } from 'button'
 import TextDisplay1 from 'typography/display1'
 
-const footerHeight = '96px' /* = padding + content */
-
 const StyledSuccessModal = styled(Modal)`
+  padding: 0;
   text-align: center;
   background-color: ${color.successBackground};
-`
 
-const Body = styled.div`
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    width: 50%;
+  /* overrides */
+  .kirk-modal-dialog {
+    padding: 0;
+    margin: 0 auto;
+    height: 100%;
+    max-width: ${modalSize.m};
+  }
 
-    &:nth-child(odd) {
-      padding-right: ${space.xl};
-    }
-
-    &:nth-child(even) {
-      padding-left: ${space.xl};
-    }
+  .kirk-modal-body {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: column;
   }
 `
 
-const Media = styled.img`
-  width: 80%;
-  margin-bottom: ${space.xl};
+const Figure = styled.img`
+  width: 100%;
+  max-height: 33vh; /* why? */
+  object-fit: cover;
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     margin-bottom: 0;
   }
 `
 
-const Footer = styled.footer`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: ${footerHeight};
+const Content = styled.div`
+  flex: 1;
   padding: ${space.xl};
+`
+
+const Footer = styled.footer`
+  padding: 0 0 ${space.xl};
   text-align: center;
+`
 
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-
-    .kirk-button {
-      margin: ${space.l} ${space.xl} 0;
-    }
-  }
+const SuccessButton = styled(Button)`
+  margin: ${space.xl};
 `
 
 export interface SuccessModalProps extends ModalProps {
@@ -97,19 +91,19 @@ class SuccessModal extends Component<SuccessModalProps> {
         className={className}
         ariaLabelledBy={successContentId}
       >
-        <Media
+        <Figure
           src={imageSrc}
           alt={imageText}
           aria-hidden // This image is always decorative
         />
-        <Body id={successContentId}>
+        <Content id={successContentId}>
           <TextDisplay1 isInverted>{children}</TextDisplay1>
-          <Footer>
-            <Button status={ButtonStatus.SECONDARY} onClick={onClose}>
-              {confirmLabel}
-            </Button>
-          </Footer>
-        </Body>
+        </Content>
+        <Footer>
+          <SuccessButton status={ButtonStatus.SECONDARY} onClick={onClose}>
+            {confirmLabel}
+          </SuccessButton>
+        </Footer>
       </StyledSuccessModal>
     )
   }
