@@ -2,10 +2,12 @@
 
 - **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
 - **[BREAKING CHANGE]** Use `title` instead of `children` prop in `Stepper`
+- **[NEW]** Add `AutocompleteOverlay` component with CSS nesting
+- **[NEW]** Add `AutocompleteSection` component with CSS nesting
 - **[NEW]** Add `StepperOverlay` component
-- **[NEW]** Add `StepperFullScreen` component
+- **[NEW]** Add `StepperSection` component
 - **[NEW]** Add `DatePickerOverlay` component
-- **[NEW]** Add `DatePickerFullScreen` component
+- **[NEW]** Add `DatePickerSection` component
 - **[NEW]** Add `CalendarIcon` component
 - **[NEW]** Add `SearchForm` component
   [...]
