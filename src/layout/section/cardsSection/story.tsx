@@ -3,10 +3,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import TripsSection from 'layout/section/tripsSection'
+import CardsSection from 'layout/section/cardsSection'
 import TripCard from 'tripCard'
+import QrCard from 'qrCard'
 
-const stories = storiesOf('Sections|TripsSection', module)
+const stories = storiesOf('Sections|CardsSection', module)
 stories.addDecorator(withKnobs)
 
 const tripCardConfig = {
@@ -39,8 +40,8 @@ const tripCardConfig = {
   title: '',
 }
 
-stories.add('TripsSection - default', () => (
-  <TripsSection>
+stories.add('CardsSection - default', () => (
+  <CardsSection>
     <TripCard {...tripCardConfig} />
     <TripCard
       {...tripCardConfig}
@@ -50,11 +51,11 @@ stories.add('TripsSection - default', () => (
       }}
       badge="Closest"
     />
-  </TripsSection>
+  </CardsSection>
 ))
 
-stories.add('TripsSection - 4 trip cards', () => (
-  <TripsSection>
+stories.add('CardsSection - 4 trip cards', () => (
+  <CardsSection>
     <TripCard {...tripCardConfig} />
     <TripCard
       {...tripCardConfig}
@@ -73,5 +74,31 @@ stories.add('TripsSection - 4 trip cards', () => (
       }}
       badge="Closest"
     />
-  </TripsSection>
+  </CardsSection>
+))
+
+const qrUrl =
+  'https://www.textencode.com/create-qr-code/qr-generator/qrcodesticker79f6448652f32311241f5992bd184e22.png'
+
+stories.add('CardsSection - 3 Qr cards', () => (
+  <CardsSection>
+    <QrCard
+      title="Jack Jones Dupont"
+      imageUrl={qrUrl}
+      itemMainTitle="1st class"
+      itemMainInfo="Your seat number will be assigned to you 1 hour before departure."
+    />
+    <QrCard
+      title="Michael Jones"
+      imageUrl={qrUrl}
+      itemMainTitle="1st class"
+      itemMainInfo="Seat n°22"
+    />
+    <QrCard
+      title="Johnny Perry Jones Tony Longname"
+      imageUrl={qrUrl}
+      itemMainTitle="1st class"
+      itemMainInfo="Seat n°21"
+    />
+  </CardsSection>
 ))

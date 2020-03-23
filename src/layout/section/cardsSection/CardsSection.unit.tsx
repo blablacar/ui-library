@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import TripsSection from './TripsSection'
+import CardsSection from './CardsSection'
 import TripCard from 'tripCard'
 
 const tripCardConfig = {
@@ -33,14 +33,14 @@ const tripCardConfig = {
   title: '',
 }
 
-describe('TripsSection component', () => {
+describe('CardsSection component', () => {
   it('Should render as many TripCards as passed', () => {
     const wrapper = mount(
-      <TripsSection>
+      <CardsSection>
         <TripCard {...tripCardConfig} />
         <TripCard {...tripCardConfig} />
         <TripCard {...tripCardConfig} />
-      </TripsSection>,
+      </CardsSection>,
     )
     expect(wrapper.find(TripCard).length).toEqual(3)
   })
