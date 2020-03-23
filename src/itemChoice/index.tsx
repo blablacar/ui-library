@@ -33,7 +33,6 @@ export interface ItemChoiceProps extends A11yProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void
   readonly ariaLabel?: string
-  readonly ariaDescribedby?: string
 }
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {

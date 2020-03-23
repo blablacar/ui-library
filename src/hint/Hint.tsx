@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import cc from 'classcat'
 import uniqueid from 'lodash.uniqueid'
 
-import { A11yProps } from '_utils/interfaces'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import HintBubble, { HintBubblePosition } from './HintBubble'
 
 export interface HintProps extends A11yProps {
@@ -11,7 +11,7 @@ export interface HintProps extends A11yProps {
   closeButtonTitle?: string
   description?: string
   position?: HintBubblePosition
-  className?: Classcat.Class
+  className?: string
   onClose?: () => void
   hidden?: boolean
 }
@@ -20,59 +20,43 @@ export interface HintState {
   hiddenBubble: boolean
 }
 
-class Hint extends Component<HintProps, HintState> {
-  static defaultProps: Partial<HintProps> = {
-    description: null,
-    closeButtonTitle: null,
-    position: HintBubblePosition.ABOVE,
-    className: '',
-    onClose() {},
-    hidden: false,
-  }
+const Hint = (props: HintProps): JSX.Element => {
+  const {
+    title,
+    children,
+    className = '',
+    description = '',
+    position = HintBubblePosition.ABOVE,
+    closeButtonTitle = '',
+    onClose = () => {},
+    hidden = false,
+  } = props
+  const [hiddenBubble, closeBubble] = useState(hidden)
+  const id = uniqueid('kirk-hint-')
+  const a11yAttrs = pickA11yProps(props)
 
-  state: HintState = {
-    hiddenBubble: this.props.hidden,
-  }
-
-  id: string = ''
-
-  constructor(props: HintProps) {
-    super(props)
-    this.id = uniqueid('kirk-hint-')
-  }
-
-  onClose = () => {
-    this.setState({ hiddenBubble: true })
-  }
-
-  render() {
-    const {
-      className,
-      title,
-      description,
-      position,
-      children,
-      closeButtonTitle,
-      onClose,
-      hidden,
-      ...props
-    } = this.props
-    return (
-      <div className={cc([className, { 'hidden-bubble': this.state.hiddenBubble }])} {...props}>
-        {children(this.state.hiddenBubble ? {} : { 'aria-describedby': this.id })}
-        {!this.state.hiddenBubble && (
-          <HintBubble
-            title={title}
-            description={description}
-            closeButtonTitle={closeButtonTitle}
-            position={position}
-            onClose={this.onClose}
-            id={this.id}
-          />
-        )}
-      </div>
-    )
-  }
+  return (
+    <div
+      className={cc([className, { 'hidden-bubble': hiddenBubble }])}
+      {...a11yAttrs}
+      aria-live="polite"
+    >
+      {!hiddenBubble && (
+        <HintBubble
+          title={title}
+          description={description}
+          closeButtonTitle={closeButtonTitle}
+          position={position}
+          onClose={() => {
+            closeBubble(true)
+            onClose()
+          }}
+          id={id}
+        />
+      )}
+      {children(hiddenBubble ? {} : { 'aria-describedby': id })}
+    </div>
+  )
 }
 
 export default Hint

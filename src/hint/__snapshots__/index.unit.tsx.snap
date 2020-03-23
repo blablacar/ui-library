@@ -227,7 +227,7 @@ exports[`Hint Default rendering (above) 1`] = `
 }
 
 .c2 .kirk-button {
-  padding: 0;
+  padding: 0 0 0 16px;
   min-height: 0;
   height: auto;
 }
@@ -288,13 +288,9 @@ exports[`Hint Default rendering (above) 1`] = `
 }
 
 <div
+  aria-live="polite"
   className="c0"
 >
-  <p
-    aria-describedby="kirk-hint-1"
-  >
-    I have an hint.
-  </p>
   <aside
     className="c1 c2 bubble-arrow--above"
     id="kirk-hint-1"
@@ -306,6 +302,7 @@ exports[`Hint Default rendering (above) 1`] = `
       Hint Description
     </p>
     <button
+      aria-controls="kirk-hint-1"
       className="kirk-button kirk-button-unstyled c3"
       disabled={false}
       onBlur={[Function]}
@@ -322,9 +319,9 @@ exports[`Hint Default rendering (above) 1`] = `
         aria-hidden={true}
         className="kirk-icon c4"
         fill="#FFF"
-        height="18"
+        height={18}
         viewBox="0 0 24 24"
-        width="18"
+        width={18}
         xmlns="http://www.w3.org/2000/svg"
       >
         
@@ -340,6 +337,11 @@ exports[`Hint Default rendering (above) 1`] = `
       </svg>
     </button>
   </aside>
+  <p
+    aria-describedby="kirk-hint-1"
+  >
+    I have an hint.
+  </p>
 </div>
 `;
 
@@ -570,7 +572,7 @@ exports[`Hint Default rendering (below) 1`] = `
 }
 
 .c2 .kirk-button {
-  padding: 0;
+  padding: 0 0 0 16px;
   min-height: 0;
   height: auto;
 }
@@ -631,13 +633,9 @@ exports[`Hint Default rendering (below) 1`] = `
 }
 
 <div
+  aria-live="polite"
   className="c0"
 >
-  <p
-    aria-describedby="kirk-hint-2"
-  >
-    I have an hint.
-  </p>
   <aside
     className="c1 c2 bubble-arrow--below"
     id="kirk-hint-2"
@@ -649,6 +647,7 @@ exports[`Hint Default rendering (below) 1`] = `
       Hint Description
     </p>
     <button
+      aria-controls="kirk-hint-2"
       className="kirk-button kirk-button-unstyled c3"
       disabled={false}
       onBlur={[Function]}
@@ -665,9 +664,9 @@ exports[`Hint Default rendering (below) 1`] = `
         aria-hidden={true}
         className="kirk-icon c4"
         fill="#FFF"
-        height="18"
+        height={18}
         viewBox="0 0 24 24"
-        width="18"
+        width={18}
         xmlns="http://www.w3.org/2000/svg"
       >
         
@@ -683,5 +682,10 @@ exports[`Hint Default rendering (below) 1`] = `
       </svg>
     </button>
   </aside>
+  <p
+    aria-describedby="kirk-hint-2"
+  >
+    I have an hint.
+  </p>
 </div>
 `;

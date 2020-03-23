@@ -21,17 +21,22 @@ export interface HintBubbleProps extends A11yProps {
   position?: HintBubblePosition
 }
 
-export const HintBubble = (props: HintBubbleProps) => {
+export const HintBubble = (props: HintBubbleProps): JSX.Element => {
   const a11yProps = pickA11yProps<HintBubbleProps>(props)
   const { title, description, closeButtonTitle, position, className, onClose } = props
   return (
-    <aside className={cc([className, `bubble-arrow--${position}`])} role="tooltip" {...a11yProps}>
+    <aside className={cc([className, `bubble-arrow--${position}`])} {...a11yProps}>
       <p>
         <strong>{title}</strong>
         {description}
       </p>
-      <Button onClick={onClose} title={closeButtonTitle} status={ButtonStatus.UNSTYLED}>
-        <CrossIcon size="18" iconColor={color.textWithBackground} />
+      <Button
+        onClick={onClose}
+        title={closeButtonTitle}
+        status={ButtonStatus.UNSTYLED}
+        aria-controls={a11yProps.id}
+      >
+        <CrossIcon size={18} iconColor={color.textWithBackground} />
       </Button>
     </aside>
   )
@@ -62,7 +67,7 @@ export default styled(HintBubble)`
   }
 
   & .kirk-button {
-    padding: 0;
+    padding: 0 0 0 ${space.l};
     min-height: 0;
     height: auto;
   }

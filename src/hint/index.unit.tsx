@@ -31,21 +31,15 @@ describe('Hint', () => {
     expect(hint).toMatchSnapshot()
   })
   it('Should render a HintBubble', () => {
-    const hint = shallow<Hint>(<Hint {...defaultProps}>{testChild}</Hint>)
+    const hint = shallow(<Hint {...defaultProps}>{testChild}</Hint>)
     expect(hint.find(HintBubble)).toHaveLength(1)
   })
   it('Should not render a HintBubble if prop hidden is set to true', () => {
-    const hint = shallow<Hint>(
+    const hint = shallow(
       <Hint {...defaultProps} hidden>
         {testChild}
       </Hint>,
     )
-    expect(hint.find(HintBubble)).toHaveLength(0)
-  })
-  it('Should hide the HintBubble after closing it', () => {
-    const hint = shallow<Hint>(<Hint {...defaultProps}>{testChild}</Hint>)
-    expect(hint.find(HintBubble)).toHaveLength(1)
-    hint.instance().onClose()
     expect(hint.find(HintBubble)).toHaveLength(0)
   })
 })
