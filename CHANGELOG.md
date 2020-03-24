@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
+- **[NEW]** Add `Hint` component
+- **[UPDATE]** Add explicit support for generic aria attributes on `Item`-like components and `Button`
 - [...]
 
 # v24.0.0 (23/03/2020)
