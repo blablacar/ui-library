@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import uuidv4 from 'uuid/v4'
 import styled from 'styled-components'
 
-import { color, space, modalSize, responsiveBreakpoints } from '_utils/branding'
+import { color, space, responsiveBreakpoints, grid } from '_utils/branding'
 
 import Modal, { ModalProps } from 'modal'
 import Button, { ButtonStatus } from 'button'
@@ -15,32 +15,59 @@ const StyledSuccessModal = styled(Modal)`
 
   /* overrides */
   .kirk-modal-dialog {
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0 auto;
     height: 100%;
-    max-width: ${modalSize.m};
   }
 
   .kirk-modal-body {
     display: flex;
     min-height: 100vh;
-    flex-flow: column;
+    flex-direction: column;
+
+    @media (${responsiveBreakpoints.isMediaLarge}) {
+      max-width: ${grid.wide};
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
 `
 
-const Figure = styled.img`
-  width: 100%;
-  max-height: 33vh; /* why? */
-  object-fit: cover;
+const Figure = styled.figure`
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  padding-top: ${space.xxl};
+  height: 33vh;
+  /* background-color: purple; */
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    margin-bottom: 0;
+    padding: 0;
+    width: calc(7 * ${grid.column} + 6 * ${grid.gutter});
+    margin: 0 ${grid.gutter} 0 ${space.xl};
   }
 `
 
 const Content = styled.div`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: ${space.xl};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    flex: 1;
+    width: calc(5 * ${grid.column} + 4 * ${grid.gutter});
+    height: auto;
+  }
+`
+
+const Main = styled.h1`
+  flex: 1;
+  margin-bottom: ${space.xl};
 `
 
 const Footer = styled.footer`
@@ -78,7 +105,7 @@ class SuccessModal extends Component<SuccessModalProps> {
       className,
     } = this.props
 
-    const successContentId = `kirk-successModal-bodyItem-${uuidv4()}`
+    const successContentId = `kirk-successModal-content-${uuidv4()}`
 
     return (
       <StyledSuccessModal
@@ -91,19 +118,23 @@ class SuccessModal extends Component<SuccessModalProps> {
         className={className}
         ariaLabelledBy={successContentId}
       >
-        <Figure
-          src={imageSrc}
-          alt={imageText}
-          aria-hidden // This image is always decorative
-        />
+        <Figure>
+          <img
+            src={imageSrc}
+            alt={imageText}
+            aria-hidden // This image is always decorative
+          />
+        </Figure>
         <Content id={successContentId}>
-          <TextDisplay1 isInverted>{children}</TextDisplay1>
+          <Main>
+            <TextDisplay1 isInverted>{children}</TextDisplay1>
+          </Main>
+          <Footer>
+            <SuccessButton status={ButtonStatus.SECONDARY} onClick={onClose}>
+              {confirmLabel}
+            </SuccessButton>
+          </Footer>
         </Content>
-        <Footer>
-          <SuccessButton status={ButtonStatus.SECONDARY} onClick={onClose}>
-            {confirmLabel}
-          </SuccessButton>
-        </Footer>
       </StyledSuccessModal>
     )
   }

@@ -69,6 +69,12 @@ export const space: defaultBranding = {
   xxl: '48px',
 }
 
+export const grid: defaultBranding = {
+  gutter: '16px',
+  column: '64px' /* 62px on design */,
+  wide: '960px' /* 12 columns */,
+}
+
 export const radius: defaultBranding = {
   none: '0',
   s: '4px',
@@ -190,6 +196,7 @@ export const color: Color = {
 export const pxToInteger = (size: string): number => parseInt(size.replace('px', ''), 10)
 
 export default {
+  grid,
   color,
   font,
   fontWeight,

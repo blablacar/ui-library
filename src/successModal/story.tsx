@@ -48,9 +48,12 @@ stories.add(
     <SuccessModalOpener
       isOpen={false}
       onClose={action('onClose')}
-      imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
-      imageText={text('imageText', 'Illustation description')}
-      confirmLabel={text('confirmLabel', 'Got it!')}
+      imageSrc={text(
+        'SuccessImageSrc',
+        'https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg',
+      )}
+      imageText={text('SuccessImageText', 'Illustation description')}
+      confirmLabel={text('SuccessConfirmLabel', 'Got it!')}
       closeOnEsc={boolean('closeOnEsc', false)}
     />
   ),
