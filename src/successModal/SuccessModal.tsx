@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-
-import Modal, { ModalSize } from 'modal'
-import { ModalProps } from 'modal/Modal'
-import Button, { ButtonStatus } from 'button'
-import TheVoice from 'theVoice'
-import { assertModalSizes } from '_utils/assert'
+import React from 'react'
 import uuidv4 from 'uuid/v4'
+
+import { ModalProps } from 'modal'
+import { ButtonStatus } from 'button'
+
+import TextDisplay1 from 'typography/display1'
+
+import { SuccessModalStyle } from './index'
 
 export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
@@ -13,74 +14,65 @@ export interface SuccessModalProps extends ModalProps {
   readonly imageText?: string
 }
 
-export enum SuccessModalSize {
-  SMALL = 'small',
-  LARGE = 'large',
-}
+const SuccessModal = (props: SuccessModalProps): JSX.Element => {
+  const {
+    isOpen = false,
+    onClose = () => {},
+    forwardedRef = null,
+    confirmLabel,
+    imageSrc,
+    imageText = '',
+    children,
+    className,
+  } = props
 
-class SuccessModal extends Component<SuccessModalProps> {
-  static defaultProps: Partial<SuccessModalProps> = {
-    isOpen: false,
-    closeOnEsc: false,
-    size: ModalSize.SMALL,
-    forwardedRef: null,
-    imageText: '',
-  }
+  const baseClassName = 'kirk-successModal'
+  const successContentId = `${baseClassName}-content-${uuidv4()}`
 
-  render() {
-    const {
-      isOpen,
-      children,
-      size,
-      onClose,
-      confirmLabel,
-      forwardedRef,
-      imageSrc,
-      imageText,
-      className,
-    } = this.props
+  const {
+    StyledSuccessModal,
+    Media,
+    Figure,
+    Content,
+    SuccessTitle,
+    SuccessAction,
+    SuccessButton,
+  } = SuccessModalStyle
 
-    // Will throw if we use a non allowed modal size
-    assertModalSizes(SuccessModalSize, this.props.size)
-
-    const baseClassName = 'kirk-successModal'
-    const successContentId = `${baseClassName}-bodyItem-${uuidv4()}`
-
-    return (
-      <Modal
-        onClose={onClose}
-        isOpen={isOpen}
-        size={size}
-        closeOnEsc={false}
-        displayCloseButton={false}
-        displayDimmer={false}
-        forwardedRef={forwardedRef}
-        className={className}
-        modalContentClassName={baseClassName}
-        ariaLabelledBy={successContentId}
-      >
-        <img
-          className={`${baseClassName}-bodyItem ${baseClassName}-image`}
-          src={imageSrc}
-          alt={imageText}
-          // This image is always decorative
-          aria-hidden
-        />
-        <div id={successContentId} className={`${baseClassName}-bodyItem`}>
-          <TheVoice isInverted>{children}</TheVoice>
-          <footer className={`${baseClassName}-footer`}>
-            <Button
+  return (
+    <StyledSuccessModal
+      onClose={onClose}
+      isOpen={isOpen}
+      closeOnEsc={false}
+      displayCloseButton={false}
+      displayDimmer={false}
+      forwardedRef={forwardedRef}
+      className={className}
+      modalContentClassName={baseClassName}
+      ariaLabelledBy={successContentId}
+      data-test="success-modal"
+    >
+      <Media>
+        <Figure>
+          <img src={imageSrc} alt={imageText} />
+        </Figure>
+        <Content>
+          <SuccessTitle data-test="success-title">
+            <TextDisplay1 isInverted>{children}</TextDisplay1>
+          </SuccessTitle>
+          <SuccessAction>
+            <SuccessButton
               status={ButtonStatus.SECONDARY}
-              className={`${baseClassName}-confirmButton`}
+              data-test="success-button"
               onClick={onClose}
             >
               {confirmLabel}
-            </Button>
-          </footer>
-        </div>
-      </Modal>
-    )
-  }
+            </SuccessButton>
+          </SuccessAction>
+        </Content>
+      </Media>
+    </StyledSuccessModal>
+  )
 }
 
 export default SuccessModal
