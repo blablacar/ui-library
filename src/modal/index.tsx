@@ -1,5 +1,12 @@
 import styled from 'styled-components'
-import { responsiveBreakpoints, space, modalSize, color, radius, componentSizes } from '_utils/branding'
+import {
+  responsiveBreakpoints,
+  space,
+  modalSize,
+  color,
+  radius,
+  componentSizes,
+} from '_utils/branding'
 
 import Modal from './Modal'
 
