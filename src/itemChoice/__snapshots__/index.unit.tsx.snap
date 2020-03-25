@@ -127,10 +127,14 @@ button.c0 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c0,
+button:hover.c0 {
+  outline: none;
 }
 
 .c0:disabled {
@@ -508,10 +512,14 @@ button.c0 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c0,
+button:hover.c0 {
+  outline: none;
 }
 
 .c0:disabled {
@@ -881,10 +889,14 @@ button.c0 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c0,
+button:hover.c0 {
+  outline: none;
 }
 
 .c0:disabled {
@@ -1225,10 +1237,14 @@ button.c0 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c0,
+button:hover.c0 {
+  outline: none;
 }
 
 .c0:disabled {
@@ -1571,10 +1587,14 @@ button.c0 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c0,
+button:hover.c0 {
+  outline: none;
 }
 
 .c0:disabled {

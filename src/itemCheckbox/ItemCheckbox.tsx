@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import Item from '_utils/item'
 import CheckboxIcon from '_utils/checkboxIcon'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import { TextDisplayType } from 'text'
 
 export enum ItemCheckboxStatus {
@@ -10,7 +11,7 @@ export enum ItemCheckboxStatus {
   LOADING = 'loading',
 }
 
-export interface ItemCheckboxProps {
+export interface ItemCheckboxProps extends A11yProps {
   readonly label: string
   readonly name: string
   readonly data?: string
@@ -47,6 +48,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
       disabled,
       status,
     } = this.props
+    const a11yAttrs = pickA11yProps<ItemCheckboxProps>(this.props)
     const isLoading = status === ItemCheckboxStatus.LOADING
     const checkbox = (
       <Fragment>
@@ -62,19 +64,18 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
     )
 
     return (
-      <Fragment>
-        <Item
-          className={cc(['kirk-item-checkbox', className])}
-          leftTitle={labelTitle}
-          leftBody={label}
-          rightTitle={data}
-          rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
-          rightBody={dataInfo}
-          tag={<label />}
-          rightAddon={checkbox}
-          isClickable
-        />
-      </Fragment>
+      <Item
+        className={cc(['kirk-item-checkbox', className])}
+        leftTitle={labelTitle}
+        leftBody={label}
+        rightTitle={data}
+        rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+        rightBody={dataInfo}
+        tag={<label />}
+        rightAddon={checkbox}
+        isClickable
+        {...a11yAttrs}
+      />
     )
   }
 }

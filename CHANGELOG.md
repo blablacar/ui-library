@@ -1,8 +1,20 @@
 # Unreleased
 
 - **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
+- **[NEW]** Add `Hint` component
+- **[UPDATE]** Add explicit support for generic aria attributes on `Item`-like components and `Button`
+- **[FIX]** Fix `MainContent` height when inside a `Modal` with close button
 - **[FIX]** Fix `MediaSection` display inside a `Modal`
 - [...]
+
+# v24.0.0 (23/03/2020)
+
+- **[BREAKING CHANGE]** Improve & rename `TripSection` as `CardsSection` to be able to handle `TripCard` and `QrCard` elements
+
+# v23.2.1 (23/03/2020)
+
+- **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
+- **[FIX]** Fix `Item` Button focus visual indicator
 
 # v23.2.0 (20/03/2020)
 

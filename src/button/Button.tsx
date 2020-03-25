@@ -3,6 +3,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import Loader from 'loader'
 
 export enum ButtonStatus {
@@ -15,7 +16,7 @@ export enum ButtonStatus {
   CHECKED = 'checked',
 }
 
-export interface ButtonProps {
+export interface ButtonProps extends A11yProps {
   readonly children: string | number | React.ReactNode
   readonly type?: string
   readonly href?: string | JSX.Element
@@ -137,6 +138,8 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       ...attrs
     } = this.props
 
+    const a11yAttrs = pickA11yProps<ButtonProps>(this.props)
+
     let componentType
     let typeProps: TypeProps = {}
 
@@ -181,6 +184,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
       ]),
       ...typeProps,
       ...attrs,
+      ...a11yAttrs,
     }
 
     return React.createElement(
