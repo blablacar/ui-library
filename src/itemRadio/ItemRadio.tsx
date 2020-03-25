@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import Item from '_utils/item'
 import RadioIcon from '_utils/radioIcon'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import { TextDisplayType } from 'text'
 
 export enum ItemRadioStatus {
@@ -10,7 +11,7 @@ export enum ItemRadioStatus {
   LOADING = 'loading',
 }
 
-export interface ItemRadioProps {
+export interface ItemRadioProps extends A11yProps {
   readonly label: string
   readonly name: string
   readonly value: string | number
@@ -76,6 +77,7 @@ class ItemRadio extends Component<ItemRadioProps> {
       chevron,
       highlighted,
     } = this.props
+    const a11yAttrs = pickA11yProps<ItemRadioProps>(this.props)
     const isLoading = status === ItemRadioStatus.LOADING
     const radio = (
       <Fragment>
@@ -108,6 +110,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           chevron={chevron && !isLoading}
           highlighted={highlighted}
           isClickable
+          {...a11yAttrs}
         />
       </Fragment>
     )

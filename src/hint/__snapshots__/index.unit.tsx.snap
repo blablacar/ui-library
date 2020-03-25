@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hint Default rendering (above) 1`] = `
+.c4.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c4.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c4 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: 48px;
+  min-width: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  white-space: nowrap;
+}
+
+.c3 svg,
+.c3 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 svg {
+  margin-right: 4px;
+  margin-left: -8px;
+}
+
+.c3.kirk-button-bubble svg {
+  margin: 0;
+}
+
+.c3.kirk-itemChoice {
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
+}
+
+.c3:hover,
+.c3:active {
+  outline: 0;
+}
+
+.c3.kirk-button-unstyled {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #00AFF5;
+  padding: inherit;
+  display: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+.c3[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c3.kirk-button-unstyled[disabled] {
+  opacity: 1;
+}
+
+.c3.kirk-button-primary {
+  background-color: #00AFF5;
+  color: #FFF;
+}
+
+.c3.kirk-button-shadowed {
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+
+.c3.kirk-button-primary:hover,
+.c3.kirk-button-primary:focus,
+.c3.kirk-button-primary:active {
+  background-color: #008FC1;
+}
+
+.c3.kirk-button-secondary {
+  background-color: #FFF;
+  border-color: #DDD;
+  color: #00AFF5;
+}
+
+.c3.kirk-button-secondary.kirk-button-shadowed {
+  border: none;
+}
+
+.c3.kirk-button-secondary:hover,
+.c3.kirk-button-secondary:focus,
+.c3.kirk-button-secondary:active {
+  background-color: #DDD;
+}
+
+.c3.kirk-button-tertiary {
+  background-color: #FFF;
+  border-color: transparent;
+  color: #00AFF5;
+}
+
+.c3.kirk-button-tertiary:hover,
+.c3.kirk-button-tertiary:focus,
+.c3.kirk-button-tertiary:active {
+  background-color: #DDD;
+}
+
+.c3.kirk-button-loading {
+  background-color: transparent;
+  max-width: initial;
+  border: 0;
+}
+
+.c3.kirk-button-loading:hover,
+.c3.kirk-button-loading:focus,
+.c3.kirk-button-loading:active {
+  background-color: transparent;
+}
+
+.c3.kirk-button-loading[disabled],
+.c3.kirk-button-checked[disabled] {
+  opacity: 1;
+}
+
+.c3 svg.kirk-button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.c3.kirk-button-checked {
+  border: 0;
+}
+
+.c3.kirk-button-warning {
+  background-color: #F53F5B;
+  color: #FFF;
+}
+
+.c3.kirk-button-bubble {
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.c3.kirk-button-bubble.kirk-button-shadowed {
+  width: calc(48px - 2px * 2);
+  height: calc(48px - 2px * 2);
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 16px 24px;
+  background-color: #054752;
+  color: #FFF;
+  border-radius: 16px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c2 strong {
+  display: block;
+  font-weight: 500;
+}
+
+.c2 p {
+  margin: 0;
+  padding: 0;
+}
+
+.c2 .kirk-button {
+  padding: 0 0 0 16px;
+  min-height: 0;
+  height: auto;
+}
+
+.c2 .kirk-button svg {
+  margin: 0;
+}
+
+.c2.bubble-arrow--above::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #054752;
+}
+
+.c2.bubble-arrow--below::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #054752;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0 .c1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.c0 .c1.bubble-arrow--above {
+  bottom: 100%;
+}
+
+.c0 .c1.bubble-arrow--below {
+  top: 100%;
+}
+
+@media (hover:none),(hover:on-demand) {
+  .c3.kirk-button-secondary:hover {
+    background-color: #FFF;
+  }
+}
+
+<div
+  aria-live="polite"
+  className="c0"
+>
+  <aside
+    className="c1 c2 bubble-arrow--above"
+    id="kirk-hint-1"
+  >
+    <p>
+      <strong>
+        Hint Title
+      </strong>
+      Hint Description
+    </p>
+    <button
+      aria-controls="kirk-hint-1"
+      className="kirk-button kirk-button-unstyled c3"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c4"
+        fill="#FFF"
+        height={18}
+        viewBox="0 0 24 24"
+        width={18}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <path
+          d="M19 5L5 19M19 19L5 5"
+          fill="none"
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        />
+      </svg>
+    </button>
+  </aside>
+  <p
+    aria-describedby="kirk-hint-1"
+  >
+    I have an hint.
+  </p>
+</div>
+`;
+
+exports[`Hint Default rendering (below) 1`] = `
+.c4.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c4.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c4 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: 48px;
+  min-width: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  white-space: nowrap;
+}
+
+.c3 svg,
+.c3 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 svg {
+  margin-right: 4px;
+  margin-left: -8px;
+}
+
+.c3.kirk-button-bubble svg {
+  margin: 0;
+}
+
+.c3.kirk-itemChoice {
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
+}
+
+.c3:hover,
+.c3:active {
+  outline: 0;
+}
+
+.c3.kirk-button-unstyled {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #00AFF5;
+  padding: inherit;
+  display: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+.c3[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c3.kirk-button-unstyled[disabled] {
+  opacity: 1;
+}
+
+.c3.kirk-button-primary {
+  background-color: #00AFF5;
+  color: #FFF;
+}
+
+.c3.kirk-button-shadowed {
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+
+.c3.kirk-button-primary:hover,
+.c3.kirk-button-primary:focus,
+.c3.kirk-button-primary:active {
+  background-color: #008FC1;
+}
+
+.c3.kirk-button-secondary {
+  background-color: #FFF;
+  border-color: #DDD;
+  color: #00AFF5;
+}
+
+.c3.kirk-button-secondary.kirk-button-shadowed {
+  border: none;
+}
+
+.c3.kirk-button-secondary:hover,
+.c3.kirk-button-secondary:focus,
+.c3.kirk-button-secondary:active {
+  background-color: #DDD;
+}
+
+.c3.kirk-button-tertiary {
+  background-color: #FFF;
+  border-color: transparent;
+  color: #00AFF5;
+}
+
+.c3.kirk-button-tertiary:hover,
+.c3.kirk-button-tertiary:focus,
+.c3.kirk-button-tertiary:active {
+  background-color: #DDD;
+}
+
+.c3.kirk-button-loading {
+  background-color: transparent;
+  max-width: initial;
+  border: 0;
+}
+
+.c3.kirk-button-loading:hover,
+.c3.kirk-button-loading:focus,
+.c3.kirk-button-loading:active {
+  background-color: transparent;
+}
+
+.c3.kirk-button-loading[disabled],
+.c3.kirk-button-checked[disabled] {
+  opacity: 1;
+}
+
+.c3 svg.kirk-button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.c3.kirk-button-checked {
+  border: 0;
+}
+
+.c3.kirk-button-warning {
+  background-color: #F53F5B;
+  color: #FFF;
+}
+
+.c3.kirk-button-bubble {
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.c3.kirk-button-bubble.kirk-button-shadowed {
+  width: calc(48px - 2px * 2);
+  height: calc(48px - 2px * 2);
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  padding: 16px 24px;
+  background-color: #054752;
+  color: #FFF;
+  border-radius: 16px;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c2 strong {
+  display: block;
+  font-weight: 500;
+}
+
+.c2 p {
+  margin: 0;
+  padding: 0;
+}
+
+.c2 .kirk-button {
+  padding: 0 0 0 16px;
+  min-height: 0;
+  height: auto;
+}
+
+.c2 .kirk-button svg {
+  margin: 0;
+}
+
+.c2.bubble-arrow--above::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #054752;
+}
+
+.c2.bubble-arrow--below::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #054752;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0 .c1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.c0 .c1.bubble-arrow--above {
+  bottom: 100%;
+}
+
+.c0 .c1.bubble-arrow--below {
+  top: 100%;
+}
+
+@media (hover:none),(hover:on-demand) {
+  .c3.kirk-button-secondary:hover {
+    background-color: #FFF;
+  }
+}
+
+<div
+  aria-live="polite"
+  className="c0"
+>
+  <aside
+    className="c1 c2 bubble-arrow--below"
+    id="kirk-hint-2"
+  >
+    <p>
+      <strong>
+        Hint Title
+      </strong>
+      Hint Description
+    </p>
+    <button
+      aria-controls="kirk-hint-2"
+      className="kirk-button kirk-button-unstyled c3"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      title="Close"
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c4"
+        fill="#FFF"
+        height={18}
+        viewBox="0 0 24 24"
+        width={18}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <path
+          d="M19 5L5 19M19 19L5 5"
+          fill="none"
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        />
+      </svg>
+    </button>
+  </aside>
+  <p
+    aria-describedby="kirk-hint-2"
+  >
+    I have an hint.
+  </p>
+</div>
+`;

@@ -3,9 +3,10 @@ import cc from 'classcat'
 
 import Loader from 'loader/Loader'
 import Item, { ItemStatus } from '_utils/item'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import prefix from '_utils'
 
-export interface ItemActionProps {
+export interface ItemActionProps extends A11yProps {
   readonly highlighted?: boolean
   readonly tag?: JSX.Element
   readonly className?: Classcat.Class
@@ -48,6 +49,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
       onDoneAnimationEnd,
       hideHoverBackground = false,
     } = this.props
+    const a11yAttrs = pickA11yProps<ItemActionProps>(this.props)
 
     let rightAddon
 
@@ -89,6 +91,7 @@ class ItemAction extends PureComponent<ItemActionProps> {
         tag={tag}
         isClickable
         hideHoverBackground={hideHoverBackground}
+        {...a11yAttrs}
       />
     )
   }

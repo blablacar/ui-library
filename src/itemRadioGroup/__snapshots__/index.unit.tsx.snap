@@ -127,10 +127,14 @@ button.c2 {
   text-align: left;
   width: 100%;
   font-family: inherit;
-  outline: none;
   background-color: transparent;
   -webkit-tap-highlight-color: rgba(221,221,221,.4);
   -webkit-touch-callout: none;
+}
+
+button:active.c2,
+button:hover.c2 {
+  outline: none;
 }
 
 .c2:disabled {
