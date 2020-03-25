@@ -22,6 +22,7 @@ import '../src/layout/section/columnedContentSection/story'
 import '../src/layout/section/illustratedSection/story'
 import '../src/layout/section/itemsSection/story'
 import '../src/layout/section/mediaSection/story'
+import '../src/layout/content/story'
 
 // Pages
 import '../src/pages/messaging/inbox.story'
