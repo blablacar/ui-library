@@ -1,13 +1,16 @@
 # Unreleased
 
+- **[FIX]** Fix `Profile` medium size rendering
+- **[FIX]** Fix `TextDisplay1` scale
+- [...]
+
+# v24.1.0 (25/03/2020)
+
 - **[NEW]** Add `Card` util component, add `QrCard` component and use `Card` in `TripCard`
 - **[NEW]** Add `Hint` component
 - **[UPDATE]** Add explicit support for generic aria attributes on `Item`-like components and `Button`
 - **[FIX]** Fix `MainContent` height when inside a `Modal` with close button
 - **[FIX]** Fix `MediaSection` display inside a `Modal`
-- **[FIX]** Fix `Profile` medium size rendering
-- **[FIX]** Fix `TextDisplay1` scale
-- [...]
 
 # v24.0.0 (23/03/2020)
 
