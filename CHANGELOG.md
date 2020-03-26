@@ -5,6 +5,7 @@
 - **[UPDATE]** Add explicit support for generic aria attributes on `Item`-like components and `Button`
 - **[FIX]** Fix `MainContent` height when inside a `Modal` with close button
 - **[FIX]** Fix `MediaSection` display inside a `Modal`
+- **[FIX]** Fix `Profile` medium size rendering
 - **[FIX]** Fix `TextDisplay1` scale
 - [...]
 
