@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `Profile` medium size rendering
 - [...]
 
 # v24.1.0 (25/03/2020)
