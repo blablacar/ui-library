@@ -13,18 +13,31 @@ import { MediaSize, MediaSizeContext } from '_utils/mediaSizeProvider/MediaSizeP
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
 import AutoCompleteOverlay from './autoComplete/overlay'
+import TextBody from 'typography/body'
 
 export interface SearchFormProps {
   className?: string
   onSubmit: Function
-  autocompleteFromProps: fieldProps
-  autocompleteToProps: fieldProps
-  datepickerProps: fieldProps
-  stepperProps: fieldProps
+  autocompleteFromProps: AutocompleteProps
+  autocompleteToProps: AutocompleteProps
+  datepickerProps: FieldProps
+  stepperProps: StepperProps
 }
 
-interface fieldProps {
+interface FieldProps {
+  defaultValue?: string | number | Date
+  format?: (value: string | number | Date) => string
+}
+
+interface AutocompleteProps extends FieldProps {
   placeholder: string
+}
+
+interface StepperProps extends FieldProps {
+  defaultValue: number
+  increaseLabel: string
+  decreaseLabel: string
+  title: string
 }
 
 enum Elements {
@@ -35,7 +48,7 @@ enum Elements {
 }
 
 type FormValues = {
-  [key in keyof typeof Elements]?: string | number | boolean
+  [key in keyof typeof Elements]?: string | number | boolean | Date
 }
 
 const SearchForm = ({
@@ -49,9 +62,19 @@ const SearchForm = ({
   const mediaSize = useContext(MediaSizeContext)
 
   const [elementOpened, setElementOpened] = useState('')
-  const [formValues, setFormValues] = useState<FormValues>({})
+  const [formValues, setFormValues] = useState<FormValues>({
+    [Elements.STEPPER]: stepperProps.defaultValue,
+    [Elements.DATEPICKER]: datepickerProps.defaultValue,
+  })
 
   const container = useRef(null)
+
+  const getStepperFormattedValue = () => stepperProps.format(formValues[Elements.STEPPER] as string)
+
+  const getDatepickerFormattedValue = () =>
+    datepickerProps.format(formValues[Elements.DATEPICKER] as string)
+
+  const selectedDate = new Date(formValues[Elements.DATEPICKER] as string)
 
   useEffect(() => {
     function hideAllOverlays(e: Event) {
@@ -82,7 +105,9 @@ const SearchForm = ({
             onClick={() => setElementOpened(Elements.AUTOCOMPLETE_FROM)}
           >
             <Bullet type={BulletTypes.SEARCH} className="kirk-bullet--searchForm" />{' '}
-            {formValues[Elements.AUTOCOMPLETE_FROM] || autocompleteFromProps.placeholder}
+            <TextBody>
+              {formValues[Elements.AUTOCOMPLETE_FROM] || autocompleteFromProps.placeholder}
+            </TextBody>
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
@@ -112,7 +137,9 @@ const SearchForm = ({
           onClick={() => setElementOpened(Elements.AUTOCOMPLETE_TO)}
         >
           <Bullet type={BulletTypes.SEARCH} className="kirk-bullet--searchForm" />{' '}
-          {formValues[Elements.AUTOCOMPLETE_TO] || autocompleteToProps.placeholder}
+          <TextBody>
+            {formValues[Elements.AUTOCOMPLETE_TO] || autocompleteToProps.placeholder}
+          </TextBody>
         </button>
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
@@ -135,18 +162,21 @@ const SearchForm = ({
             className="kirk-search-button"
             onClick={() => setElementOpened(Elements.DATEPICKER)}
           >
-            <CalendarIcon /> {formValues[Elements.DATEPICKER] || datepickerProps.placeholder}
+            <CalendarIcon />
+            <TextBody>{getDatepickerFormattedValue()}</TextBody>
           </button>
         </div>
 
         {elementOpened === Elements.DATEPICKER && (
           <DatePickerOverlay
-            title={(formValues[Elements.DATEPICKER] as string) || datepickerProps.placeholder}
+            title={getDatepickerFormattedValue()}
             name="datepicker"
+            initialDate={selectedDate}
+            initialMonth={selectedDate} // Needed to open the Datepicker on the selected month
             className="kirk-searchForm-overlay kirk-searchForm-datepicker"
             onChange={({ value }) => {
               setElementOpened(null)
-              setFormValues({ [Elements.DATEPICKER]: value })
+              setFormValues({ ...formValues, [Elements.DATEPICKER]: value })
             }}
           />
         )}
@@ -157,7 +187,8 @@ const SearchForm = ({
             className="kirk-search-button"
             onClick={() => setElementOpened(Elements.STEPPER)}
           >
-            <StandardSeat /> {formValues[Elements.STEPPER] || stepperProps.placeholder}
+            <StandardSeat />
+            <TextBody>{getStepperFormattedValue()}</TextBody>
           </button>
         </div>
       </div>
@@ -165,10 +196,10 @@ const SearchForm = ({
       {elementOpened === Elements.STEPPER && (
         <StepperOverlay
           name="stepper"
-          itemTitle={(formValues[Elements.STEPPER] as string) || stepperProps.placeholder}
-          title="Choose your number of seats"
-          increaseLabel="Increase"
-          decreaseLabel="Decrease"
+          itemTitle={getStepperFormattedValue()}
+          title={stepperProps.title}
+          increaseLabel={stepperProps.increaseLabel}
+          decreaseLabel={stepperProps.decreaseLabel}
           className="kirk-searchForm-overlay kirk-searchForm-stepper"
           value={formValues[Elements.STEPPER] as number}
           onChange={({ value }) => {

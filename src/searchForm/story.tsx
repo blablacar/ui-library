@@ -134,10 +134,15 @@ stories.add(
             placeholder: 'Going to',
           }}
           datepickerProps={{
-            placeholder: 'Today',
+            defaultValue: new Date().toISOString(),
+            format: value => new Date(value).toLocaleDateString(),
           }}
           stepperProps={{
-            placeholder: '1 seat',
+            defaultValue: 1,
+            title: 'Choose your number of seats',
+            increaseLabel: 'Increase the number of seats by 1',
+            decreaseLabel: 'Decrease the number of seats by 1',
+            format: value => `${value} seat(s)`,
           }}
         />
       </BaseSection>
