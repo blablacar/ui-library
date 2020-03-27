@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix `Profile` medium size rendering
+- **[FIX]** Fix `TextDisplay1` scale
 - [...]
 
 # v24.1.0 (25/03/2020)

@@ -5,8 +5,8 @@ import Text from '../index'
 
 const TextDisplay1 = styled(Text)`
   color: ${color.primaryText};
-  font-size: ${font.l.size};
-  line-height: ${font.l.lineHeight};
+  font-size: ${font.xl.size};
+  line-height: ${font.xl.lineHeight};
   font-weight: ${fontWeight.medium};
 `
 export default TextDisplay1
