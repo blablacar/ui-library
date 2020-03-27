@@ -16,7 +16,7 @@ const defaultProps = {
     placeholder: 'Going to',
   },
   datepickerProps: {
-    defaultValue: new Date('2020-03-31'),
+    defaultValue: '2020-03-31',
     format: value => new Date(value).toLocaleDateString(),
   },
   stepperProps: {

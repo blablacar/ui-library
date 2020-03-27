@@ -25,8 +25,8 @@ export interface SearchFormProps {
 }
 
 interface FieldProps {
-  defaultValue?: string | number | Date
-  format?: (value: string | number | Date) => string
+  defaultValue?: string | number
+  format?: (value: string | number) => string
 }
 
 interface AutocompleteProps extends FieldProps {
@@ -48,7 +48,7 @@ enum Elements {
 }
 
 type FormValues = {
-  [key in keyof typeof Elements]?: string | number | boolean | Date
+  [key in keyof typeof Elements]?: string | number | boolean
 }
 
 const SearchForm = ({
