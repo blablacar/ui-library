@@ -108,6 +108,7 @@ export const componentSizes = {
   smallSectionWidth: '662px',
   largeSectionWidth: '1016px',
   modalTopPadding: '70px',
+  searchOverlayWidth: '375px',
 }
 
 export const modalSize = {
