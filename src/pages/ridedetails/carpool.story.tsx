@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
-
 import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
+import LayoutNormalizer from 'layout/layoutNormalizer'
+
 import TheVoice from 'theVoice'
 import Itinerary from 'itinerary'
 import ItemData from 'itemData'
@@ -11,9 +13,10 @@ import Avatar from 'avatar'
 import ItemChoice from 'itemChoice'
 import ItemAction from 'itemAction'
 import ItemInfo from 'itemInfo'
-import { PetIcon, SmokeIcon, BubbleIcon } from 'icon'
 import SubHeader from 'subHeader'
-import LayoutNormalizer from 'layout/layoutNormalizer'
+import PetIcon from 'icon/pet'
+import BubbleIcon from 'icon/bubbleIcon'
+import SmokeIcon from 'icon/smokeIcon'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 

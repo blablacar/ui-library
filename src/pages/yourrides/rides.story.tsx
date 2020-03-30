@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
-
 import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
-import TripCard from 'tripCard'
+
 import Section from 'layout/section/baseSection'
-import { HourglassIcon } from 'icon'
+
+import TripCard from 'tripCard'
 import TheVoice from 'theVoice'
 import ItemChoice from 'itemChoice'
+import HourglassIcon from 'icon/hourglassIcon'
 
 import LayoutNormalizer from 'layout/layoutNormalizer'
 
