@@ -19,7 +19,7 @@ addParameters({
     // You can still set it to false, but it's strongly unrecommendend in cases when you host your storybook on some route of your main site or web app.
   },
   viewport: {
-    viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
+    viewports: INITIAL_VIEWPORTS,
     defaultViewport: 'iPhone6',
   },
   readme: {
