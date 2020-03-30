@@ -20,7 +20,7 @@ addParameters({
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
-    defaultViewport: 'iPhone6',
+    defaultViewport: 'iPhone 6',
   },
   readme: {
     sidebar: props,
