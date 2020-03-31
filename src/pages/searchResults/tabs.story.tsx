@@ -1,20 +1,23 @@
 import React, { Fragment } from 'react'
-
 import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
-import BlankSeparator from 'blankSeparator'
-import Section from 'layout/section/baseSection'
-import TripCard from 'tripCard'
-import TabsSection from 'layout/section/tabsSection'
-import { TabStatus } from 'tabs'
-import Button, { ButtonStatus } from 'button'
-import Disclaimer from 'disclaimer'
+
 import Item from '_utils/item'
-import { CarpoolIcon, BusIcon } from 'icon'
+
+import Section from 'layout/section/baseSection'
+import CardsSection from 'layout/section/cardsSection'
+import TabsSection from 'layout/section/tabsSection'
+import LayoutNormalizer from 'layout/layoutNormalizer'
+
+import CarpoolIcon from 'icon/carpoolIcon'
+import BusIcon from 'icon/busIcon'
+import Button, { ButtonStatus } from 'button'
+import BlankSeparator from 'blankSeparator'
+import TripCard from 'tripCard'
+import { TabStatus } from 'tabs'
+import Disclaimer from 'disclaimer'
 import SearchRecap from 'searchRecap'
 import SubHeader from 'subHeader'
-import CardsSection from 'layout/section/cardsSection'
-import LayoutNormalizer from 'layout/layoutNormalizer'
 
 const stories = storiesOf('Pages|Search results/With tabs', module)
 

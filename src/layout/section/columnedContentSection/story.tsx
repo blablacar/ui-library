@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
-import { CheckShieldIcon, IdCardVerifiedIcon, DirectionIcon } from 'icon'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+
+import CheckShieldIcon from 'icon/checkShieldIcon'
+import IdCardVerifiedIcon from 'icon/idCardVerifiedIcon'
+import DirectionIcon from 'icon/directionIcon'
 
 import ColumnedContentSection, { ColumnedSectionContentMediaKind } from './index'
 
