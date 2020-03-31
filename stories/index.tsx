@@ -1,6 +1,8 @@
 import './stories.css'
 
-// BRAND
+// DESIGN TOKENS
+import '../src/_utils/story'
+
 import '../src/typography/story'
 import '../src/typography/display2/story'
 import '../src/typography/display1/story'
@@ -10,6 +12,8 @@ import '../src/typography/title/story'
 import '../src/typography/titleStrong/story'
 import '../src/typography/body/story'
 import '../src/typography/bodyStrong/story'
+
+import '../src/icon/story/story'
 
 // Sections
 import '../src/layout/section/baseSection/story'
@@ -35,7 +39,6 @@ import '../src/pages/yourrides/history.story'
 import '../src/pages/login/email.story'
 
 // Widgets
-import '../src/_utils/story'
 import '../src/autoComplete/story'
 import '../src/avatar/story'
 import '../src/badge/story'
@@ -53,7 +56,6 @@ import '../src/dropdownButton/story'
 import '../src/emptyState/story'
 import '../src/hamburgerButton/story'
 import '../src/hint/story'
-import '../src/icon/story'
 import '../src/itemAction/story'
 import '../src/itemCheckbox/story'
 import '../src/itemChoice/story'

@@ -3,8 +3,9 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
 import { color } from '_utils/branding'
-import * as icons from 'icon/index'
-import readme from 'icon/specifications/icon.md'
+
+import * as icons from './icons'
+import readme from './icon.md'
 
 /** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {
@@ -20,7 +21,7 @@ const styles: { [name: string]: React.CSSProperties } = {
   },
 }
 
-const stories = storiesOf('Widgets|Icons', module)
+const stories = storiesOf('Brand|Icons', module)
 stories.addDecorator(withKnobs)
 
 const c = Object.keys(color).reduce(
