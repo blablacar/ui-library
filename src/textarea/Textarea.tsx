@@ -1,3 +1,6 @@
+/* TODO: BBC-7420 fix a11y issues */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 

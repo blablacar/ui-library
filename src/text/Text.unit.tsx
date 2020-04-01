@@ -16,7 +16,7 @@ describe('Text', () => {
   it('should have a role and classname', () => {
     const text = renderer
       .create(
-        <Text className="custom" role="role">
+        <Text className="custom" role="complementary">
           text
         </Text>,
       )

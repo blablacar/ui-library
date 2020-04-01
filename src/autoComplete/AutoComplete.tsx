@@ -268,6 +268,8 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
       : this.props.renderEmptySearch
 
     return (
+      /* TODO: BBC-7413 fix a11y issue */
+      // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
       <div role="combobox" className={cc([prefix({ autoComplete: true }), this.props.className])}>
         <TextField
           type={inputTypes.SEARCH}

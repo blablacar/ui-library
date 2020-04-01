@@ -3,7 +3,7 @@
 exports[`Text should have a role and classname 1`] = `
 <span
   className="kirk-text kirk-text-body custom"
-  role="role"
+  role="complementary"
 >
   text
 </span>

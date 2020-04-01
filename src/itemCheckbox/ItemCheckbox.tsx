@@ -71,6 +71,8 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
         rightTitle={data}
         rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
         rightBody={dataInfo}
+        /* TODO: BBC-7414 fix a11y issue */
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         tag={<label />}
         rightAddon={checkbox}
         isClickable

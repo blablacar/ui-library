@@ -76,12 +76,15 @@ export default class ItineraryCollapsible extends PureComponent<ItineraryCollaps
     ])
 
     return (
+      /* TODO: BBC-7412 fix a11y issues */
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
       <li
         className={classNames}
         onClick={this.onClick}
         aria-pressed={!this.state.collapsed}
         aria-expanded={!this.state.collapsed}
         aria-label={ariaLabel}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
         role="button"
       >
         <div aria-hidden={!this.state.collapsed} className="kirk-itineraryCollapsible-collapsed">
