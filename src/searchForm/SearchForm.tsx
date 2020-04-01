@@ -1,5 +1,7 @@
-import React, { useContext, useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import cc from 'classcat'
+import { canUseDOM } from 'exenv'
 
 import { color } from '_utils/branding'
 import SearchIcon from 'icon/searchIcon'
@@ -14,6 +16,9 @@ import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
 import AutoCompleteOverlay from './autoComplete/overlay'
 import TextBody from 'typography/body'
+import DatePickerSection from './datePicker/section'
+import StepperSection from './stepper/section'
+import AutoCompleteSection from './autoComplete/section'
 
 export interface SearchFormProps {
   className?: string
@@ -38,6 +43,7 @@ interface StepperProps extends FieldProps {
   increaseLabel: string
   decreaseLabel: string
   title: string
+  confirmLabel: string
 }
 
 enum Elements {
@@ -59,7 +65,9 @@ const SearchForm = ({
   datepickerProps,
   stepperProps,
 }: SearchFormProps) => {
-  const mediaSize = useContext(MediaSizeContext)
+  // Use React.useContext syntaxt so we can mock it
+  // https://github.com/enzymejs/enzyme/issues/2176#issuecomment-533582429
+  const mediaSize = React.useContext(MediaSizeContext)
 
   const [elementOpened, setElementOpened] = useState('')
   const [formValues, setFormValues] = useState<FormValues>({
@@ -76,9 +84,33 @@ const SearchForm = ({
 
   const selectedDate = new Date(formValues[Elements.DATEPICKER] as string)
 
+  const datepickerConfig = {
+    title: getDatepickerFormattedValue(),
+    name: 'datepicker',
+    initialDate: selectedDate,
+    initialMonth: selectedDate,
+    onChange: ({ value }: OnChangeParameters) => {
+      setElementOpened(null)
+      setFormValues({ ...formValues, [Elements.DATEPICKER]: value })
+    },
+  }
+
+  const stepperConfig = {
+    name: 'stepper',
+    itemTitle: getStepperFormattedValue(),
+    title: stepperProps.title,
+    increaseLabel: stepperProps.increaseLabel,
+    decreaseLabel: stepperProps.decreaseLabel,
+    value: formValues[Elements.STEPPER] as number,
+    onChange: ({ value }: OnChangeParameters) => {
+      setElementOpened(null)
+      setFormValues({ ...formValues, [Elements.STEPPER]: value })
+    },
+  }
+
   useEffect(() => {
     function hideAllOverlays(e: Event) {
-      if (!container.current.contains(e.target)) {
+      if (!container.current.contains(e.target) && mediaSize === MediaSize.LARGE) {
         setElementOpened(null)
       }
     }
@@ -119,7 +151,7 @@ const SearchForm = ({
         </div>
       </div>
 
-      {elementOpened === Elements.AUTOCOMPLETE_FROM && (
+      {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_FROM && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
           name="from"
@@ -129,6 +161,23 @@ const SearchForm = ({
           autoFocus
         />
       )}
+
+      {mediaSize === MediaSize.SMALL &&
+        elementOpened === Elements.AUTOCOMPLETE_FROM &&
+        canUseDOM &&
+        createPortal(
+          <AutoCompleteSection
+            name="from"
+            searchOnMount={false}
+            isSearching={false}
+            searchForItems={() => {}}
+            autoFocus
+            onClick={() => {
+              setElementOpened(null)
+            }}
+          />,
+          document.body,
+        )}
 
       <div className="kirk-searchForm-to">
         <button
@@ -144,7 +193,7 @@ const SearchForm = ({
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
 
-      {elementOpened === Elements.AUTOCOMPLETE_TO && (
+      {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_TO && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
           name="to"
@@ -154,6 +203,23 @@ const SearchForm = ({
           autoFocus
         />
       )}
+
+      {mediaSize === MediaSize.SMALL &&
+        elementOpened === Elements.AUTOCOMPLETE_TO &&
+        canUseDOM &&
+        createPortal(
+          <AutoCompleteSection
+            name="to"
+            searchOnMount={false}
+            isSearching={false}
+            searchForItems={() => {}}
+            autoFocus
+            onClick={() => {
+              setElementOpened(null)
+            }}
+          />,
+          document.body,
+        )}
 
       <div className="kirk-searchForm-dateSeat-container">
         <div className="kirk-searchForm-date">
@@ -167,19 +233,25 @@ const SearchForm = ({
           </button>
         </div>
 
-        {elementOpened === Elements.DATEPICKER && (
+        {elementOpened === Elements.DATEPICKER && mediaSize === MediaSize.LARGE && (
           <DatePickerOverlay
-            title={getDatepickerFormattedValue()}
-            name="datepicker"
-            initialDate={selectedDate}
-            initialMonth={selectedDate} // Needed to open the Datepicker on the selected month
+            {...datepickerConfig}
             className="kirk-searchForm-overlay kirk-searchForm-datepicker"
-            onChange={({ value }) => {
-              setElementOpened(null)
-              setFormValues({ ...formValues, [Elements.DATEPICKER]: value })
-            }}
           />
         )}
+
+        {elementOpened === Elements.DATEPICKER &&
+          mediaSize === MediaSize.SMALL &&
+          canUseDOM &&
+          createPortal(
+            <DatePickerSection
+              {...datepickerConfig}
+              onClick={() => {
+                setElementOpened(null)
+              }}
+            />,
+            document.body,
+          )}
 
         <div className="kirk-searchForm-seats">
           <button
@@ -193,20 +265,29 @@ const SearchForm = ({
         </div>
       </div>
 
-      {elementOpened === Elements.STEPPER && (
+      {elementOpened === Elements.STEPPER && mediaSize === MediaSize.LARGE && (
         <StepperOverlay
-          name="stepper"
-          itemTitle={getStepperFormattedValue()}
-          title={stepperProps.title}
-          increaseLabel={stepperProps.increaseLabel}
-          decreaseLabel={stepperProps.decreaseLabel}
+          {...stepperConfig}
           className="kirk-searchForm-overlay kirk-searchForm-stepper"
-          value={formValues[Elements.STEPPER] as number}
           onChange={({ value }) => {
             setFormValues({ ...formValues, [Elements.STEPPER]: value })
           }}
         />
       )}
+
+      {elementOpened === Elements.STEPPER &&
+        mediaSize === MediaSize.SMALL &&
+        canUseDOM &&
+        createPortal(
+          <StepperSection
+            {...stepperConfig}
+            confirmLabel={stepperProps.confirmLabel}
+            onBackButtonClick={() => {
+              setElementOpened(null)
+            }}
+          />,
+          document.body,
+        )}
 
       <div className="kirk-searchForm-submit">
         <button type="button" className="kirk-search-button" onClick={() => onSubmit(formValues)}>

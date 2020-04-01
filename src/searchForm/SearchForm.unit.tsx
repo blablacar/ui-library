@@ -2,10 +2,14 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 
 import TextBody from 'typography/body'
+import { MediaSize } from '_utils/mediaSizeProvider/MediaSizeProvider'
 import SearchForm from './SearchForm'
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
 import AutoCompleteOverlay from './autoComplete/overlay'
+import AutoCompleteSection from './autoComplete/section'
+import DatePickerSection from './datePicker/section'
+import StepperSection from './stepper/section'
 
 const today = new Date().toISOString()
 
@@ -27,6 +31,7 @@ const defaultProps = {
     decreaseLabel: 'Decrease',
     title: 'Choose your number of seats',
     format: value => `${value} seat(s)`,
+    confirmLabel: 'Submit',
   },
 }
 
@@ -34,41 +39,80 @@ describe('searchForm', () => {
   let wrapper
 
   describe('interactions', () => {
-    beforeEach(() => {
-      wrapper = shallow(<SearchForm {...defaultProps} />)
-    })
-    it('should open the autocomplete from overlay', () => {
-      expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-      wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
-      expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
-      expect(wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-from')).toBe(
-        true,
-      )
+    describe('large', () => {
+      beforeEach(() => {
+        jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
+        wrapper = shallow(<SearchForm {...defaultProps} />)
+      })
+
+      it('should open the autocomplete from overlay', () => {
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
+        expect(
+          wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-from'),
+        ).toBe(true)
+      })
+
+      it('should open the autocomplete to overlay', () => {
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
+        expect(wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-to')).toBe(
+          true,
+        )
+      })
+
+      it('should open the datepicker overlay', () => {
+        expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
+        expect(wrapper.find(DatePickerOverlay).exists()).toBe(true)
+      })
+
+      it('should open the stepper overlay', () => {
+        expect(wrapper.find(StepperOverlay).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
+        expect(wrapper.find(StepperOverlay).exists()).toBe(true)
+      })
     })
 
-    it('should open the autocomplete to overlay', () => {
-      expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-      wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
-      expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
-      expect(wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-to')).toBe(
-        true,
-      )
-    })
+    describe('small', () => {
+      beforeEach(() => {
+        jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.SMALL)
+        wrapper = shallow(<SearchForm {...defaultProps} />)
+      })
 
-    it('should open the datepicker overlay', () => {
-      expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
-      wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
-      expect(wrapper.find(DatePickerOverlay).exists()).toBe(true)
-    })
+      it('should open the autocomplete from section', () => {
+        expect(wrapper.find(AutoCompleteSection).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
+        expect(wrapper.find(AutoCompleteSection).exists()).toBe(true)
+      })
 
-    it('should open the stepper overlay', () => {
-      expect(wrapper.find(StepperOverlay).exists()).toBe(false)
-      wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
-      expect(wrapper.find(StepperOverlay).exists()).toBe(true)
+      it('should open the autocomplete to section', () => {
+        expect(wrapper.find(AutoCompleteSection).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
+        expect(wrapper.find(AutoCompleteSection).exists()).toBe(true)
+      })
+
+      it('should open the datepicker section', () => {
+        expect(wrapper.find(DatePickerSection).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
+        expect(wrapper.find(DatePickerSection).exists()).toBe(true)
+      })
+
+      it('should open the stepper section', () => {
+        expect(wrapper.find(StepperSection).exists()).toBe(false)
+        wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
+        expect(wrapper.find(StepperSection).exists()).toBe(true)
+      })
     })
   })
 
   describe('format', () => {
+    beforeEach(() => {
+      jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
+    })
+
     it('should format the stepper & datepicker values into human readable strings', () => {
       expect(
         wrapper
@@ -118,9 +162,8 @@ describe('searchForm', () => {
       wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
 
       wrapper
-        .find(StepperOverlay)
-        .find('button')
-        .at(1)
+        .find('.kirk-stepper-increment')
+        .at(0)
         .simulate('click')
 
       expect(

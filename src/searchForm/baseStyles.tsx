@@ -11,6 +11,15 @@ export const overlayBaseStyle = `
   background: ${color.defaultBackground};
 `
 
+export const sectionBaseStyle = `
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: ${color.defaultBackground};`
+
 export const autoCompleteBaseStyle = `
   .kirk-textField-wrapper {
     background: transparent;

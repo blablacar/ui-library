@@ -115,6 +115,7 @@ stories.add('StepperSection', () => (
     title="Choose your number of seats"
     increaseLabel="Increase"
     decreaseLabel="Decrease"
+    confirmLabel="Submit"
   />
 ))
 stories.add('AutoCompleteOverlay', () => <AutoCompleteExample component={AutoCompleteOverlay} />)
@@ -143,6 +144,7 @@ stories.add(
             increaseLabel: 'Increase the number of seats by 1',
             decreaseLabel: 'Decrease the number of seats by 1',
             format: value => `${value} seat(s)`,
+            confirmLabel: 'Submit',
           }}
         />
       </BaseSection>
