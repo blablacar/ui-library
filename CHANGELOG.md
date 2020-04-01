@@ -1,10 +1,13 @@
 # Unreleased
 
+- [...]
+
+# v24.1.1 (01/04/2020)
+
 - **[FIX]** Fix `Profile` medium size rendering
 - **[FIX]** Fix `TextDisplay1` scale
 - **[UPDATE]** Import `icons` as default instead of named export for a better code splitting
 - **[UPDATE]** Adjust `jsx-a11y` linter settings to recommended
-- [...]
 
 # v24.1.0 (25/03/2020)
 
