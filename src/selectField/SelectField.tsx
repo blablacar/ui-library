@@ -72,6 +72,8 @@ const SelectField = React.forwardRef(
           defaultValue={defaultValue}
           disabled={disabled}
           required={required}
+          /* TODO: BBC-7419 fix a11y issue */
+          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={autoFocus}
           autoComplete={autoComplete}
           ref={ref}
