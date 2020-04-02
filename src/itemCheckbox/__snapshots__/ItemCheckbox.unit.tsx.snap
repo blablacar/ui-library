@@ -165,6 +165,10 @@ button:hover.c0 {
   position: relative;
 }
 
+.c0 .kirk-text-title {
+  display: block;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -223,21 +227,21 @@ button:hover.c0 {
 <label
   className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
-  <div
+  <span
     className="kirk-item-leftText"
   >
-    <div
+    <span
       className="kirk-text kirk-text-title c1"
     >
       Label title
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
-    </div>
-  </div>
-  <div
+    </span>
+  </span>
+  <span
     className="kirk-item-rightText"
   >
     <div
@@ -250,8 +254,8 @@ button:hover.c0 {
     >
       Data info
     </div>
-  </div>
-  <div
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <input
@@ -281,7 +285,7 @@ button:hover.c0 {
         strokeWidth="1"
       />
     </svg>
-  </div>
+  </span>
 </label>
 `;
 
@@ -450,6 +454,10 @@ button:hover.c0 {
   position: relative;
 }
 
+.c0 .kirk-text-title {
+  display: block;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -549,21 +557,21 @@ button:hover.c0 {
 <label
   className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
-  <div
+  <span
     className="kirk-item-leftText"
   >
-    <div
+    <span
       className="kirk-text kirk-text-title c1"
     >
       Label title
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
-    </div>
-  </div>
-  <div
+    </span>
+  </span>
+  <span
     className="kirk-item-rightText"
   >
     <div
@@ -576,8 +584,8 @@ button:hover.c0 {
     >
       Data info
     </div>
-  </div>
-  <div
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <input
@@ -615,7 +623,7 @@ button:hover.c0 {
         />
       </svg>
     </div>
-  </div>
+  </span>
 </label>
 `;
 
@@ -784,6 +792,10 @@ button:hover.c0 {
   position: relative;
 }
 
+.c0 .kirk-text-title {
+  display: block;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -852,21 +864,21 @@ button:hover.c0 {
 <label
   className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
 >
-  <div
+  <span
     className="kirk-item-leftText"
   >
-    <div
+    <span
       className="kirk-text kirk-text-title c1"
     >
       Label title
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-body kirk-item-body c1"
     >
       Label
-    </div>
-  </div>
-  <div
+    </span>
+  </span>
+  <span
     className="kirk-item-rightText"
   >
     <div
@@ -879,8 +891,8 @@ button:hover.c0 {
     >
       Data info
     </div>
-  </div>
-  <div
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <input
@@ -908,6 +920,6 @@ button:hover.c0 {
         stroke="#00AFF5"
       />
     </svg>
-  </div>
+  </span>
 </label>
 `;

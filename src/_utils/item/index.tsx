@@ -73,6 +73,10 @@ const StyledItem = styled(Item)`
     position: relative;
   }
 
+  & .kirk-text-title {
+    display: block;
+  }
+
   /* Addons */
   & .kirk-item-leftAddon,
   & .kirk-item-rightAddon {
@@ -90,6 +94,7 @@ const StyledItem = styled(Item)`
   }
 
   /* Highlighted state */
+
   &.kirk-item--highlighted .kirk-text-title {
     color: ${color.primary};
   }

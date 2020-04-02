@@ -251,6 +251,10 @@ button:hover.c0 {
   position: relative;
 }
 
+.c0 .kirk-text-title {
+  display: block;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -288,10 +292,10 @@ button:hover.c0 {
   className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
-  <div
+  <span
     className="kirk-item-leftText"
   >
-    <div
+    <span
       className="kirk-text kirk-text-titleStrong c1"
       style={
         Object {
@@ -300,8 +304,8 @@ button:hover.c0 {
       }
     >
       A label
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
       style={
         Object {
@@ -314,14 +318,14 @@ button:hover.c0 {
       >
         A sub label
       </span>
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
     >
       3 days ago
-    </div>
-  </div>
-  <div
+    </span>
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <div
@@ -332,8 +336,8 @@ button:hover.c0 {
         src="http_test.picture.url"
       />
     </div>
-  </div>
-  <div
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <svg
@@ -356,7 +360,7 @@ button:hover.c0 {
         strokeWidth="2"
       />
     </svg>
-  </div>
+  </span>
 </a>
 `;
 
@@ -611,6 +615,10 @@ button:hover.c0 {
   position: relative;
 }
 
+.c0 .kirk-text-title {
+  display: block;
+}
+
 .c0 .kirk-item-leftAddon,
 .c0 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -648,10 +656,10 @@ button:hover.c0 {
   className="kirk-item kirk-item--clickable kirk-messaging-summary-item c0"
   href="http_test.url"
 >
-  <div
+  <span
     className="kirk-item-leftText"
   >
-    <div
+    <span
       className="kirk-text kirk-text-titleStrong c1"
       style={
         Object {
@@ -660,8 +668,8 @@ button:hover.c0 {
       }
     >
       A label
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
       style={
         Object {
@@ -674,14 +682,14 @@ button:hover.c0 {
       >
         A sub label
       </span>
-    </div>
-    <div
+    </span>
+    <span
       className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
     >
       3 days ago
-    </div>
-  </div>
-  <div
+    </span>
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <div
@@ -692,8 +700,8 @@ button:hover.c0 {
         src="http_test.picture.url"
       />
     </div>
-  </div>
-  <div
+  </span>
+  <span
     className="kirk-item-rightAddon"
   >
     <svg
@@ -716,6 +724,6 @@ button:hover.c0 {
         strokeWidth="2"
       />
     </svg>
-  </div>
+  </span>
 </a>
 `;

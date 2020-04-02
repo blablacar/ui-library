@@ -1,7 +1,8 @@
 # Unreleased
 
 - **[FIX]** Remove DOM Warning on `MainContent` component
-  [...]
+- **[FIX]** Fix markup `Item` tag label by replacing `div` children with `span`
+[...]
 
 # v25.0.0 (02/04/2020)
 

@@ -165,6 +165,10 @@ button:hover.c2 {
   position: relative;
 }
 
+.c2 .kirk-text-title {
+  display: block;
+}
+
 .c2 .kirk-item-leftAddon,
 .c2 .kirk-item-rightAddon {
   display: -webkit-inline-box;
@@ -284,16 +288,16 @@ button:hover.c2 {
     <label
       className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
     >
-      <div
+      <span
         className="kirk-item-leftText"
       >
-        <div
+        <span
           className="kirk-text kirk-text-body kirk-item-body c3"
         >
           1
-        </div>
-      </div>
-      <div
+        </span>
+      </span>
+      <span
         className="kirk-item-rightAddon"
       >
         <input
@@ -325,7 +329,7 @@ button:hover.c2 {
             stroke="#00AFF5"
           />
         </svg>
-      </div>
+      </span>
     </label>
   </li>
   <li
@@ -334,16 +338,16 @@ button:hover.c2 {
     <label
       className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
     >
-      <div
+      <span
         className="kirk-item-leftText"
       >
-        <div
+        <span
           className="kirk-text kirk-text-body kirk-item-body c3"
         >
           2
-        </div>
-      </div>
-      <div
+        </span>
+      </span>
+      <span
         className="kirk-item-rightAddon"
       >
         <input
@@ -382,7 +386,7 @@ button:hover.c2 {
             r="18"
           />
         </svg>
-      </div>
+      </span>
     </label>
   </li>
   <li
@@ -391,16 +395,16 @@ button:hover.c2 {
     <label
       className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
     >
-      <div
+      <span
         className="kirk-item-leftText"
       >
-        <div
+        <span
           className="kirk-text kirk-text-body kirk-item-body c3"
         >
           3
-        </div>
-      </div>
-      <div
+        </span>
+      </span>
+      <span
         className="kirk-item-rightAddon"
       >
         <input
@@ -432,7 +436,7 @@ button:hover.c2 {
             stroke="#00AFF5"
           />
         </svg>
-      </div>
+      </span>
     </label>
   </li>
 </ul>
