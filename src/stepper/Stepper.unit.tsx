@@ -20,9 +20,7 @@ it('Should have classNames', () => {
       decreaseLabel="Minus"
       className="customClassName"
       valueClassName="valueClassName"
-    >
-      Amount of something
-    </Stepper>,
+    />,
   )
   expect(stepper.hasClass('kirk-stepper')).toBe(true)
   expect(stepper.hasClass('customClassName')).toBe(true)
@@ -31,9 +29,12 @@ it('Should have classNames', () => {
 
 it('Should have the default text & attributes', () => {
   const stepper = mount(
-    <Stepper name="test" increaseLabel="Plus" decreaseLabel="Minus">
-      Choose the number of passengers
-    </Stepper>,
+    <Stepper
+      name="test"
+      increaseLabel="Plus"
+      decreaseLabel="Minus"
+      title="Choose the number of passengers"
+    />,
   )
 
   expect(stepper.find('.kirk-stepper').prop('aria-label')).toEqual(
@@ -61,9 +62,7 @@ it('Should have the default text & attributes', () => {
 it('Should be able to increment/decrement the value', () => {
   const onChange = jest.fn()
   const stepper = shallow(
-    <Stepper {...defaultProps} value={3} step={3} min={2} max={10} onChange={onChange}>
-      Amount of something
-    </Stepper>,
+    <Stepper {...defaultProps} value={3} step={3} min={2} max={10} onChange={onChange} />,
   )
   expect(stepper.state('value')).toBe(3)
   stepper.find('.kirk-stepper-increment').simulate('click')
@@ -75,58 +74,34 @@ it('Should be able to increment/decrement the value', () => {
 })
 
 it('Should be able to have a max value', () => {
-  const stepper = shallow(
-    <Stepper {...defaultProps} value={8} step={3} max={10}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = shallow(<Stepper {...defaultProps} value={8} step={3} max={10} />)
   stepper.find('.kirk-stepper-increment').simulate('click')
   expect(stepper.state('value')).toBe(10)
 })
 
 it('Should be able to have a min value', () => {
-  const stepper = shallow(
-    <Stepper {...defaultProps} value={5} step={3} min={3}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = shallow(<Stepper {...defaultProps} value={5} step={3} min={3} />)
   stepper.find('.kirk-stepper-decrement').simulate('click')
   expect(stepper.state('value')).toBe(3)
 })
 
 it('Should have the right max value instead of wrong settings', () => {
-  const stepper = shallow(
-    <Stepper {...defaultProps} value={10} min={2} max={5}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = shallow(<Stepper {...defaultProps} value={10} min={2} max={5} />)
   expect(stepper.state('value')).toBe(5)
 })
 
 it('Should have the right min value instead of wrong settings', () => {
-  const stepper = shallow(
-    <Stepper {...defaultProps} value={-10} min={2} max={5}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = shallow(<Stepper {...defaultProps} value={-10} min={2} max={5} />)
   expect(stepper.state('value')).toBe(2)
 })
 
 it('Be able to format the value', () => {
-  const stepper = mount(
-    <Stepper {...defaultProps} value={2} format={value => `${value} €`}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = mount(<Stepper {...defaultProps} value={2} format={value => `${value} €`} />)
   expect(stepper.find('.kirk-stepper-value').prop('children')).toBe('2 €')
 })
 
 it('Should be able to receive props and then update the value', () => {
-  const stepper = mount(
-    <Stepper {...defaultProps} value={4} min={0} max={10}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = mount(<Stepper {...defaultProps} value={4} min={0} max={10} />)
 
   // Only change the max value
   stepper.setProps({ max: 3 })
@@ -150,11 +125,7 @@ it('Should be able to receive props and then update the value', () => {
 })
 
 it('Should be able to keep the right value after props change', () => {
-  const stepper = shallow(
-    <Stepper {...defaultProps} value={5} step={3} min={1}>
-      Amount of something
-    </Stepper>,
-  )
+  const stepper = shallow(<Stepper {...defaultProps} value={5} step={3} min={1} />)
   stepper.find('.kirk-stepper-increment').simulate('click')
   stepper.setProps({ min: 2 })
   expect(stepper.state('value')).toBe(8)
@@ -162,32 +133,20 @@ it('Should be able to keep the right value after props change', () => {
 
 it('Should not call onChange on componentDidMount', () => {
   const onChange = jest.fn()
-  shallow(
-    <Stepper {...defaultProps} min={1} value={2} step={3} max={5} onChange={onChange}>
-      Amount of something
-    </Stepper>,
-  )
+  shallow(<Stepper {...defaultProps} min={1} value={2} step={3} max={5} onChange={onChange} />)
   expect(onChange).toHaveBeenCalledTimes(0)
 })
 
 describe('display', () => {
   it('should render SMALL display', () => {
-    const stepper = shallow(
-      <Stepper {...defaultProps} display={StepperDisplay.SMALL}>
-        Amount of something
-      </Stepper>,
-    )
+    const stepper = shallow(<Stepper {...defaultProps} display={StepperDisplay.SMALL} />)
     expect(stepper.find(MinusIcon).prop('size')).toBe(24)
     expect(stepper.find(PlusIcon).prop('size')).toBe(24)
     expect(stepper.find('.kirk-stepper-small').exists()).toBe(true)
   })
 
   it('should render LARGE display', () => {
-    const stepper = shallow(
-      <Stepper {...defaultProps} display={StepperDisplay.LARGE}>
-        Amount of something
-      </Stepper>,
-    )
+    const stepper = shallow(<Stepper {...defaultProps} display={StepperDisplay.LARGE} />)
     expect(stepper.find(MinusIcon).prop('size')).toBe(48)
     expect(stepper.find(PlusIcon).prop('size')).toBe(48)
     expect(stepper.find('.kirk-stepper-large').exists()).toBe(true)
@@ -196,7 +155,7 @@ describe('display', () => {
 
 describe('handleFontSize', () => {
   it('should call handleFontSize() on componentDidUpdate()', () => {
-    const stepper = shallow(<Stepper {...defaultProps}>Amount of something</Stepper>)
+    const stepper = shallow(<Stepper {...defaultProps} />)
     const spyHandleFontSize = jest.spyOn(Stepper.prototype, 'handleFontSize')
 
     spyHandleFontSize.mockClear()
@@ -205,7 +164,7 @@ describe('handleFontSize', () => {
   })
 
   it('should call handleFontSize() on window.resize()', () => {
-    shallow(<Stepper {...defaultProps}>Amount of something</Stepper>)
+    shallow(<Stepper {...defaultProps} />)
     const spyHandleFontSize = jest.spyOn(Stepper.prototype, 'handleFontSize')
 
     spyHandleFontSize.mockClear()

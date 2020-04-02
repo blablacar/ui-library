@@ -9,6 +9,7 @@ import BikeAreaIcon from './bikeArea'
 import BlanketIcon from './blanket'
 import BubbleIcon from './bubbleIcon'
 import BusIcon from './busIcon'
+import CalendarIcon from './calendarIcon'
 import CallIcon from './callIcon'
 import CarIcon from './carIcon'
 import CarpoolIcon from './carpoolIcon'
@@ -115,6 +116,7 @@ export {
   BlanketIcon,
   BubbleIcon,
   BusIcon,
+  CalendarIcon,
   CallIcon,
   CarIcon,
   CarpoolIcon,

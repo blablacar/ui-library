@@ -7,20 +7,9 @@ import { Stepper, StepperDisplay } from '@blablacar/ui-library'
 ## How to use
 
 ```html
-<Stepper
-  name="price"
-  min={1}
-  max={100}
-  step={2}
-  value={5}
-  increaseLabel="Increment"
-  decreaseLabel="Decrement"
-  format={value => `${value} €`}
-  onChange={onChange}
-  display={StepperDisplay.SMALL}
->
-  Edit the price
-</Stepper>
+<Stepper name="price" min={1} max={100} step={2} value={5} increaseLabel="Increment"
+decreaseLabel="Decrement" format={value => `${value} €`} onChange={onChange}
+display={StepperDisplay.SMALL} title="Edit the price" />
 ```
 
 ## Playground
