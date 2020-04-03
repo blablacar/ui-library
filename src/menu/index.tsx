@@ -10,6 +10,8 @@ export interface MenuProps {
 }
 
 const Menu = ({ className, children, withSeparators = false }: MenuProps) => (
+  /* TODO: BBC-7416 fix a11y issue */
+  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
   <nav className={cc(className)} role="menu">
     <ItemsList withSeparators={withSeparators}>{children}</ItemsList>
   </nav>

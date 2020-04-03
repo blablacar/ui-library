@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text should have a role and classname 1`] = `
-<span
-  className="kirk-text kirk-text-body custom"
-  role="role"
->
-  text
-</span>
-`;
-
 exports[`Text should have change the DOM 1`] = `
 <span
   className="kirk-text kirk-text-body"

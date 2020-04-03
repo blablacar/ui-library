@@ -13,16 +13,6 @@ describe('Text', () => {
     const text = renderer.create(<Text>text</Text>).toJSON()
     expect(text).toMatchSnapshot()
   })
-  it('should have a role and classname', () => {
-    const text = renderer
-      .create(
-        <Text className="custom" role="role">
-          text
-        </Text>,
-      )
-      .toJSON()
-    expect(text).toMatchSnapshot()
-  })
 
   it('Should have the custom class', () => {
     const wrapper = shallow(<Text className="testClass">test</Text>)

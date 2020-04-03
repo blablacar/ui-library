@@ -24,9 +24,8 @@ stories.add(
         decreaseLabel={text('decreaseLabel', 'Decrement')}
         onChange={action('changed')}
         display={select('display', StepperDisplay, StepperDisplay.SMALL)}
-      >
-        {text('children', 'Number of seats')}
-      </Stepper>
+        title={text('children', 'Number of seats')}
+      />
     </Section>
   ),
   {
@@ -47,9 +46,8 @@ stories.add('Stepper with formatted value', () => (
       format={value => `${value} €`}
       onChange={action('changed')}
       display={select('display', StepperDisplay, StepperDisplay.SMALL)}
-    >
-      {text('children', 'Edit the price')}
-    </Stepper>
+      title={text('children', 'Edit the price')}
+    />
   </Section>
 ))
 
@@ -66,9 +64,8 @@ stories.add('Stepper with large formatted value', () => (
       format={value => `${value} грн.`}
       onChange={action('changed')}
       display={select('display', StepperDisplay, StepperDisplay.LARGE)}
-    >
-      {text('children', 'Edit the price')}
-    </Stepper>
+      title={text('children', 'Edit the price')}
+    />
   </Section>
 ))
 
