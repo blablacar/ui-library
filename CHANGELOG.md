@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Remove DOM Warning on `MainContent` component
+  [...]
 
 # v25.0.0 (02/04/2020)
 
