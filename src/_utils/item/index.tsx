@@ -73,6 +73,10 @@ const StyledItem = styled(Item)`
     position: relative;
   }
 
+  & .kirk-text-title {
+    display: block;
+  }
+
   /* Addons */
   & .kirk-item-leftAddon,
   & .kirk-item-rightAddon {

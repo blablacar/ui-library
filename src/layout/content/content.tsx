@@ -59,7 +59,7 @@ export class MainContent extends Component<MainContentProps> {
   }
 
   render(): JSX.Element {
-    const { children, tag = 'div', topBarSelector, ...props } = this.props
+    const { children, tag = 'div', topBarSelector, topBarHeight, ...props } = this.props
 
     return React.createElement(
       tag,
