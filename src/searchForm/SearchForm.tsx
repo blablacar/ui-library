@@ -127,7 +127,7 @@ const SearchForm = ({
     return () => {
       document.removeEventListener('click', hideAllOverlays)
     }
-  }, [])
+  }, [mediaSize])
 
   return (
     <form

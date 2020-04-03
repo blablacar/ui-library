@@ -4,7 +4,8 @@
 - **[FIX]** Fix markup `Item` tag label by replacing `div` children with `span`
 - **[BREAKING CHANGE]** Import `icons` as default instead of named export for a better code splitting
 - **[UPDATE]** Make `Review` more semantic with proper HTML and Review/Rating microdata
-- [...]
+- **[FIX]** Fix clicking oustide of `SearchForm` closes overlays
+  [...]
 
 # v25.0.0 (02/04/2020)
 
