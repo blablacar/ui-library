@@ -105,6 +105,8 @@ class ItemRadio extends Component<ItemRadioProps> {
           rightTitle={data}
           rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
           rightBody={dataInfo}
+          /* TODO: BBC-7415 fix a11y issue */
+          // eslint-disable-next-line jsx-a11y/label-has-associated-control
           tag={<label />}
           rightAddon={radio}
           chevron={chevron && !isLoading}

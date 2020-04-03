@@ -8,7 +8,8 @@
     "plugin:react/recommended",
     "prettier",
     "prettier/react",
-    "airbnb"
+    "airbnb",
+    "plugin:jsx-a11y/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -21,7 +22,8 @@
   "plugins": [
     "react",
     "prettier",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "jsx-a11y"
   ],
   "rules": {
     "prettier/prettier": [
@@ -43,16 +45,6 @@
     "import/order": 0,
     "import/prefer-default-export": 0,
     "indent": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "jsx-a11y/anchor-has-content": 0,
-    "jsx-a11y/aria-role": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/control-has-associated-label": 0,
-    "jsx-a11y/label-has-associated-control": 0,
-    "jsx-a11y/no-autofocus": 0,
-    "jsx-a11y/no-noninteractive-element-to-interactive-role": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "jsx-a11y/role-has-required-aria-props": 0,
     "lines-between-class-members": 0,
     "object-curly-newline": 0,
     "operator-linebreak": 0,
@@ -75,9 +67,11 @@
   },
   "overrides": [
     {
-      "files": ["story.tsx"],
+      "files": ["story.tsx", "*.unit.tsx"],
       "rules": {
-        "no-alert": 0
+        "no-alert": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "jsx-a11y/anchor-has-content": 0
       }
     }
   ]
