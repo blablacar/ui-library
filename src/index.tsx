@@ -70,5 +70,3 @@ export { default as UneditableTextField } from 'uneditableTextField'
 export { default as Why } from 'why'
 
 export { default as branding } from '_utils/branding'
-
-export * from 'icon/index'
