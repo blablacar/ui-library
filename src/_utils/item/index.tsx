@@ -94,7 +94,6 @@ const StyledItem = styled(Item)`
   }
 
   /* Highlighted state */
-
   &.kirk-item--highlighted .kirk-text-title {
     color: ${color.primary};
   }
