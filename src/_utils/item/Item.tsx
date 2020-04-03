@@ -116,14 +116,14 @@ const Item = (props: ItemProps) => {
       {...a11yAttrs}
       aria-label={ariaLabel}
     >
-      {leftAddon && <div className="kirk-item-leftAddon">{leftAddon}</div>}
-      <div className="kirk-item-leftText">
+      {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
+      <span className="kirk-item-leftText">
         {leftTitle && (
           <Text
             className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
             display={leftTitleDisplay}
             textColor={leftTitleColor}
-            tag={TextTagType.DIV}
+            tag={TextTagType.SPAN}
           >
             {leftTitle}
             {/* In case of a clickable Item don't display the addon button */}
@@ -135,7 +135,7 @@ const Item = (props: ItemProps) => {
             className="kirk-item-body"
             display={leftBodyDisplay}
             textColor={leftBodyColor}
-            tag={TextTagType.DIV}
+            tag={TextTagType.SPAN}
           >
             {leftBody}
           </Text>
@@ -145,14 +145,14 @@ const Item = (props: ItemProps) => {
             className="kirk-item-body-annotation"
             display={leftBodyAnnotationDisplay}
             textColor={leftBodyAnnotationColor}
-            tag={TextTagType.DIV}
+            tag={TextTagType.SPAN}
           >
             {leftBodyAnnotation}
           </Text>
         )}
-      </div>
+      </span>
       {hasRightText && (
-        <div className="kirk-item-rightText">
+        <span className="kirk-item-rightText">
           {rightTitle && (
             <Text
               className={cc([
@@ -179,13 +179,13 @@ const Item = (props: ItemProps) => {
               {rightBody}
             </Text>
           )}
-        </div>
+        </span>
       )}
-      {rightAddon && <div className="kirk-item-rightAddon">{rightAddon}</div>}
+      {rightAddon && <span className="kirk-item-rightAddon">{rightAddon}</span>}
       {chevron && (
-        <div className="kirk-item-rightAddon">
+        <span className="kirk-item-rightAddon">
           <ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />
-        </div>
+        </span>
       )}
     </Tag>
   )

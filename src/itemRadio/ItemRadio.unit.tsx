@@ -41,6 +41,14 @@ describe('ItemRadio', () => {
     expect(itemRadio).toMatchSnapshot()
   })
 
+  describe('a11y', () => {
+    it('Should have a label tag as wrapper to associate content text to input radio', () => {
+      const itemRadio = mount(<ItemRadio {...defaultProps} />)
+      const labelTag = itemRadio.find('label input[type="radio"]')
+      expect(labelTag.exists()).toBe(true)
+    })
+  })
+
   describe('onChange', () => {
     it('Should bind the onChange callback of the input', () => {
       const itemRadio = mount(<ItemRadio {...defaultProps} />)
