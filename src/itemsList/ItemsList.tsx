@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { ItemChoiceProps } from 'itemChoice'
 import { ItemRadioProps } from 'itemRadio/ItemRadio'
 import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
+import Divider from 'divider'
 
 export const ItemsListDivider: FunctionComponent = () => null
 
@@ -31,35 +32,24 @@ class ItemsList extends Component<ItemsListProps> {
 
   render() {
     const { children, className, withSeparators, keyGenerator, ...otherProps } = this.props
-    let separator = false
+
     return (
-      <ul
-        className={cc([
-          'kirk-items-list',
-          className,
-          { 'kirk-items-list--withSeparators': withSeparators },
-        ])}
-        {...otherProps}
-      >
+      <ul className={cc(['kirk-items-list', className])} {...otherProps}>
         {children.map((item, index) => {
-          let child = null
-          if (item.type === ItemsListDivider && !withSeparators) {
-            separator = true
-          } else if (item.type !== ItemsListDivider && item.type !== undefined) {
-            child = (
-              <li
-                className={cc([
-                  'kirk-items-list-item',
-                  { 'kirk-items-list-item--withSeparator': separator },
-                ])}
-                key={keyGenerator(index)}
-              >
-                {item}
-              </li>
-            )
-            separator = false
+          if (item.type === ItemsListDivider || item.type === undefined) {
+            return null
           }
-          return child
+
+          const isLast = children.length === index + 1
+          const hasSeparator =
+            !isLast && (children[index + 1].type === ItemsListDivider || withSeparators)
+
+          return (
+            <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>
+              {item}
+              {hasSeparator && <Divider />}
+            </li>
+          )
         })}
       </ul>
     )

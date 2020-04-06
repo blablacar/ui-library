@@ -325,6 +325,7 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
           itemClassName={this.props.itemClassName}
           onDoneAnimationEnd={this.props.onDoneAnimationEnd}
           itemKey={this.props.itemKey}
+          withSeparators={!this.props.embeddedInSearchForm}
         />
       </div>
     )

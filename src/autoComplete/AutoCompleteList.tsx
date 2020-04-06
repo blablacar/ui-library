@@ -20,6 +20,7 @@ export interface AutoCompleteListProps {
   itemKey?: (item: AutocompleteItem) => string
   visible?: boolean
   selectedItemStatus?: ItemStatus
+  withSeparators?: boolean
 }
 
 export interface AutoCompleteListState {
@@ -35,6 +36,7 @@ export default class AutoCompleteList extends Component<
     maxItems: Infinity,
     itemKey: ({ leftAddon, ...item }) => JSON.stringify(item),
     visible: false,
+    withSeparators: true,
   }
 
   state: AutoCompleteListState = {
@@ -136,7 +138,7 @@ export default class AutoCompleteList extends Component<
           className={cc([prefix({ 'autoComplete-list': true }), this.props.className])}
           keyGenerator={(index: number) => this.props.itemKey(this.props.items[index])}
           role="listbox"
-          withSeparators
+          withSeparators={this.props.withSeparators}
         >
           {this.props.items.slice(0, this.props.maxItems).map((item, index) => {
             const status =
