@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { color, font, radius, space } from '_utils/branding'
+import { color, font, space } from '_utils/branding'
 
 import AutoCompleteList from './AutoCompleteList'
 
@@ -10,7 +10,8 @@ const StyledAutoCompleteList = styled(AutoCompleteList)`
   }
 
   & .kirk-item-choice {
-    padding: ${space.m} ${space.xl};
+    padding-top: ${space.m};
+    padding-bottom: ${space.m};
   }
 
   & .kirk-autoComplete-primaryText {
@@ -29,7 +30,6 @@ const StyledAutoCompleteList = styled(AutoCompleteList)`
   & .kirk-item-choice:hover,
   & .kirk-item-choice[aria-selected='true'] {
     background-color: ${color.lightBackground};
-    border-radius: ${radius.l};
   }
 `
 
