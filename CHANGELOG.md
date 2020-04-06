@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v26.0.0 (06/04/2020)
+
 - **[FIX]** Remove DOM Warning on `MainContent` component
 - **[FIX]** Fix markup `Item` tag label by replacing `div` children with `span`
 - **[BREAKING CHANGE]** Import `icons` as default instead of named export for a better code splitting
@@ -7,7 +11,6 @@
 - **[FIX]** Fix clicking oustide of `SearchForm` closes overlays
 - **[UPDATE]** Use `Divider` in `ItemList` instead of custom CSS
 - **[UPDATE]** Remove legacy style from Autocomplete
-  [...]
 
 # v25.0.0 (02/04/2020)
 
