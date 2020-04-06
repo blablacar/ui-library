@@ -17,8 +17,25 @@ export interface ReviewProps {
 const Review = (props: ReviewProps) => {
   const { className, title, text, formattedDatetime, isoDatetime, isResponse = false } = props
 
+  // For responses, the title is not a rating but the name of the person replying.
+  const titleMicroData = isResponse
+    ? null
+    : {
+        itemScope: true,
+        itemProp: 'reviewRating',
+        itemType: 'https://schema.org/Rating',
+      }
+
+  const titleMicroDataContent = isResponse
+    ? null
+    : {
+        itemProp: 'reviewRating',
+      }
+
   return (
-    <div
+    <blockquote
+      itemScope
+      itemType="http://schema.org/Review"
       className={cc([
         className,
         {
@@ -26,12 +43,12 @@ const Review = (props: ReviewProps) => {
         },
       ])}
     >
-      <h2 className="kirk-review-title">
-        <TextTitle>{title}</TextTitle>
+      <h2 className="kirk-review-title" {...titleMicroData}>
+        <TextTitle {...titleMicroDataContent}>{title}</TextTitle>
       </h2>
-      <Paragraph>{text}</Paragraph>
+      <Paragraph itemProp="reviewBody">{text}</Paragraph>
       <Caption isoDate={isoDatetime}>{formattedDatetime}</Caption>
-    </div>
+    </blockquote>
   )
 }
 

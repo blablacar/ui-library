@@ -10,6 +10,7 @@ export interface ParagraphProps {
   readonly children: string
   readonly isExpandable?: boolean
   readonly expandLabel?: string
+  readonly itemProp?: string
 }
 
 interface ParagraphState {
@@ -21,6 +22,7 @@ class Paragraph extends PureComponent<ParagraphProps> {
     className: '',
     isExpandable: false,
     expandLabel: '',
+    itemProp: null,
   }
 
   state: ParagraphState = {
@@ -36,7 +38,7 @@ class Paragraph extends PureComponent<ParagraphProps> {
   }
 
   render() {
-    const { className, children: originalContent, isExpandable, expandLabel } = this.props
+    const { className, children: originalContent, isExpandable, expandLabel, itemProp } = this.props
     const { isExpanded } = this.state
 
     const isContentTruncated =
@@ -51,7 +53,7 @@ class Paragraph extends PureComponent<ParagraphProps> {
 
     return (
       <div className={cc(className)} role="presentation">
-        <Text tag={TextTagType.PARAGRAPH} newlineToBr>
+        <Text {...(itemProp && { itemProp })} tag={TextTagType.PARAGRAPH} newlineToBr>
           {content}
         </Text>
         {readMoreButton}

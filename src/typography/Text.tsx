@@ -6,6 +6,7 @@ export interface TextProps {
   readonly className?: string
   readonly children: string | ReactNode
   readonly isInverted?: boolean
+  readonly itemProp?: string // Allows microdata annotation on Text
 }
 
 const Text = ({ children, className, isInverted = false, ...props }: TextProps) => {

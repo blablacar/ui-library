@@ -6,6 +6,7 @@ import Review from './Review'
 const StyledReview = styled(Review)`
   & {
     padding: ${space.m} 0;
+    margin: 0;
   }
 
   &.kirk-is-review-response {

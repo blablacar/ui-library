@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render review microdata annotations and HTML 1`] = `
+Array [
+  .c3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c3.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-body,
+.c3.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c3.kirk-text-title,
+.c3.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c3.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c3.kirk-text-subheader,
+.c3.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c3.kirk-text-title,
+.c3.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-bodyStrong,
+.c3.kirk-text-subheaderStrong,
+.c3.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.c2 .kirk-button {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c4 {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c4 .kirk-link {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c1 {
+  color: #054752;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.c1.kirk-text--inverse {
+  color: #FFF;
+}
+
+.c0 {
+  padding: 8px 0;
+  margin: 0;
+}
+
+.c0.kirk-is-review-response {
+  padding-left: 24px;
+}
+
+.c0 .kirk-review-title {
+  margin: 0;
+  font-size: 1em;
+}
+
+<blockquote
+    className="c0"
+    itemScope={true}
+    itemType="http://schema.org/Review"
+  >
+    <h2
+      className="kirk-review-title"
+      itemProp="reviewRating"
+      itemScope={true}
+      itemType="https://schema.org/Rating"
+    >
+      <span
+        className="c1"
+        itemProp="reviewRating"
+      >
+        Review title
+      </span>
+    </h2>
+    <div
+      className="c2"
+      role="presentation"
+    >
+      <p
+        className="kirk-text kirk-text-body c3"
+        itemProp="reviewBody"
+      >
+        Review content
+      </p>
+    </div>
+    <div
+      className="kirk-caption c4"
+    >
+      <time
+        dateTime="2017-08-07T14:10:40.526Z"
+      >
+        05 jul - 17:39
+      </time>
+    </div>
+  </blockquote>,
+  .c3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c3.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-body,
+.c3.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c3.kirk-text-title,
+.c3.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c3.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c3.kirk-text-subheader,
+.c3.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c3.kirk-text-title,
+.c3.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c3.kirk-text-bodyStrong,
+.c3.kirk-text-subheaderStrong,
+.c3.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.c2 .kirk-button {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c4 {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c4 .kirk-link {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c1 {
+  color: #054752;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.c1.kirk-text--inverse {
+  color: #FFF;
+}
+
+.c0 {
+  padding: 8px 0;
+  margin: 0;
+}
+
+.c0.kirk-is-review-response {
+  padding-left: 24px;
+}
+
+.c0 .kirk-review-title {
+  margin: 0;
+  font-size: 1em;
+}
+
+<blockquote
+    className="c0 kirk-is-review-response"
+    itemScope={true}
+    itemType="http://schema.org/Review"
+  >
+    <h2
+      className="kirk-review-title"
+    >
+      <span
+        className="c1"
+      >
+        Review title
+      </span>
+    </h2>
+    <div
+      className="c2"
+      role="presentation"
+    >
+      <p
+        className="kirk-text kirk-text-body c3"
+        itemProp="reviewBody"
+      >
+        Review content
+      </p>
+    </div>
+    <div
+      className="kirk-caption c4"
+    >
+      <time
+        dateTime="2017-08-07T14:10:40.526Z"
+      >
+        05 jul - 17:39
+      </time>
+    </div>
+  </blockquote>,
+]
+`;
