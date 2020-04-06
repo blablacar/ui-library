@@ -10,23 +10,19 @@ const LegacyLayoutNormalizationGlobalStyles = createGlobalStyle`
         padding-left: 24px;
         padding-right: 24px;
     }
+
     button.kirk-item.kirk-item--clickable {
         width: calc(100% + 48px); /* fixes button width not scaling with negative margins */
     }
-    .kirk-autoComplete {
-        margin-left: -24px;
-        margin-right: -24px;
-    }
-    
+
     .home-column .kirk-item.kirk-item--clickable,
-    .user-menu-item.kirk-item.kirk-item--clickable,
-    .addressField .kirk-item.kirk-item--clickable {
+    .user-menu-item.kirk-item.kirk-item--clickable {
         margin-left: 0;
         margin-right: 0;
     }
+
     .home-column button.kirk-item.kirk-item--clickable,
-    button.user-menu-item.kirk-item.kirk-item--clickable,
-    .addressField button.kirk-item.kirk-item--clickable {
+    button.user-menu-item.kirk-item.kirk-item--clickable {
         max-width: 100%;
     }
 `
