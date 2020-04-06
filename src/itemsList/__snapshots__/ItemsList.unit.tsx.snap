@@ -213,22 +213,6 @@ button:hover.c1 {
   list-style-type: none;
 }
 
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item,
-.c0 .kirk-items-list-item--withSeparator {
-  margin-top: 16px;
-  position: relative;
-}
-
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item::before,
-.c0 .kirk-items-list-item--withSeparator::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: 0px;
-  left: 0px;
-  border-bottom: 1px solid #EDEDED;
-}
-
 <ul
   className="kirk-items-list c0"
   role=""
@@ -585,6 +569,19 @@ button:hover.c1 {
   bottom: 0;
 }
 
+.c4 {
+  height: calc(2 * 8px);
+  position: relative;
+}
+
+.c4:after {
+  position: absolute;
+  top: 8px;
+  content: ' ';
+  border-top: solid #EDEDED 1px;
+  width: 100%;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -594,22 +591,6 @@ button:hover.c1 {
   -ms-flex-direction: column;
   flex-direction: column;
   list-style-type: none;
-}
-
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item,
-.c0 .kirk-items-list-item--withSeparator {
-  margin-top: 16px;
-  position: relative;
-}
-
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item::before,
-.c0 .kirk-items-list-item--withSeparator::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: 0px;
-  left: 0px;
-  border-bottom: 1px solid #EDEDED;
 }
 
 <ul
@@ -713,9 +694,13 @@ button:hover.c1 {
         </svg>
       </span>
     </a>
+    <div
+      aria-hidden="true"
+      className="c4"
+    />
   </li>
   <li
-    className="kirk-items-list-item kirk-items-list-item--withSeparator"
+    className="kirk-items-list-item"
   >
     <a
       className="kirk-item kirk-item--clickable kirk-item-choice c1"
@@ -968,6 +953,19 @@ button:hover.c1 {
   bottom: 0;
 }
 
+.c4 {
+  height: calc(2 * 8px);
+  position: relative;
+}
+
+.c4:after {
+  position: absolute;
+  top: 8px;
+  content: ' ';
+  border-top: solid #EDEDED 1px;
+  width: 100%;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -979,24 +977,8 @@ button:hover.c1 {
   list-style-type: none;
 }
 
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item,
-.c0 .kirk-items-list-item--withSeparator {
-  margin-top: 16px;
-  position: relative;
-}
-
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item::before,
-.c0 .kirk-items-list-item--withSeparator::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: 0px;
-  left: 0px;
-  border-bottom: 1px solid #EDEDED;
-}
-
 <ul
-  className="kirk-items-list c0 kirk-items-list--withSeparators"
+  className="kirk-items-list c0"
   role=""
 >
   <li
@@ -1047,6 +1029,10 @@ button:hover.c1 {
         </svg>
       </span>
     </a>
+    <div
+      aria-hidden="true"
+      className="c4"
+    />
   </li>
   <li
     className="kirk-items-list-item"
@@ -1096,6 +1082,10 @@ button:hover.c1 {
         </svg>
       </span>
     </a>
+    <div
+      aria-hidden="true"
+      className="c4"
+    />
   </li>
   <li
     className="kirk-items-list-item"

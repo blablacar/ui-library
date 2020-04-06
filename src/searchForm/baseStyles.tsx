@@ -44,10 +44,6 @@ export const autoCompleteBaseStyle = `
     padding: 0;
 
     .kirk-items-list-item {
-      &::before {
-        content: none;
-      }
-
       .kirk-item-choice {
         padding: ${space.m} ${space.l};
       }

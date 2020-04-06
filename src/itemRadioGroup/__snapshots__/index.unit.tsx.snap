@@ -261,22 +261,6 @@ button:hover.c2 {
   list-style-type: none;
 }
 
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item,
-.c0 .kirk-items-list-item--withSeparator {
-  margin-top: 16px;
-  position: relative;
-}
-
-.c0.kirk-items-list--withSeparators .kirk-items-list-item + .kirk-items-list-item::before,
-.c0 .kirk-items-list-item--withSeparator::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: 0px;
-  left: 0px;
-  border-bottom: 1px solid #EDEDED;
-}
-
 <ul
   aria-labelledby="my-div-id"
   className="kirk-items-list c0"
