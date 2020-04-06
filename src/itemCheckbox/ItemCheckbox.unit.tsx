@@ -60,4 +60,11 @@ describe('ItemCheckbox', () => {
       value: false,
     })
   })
+  describe('a11y', () => {
+    it('Should have a label tag as wrapper to associate content text to input checkbox', () => {
+      const itemCheckbox = mount(<ItemCheckbox {...defaultProps} />)
+      const labelTag = itemCheckbox.find('label input[type="checkbox"]')
+      expect(labelTag.exists()).toBe(true)
+    })
+  })
 })
