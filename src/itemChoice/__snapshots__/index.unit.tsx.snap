@@ -152,6 +152,10 @@ button:hover.c0 {
   text-align: right;
 }
 
+.c0 .kirk-text {
+  display: block;
+}
+
 .c0 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -163,10 +167,6 @@ button:hover.c0 {
 
 .c0 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c0 .kirk-text-title {
-  display: block;
 }
 
 .c0 .kirk-item-leftAddon,
@@ -541,6 +541,10 @@ button:hover.c0 {
   text-align: right;
 }
 
+.c0 .kirk-text {
+  display: block;
+}
+
 .c0 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -552,10 +556,6 @@ button:hover.c0 {
 
 .c0 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c0 .kirk-text-title {
-  display: block;
 }
 
 .c0 .kirk-item-leftAddon,
@@ -922,6 +922,10 @@ button:hover.c0 {
   text-align: right;
 }
 
+.c0 .kirk-text {
+  display: block;
+}
+
 .c0 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -933,10 +937,6 @@ button:hover.c0 {
 
 .c0 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c0 .kirk-text-title {
-  display: block;
 }
 
 .c0 .kirk-item-leftAddon,
@@ -1274,6 +1274,10 @@ button:hover.c0 {
   text-align: right;
 }
 
+.c0 .kirk-text {
+  display: block;
+}
+
 .c0 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -1285,10 +1289,6 @@ button:hover.c0 {
 
 .c0 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c0 .kirk-text-title {
-  display: block;
 }
 
 .c0 .kirk-item-leftAddon,
@@ -1628,6 +1628,10 @@ button:hover.c0 {
   text-align: right;
 }
 
+.c0 .kirk-text {
+  display: block;
+}
+
 .c0 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -1639,10 +1643,6 @@ button:hover.c0 {
 
 .c0 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c0 .kirk-text-title {
-  display: block;
 }
 
 .c0 .kirk-item-leftAddon,
