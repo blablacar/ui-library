@@ -36,6 +36,7 @@ export interface DatePickerProps {
   readonly orientation?: DatePickerOrientation
   readonly isOutsideRange?: (day: Date) => boolean
   readonly fromMonth?: Date
+  readonly toMonth?: Date
   readonly firstDayOfWeek?: number
   readonly stickyPositionTop?: number
 }
@@ -56,6 +57,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
     isOutsideRange: day => DayPicker.DateUtils.isDayBefore(day, new Date()),
     orientation: DatePickerOrientation.HORIZONTAL,
     fromMonth: new Date(),
+    toMonth: new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate()),
     firstDayOfWeek: 0,
     stickyPositionTop: 0,
   }
@@ -185,6 +187,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       isOutsideRange,
       orientation,
       fromMonth,
+      toMonth,
       weekdaysShort,
       weekdaysLong,
       months,
@@ -220,6 +223,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
           firstDayOfWeek={firstDayOfWeek}
           localeUtils={{ ...DayPicker.LocaleUtils, formatMonthTitle: this.formatMonthTitle }}
           initialMonth={initialMonth}
+          toMonth={toMonth}
         />
       </div>
     )
