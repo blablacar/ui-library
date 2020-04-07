@@ -61,6 +61,10 @@ const StyledItem = styled(Item)`
   }
 
   /* Text */
+  & .kirk-text {
+    display: block;
+  }
+
   & .kirk-item-title--withBody {
     margin-bottom: ${space.s};
   }
@@ -71,10 +75,6 @@ const StyledItem = styled(Item)`
 
   & .kirk-item-title--withButtonAddon {
     position: relative;
-  }
-
-  & .kirk-text-title {
-    display: block;
   }
 
   /* Addons */
