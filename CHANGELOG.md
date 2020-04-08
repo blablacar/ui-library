@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `Item` Text display
 [...]
 
 # v26.0.0 (06/04/2020)

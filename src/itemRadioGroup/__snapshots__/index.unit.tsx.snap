@@ -152,6 +152,10 @@ button:hover.c2 {
   text-align: right;
 }
 
+.c2 .kirk-text {
+  display: block;
+}
+
 .c2 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
@@ -163,10 +167,6 @@ button:hover.c2 {
 
 .c2 .kirk-item-title--withButtonAddon {
   position: relative;
-}
-
-.c2 .kirk-text-title {
-  display: block;
 }
 
 .c2 .kirk-item-leftAddon,
