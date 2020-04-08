@@ -1,6 +1,7 @@
 # Unreleased
 
--[...]
+- **[UPDATE]** Add `toMonth` parameter to `DatePicker` and set it to 1 year by default
+- [...]
 
 # v26.0.1 (08/04/2020)
 
