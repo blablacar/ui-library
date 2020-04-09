@@ -42,11 +42,5 @@ export const autoCompleteBaseStyle = `
 
   .kirk-items-list.kirk-autoComplete-list {
     padding: 0;
-
-    .kirk-items-list-item {
-      .kirk-item-choice {
-        padding: ${space.m} ${space.l};
-      }
-    }
   }
 `

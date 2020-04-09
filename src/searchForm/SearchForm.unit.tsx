@@ -4,6 +4,7 @@ import { shallow, mount } from 'enzyme'
 
 import TextBody from 'typography/body'
 import { MediaSize } from '_utils/mediaSizeProvider'
+import AutoComplete from 'autoComplete/AutoComplete'
 import SearchForm from './SearchForm'
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
@@ -16,12 +17,8 @@ const today = new Date().toISOString()
 
 const defaultProps = {
   onSubmit: () => {},
-  autocompleteFromProps: {
-    placeholder: 'Leaving From',
-  },
-  autocompleteToProps: {
-    placeholder: 'Going to',
-  },
+  autocompleteFrom: <AutoComplete placeholder="Leaving from" />,
+  autocompleteTo: <AutoComplete placeholder="Going to" />,
   datepickerProps: {
     defaultValue: today,
     format: value => `Date: ${new Date(value).toISOString()}`,
@@ -44,6 +41,11 @@ describe('searchForm', () => {
       beforeEach(() => {
         jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
         wrapper = shallow(<SearchForm {...defaultProps} />)
+      })
+
+      it('should have the autocomplete placeholder', () => {
+        expect(wrapper.find('.kirk-searchForm-from').text()).toBe('Leaving from')
+        expect(wrapper.find('.kirk-searchForm-to').text()).toBe('Going to')
       })
 
       it('should open the autocomplete from overlay', () => {

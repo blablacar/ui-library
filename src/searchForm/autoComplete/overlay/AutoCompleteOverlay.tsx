@@ -1,15 +1,27 @@
 import React from 'react'
-import AutoComplete, { AutoCompleteProps } from 'autoComplete'
 import Bullet, { BulletTypes } from 'bullet'
+import { AutoCompleteProps } from 'autoComplete'
 
-export const AutoCompleteOverlay = (props: AutoCompleteProps) => {
+export interface AutoCompleteOverlayProps {
+  readonly name: string
+  readonly autocompleteComponent: React.ReactElement<AutoCompleteProps>
+  readonly className?: Classcat.Class
+  readonly onSelect?: (obj: AutocompleteOnChange) => void
+}
+
+export const AutoCompleteOverlay = (props: AutoCompleteOverlayProps) => {
   const icon = (
     <div className="kirk-autoComplete-icon">
       <Bullet type={BulletTypes.SEARCH} />
     </div>
   )
 
-  return <AutoComplete {...props} inputAddon={icon} embeddedInSearchForm />
+  return React.cloneElement(props.autocompleteComponent, {
+    ...props,
+    autoFocus: true,
+    inputAddon: icon,
+    embeddedInSearchForm: true,
+  })
 }
 
 export default AutoCompleteOverlay

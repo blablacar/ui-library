@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import { ItemStatus } from '_utils/item'
 import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
@@ -26,6 +25,12 @@ interface AutoCompleteExampleProps {
   readonly searchOnMount?: boolean
   readonly searchForItemsDelay?: number
   readonly renderEmptySearch?: AutocompleteItem[]
+  readonly className?: Classcat.Class
+  readonly inputAddon?: React.ReactElement
+  readonly onSelect?: (obj: AutocompleteOnChange) => void
+  readonly autoFocus?: boolean
+  readonly placeholder?: string
+  readonly embeddedInSearchForm?: boolean
 }
 
 interface AutoCompleteExampleState {
@@ -33,7 +38,10 @@ interface AutoCompleteExampleState {
   readonly items: AutocompleteItem[]
 }
 
-class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoCompleteExampleState> {
+export class AutoCompleteExample extends Component<
+  AutoCompleteExampleProps,
+  AutoCompleteExampleState
+> {
   state: AutoCompleteExampleState = {
     isSearching: false,
     items: [],
@@ -43,6 +51,10 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
     searchOnMount: true,
     searchForItemsDelay: 0,
     renderEmptySearch: [],
+    onSelect() {},
+    autoFocus: false,
+    placeholder: 'Search here',
+    embeddedInSearchForm: false,
   }
 
   searchForItems = (query: string) => {
@@ -60,49 +72,70 @@ class AutoCompleteExample extends Component<AutoCompleteExampleProps, AutoComple
     const error = boolean('error', false)
 
     return (
-      <Section>
-        <p>
-          Type <code>Paris</code> to test auto-completion.
-        </p>
-        <AutoComplete
-          name="city"
-          placeholder="Search here…"
-          defaultValue={text('defaultValue')}
-          searchOnMount={boolean('searchOnMount', true)}
-          isSearching={this.state.isSearching}
-          searchForItems={this.searchForItems}
-          items={this.state.items}
-          renderEmptySearch={this.props.renderEmptySearch}
-          onSelect={action('onChange')}
-          getItemValue={item => item.id}
-          renderQuery={item => item.label}
-          error={error ? text('error message', 'something went wrong') : ''}
-          maxItems={number('maxItems', 5)}
-          showList={boolean('showList', true)}
-          searchForItemsMinChars={number('searchForItemsMinChars', 3)}
-          selectedItemStatus={select(
-            'selectedItemStatus',
-            [ItemStatus.DEFAULT, ItemStatus.LOADING, ItemStatus.CHECKED],
-            ItemStatus.DEFAULT,
-          )}
-          autoCorrect={select('autoCorrect', { on: 'on', off: 'off' }, 'off')}
-          disabled={boolean('disabled', false)}
-          readOnly={boolean('readOnly', false)}
-          required={boolean('required', false)}
-        />
-      </Section>
+      <AutoComplete
+        className={this.props.className}
+        name="city"
+        placeholder={this.props.placeholder}
+        defaultValue={text('defaultValue')}
+        searchOnMount={boolean('searchOnMount', true)}
+        isSearching={this.state.isSearching}
+        searchForItems={this.searchForItems}
+        items={this.state.items}
+        renderEmptySearch={this.props.renderEmptySearch}
+        onSelect={this.props.onSelect}
+        getItemValue={item => item.id}
+        renderQuery={item => item.label}
+        error={error ? text('error message', 'something went wrong') : ''}
+        maxItems={number('maxItems', 5)}
+        showList={boolean('showList', true)}
+        searchForItemsMinChars={number('searchForItemsMinChars', 3)}
+        selectedItemStatus={select(
+          'selectedItemStatus',
+          [ItemStatus.DEFAULT, ItemStatus.LOADING, ItemStatus.CHECKED],
+          ItemStatus.DEFAULT,
+        )}
+        autoCorrect={select('autoCorrect', { on: 'on', off: 'off' }, 'off')}
+        disabled={boolean('disabled', false)}
+        readOnly={boolean('readOnly', false)}
+        required={boolean('required', false)}
+        inputAddon={this.props.inputAddon}
+        autoFocus={this.props.autoFocus}
+        embeddedInSearchForm={this.props.embeddedInSearchForm}
+      />
     )
   }
 }
 
-stories.add('Basic', () => <AutoCompleteExample />)
+stories.add('Basic', () => (
+  <Section>
+    <p>
+      Type <code>Paris</code> to test auto-completion.
+    </p>
+    <AutoCompleteExample />
+  </Section>
+))
 
-stories.add('With busy state', () => <AutoCompleteExample searchForItemsDelay={1500} />)
+stories.add('With busy state', () => (
+  <Section>
+    <p>
+      Type <code>Paris</code> to test auto-completion.
+    </p>
+    <AutoCompleteExample searchForItemsDelay={1500} />
+  </Section>
+))
 
 stories.add('With empty search', () => {
   const emptySearch = [
     { id: '1', label: 'Get my location', labelInfo: '' },
     { id: '2', label: 'Favorite address', labelInfo: '' },
   ]
-  return <AutoCompleteExample renderEmptySearch={emptySearch} />
+
+  return (
+    <Section>
+      <p>
+        Type <code>Paris</code> to test auto-completion.
+      </p>
+      <AutoCompleteExample renderEmptySearch={emptySearch} />
+    </Section>
+  )
 })
