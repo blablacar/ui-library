@@ -11,7 +11,7 @@ import StepperSection from './stepper/section'
 import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
 import SearchForm from '.'
-import MediaSizeProvider from '_utils/mediaSizeProvider/MediaSizeProvider'
+import MediaSizeProvider from '_utils/mediaSizeProvider'
 import searchFormDocumentation from './specifications/searchForm.md'
 import BaseSection, { SectionContentSize } from 'layout/section/baseSection/'
 

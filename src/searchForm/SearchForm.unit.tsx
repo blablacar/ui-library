@@ -3,7 +3,7 @@ import { act } from 'react-dom/test-utils'
 import { shallow, mount } from 'enzyme'
 
 import TextBody from 'typography/body'
-import { MediaSize } from '_utils/mediaSizeProvider/MediaSizeProvider'
+import { MediaSize } from '_utils/mediaSizeProvider'
 import SearchForm from './SearchForm'
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'

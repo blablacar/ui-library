@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { mount } from 'enzyme'
-import MediaSizeProvider, { MediaSizeContext } from './MediaSizeProvider'
+import MediaSizeProvider, { MediaSizeContext } from '.'
 
 const mockWindowInnerWidth = value => {
   Object.defineProperty(window, 'innerWidth', {
