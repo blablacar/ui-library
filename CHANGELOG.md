@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v27.0.0 (09/04/2020)
+
 - **[UPDATE]** Add `toMonth` parameter to `DatePicker` and set it to 1 year by default
 - **[BREAKING CHANGE]** `MediaSizeProvider` filename renamed
 
