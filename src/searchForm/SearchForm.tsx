@@ -6,8 +6,7 @@ import { canUseDOM } from 'exenv'
 import { color } from '_utils/branding'
 import SearchIcon from 'icon/searchIcon'
 import { CalendarIcon } from 'icon/calendarIcon'
-import { Bullet } from 'index'
-import { BulletTypes } from 'bullet'
+import Bullet, { BulletTypes } from 'bullet'
 import { StandardSeat } from 'icon/standardSeat'
 import { DoubleArrowIcon } from 'icon/doubleArrowIcon'
 import Divider from 'divider'
@@ -23,8 +22,8 @@ import AutoCompleteSection from './autoComplete/section'
 export interface SearchFormProps {
   className?: string
   onSubmit: Function
-  autocompleteFromProps: AutocompleteProps
-  autocompleteToProps: AutocompleteProps
+  autocompleteFrom: React.ReactElement
+  autocompleteTo: React.ReactElement
   datepickerProps: FieldProps
   stepperProps: StepperProps
 }
@@ -32,10 +31,6 @@ export interface SearchFormProps {
 interface FieldProps {
   defaultValue?: string | number
   format?: (value: string | number) => string
-}
-
-interface AutocompleteProps extends FieldProps {
-  placeholder: string
 }
 
 interface StepperProps extends FieldProps {
@@ -54,18 +49,18 @@ enum Elements {
 }
 
 type FormValues = {
-  [key in keyof typeof Elements]?: string | number | boolean
+  [key in keyof typeof Elements]?: string | number | boolean | AutocompleteOnChange
 }
 
 const SearchForm = ({
   className,
   onSubmit,
-  autocompleteFromProps,
-  autocompleteToProps,
+  autocompleteFrom,
+  autocompleteTo,
   datepickerProps,
   stepperProps,
 }: SearchFormProps) => {
-  // Use React.useContext syntaxt so we can mock it
+  // Use React.useContext syntax so we can mock it
   // https://github.com/enzymejs/enzyme/issues/2176#issuecomment-533582429
   const mediaSize = React.useContext(MediaSizeContext)
 
@@ -108,6 +103,24 @@ const SearchForm = ({
     },
   }
 
+  const autocompleteFromConfig = {
+    name: 'from',
+    autocompleteComponent: autocompleteFrom,
+    onSelect: (value: AutocompleteOnChange) => {
+      setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_FROM]: value })
+      setElementOpened(null)
+    },
+  }
+
+  const autocompleteToConfig = {
+    name: 'to',
+    autocompleteComponent: autocompleteTo,
+    onSelect: (value: AutocompleteOnChange) => {
+      setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_TO]: value })
+      setElementOpened(null)
+    },
+  }
+
   const invertFromTo = () => {
     setFormValues({
       ...formValues,
@@ -129,6 +142,9 @@ const SearchForm = ({
     }
   }, [mediaSize])
 
+  const autocompleteFromValue = formValues[Elements.AUTOCOMPLETE_FROM] as AutocompleteOnChange
+  const autocompleteToValue = formValues[Elements.AUTOCOMPLETE_TO] as AutocompleteOnChange
+
   return (
     <form
       action=""
@@ -144,9 +160,11 @@ const SearchForm = ({
             className="kirk-search-button"
             onClick={() => setElementOpened(Elements.AUTOCOMPLETE_FROM)}
           >
-            <Bullet type={BulletTypes.SEARCH} className="kirk-bullet--searchForm" />{' '}
+            <span className="kirk-bullet--searchForm">
+              <Bullet type={BulletTypes.SEARCH} />
+            </span>
             <TextBody>
-              {formValues[Elements.AUTOCOMPLETE_FROM] || autocompleteFromProps.placeholder}
+              {autocompleteFromValue?.item.label || autocompleteFrom.props.placeholder}
             </TextBody>
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
@@ -162,11 +180,7 @@ const SearchForm = ({
       {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_FROM && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
-          name="from"
-          searchOnMount={false}
-          isSearching={false}
-          searchForItems={() => {}}
-          autoFocus
+          {...autocompleteFromConfig}
         />
       )}
 
@@ -175,11 +189,7 @@ const SearchForm = ({
         canUseDOM &&
         createPortal(
           <AutoCompleteSection
-            name="from"
-            searchOnMount={false}
-            isSearching={false}
-            searchForItems={() => {}}
-            autoFocus
+            {...autocompleteFromConfig}
             onClick={() => {
               setElementOpened(null)
             }}
@@ -193,10 +203,10 @@ const SearchForm = ({
           className="kirk-search-button"
           onClick={() => setElementOpened(Elements.AUTOCOMPLETE_TO)}
         >
-          <Bullet type={BulletTypes.SEARCH} className="kirk-bullet--searchForm" />{' '}
-          <TextBody>
-            {formValues[Elements.AUTOCOMPLETE_TO] || autocompleteToProps.placeholder}
-          </TextBody>
+          <span className="kirk-bullet--searchForm">
+            <Bullet type={BulletTypes.SEARCH} />
+          </span>
+          <TextBody>{autocompleteToValue?.item.label || autocompleteTo.props.placeholder}</TextBody>
         </button>
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
@@ -204,11 +214,7 @@ const SearchForm = ({
       {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_TO && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
-          name="to"
-          searchOnMount={false}
-          isSearching={false}
-          searchForItems={() => {}}
-          autoFocus
+          {...autocompleteToConfig}
         />
       )}
 
@@ -217,11 +223,7 @@ const SearchForm = ({
         canUseDOM &&
         createPortal(
           <AutoCompleteSection
-            name="to"
-            searchOnMount={false}
-            isSearching={false}
-            searchForItems={() => {}}
-            autoFocus
+            {...autocompleteToConfig}
             onClick={() => {
               setElementOpened(null)
             }}

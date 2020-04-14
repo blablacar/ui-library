@@ -13,7 +13,7 @@ import '../src/typography/titleStrong/story'
 import '../src/typography/body/story'
 import '../src/typography/bodyStrong/story'
 
-import '../src/icon/story/'
+import '../src/icon/story'
 
 // Sections
 import '../src/layout/section/baseSection/story'

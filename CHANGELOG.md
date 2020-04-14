@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add `autocompleteFrom` & `autocompleteTo` props to `SearchForm`
+  [...]
 
 # v27.0.0 (09/04/2020)
 
