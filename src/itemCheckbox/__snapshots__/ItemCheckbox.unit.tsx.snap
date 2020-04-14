@@ -523,7 +523,11 @@ button:hover.c0 {
   stroke-width: 0;
 }
 
-.c2 {
+.c2.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c2.kirk-loader--fullScreen {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -536,9 +540,6 @@ button:hover.c0 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c2.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -548,7 +549,32 @@ button:hover.c0 {
   z-index: 4;
 }
 
-.c2.kirk-loader--done {
+.c2.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c2 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
@@ -596,32 +622,36 @@ button:hover.c0 {
       type="checkbox"
     />
     <div
-      className="kirk-loader c2"
-      style={
-        Object {
-          "height": "24px",
-          "width": "24px",
-        }
-      }
+      className="c2 kirk-loader--inline"
     >
-      <svg
-        aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c3 c4"
-        fill="#5DD167"
-        height={24}
-        viewBox="0 0 66 66"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        className=""
+        style={
+          Object {
+            "height": "24px",
+            "width": "24px",
+          }
+        }
       >
-        
-        <circle
-          cx="33"
-          cy="33"
-          fill="none"
-          r="30"
-          stroke="#5DD167"
-        />
-      </svg>
+        <svg
+          aria-hidden={true}
+          className="kirk-icon kirk-icon-circle spinning c3 c4"
+          fill="#5DD167"
+          height={24}
+          viewBox="0 0 66 66"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <circle
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke="#5DD167"
+          />
+        </svg>
+      </div>
     </div>
   </span>
 </label>
