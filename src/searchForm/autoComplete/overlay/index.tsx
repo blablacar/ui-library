@@ -25,4 +25,6 @@ const StyledAutoComplete = styled(autoComplete)`
   }
 `
 
+export { AutoCompleteOverlayProps } from './AutoCompleteOverlay'
+
 export default StyledAutoComplete

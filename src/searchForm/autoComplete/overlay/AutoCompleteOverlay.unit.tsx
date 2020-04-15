@@ -7,7 +7,10 @@ import Bullet from 'bullet'
 describe('AutoCompleteOverlay', () => {
   it('should contains an AutoComplete component', () => {
     const wrapper = shallow(
-      <AutoCompleteOverlay name="from" autocompleteComponent={<AutoComplete />} />,
+      <AutoCompleteOverlay
+        name="from"
+        renderAutocompleteComponent={props => <AutoComplete {...props} />}
+      />,
     )
 
     expect(wrapper.find(AutoComplete).prop('embeddedInSearchForm')).toBe(true)

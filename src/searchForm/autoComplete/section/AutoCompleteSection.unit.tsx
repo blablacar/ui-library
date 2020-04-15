@@ -7,7 +7,10 @@ import ChevronIcon from 'icon/chevronIcon'
 describe('AutoCompleteSection', () => {
   it('should contains an AutoComplete component', () => {
     const wrapper = shallow(
-      <AutoCompleteSection name="from" autocompleteComponent={<AutoComplete />} />,
+      <AutoCompleteSection
+        name="from"
+        renderAutocompleteComponent={props => <AutoComplete {...props} />}
+      />,
     )
     expect(wrapper.find(AutoComplete).prop('embeddedInSearchForm')).toBe(true)
     expect(wrapper.find(AutoComplete).prop('autoFocus')).toBe(true)
