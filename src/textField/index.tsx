@@ -49,6 +49,8 @@ const StyledTextfield = styled(Textfield)`
 
   & input {
     padding-right: 0;
+    /* Make sure to override the user agent default font-family on input */
+    font-family: inherit;
     /*
     Use margin-right instead of padding-right to fix a cursor bug
     when calling setSelectionRange on Safari Mobile [BBCSPA-1030]

@@ -305,6 +305,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 
 .c3 input {
   padding-right: 0;
+  font-family: inherit;
   margin-right: 48px;
 }
 
@@ -723,6 +724,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 
 .c3 input {
   padding-right: 0;
+  font-family: inherit;
   margin-right: 48px;
 }
 

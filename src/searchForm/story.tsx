@@ -62,6 +62,8 @@ stories.add(
           }}
           stepperProps={{
             defaultValue: 1,
+            min: 1,
+            max: 8,
             title: 'Choose your number of seats',
             increaseLabel: 'Increase the number of seats by 1',
             decreaseLabel: 'Decrease the number of seats by 1',
