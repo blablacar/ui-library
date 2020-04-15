@@ -234,7 +234,11 @@ button:hover.c0 {
   stroke-width: 0;
 }
 
-.c3 {
+.c3.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c3.kirk-loader--fullScreen {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -247,9 +251,6 @@ button:hover.c0 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c3.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -259,7 +260,32 @@ button:hover.c0 {
   z-index: 4;
 }
 
-.c3.kirk-loader--done {
+.c3.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c3 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
@@ -358,32 +384,36 @@ button:hover.c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-loader c3"
-      style={
-        Object {
-          "height": "24px",
-          "width": "24px",
-        }
-      }
+      className="c3 kirk-loader--inline"
     >
-      <svg
-        aria-hidden={true}
-        className="kirk-icon kirk-icon-circle spinning c4 c1"
-        fill="#5DD167"
-        height={24}
-        viewBox="0 0 66 66"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        className=""
+        style={
+          Object {
+            "height": "24px",
+            "width": "24px",
+          }
+        }
       >
-        
-        <circle
-          cx="33"
-          cy="33"
-          fill="none"
-          r="30"
-          stroke="#5DD167"
-        />
-      </svg>
+        <svg
+          aria-hidden={true}
+          className="kirk-icon kirk-icon-circle spinning c4 c1"
+          fill="#5DD167"
+          height={24}
+          viewBox="0 0 66 66"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <circle
+            cx="33"
+            cy="33"
+            fill="none"
+            r="30"
+            stroke="#5DD167"
+          />
+        </svg>
+      </div>
     </div>
   </span>
 </a>
@@ -613,7 +643,11 @@ button:hover.c0 {
   animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
 }
 
-.c3 {
+.c3.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c3.kirk-loader--fullScreen {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -626,9 +660,6 @@ button:hover.c0 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c3.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -638,7 +669,32 @@ button:hover.c0 {
   z-index: 4;
 }
 
-.c3.kirk-loader--done {
+.c3.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c3 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
@@ -737,34 +793,38 @@ button:hover.c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-loader kirk-loader--done c3"
-      style={
-        Object {
-          "height": "24px",
-          "width": "24px",
-        }
-      }
+      className="c3 kirk-loader--inline"
     >
-      <svg
-        aria-hidden={true}
-        className="kirk-icon kirk-icon-check validate c4 c1"
-        fill="#FFF"
-        height={12}
-        viewBox="0 0 24 24"
-        width={12}
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        className="kirk-loader--done"
+        style={
+          Object {
+            "height": "24px",
+            "width": "24px",
+          }
+        }
       >
-        
-        <path
-          d="M6.5 12.5l4 4 8-8"
-          fill="none"
-          stroke="#FFF"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-          strokeWidth="2"
-        />
-      </svg>
+        <svg
+          aria-hidden={true}
+          className="kirk-icon kirk-icon-check validate c4 c1"
+          fill="#FFF"
+          height={12}
+          viewBox="0 0 24 24"
+          width={12}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          <path
+            d="M6.5 12.5l4 4 8-8"
+            fill="none"
+            stroke="#FFF"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeMiterlimit="10"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
     </div>
   </span>
 </a>

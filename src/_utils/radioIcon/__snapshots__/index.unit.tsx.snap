@@ -125,7 +125,11 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   stroke-width: 0;
 }
 
-.c0 {
+.c0.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c0.kirk-loader--fullScreen {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -138,9 +142,6 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c0.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -150,39 +151,68 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   z-index: 4;
 }
 
-.c0.kirk-loader--done {
+.c0.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c0 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
 }
 
 <div
-  className="kirk-loader c0"
-  style={
-    Object {
-      "height": "24px",
-      "width": "24px",
-    }
-  }
+  className="c0 kirk-loader--inline"
 >
-  <svg
-    aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning c1 c2"
-    fill="#5DD167"
-    height={24}
-    viewBox="0 0 66 66"
-    width={24}
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    className=""
+    style={
+      Object {
+        "height": "24px",
+        "width": "24px",
+      }
+    }
   >
-    
-    <circle
-      cx="33"
-      cy="33"
-      fill="none"
-      r="30"
-      stroke="#5DD167"
-    />
-  </svg>
+    <svg
+      aria-hidden={true}
+      className="kirk-icon kirk-icon-circle spinning c1 c2"
+      fill="#5DD167"
+      height={24}
+      viewBox="0 0 66 66"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <circle
+        cx="33"
+        cy="33"
+        fill="none"
+        r="30"
+        stroke="#5DD167"
+      />
+    </svg>
+  </div>
 </div>
 `;
 
@@ -235,7 +265,11 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   stroke-width: 0;
 }
 
-.c0 {
+.c0.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c0.kirk-loader--fullScreen {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -248,9 +282,6 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.c0.kirk-loader--fullScreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -260,39 +291,68 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   z-index: 4;
 }
 
-.c0.kirk-loader--done {
+.c0.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c0 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
 }
 
 <div
-  className="kirk-loader c0"
-  style={
-    Object {
-      "height": "24px",
-      "width": "24px",
-    }
-  }
+  className="c0 kirk-loader--inline"
 >
-  <svg
-    aria-hidden={true}
-    className="kirk-icon kirk-icon-circle spinning c1 c2"
-    fill="#5DD167"
-    height={24}
-    viewBox="0 0 66 66"
-    width={24}
-    xmlns="http://www.w3.org/2000/svg"
+  <div
+    className=""
+    style={
+      Object {
+        "height": "24px",
+        "width": "24px",
+      }
+    }
   >
-    
-    <circle
-      cx="33"
-      cy="33"
-      fill="none"
-      r="30"
-      stroke="#5DD167"
-    />
-  </svg>
+    <svg
+      aria-hidden={true}
+      className="kirk-icon kirk-icon-circle spinning c1 c2"
+      fill="#5DD167"
+      height={24}
+      viewBox="0 0 66 66"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      
+      <circle
+        cx="33"
+        cy="33"
+        fill="none"
+        r="30"
+        stroke="#5DD167"
+      />
+    </svg>
+  </div>
 </div>
 `;
 

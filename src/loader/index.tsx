@@ -4,13 +4,14 @@ import { color } from '_utils/branding'
 import Loader from './Loader'
 
 const StyledLoader = styled(Loader)`
-  & {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &.kirk-loader--inline {
+    display: inline-block;
   }
 
   &.kirk-loader--fullScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,12 +21,22 @@ const StyledLoader = styled(Loader)`
     z-index: 4;
   }
 
-  &.kirk-loader--done {
+  &.kirk-loader--block {
+    display: block;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  & .kirk-loader--done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: ${color.success};
     color: ${color.white};
     border-radius: 50%;
   }
 `
 
-export { LoaderProps } from './Loader'
+export { LoaderProps, LoaderLayoutMode } from './Loader'
 export default StyledLoader
