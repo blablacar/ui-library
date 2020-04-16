@@ -15,9 +15,9 @@ import Loader from 'loader'
 type query = string | number | boolean
 export interface AutoCompleteProps {
   readonly name: string
-  readonly searchOnMount: boolean
-  readonly isSearching: boolean
   readonly searchForItems: (query: query) => void
+  readonly isSearching?: boolean
+  readonly searchOnMount?: boolean
   readonly onInputChange?: (params: Partial<OnChangeParameters>) => void
   readonly searchForItemsMinChars?: number
   readonly defaultValue?: string

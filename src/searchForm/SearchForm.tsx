@@ -13,32 +13,36 @@ import Divider from 'divider'
 import { MediaSize, MediaSizeContext } from '_utils/mediaSizeProvider'
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
-import AutoCompleteOverlay from './autoComplete/overlay'
+import AutoCompleteOverlay, { AutoCompleteOverlayProps } from './autoComplete/overlay'
 import TextBody from 'typography/body'
 import DatePickerSection from './datePicker/section'
 import StepperSection from './stepper/section'
 import AutoCompleteSection from './autoComplete/section'
+import { AutoCompleteProps } from 'autoComplete'
 
 export interface SearchFormProps {
   className?: string
   onSubmit: Function
-  autocompleteFrom: React.ReactElement
-  autocompleteTo: React.ReactElement
-  datepickerProps: FieldProps
+  autocompleteFromPlaceholder: AutoCompleteProps['placeholder']
+  autocompleteToPlaceholder: AutoCompleteProps['placeholder']
+  renderAutocompleteFrom: AutoCompleteOverlayProps['renderAutocompleteComponent']
+  renderAutocompleteTo: AutoCompleteOverlayProps['renderAutocompleteComponent']
+  datepickerProps: DatePickerProps
   stepperProps: StepperProps
 }
 
-interface FieldProps {
-  defaultValue?: string | number
-  format?: (value: string | number) => string
+interface DatePickerProps {
+  defaultValue: string
+  format?: (value: string) => string
 }
 
-interface StepperProps extends FieldProps {
+interface StepperProps {
   defaultValue: number
   increaseLabel: string
   decreaseLabel: string
   title: string
   confirmLabel: string
+  format?: (value: number) => string
 }
 
 enum Elements {
@@ -49,14 +53,19 @@ enum Elements {
 }
 
 type FormValues = {
-  [key in keyof typeof Elements]?: string | number | boolean | AutocompleteOnChange
+  DATEPICKER: string
+  STEPPER: number
+  AUTOCOMPLETE_FROM?: AutocompleteOnChange
+  AUTOCOMPLETE_TO?: AutocompleteOnChange
 }
 
 const SearchForm = ({
   className,
   onSubmit,
-  autocompleteFrom,
-  autocompleteTo,
+  autocompleteFromPlaceholder,
+  autocompleteToPlaceholder,
+  renderAutocompleteFrom,
+  renderAutocompleteTo,
   datepickerProps,
   stepperProps,
 }: SearchFormProps) => {
@@ -72,12 +81,11 @@ const SearchForm = ({
 
   const container = useRef(null)
 
-  const getStepperFormattedValue = () => stepperProps.format(formValues[Elements.STEPPER] as string)
+  const getStepperFormattedValue = () => stepperProps.format(formValues[Elements.STEPPER])
 
-  const getDatepickerFormattedValue = () =>
-    datepickerProps.format(formValues[Elements.DATEPICKER] as string)
+  const getDatepickerFormattedValue = () => datepickerProps.format(formValues[Elements.DATEPICKER])
 
-  const selectedDate = new Date(formValues[Elements.DATEPICKER] as string)
+  const selectedDate = new Date(formValues[Elements.DATEPICKER])
 
   const datepickerConfig = {
     title: getDatepickerFormattedValue(),
@@ -86,7 +94,7 @@ const SearchForm = ({
     initialMonth: selectedDate,
     onChange: ({ value }: OnChangeParameters) => {
       setElementOpened(null)
-      setFormValues({ ...formValues, [Elements.DATEPICKER]: value })
+      setFormValues({ ...formValues, [Elements.DATEPICKER]: value as string })
     },
   }
 
@@ -96,16 +104,17 @@ const SearchForm = ({
     title: stepperProps.title,
     increaseLabel: stepperProps.increaseLabel,
     decreaseLabel: stepperProps.decreaseLabel,
-    value: formValues[Elements.STEPPER] as number,
+    value: formValues[Elements.STEPPER],
     onChange: ({ value }: OnChangeParameters) => {
       setElementOpened(null)
-      setFormValues({ ...formValues, [Elements.STEPPER]: value })
+      setFormValues({ ...formValues, [Elements.STEPPER]: value as number })
     },
   }
 
   const autocompleteFromConfig = {
     name: 'from',
-    autocompleteComponent: autocompleteFrom,
+    placeholder: autocompleteFromPlaceholder,
+    renderAutocompleteComponent: renderAutocompleteFrom,
     onSelect: (value: AutocompleteOnChange) => {
       setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_FROM]: value })
       setElementOpened(null)
@@ -114,7 +123,8 @@ const SearchForm = ({
 
   const autocompleteToConfig = {
     name: 'to',
-    autocompleteComponent: autocompleteTo,
+    placeholder: autocompleteToPlaceholder,
+    renderAutocompleteComponent: renderAutocompleteTo,
     onSelect: (value: AutocompleteOnChange) => {
       setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_TO]: value })
       setElementOpened(null)
@@ -163,9 +173,7 @@ const SearchForm = ({
             <span className="kirk-bullet--searchForm">
               <Bullet type={BulletTypes.SEARCH} />
             </span>
-            <TextBody>
-              {autocompleteFromValue?.item.label || autocompleteFrom.props.placeholder}
-            </TextBody>
+            <TextBody>{autocompleteFromValue?.item.label || autocompleteFromPlaceholder}</TextBody>
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
@@ -206,7 +214,7 @@ const SearchForm = ({
           <span className="kirk-bullet--searchForm">
             <Bullet type={BulletTypes.SEARCH} />
           </span>
-          <TextBody>{autocompleteToValue?.item.label || autocompleteTo.props.placeholder}</TextBody>
+          <TextBody>{autocompleteToValue?.item.label || autocompleteToPlaceholder}</TextBody>
         </button>
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
@@ -280,7 +288,7 @@ const SearchForm = ({
           {...stepperConfig}
           className="kirk-searchForm-overlay kirk-searchForm-stepper"
           onChange={({ value }) => {
-            setFormValues({ ...formValues, [Elements.STEPPER]: value })
+            setFormValues({ ...formValues, [Elements.STEPPER]: value as number })
           }}
         />
       )}

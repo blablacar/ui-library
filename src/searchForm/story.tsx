@@ -39,10 +39,10 @@ stories.add('StepperSection', () => (
   />
 ))
 stories.add('AutoCompleteOverlay', () => (
-  <AutoCompleteOverlay name="from" autocompleteComponent={<AutoCompleteExample />} />
+  <AutoCompleteOverlay name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
 ))
 stories.add('AutoCompleteSection', () => (
-  <AutoCompleteSection name="from" autocompleteComponent={<AutoCompleteExample />} />
+  <AutoCompleteSection name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
 ))
 
 stories.add(
@@ -52,8 +52,10 @@ stories.add(
       <BaseSection contentSize={SectionContentSize.LARGE}>
         <SearchForm
           onSubmit={() => {}}
-          autocompleteFrom={<AutoCompleteExample placeholder="Leaving from" />}
-          autocompleteTo={<AutoCompleteExample placeholder="Going to" />}
+          autocompleteFromPlaceholder="Leaving From"
+          autocompleteToPlaceholder="Going to"
+          renderAutocompleteFrom={props => <AutoCompleteExample {...props} />}
+          renderAutocompleteTo={props => <AutoCompleteExample {...props} placeholder="Going to" />}
           datepickerProps={{
             defaultValue: new Date().toISOString(),
             format: value => new Date(value).toLocaleDateString(),

@@ -1,8 +1,9 @@
 # Unreleased
 
 - **[UPDATE]** Add `autocompleteFrom` & `autocompleteTo` props to `SearchForm`
-- **[UPDATE]** Add new layoutMode props to `Loader`  and add support for `block` mode.
-- [...]
+- **[UPDATE]** Add new layoutMode props to `Loader` and add support for `block` mode.
+- **[BREAKING CHANGE]** Replace autocompleteProps to be a function renderAutocomplete in search form
+  [...]
 
 # v27.0.0 (09/04/2020)
 

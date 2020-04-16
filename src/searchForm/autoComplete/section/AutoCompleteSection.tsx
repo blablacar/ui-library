@@ -4,15 +4,27 @@ import Icon from 'icon/chevronIcon'
 import Button, { ButtonStatus } from 'button'
 import { AutoCompleteProps } from 'autoComplete'
 
-export interface AutoCompleteSectionProps {
-  readonly name: string
-  readonly autocompleteComponent: React.ReactElement<AutoCompleteProps>
-  readonly className?: Classcat.Class
+export type AutoCompleteSectionProps = Omit<
+  AutoCompleteProps,
+  | 'autoFocus'
+  | 'inputAddon'
+  | 'embeddedInSearchForm'
+  // Adding searchForItems because AutoComplete needs to be passed from the
+  // renderAutocompleteComponent method
+  | 'searchForItems'
+> & {
+  readonly renderAutocompleteComponent: (
+    props: Omit<AutoCompleteProps, 'searchForItems'>,
+  ) => JSX.Element
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onSelect?: (obj: AutocompleteOnChange) => void
 }
 
-export const AutoCompleteSection = ({ onClick, className, ...props }: AutoCompleteSectionProps) => {
+export const AutoCompleteSection = ({
+  onClick,
+  className,
+  renderAutocompleteComponent,
+  ...props
+}: AutoCompleteSectionProps) => {
   const backButton = (
     <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1" onClick={onClick}>
       <Icon size="18" left />
@@ -21,7 +33,7 @@ export const AutoCompleteSection = ({ onClick, className, ...props }: AutoComple
 
   return (
     <Section className={className}>
-      {React.cloneElement(props.autocompleteComponent, {
+      {renderAutocompleteComponent({
         ...props,
         autoFocus: true,
         inputAddon: backButton,

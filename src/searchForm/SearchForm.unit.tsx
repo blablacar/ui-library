@@ -17,8 +17,10 @@ const today = new Date().toISOString()
 
 const defaultProps = {
   onSubmit: () => {},
-  autocompleteFrom: <AutoComplete placeholder="Leaving from" />,
-  autocompleteTo: <AutoComplete placeholder="Going to" />,
+  autocompleteFromPlaceholder: 'Leaving from',
+  autocompleteToPlaceholder: 'Going to',
+  renderAutocompleteFrom: props => <AutoComplete {...props} />,
+  renderAutocompleteTo: props => <AutoComplete {...props} />,
   datepickerProps: {
     defaultValue: today,
     format: value => `Date: ${new Date(value).toISOString()}`,
