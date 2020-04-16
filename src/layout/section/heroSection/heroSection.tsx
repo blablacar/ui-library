@@ -1,17 +1,17 @@
 import React from 'react'
-import Button from 'button'
+import Button, { ButtonProps } from 'button'
 import Title from 'title'
 import Text, { TextTagType } from 'text'
 import cc from 'classcat'
 
 export interface HeroSectionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly heroImageUrl: string
   readonly heroImageUrlLarge: string
   readonly heroText?: string
   readonly heroDescription?: string
   readonly buttonText?: string
-  readonly buttonHref?: string | JSX.Element
+  readonly buttonHref?: ButtonProps['href']
 }
 
 function HeroSection({
