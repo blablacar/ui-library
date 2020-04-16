@@ -2,7 +2,7 @@
 
 - [...]
 
-# v28.0.0 (09/04/2020)
+# v28.0.0 (16/04/2020)
 
 - **[UPDATE]** Add `autocompleteFrom` & `autocompleteTo` props to `SearchForm`
 - **[UPDATE]** Add new layoutMode props to `Loader` and add support for `block` mode.
