@@ -14,7 +14,7 @@ import { MediaSize, MediaSizeContext } from '_utils/mediaSizeProvider'
 import DatePickerOverlay from './datePicker/overlay'
 import StepperOverlay from './stepper/overlay'
 import AutoCompleteOverlay, { AutoCompleteOverlayProps } from './autoComplete/overlay'
-import TextBody from 'typography/body'
+import TextTitle from 'typography/title'
 import DatePickerSection from './datePicker/section'
 import StepperSection from './stepper/section'
 import AutoCompleteSection from './autoComplete/section'
@@ -37,6 +37,8 @@ interface DatePickerProps {
 }
 
 interface StepperProps {
+  min: number
+  max: number
   defaultValue: number
   increaseLabel: string
   decreaseLabel: string
@@ -100,6 +102,8 @@ const SearchForm = ({
 
   const stepperConfig = {
     name: 'stepper',
+    min: stepperProps.min,
+    max: stepperProps.max,
     itemTitle: getStepperFormattedValue(),
     title: stepperProps.title,
     increaseLabel: stepperProps.increaseLabel,
@@ -173,7 +177,9 @@ const SearchForm = ({
             <span className="kirk-bullet--searchForm">
               <Bullet type={BulletTypes.SEARCH} />
             </span>
-            <TextBody>{autocompleteFromValue?.item.label || autocompleteFromPlaceholder}</TextBody>
+            <TextTitle className={cc({ 'kirk-search-placeholder': !autocompleteFromValue })}>
+              {autocompleteFromValue?.item.label || autocompleteFromPlaceholder}
+            </TextTitle>
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
@@ -214,7 +220,9 @@ const SearchForm = ({
           <span className="kirk-bullet--searchForm">
             <Bullet type={BulletTypes.SEARCH} />
           </span>
-          <TextBody>{autocompleteToValue?.item.label || autocompleteToPlaceholder}</TextBody>
+          <TextTitle className={cc({ 'kirk-search-placeholder': !autocompleteToValue })}>
+            {autocompleteToValue?.item.label || autocompleteToPlaceholder}
+          </TextTitle>
         </button>
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
@@ -247,7 +255,7 @@ const SearchForm = ({
             onClick={() => setElementOpened(Elements.DATEPICKER)}
           >
             <CalendarIcon />
-            <TextBody>{getDatepickerFormattedValue()}</TextBody>
+            <TextTitle>{getDatepickerFormattedValue()}</TextTitle>
           </button>
         </div>
 
@@ -278,7 +286,7 @@ const SearchForm = ({
             onClick={() => setElementOpened(Elements.STEPPER)}
           >
             <StandardSeat />
-            <TextBody>{getStepperFormattedValue()}</TextBody>
+            <TextTitle>{getStepperFormattedValue()}</TextTitle>
           </button>
         </div>
       </div>

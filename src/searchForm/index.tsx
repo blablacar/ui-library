@@ -48,6 +48,10 @@ const StyledSearchForm = styled(SearchForm)`
     border: none;
   }
 
+  & .kirk-search-placeholder {
+    color: ${color.secondaryText};
+  }
+
   & .kirk-searchForm-textfield input {
     background: none;
   }

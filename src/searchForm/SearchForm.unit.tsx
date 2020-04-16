@@ -2,7 +2,7 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { shallow, mount } from 'enzyme'
 
-import TextBody from 'typography/body'
+import TextTitle from 'typography/title'
 import { MediaSize } from '_utils/mediaSizeProvider'
 import AutoComplete from 'autoComplete/AutoComplete'
 import SearchForm from './SearchForm'
@@ -145,13 +145,13 @@ describe('searchForm', () => {
       expect(
         wrapper
           .find('.kirk-searchForm-seats')
-          .find(TextBody)
+          .find(TextTitle)
           .text(),
       ).toEqual('1 seat(s)')
       expect(
         wrapper
           .find('.kirk-searchForm-date')
-          .find(TextBody)
+          .find(TextTitle)
           .text(),
       ).toEqual(`Date: ${today}`)
     })
@@ -180,7 +180,7 @@ describe('searchForm', () => {
       expect(
         wrapper
           .find('.kirk-searchForm-date')
-          .find(TextBody)
+          .find(TextTitle)
           .text(),
       ).toEqual(`Date: ${expectedDate}`)
     })
@@ -197,7 +197,7 @@ describe('searchForm', () => {
       expect(
         wrapper
           .find('.kirk-searchForm-seats')
-          .find(TextBody)
+          .find(TextTitle)
           .text(),
       ).toEqual('2 seat(s)')
     })
