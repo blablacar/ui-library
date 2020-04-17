@@ -91,4 +91,11 @@ describe('SelectField', () => {
       expect(defaultWrapper.find('.kirk-selectField--hasFocus').exists()).toBe(true)
     })
   })
+
+  describe('A11y', () => {
+    it("Shouldn't be focused by default", () => {
+      const selectField = defaultWrapper.find('select')
+      expect(selectField.prop('autofocus')).toBe(undefined)
+    })
+  })
 })

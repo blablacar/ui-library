@@ -35,6 +35,7 @@
         "semi": false
       }
     ],
+    "jsx-a11y/no-autofocus": 0,
     "arrow-parens": 0,
     "default-case": 0,
     "function-paren-newline": 0,

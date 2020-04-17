@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Update `jsx-a11y` linter autofocus rule
 - [...]
 
 # v28.0.0 (16/04/2020)
@@ -27,6 +28,7 @@
 - **[FIX]** Fix clicking oustide of `SearchForm` closes overlays
 - **[UPDATE]** Use `Divider` in `ItemList` instead of custom CSS
 - **[UPDATE]** Remove legacy style from Autocomplete
+
 
 # v25.0.0 (02/04/2020)
 
