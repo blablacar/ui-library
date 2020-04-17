@@ -1,17 +1,17 @@
-import React from 'react'
 import Button, { ButtonProps } from 'button'
-import Title from 'title'
-import Text, { TextTagType } from 'text'
-import cc from 'classcat'
+import React from 'react'
+import TextDisplay1 from 'typography/display1'
+import TextTitle from 'typography/title'
 
-export interface HeroSectionProps {
-  readonly className?: string
-  readonly heroImageUrl: string
-  readonly heroImageUrlLarge: string
-  readonly heroText?: string
-  readonly heroDescription?: string
-  readonly buttonText?: string
-  readonly buttonHref?: ButtonProps['href']
+export type HeroSectionProps = {
+  className?: string
+  heroImageUrl: string
+  heroImageUrlLarge: string
+  heroText?: string
+  heroDescription?: string
+  buttonText?: string
+  buttonHref?: ButtonProps['href']
+  bottomElement?: React.ReactElement
 }
 
 function HeroSection({
@@ -20,22 +20,28 @@ function HeroSection({
   heroDescription,
   buttonText,
   buttonHref,
+  bottomElement,
 }: HeroSectionProps) {
   return (
-    <div className={cc(className)}>
+    <div className={className}>
       <div className="hero-image" aria-hidden="true" />
-      <div className="hero-info wrapper wrapper--large">
+
+      <div className="hero-info">
         <div className="hero-info-title-wrapper">
-          <Title className="hero-info-title">{heroText}</Title>
+          <h1 className="hero-info-title">
+            <TextDisplay1 className="hero-info-title--display1">{heroText}</TextDisplay1>
+          </h1>
+
           {heroDescription && (
-            <Text tag={TextTagType.PARAGRAPH} className="hero-info-text">
-              {heroDescription}
-            </Text>
+            <p className="hero-info-text">
+              <TextTitle className="hero-info-text-title">{heroDescription}</TextTitle>
+            </p>
           )}
         </div>
-        <Button className="hero-button" href={buttonHref}>
-          {buttonText}
-        </Button>
+
+        <div className="hero-content">
+          {bottomElement ?? <Button href={buttonHref}>{buttonText}</Button>}
+        </div>
       </div>
     </div>
   )
