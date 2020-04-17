@@ -60,6 +60,7 @@ const Figure = styled.figure`
   align-items: center;
   padding-top: calc(2 * ${space.xxl});
   height: 33.33vh;
+  min-height: 33.33vh;
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     padding: 0;
@@ -85,13 +86,6 @@ const SuccessTitle = styled.h1`
   display: flex;
   flex: 1;
   padding: ${space.xl};
-
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    span {
-      /* Font-Size not available on typography scale */
-      font-size: 2.5rem;
-    }
-  }
 `
 
 const SuccessAction = styled.div`
@@ -100,8 +94,10 @@ const SuccessAction = styled.div`
 
 const SuccessButton = styled(Button)`
   justify-content: center;
-  /* cascade weight :( */
-  min-width: 8rem !important;
+
+  & {
+    min-width: 8rem;
+  }
 `
 
 const SuccessModalStyle = {
