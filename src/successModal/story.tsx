@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-
-import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
-import SuccessModal from 'successModal'
-import { SuccessModalProps, SuccessModalSize } from './SuccessModal'
-import successModalDoc from './specifications/successModal.md'
+
+import SuccessModal, { SuccessModalProps } from 'successModal'
+
+import spec from './specifications/successModal.md'
 
 const stories = storiesOf('Widgets|Modal|SuccessModal', module)
 
@@ -48,14 +49,16 @@ stories.add(
     <SuccessModalOpener
       isOpen={false}
       onClose={action('onClose')}
-      imageSrc={text('imageSrc', 'https://svgshare.com/i/AGz.svg')}
-      imageText={text('imageText', 'Illustation description')}
-      confirmLabel={text('confirmLabel', 'Got it!')}
-      size={select('size', SuccessModalSize, SuccessModalSize.SMALL)}
-      closeOnEsc={boolean('closeOnEsc', false)}
+      imageSrc={text(
+        'SuccessImageSrc',
+        'https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg',
+      )}
+      imageText={text('SuccessImagText', 'Illustation description')}
+      confirmLabel={text('SuccessConfirmationLabel', 'Got it!')}
+      closeOnEsc={boolean('SuccessCloseOnEsc', false)}
     />
   ),
   {
-    readme: { content: successModalDoc },
+    readme: { content: spec },
   },
 )

@@ -1,100 +1,119 @@
 import styled from 'styled-components'
-import { color, font, space, modalSize } from '_utils/branding'
 import SuccessModal from './SuccessModal'
 
-const footerHeight = '96px' /* = padding + content */
+import { color, space, responsiveBreakpoints, componentSizes } from '_utils/branding'
 
-const StyledSuccessModal = styled(SuccessModal)`
-  & .kirk-successModal {
-    background-color: ${color.successBackground};
-    color: ${color.white};
-  }
+import Modal from 'modal'
+import Button from 'button'
 
-  & .kirk-modal--large {
-    text-align: center;
-  }
+const StyledSuccessModal = styled(Modal)`
+  padding: 0;
+  text-align: center;
+  background-color: ${color.successBackground};
 
-  & .kirk-modal.kirk-successModal .kirk-modal-dialog {
-    margin: 0 auto;
-    max-width: ${modalSize.m};
-    height: 100%;
-    padding: ${space.xl} 0 ${footerHeight} 0;
-    background-color: ${color.successBackground};
-  }
-
-  /* Stronger selector to override Modal component styling */
-  &.kirk-modal-dimmer .kirk-modal.kirk-successModal .kirk-modal-dialog.kirk-modal-dialog {
-    width: auto;
-  }
-
-  & .kirk-modal--large.kirk-successModal .kirk-modal-dialog {
-    padding: ${space.xl} 0;
-  }
-
-  & .kirk-modal.kirk-successModal .kirk-modal-body {
-    padding: ${space.xl};
-    font-size: ${font.l.size};
-    line-height: ${font.l.lineHeight};
-    text-align: center;
-    align-items: center;
-  }
-
-  & .kirk-modal--large.kirk-successModal .kirk-modal-body {
-    position: relative;
+  .kirk-modal-dialog {
     display: flex;
-  }
-
-  & .kirk-modal--large .kirk-successModal-bodyItem {
-    width: 50%;
-  }
-
-  & .kirk-modal--large .kirk-successModal-bodyItem:nth-child(odd) {
-    padding-right: ${space.xl};
-  }
-
-  & .kirk-modal--large .kirk-successModal-bodyItem:nth-child(even) {
-    padding-left: ${space.xl};
-  }
-
-  & .kirk-successModal-image {
-    width: 80%;
-    margin-bottom: ${space.xl};
-  }
-
-  & .kirk-modal--small .kirk-successModal-image {
-    max-height: 33vh;
-    object-fit: contain;
-  }
-
-  & .kirk-modal--large .kirk-successModal-image {
-    margin-bottom: 0;
-  }
-
-  & .kirk-successModal-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: ${footerHeight};
-    padding: ${space.xl};
-    text-align: center;
-  }
-
-  & .kirk-modal--large .kirk-successModal-footer {
-    position: relative;
-    display: block;
+    justify-content: center;
+    padding: 0;
     margin: 0 auto;
+    width: 100%;
+    border-radius: 0;
+    background-color: ${color.successBackground};
   }
 
-  & .kirk-modal--large .kirk-successModal-footer .kirk-button {
-    margin: ${space.l} ${space.xl} 0;
-  }
+  .kirk-modal-body {
+    display: flex;
+    min-height: 100vh;
+    /* to avoid scroll on webkit browsers when they have a top bar */
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    flex-direction: column;
 
-  & .kirk-successModal-confirmButton {
-    vertical-align: bottom; /* vertical alignment to be fixed in Button */
-    border: 0; /* content alignment to be fixed in Button */
+    @media (${responsiveBreakpoints.isMediaLarge}) {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
 `
 
+/* LAYOUT: Media */
+const Media = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    max-width: ${componentSizes.largeSectionWidth};
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+const Figure = styled.figure`
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(2 * ${space.xxl});
+  height: 33.33vh;
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    padding: 0;
+    width: 33.33vh;
+  }
+`
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: ${space.xl};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    flex: 1;
+    width: 66.66vh;
+    height: auto;
+  }
+`
+
+/* SuccessModal Spacements */
+const SuccessTitle = styled.h1`
+  display: flex;
+  flex: 1;
+  padding: ${space.xl};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    span {
+      /* Font-Size not available on typography scale */
+      font-size: 2.5rem;
+    }
+  }
+`
+
+const SuccessAction = styled.div`
+  padding: ${space.xl};
+`
+
+const SuccessButton = styled(Button)`
+  justify-content: center;
+  /* cascade weight :( */
+  min-width: 8rem !important;
+`
+
+const SuccessModalStyle = {
+  StyledSuccessModal,
+  Media,
+  Figure,
+  Content,
+  SuccessTitle,
+  SuccessAction,
+  SuccessButton,
+}
+
 export { SuccessModalProps } from './SuccessModal'
-export default StyledSuccessModal
+export { SuccessModalStyle }
+export default SuccessModal

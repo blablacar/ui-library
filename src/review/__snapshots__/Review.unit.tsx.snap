@@ -99,8 +99,7 @@ Array [
 .c1 {
   color: #054752;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
+  font-weight: 400 line-height:20px;
 }
 
 .c1.kirk-text--inverse {
@@ -257,8 +256,7 @@ Array [
 .c1 {
   color: #054752;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
+  font-weight: 400 line-height:20px;
 }
 
 .c1.kirk-text--inverse {
