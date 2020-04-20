@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v29.0.0 (20/04/2020)
+
 - **[BREAKING CHANGE]** Resposive `SuccessModal` (no more size)
 - **[UPDATE]** Update `jsx-a11y` linter autofocus rule
-- [...]
 
 # v28.0.0 (16/04/2020)
 
