@@ -1,13 +1,7 @@
----
-name: "Pull Request"
-title: "[BBC-XXXX] Pull Request Title"
-labels: "feature-request, not-reviewed"
-assignees: "@blablacar/spa"
----
-
 ## Description
 
 <!-- Give some context of this PR. Illustrate with screenshots or a video (gif, loom, etc.) -->
+
 
 ## What has been done
 
