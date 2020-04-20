@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Add a maximum width on `QrCard`
 - [...]
 
 # v29.0.0 (20/04/2020)

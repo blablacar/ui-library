@@ -13,6 +13,7 @@ const StyledCardsSection = styled(CardsSection)`
   & .kirk-cardsSection {
     margin: auto;
     display: flex;
+    justify-content: center;
     padding: ${space.l} ${wrapperHorizontalPadding};
     box-sizing: border-box;
     overflow: auto; /* Make Cards scrollable horizontally */
