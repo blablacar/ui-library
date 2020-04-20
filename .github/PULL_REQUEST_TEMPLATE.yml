@@ -1,7 +1,8 @@
 ---
-name: Pull Request
-title: '[BBC-XXXX] Pull Request Title'
-assignees: blablacar/spa
+name: "Pull Request"
+title: "[BBC-XXXX] Pull Request Title"
+labels: "feature-request, not-reviewed"
+assignees: "@blablacar/spa"
 ---
 
 ## Description
