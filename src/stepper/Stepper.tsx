@@ -38,6 +38,7 @@ export interface StepperProps {
   format?: (value: string | number) => string | number
   onChange?: (obj: OnChangeParameters) => void
   display?: StepperDisplay
+  focus?: boolean
 }
 
 interface StepperState {
@@ -50,7 +51,8 @@ const defaultInteger = 2 ** 53 - 1
 const isTouchScreen = isTouchEventsAvailable()
 
 export default class Stepper extends PureComponent<StepperProps, StepperState> {
-  private ref: RefObject<HTMLDivElement>
+  private valueElementRef: RefObject<HTMLDivElement>
+  private containerRef: RefObject<HTMLDivElement>
 
   static defaultProps: Partial<StepperProps> = {
     value: 0,
@@ -60,6 +62,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     format: value => value,
     onChange: () => {},
     display: StepperDisplay.SMALL,
+    focus: false,
   }
 
   filterValue = (value: number, min: number, max: number) => Math.max(min, Math.min(value, max))
@@ -73,12 +76,16 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
 
   constructor(props: StepperProps) {
     super(props)
-    this.ref = React.createRef()
+    this.valueElementRef = React.createRef()
+    this.containerRef = React.createRef()
   }
 
   componentDidMount() {
     this.handleFontSize()
     window.addEventListener('resize', this.handleFontSize.bind(this))
+    if (this.containerRef.current && this.props.focus) {
+      this.containerRef.current.focus()
+    }
   }
 
   componentWillUnmount() {
@@ -102,7 +109,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
   }
 
   handleFontSize() {
-    if (!this.ref.current || this.props.display === StepperDisplay.SMALL) {
+    if (!this.valueElementRef.current || this.props.display === StepperDisplay.SMALL) {
       return
     }
 
@@ -110,7 +117,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     const { value } = this.state
 
     // Compute available space without paddings
-    const availableSpace = this.ref.current.offsetWidth - pxToInteger(space.l) * 2
+    const availableSpace = this.valueElementRef.current.offsetWidth - pxToInteger(space.l) * 2
     const valueLength = String(format(value)).length
     const optimalSize = Math.trunc(availableSpace / (valueLength * 0.5))
     const maxSize = StepperValueSize[display]
@@ -187,7 +194,9 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
     return (
       <div
         className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}
+        ref={this.containerRef}
         aria-label={title}
+        tabIndex={-1}
       >
         <Button
           aria-label={decreaseLabel}
@@ -204,7 +213,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           aria-live="polite"
           className={cc(['kirk-stepper-value', valueClassName])}
           style={{ fontSize: `${this.state.fontSize}px` }}
-          ref={this.ref}
+          ref={this.valueElementRef}
         >
           {format(this.state.value)}
         </div>

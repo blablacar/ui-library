@@ -1,5 +1,4 @@
 import React from 'react'
-import { act } from 'react-dom/test-utils'
 import { shallow, mount } from 'enzyme'
 
 import TextTitle from 'typography/title'
@@ -27,6 +26,8 @@ const defaultProps = {
   },
   stepperProps: {
     defaultValue: 1,
+    min: 1,
+    max: 8,
     increaseLabel: 'Increase',
     decreaseLabel: 'Decrease',
     title: 'Choose your number of seats',
@@ -37,12 +38,13 @@ const defaultProps = {
 
 describe('searchForm', () => {
   let wrapper
+  const fakeEvent = { e: { relatedTarget: null } }
 
   describe('interactions', () => {
     describe('large', () => {
       beforeEach(() => {
         jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
-        wrapper = shallow(<SearchForm {...defaultProps} />)
+        wrapper = mount(<SearchForm {...defaultProps} />)
       })
 
       it('should have the autocomplete placeholder', () => {
@@ -57,42 +59,34 @@ describe('searchForm', () => {
         expect(
           wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-from'),
         ).toBe(true)
+        wrapper.find(AutoCompleteOverlay).simulate('blur', fakeEvent)
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
       })
 
-      it('should open the autocomplete to overlay', () => {
+      it('should open the autocomplete to overlay and close it on blur', () => {
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
         expect(wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-to')).toBe(
           true,
         )
+        wrapper.find(AutoCompleteOverlay).simulate('blur', fakeEvent)
+        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
       })
 
-      it('should open the datepicker overlay', () => {
+      it('should open the datepicker overlay and close it on blur', () => {
         expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
         expect(wrapper.find(DatePickerOverlay).exists()).toBe(true)
+        wrapper.find(DatePickerOverlay).simulate('blur', fakeEvent)
+        expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
       })
 
-      it('should open the stepper overlay', () => {
+      it('should open the stepper overlay and close it on blur', () => {
         expect(wrapper.find(StepperOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
         expect(wrapper.find(StepperOverlay).exists()).toBe(true)
-      })
-
-      it('should close the overlays when clicking outiside of the form', () => {
-        const outerNode = document.createElement('div')
-        document.body.appendChild(outerNode)
-
-        wrapper = mount(<SearchForm {...defaultProps} />, {
-          attachTo: outerNode,
-        })
-
-        wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
-        act(() => {
-          outerNode.dispatchEvent(new Event('click', { bubbles: true }))
-        })
-        wrapper.update()
+        wrapper.find(StepperOverlay).simulate('blur', fakeEvent)
         expect(wrapper.find(StepperOverlay).exists()).toBe(false)
       })
     })

@@ -39,6 +39,7 @@ export interface DatePickerProps {
   readonly toMonth?: Date
   readonly firstDayOfWeek?: number
   readonly stickyPositionTop?: number
+  readonly focus?: boolean
 }
 
 export interface DatePickerState {
@@ -60,6 +61,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
     toMonth: new Date(new Date().getFullYear() + 1, new Date().getMonth(), new Date().getDate()),
     firstDayOfWeek: 0,
     stickyPositionTop: 0,
+    focus: false,
   }
 
   state = {
@@ -174,6 +176,14 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
 
   componentDidMount() {
     this.scrollToSelectedMonth()
+    if (this.dayPickerContainer.current && this.props.focus) {
+      const datePickerFocusableElement = this.dayPickerContainer.current.querySelector(
+        '.DayPicker-wrapper',
+      ) as HTMLElement
+      if (datePickerFocusableElement) {
+        datePickerFocusableElement.focus()
+      }
+    }
   }
 
   componentDidUpdate() {

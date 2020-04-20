@@ -13,19 +13,25 @@ import SearchForm from '.'
 import MediaSizeProvider from '_utils/mediaSizeProvider'
 import searchFormDocumentation from './specifications/searchForm.md'
 import BaseSection, { SectionContentSize } from 'layout/section/baseSection/'
+import CrossIcon from 'icon/crossIcon'
 
 const stories = storiesOf('Widgets|SearchForm', module)
 stories.addDecorator(withKnobs)
 
-stories.add('DatepickerOverlay', () => <DatePickerOverlay name="Datepicker" title="Today" />)
+stories.add('DatepickerOverlay', () => (
+  <DatePickerOverlay name="Datepicker" title="Today" closeOnBlur={() => {}} />
+))
 stories.add('DatePickerSection', () => <DatePickerSection name="Datepicker" title="Today" />)
 stories.add('StepperOverlay', () => (
   <StepperOverlay
     name="Stepper"
+    min={1}
+    max={8}
     itemTitle="1 seat"
     title="Choose your number of seats"
     increaseLabel="Increase"
     decreaseLabel="Decrease"
+    closeOnBlur={() => {}}
   />
 ))
 stories.add('StepperSection', () => (
@@ -39,7 +45,11 @@ stories.add('StepperSection', () => (
   />
 ))
 stories.add('AutoCompleteOverlay', () => (
-  <AutoCompleteOverlay name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
+  <AutoCompleteOverlay
+    name="from"
+    closeOnBlur={() => {}}
+    renderAutocompleteComponent={() => <AutoCompleteExample />}
+  />
 ))
 stories.add('AutoCompleteSection', () => (
   <AutoCompleteSection name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
@@ -54,8 +64,10 @@ stories.add(
           onSubmit={() => {}}
           autocompleteFromPlaceholder="Leaving From"
           autocompleteToPlaceholder="Going to"
-          renderAutocompleteFrom={props => <AutoCompleteExample {...props} />}
-          renderAutocompleteTo={props => <AutoCompleteExample {...props} placeholder="Going to" />}
+          renderAutocompleteFrom={props => (
+            <AutoCompleteExample inputAddon={<CrossIcon />} autoFocus={false} {...props} />
+          )}
+          renderAutocompleteTo={props => <AutoCompleteExample {...props} />}
           datepickerProps={{
             defaultValue: new Date().toISOString(),
             format: value => new Date(value).toLocaleDateString(),
