@@ -6,7 +6,7 @@ import Text from '../index'
 const TextSubHeader = styled(Text)`
   color: ${color.primaryText};
   font-size: ${font.l.size};
-  font-weight: ${fontWeight.regular} 
+  font-weight: ${fontWeight.regular};
   line-height: ${font.l.lineHeight};
 `
 export default TextSubHeader
