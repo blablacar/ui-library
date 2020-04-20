@@ -1,8 +1,11 @@
 # Unreleased
 
-- **[BREAKING CHANGE]** Resposive `SuccessModal` (no more size)
-- **[UPDATE]** Update `jsx-a11y` linter autofocus rule
 - [...]
+
+# v29.0.0 (20/04/2020)
+
+- **[BREAKING CHANGE]** Resposive `SuccessModal` (no more `size` prop)
+- **[UPDATE]** Update `jsx-a11y` linter autofocus rule
 
 # v28.0.0 (16/04/2020)
 
@@ -22,25 +25,13 @@
 
 # v26.0.0 (06/04/2020)
 
-<<<<<<< HEAD
-
 - **[FIX]** Remove DOM Warning on `MainContent` component
 - **[FIX]** Fix markup `Item` tag label by replacing `div` children with `span`
-- # **[BREAKING CHANGE]** Import `icons` as default instead of named export for a better code splitting
 - **[BREAKING CHANGE]** Import `icons` as default instead of named export for a better code splitting
-- **[FIX]** Remove DOM Warning on `MainContent` component
-- **[FIX]** Fix markup `Item` tag label by replacing `div` children with `span`
-  > > > > > > > [BBC-6997] Responsive ModalSuccess
 - **[UPDATE]** Make `Review` more semantic with proper HTML and Review/Rating microdata
 - **[FIX]** Fix clicking oustide of `SearchForm` closes overlays
 - **[UPDATE]** Use `Divider` in `ItemList` instead of custom CSS
 - **[UPDATE]** Remove legacy style from Autocomplete
-
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > [BBC-6997] Responsive ModalSuccess
 
 # v25.0.0 (02/04/2020)
 
