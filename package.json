@@ -28,7 +28,7 @@
     "storybook-build": "export NODE_PATH=src && build-storybook -c .storybook -o storybook-build",
     "storybook-deploy": "npm run storybook-build && gh-pages -d storybook-build"
   },
-  "author": "BlaBlaCar front-end team",
+  "author": "@blablacar/spa",
   "keywords": [
     "blablacar",
     "design-system",
