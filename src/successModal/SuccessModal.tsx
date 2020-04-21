@@ -6,7 +6,7 @@ import { ButtonStatus } from 'button'
 
 import TextDisplay1 from 'typography/display1'
 
-import { SuccessModalStyle } from './index'
+import SuccessModalElements from './elements'
 
 export interface SuccessModalProps extends ModalProps {
   readonly confirmLabel?: string
@@ -37,7 +37,7 @@ const SuccessModal = (props: SuccessModalProps): JSX.Element => {
     SuccessTitle,
     SuccessAction,
     SuccessButton,
-  } = SuccessModalStyle
+  } = SuccessModalElements
 
   return (
     <StyledSuccessModal
