@@ -3,10 +3,13 @@ import { space } from '_utils/branding'
 
 import QrCard from './QrCard'
 
+const qrCardMaxWidth = '450px'
+
 const StyledQrCard = styled(QrCard)`
   & {
     display: block;
     padding: ${space.none} ${space.xl};
+    max-width: ${qrCardMaxWidth};
   }
 
   & img {

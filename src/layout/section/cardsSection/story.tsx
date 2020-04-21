@@ -102,3 +102,14 @@ stories.add('CardsSection - 3 Qr cards', () => (
     />
   </CardsSection>
 ))
+
+stories.add('CardsSection - 1 Qr card', () => (
+  <CardsSection>
+    <QrCard
+      title="Jack Jones Dupont"
+      imageUrl={qrUrl}
+      itemMainTitle="1st class"
+      itemMainInfo="Your seat number will be assigned to you 1 hour before departure."
+    />
+  </CardsSection>
+))

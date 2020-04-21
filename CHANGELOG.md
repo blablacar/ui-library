@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Add a maximum width on `QrCard`
 - **[FIX]** Fix the `font-size` and `line-height` of `TextBody`, `TextSubHeader` and `TextTitle` components.
 - [...]
 
