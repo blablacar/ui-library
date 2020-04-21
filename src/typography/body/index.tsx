@@ -6,7 +6,7 @@ import TextStyle from '../index'
 const TextBody = styled(TextStyle)`
   color: ${color.secondaryText};
   font-size: ${font.base.size};
-  font-weight: ${fontWeight.regular} 
+  font-weight: ${fontWeight.regular};
   line-height: ${font.base.lineHeight};
 `
 export default TextBody
