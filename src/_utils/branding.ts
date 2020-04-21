@@ -130,10 +130,11 @@ export const inputBorderSize = {
   focus: '3px',
 }
 
-const smallBreakPointThreshold = '800px'
+const largeBreakPointThreshold = '800px'
+const smallBreakPointThreshold = '799px'
 export const responsiveBreakpoints = {
   small: smallBreakPointThreshold,
-  isMediaLarge: `min-width: ${smallBreakPointThreshold}`,
+  isMediaLarge: `min-width: ${largeBreakPointThreshold}`,
   isMediaSmall: `max-width: ${smallBreakPointThreshold}`,
 }
 

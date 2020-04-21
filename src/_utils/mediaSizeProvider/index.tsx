@@ -19,7 +19,7 @@ export const MediaSizeProvider = ({ children }: MediaSizeProviderProps) => {
   const [mediaSize, setMediaSize] = useState(MediaSize.SMALL)
 
   const handleResize = () => {
-    const isSmall = window.innerWidth < parseInt(responsiveBreakpoints.small, 10)
+    const isSmall = window.innerWidth <= parseInt(responsiveBreakpoints.small, 10)
     setMediaSize(isSmall ? MediaSize.SMALL : MediaSize.LARGE)
   }
 

@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** Fix breakpoints values to make them exclusive betweens small & large
 
 # v29.1.0 (21/04/2020)
 
