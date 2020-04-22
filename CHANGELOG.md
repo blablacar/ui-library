@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v29.1.0 (21/04/2020)
+
 - **[FIX]** Remove `babel-styled-components-plugin`
 - **[FIX]** Add a maximum width on `QrCard`
 - **[FIX]** Fix the `font-size` and `line-height` of `TextBody`, `TextSubHeader` and `TextTitle` components.
-- [...]
 
 # v29.0.0 (20/04/2020)
 
