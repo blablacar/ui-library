@@ -1,18 +1,20 @@
 import React from 'react'
 import uuidv4 from 'uuid/v4'
 
-import { ModalProps } from 'modal'
 import { ButtonStatus } from 'button'
+
+import { ModalProps } from '../modal'
 
 import TextDisplay1 from 'typography/display1'
 
 import SuccessModalElements from './elements'
 
-export interface SuccessModalProps extends ModalProps {
-  readonly confirmLabel?: string
-  readonly imageSrc: string
-  readonly imageText?: string
-}
+export type SuccessModalProps = ModalProps &
+  Readonly<{
+    confirmLabel?: string
+    imageSrc: string
+    imageText?: string
+  }>
 
 const SuccessModal = (props: SuccessModalProps): JSX.Element => {
   const {

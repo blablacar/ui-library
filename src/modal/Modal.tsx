@@ -19,22 +19,22 @@ export enum ModalSize {
   FULLSCREEN = 'fullscreen',
 }
 
-export interface ModalProps {
-  readonly onClose: () => void
-  readonly isOpen?: boolean
-  readonly children?: React.ReactNode
-  readonly className?: Classcat.Class
-  readonly modalContentClassName?: Classcat.Class
-  readonly closeOnEsc?: boolean
-  readonly closeOnOutsideClick?: boolean
-  readonly displayCloseButton?: boolean
-  readonly size?: ModalSize
-  readonly displayDimmer?: boolean
-  readonly closeButtonTitle?: string
-  readonly forwardedRef?: Ref<HTMLDivElement>
-  readonly ariaLabelledBy?: string
-  readonly ariaDescribedBy?: string
-}
+export type ModalProps = Readonly<{
+  onClose: () => void
+  isOpen?: boolean
+  children?: React.ReactNode
+  className?: Classcat.Class
+  modalContentClassName?: Classcat.Class
+  closeOnEsc?: boolean
+  closeOnOutsideClick?: boolean
+  displayCloseButton?: boolean
+  size?: ModalSize
+  displayDimmer?: boolean
+  closeButtonTitle?: string
+  forwardedRef?: Ref<HTMLDivElement>
+  ariaLabelledBy?: string
+  ariaDescribedBy?: string
+}>
 
 export default class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
