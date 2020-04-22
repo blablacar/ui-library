@@ -337,7 +337,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:799px) {
   .c2 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -357,7 +357,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:799px) {
   .c0 .kirk-media-content-img {
     height: 136px;
     min-height: 0;

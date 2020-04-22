@@ -49,7 +49,7 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:799px) {
   .c0 .kirk-subheader {
     text-align: center;
   }
@@ -121,7 +121,7 @@ exports[`HighlightSection should render default highlight section 1`] = `
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:799px) {
   .c0 .kirk-subheader {
     text-align: center;
   }

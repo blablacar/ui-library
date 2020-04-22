@@ -326,7 +326,7 @@ exports[`Modal should not have changed 1`] = `
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:799px) {
   .c0 .media-section {
     margin-left: -24px;
     margin-right: -24px;
