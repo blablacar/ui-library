@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Convert `SuccessModalProps` and `ModalProps` to type instead of interface; Resolve `ModalProps` path;
 - **[FIX]** Fix breakpoints values to make them exclusive betweens small & large
 - **[UPDATE]** Use focus & blur for improving keyboard navigation in `searchForm`
 - [...]
