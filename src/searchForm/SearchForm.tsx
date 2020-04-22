@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
 import cc from 'classcat'
 import { canUseDOM } from 'exenv'
@@ -81,13 +81,15 @@ const SearchForm = ({
     [Elements.DATEPICKER]: datepickerProps.defaultValue,
   })
 
-  const container = useRef(null)
-
   const getStepperFormattedValue = () => stepperProps.format(formValues[Elements.STEPPER])
 
   const getDatepickerFormattedValue = () => datepickerProps.format(formValues[Elements.DATEPICKER])
 
   const selectedDate = new Date(formValues[Elements.DATEPICKER])
+
+  const closeOpenedElement = () => {
+    setElementOpened(null)
+  }
 
   const datepickerConfig = {
     title: getDatepickerFormattedValue(),
@@ -95,7 +97,7 @@ const SearchForm = ({
     initialDate: selectedDate,
     initialMonth: selectedDate,
     onChange: ({ value }: OnChangeParameters) => {
-      setElementOpened(null)
+      closeOpenedElement()
       setFormValues({ ...formValues, [Elements.DATEPICKER]: value as string })
     },
   }
@@ -110,7 +112,7 @@ const SearchForm = ({
     decreaseLabel: stepperProps.decreaseLabel,
     value: formValues[Elements.STEPPER],
     onChange: ({ value }: OnChangeParameters) => {
-      setElementOpened(null)
+      closeOpenedElement()
       setFormValues({ ...formValues, [Elements.STEPPER]: value as number })
     },
   }
@@ -121,7 +123,7 @@ const SearchForm = ({
     renderAutocompleteComponent: renderAutocompleteFrom,
     onSelect: (value: AutocompleteOnChange) => {
       setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_FROM]: value })
-      setElementOpened(null)
+      closeOpenedElement()
     },
   }
 
@@ -131,7 +133,7 @@ const SearchForm = ({
     renderAutocompleteComponent: renderAutocompleteTo,
     onSelect: (value: AutocompleteOnChange) => {
       setFormValues({ ...formValues, [Elements.AUTOCOMPLETE_TO]: value })
-      setElementOpened(null)
+      closeOpenedElement()
     },
   }
 
@@ -143,19 +145,6 @@ const SearchForm = ({
     })
   }
 
-  useEffect(() => {
-    function hideAllOverlays(e: Event) {
-      if (!container.current.contains(e.target) && mediaSize === MediaSize.LARGE) {
-        setElementOpened(null)
-      }
-    }
-
-    document.addEventListener('click', hideAllOverlays)
-    return () => {
-      document.removeEventListener('click', hideAllOverlays)
-    }
-  }, [mediaSize])
-
   const autocompleteFromValue = formValues[Elements.AUTOCOMPLETE_FROM] as AutocompleteOnChange
   const autocompleteToValue = formValues[Elements.AUTOCOMPLETE_TO] as AutocompleteOnChange
 
@@ -164,8 +153,12 @@ const SearchForm = ({
       action=""
       noValidate
       className={cc(['kirk-searchForm', className])}
-      ref={container}
       role="search"
+      method="post"
+      onSubmit={evt => {
+        evt.preventDefault()
+        onSubmit(formValues)
+      }}
     >
       <div className="kirk-searchForm-from-container">
         <div className="kirk-searchForm-from">
@@ -194,6 +187,7 @@ const SearchForm = ({
       {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_FROM && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
+          closeOnBlur={closeOpenedElement}
           {...autocompleteFromConfig}
         />
       )}
@@ -205,7 +199,7 @@ const SearchForm = ({
           <AutoCompleteSection
             {...autocompleteFromConfig}
             onClick={() => {
-              setElementOpened(null)
+              closeOpenedElement()
             }}
           />,
           document.body,
@@ -230,6 +224,7 @@ const SearchForm = ({
       {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_TO && (
         <AutoCompleteOverlay
           className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
+          closeOnBlur={closeOpenedElement}
           {...autocompleteToConfig}
         />
       )}
@@ -241,7 +236,7 @@ const SearchForm = ({
           <AutoCompleteSection
             {...autocompleteToConfig}
             onClick={() => {
-              setElementOpened(null)
+              closeOpenedElement()
             }}
           />,
           document.body,
@@ -263,6 +258,7 @@ const SearchForm = ({
           <DatePickerOverlay
             {...datepickerConfig}
             className="kirk-searchForm-overlay kirk-searchForm-datepicker"
+            closeOnBlur={closeOpenedElement}
           />
         )}
 
@@ -273,7 +269,7 @@ const SearchForm = ({
             <DatePickerSection
               {...datepickerConfig}
               onClick={() => {
-                setElementOpened(null)
+                closeOpenedElement()
               }}
             />,
             document.body,
@@ -298,6 +294,7 @@ const SearchForm = ({
           onChange={({ value }) => {
             setFormValues({ ...formValues, [Elements.STEPPER]: value as number })
           }}
+          closeOnBlur={closeOpenedElement}
         />
       )}
 
@@ -309,14 +306,14 @@ const SearchForm = ({
             {...stepperConfig}
             confirmLabel={stepperProps.confirmLabel}
             onBackButtonClick={() => {
-              setElementOpened(null)
+              closeOpenedElement()
             }}
           />,
           document.body,
         )}
 
       <div className="kirk-searchForm-submit">
-        <button type="button" className="kirk-search-button" onClick={() => onSubmit(formValues)}>
+        <button type="submit" className="kirk-search-button">
           <SearchIcon iconColor={color.textWithBackground} strokeWidth="2" />
         </button>
       </div>

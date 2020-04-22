@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[FIX]** Fix breakpoints values to make them exclusive betweens small & large
+- **[UPDATE]** Use focus & blur for improving keyboard navigation in `searchForm`
+- [...]
 
 # v29.1.0 (21/04/2020)
 
