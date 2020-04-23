@@ -16,6 +16,7 @@ export interface ItemDataProps extends A11yProps {
   readonly dataInfo?: string
   readonly tag?: JSX.Element
   readonly ariaLabel?: string
+  readonly disabled?: boolean
 }
 
 const ItemData = (props: ItemDataProps) => {
@@ -30,6 +31,7 @@ const ItemData = (props: ItemDataProps) => {
     dataInfo,
     tag,
     ariaLabel,
+    disabled,
   } = props
   const a11yAttrs = pickA11yProps<ItemDataProps>(props)
   return (
@@ -45,6 +47,7 @@ const ItemData = (props: ItemDataProps) => {
       rightBody={dataInfo}
       tag={tag}
       ariaLabel={ariaLabel}
+      disabled={disabled}
       {...a11yAttrs}
     />
   )

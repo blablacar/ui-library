@@ -189,10 +189,10 @@ exports[`searchRecap Should display searchRecap component 1`] = `
             transform="rotate(180 12 12)"
           >
             <path
-              d="M22 12H2"
+              d="M9 19l-7-7 7-7"
             />
             <path
-              d="M9 19l-7-7 7-7"
+              d="M22 12H2"
             />
           </g>
         </svg>

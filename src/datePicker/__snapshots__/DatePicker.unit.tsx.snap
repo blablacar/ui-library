@@ -248,10 +248,10 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
         strokeWidth="2"
       >
         <path
-          d="M22 12H2"
+          d="M9 19l-7-7 7-7"
         />
         <path
-          d="M9 19l-7-7 7-7"
+          d="M22 12H2"
         />
       </g>
     </svg>
@@ -288,10 +288,10 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
         transform="rotate(180 12 12)"
       >
         <path
-          d="M22 12H2"
+          d="M9 19l-7-7 7-7"
         />
         <path
-          d="M9 19l-7-7 7-7"
+          d="M22 12H2"
         />
       </g>
     </svg>

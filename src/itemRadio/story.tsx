@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import LadyIcon from '../icon/ladyIcon'
 import ItemRadioGroup from '../itemRadioGroup'
 import Section from '../layout/section/baseSection'
 import TheVoice from '../theVoice'
@@ -17,20 +18,21 @@ stories.addDecorator(withKnobs)
 stories.add(
   'Default',
   () => {
-    const isMainTitle = boolean('Title', false)
-    const isDataInfo = boolean('Secondary info', false)
+    const disabled = boolean('Disabled', false)
 
     return (
       <Section>
         <ItemRadio
-          label={text('Label', 'Main information')}
           name={text('Name', 'InputName')}
           value={text('Value', 'InputValue')}
+          leftAddon={boolean('with icon', false) ? <LadyIcon isDisabled={disabled} /> : null}
+          labelTitle={text('Label title')}
+          label={text('Label', 'Main information')}
           data={text('Data', 'Data')}
-          labelTitle={isMainTitle ? text('Label title', 'Title') : null}
-          dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+          dataInfo={text('Data info')}
           onChange={action('changed')}
           checked={boolean('isChecked', false)}
+          disabled={disabled}
           status={select('status', ItemRadioStatus, ItemRadioStatus.DEFAULT)}
         />
       </Section>

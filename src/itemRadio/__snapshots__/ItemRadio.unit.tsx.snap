@@ -110,6 +110,10 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -222,16 +222,21 @@ button:hover.c0 {
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c2 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c2 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
 .c2.thin circle {
   stroke-width: 3;
 }
 
 .c2.absolute {
   position: absolute;
-}
-
-.c2 circle.inner {
-  stroke-width: 0;
 }
 
 <label
@@ -290,17 +295,16 @@ button:hover.c0 {
     >
       
       <circle
+        className="outer"
         cx="33"
         cy="33"
         fill="none"
         r="30"
-        stroke="#00AFF5"
       />
       <circle
         className="inner"
         cx="33"
         cy="33"
-        fill="#00AFF5"
         r="18"
       />
     </svg>
@@ -418,6 +422,10 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -443,10 +451,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -530,16 +534,21 @@ button:hover.c0 {
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c3 circle.outer {
+  stroke: #5DD167;
+}
+
+.c3 circle.inner {
+  stroke-width: 0;
+  fill: #5DD167;
+}
+
 .c3.thin circle {
   stroke-width: 3;
 }
 
 .c3.absolute {
   position: absolute;
-}
-
-.c3 circle.inner {
-  stroke-width: 0;
 }
 
 .c2.kirk-loader--inline {
@@ -667,11 +676,11 @@ button:hover.c0 {
         >
           
           <circle
+            className="outer"
             cx="33"
             cy="33"
             fill="none"
             r="30"
-            stroke="#5DD167"
           />
         </svg>
       </div>
@@ -790,6 +799,10 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -815,10 +828,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -902,16 +911,21 @@ button:hover.c0 {
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c2 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c2 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
 .c2.thin circle {
   stroke-width: 3;
 }
 
 .c2.absolute {
   position: absolute;
-}
-
-.c2 circle.inner {
-  stroke-width: 0;
 }
 
 <label
@@ -970,11 +984,11 @@ button:hover.c0 {
     >
       
       <circle
+        className="outer"
         cx="33"
         cy="33"
         fill="none"
         r="30"
-        stroke="#00AFF5"
       />
     </svg>
   </span>

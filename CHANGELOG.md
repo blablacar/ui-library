@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[UPDATE]** Clean svg code for several icons
+- **[UPDATE]** Add `isDisabled` prop to `BaseIcon`
+- **[UPDATE]** Add `disabled` support to all `Item` based components
 - **[FIX]** Add `padding-top` on `Itinerary`
   [...]
 

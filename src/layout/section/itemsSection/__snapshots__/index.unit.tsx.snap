@@ -94,6 +94,10 @@ exports[`ItemsSection should render default items section 1`] = `
   background: none;
 }
 
+.c2:disabled {
+  cursor: default;
+}
+
 a.c2 {
   background: none;
   -webkit-text-decoration: none;
@@ -119,10 +123,6 @@ button.c2 {
 button:active.c2,
 button:hover.c2 {
   outline: none;
-}
-
-.c2:disabled {
-  cursor: default;
 }
 
 .c2 .kirk-item-leftText {
@@ -351,6 +351,10 @@ exports[`ItemsSection should render non-default items section 1`] = `
   background: none;
 }
 
+.c2:disabled {
+  cursor: default;
+}
+
 a.c2 {
   background: none;
   -webkit-text-decoration: none;
@@ -376,10 +380,6 @@ button.c2 {
 button:active.c2,
 button:hover.c2 {
   outline: none;
-}
-
-.c2:disabled {
-  cursor: default;
 }
 
 .c2 .kirk-item-leftText {

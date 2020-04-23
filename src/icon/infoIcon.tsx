@@ -7,7 +7,6 @@ import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 export const InfoIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g transform="translate(-1 -1)" fill="none" fillRule="evenodd">
-      <path d="M0 0h24v24H0z" />
       <path
         d="M12 22.065C6.441 22.065 1.935 17.56 1.935 12 1.935 6.441 6.44 1.935 12 1.935c5.559 0 10.065 4.506 10.065 10.065 0 5.559-4.506 10.065-10.065 10.065zm0-1a9.065 9.065 0 1 0 0-18.13 9.065 9.065 0 0 0 0 18.13z"
         fill={props.iconColor}

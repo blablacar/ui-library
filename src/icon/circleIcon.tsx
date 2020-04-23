@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import styled, { keyframes } from 'styled-components'
 
+import { color } from '../_utils/branding'
 import BaseIcon from '../_utils/icon'
 import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 
@@ -31,8 +32,9 @@ const CircleIcon = ({ absolute, spinning, thin, innerDisc, ...props }: CirclePro
     ])}
   >
     <Fragment>
-      <circle cx="33" cy="33" r="30" fill="none" stroke={props.iconColor} />
-      {innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />}
+      <circle className="outer" cx="33" cy="33" r="30" fill="none" />
+
+      {innerDisc && <circle className="inner" cx="33" cy="33" r="18" />}
     </Fragment>
   </BaseIcon>
 )
@@ -77,16 +79,21 @@ export const StyledCircleIcon = styled(CircleIcon)`
     animation: ${dashKeyframes} ${duration} ease-in-out infinite;
   }
 
+  & circle.outer {
+    stroke: ${props => (props.isDisabled ? color.gray : props.iconColor)};
+  }
+
+  & circle.inner {
+    stroke-width: 0;
+    fill: ${props => (props.isDisabled ? color.gray : props.iconColor)};
+  }
+
   &.thin circle {
     stroke-width: 3;
   }
 
   &.absolute {
     position: absolute;
-  }
-
-  & circle.inner {
-    stroke-width: 0;
   }
 `
 

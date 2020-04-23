@@ -18,6 +18,7 @@ export const BaseIconDefaultProps = {
   title: '',
   badgeAriaLabel: '',
   badgeContent: '',
+  isDisabled: false,
 }
 
 const BaseIcon = ({

@@ -6,7 +6,6 @@ import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 export const FlagsIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g fill="none">
-      <path d="M-2-1h24v24H-2z" />
       <path
         stroke={props.iconColor}
         strokeLinecap="round"

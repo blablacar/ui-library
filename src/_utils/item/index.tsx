@@ -15,12 +15,18 @@ const StyledItem = styled(Item)`
     border: 0;
     background: none;
   }
+
   &.kirk-item--clickable:hover {
     background: ${color.lightGray};
   }
 
   &.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
     background: none;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: ${color.defaultBackground};
   }
 
   a& {
@@ -44,10 +50,6 @@ const StyledItem = styled(Item)`
   button:active&,
   button:hover& {
     outline: none;
-  }
-
-  &:disabled {
-    cursor: default;
   }
 
   /* Text areas */

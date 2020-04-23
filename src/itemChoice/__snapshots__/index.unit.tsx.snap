@@ -110,6 +110,10 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -222,16 +222,21 @@ button:hover.c0 {
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c4 circle.outer {
+  stroke: #5DD167;
+}
+
+.c4 circle.inner {
+  stroke-width: 0;
+  fill: #5DD167;
+}
+
 .c4.thin circle {
   stroke-width: 3;
 }
 
 .c4.absolute {
   position: absolute;
-}
-
-.c4 circle.inner {
-  stroke-width: 0;
 }
 
 .c3.kirk-loader--inline {
@@ -406,11 +411,11 @@ button:hover.c0 {
         >
           
           <circle
+            className="outer"
             cx="33"
             cy="33"
             fill="none"
             r="30"
-            stroke="#5DD167"
           />
         </svg>
       </div>
@@ -529,6 +534,10 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -554,10 +563,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -624,6 +629,10 @@ button:hover.c0 {
 .c4 {
   background-color: transparent;
   border-radius: 100%;
+}
+
+.c4 path {
+  stroke: #FFF;
 }
 
 .c4.absolute {
@@ -817,7 +826,6 @@ button:hover.c0 {
           <path
             d="M6.5 12.5l4 4 8-8"
             fill="none"
-            stroke="#FFF"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeMiterlimit="10"
@@ -940,6 +948,10 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -965,10 +977,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -1292,6 +1300,10 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -1317,10 +1329,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -1646,6 +1654,10 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -1671,10 +1683,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {

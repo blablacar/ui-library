@@ -13,20 +13,20 @@ const stories = storiesOf('Widgets|ItemData', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Default', () => {
-  const isMainTitle = boolean('Title', false)
   const ismainTitleButtonAddon = boolean('Title button info', true)
-  const isDataInfo = boolean('Secondary info', false)
   const dataStrikeThrough = boolean('Data strikethrough', false)
 
   return (
     <Section>
       <ItemData
+        mainTitle={text('Main title')}
         ariaLabel={text('Aria label', 'Complementary info')}
         mainInfo={text('Main info', 'Main information')}
         data={text('Data', 'Data')}
-        dataStrikeThrough={dataStrikeThrough}
+        dataInfo={text('Data info')}
         dataAriaLabel={text('Data aria label', 'Data aria label')}
-        mainTitle={isMainTitle ? text('Main title', 'Title') : null}
+        dataStrikeThrough={dataStrikeThrough}
+        disabled={boolean('Disabled', false)}
         mainTitleButtonAddon={
           ismainTitleButtonAddon ? (
             <Button status={ButtonStatus.UNSTYLED} isBubble onClick={action('Info clicked')}>
@@ -34,7 +34,6 @@ stories.add('Default', () => {
             </Button>
           ) : null
         }
-        dataInfo={isDataInfo ? text('Data info', 'Info') : null}
         tag={<li />}
       />
     </Section>

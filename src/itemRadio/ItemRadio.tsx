@@ -12,22 +12,22 @@ export enum ItemRadioStatus {
 }
 
 export interface ItemRadioProps extends A11yProps {
-  readonly label: string
+  readonly className?: string
   readonly name: string
   readonly value: string | number
-  readonly data?: string
-  readonly className?: string
-  readonly labelTitle?: string
   readonly leftAddon?: React.ReactNode
+  readonly labelTitle?: string
+  readonly label: string
+  readonly data?: string
   readonly dataInfo?: string
   readonly checked?: boolean
   readonly disabled?: boolean
+  readonly chevron?: boolean
+  readonly highlighted?: boolean
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly onClick?: (obj: OnChangeParameters) => void
   readonly status?: ItemRadioStatus
   readonly key?: string | number
-  readonly chevron?: boolean
-  readonly highlighted?: boolean
 }
 
 interface ItemRadioState {
@@ -94,7 +94,9 @@ class ItemRadio extends Component<ItemRadioProps> {
           onBlur={this.onBlur}
           disabled={disabled || isLoading}
         />
-        {(!chevron || isLoading) && <RadioIcon isChecked={checked} isLoading={isLoading} />}
+        {(!chevron || isLoading) && (
+          <RadioIcon isChecked={checked} isLoading={isLoading} isDisabled={disabled} />
+        )}
       </Fragment>
     )
 
@@ -118,6 +120,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           chevron={chevron && !isLoading}
           highlighted={highlighted}
           isClickable
+          disabled={disabled}
           {...a11yAttrs}
         />
       </Fragment>

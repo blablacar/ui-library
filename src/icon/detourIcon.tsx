@@ -8,7 +8,7 @@ import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 export const DetourIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 20 20">
     <g transform="translate(-2 -2)" fill="none" fillRule="evenodd">
-      <circle fill={color.green} cx="12" cy="12" r="10" />
+      <circle fill={props.isDisabled ? 'none' : color.green} cx="12" cy="12" r="10" />
       <path
         stroke={color.white}
         strokeLinecap="round"
