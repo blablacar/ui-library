@@ -1,18 +1,22 @@
 import React from 'react'
 import uuidv4 from 'uuid/v4'
 
-import { ModalProps } from 'modal'
 import { ButtonStatus } from 'button'
+
+// TODO: fix alias resolving path on build
+// Must use relative path since alias is broken
+import { ModalProps } from '../modal'
 
 import TextDisplay1 from 'typography/display1'
 
 import SuccessModalElements from './elements'
 
-export interface SuccessModalProps extends ModalProps {
-  readonly confirmLabel?: string
-  readonly imageSrc: string
-  readonly imageText?: string
-}
+export type SuccessModalProps = ModalProps &
+  Readonly<{
+    confirmLabel?: string
+    imageSrc: string
+    imageText?: string
+  }>
 
 const SuccessModal = (props: SuccessModalProps): JSX.Element => {
   const {
