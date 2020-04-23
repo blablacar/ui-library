@@ -49,7 +49,7 @@ export default styled(HintBubble)`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: ${space.l} ${space.xl};
+    padding: ${space.l};
     background-color: ${color.pushBackground};
     color: ${color.textWithBackground};
     border-radius: ${radius.l};
@@ -59,6 +59,7 @@ export default styled(HintBubble)`
   & strong {
     display: block;
     font-weight: ${fontWeight.medium};
+    padding-bottom: ${space.s};
   }
 
   & p {
@@ -67,7 +68,7 @@ export default styled(HintBubble)`
   }
 
   & .kirk-button {
-    padding: 0 0 0 ${space.l};
+    padding: 0 0 0 ${space.m};
     min-height: 0;
     height: auto;
   }
