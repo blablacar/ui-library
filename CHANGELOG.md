@@ -2,7 +2,7 @@
 
 - [...]
 
-# v29.1.0 (23/04/2020)
+# v29.2.0 (23/04/2020)
 
 - **[FIX]** Convert `SuccessModalProps` and `ModalProps` to type instead of interface; Resolve `ModalProps` path;
 - **[FIX]** Fix breakpoints values to make them exclusive betweens small & large
