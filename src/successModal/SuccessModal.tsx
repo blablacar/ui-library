@@ -3,6 +3,8 @@ import uuidv4 from 'uuid/v4'
 
 import { ButtonStatus } from 'button'
 
+// TODO: fix alias resolving path on build
+// Must use natural path since alias is broken
 import { ModalProps } from '../modal'
 
 import TextDisplay1 from 'typography/display1'
