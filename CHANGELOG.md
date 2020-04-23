@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Add `searchForm` prop to `HeroSection`.
+- **[FIX]** Use proper padding for the `Hint` component.
 - [...]
 
 # v29.2.0 (23/04/2020)

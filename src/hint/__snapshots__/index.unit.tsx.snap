@@ -209,7 +209,7 @@ exports[`Hint Default rendering (above) 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  padding: 16px 24px;
+  padding: 16px;
   background-color: #054752;
   color: #FFF;
   border-radius: 16px;
@@ -219,6 +219,7 @@ exports[`Hint Default rendering (above) 1`] = `
 .c2 strong {
   display: block;
   font-weight: 500;
+  padding-bottom: 4px;
 }
 
 .c2 p {
@@ -227,7 +228,7 @@ exports[`Hint Default rendering (above) 1`] = `
 }
 
 .c2 .kirk-button {
-  padding: 0 0 0 16px;
+  padding: 0 0 0 8px;
   min-height: 0;
   height: auto;
 }
@@ -554,7 +555,7 @@ exports[`Hint Default rendering (below) 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  padding: 16px 24px;
+  padding: 16px;
   background-color: #054752;
   color: #FFF;
   border-radius: 16px;
@@ -564,6 +565,7 @@ exports[`Hint Default rendering (below) 1`] = `
 .c2 strong {
   display: block;
   font-weight: 500;
+  padding-bottom: 4px;
 }
 
 .c2 p {
@@ -572,7 +574,7 @@ exports[`Hint Default rendering (below) 1`] = `
 }
 
 .c2 .kirk-button {
-  padding: 0 0 0 16px;
+  padding: 0 0 0 8px;
   min-height: 0;
   height: auto;
 }
