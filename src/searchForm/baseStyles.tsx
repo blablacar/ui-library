@@ -18,7 +18,8 @@ export const sectionBaseStyle = `
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: ${color.defaultBackground};`
+  background-color: ${color.defaultBackground};
+  overflow: auto;`
 
 export const autoCompleteBaseStyle = `
   .kirk-textField-wrapper {

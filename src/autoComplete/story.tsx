@@ -25,7 +25,7 @@ interface AutoCompleteExampleProps {
   readonly searchOnMount?: boolean
   readonly searchForItemsDelay?: number
   readonly renderEmptySearch?: AutocompleteItem[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly inputAddon?: React.ReactElement
   readonly onSelect?: (obj: AutocompleteOnChange) => void
   readonly autoFocus?: boolean
@@ -47,7 +47,7 @@ export class AutoCompleteExample extends Component<
     items: [],
   }
 
-  defaultProps: AutoCompleteExampleProps = {
+  static defaultProps: AutoCompleteExampleProps = {
     searchOnMount: true,
     searchForItemsDelay: 0,
     renderEmptySearch: [],

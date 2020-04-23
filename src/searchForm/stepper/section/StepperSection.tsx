@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Stepper, { StepperProps, StepperDisplay } from 'stepper'
 import Divider from 'divider'
 import Section from 'layout/section/baseSection'
@@ -6,18 +6,20 @@ import ChevronIcon from 'icon/chevronIcon'
 import Item from '_utils/item'
 import { Button } from 'index'
 import { ButtonStatus } from 'button'
+import { useFocusTrap } from '_utils/useFocusTrap'
+import { useOverflowHiddenOnDocument } from '_utils/useOverflowHiddenOnDocument'
 
 export interface StepperSectionProps extends StepperProps {
-  readonly itemTitle: string
-  readonly confirmLabel: string
-  readonly onBackButtonClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onConfirm?: (event: React.MouseEvent<HTMLElement>) => void
+  itemTitle: string
+  confirmLabel: string
+  onClose: () => void
+  onConfirm?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 export const StepperSection = ({
   itemTitle,
   className,
-  onBackButtonClick,
+  onClose,
   confirmLabel,
   onChange,
   ...props
@@ -27,23 +29,30 @@ export const StepperSection = ({
     name: props.name,
     value: props.value,
   })
+  const ref = useRef<HTMLDivElement>(null)
+
+  useFocusTrap(ref, onClose)
+
+  useOverflowHiddenOnDocument()
 
   return (
-    <Section className={className}>
-      <Item
-        leftAddon={<ChevronIcon left />}
-        leftTitle={itemTitleState}
-        tag={<button type="button" />}
-        onClick={onBackButtonClick}
-      />
-      <Divider />
-      <Stepper {...props} onChange={setStepperValue} display={StepperDisplay.LARGE} />
-      <div className="kirk-stepperSection-submit">
-        <Button status={ButtonStatus.PRIMARY} onClick={() => onChange(stepperValue)}>
-          {confirmLabel}
-        </Button>
-      </div>
-    </Section>
+    <div ref={ref} role="dialog" className={className}>
+      <Section>
+        <Item
+          leftAddon={<ChevronIcon left />}
+          leftTitle={itemTitleState}
+          tag={<button type="button" />}
+          onClick={onClose}
+        />
+        <Divider />
+        <Stepper {...props} onChange={setStepperValue} display={StepperDisplay.LARGE} />
+        <div className="kirk-stepperSection-submit">
+          <Button status={ButtonStatus.PRIMARY} onClick={() => onChange(stepperValue)}>
+            {confirmLabel}
+          </Button>
+        </div>
+      </Section>
+    </div>
   )
 }
 

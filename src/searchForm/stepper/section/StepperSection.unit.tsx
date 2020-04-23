@@ -10,7 +10,7 @@ describe('StepperSection', () => {
   it('should have a clickable Item with a title and chevron icon', () => {
     const onClick = jest.fn()
     const wrapper = shallow(
-      <StepperSection itemTitle="1 seat" onBackButtonClick={onClick} confirmLabel="Submit" />,
+      <StepperSection itemTitle="1 seat" onClose={onClick} confirmLabel="Submit" />,
     )
     expect(wrapper.find(Item).prop('leftTitle')).toEqual('1 seat')
     expect(wrapper.find(Item).prop('leftAddon')).toEqual(<ChevronIcon left />)
@@ -21,13 +21,15 @@ describe('StepperSection', () => {
   })
 
   it('should have a Stepper with display large', () => {
-    const wrapper = shallow(<StepperSection itemTitle="1 seat" confirmLabel="Submit" />)
+    const wrapper = shallow(
+      <StepperSection itemTitle="1 seat" confirmLabel="Submit" onClose={() => {}} />,
+    )
     expect(wrapper.find(Stepper).prop('display')).toEqual(StepperDisplay.LARGE)
   })
 
   it('should not have the same title and itemTitle for a11y', () => {
     const wrapper = shallow(
-      <StepperSection itemTitle="1 seat" title="Choose your number of seats" />,
+      <StepperSection itemTitle="1 seat" title="Choose your number of seats" onClose={() => {}} />,
     )
     expect(wrapper.find(Stepper).prop('title')).toEqual('Choose your number of seats')
   })

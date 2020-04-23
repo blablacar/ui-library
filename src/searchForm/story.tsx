@@ -21,7 +21,9 @@ stories.addDecorator(withKnobs)
 stories.add('DatepickerOverlay', () => (
   <DatePickerOverlay name="Datepicker" title="Today" closeOnBlur={() => {}} />
 ))
-stories.add('DatePickerSection', () => <DatePickerSection name="Datepicker" title="Today" />)
+stories.add('DatePickerSection', () => (
+  <DatePickerSection name="Datepicker" title="Today" onClose={() => {}} />
+))
 stories.add('StepperOverlay', () => (
   <StepperOverlay
     name="Stepper"
@@ -42,6 +44,7 @@ stories.add('StepperSection', () => (
     increaseLabel="Increase"
     decreaseLabel="Decrease"
     confirmLabel="Submit"
+    onClose={() => {}}
   />
 ))
 stories.add('AutoCompleteOverlay', () => (
@@ -52,7 +55,11 @@ stories.add('AutoCompleteOverlay', () => (
   />
 ))
 stories.add('AutoCompleteSection', () => (
-  <AutoCompleteSection name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
+  <AutoCompleteSection
+    name="from"
+    renderAutocompleteComponent={() => <AutoCompleteExample />}
+    onClose={() => {}}
+  />
 ))
 
 stories.add(

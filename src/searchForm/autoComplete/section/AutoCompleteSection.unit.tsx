@@ -6,10 +6,12 @@ import ChevronIcon from 'icon/chevronIcon'
 
 describe('AutoCompleteSection', () => {
   it('should contains an AutoComplete component', () => {
+    const onClose = jest.fn()
     const wrapper = shallow(
       <AutoCompleteSection
         name="from"
         renderAutocompleteComponent={props => <AutoComplete {...props} />}
+        onClose={onClose}
       />,
     )
     expect(wrapper.find(AutoComplete).prop('embeddedInSearchForm')).toBe(true)
@@ -17,5 +19,8 @@ describe('AutoCompleteSection', () => {
 
     const inputAddonWrapper = shallow(wrapper.find(AutoComplete).prop('inputAddon'))
     expect(inputAddonWrapper.find(ChevronIcon).length).toEqual(1)
+
+    inputAddonWrapper.simulate('click')
+    expect(onClose).toHaveBeenCalled()
   })
 })

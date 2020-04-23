@@ -25,10 +25,10 @@ export interface AutoCompleteProps {
   readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
   readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
   readonly onClear?: () => void
-  readonly className?: Classcat.Class
-  readonly inputClassName?: Classcat.Class
-  readonly itemClassName?: Classcat.Class
-  readonly bodyClassName?: Classcat.Class
+  readonly className?: string
+  readonly inputClassName?: string
+  readonly itemClassName?: string
+  readonly bodyClassName?: string
   readonly items?: AutocompleteItem[]
   readonly maxItems?: number
   readonly itemKey?: (item: AutocompleteItem) => string
