@@ -1,123 +1,195 @@
-import styled from 'styled-components'
-import { responsiveBreakpoints, componentSizes, color, space } from '_utils/branding'
+import styled, { css } from 'styled-components'
+import { responsiveBreakpoints, componentSizes, color, space, font } from '_utils/branding'
+import HeroSection, { HeroSectionProps } from './heroSection'
 
-import HeroSection from './heroSection'
+// Remove these deprecated styles once all the button content parts have been removed.
+const DEPRECATED_STYLES = css`
+  & {
+    margin-bottom: 0;
+    height: initial;
+  }
+
+  & .hero-image {
+    position: static;
+    height: 136px;
+    background-image: ${(props: HeroSectionProps) => `url(${props.heroImageUrl})`};
+  }
+
+  & .hero-image::after {
+    content: none;
+  }
+
+  & .hero-info {
+    padding-top: ${space.xl};
+  }
+
+  & .hero-info-title--display1 {
+    color: ${color.primaryText};
+  }
+
+  & .hero-info-text-title {
+    color: ${color.secondaryText};
+    font-size: ${font.base.size};
+    line-height: ${font.base.lineHeight};
+  }
+
+  & .hero-content {
+    align-items: center;
+  }
+`
+
+const DEPRECATED_LARGE_MEDIA_STYLES = css`
+  & {
+    margin-bottom: ${space.xl};
+    justify-content: flex-end;
+  }
+
+  & .hero-image {
+    position: absolute;
+    background-image: ${(props: HeroSectionProps) => `url(${props.heroImageUrlLarge})`};
+  }
+
+  & .hero-image::after {
+    content: '';
+  }
+
+  & .hero-info {
+    padding-top: 0;
+    padding-bottom: ${space.xl};
+    margin-bottom: ${space.xl};
+  }
+
+  & .hero-info-title--display1 {
+    color: ${color.textWithBackground};
+  }
+
+  & .hero-info-text-title {
+    color: ${color.textWithBackground};
+  }
+`
 
 const StyledHeroSection = styled(HeroSection)`
   & {
     background-color: ${color.defaultBackground};
     position: relative;
     z-index: 1;
-    padding: 0;
+    height: 80vh;
+    margin-bottom: ${space.xl};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   & .hero-image {
-    position: relative;
-    min-height: 136px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
     background-size: cover;
     background-position: center;
-    background-image: ${props => `url(${props.heroImageUrl})`};
+    background-image: ${props => `url(${props.heroImageUrlLarge})`};
+
+    /* Hide the shadow. */
+    overflow: hidden;
+  }
+
+  & .hero-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: block;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4) 72%,
+      rgba(0, 0, 0, 0.2) 85%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 
   & .hero-info {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     max-width: ${componentSizes.largeSectionWidth};
-    padding: ${space.xl};
-    padding-top: 0;
+    padding: 0 ${space.xl};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   & .hero-info-title-wrapper {
-    display: flex;
-    flex-direction: column;
+    text-align: center;
   }
 
-  & .hero-info-title.kirk-title {
-    min-height: auto;
-    align-items: flex-end;
-    align-self: center;
-    display: flex;
-    padding-top: ${space.xl};
-    padding-bottom: ${space.ms};
+  & .hero-info-title {
+    margin: 0;
+    padding-top: ${space.m};
+    padding-bottom: ${space.m};
+  }
+  
+  & .hero-info-title--display1 {
+    color: ${color.textWithBackground};
+  }
+
+  & .hero-info-text {
     margin: 0;
   }
-
-  & .hero-button {
-    margin-top: ${space.xl};
+  
+  & .hero-info-text-title {
+    color: ${color.textWithBackground};
   }
+
+  & .hero-content {
+    width: 100%;
+    margin-top: ${space.xl};
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  ${props => (props.bottomElement == null ? DEPRECATED_STYLES : null)}
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     & {
       height: 75vh;
-      margin-bottom: ${space.xl};
-      /* Clip overflowing bottom shadow */
-      overflow: hidden;
+      justify-content: center;
     }
 
     & .hero-image {
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      background-image: ${props => `url(${props.heroImageUrlLarge});`};
+    }
+
+    & .hero-image::after {
+      height: 75%;
     }
 
     & .hero-info {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 3;
-      width: 100%;
-      margin-bottom: ${space.xl};
+      /* This value seams to work in most cases. */
+      padding-top: 120px;
     }
 
-    & .hero-info * {
-      position: relative;
-      z-index: 3;
-    }
-
-    & .hero-info::after {
-      content: '';
-      display: block;
-      width: 200%;
-      height: 150%;
-      position: absolute;
-      bottom: -${space.xl};
-      left: -50%;
-      right: -50%;
-      z-index: 2;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.4) 72%,
-        rgba(0, 0, 0, 0.2) 85%,
-        rgba(0, 0, 0, 0) 100%
-      );
-    }
-
-    /* override ui-library */
-    & .hero-info .hero-info-title {
+    & .hero-info-title--display1 {
+      /* This is a custom font size which is only used for the hero section. */
       font-size: 60px;
-      color: ${color.textWithBackground};
-      padding-top: 8px;
-      padding-bottom: 8px;
+      line-height: 60px;
     }
 
-    /* override ui-library */
-    & .hero-info .hero-info-text {
-      font-size: 26px;
-      color: ${color.textWithBackground};
+    & .hero-info-text-title {
+      font-size: ${font.l.size};
+      line-height: ${font.l.lineHeight};
     }
 
-    & .hero-button {
-      margin-bottom: ${space.xl};
+    & .hero-content {
+      align-items: center;
     }
+
+    ${props => (props.bottomElement == null ? DEPRECATED_LARGE_MEDIA_STYLES : null)}
   }
 `
 
-export { HeroSectionProps } from './heroSection'
+export { HeroSectionProps }
 export default StyledHeroSection

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add `searchForm` prop to `HeroSection`.
 - [...]
 
 # v29.2.0 (23/04/2020)

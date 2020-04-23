@@ -1,41 +1,50 @@
-import React, { PureComponent } from 'react'
-import Button from 'button'
-import Title from 'title'
-import Text, { TextTagType } from 'text'
-import cc from 'classcat'
+import Button, { ButtonProps } from 'button'
+import React from 'react'
+import TextDisplay1 from 'typography/display1'
+import TextTitle from 'typography/title'
 
-export interface HeroSectionProps {
-  readonly className?: Classcat.Class
-  readonly heroImageUrl: string
-  readonly heroImageUrlLarge: string
-  readonly heroText?: string
-  readonly heroDescription?: string
-  readonly buttonText?: string
-  readonly buttonHref?: string | JSX.Element
+export type HeroSectionProps = {
+  className?: string
+  heroImageUrl: string
+  heroImageUrlLarge: string
+  heroText?: string
+  heroDescription?: string
+  buttonText?: string
+  buttonHref?: ButtonProps['href']
+  bottomElement?: React.ReactElement
 }
 
-class HeroSection extends PureComponent<HeroSectionProps> {
-  render() {
-    const { className, heroText, heroDescription, buttonText, buttonHref } = this.props
-    return (
-      <div className={cc(className)}>
-        <div className="hero-image" aria-hidden="true" />
-        <div className="hero-info wrapper wrapper--large">
-          <div className="hero-info-title-wrapper">
-            <Title className="hero-info-title">{heroText}</Title>
-            {heroDescription && (
-              <Text tag={TextTagType.PARAGRAPH} className="hero-info-text">
-                {heroDescription}
-              </Text>
-            )}
-          </div>
-          <Button className="hero-button" href={buttonHref}>
-            {buttonText}
-          </Button>
+function HeroSection({
+  className,
+  heroText,
+  heroDescription,
+  buttonText,
+  buttonHref,
+  bottomElement,
+}: HeroSectionProps) {
+  return (
+    <div className={className}>
+      <div className="hero-image" aria-hidden="true" />
+
+      <div className="hero-info">
+        <div className="hero-info-title-wrapper">
+          <h1 className="hero-info-title">
+            <TextDisplay1 className="hero-info-title--display1">{heroText}</TextDisplay1>
+          </h1>
+
+          {heroDescription && (
+            <p className="hero-info-text">
+              <TextTitle className="hero-info-text-title">{heroDescription}</TextTitle>
+            </p>
+          )}
+        </div>
+
+        <div className="hero-content">
+          {bottomElement ?? <Button href={buttonHref}>{buttonText}</Button>}
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default HeroSection
