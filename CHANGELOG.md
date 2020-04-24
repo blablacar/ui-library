@@ -2,6 +2,7 @@
 
 - **[FIX]** `Hint` close icon was cropped when the hint content was too long.
 - **[UPDATE]** Add new `ItemEditableInfo` widget.
+- **[FIX]** Define `CardsSection`'s justify-content to be centered only in large screens
 - [...]
 
 # v29.3.0 (24/04/2020)
