@@ -7,7 +7,7 @@ import { color } from '_utils/branding'
 import ArrowIcon from 'icon/arrowIcon'
 import Button, { ButtonStatus } from 'button'
 
-const BASE_CLASSNAME = prefix({ datepicker: true })
+const BASE_CLASSNAME = 'datepicker'
 
 const defaultWeekdaysLong = [0, 1, 2, 3, 4, 5, 6].map(weekday =>
   DayPicker.LocaleUtils.formatWeekdayLong(weekday),

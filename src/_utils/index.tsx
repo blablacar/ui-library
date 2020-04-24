@@ -1,12 +1,18 @@
 import React, { Fragment } from 'react'
 import { canUseDOM } from 'exenv'
 
-export const prefix = (
-  modifiers: Classcat.ClassObject = {},
-  baseClass: string = 'kirk',
-): string => {
+const DEFAULT_CLASS_PREFIX = 'kirk'
+
+export const prefix = (modifiers: Classcat.ClassObject, baseClass?: string): string => {
   const mods = Object.keys(modifiers).filter(elem => modifiers[elem])
-  return mods.map(modifier => `${baseClass}-${modifier}`).join(' ')
+
+  let classPrefix = DEFAULT_CLASS_PREFIX
+
+  if (baseClass != null) {
+    classPrefix = `${classPrefix}-${baseClass}`
+  }
+
+  return mods.map(modifier => `${classPrefix}-${modifier}`).join(' ')
 }
 
 export const isTouchEventsAvailable = () =>

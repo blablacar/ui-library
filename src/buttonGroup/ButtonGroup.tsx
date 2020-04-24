@@ -13,7 +13,7 @@ export interface ButtonGroupProps {
   readonly loadingIndex?: string
 }
 
-const BASE_CLASSNAME = prefix({ 'button-group': true })
+const BASE_CLASSNAME = 'button-group'
 
 const ButtonGroup = ({
   children,
