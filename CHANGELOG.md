@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Define `CardsSection`'s justify-content to be centered only in large screens
 - [...]
 
 # v29.4.0 (24/04/2020)

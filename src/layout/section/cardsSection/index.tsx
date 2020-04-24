@@ -13,7 +13,7 @@ const StyledCardsSection = styled(CardsSection)`
   & .kirk-cardsSection {
     margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding: ${space.l} ${wrapperHorizontalPadding};
     box-sizing: border-box;
     overflow: auto; /* Make Cards scrollable horizontally */
@@ -59,6 +59,7 @@ const StyledCardsSection = styled(CardsSection)`
   @media (${responsiveBreakpoints.isMediaLarge}) {
     & .kirk-cardsSection {
       max-width: ${componentSizes.smallSectionWidth};
+      justify-content: center;
     }
   }
 
