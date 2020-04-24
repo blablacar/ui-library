@@ -4,4 +4,8 @@ export const KEYCODES = {
   SPACEBAR: 32,
 }
 
+export const KEYS = {
+  ESCAPE: 'Escape',
+}
+
 export default KEYCODES

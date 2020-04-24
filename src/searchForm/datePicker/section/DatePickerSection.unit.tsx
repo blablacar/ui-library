@@ -8,7 +8,7 @@ import ChevronIcon from 'icon/chevronIcon'
 describe('DatePickerSection', () => {
   it('should have a clickable Item with a title and chevron icon', () => {
     const onClick = jest.fn()
-    const wrapper = shallow(<DatePickerSection title="Today" onClick={onClick} />)
+    const wrapper = shallow(<DatePickerSection title="Today" onClose={onClick} />)
     expect(wrapper.find(Item).prop('leftTitle')).toEqual('Today')
     expect(wrapper.find(Item).prop('leftAddon')).toEqual(<ChevronIcon left />)
     expect(wrapper.find(Item).prop('tag')).toEqual(<button type="button" />)

@@ -31,7 +31,7 @@ export interface DatePickerProps {
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly initialDate?: Date
   readonly initialMonth?: Date
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly numberOfMonths?: number
   readonly orientation?: DatePickerOrientation
   readonly isOutsideRange?: (day: Date) => boolean

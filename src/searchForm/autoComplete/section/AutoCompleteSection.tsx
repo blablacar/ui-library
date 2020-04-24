@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Section from 'layout/section/baseSection'
 import Icon from 'icon/chevronIcon'
 import Button, { ButtonStatus } from 'button'
 import { AutoCompleteProps } from 'autoComplete'
+import { useFocusTrap } from '_utils/useFocusTrap'
 
 export type AutoCompleteSectionProps = Omit<
   AutoCompleteProps,
@@ -13,33 +14,36 @@ export type AutoCompleteSectionProps = Omit<
   // renderAutocompleteComponent method
   | 'searchForItems'
 > & {
-  readonly renderAutocompleteComponent: (
-    props: Omit<AutoCompleteProps, 'searchForItems'>,
-  ) => JSX.Element
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
+  renderAutocompleteComponent: (props: Omit<AutoCompleteProps, 'searchForItems'>) => JSX.Element
+  onClose: () => void
 }
 
 export const AutoCompleteSection = ({
-  onClick,
+  onClose,
   className,
   renderAutocompleteComponent,
   ...props
 }: AutoCompleteSectionProps) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useFocusTrap(ref, onClose)
+
   const backButton = (
-    <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1" onClick={onClick}>
+    <Button status={ButtonStatus.UNSTYLED} isBubble onClick={onClose}>
       <Icon size="18" left />
     </Button>
   )
 
   return (
-    <Section className={className}>
-      {renderAutocompleteComponent({
-        ...props,
-        autoFocus: true,
-        inputAddon: backButton,
-        embeddedInSearchForm: true,
-      })}
-    </Section>
+    <div ref={ref} role="dialog" className={className}>
+      <Section>
+        {renderAutocompleteComponent({
+          ...props,
+          autoFocus: true,
+          inputAddon: backButton,
+          embeddedInSearchForm: true,
+        })}
+      </Section>
+    </div>
   )
 }
 

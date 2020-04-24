@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Define `CardsSection`'s justify-content to be centered only in large screens
+- **[UPDATE]** Add focus trap & handling overflow on `searchForm` section components
 - [...]
 
 # v29.4.0 (24/04/2020)

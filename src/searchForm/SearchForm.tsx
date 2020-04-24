@@ -196,12 +196,7 @@ const SearchForm = ({
         elementOpened === Elements.AUTOCOMPLETE_FROM &&
         canUseDOM &&
         createPortal(
-          <AutoCompleteSection
-            {...autocompleteFromConfig}
-            onClick={() => {
-              closeOpenedElement()
-            }}
-          />,
+          <AutoCompleteSection {...autocompleteFromConfig} onClose={closeOpenedElement} />,
           document.body,
         )}
 
@@ -233,12 +228,7 @@ const SearchForm = ({
         elementOpened === Elements.AUTOCOMPLETE_TO &&
         canUseDOM &&
         createPortal(
-          <AutoCompleteSection
-            {...autocompleteToConfig}
-            onClick={() => {
-              closeOpenedElement()
-            }}
-          />,
+          <AutoCompleteSection {...autocompleteToConfig} onClose={closeOpenedElement} />,
           document.body,
         )}
 
@@ -266,12 +256,7 @@ const SearchForm = ({
           mediaSize === MediaSize.SMALL &&
           canUseDOM &&
           createPortal(
-            <DatePickerSection
-              {...datepickerConfig}
-              onClick={() => {
-                closeOpenedElement()
-              }}
-            />,
+            <DatePickerSection {...datepickerConfig} onClose={closeOpenedElement} />,
             document.body,
           )}
 
@@ -305,9 +290,7 @@ const SearchForm = ({
           <StepperSection
             {...stepperConfig}
             confirmLabel={stepperProps.confirmLabel}
-            onBackButtonClick={() => {
-              closeOpenedElement()
-            }}
+            onClose={closeOpenedElement}
           />,
           document.body,
         )}
