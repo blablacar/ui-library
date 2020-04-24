@@ -9,7 +9,7 @@ export enum AnimationType {
 }
 
 export interface CustomTransitionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: JSX.Element
   readonly animationName?: AnimationType
   readonly delayEnter?: number

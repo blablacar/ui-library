@@ -23,7 +23,7 @@ export enum TextTagType {
 }
 
 export interface TextProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: string | number | React.ReactNode
   readonly display?: TextDisplayType
   readonly tag?: TextTagType

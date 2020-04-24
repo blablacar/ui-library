@@ -17,7 +17,7 @@ export type ItemsListChild =
 export interface ItemsListProps {
   readonly children: ItemsListChild[]
   readonly withSeparators?: boolean
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly keyGenerator?: (index: number) => string | number
   readonly role?: string
 }

@@ -9,7 +9,7 @@ import prefix from '_utils'
 export interface ItemActionProps extends A11yProps {
   readonly highlighted?: boolean
   readonly tag?: JSX.Element
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly href?: string | JSX.Element
   readonly action?: string
   readonly subLabel?: string

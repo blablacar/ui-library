@@ -30,8 +30,8 @@ export interface TextAreaProps extends CommonFormFields {
   defaultValue?: string
   labelledBy?: string
   onChange?: (obj: OnChangeParameters) => void
-  className?: Classcat.Class
-  errorClassName?: Classcat.Class
+  className?: string
+  errorClassName?: string
   error?: errorField
   label?: string
   focus?: boolean

@@ -11,7 +11,7 @@ export enum BulletTypes {
 }
 
 export interface BulletProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly type?: BulletTypes
 }
 

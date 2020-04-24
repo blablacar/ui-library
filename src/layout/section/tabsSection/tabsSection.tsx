@@ -3,7 +3,7 @@ import cc from 'classcat'
 import Tabs, { TabsProps } from 'tabs'
 
 export interface TabsSectionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly tabsProps: TabsProps
 }
 

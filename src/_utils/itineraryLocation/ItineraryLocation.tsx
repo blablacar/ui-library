@@ -9,7 +9,7 @@ import Text, { TextDisplayType, TextTagType } from 'text'
 
 export interface ItineraryLocationProps {
   readonly place: Place
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly isSmall?: boolean
   readonly isArrival?: boolean
   readonly hasBottomAddon?: boolean

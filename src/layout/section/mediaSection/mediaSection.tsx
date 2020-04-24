@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 export interface MediaSectionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly role?: string
   readonly children: React.ReactNode
 }

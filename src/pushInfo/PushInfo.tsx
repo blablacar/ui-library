@@ -5,7 +5,7 @@ export const animationDuration = 700
 export const animationDelay = 300
 
 export interface PushInfoProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly icon?: React.ReactNode
   readonly headline: string
   readonly content?: string

@@ -47,7 +47,7 @@ export interface TripCardProps {
     autoApproval?: string
   }
   metaUrl?: string
-  className?: Classcat.Class
+  className?: string
   statusInformation?: {
     icon: JSX.Element
     text: string

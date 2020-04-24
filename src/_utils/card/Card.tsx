@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 export interface CardProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children?: React.ReactNode
 }
 

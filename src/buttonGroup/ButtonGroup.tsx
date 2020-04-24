@@ -7,13 +7,13 @@ import { ButtonProps } from 'button/Button'
 
 export interface ButtonGroupProps {
   readonly children: React.ReactElement<ButtonProps>[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly isInline?: boolean
   readonly isReverse?: boolean
   readonly loadingIndex?: string
 }
 
-const [BASE_CLASSNAME] = prefix({ 'button-group': true })
+const BASE_CLASSNAME = prefix({ 'button-group': true })
 
 const ButtonGroup = ({
   children,

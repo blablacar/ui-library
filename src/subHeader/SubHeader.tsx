@@ -3,7 +3,7 @@ import Title from 'title'
 import cc from 'classcat'
 
 export interface SubHeaderProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: string
 }
 

@@ -1,7 +1,7 @@
 declare interface Icon {
   readonly size?: number | string
-  readonly className?: Classcat.Class
-  readonly iconClassName?: Classcat.Class
+  readonly className?: string
+  readonly iconClassName?: string
   readonly title?: string
   readonly iconColor?: string
   readonly badgeAriaLabel?: string

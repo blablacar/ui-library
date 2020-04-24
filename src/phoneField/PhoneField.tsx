@@ -28,8 +28,8 @@ export interface PhoneFieldProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
   readonly id?: string
-  readonly className?: Classcat.Class
-  readonly innerWrapperClassName?: Classcat.Class
+  readonly className?: string
+  readonly innerWrapperClassName?: string
   readonly ariaLabelledBy?: string
   readonly selectFieldLabel?: string
   readonly textFieldTitle?: string

@@ -12,10 +12,10 @@ import ItemsList from 'itemsList'
 export interface AutoCompleteListProps {
   name: string
   onSelect?: (item: AutocompleteItem) => void
-  className?: Classcat.Class
+  className?: string
   items?: AutocompleteItem[]
   maxItems?: number
-  itemClassName?: Classcat.Class
+  itemClassName?: string
   onDoneAnimationEnd?: () => void
   itemKey?: (item: AutocompleteItem) => string
   visible?: boolean

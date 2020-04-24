@@ -6,7 +6,7 @@ import QuestionIcon from 'icon/questionIcon'
 export interface WhyProps {
   readonly children: string
   readonly title: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly onClick?: () => void
 }
 

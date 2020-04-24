@@ -7,7 +7,7 @@ import Text, { TextTagType } from 'text'
 import Title from 'title'
 
 export interface ColumnedContentSectionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly title: string
   readonly topLinkLabel?: string
   readonly topLinkHref?: string | JSX.Element

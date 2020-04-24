@@ -3,7 +3,7 @@ import cc from 'classcat'
 import Star from 'icon/starIcon'
 
 export interface StarsProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly stars: number
 }
 

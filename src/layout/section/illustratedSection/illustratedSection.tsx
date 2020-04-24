@@ -4,7 +4,7 @@ import Avatar from 'avatar'
 
 export interface IllustratedSectionProps {
   readonly children: React.ReactNode
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly illustrationUrl: string
   readonly illustrationAlt?: string
   readonly isAvatar?: boolean

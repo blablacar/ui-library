@@ -6,7 +6,7 @@ import BaseSection from 'layout/section/baseSection'
 
 export interface ItemsSectionProps {
   readonly children: React.ReactElement<ItemInfoProps>[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly tag?: JSX.Element
 }
 

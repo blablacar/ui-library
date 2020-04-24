@@ -13,7 +13,7 @@ export const renderSecondary = (href?: string, secondaryText?: string) =>
   )
 
 export interface CaptionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: any
   readonly isoDate: string
   readonly href?: string

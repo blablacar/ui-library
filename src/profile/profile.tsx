@@ -8,7 +8,7 @@ import TextBody from 'typography/body'
 import cc from 'classcat'
 
 export interface ProfileProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly ariaLabel?: string
   readonly title: string
   readonly info?: string | JSX.Element

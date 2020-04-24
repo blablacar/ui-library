@@ -10,7 +10,7 @@ import ItineraryLocation, { computeKeyFromPlace } from '_utils/itineraryLocation
 
 export interface ItineraryCollapsibleProps {
   readonly places: Place[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly label?: string
   readonly ariaLabel?: string
 }

@@ -6,7 +6,7 @@ import Button, { ButtonStatus } from 'button'
 const DEFAULT_MAX_CHAR_SIZE = 180
 
 export interface ParagraphProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: string
   readonly isExpandable?: boolean
   readonly expandLabel?: string

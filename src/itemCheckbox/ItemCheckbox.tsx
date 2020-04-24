@@ -15,7 +15,7 @@ export interface ItemCheckboxProps extends A11yProps {
   readonly label: string
   readonly name: string
   readonly data?: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly labelTitle?: string
   readonly dataInfo?: string
   readonly checked?: boolean

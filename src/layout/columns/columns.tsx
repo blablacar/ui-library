@@ -3,7 +3,7 @@ import cc from 'classcat'
 import { ColumnProps } from 'layout/column'
 
 export interface ColumnsProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: React.ReactElement<ColumnProps>[]
 }
 

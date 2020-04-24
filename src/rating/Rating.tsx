@@ -4,7 +4,7 @@ import cc from 'classcat'
 import Stars from 'stars'
 
 export interface RatingProps {
-  className?: Classcat.Class
+  className?: string
   score?: number
   ratings: number
   children: string

@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 export interface TitleProps {
   readonly id?: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: ReactNode
   readonly headingLevel?: number | string
 }

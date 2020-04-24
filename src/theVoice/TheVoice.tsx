@@ -3,7 +3,7 @@ import Title from 'title'
 
 export interface TheVoiceProps {
   readonly id?: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: ReactNode
   readonly isInverted?: boolean
 }
