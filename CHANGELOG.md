@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `Hint` close icon was cropped when the hint content was too long.
 - [...]
 
 # v29.3.0 (24/04/2020)

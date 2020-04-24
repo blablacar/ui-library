@@ -225,6 +225,9 @@ exports[`Hint Default rendering (above) 1`] = `
 .c2 p {
   margin: 0;
   padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2 .kirk-button {
@@ -571,6 +574,9 @@ exports[`Hint Default rendering (below) 1`] = `
 .c2 p {
   margin: 0;
   padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c2 .kirk-button {

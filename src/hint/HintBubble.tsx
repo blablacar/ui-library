@@ -65,6 +65,7 @@ export default styled(HintBubble)`
   & p {
     margin: 0;
     padding: 0;
+    flex: 1;
   }
 
   & .kirk-button {
