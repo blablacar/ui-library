@@ -54,8 +54,8 @@ export interface TextFieldProps extends CommonFormFields {
   labelledBy?: string
   onChange?: (obj: OnChangeParameters) => void
   onClear?: () => void
-  className?: Classcat.Class
-  errorClassName?: Classcat.Class
+  className?: string
+  errorClassName?: string
   error?: errorField
   addon?: JSX.Element
   label?: string

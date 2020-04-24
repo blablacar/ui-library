@@ -20,7 +20,7 @@ export interface ButtonProps extends A11yProps {
   readonly children: string | number | React.ReactNode
   readonly type?: string
   readonly href?: string | JSX.Element
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly title?: string
   readonly status?: ButtonStatus
   readonly focus?: boolean

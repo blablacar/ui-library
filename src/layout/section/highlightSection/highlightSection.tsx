@@ -3,8 +3,8 @@ import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
 import SubHeader from 'subHeader'
 
 export interface HighlightSectionProps {
-  readonly className?: Classcat.Class
-  readonly contentClassName?: Classcat.Class
+  readonly className?: string
+  readonly contentClassName?: string
   readonly children: React.ReactNode
   readonly title?: string
 }

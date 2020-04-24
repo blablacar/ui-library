@@ -21,7 +21,7 @@ export enum LoaderLayoutMode {
 }
 
 export interface LoaderProps {
-  className?: Classcat.Class
+  className?: string
   inline?: boolean // Deprecated, use layoutMode instead.
   size?: number
   done?: boolean

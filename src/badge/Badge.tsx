@@ -3,7 +3,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 export interface BadgeProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly children: string | JSX.Element | number
   readonly ariaLabel?: string
 }

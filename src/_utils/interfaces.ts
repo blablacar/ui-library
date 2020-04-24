@@ -1,7 +1,7 @@
 export interface CommonFieldsProps {
   readonly id?: string
   readonly name: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly value: string
   readonly disabled?: boolean
   readonly autoFocus?: boolean

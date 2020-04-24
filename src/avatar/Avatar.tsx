@@ -7,7 +7,7 @@ import Badge from 'badge'
 import CheckIcon from 'icon/checkIcon'
 
 export interface AvatarProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly image?: string
   readonly alt?: string
   readonly isSmall?: boolean

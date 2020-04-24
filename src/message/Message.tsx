@@ -11,7 +11,7 @@ export interface MessageProps {
   readonly date?: string
   readonly active?: boolean
   readonly author?: string | JSX.Element
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly messageAnnotation?: string
 }
 

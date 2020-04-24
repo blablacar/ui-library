@@ -12,8 +12,8 @@ const DrawerGlobalStyles = createGlobalStyle`
 
 export interface DrawerProps {
   readonly children: string | JSX.Element
-  readonly className?: Classcat.Class
-  readonly innerClassName?: Classcat.Class
+  readonly className?: string
+  readonly innerClassName?: string
   readonly onOpen?: () => void
   readonly onClose?: () => void
   readonly onTransitionEnd?: (open: boolean) => void

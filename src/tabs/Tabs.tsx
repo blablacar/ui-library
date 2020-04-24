@@ -22,8 +22,8 @@ export interface TabsProps {
   readonly activeTabId: string
   readonly onChange?: Function
   readonly status?: TabStatus
-  readonly className?: Classcat.Class
-  readonly tabsClassName?: Classcat.Class
+  readonly className?: string
+  readonly tabsClassName?: string
 }
 
 interface TabsState {

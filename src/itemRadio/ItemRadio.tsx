@@ -16,7 +16,7 @@ export interface ItemRadioProps extends A11yProps {
   readonly name: string
   readonly value: string | number
   readonly data?: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly labelTitle?: string
   readonly dataInfo?: string
   readonly checked?: boolean

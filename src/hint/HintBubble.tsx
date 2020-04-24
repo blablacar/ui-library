@@ -14,7 +14,7 @@ export enum HintBubblePosition {
 
 export interface HintBubbleProps extends A11yProps {
   title: string
-  className?: Classcat.Class
+  className?: string
   onClose: () => void
   closeButtonTitle?: string
   description?: string

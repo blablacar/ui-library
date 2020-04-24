@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 export interface MarketingMessageProps {
   readonly children: React.ReactNode
-  readonly className?: Classcat.Class
+  readonly className?: string
 }
 
 const MarketingMessage = ({ children, className }: MarketingMessageProps) => (

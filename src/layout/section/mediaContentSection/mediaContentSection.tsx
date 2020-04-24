@@ -7,7 +7,7 @@ import Text, { TextTagType } from 'text'
 import Button from 'button'
 
 export interface MediaContentSectionProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly mediaUrl: string
   readonly title: string
   readonly content?: string

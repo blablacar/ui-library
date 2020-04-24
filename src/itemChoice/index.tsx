@@ -22,7 +22,7 @@ export interface ItemChoiceProps extends A11yProps {
   readonly dataInfo?: string
   readonly leftAddon?: JSX.Element
   readonly rightAddon?: JSX.Element
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly href?: string | JSX.Element
   readonly status?: ItemStatus
   readonly style?: ItemChoiceStyle

@@ -3,7 +3,7 @@ import cc from 'classcat'
 import Title from 'title'
 
 export interface EmptyStateProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly image: string
   readonly text: string
   readonly button?: JSX.Element

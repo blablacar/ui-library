@@ -15,7 +15,7 @@ export enum ItemStatus {
 
 export interface ItemProps extends A11yProps {
   readonly chevron?: boolean
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean

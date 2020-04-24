@@ -23,8 +23,8 @@ export type ModalProps = Readonly<{
   onClose: () => void
   isOpen?: boolean
   children?: React.ReactNode
-  className?: Classcat.Class
-  modalContentClassName?: Classcat.Class
+  className?: string
+  modalContentClassName?: string
   closeOnEsc?: boolean
   closeOnOutsideClick?: boolean
   displayCloseButton?: boolean

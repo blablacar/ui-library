@@ -7,8 +7,8 @@ export enum SectionContentSize {
 }
 
 export interface BaseSectionProps {
-  readonly className?: Classcat.Class
-  readonly contentClassName?: Classcat.Class
+  readonly className?: string
+  readonly contentClassName?: string
   readonly backgroundStyle?: object
   readonly tagName?: string
   readonly role?: string

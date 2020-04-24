@@ -5,7 +5,7 @@ import ItemsList, { ItemsListDivider } from 'itemsList'
 
 export interface MenuProps {
   readonly children: React.ReactElement<ItemChoiceProps>[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly withSeparators?: boolean
 }
 

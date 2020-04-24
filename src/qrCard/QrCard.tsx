@@ -7,7 +7,7 @@ import SubHeader from 'subHeader'
 
 export interface QrCardProps {
   readonly ariaLabel?: string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly imageUrl: string
   readonly itemMainTitle?: string
   readonly itemMainInfo?: string

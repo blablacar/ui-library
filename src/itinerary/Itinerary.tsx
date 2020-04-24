@@ -15,7 +15,7 @@ export interface ItineraryProps {
   readonly ariaLabelledBy?: string
   readonly ariaLabel?: string
   readonly places: Place[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly fromAddon?: string
   readonly toAddon?: string
   readonly fromAddonAriaLabel?: string

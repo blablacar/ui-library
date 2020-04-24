@@ -6,7 +6,7 @@ import ItemsList from 'itemsList'
 export interface ItemRadioGroupProps {
   readonly name: string
   readonly children: React.ReactElement<ItemRadioProps>[]
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly value?: string | number | boolean
   readonly onChange?: (obj: OnChangeParameters) => void
   readonly onClick?: (obj: OnChangeParameters) => void

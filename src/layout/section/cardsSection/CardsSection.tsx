@@ -8,7 +8,7 @@ type CardsProps = TripCardProps | QrCardProps
 
 export interface CardsSectionProps {
   readonly children: React.ReactElement<CardsProps>[] | React.ReactElement<CardsProps>
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly width?: string
 }
 

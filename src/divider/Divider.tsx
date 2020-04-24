@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 export interface DividerProps {
-  readonly className?: Classcat.Class
+  readonly className?: string
 }
 
 const Divider = ({ className }: DividerProps) => (

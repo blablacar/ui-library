@@ -4,7 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 export interface UneditableTextFieldProps {
   readonly children: JSX.Element | string
-  readonly className?: Classcat.Class
+  readonly className?: string
   readonly addOn?: JSX.Element
   readonly href?: JSX.Element | string
   readonly ellipsis?: boolean
