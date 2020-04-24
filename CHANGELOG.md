@@ -7,7 +7,6 @@
 
 - **[FIX]** `Hint` close icon was cropped when the hint content was too long.
 - **[UPDATE]** Add new `ItemEditableInfo` widget.
-- [...]
 
 # v29.3.0 (24/04/2020)
 
