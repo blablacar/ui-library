@@ -4,7 +4,6 @@ import Icon from 'icon/chevronIcon'
 import Button, { ButtonStatus } from 'button'
 import { AutoCompleteProps } from 'autoComplete'
 import { useFocusTrap } from '_utils/useFocusTrap'
-import { useOverflowHiddenOnDocument } from '_utils/useOverflowHiddenOnDocument'
 
 export type AutoCompleteSectionProps = Omit<
   AutoCompleteProps,
@@ -27,8 +26,6 @@ export const AutoCompleteSection = ({
 }: AutoCompleteSectionProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useFocusTrap(ref, onClose)
-
-  useOverflowHiddenOnDocument()
 
   const backButton = (
     <Button status={ButtonStatus.UNSTYLED} isBubble onClick={onClose}>

@@ -49,4 +49,12 @@ describe('useFocusTrap', () => {
     wrapper.unmount()
     expect(deactivate).toHaveBeenCalled()
   })
+
+  it('Should set overflow hidden on html tag and reset it to visible when unmounting', () => {
+    const wrapper = mount(<TestComponent />)
+    const htmlNode = document.querySelector('html')
+    expect(htmlNode.style.overflow).toEqual('hidden')
+    wrapper.unmount()
+    expect(htmlNode.style.overflow).toEqual('visible')
+  })
 })

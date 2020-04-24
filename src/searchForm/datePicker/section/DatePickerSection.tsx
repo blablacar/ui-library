@@ -5,7 +5,6 @@ import Section from 'layout/section/baseSection'
 import ChevronIcon from 'icon/chevronIcon'
 import Item from '_utils/item'
 import { useFocusTrap } from '_utils/useFocusTrap'
-import { useOverflowHiddenOnDocument } from '_utils/useOverflowHiddenOnDocument'
 
 export interface DatePickerSectionProps extends DatePickerProps {
   title: string
@@ -15,8 +14,6 @@ export interface DatePickerSectionProps extends DatePickerProps {
 export const DatePickerSection = ({ onClose, ...props }: DatePickerSectionProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useFocusTrap(ref, onClose)
-
-  useOverflowHiddenOnDocument()
 
   return (
     <div ref={ref} role="dialog" className={props.className}>

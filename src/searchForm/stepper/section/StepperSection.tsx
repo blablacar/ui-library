@@ -7,7 +7,6 @@ import Item from '_utils/item'
 import { Button } from 'index'
 import { ButtonStatus } from 'button'
 import { useFocusTrap } from '_utils/useFocusTrap'
-import { useOverflowHiddenOnDocument } from '_utils/useOverflowHiddenOnDocument'
 
 export interface StepperSectionProps extends StepperProps {
   itemTitle: string
@@ -30,10 +29,7 @@ export const StepperSection = ({
     value: props.value,
   })
   const ref = useRef<HTMLDivElement>(null)
-
   useFocusTrap(ref, onClose)
-
-  useOverflowHiddenOnDocument()
 
   return (
     <div ref={ref} role="dialog" className={className}>

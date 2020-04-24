@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import createFocusTrap from 'focus-trap'
+import { KEYS } from '_utils/keycodes'
 
-const ESCAPE_KEY = 'Escape'
 /**
  * This custom hook will trap the focus in the component as long.
  * ESC key is listened and will trigger a way out of the focus trap
@@ -14,7 +14,7 @@ export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: 
   const elementToReturnFocusTo = useRef(document.activeElement as HTMLElement)
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
-      if (event.code === ESCAPE_KEY) {
+      if (event.code === KEYS.ESCAPE) {
         event.stopPropagation()
         onClose()
       }
@@ -23,6 +23,7 @@ export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: 
     const focusTrap = createFocusTrap(ref.current)
     focusTrap.activate()
     ref.current.addEventListener('keydown', handleKeydown)
+    document.querySelector('html').style.overflow = 'hidden'
 
     return () => {
       // Wait for next tick so the browser can set the focus on previous element
@@ -31,6 +32,7 @@ export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: 
       })
       focusTrap.deactivate()
       ref.current.removeEventListener('keydown', handleKeydown)
+      document.querySelector('html').style.overflow = 'visible'
     }
   }, [onClose])
 }
