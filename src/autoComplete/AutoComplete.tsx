@@ -234,7 +234,9 @@ export default class AutoComplete extends Component<AutoCompleteProps, AutoCompl
     // is still scheduled to be called while the user has modified the query
     // during that lapse of time. Therefore, the check below verify the real input value
     // against the searchForItemsMinChars prop.
-    if (!this.hasMinCharsForSearch(this.state.textfieldValue)) return
+    if (!this.hasMinCharsForSearch(this.state.textfieldValue)) {
+      return
+    }
 
     this.busyTimeout = window.setTimeout(this.showBusy, this.props.busyTimeout)
     this.props.searchForItems(this.state.query)

@@ -19,12 +19,7 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "prettier",
-    "@typescript-eslint",
-    "jsx-a11y"
-  ],
+  "plugins": ["react", "prettier", "@typescript-eslint", "jsx-a11y"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -44,6 +39,7 @@
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "import/order": 0,
+    "curly": [2, "all"],
     "import/prefer-default-export": 0,
     "indent": 0,
     "lines-between-class-members": 0,

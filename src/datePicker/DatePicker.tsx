@@ -153,7 +153,9 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
   scrollToSelectedMonth = () => {
     const { initialDate, initialMonth } = this.props
 
-    if (initialDate === null) return
+    if (initialDate === null) {
+      return
+    }
 
     // Get the number of months between initialMonth (first month) and initialDate (selected date)
     // This gives us the index to select the right month in '.DayPicker-Month' array
@@ -166,7 +168,9 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       month
     ] as HTMLElement
 
-    if (typeof selectedMonth === 'undefined') return
+    if (typeof selectedMonth === 'undefined') {
+      return
+    }
 
     const top = selectedMonth.offsetTop + this.props.stickyPositionTop
     if (top > window.innerHeight + window.pageYOffset) {
