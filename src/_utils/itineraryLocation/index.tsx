@@ -85,7 +85,7 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
 
   &.kirk-itineraryLocation--withToAddon .kirk-itineraryLocation-road {
     min-height: 48px;
-    background-color: ${color.fadedText} !important;
+    background-color: ${color.gray} !important;
   }
 `
 

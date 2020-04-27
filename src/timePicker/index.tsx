@@ -15,8 +15,8 @@ export const StyledTimePicker = styled(TimePicker)`
     font-weight: 500;
     line-height: 1;
     background-color: ${color.white};
-    color: ${color.primaryText};
-    border: 1px solid ${color.border};
+    color: ${color.midnightGreen};
+    border: 1px solid ${color.gray};
     border-radius: 2em;
     box-sizing: border-box;
     cursor: pointer;
@@ -24,11 +24,11 @@ export const StyledTimePicker = styled(TimePicker)`
   }
 
   &:hover {
-    background-color: ${color.lightBackground};
+    background-color: ${color.lightGray};
   }
 
   &.focus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    border: ${inputBorderSize.focus} solid ${color.blue};
     padding: 1px;
   }
 
@@ -39,7 +39,7 @@ export const StyledTimePicker = styled(TimePicker)`
     top: calc(50% - 8px);
     display: inline-block;
     padding: 5px;
-    border: solid ${color.primary};
+    border: solid ${color.blue};
     border-width: 0 2px 2px 0;
     vertical-align: middle;
     transform: rotate(45deg);
@@ -50,12 +50,12 @@ export const StyledTimePicker = styled(TimePicker)`
   }
 
   &[aria-disabled='true'] {
-    color: ${color.disabled};
+    color: ${color.lightGray};
     border-color: transparent;
   }
 
   &[aria-disabled='true']::after {
-    border-color: ${color.disabled};
+    border-color: ${color.lightGray};
   }
 
   & > select,

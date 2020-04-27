@@ -92,11 +92,7 @@ const renderAddon = (type: string, addon: string, ariaLabel: string) => {
         {type === 'from' && <div className="kirk-itineraryLocation-road" aria-hidden="true" />}
       </div>
       <div className="kirk-itineraryLocation-label">
-        <Text
-          tag={TextTagType.PARAGRAPH}
-          display={TextDisplayType.CAPTION}
-          textColor={color.fadedText}
-        >
+        <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.CAPTION} textColor={color.gray}>
           {addon}
         </Text>
       </div>

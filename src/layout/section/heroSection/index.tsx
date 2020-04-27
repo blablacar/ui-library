@@ -24,11 +24,11 @@ const DEPRECATED_STYLES = css`
   }
 
   & .hero-info-title--display1 {
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
   }
 
   & .hero-info-text-title {
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
   }
@@ -60,17 +60,17 @@ const DEPRECATED_LARGE_MEDIA_STYLES = css`
   }
 
   & .hero-info-title--display1 {
-    color: ${color.textWithBackground};
+    color: ${color.white};
   }
 
   & .hero-info-text-title {
-    color: ${color.textWithBackground};
+    color: ${color.white};
   }
 `
 
 const StyledHeroSection = styled(HeroSection)`
   & {
-    background-color: ${color.defaultBackground};
+    background-color: ${color.white};
     position: relative;
     z-index: 1;
     height: 80vh;
@@ -130,17 +130,17 @@ const StyledHeroSection = styled(HeroSection)`
     padding-top: ${space.m};
     padding-bottom: ${space.m};
   }
-  
+
   & .hero-info-title--display1 {
-    color: ${color.textWithBackground};
+    color: ${color.white};
   }
 
   & .hero-info-text {
     margin: 0;
   }
-  
+
   & .hero-info-text-title {
-    color: ${color.textWithBackground};
+    color: ${color.white};
   }
 
   & .hero-content {

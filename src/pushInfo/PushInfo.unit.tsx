@@ -23,7 +23,7 @@ it('Should also have the correct icon.', () => {
   const pushInfo = renderer
     .create(
       <PushInfo
-        icon={<ProximityIcon iconColor={color.success} title="" />}
+        icon={<ProximityIcon iconColor={color.green} title="" />}
         headline="If it's green it's a win!"
         content="Green icons show meeting points closest to you!"
       />,

@@ -5,7 +5,7 @@ import Title from './Title'
 
 const StyledTitle = styled(Title)`
   & {
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     font-size: ${font.xl.size};
     font-weight: ${fontWeight.medium};
     line-height: ${font.xl.lineHeight};

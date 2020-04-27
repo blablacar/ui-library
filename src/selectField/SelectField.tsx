@@ -83,7 +83,7 @@ const SelectField = React.forwardRef(
             </option>
           ))}
         </select>
-        <ChevronIcon iconColor={color.icon} down />
+        <ChevronIcon iconColor={color.lightMidnightGreen} down />
       </div>
     )
   },

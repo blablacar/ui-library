@@ -33,7 +33,7 @@ If request is not loaded we display the loading state of these buttons. When loa
 
 ```js
 <Button status={ButtonStatus.PRIMARY} isBubble>
-  <ArrowIcon right iconColor={color.primary} />
+  <ArrowIcon right iconColor={color.blue} />
 </Button>
 ```
 

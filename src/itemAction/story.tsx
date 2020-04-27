@@ -50,7 +50,7 @@ stories.add('With left addon', () => {
       <ItemAction
         action={text('Action', 'Action')}
         subLabel={isSubLabel ? text('Secondary info', 'Info') : null}
-        leftAddon={<BubbleIcon iconColor={color.primary} />}
+        leftAddon={<BubbleIcon iconColor={color.blue} />}
         href="#"
       />
       <ItemAction

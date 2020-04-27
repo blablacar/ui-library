@@ -14,9 +14,9 @@ const RadioIcon = ({ isChecked = false, isLoading = false }: RadioIconProps) => 
     return <Loader size={24} inline />
   }
   if (isChecked) {
-    return <CircleIcon iconColor={color.primary} innerDisc />
+    return <CircleIcon iconColor={color.blue} innerDisc />
   }
-  return <CircleIcon iconColor={color.primary} />
+  return <CircleIcon iconColor={color.blue} />
 }
 
 export default RadioIcon

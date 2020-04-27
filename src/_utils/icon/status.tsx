@@ -17,7 +17,7 @@ export interface StatusProps extends IconProps {
 const StatusIcon = (props: StatusProps) => {
   const finalProps = {
     ...props,
-    iconColor: props.status === status.ON ? color.iconHighlight : props.iconColor,
+    iconColor: props.status === status.ON ? color.midnightGreen : props.iconColor,
   }
 
   return (
@@ -27,7 +27,7 @@ const StatusIcon = (props: StatusProps) => {
         {props.status === status.OFF && (
           <g fillRule="nonzero" strokeLinecap="round" strokeLinejoin="round">
             <path stroke={color.white} d="M1,24.5 L23.5,2" />
-            <path stroke={color.danger} d="M1,23.5 L23.5,1" />
+            <path stroke={color.red} d="M1,23.5 L23.5,1" />
           </g>
         )}
       </Fragment>

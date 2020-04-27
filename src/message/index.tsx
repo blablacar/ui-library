@@ -38,8 +38,8 @@ const StyledMessage = styled(Message)`
     padding: ${space.l};
     border-radius: ${radius.l};
     border-top-left-radius: 0;
-    background: ${color.lightBackground};
-    color: ${color.primaryText};
+    background: ${color.lightGray};
+    color: ${color.midnightGreen};
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
   }
@@ -49,7 +49,7 @@ const StyledMessage = styled(Message)`
   }
 
   &.kirk-active .kirk-label {
-    background: ${color.primaryText};
+    background: ${color.midnightGreen};
     color: ${color.white};
     border-top-left-radius: ${radius.l};
     border-bottom-right-radius: 0;

@@ -12,7 +12,7 @@ const StyledTabs = styled(Tabs)`
 
   & .kirk-tabs {
     margin-bottom: ${space.l};
-    border-bottom: 1px solid ${color.border};
+    border-bottom: 1px solid ${color.gray};
   }
 
   & .kirk-tablist {
@@ -39,7 +39,7 @@ const StyledTabs = styled(Tabs)`
     background: none;
     border: none;
     background-color: ${color.white};
-    color: ${color.primary};
+    color: ${color.blue};
     font-size: ${font.base.size};
     white-space: nowrap;
   }
@@ -69,7 +69,7 @@ const StyledTabs = styled(Tabs)`
   }
 
   & .kirk-tab-selected .kirk-tab {
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
   }
 
   & .kirk-tab:not(.kirk-tab-selected):hover {
@@ -90,7 +90,7 @@ const StyledTabs = styled(Tabs)`
     bottom: 0;
     width: 0;
     height: ${highlightHeight};
-    background-color: ${color.primaryText};
+    background-color: ${color.midnightGreen};
     transition-property: width, left;
     transition-duration: ${transition.duration.base};
     transition-timing-function: ease-in-out;

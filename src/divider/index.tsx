@@ -14,7 +14,7 @@ const StyledDivider = styled(Divider)`
     position: absolute;
     top: ${space.m};
     content: ' ';
-    border-top: solid ${color.divider} 1px;
+    border-top: solid ${color.lightGray} 1px;
     width: 100%;
   }
 `

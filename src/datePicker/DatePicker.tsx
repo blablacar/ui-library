@@ -125,7 +125,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
             onClick={() => props.onPreviousClick()}
             isBubble
           >
-            <ArrowIcon iconColor={color.primary} />
+            <ArrowIcon iconColor={color.blue} />
           </Button>
         )}
         {props.showNextButton && (
@@ -135,7 +135,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
             onClick={() => props.onNextClick()}
             isBubble
           >
-            <ArrowIcon right iconColor={color.primary} />
+            <ArrowIcon right iconColor={color.blue} />
           </Button>
         )}
       </div>

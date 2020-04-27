@@ -16,7 +16,7 @@ const StyledItem = styled(Item)`
     background: none;
   }
   &.kirk-item--clickable:hover {
-    background: ${color.hover};
+    background: ${color.lightGray};
   }
 
   &.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
@@ -95,7 +95,7 @@ const StyledItem = styled(Item)`
 
   /* Highlighted state */
   &.kirk-item--highlighted .kirk-text-title {
-    color: ${color.primary};
+    color: ${color.blue};
   }
 
   /* Button info */

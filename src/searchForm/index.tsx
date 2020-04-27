@@ -25,7 +25,7 @@ const positionDateStepper = '473px'
 const StyledSearchForm = styled(SearchForm)`
   & {
     box-sizing: border-box;
-    background-color: ${color.defaultBackground};
+    background-color: ${color.white};
     box-shadow: ${shadow.searchForm};
     padding: ${space.m};
     padding-right: 0;
@@ -49,7 +49,7 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-search-placeholder {
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
   }
 
   & .kirk-searchForm-textfield input {
@@ -57,7 +57,7 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-searchForm-button {
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
   }
 
   & .kirk-bullet--searchForm {
@@ -65,7 +65,7 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-searchForm-invert {
-    border-right: 1px solid ${color.inputBorder};
+    border-right: 1px solid ${color.lightGray};
   }
 
   & .kirk-searchForm-invert .kirk-icon {
@@ -78,7 +78,7 @@ const StyledSearchForm = styled(SearchForm)`
     border: none;
     font-size: inherit;
     font-family: inherit;
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     background: none;
     height: ${buttonHeight};
     box-sizing: border-box;
@@ -92,7 +92,7 @@ const StyledSearchForm = styled(SearchForm)`
   & .kirk-searchForm-from .kirk-search-button,
   & .kirk-searchForm-to .kirk-search-button {
     width: ${primaryFieldsWidth};
-    border-right: 1px solid ${color.inputBorder};
+    border-right: 1px solid ${color.lightGray};
     padding-left: ${space.m};
     line-height: ${componentSizes.bulletSizeSearch};
   }
@@ -112,14 +112,14 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-searchForm-date .kirk-search-button {
-    border-right: 1px solid ${color.inputBorder};
+    border-right: 1px solid ${color.lightGray};
   }
 
   & .kirk-searchForm-submit .kirk-search-button {
     width: ${submitButtonWidth};
     height: ${formHeight};
     border-radius: 0 ${radius.l} ${radius.l} 0;
-    background-color: ${color.primary};
+    background-color: ${color.blue};
     padding: 0;
   }
 

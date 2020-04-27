@@ -7,7 +7,7 @@ const wrapperHorizontalPadding = space.xl
 
 const StyledCardsSection = styled(CardsSection)`
   & {
-    background-color: ${color.lightBackground};
+    background-color: ${color.lightGray};
   }
 
   & .kirk-cardsSection {

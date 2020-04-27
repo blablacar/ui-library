@@ -53,7 +53,7 @@ const renderMainLabel = (label: string) => (
     className="kirk-itineraryLocation-label-text"
     tag={TextTagType.PARAGRAPH}
     display={TextDisplayType.TITLESTRONG}
-    textColor={color.primaryText}
+    textColor={color.midnightGreen}
   >
     {label}
   </Text>
@@ -65,7 +65,7 @@ const renderSubLabel = (label: ReactNode) =>
       className="kirk-itineraryLocation-label-text"
       tag={TextTagType.PARAGRAPH}
       display={TextDisplayType.CAPTION}
-      textColor={color.primaryText}
+      textColor={color.midnightGreen}
     >
       {label}
     </Text>

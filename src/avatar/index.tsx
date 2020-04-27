@@ -4,7 +4,7 @@ import Avatar from './Avatar'
 
 const StyledAvatar = styled(Avatar)`
   & {
-    border: 2px dashed ${color.border};
+    border: 2px dashed ${color.gray};
     box-sizing: border-box;
     border-radius: 50%;
     position: relative;
@@ -56,7 +56,7 @@ const StyledAvatar = styled(Avatar)`
     height: 18px;
     padding: 0;
     border-radius: 50%;
-    background-color: ${color.success};
+    background-color: ${color.green};
   }
 
   &.kirk-avatar--medium .kirk-badge.kirk-avatar-badge--idCheck,

@@ -22,7 +22,7 @@ const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
       <Fragment>
         <Text
           tag={TextTagType.PARAGRAPH}
-          textColor={color.primaryText}
+          textColor={color.midnightGreen}
           className="kirk-requestRecap-route"
         >
           {from && <span className="kirk-requestRecap-location">{from}</span>}
@@ -30,7 +30,7 @@ const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
             <ArrowIcon
               className="kirk-requestRecap-locationSeparator"
               size={separatorWidth}
-              iconColor={color.secondaryText}
+              iconColor={color.lightMidnightGreen}
               right
             />
           )}

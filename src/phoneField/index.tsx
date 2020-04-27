@@ -8,11 +8,11 @@ const StyledPhoneField = styled(PhoneField)`
   & .kirk-phoneField-wrapper--inline {
     display: flex;
     border-radius: ${radius.l};
-    background-color: ${color.inputBackground};
+    background-color: ${color.lightGray};
   }
 
   & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    border: ${inputBorderSize.focus} solid ${color.blue};
   }
 
   & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
@@ -49,7 +49,7 @@ const StyledPhoneField = styled(PhoneField)`
   }
 
   &.kirk-error .kirk-phoneField-wrapper--inline {
-    background: ${color.inputError};
+    background: ${color.lightRed};
     animation: phoneFieldError ${transition.duration.fast} ease-in-out;
   }
 
@@ -57,12 +57,12 @@ const StyledPhoneField = styled(PhoneField)`
   &.kirk-error .kirk-selectField .kirk-icon,
   &.kirk-error .kirk-textField-wrapper,
   &.kirk-error .kirk-textField .kirk-textField-wrapper input {
-    background: ${color.inputError};
-    border-color: ${color.inputError};
+    background: ${color.lightRed};
+    border-color: ${color.lightRed};
   }
 
   &.kirk-error .kirk-error-message {
-    color: ${color.danger};
+    color: ${color.red};
     display: block;
     padding: ${space.m};
   }

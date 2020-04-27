@@ -274,7 +274,7 @@ export default class TextField extends PureComponent<TextFieldProps, TextFieldSt
     }
 
     const iconProps = {
-      iconColor: color.secondaryText,
+      iconColor: color.lightMidnightGreen,
       size: '18',
     }
 

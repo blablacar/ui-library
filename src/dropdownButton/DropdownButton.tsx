@@ -28,9 +28,9 @@ const DropdownButton = ({
     ])}
   >
     <button aria-expanded={open} type="button" onClick={onClick}>
-      {iconPosition === 'left' && <ChevronIcon iconColor={color.icon} down />}
+      {iconPosition === 'left' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
       {children}
-      {iconPosition === 'right' && <ChevronIcon iconColor={color.icon} down />}
+      {iconPosition === 'right' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
     </button>
   </div>
 )

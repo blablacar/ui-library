@@ -11,9 +11,9 @@ const StyledUneditableTextField = styled(uneditableTextField)`
     align-items: center;
     min-height: ${inputHeight};
     padding: 0 ${space.l};
-    background-color: ${color.inputBackground};
+    background-color: ${color.lightGray};
     border-radius: ${radius.l};
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     font-size: ${font.base.size};
     line-height: ${inputHeight};
     text-decoration: none;

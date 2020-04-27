@@ -15,8 +15,8 @@ export interface MessagingSummaryItemProps {
   readonly hasUnreadMessages: boolean
 }
 
-const UNREAD_COLOR = color.primaryText
-const READ_COLOR = color.secondaryText
+const UNREAD_COLOR = color.midnightGreen
+const READ_COLOR = color.lightMidnightGreen
 
 const generateSubLabel = (subLabel: string | JSX.Element): JSX.Element => (
   <span className="kirk-messaging-summary-item-sub-label">{subLabel}</span>

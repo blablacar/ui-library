@@ -15,7 +15,7 @@ const StyledBadge = styled(Badge)`
     text-align: center;
     border-radius: 18px;
     border: 1px solid ${color.white};
-    background-color: ${color.danger};
+    background-color: ${color.red};
     color: ${color.white};
   }
 `

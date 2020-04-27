@@ -3,12 +3,12 @@ import { space, font, color, radius, componentSizes, shadow } from '_utils/brand
 export const overlayBaseStyle = `
   box-sizing: border-box;
   width: ${componentSizes.searchOverlayWidth};
-  border: 1px solid ${color.border};
+  border: 1px solid ${color.gray};
   border-radius: ${radius.l};
   padding: ${space.xl};
   padding-top: ${space.s};
   box-shadow: ${shadow.searchForm};
-  background: ${color.defaultBackground};
+  background: ${color.white};
 `
 
 export const sectionBaseStyle = `
@@ -18,7 +18,7 @@ export const sectionBaseStyle = `
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: ${color.defaultBackground};
+  background-color: ${color.white};
   overflow: auto;`
 
 export const autoCompleteBaseStyle = `

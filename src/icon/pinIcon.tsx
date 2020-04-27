@@ -25,7 +25,7 @@ export const PinIcon = (props: PinProps) => (
 PinIcon.defaultProps = {
   ...BaseIconDefaultProps,
   bgColor: 'none',
-  strokeColor: color.icon,
+  strokeColor: color.lightMidnightGreen,
 }
 
 export default React.memo(PinIcon)

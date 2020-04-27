@@ -67,15 +67,15 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
   get labelColor() {
     const { style, disabled } = this.props
     if (disabled) {
-      return color.fadedText
+      return color.gray
     }
     if (style === ItemChoiceStyle.RECOMMENDED) {
-      return color.primary
+      return color.blue
     }
     if (style === ItemChoiceStyle.SECONDARY) {
-      return color.secondaryText
+      return color.lightMidnightGreen
     }
-    return color.primaryText
+    return color.midnightGreen
   }
 
   render() {
@@ -104,13 +104,13 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
         leftTitle={label}
         leftTitleDisplay={isRecommended ? TextDisplayType.SUBHEADER : TextDisplayType.TITLE}
         leftBody={labelInfo}
-        leftBodyColor={disabled ? color.fadedText : color.secondaryText}
+        leftBodyColor={disabled ? color.gray : color.lightMidnightGreen}
         leftTitleColor={this.labelColor}
         rightTitle={data}
         rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
         rightTitleColor={this.labelColor}
         rightBody={dataInfo}
-        rightBodyColor={disabled ? color.fadedText : color.secondaryText}
+        rightBodyColor={disabled ? color.gray : color.lightMidnightGreen}
         leftAddon={leftAddon}
         rightAddon={this.rightAddon}
         href={!disabled ? href : ''}

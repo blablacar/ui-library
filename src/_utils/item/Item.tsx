@@ -184,7 +184,7 @@ const Item = (props: ItemProps) => {
       {rightAddon && <span className="kirk-item-rightAddon">{rightAddon}</span>}
       {chevron && (
         <span className="kirk-item-rightAddon">
-          <ChevronIcon iconColor={!isClickable ? color.fadedText : color.secondaryText} />
+          <ChevronIcon iconColor={!isClickable ? color.gray : color.lightMidnightGreen} />
         </span>
       )}
     </Tag>

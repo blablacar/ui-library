@@ -13,13 +13,13 @@ export enum Distances {
 const size = '20px'
 
 const getColorAndTitle = (index: string, value: string, title: string) => {
-  const defaultParams = { title: '', iconColor: color.disabled }
+  const defaultParams = { title: '', iconColor: color.lightGray }
   switch (value) {
     case Distances.CLOSE:
       return index === value
         ? {
             title: title || defaultParams.title,
-            iconColor: color.proximityClose,
+            iconColor: color.green,
           }
         : defaultParams
 
@@ -27,7 +27,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
       return index === value
         ? {
             title: title || defaultParams.title,
-            iconColor: color.proximityMiddle,
+            iconColor: color.yellow,
           }
         : defaultParams
 
@@ -35,7 +35,7 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
       return index === value
         ? {
             title: title || defaultParams.title,
-            iconColor: color.proximityFar,
+            iconColor: color.orange,
           }
         : defaultParams
 

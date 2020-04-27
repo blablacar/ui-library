@@ -56,7 +56,7 @@ stories.add(
         shadowed={boolean('shadowed', false)}
         {...commonProps}
       >
-        {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Secondary button')}
+        {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Secondary button')}
       </Button>
     </Section>
   ),
@@ -75,7 +75,7 @@ stories.add(
         shadowed={boolean('shadowed', false)}
         {...commonProps}
       >
-        {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Tertiary button')}
+        {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Tertiary button')}
       </Button>
     </Section>
   ),
@@ -107,7 +107,7 @@ stories.add('warning', () => (
 stories.add('unstyled', () => (
   <Section>
     <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
-      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Unstyled button')}
+      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Unstyled button')}
     </Button>
   </Section>
 ))
@@ -137,7 +137,7 @@ stories.add('icon + text', () => (
 stories.add('anchor button', () => (
   <Section>
     <Button isBubble={hasIcon()} status={ButtonStatus.PRIMARY} href="#" {...commonProps}>
-      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
+      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
     </Button>
   </Section>
 ))
@@ -158,7 +158,7 @@ stories.add('anchor button with link element', () => (
 stories.add('anchor button unstyled', () => (
   <Section>
     <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
-      {hasIcon() ? <ArrowIcon right iconColor={color.primary} /> : label('Anchor button')}
+      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
     </Button>
   </Section>
 ))

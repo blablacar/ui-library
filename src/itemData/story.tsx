@@ -31,7 +31,7 @@ stories.add('Default', () => {
         mainTitleButtonAddon={
           ismainTitleButtonAddon ? (
             <Button status={ButtonStatus.UNSTYLED} isBubble onClick={action('Info clicked')}>
-              <InfoIcon iconColor={color.primary} title="More info" />
+              <InfoIcon iconColor={color.blue} title="More info" />
             </Button>
           ) : null
         }

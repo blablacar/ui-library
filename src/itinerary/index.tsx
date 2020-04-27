@@ -18,7 +18,7 @@ const StyledItinerary = styled(Itinerary)`
   }
 
   & .kirk-itinerary--highlightRoad .kirk-itineraryLocation-road {
-    background-color: ${color.primaryText};
+    background-color: ${color.midnightGreen};
   }
 
   & .kirk-itineraryLocation-road {
@@ -29,7 +29,7 @@ const StyledItinerary = styled(Itinerary)`
     ); /* +4px to better hide behind small Bullets */
     position: relative;
     top: -1px; /* -1px to better hide behind small Bullets */
-    background-color: ${color.fadedText};
+    background-color: ${color.gray};
     margin: 0 auto;
   }
 
@@ -66,7 +66,7 @@ const StyledItinerary = styled(Itinerary)`
 
   /* road, only for -addon--from */
   & .kirk-itinerary-addon--from .kirk-itineraryLocation-road {
-    background-color: ${color.fadedText};
+    background-color: ${color.gray};
   }
 
   & .kirk-itineraryLocation-smallLabel .kirk-text {

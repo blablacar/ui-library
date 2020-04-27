@@ -77,9 +77,9 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
 
     const getIcon = () => {
       if (isWarning) {
-        return <WarningIcon {...iconProps} iconColor={color.danger} />
+        return <WarningIcon {...iconProps} iconColor={color.red} />
       }
-      return <InfoIcon {...iconProps} iconColor={color.info} />
+      return <InfoIcon {...iconProps} iconColor={color.blue} />
     }
 
     let confirmButtonStatus = isWarning ? ButtonStatus.WARNING : ButtonStatus.PRIMARY
@@ -111,7 +111,7 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
                 onClick={onClose}
                 title={closeButtonTitle}
               >
-                <CrossIcon size="24" iconColor={color.accent} />
+                <CrossIcon size="24" iconColor={color.blue} />
               </Button>
             )}
             <Button

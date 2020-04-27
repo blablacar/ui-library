@@ -6,7 +6,7 @@ import Text from './Text'
 
 const StyledText = styled(Text)`
   & {
-    color: ${props => (props.isInverted ? color.textWithBackground : '')};
+    color: ${props => (props.isInverted ? color.white : '')};
   }
 `
 
