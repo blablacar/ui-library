@@ -13,7 +13,6 @@ const StyledSuccessModal = styled(Modal)`
   .kirk-modal-dialog {
     display: flex;
     justify-content: center;
-    padding: 0;
     margin: 0 auto;
     width: 100%;
     border-radius: 0;
@@ -64,6 +63,7 @@ const Figure = styled.figure`
   @media (${responsiveBreakpoints.isMediaLarge}) {
     padding: 0;
     width: 33.33vh;
+    min-width: 33.33vh;
   }
 `
 
@@ -74,8 +74,6 @@ const Content = styled.div`
   padding: ${space.xl};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    flex: 1;
-    width: 66.66vh;
     height: auto;
   }
 `
@@ -84,6 +82,7 @@ const Content = styled.div`
 const SuccessTitle = styled.h1`
   display: flex;
   flex: 1;
+  justify-content: center;
   padding: ${space.xl};
 `
 
@@ -94,6 +93,7 @@ const SuccessAction = styled.div`
 const SuccessButton = styled(Button)`
   justify-content: center;
 
+  /* to increase specificity since button is declared with high specificity */
   & {
     min-width: 8rem;
   }
