@@ -68,7 +68,9 @@ export default class AutoCompleteList extends Component<
   onKeyboardEventArrowDown = (e: Event) => {
     e.preventDefault()
 
-    if (isEmpty(this.props.items)) return
+    if (isEmpty(this.props.items)) {
+      return
+    }
 
     const { highlightedIndex } = this.state
     const index =
