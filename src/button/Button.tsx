@@ -178,7 +178,7 @@ export default class Button extends PureComponent<ButtonProps, ButtonState> {
             bubble: isBubble || hasLoader,
             shadowed,
           },
-          'kirk-button',
+          'button',
         ),
         className,
       ]),

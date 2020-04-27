@@ -49,7 +49,7 @@ const Avatar = ({
 }: AvatarProps) => (
   <div
     className={cc([
-      prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'kirk-avatar-'),
+      prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'avatar-'),
       className,
       'kirk-avatar',
     ])}
