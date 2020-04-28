@@ -3,6 +3,7 @@
 - **[BREAKING CHANGE]** All `className` prop types have been changed to `string` instead of `Classcat.Class`
 - **[FIX]** Define `CardsSection`'s justify-content to be centered only in large screens
 - **[UPDATE]** Add focus trap & handling overflow on `searchForm` section components
+- **[UPDATE]** `Success-Modal` alignments and Storybook improvements (knobs)
 - [...]
 
 # v29.4.0 (24/04/2020)
