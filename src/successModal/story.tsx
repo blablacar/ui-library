@@ -36,7 +36,7 @@ class SuccessModalOpener extends Component<SuccessModalProps> {
           onClose={this.closeSuccessModal}
           isOpen={this.state.successModalOpen}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+          {text('SuccessText', 'Booking approved!\nBuddy will travel with you.')}
         </SuccessModal>
       </Section>
     )

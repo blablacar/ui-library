@@ -3,7 +3,8 @@
 - **[BREAKING CHANGE]** All `className` prop types have been changed to `string` instead of `Classcat.Class`
 - **[FIX]** Define `CardsSection`'s justify-content to be centered only in large screens
 - **[UPDATE]** Add focus trap & handling overflow on `searchForm` section components
-- **[UPDATE]** Add `searchForm` prop to `HeroSection`.
+- **[UPDATE]** Add `searchForm` prop to `HeroSection`
+- **[UPDATE]** `Success-Modal` alignments and Storybook improvements (knobs)
 - **[NEW]** Add `FocusVisibleProvider` and `useFocusVisible` utils to polyfill :focus-visible css pseudo class.
 - [...]
 
