@@ -11,7 +11,7 @@ const StyledTheVoice = styled(TheVoice)`
   }
 
   &.kirk-title--inverse {
-    color: ${color.textWithBackground};
+    color: ${color.white};
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {

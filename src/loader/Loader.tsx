@@ -88,7 +88,7 @@ class Loader extends PureComponent<LoaderProps> {
     return (
       <div className={cc([className, this.computeLayoutClass()])}>
         <div className={cc([{ 'kirk-loader--done': done }])} style={iconSize}>
-          {!done && <CircleIcon iconColor={color.success} size={size} spinning />}
+          {!done && <CircleIcon iconColor={color.green} size={size} spinning />}
           {done && <CheckIcon iconColor={color.white} size={size / 2} validate />}
         </div>
       </div>

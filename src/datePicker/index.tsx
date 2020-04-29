@@ -12,7 +12,7 @@ const StyledDatePicker = styled(DatePicker)`
     position: relative;
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     background-color: ${color.white};
   }
 
@@ -59,7 +59,7 @@ const StyledDatePicker = styled(DatePicker)`
     display: table-cell;
     padding: ${space.s} 0;
     cursor: pointer;
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     outline: none;
   }
 
@@ -80,19 +80,19 @@ const StyledDatePicker = styled(DatePicker)`
     right: 0;
     bottom: 0;
     left: 0;
-    border: ${color.divider} 2px solid;
+    border: ${color.lightGray} 2px solid;
     width: 36px;
     height: 36px;
     border-radius: 50%;
   }
 
   & .DayPicker-Day--disabled {
-    color: ${color.fadedText};
+    color: ${color.gray};
     cursor: default;
   }
   & .DayPicker-Day--selected span,
   & .DayPicker-Day:focus span {
-    background-color: ${color.primary};
+    background-color: ${color.blue};
     color: ${color.white};
   }
   & .DayPicker-Day span {

@@ -58,7 +58,7 @@ const StyledButton = styled(Button)`
   &.kirk-button-unstyled {
     background-color: transparent;
     border-radius: inherit;
-    color: ${color.accent};
+    color: ${color.blue};
     padding: inherit;
     display: inherit;
     line-height: inherit;
@@ -79,7 +79,7 @@ const StyledButton = styled(Button)`
   }
 
   &.kirk-button-primary {
-    background-color: ${color.primary};
+    background-color: ${color.blue};
     color: ${color.white};
   }
 
@@ -92,13 +92,13 @@ const StyledButton = styled(Button)`
   &.kirk-button-primary:hover,
   &.kirk-button-primary:focus,
   &.kirk-button-primary:active {
-    background-color: ${color.primaryActive};
+    background-color: ${color.darkBlue};
   }
 
   &.kirk-button-secondary {
     background-color: ${color.white};
-    border-color: ${color.border};
-    color: ${color.accent};
+    border-color: ${color.gray};
+    color: ${color.blue};
   }
   &.kirk-button-secondary.kirk-button-shadowed {
     border: none;
@@ -107,19 +107,19 @@ const StyledButton = styled(Button)`
   &.kirk-button-secondary:hover,
   &.kirk-button-secondary:focus,
   &.kirk-button-secondary:active {
-    background-color: ${color.secondaryActive};
+    background-color: ${color.gray};
   }
 
   &.kirk-button-tertiary {
     background-color: ${color.white};
     border-color: transparent;
-    color: ${color.accent};
+    color: ${color.blue};
   }
 
   &.kirk-button-tertiary:hover,
   &.kirk-button-tertiary:focus,
   &.kirk-button-tertiary:active {
-    background-color: ${color.secondaryActive};
+    background-color: ${color.gray};
   }
 
   &.kirk-button-loading {
@@ -151,7 +151,7 @@ const StyledButton = styled(Button)`
   }
 
   &.kirk-button-warning {
-    background-color: ${color.danger};
+    background-color: ${color.red};
     color: ${color.white};
   }
 

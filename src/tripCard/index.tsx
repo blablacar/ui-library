@@ -19,7 +19,7 @@ const StyledTripCard = styled(TripCard)`
   & .kirk-tripCard-badge {
     position: absolute;
     top: 0;
-    background: ${color.primary};
+    background: ${color.blue};
     padding: ${space.s} ${space.m};
     border-radius: 0 0 ${radius.m} ${radius.m};
   }
@@ -29,7 +29,7 @@ const StyledTripCard = styled(TripCard)`
   }
 
   & .kirk-item--highlighted .kirk-text-body {
-    color: ${color.primary};
+    color: ${color.blue};
   }
 
   & .kirk-tripCard-title + .kirk-tripCard-mainContainer {
@@ -135,7 +135,7 @@ const StyledTripCard = styled(TripCard)`
   }
 
   & .kirk-tripCard-passengers .kirk-tripCard-passengers-more {
-    background: ${color.iconHighlight};
+    background: ${color.midnightGreen};
     border-radius: 50%;
     width: 40px;
     height: 40px;

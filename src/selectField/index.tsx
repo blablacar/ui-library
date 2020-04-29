@@ -10,10 +10,10 @@ const StyledSelectField = styled(SelectField)`
     width: 100%;
     padding: 0 0 0 ${space.l};
     box-sizing: border-box;
-    color: ${color.primaryText};
-    background-color: ${color.inputBackground};
+    color: ${color.midnightGreen};
+    background-color: ${color.lightGray};
     border-radius: ${radius.l};
-    border: solid 1px ${color.inputBorder};
+    border: solid 1px ${color.lightGray};
     box-shadow: none;
   }
 
@@ -26,7 +26,7 @@ const StyledSelectField = styled(SelectField)`
     padding: 0 calc(${space.m} + ${space.xl}) 0 0;
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     box-shadow: none;
     background: transparent;
     appearance: none;
@@ -52,12 +52,12 @@ const StyledSelectField = styled(SelectField)`
     bottom: 0;
     margin: auto;
     right: ${space.m};
-    background: ${color.inputBackground};
+    background: ${color.lightGray};
     z-index: 0;
   }
 
   .kirk-selectField--hasFocus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    border: ${inputBorderSize.focus} solid ${color.blue};
   }
 
   .kirk-selectField--hasFocus select {

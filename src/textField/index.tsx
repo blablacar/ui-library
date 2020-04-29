@@ -13,15 +13,15 @@ const StyledTextfield = styled(Textfield)`
     position: relative;
     display: flex;
     box-sizing: border-box;
-    color: ${color.primaryText};
-    background-color: ${color.inputBackground};
+    color: ${color.midnightGreen};
+    background-color: ${color.lightGray};
     border-radius: ${radius.l};
-    border: solid ${inputBorderSize.default} ${color.inputBorder};
+    border: solid ${inputBorderSize.default} ${color.lightGray};
     box-shadow: none;
   }
 
   & .kirk-textField-wrapper--hasFocus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    border: ${inputBorderSize.focus} solid ${color.blue};
   }
 
   & .kirk-textField-wrapper--hasFocus input,
@@ -37,13 +37,13 @@ const StyledTextfield = styled(Textfield)`
     appearance: none;
     border: 0;
     border-radius: ${radius.l};
-    background-color: ${color.inputBackground};
-    color: ${color.primaryText};
+    background-color: ${color.lightGray};
+    color: ${color.midnightGreen};
     flex: 1;
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     width: 100%;
-    caret-color: ${color.inputCaret};
+    caret-color: ${color.blue};
     padding: ${space.l};
   }
 
@@ -65,7 +65,7 @@ const StyledTextfield = styled(Textfield)`
   }
 
   & input::placeholder {
-    color: ${color.inputPlaceholder};
+    color: ${color.lightMidnightGreen};
   }
 
   & input::-ms-clear {
@@ -93,35 +93,35 @@ const StyledTextfield = styled(Textfield)`
   }
 
   & input:focus {
-    border-color: ${color.inputBorder};
+    border-color: ${color.lightGray};
     box-shadow: none;
     outline: none;
   }
 
   &.kirk-error .kirk-textField-wrapper {
-    background: ${color.inputError};
-    border: solid 1px ${color.inputError};
+    background: ${color.lightRed};
+    border: solid 1px ${color.lightRed};
     animation: textFieldError ${transition.duration.fast} ease-in-out;
   }
 
   &.kirk-error input {
-    background-color: ${color.inputError};
+    background-color: ${color.lightRed};
   }
 
   &.kirk-error .kirk-error-message {
-    color: ${color.danger};
+    color: ${color.red};
     display: block;
     padding: ${space.m};
   }
 
   & label {
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     padding: 0 ${space.m} ${space.s} ${space.m};
   }
 
   & .kirk-button {
     background-color: transparent;
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     height: auto;
   }
 

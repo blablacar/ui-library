@@ -13,7 +13,7 @@ stories.addDecorator(withKnobs)
 
 const leftAction = (
   <Button isBubble status={ButtonStatus.UNSTYLED} onClick={() => {}} aria-label="back">
-    <ArrowIcon size="24" iconColor={color.primary} />
+    <ArrowIcon size="24" iconColor={color.blue} />
   </Button>
 )
 
@@ -23,7 +23,7 @@ const rightAction = (
       padding: '12px',
       fontSize: '18px',
       lineHeight: '20px',
-      color: color.primary,
+      color: color.blue,
     }}
   >
     Need help?
@@ -36,7 +36,7 @@ const centerContent = (
       style={{
         fontSize: '16px',
         lineHeight: '20px',
-        color: color.primaryText,
+        color: color.midnightGreen,
       }}
     >
       Trip
@@ -46,7 +46,7 @@ const centerContent = (
         display: 'block',
         fontSize: '13px',
         lineHeight: '20px',
-        color: color.secondaryText,
+        color: color.lightMidnightGreen,
       }}
     >
       Paris → Lyon

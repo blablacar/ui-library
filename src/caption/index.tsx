@@ -6,12 +6,12 @@ const StyledCaption = styled(Caption)`
   & {
     font-size: ${font.s.size};
     line-height: ${font.s.lineHeight};
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
   }
   .kirk-link {
     font-size: ${font.s.size};
     line-height: ${font.s.lineHeight};
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
   }
 `
 

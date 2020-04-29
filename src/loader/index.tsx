@@ -32,7 +32,7 @@ const StyledLoader = styled(Loader)`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${color.success};
+    background-color: ${color.green};
     color: ${color.white};
     border-radius: 50%;
   }

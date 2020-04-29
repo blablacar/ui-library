@@ -17,7 +17,7 @@ const StyledStepper = styled(Stepper)`
     padding: 0 ${space.l};
     margin: 0;
     border: none;
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     text-align: center;
     flex-grow: 1;
     align-self: center;

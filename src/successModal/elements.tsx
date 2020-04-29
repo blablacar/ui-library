@@ -8,7 +8,7 @@ import Button from 'button'
 const StyledSuccessModal = styled(Modal)`
   padding: 0;
   text-align: center;
-  background-color: ${color.successBackground};
+  background-color: ${color.green};
 
   .kirk-modal-dialog {
     display: flex;
@@ -18,7 +18,7 @@ const StyledSuccessModal = styled(Modal)`
     padding-top: 0;
     padding-bottom: 0;
     border-radius: 0;
-    background-color: ${color.successBackground};
+    background-color: ${color.green};
   }
 
   .kirk-modal-body {

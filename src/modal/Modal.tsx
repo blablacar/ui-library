@@ -182,7 +182,7 @@ export default class Modal extends Component<ModalProps> {
                       onClick={this.props.onClose}
                       title={this.props.closeButtonTitle}
                     >
-                      <CrossIcon size="18" iconColor={color.accent} />
+                      <CrossIcon size="18" iconColor={color.blue} />
                     </Button>
                   )}
                   <div className={`${baseClassName}-body`}>{this.props.children}</div>

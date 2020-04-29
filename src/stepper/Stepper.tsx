@@ -207,7 +207,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           isBubble
           {...this.createButtonListeners(this.decrement)}
         >
-          <MinusIcon iconColor={isMin ? color.disabled : color.primary} size={buttonSize} />
+          <MinusIcon iconColor={isMin ? color.lightGray : color.blue} size={buttonSize} />
         </Button>
         <div
           aria-live="polite"
@@ -226,7 +226,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
           isBubble
           {...this.createButtonListeners(this.increment)}
         >
-          <PlusIcon iconColor={isMax ? color.disabled : color.primary} size={buttonSize} />
+          <PlusIcon iconColor={isMax ? color.lightGray : color.blue} size={buttonSize} />
         </Button>
       </div>
     )

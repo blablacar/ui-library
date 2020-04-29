@@ -5,7 +5,7 @@ import HighlightSection from './highlightSection'
 
 const StyledHighlightSection = styled(HighlightSection)`
   & {
-    background-color: ${color.success};
+    background-color: ${color.green};
     padding-bottom: ${space.xl};
   }
 
@@ -14,7 +14,7 @@ const StyledHighlightSection = styled(HighlightSection)`
   }
 
   & .kirk-subheader {
-    color: ${color.textWithBackground};
+    color: ${color.white};
     font-size: ${font.xl.size};
     padding-top: ${space.xl};
     padding-bottom: ${space.xl};

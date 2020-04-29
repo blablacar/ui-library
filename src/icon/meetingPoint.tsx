@@ -11,8 +11,8 @@ export interface MeetingPointIconProps extends Icon {
 }
 
 export const MeetingPointIcon = (props: MeetingPointIconProps) => {
-  const strokeColor = props.active ? color.white : color.primary
-  const fillColor = props.active ? color.primary : color.white
+  const strokeColor = props.active ? color.white : color.blue
+  const fillColor = props.active ? color.blue : color.white
   const className = cc([props.className, { 'kirk-icon-shadowed': props.shadowed }])
 
   return (

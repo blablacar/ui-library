@@ -7,7 +7,7 @@ const StyledPushInfo = styled(PushInfo)`
   & {
     display: flex;
     align-items: center;
-    background: ${color.pushBackground};
+    background: ${color.midnightGreen};
     color: ${color.white};
     border-radius: ${radius.l};
     font-size: ${font.base.size};

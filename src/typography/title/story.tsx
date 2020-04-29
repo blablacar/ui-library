@@ -17,7 +17,7 @@ stories.add('TextTitle', () => (
         {text('Text1', 'The quick\n brown fox jumps\n over the lazy\n dog')}
       </TextTitle>
     </h1>
-    <h1 style={{ backgroundColor: color.primary }}>
+    <h1 style={{ backgroundColor: color.blue }}>
       <TextTitle isInverted>
         {text('Text2', 'The quick brown fox jumps over the lazy dog')}
       </TextTitle>

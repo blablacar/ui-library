@@ -8,12 +8,12 @@ const StyledBullet = styled(Bullet)`
     width: ${componentSizes.bulletSize};
     height: ${componentSizes.bulletSize};
     background-color: ${color.white};
-    border: 2px solid ${color.primaryText};
+    border: 2px solid ${color.midnightGreen};
     border-radius: 50%;
   }
 
   &.kirk-bullet--addon {
-    border-color: ${color.border};
+    border-color: ${color.gray};
   }
 
   &.kirk-bullet--small {
@@ -39,18 +39,18 @@ const StyledBullet = styled(Bullet)`
   }
 
   &.kirk-bullet--map-active {
-    border-color: ${color.polylinePrimary};
-    box-shadow: 0 0 0 1px ${color.polylineStrokePrimary};
+    border-color: ${color.midnightGreenDetail};
+    box-shadow: 0 0 0 1px ${color.midnightGreen};
   }
 
   &.kirk-bullet--map-inactive {
-    border-color: ${color.polylineSecondary};
-    box-shadow: 0 0 0 1px ${color.polylineStrokeSecondary};
+    border-color: ${color.gray};
+    box-shadow: 0 0 0 1px ${color.lightMidnightGreen};
   }
 
   &.kirk-bullet--search {
     border-width: 4px;
-    border-color: ${color.secondaryText};
+    border-color: ${color.lightMidnightGreen};
   }
 `
 export { BulletTypes, BulletProps } from './Bullet'

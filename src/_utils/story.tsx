@@ -30,21 +30,10 @@ const styles: { [name: string]: React.CSSProperties } = {
   },
 }
 
-function getBrightness(hex: string) {
-  /* eslint-disable no-bitwise */
-  const rgb = parseInt(hex.substring(1), 16) // convert rrggbb to decimal
-  const r = (rgb >> 16) & 0xff // extract red
-  const g = (rgb >> 8) & 0xff // extract green
-  const b = (rgb >> 0) & 0xff // extract blue
-
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b // per ITU-R BT.709
-  /* eslint-enable no-bitwise */
-}
-
 const renderColors = (c: string) => {
   const style = {
     ...styles.colorTile,
-    color: getBrightness(color[c]) < 120 ? '#FFF' : '#000',
+    color: '#000',
     backgroundColor: color[c],
   }
   return (

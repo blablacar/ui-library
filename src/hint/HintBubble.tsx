@@ -36,7 +36,7 @@ export const HintBubble = (props: HintBubbleProps): JSX.Element => {
         status={ButtonStatus.UNSTYLED}
         aria-controls={a11yProps.id}
       >
-        <CrossIcon size={18} iconColor={color.textWithBackground} />
+        <CrossIcon size={18} iconColor={color.white} />
       </Button>
     </aside>
   )
@@ -50,8 +50,8 @@ export default styled(HintBubble)`
     justify-content: space-between;
     align-items: flex-start;
     padding: ${space.l};
-    background-color: ${color.pushBackground};
-    color: ${color.textWithBackground};
+    background-color: ${color.midnightGreen};
+    color: ${color.white};
     border-radius: ${radius.l};
     box-shadow: ${shadow.icon};
   }
@@ -88,7 +88,7 @@ export default styled(HintBubble)`
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid ${color.pushBackground};
+    border-top: 8px solid ${color.midnightGreen};
   }
 
   &.bubble-arrow--below::after {
@@ -101,6 +101,6 @@ export default styled(HintBubble)`
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid ${color.pushBackground};
+    border-bottom: 8px solid ${color.midnightGreen};
   }
 `

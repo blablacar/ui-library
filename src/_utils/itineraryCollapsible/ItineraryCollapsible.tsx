@@ -89,7 +89,7 @@ export default class ItineraryCollapsible extends PureComponent<ItineraryCollaps
       >
         <div aria-hidden={!this.state.collapsed} className="kirk-itineraryCollapsible-collapsed">
           <Bullet type={BulletTypes.SMALL} />
-          <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.BODY} textColor={color.link}>
+          <Text tag={TextTagType.PARAGRAPH} display={TextDisplayType.BODY} textColor={color.blue}>
             {label}
           </Text>
         </div>

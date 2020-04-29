@@ -2,11 +2,12 @@ interface Color {
   [propName: string]: string
 }
 
-const palette: Color = {
+export const color: Color = {
   white: '#FFF',
   gray: '#DDD',
   lightGray: '#EDEDED',
   midnightGreen: '#054752',
+  midnightGreenDetail: '#3D5C62',
   lightMidnightGreen: '#708C91',
   blue: '#00AFF5',
   darkBlue: '#008FC1',
@@ -15,6 +16,9 @@ const palette: Color = {
   yellow: '#FFCA0C',
   red: '#F53F5B',
   lightRed: '#FDD8DE',
+  facebookBrand: '#4267B2',
+  vkBrand: '#4680C2',
+  tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
 type Font = {
@@ -136,62 +140,6 @@ export const responsiveBreakpoints = {
   small: smallBreakPointThreshold,
   isMediaLarge: `min-width: ${largeBreakPointThreshold}`,
   isMediaSmall: `max-width: ${smallBreakPointThreshold}`,
-}
-
-export const color: Color = {
-  primary: palette.blue,
-  accent: palette.blue,
-  primaryText: palette.midnightGreen,
-  secondaryText: palette.lightMidnightGreen,
-  fadedText: palette.gray,
-  textWithBackground: palette.white,
-
-  border: palette.gray,
-  disabled: palette.lightGray,
-  divider: palette.lightGray,
-
-  icon: palette.lightMidnightGreen,
-  iconHighlight: palette.midnightGreen,
-  facebookBrand: '#4267B2',
-  vkBrand: '#4680C2',
-
-  link: palette.blue,
-  defaultBackground: palette.white,
-  lightBackground: palette.lightGray,
-  inputBackground: palette.lightGray,
-  pushBackground: palette.midnightGreen,
-  warningBackground: palette.midnightGreen,
-  successBackground: palette.green,
-  inputBorder: palette.lightGray,
-  inputBorderFocus: palette.blue,
-  inputError: palette.lightRed,
-  inputPlaceholder: palette.lightMidnightGreen,
-  inputCaret: palette.blue,
-  hover: palette.lightGray,
-
-  success: palette.green,
-  info: palette.blue,
-  danger: palette.red,
-  white: palette.white,
-
-  proximityClose: palette.green,
-  proximityMiddle: palette.yellow,
-  proximityFar: palette.orange,
-  proximityDisabled: palette.lightGray,
-
-  priceLow: palette.green,
-  priceMedium: palette.orange,
-  priceHigh: palette.red,
-
-  primaryActive: palette.darkBlue,
-  secondaryActive: palette.gray,
-
-  polylinePrimary: '#3D5C62',
-  polylineStrokePrimary: palette.midnightGreen,
-  polylineSecondary: palette.gray,
-  polylineStrokeSecondary: palette.lightMidnightGreen,
-
-  tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
 export const pxToInteger = (size: string): number => parseInt(size.replace('px', ''), 10)

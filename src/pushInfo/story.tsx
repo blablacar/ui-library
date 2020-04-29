@@ -23,7 +23,7 @@ stories.add('default', () => (
 stories.add('with icon', () => (
   <Section>
     <PushInfo
-      icon={<ProximityIcon iconColor={color.success} title="" />}
+      icon={<ProximityIcon iconColor={color.green} title="" />}
       headline={text('headline', "If it's green it's a win!")}
       content={text('content', 'Green icons show meeting points closest to you!')}
     />

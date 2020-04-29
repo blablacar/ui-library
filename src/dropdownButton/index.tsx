@@ -13,7 +13,7 @@ const StyledDropdownButton = styled(DropdownButton)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${color.primary};
+    color: ${color.blue};
     background: none;
     border: 0;
     font-size: ${font.base.size};

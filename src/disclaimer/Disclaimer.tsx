@@ -21,7 +21,7 @@ export interface DisclaimerProps {
 
 const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => (
   <Button href={deprecatedHelpUrl} status={ButtonStatus.UNSTYLED} isBubble>
-    <QuestionIcon iconColor={color.primary} />
+    <QuestionIcon iconColor={color.blue} />
   </Button>
 )
 

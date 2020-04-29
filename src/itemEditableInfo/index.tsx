@@ -36,14 +36,14 @@ const ItemEditableInfo = (props: ItemEditableInfoProps) => {
     // The value is modifiable and get the primary color (i.e. the action
     // bright blue color).
     leftTitleColor: color.lightMidnightGreen,
-    leftBodyColor: color.primary,
+    leftBodyColor: color.blue,
   }
 
   if (readonly) {
     delete extraProps.href
     extraProps.isClickable = false
     // Override the primary color from the non modifiable value.
-    extraProps.leftBodyColor = color.primaryText
+    extraProps.leftBodyColor = color.midnightGreen
   }
 
   return (

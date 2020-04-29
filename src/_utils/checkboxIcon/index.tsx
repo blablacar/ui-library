@@ -15,9 +15,9 @@ const CheckboxIcon = ({ isChecked = false, isLoading = false }: CheckboxIconProp
     return <Loader size={24} inline />
   }
   if (isChecked) {
-    return <CheckIcon iconColor={color.white} backgroundColor={color.primary} thin />
+    return <CheckIcon iconColor={color.white} backgroundColor={color.blue} thin />
   }
-  return <CircleIcon iconColor={color.primary} />
+  return <CircleIcon iconColor={color.blue} />
 }
 
 export default CheckboxIcon

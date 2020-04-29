@@ -10,7 +10,7 @@ const StyledHamburgerButton = styled(HamburgerButton)`
     height: 48px;
     border: 0;
     background: transparent;
-    color: ${color.icon};
+    color: ${color.lightMidnightGreen};
     cursor: pointer;
     user-select: none;
   }

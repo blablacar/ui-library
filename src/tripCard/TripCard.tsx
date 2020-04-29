@@ -151,7 +151,7 @@ const TripCard = ({
             <Item
               className="kirk-tripCard-top-item"
               leftAddon={React.cloneElement(statusInformation.icon, {
-                iconColor: statusInformation.highlighted ? color.primary : color.icon,
+                iconColor: statusInformation.highlighted ? color.blue : color.lightMidnightGreen,
               })}
               leftTitle={statusInformation.text}
               leftTitleDisplay={TextDisplayType.BODY}

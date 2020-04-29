@@ -56,7 +56,7 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
     display: flex;
     justify-content: flex-end;
     padding: ${space.xl};
-    background-color: ${color.warningBackground};
+    background-color: ${color.midnightGreen};
   }
 
   &.kirk-confirmationModal--large .kirk-confirmationModal-footer {

@@ -5,19 +5,19 @@ import Why from './Why'
 const StyledWhy = styled(Why)`
   & {
     padding: ${space.m} ${space.l} ${space.m} ${space.m};
-    border: 1px solid ${color.border};
+    border: 1px solid ${color.gray};
     border-radius: ${radius.xl};
     display: inline-flex;
     align-items: center;
     font-size: ${font.base.size};
     cursor: pointer;
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     background-color: ${color.white};
     -webkit-tap-highlight-color: ${color.tapHighlight};
   }
 
   &:hover {
-    background-color: ${color.lightBackground};
+    background-color: ${color.lightGray};
   }
 
   :focus:not(.focus-visible) {

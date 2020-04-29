@@ -21,7 +21,7 @@ const StyledSnackbar = styled(Snackbar)`
     width: 100%;
     max-width: 614px;
     overflow: hidden;
-    background-color: ${color.danger};
+    background-color: ${color.red};
     padding: ${space.l} ${space.xl};
   }
 

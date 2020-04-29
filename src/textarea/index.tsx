@@ -21,27 +21,27 @@ const StyledTextarea = styled(Textarea)`
     position: relative;
     display: flex;
     box-sizing: border-box;
-    color: ${color.primaryText};
-    background-color: ${color.inputBackground};
+    color: ${color.midnightGreen};
+    background-color: ${color.lightGray};
     border-radius: ${radius.l};
     border: solid ${inputBorderSize.focus} transparent;
   }
 
   & .kirk-textarea-wrapper.kirk-textarea-wrapper--hasFocus {
-    border-color: ${color.inputBorderFocus};
+    border-color: ${color.blue};
   }
 
   & textarea {
     outline: none;
     appearance: none;
     border: 0;
-    background-color: ${color.inputBackground};
-    color: ${color.primaryText};
+    background-color: ${color.lightGray};
+    color: ${color.midnightGreen};
     flex: 1;
     font-size: ${font.base.size};
     line-height: ${font.base.lineHeight};
     width: 100%;
-    caret-color: ${color.inputCaret};
+    caret-color: ${color.blue};
     padding: 0 calc(${space.l} + 1px - ${inputBorderSize.focus});
     margin: calc(${space.l} + 1px - ${inputBorderSize.focus}) 0;
     box-sizing: content-box;
@@ -61,7 +61,7 @@ const StyledTextarea = styled(Textarea)`
   }
 
   & textarea::placeholder {
-    color: ${color.inputPlaceholder};
+    color: ${color.lightMidnightGreen};
   }
 
   & textarea {
@@ -74,29 +74,29 @@ const StyledTextarea = styled(Textarea)`
   }
 
   &.kirk-error .kirk-textarea-wrapper {
-    background: ${color.inputError};
-    border: solid 1px ${color.inputError};
+    background: ${color.lightRed};
+    border: solid 1px ${color.lightRed};
     animation: textFieldError ${transition.duration.fast} ease-in-out;
   }
 
   &.kirk-error textarea {
-    background-color: ${color.inputError};
+    background-color: ${color.lightRed};
   }
 
   &.kirk-error .kirk-error-message {
-    color: ${color.danger};
+    color: ${color.red};
     display: block;
     padding: ${space.m};
   }
 
   & label {
-    color: ${color.primaryText};
+    color: ${color.midnightGreen};
     padding: 0 ${space.m} ${space.s} ${space.m};
   }
 
   & .kirk-button {
     background-color: transparent;
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
   }
 
   & .kirk-textarea-button {

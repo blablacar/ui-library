@@ -4,7 +4,7 @@ import { color, font, fontWeight } from '_utils/branding'
 import TextStyle from '../index'
 
 const TextBody = styled(TextStyle)`
-  color: ${color.secondaryText};
+  color: ${color.lightMidnightGreen};
   font-size: ${font.base.size};
   font-weight: ${fontWeight.regular};
   line-height: ${font.base.lineHeight};

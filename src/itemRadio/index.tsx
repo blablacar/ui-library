@@ -14,7 +14,7 @@ const StyledItemRadio = styled(ItemRadio)`
     padding: calc(${space.l} - ${inputBorderSize.focus}) 0;
   }
   &.focus {
-    border: ${inputBorderSize.focus} solid ${color.inputBorderFocus};
+    border: ${inputBorderSize.focus} solid ${color.blue};
   }
 `
 

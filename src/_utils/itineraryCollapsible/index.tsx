@@ -49,7 +49,7 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
     left: 2px;
     width: ${componentSizes.roadWidth};
     height: 4px;
-    background-color: ${color.primaryText};
+    background-color: ${color.midnightGreen};
     border-radius: ${radius.s};
   }
 

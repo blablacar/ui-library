@@ -10,7 +10,7 @@ const StyledRating = styled(Rating)`
   }
 
   & span {
-    color: ${color.secondaryText};
+    color: ${color.lightMidnightGreen};
     margin-left: ${space.s};
   }
 `

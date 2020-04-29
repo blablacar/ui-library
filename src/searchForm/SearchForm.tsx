@@ -178,7 +178,7 @@ const SearchForm = ({
         </div>
         <div className="kirk-searchForm-invert">
           <button type="button" className="kirk-search-button" onClick={invertFromTo}>
-            <DoubleArrowIcon iconColor={color.primary} />
+            <DoubleArrowIcon iconColor={color.blue} />
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
@@ -297,7 +297,7 @@ const SearchForm = ({
 
       <div className="kirk-searchForm-submit">
         <button type="submit" className="kirk-search-button">
-          <SearchIcon iconColor={color.textWithBackground} strokeWidth="2" />
+          <SearchIcon iconColor={color.white} strokeWidth="2" />
         </button>
       </div>
     </form>

@@ -9,7 +9,7 @@ const StyledCard = styled(Card)`
     box-shadow: ${shadow.card};
     list-style-type: none;
     transition: box-shadow ${transition.duration.base} ${transition.easing.default};
-    background-color: ${color.defaultBackground};
+    background-color: ${color.white};
   }
 
   &:hover {
