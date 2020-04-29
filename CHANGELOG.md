@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v31.0.0 (29/04/2020)
+
 - **[BREAKING CHANGE]** Removed color abstraction and only use palette instead
 
 # v30.0.0 (28/04/2020)
