@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Add missing "kirk" prefix to base class name of `DatePicker` and `ButtonGroup`.
+  [...]
 
 # v31.0.1 (30/04/2020)
 
