@@ -35,8 +35,15 @@ const tripCardConfig = () => ({
   price: text('Price', '8,00€'),
   flags: {
     ladiesOnly: boolean('Ladies only', true),
+    aloneInTheBack: boolean('Alone in the back', true),
     maxTwo: boolean('Max 2 in the back', true),
     autoApproval: boolean('Auto approval', true),
+  },
+  titles: {
+    ladiesOnly: text('Flag title for Ladies only', 'Ladies Only'),
+    aloneInTheBack: text('Flag title for Alone in the back', 'Alone in the back'),
+    maxTwo: text('Flag title for Max 2 in the back', 'Max 2 in the back'),
+    autoApproval: text('Flag title for Auto approval', 'Auto approval'),
   },
   metaUrl: text('Meta URL'),
   statusInformation: boolean('Status information', true)

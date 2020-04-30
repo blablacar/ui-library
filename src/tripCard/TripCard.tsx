@@ -4,6 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 import Card from '_utils/card'
 import Avatar from 'avatar'
+import AloneInTheBackIcon from 'icon/aloneInTheBackIcon'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
@@ -38,11 +39,13 @@ export interface TripCardProps {
   price?: string
   flags?: {
     ladiesOnly?: boolean
+    aloneInTheBack?: boolean
     maxTwo?: boolean
     autoApproval?: boolean
   }
   titles?: {
     ladiesOnly?: string
+    aloneInTheBack?: string
     maxTwo?: string
     autoApproval?: string
   }
@@ -220,6 +223,9 @@ const TripCard = ({
                   <div className="kirk-tripCard-bottom-right">
                     <div className="kirk-tripCard-flags">
                       {flags.ladiesOnly && <LadyIcon title={titles.ladiesOnly || ''} />}
+                      {flags.aloneInTheBack && (
+                        <AloneInTheBackIcon title={titles.aloneInTheBack || ''} />
+                      )}
                       {flags.maxTwo && <ComfortIcon title={titles.maxTwo || ''} />}
                       {flags.autoApproval && <LightningIcon title={titles.autoApproval || ''} />}
                     </div>
