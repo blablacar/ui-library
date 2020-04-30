@@ -23,10 +23,9 @@ const StyledSuccessModal = styled(Modal)`
 
   .kirk-modal-body {
     display: flex;
+    min-height: -webkit-fill-available;
     min-height: 100vh;
     /* to avoid scroll on webkit browsers when they have a top bar */
-    min-height: -moz-available;
-    min-height: -webkit-fill-available;
     flex-direction: column;
 
     @media (${responsiveBreakpoints.isMediaLarge}) {
@@ -55,17 +54,26 @@ const Media = styled.div`
 
 const Figure = styled.figure`
   display: flex;
-  margin: 0;
+  margin-top: calc(2 * ${space.xxl});
   justify-content: center;
   align-items: center;
-  padding-top: calc(2 * ${space.xxl});
-  height: 33.33vh;
-  min-height: 33.33vh;
+  height: 33.33%;
+  max-height: 33.33%;
+
+  img {
+    height: 100%;
+    max-width: 305px; /* Magic Numbers from spec */
+    max-height: 240px; /* Magic Numbers from spec */
+  }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    padding: 0;
-    width: 33.33vh;
+    margin: 0;
+    width: 33.33%;
     min-width: 33.33vh;
+
+    img {
+      width: 100%;
+    }
   }
 `
 
@@ -73,7 +81,6 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: ${space.xl};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     height: auto;
@@ -85,15 +92,22 @@ const SuccessTitle = styled.h1`
   display: flex;
   flex: 1;
   justify-content: center;
-  padding: ${space.xl};
+  margin: 0; /*reset h1*/
+  padding: ${space.xl} 0 32px; /* TheVoice spacing*/
+  white-space: pre-line;
 `
 
 const SuccessAction = styled.div`
-  padding: ${space.xl};
+  padding-bottom: ${space.xl};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    padding-bottom: 0;
+  }
 `
 
 const SuccessButton = styled(Button)`
   justify-content: center;
+  margin: ${space.xl};
 
   /* to increase specificity since button is declared with high specificity */
   & {
