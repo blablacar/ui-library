@@ -215,7 +215,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
       <div
         ref={this.dayPickerContainer}
         className={cc([
-          BASE_CLASSNAME,
+          `kirk-${BASE_CLASSNAME}`,
           className,
           prefix({ [orientation]: true }, BASE_CLASSNAME),
           prefix({ [layoutClassName]: true }, BASE_CLASSNAME),

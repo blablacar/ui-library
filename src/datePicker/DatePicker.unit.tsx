@@ -5,6 +5,11 @@ import DayPicker, { NavbarElementProps, CaptionElementProps } from 'react-day-pi
 import DatePicker, { DatePickerOrientation } from './DatePicker'
 
 describe('DatePicker', () => {
+  it('Should apply the base className ', () => {
+    const datepicker = shallow(<DatePicker />)
+    expect(datepicker.prop('className')).toContain('kirk-datepicker')
+  })
+
   describe('renderNavbar', () => {
     const navbarProps: Partial<NavbarElementProps> = {
       className: '',

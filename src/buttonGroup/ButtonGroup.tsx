@@ -23,7 +23,7 @@ const ButtonGroup = ({
   loadingIndex = null,
 }: ButtonGroupProps) => {
   const classNames = [
-    BASE_CLASSNAME,
+    `kirk-${BASE_CLASSNAME}`,
     className,
     prefix(
       {

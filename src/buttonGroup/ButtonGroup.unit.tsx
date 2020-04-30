@@ -1,10 +1,23 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import ButtonGroup from './ButtonGroup'
 import Button, { ButtonStatus } from 'button'
 
 describe('Button Group', () => {
+  it('Should apply the base className ', () => {
+    const btnGroup = mount(
+      <ButtonGroup>
+        <Button>Hello</Button>
+        <Button>Hello</Button>
+      </ButtonGroup>,
+    )
+
+    // Can't use `expect(btnGroup.prop('className')).toContain('kirk-button-group')`
+    // because `kirk-button-group` is contained in `kirk-button-group-column`.
+    expect(btnGroup.getDOMNode().classList.contains('kirk-button-group')).toBe(true)
+  })
+
   it('Should apply the row className if the inline prop is set to true', () => {
     const btnGroup = shallow(
       <ButtonGroup isInline>
