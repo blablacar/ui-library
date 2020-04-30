@@ -19,13 +19,11 @@ const StyledSuccessModal = styled(Modal)`
     padding-bottom: 0;
     border-radius: 0;
     background-color: ${color.green};
+    min-height: 100%;
   }
 
   .kirk-modal-body {
     display: flex;
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
-    /* to avoid scroll on webkit browsers when they have a top bar */
     flex-direction: column;
 
     @media (${responsiveBreakpoints.isMediaLarge}) {
