@@ -1,23 +1,15 @@
 import styled from 'styled-components'
-
-import { color, font, responsiveBreakpoints, space } from '_utils/branding'
+import { space, color, responsiveBreakpoints } from '_utils/branding'
 
 import TheVoice from './TheVoice'
 
 const StyledTheVoice = styled(TheVoice)`
-  & {
+  margin: 0;
+  padding: ${space.xl} 0 calc(${space.xl} + ${space.m}); /* 32px it's not en scale but on spec :() */
+  color: ${props => (props.isInverted ? color.white : '')};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
     text-align: center;
-    font-size: ${font.xl.size};
-    margin: ${space.xxl} 0;
-  }
-
-  &.kirk-title--inverse {
-    color: ${color.white};
-  }
-
-  @media (${responsiveBreakpoints.isMediaSmall}) {
-    text-align: left;
-    margin: ${space.xl} 0;
   }
 `
 
