@@ -4,6 +4,7 @@ import { shallow, mount } from 'enzyme'
 import Text from 'text'
 import Avatar from 'avatar'
 import TripCard from './TripCard'
+import AloneInTheBackIcon from 'icon/aloneInTheBackIcon'
 import ComfortIcon from 'icon/comfortIcon'
 import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
@@ -34,6 +35,7 @@ const mockedProps = {
   },
   flags: {
     ladiesOnly: true,
+    aloneInTheBack: true,
     maxTwo: true,
     autoApproval: true,
   },
@@ -84,6 +86,7 @@ describe('TripCard component', () => {
   it('Should have only the Ladies Only icon', () => {
     const tripCard = shallow(<TripCard {...mockedProps} flags={{ ladiesOnly: true }} />)
     expect(tripCard.find(LadyIcon).exists()).toBe(true)
+    expect(tripCard.find(AloneInTheBackIcon).exists()).toBe(false)
     expect(tripCard.find(ComfortIcon).exists()).toBe(false)
     expect(tripCard.find(LightningIcon).exists()).toBe(false)
   })

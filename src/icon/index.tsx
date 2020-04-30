@@ -1,4 +1,5 @@
 import AirConditioningIcon from './airConditioning'
+import AloneInTheBackIcon from './aloneInTheBackIcon'
 import ArrowIcon from './arrowIcon'
 import AudioIcon from './audio'
 import AvatarIcon from './avatarIcon'
@@ -106,6 +107,7 @@ import ZoomOutIcon from './zoomOut'
 
 export {
   AirConditioningIcon,
+  AloneInTheBackIcon,
   ArrowIcon,
   AudioIcon,
   AvatarIcon,
