@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { color } from '_utils/branding'
 
 import TopBar from './TopBar'

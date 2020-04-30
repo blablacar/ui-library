@@ -1,11 +1,12 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, number, select } from '@storybook/addon-knobs'
+import { number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import Section from 'layout/section/baseSection'
-import spec from './specifications/stepper.md'
 import Stepper, { StepperDisplay } from 'stepper'
+
+import spec from './specifications/stepper.md'
 
 const stories = storiesOf('Widgets|Stepper', module)
 stories.addDecorator(withKnobs)

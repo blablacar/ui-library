@@ -1,8 +1,9 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import Section from 'layout/section/baseSection'
+
 import QrCard from './index'
 
 const stories = storiesOf('Widgets|QrCard', module)

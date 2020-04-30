@@ -1,4 +1,5 @@
-import { useState, useContext, useCallback } from 'react'
+import { useCallback, useContext, useState } from 'react'
+
 import { FocusVisibleContext } from '_utils/focusVisibleProvider'
 
 export const useFocusVisible = () => {

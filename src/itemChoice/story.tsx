@@ -1,11 +1,11 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
-import Section from 'layout/section/baseSection'
-import ItemChoice, { ItemChoiceStatus, ItemChoiceStyle } from 'itemChoice'
+import { storiesOf } from '@storybook/react'
+
 import ComfortIcon from 'icon/comfortIcon'
+import ItemChoice, { ItemChoiceStatus, ItemChoiceStyle } from 'itemChoice'
+import Section from 'layout/section/baseSection'
 
 import specs from './specifications/index.md'
 

@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 
 import {
-  space,
   color,
+  componentSizes,
+  font,
   radius,
   responsiveBreakpoints,
   shadow,
-  font,
-  componentSizes,
+  space,
 } from '_utils/branding'
+
 import SearchForm from './SearchForm'
 
 const formWidth = '928px'

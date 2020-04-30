@@ -1,9 +1,9 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
-import Section from 'layout/section/baseSection'
+import { storiesOf } from '@storybook/react'
+
 import Itinerary from 'itinerary'
+import Section from 'layout/section/baseSection'
 import Proximity, { Distances } from 'proximity'
 
 const stories = storiesOf('Widgets|Itinerary', module)

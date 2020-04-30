@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
+import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import CrossIcon from 'icon/crossIcon'
 import EyeIcon from 'icon/eyeIcon'
-import isEmpty from 'lodash.isempty'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 

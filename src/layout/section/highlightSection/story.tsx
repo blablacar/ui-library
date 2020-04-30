@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
+import BlankSeparator from 'blankSeparator'
 
 import HighlightSection from './index'
-import BlankSeparator from 'blankSeparator'
 
 const stories = storiesOf('Sections|HighlightSection', module)
 stories.addDecorator(withKnobs)

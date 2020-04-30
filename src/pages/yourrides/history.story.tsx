@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
-import TripCard from 'tripCard'
-import Section from 'layout/section/baseSection'
+import { storiesOf } from '@storybook/react'
+
 import BanIcon from 'icon/banIcon'
 import StarIcon from 'icon/starIcon'
-import TheVoice from 'theVoice'
-
 import LayoutNormalizer from 'layout/layoutNormalizer'
+import Section from 'layout/section/baseSection'
+import TheVoice from 'theVoice'
+import TripCard from 'tripCard'
 
 const stories = storiesOf('Pages|Your rides/History', module)
 

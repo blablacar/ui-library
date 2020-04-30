@@ -3,8 +3,9 @@ import { act } from 'react-dom/test-utils'
 import { mount, ReactWrapper } from 'enzyme'
 
 import { KEYS } from '_utils/keycodes'
-import { useFocusVisible } from './useFocusVisible'
+
 import FocusVisibleProvider from '.'
+import { useFocusVisible } from './useFocusVisible'
 
 let wrapper: ReactWrapper
 const ButtonComponent = () => {

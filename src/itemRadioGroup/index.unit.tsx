@@ -1,6 +1,6 @@
 import React from 'react'
-import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
 
 import ItemRadio from 'itemRadio'
 import { ItemRadioStatus } from 'itemRadio/ItemRadio'

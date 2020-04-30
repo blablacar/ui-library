@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
+import { assertModalSizes } from '_utils/assert'
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
+import CrossIcon from 'icon/crossIcon'
+import InfoIcon from 'icon/infoIcon'
+import WarningIcon from 'icon/warningIcon'
 import Modal, { ModalSize } from 'modal'
 import { ModalProps } from 'modal/Modal'
 import TheVoice from 'theVoice'
-import CrossIcon from 'icon/crossIcon'
-import WarningIcon from 'icon/warningIcon'
-import InfoIcon from 'icon/infoIcon'
-import { assertModalSizes } from '_utils/assert'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',

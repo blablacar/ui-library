@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Item from '_utils/item'
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
+import Item from '_utils/item'
 
 export interface ItemInfoProps extends A11yProps {
   readonly mainInfo: string

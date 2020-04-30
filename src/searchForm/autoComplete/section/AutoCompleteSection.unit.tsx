@@ -1,8 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+
 import AutoComplete from 'autoComplete'
-import AutoCompleteSection from './AutoCompleteSection'
 import ChevronIcon from 'icon/chevronIcon'
+
+import AutoCompleteSection from './AutoCompleteSection'
 
 describe('AutoCompleteSection', () => {
   it('should contains an AutoComplete component', () => {

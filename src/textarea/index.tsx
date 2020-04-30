@@ -1,12 +1,13 @@
 import styled from 'styled-components'
+
 import {
   color,
-  space,
-  font,
-  radius,
-  transition,
-  inputBorderSize,
   componentSizes,
+  font,
+  inputBorderSize,
+  radius,
+  space,
+  transition,
 } from '_utils/branding'
 
 import Textarea from './Textarea'

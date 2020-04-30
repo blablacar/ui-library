@@ -1,6 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
+
 import StyledPhoneField from '.'
 import PhoneField from './PhoneField'
 

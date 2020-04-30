@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
-import Section from 'layout/section/baseSection'
-import Icon from 'icon/chevronIcon'
-import Button, { ButtonStatus } from 'button'
-import { AutoCompleteProps } from 'autoComplete'
+
 import { useFocusTrap } from '_utils/useFocusTrap'
+import { AutoCompleteProps } from 'autoComplete'
+import Button, { ButtonStatus } from 'button'
+import Icon from 'icon/chevronIcon'
+import Section from 'layout/section/baseSection'
 
 export type AutoCompleteSectionProps = Omit<
   AutoCompleteProps,

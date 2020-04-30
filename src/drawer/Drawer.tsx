@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
-import { canUseDOM } from 'exenv'
 import cc from 'classcat'
+import { canUseDOM } from 'exenv'
 import { createGlobalStyle } from 'styled-components'
+
 import KEYCODES from '_utils/keycodes'
 
 const DrawerGlobalStyles = createGlobalStyle`

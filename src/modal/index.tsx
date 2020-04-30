@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+
 import {
+  color,
+  componentSizes,
+  modalSize,
+  radius,
   responsiveBreakpoints,
   space,
-  modalSize,
-  color,
-  radius,
-  componentSizes,
 } from '_utils/branding'
 
 import Modal from './Modal'

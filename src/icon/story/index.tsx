@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
 import { color } from '_utils/branding'
 
-import * as icons from './icons'
 import readme from './icon.md'
+import * as icons from './icons'
 
 /** @type {{colorTitle: React.CSSProperties}} */
 const styles: { [name: string]: React.CSSProperties } = {

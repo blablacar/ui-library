@@ -1,8 +1,9 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
+
+import Button, { ButtonStatus } from 'button'
 
 import ButtonGroup from './ButtonGroup'
-import Button, { ButtonStatus } from 'button'
 
 describe('Button Group', () => {
   it('Should apply the base className ', () => {

@@ -1,5 +1,6 @@
-import React, { useEffect, useState, ReactNode } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import debounce from 'lodash.debounce'
+
 import { responsiveBreakpoints } from '../branding'
 
 export enum MediaSize {

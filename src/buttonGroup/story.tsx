@@ -1,11 +1,11 @@
 import React from 'react'
-
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
 
-import ButtonGroup from 'buttonGroup'
 import Button, { ButtonStatus } from 'button'
+import ButtonGroup from 'buttonGroup'
 import Section from 'layout/section/baseSection'
+
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ButtonGroup', module)

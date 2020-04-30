@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { action } from '@storybook/addon-actions'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import Section from 'layout/section/baseSection'
-
 import SuccessModal, { SuccessModalProps } from 'successModal'
 
 import spec from './specifications/successModal.md'

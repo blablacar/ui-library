@@ -1,11 +1,11 @@
 import React from 'react'
+import cc from 'classcat'
 
+import Item from '_utils/item'
 import Avatar from 'avatar'
 import Rating from 'rating'
 import { TextDisplayType } from 'text'
-import Item from '_utils/item'
 import TextBody from 'typography/body'
-import cc from 'classcat'
 
 export interface ProfileProps {
   readonly className?: string

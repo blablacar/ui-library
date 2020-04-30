@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Item from '_utils/item'
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import { TextDisplayType } from 'text'
+import Item from '_utils/item'
 import Button from 'button/Button'
+import { TextDisplayType } from 'text'
 
 export interface ItemDataProps extends A11yProps {
   readonly data: string | JSX.Element

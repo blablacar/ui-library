@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import { color, space, modalSize } from '_utils/branding'
+
+import { color, modalSize, space } from '_utils/branding'
+
 import ConfirmationModal from './ConfirmationModal'
 
 const footerHeight = '96px' /* = padding + content */

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+
 import { transition } from '_utils/branding'
+
 import Transitions from './Transitions'
 
 const StyledTransitions = styled(Transitions)`

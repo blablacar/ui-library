@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import cc from 'classcat'
-import Stepper, { StepperProps, StepperDisplay } from 'stepper'
-import Divider from 'divider'
+
 import Item from '_utils/item'
+import Divider from 'divider'
 import StandardSeat from 'icon/standardSeat'
+import Stepper, { StepperDisplay, StepperProps } from 'stepper'
 
 export interface StepperOverlayProps extends StepperProps {
   itemTitle: string

@@ -1,13 +1,12 @@
 import React, { PureComponent, RefObject } from 'react'
-import { canUseDOM } from 'exenv'
 import cc from 'classcat'
+import { canUseDOM } from 'exenv'
+
 import { isTouchEventsAvailable } from '_utils'
-
+import { color, delay, font, pxToInteger, space } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
-import PlusIcon from 'icon/plusIcon'
 import MinusIcon from 'icon/minusIcon'
-
-import { color, delay, font, space, pxToInteger } from '_utils/branding'
+import PlusIcon from 'icon/plusIcon'
 
 export enum StepperDisplay {
   SMALL = 'small',

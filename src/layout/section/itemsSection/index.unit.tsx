@@ -2,6 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 import ItemInfo from 'itemInfo'
+
 import ItemsSection from './index'
 
 describe('ItemsSection', () => {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { FocusVisibleProvider } from '_utils/focusVisibleProvider'
-
-import { storiesOf } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
+import { FocusVisibleProvider } from '_utils/focusVisibleProvider'
 import Section from 'layout/section/baseSection'
 import Why from 'why'
 

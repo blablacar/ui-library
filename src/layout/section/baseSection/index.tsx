@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { responsiveBreakpoints, componentSizes, space } from '_utils/branding'
+
+import { componentSizes, responsiveBreakpoints, space } from '_utils/branding'
 
 import BaseSection from './baseSection'
 

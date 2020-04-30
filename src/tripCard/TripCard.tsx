@@ -2,17 +2,17 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
+import { color } from '_utils/branding'
 import Card from '_utils/card'
+import Item from '_utils/item'
 import Avatar from 'avatar'
 import AloneInTheBackIcon from 'icon/aloneInTheBackIcon'
 import ComfortIcon from 'icon/comfortIcon'
-import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
+import LightningIcon from 'icon/lightningIcon'
 import Star from 'icon/starIcon'
 import Itinerary from 'itinerary'
-import Item from '_utils/item'
 import Text, { TextDisplayType, TextTagType } from 'text'
-import { color } from '_utils/branding'
 
 /**
  * Display 5 passengers max.

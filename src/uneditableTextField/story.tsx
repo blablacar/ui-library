@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+
+import IconSearch from 'icon/searchIcon'
 import Section from 'layout/section/baseSection'
 import UneditableTextField from 'uneditableTextField'
-import IconSearch from 'icon/searchIcon'
 
 const stories = storiesOf('Widgets|UneditableTextField', module)
 stories.addDecorator(withKnobs)

@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+
 import Tabs, { TabsProps } from 'tabs'
 
 export interface TabsSectionProps {

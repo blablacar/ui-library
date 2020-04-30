@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
+import { canUseEventListeners } from 'exenv'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 

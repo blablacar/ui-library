@@ -1,7 +1,8 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import DayPicker, { CaptionElementProps, NavbarElementProps } from 'react-day-picker'
 import renderer from 'react-test-renderer'
-import DayPicker, { NavbarElementProps, CaptionElementProps } from 'react-day-picker'
+import { mount, shallow } from 'enzyme'
+
 import DatePicker, { DatePickerOrientation } from './DatePicker'
 
 describe('DatePicker', () => {

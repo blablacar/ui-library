@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Transition from 'react-transition-group/Transition'
 import cc from 'classcat'
+
 import { transition } from '_utils/branding'
 
 export enum AnimationType {

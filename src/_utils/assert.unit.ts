@@ -1,6 +1,7 @@
-import { assertModalSizes } from './assert'
-import { ModalSize } from 'modal/Modal'
 import { ConfirmationModalSize } from 'confirmationModal/ConfirmationModal'
+import { ModalSize } from 'modal/Modal'
+
+import { assertModalSizes } from './assert'
 
 describe('assertModalSizes', () => {
   it('Should throw if modal size is not in the allowed size list', () => {

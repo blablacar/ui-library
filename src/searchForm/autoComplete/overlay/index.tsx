@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+
 import { space } from '_utils/branding'
-import { overlayBaseStyle, autoCompleteBaseStyle } from 'searchForm/baseStyles'
+import { autoCompleteBaseStyle, overlayBaseStyle } from 'searchForm/baseStyles'
 
 import autoComplete from './AutoCompleteOverlay'
 

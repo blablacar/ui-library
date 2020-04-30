@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
+import cc from 'classcat'
+
+import { color } from '_utils/branding'
+import Item from '_utils/item'
 import Avatar from 'avatar'
 import { TextDisplayType } from 'text'
-import Item from '_utils/item'
-import { color } from '_utils/branding'
-import cc from 'classcat'
 
 export interface MessagingSummaryItemProps {
   readonly className?: string

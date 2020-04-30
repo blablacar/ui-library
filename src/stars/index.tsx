@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import Stars from './Stars'
 
 const StyledStars = styled(Stars)`

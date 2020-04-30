@@ -1,13 +1,14 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
 
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import ArrowIcon from 'icon/arrowIcon'
 import LockIcon from 'icon/lockIcon'
 import Section from 'layout/section/baseSection'
+
 import primaryDoc from './specifications/primary.md'
 import secondaryDoc from './specifications/secondary.md'
 import tertiaryDoc from './specifications/tertiary.md'

@@ -1,15 +1,16 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import TextTitle from 'typography/title'
 import { MediaSize } from '_utils/mediaSizeProvider'
 import AutoComplete from 'autoComplete/AutoComplete'
-import SearchForm from './SearchForm'
-import DatePickerOverlay from './datePicker/overlay'
-import StepperOverlay from './stepper/overlay'
+import TextTitle from 'typography/title'
+
 import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
+import DatePickerOverlay from './datePicker/overlay'
 import DatePickerSection from './datePicker/section'
+import SearchForm from './SearchForm'
+import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
 
 const today = new Date().toISOString()

@@ -1,9 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Loader, { LoaderLayoutMode } from './Loader'
-import { StyledCircleIcon } from 'icon/circleIcon'
 import { StyledCheckIcon } from 'icon/checkIcon'
+import { StyledCircleIcon } from 'icon/circleIcon'
+
+import Loader, { LoaderLayoutMode } from './Loader'
 
 jest.useFakeTimers()
 

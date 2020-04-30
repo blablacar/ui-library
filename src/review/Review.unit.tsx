@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 
 import Review from './index'
 

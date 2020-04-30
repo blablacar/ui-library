@@ -1,8 +1,8 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import ItemData from 'itemData'
 import Button from 'button'
+import ItemData from 'itemData'
 import Text from 'text'
 
 const defaultProps = {

@@ -1,4 +1,4 @@
-import { space, font, color, radius, componentSizes, shadow } from '_utils/branding'
+import { color, componentSizes, font, radius, shadow, space } from '_utils/branding'
 
 export const overlayBaseStyle = `
   box-sizing: border-box;

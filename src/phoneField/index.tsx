@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, radius, space, inputBorderSize, transition } from '_utils/branding'
+
+import { color, inputBorderSize, radius, space, transition } from '_utils/branding'
 import { selectHeight } from 'selectField/SelectField'
 
 import PhoneField from './PhoneField'

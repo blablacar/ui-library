@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { responsiveBreakpoints, space, font, radius } from '_utils/branding'
+
+import { font, radius, responsiveBreakpoints, space } from '_utils/branding'
 
 import MediaContentSection from './mediaContentSection'
 

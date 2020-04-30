@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
-import BaseIcon from '_utils/icon'
 import { color } from '_utils/branding'
+import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps, IconProps } from '_utils/icon/BaseIcon'
 
 export enum status {

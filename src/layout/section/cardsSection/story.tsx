@@ -1,11 +1,10 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
 
 import CardsSection from 'layout/section/cardsSection'
-import TripCard from 'tripCard'
 import QrCard from 'qrCard'
+import TripCard from 'tripCard'
 
 const stories = storiesOf('Sections|CardsSection', module)
 stories.addDecorator(withKnobs)

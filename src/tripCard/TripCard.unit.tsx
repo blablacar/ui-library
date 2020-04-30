@@ -1,15 +1,16 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import Text from 'text'
+import Card from '_utils/card'
 import Avatar from 'avatar'
-import TripCard from './TripCard'
 import AloneInTheBackIcon from 'icon/aloneInTheBackIcon'
 import ComfortIcon from 'icon/comfortIcon'
-import LightningIcon from 'icon/lightningIcon'
 import LadyIcon from 'icon/ladyIcon'
+import LightningIcon from 'icon/lightningIcon'
 import WarningIcon from 'icon/warningIcon'
-import Card from '_utils/card'
+import Text from 'text'
+
+import TripCard from './TripCard'
 
 const mockedProps = {
   href: '#',

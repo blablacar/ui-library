@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, radius, space, font } from '_utils/branding'
+
+import { color, font, radius, space } from '_utils/branding'
 
 import uneditableTextField from './UneditableTextField'
 

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+
 import { color, space } from '_utils/branding'
+
 import Snackbar from './Snackbar'
 
 const StyledSnackbar = styled(Snackbar)`

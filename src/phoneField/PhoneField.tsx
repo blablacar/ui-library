@@ -1,11 +1,12 @@
 import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
-import prefix from '_utils'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
+
+import prefix from '_utils'
+import { allCountries } from 'country-telephone-data'
 import SelectField from 'selectField'
 import TextField, { inputTypes } from 'textField'
-import { allCountries } from 'country-telephone-data'
 
 export type selectfield = HTMLSelectElement
 

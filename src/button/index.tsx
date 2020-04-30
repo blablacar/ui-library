@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, font, space, transition, componentSizes, shadow } from '_utils/branding'
+
+import { color, componentSizes, font, shadow, space, transition } from '_utils/branding'
 
 import Button from './Button'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Proximity from 'proximity'
 import Bullet, { BulletTypes } from 'bullet'
+import Proximity from 'proximity'
 
 import ItineraryLocation from './ItineraryLocation'
 

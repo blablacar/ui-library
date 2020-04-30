@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import Profile from './profile'
 
 const StyledProfile = styled(Profile)`

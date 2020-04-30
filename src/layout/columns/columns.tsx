@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+
 import { ColumnProps } from 'layout/column'
 
 export interface ColumnsProps {

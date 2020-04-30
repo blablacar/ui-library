@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
-import Bullet, { BulletTypes } from 'bullet'
+
 import { AutoCompleteProps } from 'autoComplete'
+import Bullet, { BulletTypes } from 'bullet'
 
 export type AutoCompleteOverlayProps = Omit<
   AutoCompleteProps,

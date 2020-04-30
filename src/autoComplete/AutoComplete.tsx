@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import { canUseEventListeners } from 'exenv'
 import cc from 'classcat'
-import isEmpty from 'lodash.isempty'
+import { canUseEventListeners } from 'exenv'
 import debounce from 'lodash.debounce'
+import isEmpty from 'lodash.isempty'
 
 import prefix from '_utils'
 import { ItemStatus } from '_utils/item'
-import ItemInfo from 'itemInfo'
-import TextField, { inputTypes } from 'textField'
-import AutoCompleteList from './AutoCompleteListStyle'
 import Divider from 'divider'
+import ItemInfo from 'itemInfo'
 import Loader from 'loader'
+import TextField, { inputTypes } from 'textField'
+
+import AutoCompleteList from './AutoCompleteListStyle'
 
 type query = string | number | boolean
 export interface AutoCompleteProps {

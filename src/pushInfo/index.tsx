@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+
 import { color, font, fontWeight, radius, space } from '_utils/branding'
 
-import PushInfo, { animationDuration, animationDelay } from './PushInfo'
+import PushInfo, { animationDelay, animationDuration } from './PushInfo'
 
 const StyledPushInfo = styled(PushInfo)`
   & {

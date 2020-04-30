@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { text, select, withKnobs } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
-import Bullet from './index'
+
 import { BulletTypes } from './Bullet'
+import Bullet from './index'
 
 const stories = storiesOf('Widgets|Bullet', module)
 stories.addDecorator(withKnobs)

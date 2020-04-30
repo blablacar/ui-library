@@ -1,9 +1,10 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import Section from 'layout/section/baseSection'
+
 import ToggleButton, { ToggleButtonStatus } from '.'
 
 const stories = storiesOf('Widgets|ToggleButton', module)

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+
 import { color, componentSizes } from '_utils/branding'
+
 import Bullet from './Bullet'
 
 const StyledBullet = styled(Bullet)`
