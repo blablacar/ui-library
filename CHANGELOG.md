@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** `TheVoice` spacing.
+  [...]
 
 # v31.0.3 (04/05/2020)
 

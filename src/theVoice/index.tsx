@@ -5,7 +5,7 @@ import TheVoice from './TheVoice'
 
 const StyledTheVoice = styled(TheVoice)`
   margin: 0;
-  padding: ${space.xl} 0 calc(${space.xl} + ${space.m}); /* 32px it's not en scale but on spec :() */
+  padding: ${space.xl} 0 calc(${space.xl} + ${space.m}); /* 32px it's not on scale but on spec :() */
   color: ${props => (props.isInverted ? color.white : '')};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
