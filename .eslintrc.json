@@ -19,8 +19,18 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "@typescript-eslint", "jsx-a11y"],
+  "plugins": ["react", "prettier", "@typescript-eslint", "jsx-a11y", "simple-import-sort"],
   "rules": {
+    "simple-import-sort/sort": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^classcat", "^enzyme", "^exenv", "^lodash", "^styled-components", "^@storybook"],
+          ["^[^.]"],
+          ["^\\."]
+        ]
+      }
+    ],
     "prettier/prettier": [
       "error",
       {

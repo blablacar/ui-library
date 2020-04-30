@@ -87,12 +87,14 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-simple-import-sort": "5.0.3",
     "gh-pages": "2.0.1",
     "husky": "1.3.1",
     "jest": "24.9.0",
     "jest-styled-components": "6.3.4",
     "jsdom": "14.0.0",
     "jsdom-global": "3.0.2",
+    "lint-staged": "10.2.1",
     "prettier": "1.19.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
@@ -123,9 +125,15 @@
     "styled-components": "4.3.2",
     "classcat": "4.0.2"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "bla node && bla check && tsc --noEmit && npm run lint",
+      "pre-commit": "bla node && bla check && lint-staged && tsc --noEmit && npm run lint",
       "pre-push": "npm run eslint && npm test"
     }
   }
