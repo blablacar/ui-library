@@ -2,7 +2,19 @@
 
 exports[`Should render review microdata annotations and HTML 1`] = `
 Array [
-  .c3 {
+  .c4 {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c4 .kirk-link {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c3 {
   margin: 0;
   font-weight: 400;
 }
@@ -82,18 +94,6 @@ Array [
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c4 {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
-}
-
-.c4 .kirk-link {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
 }
 
 .c1 {
@@ -156,7 +156,19 @@ Array [
       </time>
     </div>
   </blockquote>,
-  .c3 {
+  .c4 {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c4 .kirk-link {
+  font-size: 13px;
+  line-height: 16px;
+  color: #708C91;
+}
+
+.c3 {
   margin: 0;
   font-weight: 400;
 }
@@ -236,18 +248,6 @@ Array [
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.c4 {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
-}
-
-.c4 .kirk-link {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
 }
 
 .c1 {

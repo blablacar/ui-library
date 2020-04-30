@@ -1,113 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MediaContentSection should render default MediaContentSection section 1`] = `
-.c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.c3 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  text-indent: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.c5 {
-  color: #054752;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.06;
-}
-
-.c4 {
-  font-size: 22px;
-  line-height: 24px;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  margin: 0;
-}
-
-.c6 {
-  margin: 0;
-  font-weight: 400;
-}
-
-.c6.kirk-text-button {
-  color: #054752;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c6.kirk-text-body,
-.c6.kirk-text-bodyStrong {
-  color: #708C91;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c6.kirk-text-caption {
-  color: #708C91;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c6.kirk-text-display2 {
-  color: #054752;
-  font-size: 82px;
-  line-height: 82px;
-  font-weight: 500;
-}
-
-.c6.kirk-text-display1 {
-  color: #054752;
-  font-size: 30px;
-  line-height: 1.06;
-  font-weight: 500;
-}
-
-.c6.kirk-text-subheader,
-.c6.kirk-text-subheaderStrong {
-  color: #054752;
-  font-size: 22px;
-  line-height: 24px;
-}
-
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c6.kirk-text-bodyStrong,
-.c6.kirk-text-subheaderStrong,
-.c6.kirk-text-titleStrong {
-  font-weight: 500;
-}
-
 .c7 {
   position: relative;
   box-sizing: border-box;
@@ -283,6 +176,113 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   height: calc(48px - 2px * 2);
 }
 
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-indent: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c5 {
+  color: #054752;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.c4 {
+  font-size: 22px;
+  line-height: 24px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.c6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c6.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-body,
+.c6.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c6.kirk-text-title,
+.c6.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c6.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c6.kirk-text-subheader,
+.c6.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c6.kirk-text-title,
+.c6.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-bodyStrong,
+.c6.kirk-text-subheaderStrong,
+.c6.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
 .c0 {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -325,15 +325,9 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   margin-top: 16px;
 }
 
-@media (min-width:800px) {
-  .c1 .section-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 662px;
-  }
-
-  .c1 .section-content.section-content--large {
-    max-width: 1016px;
+@media (hover:none),(hover:on-demand) {
+  .c7.kirk-button-secondary:hover {
+    background-color: #FFF;
   }
 }
 
@@ -345,9 +339,15 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   }
 }
 
-@media (hover:none),(hover:on-demand) {
-  .c7.kirk-button-secondary:hover {
-    background-color: #FFF;
+@media (min-width:800px) {
+  .c1 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c1 .section-content.section-content--large {
+    max-width: 1016px;
   }
 }
 

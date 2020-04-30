@@ -1,6 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item Should not have changed 1`] = `
+.c2.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c2.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c2 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -64,22 +80,6 @@ exports[`Item Should not have changed 1`] = `
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c2.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c2.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c2 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
