@@ -16,8 +16,6 @@
     "build-rename-jsx-map": "renamer --find jsx.map --replace js.map \"build/**\"",
     "build-cleanup": "rimraf build/src && del \"build/**/story.*\" && del \"build/**/*.unit.*\"",
     "eslint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
-    "lint": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs eslint",
-    "lint-fix": "git diff --name-only --cached --diff-filter=ACMRTUXB -- \"src/*.ts\" \"src/*.tsx\" | xargs eslint --fix",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
     "prettier:ci": "prettier --list-different '**/*.{ts,tsx}'",
     "test": "jest",
@@ -133,7 +131,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "bla node && bla check && lint-staged && tsc --noEmit && npm run lint",
+      "pre-commit": "bla node && bla check && lint-staged && tsc --noEmit",
       "pre-push": "npm run eslint && npm test"
     }
   }
