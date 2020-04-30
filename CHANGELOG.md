@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** `ScreenModal` layout on Safari/Firefox
 - **[FIX]** Add missing "kirk" prefix to base class name of `DatePicker` and `ButtonGroup`.
   [...]
 
