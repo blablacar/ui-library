@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v31.0.1 (30/04/2020)
+
 - **[UPDATE]** Implement `AloneInTheBackIcon` in `TripCard`
 - **[NEW]** Add `AloneInTheBackIcon`
-  [...]
 
 # v31.0.0 (29/04/2020)
 
