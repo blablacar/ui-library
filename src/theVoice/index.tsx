@@ -14,6 +14,7 @@ const StyledTheVoice = styled(TheVoice)`
   margin: 0;
   padding: ${space.xl} 0 var(--space-bottom);
   color: ${props => (props.isInverted ? color.white : '')};
+  white-space: pre-line;
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     text-align: center;
