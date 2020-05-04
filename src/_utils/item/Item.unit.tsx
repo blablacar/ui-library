@@ -1,13 +1,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import Item from './Item'
 import Button from 'button'
-import Text from 'text'
-import StyledItem from './index'
-import ClockIcon from 'icon/clockIcon'
 import ChevronIcon from 'icon/chevronIcon'
+import ClockIcon from 'icon/clockIcon'
+import Text from 'text'
+
+import StyledItem from './index'
+import Item from './Item'
 
 describe('Item', () => {
   it('Should not have changed', () => {

@@ -1,9 +1,7 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
-
-import Section from 'layout/section/baseSection'
+import { storiesOf } from '@storybook/react'
 
 import BellIcon from 'icon/bellIcon'
 import BubbleIcon from 'icon/bubbleIcon'
@@ -11,10 +9,10 @@ import CheckShieldIcon from 'icon/checkShieldIcon'
 import HomeIcon from 'icon/homeIcon'
 import NewspaperIcon from 'icon/newspaperIcon'
 import TicketIcon from 'icon/ticketIcon'
-
-import Text from 'text'
-import Menu from 'menu'
 import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
+import Section from 'layout/section/baseSection'
+import Menu from 'menu'
+import Text from 'text'
 
 const stories = storiesOf('Widgets|Menu', module)
 stories.addDecorator(withKnobs)

@@ -1,9 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import DatePicker, { DatePickerOrientation } from 'datePicker'
-import DatePickerSection from './DatePickerSection'
+
 import Item from '_utils/item'
+import DatePicker, { DatePickerOrientation } from 'datePicker'
 import ChevronIcon from 'icon/chevronIcon'
+
+import DatePickerSection from './DatePickerSection'
 
 describe('DatePickerSection', () => {
   it('should have a clickable Item with a title and chevron icon', () => {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Profile from 'profile'
 import Item from '_utils/item'
 import Avatar from 'avatar'
+import Profile from 'profile'
 import Rating from 'rating'
 import { TextDisplayType } from 'text'
 import TextBody from 'typography/body'

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { ItemStatus } from '_utils/item'
-import { withKnobs, number, text, boolean, select } from '@storybook/addon-knobs'
 
-import AutoComplete from '.'
+import { ItemStatus } from '_utils/item'
 import ComfortIcon from 'icon/comfortIcon'
 import Section from 'layout/section/baseSection'
+
+import AutoComplete from '.'
 
 const stories = storiesOf('Widgets|AutoComplete', module)
 stories.addDecorator(withKnobs)

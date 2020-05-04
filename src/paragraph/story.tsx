@@ -1,8 +1,9 @@
 import React from 'react'
-
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
+
 import Paragraph from './index'
 
 const stories = storiesOf('Widgets|Paragraph', module)

@@ -1,11 +1,12 @@
 import React from 'react'
-import exenv from 'exenv'
 import renderer from 'react-test-renderer'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
+import exenv from 'exenv'
 
 import Button from 'button'
-import Snackbar from './Snackbar'
+
 import StyledSnackbar from './index'
+import Snackbar from './Snackbar'
 
 const close = jest.fn()
 

@@ -1,6 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadioGroup Should map its children and render them with specific props 1`] = `
+.c5.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c5.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c5 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c3 {
   margin: 0;
   font-weight: 400;
@@ -64,22 +80,6 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 .c3.kirk-text-subheaderStrong,
 .c3.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c5.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c5.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c5 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c2 {

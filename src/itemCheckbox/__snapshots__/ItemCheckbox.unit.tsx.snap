@@ -1,6 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] = `
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c3 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -64,22 +80,6 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c3.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c3.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c3 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -290,6 +290,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemCheckbox Should display a Loader when the component is in loading status 1`] = `
+.c4.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c4.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c4 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -353,22 +369,6 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c4.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c4.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c4 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -658,6 +658,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c3 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -721,22 +737,6 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c3.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c3.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c3 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {

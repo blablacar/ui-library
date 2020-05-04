@@ -1,12 +1,12 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
-import Section from 'layout/section/baseSection'
-import TextField, { inputTypes, inputModes } from 'textField'
-import ArrowIcon from 'icon/arrowIcon'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import Button, { ButtonStatus } from 'button'
+import ArrowIcon from 'icon/arrowIcon'
+import Section from 'layout/section/baseSection'
+import TextField, { inputModes, inputTypes } from 'textField'
 import readme from 'textField/specifications/textField.md'
 
 const stories = storiesOf('Widgets|TextField', module)

@@ -1,6 +1,7 @@
 import React from 'react'
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
+
 import Avatar from 'avatar'
+import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
 
 export interface IllustratedSectionProps {
   readonly children: React.ReactNode

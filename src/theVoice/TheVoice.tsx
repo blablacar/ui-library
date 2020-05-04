@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+
 import Title from 'title'
 
 export interface TheVoiceProps {

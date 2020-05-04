@@ -1,10 +1,10 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import spec from 'subHeader/specifications/subHeader.md'
-import SubHeader from 'subHeader'
+import { storiesOf } from '@storybook/react'
+
 import Section from 'layout/section/baseSection'
+import SubHeader from 'subHeader'
+import spec from 'subHeader/specifications/subHeader.md'
 
 const stories = storiesOf('Widgets|SubHeader', module)
 stories.addDecorator(withKnobs)

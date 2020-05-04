@@ -1,11 +1,11 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import Menu from 'menu'
-import ItemChoice from 'itemChoice'
+import { CheckShieldIcon } from 'icon/checkShieldIcon'
 import { HomeIcon } from 'icon/homeIcon'
 import { NewspaperIcon } from 'icon/newspaperIcon'
-import { CheckShieldIcon } from 'icon/checkShieldIcon'
+import ItemChoice from 'itemChoice'
+import Menu from 'menu'
 
 let children = []
 

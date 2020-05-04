@@ -1,10 +1,11 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import spec from 'blankSeparator/specifications/blankSeparator.md'
+import { storiesOf } from '@storybook/react'
+
 import BlankSeparator from 'blankSeparator'
+import spec from 'blankSeparator/specifications/blankSeparator.md'
 import Section from 'layout/section/baseSection'
+
 import { BlankSeparatorSize } from './BlankSeparator'
 
 const stories = storiesOf('Widgets|BlankSeparator', module)

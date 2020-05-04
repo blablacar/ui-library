@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import { color, space, font, radius } from '_utils/branding'
+
+import { color, font, radius, space } from '_utils/branding'
+
 import Why from './Why'
 
 const StyledWhy = styled(Why)`

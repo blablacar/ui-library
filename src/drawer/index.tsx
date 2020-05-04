@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import Drawer from './Drawer'
 import { color, transition } from '_utils/branding'
+
+import Drawer from './Drawer'
 
 const StyledDrawer = styled(Drawer)`
   &.kirk-drawer--open {

@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
+import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text } from '@storybook/addon-knobs'
 
-import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
-
+import Drawer from 'drawer'
+import HamburgerButton from 'hamburgerButton'
 import BellIcon from 'icon/bellIcon'
 import BubbleIcon from 'icon/bubbleIcon'
 import HomeIcon from 'icon/homeIcon'
 import NewspaperIcon from 'icon/newspaperIcon'
 import TicketIcon from 'icon/ticketIcon'
-
+import ItemChoice, { ItemChoiceStatus } from 'itemChoice'
 import Menu from 'menu'
-import Drawer from 'drawer'
-import HamburgerButton from 'hamburgerButton'
 
 const stories = storiesOf('Widgets|Drawer', module)
 stories.addDecorator(withKnobs)

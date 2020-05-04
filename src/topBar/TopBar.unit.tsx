@@ -1,7 +1,8 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import Button from 'button'
+
 import TopBar from './TopBar'
 
 it('should not have any modifier classes', () => {

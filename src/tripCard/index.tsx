@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { color, font, radius, space } from '_utils/branding'
 
 import TripCard from './TripCard'

@@ -1,11 +1,12 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 
 import { color } from '_utils/branding'
 import ProximityIcon from 'icon/proximityIcon'
-import { animationDuration, animationDelay } from './PushInfo'
+
 import PushInfo from './index'
+import { animationDelay, animationDuration } from './PushInfo'
 
 it('Should have the correct attributes and text.', () => {
   const pushInfo = renderer

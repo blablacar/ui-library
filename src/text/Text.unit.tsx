@@ -1,6 +1,6 @@
-import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
 import * as React from 'react'
+import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
 
 import Text, { TextTagType } from './Text'
 

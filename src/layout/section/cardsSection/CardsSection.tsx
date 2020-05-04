@@ -1,8 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { TripCardProps } from 'tripCard'
 import { QrCardProps } from 'qrCard'
+import { TripCardProps } from 'tripCard'
 
 type CardsProps = TripCardProps | QrCardProps
 

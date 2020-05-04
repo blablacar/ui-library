@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { space, responsiveBreakpoints, componentSizes } from '_utils/branding'
+
+import { componentSizes, responsiveBreakpoints, space } from '_utils/branding'
 
 import TabsSection from './tabsSection'
 

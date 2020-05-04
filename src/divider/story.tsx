@@ -1,9 +1,9 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import spec from 'divider/specifications/divider.md'
+import { storiesOf } from '@storybook/react'
+
 import Divider from 'divider'
+import spec from 'divider/specifications/divider.md'
 import Section from 'layout/section/baseSection'
 
 const stories = storiesOf('Widgets|Divider', module)

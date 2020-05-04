@@ -1,12 +1,13 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
-import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import Section from 'layout/section/baseSection'
-import defaultDoc from './specifications/default.md'
-import customDoc from './specifications/custom.md'
+
 import PhoneField from '.'
+import customDoc from './specifications/custom.md'
+import defaultDoc from './specifications/default.md'
 
 const stories = storiesOf('Widgets|PhoneField', module)
 stories.addDecorator(withKnobs)

@@ -1,11 +1,11 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, select, number } from '@storybook/addon-knobs'
-import Section from 'layout/section/baseSection'
+import { number, select, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import DatePicker, { DatePickerOrientation } from 'datePicker'
 import readme from 'datePicker/specifications/datepicker.md'
+import Section from 'layout/section/baseSection'
 
 const stories = storiesOf('Widgets|DatePicker', module)
 stories.addDecorator(withKnobs)

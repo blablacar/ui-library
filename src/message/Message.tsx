@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import prefix from '_utils'
-
 import BlankSeparator, { BlankSeparatorSize } from 'blankSeparator'
 import Text, { TextDisplayType } from 'text'
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+
 import { ItemChoiceProps } from 'itemChoice'
 import ItemsList, { ItemsListDivider } from 'itemsList'
 

@@ -1,5 +1,5 @@
-import { ModalSize } from 'modal/Modal'
 import { ConfirmationModalSize } from 'confirmationModal/ConfirmationModal'
+import { ModalSize } from 'modal/Modal'
 
 export const assertModalSizes = (
   modalSize: typeof ModalSize | typeof ConfirmationModalSize,

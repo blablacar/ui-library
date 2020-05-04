@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, space, componentSizes } from '_utils/branding'
+
+import { color, componentSizes, space } from '_utils/branding'
 
 import ItineraryLocation from './ItineraryLocation'
 

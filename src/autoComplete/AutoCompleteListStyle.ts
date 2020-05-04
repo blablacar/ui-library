@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { color, font, space } from '_utils/branding'
 
 import AutoCompleteList from './AutoCompleteList'

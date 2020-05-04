@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
-import createFocusTrap from 'focus-trap'
 import { mount } from 'enzyme'
+
+import createFocusTrap from 'focus-trap'
+
 import { useFocusTrap } from './index'
 
 let TestComponent

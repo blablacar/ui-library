@@ -1,6 +1,8 @@
 import styled from 'styled-components'
-import Divider from './Divider'
+
 import { color, space } from '_utils/branding'
+
+import Divider from './Divider'
 
 const StyledDivider = styled(Divider)`
   & {

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
-import Item from '_utils/item'
 import CheckboxIcon from '_utils/checkboxIcon'
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
+import Item from '_utils/item'
 import { TextDisplayType } from 'text'
 
 export enum ItemCheckboxStatus {

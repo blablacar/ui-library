@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { boolean } from '@storybook/addon-knobs'
-import Section from 'layout/section/baseSection'
-import SubHeader from 'subHeader'
-import Text from 'text'
+import { storiesOf } from '@storybook/react'
+
+import Avatar from 'avatar'
 import BlankSeparator, { BlankSeparatorSize } from 'blankSeparator'
 import Button from 'button'
 import ItemInfo from 'itemInfo'
-import Avatar from 'avatar'
-import MarketingMessage from 'marketingMessage'
 import LayoutNormalizer from 'layout/layoutNormalizer'
+import Section from 'layout/section/baseSection'
+import MarketingMessage from 'marketingMessage'
+import SubHeader from 'subHeader'
+import Text from 'text'
 
 const stories = storiesOf('Pages|Messaging/Braze marketing', module)
 

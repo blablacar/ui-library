@@ -1,9 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import EmptyState from './EmptyState'
-import Title from 'title'
 import Button from 'button'
+import Title from 'title'
+
+import EmptyState from './EmptyState'
 
 const defaultProps = {
   image: 'my-image-url',

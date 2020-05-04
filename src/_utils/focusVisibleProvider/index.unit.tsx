@@ -2,8 +2,9 @@ import React, { useContext } from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, ReactWrapper } from 'enzyme'
 
-import FocusVisibleProvider, { FocusVisibleContext } from '.'
 import { KEYS } from '_utils/keycodes'
+
+import FocusVisibleProvider, { FocusVisibleContext } from '.'
 
 let focusVisibleContext = null
 let wrapper: ReactWrapper

@@ -1,11 +1,11 @@
 import React, { Component, createRef } from 'react'
-
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
 import Modal, { ModalSize } from 'modal'
-import { ModalProps } from './Modal'
 
+import { ModalProps } from './Modal'
 import modalDoc from './specifications/modal.md'
 
 const stories = storiesOf('Widgets|Modal', module)

@@ -1,9 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
+
+import Button from 'button'
 import { InfoIcon } from 'icon/infoIcon'
 import { QuestionIcon } from 'icon/questionIcon'
+
 import Disclaimer from './Disclaimer'
-import Button from 'button'
 
 const disclaimerContent = 'Disclaimer content'
 

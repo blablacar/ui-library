@@ -3,6 +3,7 @@ import cc from 'classcat'
 import uniqueid from 'lodash.uniqueid'
 
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
+
 import HintBubble, { HintBubblePosition } from './HintBubble'
 
 export interface HintProps extends A11yProps {

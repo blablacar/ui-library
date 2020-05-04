@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, inputBorderSize, font, space } from '_utils/branding'
+
+import { color, font, inputBorderSize, space } from '_utils/branding'
 
 import TimePicker from './TimePicker'
 

@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, number } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
 import Rating from 'rating'
 

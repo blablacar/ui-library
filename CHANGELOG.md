@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Auto-sort imports
 [...]
 
 # v31.0.2 (30/04/2020)

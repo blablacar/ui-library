@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IllustratedSection should render an IllustratedSection section with an Avatar 1`] = `
-.c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
 .c2 {
   border: 2px dashed #DDD;
   box-sizing: border-box;
@@ -90,6 +85,11 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
   line-height: 34px;
   font-size: 18px;
   padding: 0 8px;
+}
+
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .c0 .section-content {

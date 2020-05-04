@@ -1,10 +1,10 @@
 import React, { Component, FunctionComponent } from 'react'
 import cc from 'classcat'
 
+import Divider from 'divider'
+import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
 import { ItemChoiceProps } from 'itemChoice'
 import { ItemRadioProps } from 'itemRadio/ItemRadio'
-import { ItemCheckboxProps } from 'itemCheckbox/ItemCheckbox'
-import Divider from 'divider'
 
 export const ItemsListDivider: FunctionComponent = () => null
 

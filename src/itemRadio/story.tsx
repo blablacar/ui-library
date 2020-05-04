@@ -1,16 +1,16 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
+import ItemRadioGroup from 'itemRadioGroup'
+import Section from 'layout/section/baseSection'
 
 import TheVoice from '../theVoice'
 import ItemRadio from '.'
-import ItemRadioGroup from 'itemRadioGroup'
-import Section from 'layout/section/baseSection'
+import { ItemRadioStatus } from './ItemRadio'
 import mainDoc from './specifications/doc.md'
 import groupDoc from './specifications/group.md'
-import { ItemRadioStatus } from './ItemRadio'
 
 const stories = storiesOf('Widgets|ItemRadio', module)
 stories.addDecorator(withKnobs)

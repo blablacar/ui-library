@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, space, font, responsiveBreakpoints } from '_utils/branding'
+
+import { color, font, responsiveBreakpoints, space } from '_utils/branding'
 
 import HighlightSection from './highlightSection'
 

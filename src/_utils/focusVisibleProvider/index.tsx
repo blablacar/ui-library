@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useEffect, useState } from 'react'
 
 import { KEYS, KEYS_TRIGGERING_KEYBOARD_NAVIGATION } from '_utils/keycodes'
 

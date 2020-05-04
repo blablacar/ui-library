@@ -2,8 +2,8 @@ import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import Badge from 'badge'
 import { color } from '_utils/branding'
+import Badge from 'badge'
 
 export interface IconProps extends Icon {
   readonly children: JSX.Element

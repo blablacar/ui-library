@@ -1,10 +1,11 @@
 import React from 'react'
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
-import Columns from 'layout/columns'
+
+import Button from 'button'
 import Column from 'layout/column'
+import Columns from 'layout/columns'
+import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
 import SubHeader from 'subHeader'
 import Text, { TextTagType } from 'text'
-import Button from 'button'
 
 export interface MediaContentSectionProps {
   readonly className?: string

@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import { color, transition } from '_utils/branding'
-import CircleIcon from 'icon/circleIcon'
 import CheckIcon from 'icon/checkIcon'
+import CircleIcon from 'icon/circleIcon'
 
 const FULLSCREEN_MODE_CSS_CLASSNAME = 'kirk-loader--fullScreen'
 const INLINE_MODE_CSS_CLASSNAME = 'kirk-loader--inline'

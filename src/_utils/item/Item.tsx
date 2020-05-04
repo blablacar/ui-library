@@ -3,9 +3,9 @@ import cc from 'classcat'
 
 import { color } from '_utils/branding'
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Text, { TextTagType, TextDisplayType } from 'text'
-import ChevronIcon from 'icon/chevronIcon'
 import Button from 'button/Button'
+import ChevronIcon from 'icon/chevronIcon'
+import Text, { TextDisplayType, TextTagType } from 'text'
 
 export enum ItemStatus {
   DEFAULT = 'default',

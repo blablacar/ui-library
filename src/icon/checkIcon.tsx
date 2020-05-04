@@ -1,9 +1,10 @@
 // tslint:disable:max-line-length
 import React, { Fragment } from 'react'
 import cc from 'classcat'
+import styled from 'styled-components'
+
 import BaseIcon from '_utils/icon'
 import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
-import styled from 'styled-components'
 
 export interface CheckProps extends Icon {
   readonly absolute?: boolean

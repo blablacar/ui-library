@@ -1,5 +1,6 @@
 import React from 'react'
 import cc from 'classcat'
+
 import Star from 'icon/starIcon'
 
 export interface StarsProps {

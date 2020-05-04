@@ -1,8 +1,9 @@
 import React from 'react'
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
-import Columns from 'layout/columns'
-import Column from 'layout/column'
+
 import Button, { ButtonStatus } from 'button'
+import Column from 'layout/column'
+import Columns from 'layout/columns'
+import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
 import Text, { TextTagType } from 'text'
 import Title from 'title'
 

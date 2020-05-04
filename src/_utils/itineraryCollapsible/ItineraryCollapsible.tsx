@@ -3,10 +3,10 @@ import cc from 'classcat'
 import { canUseEventListeners } from 'exenv'
 
 import { color } from '_utils/branding'
-import KEYCODES from '_utils/keycodes'
-import Text, { TextDisplayType, TextTagType } from 'text'
-import Bullet, { BulletTypes } from 'bullet'
 import ItineraryLocation, { computeKeyFromPlace } from '_utils/itineraryLocation'
+import KEYCODES from '_utils/keycodes'
+import Bullet, { BulletTypes } from 'bullet'
+import Text, { TextDisplayType, TextTagType } from 'text'
 
 export interface ItineraryCollapsibleProps {
   readonly places: Place[]

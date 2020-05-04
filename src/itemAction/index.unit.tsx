@@ -1,9 +1,9 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
-import Loader from 'loader/Loader'
-import ItemAction from 'itemAction'
 import CrossIcon from 'icon/crossIcon'
+import ItemAction from 'itemAction'
+import Loader from 'loader/Loader'
 
 jest.useFakeTimers()
 

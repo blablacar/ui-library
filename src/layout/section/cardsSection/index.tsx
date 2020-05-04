@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { color, space, responsiveBreakpoints, componentSizes } from '_utils/branding'
+
+import { color, componentSizes, responsiveBreakpoints, space } from '_utils/branding'
 
 import CardsSection from './CardsSection'
 

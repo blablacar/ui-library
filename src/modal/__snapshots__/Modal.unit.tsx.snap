@@ -1,51 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should not have changed 1`] = `
-.c1.fade {
-  -webkit-transition: ease-in-out 200ms;
-  transition: ease-in-out 200ms;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-}
-
-.c1.fade-entering {
-  opacity: 0;
-}
-
-.c1.fade-entered {
-  opacity: 1;
-}
-
-.c1.fade-exiting {
-  opacity: 0;
-}
-
-.c1.slide-up {
-  -webkit-transition: ease-in-out 200ms;
-  transition: ease-in-out 200ms;
-  -webkit-transition-property: opacity,-webkit-transform;
-  -webkit-transition-property: opacity,transform;
-  transition-property: opacity,transform;
-}
-
-.c1.slide-up-entering {
-  opacity: 0;
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
-}
-
-.c1.slide-up-entered {
-  opacity: 1;
-}
-
-.c1.slide-up-exiting {
-  opacity: 0;
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
-}
-
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -235,6 +190,51 @@ exports[`Modal should not have changed 1`] = `
 .c2.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
+}
+
+.c1.fade {
+  -webkit-transition: ease-in-out 200ms;
+  transition: ease-in-out 200ms;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.c1.fade-entering {
+  opacity: 0;
+}
+
+.c1.fade-entered {
+  opacity: 1;
+}
+
+.c1.fade-exiting {
+  opacity: 0;
+}
+
+.c1.slide-up {
+  -webkit-transition: ease-in-out 200ms;
+  transition: ease-in-out 200ms;
+  -webkit-transition-property: opacity,-webkit-transform;
+  -webkit-transition-property: opacity,transform;
+  transition-property: opacity,transform;
+}
+
+.c1.slide-up-entering {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.c1.slide-up-entered {
+  opacity: 1;
+}
+
+.c1.slide-up-exiting {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
 }
 
 .c0.kirk-modal-dimmer,

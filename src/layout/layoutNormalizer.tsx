@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
 import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 // Legacy layout rules from production BBC.
 const LegacyLayoutNormalizationGlobalStyles = createGlobalStyle`

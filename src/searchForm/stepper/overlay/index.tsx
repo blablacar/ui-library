@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { overlayBaseStyle } from 'searchForm/baseStyles'
 
 import StepperOverlay from './StepperOverlay'

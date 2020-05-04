@@ -1,19 +1,20 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import DatePickerOverlay from './datePicker/overlay'
-import DatePickerSection from './datePicker/section'
-import StepperOverlay from './stepper/overlay'
-import StepperSection from './stepper/section'
+import { storiesOf } from '@storybook/react'
+
+import MediaSizeProvider from '_utils/mediaSizeProvider'
 import { AutoCompleteExample } from 'autoComplete/story'
+import CrossIcon from 'icon/crossIcon'
+import BaseSection, { SectionContentSize } from 'layout/section/baseSection/'
+
+import SearchForm from '.'
 import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
-import SearchForm from '.'
-import MediaSizeProvider from '_utils/mediaSizeProvider'
+import DatePickerOverlay from './datePicker/overlay'
+import DatePickerSection from './datePicker/section'
 import searchFormDocumentation from './specifications/searchForm.md'
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection/'
-import CrossIcon from 'icon/crossIcon'
+import StepperOverlay from './stepper/overlay'
+import StepperSection from './stepper/section'
 
 const stories = storiesOf('Widgets|SearchForm', module)
 stories.addDecorator(withKnobs)

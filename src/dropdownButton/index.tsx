@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import DropdownButton from './DropdownButton'
 import { color, font, transition } from '_utils/branding'
+
+import DropdownButton from './DropdownButton'
 
 const StyledDropdownButton = styled(DropdownButton)`
   & {

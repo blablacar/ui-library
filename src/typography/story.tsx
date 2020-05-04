@@ -4,18 +4,16 @@ import { storiesOf } from '@storybook/react'
 import { space } from '_utils/branding'
 
 import Section from '../layout/section/baseSection'
-
 import TextBody from './body'
 import TextBodyStrong from './bodyStrong'
 import TextCaption from './caption'
-import TextTitle from './title'
-import TextTitleStrong from './titleStrong'
+import TextDisplay1 from './display1'
+import TextDisplay2 from './display2'
+import readme from './specifications/typography.md'
 import TextSubHeader from './subHeader'
 import TextSubHeaderStrong from './subHeaderStrong'
-import TextDisplay2 from './display2'
-import TextDisplay1 from './display1'
-
-import readme from './specifications/typography.md'
+import TextTitle from './title'
+import TextTitleStrong from './titleStrong'
 
 const stories = storiesOf('Brand|typography', module)
 

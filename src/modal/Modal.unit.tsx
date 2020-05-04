@@ -1,10 +1,10 @@
 import React from 'react'
-import { mount } from 'enzyme'
-
-import Modal, { ModalSize } from 'modal'
-import Button from 'button'
 import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 import exenv from 'exenv'
+
+import Button from 'button'
+import Modal, { ModalSize } from 'modal'
 
 describe('Modal', () => {
   it('Should have default dimmer with default props', () => {

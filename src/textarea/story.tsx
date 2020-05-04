@@ -1,8 +1,8 @@
 import React from 'react'
-
-import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+
 import SendMessageIcon from 'icon/sendMessageIcon'
 import Section from 'layout/section/baseSection'
 import TextArea from 'textarea'

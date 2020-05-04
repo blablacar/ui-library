@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
-
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
-import TheVoice from '.'
 import readme from 'theVoice/specifications/theVoice.md'
+
+import TheVoice from '.'
 
 const stories = storiesOf('Widgets|TheVoice', module)
 stories.addDecorator(withKnobs)

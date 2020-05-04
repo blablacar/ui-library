@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { componentSizes, pxToInteger } from '_utils/branding'
+
 import '_utils/closest'
+import { componentSizes, pxToInteger } from '_utils/branding'
 
 export interface MainContentProps {
   readonly children: React.ReactNode

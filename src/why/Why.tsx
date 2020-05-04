@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
-import { useFocusVisible } from '_utils/focusVisibleProvider/useFocusVisible'
 
+import { useFocusVisible } from '_utils/focusVisibleProvider/useFocusVisible'
 import QuestionIcon from 'icon/questionIcon'
 
 export interface WhyProps {

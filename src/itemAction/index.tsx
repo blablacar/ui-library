@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Loader from 'loader/Loader'
-import Item, { ItemStatus } from '_utils/item'
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import prefix from '_utils'
+import { A11yProps, pickA11yProps } from '_utils/interfaces'
+import Item, { ItemStatus } from '_utils/item'
+import Loader from 'loader/Loader'
 
 export interface ItemActionProps extends A11yProps {
   readonly highlighted?: boolean

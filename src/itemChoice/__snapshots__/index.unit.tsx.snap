@@ -1,6 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemChoice Should display a Loader when the component is in loading status 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -64,22 +80,6 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c1.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c1 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -420,6 +420,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should display a done Loader when the component is in checked status 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -483,22 +499,6 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c1.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c1 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -831,6 +831,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should forward its props to the Item component 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -894,22 +910,6 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c1.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c1 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -1183,6 +1183,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should support a disabled state 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -1246,22 +1262,6 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c1.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c1 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {
@@ -1537,6 +1537,22 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should use a button tag if no href is given 1`] = `
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -1600,22 +1616,6 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1.kirk-icon-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.c1.kirk-icon-shadowed {
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0,0,0,.3);
-}
-
-.c1 .kirk-icon-badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
 }
 
 .c0 {

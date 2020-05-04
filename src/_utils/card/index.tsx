@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { radius, transition, color, shadow } from '_utils/branding'
+import { color, radius, shadow, transition } from '_utils/branding'
+
 import Card from './Card'
 
 const StyledCard = styled(Card)`

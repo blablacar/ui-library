@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import styled from 'styled-components'
 
-import { color, radius, space, fontWeight, shadow } from '_utils/branding'
+import { color, fontWeight, radius, shadow, space } from '_utils/branding'
 import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import Button, { ButtonStatus } from 'button'
 import CrossIcon from 'icon/crossIcon'

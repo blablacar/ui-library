@@ -1,8 +1,9 @@
 import React from 'react'
-
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs'
+
 import Section from 'layout/section/baseSection'
+
 import Avatar from './index'
 
 const sizes = {
