@@ -1,37 +1,54 @@
 ## The Voice
 
+<!-- STORY -->
+
+## Usage
+
 ```js
 import { TheVoice } from '@blablacar/ui-library'
 ```
 
 ```html
-<TheVoice>
+<TheVoice isInverted="{true||false}">
   This is the Voice!
 </TheVoice>
 ```
 
+## Props
+
+| **Props**    | **Value**       | **Description**                                 |
+| ------------ | --------------- | ----------------------------------------------- |
+| `isInverted` | `true`\|`false` | When applied to dark backgrounds _(cf. COLORS)_ |
+
 ## Specifications
 
-> Behaviour
+### BEHAVIOUR
 
-Use it to guide the member on what to do in the screen.
 This component is the core of our **conversational approach**.
+Use it to guide the member on what to do in the screen.
 
-The voice is not clickable.
+`TheVoice` is not clickable.
+
 It’s not sticky but when scrolling it slides under the topbar.
 
-**SIZING AND POSITIONING**
+### SIZING AND POSITIONING
 
-Tall viewport, above 800px: Text is centered, font size is 32px.
-When screen width is less than 800px:
+#### Viewport variation
 
-- the font size moves down to 22px.
-- the text becomes left-aligned instead of centered
+_Mobile (below `799px`)_
 
-**COLORS**
+- Text aligned left
+- Font-size same as `Title`
 
-It can switch colors when applied to darker backgrounds.
+_Desktop (above `800px`)_
 
-> Long texts
+- Text is centered
+- Font-size up to `40px`
 
-There’s no limitation on the number of lines.
+#### Text rules
+
+- There’s no limitation on the _number of lines_
+
+#### COLORS
+
+It can switch colors (`white` or `midnightGreen`) when applied to darker backgrounds.
