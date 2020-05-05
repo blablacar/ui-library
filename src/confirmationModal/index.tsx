@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, modalSize, space } from '_utils/branding'
+import { color, modalSize, responsiveBreakpoints, space } from '_utils/branding'
 
 import ConfirmationModal from './ConfirmationModal'
 
@@ -12,6 +12,15 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
     color: ${color.white};
   }
 
+  & .kirk-confirmationModal-dialog {
+    position: relative;
+    margin: 0 auto;
+    padding: ${footerHeight} ${space.xl};
+    width: auto;
+    min-height: 100%;
+    box-shadow: none;
+  }
+
   &.kirk-confirmationModal .kirk-modal-dialog {
     background: transparent;
     width: auto !important;
@@ -20,33 +29,6 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
     margin: 0;
     display: flex;
     height: 100%;
-  }
-
-  &.kirk-confirmationModal--large {
-    text-align: center;
-  }
-
-  & .kirk-confirmationModal-dialog {
-    position: relative;
-    margin: 0 auto;
-    box-shadow: none;
-    width: auto;
-    min-height: 100%;
-    padding-top: ${space.xl};
-    padding-bottom: ${footerHeight};
-  }
-
-  &.kirk-confirmationModal--large .kirk-confirmationModal-dialog {
-    max-width: ${modalSize.m};
-  }
-
-  & .kirk-confirmationModal-body {
-    padding: ${space.xl};
-  }
-
-  & .kirk-confirmationModal-icon {
-    margin-top: ${space.xl};
-    margin-left: ${space.xl};
   }
 
   & .kirk-confirmationModal-footer {
@@ -61,13 +43,6 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
     background-color: ${color.midnightGreen};
   }
 
-  &.kirk-confirmationModal--large .kirk-confirmationModal-footer {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    background: none;
-  }
-
   & .kirk-confirmationModal-footer {
     justify-content: flex-end;
   }
@@ -76,19 +51,44 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
     justify-content: space-between;
   }
 
-  &.kirk-confirmationModal--large .kirk-confirmationModal-footer .kirk-button {
-    margin: ${space.l} ${space.xl} 0;
-  }
-
   & .kirk-confirmationModal-closeButton {
     vertical-align: bottom; /* vertical alignment to be fixed in Button */
     border: 0; /* content alignment to be fixed in Button */
   }
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    text-align: center;
+
+    &.kirk-confirmationModal-dialog {
+      justify-content: center;
+      align-content: center;
+    }
+
+    .kirk-confirmationModal-dialog {
+      max-width: ${modalSize.m};
+    }
+
+    .kirk-confirmationModal-body {
+      padding: ${space.xl};
+    }
+
+    .kirk-confirmationModal-footer {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      background: none;
+    }
+
+    .kirk-confirmationModal-footer .kirk-button {
+      margin: ${space.l} ${space.xl} 0;
+    }
+
+    .kirk-confirmationModal-confirmButton {
+      min-width: 128px;
+      justify-content: center;
+    }
+  }
 `
 
-export {
-  ConfirmationModalProps,
-  ConfirmationModalSize,
-  ConfirmationModalStatus,
-} from './ConfirmationModal'
+export { ConfirmationModalProps, ConfirmationModalStatus } from './ConfirmationModal'
 export default StyledConfirmationModal

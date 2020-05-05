@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import ConfirmationModal, { ConfirmationModalStatus } from 'confirmationModal'
 import Section from 'layout/section/baseSection'
 
-import { ConfirmationModalProps, ConfirmationModalSize } from './ConfirmationModal'
+import { ConfirmationModalProps } from './ConfirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
 const stories = storiesOf('Widgets|Modal|ConfirmationModal', module)
@@ -60,7 +60,6 @@ stories.add(
       onClose={action('onClose')}
       onConfirm={action('onConfirm')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
-      size={select('size', ConfirmationModalSize, ConfirmationModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', true)}
       confirmIsLoading={boolean('confirmIsLoading', false)}
     />
@@ -78,7 +77,6 @@ stories.add(
       onClose={action('onClose')}
       confirmLabel={text('confirmLabel', 'Fhtagn')}
       onConfirm={action('onConfirm')}
-      size={select('size', ConfirmationModalSize, ConfirmationModalSize.SMALL)}
       closeOnEsc={boolean('closeOnEsc', true)}
     />
   ),
