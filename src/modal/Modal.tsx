@@ -157,9 +157,6 @@ export default class Modal extends Component<ModalProps> {
       this.props.modalContentClassName,
     ])
 
-    // Will throw if we use a non allowed modal size
-    // assertModalSizes(ModalSize, this.props.size)
-
     const modalElement = (
       <div className={dimmerClassNames}>
         <TransitionGroup component="div" className="transition-wrapper">

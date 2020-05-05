@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Responsive `ConfirmationModal`: remove `size` from it.
 - **[FIX]** `TheVoice` spacing.
   [...]
 
