@@ -9,7 +9,7 @@ const StyledTheVoice = styled(TheVoice)`
   /* 32px it's not part of current scale. 4 it could be calculated by the base unit space.s  */
   --space-bottom: 32px;
   /* 40px is an exception on font scale  */
-  --font-size-desktop: 2.5rem;
+  --font-size-desktop: 40px;
 
   margin: 0;
   padding: ${space.xl} 0 var(--space-bottom);
