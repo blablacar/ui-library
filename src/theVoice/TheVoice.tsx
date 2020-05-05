@@ -9,13 +9,10 @@ export interface TheVoiceProps {
   readonly isInverted?: boolean
 }
 
-const TheVoice = ({ id, className, children, isInverted = false }: TheVoiceProps) => {
-  const classes = isInverted ? `kirk-title--inverse ${className}` : className
-  return (
-    <Title id={id} className={classes} headingLevel="1">
-      {children}
-    </Title>
-  )
-}
+const TheVoice = ({ id, className, children }: TheVoiceProps) => (
+  <Title id={id} className={className} headingLevel="1">
+    {children}
+  </Title>
+)
 
 export default TheVoice
