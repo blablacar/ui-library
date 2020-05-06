@@ -4,7 +4,6 @@ import TransitionGroup from 'react-transition-group/TransitionGroup'
 import cc from 'classcat'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 
-import { assertModalSizes } from '_utils/assert'
 import { color } from '_utils/branding'
 import KEYCODES from '_utils/keycodes'
 import Button from 'button'
@@ -157,9 +156,6 @@ export default class Modal extends Component<ModalProps> {
       },
       this.props.modalContentClassName,
     ])
-
-    // Will throw if we use a non allowed modal size
-    assertModalSizes(ModalSize, this.props.size)
 
     const modalElement = (
       <div className={dimmerClassNames}>

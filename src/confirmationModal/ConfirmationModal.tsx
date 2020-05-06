@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
-import { assertModalSizes } from '_utils/assert'
 import { color } from '_utils/branding'
 import Button, { ButtonStatus } from 'button'
 import CrossIcon from 'icon/crossIcon'
@@ -15,18 +14,11 @@ export enum ConfirmationModalStatus {
   WARNING = 'warning',
   REMINDER = 'reminder',
 }
-
-export enum ConfirmationModalSize {
-  SMALL = 'small',
-  LARGE = 'large',
-}
-
 export interface ConfirmationModalProps extends ModalProps {
   readonly status: ConfirmationModalStatus
   readonly onConfirm?: () => void
   readonly confirmLabel?: string
   readonly confirmIsLoading?: boolean
-  readonly size?: ModalSize
 }
 
 class ConfirmationModal extends Component<ConfirmationModalProps> {
@@ -34,7 +26,6 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
     onConfirm() {},
     confirmLabel: '',
     confirmIsLoading: false,
-    size: ModalSize.SMALL,
   }
 
   render() {
@@ -53,9 +44,6 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       forwardedRef,
       confirmIsLoading,
     } = this.props
-
-    // Will throw if we use a non allowed modal size
-    assertModalSizes(ConfirmationModalSize, this.props.size)
 
     const isWarning = status === ConfirmationModalStatus.WARNING
 
@@ -89,7 +77,6 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
       <Modal
         onClose={onClose}
         isOpen={isOpen}
-        size={size}
         displayCloseButton={false}
         displayDimmer={false}
         forwardedRef={forwardedRef}
