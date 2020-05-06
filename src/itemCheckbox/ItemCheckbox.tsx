@@ -16,6 +16,7 @@ export interface ItemCheckboxProps extends A11yProps {
   readonly name: string
   readonly data?: string
   readonly className?: string
+  readonly leftAddon?: React.ReactNode
   readonly labelTitle?: string
   readonly dataInfo?: string
   readonly checked?: boolean
@@ -43,6 +44,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
       data,
       className,
       labelTitle,
+      leftAddon,
       dataInfo,
       checked,
       disabled,
@@ -68,6 +70,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
         className={cc(['kirk-item-checkbox', className])}
         leftTitle={labelTitle}
         leftBody={label}
+        leftAddon={leftAddon}
         rightTitle={data}
         rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
         rightBody={dataInfo}

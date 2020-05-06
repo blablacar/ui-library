@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Allow icons in `ItemCheckbox` component using `leftAddon` prop
 - **[BREAKING CHANGE]** Responsive `ConfirmationModal`: remove `size` from it.
 - **[FIX]** `TheVoice` spacing.
   [...]

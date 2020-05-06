@@ -4,7 +4,7 @@ import { A11yProps, pickA11yProps } from '_utils/interfaces'
 import Item from '_utils/item'
 
 export interface ItemInfoProps extends A11yProps {
-  readonly mainInfo: string
+  readonly mainInfo?: string
   readonly className?: string
   readonly icon?: React.ReactNode
   readonly mainTitle?: string
