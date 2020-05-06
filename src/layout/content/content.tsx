@@ -3,12 +3,16 @@ import React, { Component } from 'react'
 import '_utils/closest'
 import { componentSizes, pxToInteger } from '_utils/branding'
 
-export interface MainContentProps {
+export type MainContentProps = Readonly<{
   readonly children: React.ReactNode
   readonly topBarSelector?: string // document query selector
   readonly topBarHeight?: string // ex: "24px" - for CSS only
   readonly tag?: string
-}
+  // Allow <Form> related attribute to be set.
+  readonly onSubmit?: (e: React.FormEvent) => void
+  readonly noValidate?: string
+  readonly method?: string
+}>
 
 export class MainContent extends Component<MainContentProps> {
   mainContentRef = React.createRef<HTMLDivElement>()
@@ -67,7 +71,6 @@ export class MainContent extends Component<MainContentProps> {
       {
         ref: this.mainContentRef,
         className: 'page-wrapper',
-        role: 'presentation',
         ...props,
       },
       children,

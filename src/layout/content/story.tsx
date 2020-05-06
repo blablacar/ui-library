@@ -14,7 +14,7 @@ const stories = storiesOf('Sections|Content', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
-  <MainContent>
+  <MainContent onSubmit={() => {}} noValidate="" method="POST">
     <Content>
       <Section>
         <SubHeader>Some Lorem ipsum content</SubHeader>
