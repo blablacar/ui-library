@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `leftAddon` prop to `Stepper`. Rendered only on small display.
 - [...]
 
 # v32.0.0 (06/05/2020)

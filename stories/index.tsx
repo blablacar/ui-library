@@ -32,6 +32,7 @@ import '../src/pages/searchResults/tabs.story'
 import '../src/pages/yourrides/rides.story'
 import '../src/pages/yourrides/history.story'
 import '../src/pages/yourrides/offer/editOptions.story'
+import '../src/pages/yourrides/offer/editPrice.story'
 import '../src/pages/login/email.story'
 // Widgets
 import '../src/autoComplete/story'

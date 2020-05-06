@@ -4,6 +4,7 @@ import { mount, shallow } from 'enzyme'
 import Button from 'button'
 import MinusIcon from 'icon/minusIcon'
 import PlusIcon from 'icon/plusIcon'
+import Itinerary from 'itinerary'
 
 import Stepper, { StepperDisplay } from './Stepper'
 
@@ -37,7 +38,7 @@ it('Should have the default text & attributes', () => {
     />,
   )
 
-  expect(stepper.find('.kirk-stepper').prop('aria-label')).toEqual(
+  expect(stepper.find('.kirk-stepper-content').prop('aria-label')).toEqual(
     'Choose the number of passengers',
   )
   expect(
@@ -170,5 +171,31 @@ describe('handleFontSize', () => {
     spyHandleFontSize.mockClear()
     window.dispatchEvent(new Event('resize'))
     expect(spyHandleFontSize).toHaveBeenCalled()
+  })
+})
+
+describe('leftAddon', () => {
+  const itinerary = <Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />
+
+  it('should not render leftAddon if not provided', () => {
+    const stepper = shallow(<Stepper {...defaultProps} display={StepperDisplay.SMALL} />)
+    expect(stepper.find('.kirk-stepper-left-addon').exists()).toBe(false)
+    expect(stepper.find(Itinerary).exists()).toBe(false)
+  })
+
+  it('should not render leftAddon on large display', () => {
+    const stepper = shallow(
+      <Stepper {...defaultProps} display={StepperDisplay.LARGE} leftAddon={itinerary} />,
+    )
+    expect(stepper.find('.kirk-stepper-left-addon').exists()).toBe(false)
+    expect(stepper.find(Itinerary).exists()).toBe(false)
+  })
+
+  it('should render leftAddon on small display', () => {
+    const stepper = shallow(
+      <Stepper {...defaultProps} display={StepperDisplay.SMALL} leftAddon={itinerary} />,
+    )
+    expect(stepper.find('.kirk-stepper-left-addon').exists()).toBe(true)
+    expect(stepper.find(Itinerary).exists()).toBe(true)
   })
 })
