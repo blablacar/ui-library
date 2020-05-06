@@ -1,11 +1,14 @@
 # Unreleased
 
+- [...]
+
+# v32.0.0 (06/05/2020)
+
 - **[NEW]** Allow icons in `ItemCheckbox` component using `leftAddon` prop
 - **[BREAKING CHANGE]** Responsive `ConfirmationModal`: remove `size` from it.
 - **[UPDATE]** Add support for Form attributes on `MainContent`
 - **[FIX]** Remove role presentation on `MainContent`
 - **[FIX]** `TheVoice` spacing.
-- [...]
 
 # v31.0.3 (04/05/2020)
 
