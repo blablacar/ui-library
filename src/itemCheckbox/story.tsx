@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import LadyIcon from 'icon/ladyIcon'
 import ItemCheckbox, { ItemCheckboxStatus } from 'itemCheckbox'
 import Section from 'layout/section/baseSection'
 
@@ -24,6 +25,7 @@ stories.add(
           name={text('Name', 'InputName')}
           data={text('Data', 'Data')}
           labelTitle={isMainTitle ? text('Label title', 'Title') : null}
+          leftAddon={boolean('with icon', false) ? <LadyIcon /> : null}
           dataInfo={isDataInfo ? text('Data info', 'Info') : null}
           onChange={action('changed')}
           checked={boolean('isChecked', false)}

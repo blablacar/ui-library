@@ -1,8 +1,6 @@
 import './stories.css'
-
 // DESIGN TOKENS
 import '../src/_utils/story'
-
 import '../src/typography/story'
 import '../src/typography/display2/story'
 import '../src/typography/display1/story'
@@ -12,9 +10,7 @@ import '../src/typography/title/story'
 import '../src/typography/titleStrong/story'
 import '../src/typography/body/story'
 import '../src/typography/bodyStrong/story'
-
 import '../src/icon/story'
-
 // Sections
 import '../src/layout/section/baseSection/story'
 import '../src/layout/section/heroSection/story'
@@ -27,7 +23,6 @@ import '../src/layout/section/illustratedSection/story'
 import '../src/layout/section/itemsSection/story'
 import '../src/layout/section/mediaSection/story'
 import '../src/layout/content/story'
-
 // Pages
 import '../src/pages/messaging/inbox.story'
 import '../src/pages/messaging/brazemarketing.story'
@@ -36,8 +31,8 @@ import '../src/pages/ridedetails/bus.story'
 import '../src/pages/searchResults/tabs.story'
 import '../src/pages/yourrides/rides.story'
 import '../src/pages/yourrides/history.story'
+import '../src/pages/yourrides/offer/editOptions.story'
 import '../src/pages/login/email.story'
-
 // Widgets
 import '../src/autoComplete/story'
 import '../src/avatar/story'
