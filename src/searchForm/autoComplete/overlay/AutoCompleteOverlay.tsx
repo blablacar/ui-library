@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 import { AutoCompleteProps } from 'autoComplete'
 import Bullet, { BulletTypes } from 'bullet'
@@ -13,41 +13,23 @@ export type AutoCompleteOverlayProps = Omit<
   | 'searchForItems'
 > & {
   renderAutocompleteComponent: (props: Omit<AutoCompleteProps, 'searchForItems'>) => JSX.Element
-  closeOnBlur: () => void
-  className?: string
 }
 
 export const AutoCompleteOverlay = ({
   renderAutocompleteComponent,
-  closeOnBlur,
-  className,
   ...props
 }: AutoCompleteOverlayProps) => {
-  const overlayRef = useRef<HTMLDivElement>(null)
-
   const icon = (
     <div className="kirk-autoComplete-icon">
       <Bullet type={BulletTypes.SEARCH} />
     </div>
   )
-  return (
-    <div
-      className={className}
-      ref={overlayRef}
-      onBlur={evt => {
-        if (!overlayRef.current.contains(evt.relatedTarget as Node)) {
-          closeOnBlur()
-        }
-      }}
-    >
-      {renderAutocompleteComponent({
-        ...props,
-        autoFocus: true,
-        inputAddon: icon,
-        embeddedInSearchForm: true,
-      })}
-    </div>
-  )
+  return renderAutocompleteComponent({
+    ...props,
+    autoFocus: true,
+    inputAddon: icon,
+    embeddedInSearchForm: true,
+  })
 }
 
 export default AutoCompleteOverlay

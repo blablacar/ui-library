@@ -150,8 +150,7 @@ const StyledSearchForm = styled(SearchForm)`
     left: ${positionAutocompleteTo};
   }
 
-  & .kirk-searchForm-datepicker,
-  & .kirk-searchForm-stepper {
+  & .kirk-searchForm-datepicker {
     left: ${positionDateStepper};
   }
 

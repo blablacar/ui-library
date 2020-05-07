@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
+import '../../__mocks__/matchMedia'
 import { MediaSize } from '_utils/mediaSizeProvider'
 import AutoComplete from 'autoComplete/AutoComplete'
 import TextTitle from 'typography/title'
@@ -9,6 +10,7 @@ import AutoCompleteOverlay from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
 import DatePickerOverlay from './datePicker/overlay'
 import DatePickerSection from './datePicker/section'
+import Overlay from './overlay'
 import SearchForm from './SearchForm'
 import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
@@ -53,42 +55,50 @@ describe('searchForm', () => {
         expect(wrapper.find('.kirk-searchForm-to').text()).toBe('Going to')
       })
 
-      it('should open the autocomplete from overlay', () => {
+      it('should open the autocomplete from overlay and close it on blur', () => {
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
         expect(
-          wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-from'),
+          wrapper
+            .find(Overlay)
+            .first()
+            .hasClass('kirk-searchForm-autocomplete-from'),
         ).toBe(true)
-        wrapper.find(AutoCompleteOverlay).simulate('blur', fakeEvent)
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
+        wrapper
+          .find(Overlay)
+          .first()
+          .simulate('blur', fakeEvent)
+        expect(
+          wrapper
+            .find(Overlay)
+            .first()
+            .prop('shouldDisplay'),
+        ).toBe(false)
       })
 
-      it('should open the autocomplete to overlay and close it on blur', () => {
+      it('should open the autocomplete to overlay', () => {
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
-        expect(wrapper.find(AutoCompleteOverlay).hasClass('kirk-searchForm-autocomplete-to')).toBe(
-          true,
-        )
-        wrapper.find(AutoCompleteOverlay).simulate('blur', fakeEvent)
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
+        expect(
+          wrapper
+            .find(Overlay)
+            .at(1)
+            .hasClass('kirk-searchForm-autocomplete-to'),
+        ).toBe(true)
       })
 
-      it('should open the datepicker overlay and close it on blur', () => {
+      it('should open the datepicker overlay', () => {
         expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
         expect(wrapper.find(DatePickerOverlay).exists()).toBe(true)
-        wrapper.find(DatePickerOverlay).simulate('blur', fakeEvent)
-        expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
       })
 
-      it('should open the stepper overlay and close it on blur', () => {
+      it('should open the stepper overlay', () => {
         expect(wrapper.find(StepperOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
         expect(wrapper.find(StepperOverlay).exists()).toBe(true)
-        wrapper.find(StepperOverlay).simulate('blur', fakeEvent)
-        expect(wrapper.find(StepperOverlay).exists()).toBe(false)
       })
     })
 

@@ -7,7 +7,7 @@ import DatePickerOverlay from './DatePickerOverlay'
 
 const StyledDatePickerOverlay = styled(DatePickerOverlay)`
   & {
-    ${overlayBaseStyle}
+    ${overlayBaseStyle};
   }
 
   & .kirk-datePickerOverlay-datepicker {

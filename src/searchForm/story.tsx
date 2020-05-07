@@ -34,7 +34,6 @@ stories.add('StepperOverlay', () => (
     title="Choose your number of seats"
     increaseLabel="Increase"
     decreaseLabel="Decrease"
-    closeOnBlur={() => {}}
   />
 ))
 stories.add('StepperSection', () => (
@@ -49,11 +48,7 @@ stories.add('StepperSection', () => (
   />
 ))
 stories.add('AutoCompleteOverlay', () => (
-  <AutoCompleteOverlay
-    name="from"
-    closeOnBlur={() => {}}
-    renderAutocompleteComponent={() => <AutoCompleteExample />}
-  />
+  <AutoCompleteOverlay name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
 ))
 stories.add('AutoCompleteSection', () => (
   <AutoCompleteSection

@@ -18,6 +18,7 @@ import AutoCompleteOverlay, { AutoCompleteOverlayProps } from './autoComplete/ov
 import AutoCompleteSection from './autoComplete/section'
 import DatePickerOverlay from './datePicker/overlay'
 import DatePickerSection from './datePicker/section'
+import Overlay from './overlay'
 import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
 
@@ -185,13 +186,15 @@ const SearchForm = ({
         </div>
       </div>
 
-      {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_FROM && (
-        <AutoCompleteOverlay
-          className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
-          closeOnBlur={closeOpenedElement}
-          {...autocompleteFromConfig}
-        />
-      )}
+      <Overlay
+        shouldDisplay={
+          mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_FROM
+        }
+        closeOnBlur={closeOpenedElement}
+        className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
+      >
+        <AutoCompleteOverlay {...autocompleteFromConfig} />
+      </Overlay>
 
       {mediaSize === MediaSize.SMALL &&
         elementOpened === Elements.AUTOCOMPLETE_FROM &&
@@ -217,13 +220,13 @@ const SearchForm = ({
         {mediaSize === MediaSize.SMALL && <Divider />}
       </div>
 
-      {mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_TO && (
-        <AutoCompleteOverlay
-          className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
-          closeOnBlur={closeOpenedElement}
-          {...autocompleteToConfig}
-        />
-      )}
+      <Overlay
+        shouldDisplay={mediaSize === MediaSize.LARGE && elementOpened === Elements.AUTOCOMPLETE_TO}
+        closeOnBlur={closeOpenedElement}
+        className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
+      >
+        <AutoCompleteOverlay {...autocompleteToConfig} />
+      </Overlay>
 
       {mediaSize === MediaSize.SMALL &&
         elementOpened === Elements.AUTOCOMPLETE_TO &&
@@ -245,13 +248,13 @@ const SearchForm = ({
           </button>
         </div>
 
-        {elementOpened === Elements.DATEPICKER && mediaSize === MediaSize.LARGE && (
-          <DatePickerOverlay
-            {...datepickerConfig}
-            className="kirk-searchForm-overlay kirk-searchForm-datepicker"
-            closeOnBlur={closeOpenedElement}
-          />
-        )}
+        <Overlay
+          shouldDisplay={mediaSize === MediaSize.LARGE && elementOpened === Elements.DATEPICKER}
+          closeOnBlur={closeOpenedElement}
+          className="kirk-searchForm-overlay kirk-searchForm-datepicker"
+        >
+          <DatePickerOverlay {...datepickerConfig} closeOnBlur={closeOpenedElement} />
+        </Overlay>
 
         {elementOpened === Elements.DATEPICKER &&
           mediaSize === MediaSize.SMALL &&
@@ -273,16 +276,18 @@ const SearchForm = ({
         </div>
       </div>
 
-      {elementOpened === Elements.STEPPER && mediaSize === MediaSize.LARGE && (
+      <Overlay
+        shouldDisplay={mediaSize === MediaSize.LARGE && elementOpened === Elements.STEPPER}
+        closeOnBlur={closeOpenedElement}
+        className="kirk-searchForm-overlay kirk-searchForm-stepper"
+      >
         <StepperOverlay
           {...stepperConfig}
-          className="kirk-searchForm-overlay kirk-searchForm-stepper"
           onChange={({ value }) => {
             setFormValues({ ...formValues, [Elements.STEPPER]: value as number })
           }}
-          closeOnBlur={closeOpenedElement}
         />
-      )}
+      </Overlay>
 
       {elementOpened === Elements.STEPPER &&
         mediaSize === MediaSize.SMALL &&
