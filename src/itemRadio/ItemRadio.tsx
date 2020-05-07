@@ -18,6 +18,7 @@ export interface ItemRadioProps extends A11yProps {
   readonly data?: string
   readonly className?: string
   readonly labelTitle?: string
+  readonly leftAddon?: React.ReactNode
   readonly dataInfo?: string
   readonly checked?: boolean
   readonly disabled?: boolean
@@ -76,6 +77,7 @@ class ItemRadio extends Component<ItemRadioProps> {
       status,
       chevron,
       highlighted,
+      leftAddon,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemRadioProps>(this.props)
     const isLoading = status === ItemRadioStatus.LOADING
@@ -111,6 +113,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           */
           // eslint-disable-next-line jsx-a11y/label-has-associated-control
           tag={<label />}
+          leftAddon={leftAddon}
           rightAddon={radio}
           chevron={chevron && !isLoading}
           highlighted={highlighted}

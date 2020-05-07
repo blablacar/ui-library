@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Allow icons in `ItemRadio` component using `leftAddon` prop
 - [...]
 
 # v32.1.0 (07/05/2020)
