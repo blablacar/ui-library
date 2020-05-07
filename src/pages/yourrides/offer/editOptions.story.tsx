@@ -52,19 +52,15 @@ class EditOptions extends Component<{}, EditOptionsState> {
           <Section>
             <SubHeader>Passengers options</SubHeader>
 
-            <div style={{ display: 'flex' }}>
-              {/*
-                // @ts-ignore style is not defined in TextTitle props (BBC-7943) */}
-              <TextTitle style={{ flex: 1, lineHeight: '48px' }}>Number of passengers</TextTitle>
-              <div style={{ position: 'relative', right: '-14px' }}>
-                <Stepper
-                  name="stepper"
-                  value={1}
-                  display={StepperDisplay.SMALL}
-                  increaseLabel="Add a seat"
-                  decreaseLabel="Remove a seat"
-                />
-              </div>
+            <div style={{ marginRight: '-14px' }}>
+              <Stepper
+                name="stepper"
+                value={1}
+                display={StepperDisplay.SMALL}
+                increaseLabel="Add a seat"
+                decreaseLabel="Remove a seat"
+                leftAddon={<TextTitle>Number of passengers</TextTitle>}
+              />
             </div>
 
             <Divider />
@@ -111,7 +107,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
         </Content>
         <BottomContent style={{ display: 'flex', justifyContent: 'center', padding: '16px' }}>
           <Button onClick={this.save} status={this.state.buttonStatus}>
-            Sauvegarder
+            Save
           </Button>
         </BottomContent>
       </MainContent>

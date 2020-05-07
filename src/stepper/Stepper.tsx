@@ -1,6 +1,7 @@
 import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import { canUseDOM } from 'exenv'
+import isEmpty from 'lodash.isempty'
 
 import { isTouchEventsAvailable } from '_utils'
 import { color, delay, font, pxToInteger, space } from '_utils/branding'
@@ -38,6 +39,7 @@ export interface StepperProps {
   onChange?: (obj: OnChangeParameters) => void
   display?: StepperDisplay
   focus?: boolean
+  leftAddon?: React.ReactNode
 }
 
 interface StepperState {
@@ -174,9 +176,10 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
         }
   }
 
-  render() {
+  render(): JSX.Element {
     const {
       className,
+      leftAddon,
       title,
       increaseLabel,
       decreaseLabel,
@@ -186,47 +189,53 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
       valueClassName,
       display,
     } = this.props
+
     const isMax = this.state.value >= max
     const isMin = this.state.value <= min
     const buttonSize = StepperButtonSize[display]
+    const hasLeftAddon = display === StepperDisplay.SMALL && !isEmpty(leftAddon)
 
     return (
-      <div
-        className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}
-        ref={this.containerRef}
-        aria-label={title}
-        tabIndex={-1}
-      >
-        <Button
-          aria-label={decreaseLabel}
-          type="button"
-          className="kirk-stepper-decrement"
-          status={ButtonStatus.UNSTYLED}
-          disabled={isMin}
-          isBubble
-          {...this.createButtonListeners(this.decrement)}
-        >
-          <MinusIcon iconColor={isMin ? color.lightGray : color.blue} size={buttonSize} />
-        </Button>
+      <div className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
+        {hasLeftAddon && <div className="kirk-stepper-left-addon">{leftAddon}</div>}
+
         <div
-          aria-live="polite"
-          className={cc(['kirk-stepper-value', valueClassName])}
-          style={{ fontSize: `${this.state.fontSize}px` }}
-          ref={this.valueElementRef}
+          className="kirk-stepper-content"
+          ref={this.containerRef}
+          aria-label={title}
+          tabIndex={-1}
         >
-          {format(this.state.value)}
+          <Button
+            aria-label={decreaseLabel}
+            type="button"
+            className="kirk-stepper-decrement"
+            status={ButtonStatus.UNSTYLED}
+            disabled={isMin}
+            isBubble
+            {...this.createButtonListeners(this.decrement)}
+          >
+            <MinusIcon iconColor={isMin ? color.lightGray : color.blue} size={buttonSize} />
+          </Button>
+          <div
+            aria-live="polite"
+            className={cc(['kirk-stepper-value', valueClassName])}
+            style={{ fontSize: `${this.state.fontSize}px` }}
+            ref={this.valueElementRef}
+          >
+            {format(this.state.value)}
+          </div>
+          <Button
+            aria-label={increaseLabel}
+            type="button"
+            className="kirk-stepper-increment"
+            status={ButtonStatus.UNSTYLED}
+            disabled={isMax}
+            isBubble
+            {...this.createButtonListeners(this.increment)}
+          >
+            <PlusIcon iconColor={isMax ? color.lightGray : color.blue} size={buttonSize} />
+          </Button>
         </div>
-        <Button
-          aria-label={increaseLabel}
-          type="button"
-          className="kirk-stepper-increment"
-          status={ButtonStatus.UNSTYLED}
-          disabled={isMax}
-          isBubble
-          {...this.createButtonListeners(this.increment)}
-        >
-          <PlusIcon iconColor={isMax ? color.lightGray : color.blue} size={buttonSize} />
-        </Button>
       </div>
     )
   }

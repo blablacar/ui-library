@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import Itinerary from 'itinerary'
 import Section from 'layout/section/baseSection'
 import Stepper, { StepperDisplay } from 'stepper'
 
@@ -70,4 +71,21 @@ stories.add('Stepper with large formatted value', () => (
   </Section>
 ))
 
-/* Tests to build */
+stories.add('Stepper with left addon', () => (
+  <Section>
+    <Stepper
+      name="stepper2"
+      min={number('min', 0)}
+      max={number('max', 99999)}
+      step={number('step', 100)}
+      value={number('value', 8400)}
+      increaseLabel={text('increaseLabel', 'Increment')}
+      decreaseLabel={text('decreaseLabel', 'Decrement')}
+      format={value => `${value} грн.`}
+      onChange={action('changed')}
+      display={select('display', StepperDisplay, StepperDisplay.SMALL)}
+      title={text('children', 'Edit the price')}
+      leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
+    />
+  </Section>
+))
