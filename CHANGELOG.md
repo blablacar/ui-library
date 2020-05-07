@@ -1,10 +1,13 @@
 # Unreleased
 
+- [...]
+
+# v32.1.0 (07/05/2020)
+
 - **[NEW]** Add `leftAddon` prop to `Stepper`. Rendered only on small display.
 - **[FIX]** Change `labelInfo` type to `React.ReactNode` in `ItemChoice`
 - **[FIX]** Change `mainInfo` type to `React.ReactNode` in `ItemData`
 - **[UPDATE]** `Message` respects break-lines character
-- [...]
 
 # v32.0.0 (06/05/2020)
 
