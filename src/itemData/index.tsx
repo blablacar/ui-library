@@ -9,7 +9,7 @@ export interface ItemDataProps extends A11yProps {
   readonly data: string | JSX.Element
   readonly dataStrikeThrough?: boolean
   readonly dataAriaLabel?: string
-  readonly mainInfo: string
+  readonly mainInfo: React.ReactNode
   readonly className?: string
   readonly mainTitle?: string
   readonly mainTitleButtonAddon?: React.ReactElement<Button>

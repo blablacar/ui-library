@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[NEW]** Add `leftAddon` prop to `Stepper`. Rendered only on small display.
+- **[FIX]** Change `labelInfo` type to `React.ReactNode` in `ItemChoice`
+- **[FIX]** Change `mainInfo` type to `React.ReactNode` in `ItemData`
 - [...]
 
 # v32.0.0 (06/05/2020)
