@@ -47,6 +47,7 @@ const StyledMessage = styled(Message)`
 
   & .kirk-label p {
     margin: 0;
+    white-space: pre-line;
   }
 
   &.kirk-active .kirk-label {
