@@ -17,7 +17,7 @@ export const ItemChoiceStatus = ItemStatus
 
 export interface ItemChoiceProps extends A11yProps {
   readonly label?: string
-  readonly labelInfo?: string
+  readonly labelInfo?: React.ReactNode
   readonly data?: string
   readonly dataInfo?: string
   readonly leftAddon?: JSX.Element
