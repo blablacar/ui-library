@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 import ItemChoice from '../itemChoice'
 import ItemsList, { ItemsListDivider } from '../itemsList'
 import Section from '../layout/section/baseSection'
-
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemsList', module)

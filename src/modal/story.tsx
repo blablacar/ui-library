@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
 import Modal, { ModalSize } from '../modal'
-
 import { ModalProps } from './Modal'
 import modalDoc from './specifications/modal.md'
 

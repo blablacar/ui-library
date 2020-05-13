@@ -6,7 +6,7 @@ import Avatar from '../avatar'
 import Profile from '../profile'
 import Rating from '../rating'
 import { TextDisplayType } from '../text'
-import TextBody from 'typography/body'
+import TextBody from '../typography/body'
 
 const defaultProps = {
   title: 'Jack Sparrow',

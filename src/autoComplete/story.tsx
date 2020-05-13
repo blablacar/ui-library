@@ -5,8 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { ItemStatus } from '../_utils/item'
 import ComfortIcon from '../icon/comfortIcon'
 import Section from '../layout/section/baseSection'
-
-import AutoComplete from '.'
+import AutoComplete from './index'
 
 const stories = storiesOf('Widgets|AutoComplete', module)
 stories.addDecorator(withKnobs)

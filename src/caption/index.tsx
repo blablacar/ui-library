@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { color, font } from '../_utils/branding'
-
 import Caption from './Caption'
 
 const StyledCaption = styled(Caption)`

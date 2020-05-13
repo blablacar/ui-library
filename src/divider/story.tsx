@@ -3,8 +3,8 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import Divider from '../divider'
-import spec from '../divider/specifications/divider.md'
 import Section from '../layout/section/baseSection'
+import spec from './specifications/divider.md'
 
 const stories = storiesOf('Widgets|Divider', module)
 stories.addDecorator(withKnobs)

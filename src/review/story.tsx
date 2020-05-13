@@ -3,7 +3,6 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
-
 import Review from './index'
 
 const stories = storiesOf('Widgets|Review', module)

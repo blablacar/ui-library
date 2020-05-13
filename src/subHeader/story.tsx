@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
 import SubHeader from '../subHeader'
-import spec from '../subHeader/specifications/subHeader.md'
+import spec from './specifications/subHeader.md'
 
 const stories = storiesOf('Widgets|SubHeader', module)
 stories.addDecorator(withKnobs)

@@ -2,7 +2,6 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 import Column from '../../layout/column'
-
 import Columns from './index'
 
 describe('Columns', () => {

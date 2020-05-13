@@ -6,7 +6,6 @@ import Button from '../../button'
 import ChevronIcon from '../../icon/chevronIcon'
 import ClockIcon from '../../icon/clockIcon'
 import Text from '../../text'
-
 import StyledItem from './index'
 import Item from './Item'
 

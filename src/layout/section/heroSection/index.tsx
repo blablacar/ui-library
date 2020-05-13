@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
-
 import HeroSection, { HeroSectionProps } from './heroSection'
 
 // Remove these deprecated styles once all the button content parts have been removed.

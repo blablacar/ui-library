@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 
 import { color } from '../../_utils/branding'
 import Section from '../../layout/section/baseSection'
-
 import TextTitleStrong from './index'
 
 const stories = storiesOf('Brand|typography', module)

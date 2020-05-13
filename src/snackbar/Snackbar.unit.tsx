@@ -4,7 +4,6 @@ import { mount, shallow } from 'enzyme'
 import exenv from 'exenv'
 
 import Button from '../button'
-
 import StyledSnackbar from './index'
 import Snackbar from './Snackbar'
 

@@ -3,7 +3,6 @@ import { shallow } from 'enzyme'
 
 import AutoComplete from '../../../autoComplete'
 import ChevronIcon from '../../../icon/chevronIcon'
-
 import AutoCompleteSection from './AutoCompleteSection'
 
 describe('AutoCompleteSection', () => {

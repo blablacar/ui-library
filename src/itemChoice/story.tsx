@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react'
 import ComfortIcon from '../icon/comfortIcon'
 import ItemChoice, { ItemChoiceStatus, ItemChoiceStyle } from '../itemChoice'
 import Section from '../layout/section/baseSection'
-
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemChoice', module)

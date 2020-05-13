@@ -9,7 +9,6 @@ import {
   space,
   transition,
 } from '../_utils/branding'
-
 import Textarea from './Textarea'
 
 const StyledTextarea = styled(Textarea)`

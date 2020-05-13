@@ -8,7 +8,6 @@ import Button, { ButtonStatus } from '../button'
 import ArrowIcon from '../icon/arrowIcon'
 import LockIcon from '../icon/lockIcon'
 import Section from '../layout/section/baseSection'
-
 import primaryDoc from './specifications/primary.md'
 import secondaryDoc from './specifications/secondary.md'
 import tertiaryDoc from './specifications/tertiary.md'

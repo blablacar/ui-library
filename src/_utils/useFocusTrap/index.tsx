@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 
-import { KEYS } from '../keycodes'
 import createFocusTrap from 'focus-trap'
+
+import { KEYS } from '../keycodes'
 
 /**
  * This custom hook will trap the focus in the component as long.

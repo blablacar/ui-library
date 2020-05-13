@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { shadow } from '../branding'
-
 import BaseIcon from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`

@@ -3,7 +3,6 @@ import { shallow } from 'enzyme'
 
 import AutoComplete from '../../../autoComplete'
 import Bullet from '../../../bullet'
-
 import AutoCompleteOverlay from './AutoCompleteOverlay'
 
 describe('AutoCompleteOverlay', () => {

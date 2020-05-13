@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { color, inputBorderSize, space } from '../_utils/branding'
-
 import ItemRadio from './ItemRadio'
 
 const StyledItemRadio = styled(ItemRadio)`

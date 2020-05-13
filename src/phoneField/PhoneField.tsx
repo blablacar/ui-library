@@ -3,8 +3,9 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 
-import prefix from '../_utils'
 import { allCountries } from 'country-telephone-data'
+
+import prefix from '../_utils'
 import SelectField from '../selectField'
 import TextField, { inputTypes } from '../textField'
 

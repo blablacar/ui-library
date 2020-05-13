@@ -2,7 +2,6 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import Button, { ButtonStatus } from '../button'
-
 import ButtonGroup from './ButtonGroup'
 
 describe('Button Group', () => {

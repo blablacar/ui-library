@@ -3,7 +3,6 @@ import { shallow } from 'enzyme'
 
 import Bullet, { BulletTypes } from '../../bullet'
 import Proximity from '../../proximity'
-
 import ItineraryLocation from './ItineraryLocation'
 
 const place: Place = {

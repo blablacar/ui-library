@@ -2,7 +2,6 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import ItemChoice, { ItemChoiceStatus } from '../itemChoice'
-
 import AutoCompleteList from './AutoCompleteList'
 
 const fakeItems = [

@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 import Button, { ButtonStatus } from '../button'
 import ButtonGroup from '../buttonGroup'
 import Section from '../layout/section/baseSection'
-
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ButtonGroup', module)

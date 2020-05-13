@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-
 import MediaSection from './mediaSection'
 
 const StyledMediaSection = styled(MediaSection)`

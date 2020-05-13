@@ -7,7 +7,6 @@ import { color } from '../_utils/branding'
 import BubbleIcon from '../icon/bubbleIcon'
 import ItemAction from '../itemAction'
 import Section from '../layout/section/baseSection'
-
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemAction', module)

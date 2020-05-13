@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import '../../_utils/closest'
+
 import { componentSizes, pxToInteger } from '../../_utils/branding'
 
 export type MainContentProps = Readonly<{

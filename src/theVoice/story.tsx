@@ -4,9 +4,8 @@ import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
 import Section from '../layout/section/baseSection'
-import readme from '../theVoice/specifications/theVoice.md'
-
-import TheVoice from '.'
+import TheVoice from './index'
+import readme from './specifications/theVoice.md'
 
 const stories = storiesOf('Widgets|TheVoice', module)
 stories.addDecorator(withKnobs)

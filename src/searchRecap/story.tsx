@@ -3,7 +3,6 @@ import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
-
 import SearchRecap from './index'
 
 const stories = storiesOf('Widgets|SearchRecap', module)

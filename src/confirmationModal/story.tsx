@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 
 import ConfirmationModal, { ConfirmationModalStatus } from '../confirmationModal'
 import Section from '../layout/section/baseSection'
-
 import { ConfirmationModalProps } from './ConfirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 

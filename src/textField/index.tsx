@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, radius, space, transition } from '../_utils/branding'
-
 import Textfield from './TextField'
 
 const StyledTextfield = styled(Textfield)`

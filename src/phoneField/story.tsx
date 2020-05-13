@@ -4,8 +4,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
-
-import PhoneField from '.'
+import PhoneField from './index'
 import customDoc from './specifications/custom.md'
 import defaultDoc from './specifications/default.md'
 

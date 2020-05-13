@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { font, space } from '../_utils/branding'
-
 import SubHeader from './SubHeader'
 
 const StyledSubHeader = styled(SubHeader)`

@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
 import Item from '../_utils/item'
-
 import ItemRadio, { ItemRadioProps, ItemRadioStatus } from './ItemRadio'
 
 describe('ItemRadio', () => {

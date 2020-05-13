@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-
 import TabsSection from './tabsSection'
 
 const StyledTabsSection = styled(TabsSection)`

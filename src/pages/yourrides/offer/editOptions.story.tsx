@@ -15,7 +15,7 @@ import Section from '../../../layout/section/baseSection'
 import Stepper, { StepperDisplay } from '../../../stepper'
 import SubHeader from '../../../subHeader'
 import Textarea from '../../../textarea'
-import TextTitle from 'typography/title'
+import TextTitle from '../../../typography/title'
 
 const stories = storiesOf('Pages|Your rides/Offer/Edit/Options', module)
 

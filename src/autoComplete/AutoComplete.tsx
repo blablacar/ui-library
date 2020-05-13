@@ -10,7 +10,6 @@ import Divider from '../divider'
 import ItemInfo from '../itemInfo'
 import Loader from '../loader'
 import TextField, { inputTypes } from '../textField'
-
 import AutoCompleteList from './AutoCompleteListStyle'
 
 type query = string | number | boolean

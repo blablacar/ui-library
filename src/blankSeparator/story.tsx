@@ -3,10 +3,9 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import BlankSeparator from '../blankSeparator'
-import spec from '../blankSeparator/specifications/blankSeparator.md'
 import Section from '../layout/section/baseSection'
-
 import { BlankSeparatorSize } from './BlankSeparator'
+import spec from './specifications/blankSeparator.md'
 
 const stories = storiesOf('Widgets|BlankSeparator', module)
 stories.addDecorator(withKnobs)

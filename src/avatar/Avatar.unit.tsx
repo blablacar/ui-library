@@ -2,7 +2,6 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Badge from '../badge'
-
 import Avatar from './Avatar'
 
 it('Should have the proper default state.', () => {

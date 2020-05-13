@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 import CheckShieldIcon from '../../../icon/checkShieldIcon'
 import DirectionIcon from '../../../icon/directionIcon'
 import IdCardVerifiedIcon from '../../../icon/idCardVerifiedIcon'
-
 import ColumnedContentSection, { ColumnedSectionContentMediaKind } from './index'
 
 const stories = storiesOf('Sections|ColumnedContentSection', module)

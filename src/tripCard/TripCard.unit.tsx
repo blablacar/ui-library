@@ -9,7 +9,6 @@ import LadyIcon from '../icon/ladyIcon'
 import LightningIcon from '../icon/lightningIcon'
 import WarningIcon from '../icon/warningIcon'
 import Text from '../text'
-
 import TripCard from './TripCard'
 
 const mockedProps = {

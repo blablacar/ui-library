@@ -5,7 +5,6 @@ import Button from '../button'
 import MinusIcon from '../icon/minusIcon'
 import PlusIcon from '../icon/plusIcon'
 import Itinerary from '../itinerary'
-
 import Stepper, { StepperDisplay } from './Stepper'
 
 const defaultProps = {

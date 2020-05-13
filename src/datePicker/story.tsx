@@ -4,8 +4,8 @@ import { number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import DatePicker, { DatePickerOrientation } from '../datePicker'
-import readme from '../datePicker/specifications/datepicker.md'
 import Section from '../layout/section/baseSection'
+import readme from './specifications/datepicker.md'
 
 const stories = storiesOf('Widgets|DatePicker', module)
 stories.addDecorator(withKnobs)

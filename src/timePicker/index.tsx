@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, space } from '../_utils/branding'
-
 import TimePicker from './TimePicker'
 
 export const StyledTimePicker = styled(TimePicker)`

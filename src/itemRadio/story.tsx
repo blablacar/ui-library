@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 
 import ItemRadioGroup from '../itemRadioGroup'
 import Section from '../layout/section/baseSection'
-
 import TheVoice from '../theVoice'
 import ItemRadio from '.'
 import { ItemRadioStatus } from './ItemRadio'

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-
 import HamburgerButton from './HamburgerButton'
 
 const StyledHamburgerButton = styled(HamburgerButton)`

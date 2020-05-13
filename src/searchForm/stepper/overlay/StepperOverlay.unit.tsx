@@ -4,7 +4,6 @@ import { shallow } from 'enzyme'
 import Item from '../../../_utils/item'
 import StandardSeat from '../../../icon/standardSeat'
 import Stepper, { StepperDisplay } from '../../../stepper'
-
 import StepperOverlay from './StepperOverlay'
 
 describe('StepperOverlay', () => {

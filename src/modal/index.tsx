@@ -8,7 +8,6 @@ import {
   responsiveBreakpoints,
   space,
 } from '../_utils/branding'
-
 import Modal from './Modal'
 
 const StyledModal = styled(Modal)`

@@ -4,7 +4,6 @@ import { mount } from 'enzyme'
 
 import { color } from '../_utils/branding'
 import ProximityIcon from '../icon/proximityIcon'
-
 import PushInfo from './index'
 import { animationDelay, animationDuration } from './PushInfo'
 

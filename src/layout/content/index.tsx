@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { responsiveBreakpoints } from '../../_utils/branding'
-
 import { MainContent as MainContentComponent } from './content'
 
 export const Content = styled.div.attrs(() => ({

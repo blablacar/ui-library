@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 
 import Button from '../../../button'
 import { TabStatus } from '../../../tabs'
-
 import TabsSection from './index'
 
 const stories = storiesOf('Sections|TabsSection', module)

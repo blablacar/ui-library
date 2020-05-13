@@ -5,7 +5,6 @@ import Item from '../../../_utils/item'
 import Button from '../../../button'
 import ChevronIcon from '../../../icon/chevronIcon'
 import Stepper, { StepperDisplay } from '../../../stepper'
-
 import StepperSection from './StepperSection'
 
 describe('StepperSection', () => {

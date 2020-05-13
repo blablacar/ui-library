@@ -3,8 +3,7 @@ import { act } from 'react-dom/test-utils'
 import { mount, ReactWrapper } from 'enzyme'
 
 import { KEYS } from '../keycodes'
-
-import FocusVisibleProvider, { FOCUS_VISIBLE_CSS_CLASS } from '.'
+import FocusVisibleProvider, { FOCUS_VISIBLE_CSS_CLASS } from './index'
 import { useFocusVisible } from './useFocusVisible'
 
 let wrapper: ReactWrapper

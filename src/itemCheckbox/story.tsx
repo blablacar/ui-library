@@ -6,7 +6,6 @@ import { storiesOf } from '@storybook/react'
 import LadyIcon from '../icon/ladyIcon'
 import ItemCheckbox, { ItemCheckboxStatus } from '../itemCheckbox'
 import Section from '../layout/section/baseSection'
-
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemCheckbox', module)

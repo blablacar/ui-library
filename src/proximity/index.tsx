@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
-
 import Proximity from './Proximity'
 
 const StyledProximity = styled(Proximity)`

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { overlayBaseStyle } from 'searchForm/baseStyles'
-
+import { overlayBaseStyle } from '../../../searchForm/baseStyles'
 import { TRANSITION_CLASS_NAME } from '../../overlay/Overlay'
 import StepperOverlay from './StepperOverlay'
 

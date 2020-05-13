@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 
 import Section from '../layout/section/baseSection'
 import SuccessModal, { SuccessModalProps } from '../successModal'
-
 import spec from './specifications/successModal.md'
 
 const stories = storiesOf('Widgets|Modal|SuccessModal', module)
