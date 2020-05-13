@@ -17,15 +17,29 @@ const pointerMoveEventList = [
 
 const pointerDownEventList = ['mousedown', 'pointerdown', 'touchstart']
 
+export const FOCUS_VISIBLE_CSS_CLASS = 'focus-visible'
+
 type FocusVisibleProviderProps = {
   children: ReactNode
+  // Provide a global css selector for legacy components.
+  setGlobalClassName?: boolean
 }
 
 export const FocusVisibleContext = createContext(false)
 
-export const FocusVisibleProvider = ({ children }: FocusVisibleProviderProps) => {
-  /* When the provider first loads, assume the user is in pointer modality. */
+export const FocusVisibleProvider = ({
+  children,
+  setGlobalClassName,
+}: FocusVisibleProviderProps) => {
+  // When the provider first loads, assume the user is in pointer modality.
   const [hadKeyboardEvent, setHadKeyboardEvent] = useState(false)
+
+  if (setGlobalClassName) {
+    useEffect(() => {
+      // Add a 'focus-visible' CSS class on the <body> element.
+      document.body.classList.toggle(FOCUS_VISIBLE_CSS_CLASS, hadKeyboardEvent)
+    }, [hadKeyboardEvent])
+  }
 
   useEffect(() => {
     let lastClientX: Number

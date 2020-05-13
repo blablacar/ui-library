@@ -4,14 +4,18 @@ import { mount, ReactWrapper } from 'enzyme'
 
 import { KEYS } from '_utils/keycodes'
 
-import FocusVisibleProvider from '.'
+import FocusVisibleProvider, { FOCUS_VISIBLE_CSS_CLASS } from '.'
 import { useFocusVisible } from './useFocusVisible'
 
 let wrapper: ReactWrapper
 const ButtonComponent = () => {
   const { focusVisible, onFocus, onBlur } = useFocusVisible()
   return (
-    <button className={focusVisible ? 'focus-visible' : null} onFocus={onFocus} onBlur={onBlur}>
+    <button
+      className={focusVisible ? FOCUS_VISIBLE_CSS_CLASS : null}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    >
       Test
     </button>
   )
@@ -34,7 +38,7 @@ describe('useFocusVisible', () => {
     expect(wrapper.find('button').prop('className')).toEqual(null)
 
     wrapper.find('button').simulate('focus')
-    expect(wrapper.find('button').prop('className')).toEqual('focus-visible')
+    expect(wrapper.find('button').prop('className')).toEqual(FOCUS_VISIBLE_CSS_CLASS)
   })
   it('Should have `focusVisible` falsy value when use not whitelisted key', () => {
     wrapper.find('button').simulate('focus')
