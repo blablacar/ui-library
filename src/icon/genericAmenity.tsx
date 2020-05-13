@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import StatusIcon from '_utils/icon/status'
+import StatusIcon from '../_utils/icon/status'
 
 export const GenericAmenity = (props: Icon) => (
   <StatusIcon {...props}>

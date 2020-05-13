@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { responsiveBreakpoints } from '_utils/branding'
+import { responsiveBreakpoints } from '../../_utils/branding'
 
 import Columns from './columns'
 

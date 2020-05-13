@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Item from '_utils/item'
-import Datepicker, { DatePickerOrientation, DatePickerProps } from 'datePicker'
-import Divider from 'divider'
-import CalendarIcon from 'icon/calendarIcon'
+import Item from '../../../_utils/item'
+import Datepicker, { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
+import Divider from '../../../divider'
+import CalendarIcon from '../../../icon/calendarIcon'
 
 export interface DatePickerOverlayProps extends DatePickerProps {
   title: string

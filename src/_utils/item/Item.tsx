@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { color } from '_utils/branding'
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Button from 'button/Button'
-import ChevronIcon from 'icon/chevronIcon'
-import Text, { TextDisplayType, TextTagType } from 'text'
+import { color } from '../branding'
+import { A11yProps, pickA11yProps } from '../interfaces'
+import Button from '../../button/Button'
+import ChevronIcon from '../../icon/chevronIcon'
+import Text, { TextDisplayType, TextTagType } from '../../text'
 
 export enum ItemStatus {
   DEFAULT = 'default',

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-import { KEYS } from '_utils/keycodes'
+import { KEYS } from '../keycodes'
 import createFocusTrap from 'focus-trap'
 
 /**

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, responsiveBreakpoints, space } from '_utils/branding'
-import Button from 'button'
-import Modal from 'modal'
+import { color, componentSizes, responsiveBreakpoints, space } from '../_utils/branding'
+import Button from '../button'
+import Modal from '../modal'
 
 const StyledSuccessModal = styled(Modal)`
   padding: 0;

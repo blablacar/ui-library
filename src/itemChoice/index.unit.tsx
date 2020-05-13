@@ -2,8 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
-import Item from '_utils/item'
-import ComfortIcon from 'icon/comfortIcon'
+import Item from '../_utils/item'
+import ComfortIcon from '../icon/comfortIcon'
 
 import ItemChoice, { ItemChoiceProps, ItemChoiceStatus, ItemChoiceStyle } from './index'
 

@@ -2,9 +2,9 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ItemEditableInfo from 'itemEditableInfo'
-import readme from 'itemEditableInfo/specifications/specs.md'
-import Section from 'layout/section/baseSection'
+import ItemEditableInfo from '../itemEditableInfo'
+import readme from '../itemEditableInfo/specifications/specs.md'
+import Section from '../layout/section/baseSection'
 
 const stories = storiesOf('Widgets|ItemEditableInfo', module)
 stories.addDecorator(withKnobs)

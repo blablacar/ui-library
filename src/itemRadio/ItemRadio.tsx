@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Item from '_utils/item'
-import RadioIcon from '_utils/radioIcon'
-import { TextDisplayType } from 'text'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import Item from '../_utils/item'
+import RadioIcon from '../_utils/radioIcon'
+import { TextDisplayType } from '../text'
 
 export enum ItemRadioStatus {
   DEFAULT = 'default',

@@ -2,10 +2,10 @@ import React from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button from 'button'
-import EmptyState from 'emptyState'
-import spec from 'emptyState/specifications/emptystate.md'
-import Section from 'layout/section/baseSection'
+import Button from '../button'
+import EmptyState from '../emptyState'
+import spec from '../emptyState/specifications/emptystate.md'
+import Section from '../layout/section/baseSection'
 
 const stories = storiesOf('Widgets|EmptyState', module)
 stories.addDecorator(withKnobs)

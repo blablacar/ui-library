@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, font, radius, space, transition } from '_utils/branding'
+import { color, componentSizes, font, radius, space, transition } from '../branding'
 
 import ItineraryCollapsible from './ItineraryCollapsible'
 

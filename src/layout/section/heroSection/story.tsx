@@ -2,10 +2,9 @@ import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import MediaSizeProvider from '_utils/mediaSizeProvider'
-import { AutoCompleteExample } from 'autoComplete/story'
-import SearchForm from 'searchForm'
-
+import MediaSizeProvider from '../../../_utils/mediaSizeProvider'
+import { AutoCompleteExample } from '../../../autoComplete/story'
+import SearchForm from '../../../searchForm'
 import HeroSection from './index'
 
 const stories = storiesOf('Sections|HeroSection', module)

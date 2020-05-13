@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, font, space } from '_utils/branding'
+import { color, componentSizes, font, space } from '../_utils/branding'
 
 import Itinerary from './Itinerary'
 

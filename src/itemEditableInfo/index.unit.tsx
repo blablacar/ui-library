@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import ItemEditableInfo from 'itemEditableInfo'
+import ItemEditableInfo from '../itemEditableInfo'
 
 it('Should render a basic ItemEditableInfo', () => {
   const props = {

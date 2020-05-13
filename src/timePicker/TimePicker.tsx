@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
+import prefix from '../_utils'
 
 /**
  * Format given dateTime in the format HH:MM.

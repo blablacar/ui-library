@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import { color } from '_utils/branding'
-import Badge from 'badge'
-import CheckIcon from 'icon/checkIcon'
+import prefix from '../_utils'
+import { color } from '../_utils/branding'
+import Badge from '../badge'
+import CheckIcon from '../icon/checkIcon'
 
 export interface AvatarProps {
   readonly className?: string

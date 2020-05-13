@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { color } from '_utils/branding'
-import CircleIcon from 'icon/circleIcon'
-import Loader from 'loader'
+import { color } from '../branding'
+import CircleIcon from '../../icon/circleIcon'
+import Loader from '../../loader'
 
 interface RadioIconProps {
   readonly isChecked?: boolean

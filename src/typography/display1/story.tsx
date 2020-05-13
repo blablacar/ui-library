@@ -2,8 +2,8 @@ import React from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color } from '_utils/branding'
-import Section from 'layout/section/baseSection'
+import { color } from '../../_utils/branding'
+import Section from '../../layout/section/baseSection'
 
 import TextDisplay1 from './index'
 

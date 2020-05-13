@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { space } from '_utils/branding'
+import { space } from '../_utils/branding'
 
 import Section from '../layout/section/baseSection'
 import TextBody from './body'

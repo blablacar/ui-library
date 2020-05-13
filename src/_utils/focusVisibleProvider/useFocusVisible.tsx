@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from 'react'
 
-import { FocusVisibleContext } from '_utils/focusVisibleProvider'
+import { FocusVisibleContext } from '../focusVisibleProvider'
 
 export const useFocusVisible = () => {
   const [isFocused, setIsFocused] = useState(false)

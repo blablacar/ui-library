@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Button from 'button'
-import ItemData from 'itemData'
-import Text from 'text'
+import Button from '../button'
+import ItemData from '../itemData'
+import Text from '../text'
 
 const defaultProps = {
   mainInfo: 'Main information',

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 
-import { color } from '_utils/branding'
-import BaseIcon from '_utils/icon'
-import { BaseIconDefaultProps, IconProps } from '_utils/icon/BaseIcon'
+import { color } from '../branding'
+import BaseIcon from '../icon'
+import { BaseIconDefaultProps, IconProps } from '../icon/BaseIcon'
 
 export enum status {
   ON = 'on',

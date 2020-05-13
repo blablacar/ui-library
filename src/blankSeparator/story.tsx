@@ -2,9 +2,9 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import BlankSeparator from 'blankSeparator'
-import spec from 'blankSeparator/specifications/blankSeparator.md'
-import Section from 'layout/section/baseSection'
+import BlankSeparator from '../blankSeparator'
+import spec from '../blankSeparator/specifications/blankSeparator.md'
+import Section from '../layout/section/baseSection'
 
 import { BlankSeparatorSize } from './BlankSeparator'
 

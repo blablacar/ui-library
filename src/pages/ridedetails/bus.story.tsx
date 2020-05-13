@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Avatar from 'avatar'
-import Divider from 'divider'
-import ItemData from 'itemData'
-import Itinerary from 'itinerary'
-import Section from 'layout/section/baseSection'
-import TheVoice from 'theVoice'
+import Avatar from '../../avatar'
+import Divider from '../../divider'
+import ItemData from '../../itemData'
+import Itinerary from '../../itinerary'
+import Section from '../../layout/section/baseSection'
+import TheVoice from '../../theVoice'
 
 const stories = storiesOf('Pages|Ride details/Bus', module)
 

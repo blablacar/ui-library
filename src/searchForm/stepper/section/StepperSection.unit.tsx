@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Item from '_utils/item'
-import Button from 'button'
-import ChevronIcon from 'icon/chevronIcon'
-import Stepper, { StepperDisplay } from 'stepper'
+import Item from '../../../_utils/item'
+import Button from '../../../button'
+import ChevronIcon from '../../../icon/chevronIcon'
+import Stepper, { StepperDisplay } from '../../../stepper'
 
 import StepperSection from './StepperSection'
 

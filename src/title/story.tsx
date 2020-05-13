@@ -2,8 +2,8 @@ import React from 'react'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
-import Title from 'title'
+import Section from '../layout/section/baseSection'
+import Title from '../title'
 
 const stories = storiesOf('Widgets|Title', module)
 const optionHeading = {

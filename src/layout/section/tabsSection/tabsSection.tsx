@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Tabs, { TabsProps } from 'tabs'
+import Tabs, { TabsProps } from '../../../tabs'
 
 export interface TabsSectionProps {
   readonly className?: string

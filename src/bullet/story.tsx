@@ -2,7 +2,7 @@ import React from 'react'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
+import Section from '../layout/section/baseSection'
 
 import { BulletTypes } from './Bullet'
 import Bullet from './index'

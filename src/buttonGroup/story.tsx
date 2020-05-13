@@ -2,9 +2,9 @@ import React from 'react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button, { ButtonStatus } from 'button'
-import ButtonGroup from 'buttonGroup'
-import Section from 'layout/section/baseSection'
+import Button, { ButtonStatus } from '../button'
+import ButtonGroup from '../buttonGroup'
+import Section from '../layout/section/baseSection'
 
 import spec from './specifications/index.md'
 

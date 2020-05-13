@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { color } from '_utils/branding'
-import BaseIcon from '_utils/icon'
-import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
+import { color } from '../_utils/branding'
+import BaseIcon from '../_utils/icon'
+import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 
 export interface PinProps extends Icon {
   readonly bgColor?: string

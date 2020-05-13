@@ -3,9 +3,9 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import LadyIcon from 'icon/ladyIcon'
-import ItemCheckbox, { ItemCheckboxStatus } from 'itemCheckbox'
-import Section from 'layout/section/baseSection'
+import LadyIcon from '../icon/ladyIcon'
+import ItemCheckbox, { ItemCheckboxStatus } from '../itemCheckbox'
+import Section from '../layout/section/baseSection'
 
 import specs from './specifications/index.md'
 

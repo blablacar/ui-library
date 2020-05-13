@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import Item from '_utils/item'
-import Avatar from 'avatar'
-import Profile from 'profile'
-import Rating from 'rating'
-import { TextDisplayType } from 'text'
+import Item from '../_utils/item'
+import Avatar from '../avatar'
+import Profile from '../profile'
+import Rating from '../rating'
+import { TextDisplayType } from '../text'
 import TextBody from 'typography/body'
 
 const defaultProps = {

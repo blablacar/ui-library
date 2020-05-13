@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import Title from 'title'
+import Title from '../title'
 
 export interface TheVoiceProps {
   readonly id?: string

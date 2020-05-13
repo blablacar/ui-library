@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
-import { A11yProps } from '_utils/interfaces'
+import { A11yProps } from '../_utils/interfaces'
 
 import Hint from './Hint'
 import HintBubble from './HintBubble'

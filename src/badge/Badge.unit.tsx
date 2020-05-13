@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { StyledCheckIcon } from 'icon/checkIcon'
+import { StyledCheckIcon } from '../icon/checkIcon'
 
 import Badge from './Badge'
 

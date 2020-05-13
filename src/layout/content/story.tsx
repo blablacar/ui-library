@@ -2,13 +2,13 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button, { ButtonStatus } from 'button'
-import ButtonGroup from 'buttonGroup'
-import { BottomContent, Content, MainContent } from 'layout/content'
-import Section from 'layout/section/baseSection'
-import Modal, { ModalSize } from 'modal'
-import Paragraph from 'paragraph'
-import SubHeader from 'subHeader'
+import Button, { ButtonStatus } from '../../button'
+import ButtonGroup from '../../buttonGroup'
+import { BottomContent, Content, MainContent } from '../../layout/content'
+import Section from '../../layout/section/baseSection'
+import Modal, { ModalSize } from '../../modal'
+import Paragraph from '../../paragraph'
+import SubHeader from '../../subHeader'
 
 const stories = storiesOf('Sections|Content', module)
 stories.addDecorator(withKnobs)

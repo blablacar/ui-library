@@ -4,11 +4,11 @@ import TransitionGroup from 'react-transition-group/TransitionGroup'
 import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 
-import { color } from '_utils/branding'
-import Button, { ButtonStatus } from 'button'
-import CrossIcon from 'icon/crossIcon'
-import Text, { TextDisplayType } from 'text'
-import CustomTransition, { AnimationType } from 'transitions'
+import { color } from '../_utils/branding'
+import Button, { ButtonStatus } from '../button'
+import CrossIcon from '../icon/crossIcon'
+import Text, { TextDisplayType } from '../text'
+import CustomTransition, { AnimationType } from '../transitions'
 
 export interface SnackbarProps {
   readonly close: () => void

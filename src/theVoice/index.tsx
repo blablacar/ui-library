@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, responsiveBreakpoints, space } from '_utils/branding'
+import { color, responsiveBreakpoints, space } from '../_utils/branding'
 
 import TheVoice from './TheVoice'
 

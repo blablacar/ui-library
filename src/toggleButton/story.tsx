@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
+import Section from '../layout/section/baseSection'
 
 import ToggleButton, { ToggleButtonStatus } from '.'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Button, { ButtonProps } from 'button'
-import TextDisplay1 from 'typography/display1'
-import TextTitle from 'typography/title'
+import Button, { ButtonProps } from '../../../button'
+import TextDisplay1 from '../../../typography/display1'
+import TextTitle from '../../../typography/title'
 
 export type HeroSectionProps = {
   className?: string

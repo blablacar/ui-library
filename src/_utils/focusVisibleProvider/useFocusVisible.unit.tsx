@@ -2,7 +2,7 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, ReactWrapper } from 'enzyme'
 
-import { KEYS } from '_utils/keycodes'
+import { KEYS } from '../keycodes'
 
 import FocusVisibleProvider, { FOCUS_VISIBLE_CSS_CLASS } from '.'
 import { useFocusVisible } from './useFocusVisible'

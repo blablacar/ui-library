@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Item from '_utils/item'
-import DatePicker, { DatePickerOrientation } from 'datePicker'
-import ChevronIcon from 'icon/chevronIcon'
+import Item from '../../../_utils/item'
+import DatePicker, { DatePickerOrientation } from '../../../datePicker'
+import ChevronIcon from '../../../icon/chevronIcon'
 
 import DatePickerSection from './DatePickerSection'
 

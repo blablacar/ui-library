@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ButtonStatus } from 'button'
+import { ButtonStatus } from '../button'
 import TextDisplay1 from 'typography/display1'
 import uuidv4 from 'uuid/v4'
 

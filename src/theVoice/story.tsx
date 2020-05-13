@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color } from '_utils/branding'
-import Section from 'layout/section/baseSection'
-import readme from 'theVoice/specifications/theVoice.md'
+import { color } from '../_utils/branding'
+import Section from '../layout/section/baseSection'
+import readme from '../theVoice/specifications/theVoice.md'
 
 import TheVoice from '.'
 

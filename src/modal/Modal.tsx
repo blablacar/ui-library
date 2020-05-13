@@ -4,12 +4,12 @@ import TransitionGroup from 'react-transition-group/TransitionGroup'
 import cc from 'classcat'
 import { canUseDOM, canUseEventListeners } from 'exenv'
 
-import { color } from '_utils/branding'
-import KEYCODES from '_utils/keycodes'
-import Button from 'button'
+import { color } from '../_utils/branding'
+import KEYCODES from '../_utils/keycodes'
+import Button from '../button'
 import createFocusTrap, { FocusTrap } from 'focus-trap'
-import CrossIcon from 'icon/crossIcon'
-import CustomTransition, { AnimationType } from 'transitions'
+import CrossIcon from '../icon/crossIcon'
+import CustomTransition, { AnimationType } from '../transitions'
 
 export enum ModalSize {
   SMALL = 'small',

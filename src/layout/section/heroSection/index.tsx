@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import { color, componentSizes, font, responsiveBreakpoints, space } from '_utils/branding'
+import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
 
 import HeroSection, { HeroSectionProps } from './heroSection'
 

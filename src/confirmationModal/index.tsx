@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, modalSize, responsiveBreakpoints, space } from '_utils/branding'
+import { color, modalSize, responsiveBreakpoints, space } from '../_utils/branding'
 
 import ConfirmationModal from './ConfirmationModal'
 

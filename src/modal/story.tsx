@@ -2,8 +2,8 @@ import React, { Component, createRef } from 'react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
-import Modal, { ModalSize } from 'modal'
+import Section from '../layout/section/baseSection'
+import Modal, { ModalSize } from '../modal'
 
 import { ModalProps } from './Modal'
 import modalDoc from './specifications/modal.md'

@@ -1,8 +1,8 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import BaseIcon from '_utils/icon'
-import { BaseIconDefaultProps } from '_utils/icon/BaseIcon'
+import BaseIcon from '../_utils/icon'
+import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 
 export const BanIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 22 22">

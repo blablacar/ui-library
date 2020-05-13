@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, transition } from '_utils/branding'
+import { color, font, transition } from '../_utils/branding'
 
 import DropdownButton from './DropdownButton'
 

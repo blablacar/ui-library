@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Item from '_utils/item'
-import DatePicker, { DatePickerOrientation } from 'datePicker'
-import CalendarIcon from 'icon/calendarIcon'
+import Item from '../../../_utils/item'
+import DatePicker, { DatePickerOrientation } from '../../../datePicker'
+import CalendarIcon from '../../../icon/calendarIcon'
 
 import DatePickerOverlay from './DatePickerOverlay'
 

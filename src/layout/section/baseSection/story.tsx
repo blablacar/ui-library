@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import BlankSeparator from 'blankSeparator'
+import BlankSeparator from '../../../blankSeparator'
 
 import BaseSection, { SectionContentSize } from './index'
 

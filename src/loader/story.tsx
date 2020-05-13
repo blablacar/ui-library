@@ -2,7 +2,7 @@ import React from 'react'
 import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
+import Section from '../layout/section/baseSection'
 
 import Loader, { LoaderLayoutMode } from './index'
 

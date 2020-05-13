@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, space, transition } from '_utils/branding'
+import { color, font, space, transition } from '../_utils/branding'
 
 import Tabs from './Tabs'
 

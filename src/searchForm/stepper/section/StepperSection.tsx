@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react'
 
-import Item from '_utils/item'
-import { useFocusTrap } from '_utils/useFocusTrap'
-import { ButtonStatus } from 'button'
-import Divider from 'divider'
-import ChevronIcon from 'icon/chevronIcon'
-import { Button } from 'index'
-import Section from 'layout/section/baseSection'
-import Stepper, { StepperDisplay, StepperProps } from 'stepper'
+import Item from '../../../_utils/item'
+import { useFocusTrap } from '../../../_utils/useFocusTrap'
+import Button, { ButtonStatus } from '../../../button'
+import Divider from '../../../divider'
+import ChevronIcon from '../../../icon/chevronIcon'
+import Section from '../../../layout/section/baseSection'
+import Stepper, { StepperDisplay, StepperProps } from '../../../stepper'
 
 export interface StepperSectionProps extends StepperProps {
   itemTitle: string

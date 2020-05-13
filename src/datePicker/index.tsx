@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, space } from '_utils/branding'
+import { color, font, space } from '../_utils/branding'
 
 import DatePicker from './DatePicker'
 

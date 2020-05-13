@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { space } from '_utils/branding'
+import { space } from '../../../_utils/branding'
 import { overlayBaseStyle } from 'searchForm/baseStyles'
 
 import DatePickerOverlay from './DatePickerOverlay'

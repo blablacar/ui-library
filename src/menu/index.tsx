@@ -1,8 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { ItemChoiceProps } from 'itemChoice'
-import ItemsList, { ItemsListDivider } from 'itemsList'
+import { ItemChoiceProps } from '../itemChoice'
+import ItemsList, { ItemsListDivider } from '../itemsList'
 
 export interface MenuProps {
   readonly children: React.ReactElement<ItemChoiceProps>[]

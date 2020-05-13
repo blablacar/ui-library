@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color } from '_utils/branding'
+import { color } from '../../_utils/branding'
 
 import readme from './icon.md'
 import * as icons from './icons'

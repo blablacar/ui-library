@@ -2,13 +2,13 @@ import React, { Fragment } from 'react'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ClockIcon from 'icon/clockIcon'
-import ItemAction from 'itemAction'
-import LayoutNormalizer from 'layout/layoutNormalizer'
-import Section from 'layout/section/baseSection'
-import TabsSection from 'layout/section/tabsSection'
-import MessagingSummaryItem from 'messagingSummaryItem'
-import TheVoice from 'theVoice'
+import ClockIcon from '../../icon/clockIcon'
+import ItemAction from '../../itemAction'
+import LayoutNormalizer from '../../layout/layoutNormalizer'
+import Section from '../../layout/section/baseSection'
+import TabsSection from '../../layout/section/tabsSection'
+import MessagingSummaryItem from '../../messagingSummaryItem'
+import TheVoice from '../../theVoice'
 
 const stories = storiesOf('Pages|Messaging/Inbox', module)
 

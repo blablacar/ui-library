@@ -1,9 +1,9 @@
 import React, { cloneElement } from 'react'
 import cc from 'classcat'
 
-import prefix from '_utils'
-import { ButtonStatus } from 'button'
-import { ButtonProps } from 'button/Button'
+import prefix from '../_utils'
+import { ButtonStatus } from '../button'
+import { ButtonProps } from '../button/Button'
 
 export interface ButtonGroupProps {
   readonly children: React.ReactElement<ButtonProps>[]

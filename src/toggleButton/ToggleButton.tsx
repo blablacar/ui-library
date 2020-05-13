@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import CheckboxIcon from '_utils/checkboxIcon'
-import Item from '_utils/item/index'
-import { ItemProps } from '_utils/item/Item'
+import CheckboxIcon from '../_utils/checkboxIcon'
+import Item from '../_utils/item/index'
+import { ItemProps } from '../_utils/item/Item'
 
 export interface ToggleButtonProps extends ItemProps {
   readonly name: string
