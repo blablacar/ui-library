@@ -1,6 +1,7 @@
 # Unreleased
 
-- [...]
+- **[UPDATE]** Added animations on Search form for media large
+  [...]
 
 # v32.2.0 (07/05/2020)
 
