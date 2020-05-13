@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v32.3.0 (13/05/2020)
+
 - **[UPDATE]** Added animations on Search form for media large
 - **[UPDATE]** Add `setGlobalClassName` prop to `FocusVisibleProvider`
-- [...]
 
 # v32.2.0 (07/05/2020)
 
