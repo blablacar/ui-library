@@ -4,7 +4,7 @@ import { mount, ReactWrapper } from 'enzyme'
 
 import { KEYS } from '_utils/keycodes'
 
-import FocusVisibleProvider, { FocusVisibleContext } from '.'
+import FocusVisibleProvider, { FOCUS_VISIBLE_CSS_CLASS, FocusVisibleContext } from '.'
 
 let focusVisibleContext = null
 let wrapper: ReactWrapper
@@ -29,6 +29,16 @@ describe('FocusVisibleProvider', () => {
     expect(focusVisibleContext).toEqual(false)
   })
 
+  it("Shouldn't apply className on the body element by default", () => {
+    expect(document.body.className).toEqual('')
+    act(() => {
+      document.body.dispatchEvent(new KeyboardEvent('keydown', { key: KEYS.TAB }))
+    })
+    wrapper.update()
+    expect(focusVisibleContext).toEqual(true)
+    expect(document.body.className).toEqual('')
+  })
+
   it('Should update the context value by switching from keyboard to pointer interaction', () => {
     act(() => {
       document.body.dispatchEvent(new KeyboardEvent('keydown', { key: KEYS.TAB }))
@@ -49,5 +59,31 @@ describe('FocusVisibleProvider', () => {
     })
     wrapper.update()
     expect(focusVisibleContext).toEqual(false)
+  })
+  describe('FocusVisibleProvider with hasGlobalClassName', () => {
+    beforeEach(() => {
+      wrapper = mount(
+        <FocusVisibleProvider setGlobalClassName>
+          <ChildComponent />
+        </FocusVisibleProvider>,
+      )
+    })
+    afterEach(() => {
+      focusVisibleContext = null
+    })
+    it('Should update the body className by switching from keyboard to pointer interaction', () => {
+      expect(document.body.className).toEqual('')
+      act(() => {
+        document.body.dispatchEvent(new KeyboardEvent('keydown', { key: KEYS.TAB }))
+      })
+      wrapper.update()
+      expect(document.body.className).toEqual(FOCUS_VISIBLE_CSS_CLASS)
+
+      act(() => {
+        document.body.dispatchEvent(new MouseEvent('mousedown'))
+      })
+      wrapper.update()
+      expect(document.body.className).toEqual('')
+    })
   })
 })
