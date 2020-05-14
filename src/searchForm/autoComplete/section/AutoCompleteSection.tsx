@@ -5,6 +5,7 @@ import { AutoCompleteProps } from '../../../autoComplete'
 import Button, { ButtonStatus } from '../../../button'
 import Icon from '../../../icon/chevronIcon'
 import Section from '../../../layout/section/baseSection'
+import { TransitionSection } from '../../baseStyles'
 
 export type AutoCompleteSectionProps = Omit<
   AutoCompleteProps,
@@ -35,7 +36,7 @@ export const AutoCompleteSection = ({
   )
 
   return (
-    <div ref={ref} role="dialog" className={className}>
+    <TransitionSection ref={ref} role="dialog" className={className}>
       <Section>
         {renderAutocompleteComponent({
           ...props,
@@ -44,7 +45,7 @@ export const AutoCompleteSection = ({
           embeddedInSearchForm: true,
         })}
       </Section>
-    </div>
+    </TransitionSection>
   )
 }
 

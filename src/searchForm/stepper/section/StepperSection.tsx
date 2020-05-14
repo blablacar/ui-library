@@ -7,6 +7,7 @@ import Divider from '../../../divider'
 import ChevronIcon from '../../../icon/chevronIcon'
 import Section from '../../../layout/section/baseSection'
 import Stepper, { StepperDisplay, StepperProps } from '../../../stepper'
+import { TransitionSection } from '../../baseStyles'
 
 export interface StepperSectionProps extends StepperProps {
   itemTitle: string
@@ -32,7 +33,7 @@ export const StepperSection = ({
   useFocusTrap(ref, onClose)
 
   return (
-    <div ref={ref} role="dialog" className={className}>
+    <TransitionSection ref={ref} role="dialog" className={className}>
       <Section>
         <Item
           leftAddon={<ChevronIcon left />}
@@ -48,7 +49,7 @@ export const StepperSection = ({
           </Button>
         </div>
       </Section>
-    </div>
+    </TransitionSection>
   )
 }
 

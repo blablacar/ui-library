@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { createPortal } from 'react-dom'
+import { CSSTransition } from 'react-transition-group'
 import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 
@@ -20,6 +21,7 @@ import DatePickerSection from './datePicker/section'
 import Overlay from './overlay'
 import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
+import { TRANSITION_SECTION_CLASS_NAME, transitionSectionTimeout } from './transitionConfig'
 
 export interface SearchFormProps {
   className?: string
@@ -138,6 +140,13 @@ const SearchForm = ({
     },
   }
 
+  const transitionSectionConfig = {
+    classNames: TRANSITION_SECTION_CLASS_NAME,
+    timeout: transitionSectionTimeout,
+    mountOnEnter: true,
+    unmountOnExit: true,
+  }
+
   const invertFromTo = () => {
     setFormValues({
       ...formValues,
@@ -196,10 +205,14 @@ const SearchForm = ({
       </Overlay>
 
       {mediaSize === MediaSize.SMALL &&
-        elementOpened === Elements.AUTOCOMPLETE_FROM &&
         canUseDOM &&
         createPortal(
-          <AutoCompleteSection {...autocompleteFromConfig} onClose={closeOpenedElement} />,
+          <CSSTransition
+            in={elementOpened === Elements.AUTOCOMPLETE_FROM}
+            {...transitionSectionConfig}
+          >
+            <AutoCompleteSection {...autocompleteFromConfig} onClose={closeOpenedElement} />
+          </CSSTransition>,
           document.body,
         )}
 
@@ -228,10 +241,14 @@ const SearchForm = ({
       </Overlay>
 
       {mediaSize === MediaSize.SMALL &&
-        elementOpened === Elements.AUTOCOMPLETE_TO &&
         canUseDOM &&
         createPortal(
-          <AutoCompleteSection {...autocompleteToConfig} onClose={closeOpenedElement} />,
+          <CSSTransition
+            in={elementOpened === Elements.AUTOCOMPLETE_TO}
+            {...transitionSectionConfig}
+          >
+            <AutoCompleteSection {...autocompleteToConfig} onClose={closeOpenedElement} />
+          </CSSTransition>,
           document.body,
         )}
 
@@ -255,11 +272,12 @@ const SearchForm = ({
           <DatePickerOverlay {...datepickerConfig} closeOnBlur={closeOpenedElement} />
         </Overlay>
 
-        {elementOpened === Elements.DATEPICKER &&
-          mediaSize === MediaSize.SMALL &&
+        {mediaSize === MediaSize.SMALL &&
           canUseDOM &&
           createPortal(
-            <DatePickerSection {...datepickerConfig} onClose={closeOpenedElement} />,
+            <CSSTransition in={elementOpened === Elements.DATEPICKER} {...transitionSectionConfig}>
+              <DatePickerSection {...datepickerConfig} onClose={closeOpenedElement} />
+            </CSSTransition>,
             document.body,
           )}
 
@@ -288,15 +306,16 @@ const SearchForm = ({
         />
       </Overlay>
 
-      {elementOpened === Elements.STEPPER &&
-        mediaSize === MediaSize.SMALL &&
+      {mediaSize === MediaSize.SMALL &&
         canUseDOM &&
         createPortal(
-          <StepperSection
-            {...stepperConfig}
-            confirmLabel={stepperProps.confirmLabel}
-            onClose={closeOpenedElement}
-          />,
+          <CSSTransition in={elementOpened === Elements.STEPPER} {...transitionSectionConfig}>
+            <StepperSection
+              {...stepperConfig}
+              confirmLabel={stepperProps.confirmLabel}
+              onClose={closeOpenedElement}
+            />
+          </CSSTransition>,
           document.body,
         )}
 

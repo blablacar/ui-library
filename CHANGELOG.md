@@ -4,7 +4,7 @@
 - **[UPDATE]** Add `isDisabled` prop to `BaseIcon`
 - **[UPDATE]** Add `disabled` support to all `Item` based components
 - **[FIX]** Add `padding-top` on `Itinerary`
-  [...]
+- **[UPDATE]** Added animations on Search form for media small
 
 # v33.0.1 (15/05/2020)
 
