@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 
-import Item from '_utils/item'
-import { useFocusTrap } from '_utils/useFocusTrap'
-import Datepicker, { DatePickerOrientation, DatePickerProps } from 'datePicker'
-import Divider from 'divider'
-import ChevronIcon from 'icon/chevronIcon'
-import Section from 'layout/section/baseSection'
+import Item from '../../../_utils/item'
+import { useFocusTrap } from '../../../_utils/useFocusTrap'
+import Datepicker, { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
+import Divider from '../../../divider'
+import ChevronIcon from '../../../icon/chevronIcon'
+import Section from '../../../layout/section/baseSection'
 
 export interface DatePickerSectionProps extends DatePickerProps {
   title: string

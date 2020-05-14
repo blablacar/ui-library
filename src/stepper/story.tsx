@@ -3,10 +3,9 @@ import { action } from '@storybook/addon-actions'
 import { number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Itinerary from 'itinerary'
-import Section from 'layout/section/baseSection'
-import Stepper, { StepperDisplay } from 'stepper'
-
+import Itinerary from '../itinerary'
+import Section from '../layout/section/baseSection'
+import Stepper, { StepperDisplay } from '../stepper'
 import spec from './specifications/stepper.md'
 
 const stories = storiesOf('Widgets|Stepper', module)

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color } from '_utils/branding'
-
+import { color } from '../_utils/branding'
 import Loader from './Loader'
 
 const StyledLoader = styled(Loader)`

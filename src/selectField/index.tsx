@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, inputBorderSize, radius, space } from '_utils/branding'
-
+import { color, font, inputBorderSize, radius, space } from '../_utils/branding'
 import SelectField, { selectHeight } from './SelectField'
 
 const StyledSelectField = styled(SelectField)`

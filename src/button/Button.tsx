@@ -2,9 +2,9 @@ import React, { Fragment, PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Loader from 'loader'
+import prefix from '../_utils'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import Loader from '../loader'
 
 export enum ButtonStatus {
   PRIMARY = 'primary',

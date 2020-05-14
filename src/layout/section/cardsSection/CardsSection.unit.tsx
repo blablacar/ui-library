@@ -1,8 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import TripCard from 'tripCard'
-
+import TripCard from '../../../tripCard'
 import CardsSection from './CardsSection'
 
 const tripCardConfig = {

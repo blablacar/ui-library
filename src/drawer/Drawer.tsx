@@ -3,7 +3,7 @@ import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 import { createGlobalStyle } from 'styled-components'
 
-import KEYCODES from '_utils/keycodes'
+import KEYCODES from '../_utils/keycodes'
 
 const DrawerGlobalStyles = createGlobalStyle`
   .kirk-scroll-lock {

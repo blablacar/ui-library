@@ -2,8 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import MailIcon from 'icon/mailIcon'
-
+import MailIcon from '../icon/mailIcon'
 import Tabs from './Tabs'
 
 const defaultTabsConfig = {

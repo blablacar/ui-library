@@ -8,8 +8,7 @@ import {
   responsiveBreakpoints,
   shadow,
   space,
-} from '_utils/branding'
-
+} from '../_utils/branding'
 import SearchForm from './SearchForm'
 
 const formWidth = '928px'

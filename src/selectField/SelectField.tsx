@@ -1,9 +1,9 @@
 import React, { RefObject, useEffect, useState } from 'react'
 import cc from 'classcat'
 
-import { color } from '_utils/branding'
-import { CommonFieldsProps } from '_utils/interfaces'
-import ChevronIcon from 'icon/chevronIcon'
+import { color } from '../_utils/branding'
+import { CommonFieldsProps } from '../_utils/interfaces'
+import ChevronIcon from '../icon/chevronIcon'
 
 export const selectHeight = '52px'
 

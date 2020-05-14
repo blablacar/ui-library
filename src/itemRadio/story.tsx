@@ -3,9 +3,8 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ItemRadioGroup from 'itemRadioGroup'
-import Section from 'layout/section/baseSection'
-
+import ItemRadioGroup from '../itemRadioGroup'
+import Section from '../layout/section/baseSection'
 import TheVoice from '../theVoice'
 import ItemRadio from '.'
 import { ItemRadioStatus } from './ItemRadio'

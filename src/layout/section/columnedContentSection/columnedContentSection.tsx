@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Button, { ButtonStatus } from 'button'
-import Column from 'layout/column'
-import Columns from 'layout/columns'
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
-import Text, { TextTagType } from 'text'
-import Title from 'title'
+import Button, { ButtonStatus } from '../../../button'
+import Column from '../../../layout/column'
+import Columns from '../../../layout/columns'
+import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
+import Text, { TextTagType } from '../../../text'
+import Title from '../../../title'
 
 export interface ColumnedContentSectionProps {
   readonly className?: string

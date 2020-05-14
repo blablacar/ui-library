@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Stars from 'stars'
+import Stars from '../stars'
 
 export interface RatingProps {
   className?: string

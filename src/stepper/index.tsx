@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, space } from '_utils/branding'
-
+import { color, space } from '../_utils/branding'
 import Stepper, { StepperButtonSize, StepperDisplay } from './Stepper'
 
 // These components have a 12px vertical padding. We probably took a shortcut when creating our

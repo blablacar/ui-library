@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { responsiveBreakpoints, space } from '_utils/branding'
-
+import { responsiveBreakpoints, space } from '../../../_utils/branding'
 import IllustratedSection from './illustratedSection'
 
 const StyledIllustratedSection = styled(IllustratedSection)`

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { color } from '_utils/branding'
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Item from '_utils/item'
-import { TextDisplayType } from 'text'
+import { color } from '../_utils/branding'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import Item from '../_utils/item'
+import { TextDisplayType } from '../text'
 
 export type ItemEditableInfoProps = A11yProps &
   Readonly<{

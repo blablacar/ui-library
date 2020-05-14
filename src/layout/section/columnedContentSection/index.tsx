@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { font, radius, responsiveBreakpoints, space } from '_utils/branding'
-
+import { font, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
 import ColumnedContentSection from './columnedContentSection'
 
 const StyledColumnedContentSection = styled(ColumnedContentSection)`

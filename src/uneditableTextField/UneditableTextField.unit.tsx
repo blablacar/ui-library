@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import UneditableTextField from '.'
+import UneditableTextField from './index'
 
 describe('UneditableTextField', () => {
   it('Should have the proper default props', () => {

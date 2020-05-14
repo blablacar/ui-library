@@ -2,10 +2,9 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ItemRadio from 'itemRadio'
-import ItemRadioGroup from 'itemRadioGroup'
-import TheVoice from 'theVoice'
-
+import ItemRadio from '../../../itemRadio'
+import ItemRadioGroup from '../../../itemRadioGroup'
+import TheVoice from '../../../theVoice'
 import IllustratedSection from './index'
 
 const stories = storiesOf('Sections|IllustratedSection', module)

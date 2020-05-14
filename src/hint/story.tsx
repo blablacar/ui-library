@@ -2,10 +2,9 @@ import React from 'react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ItemChoice from 'itemChoice'
-import ItemsList from 'itemsList'
-import BaseSection from 'layout/section/baseSection'
-
+import ItemChoice from '../itemChoice'
+import ItemsList from '../itemsList'
+import BaseSection from '../layout/section/baseSection'
 import { HintBubblePosition } from './HintBubble'
 import Hint from './index'
 import readme from './specifications/hint.md'

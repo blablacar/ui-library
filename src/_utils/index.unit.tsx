@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { prefix, replaceNewLineWithBR } from '_utils'
+import { prefix, replaceNewLineWithBR } from './index'
 
 const multipleLineText = `line1
 line2

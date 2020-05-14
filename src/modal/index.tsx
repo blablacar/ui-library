@@ -7,8 +7,7 @@ import {
   radius,
   responsiveBreakpoints,
   space,
-} from '_utils/branding'
-
+} from '../_utils/branding'
 import Modal from './Modal'
 
 const StyledModal = styled(Modal)`

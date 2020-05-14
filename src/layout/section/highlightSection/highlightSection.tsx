@@ -1,7 +1,7 @@
 import React from 'react'
 
-import BaseSection, { SectionContentSize } from 'layout/section/baseSection'
-import SubHeader from 'subHeader'
+import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
+import SubHeader from '../../../subHeader'
 
 export interface HighlightSectionProps {
   readonly className?: string

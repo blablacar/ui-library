@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ItemInfoProps } from 'itemInfo'
-import BaseSection from 'layout/section/baseSection'
+import { ItemInfoProps } from '../../../itemInfo'
+import BaseSection from '../../../layout/section/baseSection'
 
 export interface ItemsSectionProps {
   readonly children: React.ReactElement<ItemInfoProps>[]

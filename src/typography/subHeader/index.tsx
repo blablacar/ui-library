@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, fontWeight } from '_utils/branding'
-
+import { color, font, fontWeight } from '../../_utils/branding'
 import Text from '../index'
 
 const TextSubHeader = styled(Text)`

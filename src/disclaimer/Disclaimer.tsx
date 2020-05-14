@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { color } from '_utils/branding'
-import Item from '_utils/item'
-import Button, { ButtonStatus } from 'button'
-import InfoIcon from 'icon/infoIcon'
-import QuestionIcon from 'icon/questionIcon'
-import { TextDisplayType } from 'text'
+import { color } from '../_utils/branding'
+import Item from '../_utils/item'
+import Button, { ButtonStatus } from '../button'
+import InfoIcon from '../icon/infoIcon'
+import QuestionIcon from '../icon/questionIcon'
+import { TextDisplayType } from '../text'
 
 export interface DisclaimerProps {
   // Whether to use a decoration Info icon on the left side of the Disclaimer or not.

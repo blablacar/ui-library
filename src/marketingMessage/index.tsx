@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, radius, space } from '_utils/branding'
-
+import { color, radius, space } from '../_utils/branding'
 import MarketingMessage from './MarketingMessage'
 
 const StyledMarketingMessage = styled(MarketingMessage)`

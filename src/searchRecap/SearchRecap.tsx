@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
-import { color } from '_utils/branding'
-import ArrowIcon from 'icon/arrowIcon'
-import SearchIcon from 'icon/searchIcon'
-import Text, { TextTagType } from 'text'
-import UneditableTextField from 'uneditableTextField'
+import { color } from '../_utils/branding'
+import ArrowIcon from '../icon/arrowIcon'
+import SearchIcon from '../icon/searchIcon'
+import Text, { TextTagType } from '../text'
+import UneditableTextField from '../uneditableTextField'
 
 export interface SearchRecapProps {
   className?: string

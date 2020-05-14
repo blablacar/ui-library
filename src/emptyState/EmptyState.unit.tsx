@@ -1,9 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Button from 'button'
-import Title from 'title'
-
+import Button from '../button'
+import Title from '../title'
 import EmptyState from './EmptyState'
 
 const defaultProps = {

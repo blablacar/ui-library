@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import { color } from '_utils/branding'
-import { A11yProps, pickA11yProps } from '_utils/interfaces'
-import Item, { ItemStatus } from '_utils/item'
-import Loader from 'loader'
-import { TextDisplayType } from 'text'
+import { color } from '../_utils/branding'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import Item, { ItemStatus } from '../_utils/item'
+import Loader from '../loader'
+import { TextDisplayType } from '../text'
 
 export enum ItemChoiceStyle {
   PRIMARY = 'primary',

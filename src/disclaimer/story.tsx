@@ -2,10 +2,10 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button, { ButtonStatus } from 'button'
-import Disclaimer from 'disclaimer'
-import spec from 'disclaimer/specifications/disclaimer.md'
-import Section from 'layout/section/baseSection'
+import Button, { ButtonStatus } from '../button'
+import Disclaimer from '../disclaimer'
+import Section from '../layout/section/baseSection'
+import spec from './specifications/disclaimer.md'
 
 const stories = storiesOf('Widgets|Disclaimer', module)
 stories.addDecorator(withKnobs)

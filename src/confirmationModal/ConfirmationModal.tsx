@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
-import { color } from '_utils/branding'
-import Button, { ButtonStatus } from 'button'
-import CrossIcon from 'icon/crossIcon'
-import InfoIcon from 'icon/infoIcon'
-import WarningIcon from 'icon/warningIcon'
-import Modal, { ModalSize } from 'modal'
-import { ModalProps } from 'modal/Modal'
-import TheVoice from 'theVoice'
+import { color } from '../_utils/branding'
+import Button, { ButtonStatus } from '../button'
+import CrossIcon from '../icon/crossIcon'
+import InfoIcon from '../icon/infoIcon'
+import WarningIcon from '../icon/warningIcon'
+import Modal, { ModalSize } from '../modal'
+import { ModalProps } from '../modal/Modal'
+import TheVoice from '../theVoice'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',

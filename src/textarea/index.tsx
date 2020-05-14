@@ -8,8 +8,7 @@ import {
   radius,
   space,
   transition,
-} from '_utils/branding'
-
+} from '../_utils/branding'
 import Textarea from './Textarea'
 
 const StyledTextarea = styled(Textarea)`

@@ -3,13 +3,13 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import isString from 'lodash.isstring'
 
-import { color } from '_utils/branding'
-import ItineraryCollapsible from '_utils/itineraryCollapsible'
-import ItineraryLocation, { computeKeyFromPlace } from '_utils/itineraryLocation'
-import BlankSeparator from 'blankSeparator'
-import Bullet, { BulletTypes } from 'bullet'
-import SubHeader from 'subHeader'
-import Text, { TextDisplayType, TextTagType } from 'text'
+import { color } from '../_utils/branding'
+import ItineraryCollapsible from '../_utils/itineraryCollapsible'
+import ItineraryLocation, { computeKeyFromPlace } from '../_utils/itineraryLocation'
+import BlankSeparator from '../blankSeparator'
+import Bullet, { BulletTypes } from '../bullet'
+import SubHeader from '../subHeader'
+import Text, { TextDisplayType, TextTagType } from '../text'
 
 export interface ItineraryProps {
   readonly ariaLabelledBy?: string

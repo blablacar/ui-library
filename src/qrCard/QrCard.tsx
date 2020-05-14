@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Card from '_utils/card'
-import ItemInfo from 'itemInfo'
-import SubHeader from 'subHeader'
+import Card from '../_utils/card'
+import ItemInfo from '../itemInfo'
+import SubHeader from '../subHeader'
 
 export interface QrCardProps {
   readonly ariaLabel?: string

@@ -2,9 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
-import ItemRadio from 'itemRadio'
-import { ItemRadioStatus } from 'itemRadio/ItemRadio'
-
+import ItemRadio from '../itemRadio'
+import { ItemRadioStatus } from '../itemRadio/ItemRadio'
 import ItemRadioGroup, { ItemRadioGroupProps } from './index'
 
 describe('ItemRadioGroup', () => {

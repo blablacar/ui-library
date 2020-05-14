@@ -3,11 +3,11 @@ import { action } from '@storybook/addon-actions'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color } from '_utils/branding'
-import Button, { ButtonStatus } from 'button'
-import InfoIcon from 'icon/infoIcon'
-import ItemData from 'itemData'
-import Section from 'layout/section/baseSection'
+import { color } from '../_utils/branding'
+import Button, { ButtonStatus } from '../button'
+import InfoIcon from '../icon/infoIcon'
+import ItemData from '../itemData'
+import Section from '../layout/section/baseSection'
 
 const stories = storiesOf('Widgets|ItemData', module)
 stories.addDecorator(withKnobs)

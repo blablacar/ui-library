@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from 'layout/section/baseSection'
-import Message from 'message'
+import Section from '../layout/section/baseSection'
+import Message from '../message'
 
 const stories = storiesOf('Widgets|Message', module)
 stories.addDecorator(withKnobs)

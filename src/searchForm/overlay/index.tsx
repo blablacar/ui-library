@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { componentSizes } from '_utils/branding'
-
+import { componentSizes } from '../../_utils/branding'
 import Overlay, {
   enterTransitionDuration,
   exitTransitionDuration,

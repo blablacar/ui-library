@@ -3,11 +3,10 @@ import { action } from '@storybook/addon-actions'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color } from '_utils/branding'
-import BubbleIcon from 'icon/bubbleIcon'
-import ItemAction from 'itemAction'
-import Section from 'layout/section/baseSection'
-
+import { color } from '../_utils/branding'
+import BubbleIcon from '../icon/bubbleIcon'
+import ItemAction from '../itemAction'
+import Section from '../layout/section/baseSection'
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemAction', module)

@@ -5,8 +5,8 @@ import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '_utils'
-import Button, { ButtonStatus } from 'button'
+import prefix from '../_utils'
+import Button, { ButtonStatus } from '../button'
 
 export interface CommonFormFields {
   name: string

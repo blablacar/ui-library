@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, transition } from '_utils/branding'
-
+import { color, transition } from '../_utils/branding'
 import Drawer from './Drawer'
 
 const StyledDrawer = styled(Drawer)`

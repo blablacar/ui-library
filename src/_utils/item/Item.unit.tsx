@@ -2,11 +2,10 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
-import Button from 'button'
-import ChevronIcon from 'icon/chevronIcon'
-import ClockIcon from 'icon/clockIcon'
-import Text from 'text'
-
+import Button from '../../button'
+import ChevronIcon from '../../icon/chevronIcon'
+import ClockIcon from '../../icon/clockIcon'
+import Text from '../../text'
 import StyledItem from './index'
 import Item from './Item'
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Caption from 'caption'
-import Paragraph from 'paragraph'
-import TextTitle from 'typography/title'
+import Caption from '../caption'
+import Paragraph from '../paragraph'
+import TextTitle from '../typography/title'
 
 export interface ReviewProps {
   readonly className?: string

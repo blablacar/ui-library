@@ -1,10 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Card from '_utils/card'
-import ItemInfo from 'itemInfo'
-import SubHeader from 'subHeader'
-
+import Card from '../_utils/card'
+import ItemInfo from '../itemInfo'
+import SubHeader from '../subHeader'
 import QrCard from './QrCard'
 
 const mockedProps = {

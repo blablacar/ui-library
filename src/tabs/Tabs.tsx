@@ -1,7 +1,7 @@
 import React, { createRef, PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 
-import Badge from 'badge'
+import Badge from '../badge'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { replaceNewLineWithBR } from '_utils'
+import { replaceNewLineWithBR } from '../_utils'
 
 export interface TextProps {
   readonly className?: string

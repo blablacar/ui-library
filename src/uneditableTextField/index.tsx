@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, radius, space } from '_utils/branding'
-
+import { color, font, radius, space } from '../_utils/branding'
 import uneditableTextField from './UneditableTextField'
 
 const inputHeight = '54px'

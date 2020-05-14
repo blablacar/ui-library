@@ -1,9 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Button from 'button'
-import { EyeIcon } from 'icon/eyeIcon'
-
+import Button from '../button'
+import { EyeIcon } from '../icon/eyeIcon'
 import TextField from './TextField'
 
 it('Should have the proper value.', () => {

@@ -1,10 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ItineraryCollapsible from '_utils/itineraryCollapsible'
-import ItineraryLocation from '_utils/itineraryLocation'
-import Proximity from 'proximity'
-
+import ItineraryCollapsible from '../_utils/itineraryCollapsible'
+import ItineraryLocation from '../_utils/itineraryLocation'
+import Proximity from '../proximity'
 import Itinerary from './Itinerary'
 
 const places = [
