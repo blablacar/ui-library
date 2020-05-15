@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v33.0.1 (15/05/2020)
+
 - **[FIX]** Fixed status icon type props
 
 # v33.0.0 (15/05/2020)
