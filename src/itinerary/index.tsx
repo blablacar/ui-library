@@ -16,6 +16,9 @@ const StyledItinerary = styled(Itinerary)`
     position: relative;
     list-style-type: none;
   }
+  & {
+    padding-top: ${space.m};
+  }
 
   & .kirk-itinerary--highlightRoad .kirk-itineraryLocation-road {
     background-color: ${color.midnightGreen};
