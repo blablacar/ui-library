@@ -16,7 +16,7 @@ export interface CircleProps extends Icon {
 const offset = 187
 const duration = '1.4s'
 
-const CircleIcon = (props: CircleProps) => (
+const CircleIcon = ({ absolute, spinning, thin, innerDisc, ...props }: CircleProps) => (
   <BaseIcon
     {...props}
     viewBox="0 0 66 66"
@@ -24,17 +24,15 @@ const CircleIcon = (props: CircleProps) => (
       'kirk-icon-circle',
       props.iconClassName,
       {
-        spinning: props.spinning,
-        absolute: props.absolute,
-        thin: props.thin,
+        spinning,
+        absolute,
+        thin,
       },
     ])}
   >
     <Fragment>
       <circle cx="33" cy="33" r="30" fill="none" stroke={props.iconColor} />
-      {props.innerDisc && (
-        <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />
-      )}
+      {innerDisc && <circle className="inner" cx="33" cy="33" r="18" fill={props.iconColor} />}
     </Fragment>
   </BaseIcon>
 )

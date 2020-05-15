@@ -11,10 +11,10 @@ export interface MeetingPointIconProps extends Icon {
   readonly shadowed?: boolean
 }
 
-export const MeetingPointIcon = (props: MeetingPointIconProps) => {
-  const strokeColor = props.active ? color.white : color.blue
-  const fillColor = props.active ? color.blue : color.white
-  const className = cc([props.className, { 'kirk-icon-shadowed': props.shadowed }])
+export const MeetingPointIcon = ({ active, shadowed, ...props }: MeetingPointIconProps) => {
+  const strokeColor = active ? color.white : color.blue
+  const fillColor = active ? color.blue : color.white
+  const className = cc([props.className, { 'kirk-icon-shadowed': shadowed }])
 
   return (
     <BaseIcon {...props} className={className} viewBox="0 0 22 22">

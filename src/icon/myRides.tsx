@@ -9,16 +9,16 @@ export interface MyRidesIconProps extends Icon {
   readonly active?: boolean
 }
 
-export const MyRidesIcon = (props: MyRidesIconProps) => (
+export const MyRidesIcon = ({ active, ...props }: MyRidesIconProps) => (
   <BaseIcon {...props} viewBox="0 0 24 20">
     <g>
-      {!props.active && (
+      {!active && (
         <g fill="none" fillRule="evenodd" stroke={props.iconColor} strokeWidth="1">
           <path d="M15.744 7.145c.203-1.217.39-2.31.56-3.275.044-.246.15-.83.322-1.752a.5.5 0 0 0-.405-.584l-2.64-.466a.5.5 0 0 0-.546.295c-1.066 2.48-1.794 4.855-2.184 7.126-.492 2.863-.47 5.946 1.047 8.116.326.466.721.89 1.195 1.26 1.38 1.08 3.05 1.503 4.677 1.227a6.034 6.034 0 0 0 3.658-2.117 6.043 6.043 0 0 0 1.303-4.87 6.04 6.04 0 0 0-2.564-3.992 6.036 6.036 0 0 0-4.423-.968z" />
           <path d="M6.179 7.145c.19-1.143.377-2.235.56-3.275l.323-1.753a.5.5 0 0 0-.405-.583l-2.641-.466a.5.5 0 0 0-.547.295C2.404 3.843 1.676 6.218 1.286 8.49c-.492 2.863-.47 5.946 1.047 8.116.326.466.721.89 1.195 1.26 1.38 1.08 3.05 1.503 4.677 1.227a6.034 6.034 0 0 0 3.658-2.117 6.043 6.043 0 0 0 1.302-4.87 6.04 6.04 0 0 0-2.563-3.992 6.036 6.036 0 0 0-4.423-.968z" />
         </g>
       )}
-      {props.active && (
+      {active && (
         <g fill="none" fillRule="evenodd">
           <path d="M-1-3h24v24H-1z" />
           <path

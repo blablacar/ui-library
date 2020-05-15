@@ -7,12 +7,12 @@ export interface SearchIconProps extends Icon {
   readonly strokeWidth?: string
 }
 
-export const SearchIcon = (props: SearchIconProps) => (
+export const SearchIcon = ({ strokeWidth, ...props }: SearchIconProps) => (
   <BaseIcon {...props}>
     <g
       fill="none"
       stroke={props.iconColor}
-      strokeWidth={props.strokeWidth}
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeMiterlimit="10"

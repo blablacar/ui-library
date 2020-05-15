@@ -1,9 +1,9 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import StatusIcon from '../_utils/icon/status'
+import StatusIcon, { IconPropsWithStatus } from '../_utils/icon/status'
 
-export const SmokeIcon = (props: Icon) => (
+export const SmokeIcon = (props: IconPropsWithStatus) => (
   <StatusIcon {...props}>
     <g>
       <path d="M22.558,17.817L8.371,9.626C7.908,9.359,7.27,9.532,7.004,9.992l-1.518,2.629c-0.275,0.477-0.111,1.09,0.366,1.366l14.188,8.191c0.151,0.087,0.324,0.133,0.498,0.133c0.356,0,0.688-0.19,0.867-0.499l1.518-2.629C23.198,18.706,23.035,18.094,22.558,17.817z M20.54,21.312C20.54,21.312,20.539,21.312,20.54,21.312l-14.188-8.19l1.518-2.629l14.187,8.191L20.54,21.312z" />

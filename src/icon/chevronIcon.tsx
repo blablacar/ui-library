@@ -8,7 +8,7 @@ export interface ChevronProps extends Icon {
   readonly left?: boolean
 }
 
-export const ChevronIcon = (props: ChevronProps) => (
+export const ChevronIcon = ({ down, left, ...props }: ChevronProps) => (
   <BaseIcon {...props}>
     <polyline
       fill="none"
@@ -18,8 +18,8 @@ export const ChevronIcon = (props: ChevronProps) => (
       strokeLinejoin="round"
       strokeMiterlimit="10"
       points="9 18 15 12 9 6"
-      {...(props.down && { transform: 'rotate(90 12 12)' })}
-      {...(props.left && { transform: 'rotate(180 12 12)' })}
+      {...(down && { transform: 'rotate(90 12 12)' })}
+      {...(left && { transform: 'rotate(180 12 12)' })}
     />
   </BaseIcon>
 )

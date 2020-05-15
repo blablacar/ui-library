@@ -2,9 +2,9 @@
 import React, { Fragment } from 'react'
 
 import BaseIcon from '../_utils/icon'
-import StatusIcon, { status, StatusProps } from '../_utils/icon/status'
+import StatusIcon, { IconPropsWithStatus, status } from '../_utils/icon/status'
 
-export const SpeakIcon = (props: StatusProps) => (
+export const SpeakIcon = (props: IconPropsWithStatus) => (
   <BaseIcon {...props}>
     <Fragment>
       {props.status === status.DEFAULT && (
