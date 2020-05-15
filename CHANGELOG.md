@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[BREAKING CHANGE]** Use relative imports so applications can resolve types.
 - [...]
+
+# v33.0.0 (15/05/2020)
+
+- **[BREAKING CHANGE]** Use relative imports so applications can resolve types.
 
 # v32.3.0 (13/05/2020)
 
