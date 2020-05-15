@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Add `padding-top` on `Itinerary`
+  [...]
 
 # v33.0.1 (15/05/2020)
 
