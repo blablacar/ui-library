@@ -10,11 +10,14 @@ export enum status {
   DEFAULT = 'default',
 }
 
-export interface StatusProps extends IconProps {
-  readonly status?: status
-}
+export type StatusIconProps = IconProps &
+  Readonly<{
+    status?: status
+  }>
 
-const StatusIcon = (props: StatusProps) => {
+export type IconPropsWithStatus = Omit<StatusIconProps, 'children'>
+
+const StatusIcon = (props: StatusIconProps) => {
   const finalProps = {
     ...props,
     iconColor: props.status === status.ON ? color.midnightGreen : props.iconColor,

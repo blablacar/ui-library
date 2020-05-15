@@ -7,7 +7,7 @@ export interface ArrowIconProps extends Icon {
   readonly right?: boolean
 }
 
-export const ArrowIcon = (props: ArrowIconProps) => (
+export const ArrowIcon = ({ right, ...props }: ArrowIconProps) => (
   <BaseIcon {...props}>
     <g
       fill="none"
@@ -16,7 +16,7 @@ export const ArrowIcon = (props: ArrowIconProps) => (
       strokeMiterlimit="10"
       strokeLinejoin="round"
       strokeLinecap="round"
-      {...(props.right && { transform: 'rotate(180 12 12)' })}
+      {...(right && { transform: 'rotate(180 12 12)' })}
     >
       <path d="M22 12H2" />
       <path d="M9 19l-7-7 7-7" />

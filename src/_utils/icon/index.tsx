@@ -21,4 +21,6 @@ const StyledBaseIcon = styled(BaseIcon)`
   }
 `
 
+export * from './BaseIcon'
+
 export default StyledBaseIcon

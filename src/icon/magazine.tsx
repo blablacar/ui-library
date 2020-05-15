@@ -1,9 +1,9 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import StatusIcon from '../_utils/icon/status'
+import StatusIcon, { IconPropsWithStatus } from '../_utils/icon/status'
 
-export const Magazine = (props: Icon) => (
+export const Magazine = (props: IconPropsWithStatus) => (
   <StatusIcon {...props}>
     <g fill="none" fillRule="evenodd">
       <path

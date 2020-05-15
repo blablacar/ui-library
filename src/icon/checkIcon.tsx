@@ -13,15 +13,15 @@ export interface CheckProps extends Icon {
   readonly thin?: boolean
 }
 
-const CheckIcon = (props: CheckProps) => (
+const CheckIcon = ({ absolute, validate, backgroundColor, thin, ...props }: CheckProps) => (
   <BaseIcon
     {...props}
     iconClassName={cc([
       'kirk-icon-check',
       props.iconClassName,
       {
-        validate: props.validate,
-        absolute: props.absolute,
+        validate,
+        absolute,
       },
     ])}
   >
@@ -30,7 +30,7 @@ const CheckIcon = (props: CheckProps) => (
         d="M6.5 12.5l4 4 8-8"
         fill="none"
         stroke={props.iconColor}
-        strokeWidth={props.thin ? '1' : '2'}
+        strokeWidth={thin ? '1' : '2'}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"

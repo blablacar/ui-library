@@ -9,17 +9,17 @@ export interface StarProps extends Icon {
   readonly fill?: number
 }
 
-export const StarIcon = (props: StarProps) => {
+export const StarIcon = ({ bgColor, fill, ...props }: StarProps) => {
   // needs to be unique, otherwise all stars will use the first defined linear gradient
-  const id = `gradient-${props.fill}`
-  const offset = `${props.fill * 100}%`
+  const id = `gradient-${fill}`
+  const offset = `${fill * 100}%`
 
   return (
     <BaseIcon {...props} viewBox="-2 -4 84 82">
       <g>
         <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id={id}>
           <stop stopColor={props.iconColor} offset={offset} />
-          <stop stopColor={props.bgColor} offset="0%" />
+          <stop stopColor={bgColor} offset="0%" />
         </linearGradient>
         <path
           stroke={props.iconColor}
