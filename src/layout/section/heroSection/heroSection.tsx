@@ -6,7 +6,7 @@ import TextTitle from '../../../typography/title'
 
 export type HeroSectionProps = {
   className?: string
-  heroImageUrl: string
+  heroImageUrl?: string
   heroImageUrlLarge: string
   heroText?: string
   heroDescription?: string
