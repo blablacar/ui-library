@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
 [...]
 
 # v33.1.0 (18/05/2020)
