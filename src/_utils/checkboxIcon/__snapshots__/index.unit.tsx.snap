@@ -22,6 +22,10 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
   border-radius: 100%;
 }
 
+.c0 path {
+  stroke: #FFF;
+}
+
 .c0.absolute {
   position: absolute;
   left: 50%;
@@ -52,7 +56,6 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
   <path
     d="M6.5 12.5l4 4 8-8"
     fill="none"
-    stroke="#FFF"
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeMiterlimit="10"
@@ -98,16 +101,21 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c1 circle.outer {
+  stroke: #5DD167;
+}
+
+.c1 circle.inner {
+  stroke-width: 0;
+  fill: #5DD167;
+}
+
 .c1.thin circle {
   stroke-width: 3;
 }
 
 .c1.absolute {
   position: absolute;
-}
-
-.c1 circle.inner {
-  stroke-width: 0;
 }
 
 .c0.kirk-loader--inline {
@@ -190,11 +198,11 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
     >
       
       <circle
+        className="outer"
         cx="33"
         cy="33"
         fill="none"
         r="30"
-        stroke="#5DD167"
       />
     </svg>
   </div>
@@ -238,16 +246,21 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c1 circle.outer {
+  stroke: #5DD167;
+}
+
+.c1 circle.inner {
+  stroke-width: 0;
+  fill: #5DD167;
+}
+
 .c1.thin circle {
   stroke-width: 3;
 }
 
 .c1.absolute {
   position: absolute;
-}
-
-.c1 circle.inner {
-  stroke-width: 0;
 }
 
 .c0.kirk-loader--inline {
@@ -330,11 +343,11 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
     >
       
       <circle
+        className="outer"
         cx="33"
         cy="33"
         fill="none"
         r="30"
-        stroke="#5DD167"
       />
     </svg>
   </div>
@@ -378,16 +391,21 @@ exports[`CheckboxIcon Should render an empty circle by default 1`] = `
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c0 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c0 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
 .c0.thin circle {
   stroke-width: 3;
 }
 
 .c0.absolute {
   position: absolute;
-}
-
-.c0 circle.inner {
-  stroke-width: 0;
 }
 
 <svg
@@ -401,11 +419,11 @@ exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 >
   
   <circle
+    className="outer"
     cx="33"
     cy="33"
     fill="none"
     r="30"
-    stroke="#00AFF5"
   />
 </svg>
 `;

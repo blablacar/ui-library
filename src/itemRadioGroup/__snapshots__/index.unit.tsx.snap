@@ -110,6 +110,10 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   background: none;
 }
 
+.c2:disabled {
+  cursor: default;
+}
+
 a.c2 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c2 {
 button:active.c2,
 button:hover.c2 {
   outline: none;
-}
-
-.c2:disabled {
-  cursor: default;
 }
 
 .c2 .kirk-item-leftText {
@@ -222,16 +222,21 @@ button:hover.c2 {
   animation: hqYbNG 1.4s ease-in-out infinite;
 }
 
+.c4 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c4 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
 .c4.thin circle {
   stroke-width: 3;
 }
 
 .c4.absolute {
   position: absolute;
-}
-
-.c4 circle.inner {
-  stroke-width: 0;
 }
 
 .c1 input {
@@ -306,11 +311,11 @@ button:hover.c2 {
         >
           
           <circle
+            className="outer"
             cx="33"
             cy="33"
             fill="none"
             r="30"
-            stroke="#00AFF5"
           />
         </svg>
       </span>
@@ -356,17 +361,16 @@ button:hover.c2 {
         >
           
           <circle
+            className="outer"
             cx="33"
             cy="33"
             fill="none"
             r="30"
-            stroke="#00AFF5"
           />
           <circle
             className="inner"
             cx="33"
             cy="33"
-            fill="#00AFF5"
             r="18"
           />
         </svg>
@@ -413,11 +417,11 @@ button:hover.c2 {
         >
           
           <circle
+            className="outer"
             cx="33"
             cy="33"
             fill="none"
             r="30"
-            stroke="#00AFF5"
           />
         </svg>
       </span>

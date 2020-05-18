@@ -6,4 +6,5 @@ declare interface Icon {
   readonly iconColor?: string
   readonly badgeAriaLabel?: string
   readonly badgeContent?: string
+  readonly isDisabled?: boolean
 }

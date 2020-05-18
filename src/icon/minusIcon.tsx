@@ -13,8 +13,8 @@ export const MinusIcon = (props: Icon) => (
       strokeLinejoin="round"
       strokeMiterlimit="10"
     >
-      <path d="M17 12H7" />
       <circle cx="12" cy="12" r="11" />
+      <path d="M17 12H7" />
     </g>
   </BaseIcon>
 )

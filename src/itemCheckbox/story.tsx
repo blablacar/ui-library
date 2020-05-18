@@ -14,20 +14,20 @@ stories.addDecorator(withKnobs)
 stories.add(
   'Default',
   () => {
-    const isMainTitle = boolean('Title', false)
-    const isDataInfo = boolean('Secondary info', false)
+    const disabled = boolean('Disabled', false)
 
     return (
       <Section>
         <ItemCheckbox
-          label={text('Label', 'Main information')}
           name={text('Name', 'InputName')}
+          leftAddon={boolean('with icon', false) ? <LadyIcon isDisabled={disabled} /> : null}
+          labelTitle={text('Label title')}
+          label={text('Label', 'Main information')}
           data={text('Data', 'Data')}
-          labelTitle={isMainTitle ? text('Label title', 'Title') : null}
-          leftAddon={boolean('with icon', false) ? <LadyIcon /> : null}
-          dataInfo={isDataInfo ? text('Data info', 'Info') : null}
+          dataInfo={text('Data info')}
           onChange={action('changed')}
           checked={boolean('isChecked', false)}
+          disabled={disabled}
           status={select('status', ItemCheckboxStatus, ItemCheckboxStatus.DEFAULT)}
         />
       </Section>

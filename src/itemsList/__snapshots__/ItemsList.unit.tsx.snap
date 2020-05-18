@@ -110,6 +110,10 @@ exports[`ItemsList Should render an unordered list 1`] = `
   background: none;
 }
 
+.c1:disabled {
+  cursor: default;
+}
+
 a.c1 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c1 {
 button:active.c1,
 button:hover.c1 {
   outline: none;
-}
-
-.c1:disabled {
-  cursor: default;
 }
 
 .c1 .kirk-item-leftText {
@@ -477,6 +477,10 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   background: none;
 }
 
+.c1:disabled {
+  cursor: default;
+}
+
 a.c1 {
   background: none;
   -webkit-text-decoration: none;
@@ -502,10 +506,6 @@ button.c1 {
 button:active.c1,
 button:hover.c1 {
   outline: none;
-}
-
-.c1:disabled {
-  cursor: default;
 }
 
 .c1 .kirk-item-leftText {
@@ -861,6 +861,10 @@ exports[`ItemsList Should render an unordered list with the separators classname
   background: none;
 }
 
+.c1:disabled {
+  cursor: default;
+}
+
 a.c1 {
   background: none;
   -webkit-text-decoration: none;
@@ -886,10 +890,6 @@ button.c1 {
 button:active.c1,
 button:hover.c1 {
   outline: none;
-}
-
-.c1:disabled {
-  cursor: default;
 }
 
 .c1 .kirk-item-leftText {

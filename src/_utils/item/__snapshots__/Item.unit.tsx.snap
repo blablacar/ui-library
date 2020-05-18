@@ -110,6 +110,10 @@ exports[`Item Should not have changed 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -236,9 +236,6 @@ button:hover.c0 {
         fill="none"
         fillRule="evenodd"
       >
-        <path
-          d="M0 0h24v24H0z"
-        />
         <g
           stroke="#708C91"
           strokeLinecap="round"

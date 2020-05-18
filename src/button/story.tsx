@@ -35,6 +35,7 @@ stories.add(
         status={ButtonStatus.PRIMARY}
         isBubble={hasIcon()}
         shadowed={boolean('shadowed', false)}
+        disabled={boolean('disabled', false)}
         {...commonProps}
       >
         {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
@@ -54,6 +55,7 @@ stories.add(
         status={ButtonStatus.SECONDARY}
         isBubble={hasIcon()}
         shadowed={boolean('shadowed', false)}
+        disabled={boolean('disabled', false)}
         {...commonProps}
       >
         {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Secondary button')}
@@ -73,6 +75,7 @@ stories.add(
         status={ButtonStatus.TERTIARY}
         isBubble={hasIcon()}
         shadowed={boolean('shadowed', false)}
+        disabled={boolean('disabled', false)}
         {...commonProps}
       >
         {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Tertiary button')}
@@ -98,7 +101,12 @@ stories.add('valid', () => (
 
 stories.add('warning', () => (
   <Section>
-    <Button status={ButtonStatus.WARNING} isBubble={hasIcon()} {...commonProps}>
+    <Button
+      status={ButtonStatus.WARNING}
+      isBubble={hasIcon()}
+      disabled={boolean('disabled', false)}
+      {...commonProps}
+    >
       {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
     </Button>
   </Section>
@@ -106,7 +114,12 @@ stories.add('warning', () => (
 
 stories.add('unstyled', () => (
   <Section>
-    <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
+    <Button
+      status={ButtonStatus.UNSTYLED}
+      isBubble={hasIcon()}
+      disabled={boolean('disabled', false)}
+      {...commonProps}
+    >
       {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Unstyled button')}
     </Button>
   </Section>
@@ -119,6 +132,7 @@ stories.add('shadowed', () => (
       isBubble
       status={ButtonStatus.PRIMARY}
       shadowed={boolean('shadowed', true)}
+      disabled={boolean('disabled', false)}
     >
       <ArrowIcon right iconColor={color.white} />
     </Button>

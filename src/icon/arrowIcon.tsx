@@ -18,8 +18,8 @@ export const ArrowIcon = ({ right, ...props }: ArrowIconProps) => (
       strokeLinecap="round"
       {...(right && { transform: 'rotate(180 12 12)' })}
     >
-      <path d="M22 12H2" />
       <path d="M9 19l-7-7 7-7" />
+      <path d="M22 12H2" />
     </g>
   </BaseIcon>
 )

@@ -1,9 +1,19 @@
 import styled from 'styled-components'
 
-import { shadow } from '../branding'
+import { color, shadow } from '../branding'
 import BaseIcon from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
+  &,
+  & rect,
+  & circle,
+  & line,
+  & polyline,
+  & path,
+  & g {
+    stroke: ${props => (props.isDisabled ? color.gray : '')};
+  }
+
   &.kirk-icon-wrapper {
     display: inline-block;
     position: relative;

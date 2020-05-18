@@ -6,7 +6,6 @@ import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
 export const CrossHairIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g fill="none" fillRule="evenodd">
-      <path d="M0 0h24v24H0z" />
       <g stroke={props.iconColor} strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="7.826" />
         <path d="M12 2.435v3.478M21.565 12h-3.478M12 21.565v-3.478M2.435 12h3.478" />

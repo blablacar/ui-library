@@ -7,16 +7,21 @@ import { color } from '../branding'
 interface RadioIconProps {
   readonly isChecked?: boolean
   readonly isLoading?: boolean
+  readonly isDisabled?: boolean
 }
 
-const RadioIcon = ({ isChecked = false, isLoading = false }: RadioIconProps) => {
+const RadioIcon = ({
+  isChecked = false,
+  isLoading = false,
+  isDisabled = false,
+}: RadioIconProps) => {
   if (isLoading) {
     return <Loader size={24} inline />
   }
   if (isChecked) {
-    return <CircleIcon iconColor={color.blue} innerDisc />
+    return <CircleIcon iconColor={color.blue} isDisabled={isDisabled} innerDisc />
   }
-  return <CircleIcon iconColor={color.blue} />
+  return <CircleIcon iconColor={color.blue} isDisabled={isDisabled} />
 }
 
 export default RadioIcon

@@ -110,6 +110,10 @@ exports[`Should render properly with read messages 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -135,10 +139,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {
@@ -474,6 +474,10 @@ exports[`Should render properly with unread messages 1`] = `
   background: none;
 }
 
+.c0:disabled {
+  cursor: default;
+}
+
 a.c0 {
   background: none;
   -webkit-text-decoration: none;
@@ -499,10 +503,6 @@ button.c0 {
 button:active.c0,
 button:hover.c0 {
   outline: none;
-}
-
-.c0:disabled {
-  cursor: default;
 }
 
 .c0 .kirk-item-leftText {

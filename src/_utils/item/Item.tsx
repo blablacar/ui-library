@@ -46,6 +46,7 @@ export interface ItemProps extends A11yProps {
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly hideHoverBackground?: boolean
+  readonly disabled?: boolean
 }
 
 const Item = (props: ItemProps) => {
@@ -82,6 +83,7 @@ const Item = (props: ItemProps) => {
     tag = <div />,
     ariaLabel,
     hideHoverBackground = false,
+    disabled = false,
   } = props
   const a11yAttrs = pickA11yProps<ItemProps>(props)
   let Tag = tag.type
@@ -96,6 +98,8 @@ const Item = (props: ItemProps) => {
     }
   }
   const hasRightText = rightTitle || rightBody
+
+  const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
   return (
     <Tag
@@ -122,7 +126,7 @@ const Item = (props: ItemProps) => {
           <Text
             className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
             display={leftTitleDisplay}
-            textColor={leftTitleColor}
+            textColor={getTextColor(leftTitleColor)}
             tag={TextTagType.SPAN}
           >
             {leftTitle}
@@ -134,7 +138,7 @@ const Item = (props: ItemProps) => {
           <Text
             className="kirk-item-body"
             display={leftBodyDisplay}
-            textColor={leftBodyColor}
+            textColor={getTextColor(leftBodyColor)}
             tag={TextTagType.SPAN}
           >
             {leftBody}
@@ -144,7 +148,7 @@ const Item = (props: ItemProps) => {
           <Text
             className="kirk-item-body-annotation"
             display={leftBodyAnnotationDisplay}
-            textColor={leftBodyAnnotationColor}
+            textColor={getTextColor(leftBodyAnnotationColor)}
             tag={TextTagType.SPAN}
           >
             {leftBodyAnnotation}
@@ -162,7 +166,7 @@ const Item = (props: ItemProps) => {
                 },
               ])}
               display={rightTitleDisplay}
-              textColor={rightTitleColor}
+              textColor={getTextColor(rightTitleColor)}
               tag={TextTagType.DIV}
               ariaLabel={rightTitleAriaLabel}
             >
@@ -173,7 +177,7 @@ const Item = (props: ItemProps) => {
             <Text
               className="kirk-item-body"
               display={rightBodyDisplay}
-              textColor={rightBodyColor}
+              textColor={getTextColor(rightBodyColor)}
               tag={TextTagType.DIV}
             >
               {rightBody}

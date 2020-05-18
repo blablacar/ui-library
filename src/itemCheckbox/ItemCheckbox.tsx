@@ -12,12 +12,12 @@ export enum ItemCheckboxStatus {
 }
 
 export interface ItemCheckboxProps extends A11yProps {
-  readonly label: string
-  readonly name: string
-  readonly data?: string
   readonly className?: string
+  readonly name: string
   readonly leftAddon?: React.ReactNode
   readonly labelTitle?: string
+  readonly label: string
+  readonly data?: string
   readonly dataInfo?: string
   readonly checked?: boolean
   readonly disabled?: boolean
@@ -61,7 +61,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
           onChange={this.onChange}
           disabled={disabled || isLoading}
         />
-        <CheckboxIcon isChecked={checked} isLoading={isLoading} />
+        <CheckboxIcon isChecked={checked} isLoading={isLoading} isDisabled={disabled} />
       </Fragment>
     )
 
@@ -82,6 +82,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
         tag={<label />}
         rightAddon={checkbox}
         isClickable
+        disabled={disabled}
         {...a11yAttrs}
       />
     )
