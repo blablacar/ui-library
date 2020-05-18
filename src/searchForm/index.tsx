@@ -213,4 +213,6 @@ const StyledSearchForm = styled(SearchForm)`
     }
   }
 `
+
 export default StyledSearchForm
+export * from './SearchForm'

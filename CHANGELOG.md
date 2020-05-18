@@ -1,7 +1,8 @@
 # Unreleased
 
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
-[...]
+- **[FIX]** Export `SearchForm`'s types.
+  [...]
 
 # v33.1.0 (18/05/2020)
 
