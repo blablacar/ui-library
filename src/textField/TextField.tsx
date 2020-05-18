@@ -4,6 +4,7 @@ import isEmpty from 'lodash.isempty'
 
 import prefix from '../_utils'
 import { color } from '../_utils/branding'
+import { OnChangeParameters } from '../_utils/onChange'
 import Button, { ButtonStatus } from '../button'
 import CrossIcon from '../icon/crossIcon'
 import EyeIcon from '../icon/eyeIcon'

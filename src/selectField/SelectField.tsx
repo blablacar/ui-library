@@ -3,9 +3,16 @@ import cc from 'classcat'
 
 import { color } from '../_utils/branding'
 import { CommonFieldsProps } from '../_utils/interfaces'
+import { OnChangeParameters } from '../_utils/onChange'
 import ChevronIcon from '../icon/chevronIcon'
 
 export const selectHeight = '52px'
+
+export interface SelectFieldItem {
+  readonly value: string | number
+  readonly label: string
+  readonly ariaLabel?: string
+}
 
 export interface SelectFieldProps extends Partial<CommonFieldsProps> {
   readonly ariaLabel?: string

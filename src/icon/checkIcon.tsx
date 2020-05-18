@@ -4,8 +4,7 @@ import cc from 'classcat'
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import BaseIcon from '../_utils/icon'
-import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
+import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export interface CheckProps extends Icon {
   readonly absolute?: boolean

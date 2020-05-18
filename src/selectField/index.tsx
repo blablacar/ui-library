@@ -65,5 +65,5 @@ const StyledSelectField = styled(SelectField)`
   }
 `
 
-export { SelectFieldProps } from './SelectField'
+export { SelectFieldProps, SelectFieldItem } from './SelectField'
 export default StyledSelectField

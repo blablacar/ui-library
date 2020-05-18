@@ -36,5 +36,5 @@ const StyledAutoComplete = styled(AutoComplete)`
   }
 `
 
-export { AutoCompleteProps } from './AutoComplete'
+export * from './AutoComplete'
 export default StyledAutoComplete

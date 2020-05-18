@@ -3,8 +3,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import BaseIcon from '../_utils/icon'
-import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
+import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export interface MeetingPointIconProps extends Icon {
   readonly active?: boolean

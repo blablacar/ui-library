@@ -9,6 +9,13 @@ import { ItemStatus } from '../_utils/item'
 import ItemChoice, { ItemChoiceStyle } from '../itemChoice'
 import ItemsList from '../itemsList'
 
+export interface AutocompleteItem {
+  readonly id: string
+  readonly label: string
+  readonly labelInfo?: string
+  readonly leftAddon?: JSX.Element
+}
+
 export interface AutoCompleteListProps {
   name: string
   onSelect?: (item: AutocompleteItem) => void
@@ -23,7 +30,7 @@ export interface AutoCompleteListProps {
   withSeparators?: boolean
 }
 
-export interface AutoCompleteListState {
+interface AutoCompleteListState {
   readonly highlightedIndex: number
   readonly selectedIndex: number
 }

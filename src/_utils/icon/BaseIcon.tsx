@@ -5,6 +5,17 @@ import isEmpty from 'lodash.isempty'
 import Badge from '../../badge'
 import { color } from '../branding'
 
+export interface Icon {
+  readonly size?: number | string
+  readonly className?: string
+  readonly iconClassName?: string
+  readonly title?: string
+  readonly iconColor?: string
+  readonly badgeAriaLabel?: string
+  readonly badgeContent?: string
+  readonly isDisabled?: boolean
+}
+
 export interface IconProps extends Icon {
   readonly children: JSX.Element
   readonly viewBox?: string

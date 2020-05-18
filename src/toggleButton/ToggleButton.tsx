@@ -4,6 +4,7 @@ import cc from 'classcat'
 import CheckboxIcon from '../_utils/checkboxIcon'
 import Item from '../_utils/item/index'
 import { ItemProps } from '../_utils/item/Item'
+import { OnChangeParameters } from '../_utils/onChange'
 
 export interface ToggleButtonProps extends ItemProps {
   readonly name: string

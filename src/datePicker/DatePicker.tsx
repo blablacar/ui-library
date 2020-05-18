@@ -4,6 +4,7 @@ import cc from 'classcat'
 
 import prefix from '../_utils'
 import { color } from '../_utils/branding'
+import { OnChangeParameters } from '../_utils/onChange'
 import Button, { ButtonStatus } from '../button'
 import ArrowIcon from '../icon/arrowIcon'
 

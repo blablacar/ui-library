@@ -6,6 +6,7 @@ import Bullet, { BulletTypes } from '../../bullet'
 import ChevronIcon from '../../icon/chevronIcon'
 import Text, { TextDisplayType, TextTagType } from '../../text'
 import { color } from '../branding'
+import { Place } from '../place'
 
 export interface ItineraryLocationProps {
   readonly place: Place

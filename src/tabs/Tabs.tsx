@@ -1,6 +1,7 @@
 import React, { createRef, PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 
+import { Icon } from '../_utils/icon'
 import Badge from '../badge'
 
 export enum TabStatus {

@@ -1,4 +1,4 @@
-declare interface Place {
+export interface Place {
   stepAriaLabel?: string
   actionAriaLabel?: string
   mainLabel: string

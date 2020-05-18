@@ -33,4 +33,5 @@ const StyledAutoCompleteList = styled(AutoCompleteList)`
   }
 `
 
+export * from './AutoCompleteList'
 export default StyledAutoCompleteList

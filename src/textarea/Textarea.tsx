@@ -6,6 +6,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import prefix from '../_utils'
+import { OnChangeParameters } from '../_utils/onChange'
 import Button, { ButtonStatus } from '../button'
 
 export interface CommonFormFields {

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 import Item from '../../../_utils/item'
+import { OnChangeParameters } from '../../../_utils/onChange'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import Button, { ButtonStatus } from '../../../button'
 import Divider from '../../../divider'

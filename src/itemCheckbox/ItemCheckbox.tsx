@@ -4,6 +4,7 @@ import cc from 'classcat'
 import CheckboxIcon from '../_utils/checkboxIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import Item from '../_utils/item'
+import { OnChangeParameters } from '../_utils/onChange'
 import { TextDisplayType } from '../text'
 
 export enum ItemCheckboxStatus {

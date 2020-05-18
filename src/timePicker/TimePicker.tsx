@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import prefix from '../_utils'
+import { OnChangeParameters } from '../_utils/onChange'
 
 /**
  * Format given dateTime in the format HH:MM.
