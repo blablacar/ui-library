@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v33.1.0 (18/05/2020)
+
 - **[UPDATE]** Clean svg code for several icons
 - **[UPDATE]** Add `isDisabled` prop to `BaseIcon`
 - **[UPDATE]** Add `disabled` support to all `Item` based components
