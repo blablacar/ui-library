@@ -1,10 +1,13 @@
 # Unreleased
 
+[...]
+
+# v33.1.1 (18/05/2020)
+
 - **[UPDATE]** Clean svg code for several icons
-- **[UPDATE]** Add `isDisabled` prop to `BaseIcon`
+- **[NEW]** Add `isDisabled` prop to `BaseIcon`
 - **[UPDATE]** Add `disabled` support to all `Item` based components
 - **[FIX]** Add `padding-top` on `Itinerary`
-  [...]
 
 # v33.0.1 (15/05/2020)
 
