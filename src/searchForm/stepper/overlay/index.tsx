@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { overlayBaseStyle } from '../../../searchForm/baseStyles'
-import { TRANSITION_CLASS_NAME } from '../../overlay/Overlay'
+import { TRANSITION_OVERLAY_CLASS_NAME } from '../../transitionConfig'
 import StepperOverlay from './StepperOverlay'
 
 export const positionDateStepper = '460px'
@@ -13,15 +13,15 @@ const StyledStepperOverlay = styled(StepperOverlay)`
     position: absolute;
   }
 
-  &.${TRANSITION_CLASS_NAME}-enter {
+  &.${TRANSITION_OVERLAY_CLASS_NAME}-enter {
     left: ${positionInitial};
   }
 
-  &.${TRANSITION_CLASS_NAME}-enter-active, &.${TRANSITION_CLASS_NAME}-enter-done {
+  &.${TRANSITION_OVERLAY_CLASS_NAME}-enter-active, &.${TRANSITION_OVERLAY_CLASS_NAME}-enter-done {
     left: ${positionDateStepper};
   }
 
-  &.${TRANSITION_CLASS_NAME}-exit {
+  &.${TRANSITION_OVERLAY_CLASS_NAME}-exit {
     left: ${positionDateStepper};
   }
 `

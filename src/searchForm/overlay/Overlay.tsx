@@ -2,16 +2,11 @@ import React, { useRef } from 'react'
 import CSSTransition from 'react-transition-group/CSSTransition'
 
 import useReducedMotion from '../../_utils/useReducedMotion'
-
-export const enterTransitionDuration = 350
-export const exitTransitionDuration = 500
-export const reducedMotionTransitionDuration = 0
-export const TRANSITION_CLASS_NAME = 'kirk-searchForm-overlay-transition'
-
-const overlayTimeout = {
-  enter: enterTransitionDuration,
-  exit: exitTransitionDuration,
-}
+import {
+  reducedMotionTransitionDuration,
+  TRANSITION_OVERLAY_CLASS_NAME,
+  transitionOverlayTimeout,
+} from '../transitionConfig'
 
 type OverlayProps = {
   closeOnBlur: () => void
@@ -36,8 +31,8 @@ export const Overlay = ({ closeOnBlur, shouldDisplay, children, className }: Ove
     >
       <CSSTransition
         in={shouldDisplay}
-        classNames={TRANSITION_CLASS_NAME}
-        timeout={reducedMotion ? reducedMotionTransitionDuration : overlayTimeout}
+        classNames={TRANSITION_OVERLAY_CLASS_NAME}
+        timeout={reducedMotion ? reducedMotionTransitionDuration : transitionOverlayTimeout}
         mountOnEnter
         unmountOnExit
       >

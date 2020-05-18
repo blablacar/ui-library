@@ -6,6 +6,7 @@ import Datepicker, { DatePickerOrientation, DatePickerProps } from '../../../dat
 import Divider from '../../../divider'
 import ChevronIcon from '../../../icon/chevronIcon'
 import Section from '../../../layout/section/baseSection'
+import { TransitionSection } from '../../baseStyles'
 
 export interface DatePickerSectionProps extends DatePickerProps {
   title: string
@@ -17,7 +18,7 @@ export const DatePickerSection = ({ onClose, ...props }: DatePickerSectionProps)
   useFocusTrap(ref, onClose)
 
   return (
-    <div ref={ref} role="dialog" className={props.className}>
+    <TransitionSection ref={ref} role="dialog" className={props.className}>
       <Section>
         <Item
           leftAddon={<ChevronIcon left />}
@@ -32,7 +33,7 @@ export const DatePickerSection = ({ onClose, ...props }: DatePickerSectionProps)
           orientation={DatePickerOrientation.VERTICAL}
         />
       </Section>
-    </div>
+    </TransitionSection>
   )
 }
 

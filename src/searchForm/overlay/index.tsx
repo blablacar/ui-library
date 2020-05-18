@@ -1,45 +1,48 @@
 import styled from 'styled-components'
 
 import { componentSizes } from '../../_utils/branding'
-import Overlay, {
-  enterTransitionDuration,
-  exitTransitionDuration,
+import {
+  enterTransitionOverlayDuration,
+  exitTransitionOverlayDuration,
   reducedMotionTransitionDuration,
-  TRANSITION_CLASS_NAME,
-} from './Overlay'
-
-export const transitionTimingFunction = 'cubic-bezier(0.2, 1, 0.2, 1)'
+  TRANSITION_OVERLAY_CLASS_NAME,
+  transitionOverlayTimingFunction,
+} from '../transitionConfig'
+import Overlay from './Overlay'
 
 /**
  *  Basic styles & transitions that apply on all overlays
  * Some of them are adding more transitions (e.g. stepperOverlay)
  */
 const StyledOverlay = styled(Overlay)`
-  & .${TRANSITION_CLASS_NAME}-enter {
+  & .${TRANSITION_OVERLAY_CLASS_NAME}-enter {
     opacity: 0;
     width: 0;
   }
 
-  & .${TRANSITION_CLASS_NAME}-enter-active {
+  & .${TRANSITION_OVERLAY_CLASS_NAME}-enter-active {
     opacity: 1;
     width: ${componentSizes.searchOverlayWidth};
-    transition: width ${enterTransitionDuration}ms ${transitionTimingFunction},
-      opacity ${enterTransitionDuration}ms ${transitionTimingFunction},
-      left ${enterTransitionDuration}ms ${transitionTimingFunction};
+    transition: width ${enterTransitionOverlayDuration}ms ${transitionOverlayTimingFunction},
+      opacity ${enterTransitionOverlayDuration}ms ${transitionOverlayTimingFunction},
+      left ${enterTransitionOverlayDuration}ms ${transitionOverlayTimingFunction};
   }
 
-  & .${TRANSITION_CLASS_NAME}-exit {
+  & .${TRANSITION_OVERLAY_CLASS_NAME}-exit {
     opacity: 1;
     width: ${componentSizes.searchOverlayWidth};
   }
 
-  & .${TRANSITION_CLASS_NAME}-exit-active {
+  & .${TRANSITION_OVERLAY_CLASS_NAME}-exit-active {
     opacity: 0;
-    transition: opacity ${exitTransitionDuration}ms ${transitionTimingFunction};
+    transition: opacity ${exitTransitionOverlayDuration}ms ${transitionOverlayTimingFunction};
   }
 
   @media (prefers-reduced-motion: reduce) {
-    & .${TRANSITION_CLASS_NAME}-enter-active, & .${TRANSITION_CLASS_NAME}-exit-active {
+    &
+      .${TRANSITION_OVERLAY_CLASS_NAME}-enter-active,
+      &
+      .${TRANSITION_OVERLAY_CLASS_NAME}-exit-active {
       transition-duration: ${reducedMotionTransitionDuration}ms !important;
     }
   }
