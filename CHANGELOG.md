@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix crash on IE11 for `MainContent` component
 - **[FIX]** Added missing padding-top on `TripCard` price
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
 - **[FIX]** Export `SearchForm`'s types.
