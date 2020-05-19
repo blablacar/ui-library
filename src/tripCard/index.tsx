@@ -61,6 +61,7 @@ const StyledTripCard = styled(TripCard)`
   & .kirk-tripCard-price {
     display: block;
     flex-shrink: 0;
+    padding-top: ${space.m};
   }
 
   & .kirk-tripCard-bottom {

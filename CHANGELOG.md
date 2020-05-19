@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Added missing padding-top on `TripCard` price
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
 - **[FIX]** Export `SearchForm`'s types.
   [...]
