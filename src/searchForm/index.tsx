@@ -60,10 +60,6 @@ const StyledSearchForm = styled(SearchForm)`
     color: ${color.lightMidnightGreen};
   }
 
-  & .kirk-bullet--searchForm {
-    margin-right: ${space.m};
-  }
-
   & .kirk-searchForm-invert {
     border-right: 1px solid ${color.lightGray};
   }
@@ -84,9 +80,15 @@ const StyledSearchForm = styled(SearchForm)`
     box-sizing: border-box;
     line-height: ${font.l.lineHeight};
     width: 100%;
+    min-width: 0;
+    text-align: left;
     white-space: nowrap;
     overflow: hidden;
     align-items: center;
+
+    & > *:not(:first-child) {
+      margin-left: ${space.m};
+    }
   }
 
   & .kirk-searchForm-from .kirk-search-button,
@@ -98,7 +100,9 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-searchForm-invert .kirk-search-button {
+    width: initial;
     padding: 0;
+    margin: 0 ${space.m};
   }
 
   & .kirk-searchForm-date .kirk-search-button,
@@ -121,6 +125,7 @@ const StyledSearchForm = styled(SearchForm)`
     border-radius: 0 ${radius.l} ${radius.l} 0;
     background-color: ${color.blue};
     padding: 0;
+    justify-content: center;
   }
 
   & .kirk-searchForm-submit .kirk-icon {
@@ -128,12 +133,7 @@ const StyledSearchForm = styled(SearchForm)`
   }
 
   & .kirk-search-button svg {
-    margin: 0;
-    margin-right: ${space.m};
-  }
-
-  & .kirk-searchForm-submit .kirk-icon {
-    flex: 1;
+    flex: none;
   }
 
   & .kirk-searchForm-overlay {
@@ -151,6 +151,14 @@ const StyledSearchForm = styled(SearchForm)`
 
   & .kirk-searchForm-datepicker {
     left: ${positionDateStepper};
+  }
+
+  & .kirk-search-ellipsis {
+    flex: 0 1 auto;
+    min-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {
@@ -176,12 +184,18 @@ const StyledSearchForm = styled(SearchForm)`
       padding-bottom: ${space.m};
     }
 
+    & .kirk-searchForm-invert .kirk-search-button {
+      width: initial;
+      margin-right: 0;
+    }
+
     & .kirk-searchForm-date {
       margin-right: ${space.m};
     }
 
     & .kirk-searchForm-from {
-      flex-grow: 1;
+      flex: 1;
+      min-width: 0;
     }
 
     & .kirk-searchForm-invert {
@@ -196,6 +210,7 @@ const StyledSearchForm = styled(SearchForm)`
     & .kirk-searchForm-date,
     & .kirk-searchForm-seats {
       flex: 1;
+      min-width: 0;
     }
 
     & .kirk-searchForm-dateSeat-container {

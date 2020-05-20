@@ -6,6 +6,7 @@
 - **[FIX]** Export `SearchForm`'s types.
 - **[BREAKING CHANGE]** Export missing global types.
 - **[UPDATE]** Add `renderDatePickerComponent` prop in `SearchForm`.
+- **[FIX]** Add ellipsis for overflowing text in `SearchForm`.
   [...]
 
 # v33.1.0 (18/05/2020)
