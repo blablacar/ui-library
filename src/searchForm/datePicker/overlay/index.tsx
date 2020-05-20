@@ -18,4 +18,5 @@ const StyledDatePickerOverlay = styled(DatePickerOverlay)`
   }
 `
 
+export { DatePickerOverlayProps } from './DatePickerOverlay'
 export default StyledDatePickerOverlay
