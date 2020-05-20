@@ -9,6 +9,7 @@ import { MediaSize, MediaSizeContext } from '../_utils/mediaSizeProvider'
 import { OnChangeParameters } from '../_utils/onChange'
 import { AutocompleteOnChange, AutoCompleteProps } from '../autoComplete'
 import Bullet, { BulletTypes } from '../bullet'
+import DatePicker from '../datePicker'
 import Divider from '../divider'
 import { CalendarIcon } from '../icon/calendarIcon'
 import { DoubleArrowIcon } from '../icon/doubleArrowIcon'
@@ -17,7 +18,7 @@ import { StandardSeat } from '../icon/standardSeat'
 import TextTitle from '../typography/title'
 import AutoCompleteOverlay, { AutoCompleteOverlayProps } from './autoComplete/overlay'
 import AutoCompleteSection from './autoComplete/section'
-import DatePickerOverlay from './datePicker/overlay'
+import DatePickerOverlay, { DatePickerOverlayProps } from './datePicker/overlay'
 import DatePickerSection from './datePicker/section'
 import Overlay from './overlay'
 import StepperOverlay from './stepper/overlay'
@@ -31,6 +32,7 @@ export interface SearchFormProps {
   autocompleteToPlaceholder: AutoCompleteProps['placeholder']
   renderAutocompleteFrom: AutoCompleteOverlayProps['renderAutocompleteComponent']
   renderAutocompleteTo: AutoCompleteOverlayProps['renderAutocompleteComponent']
+  renderDatePickerComponent?: DatePickerOverlayProps['renderDatePickerComponent']
   datepickerProps: SearchFormDatePickerProps
   stepperProps: SearchFormStepperProps
 }
@@ -72,6 +74,7 @@ const SearchForm = ({
   autocompleteToPlaceholder,
   renderAutocompleteFrom,
   renderAutocompleteTo,
+  renderDatePickerComponent = props => <DatePicker {...props} />,
   datepickerProps,
   stepperProps,
 }: SearchFormProps) => {
@@ -116,6 +119,7 @@ const SearchForm = ({
       closeOpenedElement()
       setFormValues({ ...formValues, [SearchFormElements.DATEPICKER]: value as string })
     },
+    renderDatePickerComponent,
   }
 
   const stepperConfig = {
@@ -288,7 +292,7 @@ const SearchForm = ({
           closeOnBlur={closeOpenedElement}
           className="kirk-searchForm-overlay kirk-searchForm-datepicker"
         >
-          <DatePickerOverlay {...datepickerConfig} closeOnBlur={closeOpenedElement} />
+          <DatePickerOverlay {...datepickerConfig} />
         </Overlay>
 
         {mediaSize === MediaSize.SMALL &&

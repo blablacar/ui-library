@@ -10,12 +10,12 @@ import TextTitle from '../typography/title'
 import AutoCompleteOverlay from './autoComplete/overlay'
 import DatePickerOverlay from './datePicker/overlay'
 import Overlay from './overlay'
-import SearchForm from './SearchForm'
+import SearchForm, { SearchFormProps } from './SearchForm'
 import StepperOverlay from './stepper/overlay'
 
 const today = new Date().toISOString()
 
-const defaultProps = {
+const defaultProps: SearchFormProps = {
   onSubmit: () => {},
   autocompleteFromPlaceholder: 'Leaving from',
   autocompleteToPlaceholder: 'Going to',

@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import MediaSizeProvider from '../_utils/mediaSizeProvider'
 import { AutoCompleteExample } from '../autoComplete/story'
+import DatePicker from '../datePicker'
 import CrossIcon from '../icon/crossIcon'
 import BaseSection, { SectionContentSize } from '../layout/section/baseSection'
 import AutoCompleteOverlay from './autoComplete/overlay'
@@ -16,14 +17,26 @@ import StepperOverlay from './stepper/overlay'
 import StepperSection from './stepper/section'
 
 const stories = storiesOf('Widgets|SearchForm', module)
+
 stories.addDecorator(withKnobs)
 
 stories.add('DatepickerOverlay', () => (
-  <DatePickerOverlay name="Datepicker" title="Today" closeOnBlur={() => {}} />
+  <DatePickerOverlay
+    name="Datepicker"
+    title="Today"
+    renderDatePickerComponent={props => <DatePicker {...props} />}
+  />
 ))
+
 stories.add('DatePickerSection', () => (
-  <DatePickerSection name="Datepicker" title="Today" onClose={() => {}} />
+  <DatePickerSection
+    name="Datepicker"
+    title="Today"
+    onClose={() => {}}
+    renderDatePickerComponent={props => <DatePicker {...props} />}
+  />
 ))
+
 stories.add('StepperOverlay', () => (
   <StepperOverlay
     name="Stepper"
@@ -35,6 +48,7 @@ stories.add('StepperOverlay', () => (
     decreaseLabel="Decrease"
   />
 ))
+
 stories.add('StepperSection', () => (
   <StepperSection
     name="Stepper"
@@ -46,9 +60,11 @@ stories.add('StepperSection', () => (
     onClose={() => {}}
   />
 ))
+
 stories.add('AutoCompleteOverlay', () => (
   <AutoCompleteOverlay name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
 ))
+
 stories.add('AutoCompleteSection', () => (
   <AutoCompleteSection
     name="from"

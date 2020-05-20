@@ -5,6 +5,7 @@
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
 - **[FIX]** Export `SearchForm`'s types.
 - **[BREAKING CHANGE]** Export missing global types.
+- **[UPDATE]** Add `renderDatePickerComponent` prop in `SearchForm`.
   [...]
 
 # v33.1.0 (18/05/2020)
