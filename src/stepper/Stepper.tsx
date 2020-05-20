@@ -5,6 +5,7 @@ import isEmpty from 'lodash.isempty'
 
 import { isTouchEventsAvailable } from '../_utils'
 import { color, delay, font, pxToInteger, space } from '../_utils/branding'
+import { OnChangeParameters } from '../_utils/onChange'
 import Button, { ButtonStatus } from '../button'
 import MinusIcon from '../icon/minusIcon'
 import PlusIcon from '../icon/plusIcon'

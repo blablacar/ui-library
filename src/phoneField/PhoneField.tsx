@@ -3,18 +3,33 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 
-import { allCountries } from 'country-telephone-data'
+import { allCountries, AllCountryPhoneData } from 'country-telephone-data'
 
 import prefix from '../_utils'
+import { OnChangeParameters } from '../_utils/onChange'
 import SelectField from '../selectField'
 import TextField, { inputTypes } from '../textField'
 
-export type selectfield = HTMLSelectElement
+type FormattedCountryPhoneData = {
+  name: string
+  iso2: string
+  dialCode: string
+}
+
+type MappedCountryPhoneData = {
+  value: string
+  label: string
+}
+
+export type PhoneFieldCustomCountryNames = {
+  [key: string]: string
+}
 
 export enum FIELDS {
   PHONENUMBER = 'phoneNumber',
   PHONEREGION = 'phoneRegion',
 }
+
 export interface PhoneFieldOnChangeParameters {
   name: string
   value: {
@@ -26,6 +41,7 @@ export interface PhoneFieldOnChangeParameters {
 }
 
 type errorField = string | JSX.Element
+
 export interface PhoneFieldProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
@@ -39,14 +55,15 @@ export interface PhoneFieldProps {
   readonly defaultRegionValue?: string
   readonly defaultPhoneValue?: string
   readonly countryWhitelist?: string[]
-  readonly customCountryNames?: customCountryNames
+  readonly customCountryNames?: PhoneFieldCustomCountryNames
   readonly isInline?: boolean
   readonly focus?: boolean
   readonly selectAutoFocus?: boolean
   error?: errorField
 }
+
 interface PhoneFieldState {
-  countryData: mappedCountryPhoneData[]
+  countryData: MappedCountryPhoneData[]
   countryWhitelist: string[]
   phonePrefix: string
   completePhoneNumber: string
@@ -54,10 +71,10 @@ interface PhoneFieldState {
   [key: string]: any
 }
 
-const allCountryPhoneData: allCountryPhoneData[] = allCountries
+const allCountryPhoneData: AllCountryPhoneData[] = allCountries
 
 /* Format and keep only used data */
-const formattedCountryPhoneData: formattedCountryPhoneData[] = allCountryPhoneData.map(
+const formattedCountryPhoneData: FormattedCountryPhoneData[] = allCountryPhoneData.map(
   countryData => ({
     name: countryData.name,
     iso2: countryData.iso2.toUpperCase(),
@@ -77,13 +94,13 @@ const filterIso2 = (countryList: string[]) =>
  * @param {string} countryDefault ISO2 format ex: 'FR'
  * @return {formattedCountriesPhoneData}
  */
-const findIso2 = (countryDefault: string): formattedCountryPhoneData =>
+const findIso2 = (countryDefault: string): FormattedCountryPhoneData =>
   formattedCountryPhoneData.find(country => country.iso2 === countryDefault)
 
 const mapCountriesPhoneData = (
-  countryData: formattedCountryPhoneData[],
-  countryNames: customCountryNames,
-): mappedCountryPhoneData[] =>
+  countryData: FormattedCountryPhoneData[],
+  countryNames: PhoneFieldCustomCountryNames,
+): MappedCountryPhoneData[] =>
   countryData.map(data => ({
     value: data.iso2,
     label: `${!isEmpty(countryNames[data.iso2]) ? countryNames[data.iso2] : data.name} ${
@@ -93,8 +110,8 @@ const mapCountriesPhoneData = (
 
 /* Alphabetically sorted */
 const sortCountriesPhoneData = (
-  mappedCountryPhoneData: mappedCountryPhoneData[],
-): mappedCountryPhoneData[] =>
+  mappedCountryPhoneData: MappedCountryPhoneData[],
+): MappedCountryPhoneData[] =>
   mappedCountryPhoneData.sort((a, b) => {
     if (a.label < b.label) {
       return -1
@@ -128,7 +145,7 @@ const DisplayError = (error: errorField) => {
   )
 }
 
-const countryData = (whitelist: string[], countryNames: customCountryNames) => {
+const countryData = (whitelist: string[], countryNames: PhoneFieldCustomCountryNames) => {
   if (!isEmpty(whitelist)) {
     const whiteListCountriesPhoneData = filterIso2(whitelist)
     const whitelistMapped = mapCountriesPhoneData(whiteListCountriesPhoneData, countryNames)

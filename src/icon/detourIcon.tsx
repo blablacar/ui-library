@@ -2,8 +2,7 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon from '../_utils/icon'
-import { BaseIconDefaultProps } from '../_utils/icon/BaseIcon'
+import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const DetourIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 20 20">

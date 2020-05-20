@@ -1,8 +1,13 @@
 declare module '*.md'
 
 declare module 'country-telephone-data' {
-  const countryTelData: countryTelData
-  const allCountries: allCountryPhoneData[]
-  const allCountryCodes: allCountryCodes
-  const iso2Lookup: iso2Lookup
+  export type AllCountryPhoneData = {
+    name: string
+    iso2: string
+    dialCode: string
+    format: string
+    priority: string
+  }
+
+  export const allCountries: AllCountryPhoneData[]
 }

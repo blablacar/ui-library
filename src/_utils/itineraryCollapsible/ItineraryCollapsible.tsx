@@ -7,6 +7,7 @@ import Text, { TextDisplayType, TextTagType } from '../../text'
 import { color } from '../branding'
 import ItineraryLocation, { computeKeyFromPlace } from '../itineraryLocation'
 import KEYCODES from '../keycodes'
+import { Place } from '../place'
 
 export interface ItineraryCollapsibleProps {
   readonly places: Place[]

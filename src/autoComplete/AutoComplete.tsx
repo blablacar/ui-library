@@ -6,13 +6,28 @@ import isEmpty from 'lodash.isempty'
 
 import prefix from '../_utils'
 import { ItemStatus } from '../_utils/item'
+import { OnChangeParameters } from '../_utils/onChange'
 import Divider from '../divider'
 import ItemInfo from '../itemInfo'
 import Loader from '../loader'
 import TextField, { inputTypes } from '../textField'
-import AutoCompleteList from './AutoCompleteListStyle'
+import AutoCompleteList, { AutocompleteItem } from './AutoCompleteListStyle'
 
 type query = string | number | boolean
+
+export { AutocompleteItem }
+
+export interface AutocompleteOnChange {
+  readonly name: string
+  readonly value: string | number | boolean
+  readonly item: AutocompleteItem
+}
+
+export interface AutocompleteItemToRender {
+  readonly item: AutocompleteItem
+  readonly index: number
+}
+
 export interface AutoCompleteProps {
   readonly name: string
   readonly searchForItems: (query: query) => void

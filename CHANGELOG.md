@@ -4,6 +4,7 @@
 - **[FIX]** Added missing padding-top on `TripCard` price
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
 - **[FIX]** Export `SearchForm`'s types.
+- **[BREAKING CHANGE]** Export missing global types.
   [...]
 
 # v33.1.0 (18/05/2020)

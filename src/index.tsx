@@ -69,5 +69,6 @@ export { default as Transitions, AnimationType } from './transitions'
 export { default as TripCard } from './tripCard'
 export { default as UneditableTextField } from './uneditableTextField'
 export { default as Why } from './why'
-
 export { default as branding } from './_utils/branding'
+export { OnChangeParameters } from './_utils/onChange'
+export { Place } from './_utils/place'
