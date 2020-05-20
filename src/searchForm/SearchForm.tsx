@@ -199,7 +199,12 @@ const SearchForm = ({
             <span className="kirk-bullet--searchForm">
               <Bullet type={BulletTypes.SEARCH} />
             </span>
-            <TextTitle className={cc({ 'kirk-search-placeholder': !autocompleteFromValue })}>
+            <TextTitle
+              className={cc([
+                'kirk-search-ellipsis',
+                { 'kirk-search-placeholder': !autocompleteFromValue },
+              ])}
+            >
               {autocompleteFromValue?.item.label || autocompleteFromPlaceholder}
             </TextTitle>
           </button>
@@ -244,7 +249,12 @@ const SearchForm = ({
           <span className="kirk-bullet--searchForm">
             <Bullet type={BulletTypes.SEARCH} />
           </span>
-          <TextTitle className={cc({ 'kirk-search-placeholder': !autocompleteToValue })}>
+          <TextTitle
+            className={cc([
+              'kirk-search-ellipsis',
+              { 'kirk-search-placeholder': !autocompleteToValue },
+            ])}
+          >
             {autocompleteToValue?.item.label || autocompleteToPlaceholder}
           </TextTitle>
         </button>
@@ -281,7 +291,7 @@ const SearchForm = ({
             onClick={() => setElementOpened(SearchFormElements.DATEPICKER)}
           >
             <CalendarIcon />
-            <TextTitle>{getDatepickerFormattedValue()}</TextTitle>
+            <TextTitle className="kirk-search-ellipsis">{getDatepickerFormattedValue()}</TextTitle>
           </button>
         </div>
 
@@ -314,7 +324,7 @@ const SearchForm = ({
             onClick={() => setElementOpened(SearchFormElements.STEPPER)}
           >
             <StandardSeat />
-            <TextTitle>{getStepperFormattedValue()}</TextTitle>
+            <TextTitle className="kirk-search-ellipsis">{getStepperFormattedValue()}</TextTitle>
           </button>
         </div>
       </div>

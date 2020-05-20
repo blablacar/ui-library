@@ -1,5 +1,5 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import MediaSizeProvider from '../_utils/mediaSizeProvider'
@@ -80,8 +80,8 @@ stories.add(
       <BaseSection contentSize={SectionContentSize.LARGE}>
         <SearchForm
           onSubmit={() => {}}
-          autocompleteFromPlaceholder="Leaving From"
-          autocompleteToPlaceholder="Going to"
+          autocompleteFromPlaceholder={text('autocompleteFromPlaceholder', 'Leaving From')}
+          autocompleteToPlaceholder={text('autocompleteToPlaceholder', 'Going to')}
           renderAutocompleteFrom={props => (
             <AutoCompleteExample inputAddon={<CrossIcon />} autoFocus={false} {...props} />
           )}
