@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import MediaContentSection from './index'
@@ -22,6 +22,7 @@ stories.add('default', () => (
       buttonLabel="Découvrez notre offre de bus"
       buttonHref="https://www.blablacar.fr/bus"
       mediaUrl="https://cdn.blablacar.com/kairos/assets/build/images/blablabus2_large-611071cd4e9502579e94f6bc24391eda.jpg"
+      flipped={boolean('Flip middle section', false)}
     />
     <MediaContentSection
       title="Ouibus devient BlaBlaBus"

@@ -352,6 +352,17 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 @media (min-width:800px) {
+  .c0.kirk-media-content--flipped .kirk-media-content-img-column {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .c0.kirk-media-content--flipped .kirk-media-content-img {
+    margin-right: 0;
+    margin-left: 24px;
+  }
+
   .c0 .kirk-media-content-title {
     padding-top: 0;
   }
@@ -374,7 +385,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 <div
-  className="c0 c1"
+  className="kirk-media-content c0 c1"
   role="presentation"
 >
   <article
@@ -384,7 +395,450 @@ exports[`MediaContentSection should render default MediaContentSection section 1
       className="c2"
     >
       <li
+        className="kirk-column kirk-media-content-img-column c3"
+      >
+        <div
+          className="kirk-media-content-img"
+          style={
+            Object {
+              "backgroundImage": "url(http://blablacar.com/pic.jpg)",
+            }
+          }
+        />
+      </li>
+      <li
         className="kirk-column c3"
+      >
+        <div
+          className="kirk-media-content-wrapper"
+        >
+          <h2
+            className="kirk-title kirk-subheader kirk-media-content-title c4 c5"
+          >
+            section title
+          </h2>
+          <p
+            className="kirk-text kirk-text-body c6"
+          >
+            section content
+          </p>
+          <a
+            className="kirk-button kirk-button-primary kirk-media-content-button c7"
+            disabled={false}
+            href="http://blablacar.com"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+          >
+            button label
+          </a>
+        </div>
+      </li>
+    </ul>
+  </article>
+</div>
+`;
+
+exports[`MediaContentSection should render flipped MediaContentSection section 1`] = `
+.c7 {
+  position: relative;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: 48px;
+  min-width: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  transition: max-width 500ms ease-in, background-color 200ms ease-in;
+  white-space: nowrap;
+}
+
+.c7 svg,
+.c7 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c7 svg {
+  margin-right: 4px;
+  margin-left: -8px;
+}
+
+.c7.kirk-button-bubble svg {
+  margin: 0;
+}
+
+.c7.kirk-itemChoice {
+  border-radius: 0;
+  overflow: visible;
+  width: 100%;
+}
+
+.c7:hover,
+.c7:active {
+  outline: 0;
+}
+
+.c7.kirk-button-unstyled {
+  background-color: transparent;
+  border-radius: inherit;
+  color: #00AFF5;
+  padding: inherit;
+  display: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+.c7[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c7.kirk-button-unstyled[disabled] {
+  opacity: 1;
+}
+
+.c7.kirk-button-primary {
+  background-color: #00AFF5;
+  color: #FFF;
+}
+
+.c7.kirk-button-shadowed {
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  box-sizing: border-box;
+}
+
+.c7.kirk-button-primary:hover,
+.c7.kirk-button-primary:focus,
+.c7.kirk-button-primary:active {
+  background-color: #008FC1;
+}
+
+.c7.kirk-button-secondary {
+  background-color: #FFF;
+  border-color: #DDD;
+  color: #00AFF5;
+}
+
+.c7.kirk-button-secondary.kirk-button-shadowed {
+  border: none;
+}
+
+.c7.kirk-button-secondary:hover,
+.c7.kirk-button-secondary:focus,
+.c7.kirk-button-secondary:active {
+  background-color: #DDD;
+}
+
+.c7.kirk-button-tertiary {
+  background-color: #FFF;
+  border-color: transparent;
+  color: #00AFF5;
+}
+
+.c7.kirk-button-tertiary:hover,
+.c7.kirk-button-tertiary:focus,
+.c7.kirk-button-tertiary:active {
+  background-color: #DDD;
+}
+
+.c7.kirk-button-loading {
+  background-color: transparent;
+  max-width: initial;
+  border: 0;
+}
+
+.c7.kirk-button-loading:hover,
+.c7.kirk-button-loading:focus,
+.c7.kirk-button-loading:active {
+  background-color: transparent;
+}
+
+.c7.kirk-button-loading[disabled],
+.c7.kirk-button-checked[disabled] {
+  opacity: 1;
+}
+
+.c7 svg.kirk-button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.c7.kirk-button-checked {
+  border: 0;
+}
+
+.c7.kirk-button-warning {
+  background-color: #F53F5B;
+  color: #FFF;
+}
+
+.c7.kirk-button-bubble {
+  display: inline-block;
+  text-align: center;
+  padding: 0;
+  line-height: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.c7.kirk-button-bubble.kirk-button-shadowed {
+  width: calc(48px - 2px * 2);
+  height: calc(48px - 2px * 2);
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-indent: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c5 {
+  color: #054752;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.c4 {
+  font-size: 22px;
+  line-height: 24px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.c6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c6.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-body,
+.c6.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c6.kirk-text-title,
+.c6.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c6.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c6.kirk-text-subheader,
+.c6.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c6.kirk-text-title,
+.c6.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c6.kirk-text-bodyStrong,
+.c6.kirk-text-subheaderStrong,
+.c6.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c0 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.c0 .kirk-media-content-title {
+  font-size: 30px;
+  line-height: 1.06;
+}
+
+.c0 .kirk-media-content-wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 .kirk-media-content-img {
+  min-height: 320px;
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 24px;
+  border-radius: 4px;
+}
+
+.c0 .kirk-media-content-button {
+  margin-top: 16px;
+}
+
+@media (hover:none),(hover:on-demand) {
+  .c7.kirk-button-secondary:hover {
+    background-color: #FFF;
+  }
+}
+
+@media (max-width:799px) {
+  .c2 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (min-width:800px) {
+  .c1 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c1 .section-content.section-content--large {
+    max-width: 1016px;
+  }
+}
+
+@media (min-width:800px) {
+  .c0.kirk-media-content--flipped .kirk-media-content-img-column {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+
+  .c0.kirk-media-content--flipped .kirk-media-content-img {
+    margin-right: 0;
+    margin-left: 24px;
+  }
+
+  .c0 .kirk-media-content-title {
+    padding-top: 0;
+  }
+}
+
+@media (max-width:799px) {
+  .c0 .kirk-media-content-img {
+    height: 136px;
+    min-height: 0;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  .c0 .kirk-media-content-wrapper {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+<div
+  className="kirk-media-content c0 kirk-media-content--flipped c1"
+  role="presentation"
+>
+  <article
+    className="section-content section-content--large"
+  >
+    <ul
+      className="c2"
+    >
+      <li
+        className="kirk-column kirk-media-content-img-column c3"
       >
         <div
           className="kirk-media-content-img"

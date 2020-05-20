@@ -36,6 +36,15 @@ const StyledMediaContentSection = styled(MediaContentSection)`
   }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
+    &.kirk-media-content--flipped .kirk-media-content-img-column {
+      order: 2;
+    }
+
+    &.kirk-media-content--flipped .kirk-media-content-img {
+      margin-right: 0;
+      margin-left: ${space.xl};
+    }
+
     & .kirk-media-content-title {
       /* Remove padding top from subheader to allow proper vertical centering. */
       padding-top: 0;
