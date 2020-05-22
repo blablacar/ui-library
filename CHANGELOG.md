@@ -7,6 +7,7 @@
 - **[BREAKING CHANGE]** Export missing global types.
 - **[UPDATE]** Add `renderDatePickerComponent` prop in `SearchForm`.
 - **[FIX]** Add ellipsis for overflowing text in `SearchForm`.
+- **[FIX]** Display "Continue" button at the bottom in number of passenger step in `SearchForm`.
   [...]
 
 # v33.1.0 (18/05/2020)
