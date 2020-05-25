@@ -1,6 +1,6 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "33.1.0",
+  "version": "34.0.0",
   "description": "BlaBlaCar React UI component library",
   "main": "build/index.js",
   "types": "build/index.d.ts",
