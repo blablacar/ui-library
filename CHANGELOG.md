@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v34.0.0 (25/05/2020)
+
 - **[FIX]** Fix crash on IE11 for `MainContent` component
 - **[FIX]** Added missing padding-top on `TripCard` price
 - **[FIX]** Make `heroImageUrl` prop optional in `HeroSection`
@@ -8,7 +12,6 @@
 - **[UPDATE]** Add `renderDatePickerComponent` prop in `SearchForm`.
 - **[FIX]** Add ellipsis for overflowing text in `SearchForm`.
 - **[FIX]** Display "Continue" button at the bottom in number of passenger step in `SearchForm`.
-  [...]
 
 # v33.1.0 (18/05/2020)
 
