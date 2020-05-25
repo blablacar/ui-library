@@ -7,10 +7,6 @@ const StyledStepperSection = styled(StepperSection)`
   & {
     ${sectionBaseStyle};
   }
-
-  & .kirk-stepperSection-submit {
-    text-align: center;
-  }
 `
 
 export default StyledStepperSection

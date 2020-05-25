@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
+import styled from 'styled-components'
 
+import { space } from '../../../_utils/branding'
 import Item from '../../../_utils/item'
 import { OnChangeParameters } from '../../../_utils/onChange'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
@@ -16,6 +18,27 @@ export interface StepperSectionProps extends StepperProps {
   onClose: () => void
   onConfirm?: (event: React.MouseEvent<HTMLElement>) => void
 }
+
+const FullHeightSection = styled(Section)`
+  height: 100%;
+
+  & .section-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const SectionContent = styled.div`
+  width: 100%;
+  flex: 1 0 auto;
+`
+
+const SectionFooter = styled.div`
+  margin-top: auto;
+  padding: ${space.l};
+`
 
 export const StepperSection = ({
   itemTitle,
@@ -35,21 +58,24 @@ export const StepperSection = ({
 
   return (
     <TransitionSection ref={ref} role="dialog" className={className}>
-      <Section>
-        <Item
-          leftAddon={<ChevronIcon left />}
-          leftTitle={itemTitleState}
-          tag={<button type="button" />}
-          onClick={onClose}
-        />
-        <Divider />
-        <Stepper {...props} onChange={setStepperValue} display={StepperDisplay.LARGE} />
-        <div className="kirk-stepperSection-submit">
+      <FullHeightSection>
+        <SectionContent>
+          <Item
+            leftAddon={<ChevronIcon left />}
+            leftTitle={itemTitleState}
+            tag={<button type="button" />}
+            onClick={onClose}
+          />
+          <Divider />
+          <Stepper {...props} onChange={setStepperValue} display={StepperDisplay.LARGE} />
+        </SectionContent>
+
+        <SectionFooter>
           <Button status={ButtonStatus.PRIMARY} onClick={() => onChange(stepperValue)}>
             {confirmLabel}
           </Button>
-        </div>
-      </Section>
+        </SectionFooter>
+      </FullHeightSection>
     </TransitionSection>
   )
 }
