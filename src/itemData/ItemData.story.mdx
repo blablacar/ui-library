@@ -14,11 +14,11 @@ import { ItemData } from './index'
   <Story name="Default">
     <ItemData
         mainTitle='Main title'
-        ariaLabel='Aria label'
+        aria-label='Aria label'
         mainInfo='Main info'
         data='Data'
         dataInfo='Data info'
-        dataAriaLabel='Data aria label'
+        dataAriaProps={{ 'aria-label': text('Data aria label', 'Data aria label') }}
         dataStrikeThrough='Data strike through'
         disabled={false}
         mainTitleButtonAddon={
@@ -40,11 +40,11 @@ import { ItemData } from '@blablacar/ui-library/build/itemData'
 
 <ItemData
     mainTitle='Main title'
-    ariaLabel='Aria label'
+    aria-label='Aria label'
     mainInfo='Main info'
     data='Data'
     dataInfo='Data info'
-    dataAriaLabel='Data aria label'
+    dataAriaProps={{ 'aria-label': text('Data aria label', 'Data aria label') }}
     dataStrikeThrough='Data strike through'
     disabled={false}
     mainTitleButtonAddon={

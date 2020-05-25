@@ -19,7 +19,7 @@ stories.add('ItemInfo', () => {
         mainInfo={text('Main info', 'Main information')}
         icon={hasIcon ? <ClockIcon /> : null}
         tag={<li />}
-        ariaLabel={text('Aria Label', 'Custom aria label')}
+        aria-label={text('Aria Label', 'Custom aria label')}
       />
     </Section>
   )

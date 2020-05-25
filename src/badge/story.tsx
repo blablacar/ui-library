@@ -10,6 +10,6 @@ stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => (
   <Section>
-    <Badge ariaLabel={text('ariaLabel', 'Unread messages')}>{text('children', '456')}</Badge>
+    <Badge aria-label={text('aria-label', 'Unread messages')}>{text('children', '456')}</Badge>
   </Section>
 ))

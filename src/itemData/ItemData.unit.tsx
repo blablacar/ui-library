@@ -40,8 +40,10 @@ it("Shouldn't display left addon button if no main title", () => {
 })
 
 it('Should display right data with aria-label attribute', () => {
-  const wrapper = mount(<ItemData data="Data" dataAriaLabel="Data aria-label" />)
+  const wrapper = mount(
+    <ItemData {...defaultProps} data="Data" dataAriaProps={{ 'aria-label': 'Data aria-label' }} />,
+  )
   const text = wrapper.find(Text)
   expect(text.hasClass('kirk-item-title')).toBe(true)
-  expect(text.prop('ariaLabel')).toBe('Data aria-label')
+  expect(text.prop('aria-label')).toBe('Data aria-label')
 })

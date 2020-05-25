@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
+import { pickA11yProps } from '../_utils/interfaces'
 import { Button, ButtonStatus } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
 import { InfoIcon } from '../icon/infoIcon'
@@ -39,11 +40,11 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
       closeButtonTitle,
       onConfirm,
       confirmLabel,
-      ariaLabelledBy,
-      ariaDescribedBy,
       forwardedRef,
       confirmIsLoading,
     } = this.props
+
+    const a11yAttrs = pickA11yProps<ConfirmationModalProps>(this.props)
 
     const isWarning = status === ConfirmationModalStatus.WARNING
 
@@ -81,8 +82,7 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
         displayDimmer={false}
         forwardedRef={forwardedRef}
         modalContentClassName={classNames}
-        ariaLabelledBy={ariaLabelledBy}
-        ariaDescribedBy={ariaDescribedBy}
+        {...a11yAttrs}
       >
         <div className={`${baseClassName}-dialog`}>
           {getIcon()}

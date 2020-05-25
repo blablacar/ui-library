@@ -34,14 +34,13 @@ export interface ItemProps extends A11yProps, NormalizeProps {
   readonly rightTitle?: string | JSX.Element
   readonly rightTitleDisplay?: TextDisplayType
   readonly rightTitleStrikeThrough?: boolean
-  readonly rightTitleAriaLabel?: string
+  readonly rightTitleAriaProps?: A11yProps
   readonly rightTitleColor?: string
   readonly rightBody?: React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
   readonly tag?: JSX.Element
-  readonly ariaLabel?: string
   readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
@@ -64,7 +63,7 @@ export const Item = (props: ItemProps) => {
     leftTitle,
     leftTitleButtonAddon,
     rightTitleStrikeThrough,
-    rightTitleAriaLabel,
+    rightTitleAriaProps,
     leftTitleDisplay = TextDisplayType.TITLE,
     leftTitleColor,
     leftBody,
@@ -82,7 +81,6 @@ export const Item = (props: ItemProps) => {
     rightBodyColor,
     rightAddon,
     tag = <div />,
-    ariaLabel,
     hideHoverBackground = false,
     disabled = false,
   } = props
@@ -137,7 +135,6 @@ export const Item = (props: ItemProps) => {
         className,
       ])}
       {...a11yAttrs}
-      aria-label={ariaLabel}
     >
       {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
       <span className="kirk-item-leftText">
@@ -176,7 +173,7 @@ export const Item = (props: ItemProps) => {
               display={rightTitleDisplay}
               textColor={getTextColor(rightTitleColor)}
               tag={TextTagType.DIV}
-              ariaLabel={rightTitleAriaLabel}
+              {...rightTitleAriaProps}
             >
               {rightTitle}
             </Text>

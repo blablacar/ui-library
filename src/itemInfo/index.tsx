@@ -10,19 +10,10 @@ export interface ItemInfoProps extends A11yProps, NormalizeProps {
   readonly icon?: React.ReactNode
   readonly mainTitle?: string
   readonly tag?: JSX.Element
-  readonly ariaLabel?: string
 }
 
 export const ItemInfo = (props: ItemInfoProps) => {
-  const {
-    mainInfo,
-    className,
-    mainTitle,
-    icon,
-    tag,
-    ariaLabel,
-    hasHorizontalSpacing = false,
-  } = props
+  const { mainInfo, className, mainTitle, icon, tag, hasHorizontalSpacing = false } = props
   const a11yAttrs = pickA11yProps<ItemInfoProps>(props)
 
   return (
@@ -32,7 +23,6 @@ export const ItemInfo = (props: ItemInfoProps) => {
       leftBody={mainInfo}
       leftAddon={icon}
       tag={tag}
-      ariaLabel={ariaLabel}
       hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}
     />
