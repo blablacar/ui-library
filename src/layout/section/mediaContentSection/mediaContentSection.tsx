@@ -1,4 +1,5 @@
 import React from 'react'
+import cc from 'classcat'
 
 import Button from '../../../button'
 import Column from '../../../layout/column'
@@ -14,19 +15,25 @@ export interface MediaContentSectionProps {
   readonly content?: string
   readonly buttonLabel?: string
   readonly buttonHref?: string | JSX.Element
+  readonly flipped?: boolean
 }
 
 /**
  * A specialized section which show some marketing content associated with a picture.
  */
 const MediaContentSection = (props: MediaContentSectionProps) => {
-  const { className, mediaUrl, title, content, buttonLabel, buttonHref } = props
+  const { className, mediaUrl, title, content, buttonLabel, buttonHref, flipped } = props
+  const classNames = cc([
+    'kirk-media-content',
+    className,
+    { 'kirk-media-content--flipped': flipped },
+  ])
   const showButton = Boolean(buttonHref && buttonLabel)
   const showParagraph = Boolean(content)
   return (
-    <BaseSection tagName="article" className={className} contentSize={SectionContentSize.LARGE}>
+    <BaseSection tagName="article" className={classNames} contentSize={SectionContentSize.LARGE}>
       <Columns>
-        <Column>
+        <Column className="kirk-media-content-img-column">
           <div className="kirk-media-content-img" style={{ backgroundImage: `url(${mediaUrl})` }} />
         </Column>
         <Column>

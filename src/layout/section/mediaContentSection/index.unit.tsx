@@ -17,4 +17,9 @@ describe('MediaContentSection', () => {
     const renderedSection = renderer.create(section).toJSON()
     expect(renderedSection).toMatchSnapshot()
   })
+  it('should render flipped MediaContentSection section', () => {
+    const section = <MediaContentSection {...defaultProps} flipped />
+    const renderedSection = renderer.create(section).toJSON()
+    expect(renderedSection).toMatchSnapshot()
+  })
 })

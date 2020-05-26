@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add `flipped` prop in `MediaContentSection`.
+  [...]
 
 # v34.0.0 (25/05/2020)
 
