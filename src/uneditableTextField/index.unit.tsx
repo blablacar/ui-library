@@ -1,41 +1,74 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 
-import UneditableTextField from './index'
+import { render, screen } from '@testing-library/react'
+
+import UneditableTextField, { UneditableTextFieldProps } from './index'
+
+function createProps(props: Partial<UneditableTextFieldProps> = {}): UneditableTextFieldProps {
+  return { children: 'Hello world', ...props }
+}
 
 describe('UneditableTextField', () => {
-  it('Should have the proper default props', () => {
-    const wrapper = renderer.create(<UneditableTextField>Hello world</UneditableTextField>)
-    expect(wrapper.toJSON()).toMatchSnapshot()
+  it('should render the content', () => {
+    const props = createProps()
+    const { container } = render(<UneditableTextField {...props} />)
+
+    expect(container.firstChild).toHaveTextContent(props.children as string)
   })
 
-  it('Should have the text ellipsed', () => {
-    const wrapper = renderer.create(
-      <UneditableTextField ellipsis>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
-        placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
-        molestie sapien justo nec orci.
-      </UneditableTextField>,
+  it('should apply public CSS classes', () => {
+    const props = createProps()
+    const { container } = render(<UneditableTextField {...props} />)
+
+    expect(container.firstChild).toHaveClass('kirk-uneditableTextField')
+    expect(screen.getByText(props.children as string)).toHaveClass('kirk-uneditableTextField-label')
+  })
+
+  it('Should not add CSS class for text ellipsis by default', () => {
+    const props = createProps()
+    render(<UneditableTextField {...props} />)
+
+    expect(screen.getByText(props.children as string)).not.toHaveClass(
+      'kirk-uneditableTextField-label--ellipsis',
     )
-    expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
-  it('Should support add-ons', () => {
-    const wrapper = renderer.create(
-      <UneditableTextField addOn={<div>Add-on</div>}>Hello world</UneditableTextField>,
+  it('Should add CSS class for text ellipsis', () => {
+    const props = createProps({ ellipsis: true })
+    render(<UneditableTextField {...props} />)
+
+    expect(screen.getByText(props.children as string)).toHaveClass(
+      'kirk-uneditableTextField-label--ellipsis',
     )
-    expect(wrapper.toJSON()).toMatchSnapshot()
   })
 
-  it('Should support simple links', () => {
-    const wrapper = renderer.create(<UneditableTextField href="#foo">Click me</UneditableTextField>)
-    expect(wrapper.toJSON()).toMatchSnapshot()
+  it('should render the add-on', () => {
+    const props = createProps({
+      addOn: <div data-testid="add-on">Add-on</div>,
+    })
+
+    render(<UneditableTextField {...props} />)
+
+    expect(screen.getByTestId(props.addOn.props['data-testid'])).toBeInTheDocument()
+  })
+
+  it('should support simple links', () => {
+    const props = createProps({ href: '#foo' })
+    render(<UneditableTextField {...props} />)
+
+    const link = screen.getByRole('link')
+    expect(link).toBeInTheDocument()
+    expect(link).toHaveAttribute('href', props.href)
+    expect(link).toHaveTextContent(props.children as string)
   })
 
   it('Should support component links', () => {
-    const wrapper = renderer.create(
-      <UneditableTextField href={<a href="#bar" />}>Click me</UneditableTextField>,
-    )
-    expect(wrapper.toJSON()).toMatchSnapshot()
+    const props = createProps({ href: <a href="#bar" /> })
+    render(<UneditableTextField {...props} />)
+
+    const link = screen.getByRole('link')
+    expect(link).toBeInTheDocument()
+    expect(link).toHaveAttribute('href', (props.href as JSX.Element).props.href)
+    expect(link).toHaveTextContent(props.children as string)
   })
 })
