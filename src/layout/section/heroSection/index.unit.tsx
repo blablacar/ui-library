@@ -1,36 +1,39 @@
 import React from 'react'
-import { mount } from 'enzyme'
+
+import { render, screen } from '@testing-library/react'
 
 import HeroSection, { HeroSectionProps } from './heroSection'
 
-const defaultProps: HeroSectionProps = {
-  heroImageUrl: 'http://heroImageUrl',
-  heroImageUrlLarge: 'http://heroImageUrl',
-  heroText: 'hero text',
-  heroDescription: 'hero description',
-  buttonText: 'button text',
-  buttonHref: 'http://buttonhref',
+function createProps(props: Partial<HeroSectionProps>): HeroSectionProps {
+  return {
+    heroText: 'hero text',
+    heroDescription: 'hero description',
+    heroImageUrlLarge: 'http://heroImageUrl',
+    ...props,
+  }
 }
 
 describe('HeroSection', () => {
   it('should render basic hero section', () => {
-    const wrapper = mount(<HeroSection {...defaultProps} />)
-    expect(wrapper.find('h1').text()).toContain('hero text')
-    expect(wrapper.find('p').text()).toContain('hero description')
-    const button = wrapper.find('a')
-    expect(button.text()).toContain('button text')
+    const props = createProps({
+      heroImageUrl: 'http://heroImageUrl',
+      buttonText: 'button text',
+      buttonHref: 'http://buttonhref',
+    })
+
+    render(<HeroSection {...props} />)
+
+    expect(screen.getByText(props.heroText)).toBeInTheDocument()
+    expect(screen.getByText(props.heroDescription)).toBeInTheDocument()
+    expect(screen.getByText(props.buttonText)).toHaveAttribute('href', props.buttonHref)
   })
 
-  it('should render a serch form', () => {
-    const props: HeroSectionProps = {
-      ...defaultProps,
-      bottomElement: <div>Bottom element</div>,
-    }
+  it('should render a search form', () => {
+    const props = createProps({
+      bottomElement: <div data-testid="bottom-element">Bottom element</div>,
+    })
 
-    const wrapper = mount(<HeroSection {...props} />)
-    expect(wrapper.find('h1').text()).toContain('hero text')
-    expect(wrapper.find('p').text()).toContain('hero description')
-    expect(wrapper.find('a')).toHaveLength(0)
-    expect(wrapper.find('form')).toBeDefined()
+    render(<HeroSection {...props} />)
+    expect(screen.getByTestId(props.bottomElement.props['data-testid'])).toBeInTheDocument()
   })
 })
