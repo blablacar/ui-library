@@ -1,6 +1,7 @@
 # Unreleased
 
 [...]
+- **[FIX]** Remove hover color & pointer when `disabled` is passed to `ItemCheckbox`/`ItemRadio`
 
 # v34.1.0 (27/05/2020)
 

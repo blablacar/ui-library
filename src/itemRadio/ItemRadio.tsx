@@ -120,7 +120,7 @@ class ItemRadio extends Component<ItemRadioProps> {
           rightAddon={radio}
           chevron={chevron && !isLoading}
           highlighted={highlighted}
-          isClickable
+          isClickable={!disabled}
           disabled={disabled}
           {...a11yAttrs}
         />
