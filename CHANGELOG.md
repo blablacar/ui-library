@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `disabled` prop to `Stepper`
 [...]
 
 # v34.1.0 (27/05/2020)

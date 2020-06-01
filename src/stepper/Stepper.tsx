@@ -41,6 +41,7 @@ export interface StepperProps {
   display?: StepperDisplay
   focus?: boolean
   leftAddon?: React.ReactNode
+  disabled?: boolean
 }
 
 interface StepperState {
@@ -189,6 +190,7 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
       max,
       valueClassName,
       display,
+      disabled,
     } = this.props
 
     const isMax = this.state.value >= max
@@ -211,11 +213,11 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
             type="button"
             className="kirk-stepper-decrement"
             status={ButtonStatus.UNSTYLED}
-            disabled={isMin}
+            disabled={disabled || isMin}
             isBubble
             {...this.createButtonListeners(this.decrement)}
           >
-            <MinusIcon iconColor={isMin ? color.lightGray : color.blue} size={buttonSize} />
+            <MinusIcon iconColor={color.blue} size={buttonSize} isDisabled={disabled || isMin} />
           </Button>
           <div
             aria-live="polite"
@@ -230,11 +232,11 @@ export default class Stepper extends PureComponent<StepperProps, StepperState> {
             type="button"
             className="kirk-stepper-increment"
             status={ButtonStatus.UNSTYLED}
-            disabled={isMax}
+            disabled={disabled || isMax}
             isBubble
             {...this.createButtonListeners(this.increment)}
           >
-            <PlusIcon iconColor={isMax ? color.lightGray : color.blue} size={buttonSize} />
+            <PlusIcon iconColor={color.blue} size={buttonSize} isDisabled={disabled || isMax} />
           </Button>
         </div>
       </div>

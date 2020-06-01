@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import Itinerary from '../itinerary'
@@ -26,6 +26,7 @@ stories.add(
         onChange={action('changed')}
         display={select('display', StepperDisplay, StepperDisplay.SMALL)}
         title={text('children', 'Number of seats')}
+        disabled={boolean('disabled', false)}
       />
     </Section>
   ),
@@ -48,6 +49,7 @@ stories.add('Stepper with formatted value', () => (
       onChange={action('changed')}
       display={select('display', StepperDisplay, StepperDisplay.SMALL)}
       title={text('children', 'Edit the price')}
+      disabled={boolean('disabled', false)}
     />
   </Section>
 ))
@@ -66,6 +68,7 @@ stories.add('Stepper with large formatted value', () => (
       onChange={action('changed')}
       display={select('display', StepperDisplay, StepperDisplay.LARGE)}
       title={text('children', 'Edit the price')}
+      disabled={boolean('disabled', false)}
     />
   </Section>
 ))
@@ -85,6 +88,7 @@ stories.add('Stepper with left addon', () => (
       display={select('display', StepperDisplay, StepperDisplay.SMALL)}
       title={text('children', 'Edit the price')}
       leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
+      disabled={boolean('disabled', false)}
     />
   </Section>
 ))

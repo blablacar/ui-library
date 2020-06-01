@@ -137,6 +137,40 @@ it('Should not call onChange on componentDidMount', () => {
   expect(onChange).toHaveBeenCalledTimes(0)
 })
 
+it('Should disable buttons if disabled is true', () => {
+  const stepper = shallow(<Stepper {...defaultProps} value={5} min={1} max={10} />)
+  expect(
+    stepper
+      .find(Button)
+      .at(0)
+      .prop('disabled'),
+  ).toBeFalsy()
+  expect(
+    stepper
+      .find(Button)
+      .at(1)
+      .prop('disabled'),
+  ).toBeFalsy()
+  expect(stepper.find(MinusIcon).prop('isDisabled')).toBeFalsy()
+  expect(stepper.find(PlusIcon).prop('isDisabled')).toBeFalsy()
+
+  stepper.setProps({ disabled: true })
+  expect(
+    stepper
+      .find(Button)
+      .at(0)
+      .prop('disabled'),
+  ).toBeTruthy()
+  expect(
+    stepper
+      .find(Button)
+      .at(1)
+      .prop('disabled'),
+  ).toBeTruthy()
+  expect(stepper.find(MinusIcon).prop('isDisabled')).toBeTruthy()
+  expect(stepper.find(PlusIcon).prop('isDisabled')).toBeTruthy()
+})
+
 describe('display', () => {
   it('should render SMALL display', () => {
     const stepper = shallow(<Stepper {...defaultProps} display={StepperDisplay.SMALL} />)
