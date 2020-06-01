@@ -177,6 +177,10 @@ const SearchForm = ({
   ] as AutocompleteOnChange
   const autocompleteToValue = formValues[SearchFormElements.AUTOCOMPLETE_TO] as AutocompleteOnChange
 
+  const showInvertButton =
+    formValues[SearchFormElements.AUTOCOMPLETE_FROM] != null ||
+    formValues[SearchFormElements.AUTOCOMPLETE_TO] != null
+
   return (
     <form
       action=""
@@ -210,8 +214,15 @@ const SearchForm = ({
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
+
         <div className="kirk-searchForm-invert">
-          <button type="button" className="kirk-search-button" onClick={invertFromTo}>
+          <button
+            type="button"
+            className="kirk-search-button"
+            onClick={invertFromTo}
+            // We need to keep it the DOM to preserve the form size.
+            disabled={!showInvertButton}
+          >
             <DoubleArrowIcon iconColor={color.blue} />
           </button>
           {mediaSize === MediaSize.SMALL && <Divider />}
