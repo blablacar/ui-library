@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** Add `disabled` prop to `Stepper`
+- **[FIX]** Fix back button alignment in `SearchForm` autocomplete sections.
 [...]
 
 # v34.1.0 (27/05/2020)

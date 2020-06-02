@@ -62,13 +62,16 @@ stories.add('StepperSection', () => (
 ))
 
 stories.add('AutoCompleteOverlay', () => (
-  <AutoCompleteOverlay name="from" renderAutocompleteComponent={() => <AutoCompleteExample />} />
+  <AutoCompleteOverlay
+    name="from"
+    renderAutocompleteComponent={props => <AutoCompleteExample {...props} />}
+  />
 ))
 
 stories.add('AutoCompleteSection', () => (
   <AutoCompleteSection
     name="from"
-    renderAutocompleteComponent={() => <AutoCompleteExample />}
+    renderAutocompleteComponent={props => <AutoCompleteExample {...props} />}
     onClose={() => {}}
   />
 ))

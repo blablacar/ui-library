@@ -1,11 +1,21 @@
 import React, { useRef } from 'react'
+import styled from 'styled-components'
 
+import { space } from '../../../_utils/branding'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import { AutoCompleteProps } from '../../../autoComplete'
 import Button, { ButtonStatus } from '../../../button'
-import Icon from '../../../icon/chevronIcon'
+import ChevronIcon from '../../../icon/chevronIcon'
 import Section from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
+
+const BackButton = styled(Button)`
+  &.kirk-button-bubble {
+    margin-right: ${space.l};
+    width: auto;
+    border: none;
+  }
+`
 
 export type AutoCompleteSectionProps = Omit<
   AutoCompleteProps,
@@ -30,9 +40,9 @@ export const AutoCompleteSection = ({
   useFocusTrap(ref, onClose)
 
   const backButton = (
-    <Button status={ButtonStatus.UNSTYLED} isBubble onClick={onClose}>
-      <Icon size="18" left />
-    </Button>
+    <BackButton status={ButtonStatus.UNSTYLED} isBubble onClick={onClose}>
+      <ChevronIcon size="24" left />
+    </BackButton>
   )
 
   return (
