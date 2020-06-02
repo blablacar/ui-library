@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix back button alignment in `SearchForm` autocomplete sections.
 [...]
 - **[FIX]** Remove hover color & pointer when `disabled` is passed to `ItemCheckbox`/`ItemRadio`
 
