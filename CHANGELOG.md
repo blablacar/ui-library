@@ -2,7 +2,7 @@
 
 [...]
 
-# v34.2.0 (27/05/2020)
+# v34.2.0 (02/06/2020)
 
 - **[NEW]** Add `disabled` prop to `Stepper`
 - **[UPDATE]** Only show the `SearchForm` switch button when at least FROM or TO is selected.
