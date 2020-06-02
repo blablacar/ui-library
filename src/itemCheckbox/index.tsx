@@ -4,7 +4,7 @@ import ItemCheckbox from './ItemCheckbox'
 
 const StyledItemCheckbox = styled(ItemCheckbox)`
   & {
-    cursor: pointer;
+    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   }
 
   & input {

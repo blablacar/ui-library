@@ -51,6 +51,15 @@ describe('ItemCheckbox', () => {
       value: true,
     })
   })
+  it('Should handle disabled prop', () => {
+    const itemCheckbox = shallow(<ItemCheckbox {...defaultProps} />)
+    expect(itemCheckbox.find(Item).prop('isClickable')).toBeTruthy()
+    expect(itemCheckbox.find(Item).prop('disabled')).toBeFalsy()
+
+    itemCheckbox.setProps({ disabled: true })
+    expect(itemCheckbox.find(Item).prop('isClickable')).toBeFalsy()
+    expect(itemCheckbox.find(Item).prop('disabled')).toBeTruthy()
+  })
   it('Should call the onChange prop with name and value when the input changes (uncheck)', () => {
     const onChangeMock = jest.fn()
     const itemCheckbox = shallow(<ItemCheckbox {...defaultProps} onChange={onChangeMock} checked />)

@@ -9,7 +9,7 @@ const StyledItemRadio = styled(ItemRadio)`
     clip: rect(0, 0, 0, 0);
   }
   & {
-    cursor: pointer;
+    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     border: ${inputBorderSize.focus} solid transparent;
     padding: calc(${space.l} - ${inputBorderSize.focus}) 0;
   }
