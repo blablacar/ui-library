@@ -2,6 +2,7 @@
 
 - **[NEW]** Add `disabled` prop to `Stepper`
 - **[FIX]** Fix back button alignment in `SearchForm` autocomplete sections.
+- **[UPDATE]** Only show the `SearchForm` switch button when at least FROM or TO is selected.
 [...]
 
 # v34.1.0 (27/05/2020)
