@@ -82,7 +82,7 @@ class ItemCheckbox extends Component<ItemCheckboxProps> {
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
         tag={<label />}
         rightAddon={checkbox}
-        isClickable
+        isClickable={!disabled}
         disabled={disabled}
         {...a11yAttrs}
       />

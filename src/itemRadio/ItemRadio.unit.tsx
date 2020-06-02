@@ -40,6 +40,15 @@ describe('ItemRadio', () => {
       .toJSON()
     expect(itemRadio).toMatchSnapshot()
   })
+  it('Should handle disabled prop', () => {
+    const itemRadio = shallow(<ItemRadio {...defaultProps} />)
+    expect(itemRadio.find(Item).prop('isClickable')).toBeTruthy()
+    expect(itemRadio.find(Item).prop('disabled')).toBeFalsy()
+
+    itemRadio.setProps({ disabled: true })
+    expect(itemRadio.find(Item).prop('isClickable')).toBeFalsy()
+    expect(itemRadio.find(Item).prop('disabled')).toBeTruthy()
+  })
 
   describe('a11y', () => {
     it('Should have a label tag as wrapper to associate content text to input radio', () => {
