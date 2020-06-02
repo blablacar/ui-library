@@ -102,7 +102,12 @@ const StyledSearchForm = styled(SearchForm)`
   & .kirk-searchForm-invert .kirk-search-button {
     width: initial;
     padding: 0;
-    margin: 0 ${space.m};
+    margin-right: ${space.m};
+
+    &:disabled {
+      opacity: 0;
+      cursor: default;
+    }
   }
 
   & .kirk-searchForm-date .kirk-search-button,

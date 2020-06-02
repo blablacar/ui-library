@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Fix back button alignment in `SearchForm` autocomplete sections.
+- **[UPDATE]** Only show the `SearchForm` switch button when at least FROM or TO is selected.
 [...]
 - **[FIX]** Remove hover color & pointer when `disabled` is passed to `ItemCheckbox`/`ItemRadio`
 
