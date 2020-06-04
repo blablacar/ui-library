@@ -103,6 +103,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -415,6 +416,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -792,6 +794,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 

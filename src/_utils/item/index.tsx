@@ -17,6 +17,7 @@ const StyledItem = styled(Item)`
   }
 
   &.kirk-item--clickable:hover {
+    cursor: pointer;
     background: ${color.lightGray};
   }
 

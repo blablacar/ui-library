@@ -103,6 +103,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 }
 
 .c2.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 

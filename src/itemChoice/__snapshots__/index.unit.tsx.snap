@@ -103,6 +103,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -527,6 +528,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -941,6 +943,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -1293,6 +1296,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -1647,6 +1651,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 

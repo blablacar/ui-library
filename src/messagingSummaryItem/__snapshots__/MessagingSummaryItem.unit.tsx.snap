@@ -103,6 +103,7 @@ exports[`Should render properly with read messages 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -467,6 +468,7 @@ exports[`Should render properly with unread messages 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 

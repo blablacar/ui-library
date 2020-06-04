@@ -14,6 +14,7 @@ export type ItemEditableInfoProps = A11yProps &
     value: string
     // A href to follow if the modifiable value is activated
     href?: string | JSX.Element
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
     // Prevent modification of the user input.
     // Used to trigger the behavior of the 'ItemEditableInfo non-editable' from the specs.
     readonly?: boolean
@@ -21,7 +22,7 @@ export type ItemEditableInfoProps = A11yProps &
   }>
 
 const ItemEditableInfo = (props: ItemEditableInfoProps) => {
-  const { className, label, value, href = null, readonly = false } = props
+  const { className, label, value, href = null, readonly = false, onClick } = props
   const a11yAttrs = pickA11yProps<ItemEditableInfoProps>(props)
 
   const extraProps = {
@@ -46,8 +47,19 @@ const ItemEditableInfo = (props: ItemEditableInfoProps) => {
     extraProps.leftBodyColor = color.midnightGreen
   }
 
+  if (onClick && !href) {
+    a11yAttrs.role = 'button'
+  }
+
   return (
-    <Item className={className} leftTitle={label} leftBody={value} {...extraProps} {...a11yAttrs} />
+    <Item
+      onClick={onClick}
+      className={className}
+      leftTitle={label}
+      leftBody={value}
+      {...extraProps}
+      {...a11yAttrs}
+    />
   )
 }
 

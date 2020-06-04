@@ -16,6 +16,18 @@ it('Should render a basic ItemEditableInfo', () => {
   expect(wrapper.text()).toBe('My labelMy value')
 })
 
+it('Should render an onClick ItemEditableInfo', () => {
+  const onClickFn = () => {}
+  const props = {
+    label: 'My label',
+    value: 'My value',
+    onClick: onClickFn,
+  }
+  const wrapper = mount(<ItemEditableInfo {...props} />)
+  expect(wrapper.text()).toBe('My labelMy value')
+  expect(wrapper.props().onClick).toBe(onClickFn)
+})
+
 it('Should render a readonly ItemEditableInfo', () => {
   const props = {
     label: 'My label',

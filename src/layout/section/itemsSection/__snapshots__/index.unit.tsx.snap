@@ -87,6 +87,7 @@ exports[`ItemsSection should render default items section 1`] = `
 }
 
 .c2.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -344,6 +345,7 @@ exports[`ItemsSection should render non-default items section 1`] = `
 }
 
 .c2.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 

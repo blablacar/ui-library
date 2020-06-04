@@ -26,6 +26,13 @@ stories.add(
         label="Bio"
         value={'A very long bio '.repeat(20)}
       />
+      <ItemEditableInfo
+        label="Item with onClick callback"
+        value="Some value"
+        onClick={() => {
+          window.alert('Clicked')
+        }}
+      />
     </Section>
   ),
   {

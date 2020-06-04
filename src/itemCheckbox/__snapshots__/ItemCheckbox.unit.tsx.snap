@@ -103,6 +103,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -395,6 +396,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
@@ -768,6 +770,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
