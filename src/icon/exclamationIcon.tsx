@@ -29,4 +29,4 @@ export const ExclamationIcon = (props: Icon) => (
 
 ExclamationIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ExclamationIcon)
+export default ExclamationIcon

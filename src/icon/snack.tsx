@@ -15,4 +15,4 @@ export const Snack = (props: IconPropsWithStatus) => (
 
 Snack.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Snack)
+export default Snack

@@ -11,4 +11,4 @@ export const DirectionIcon = (props: Icon) => (
 
 DirectionIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(DirectionIcon)
+export default DirectionIcon

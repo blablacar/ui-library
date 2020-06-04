@@ -18,4 +18,4 @@ export const NewspaperIcon = (props: Icon) => (
 
 NewspaperIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(NewspaperIcon)
+export default NewspaperIcon

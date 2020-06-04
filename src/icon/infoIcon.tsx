@@ -23,4 +23,4 @@ export const InfoIcon = (props: Icon) => (
 
 InfoIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(InfoIcon)
+export default InfoIcon

@@ -15,4 +15,4 @@ export const PlugUsbSocket = (props: IconPropsWithStatus) => (
 
 PlugUsbSocket.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(PlugUsbSocket)
+export default PlugUsbSocket

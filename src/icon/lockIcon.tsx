@@ -15,4 +15,4 @@ export const LockIcon = (props: Icon) => (
 
 LockIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(LockIcon)
+export default LockIcon

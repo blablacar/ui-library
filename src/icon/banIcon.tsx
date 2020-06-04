@@ -17,4 +17,4 @@ export const BanIcon = (props: Icon) => (
 
 BanIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(BanIcon)
+export default BanIcon

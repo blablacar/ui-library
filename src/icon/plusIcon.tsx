@@ -20,4 +20,4 @@ export const PlusIcon = (props: Icon) => (
 
 PlusIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(PlusIcon)
+export default PlusIcon

@@ -15,4 +15,4 @@ export const YoutubeIcon = (props: Icon) => (
 
 YoutubeIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(YoutubeIcon)
+export default YoutubeIcon

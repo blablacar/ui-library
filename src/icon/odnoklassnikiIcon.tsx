@@ -16,4 +16,4 @@ export const OdnoklassnikiIcon = (props: Icon) => (
 
 OdnoklassnikiIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(OdnoklassnikiIcon)
+export default OdnoklassnikiIcon

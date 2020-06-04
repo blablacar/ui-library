@@ -15,4 +15,4 @@ export const SeatSliding = (props: IconPropsWithStatus) => (
 
 SeatSliding.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(SeatSliding)
+export default SeatSliding

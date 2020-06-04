@@ -15,4 +15,4 @@ export const AloneInTheBackIcon = (props: Icon) => (
 
 AloneInTheBackIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(AloneInTheBackIcon)
+export default AloneInTheBackIcon

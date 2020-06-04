@@ -24,4 +24,4 @@ export const CoinIcon = (props: Icon) => (
 
 CoinIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CoinIcon)
+export default CoinIcon

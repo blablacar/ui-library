@@ -15,4 +15,4 @@ export const PetIcon = (props: IconPropsWithStatus) => (
 
 PetIcon.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(PetIcon)
+export default PetIcon

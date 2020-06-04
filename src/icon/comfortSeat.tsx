@@ -19,4 +19,4 @@ export const ComfortSeat = (props: IconPropsWithStatus) => (
 
 ComfortSeat.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(ComfortSeat)
+export default ComfortSeat

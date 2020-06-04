@@ -18,4 +18,4 @@ export const CallIcon = (props: Icon) => (
 
 CallIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CallIcon)
+export default CallIcon

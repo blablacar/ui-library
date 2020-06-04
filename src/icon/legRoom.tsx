@@ -15,4 +15,4 @@ export const LegRoom = (props: IconPropsWithStatus) => (
 
 LegRoom.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(LegRoom)
+export default LegRoom

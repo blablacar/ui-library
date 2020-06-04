@@ -20,4 +20,4 @@ export const LadyIcon = (props: Icon) => (
 
 LadyIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(LadyIcon)
+export default LadyIcon

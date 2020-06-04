@@ -15,4 +15,4 @@ export const StandardSeat = (props: IconPropsWithStatus) => (
 
 StandardSeat.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(StandardSeat)
+export default StandardSeat

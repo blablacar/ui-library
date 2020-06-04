@@ -14,4 +14,4 @@ export const CrossDiscIcon = (props: Icon) => (
 
 CrossDiscIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CrossDiscIcon)
+export default CrossDiscIcon

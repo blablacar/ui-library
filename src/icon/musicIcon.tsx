@@ -11,4 +11,4 @@ export const MusicIcon = (props: IconPropsWithStatus) => (
 
 MusicIcon.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(MusicIcon)
+export default MusicIcon

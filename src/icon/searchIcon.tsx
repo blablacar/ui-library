@@ -27,4 +27,4 @@ SearchIcon.defaultProps = {
   strokeWidth: '1',
 }
 
-export default React.memo(SearchIcon)
+export default SearchIcon

@@ -15,4 +15,4 @@ export const Light = (props: IconPropsWithStatus) => (
 
 Light.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Light)
+export default Light

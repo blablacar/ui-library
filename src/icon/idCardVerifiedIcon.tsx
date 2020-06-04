@@ -23,4 +23,4 @@ export const IdCardVerifiedIcon = (props: Icon) => (
 
 IdCardVerifiedIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(IdCardVerifiedIcon)
+export default IdCardVerifiedIcon

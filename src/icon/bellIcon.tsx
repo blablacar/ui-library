@@ -11,4 +11,4 @@ export const BellIcon = (props: Icon) => (
 
 BellIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(BellIcon)
+export default BellIcon

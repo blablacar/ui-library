@@ -28,4 +28,4 @@ ArrowIcon.defaultProps = {
   right: false,
 }
 
-export default React.memo(ArrowIcon)
+export default ArrowIcon

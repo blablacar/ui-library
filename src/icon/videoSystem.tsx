@@ -15,4 +15,4 @@ export const VideoSystem = (props: IconPropsWithStatus) => (
 
 VideoSystem.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(VideoSystem)
+export default VideoSystem

@@ -16,4 +16,4 @@ export const PhotoIcon = (props: Icon) => (
 
 PhotoIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(PhotoIcon)
+export default PhotoIcon

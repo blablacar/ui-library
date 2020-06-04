@@ -20,4 +20,4 @@ export const CreditCardIcon = (props: Icon) => (
 
 CreditCardIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CreditCardIcon)
+export default CreditCardIcon

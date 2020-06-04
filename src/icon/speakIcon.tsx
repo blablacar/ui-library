@@ -77,4 +77,4 @@ export const SpeakIcon = (props: IconPropsWithStatus) => (
 
 SpeakIcon.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(SpeakIcon)
+export default SpeakIcon

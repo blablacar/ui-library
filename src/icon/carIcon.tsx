@@ -17,4 +17,4 @@ export const CarIcon = (props: Icon) => (
 
 CarIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CarIcon)
+export default CarIcon

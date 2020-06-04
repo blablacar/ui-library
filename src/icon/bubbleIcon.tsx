@@ -11,4 +11,4 @@ export const BubbleIcon = (props: Icon) => (
 
 BubbleIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(BubbleIcon)
+export default BubbleIcon

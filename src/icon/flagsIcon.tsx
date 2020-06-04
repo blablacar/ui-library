@@ -23,4 +23,4 @@ export const FlagsIcon = (props: Icon) => (
 
 FlagsIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(FlagsIcon)
+export default FlagsIcon

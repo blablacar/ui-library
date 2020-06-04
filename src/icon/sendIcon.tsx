@@ -19,4 +19,4 @@ export const SendIcon = (props: Icon) => (
 
 SendIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(SendIcon)
+export default SendIcon

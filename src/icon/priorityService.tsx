@@ -15,4 +15,4 @@ export const PriorityServiceIcon = (props: IconPropsWithStatus) => (
 
 PriorityServiceIcon.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(PriorityServiceIcon)
+export default PriorityServiceIcon

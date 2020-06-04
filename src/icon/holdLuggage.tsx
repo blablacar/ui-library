@@ -15,4 +15,4 @@ export const HoldLuggage = (props: IconPropsWithStatus) => (
 
 HoldLuggage.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(HoldLuggage)
+export default HoldLuggage

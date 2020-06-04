@@ -15,4 +15,4 @@ export const SeatWithTable = (props: Icon) => (
 
 SeatWithTable.defaultProps = BaseIconDefaultProps
 
-export default React.memo(SeatWithTable)
+export default SeatWithTable

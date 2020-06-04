@@ -39,4 +39,4 @@ StyledBusIcon.defaultProps = {
   ...BaseIconDefaultProps,
 }
 
-export default React.memo(StyledBusIcon)
+export default StyledBusIcon

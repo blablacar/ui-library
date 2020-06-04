@@ -15,4 +15,4 @@ export const GenericAmenity = (props: IconPropsWithStatus) => (
 
 GenericAmenity.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(GenericAmenity)
+export default GenericAmenity
