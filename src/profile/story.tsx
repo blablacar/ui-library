@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Divider from '../divider'
-import StarIcon from '../icon/starIcon'
-import Section from '../layout/section/baseSection'
-import Profile from '../profile'
+import { Divider } from '../divider'
+import { StarIcon } from '../icon/starIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Profile } from '../profile'
 
 const stories = storiesOf('Widgets|Profile', module)
 stories.addDecorator(withKnobs)

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { OnChangeParameters } from '../_utils/onChange'
 
 /**
@@ -54,7 +54,7 @@ interface TimePickerState {
   readonly isFocused: boolean
 }
 
-export default class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
+export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
   /**
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.

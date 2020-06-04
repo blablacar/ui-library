@@ -19,7 +19,7 @@ const pointerDownEventList = ['mousedown', 'pointerdown', 'touchstart']
 
 export const FOCUS_VISIBLE_CSS_CLASS = 'focus-visible'
 
-type FocusVisibleProviderProps = {
+export type FocusVisibleProviderProps = {
   children: ReactNode
   // Provide a global css selector for legacy components.
   setGlobalClassName?: boolean

@@ -1,16 +1,16 @@
 import React from 'react'
 
-import CircleIcon from '../../icon/circleIcon'
-import Loader from '../../loader'
+import { CircleIcon } from '../../icon/circleIcon'
+import { Loader } from '../../loader'
 import { color } from '../branding'
 
-interface RadioIconProps {
+export interface RadioIconProps {
   readonly isChecked?: boolean
   readonly isLoading?: boolean
   readonly isDisabled?: boolean
 }
 
-const RadioIcon = ({
+export const RadioIcon = ({
   isChecked = false,
   isLoading = false,
   isDisabled = false,

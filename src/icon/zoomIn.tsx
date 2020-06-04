@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const ZoomInIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 18 18">
@@ -13,5 +13,4 @@ export const ZoomInIcon = (props: Icon) => (
 )
 
 ZoomInIcon.defaultProps = BaseIconDefaultProps
-
 export default ZoomInIcon

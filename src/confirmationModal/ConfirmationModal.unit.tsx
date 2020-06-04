@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 
 import { CrossIcon } from '../icon/crossIcon'
-import ConfirmationModal, { ConfirmationModalStatus } from './ConfirmationModal'
+import { ConfirmationModal, ConfirmationModalStatus } from './ConfirmationModal'
 
 const defaultProps = {
   isOpen: false,

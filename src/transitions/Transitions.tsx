@@ -9,7 +9,7 @@ export enum AnimationType {
   SLIDE_UP = 'slide-up',
 }
 
-export interface CustomTransitionProps {
+export interface TransitionsProps {
   readonly className?: string
   readonly children: JSX.Element
   readonly animationName?: AnimationType
@@ -19,8 +19,8 @@ export interface CustomTransitionProps {
   readonly onEntered?: () => void
 }
 
-export default class CustomTransition extends PureComponent<CustomTransitionProps> {
-  static defaultProps: Partial<CustomTransitionProps> = {
+export class Transitions extends PureComponent<TransitionsProps> {
+  static defaultProps: Partial<TransitionsProps> = {
     animationName: AnimationType.FADE,
     delayEnter: 0,
     delayLeave: parseInt(transition.duration.base, 10),

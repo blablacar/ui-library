@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, fontWeight } from '../_utils/branding'
-import Title from './Title'
+import { Title } from './Title'
 
 const StyledTitle = styled(Title)`
   & {
@@ -13,4 +13,5 @@ const StyledTitle = styled(Title)`
 `
 
 export { TitleProps } from './Title'
+export { StyledTitle as Title }
 export default StyledTitle

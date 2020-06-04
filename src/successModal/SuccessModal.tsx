@@ -6,8 +6,8 @@ import { ButtonStatus } from '../button'
 // TODO: fix alias resolving path on build
 // Must use relative path since alias is broken
 import { ModalProps } from '../modal'
-import TextDisplay1 from '../typography/display1'
-import SuccessModalElements from './elements'
+import { TextDisplay1 } from '../typography/display1'
+import { SuccessModalElements } from './elements'
 
 export type SuccessModalProps = ModalProps &
   Readonly<{
@@ -16,7 +16,7 @@ export type SuccessModalProps = ModalProps &
     imageText?: string
   }>
 
-const SuccessModal = (props: SuccessModalProps): JSX.Element => {
+export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
   const {
     isOpen = false,
     onClose = () => {},
@@ -76,5 +76,3 @@ const SuccessModal = (props: SuccessModalProps): JSX.Element => {
     </StyledSuccessModal>
   )
 }
-
-export default SuccessModal

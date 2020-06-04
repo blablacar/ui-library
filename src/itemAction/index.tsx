@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import Item, { ItemStatus } from '../_utils/item'
-import Loader from '../loader/Loader'
+import { Item, ItemStatus } from '../_utils/item'
+import { Loader } from '../loader/Loader'
 
 export interface ItemActionProps extends A11yProps {
   readonly highlighted?: boolean
@@ -23,7 +23,7 @@ export interface ItemActionProps extends A11yProps {
   readonly hideHoverBackground?: boolean
 }
 
-class ItemAction extends PureComponent<ItemActionProps> {
+export class ItemAction extends PureComponent<ItemActionProps> {
   static defaultProps: Partial<ItemActionProps> = {
     highlighted: true,
     status: ItemStatus.DEFAULT,

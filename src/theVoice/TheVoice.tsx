@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import Title from '../title'
+import { Title } from '../title'
 
 export interface TheVoiceProps {
   readonly id?: string
@@ -9,10 +9,8 @@ export interface TheVoiceProps {
   readonly isInverted?: boolean
 }
 
-const TheVoice = ({ id, className, children }: TheVoiceProps) => (
+export const TheVoice = ({ id, className, children }: TheVoiceProps) => (
   <Title id={id} className={className} headingLevel="1">
     {children}
   </Title>
 )
-
-export default TheVoice

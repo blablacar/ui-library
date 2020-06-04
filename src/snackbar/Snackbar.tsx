@@ -5,10 +5,10 @@ import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 
 import { color } from '../_utils/branding'
-import Button, { ButtonStatus } from '../button'
-import CrossIcon from '../icon/crossIcon'
-import Text, { TextDisplayType } from '../text'
-import CustomTransition, { AnimationType } from '../transitions'
+import { Button, ButtonStatus } from '../button'
+import { CrossIcon } from '../icon/crossIcon'
+import { Text, TextDisplayType } from '../text'
+import { AnimationType, Transitions as CustomTransition } from '../transitions'
 
 export interface SnackbarProps {
   readonly close: () => void
@@ -18,7 +18,7 @@ export interface SnackbarProps {
   readonly children: JSX.Element
 }
 
-class Snackbar extends PureComponent<SnackbarProps> {
+export class Snackbar extends PureComponent<SnackbarProps> {
   private portalNode: HTMLElement
   static defaultProps: Partial<SnackbarProps> = {
     isOpen: false,
@@ -71,5 +71,3 @@ class Snackbar extends PureComponent<SnackbarProps> {
     return createPortal(modalElement, this.portalNode)
   }
 }
-
-export default Snackbar

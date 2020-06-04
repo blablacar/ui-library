@@ -3,11 +3,11 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button from '../button'
-import BusIcon from '../icon/busIcon'
-import CarpoolIcon from '../icon/carpoolIcon'
-import Section from '../layout/section/baseSection'
-import Tabs, { TabStatus } from '../tabs'
+import { Button } from '../button'
+import { BusIcon } from '../icon/busIcon'
+import { CarpoolIcon } from '../icon/carpoolIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Tabs, TabStatus } from '../tabs'
 
 const stories = storiesOf('Widgets|Tabs', module)
 stories.addDecorator(withKnobs)

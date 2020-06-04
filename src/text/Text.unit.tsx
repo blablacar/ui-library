@@ -2,7 +2,7 @@ import * as React from 'react'
 import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
-import Text, { TextTagType } from './Text'
+import { Text, TextTagType } from './Text'
 
 const multipleLineText = `line1
 line2

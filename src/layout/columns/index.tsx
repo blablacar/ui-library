@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { responsiveBreakpoints } from '../../_utils/branding'
-import Columns from './columns'
+import { Columns } from './columns'
 
 const StyledColumns = styled(Columns)`
   & {
@@ -22,4 +22,5 @@ const StyledColumns = styled(Columns)`
 `
 
 export { ColumnsProps } from './columns'
+export { StyledColumns as Columns }
 export default StyledColumns

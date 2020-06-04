@@ -2,14 +2,14 @@
 import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Button, { ButtonStatus } from '../../../button'
-import Divider from '../../../divider'
-import Itinerary from '../../../itinerary'
+import { Button, ButtonStatus } from '../../../button'
+import { Divider } from '../../../divider'
+import { Itinerary } from '../../../itinerary'
 import { BottomContent, Content, MainContent } from '../../../layout/content'
-import LayoutNormalizer from '../../../layout/layoutNormalizer'
-import Section from '../../../layout/section/baseSection'
-import Stepper, { StepperDisplay } from '../../../stepper'
-import SubHeader from '../../../subHeader'
+import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
+import { BaseSection as Section } from '../../../layout/section/baseSection'
+import { Stepper, StepperDisplay } from '../../../stepper'
+import { SubHeader } from '../../../subHeader'
 
 const stories = storiesOf('Pages|Your rides/Offer/Edit/Price', module)
 

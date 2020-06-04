@@ -3,7 +3,7 @@ import cc from 'classcat'
 import uniqueid from 'lodash.uniqueid'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import HintBubble, { HintBubblePosition } from './HintBubble'
+import { HintBubble, HintBubblePosition } from './HintBubble'
 
 export interface HintProps extends A11yProps {
   children: (a11yAttrs: A11yProps) => React.ReactNode
@@ -20,7 +20,7 @@ export interface HintState {
   hiddenBubble: boolean
 }
 
-const Hint = (props: HintProps): JSX.Element => {
+export const Hint = (props: HintProps): JSX.Element => {
   const {
     title,
     children,
@@ -58,5 +58,3 @@ const Hint = (props: HintProps): JSX.Element => {
     </div>
   )
 }
-
-export default Hint

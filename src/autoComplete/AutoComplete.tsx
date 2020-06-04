@@ -4,14 +4,14 @@ import { canUseEventListeners } from 'exenv'
 import debounce from 'lodash.debounce'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { ItemStatus } from '../_utils/item'
 import { OnChangeParameters } from '../_utils/onChange'
-import Divider from '../divider'
-import ItemInfo from '../itemInfo'
-import Loader from '../loader'
-import TextField, { inputTypes } from '../textField'
-import AutoCompleteList, { AutocompleteItem } from './AutoCompleteListStyle'
+import { Divider } from '../divider'
+import { ItemInfo } from '../itemInfo'
+import { Loader } from '../loader'
+import { inputTypes, TextField } from '../textField'
+import { AutocompleteItem, AutoCompleteList } from './AutoCompleteListStyle'
 
 type query = string | number | boolean
 
@@ -92,7 +92,7 @@ const initialState: AutoCompleteState = {
   isSearching: false,
 }
 
-export default class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState> {
+export class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState> {
   private input: HTMLInputElement
   private busyTimeout: number | void
 

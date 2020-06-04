@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Title from '../title'
+import { Title } from '../title'
 
 export interface EmptyStateProps {
   readonly className?: string
@@ -10,12 +10,10 @@ export interface EmptyStateProps {
   readonly button?: JSX.Element
 }
 
-const EmptyState = ({ className, image, text, button }: EmptyStateProps) => (
+export const EmptyState = ({ className, image, text, button }: EmptyStateProps) => (
   <div className={cc(['kirk-empty-state', className])}>
     <img src={image} alt="" />
     <Title>{text}</Title>
     {button}
   </div>
 )
-
-export default EmptyState

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 import { fontWeight } from '../../_utils/branding'
-import Title from '../title'
+import { TextTitle } from '../title'
 
-const TextTitleStrong = styled(Title)`
+export const TextTitleStrong = styled(TextTitle)`
   font-weight: ${fontWeight.medium};
 `
-export default TextTitleStrong

@@ -2,9 +2,9 @@ import React, { Fragment, ReactNode } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import Bullet, { BulletTypes } from '../../bullet'
-import ChevronIcon from '../../icon/chevronIcon'
-import Text, { TextDisplayType, TextTagType } from '../../text'
+import { Bullet, BulletTypes } from '../../bullet'
+import { ChevronIcon } from '../../icon/chevronIcon'
+import { Text, TextDisplayType, TextTagType } from '../../text'
 import { color } from '../branding'
 import { Place } from '../place'
 
@@ -74,7 +74,7 @@ const renderSubLabel = (label: ReactNode) =>
     <div>{label}</div>
   )
 
-const ItineraryLocation = ({
+export const ItineraryLocation = ({
   place,
   className = '',
   isSmall = false,
@@ -164,5 +164,3 @@ const ItineraryLocation = ({
     </li>
   )
 }
-
-export default ItineraryLocation

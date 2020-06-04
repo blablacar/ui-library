@@ -3,8 +3,8 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
-import Section from '../layout/section/baseSection'
-import Text, { TextDisplayType, TextTagType } from '../text'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Text, TextDisplayType, TextTagType } from '../text'
 
 const stories = storiesOf('Widgets|Text', module)
 stories.addDecorator(withKnobs)

@@ -4,8 +4,8 @@ import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
-import Section from '../layout/section/baseSection'
-import Why from '../why'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Why } from '../why'
 
 class LayoutExample extends Component {
   render() {

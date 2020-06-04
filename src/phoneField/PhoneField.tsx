@@ -5,10 +5,10 @@ import isEqual from 'lodash.isequal'
 
 import { allCountries, AllCountryPhoneData } from 'country-telephone-data'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { OnChangeParameters } from '../_utils/onChange'
-import SelectField from '../selectField'
-import TextField, { inputTypes } from '../textField'
+import { SelectField } from '../selectField'
+import { inputTypes, TextField } from '../textField'
 
 type FormattedCountryPhoneData = {
   name: string
@@ -159,7 +159,7 @@ const countryData = (whitelist: string[], countryNames: PhoneFieldCustomCountryN
 /**
  * TODO: BBCSPA-3355 Fix A11y issues on label and error state
  */
-export default class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> {
+export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> {
   private ref: RefObject<HTMLSelectElement>
   constructor(props: PhoneFieldProps) {
     super(props)

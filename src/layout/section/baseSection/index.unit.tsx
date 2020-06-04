@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import BasicSection, { SectionContentSize } from './index'
+import { BaseSection as BasicSection, SectionContentSize } from './index'
 
 describe('BaseSection', () => {
   it('should render default basic section', () => {

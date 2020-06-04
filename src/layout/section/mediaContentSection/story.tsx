@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import MediaContentSection from './index'
+import { MediaContentSection } from './index'
 
 const stories = storiesOf('Sections|MediaContentSection', module)
 stories.addDecorator(withKnobs)

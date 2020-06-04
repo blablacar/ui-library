@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import Item from '../_utils/item'
+import { Item } from '../_utils/item'
 import { OnChangeParameters } from '../_utils/onChange'
-import RadioIcon from '../_utils/radioIcon'
+import { RadioIcon } from '../_utils/radioIcon'
 import { TextDisplayType } from '../text'
 
 export enum ItemRadioStatus {
@@ -35,7 +35,7 @@ interface ItemRadioState {
   readonly focus: boolean
 }
 
-class ItemRadio extends Component<ItemRadioProps> {
+export class ItemRadio extends Component<ItemRadioProps> {
   static defaultProps: Partial<ItemRadioProps> = {
     onChange() {},
     onClick() {},
@@ -128,5 +128,3 @@ class ItemRadio extends Component<ItemRadioProps> {
     )
   }
 }
-
-export default ItemRadio

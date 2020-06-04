@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ItemCheckbox from './ItemCheckbox'
+import { ItemCheckbox } from './ItemCheckbox'
 
 const StyledItemCheckbox = styled(ItemCheckbox)`
   & {
@@ -14,4 +14,5 @@ const StyledItemCheckbox = styled(ItemCheckbox)`
 `
 
 export { ItemCheckboxProps, ItemCheckboxStatus } from './ItemCheckbox'
+export { StyledItemCheckbox as ItemCheckbox }
 export default StyledItemCheckbox

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
-import ButtonGroup from './ButtonGroup'
+import { ButtonGroup } from './ButtonGroup'
 
 const StyledButtonGroup = styled(ButtonGroup)`
   & {
@@ -53,4 +53,5 @@ const StyledButtonGroup = styled(ButtonGroup)`
 `
 
 export { ButtonGroupProps } from './ButtonGroup'
+export { StyledButtonGroup as ButtonGroup }
 export default StyledButtonGroup

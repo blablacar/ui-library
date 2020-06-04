@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 
-import Item from '../../../_utils/item'
+import { Item } from '../../../_utils/item'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
-import Divider from '../../../divider'
-import ChevronIcon from '../../../icon/chevronIcon'
-import Section from '../../../layout/section/baseSection'
+import { Divider } from '../../../divider'
+import { ChevronIcon } from '../../../icon/chevronIcon'
+import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
 
 export type DatePickerSectionProps = Omit<DatePickerProps, 'className' | 'orientation'> & {
@@ -46,5 +46,3 @@ export const DatePickerSection = ({
     </TransitionSection>
   )
 }
-
-export default DatePickerSection

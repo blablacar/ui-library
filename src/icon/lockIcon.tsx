@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const LockIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -14,5 +14,4 @@ export const LockIcon = (props: Icon) => (
 )
 
 LockIcon.defaultProps = BaseIconDefaultProps
-
 export default LockIcon

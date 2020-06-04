@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import ItineraryCollapsible from './ItineraryCollapsible'
+import { ItineraryCollapsible } from './ItineraryCollapsible'
 
 const places = [
   {

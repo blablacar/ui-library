@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ItemInfo from '../../../itemInfo'
-import ItemsSection from './index'
+import { ItemInfo } from '../../../itemInfo'
+import { ItemsSection } from './index'
 
 describe('ItemsSection', () => {
   it('should render default items section', () => {

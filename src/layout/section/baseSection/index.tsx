@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-import BaseSection from './baseSection'
+import { BaseSection } from './baseSection'
 
 const StyledBaseSection = styled(BaseSection)`
   & .section-content {
@@ -23,4 +23,5 @@ const StyledBaseSection = styled(BaseSection)`
 `
 
 export { BaseSectionProps, SectionContentSize } from './baseSection'
+export { StyledBaseSection as BaseSection }
 export default StyledBaseSection

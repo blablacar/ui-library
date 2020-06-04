@@ -144,7 +144,7 @@ export const responsiveBreakpoints = {
 
 export const pxToInteger = (size: string): number => parseInt(size.replace('px', ''), 10)
 
-export default {
+export const branding = {
   color,
   font,
   fontWeight,
@@ -152,3 +152,5 @@ export default {
   radius,
   shadow,
 }
+
+export default branding

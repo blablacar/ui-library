@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { sectionBaseStyle } from '../../../searchForm/baseStyles'
-import DatePickerSection from './DatePickerSection'
+import { DatePickerSection } from './DatePickerSection'
 
 const StyledDatePickerSection = styled(DatePickerSection)`
   & {
@@ -9,4 +9,5 @@ const StyledDatePickerSection = styled(DatePickerSection)`
   }
 `
 
+export { StyledDatePickerSection as DatePickerSection }
 export default StyledDatePickerSection

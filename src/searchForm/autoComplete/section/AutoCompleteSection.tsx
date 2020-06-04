@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { space } from '../../../_utils/branding'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import { AutoCompleteProps } from '../../../autoComplete'
-import Button, { ButtonStatus } from '../../../button'
-import ChevronIcon from '../../../icon/chevronIcon'
-import Section from '../../../layout/section/baseSection'
+import { Button, ButtonStatus } from '../../../button'
+import { ChevronIcon } from '../../../icon/chevronIcon'
+import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
 
 const BackButton = styled(Button)`
@@ -58,5 +58,3 @@ export const AutoCompleteSection = ({
     </TransitionSection>
   )
 }
-
-export default AutoCompleteSection

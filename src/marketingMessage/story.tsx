@@ -2,12 +2,12 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import BlankSeparator, { BlankSeparatorSize } from '../blankSeparator'
-import Button from '../button'
-import Section from '../layout/section/baseSection'
-import MarketingMessage from '../marketingMessage'
-import SubHeader from '../subHeader'
-import Text from '../text'
+import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
+import { Button } from '../button'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { MarketingMessage } from '../marketingMessage'
+import { SubHeader } from '../subHeader'
+import { Text } from '../text'
 
 const stories = storiesOf('Widgets|MarketingMessage', module)
 stories.addDecorator(withKnobs)

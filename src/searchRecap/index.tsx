@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { font, responsiveBreakpoints, space } from '../_utils/branding'
-import SearchRecap, { separatorWidth } from './SearchRecap'
+import { SearchRecap, separatorWidth } from './SearchRecap'
 
 const separatorWidthPx = `${separatorWidth}px`
 
@@ -61,4 +61,5 @@ const StyledSearchRecap = styled(SearchRecap)`
     }
   }
 `
+export { StyledSearchRecap as SearchRecap }
 export default StyledSearchRecap

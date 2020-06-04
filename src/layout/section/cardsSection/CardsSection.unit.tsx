@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import TripCard from '../../../tripCard'
-import CardsSection from './CardsSection'
+import { TripCard } from '../../../tripCard'
+import { CardsSection } from './CardsSection'
 
 const tripCardConfig = {
   ariaLabel: 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 const BusIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 28 17">
@@ -28,7 +28,7 @@ const BusIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-export const StyledBusIcon = styled(BusIcon)`
+const StyledBusIcon = styled(BusIcon)`
   & path,
   & circle {
     color: ${props => (props.isDisabled ? color.gray : 'currentColor')};
@@ -39,4 +39,5 @@ StyledBusIcon.defaultProps = {
   ...BaseIconDefaultProps,
 }
 
+export { StyledBusIcon as BusIcon }
 export default StyledBusIcon

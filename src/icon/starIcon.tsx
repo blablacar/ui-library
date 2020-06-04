@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface StarProps extends Icon {
+export interface StarIconProps extends Icon {
   readonly bgColor?: string
   readonly fill?: number
 }
 
-export const StarIcon = ({ bgColor, fill, ...props }: StarProps) => {
+export const StarIcon = ({ bgColor, fill, ...props }: StarIconProps) => {
   // needs to be unique, otherwise all stars will use the first defined linear gradient
   const id = `gradient-${fill}`
   const offset = `${fill * 100}%`

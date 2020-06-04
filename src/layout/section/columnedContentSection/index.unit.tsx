@@ -1,7 +1,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import ColumnedContentSection, {
+import {
+  ColumnedContentSection,
   ColumnedContentSectionProps,
   ColumnedSectionContentMediaKind,
 } from './index'

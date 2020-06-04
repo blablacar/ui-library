@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ItemsSection from './itemsSection'
+import { ItemsSection } from './itemsSection'
 
 const StyledItemsSection = styled(ItemsSection)`
   & .kirk-items-section-content {
@@ -9,4 +9,5 @@ const StyledItemsSection = styled(ItemsSection)`
 `
 
 export { ItemsSectionProps } from './itemsSection'
+export { StyledItemsSection as ItemsSection }
 export default StyledItemsSection

@@ -20,7 +20,7 @@ export interface BaseSectionProps {
  * The core section: It sections horizontally a page while fitting its
  * content in width-constrained and centered column.
  */
-const BaseSection = (props: BaseSectionProps) => {
+export const BaseSection = (props: BaseSectionProps) => {
   const {
     className,
     contentClassName,
@@ -52,5 +52,3 @@ const BaseSection = (props: BaseSectionProps) => {
     </div>
   )
 }
-
-export default BaseSection

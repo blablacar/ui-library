@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Item from '../../../_utils/item'
-import Divider from '../../../divider'
-import StandardSeat from '../../../icon/standardSeat'
-import Stepper, { StepperDisplay, StepperProps } from '../../../stepper'
+import { Item } from '../../../_utils/item'
+import { Divider } from '../../../divider'
+import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
+import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 
 export interface StepperOverlayProps extends StepperProps {
   itemTitle: string
@@ -22,5 +22,3 @@ export const StepperOverlay = ({ itemTitle, className, ...props }: StepperOverla
     />
   </div>
 )
-
-export default StepperOverlay

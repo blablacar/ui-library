@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Caption from '../caption'
-import Paragraph from '../paragraph'
-import TextTitle from '../typography/title'
+import { Caption } from '../caption'
+import { Paragraph } from '../paragraph'
+import { TextTitle } from '../typography/title'
 
 export interface ReviewProps {
   readonly className?: string
@@ -14,7 +14,7 @@ export interface ReviewProps {
   readonly isoDatetime: string
 }
 
-const Review = (props: ReviewProps) => {
+export const Review = (props: ReviewProps) => {
   const { className, title, text, formattedDatetime, isoDatetime, isResponse = false } = props
 
   // For responses, the title is not a rating but the name of the person replying.
@@ -51,5 +51,3 @@ const Review = (props: ReviewProps) => {
     </blockquote>
   )
 }
-
-export default Review

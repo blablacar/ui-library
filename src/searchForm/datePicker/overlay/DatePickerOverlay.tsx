@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Item from '../../../_utils/item'
+import { Item } from '../../../_utils/item'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
-import Divider from '../../../divider'
-import CalendarIcon from '../../../icon/calendarIcon'
+import { Divider } from '../../../divider'
+import { CalendarIcon } from '../../../icon/calendarIcon'
 
 export type DatePickerOverlayProps = Omit<
   DatePickerProps,
@@ -37,5 +37,3 @@ export const DatePickerOverlay = ({
     })}
   </div>
 )
-
-export default DatePickerOverlay

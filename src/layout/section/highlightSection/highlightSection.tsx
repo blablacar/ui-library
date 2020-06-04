@@ -1,7 +1,7 @@
 import React from 'react'
 
-import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
-import SubHeader from '../../../subHeader'
+import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
+import { SubHeader } from '../../../subHeader'
 
 export interface HighlightSectionProps {
   readonly className?: string
@@ -13,7 +13,7 @@ export interface HighlightSectionProps {
 /**
  * A specialized section with an highlighting background color.
  */
-const HighlightSection = (props: HighlightSectionProps) => {
+export const HighlightSection = (props: HighlightSectionProps) => {
   const { className, children, contentClassName, title } = props
   return (
     <BaseSection
@@ -27,5 +27,3 @@ const HighlightSection = (props: HighlightSectionProps) => {
     </BaseSection>
   )
 }
-
-export default HighlightSection

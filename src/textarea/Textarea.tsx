@@ -5,9 +5,9 @@ import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { OnChangeParameters } from '../_utils/onChange'
-import Button, { ButtonStatus } from '../button'
+import { Button, ButtonStatus } from '../button'
 
 export interface CommonFormFields {
   name: string
@@ -27,7 +27,7 @@ export interface CommonFormFields {
 
 type errorField = string | JSX.Element
 
-export interface TextAreaProps extends CommonFormFields {
+export interface TextareaProps extends CommonFormFields {
   defaultValue?: string
   labelledBy?: string
   onChange?: (obj: OnChangeParameters) => void
@@ -61,8 +61,8 @@ export interface TextAreaState {
   readonly hasFocus: boolean
 }
 
-export default class Textarea extends PureComponent<TextAreaProps, TextAreaState> {
-  static defaultProps: Partial<TextAreaProps> = {
+export class Textarea extends PureComponent<TextareaProps, TextAreaState> {
+  static defaultProps: Partial<TextareaProps> = {
     fieldRef() {},
     onFocus() {},
     onBlur() {},
@@ -84,7 +84,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     }
   }
 
-  static getDerivedStateFromProps(props: TextAreaProps, state: TextAreaState) {
+  static getDerivedStateFromProps(props: TextareaProps, state: TextAreaState) {
     if (props.defaultValue !== state.defaultValue) {
       return {
         ...state,
@@ -95,7 +95,7 @@ export default class Textarea extends PureComponent<TextAreaProps, TextAreaState
     return null
   }
 
-  componentDidUpdate(prevProps: TextAreaProps) {
+  componentDidUpdate(prevProps: TextareaProps) {
     if (
       this.props.focus &&
       this.props.focus !== prevProps.focus &&

@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import RadioIcon from './index'
+import { RadioIcon } from './index'
 
 describe('RadioIcon', () => {
   it('Should render an empty circle by default', () => {

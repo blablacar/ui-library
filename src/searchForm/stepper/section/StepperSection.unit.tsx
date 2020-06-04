@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Item from '../../../_utils/item'
-import Button from '../../../button'
-import ChevronIcon from '../../../icon/chevronIcon'
-import Stepper, { StepperDisplay } from '../../../stepper'
-import StepperSection from './StepperSection'
+import { Item } from '../../../_utils/item'
+import { Button } from '../../../button'
+import { ChevronIcon } from '../../../icon/chevronIcon'
+import { Stepper, StepperDisplay } from '../../../stepper'
+import { StepperSection } from './StepperSection'
 
 describe('StepperSection', () => {
   it('should have a clickable Item with a title and chevron icon', () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import HighlightSection from './index'
+import { HighlightSection } from './index'
 
 describe('HighlightSection', () => {
   it('should render default highlight section', () => {

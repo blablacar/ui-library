@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import UneditableTextField, { UneditableTextFieldProps } from './index'
+import { UneditableTextField, UneditableTextFieldProps } from './index'
 
 function createProps(props: Partial<UneditableTextFieldProps> = {}): UneditableTextFieldProps {
   return { children: 'Hello world', ...props }

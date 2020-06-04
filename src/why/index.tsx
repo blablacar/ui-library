@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
-import Why from './Why'
+import { Why } from './Why'
 
 const StyledWhy = styled(Why)`
   & {
@@ -42,4 +42,5 @@ const StyledWhy = styled(Why)`
 `
 
 export { WhyProps } from './Why'
+export { StyledWhy as Why }
 export default StyledWhy

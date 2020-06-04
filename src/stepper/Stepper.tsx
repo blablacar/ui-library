@@ -6,9 +6,9 @@ import isEmpty from 'lodash.isempty'
 import { isTouchEventsAvailable } from '../_utils'
 import { color, delay, font, pxToInteger, space } from '../_utils/branding'
 import { OnChangeParameters } from '../_utils/onChange'
-import Button, { ButtonStatus } from '../button'
-import MinusIcon from '../icon/minusIcon'
-import PlusIcon from '../icon/plusIcon'
+import { Button, ButtonStatus } from '../button'
+import { MinusIcon } from '../icon/minusIcon'
+import { PlusIcon } from '../icon/plusIcon'
 
 export enum StepperDisplay {
   SMALL = 'small',
@@ -53,7 +53,7 @@ interface StepperState {
 const defaultInteger = 2 ** 53 - 1
 const isTouchScreen = isTouchEventsAvailable()
 
-export default class Stepper extends PureComponent<StepperProps, StepperState> {
+export class Stepper extends PureComponent<StepperProps, StepperState> {
   private valueElementRef: RefObject<HTMLDivElement>
   private containerRef: RefObject<HTMLDivElement>
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { color } from '../branding'
-import BaseIcon from '../icon'
+import { BaseIcon } from '../icon'
 import { BaseIconDefaultProps, IconProps } from '../icon/BaseIcon'
 
 export enum status {
@@ -17,7 +17,7 @@ export type StatusIconProps = IconProps &
 
 export type IconPropsWithStatus = Omit<StatusIconProps, 'children'>
 
-const StatusIcon = (props: StatusIconProps) => {
+export const StatusIcon = (props: StatusIconProps) => {
   const finalProps = {
     ...props,
     iconColor: props.status === status.ON ? color.midnightGreen : props.iconColor,

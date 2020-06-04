@@ -7,10 +7,10 @@ import { canUseDOM, canUseEventListeners } from 'exenv'
 import createFocusTrap, { FocusTrap } from 'focus-trap'
 
 import { color } from '../_utils/branding'
-import KEYCODES from '../_utils/keycodes'
-import Button from '../button'
-import CrossIcon from '../icon/crossIcon'
-import CustomTransition, { AnimationType } from '../transitions'
+import { KEYCODES } from '../_utils/keycodes'
+import { Button } from '../button'
+import { CrossIcon } from '../icon/crossIcon'
+import { AnimationType, Transitions as CustomTransition } from '../transitions'
 
 export enum ModalSize {
   SMALL = 'small',
@@ -36,7 +36,7 @@ export type ModalProps = Readonly<{
   ariaDescribedBy?: string
 }>
 
-export default class Modal extends Component<ModalProps> {
+export class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
   private contentNode: HTMLElement
   private focusTrap: FocusTrap

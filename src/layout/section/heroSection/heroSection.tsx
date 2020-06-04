@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Button, { ButtonProps } from '../../../button'
-import TextDisplay1 from '../../../typography/display1'
-import TextTitle from '../../../typography/title'
+import { Button, ButtonProps } from '../../../button'
+import { TextDisplay1 } from '../../../typography/display1'
+import { TextTitle } from '../../../typography/title'
 
 export type HeroSectionProps = {
   className?: string
@@ -15,7 +15,7 @@ export type HeroSectionProps = {
   bottomElement?: React.ReactElement
 }
 
-function HeroSection({
+export function HeroSection({
   className,
   heroText,
   heroDescription,
@@ -47,5 +47,3 @@ function HeroSection({
     </div>
   )
 }
-
-export default HeroSection

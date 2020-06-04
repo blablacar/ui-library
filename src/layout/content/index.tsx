@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { responsiveBreakpoints } from '../../_utils/branding'
-import { MainContent as MainContentComponent } from './content'
+import { MainContent } from './content'
 
 export const Content = styled.div.attrs(() => ({
   role: 'presentation',
@@ -11,7 +11,7 @@ export const BottomContent = styled.div.attrs(() => ({
   role: 'presentation',
 }))``
 
-export const MainContent = styled(MainContentComponent)`
+const StyledMainContent = styled(MainContent)`
   & {
     display: flex;
     flex-direction: column;
@@ -30,3 +30,6 @@ export const MainContent = styled(MainContentComponent)`
     }
   }
 `
+
+export { StyledMainContent as MainContent }
+export default StyledMainContent

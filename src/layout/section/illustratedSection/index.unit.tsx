@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import IllustratedSection from './index'
+import { IllustratedSection } from './index'
 
 const defaultProps = {
   illustrationUrl: 'http://blablacar.com/pic.jpg',

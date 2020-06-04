@@ -1,13 +1,13 @@
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface ChevronProps extends Icon {
+export interface ChevronIconProps extends Icon {
   readonly down?: boolean
   readonly left?: boolean
 }
 
-export const ChevronIcon = ({ down, left, ...props }: ChevronProps) => (
+export const ChevronIcon = ({ down, left, ...props }: ChevronIconProps) => (
   <BaseIcon {...props}>
     <polyline
       fill="none"

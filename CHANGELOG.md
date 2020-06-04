@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Use named exports instead of default exports.
+  [...]
 
 # v34.3.0 (05/06/2020)
 

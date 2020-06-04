@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
-import Stepper, { StepperButtonSize, StepperDisplay } from './Stepper'
+import { Stepper, StepperButtonSize, StepperDisplay } from './Stepper'
 
 // These components have a 12px vertical padding. We probably took a shortcut when creating our
 // sizes, as we should have handled 4px multiples (checked with @wakooka)
@@ -66,4 +66,5 @@ const StyledStepper = styled(Stepper)`
 `
 
 export { StepperDisplay, StepperProps } from './Stepper'
+export { StyledStepper as Stepper }
 export default StyledStepper

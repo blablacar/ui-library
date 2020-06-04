@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface PinProps extends Icon {
+export interface PinIconProps extends Icon {
   readonly bgColor?: string
   readonly strokeColor?: string
 }
 
-export const PinIcon = ({ bgColor, strokeColor, isDisabled, ...props }: PinProps) => (
+export const PinIcon = ({ bgColor, strokeColor, isDisabled, ...props }: PinIconProps) => (
   <BaseIcon {...props}>
     <g stroke={strokeColor} strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10">
       <path fill={bgColor} d="M20 9c0 4.9-8 13-8 13S4 13.9 4 9c0-5.1 4.1-8 8-8s8 2.9 8 8z" />

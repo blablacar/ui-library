@@ -2,7 +2,7 @@ import React from 'react'
 
 import { color } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import Item from '../_utils/item'
+import { Item } from '../_utils/item'
 import { TextDisplayType } from '../text'
 
 export type ItemEditableInfoProps = A11yProps &
@@ -21,7 +21,7 @@ export type ItemEditableInfoProps = A11yProps &
     ariaLabel?: string
   }>
 
-const ItemEditableInfo = (props: ItemEditableInfoProps) => {
+export const ItemEditableInfo = (props: ItemEditableInfoProps) => {
   const { className, label, value, href = null, readonly = false, onClick } = props
   const a11yAttrs = pickA11yProps<ItemEditableInfoProps>(props)
 

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import CheckboxIcon from '../_utils/checkboxIcon'
-import Item from '../_utils/item/index'
+import { CheckboxIcon } from '../_utils/checkboxIcon'
+import { Item } from '../_utils/item/index'
 import { ItemProps } from '../_utils/item/Item'
 import { OnChangeParameters } from '../_utils/onChange'
 
@@ -25,7 +25,7 @@ export enum ToggleButtonStatus {
   LOADING = 'loading',
 }
 
-export default class ToggleButton extends PureComponent<ToggleButtonProps> {
+export class ToggleButton extends PureComponent<ToggleButtonProps> {
   static defaultProps: Partial<ToggleButtonProps> = {
     status: ToggleButtonStatus.DEFAULT,
     checked: false,

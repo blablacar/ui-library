@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, space } from '../_utils/branding'
-import TimePicker from './TimePicker'
+import { TimePicker } from './TimePicker'
 
-export const StyledTimePicker = styled(TimePicker)`
+const StyledTimePicker = styled(TimePicker)`
   & {
     position: relative;
     display: inline-flex;
@@ -90,4 +90,5 @@ export const StyledTimePicker = styled(TimePicker)`
 `
 
 export { TimePickerProps } from './TimePicker'
+export { StyledTimePicker as TimePicker }
 export default StyledTimePicker

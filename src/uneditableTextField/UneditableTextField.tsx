@@ -48,5 +48,3 @@ export const UneditableTextField = ({
     </Fragment>,
   )
 }
-
-export default UneditableTextField

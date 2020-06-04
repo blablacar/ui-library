@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import EyeIcon from '../icon/eyeIcon'
-import Textarea from './Textarea'
+import { EyeIcon } from '../icon/eyeIcon'
+import { Textarea } from './Textarea'
 
 it('Should have the proper value.', () => {
   const wrapper = shallow(<Textarea name="test" defaultValue="blabla" />)

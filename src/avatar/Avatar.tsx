@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { color } from '../_utils/branding'
-import Badge from '../badge'
-import CheckIcon from '../icon/checkIcon'
+import { Badge } from '../badge'
+import { CheckIcon } from '../icon/checkIcon'
 
 export interface AvatarProps {
   readonly className?: string
@@ -36,7 +36,7 @@ const unreadNotificationsBadge = (
   </Badge>
 )
 
-const Avatar = ({
+export const Avatar = ({
   isSmall,
   isMedium,
   isLarge,
@@ -60,5 +60,3 @@ const Avatar = ({
     {isIdChecked && IdCheckBadge}
   </div>
 )
-
-export default Avatar

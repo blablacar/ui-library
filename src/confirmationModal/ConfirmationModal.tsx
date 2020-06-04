@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import Button, { ButtonStatus } from '../button'
-import CrossIcon from '../icon/crossIcon'
-import InfoIcon from '../icon/infoIcon'
-import WarningIcon from '../icon/warningIcon'
-import Modal, { ModalSize } from '../modal'
+import { Button, ButtonStatus } from '../button'
+import { CrossIcon } from '../icon/crossIcon'
+import { InfoIcon } from '../icon/infoIcon'
+import { WarningIcon } from '../icon/warningIcon'
+import { Modal, ModalSize } from '../modal'
 import { ModalProps } from '../modal/Modal'
-import TheVoice from '../theVoice'
+import { TheVoice } from '../theVoice'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
@@ -21,7 +21,7 @@ export interface ConfirmationModalProps extends ModalProps {
   readonly confirmIsLoading?: boolean
 }
 
-class ConfirmationModal extends Component<ConfirmationModalProps> {
+export class ConfirmationModal extends Component<ConfirmationModalProps> {
   static defaultProps: Partial<ConfirmationModalProps> = {
     onConfirm() {},
     confirmLabel: '',
@@ -114,5 +114,3 @@ class ConfirmationModal extends Component<ConfirmationModalProps> {
     )
   }
 }
-
-export default ConfirmationModal

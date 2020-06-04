@@ -3,9 +3,9 @@ import { action } from '@storybook/addon-actions'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Avatar from '../avatar'
-import DropdownButton from '../dropdownButton'
-import Section from '../layout/section/baseSection'
+import { Avatar } from '../avatar'
+import { DropdownButton } from '../dropdownButton'
+import { BaseSection as Section } from '../layout/section/baseSection'
 
 const stories = storiesOf('Widgets|DropdownButton', module)
 stories.addDecorator(withKnobs)

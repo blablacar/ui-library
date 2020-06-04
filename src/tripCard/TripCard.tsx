@@ -3,17 +3,17 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import { color } from '../_utils/branding'
-import Card from '../_utils/card'
-import Item from '../_utils/item'
+import { Card } from '../_utils/card'
+import { Item } from '../_utils/item'
 import { Place } from '../_utils/place'
-import Avatar from '../avatar'
-import AloneInTheBackIcon from '../icon/aloneInTheBackIcon'
-import ComfortIcon from '../icon/comfortIcon'
-import LadyIcon from '../icon/ladyIcon'
-import LightningIcon from '../icon/lightningIcon'
-import Star from '../icon/starIcon'
-import Itinerary from '../itinerary'
-import Text, { TextDisplayType, TextTagType } from '../text'
+import { Avatar } from '../avatar'
+import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
+import { ComfortIcon } from '../icon/comfortIcon'
+import { LadyIcon } from '../icon/ladyIcon'
+import { LightningIcon } from '../icon/lightningIcon'
+import { StarIcon as Star } from '../icon/starIcon'
+import { Itinerary } from '../itinerary'
+import { Text, TextDisplayType, TextTagType } from '../text'
 
 /**
  * Display 5 passengers max.
@@ -75,7 +75,7 @@ const renderMorePassengers = (count: number) => (
   </li>
 )
 
-const TripCard = ({
+export const TripCard = ({
   className,
   ariaLabel,
   href,
@@ -240,5 +240,3 @@ const TripCard = ({
     </Card>
   )
 }
-
-export default TripCard

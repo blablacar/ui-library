@@ -12,7 +12,7 @@ export interface PushInfoProps {
   readonly onAnimationEnd?: Function
 }
 
-class PushInfo extends Component<PushInfoProps> {
+export class PushInfo extends Component<PushInfoProps> {
   componentDidMount() {
     if (this.props.onAnimationEnd) {
       setTimeout(this.props.onAnimationEnd, animationDuration + animationDelay)
@@ -39,5 +39,3 @@ class PushInfo extends Component<PushInfoProps> {
     )
   }
 }
-
-export default PushInfo

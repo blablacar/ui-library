@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
-import Review from './Review'
+import { Review } from './Review'
 
 const StyledReview = styled(Review)`
   & {
@@ -18,4 +18,6 @@ const StyledReview = styled(Review)`
     font-size: 1em;
   }
 `
+
+export { StyledReview as Review }
 export default StyledReview

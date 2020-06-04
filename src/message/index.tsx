@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
-import Message from './Message'
+import { Message } from './Message'
 
 const StyledMessage = styled(Message)`
   & blockquote {
@@ -65,4 +65,5 @@ const StyledMessage = styled(Message)`
 `
 
 export { MessageProps } from './Message'
+export { StyledMessage as Message }
 export default StyledMessage

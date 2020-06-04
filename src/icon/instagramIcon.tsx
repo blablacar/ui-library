@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const InstagramIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -27,5 +27,4 @@ export const InstagramIcon = (props: Icon) => (
 )
 
 InstagramIcon.defaultProps = BaseIconDefaultProps
-
 export default InstagramIcon

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export const CrossHairIcon = (props: Icon) => (
+export const CrosshairIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g fill="none" fillRule="evenodd">
       <g stroke={props.iconColor} strokeLinecap="round" strokeLinejoin="round">
@@ -15,6 +15,5 @@ export const CrossHairIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-CrossHairIcon.defaultProps = BaseIconDefaultProps
-
-export default CrossHairIcon
+CrosshairIcon.defaultProps = BaseIconDefaultProps
+export default CrosshairIcon

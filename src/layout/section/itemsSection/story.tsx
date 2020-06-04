@@ -2,8 +2,8 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ItemInfo from '../../../itemInfo'
-import ItemsSection from './index'
+import { ItemInfo } from '../../../itemInfo'
+import { ItemsSection } from './index'
 
 const stories = storiesOf('Sections|ItemsSection', module)
 stories.addDecorator(withKnobs)

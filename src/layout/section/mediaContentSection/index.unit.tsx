@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import MediaContentSection from './index'
+import { MediaContentSection } from './index'
 
 const defaultProps = {
   title: 'section title',

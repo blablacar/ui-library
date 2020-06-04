@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { font, space } from '../_utils/branding'
-import SubHeader from './SubHeader'
+import { SubHeader } from './SubHeader'
 
 const StyledSubHeader = styled(SubHeader)`
   & {
@@ -14,4 +14,5 @@ const StyledSubHeader = styled(SubHeader)`
 `
 
 export { SubHeaderProps } from './SubHeader'
+export { StyledSubHeader as SubHeader }
 export default StyledSubHeader

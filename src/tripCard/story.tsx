@@ -2,9 +2,9 @@ import React from 'react'
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import WarningIcon from '../icon/warningIcon'
-import Section from '../layout/section/baseSection'
-import TripCard from './index'
+import { WarningIcon } from '../icon/warningIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { TripCard } from './index'
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|TripCard', module)

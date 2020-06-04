@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
-import TripCard from './TripCard'
+import { TripCard } from './TripCard'
 
 const StyledTripCard = styled(TripCard)`
   & a {
@@ -152,4 +152,5 @@ const StyledTripCard = styled(TripCard)`
 `
 
 export { TripCardProps, User } from './TripCard'
+export { StyledTripCard as TripCard }
 export default StyledTripCard

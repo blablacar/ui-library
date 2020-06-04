@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import Loader from './Loader'
+import { Loader } from './Loader'
 
 const StyledLoader = styled(Loader)`
   &.kirk-loader--inline {
@@ -39,4 +39,5 @@ const StyledLoader = styled(Loader)`
 `
 
 export { LoaderProps, LoaderLayoutMode } from './Loader'
+export { StyledLoader as Loader }
 export default StyledLoader

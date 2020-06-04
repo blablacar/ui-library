@@ -1,13 +1,13 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface EyeProps extends Icon {
+export interface EyeIconProps extends Icon {
   readonly off?: boolean
 }
 
-export const EyeIcon = ({ off, ...props }: EyeProps) => (
+export const EyeIcon = ({ off, ...props }: EyeIconProps) => (
   <BaseIcon {...props}>
     <g
       fill="none"

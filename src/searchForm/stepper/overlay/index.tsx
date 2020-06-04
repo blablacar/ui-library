@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { overlayBaseStyle } from '../../../searchForm/baseStyles'
 import { TRANSITION_OVERLAY_CLASS_NAME } from '../../transitionConfig'
-import StepperOverlay from './StepperOverlay'
+import { StepperOverlay } from './StepperOverlay'
 
 export const positionDateStepper = '460px'
 export const positionInitial = '648px'
@@ -26,4 +26,5 @@ const StyledStepperOverlay = styled(StepperOverlay)`
   }
 `
 
+export { StyledStepperOverlay as StepperOverlay }
 export default StyledStepperOverlay

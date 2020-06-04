@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ItemInfoProps } from '../../../itemInfo'
-import BaseSection from '../../../layout/section/baseSection'
+import { BaseSection } from '../../../layout/section/baseSection'
 
 export interface ItemsSectionProps {
   readonly children: React.ReactElement<ItemInfoProps>[]
@@ -13,7 +13,7 @@ export interface ItemsSectionProps {
  * Items Section: display a list of items in a display: flex.
  * Use with two items.
  */
-const ItemsSection = (props: ItemsSectionProps) => {
+export const ItemsSection = (props: ItemsSectionProps) => {
   const { className, children, tag = <div /> } = props
 
   return (
@@ -26,5 +26,3 @@ const ItemsSection = (props: ItemsSectionProps) => {
     </BaseSection>
   )
 }
-
-export default ItemsSection

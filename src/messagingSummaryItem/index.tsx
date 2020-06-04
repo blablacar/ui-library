@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import MessagingSummaryItem from './MessagingSummaryItem'
+import { MessagingSummaryItem } from './MessagingSummaryItem'
 
 const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
   & .kirk-messaging-summary-item-sub-label {
@@ -13,4 +13,5 @@ const StyledMessagingSummaryItem = styled(MessagingSummaryItem)`
 `
 
 export { MessagingSummaryItemProps } from './MessagingSummaryItem'
+export { StyledMessagingSummaryItem as MessagingSummaryItem }
 export default StyledMessagingSummaryItem

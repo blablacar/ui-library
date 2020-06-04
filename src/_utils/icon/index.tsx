@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, shadow } from '../branding'
-import BaseIcon from './BaseIcon'
+import { BaseIcon } from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
   &,
@@ -33,4 +33,5 @@ const StyledBaseIcon = styled(BaseIcon)`
 
 export * from './BaseIcon'
 
+export { StyledBaseIcon as BaseIcon }
 export default StyledBaseIcon

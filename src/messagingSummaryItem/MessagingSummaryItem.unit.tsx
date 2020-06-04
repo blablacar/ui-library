@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import MessagingSummaryItem from './MessagingSummaryItem'
+import { MessagingSummaryItem } from './MessagingSummaryItem'
 
 const defaultProps = {
   url: 'http_test.url',

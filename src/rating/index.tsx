@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
-import Rating from './Rating'
+import { Rating } from './Rating'
 
 const StyledRating = styled(Rating)`
   & {
@@ -16,4 +16,5 @@ const StyledRating = styled(Rating)`
 `
 
 export { RatingProps } from './Rating'
+export { StyledRating as Rating }
 export default StyledRating

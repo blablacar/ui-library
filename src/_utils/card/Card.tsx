@@ -6,8 +6,6 @@ export interface CardProps {
   readonly children?: React.ReactNode
 }
 
-const Card = ({ className, children }: CardProps) => (
+export const Card = ({ className, children }: CardProps) => (
   <li className={cc(['kirk-card', className])}>{children}</li>
 )
-
-export default Card

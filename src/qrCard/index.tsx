@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
-import QrCard from './QrCard'
+import { QrCard } from './QrCard'
 
 const qrCardMaxWidth = '450px'
 
@@ -19,4 +19,5 @@ const StyledQrCard = styled(QrCard)`
 `
 
 export { QrCardProps } from './QrCard'
+export { StyledQrCard as QrCard }
 export default StyledQrCard

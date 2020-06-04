@@ -2,9 +2,9 @@ import React from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button from '../button'
-import EmptyState from '../emptyState'
-import Section from '../layout/section/baseSection'
+import { Button } from '../button'
+import { EmptyState } from '../emptyState'
+import { BaseSection as Section } from '../layout/section/baseSection'
 import spec from './specifications/emptystate.md'
 
 const stories = storiesOf('Widgets|EmptyState', module)

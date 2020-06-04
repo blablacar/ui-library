@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 import { space } from '../../../_utils/branding'
 import { autoCompleteBaseStyle, overlayBaseStyle } from '../../../searchForm/baseStyles'
-import autoComplete from './AutoCompleteOverlay'
+import { AutoCompleteOverlay } from './AutoCompleteOverlay'
 
-const StyledAutoComplete = styled(autoComplete)`
+const StyledAutoComplete = styled(AutoCompleteOverlay)`
   & {
     ${overlayBaseStyle}
 
@@ -27,4 +27,5 @@ const StyledAutoComplete = styled(autoComplete)`
 
 export { AutoCompleteOverlayProps } from './AutoCompleteOverlay'
 
+export { StyledAutoComplete as AutoCompleteOverlay }
 export default StyledAutoComplete

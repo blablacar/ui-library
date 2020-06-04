@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import MediaSection from './index'
+import { MediaSection } from './index'
 
 describe('MediaSection', () => {
   it('should render MediaSection', () => {

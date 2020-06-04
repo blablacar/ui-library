@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import Review from './index'
+import { Review } from './index'
 
 const defaultReviewProps = {
   title: 'Review title',

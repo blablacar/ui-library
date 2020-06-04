@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import SubHeader from './SubHeader'
+import { SubHeader } from './SubHeader'
 
 describe('SubHeader', () => {
   it('Should render the SubHeader properly', () => {

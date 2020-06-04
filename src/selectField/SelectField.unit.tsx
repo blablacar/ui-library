@@ -2,8 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import StyledSelectField from './index'
-import SelectField from './SelectField'
+import { SelectField as StyledSelectField } from './index'
+import { SelectField } from './SelectField'
 
 const options = [
   { value: '1', label: 'val 1', ariaLabel: 'value 1' },

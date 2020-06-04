@@ -12,8 +12,6 @@ export enum BlankSeparatorSize {
   LARGE = 'large',
 }
 
-const BlankSeparator = ({ className }: BlankSeparatorProps) => (
+export const BlankSeparator = ({ className }: BlankSeparatorProps) => (
   <div className={cc(className)} aria-hidden="true" />
 )
-
-export default BlankSeparator

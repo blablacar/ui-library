@@ -4,7 +4,7 @@ import cc from 'classcat'
 import { color } from '../_utils/branding'
 import { CommonFieldsProps } from '../_utils/interfaces'
 import { OnChangeParameters } from '../_utils/onChange'
-import ChevronIcon from '../icon/chevronIcon'
+import { ChevronIcon } from '../icon/chevronIcon'
 
 export const selectHeight = '52px'
 
@@ -27,7 +27,7 @@ export interface SelectFieldProps extends Partial<CommonFieldsProps> {
   readonly autoComplete?: string
 }
 
-const SelectField = React.forwardRef(
+export const SelectField = React.forwardRef(
   (
     {
       id,
@@ -96,5 +96,3 @@ const SelectField = React.forwardRef(
     )
   },
 )
-
-export default SelectField

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Stars from './Stars'
+import { Stars } from './Stars'
 
 const StyledStars = styled(Stars)`
   & .star {
@@ -9,4 +9,5 @@ const StyledStars = styled(Stars)`
   }
 `
 export { StarsProps } from './Stars'
+export { StyledStars as Stars }
 export default StyledStars

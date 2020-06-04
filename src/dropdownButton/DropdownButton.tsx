@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import ChevronIcon from '../icon/chevronIcon'
+import { ChevronIcon } from '../icon/chevronIcon'
 
 export interface DropdownButtonProps {
   onClick: (event: React.MouseEvent<HTMLElement>) => void
@@ -12,7 +12,7 @@ export interface DropdownButtonProps {
   iconPosition?: 'left' | 'right'
 }
 
-const DropdownButton = ({
+export const DropdownButton = ({
   open = false,
   children,
   onClick,
@@ -35,5 +35,3 @@ const DropdownButton = ({
     </button>
   </div>
 )
-
-export default DropdownButton

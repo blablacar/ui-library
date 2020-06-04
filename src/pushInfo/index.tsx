@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, fontWeight, radius, space } from '../_utils/branding'
-import PushInfo, { animationDelay, animationDuration } from './PushInfo'
+import { animationDelay, animationDuration, PushInfo } from './PushInfo'
 
 const StyledPushInfo = styled(PushInfo)`
   & {
@@ -58,4 +58,5 @@ const StyledPushInfo = styled(PushInfo)`
 `
 
 export { PushInfoProps } from './PushInfo'
+export { StyledPushInfo as PushInfo }
 export default StyledPushInfo

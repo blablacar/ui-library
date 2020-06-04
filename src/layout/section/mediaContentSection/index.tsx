@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { font, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
-import MediaContentSection from './mediaContentSection'
+import { MediaContentSection } from './mediaContentSection'
 
 const StyledMediaContentSection = styled(MediaContentSection)`
   & {
@@ -66,4 +66,5 @@ const StyledMediaContentSection = styled(MediaContentSection)`
 `
 
 export { MediaContentSectionProps } from './mediaContentSection'
+export { StyledMediaContentSection as MediaContentSection }
 export default StyledMediaContentSection

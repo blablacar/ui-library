@@ -2,7 +2,7 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import CrossIcon from '../icon/crossIcon'
-import Button, { ButtonStatus, eventHandler } from './Button'
+import { Button, ButtonStatus, eventHandler } from './Button'
 
 jest.useFakeTimers()
 

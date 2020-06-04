@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, responsiveBreakpoints, space } from '../_utils/branding'
-import Button from '../button'
-import Modal from '../modal'
+import { Button } from '../button'
+import { Modal } from '../modal'
 
 const StyledSuccessModal = styled(Modal)`
   padding: 0;
@@ -112,7 +112,7 @@ const SuccessButton = styled(Button)`
   }
 `
 
-const SuccessModalElements = {
+export const SuccessModalElements = {
   StyledSuccessModal,
   Media,
   Figure,
@@ -121,5 +121,3 @@ const SuccessModalElements = {
   SuccessAction,
   SuccessButton,
 }
-
-export default SuccessModalElements

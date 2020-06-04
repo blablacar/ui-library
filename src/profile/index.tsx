@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Profile from './profile'
+import { Profile } from './profile'
 
 const StyledProfile = styled(Profile)`
   &.kirk-profile-size-medium .kirk-item-leftText {
@@ -9,4 +9,5 @@ const StyledProfile = styled(Profile)`
 `
 
 export { ProfileProps } from './profile'
+export { StyledProfile as Profile }
 export default StyledProfile

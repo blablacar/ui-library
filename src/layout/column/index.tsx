@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Column from './column'
+import { Column } from './column'
 
 const StyledColumn = styled(Column)`
   & {
@@ -12,4 +12,5 @@ const StyledColumn = styled(Column)`
 `
 
 export { ColumnProps } from './column'
+export { StyledColumn as Column }
 export default StyledColumn

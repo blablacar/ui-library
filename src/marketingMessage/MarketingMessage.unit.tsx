@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import MarketingMessage from './MarketingMessage'
+import { MarketingMessage } from './MarketingMessage'
 
 it('should render a basic marketing conversation message', () => {
   const message = shallow(

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import Button, { ButtonStatus } from '../button'
-import Text, { TextTagType } from '../text'
+import { Button, ButtonStatus } from '../button'
+import { Text, TextTagType } from '../text'
 
 const DEFAULT_MAX_CHAR_SIZE = 180
 
@@ -18,7 +18,7 @@ interface ParagraphState {
   readonly isExpanded: boolean
 }
 
-class Paragraph extends PureComponent<ParagraphProps> {
+export class Paragraph extends PureComponent<ParagraphProps> {
   static defaultProps: Partial<ParagraphProps> = {
     className: '',
     isExpandable: false,
@@ -62,5 +62,3 @@ class Paragraph extends PureComponent<ParagraphProps> {
     )
   }
 }
-
-export default Paragraph

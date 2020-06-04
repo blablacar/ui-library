@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 const CarpoolIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 28 16">
@@ -20,7 +20,7 @@ const CarpoolIcon = (props: Icon) => (
   </BaseIcon>
 )
 
-export const StyledCarpoolIcon = styled(CarpoolIcon)`
+const StyledCarpoolIcon = styled(CarpoolIcon)`
   & path,
   & circle {
     color: ${props => (props.isDisabled ? color.gray : 'currentColor')};
@@ -31,4 +31,5 @@ StyledCarpoolIcon.defaultProps = {
   ...BaseIconDefaultProps,
 }
 
+export { StyledCarpoolIcon as CarpoolIcon }
 export default StyledCarpoolIcon

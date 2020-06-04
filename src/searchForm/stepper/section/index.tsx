@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { sectionBaseStyle } from '../../../searchForm/baseStyles'
-import StepperSection from './StepperSection'
+import { StepperSection } from './StepperSection'
 
 const StyledStepperSection = styled(StepperSection)`
   & {
@@ -9,4 +9,5 @@ const StyledStepperSection = styled(StepperSection)`
   }
 `
 
+export { StyledStepperSection as StepperSection }
 export default StyledStepperSection

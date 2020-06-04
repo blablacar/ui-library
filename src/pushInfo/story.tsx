@@ -3,9 +3,9 @@ import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
-import ProximityIcon from '../icon/proximityIcon'
-import Section from '../layout/section/baseSection'
-import PushInfo from './index'
+import { ProximityIcon } from '../icon/proximityIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { PushInfo } from './index'
 
 const stories = storiesOf('Widgets|PushInfo', module)
 stories.addDecorator(withKnobs)

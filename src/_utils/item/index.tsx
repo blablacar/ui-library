@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, space } from '../branding'
-import Item from './Item'
+import { Item } from './Item'
 
 const StyledItem = styled(Item)`
   & {
@@ -112,4 +112,5 @@ const StyledItem = styled(Item)`
 `
 
 export { ItemStatus } from './Item'
+export { StyledItem as Item }
 export default StyledItem

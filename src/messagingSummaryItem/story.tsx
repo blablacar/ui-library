@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import ChevronIcon from '../icon/chevronIcon'
-import Section from '../layout/section/baseSection'
-import MessagingSummaryItem from './index'
+import { ChevronIcon } from '../icon/chevronIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { MessagingSummaryItem } from './index'
 
 const stories = storiesOf('Widgets|MessagingSummaryItem', module)
 stories.addDecorator(withKnobs)

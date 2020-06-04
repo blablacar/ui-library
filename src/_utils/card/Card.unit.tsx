@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Card from './Card'
+import { Card } from './Card'
 
 describe('Card component', () => {
   it('Should wrap in a li tag and have the base class', () => {

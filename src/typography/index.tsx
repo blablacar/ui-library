@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import Text from './Text'
+import { Text } from './Text'
 
 const StyledText = styled(Text)`
   & {
@@ -9,4 +9,5 @@ const StyledText = styled(Text)`
   }
 `
 
+export { StyledText as Text }
 export default StyledText

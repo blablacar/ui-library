@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from '../layout/section/baseSection'
-import Snackbar from '../snackbar'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Snackbar } from '../snackbar'
 
 const stories = storiesOf('Widgets|Snackbar', module)
 stories.addDecorator(withKnobs)

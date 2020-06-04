@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import TabsSection from './index'
+import { TabsSection } from './index'
 
 const tabs = {
   activeTabId: 'tab1',

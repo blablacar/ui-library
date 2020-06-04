@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import BlankSeparator from './BlankSeparator'
+import { BlankSeparator } from './BlankSeparator'
 
 describe('BlankSeparator', () => {
   it('Should render the BlankSeparator properly', () => {

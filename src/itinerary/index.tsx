@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, font, space } from '../_utils/branding'
-import Itinerary from './Itinerary'
+import { Itinerary } from './Itinerary'
 
 const distanceFromHeight = '48px'
 const totalTimeWidth = `${Math.ceil(
@@ -104,4 +104,5 @@ const StyledItinerary = styled(Itinerary)`
 `
 
 export { ItineraryProps } from './Itinerary'
+export { StyledItinerary as Itinerary }
 export default StyledItinerary

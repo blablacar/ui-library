@@ -12,7 +12,7 @@ export interface TopBarProps {
   readonly innerWrapperClassName?: string
 }
 
-const TopBar = ({
+export const TopBar = ({
   className,
   leftItem,
   rightItem,
@@ -65,5 +65,3 @@ const TopBar = ({
     </header>
   )
 }
-
-export default TopBar
