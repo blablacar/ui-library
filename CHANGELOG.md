@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v34.3.0 (05/06/2020)
+
 - **[FIX]** Clickable `Item` always uses cursor pointer style.
 - **[UPDATE]** Add onClick callback to `ItemEdtableInfo` widget.
-[...]
 
 # v34.2.0 (02/06/2020)
 
