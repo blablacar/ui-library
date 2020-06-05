@@ -20,4 +20,4 @@ export const GiftIcon = (props: Icon) => (
 
 GiftIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(GiftIcon)
+export default GiftIcon

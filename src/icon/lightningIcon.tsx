@@ -18,4 +18,4 @@ export const LightningIcon = (props: Icon) => (
 
 LightningIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(LightningIcon)
+export default LightningIcon

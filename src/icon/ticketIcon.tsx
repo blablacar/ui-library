@@ -21,4 +21,4 @@ export const TicketIcon = (props: Icon) => (
 
 TicketIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(TicketIcon)
+export default TicketIcon

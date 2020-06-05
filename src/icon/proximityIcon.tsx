@@ -14,4 +14,4 @@ export const ProximityIcon = (props: Icon) => (
 
 ProximityIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ProximityIcon)
+export default ProximityIcon

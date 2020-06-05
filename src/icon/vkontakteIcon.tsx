@@ -20,4 +20,4 @@ VkontakteIcon.defaultProps = {
   iconColor: color.vkBrand,
 }
 
-export default React.memo(VkontakteIcon)
+export default VkontakteIcon

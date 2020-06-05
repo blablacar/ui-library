@@ -16,4 +16,4 @@ export const MailIcon = (props: Icon) => (
 
 MailIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(MailIcon)
+export default MailIcon

@@ -15,4 +15,4 @@ export const ClockIcon = (props: Icon) => (
 
 ClockIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ClockIcon)
+export default ClockIcon

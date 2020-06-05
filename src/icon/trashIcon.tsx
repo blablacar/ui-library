@@ -16,4 +16,4 @@ export const TrashIcon = (props: Icon) => (
 
 TrashIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(TrashIcon)
+export default TrashIcon

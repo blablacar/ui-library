@@ -15,4 +15,4 @@ export const AirConditioning = (props: IconPropsWithStatus) => (
 
 AirConditioning.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(AirConditioning)
+export default AirConditioning

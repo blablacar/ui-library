@@ -28,4 +28,4 @@ export const InstagramIcon = (props: Icon) => (
 
 InstagramIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(InstagramIcon)
+export default InstagramIcon

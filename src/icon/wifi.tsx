@@ -15,4 +15,4 @@ export const Wifi = (props: IconPropsWithStatus) => (
 
 Wifi.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Wifi)
+export default Wifi

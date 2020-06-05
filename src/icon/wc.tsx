@@ -15,4 +15,4 @@ export const WC = (props: IconPropsWithStatus) => (
 
 WC.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(WC)
+export default WC

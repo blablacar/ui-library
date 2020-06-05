@@ -94,4 +94,4 @@ StyledCheckIcon.defaultProps = {
   thin: false,
 }
 
-export default React.memo(StyledCheckIcon)
+export default StyledCheckIcon

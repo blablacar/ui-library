@@ -20,4 +20,4 @@ export const MinusIcon = (props: Icon) => (
 
 MinusIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(MinusIcon)
+export default MinusIcon

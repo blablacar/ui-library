@@ -31,4 +31,4 @@ StyledCarpoolIcon.defaultProps = {
   ...BaseIconDefaultProps,
 }
 
-export default React.memo(StyledCarpoolIcon)
+export default StyledCarpoolIcon

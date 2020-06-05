@@ -15,4 +15,4 @@ export const QuestionIcon = (props: Icon) => (
 
 QuestionIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(QuestionIcon)
+export default QuestionIcon

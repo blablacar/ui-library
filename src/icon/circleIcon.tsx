@@ -104,4 +104,4 @@ StyledCircleIcon.defaultProps = {
   innerDisc: false,
 }
 
-export default React.memo(StyledCircleIcon)
+export default StyledCircleIcon

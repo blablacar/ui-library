@@ -15,4 +15,4 @@ export const Audio = (props: IconPropsWithStatus) => (
 
 Audio.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Audio)
+export default Audio

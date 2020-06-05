@@ -15,4 +15,4 @@ export const DoubleArrowIcon = (props: Icon) => (
 
 DoubleArrowIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(DoubleArrowIcon)
+export default DoubleArrowIcon

@@ -25,4 +25,4 @@ export const ComfortIcon = (props: Icon) => (
 
 ComfortIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ComfortIcon)
+export default ComfortIcon

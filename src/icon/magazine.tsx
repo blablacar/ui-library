@@ -28,4 +28,4 @@ export const Magazine = (props: IconPropsWithStatus) => (
 
 Magazine.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Magazine)
+export default Magazine

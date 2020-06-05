@@ -15,4 +15,4 @@ export const Crew = (props: IconPropsWithStatus) => (
 
 Crew.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Crew)
+export default Crew

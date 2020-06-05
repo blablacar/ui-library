@@ -37,4 +37,4 @@ MyRidesIcon.defaultProps = {
   active: false,
 }
 
-export default React.memo(MyRidesIcon)
+export default MyRidesIcon

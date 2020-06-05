@@ -14,4 +14,4 @@ export const ZoomOutIcon = (props: Icon) => (
 
 ZoomOutIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ZoomOutIcon)
+export default ZoomOutIcon

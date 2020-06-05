@@ -15,4 +15,4 @@ export const PinterestIcon = (props: Icon) => (
 
 PinterestIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(PinterestIcon)
+export default PinterestIcon

@@ -16,4 +16,4 @@ export const Child = (props: IconPropsWithStatus) => (
 
 Child.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Child)
+export default Child

@@ -14,4 +14,4 @@ export const HomeIcon = (props: Icon) => (
 
 HomeIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(HomeIcon)
+export default HomeIcon

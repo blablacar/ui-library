@@ -15,4 +15,4 @@ export const ShareIcon = (props: Icon) => (
 
 ShareIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ShareIcon)
+export default ShareIcon

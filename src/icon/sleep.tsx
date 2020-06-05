@@ -15,4 +15,4 @@ export const Sleep = (props: IconPropsWithStatus) => (
 
 Sleep.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Sleep)
+export default Sleep

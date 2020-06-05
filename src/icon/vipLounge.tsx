@@ -15,4 +15,4 @@ export const VipLounge = (props: IconPropsWithStatus) => (
 
 VipLounge.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(VipLounge)
+export default VipLounge

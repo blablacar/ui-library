@@ -20,4 +20,4 @@ export const RotateIcon = (props: Icon) => (
 
 RotateIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(RotateIcon)
+export default RotateIcon

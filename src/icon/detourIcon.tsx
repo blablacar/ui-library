@@ -26,4 +26,4 @@ export const DetourIcon = (props: Icon) => (
 
 DetourIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(DetourIcon)
+export default DetourIcon

@@ -15,4 +15,4 @@ export const BikeArea = (props: IconPropsWithStatus) => (
 
 BikeArea.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(BikeArea)
+export default BikeArea

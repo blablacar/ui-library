@@ -15,4 +15,4 @@ export const TwitterIcon = (props: Icon) => (
 
 TwitterIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(TwitterIcon)
+export default TwitterIcon

@@ -14,4 +14,4 @@ export const ProfileIcon = (props: Icon) => (
 
 ProfileIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ProfileIcon)
+export default ProfileIcon

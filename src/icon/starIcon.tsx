@@ -39,4 +39,4 @@ StarIcon.defaultProps = {
   fill: 0,
 }
 
-export default React.memo(StarIcon)
+export default StarIcon

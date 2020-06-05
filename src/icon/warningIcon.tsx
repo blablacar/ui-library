@@ -16,4 +16,4 @@ export const WarningIcon = (props: Icon) => (
 
 WarningIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(WarningIcon)
+export default WarningIcon

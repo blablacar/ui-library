@@ -14,4 +14,4 @@ export const CheckShieldIcon = (props: Icon) => (
 
 CheckShieldIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CheckShieldIcon)
+export default CheckShieldIcon

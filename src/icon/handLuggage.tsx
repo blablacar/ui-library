@@ -15,4 +15,4 @@ export const HandLuggage = (props: IconPropsWithStatus) => (
 
 HandLuggage.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(HandLuggage)
+export default HandLuggage

@@ -58,7 +58,7 @@ stories.add(
   () => {
     const iconList = Object.entries(icons).map(([name, Component]) => (
       <div key={name} style={styles.iconItem}>
-        <Component {...Component.type.defaultProps} />
+        <Component {...Component.defaultProps} />
         <br />
         {name}
       </div>
@@ -71,6 +71,6 @@ stories.add(
 
 Object.entries(icons).forEach(([name, Component]) => {
   stories.add(name.replace('Icon', ''), () => (
-    <Component {...createIconKnobs(Component.type.defaultProps)} />
+    <Component {...createIconKnobs(Component.defaultProps)} />
   ))
 })

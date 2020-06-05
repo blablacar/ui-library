@@ -18,4 +18,4 @@ FacebookIcon.defaultProps = {
   iconColor: color.facebookBrand,
 }
 
-export default React.memo(FacebookIcon)
+export default FacebookIcon

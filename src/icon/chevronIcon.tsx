@@ -29,4 +29,4 @@ ChevronIcon.defaultProps = {
   left: false,
 }
 
-export default React.memo(ChevronIcon)
+export default ChevronIcon

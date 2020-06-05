@@ -17,4 +17,4 @@ export const CrossHairIcon = (props: Icon) => (
 
 CrossHairIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CrossHairIcon)
+export default CrossHairIcon

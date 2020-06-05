@@ -15,4 +15,4 @@ export const DepartureIcon = (props: Icon) => (
 
 DepartureIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(DepartureIcon)
+export default DepartureIcon

@@ -15,4 +15,4 @@ export const WheelchairIcon = (props: IconPropsWithStatus) => (
 
 WheelchairIcon.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(WheelchairIcon)
+export default WheelchairIcon

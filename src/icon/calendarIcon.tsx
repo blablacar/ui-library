@@ -29,4 +29,4 @@ export const CalendarIcon = (props: Icon) => (
 
 CalendarIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(CalendarIcon)
+export default CalendarIcon

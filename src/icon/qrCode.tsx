@@ -15,4 +15,4 @@ export const QrCode = (props: IconPropsWithStatus) => (
 
 QrCode.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(QrCode)
+export default QrCode

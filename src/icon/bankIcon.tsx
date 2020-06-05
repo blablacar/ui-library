@@ -19,4 +19,4 @@ export const BankIcon = (props: Icon) => (
 
 BankIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(BankIcon)
+export default BankIcon

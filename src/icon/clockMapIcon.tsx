@@ -14,4 +14,4 @@ export const ClockMapIcon = (props: Icon) => (
 
 ClockMapIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(ClockMapIcon)
+export default ClockMapIcon

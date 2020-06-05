@@ -15,4 +15,4 @@ export const Blanket = (props: IconPropsWithStatus) => (
 
 Blanket.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(Blanket)
+export default Blanket

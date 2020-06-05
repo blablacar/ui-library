@@ -23,4 +23,4 @@ PinIcon.defaultProps = {
   strokeColor: color.lightMidnightGreen,
 }
 
-export default React.memo(PinIcon)
+export default PinIcon

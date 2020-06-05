@@ -15,4 +15,4 @@ export const SeatBelt = (props: IconPropsWithStatus) => (
 
 SeatBelt.defaultProps = StatusIcon.defaultProps
 
-export default React.memo(SeatBelt)
+export default SeatBelt

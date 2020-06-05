@@ -33,4 +33,4 @@ export const IdCheckIcon = (props: Icon) => (
 
 IdCheckIcon.defaultProps = BaseIconDefaultProps
 
-export default React.memo(IdCheckIcon)
+export default IdCheckIcon
