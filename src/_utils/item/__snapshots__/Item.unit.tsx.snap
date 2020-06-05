@@ -103,6 +103,7 @@ exports[`Item Should not have changed 1`] = `
 }
 
 .c0.kirk-item--clickable:hover {
+  cursor: pointer;
   background: #EDEDED;
 }
 
