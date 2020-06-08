@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import Item from '../_utils/item'
-import Button, { ButtonStatus } from '../button'
-import InfoIcon from '../icon/infoIcon'
-import QuestionIcon from '../icon/questionIcon'
+import { Item } from '../_utils/item'
+import { Button, ButtonStatus } from '../button'
+import { InfoIcon } from '../icon/infoIcon'
+import { QuestionIcon } from '../icon/questionIcon'
 import { TextDisplayType } from '../text'
 
 export interface DisclaimerProps {
@@ -26,7 +26,7 @@ const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => (
   </Button>
 )
 
-const Disclaimer = ({
+export const Disclaimer = ({
   useInfoIcon = true,
   isCaption = true,
   children,
@@ -39,5 +39,3 @@ const Disclaimer = ({
     rightAddon={deprecatedHelpUrl ? deprecatedHelpButtonIcon(deprecatedHelpUrl) : null}
   />
 )
-
-export default Disclaimer

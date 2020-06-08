@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import ItemChoice, { ItemChoiceStatus } from '../itemChoice'
-import AutoCompleteList from './AutoCompleteList'
+import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
+import { AutoCompleteList } from './AutoCompleteList'
 
 const fakeItems = [
   { label: 'title1', labelInfo: 'description1' },

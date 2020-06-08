@@ -11,7 +11,7 @@ export interface MediaSectionProps {
  * The media section: Renders a fullscreen div without margins on small devices
  * and a standard sized "section" on large ones
  */
-const MediaSection = (props: MediaSectionProps) => {
+export const MediaSection = (props: MediaSectionProps) => {
   const { children, className, role = 'presentation' } = props
 
   return (
@@ -20,5 +20,3 @@ const MediaSection = (props: MediaSectionProps) => {
     </div>
   )
 }
-
-export default MediaSection

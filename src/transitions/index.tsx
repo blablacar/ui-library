@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { transition } from '../_utils/branding'
-import Transitions from './Transitions'
+import { Transitions } from './Transitions'
 
 const StyledTransitions = styled(Transitions)`
   &.fade {
@@ -41,5 +41,6 @@ const StyledTransitions = styled(Transitions)`
   }
 `
 
-export { AnimationType, CustomTransitionProps } from './Transitions'
+export { AnimationType, TransitionsProps } from './Transitions'
+export { StyledTransitions as Transitions }
 export default StyledTransitions

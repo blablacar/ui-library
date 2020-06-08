@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import AutoComplete from '../../../autoComplete'
-import Bullet from '../../../bullet'
-import AutoCompleteOverlay from './AutoCompleteOverlay'
+import { AutoComplete } from '../../../autoComplete'
+import { Bullet } from '../../../bullet'
+import { AutoCompleteOverlay } from './AutoCompleteOverlay'
 
 describe('AutoCompleteOverlay', () => {
   it('should contains an AutoComplete component', () => {

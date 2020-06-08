@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Bullet, { BulletTypes } from '../../bullet'
-import Proximity from '../../proximity'
+import { Bullet, BulletTypes } from '../../bullet'
+import { Proximity } from '../../proximity'
 import { Place } from '../place'
-import ItineraryLocation from './ItineraryLocation'
+import { ItineraryLocation } from './ItineraryLocation'
 
 const place: Place = {
   time: '09:00',

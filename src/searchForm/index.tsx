@@ -9,7 +9,7 @@ import {
   shadow,
   space,
 } from '../_utils/branding'
-import SearchForm from './SearchForm'
+import { SearchForm } from './SearchForm'
 
 const formWidth = '928px'
 const formHeight = '56px'
@@ -234,5 +234,6 @@ const StyledSearchForm = styled(SearchForm)`
   }
 `
 
-export default StyledSearchForm
 export * from './SearchForm'
+export { StyledSearchForm as SearchForm }
+export default StyledSearchForm

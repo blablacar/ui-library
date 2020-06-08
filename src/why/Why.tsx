@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
-import QuestionIcon from '../icon/questionIcon'
+import { QuestionIcon } from '../icon/questionIcon'
 
 export interface WhyProps {
   readonly children: string
@@ -11,7 +11,7 @@ export interface WhyProps {
   readonly onClick?: () => void
 }
 
-const Why = ({ className, children, title, onClick }: WhyProps) => {
+export const Why = ({ className, children, title, onClick }: WhyProps) => {
   const { focusVisible, onFocus, onBlur } = useFocusVisible()
   return (
     <button
@@ -33,5 +33,3 @@ const Why = ({ className, children, title, onClick }: WhyProps) => {
     </button>
   )
 }
-
-export default Why

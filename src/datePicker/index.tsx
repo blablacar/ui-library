@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, space } from '../_utils/branding'
-import DatePicker from './DatePicker'
+import { DatePicker } from './DatePicker'
 
 const horizontalMonthsGutter = parseInt(space.xl, 10)
 
@@ -157,4 +157,5 @@ const StyledDatePicker = styled(DatePicker)`
 `
 
 export { DatePickerProps, DatePickerOrientation } from './DatePicker'
+export { StyledDatePicker as DatePicker }
 export default StyledDatePicker

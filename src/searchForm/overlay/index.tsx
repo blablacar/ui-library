@@ -8,7 +8,7 @@ import {
   TRANSITION_OVERLAY_CLASS_NAME,
   transitionOverlayTimingFunction,
 } from '../transitionConfig'
-import Overlay from './Overlay'
+import { Overlay } from './Overlay'
 
 /**
  *  Basic styles & transitions that apply on all overlays
@@ -47,4 +47,5 @@ const StyledOverlay = styled(Overlay)`
     }
   }
 `
+export { StyledOverlay as Overlay }
 export default StyledOverlay

@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import { canUseEventListeners } from 'exenv'
 
-import Bullet, { BulletTypes } from '../../bullet'
-import Text, { TextDisplayType, TextTagType } from '../../text'
+import { Bullet, BulletTypes } from '../../bullet'
+import { Text, TextDisplayType, TextTagType } from '../../text'
 import { color } from '../branding'
-import ItineraryLocation, { computeKeyFromPlace } from '../itineraryLocation'
-import KEYCODES from '../keycodes'
+import { computeKeyFromPlace, ItineraryLocation } from '../itineraryLocation'
+import { KEYCODES } from '../keycodes'
 import { Place } from '../place'
 
 export interface ItineraryCollapsibleProps {
@@ -22,7 +22,7 @@ interface ItineraryCollapsibleState {
 
 const collapsibleLocationSize = 32 // default size of a collapsible ItineraryLocation
 
-export default class ItineraryCollapsible extends PureComponent<ItineraryCollapsibleProps> {
+export class ItineraryCollapsible extends PureComponent<ItineraryCollapsibleProps> {
   static defaultProps: Partial<ItineraryCollapsibleProps> = {
     className: '',
     label: '',

@@ -6,8 +6,6 @@ export interface MarketingMessageProps {
   readonly className?: string
 }
 
-const MarketingMessage = ({ children, className }: MarketingMessageProps) => (
+export const MarketingMessage = ({ children, className }: MarketingMessageProps) => (
   <div className={cc(className)}>{children}</div>
 )
-
-export default MarketingMessage

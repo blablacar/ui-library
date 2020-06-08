@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Button, { ButtonStatus } from '../../../button'
-import Column from '../../../layout/column'
-import Columns from '../../../layout/columns'
-import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
-import Text, { TextTagType } from '../../../text'
-import Title from '../../../title'
+import { Button, ButtonStatus } from '../../../button'
+import { Column } from '../../../layout/column'
+import { Columns } from '../../../layout/columns'
+import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
+import { Text, TextTagType } from '../../../text'
+import { Title } from '../../../title'
 
 export interface ColumnedContentSectionProps {
   readonly className?: string
@@ -130,7 +130,7 @@ const renderColumnContent = (columnContent: ColumnContent, index: string): JSX.E
 /**
  * A specialized section which shows some marketing content in columns (usually 3).
  */
-const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
+export const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
   const { className, title, topLinkLabel, topLinkHref, columnContentList } = props
   const showTopLink = Boolean(topLinkLabel && topLinkHref)
 
@@ -161,5 +161,3 @@ const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
     </BaseSection>
   )
 }
-
-export default ColumnedContentSection

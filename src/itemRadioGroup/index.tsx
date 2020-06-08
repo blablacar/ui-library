@@ -2,7 +2,7 @@ import React, { cloneElement, PureComponent } from 'react'
 
 import { OnChangeParameters } from '../_utils/onChange'
 import { ItemRadioProps, ItemRadioStatus } from '../itemRadio/ItemRadio'
-import ItemsList from '../itemsList'
+import { ItemsList } from '../itemsList'
 
 export interface ItemRadioGroupProps {
   readonly name: string
@@ -21,7 +21,7 @@ interface ItemRadioGroupState {
   value: string | number | boolean
 }
 
-class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupState> {
+export class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadioGroupState> {
   static defaultProps: Partial<ItemRadioGroupProps> = {
     value: '',
     className: '',

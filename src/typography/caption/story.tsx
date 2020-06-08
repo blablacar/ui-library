@@ -3,21 +3,23 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../../_utils/branding'
-import Section from '../../layout/section/baseSection'
-import TextBody from './index'
+import { BaseSection as Section } from '../../layout/section/baseSection'
+import { TextCaption } from './index'
 
 const stories = storiesOf('Brand|typography', module)
 stories.addDecorator(withKnobs)
 
-stories.add('TextBody', () => (
+stories.add('TextCaption', () => (
   <Section>
     <h1>
-      <TextBody isInverted={boolean('isInverted', false)}>
+      <TextCaption isInverted={boolean('isInverted', false)}>
         {text('Text1', 'The quick\n brown fox jumps\n over the lazy\n dog')}
-      </TextBody>
+      </TextCaption>
     </h1>
     <h1 style={{ backgroundColor: color.blue }}>
-      <TextBody isInverted>{text('Text2', 'The quick brown fox jumps over the lazy dog')}</TextBody>
+      <TextCaption isInverted>
+        {text('Text2', 'The quick brown fox jumps over the lazy dog')}
+      </TextCaption>
     </h1>
   </Section>
 ))

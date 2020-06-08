@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { space } from '../../../_utils/branding'
 import { overlayBaseStyle } from '../../../searchForm/baseStyles'
-import DatePickerOverlay from './DatePickerOverlay'
+import { DatePickerOverlay } from './DatePickerOverlay'
 
 const StyledDatePickerOverlay = styled(DatePickerOverlay)`
   & {
@@ -19,4 +19,5 @@ const StyledDatePickerOverlay = styled(DatePickerOverlay)`
 `
 
 export { DatePickerOverlayProps } from './DatePickerOverlay'
+export { StyledDatePickerOverlay as DatePickerOverlay }
 export default StyledDatePickerOverlay

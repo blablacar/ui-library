@@ -35,7 +35,7 @@ export interface LayoutNormalizerProps {
   readonly useLegacyNormalization?: boolean
 }
 
-const LayoutNormalizer = ({ useLegacyNormalization = true }: LayoutNormalizerProps) => {
+export const LayoutNormalizer = ({ useLegacyNormalization = true }: LayoutNormalizerProps) => {
   if (useLegacyNormalization) {
     return <LegacyLayoutNormalizationGlobalStyles />
   }

@@ -8,7 +8,7 @@ export interface BadgeProps {
   readonly ariaLabel?: string
 }
 
-const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
+export const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
   if (isEmpty(children)) {
     return null
   }
@@ -19,5 +19,3 @@ const Badge = ({ className, children, ariaLabel }: BadgeProps) => {
     </span>
   )
 }
-
-export default Badge

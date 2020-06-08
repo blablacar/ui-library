@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, radius, shadow, transition } from '../branding'
-import Card from './Card'
+import { Card } from './Card'
 
 const StyledCard = styled(Card)`
   & {
@@ -17,4 +17,5 @@ const StyledCard = styled(Card)`
   }
 `
 
+export { StyledCard as Card }
 export default StyledCard

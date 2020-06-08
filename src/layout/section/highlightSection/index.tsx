@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, responsiveBreakpoints, space } from '../../../_utils/branding'
-import HighlightSection from './highlightSection'
+import { HighlightSection } from './highlightSection'
 
 const StyledHighlightSection = styled(HighlightSection)`
   & {
@@ -27,4 +27,5 @@ const StyledHighlightSection = styled(HighlightSection)`
   }
 `
 
+export { StyledHighlightSection as HighlightSection }
 export default StyledHighlightSection

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const CrossIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -17,5 +17,4 @@ export const CrossIcon = (props: Icon) => (
 )
 
 CrossIcon.defaultProps = BaseIconDefaultProps
-
 export default CrossIcon

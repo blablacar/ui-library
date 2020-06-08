@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, transition } from '../_utils/branding'
-import DropdownButton from './DropdownButton'
+import { DropdownButton } from './DropdownButton'
 
 const StyledDropdownButton = styled(DropdownButton)`
   & {
@@ -30,4 +30,5 @@ const StyledDropdownButton = styled(DropdownButton)`
 `
 
 export { DropdownButtonProps } from './DropdownButton'
+export { StyledDropdownButton as DropdownButton }
 export default StyledDropdownButton

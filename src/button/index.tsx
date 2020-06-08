@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, font, shadow, space, transition } from '../_utils/branding'
-import Button from './Button'
+import { Button } from './Button'
 
 const borderSize = '2px'
 
@@ -177,4 +177,5 @@ const StyledButton = styled(Button)`
 `
 
 export { ButtonStatus, ButtonProps } from './Button'
+export { StyledButton as Button }
 export default StyledButton

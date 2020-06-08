@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import Hint from './Hint'
-import HintBubble from './HintBubble'
+import { Hint } from './Hint'
+import { HintBubble } from './HintBubble'
 
 const StyledHint = styled(Hint)`
   & {
@@ -24,4 +24,5 @@ const StyledHint = styled(Hint)`
 
 export { HintProps } from './Hint'
 export { HintBubblePosition } from './HintBubble'
+export { StyledHint as Hint }
 export default StyledHint

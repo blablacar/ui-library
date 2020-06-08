@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Button, { ButtonStatus } from '../button'
-import ArrowIcon from '../icon/arrowIcon'
-import Section from '../layout/section/baseSection'
-import TextField, { inputModes, inputTypes } from '../textField'
+import { Button, ButtonStatus } from '../button'
+import { ArrowIcon } from '../icon/arrowIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { inputModes, inputTypes, TextField } from '../textField'
 import readme from './specifications/textField.md'
 
 const stories = storiesOf('Widgets|TextField', module)

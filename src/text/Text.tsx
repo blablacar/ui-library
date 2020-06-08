@@ -37,7 +37,7 @@ export interface TextProps {
 const baseClassName = 'kirk-text'
 const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i
 
-const Text = ({
+export const Text = ({
   className,
   children,
   display = TextDisplayType.BODY,
@@ -65,5 +65,3 @@ const Text = ({
     </Tag>
   )
 }
-
-export default Text

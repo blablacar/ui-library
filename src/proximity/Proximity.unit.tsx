@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Proximity, { Distances } from './Proximity'
+import { Distances, Proximity } from './Proximity'
 
 it('Should highlight FAR and have a title', () => {
   const proximity = renderer

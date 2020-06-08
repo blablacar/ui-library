@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
-import Divider from './Divider'
+import { Divider } from './Divider'
 
 const StyledDivider = styled(Divider)`
   & {
@@ -21,4 +21,5 @@ const StyledDivider = styled(Divider)`
 `
 
 export { DividerProps } from './Divider'
+export { StyledDivider as Divider }
 export default StyledDivider

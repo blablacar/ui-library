@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const HourglassIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 16 21">
@@ -17,5 +17,4 @@ export const HourglassIcon = (props: Icon) => (
 )
 
 HourglassIcon.defaultProps = BaseIconDefaultProps
-
 export default HourglassIcon

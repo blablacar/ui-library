@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import Item from '../_utils/item'
-import Avatar from '../avatar'
+import { Item } from '../_utils/item'
+import { Avatar } from '../avatar'
 import { TextDisplayType } from '../text'
 
 export interface MessagingSummaryItemProps {
@@ -23,7 +23,7 @@ const generateSubLabel = (subLabel: string | JSX.Element): JSX.Element => (
   <span className="kirk-messaging-summary-item-sub-label">{subLabel}</span>
 )
 
-const MessagingSummaryItem = ({
+export const MessagingSummaryItem = ({
   className,
   url,
   pictureUrl,
@@ -50,5 +50,3 @@ const MessagingSummaryItem = ({
     />
   </Fragment>
 )
-
-export default MessagingSummaryItem

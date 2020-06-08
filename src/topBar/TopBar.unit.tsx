@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Button from '../button'
-import TopBar from './TopBar'
+import { Button } from '../button'
+import { TopBar } from './TopBar'
 
 it('should not have any modifier classes', () => {
   const topBar = shallow(<TopBar />)

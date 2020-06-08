@@ -3,9 +3,9 @@ import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs
 import { storiesOf } from '@storybook/react'
 
 import { ItemStatus } from '../_utils/item'
-import ComfortIcon from '../icon/comfortIcon'
-import Section from '../layout/section/baseSection'
-import AutoComplete, { AutocompleteItem, AutocompleteOnChange } from './index'
+import { ComfortIcon } from '../icon/comfortIcon'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'
 
 const stories = storiesOf('Widgets|AutoComplete', module)
 stories.addDecorator(withKnobs)

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-import CardsSection from './CardsSection'
+import { CardsSection } from './CardsSection'
 
 const wrapperHorizontalPadding = space.xl
 
@@ -71,4 +71,5 @@ const StyledCardsSection = styled(CardsSection)`
 `
 
 export { CardsSectionProps } from './CardsSection'
+export { StyledCardsSection as CardsSection }
 export default StyledCardsSection

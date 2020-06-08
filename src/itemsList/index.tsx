@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ItemsList from './ItemsList'
+import { ItemsList } from './ItemsList'
 
 const StyledItemsList = styled(ItemsList)`
   & {
@@ -11,4 +11,5 @@ const StyledItemsList = styled(ItemsList)`
 `
 
 export { ItemsListDivider, ItemsListProps, ItemsListChild } from './ItemsList'
+export { StyledItemsList as ItemsList }
 export default StyledItemsList

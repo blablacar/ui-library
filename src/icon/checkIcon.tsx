@@ -4,9 +4,9 @@ import cc from 'classcat'
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface CheckProps extends Icon {
+export interface CheckIconProps extends Icon {
   readonly absolute?: boolean
   readonly validate?: boolean
   readonly backgroundColor?: string
@@ -15,7 +15,7 @@ export interface CheckProps extends Icon {
 
 const defaultBackgroundColor = 'transparent'
 
-const CheckIcon = ({ absolute, validate, backgroundColor, thin, ...props }: CheckProps) => (
+const CheckIcon = ({ absolute, validate, backgroundColor, thin, ...props }: CheckIconProps) => (
   <BaseIcon
     {...props}
     iconClassName={cc([
@@ -38,7 +38,7 @@ const CheckIcon = ({ absolute, validate, backgroundColor, thin, ...props }: Chec
   </BaseIcon>
 )
 
-export const StyledCheckIcon = styled(CheckIcon)`
+const StyledCheckIcon = styled(CheckIcon)`
   & {
     background-color: ${props =>
       props.isDisabled && props.backgroundColor !== defaultBackgroundColor
@@ -94,4 +94,5 @@ StyledCheckIcon.defaultProps = {
   thin: false,
 }
 
+export { StyledCheckIcon as CheckIcon }
 export default StyledCheckIcon

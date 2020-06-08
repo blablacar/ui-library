@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, radius, space, transition } from '../_utils/branding'
-import Textfield from './TextField'
+import { TextField } from './TextField'
 
-const StyledTextfield = styled(Textfield)`
+const StyledTextfield = styled(TextField)`
   & {
     position: relative;
     box-sizing: border-box;
@@ -168,4 +168,5 @@ const StyledTextfield = styled(Textfield)`
 `
 
 export { TextFieldProps, inputTypes, inputModes } from './TextField'
+export { StyledTextfield as TextField }
 export default StyledTextfield

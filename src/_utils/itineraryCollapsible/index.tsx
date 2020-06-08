@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, font, radius, space, transition } from '../branding'
-import ItineraryCollapsible from './ItineraryCollapsible'
+import { ItineraryCollapsible } from './ItineraryCollapsible'
 
 const minHeight = '40px'
 const smallBulletPositionDifference = `${Math.ceil(
@@ -95,4 +95,5 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
   }
 `
 export { ItineraryCollapsibleProps } from './ItineraryCollapsible'
+export { StyledItineraryCollapsible as ItineraryCollapsible }
 export default StyledItineraryCollapsible

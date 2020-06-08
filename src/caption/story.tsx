@@ -2,8 +2,8 @@ import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Caption from '../caption'
-import Section from '../layout/section/baseSection'
+import { Caption } from '../caption'
+import { BaseSection as Section } from '../layout/section/baseSection'
 
 const stories = storiesOf('Widgets|Caption', module)
 stories.addDecorator(withKnobs)

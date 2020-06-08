@@ -1,12 +1,12 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Button from '../../../button'
-import Column from '../../../layout/column'
-import Columns from '../../../layout/columns'
-import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
-import SubHeader from '../../../subHeader'
-import Text, { TextTagType } from '../../../text'
+import { Button } from '../../../button'
+import { Column } from '../../../layout/column'
+import { Columns } from '../../../layout/columns'
+import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
+import { SubHeader } from '../../../subHeader'
+import { Text, TextTagType } from '../../../text'
 
 export interface MediaContentSectionProps {
   readonly className?: string
@@ -21,7 +21,7 @@ export interface MediaContentSectionProps {
 /**
  * A specialized section which show some marketing content associated with a picture.
  */
-const MediaContentSection = (props: MediaContentSectionProps) => {
+export const MediaContentSection = (props: MediaContentSectionProps) => {
   const { className, mediaUrl, title, content, buttonLabel, buttonHref, flipped } = props
   const classNames = cc([
     'kirk-media-content',
@@ -51,5 +51,3 @@ const MediaContentSection = (props: MediaContentSectionProps) => {
     </BaseSection>
   )
 }
-
-export default MediaContentSection

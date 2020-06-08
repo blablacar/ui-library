@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { color, inputBorderSize, radius, space, transition } from '../_utils/branding'
 import { selectHeight } from '../selectField/SelectField'
-import PhoneField from './PhoneField'
+import { PhoneField } from './PhoneField'
 
 const StyledPhoneField = styled(PhoneField)`
   & .kirk-phoneField-wrapper--inline {
@@ -92,4 +92,5 @@ const StyledPhoneField = styled(PhoneField)`
 `
 
 export * from './PhoneField'
+export { StyledPhoneField as PhoneField }
 export default StyledPhoneField

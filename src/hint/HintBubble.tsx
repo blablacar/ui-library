@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 import { color, fontWeight, radius, shadow, space } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import Button, { ButtonStatus } from '../button'
-import CrossIcon from '../icon/crossIcon'
+import { Button, ButtonStatus } from '../button'
+import { CrossIcon } from '../icon/crossIcon'
 
 export enum HintBubblePosition {
   ABOVE = 'above',
@@ -21,7 +21,7 @@ export interface HintBubbleProps extends A11yProps {
   position?: HintBubblePosition
 }
 
-export const HintBubble = (props: HintBubbleProps): JSX.Element => {
+const HintBubble = (props: HintBubbleProps): JSX.Element => {
   const a11yProps = pickA11yProps<HintBubbleProps>(props)
   const { title, description, closeButtonTitle, position, className, onClose } = props
   return (
@@ -42,7 +42,7 @@ export const HintBubble = (props: HintBubbleProps): JSX.Element => {
   )
 }
 
-export default styled(HintBubble)`
+const StyledHintBubble = styled(HintBubble)`
   & {
     position: relative;
     display: flex;
@@ -104,3 +104,4 @@ export default styled(HintBubble)`
     border-bottom: 8px solid ${color.midnightGreen};
   }
 `
+export { StyledHintBubble as HintBubble }

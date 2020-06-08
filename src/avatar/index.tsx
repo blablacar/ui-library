@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import Avatar from './Avatar'
+import { Avatar } from './Avatar'
 
 const StyledAvatar = styled(Avatar)`
   & {
@@ -92,4 +92,5 @@ const StyledAvatar = styled(Avatar)`
 `
 
 export { AvatarProps } from './Avatar'
+export { StyledAvatar as Avatar }
 export default StyledAvatar

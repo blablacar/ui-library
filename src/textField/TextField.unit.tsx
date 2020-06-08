@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Button from '../button'
+import { Button } from '../button'
 import { EyeIcon } from '../icon/eyeIcon'
-import TextField from './TextField'
+import { TextField } from './TextField'
 
 it('Should have the proper value.', () => {
   const wrapper = shallow(<TextField name="test" defaultValue="blabla" />)

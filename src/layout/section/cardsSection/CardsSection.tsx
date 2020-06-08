@@ -12,10 +12,8 @@ export interface CardsSectionProps {
   readonly width?: string
 }
 
-const CardsSection = ({ children, className = '' }: CardsSectionProps) => (
+export const CardsSection = ({ children, className = '' }: CardsSectionProps) => (
   <div className={cc(['kirk-cardsSection-wrapper', className])}>
     <ul className={cc(['kirk-cardsSection'])}>{children}</ul>
   </div>
 )
-
-export default CardsSection

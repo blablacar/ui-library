@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 // tslint:disable:max-line-length
 export const GiftIcon = (props: Icon) => (
@@ -19,5 +19,4 @@ export const GiftIcon = (props: Icon) => (
 )
 
 GiftIcon.defaultProps = BaseIconDefaultProps
-
 export default GiftIcon

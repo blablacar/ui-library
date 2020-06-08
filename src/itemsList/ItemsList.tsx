@@ -1,7 +1,7 @@
 import React, { Component, FunctionComponent } from 'react'
 import cc from 'classcat'
 
-import Divider from '../divider'
+import { Divider } from '../divider'
 import { ItemCheckboxProps } from '../itemCheckbox/ItemCheckbox'
 import { ItemChoiceProps } from '../itemChoice'
 import { ItemRadioProps } from '../itemRadio/ItemRadio'
@@ -22,7 +22,7 @@ export interface ItemsListProps {
   readonly role?: string
 }
 
-class ItemsList extends Component<ItemsListProps> {
+export class ItemsList extends Component<ItemsListProps> {
   static defaultProps: Partial<ItemsListProps> = {
     withSeparators: false,
     className: '',
@@ -55,5 +55,3 @@ class ItemsList extends Component<ItemsListProps> {
     )
   }
 }
-
-export default ItemsList

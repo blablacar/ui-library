@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import CheckboxIcon from './index'
+import { CheckboxIcon } from './index'
 
 describe('CheckboxIcon', () => {
   it('Should render an empty circle by default', () => {

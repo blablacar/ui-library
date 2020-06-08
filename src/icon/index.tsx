@@ -1,215 +1,106 @@
-import AirConditioningIcon from './airConditioning'
-import AloneInTheBackIcon from './aloneInTheBackIcon'
-import ArrowIcon from './arrowIcon'
-import AudioIcon from './audio'
-import AvatarIcon from './avatarIcon'
-import BanIcon from './banIcon'
-import BankIcon from './bankIcon'
-import BellIcon from './bellIcon'
-import BikeAreaIcon from './bikeArea'
-import BlanketIcon from './blanket'
-import BubbleIcon from './bubbleIcon'
-import BusIcon from './busIcon'
-import CalendarIcon from './calendarIcon'
-import CallIcon from './callIcon'
-import CarIcon from './carIcon'
-import CarpoolIcon from './carpoolIcon'
-import CheckIcon from './checkIcon'
-import CheckShieldIcon from './checkShieldIcon'
-import ChevronIcon from './chevronIcon'
-import ChildIcon from './child'
-import CircleIcon from './circleIcon'
-import ClockIcon from './clockIcon'
-import ClockMapIcon from './clockMapIcon'
-import CoinIcon from './coinIcon'
-import ComfortIcon from './comfortIcon'
-import ComfortSeatIcon from './comfortSeat'
-import CreditCardIcon from './creditCardIcon'
-import CrewIcon from './crew'
-import CrossDiscIcon from './crossDiscIcon'
-import CrosshairIcon from './crosshairIcon'
-import CrossIcon from './crossIcon'
-import DepartureIcon from './departureIcon'
-import DetourIcon from './detourIcon'
-import DirectionIcon from './directionIcon'
-import DoubleArrowIcon from './doubleArrowIcon'
-import DrinkIcon from './drink'
-import ExclamationIcon from './exclamationIcon'
-import EyeIcon from './eyeIcon'
-import FacebookIcon from './facebookIcon'
-import FlagsIcon from './flagsIcon'
-import GenericAmenityIcon from './genericAmenity'
-import GiftIcon from './giftIcon'
-import HandLuggageIcon from './handLuggage'
-import HoldLuggageIcon from './holdLuggage'
-import HomeIcon from './homeIcon'
-import HourglassIcon from './hourglassIcon'
-import IdCardVerifiedIcon from './idCardVerifiedIcon'
-import IdCheckIcon from './idCheckIcon'
-import InfoIcon from './infoIcon'
-import InstagramIcon from './instagramIcon'
-import LadyIcon from './ladyIcon'
-import LegRestIcon from './legRest'
-import LegRoomIcon from './legRoom'
-import LightIcon from './light'
-import LightningIcon from './lightningIcon'
-import LockIcon from './lockIcon'
-import MagazineIcon from './magazine'
-import MailIcon from './mailIcon'
-import MapIcon from './mapIcon'
-import MealIcon from './meal'
-import MeetingPointIcon from './meetingPoint'
-import MinusIcon from './minusIcon'
-import MusicIcon from './musicIcon'
-import MyRidesIcon from './myRides'
-import NewspaperIcon from './newspaperIcon'
-import OdnoklassnikiIcon from './odnoklassnikiIcon'
-import PetIcon from './pet'
-import PhotoIcon from './photoIcon'
-import PinIcon from './pinIcon'
-import PinterestIcon from './pinterestIcon'
-import PlugUsbSocketIcon from './plugUsbSocket'
-import PlusIcon from './plusIcon'
-import PriorityServiceIcon from './priorityService'
-import ProfileIcon from './profileIcon'
-import ProximityIcon from './proximityIcon'
-import QrCodeIcon from './qrCode'
-import QuestionIcon from './questionIcon'
-import QuietIcon from './quiet'
-import RecliningSeatIcon from './recliningSeat'
-import RotateIcon from './rotateIcon'
-import SearchIcon from './searchIcon'
-import SeatBeltIcon from './seatBelt'
-import SeatSlidingIcon from './seatSliding'
-import SeatWithTableIcon from './seatWithTable'
-import SendIcon from './sendIcon'
-import SendMessageIcon from './sendMessageIcon'
-import ShareIcon from './shareIcon'
-import SleepIcon from './sleep'
-import SmokeIcon from './smokeIcon'
-import SnackIcon from './snack'
-import SpeakIcon from './speakIcon'
-import StandartSeatIcon from './standardSeat'
-import StarIcon from './starIcon'
-import TicketIcon from './ticketIcon'
-import TrashIcon from './trashIcon'
-import TwitterIcon from './twitterIcon'
-import VideoSystemIcon from './videoSystem'
-import VipLoungeIcon from './vipLounge'
-import VkontakteIcon from './vkontakteIcon'
-import WarningIcon from './warningIcon'
-import WcIcon from './wc'
-import WheelchairIcon from './wheelchair'
-import WifiIcon from './wifi'
-import YoutubeIcon from './youtubeIcon'
-import ZoomInIcon from './zoomIn'
-import ZoomOutIcon from './zoomOut'
-
-export {
-  AirConditioningIcon,
-  AloneInTheBackIcon,
-  ArrowIcon,
-  AudioIcon,
-  AvatarIcon,
-  BanIcon,
-  BankIcon,
-  BellIcon,
-  BikeAreaIcon,
-  BlanketIcon,
-  BubbleIcon,
-  BusIcon,
-  CalendarIcon,
-  CallIcon,
-  CarIcon,
-  CarpoolIcon,
-  CheckIcon,
-  CheckShieldIcon,
-  ChevronIcon,
-  ChildIcon,
-  CircleIcon,
-  ClockIcon,
-  ClockMapIcon,
-  CoinIcon,
-  ComfortIcon,
-  ComfortSeatIcon,
-  CreditCardIcon,
-  CrewIcon,
-  CrossDiscIcon,
-  CrosshairIcon,
-  CrossIcon,
-  DepartureIcon,
-  DetourIcon,
-  DirectionIcon,
-  DoubleArrowIcon,
-  DrinkIcon,
-  ExclamationIcon,
-  EyeIcon,
-  FacebookIcon,
-  FlagsIcon,
-  GenericAmenityIcon,
-  GiftIcon,
-  HandLuggageIcon,
-  HoldLuggageIcon,
-  HomeIcon,
-  HourglassIcon,
-  IdCardVerifiedIcon,
-  IdCheckIcon,
-  InfoIcon,
-  InstagramIcon,
-  LadyIcon,
-  LegRestIcon,
-  LegRoomIcon,
-  LightIcon,
-  LightningIcon,
-  LockIcon,
-  MagazineIcon,
-  MailIcon,
-  MapIcon,
-  MealIcon,
-  MeetingPointIcon,
-  MinusIcon,
-  MusicIcon,
-  MyRidesIcon,
-  NewspaperIcon,
-  OdnoklassnikiIcon,
-  PetIcon,
-  PhotoIcon,
-  PinIcon,
-  PinterestIcon,
-  PlugUsbSocketIcon,
-  PlusIcon,
-  PriorityServiceIcon,
-  ProfileIcon,
-  ProximityIcon,
-  QrCodeIcon,
-  QuestionIcon,
-  QuietIcon,
-  RecliningSeatIcon,
-  RotateIcon,
-  SearchIcon,
-  SeatBeltIcon,
-  SeatSlidingIcon,
-  SeatWithTableIcon,
-  SendIcon,
-  SendMessageIcon,
-  ShareIcon,
-  SleepIcon,
-  SmokeIcon,
-  SnackIcon,
-  SpeakIcon,
-  StandartSeatIcon,
-  StarIcon,
-  TicketIcon,
-  TrashIcon,
-  TwitterIcon,
-  VideoSystemIcon,
-  VipLoungeIcon,
-  VkontakteIcon,
-  WarningIcon,
-  WcIcon,
-  WheelchairIcon,
-  WifiIcon,
-  YoutubeIcon,
-  ZoomInIcon,
-  ZoomOutIcon,
-}
+export { AirConditioningIcon } from './airConditioning'
+export { AloneInTheBackIcon } from './aloneInTheBackIcon'
+export { ArrowIcon } from './arrowIcon'
+export { AudioIcon } from './audio'
+export { AvatarIcon } from './avatarIcon'
+export { BanIcon } from './banIcon'
+export { BankIcon } from './bankIcon'
+export { BellIcon } from './bellIcon'
+export { BikeAreaIcon } from './bikeArea'
+export { BlanketIcon } from './blanket'
+export { BubbleIcon } from './bubbleIcon'
+export { BusIcon } from './busIcon'
+export { CalendarIcon } from './calendarIcon'
+export { CallIcon } from './callIcon'
+export { CarIcon } from './carIcon'
+export { CarpoolIcon } from './carpoolIcon'
+export { CheckIcon } from './checkIcon'
+export { CheckShieldIcon } from './checkShieldIcon'
+export { ChevronIcon } from './chevronIcon'
+export { ChildIcon } from './child'
+export { CircleIcon } from './circleIcon'
+export { ClockIcon } from './clockIcon'
+export { ClockMapIcon } from './clockMapIcon'
+export { CoinIcon } from './coinIcon'
+export { ComfortIcon } from './comfortIcon'
+export { ComfortSeatIcon } from './comfortSeat'
+export { CreditCardIcon } from './creditCardIcon'
+export { CrewIcon } from './crew'
+export { CrossDiscIcon } from './crossDiscIcon'
+export { CrosshairIcon } from './crosshairIcon'
+export { CrossIcon } from './crossIcon'
+export { DepartureIcon } from './departureIcon'
+export { DetourIcon } from './detourIcon'
+export { DirectionIcon } from './directionIcon'
+export { DoubleArrowIcon } from './doubleArrowIcon'
+export { DrinkIcon } from './drink'
+export { ExclamationIcon } from './exclamationIcon'
+export { EyeIcon } from './eyeIcon'
+export { FacebookIcon } from './facebookIcon'
+export { FlagsIcon } from './flagsIcon'
+export { GenericAmenityIcon } from './genericAmenity'
+export { GiftIcon } from './giftIcon'
+export { HandLuggageIcon } from './handLuggage'
+export { HoldLuggageIcon } from './holdLuggage'
+export { HomeIcon } from './homeIcon'
+export { HourglassIcon } from './hourglassIcon'
+export { IdCardVerifiedIcon } from './idCardVerifiedIcon'
+export { IdCheckIcon } from './idCheckIcon'
+export { InfoIcon } from './infoIcon'
+export { InstagramIcon } from './instagramIcon'
+export { LadyIcon } from './ladyIcon'
+export { LegRestIcon } from './legRest'
+export { LegRoomIcon } from './legRoom'
+export { LightIcon } from './light'
+export { LightningIcon } from './lightningIcon'
+export { LockIcon } from './lockIcon'
+export { MagazineIcon } from './magazine'
+export { MailIcon } from './mailIcon'
+export { MapIcon } from './mapIcon'
+export { MealIcon } from './meal'
+export { MeetingPointIcon } from './meetingPoint'
+export { MinusIcon } from './minusIcon'
+export { MusicIcon } from './musicIcon'
+export { MyRidesIcon } from './myRides'
+export { NewspaperIcon } from './newspaperIcon'
+export { OdnoklassnikiIcon } from './odnoklassnikiIcon'
+export { PetIcon } from './pet'
+export { PhotoIcon } from './photoIcon'
+export { PinIcon } from './pinIcon'
+export { PinterestIcon } from './pinterestIcon'
+export { PlugUsbSocketIcon } from './plugUsbSocket'
+export { PlusIcon } from './plusIcon'
+export { PriorityServiceIcon } from './priorityService'
+export { ProfileIcon } from './profileIcon'
+export { ProximityIcon } from './proximityIcon'
+export { QrCodeIcon } from './qrCode'
+export { QuestionIcon } from './questionIcon'
+export { QuietIcon } from './quiet'
+export { RecliningSeatIcon } from './recliningSeat'
+export { RotateIcon } from './rotateIcon'
+export { SearchIcon } from './searchIcon'
+export { SeatBeltIcon } from './seatBelt'
+export { SeatSlidingIcon } from './seatSliding'
+export { SeatWithTableIcon } from './seatWithTable'
+export { SendIcon } from './sendIcon'
+export { SendMessageIcon } from './sendMessageIcon'
+export { ShareIcon } from './shareIcon'
+export { SleepIcon } from './sleep'
+export { SmokeIcon } from './smokeIcon'
+export { SnackIcon } from './snack'
+export { SpeakIcon } from './speakIcon'
+export { StandardSeatIcon } from './standardSeat'
+export { StarIcon } from './starIcon'
+export { TicketIcon } from './ticketIcon'
+export { TrashIcon } from './trashIcon'
+export { TwitterIcon } from './twitterIcon'
+export { VideoSystemIcon } from './videoSystem'
+export { VipLoungeIcon } from './vipLounge'
+export { VkontakteIcon } from './vkontakteIcon'
+export { WarningIcon } from './warningIcon'
+export { WcIcon } from './wc'
+export { WheelchairIcon } from './wheelchair'
+export { WifiIcon } from './wifi'
+export { YoutubeIcon } from './youtubeIcon'
+export { ZoomInIcon } from './zoomIn'
+export { ZoomOutIcon } from './zoomOut'

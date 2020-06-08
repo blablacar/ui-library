@@ -1,17 +1,17 @@
 import React from 'react'
 
-import CheckIcon from '../../icon/checkIcon'
-import CircleIcon from '../../icon/circleIcon'
-import Loader from '../../loader'
+import { CheckIcon } from '../../icon/checkIcon'
+import { CircleIcon } from '../../icon/circleIcon'
+import { Loader } from '../../loader'
 import { color } from '../branding'
 
-interface CheckboxIconProps {
+export interface CheckboxIconProps {
   readonly isChecked?: boolean
   readonly isLoading?: boolean
   readonly isDisabled?: boolean
 }
 
-const CheckboxIcon = ({
+export const CheckboxIcon = ({
   isChecked = false,
   isLoading = false,
   isDisabled = false,

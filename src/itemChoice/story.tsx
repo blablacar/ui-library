@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import CheckIcon from '../icon/checkIcon'
-import MyRidesIcon from '../icon/myRides'
-import ItemChoice, { ItemChoiceStatus, ItemChoiceStyle } from '../itemChoice'
-import Section from '../layout/section/baseSection'
+import { CheckIcon } from '../icon/checkIcon'
+import { MyRidesIcon } from '../icon/myRides'
+import { ItemChoice, ItemChoiceStatus, ItemChoiceStyle } from '../itemChoice'
+import { BaseSection as Section } from '../layout/section/baseSection'
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemChoice', module)

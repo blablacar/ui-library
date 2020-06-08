@@ -2,14 +2,14 @@ import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 
 import { space } from '../../../_utils/branding'
-import Item from '../../../_utils/item'
+import { Item } from '../../../_utils/item'
 import { OnChangeParameters } from '../../../_utils/onChange'
 import { useFocusTrap } from '../../../_utils/useFocusTrap'
-import Button, { ButtonStatus } from '../../../button'
-import Divider from '../../../divider'
-import ChevronIcon from '../../../icon/chevronIcon'
-import Section from '../../../layout/section/baseSection'
-import Stepper, { StepperDisplay, StepperProps } from '../../../stepper'
+import { Button, ButtonStatus } from '../../../button'
+import { Divider } from '../../../divider'
+import { ChevronIcon } from '../../../icon/chevronIcon'
+import { BaseSection as Section } from '../../../layout/section/baseSection'
+import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 import { TransitionSection } from '../../baseStyles'
 
 export interface StepperSectionProps extends StepperProps {
@@ -79,5 +79,3 @@ export const StepperSection = ({
     </TransitionSection>
   )
 }
-
-export default StepperSection

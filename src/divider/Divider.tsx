@@ -5,8 +5,6 @@ export interface DividerProps {
   readonly className?: string
 }
 
-const Divider = ({ className }: DividerProps) => (
+export const Divider = ({ className }: DividerProps) => (
   <div className={cc(className)} aria-hidden="true" />
 )
-
-export default Divider

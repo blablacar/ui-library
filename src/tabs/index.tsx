@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, space, transition } from '../_utils/branding'
-import Tabs from './Tabs'
+import { Tabs } from './Tabs'
 
 const highlightHeight = '2px'
 
@@ -98,4 +98,5 @@ const StyledTabs = styled(Tabs)`
 `
 
 export { TabStatus, TabsProps, Tab } from './Tabs'
+export { StyledTabs as Tabs }
 export default StyledTabs

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-import MediaSection from './mediaSection'
+import { MediaSection } from './mediaSection'
 
 const StyledMediaSection = styled(MediaSection)`
   @media (${responsiveBreakpoints.isMediaLarge}) {
@@ -16,4 +16,5 @@ const StyledMediaSection = styled(MediaSection)`
 `
 
 export { MediaSectionProps } from './mediaSection'
+export { StyledMediaSection as MediaSection }
 export default StyledMediaSection

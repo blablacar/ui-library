@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { AutoCompleteProps } from '../../../autoComplete'
-import Bullet, { BulletTypes } from '../../../bullet'
+import { Bullet, BulletTypes } from '../../../bullet'
 
 export type AutoCompleteOverlayProps = Omit<
   AutoCompleteProps,
@@ -31,5 +31,3 @@ export const AutoCompleteOverlay = ({
     embeddedInSearchForm: true,
   })
 }
-
-export default AutoCompleteOverlay

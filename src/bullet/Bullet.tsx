@@ -15,7 +15,7 @@ export interface BulletProps {
   readonly type?: BulletTypes
 }
 
-const Bullet = ({ className, type }: BulletProps) => {
+export const Bullet = ({ className, type }: BulletProps) => {
   const baseClassName = 'kirk-bullet'
   const classNames = cc([baseClassName, `${baseClassName}--${type}`, className])
   return <div className={classNames} aria-hidden="true" />
@@ -25,5 +25,3 @@ Bullet.defaultProps = {
   className: '',
   type: BulletTypes.DEFAULT,
 }
-
-export default Bullet

@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Item from '../_utils/item'
-import Avatar from '../avatar'
-import Rating from '../rating'
+import { Item } from '../_utils/item'
+import { Avatar } from '../avatar'
+import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
-import TextBody from '../typography/body'
+import { TextBody } from '../typography/body'
 
 export interface ProfileProps {
   readonly className?: string
@@ -27,7 +27,7 @@ export interface ProfileProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-const Profile = ({
+export const Profile = ({
   className,
   ariaLabel,
   title,
@@ -79,5 +79,3 @@ const Profile = ({
     />
   )
 }
-
-export default Profile

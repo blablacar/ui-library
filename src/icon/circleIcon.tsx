@@ -4,9 +4,9 @@ import cc from 'classcat'
 import styled, { keyframes } from 'styled-components'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface CircleProps extends Icon {
+export interface CircleIconProps extends Icon {
   readonly absolute?: boolean
   readonly spinning?: boolean
   readonly thin?: boolean
@@ -16,7 +16,7 @@ export interface CircleProps extends Icon {
 const offset = 187
 const duration = '1.4s'
 
-const CircleIcon = ({ absolute, spinning, thin, innerDisc, ...props }: CircleProps) => (
+const CircleIcon = ({ absolute, spinning, thin, innerDisc, ...props }: CircleIconProps) => (
   <BaseIcon
     {...props}
     viewBox="0 0 66 66"
@@ -61,7 +61,7 @@ const rotatorKeyframes = keyframes`
     }
   `
 
-export const StyledCircleIcon = styled(CircleIcon)`
+const StyledCircleIcon = styled(CircleIcon)`
   &.spinning {
     animation: ${rotatorKeyframes} ${duration} linear infinite;
   }
@@ -104,4 +104,5 @@ StyledCircleIcon.defaultProps = {
   innerDisc: false,
 }
 
+export { StyledCircleIcon as CircleIcon }
 export default StyledCircleIcon

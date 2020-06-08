@@ -8,7 +8,7 @@ import {
   responsiveBreakpoints,
   space,
 } from '../_utils/branding'
-import Modal from './Modal'
+import { Modal } from './Modal'
 
 const StyledModal = styled(Modal)`
   &.kirk-modal-dimmer,
@@ -100,4 +100,5 @@ const StyledModal = styled(Modal)`
 `
 
 export { ModalSize, ModalProps } from './Modal'
+export { StyledModal as Modal }
 export default StyledModal

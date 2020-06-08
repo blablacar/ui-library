@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ItemChoice from '../itemChoice'
-import ItemsList, { ItemsListDivider } from './index'
+import { ItemChoice } from '../itemChoice'
+import { ItemsList, ItemsListDivider } from './index'
 
 describe('ItemsList', () => {
   it('Should render an unordered list', () => {

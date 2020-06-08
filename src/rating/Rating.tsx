@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Stars from '../stars'
+import { Stars } from '../stars'
 
 export interface RatingProps {
   className?: string
@@ -10,7 +10,7 @@ export interface RatingProps {
   children: string
 }
 
-const Rating = ({
+export const Rating = ({
   className = '',
   score = 0,
   ratings = 0,
@@ -23,5 +23,3 @@ const Rating = ({
     </span>
   </div>
 )
-
-export default Rating

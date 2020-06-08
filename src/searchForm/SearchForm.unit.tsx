@@ -5,13 +5,13 @@ import { mount, shallow } from 'enzyme'
 import '../../__mocks__/matchMedia'
 
 import { MediaSize } from '../_utils/mediaSizeProvider'
-import AutoComplete from '../autoComplete/AutoComplete'
-import TextTitle from '../typography/title'
-import AutoCompleteOverlay from './autoComplete/overlay'
-import DatePickerOverlay from './datePicker/overlay'
-import Overlay from './overlay'
-import SearchForm, { SearchFormProps } from './SearchForm'
-import StepperOverlay from './stepper/overlay'
+import { AutoComplete } from '../autoComplete/AutoComplete'
+import { TextTitle } from '../typography/title'
+import { AutoCompleteOverlay } from './autoComplete/overlay'
+import { DatePickerOverlay } from './datePicker/overlay'
+import { Overlay } from './overlay'
+import { SearchForm, SearchFormProps } from './SearchForm'
+import { StepperOverlay } from './stepper/overlay'
 
 const today = new Date().toISOString()
 

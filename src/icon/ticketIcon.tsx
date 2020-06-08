@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const TicketIcon = (props: Icon) => (
   <BaseIcon {...props} viewBox="0 0 24 15">
@@ -20,5 +20,4 @@ export const TicketIcon = (props: Icon) => (
 )
 
 TicketIcon.defaultProps = BaseIconDefaultProps
-
 export default TicketIcon

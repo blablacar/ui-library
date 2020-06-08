@@ -7,10 +7,8 @@ export interface HamburgerButtonProps {
   readonly className?: string
 }
 
-const HamburgerButton = ({ open = false, onClick, className }: HamburgerButtonProps) => (
+export const HamburgerButton = ({ open = false, onClick, className }: HamburgerButtonProps) => (
   <button className={cc([className])} aria-expanded={open} onClick={onClick}>
     <i />
   </button>
 )
-
-export default HamburgerButton

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, space } from '../branding'
-import ItineraryLocation from './ItineraryLocation'
+import { ItineraryLocation } from './ItineraryLocation'
 
 const totalTimeWidth = `${Math.ceil(
   parseInt(componentSizes.timeWidth, 10) + parseInt(componentSizes.bulletSize, 10),
@@ -90,4 +90,5 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
 `
 
 export { ItineraryLocationProps, computeKeyFromPlace } from './ItineraryLocation'
+export { StyledItineraryLocation as ItineraryLocation }
 export default StyledItineraryLocation

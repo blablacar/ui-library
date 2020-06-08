@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import { color, transition } from '../_utils/branding'
-import CheckIcon from '../icon/checkIcon'
-import CircleIcon from '../icon/circleIcon'
+import { CheckIcon } from '../icon/checkIcon'
+import { CircleIcon } from '../icon/circleIcon'
 
 const FULLSCREEN_MODE_CSS_CLASSNAME = 'kirk-loader--fullScreen'
 const INLINE_MODE_CSS_CLASSNAME = 'kirk-loader--inline'
@@ -29,7 +29,7 @@ export interface LoaderProps {
   onDoneAnimationEnd?: () => void
 }
 
-class Loader extends PureComponent<LoaderProps> {
+export class Loader extends PureComponent<LoaderProps> {
   static defaultProps: Partial<LoaderProps> = {
     className: '',
     inline: false,
@@ -95,5 +95,3 @@ class Loader extends PureComponent<LoaderProps> {
     )
   }
 }
-
-export default Loader

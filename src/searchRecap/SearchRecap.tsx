@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import ArrowIcon from '../icon/arrowIcon'
-import SearchIcon from '../icon/searchIcon'
-import Text, { TextTagType } from '../text'
-import UneditableTextField from '../uneditableTextField'
+import { ArrowIcon } from '../icon/arrowIcon'
+import { SearchIcon } from '../icon/searchIcon'
+import { Text, TextTagType } from '../text'
+import { UneditableTextField } from '../uneditableTextField'
 
 export interface SearchRecapProps {
   className?: string
@@ -16,7 +16,7 @@ export interface SearchRecapProps {
 
 export const separatorWidth: number = 14
 
-const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
+export const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
   <div className={cc(['kirk-searchRecap', className])}>
     <UneditableTextField addOn={<SearchIcon />} ellipsis>
       <Fragment>
@@ -45,5 +45,3 @@ const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
     </UneditableTextField>
   </div>
 )
-
-export default SearchRecap

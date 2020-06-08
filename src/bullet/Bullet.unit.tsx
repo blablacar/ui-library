@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Bullet, { BulletTypes } from './Bullet'
+import { Bullet, BulletTypes } from './Bullet'
 
 it('Should render a Bullet with "default" type if not specified', () => {
   const wrapper = shallow(<Bullet />)

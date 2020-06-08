@@ -2,8 +2,8 @@ import React from 'react'
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from '../layout/section/baseSection'
-import Proximity, { Distances } from './index'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { Distances, Proximity } from './index'
 
 const stories = storiesOf('Widgets|Proximity', module)
 stories.addDecorator(withKnobs)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import SuccessModal from './index'
+import { SuccessModal } from './index'
 
 const defaultProps = {
   isOpen: false,

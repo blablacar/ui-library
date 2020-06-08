@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { font, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
-import ColumnedContentSection from './columnedContentSection'
+import { ColumnedContentSection } from './columnedContentSection'
 
 const StyledColumnedContentSection = styled(ColumnedContentSection)`
   & {
@@ -88,4 +88,5 @@ export {
   ColumnedContentSectionProps,
   ColumnedSectionContentMediaKind,
 } from './columnedContentSection'
+export { StyledColumnedContentSection as ColumnedContentSection }
 export default StyledColumnedContentSection

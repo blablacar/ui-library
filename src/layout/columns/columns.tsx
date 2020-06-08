@@ -15,10 +15,8 @@ export interface ColumnsProps {
  *
  * Only <Column> are valid children of <Columns>.
  */
-const Columns = (props: ColumnsProps) => {
+export const Columns = (props: ColumnsProps) => {
   const { className, children } = props
 
   return <ul className={cc([className])}>{children}</ul>
 }
-
-export default Columns

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import AutoComplete from './AutoComplete'
+import { AutoComplete } from './AutoComplete'
 
 const StyledAutoComplete = styled(AutoComplete)`
   & {
@@ -37,4 +37,5 @@ const StyledAutoComplete = styled(AutoComplete)`
 `
 
 export * from './AutoComplete'
+export { StyledAutoComplete as AutoComplete }
 export default StyledAutoComplete

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export interface ArrowIconProps extends Icon {
   readonly right?: boolean

@@ -8,21 +8,21 @@ import { color } from '../_utils/branding'
 import { MediaSize, MediaSizeContext } from '../_utils/mediaSizeProvider'
 import { OnChangeParameters } from '../_utils/onChange'
 import { AutocompleteOnChange, AutoCompleteProps } from '../autoComplete'
-import Bullet, { BulletTypes } from '../bullet'
-import DatePicker from '../datePicker'
-import Divider from '../divider'
+import { Bullet, BulletTypes } from '../bullet'
+import { DatePicker } from '../datePicker'
+import { Divider } from '../divider'
 import { CalendarIcon } from '../icon/calendarIcon'
 import { DoubleArrowIcon } from '../icon/doubleArrowIcon'
-import SearchIcon from '../icon/searchIcon'
-import { StandardSeat } from '../icon/standardSeat'
-import TextTitle from '../typography/title'
-import AutoCompleteOverlay, { AutoCompleteOverlayProps } from './autoComplete/overlay'
-import AutoCompleteSection from './autoComplete/section'
-import DatePickerOverlay, { DatePickerOverlayProps } from './datePicker/overlay'
-import DatePickerSection from './datePicker/section'
-import Overlay from './overlay'
-import StepperOverlay from './stepper/overlay'
-import StepperSection from './stepper/section'
+import { SearchIcon } from '../icon/searchIcon'
+import { StandardSeatIcon as StandardSeat } from '../icon/standardSeat'
+import { TextTitle } from '../typography/title'
+import { AutoCompleteOverlay, AutoCompleteOverlayProps } from './autoComplete/overlay'
+import { AutoCompleteSection } from './autoComplete/section'
+import { DatePickerOverlay, DatePickerOverlayProps } from './datePicker/overlay'
+import { DatePickerSection } from './datePicker/section'
+import { Overlay } from './overlay'
+import { StepperOverlay } from './stepper/overlay'
+import { StepperSection } from './stepper/section'
 import { TRANSITION_SECTION_CLASS_NAME, transitionSectionTimeout } from './transitionConfig'
 
 export interface SearchFormProps {
@@ -67,7 +67,7 @@ export type SearchFormValues = {
   AUTOCOMPLETE_TO?: AutocompleteOnChange
 }
 
-const SearchForm = ({
+export const SearchForm = ({
   className,
   onSubmit,
   autocompleteFromPlaceholder,
@@ -379,5 +379,3 @@ const SearchForm = ({
     </form>
   )
 }
-
-export default SearchForm

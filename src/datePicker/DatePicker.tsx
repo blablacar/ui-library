@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react'
 import DayPicker, { CaptionElementProps, DayModifiers, NavbarElementProps } from 'react-day-picker'
 import cc from 'classcat'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { color } from '../_utils/branding'
 import { OnChangeParameters } from '../_utils/onChange'
-import Button, { ButtonStatus } from '../button'
-import ArrowIcon from '../icon/arrowIcon'
+import { Button, ButtonStatus } from '../button'
+import { ArrowIcon } from '../icon/arrowIcon'
 
 const BASE_CLASSNAME = 'datepicker'
 
@@ -244,5 +244,3 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
     )
   }
 }
-
-export default DatePicker

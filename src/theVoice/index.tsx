@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, responsiveBreakpoints, space } from '../_utils/branding'
-import TheVoice from './TheVoice'
+import { TheVoice } from './TheVoice'
 
 const StyledTheVoice = styled(TheVoice)`
   /* @TODO: Align scale and spec
@@ -22,4 +22,5 @@ const StyledTheVoice = styled(TheVoice)`
 `
 
 export { TheVoiceProps } from './TheVoice'
+export { StyledTheVoice as TheVoice }
 export default StyledTheVoice

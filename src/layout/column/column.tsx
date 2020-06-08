@@ -11,7 +11,7 @@ export interface ColumnProps {
  * A child component for <Columns> parent component.
  * See <Columns> component for details.
  */
-const Column = (props: ColumnProps) => {
+export const Column = (props: ColumnProps) => {
   const { className, children, key } = props
 
   return (
@@ -20,5 +20,3 @@ const Column = (props: ColumnProps) => {
     </li>
   )
 }
-
-export default Column

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, font, space } from '../_utils/branding'
-import AutoCompleteList from './AutoCompleteList'
+import { AutoCompleteList } from './AutoCompleteList'
 
 const StyledAutoCompleteList = styled(AutoCompleteList)`
   & {
@@ -34,4 +34,4 @@ const StyledAutoCompleteList = styled(AutoCompleteList)`
 `
 
 export * from './AutoCompleteList'
-export default StyledAutoCompleteList
+export { StyledAutoCompleteList as AutoCompleteList }

@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { color } from '../_utils/branding'
-import BaseIcon, { BaseIconDefaultProps, Icon } from '../_utils/icon'
+import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
 export const TwitterIcon = (props: Icon) => (
   <BaseIcon {...props}>
@@ -14,5 +14,4 @@ export const TwitterIcon = (props: Icon) => (
 )
 
 TwitterIcon.defaultProps = BaseIconDefaultProps
-
 export default TwitterIcon

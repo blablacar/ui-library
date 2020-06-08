@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import Badge from './Badge'
+import { Badge } from './Badge'
 
 const StyledBadge = styled(Badge)`
   & {
@@ -22,4 +22,5 @@ const StyledBadge = styled(Badge)`
 `
 
 export { BadgeProps } from './Badge'
+export { StyledBadge as Badge }
 export default StyledBadge

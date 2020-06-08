@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
-import uneditableTextField from './UneditableTextField'
+import { UneditableTextField } from './UneditableTextField'
 
 const inputHeight = '54px'
 
-const StyledUneditableTextField = styled(uneditableTextField)`
+const StyledUneditableTextField = styled(UneditableTextField)`
   & {
     display: flex;
     align-items: center;
@@ -35,4 +35,5 @@ const StyledUneditableTextField = styled(uneditableTextField)`
 `
 
 export { UneditableTextFieldProps } from './UneditableTextField'
+export { StyledUneditableTextField as UneditableTextField }
 export default StyledUneditableTextField

@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { color } from '../_utils/branding'
 import { OnChangeParameters } from '../_utils/onChange'
-import Button, { ButtonStatus } from '../button'
-import CrossIcon from '../icon/crossIcon'
-import EyeIcon from '../icon/eyeIcon'
+import { Button, ButtonStatus } from '../button'
+import { CrossIcon } from '../icon/crossIcon'
+import { EyeIcon } from '../icon/eyeIcon'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 
@@ -88,7 +88,7 @@ export interface TextFieldState {
   readonly hasFocus: boolean
 }
 
-export default class TextField extends PureComponent<TextFieldProps, TextFieldState> {
+export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
   private input: HTMLInputElement | HTMLTextAreaElement
   static defaultProps: Partial<TextFieldProps> = {
     inputRef() {},

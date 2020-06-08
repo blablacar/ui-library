@@ -9,7 +9,7 @@ export interface TextProps {
   readonly itemProp?: string // Allows microdata annotation on Text
 }
 
-const Text = ({ children, className, isInverted, ...props }: TextProps) => {
+export const Text = ({ children, className, isInverted, ...props }: TextProps) => {
   const content = typeof children === 'string' ? replaceNewLineWithBR(children) : children
 
   return (
@@ -18,5 +18,3 @@ const Text = ({ children, className, isInverted, ...props }: TextProps) => {
     </span>
   )
 }
-
-export default Text

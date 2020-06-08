@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import Badge from '../../badge'
+import { Badge } from '../../badge'
 import { color } from '../branding'
 
 export interface Icon {
@@ -32,7 +32,7 @@ export const BaseIconDefaultProps = {
   isDisabled: false,
 }
 
-const BaseIcon = ({
+export const BaseIcon = ({
   className,
   iconClassName,
   iconColor,
@@ -78,5 +78,3 @@ const BaseIcon = ({
 
   return icon
 }
-
-export default BaseIcon

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Avatar from '../../../avatar'
-import BaseSection, { SectionContentSize } from '../../../layout/section/baseSection'
+import { Avatar } from '../../../avatar'
+import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
 
 export interface IllustratedSectionProps {
   readonly children: React.ReactNode
@@ -14,7 +14,9 @@ export interface IllustratedSectionProps {
 /**
  * A specialized section which show some content with an illustration.
  */
-const IllustratedSection: React.SFC<IllustratedSectionProps> = (props: IllustratedSectionProps) => {
+export const IllustratedSection: React.SFC<IllustratedSectionProps> = (
+  props: IllustratedSectionProps,
+) => {
   const { className = '', illustrationUrl, illustrationAlt = '', isAvatar = false } = props
   const illu: JSX.Element = !isAvatar ? (
     <img src={illustrationUrl} alt={illustrationAlt} />
@@ -28,5 +30,3 @@ const IllustratedSection: React.SFC<IllustratedSectionProps> = (props: Illustrat
     </BaseSection>
   )
 }
-
-export default IllustratedSection

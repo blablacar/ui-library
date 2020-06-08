@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import SearchRecap from './SearchRecap'
+import { SearchRecap } from './SearchRecap'
 
 const defaultProps = {
   from: 'Middlesbrough',

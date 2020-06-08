@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color } from '../_utils/branding'
-import TopBar from './TopBar'
+import { TopBar } from './TopBar'
 
 const StyledTopBar = styled(TopBar)`
   & {
@@ -48,4 +48,5 @@ const StyledTopBar = styled(TopBar)`
 `
 
 export { TopBarProps } from './TopBar'
+export { StyledTopBar as TopBar }
 export default StyledTopBar

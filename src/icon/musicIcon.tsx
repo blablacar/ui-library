@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import React from 'react'
 
-import StatusIcon, { IconPropsWithStatus } from '../_utils/icon/status'
+import { IconPropsWithStatus, StatusIcon } from '../_utils/icon/status'
 
 export const MusicIcon = (props: IconPropsWithStatus) => (
   <StatusIcon {...props}>
@@ -10,5 +10,4 @@ export const MusicIcon = (props: IconPropsWithStatus) => (
 )
 
 MusicIcon.defaultProps = StatusIcon.defaultProps
-
 export default MusicIcon

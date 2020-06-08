@@ -3,7 +3,7 @@ import DayPicker, { CaptionElementProps, NavbarElementProps } from 'react-day-pi
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
-import DatePicker, { DatePickerOrientation } from './DatePicker'
+import { DatePicker, DatePickerOrientation } from './DatePicker'
 
 describe('DatePicker', () => {
   it('Should apply the base className ', () => {

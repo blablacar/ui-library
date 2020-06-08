@@ -1,15 +1,15 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Card from '../_utils/card'
-import Avatar from '../avatar'
-import AloneInTheBackIcon from '../icon/aloneInTheBackIcon'
-import ComfortIcon from '../icon/comfortIcon'
-import LadyIcon from '../icon/ladyIcon'
-import LightningIcon from '../icon/lightningIcon'
-import WarningIcon from '../icon/warningIcon'
-import Text from '../text'
-import TripCard from './TripCard'
+import { Card } from '../_utils/card'
+import { Avatar } from '../avatar'
+import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
+import { ComfortIcon } from '../icon/comfortIcon'
+import { LadyIcon } from '../icon/ladyIcon'
+import { LightningIcon } from '../icon/lightningIcon'
+import { WarningIcon } from '../icon/warningIcon'
+import { Text } from '../text'
+import { TripCard } from './TripCard'
 
 const mockedProps = {
   href: '#',

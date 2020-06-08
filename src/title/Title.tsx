@@ -10,7 +10,7 @@ export interface TitleProps {
 
 export const isHeadingAvailable = (level: number) => level >= 1 && level <= 6
 
-const Title = ({ id, className, children, headingLevel = 1 }: TitleProps) => {
+export const Title = ({ id, className, children, headingLevel = 1 }: TitleProps) => {
   if (!isHeadingAvailable(Number(headingLevel))) {
     return null
   }
@@ -23,4 +23,3 @@ const Title = ({ id, className, children, headingLevel = 1 }: TitleProps) => {
     <Fragment>{children}</Fragment>,
   )
 }
-export default Title

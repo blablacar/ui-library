@@ -1,8 +1,8 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import Title from '../title'
-import TheVoice from './TheVoice'
+import { Title } from '../title'
+import { TheVoice } from './TheVoice'
 
 describe('TheVoice', () => {
   it('Should use a h1 with the voice content', () => {

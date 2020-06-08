@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Tabs, { TabsProps } from '../../../tabs'
+import { Tabs, TabsProps } from '../../../tabs'
 
 export interface TabsSectionProps {
   readonly className?: string
@@ -16,9 +16,7 @@ export interface TabsSectionProps {
  * If you need the non full-width tabs (to use a in a multi column layout), use the <Tabs> widget
  * directly instead.
  */
-const TabsSection = (props: TabsSectionProps) => {
+export const TabsSection = (props: TabsSectionProps) => {
   const { className, tabsProps } = props
   return <Tabs className={cc(className)} {...tabsProps} />
 }
-
-export default TabsSection

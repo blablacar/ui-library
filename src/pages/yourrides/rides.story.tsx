@@ -2,12 +2,12 @@ import React, { Fragment } from 'react'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import HourglassIcon from '../../icon/hourglassIcon'
-import ItemChoice from '../../itemChoice'
-import LayoutNormalizer from '../../layout/layoutNormalizer'
-import Section from '../../layout/section/baseSection'
-import TheVoice from '../../theVoice'
-import TripCard from '../../tripCard'
+import { HourglassIcon } from '../../icon/hourglassIcon'
+import { ItemChoice } from '../../itemChoice'
+import { LayoutNormalizer } from '../../layout/layoutNormalizer'
+import { BaseSection as Section } from '../../layout/section/baseSection'
+import { TheVoice } from '../../theVoice'
+import { TripCard } from '../../tripCard'
 
 const stories = storiesOf('Pages|Your rides/Rides', module)
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Item from '../../../_utils/item'
-import StandardSeat from '../../../icon/standardSeat'
-import Stepper, { StepperDisplay } from '../../../stepper'
-import StepperOverlay from './StepperOverlay'
+import { Item } from '../../../_utils/item'
+import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
+import { Stepper, StepperDisplay } from '../../../stepper'
+import { StepperOverlay } from './StepperOverlay'
 
 describe('StepperOverlay', () => {
   it('should have a Item with a title and a seat icon', () => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ToggleButton from './ToggleButton'
+import { ToggleButton } from './ToggleButton'
 
 const StyledToggleButton = styled(ToggleButton)`
   & {
@@ -22,4 +22,5 @@ const StyledToggleButton = styled(ToggleButton)`
   }
 `
 export { ToggleButtonProps, ToggleButtonStatus } from './ToggleButton'
+export { StyledToggleButton as ToggleButton }
 export default StyledToggleButton

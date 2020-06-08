@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, modalSize, responsiveBreakpoints, space } from '../_utils/branding'
-import ConfirmationModal from './ConfirmationModal'
+import { ConfirmationModal } from './ConfirmationModal'
 
 const footerHeight = '96px' /* = padding + content */
 
@@ -90,4 +90,5 @@ const StyledConfirmationModal = styled(ConfirmationModal)`
 `
 
 export { ConfirmationModalProps, ConfirmationModalStatus } from './ConfirmationModal'
+export { StyledConfirmationModal as ConfirmationModal }
 export default StyledConfirmationModal

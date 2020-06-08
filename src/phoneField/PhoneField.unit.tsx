@@ -2,8 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
-import StyledPhoneField from './index'
-import PhoneField from './PhoneField'
+import { PhoneField as StyledPhoneField } from './index'
+import { PhoneField } from './PhoneField'
 
 const countryWhitelist = ['FR', 'ES']
 const countryWhitelistUpdated = ['DE']

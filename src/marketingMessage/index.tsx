@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { color, radius, space } from '../_utils/branding'
-import MarketingMessage from './MarketingMessage'
+import { MarketingMessage } from './MarketingMessage'
 
 const StyledMarketingMessage = styled(MarketingMessage)`
   & {
@@ -15,4 +15,5 @@ const StyledMarketingMessage = styled(MarketingMessage)`
 `
 
 export { MarketingMessageProps } from './MarketingMessage'
+export { StyledMarketingMessage as MarketingMessage }
 export default StyledMarketingMessage

@@ -9,7 +9,7 @@ import {
   space,
   transition,
 } from '../_utils/branding'
-import Textarea from './Textarea'
+import { Textarea } from './Textarea'
 
 const StyledTextarea = styled(Textarea)`
   & {
@@ -134,5 +134,6 @@ const StyledTextarea = styled(Textarea)`
   }
 `
 
-export { TextAreaProps } from './Textarea'
+export { TextareaProps } from './Textarea'
+export { StyledTextarea as Textarea }
 export default StyledTextarea

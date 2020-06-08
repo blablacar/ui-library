@@ -1,7 +1,7 @@
 import React, { cloneElement } from 'react'
 import cc from 'classcat'
 
-import prefix from '../_utils'
+import { prefix } from '../_utils'
 import { ButtonStatus } from '../button'
 import { ButtonProps } from '../button/Button'
 
@@ -15,7 +15,7 @@ export interface ButtonGroupProps {
 
 const BASE_CLASSNAME = 'button-group'
 
-const ButtonGroup = ({
+export const ButtonGroup = ({
   children,
   className = '',
   isInline = false,
@@ -57,5 +57,3 @@ const ButtonGroup = ({
     </div>
   )
 }
-
-export default ButtonGroup

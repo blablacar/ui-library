@@ -2,8 +2,8 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import Section from '../layout/section/baseSection'
-import SubHeader from '../subHeader'
+import { BaseSection as Section } from '../layout/section/baseSection'
+import { SubHeader } from '../subHeader'
 import spec from './specifications/subHeader.md'
 
 const stories = storiesOf('Widgets|SubHeader', module)

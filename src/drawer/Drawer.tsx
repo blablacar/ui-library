@@ -3,7 +3,7 @@ import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 import { createGlobalStyle } from 'styled-components'
 
-import KEYCODES from '../_utils/keycodes'
+import { KEYCODES } from '../_utils/keycodes'
 
 const DrawerGlobalStyles = createGlobalStyle`
   .kirk-scroll-lock {
@@ -22,7 +22,7 @@ export interface DrawerProps {
   readonly open?: boolean
 }
 
-export default class Drawer extends PureComponent<DrawerProps> {
+export class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
   static defaultProps: Partial<DrawerProps> = {
     width: '400px',

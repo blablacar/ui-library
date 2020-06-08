@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import Button from '../../button/Button'
-import ChevronIcon from '../../icon/chevronIcon'
-import Text, { TextDisplayType, TextTagType } from '../../text'
+import { Button } from '../../button/Button'
+import { ChevronIcon } from '../../icon/chevronIcon'
+import { Text, TextDisplayType, TextTagType } from '../../text'
 import { color } from '../branding'
 import { A11yProps, pickA11yProps } from '../interfaces'
 
@@ -49,7 +49,7 @@ export interface ItemProps extends A11yProps {
   readonly disabled?: boolean
 }
 
-const Item = (props: ItemProps) => {
+export const Item = (props: ItemProps) => {
   const {
     chevron,
     className,
@@ -194,5 +194,3 @@ const Item = (props: ItemProps) => {
     </Tag>
   )
 }
-
-export default Item

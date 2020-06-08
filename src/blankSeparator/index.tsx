@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
-import BlankSeparator, { BlankSeparatorSize } from './BlankSeparator'
+import { BlankSeparator, BlankSeparatorSize } from './BlankSeparator'
 
 const StyledBlankSeparator = styled(BlankSeparator)`
   & {
@@ -20,4 +20,5 @@ const StyledBlankSeparator = styled(BlankSeparator)`
   }
 `
 export { BlankSeparatorSize, BlankSeparatorProps } from './BlankSeparator'
+export { StyledBlankSeparator as BlankSeparator }
 export default StyledBlankSeparator
