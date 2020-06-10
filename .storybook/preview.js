@@ -1,13 +1,10 @@
 import { addDecorator, addParameters } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-
-// import { withA11y } from '@storybook/addon-a11y'
+import { withA11y } from '@storybook/addon-a11y'
 // import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-// import { addReadme } from 'storybook-readme'
 
-// addDecorator(addReadme)
 addDecorator(withKnobs)
-// addDecorator(withA11y)
+addDecorator(withA11y)
 
 addParameters({
   options: {
