@@ -19,7 +19,7 @@ export interface ItemProps extends A11yProps {
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean
-  readonly leftTitle?: string
+  readonly leftTitle?: string | React.ReactNode
   readonly leftTitleButtonAddon?: React.ReactElement<Button>
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
@@ -122,7 +122,9 @@ export const Item = (props: ItemProps) => {
     >
       {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
       <span className="kirk-item-leftText">
-        {leftTitle && (
+        {leftTitle && typeof leftTitle !== 'string' ? (
+          leftTitle
+        ) : (
           <Text
             className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
             display={leftTitleDisplay}

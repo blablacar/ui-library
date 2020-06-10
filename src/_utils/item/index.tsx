@@ -30,7 +30,7 @@ const StyledItem = styled(Item)`
     background-color: ${color.defaultBackground};
   }
 
-  a& {
+  & {
     background: none;
     text-decoration: none;
     user-select: none;

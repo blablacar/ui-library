@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Component `ItemBigData` to display a specific and important data.
 - **[UPDATE]** Use named exports instead of default exports.
   [...]
 
