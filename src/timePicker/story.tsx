@@ -1,13 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { TimePicker } from './index'
 
 const stories = storiesOf('Widgets|TimePicker', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <Section>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { ConfirmationModal, ConfirmationModalStatus } from '../confirmationModal'
@@ -9,7 +9,6 @@ import { ConfirmationModalProps } from './ConfirmationModal'
 import confirmationModalDoc from './specifications/confirmationModal.md'
 
 const stories = storiesOf('Widgets|Modal|ConfirmationModal', module)
-stories.addDecorator(withKnobs)
 
 class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
   state = {

@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color, font, space } from './branding'
 
 const stories = storiesOf('Brand|', module)
-stories.addDecorator(withKnobs)
 
 const styles: { [name: string]: React.CSSProperties } = {
   main: {

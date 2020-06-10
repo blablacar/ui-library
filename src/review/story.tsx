@@ -1,12 +1,10 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Review } from './index'
 
 const stories = storiesOf('Widgets|Review', module)
-stories.addDecorator(withKnobs)
 
 const longComment = 'This is very long review which is cool and etc. '.repeat(5)
 const reviewProps = {

@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { CardsSection } from '../../../layout/section/cardsSection'
@@ -7,7 +6,6 @@ import { QrCard } from '../../../qrCard'
 import { TripCard } from '../../../tripCard'
 
 const stories = storiesOf('Sections|CardsSection', module)
-stories.addDecorator(withKnobs)
 
 const tripCardConfig = {
   ariaLabel: 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',

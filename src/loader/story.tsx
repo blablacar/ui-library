@@ -1,12 +1,11 @@
 import React from 'react'
-import { boolean, number, select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Loader, LoaderLayoutMode } from './index'
 
 const stories = storiesOf('Widgets|Loader', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <Section>

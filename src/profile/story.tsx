@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Divider } from '../divider'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import { Profile } from '../profile'
 
 const stories = storiesOf('Widgets|Profile', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <Section>

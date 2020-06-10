@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button } from '../button'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import spec from './specifications/emptystate.md'
 
 const stories = storiesOf('Widgets|EmptyState', module)
-stories.addDecorator(withKnobs)
 
 const button = <Button>Do something</Button>
 

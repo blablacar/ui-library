@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
@@ -12,7 +12,7 @@ import { primaryDoc } from './specifications/primary.md'
 import { secondaryDoc } from './specifications/secondary.md'
 import { tertiaryDoc } from './specifications/tertiary.md'
 
-const stories = storiesOf('Widgets|Button', module).addDecorator(withKnobs)
+const stories = storiesOf('Widgets|Button', module)
 
 const label = (defaultValue: string) => text('Label', defaultValue)
 const hasIcon = () => boolean('icon', false)

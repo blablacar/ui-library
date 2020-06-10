@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { WarningIcon } from '../icon/warningIcon'
@@ -8,7 +8,6 @@ import { TripCard } from './index'
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|TripCard', module)
-stories.addDecorator(withKnobs)
 
 const tripCardConfig = () => ({
   ariaLabel: text(

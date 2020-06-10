@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../button'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ButtonGroup', module)
-stories.addDecorator(withKnobs)
 
 stories.add(
   'Button Group - default',

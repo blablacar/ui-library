@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button } from '../../../button'
@@ -8,7 +8,6 @@ import { TabStatus } from '../../../tabs'
 import { TabsSection } from './index'
 
 const stories = storiesOf('Sections|TabsSection', module)
-stories.addDecorator(withKnobs)
 
 const panels = [
   <div>Content for first tab</div>,

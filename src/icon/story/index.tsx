@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../../_utils/branding'
@@ -21,7 +21,6 @@ const styles: { [name: string]: React.CSSProperties } = {
 }
 
 const stories = storiesOf('Brand|Icons', module)
-stories.addDecorator(withKnobs)
 
 const c = Object.keys(color).reduce(
   (acc, key) => ({

@@ -1,12 +1,11 @@
 import React from 'react'
-import { number, text, withKnobs } from '@storybook/addon-knobs'
+import { number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Rating } from '../rating'
 
 const stories = storiesOf('Widgets|Rating', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Rating', () => (
   <Section>

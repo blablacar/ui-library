@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { number, select, withKnobs } from '@storybook/addon-knobs'
+import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { DatePicker, DatePickerOrientation } from '../datePicker'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import readme from './specifications/datepicker.md'
 
 const stories = storiesOf('Widgets|DatePicker', module)
-stories.addDecorator(withKnobs)
 
 const weekdaysShort = (locale: string): string[] => {
   const options = { weekday: 'short' }

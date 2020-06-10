@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../button'
@@ -8,7 +7,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import spec from './specifications/disclaimer.md'
 
 const stories = storiesOf('Widgets|Disclaimer', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Specifications', () => <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>, {
   readme: spec,

@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
@@ -8,7 +8,6 @@ import { ModalProps } from './Modal'
 import modalDoc from './specifications/modal.md'
 
 const stories = storiesOf('Widgets|Modal', module)
-stories.addDecorator(withKnobs)
 
 class ModalOpener extends Component<ModalProps> {
   state = {

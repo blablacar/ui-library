@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
@@ -8,7 +8,6 @@ import { ArrowIcon } from '../icon/arrowIcon'
 import { TopBar } from '../topBar'
 
 const stories = storiesOf('Widgets|TopBar', module)
-stories.addDecorator(withKnobs)
 
 const leftAction = (
   <Button isBubble status={ButtonStatus.UNSTYLED} onClick={() => {}} aria-label="back">

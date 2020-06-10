@@ -1,13 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { SelectField } from '../selectField'
 
 const stories = storiesOf('Widgets|SelectField', module)
-stories.addDecorator(withKnobs)
 
 const phonePrefixOptions = [
   { value: '+33', label: 'Fr +33', ariaLabel: 'France' },

@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
@@ -10,7 +9,6 @@ import { SubHeader } from '../subHeader'
 import { Text } from '../text'
 
 const stories = storiesOf('Widgets|MarketingMessage', module)
-stories.addDecorator(withKnobs)
 
 const longContent = 'Long content.'.repeat(50)
 stories.add('Basic message', () => (

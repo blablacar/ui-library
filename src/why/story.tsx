@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { action } from '@storybook/addon-actions'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
@@ -27,6 +27,5 @@ class LayoutExample extends Component {
 }
 
 const stories = storiesOf('Widgets|Why', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => <LayoutExample />)

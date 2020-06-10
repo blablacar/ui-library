@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { SendMessageIcon } from '../icon/sendMessageIcon'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import { Textarea as TextArea } from '../textarea'
 
 const stories = storiesOf('Widgets|Textarea', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Basic text area', () => (
   <Section>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../button'
@@ -10,7 +10,6 @@ import { inputModes, inputTypes, TextField } from '../textField'
 import readme from './specifications/textField.md'
 
 const stories = storiesOf('Widgets|TextField', module)
-stories.addDecorator(withKnobs)
 
 stories.add(
   'specifications',

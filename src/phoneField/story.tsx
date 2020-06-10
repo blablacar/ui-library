@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
@@ -9,7 +9,6 @@ import customDoc from './specifications/custom.md'
 import defaultDoc from './specifications/default.md'
 
 const stories = storiesOf('Widgets|PhoneField', module)
-stories.addDecorator(withKnobs)
 
 const countryWhitelist = ['FR', 'ES']
 

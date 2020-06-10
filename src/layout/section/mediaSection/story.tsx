@@ -1,12 +1,11 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Modal, ModalSize } from '../../../modal'
 import { MediaSection } from './index'
 
 const stories = storiesOf('Sections|MediaSection', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <MediaSection className={text('className', '')} role={text('role', undefined)}>

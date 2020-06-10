@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Drawer } from '../drawer'
@@ -13,7 +13,6 @@ import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
 import { Menu } from '../menu'
 
 const stories = storiesOf('Widgets|Drawer', module)
-stories.addDecorator(withKnobs)
 
 class DrawerDemo extends Component {
   state = {

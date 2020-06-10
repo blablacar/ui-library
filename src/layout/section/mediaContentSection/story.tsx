@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { MediaContentSection } from './index'
 
 const stories = storiesOf('Sections|MediaContentSection', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <Fragment>

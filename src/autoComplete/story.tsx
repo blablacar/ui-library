@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { ItemStatus } from '../_utils/item'
@@ -8,7 +8,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'
 
 const stories = storiesOf('Widgets|AutoComplete', module)
-stories.addDecorator(withKnobs)
 
 const places: AutocompleteItem[] = [
   {

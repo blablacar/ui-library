@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Itinerary } from '../itinerary'
@@ -9,7 +9,6 @@ import { Stepper, StepperDisplay } from '../stepper'
 import spec from './specifications/stepper.md'
 
 const stories = storiesOf('Widgets|Stepper', module)
-stories.addDecorator(withKnobs)
 
 stories.add(
   'Default stepper',

@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { ItemRadio } from '../../../itemRadio'
@@ -8,7 +7,6 @@ import { TheVoice } from '../../../theVoice'
 import { IllustratedSection } from './index'
 
 const stories = storiesOf('Sections|IllustratedSection', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <IllustratedSection illustrationUrl="https://cdn.blablacar.com/kairos/assets/build/images/max_2_in_the_back-d1b1da56d9d48d78e0365ff586c68f92.svg">

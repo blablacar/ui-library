@@ -1,5 +1,5 @@
 import React from 'react'
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
@@ -14,8 +14,6 @@ const optionHeading = {
   5: '5',
   6: '6',
 }
-
-stories.addDecorator(withKnobs)
 
 stories.add('basic', () => (
   <Section>

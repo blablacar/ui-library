@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../../button'
@@ -11,7 +10,6 @@ import { Paragraph } from '../../paragraph'
 import { SubHeader } from '../../subHeader'
 
 const stories = storiesOf('Sections|Content', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <MainContent onSubmit={() => {}} noValidate="" method="POST">

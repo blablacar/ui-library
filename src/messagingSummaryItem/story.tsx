@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { ChevronIcon } from '../icon/chevronIcon'
@@ -7,7 +7,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import { MessagingSummaryItem } from './index'
 
 const stories = storiesOf('Widgets|MessagingSummaryItem', module)
-stories.addDecorator(withKnobs)
 
 const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
 const htmlSubLabel = (

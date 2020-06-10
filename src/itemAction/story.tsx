@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
@@ -10,7 +10,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import spec from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemAction', module)
-stories.addDecorator(withKnobs)
 
 stories.add(
   'Default',

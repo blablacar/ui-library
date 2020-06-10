@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { CheckIcon } from '../icon/checkIcon'
@@ -10,7 +10,6 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import specs from './specifications/index.md'
 
 const stories = storiesOf('Widgets|ItemChoice', module)
-stories.addDecorator(withKnobs)
 
 stories.add(
   'Playground',

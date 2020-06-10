@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { CheckShieldIcon } from '../../../icon/checkShieldIcon'
@@ -8,7 +7,6 @@ import { IdCardVerifiedIcon } from '../../../icon/idCardVerifiedIcon'
 import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index'
 
 const stories = storiesOf('Sections|ColumnedContentSection', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Simple', () => {
   const column1 = {

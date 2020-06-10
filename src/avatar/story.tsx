@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
@@ -12,7 +12,6 @@ const sizes = {
 }
 
 const stories = storiesOf('Widgets|Avatar', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Basic', () => {
   const modifiers = select('Size', sizes, '')

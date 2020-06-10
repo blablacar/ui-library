@@ -1,12 +1,11 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { SearchRecap } from './index'
 
 const stories = storiesOf('Widgets|SearchRecap', module)
-stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
   <Section>

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
@@ -8,7 +8,6 @@ import { TheVoice } from './index'
 import readme from './specifications/theVoice.md'
 
 const stories = storiesOf('Widgets|TheVoice', module)
-stories.addDecorator(withKnobs)
 
 stories.add('Specifications', () => null, {
   readme: { content: readme },

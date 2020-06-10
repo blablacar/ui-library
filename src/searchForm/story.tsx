@@ -1,5 +1,5 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { MediaSizeProvider } from '../_utils/mediaSizeProvider'
@@ -17,8 +17,6 @@ import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
 
 const stories = storiesOf('Widgets|SearchForm', module)
-
-stories.addDecorator(withKnobs)
 
 stories.add('DatepickerOverlay', () => (
   <DatePickerOverlay
