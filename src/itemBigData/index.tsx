@@ -26,7 +26,7 @@ const StyledItemBigData = styled(Item)`
   }
 `
 
-const ItemBigData = (props: ItemBigDataProps) => {
+export const ItemBigData = (props: ItemBigDataProps) => {
   const { mainInfo, className, mainTitle, tag, ariaLabel } = props
   const a11yAttrs = pickA11yProps<ItemBigDataProps>(props)
 
