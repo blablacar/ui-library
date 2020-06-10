@@ -115,7 +115,7 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -540,7 +540,7 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -955,7 +955,7 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1308,7 +1308,7 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1663,7 +1663,7 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;

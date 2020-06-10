@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import cc from 'classcat'
 
 import { Button } from '../../button/Button'
@@ -101,6 +101,24 @@ export const Item = (props: ItemProps) => {
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
+  const getLeftTitle = (value: any) => {
+    if (typeof value === 'object') {
+      return leftTitle
+    }
+    return (
+      <Text
+        className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
+        display={leftTitleDisplay}
+        textColor={getTextColor(leftTitleColor)}
+        tag={TextTagType.SPAN}
+      >
+        {leftTitle}
+        {/* In case of a clickable Item don't display the addon button */}
+        {!href && leftTitleButtonAddon}
+      </Text>
+    )
+  }
+
   return (
     <Tag
       {...tagProps}
@@ -122,20 +140,7 @@ export const Item = (props: ItemProps) => {
     >
       {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
       <span className="kirk-item-leftText">
-        {leftTitle && typeof leftTitle !== 'string' ? (
-          leftTitle
-        ) : (
-          <Text
-            className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
-            display={leftTitleDisplay}
-            textColor={getTextColor(leftTitleColor)}
-            tag={TextTagType.SPAN}
-          >
-            {leftTitle}
-            {/* In case of a clickable Item don't display the addon button */}
-            {!href && leftTitleButtonAddon}
-          </Text>
-        )}
+        {leftTitle && getLeftTitle(leftTitle)}
         {leftBody && (
           <Text
             className="kirk-item-body"
