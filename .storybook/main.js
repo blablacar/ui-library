@@ -11,5 +11,13 @@ module.exports = {
     return config
   },
   stories: ['../src/**/story.(tsx|mdx)', '../src/**/*.story.(tsx|mdx)'],
-  addons: ['@storybook/addon-knobs'],
+  addons: [
+    '@storybook/addon-knobs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+      },
+    },
+  ],
 }

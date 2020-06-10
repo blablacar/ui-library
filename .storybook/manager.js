@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons'
-import { themes } from '@storybook/theming'
+import pixar from './theme-pixar'
 
 addons.setConfig({
-  theme: themes.light,
+  theme: pixar,
 })

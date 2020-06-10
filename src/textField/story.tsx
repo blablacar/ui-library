@@ -7,41 +7,34 @@ import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { inputModes, inputTypes, TextField } from '../textField'
-import readme from './specifications/textField.md'
 
 const stories = storiesOf('Widgets|TextField', module)
 
-stories.add(
-  'specifications',
-  () => (
-    <Section>
-      <TextField
-        type={select('type', inputTypes, inputTypes.TEXT)}
-        id={text('id')}
-        name={text('name', 'inputName')}
-        inputMode={select('inputMode', inputModes, inputModes.TEXT)}
-        pattern={text('pattern')}
-        placeholder={text('placeholder')}
-        labelledBy={text('aria label')}
-        disabled={boolean('disabled', false)}
-        readOnly={boolean('readOnly', false)}
-        label={text('label')}
-        error={text('error message', '')}
-        onChange={action('changed')}
-        onFocus={action('focused')}
-        onBlur={action('blurred')}
-        focus={boolean('focus', false)}
-        required={boolean('required', false)}
-        maxLength={number('maxLength')}
-        autoComplete={select('autocomplete', ['on', 'off'])}
-        title={text('title', 'accessibility text')}
-      />
-    </Section>
-  ),
-  {
-    readme: { content: readme },
-  },
-)
+stories.add('specifications', () => (
+  <Section>
+    <TextField
+      type={select('type', inputTypes, inputTypes.TEXT)}
+      id={text('id')}
+      name={text('name', 'inputName')}
+      inputMode={select('inputMode', inputModes, inputModes.TEXT)}
+      pattern={text('pattern')}
+      placeholder={text('placeholder')}
+      labelledBy={text('aria label')}
+      disabled={boolean('disabled', false)}
+      readOnly={boolean('readOnly', false)}
+      label={text('label')}
+      error={text('error message', '')}
+      onChange={action('changed')}
+      onFocus={action('focused')}
+      onBlur={action('blurred')}
+      focus={boolean('focus', false)}
+      required={boolean('required', false)}
+      maxLength={number('maxLength')}
+      autoComplete={select('autocomplete', ['on', 'off'])}
+      title={text('title', 'accessibility text')}
+    />
+  </Section>
+))
 
 stories.add('input', () => (
   <Section>

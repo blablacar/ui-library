@@ -5,7 +5,6 @@ import { storiesOf } from '@storybook/react'
 
 import { DatePicker, DatePickerOrientation } from '../datePicker'
 import { BaseSection as Section } from '../layout/section/baseSection'
-import readme from './specifications/datepicker.md'
 
 const stories = storiesOf('Widgets|DatePicker', module)
 
@@ -42,29 +41,23 @@ const firstDayOfWeek: FirstDayOfWeekMap = {
 
 const testLocales = ['en-GB', 'fr-FR', 'ru-RU']
 
-stories.add(
-  'default',
-  () => (
-    <Section>
-      <DatePicker
-        initialDate={new Date()}
-        name="datepicker"
-        onChange={action('onChange')}
-        orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
-        locale={select('Locale', testLocales, 'en-GB')}
-        weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
-        weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
-        months={months(select('Locale', testLocales, 'en-GB'))}
-        firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
-        numberOfMonths={number('Number of months', 1)}
-        stickyPositionTop={number('Top position of sticky weekdays', 0)}
-      />
-    </Section>
-  ),
-  {
-    readme: { content: readme },
-  },
-)
+stories.add('default', () => (
+  <Section>
+    <DatePicker
+      initialDate={new Date()}
+      name="datepicker"
+      onChange={action('onChange')}
+      orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
+      locale={select('Locale', testLocales, 'en-GB')}
+      weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
+      weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
+      months={months(select('Locale', testLocales, 'en-GB'))}
+      firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
+      numberOfMonths={number('Number of months', 1)}
+      stickyPositionTop={number('Top position of sticky weekdays', 0)}
+    />
+  </Section>
+))
 
 stories.add('example horizontal (2 months)', () => (
   <Section>
