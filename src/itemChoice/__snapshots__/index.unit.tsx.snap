@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemChoice Should display a Loader when the component is in loading status 1`] = `
+.c1 {
+  stroke: currentColor;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -12,6 +16,26 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 }
 
 .c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c5 {
+  stroke: #5DD167;
+}
+
+.c5.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c5.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c5 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -310,7 +334,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -319,7 +343,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -403,7 +427,7 @@ button:hover.c0 {
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle spinning c4 c1"
+          className="kirk-icon kirk-icon-circle spinning c4 c5"
           fill="#5DD167"
           height={24}
           viewBox="0 0 66 66"
@@ -426,6 +450,10 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should display a done Loader when the component is in checked status 1`] = `
+.c1 {
+  stroke: currentColor;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -437,6 +465,26 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 }
 
 .c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c5 {
+  stroke: #FFF;
+}
+
+.c5.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c5.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c5 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -724,7 +772,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -733,7 +781,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -817,7 +865,7 @@ button:hover.c0 {
       >
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-check validate c4 c1"
+          className="kirk-icon kirk-icon-check validate c4 c5"
           fill="#FFF"
           height={12}
           viewBox="0 0 24 24"
@@ -841,6 +889,10 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should forward its props to the Item component 1`] = `
+.c1 {
+  stroke: currentColor;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -852,6 +904,26 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 }
 
 .c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  stroke: #708C91;
+}
+
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -1056,7 +1128,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1065,7 +1137,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1138,7 +1210,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1147,7 +1219,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1171,7 +1243,7 @@ button:hover.c0 {
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c1"
+      className="kirk-icon c3"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
@@ -1194,6 +1266,10 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should support a disabled state 1`] = `
+.c1 {
+  stroke: currentColor;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -1205,6 +1281,26 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 }
 
 .c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  stroke: #DDD;
+}
+
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -1411,7 +1507,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1420,7 +1516,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1493,7 +1589,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1502,7 +1598,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1526,7 +1622,7 @@ button:hover.c0 {
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c1"
+      className="kirk-icon c3"
       fill="#DDD"
       height={24}
       viewBox="0 0 24 24"
@@ -1549,6 +1645,10 @@ button:hover.c0 {
 `;
 
 exports[`ItemChoice Should use a button tag if no href is given 1`] = `
+.c1 {
+  stroke: currentColor;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -1560,6 +1660,26 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
 }
 
 .c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  stroke: #708C91;
+}
+
+.c3.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c3.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
@@ -1763,7 +1883,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1772,7 +1892,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1845,7 +1965,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -1854,7 +1974,7 @@ button:hover.c0 {
       
       <g
         fill="none"
-        stroke="#708C91"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -1878,7 +1998,7 @@ button:hover.c0 {
   >
     <svg
       aria-hidden={true}
-      className="kirk-icon c1"
+      className="kirk-icon c3"
       fill="#708C91"
       height={24}
       viewBox="0 0 24 24"

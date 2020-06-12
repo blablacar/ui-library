@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = `
+.c1 {
+  stroke: #00AFF5;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -81,6 +85,10 @@ exports[`RadioIcon Should render a check icon if isChecked is set to true 1`] = 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading and isChecked are set to true 1`] = `
+.c2 {
+  stroke: #5DD167;
+}
+
 .c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -226,6 +234,10 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 `;
 
 exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
+.c2 {
+  stroke: #5DD167;
+}
+
 .c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -371,6 +383,10 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 `;
 
 exports[`RadioIcon Should render an empty circle by default 1`] = `
+.c1 {
+  stroke: #00AFF5;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;

@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should not have changed 1`] = `
+.c3 {
+  stroke: #00AFF5;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;

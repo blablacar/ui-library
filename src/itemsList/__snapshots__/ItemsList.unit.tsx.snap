@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemsList Should render an unordered list 1`] = `
+.c3 {
+  stroke: #708C91;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -369,6 +373,10 @@ button:hover.c1 {
 `;
 
 exports[`ItemsList Should render an unordered list with some separators 1`] = `
+.c3 {
+  stroke: #708C91;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -754,6 +762,10 @@ button:hover.c1 {
 `;
 
 exports[`ItemsList Should render an unordered list with the separators classname 1`] = `
+.c3 {
+  stroke: #708C91;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;

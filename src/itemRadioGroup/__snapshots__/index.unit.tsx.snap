@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadioGroup Should map its children and render them with specific props 1`] = `
+.c5 {
+  stroke: #00AFF5;
+}
+
 .c5.kirk-icon-wrapper {
   display: inline-block;
   position: relative;

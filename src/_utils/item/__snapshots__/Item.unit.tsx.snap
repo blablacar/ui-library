@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item Should not have changed 1`] = `
+.c2 {
+  stroke: currentColor;
+}
+
 .c2.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -226,7 +230,7 @@ button:hover.c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c2"
-      fill="#708C91"
+      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -238,7 +242,7 @@ button:hover.c0 {
         fillRule="evenodd"
       >
         <g
-          stroke="#708C91"
+          stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
