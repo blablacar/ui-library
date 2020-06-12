@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import cc from 'classcat'
 
 import { Button } from '../../button/Button'
@@ -19,7 +19,7 @@ export interface ItemProps extends A11yProps {
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean
-  readonly leftTitle?: string | React.ReactNode
+  readonly leftTitle?: React.ReactNode
   readonly leftTitleButtonAddon?: React.ReactElement<Button>
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
@@ -101,7 +101,7 @@ export const Item = (props: ItemProps) => {
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
-  const getLeftTitle = (value: any) => {
+  const getLeftTitle = (value: React.ReactNode) => {
     if (typeof value === 'object') {
       return leftTitle
     }
