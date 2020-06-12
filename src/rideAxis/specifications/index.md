@@ -1,8 +1,11 @@
-# Trip Go
+# Ride Axis
 
 ```js
 import { RideAxis } from '@blablacar/ui-library'
+<RideAxis from="Paris" to="Lille" />
 ```
+
+## Exemples
 
 ---
 
@@ -14,7 +17,8 @@ import { RideAxis } from '@blablacar/ui-library'
 
 ## Specifications
 
-- `Font-size` and `Color` are inhehit from parent
+- `Font-size` and `Color` are _inhehit from parent_
+- `From` and `To` properties are optional
 
 <!-- PROPS -->
 

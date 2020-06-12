@@ -3,9 +3,9 @@ import cc from 'classcat'
 
 import { color } from '../_utils/branding'
 import { SearchIcon } from '../icon/searchIcon'
+import { RideAxis } from '../rideAxis'
 import { Text, TextTagType } from '../text'
 import { UneditableTextField } from '../uneditableTextField'
-import { RideAxis } from '../rideAxis'
 
 export interface SearchRecapProps {
   className?: string
@@ -13,6 +13,8 @@ export interface SearchRecapProps {
   to?: string
   info?: string
 }
+
+export const separatorWidth: number = 14
 
 export const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
   <div className={cc(['kirk-searchRecap', className])}>

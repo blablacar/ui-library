@@ -14,9 +14,9 @@ import { ItemInfo } from '../../itemInfo'
 import { Itinerary } from '../../itinerary'
 import { LayoutNormalizer } from '../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../layout/section/baseSection'
+import { RideAxis } from '../../rideAxis'
 import { SubHeader } from '../../subHeader'
 import { TheVoice } from '../../theVoice'
-import { RideAxis } from '../../rideAxis'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 

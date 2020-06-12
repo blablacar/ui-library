@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { space } from '../_utils/branding'
 import { ArrowIcon } from '../icon'
 
@@ -11,17 +12,16 @@ const StyledRideAxis = styled.span`
 `
 
 const StyledArrowIcon = styled(ArrowIcon)`
-  font-size: 1em;
-  height: 1em;
-  display: inline-block;
-  margin: 0 ${space.s};
-  color: currentColor;
-  fill: currentColor;
-  stroke: currentColor;
+  & {
+    display: inline-block;
+    margin: 0 ${space.s};
+    height: 1em;
+    stroke: currentColor;
+  }
 `
 
 export interface RideAxisProps {
-  readonly from: string
+  readonly from?: string
   readonly to?: string
 }
 
