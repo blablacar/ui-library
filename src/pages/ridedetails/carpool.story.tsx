@@ -16,6 +16,7 @@ import { LayoutNormalizer } from '../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../layout/section/baseSection'
 import { SubHeader } from '../../subHeader'
 import { TheVoice } from '../../theVoice'
+import { TripGo } from '../../tripGo'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 
@@ -57,8 +58,18 @@ stories.add('Default', () => (
       <Divider />
       <SubHeader>Passagers</SubHeader>
       <ul>
-        <ItemChoice label="Jessica" labelInfo="Paris - Rennes" rightAddon={<Avatar />} href="#" />
-        <ItemChoice label="Joe" labelInfo="Paris - Lyon" rightAddon={<Avatar />} href="#" />
+        <ItemChoice
+          label="Jessica"
+          labelInfo={<TripGo from="Paris" to="Rennes" />}
+          rightAddon={<Avatar />}
+          href="#"
+        />
+        <ItemChoice
+          label="Joe"
+          labelInfo={<TripGo from="Paris" to="Lyon" />}
+          rightAddon={<Avatar />}
+          href="#"
+        />
       </ul>
       <Divider />
       <ItemAction action="Signaler ce trajet" href="#" />

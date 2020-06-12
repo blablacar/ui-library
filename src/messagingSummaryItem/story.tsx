@@ -2,19 +2,15 @@ import React, { Fragment } from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { ChevronIcon } from '../icon/chevronIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
+import { TripGo } from '../tripGo'
+
 import { MessagingSummaryItem } from './index'
 
 const stories = storiesOf('Widgets|MessagingSummaryItem', module)
 stories.addDecorator(withKnobs)
 
 const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
-const htmlSubLabel = (
-  <Fragment>
-    Paris <ChevronIcon size="20" /> Bordeaux
-  </Fragment>
-)
 
 stories.add('With unread messages', () => (
   <Section>
@@ -77,7 +73,7 @@ stories.add('With html sublabel', () => (
       url={text('url', 'http://google.com')}
       pictureUrl={text('url', pictureUrl)}
       label={text('Label', 'Label')}
-      subLabel={htmlSubLabel}
+      subLabel={<TripGo from="Paris" to="Rennes" />}
       timeLabel={text('Time label', '3 hours ago')}
       hasUnreadMessages={boolean('hasUnreadMessages', true)}
     />

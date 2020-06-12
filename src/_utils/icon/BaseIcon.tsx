@@ -24,7 +24,7 @@ export interface IconProps extends Icon {
 export const BaseIconDefaultProps = {
   className: '',
   iconClassName: '',
-  iconColor: color.lightMidnightGreen,
+  iconColor: 'currentColor',
   size: 24,
   title: '',
   badgeAriaLabel: '',
@@ -35,7 +35,7 @@ export const BaseIconDefaultProps = {
 export const BaseIcon = ({
   className,
   iconClassName,
-  iconColor,
+  iconColor = 'currentColor',
   size,
   title,
   children,
