@@ -3,7 +3,6 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import { Badge } from '../../badge'
-import { color } from '../branding'
 
 export interface Icon {
   readonly size?: number | string

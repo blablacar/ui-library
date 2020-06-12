@@ -5,7 +5,6 @@ import { BaseIcon } from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
   stroke: ${props => (props.iconColor ? props.iconColor : 'currentColor')};
-  fill: ${props => (props.iconColor ? props.iconColor : 'currentColor')};
 
   &,
   & rect,
