@@ -99,7 +99,7 @@ exports[`ItemsSection should render default items section 1`] = `
   cursor: default;
 }
 
-a.c2 {
+.c2 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -357,7 +357,7 @@ exports[`ItemsSection should render non-default items section 1`] = `
   cursor: default;
 }
 
-a.c2 {
+.c2 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;

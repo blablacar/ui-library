@@ -115,7 +115,7 @@ exports[`Should render properly with read messages 1`] = `
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -480,7 +480,7 @@ exports[`Should render properly with unread messages 1`] = `
   cursor: default;
 }
 
-a.c0 {
+.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
