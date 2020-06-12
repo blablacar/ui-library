@@ -119,7 +119,7 @@ exports[`ItemsList Should render an unordered list 1`] = `
   cursor: default;
 }
 
-a.c1 {
+.c1 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -491,7 +491,7 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   cursor: default;
 }
 
-a.c1 {
+.c1 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -880,7 +880,7 @@ exports[`ItemsList Should render an unordered list with the separators classname
   cursor: default;
 }
 
-a.c1 {
+.c1 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;

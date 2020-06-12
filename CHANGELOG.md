@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[NEW]** `RideAxis` component to display origin-destination
+- **[NEW]** Component `ItemBigData` to display a specific and important data.
 - **[UPDATE]** Use named exports instead of default exports.
   [...]
 

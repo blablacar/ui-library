@@ -119,7 +119,7 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   cursor: default;
 }
 
-a.c2 {
+.c2 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
