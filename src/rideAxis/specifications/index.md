@@ -1,7 +1,7 @@
 # Trip Go
 
 ```js
-import { TripGo } from '@blablacar/ui-library'
+import { RideAxis } from '@blablacar/ui-library'
 ```
 
 ---

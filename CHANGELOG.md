@@ -1,6 +1,6 @@
 # Unreleased
 
-- **[NEW]** `TripGo` component to display origin-destination
+- **[NEW]** `RideAxis` component to display origin-destination
 - **[UPDATE]** Use named exports instead of default exports.
   [...]
 

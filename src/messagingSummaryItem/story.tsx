@@ -3,7 +3,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
-import { TripGo } from '../tripGo'
+import { RideAxis } from '../rideAxis'
 
 import { MessagingSummaryItem } from './index'
 
@@ -73,7 +73,7 @@ stories.add('With html sublabel', () => (
       url={text('url', 'http://google.com')}
       pictureUrl={text('url', pictureUrl)}
       label={text('Label', 'Label')}
-      subLabel={<TripGo from="Paris" to="Rennes" />}
+      subLabel={<RideAxis from="Paris" to="Rennes" />}
       timeLabel={text('Time label', '3 hours ago')}
       hasUnreadMessages={boolean('hasUnreadMessages', true)}
     />

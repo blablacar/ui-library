@@ -16,7 +16,7 @@ import { LayoutNormalizer } from '../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../layout/section/baseSection'
 import { SubHeader } from '../../subHeader'
 import { TheVoice } from '../../theVoice'
-import { TripGo } from '../../tripGo'
+import { RideAxis } from '../../rideAxis'
 
 const stories = storiesOf('Pages|Ride details/Carpool', module)
 
@@ -60,13 +60,13 @@ stories.add('Default', () => (
       <ul>
         <ItemChoice
           label="Jessica"
-          labelInfo={<TripGo from="Paris" to="Rennes" />}
+          labelInfo={<RideAxis from="Paris" to="Rennes" />}
           rightAddon={<Avatar />}
           href="#"
         />
         <ItemChoice
           label="Joe"
-          labelInfo={<TripGo from="Paris" to="Lyon" />}
+          labelInfo={<RideAxis from="Paris" to="Lyon" />}
           rightAddon={<Avatar />}
           href="#"
         />

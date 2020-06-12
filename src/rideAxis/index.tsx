@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { space } from '../_utils/branding'
 import { ArrowIcon } from '../icon'
 
-const StyledTripGo = styled.span`
+const StyledRideAxis = styled.span`
   display: flex;
   align-items: center;
   font-size: 1em;
@@ -20,15 +20,15 @@ const StyledArrowIcon = styled(ArrowIcon)`
   stroke: currentColor;
 `
 
-export interface TripGoProps {
+export interface RideAxisProps {
   readonly from: string
   readonly to?: string
 }
 
-export const TripGo = ({ from, to, ...props }: TripGoProps) => (
-  <StyledTripGo {...props}>
+export const RideAxis = ({ from, to, ...props }: RideAxisProps) => (
+  <StyledRideAxis {...props}>
     {from && <span>{from}</span>}
     {from && to && <StyledArrowIcon right />}
     {to && <span>{to}</span>}
-  </StyledTripGo>
+  </StyledRideAxis>
 )
