@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 
 import { ItemStatus } from '../_utils/item'
 import { ComfortIcon } from '../icon/comfortIcon'
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'
 
 const stories = storiesOf('Widgets|AutoComplete', module)
@@ -105,36 +104,17 @@ export class AutoCompleteExample extends Component<
   }
 }
 
-stories.add('Basic', () => (
-  <Section>
-    <p>
-      Type <code>Paris</code> to test auto-completion.
-    </p>
-    <AutoCompleteExample />
-  </Section>
-))
+// Type <code>Paris</code> to test auto-completion.
 
-stories.add('With busy state', () => (
-  <Section>
-    <p>
-      Type <code>Paris</code> to test auto-completion.
-    </p>
-    <AutoCompleteExample searchForItemsDelay={1500} />
-  </Section>
-))
+stories.add('Basic', () => <AutoCompleteExample />)
 
-stories.add('With empty search', () => {
+stories.add('WithBusyState', () => <AutoCompleteExample searchForItemsDelay={1500} />)
+
+stories.add('WithEmptySearch', () => {
   const emptySearch = [
     { id: '1', label: 'Get my location', labelInfo: '' },
     { id: '2', label: 'Favorite address', labelInfo: '' },
   ]
 
-  return (
-    <Section>
-      <p>
-        Type <code>Paris</code> to test auto-completion.
-      </p>
-      <AutoCompleteExample renderEmptySearch={emptySearch} />
-    </Section>
-  )
+  return <AutoCompleteExample renderEmptySearch={emptySearch} />
 })

@@ -1,7 +1,7 @@
 import React from 'react'
 import { addDecorator, addParameters } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withA11y } from '@storybook/addon-a11y'
+// import { withA11y } from '@storybook/addon-a11y'
 
 import { BaseSection as Section } from '../src/layout/section/baseSection'
 
@@ -17,6 +17,8 @@ addParameters({
 })
 
 addDecorator(withKnobs)
+
+// addDecorator(withInfo({ inline: true, source: true, header: false }))
 addDecorator(story => (
   <div
     style={{

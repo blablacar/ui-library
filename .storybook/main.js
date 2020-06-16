@@ -14,6 +14,12 @@ module.exports = {
         {
           loader: require.resolve('react-docgen-typescript-loader'),
         },
+        {
+          loader: require.resolve('@storybook/source-loader'),
+          options: {
+            enforce: 'pre',
+          },
+        },
       ],
     })
     config.resolve.extensions.push('.ts', '.tsx')
@@ -29,6 +35,9 @@ module.exports = {
       options: {
         configureJSX: true,
       },
+    },
+    {
+      name: '@storybook/addon-storysource',
     },
   ],
 }
