@@ -137,8 +137,7 @@ button.c1 {
   -webkit-touch-callout: none;
 }
 
-button:active.c1,
-button:hover.c1 {
+button:focus:not(.focus-visible).c1 {
   outline: none;
 }
 
@@ -505,8 +504,7 @@ button.c1 {
   -webkit-touch-callout: none;
 }
 
-button:active.c1,
-button:hover.c1 {
+button:focus:not(.focus-visible).c1 {
   outline: none;
 }
 
@@ -890,8 +888,7 @@ button.c1 {
   -webkit-touch-callout: none;
 }
 
-button:active.c1,
-button:hover.c1 {
+button:focus:not(.focus-visible).c1 {
   outline: none;
 }
 

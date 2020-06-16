@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
+import { FocusVisibleContext } from '../_utils/focusVisibleProvider'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Item, ItemStatus } from '../_utils/item'
 import { Loader } from '../loader'
@@ -59,11 +60,6 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
     return rightAddon
   }
 
-  get fullClassName() {
-    const { className } = this.props
-    return cc(['kirk-item-choice', className])
-  }
-
   get labelColor() {
     const { style, disabled } = this.props
     if (disabled) {
@@ -94,37 +90,48 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
       status,
       disabled,
       ariaLabel,
+      className,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemChoiceProps>(this.props)
     const isRecommended = style === ItemChoiceStyle.RECOMMENDED
 
     return (
-      <Item
-        className={this.fullClassName}
-        leftTitle={label}
-        leftTitleDisplay={isRecommended ? TextDisplayType.SUBHEADER : TextDisplayType.TITLE}
-        leftBody={labelInfo}
-        leftBodyColor={disabled ? color.gray : color.lightMidnightGreen}
-        leftTitleColor={this.labelColor}
-        rightTitle={data}
-        rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
-        rightTitleColor={this.labelColor}
-        rightBody={dataInfo}
-        rightBodyColor={disabled ? color.gray : color.lightMidnightGreen}
-        leftAddon={leftAddon}
-        rightAddon={this.rightAddon}
-        href={!disabled ? href : ''}
-        tag={<button type="button" disabled={disabled} />}
-        onClick={!disabled ? onClick : null}
-        onFocus={!disabled ? onFocus : null}
-        onBlur={!disabled ? onBlur : null}
-        onMouseDown={!disabled ? onMouseDown : null}
-        highlighted={isRecommended}
-        chevron={status === ItemStatus.DEFAULT}
-        isClickable={!disabled}
-        ariaLabel={ariaLabel}
-        {...a11yAttrs}
-      />
+      <FocusVisibleContext.Consumer>
+        {context => (
+          <Item
+            className={cc([
+              'kirk-item-choice',
+              {
+                'focus-visible': context,
+              },
+              className,
+            ])}
+            leftTitle={label}
+            leftTitleDisplay={isRecommended ? TextDisplayType.SUBHEADER : TextDisplayType.TITLE}
+            leftBody={labelInfo}
+            leftBodyColor={disabled ? color.gray : color.lightMidnightGreen}
+            leftTitleColor={this.labelColor}
+            rightTitle={data}
+            rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+            rightTitleColor={this.labelColor}
+            rightBody={dataInfo}
+            rightBodyColor={disabled ? color.gray : color.lightMidnightGreen}
+            leftAddon={leftAddon}
+            rightAddon={this.rightAddon}
+            href={!disabled ? href : ''}
+            tag={<button type="button" disabled={disabled} />}
+            onClick={!disabled ? onClick : null}
+            onFocus={!disabled ? onFocus : null}
+            onBlur={!disabled ? onBlur : null}
+            onMouseDown={!disabled ? onMouseDown : null}
+            highlighted={isRecommended}
+            chevron={status === ItemStatus.DEFAULT}
+            isClickable={!disabled}
+            ariaLabel={ariaLabel}
+            {...a11yAttrs}
+          />
+        )}
+      </FocusVisibleContext.Consumer>
     )
   }
 }
