@@ -4,7 +4,7 @@ import { color, shadow } from '../branding'
 import { BaseIcon } from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
-  stroke: ${props => (props.iconColor ? props.iconColor : 'currentColor')};
+  stroke: ${props => props.iconColor ?? 'currentColor'};
 
   &,
   & rect,

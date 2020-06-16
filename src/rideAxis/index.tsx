@@ -7,8 +7,6 @@ import { ArrowIcon } from '../icon'
 const StyledRideAxis = styled.span`
   display: flex;
   align-items: center;
-  font-size: 1em;
-  color: inherit;
 `
 
 const StyledArrowIcon = styled(ArrowIcon)`
@@ -16,7 +14,6 @@ const StyledArrowIcon = styled(ArrowIcon)`
     display: inline-block;
     margin: 0 ${space.s};
     height: 1em;
-    stroke: currentColor;
   }
 `
 
