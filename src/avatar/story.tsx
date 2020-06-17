@@ -1,8 +1,6 @@
 import React from 'react'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { Avatar } from './index'
 
 const sizes = {
@@ -11,21 +9,22 @@ const sizes = {
   isLarge: 'isLarge',
 }
 
-const stories = storiesOf('Widgets|Avatar', module)
+export default {
+  title: 'Components|Avatar',
+  component: Avatar,
+}
 
-stories.add('Basic', () => {
+export const Basic = () => {
   const modifiers = select('Size', sizes, '')
   const propsModifiers = modifiers ? { [modifiers]: !!modifiers } : {}
   return (
-    <Section>
-      <Avatar
-        image={text('url', '//placehold.it/80x80')}
-        alt={text('alternative text', 'Avatar')}
-        isIdChecked={boolean('isIdChecked', false)}
-        unreadNotificationsCount={text('unreadNotificationsCount', '')}
-        unreadNotificationsCountAriaLabel={text('unreadNotificationsCountAriaLabel', '')}
-        {...propsModifiers}
-      />
-    </Section>
+    <Avatar
+      image={text('url', '//placehold.it/48x48')}
+      alt={text('alternative text', 'Avatar')}
+      isIdChecked={boolean('isIdChecked', false)}
+      unreadNotificationsCount={text('unreadNotificationsCount', '')}
+      unreadNotificationsCountAriaLabel={text('unreadNotificationsCountAriaLabel', '')}
+      {...propsModifiers}
+    />
   )
-})
+}

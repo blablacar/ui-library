@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { ConfirmationModal, ConfirmationModalStatus } from '../confirmationModal'
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { ConfirmationModalProps } from './ConfirmationModal'
-import confirmationModalDoc from './specifications/confirmationModal.md'
 
-const stories = storiesOf('Widgets|Modal|ConfirmationModal', module)
+export default {
+  title: 'Widgets|Modal|ConfirmationModal',
+  component: ConfirmationModal,
+}
 
 class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
   state = {
@@ -31,7 +31,7 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
 
   render() {
     return (
-      <Section>
+      <Fragment>
         <button type="button" onClick={this.openConfirmationModal}>
           Open ConfirmationModal
         </button>
@@ -45,40 +45,28 @@ class ConfirmationModalOpener extends Component<ConfirmationModalProps> {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua.
         </ConfirmationModal>
-      </Section>
+      </Fragment>
     )
   }
 }
 
-stories.add(
-  'warning',
-  () => (
-    <ConfirmationModalOpener
-      status={ConfirmationModalStatus.WARNING}
-      onClose={action('onClose')}
-      onConfirm={action('onConfirm')}
-      confirmLabel={text('confirmLabel', 'Fhtagn')}
-      closeOnEsc={boolean('closeOnEsc', true)}
-      confirmIsLoading={boolean('confirmIsLoading', false)}
-    />
-  ),
-  {
-    readme: { content: confirmationModalDoc },
-  },
+export const Warning = () => (
+  <ConfirmationModalOpener
+    status={ConfirmationModalStatus.WARNING}
+    onClose={action('onClose')}
+    onConfirm={action('onConfirm')}
+    confirmLabel={text('confirmLabel', 'Fhtagn')}
+    closeOnEsc={boolean('closeOnEsc', true)}
+    confirmIsLoading={boolean('confirmIsLoading', false)}
+  />
 )
 
-stories.add(
-  'reminder',
-  () => (
-    <ConfirmationModalOpener
-      status={ConfirmationModalStatus.REMINDER}
-      onClose={action('onClose')}
-      confirmLabel={text('confirmLabel', 'Fhtagn')}
-      onConfirm={action('onConfirm')}
-      closeOnEsc={boolean('closeOnEsc', true)}
-    />
-  ),
-  {
-    readme: { content: confirmationModalDoc },
-  },
+export const Reminder = () => (
+  <ConfirmationModalOpener
+    status={ConfirmationModalStatus.REMINDER}
+    onClose={action('onClose')}
+    confirmLabel={text('confirmLabel', 'Fhtagn')}
+    onConfirm={action('onConfirm')}
+    closeOnEsc={boolean('closeOnEsc', true)}
+  />
 )

@@ -1,18 +1,16 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
-import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
 import { LockIcon } from '../icon/lockIcon'
-import { BaseSection as Section } from '../layout/section/baseSection'
-import { primaryDoc } from './specifications/primary.md'
-import { secondaryDoc } from './specifications/secondary.md'
-import { tertiaryDoc } from './specifications/tertiary.md'
+import { Button, ButtonStatus } from './index'
 
-const stories = storiesOf('Widgets|Button', module)
+export default {
+  title: 'Buttons|Button',
+  component: Button,
+}
 
 const label = (defaultValue: string) => text('Label', defaultValue)
 const hasIcon = () => boolean('icon', false)
@@ -27,155 +25,111 @@ const commonProps = {
   onBlur: action('blured'),
 }
 
-stories.add(
-  'primary',
-  () => (
-    <Section>
-      <Button
-        status={ButtonStatus.PRIMARY}
-        isBubble={hasIcon()}
-        shadowed={boolean('shadowed', false)}
-        disabled={boolean('disabled', false)}
-        {...commonProps}
-      >
-        {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
-      </Button>
-    </Section>
-  ),
-  {
-    readme: { content: primaryDoc },
-  },
+export const Primary = () => (
+  <Button
+    status={ButtonStatus.PRIMARY}
+    isBubble={hasIcon()}
+    shadowed={boolean('shadowed', false)}
+    disabled={boolean('disabled', false)}
+    {...commonProps}
+  >
+    {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Primary button')}
+  </Button>
 )
 
-stories.add(
-  'secondary',
-  () => (
-    <Section>
-      <Button
-        status={ButtonStatus.SECONDARY}
-        isBubble={hasIcon()}
-        shadowed={boolean('shadowed', false)}
-        disabled={boolean('disabled', false)}
-        {...commonProps}
-      >
-        {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Secondary button')}
-      </Button>
-    </Section>
-  ),
-  {
-    readme: { content: secondaryDoc },
-  },
+export const Secondary = () => (
+  <Button
+    status={ButtonStatus.SECONDARY}
+    isBubble={hasIcon()}
+    shadowed={boolean('shadowed', false)}
+    disabled={boolean('disabled', false)}
+    {...commonProps}
+  >
+    {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Secondary button')}
+  </Button>
 )
 
-stories.add(
-  'tertiary',
-  () => (
-    <Section>
-      <Button
-        status={ButtonStatus.TERTIARY}
-        isBubble={hasIcon()}
-        shadowed={boolean('shadowed', false)}
-        disabled={boolean('disabled', false)}
-        {...commonProps}
-      >
-        {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Tertiary button')}
-      </Button>
-    </Section>
-  ),
-  {
-    readme: { content: tertiaryDoc },
-  },
+export const Tertiary = () => (
+  <Button
+    status={ButtonStatus.TERTIARY}
+    isBubble={hasIcon()}
+    shadowed={boolean('shadowed', false)}
+    disabled={boolean('disabled', false)}
+    {...commonProps}
+  >
+    {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Tertiary button')}
+  </Button>
 )
 
-stories.add('loading', () => (
-  <Section>
-    <Button status={ButtonStatus.LOADING} />
-  </Section>
-))
+export const Loading = () => <Button status={ButtonStatus.LOADING} />
 
-stories.add('valid', () => (
-  <Section>
-    <Button status={ButtonStatus.CHECKED} onDoneAnimationEnd={() => action('animation done')} />
-  </Section>
-))
+export const Valid = () => (
+  <Button status={ButtonStatus.CHECKED} onDoneAnimationEnd={() => action('animation done')} />
+)
 
-stories.add('warning', () => (
-  <Section>
-    <Button
-      status={ButtonStatus.WARNING}
-      isBubble={hasIcon()}
-      disabled={boolean('disabled', false)}
-      {...commonProps}
-    >
-      {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
-    </Button>
-  </Section>
-))
+export const Warning = () => (
+  <Button
+    status={ButtonStatus.WARNING}
+    isBubble={hasIcon()}
+    disabled={boolean('disabled', false)}
+    {...commonProps}
+  >
+    {hasIcon() ? <ArrowIcon right iconColor={color.white} /> : label('Warning button')}
+  </Button>
+)
 
-stories.add('unstyled', () => (
-  <Section>
-    <Button
-      status={ButtonStatus.UNSTYLED}
-      isBubble={hasIcon()}
-      disabled={boolean('disabled', false)}
-      {...commonProps}
-    >
-      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Unstyled button')}
-    </Button>
-  </Section>
-))
+export const Unstyled = () => (
+  <Button
+    status={ButtonStatus.UNSTYLED}
+    isBubble={hasIcon()}
+    disabled={boolean('disabled', false)}
+    {...commonProps}
+  >
+    {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Unstyled button')}
+  </Button>
+)
 
-stories.add('shadowed', () => (
-  <Section>
-    <Button
-      {...commonProps}
-      isBubble
-      status={ButtonStatus.PRIMARY}
-      shadowed={boolean('shadowed', true)}
-      disabled={boolean('disabled', false)}
-    >
-      <ArrowIcon right iconColor={color.white} />
-    </Button>
-  </Section>
-))
+export const hadowed = () => (
+  <Button
+    {...commonProps}
+    isBubble
+    status={ButtonStatus.PRIMARY}
+    shadowed={boolean('shadowed', true)}
+    disabled={boolean('disabled', false)}
+  >
+    <ArrowIcon right iconColor={color.white} />
+  </Button>
+)
 
-stories.add('icon + text', () => (
-  <Section>
-    <Button status={ButtonStatus.PRIMARY} {...commonProps}>
-      <LockIcon iconColor={color.white} />
-      {label('Content')}
-    </Button>
-  </Section>
-))
+export const WithText = () => (
+  <Button status={ButtonStatus.PRIMARY} {...commonProps}>
+    <LockIcon iconColor={color.white} />
+    {label('Content')}
+  </Button>
+)
 
-stories.add('anchor button', () => (
-  <Section>
-    <Button isBubble={hasIcon()} status={ButtonStatus.PRIMARY} href="#" {...commonProps}>
-      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
-    </Button>
-  </Section>
-))
+export const AnchorButton = () => (
+  <Button isBubble={hasIcon()} status={ButtonStatus.PRIMARY} href="#" {...commonProps}>
+    {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
+  </Button>
+)
 
-stories.add('anchor button with link element', () => (
-  <Section>
-    <Button
-      isBubble={hasIcon()}
-      status={ButtonStatus.PRIMARY}
-      href={<a href="#1">foo</a>}
-      {...commonProps}
-    >
-      {label('Anchor button')}
-    </Button>
-  </Section>
-))
+export const AnchorButtonWithLink = () => (
+  <Button
+    isBubble={hasIcon()}
+    status={ButtonStatus.PRIMARY}
+    href={<a href="#1">foo</a>}
+    {...commonProps}
+  >
+    {label('Anchor button')}
+  </Button>
+)
 
-stories.add('anchor button unstyled', () => (
-  <Section>
-    <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
-      {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
-    </Button>
-  </Section>
-))
+export const AnchorButtonUnstyled = () => (
+  <Button status={ButtonStatus.UNSTYLED} isBubble={hasIcon()} {...commonProps}>
+    {hasIcon() ? <ArrowIcon right iconColor={color.blue} /> : label('Anchor button')}
+  </Button>
+)
 
 class Validation extends React.Component {
   state = {
@@ -207,21 +161,19 @@ class Validation extends React.Component {
       status = ButtonStatus.CHECKED
     }
     return (
-      <Section>
-        <Button
-          status={status}
-          isBubble={hasIcon() || this.state.icon}
-          onClick={this.validate}
-          onDoneAnimationEnd={() => action('animation done')}
-        >
-          {this.renderChildren()}
-        </Button>
-      </Section>
+      <Button
+        status={status}
+        isBubble={hasIcon() || this.state.icon}
+        onClick={this.validate}
+        onDoneAnimationEnd={() => action('animation done')}
+      >
+        {this.renderChildren()}
+      </Button>
     )
   }
 }
 
-stories.add('validate on click', () => {
+export const ValidateOnClick = () => {
   validation()
   return <Validation />
-})
+}

@@ -1,9 +1,6 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import { space } from './branding'
-
-const stories = storiesOf('Design Tokens', module)
 
 const styles: { [name: string]: React.CSSProperties } = {
   main: {
@@ -35,7 +32,7 @@ const renderTabSpacing = (s: string) => (
   </tr>
 )
 
-stories.add('Spacing', () => (
+export const Basic = () => (
   <div style={styles.main}>
     <table style={styles.fontTableTile}>
       <tbody>
@@ -47,4 +44,8 @@ stories.add('Spacing', () => (
       </tbody>
     </table>
   </div>
-))
+)
+
+export default {
+  title: 'Design Tokens|Spacing',
+}

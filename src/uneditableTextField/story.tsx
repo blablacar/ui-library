@@ -6,7 +6,7 @@ import { SearchIcon as IconSearch } from '../icon/searchIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { UneditableTextField } from '../uneditableTextField'
 
-const stories = storiesOf('Widgets|UneditableTextField', module)
+const stories = storiesOf('Forms|UneditableTextField', module)
 
 stories.add('Basic', () => (
   <Section>

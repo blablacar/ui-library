@@ -19,12 +19,4 @@ addParameters({
 addDecorator(withKnobs)
 
 // addDecorator(withInfo({ inline: true, source: true, header: false }))
-addDecorator(story => (
-  <div
-    style={{
-      margin: '3rem auto',
-    }}
-  >
-    <Section>{story()}</Section>
-  </div>
-))
+addDecorator(story => <Section>{story()}</Section>)

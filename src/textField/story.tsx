@@ -1,175 +1,162 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { inputModes, inputTypes, TextField } from '../textField'
 
-const stories = storiesOf('Widgets|TextField', module)
+export default {
+  title: 'Forms|TextField',
+  component: TextField,
+}
 
-stories.add('specifications', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      name={text('name', 'inputName')}
-      inputMode={select('inputMode', inputModes, inputModes.TEXT)}
-      pattern={text('pattern')}
-      placeholder={text('placeholder')}
-      labelledBy={text('aria label')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      focus={boolean('focus', false)}
-      required={boolean('required', false)}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-      title={text('title', 'accessibility text')}
-    />
-  </Section>
-))
+export const Basic = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    name={text('name', 'inputName')}
+    inputMode={select('inputMode', inputModes, inputModes.TEXT)}
+    pattern={text('pattern')}
+    placeholder={text('placeholder')}
+    labelledBy={text('aria label')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    focus={boolean('focus', false)}
+    required={boolean('required', false)}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+    title={text('title', 'accessibility text')}
+  />
+)
 
-stories.add('input', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      name={text('name', 'inputName')}
-      placeholder={text('placeholder')}
-      labelledBy={text('aria label')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      focus={boolean('focus', false)}
-      required={boolean('required', false)}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-      title={text('title', 'accessibility text')}
-    />
-  </Section>
-))
+export const Input = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    name={text('name', 'inputName')}
+    placeholder={text('placeholder')}
+    labelledBy={text('aria label')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    focus={boolean('focus', false)}
+    required={boolean('required', false)}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+    title={text('title', 'accessibility text')}
+  />
+)
 
-stories.add('input with default value', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      defaultValue={text('defaultValue', 'starting value')}
-      name={text('name')}
-      placeholder={text('placeholder')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-    />
-  </Section>
-))
+export const InputWithDefaultValue = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    defaultValue={text('defaultValue', 'starting value')}
+    name={text('name')}
+    placeholder={text('placeholder')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+  />
+)
 
-stories.add('input disabled', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      defaultValue="starting value"
-      name={text('name')}
-      placeholder={text('placeholder')}
-      disabled
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-    />
-  </Section>
-))
+export const InputDisabled = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    defaultValue="starting value"
+    name={text('name')}
+    placeholder={text('placeholder')}
+    disabled
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+  />
+)
 
-stories.add('input password', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.PASSWORD)}
-      id={text('id')}
-      defaultValue="starting value"
-      name={text('name')}
-      placeholder={text('placeholder')}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-    />
-  </Section>
-))
+export const InputPassword = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.PASSWORD)}
+    id={text('id')}
+    defaultValue="starting value"
+    name={text('name')}
+    placeholder={text('placeholder')}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+  />
+)
 
-stories.add('input with autofocus', () => (
-  <Section>
-    <TextField
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      name={text('name')}
-      placeholder={text('placeholder')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      autoFocus
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-    />
-  </Section>
-))
+export const InputWithAutofocus = () => (
+  <TextField
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    name={text('name')}
+    placeholder={text('placeholder')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    autoFocus
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+  />
+)
 
-const button = (
+const addon = (
   <Button status={ButtonStatus.UNSTYLED} isBubble tabIndex="-1">
     <ArrowIcon size="18" />
   </Button>
 )
 
-stories.add('input with addon', () => (
-  <Section>
-    <TextField
-      addon={button}
-      type={select('type', inputTypes, inputTypes.TEXT)}
-      id={text('id')}
-      defaultValue="starting value"
-      name={text('name')}
-      placeholder={text('placeholder')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-    />
-  </Section>
-))
+export const InputWithAddon = () => (
+  <TextField
+    addon={addon}
+    type={select('type', inputTypes, inputTypes.TEXT)}
+    id={text('id')}
+    defaultValue="starting value"
+    name={text('name')}
+    placeholder={text('placeholder')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    maxLength={number('maxLength')}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+  />
+)
 
 const formatValue = (value: string, previousValue: string) => {
   if (previousValue && value.length < previousValue.length) {
@@ -182,22 +169,20 @@ const formatValue = (value: string, previousValue: string) => {
   return value
 }
 
-stories.add('date input ', () => (
-  <Section>
-    <TextField
-      id={text('id')}
-      name={text('name')}
-      placeholder={text('placeholder')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      maxLength={number('maxLength', 10)}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-      format={formatValue}
-    />
-  </Section>
-))
+export const InputDate = () => (
+  <TextField
+    id={text('id')}
+    name={text('name')}
+    placeholder={text('placeholder')}
+    disabled={boolean('disabled', false)}
+    readOnly={boolean('readOnly', false)}
+    label={text('label')}
+    error={text('error message', '')}
+    onChange={action('changed')}
+    onFocus={action('focused')}
+    onBlur={action('blurred')}
+    maxLength={number('maxLength', 10)}
+    autoComplete={select('autocomplete', ['on', 'off'])}
+    format={formatValue}
+  />
+)

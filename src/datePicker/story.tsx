@@ -1,12 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { number, select } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { DatePicker, DatePickerOrientation } from '../datePicker'
-import { BaseSection as Section } from '../layout/section/baseSection'
 
-const stories = storiesOf('Widgets|DatePicker', module)
+export default {
+  title: 'Forms|DatePicker',
+  component: DatePicker,
+}
 
 const weekdaysShort = (locale: string): string[] => {
   const options = { weekday: 'short' }
@@ -41,61 +42,53 @@ const firstDayOfWeek: FirstDayOfWeekMap = {
 
 const testLocales = ['en-GB', 'fr-FR', 'ru-RU']
 
-stories.add('default', () => (
-  <Section>
-    <DatePicker
-      initialDate={new Date()}
-      name="datepicker"
-      onChange={action('onChange')}
-      orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
-      locale={select('Locale', testLocales, 'en-GB')}
-      weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
-      weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
-      months={months(select('Locale', testLocales, 'en-GB'))}
-      firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
-      numberOfMonths={number('Number of months', 1)}
-      stickyPositionTop={number('Top position of sticky weekdays', 0)}
-    />
-  </Section>
-))
+export const Basic = () => (
+  <DatePicker
+    initialDate={new Date()}
+    name="datepicker"
+    onChange={action('onChange')}
+    orientation={select('Orientation', DatePickerOrientation, DatePickerOrientation.HORIZONTAL)}
+    locale={select('Locale', testLocales, 'en-GB')}
+    weekdaysShort={weekdaysShort(select('Locale', testLocales, 'en-GB'))}
+    weekdaysLong={weekdaysLong(select('Locale', testLocales, 'en-GB'))}
+    months={months(select('Locale', testLocales, 'en-GB'))}
+    firstDayOfWeek={firstDayOfWeek[select('Locale', testLocales, 'en-GB')]}
+    numberOfMonths={number('Number of months', 1)}
+    stickyPositionTop={number('Top position of sticky weekdays', 0)}
+  />
+)
 
-stories.add('example horizontal (2 months)', () => (
-  <Section>
-    <DatePicker
-      initialDate={new Date()}
-      name="datepicker"
-      onChange={action('onChange')}
-      orientation={DatePickerOrientation.HORIZONTAL}
-      numberOfMonths={2}
-    />
-  </Section>
-))
+export const Horizontal = () => (
+  <DatePicker
+    initialDate={new Date()}
+    name="datepicker"
+    onChange={action('onChange')}
+    orientation={DatePickerOrientation.HORIZONTAL}
+    numberOfMonths={2}
+  />
+)
 
-stories.add('example vertical (6 months)', () => (
-  <Section>
-    <DatePicker
-      initialDate={new Date()}
-      name="datepicker"
-      onChange={action('onChange')}
-      orientation={DatePickerOrientation.VERTICAL}
-      numberOfMonths={6}
-    />
-  </Section>
-))
+export const Vertical6Months = () => (
+  <DatePicker
+    initialDate={new Date()}
+    name="datepicker"
+    onChange={action('onChange')}
+    orientation={DatePickerOrientation.VERTICAL}
+    numberOfMonths={6}
+  />
+)
 
-stories.add('example vertical (12 months - selected date in 6 months)', () => {
+export const VerticalYear = () => {
   const initialeDate = new Date()
   initialeDate.setMonth(initialeDate.getMonth() + 6)
 
   return (
-    <Section>
-      <DatePicker
-        initialDate={initialeDate}
-        name="datepicker"
-        onChange={action('onChange')}
-        orientation={DatePickerOrientation.VERTICAL}
-        numberOfMonths={12}
-      />
-    </Section>
+    <DatePicker
+      initialDate={initialeDate}
+      name="datepicker"
+      onChange={action('onChange')}
+      orientation={DatePickerOrientation.VERTICAL}
+      numberOfMonths={12}
+    />
   )
-})
+}

@@ -1,34 +1,31 @@
 import styled from 'styled-components'
 
 import { color, componentSizes, font, shadow, space, transition } from '../_utils/branding'
-import { Button } from './Button'
 
 const borderSize = '2px'
 
-const StyledButton = styled(Button)`
-  & {
-    position: relative;
-    box-sizing: border-box;
-    display: inline-flex;
-    padding: 0 ${space.xl};
-    border: 1px solid transparent;
-    border-radius: 48px;
-    font-size: ${font.base.size};
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
-    height: ${componentSizes.buttonIconSize};
-    min-width: ${componentSizes.buttonIconSize};
-    max-width: 100%;
-    overflow: hidden;
-    user-select: none;
-    align-items: center;
-    transition: max-width ${transition.duration.fast} ease-in,
-      background-color ${transition.duration.base} ease-in;
-    white-space: nowrap;
-  }
+const StyledButton = styled.button`
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  padding: 0 ${space.xl};
+  border: 1px solid transparent;
+  border-radius: 48px;
+  font-size: ${font.base.size};
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: ${componentSizes.buttonIconSize};
+  min-width: ${componentSizes.buttonIconSize};
+  max-width: 100%;
+  overflow: hidden;
+  user-select: none;
+  align-items: center;
+  transition: max-width ${transition.duration.fast} ease-in,
+    background-color ${transition.duration.base} ease-in;
+  white-space: nowrap;
 
   & svg,
   & img {

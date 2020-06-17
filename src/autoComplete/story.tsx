@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { ItemStatus } from '../_utils/item'
 import { ComfortIcon } from '../icon/comfortIcon'
 import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'
 
-const stories = storiesOf('Widgets|AutoComplete', module)
+export default {
+  title: 'Widget|AutoComplete',
+  component: AutoComplete,
+}
 
 const places: AutocompleteItem[] = [
   {
@@ -106,15 +108,15 @@ export class AutoCompleteExample extends Component<
 
 // Type <code>Paris</code> to test auto-completion.
 
-stories.add('Basic', () => <AutoCompleteExample />)
+export const Basic = () => <AutoCompleteExample />
 
-stories.add('WithBusyState', () => <AutoCompleteExample searchForItemsDelay={1500} />)
+export const WithBusyState = () => <AutoCompleteExample searchForItemsDelay={1500} />
 
-stories.add('WithEmptySearch', () => {
+export const WithEmptySearch = () => {
   const emptySearch = [
     { id: '1', label: 'Get my location', labelInfo: '' },
     { id: '2', label: 'Favorite address', labelInfo: '' },
   ]
 
   return <AutoCompleteExample renderEmptySearch={emptySearch} />
-})
+}

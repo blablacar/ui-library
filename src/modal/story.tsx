@@ -1,13 +1,13 @@
-import React, { Component, createRef } from 'react'
+import React, { Component, createRef, Fragment } from 'react'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { Modal, ModalSize } from '../modal'
 import { ModalProps } from './Modal'
-import modalDoc from './specifications/modal.md'
 
-const stories = storiesOf('Widgets|Modal', module)
+export default {
+  title: 'Widgets|Modal',
+  component: Modal,
+}
 
 class ModalOpener extends Component<ModalProps> {
   state = {
@@ -35,7 +35,7 @@ class ModalOpener extends Component<ModalProps> {
 
   render() {
     return (
-      <Section>
+      <Fragment>
         <button onClick={this.openModal}>Open modal 1</button>
         <button onClick={this.openModal2}>Open modal 2</button>
         <Modal {...this.props} onClose={this.closeModal} isOpen={this.state.modalOpen}>
@@ -53,32 +53,26 @@ class ModalOpener extends Component<ModalProps> {
             <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="A kitten" />
           </div>
         </Modal>
-      </Section>
+      </Fragment>
     )
   }
 }
 
-stories.add(
-  'default',
-  () => (
-    <ModalOpener
-      onClose={() => {}}
-      closeOnEsc={boolean('closeOnEsc', true)}
-      closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
-      displayDimmer={boolean('displayDimmer', true)}
-      isOpen={false}
-      closeButtonTitle={text('Close icon text', 'Close modal')}
-      ariaLabelledBy="label1"
-      ariaDescribedBy="description1"
-      size={select('size', ModalSize, ModalSize.MEDIUM)}
-    />
-  ),
-  {
-    readme: { content: modalDoc },
-  },
+export const Basic = () => (
+  <ModalOpener
+    onClose={() => {}}
+    closeOnEsc={boolean('closeOnEsc', true)}
+    closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
+    displayDimmer={boolean('displayDimmer', true)}
+    isOpen={false}
+    closeButtonTitle={text('Close icon text', 'Close modal')}
+    ariaLabelledBy="label1"
+    ariaDescribedBy="description1"
+    size={select('size', ModalSize, ModalSize.MEDIUM)}
+  />
 )
 
-stories.add('fullscreen', () => (
+export const Fullscreen = () => (
   <ModalOpener
     onClose={() => {}}
     closeOnEsc={boolean('closeOnEsc', true)}
@@ -90,4 +84,4 @@ stories.add('fullscreen', () => (
     ariaDescribedBy="description2"
     size={select('size', ModalSize, ModalSize.FULLSCREEN)}
   />
-))
+)
