@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { CheckIcon } from '../icon/checkIcon'
 import { MyRidesIcon } from '../icon/myRides'
 import { ItemChoice, ItemChoiceStatus, ItemChoiceStyle } from '../itemChoice'
@@ -21,23 +22,25 @@ stories.add(
     const disabled = boolean('Disabled', false)
 
     return (
-      <Section>
-        <ItemChoice
-          label={text('Title', 'Main title')}
-          labelInfo={text('Title Info', 'Additional informations')}
-          data={text('Data', 'Data')}
-          dataInfo={text('Data Info', 'Info')}
-          leftAddon={withLeftIcon ? <CheckIcon isDisabled={disabled} /> : null}
-          rightAddon={withRightIcon ? <MyRidesIcon active isDisabled={disabled} /> : null}
-          status={select('Status', ItemChoiceStatus, ItemChoiceStatus.DEFAULT)}
-          style={select('Style', ItemChoiceStyle, ItemChoiceStyle.PRIMARY)}
-          onDoneAnimationEnd={action('onDoneAnimationEnd')}
-          onClick={action('onClick')}
-          href={isLink ? <a href="#" /> : ''}
-          disabled={disabled}
-          ariaLabel={text('Aria label', 'Aria label')}
-        />
-      </Section>
+      <FocusVisibleProvider>
+        <Section>
+          <ItemChoice
+            label={text('Title', 'Main title')}
+            labelInfo={text('Title Info', 'Additional informations')}
+            data={text('Data', 'Data')}
+            dataInfo={text('Data Info', 'Info')}
+            leftAddon={withLeftIcon ? <CheckIcon isDisabled={disabled} /> : null}
+            rightAddon={withRightIcon ? <MyRidesIcon active isDisabled={disabled} /> : null}
+            status={select('Status', ItemChoiceStatus, ItemChoiceStatus.DEFAULT)}
+            style={select('Style', ItemChoiceStyle, ItemChoiceStyle.PRIMARY)}
+            onDoneAnimationEnd={action('onDoneAnimationEnd')}
+            onClick={action('onClick')}
+            href={isLink ? <a href="#" /> : ''}
+            disabled={disabled}
+            ariaLabel={text('Aria label', 'Aria label')}
+          />
+        </Section>
+      </FocusVisibleProvider>
     )
   },
   {
