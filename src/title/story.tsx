@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Title } from '../title'
 
-const stories = storiesOf('Widgets|Title', module)
+const stories = storiesOf('Design Tokens|Text (legacy)/Title', module)
 const optionHeading = {
   1: '1',
   2: '2',

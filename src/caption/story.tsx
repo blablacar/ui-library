@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { Caption } from '../caption'
 import { BaseSection as Section } from '../layout/section/baseSection'
 
-const stories = storiesOf('Widgets|Caption', module)
+const stories = storiesOf('Design Tokens|Text (legacy)/Caption', module)
 
 stories.add('A basic caption', () => (
   <Section>

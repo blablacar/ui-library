@@ -1,23 +1,22 @@
 import React from 'react'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { color } from '../_utils/branding'
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { Text, TextDisplayType, TextTagType } from '../text'
 
-const stories = storiesOf('Widgets|Text', module)
+export default {
+  title: 'Design Tokens|Text (legacy)/Text',
+  component: Text,
+}
 
-stories.add('basic', () => (
-  <Section>
-    <Text
-      display={select('Display', TextDisplayType, TextDisplayType.BODY)}
-      tag={select('Tag', TextTagType, TextTagType.SPAN)}
-      textColor={select('Color', color, 'primary')}
-      newlineToBr={boolean('newlineToBr', true)}
-      ariaLabel={text('Aria label', 'Aria label')}
-    >
-      {text('Text', 'This is an example')}
-    </Text>
-  </Section>
-))
+export const Default = () => (
+  <Text
+    display={select('Display', TextDisplayType, TextDisplayType.BODY)}
+    tag={select('Tag', TextTagType, TextTagType.SPAN)}
+    textColor={select('Color', color, 'primary')}
+    newlineToBr={boolean('newlineToBr', true)}
+    ariaLabel={text('Aria label', 'Aria label')}
+  >
+    {text('Text', 'This is an example')}
+  </Text>
+)

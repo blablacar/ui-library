@@ -5,7 +5,7 @@ import { BaseSection as Section } from '../layout/section/baseSection'
 import { SubHeader } from '../subHeader'
 import spec from './specifications/subHeader.md'
 
-const stories = storiesOf('Widgets|SubHeader', module)
+const stories = storiesOf('Design Tokens|Text (legacy)/SubHeader', module)
 
 const specTemplateFn = () => <SubHeader>SubHeader content</SubHeader>
 stories.add('Specifications', specTemplateFn, { readme: spec })

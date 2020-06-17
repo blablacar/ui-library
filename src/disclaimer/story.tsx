@@ -4,15 +4,12 @@ import { storiesOf } from '@storybook/react'
 import { Button, ButtonStatus } from '../button'
 import { Disclaimer } from '../disclaimer'
 import { BaseSection as Section } from '../layout/section/baseSection'
-import spec from './specifications/disclaimer.md'
 
-const stories = storiesOf('Widgets|Disclaimer', module)
+const stories = storiesOf('Design Tokens|Text/Disclaimer', module)
 
-stories.add('Specifications', () => <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>, {
-  readme: spec,
-})
+stories.add('Default', () => <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>)
 
-stories.add('With info icon', () => (
+stories.add('WithInfoIcon', () => (
   <Section>
     <Disclaimer useInfoIcon>
       <span>

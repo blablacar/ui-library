@@ -5,15 +5,10 @@ import { storiesOf } from '@storybook/react'
 import { color } from '../_utils/branding'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { TheVoice } from './index'
-import readme from './specifications/theVoice.md'
 
-const stories = storiesOf('Widgets|TheVoice', module)
+const stories = storiesOf('Design Tokens|Text', module)
 
-stories.add('Specifications', () => null, {
-  readme: { content: readme },
-})
-
-stories.add('default', () => (
+stories.add('TheVoice', () => (
   <Fragment>
     <Section>
       <TheVoice id={text('id', 'MyId')} className={text('className', 'other-classes')}>
