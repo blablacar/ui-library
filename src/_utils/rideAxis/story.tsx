@@ -2,17 +2,17 @@ import React from 'react'
 import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color, font } from '../_utils/branding'
-import { BaseSection as Section } from '../layout/section/baseSection'
+import { BaseSection as Section } from '../../layout/section/baseSection'
+import { color, font } from '../branding'
 import { RideAxis } from './index'
 import readme from './specifications/index.md'
 
-const stories = storiesOf('Widgets|RideAxis', module)
+const stories = storiesOf('Internal|RideAxis', module)
 stories.addParameters({
   readme,
 })
 
-stories.add('FromTo', () => (
+stories.add('Default', () => (
   <Section>
     <div
       style={{

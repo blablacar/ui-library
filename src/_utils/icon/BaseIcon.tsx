@@ -3,6 +3,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import { Badge } from '../../badge'
+import { color } from '../branding'
 
 export interface Icon {
   readonly size?: number | string
@@ -23,7 +24,7 @@ export interface IconProps extends Icon {
 export const BaseIconDefaultProps = {
   className: '',
   iconClassName: '',
-  iconColor: 'currentColor',
+  iconColor: color.lightMidnightGreen,
   size: 24,
   title: '',
   badgeAriaLabel: '',
@@ -34,7 +35,6 @@ export const BaseIconDefaultProps = {
 export const BaseIcon = ({
   className,
   iconClassName,
-  iconColor = 'currentColor',
   size,
   title,
   children,
@@ -57,7 +57,6 @@ export const BaseIcon = ({
       width={size}
       height={size}
       aria-hidden={isEmpty(title)}
-      fill={iconColor}
     >
       {title && <title>{title}</title>}
       {children}

@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
+import { RideAxis } from '../_utils/rideAxis'
 import { SearchIcon } from '../icon/searchIcon'
-import { RideAxis } from '../rideAxis'
 import { Text, TextTagType } from '../text'
 import { UneditableTextField } from '../uneditableTextField'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { space } from '../_utils/branding'
-import { ArrowIcon } from '../icon'
+import { ArrowIcon } from '../../icon'
+import { space } from '../branding'
 
 const StyledRideAxis = styled.span`
   display: flex;

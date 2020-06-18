@@ -2,8 +2,8 @@ import React from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import { RideAxis } from '../_utils/rideAxis'
 import { BaseSection as Section } from '../layout/section/baseSection'
-import { RideAxis } from '../rideAxis'
 import { MessagingSummaryItem } from './index'
 
 const stories = storiesOf('Widgets|MessagingSummaryItem', module)

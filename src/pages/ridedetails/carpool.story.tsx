@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import { color } from '../../_utils/branding'
+import { RideAxis } from '../../_utils/rideAxis'
 import { Avatar } from '../../avatar'
 import { Divider } from '../../divider'
 import { BubbleIcon } from '../../icon/bubbleIcon'
@@ -14,7 +16,6 @@ import { ItemInfo } from '../../itemInfo'
 import { Itinerary } from '../../itinerary'
 import { LayoutNormalizer } from '../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../layout/section/baseSection'
-import { RideAxis } from '../../rideAxis'
 import { SubHeader } from '../../subHeader'
 import { TheVoice } from '../../theVoice'
 
@@ -49,7 +50,11 @@ stories.add('Default', () => (
       <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
       <Divider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
-      <ItemAction action="Contacter Vince" leftAddon={<BubbleIcon />} href="#" />
+      <ItemAction
+        action="Contacter Vince"
+        leftAddon={<BubbleIcon iconColor={color.blue} />}
+        href="#"
+      />
       <Divider />
       <ul>
         <ItemInfo mainInfo="Fumer nest pas autporisé dans la voiture." icon={<SmokeIcon />} />

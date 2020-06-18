@@ -17,10 +17,13 @@ import { RideAxis } from '@blablacar/ui-library'
 
 ## Specifications
 
-- `Font-size` and `Color` are _inhehit from parent_
-- `From` and `To` properties are optional
+> ⚠️ Not a official component at PIXAR
 
-<!-- PROPS -->
+- `Font-size` is _inherit from parent_
+- `From` and `To` properties are optional
+- `ArrowIcon` is **always** `color.lightMidnightGreen`
+
+  <!-- PROPS -->
 
 ## When should I use it?
 
