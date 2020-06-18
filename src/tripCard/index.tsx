@@ -145,7 +145,11 @@ const StyledTripCard = styled(TripCard)`
     text-align: center;
   }
 
-  & .kirk-tripCard-flags svg {
+  & .kirk-tripCard-flags {
+    color: ${color.lightMidnightGreen};
+  }
+
+  & .kirk-tripCard-flags .kirk-icon {
     display: inline-block;
     margin-left: ${space.m};
   }

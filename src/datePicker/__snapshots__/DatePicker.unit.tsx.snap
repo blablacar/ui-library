@@ -17,6 +17,10 @@ exports[`DatePicker renderCaption Should render the given month title with year 
 `;
 
 exports[`DatePicker renderNavbar Should render the previous/next buttons in horizontal mode 1`] = `
+.c1 {
+  stroke: #00AFF5;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -232,7 +236,6 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -271,7 +274,6 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 24 24"
       width={24}

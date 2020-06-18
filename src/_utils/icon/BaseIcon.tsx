@@ -35,7 +35,6 @@ export const BaseIconDefaultProps = {
 export const BaseIcon = ({
   className,
   iconClassName,
-  iconColor,
   size,
   title,
   children,
@@ -58,7 +57,6 @@ export const BaseIcon = ({
       width={size}
       height={size}
       aria-hidden={isEmpty(title)}
-      fill={iconColor}
     >
       {title && <title>{title}</title>}
       {children}

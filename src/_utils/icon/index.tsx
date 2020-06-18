@@ -4,6 +4,8 @@ import { color, shadow } from '../branding'
 import { BaseIcon } from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
+  stroke: ${props => props.iconColor ?? color.lightMidnightGreen};
+
   &,
   & rect,
   & circle,

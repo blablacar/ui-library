@@ -4,7 +4,7 @@
 import { TripCard } from '@blablacar/ui-library'
 ```
 
-## Playground
+## Component
 
 <!-- STORY -->
 

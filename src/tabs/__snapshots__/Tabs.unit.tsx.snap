@@ -129,6 +129,10 @@ exports[`Rendering testing should render properly 1`] = `
 `;
 
 exports[`Rendering testing should render properly with icons 1`] = `
+.c0 {
+  stroke: #708C91;
+}
+
 .c0.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -182,7 +186,6 @@ exports[`Rendering testing should render properly with icons 1`] = `
             <svg
               aria-hidden={true}
               className="kirk-icon c0"
-              fill="#708C91"
               height={24}
               viewBox="0 0 24 24"
               width={24}
@@ -248,7 +251,6 @@ exports[`Rendering testing should render properly with icons 1`] = `
             <svg
               aria-hidden={true}
               className="kirk-icon c0"
-              fill="#708C91"
               height={24}
               viewBox="0 0 24 24"
               width={24}

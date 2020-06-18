@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
-import { ArrowIcon } from '../icon/arrowIcon'
+import { RideAxis } from '../_utils/rideAxis'
 import { SearchIcon } from '../icon/searchIcon'
 import { Text, TextTagType } from '../text'
 import { UneditableTextField } from '../uneditableTextField'
@@ -25,16 +25,7 @@ export const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => 
           textColor={color.midnightGreen}
           className="kirk-requestRecap-route"
         >
-          {from && <span className="kirk-requestRecap-location">{from}</span>}
-          {from && to && (
-            <ArrowIcon
-              className="kirk-requestRecap-locationSeparator"
-              size={separatorWidth}
-              iconColor={color.lightMidnightGreen}
-              right
-            />
-          )}
-          {to && <span className="kirk-requestRecap-location">{to}</span>}
+          <RideAxis from={from} to={to} />
         </Text>
         {info && (
           <Text tag={TextTagType.SPAN} className="kirk-requestRecap-info">

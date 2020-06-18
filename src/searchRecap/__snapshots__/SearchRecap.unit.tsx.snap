@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`searchRecap Should display searchRecap component 1`] = `
+.c1 {
+  stroke: #708C91;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -15,6 +19,23 @@ exports[`searchRecap Should display searchRecap component 1`] = `
   position: absolute;
   bottom: 12px;
   left: 12px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  display: inline-block;
+  margin: 0 4px;
+  height: 1em;
 }
 
 .c2 {
@@ -112,10 +133,6 @@ exports[`searchRecap Should display searchRecap component 1`] = `
   overflow: hidden;
 }
 
-.c0 .kirk-icon {
-  height: 24px;
-}
-
 <div
   className="kirk-searchRecap"
 >
@@ -125,7 +142,6 @@ exports[`searchRecap Should display searchRecap component 1`] = `
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -165,41 +181,40 @@ exports[`searchRecap Should display searchRecap component 1`] = `
         }
       >
         <span
-          className="kirk-requestRecap-location"
+          className="c3"
         >
-          Middlesbrough
-        </span>
-        <svg
-          aria-hidden={true}
-          className="kirk-icon kirk-requestRecap-locationSeparator c1"
-          fill="#708C91"
-          height={14}
-          viewBox="0 0 24 24"
-          width={14}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          
-          <g
-            fill="none"
-            stroke="#708C91"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            strokeWidth="2"
-            transform="rotate(180 12 12)"
+          <span>
+            Middlesbrough
+          </span>
+          <svg
+            aria-hidden={true}
+            className="kirk-icon c4 c1"
+            height={24}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M9 19l-7-7 7-7"
-            />
-            <path
-              d="M22 12H2"
-            />
-          </g>
-        </svg>
-        <span
-          className="kirk-requestRecap-location"
-        >
-          Stoke-on-Trent, city center
+            
+            <g
+              fill="none"
+              stroke="#708C91"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              transform="rotate(180 12 12)"
+            >
+              <path
+                d="M9 19l-7-7 7-7"
+              />
+              <path
+                d="M22 12H2"
+              />
+            </g>
+          </svg>
+          <span>
+            Stoke-on-Trent, city center
+          </span>
         </span>
       </p>
       <span

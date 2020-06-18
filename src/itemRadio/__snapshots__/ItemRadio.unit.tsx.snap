@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input is checked 1`] = `
+.c3 {
+  stroke: #00AFF5;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -287,7 +291,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-circle c2 c3"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
       width={24}
@@ -313,6 +316,10 @@ button:focus:not(.focus-visible).c0 {
 `;
 
 exports[`ItemRadio Should display a Loader when the component is in loading status 1`] = `
+.c4 {
+  stroke: #5DD167;
+}
+
 .c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -668,7 +675,6 @@ button:focus:not(.focus-visible).c0 {
         <svg
           aria-hidden={true}
           className="kirk-icon kirk-icon-circle spinning c3 c4"
-          fill="#5DD167"
           height={24}
           viewBox="0 0 66 66"
           width={24}
@@ -690,6 +696,10 @@ button:focus:not(.focus-visible).c0 {
 `;
 
 exports[`ItemRadio Should forward its props to the Item component 1`] = `
+.c3 {
+  stroke: #00AFF5;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -976,7 +986,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-circle c2 c3"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
       width={24}

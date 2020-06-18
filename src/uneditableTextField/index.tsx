@@ -28,10 +28,6 @@ const StyledUneditableTextField = styled(UneditableTextField)`
     text-overflow: ellipsis;
     overflow: hidden;
   }
-
-  & .kirk-icon {
-    height: ${space.xl};
-  }
 `
 
 export { UneditableTextFieldProps } from './UneditableTextField'

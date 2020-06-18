@@ -14,6 +14,7 @@ import { LightningIcon } from '../icon/lightningIcon'
 import { StarIcon as Star } from '../icon/starIcon'
 import { Itinerary } from '../itinerary'
 import { Text, TextDisplayType, TextTagType } from '../text'
+import { TextBody } from '../typography/body'
 
 /**
  * Display 5 passengers max.
@@ -197,10 +198,10 @@ export const TripCard = ({
                             {driver.firstName}
                           </Text>
                           {driver.rating && (
-                            <div className="kirk-tripCard-ratingContainer">
+                            <TextBody className="kirk-tripCard-ratingContainer">
                               <Star fill={1} size={16} />
-                              <Text className="kirk-tripCard-rating">{driver.rating}</Text>
-                            </div>
+                              <span className="kirk-tripCard-rating">{driver.rating}</span>
+                            </TextBody>
                           )}
                         </div>
                       </div>

@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render properly with read messages 1`] = `
+.c3 {
+  stroke: #708C91;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -343,7 +347,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c3"
-      fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -365,6 +368,10 @@ button:focus:not(.focus-visible).c0 {
 `;
 
 exports[`Should render properly with unread messages 1`] = `
+.c3 {
+  stroke: #708C91;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -707,7 +714,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c3"
-      fill="#708C91"
       height={24}
       viewBox="0 0 24 24"
       width={24}

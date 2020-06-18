@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SelectField should have the expected markup in the DOM 1`] = `
+.c1 {
+  stroke: #708C91;
+}
+
 .c1.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -103,7 +107,6 @@ exports[`SelectField should have the expected markup in the DOM 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c1"
-    fill="#708C91"
     height={24}
     viewBox="0 0 24 24"
     width={24}

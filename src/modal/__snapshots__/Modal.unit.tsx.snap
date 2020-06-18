@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should not have changed 1`] = `
+.c3 {
+  stroke: #00AFF5;
+}
+
 .c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -362,7 +366,6 @@ exports[`Modal should not have changed 1`] = `
           <svg
             aria-hidden={true}
             className="kirk-icon c3"
-            fill="#00AFF5"
             height="18"
             viewBox="0 0 24 24"
             width="18"

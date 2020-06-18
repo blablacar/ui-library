@@ -89,6 +89,8 @@ const StyledItem = styled(Item)`
 
   & .kirk-item-leftAddon {
     margin-right: ${space.l};
+    /* //icons */
+    color: ${color.mindNightGreen};
   }
 
   & .kirk-item-rightAddon {

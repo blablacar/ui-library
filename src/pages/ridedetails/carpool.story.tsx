@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import { color } from '../../_utils/branding'
+import { RideAxis } from '../../_utils/rideAxis'
 import { Avatar } from '../../avatar'
 import { Divider } from '../../divider'
 import { BubbleIcon } from '../../icon/bubbleIcon'
@@ -48,7 +50,11 @@ stories.add('Default', () => (
       <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
       <Divider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
-      <ItemAction action="Contacter Vince" leftAddon={<BubbleIcon />} href="#" />
+      <ItemAction
+        action="Contacter Vince"
+        leftAddon={<BubbleIcon iconColor={color.blue} />}
+        href="#"
+      />
       <Divider />
       <ul>
         <ItemInfo mainInfo="Fumer nest pas autporisé dans la voiture." icon={<SmokeIcon />} />
@@ -57,8 +63,18 @@ stories.add('Default', () => (
       <Divider />
       <SubHeader>Passagers</SubHeader>
       <ul>
-        <ItemChoice label="Jessica" labelInfo="Paris - Rennes" rightAddon={<Avatar />} href="#" />
-        <ItemChoice label="Joe" labelInfo="Paris - Lyon" rightAddon={<Avatar />} href="#" />
+        <ItemChoice
+          label="Jessica"
+          labelInfo={<RideAxis from="Paris" to="Rennes" />}
+          rightAddon={<Avatar />}
+          href="#"
+        />
+        <ItemChoice
+          label="Joe"
+          labelInfo={<RideAxis from="Paris" to="Lyon" />}
+          rightAddon={<Avatar />}
+          href="#"
+        />
       </ul>
       <Divider />
       <ItemAction action="Signaler ce trajet" href="#" />

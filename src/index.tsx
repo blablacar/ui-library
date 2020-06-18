@@ -73,6 +73,7 @@ export * from './tripCard'
 export * from './uneditableTextField'
 export * from './why'
 
+export * from './_utils/rideAxis'
 export * from './_utils/branding'
 export * from './_utils/onChange'
 export * from './_utils/place'

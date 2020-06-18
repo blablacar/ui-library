@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hint Default rendering (above) 1`] = `
+.c4 {
+  stroke: #FFF;
+}
+
 .c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -322,7 +326,6 @@ exports[`Hint Default rendering (above) 1`] = `
       <svg
         aria-hidden={true}
         className="kirk-icon c4"
-        fill="#FFF"
         height={18}
         viewBox="0 0 24 24"
         width={18}
@@ -350,6 +353,10 @@ exports[`Hint Default rendering (above) 1`] = `
 `;
 
 exports[`Hint Default rendering (below) 1`] = `
+.c4 {
+  stroke: #FFF;
+}
+
 .c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
@@ -671,7 +678,6 @@ exports[`Hint Default rendering (below) 1`] = `
       <svg
         aria-hidden={true}
         className="kirk-icon c4"
-        fill="#FFF"
         height={18}
         viewBox="0 0 24 24"
         width={18}
