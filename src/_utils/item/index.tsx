@@ -48,8 +48,7 @@ const StyledItem = styled(Item)`
     -webkit-touch-callout: none;
   }
 
-  button:active&,
-  button:hover& {
+  button:focus:not(.focus-visible)& {
     outline: none;
   }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
 import { Item } from '../_utils/item'
 import { ComfortIcon } from '../icon/comfortIcon'
@@ -23,7 +23,7 @@ describe('ItemChoice', () => {
   }
 
   it('Should use the Item component', () => {
-    const itemChoice = shallow(<ItemChoice {...defaultProps} />)
+    const itemChoice = mount(<ItemChoice {...defaultProps} />)
     expect(itemChoice.find(Item).exists()).toBe(true)
   })
   it('Should forward its props to the Item component', () => {

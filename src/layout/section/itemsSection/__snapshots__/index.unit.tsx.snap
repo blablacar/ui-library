@@ -121,8 +121,7 @@ button.c2 {
   -webkit-touch-callout: none;
 }
 
-button:active.c2,
-button:hover.c2 {
+button:focus:not(.focus-visible).c2 {
   outline: none;
 }
 
@@ -379,8 +378,7 @@ button.c2 {
   -webkit-touch-callout: none;
 }
 
-button:active.c2,
-button:hover.c2 {
+button:focus:not(.focus-visible).c2 {
   outline: none;
 }
 

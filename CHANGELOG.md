@@ -3,6 +3,7 @@
 - **[NEW]** `RideAxis` component to display origin-destination
 - **[NEW]** Component `ItemBigData` to display a specific and important data.
 - **[UPDATE]** Use named exports instead of default exports.
+- **[FIX]** Fix Focus issue on `ItemChoice` using `FocusVisibleContext`.
   [...]
 
 # v34.3.0 (05/06/2020)
