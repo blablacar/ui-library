@@ -236,7 +236,6 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -275,7 +274,6 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 24 24"
       width={24}

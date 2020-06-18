@@ -399,7 +399,6 @@ exports[`Snackbar should not have changed 1`] = `
       <svg
         aria-hidden={true}
         className="kirk-icon c4"
-        fill="#FFF"
         height="18px"
         viewBox="0 0 24 24"
         width="18px"

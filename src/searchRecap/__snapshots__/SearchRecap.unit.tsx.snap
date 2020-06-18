@@ -2,7 +2,7 @@
 
 exports[`searchRecap Should display searchRecap component 1`] = `
 .c1 {
-  stroke: currentColor;
+  stroke: #708C91;
 }
 
 .c1.kirk-icon-wrapper {
@@ -30,15 +30,12 @@ exports[`searchRecap Should display searchRecap component 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-size: 1em;
-  color: inherit;
 }
 
 .c4 {
   display: inline-block;
   margin: 0 4px;
   height: 1em;
-  stroke: currentColor;
 }
 
 .c2 {
@@ -145,7 +142,6 @@ exports[`searchRecap Should display searchRecap component 1`] = `
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -154,7 +150,7 @@ exports[`searchRecap Should display searchRecap component 1`] = `
       
       <g
         fill="none"
-        stroke="currentColor"
+        stroke="#708C91"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -193,7 +189,6 @@ exports[`searchRecap Should display searchRecap component 1`] = `
           <svg
             aria-hidden={true}
             className="kirk-icon c4 c1"
-            fill="currentColor"
             height={24}
             viewBox="0 0 24 24"
             width={24}
@@ -202,7 +197,7 @@ exports[`searchRecap Should display searchRecap component 1`] = `
             
             <g
               fill="none"
-              stroke="currentColor"
+              stroke="#708C91"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeMiterlimit="10"

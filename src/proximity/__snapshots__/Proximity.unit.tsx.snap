@@ -47,7 +47,6 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   <svg
     aria-hidden={false}
     className="kirk-icon c0"
-    fill="#5DD167"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -64,7 +63,6 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c1"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -79,7 +77,6 @@ exports[`Should highlight CLOSE and have a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c1"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -141,7 +138,6 @@ exports[`Should highlight FAR and have a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c0"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -156,7 +152,6 @@ exports[`Should highlight FAR and have a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c0"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -171,7 +166,6 @@ exports[`Should highlight FAR and have a title 1`] = `
   <svg
     aria-hidden={false}
     className="kirk-icon c1"
-    fill="#F78B00"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -235,7 +229,6 @@ exports[`Should highlight MIDDLE without a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c0"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -250,7 +243,6 @@ exports[`Should highlight MIDDLE without a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c1"
-    fill="#FFCA0C"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"
@@ -265,7 +257,6 @@ exports[`Should highlight MIDDLE without a title 1`] = `
   <svg
     aria-hidden={true}
     className="kirk-icon c0"
-    fill="#EDEDED"
     height="20px"
     viewBox="0 0 20 20"
     width="20px"

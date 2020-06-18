@@ -87,7 +87,6 @@ exports[`Should also have the correct icon. 1`] = `
     <svg
       aria-hidden={true}
       className="kirk-icon c1"
-      fill="#5DD167"
       height={24}
       viewBox="0 0 20 20"
       width={24}

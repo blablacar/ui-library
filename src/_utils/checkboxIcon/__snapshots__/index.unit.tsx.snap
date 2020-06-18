@@ -50,7 +50,6 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
 <svg
   aria-hidden={true}
   className="kirk-icon kirk-icon-check c0 c1"
-  fill="#FFF"
   height={24}
   viewBox="0 0 24 24"
   width={24}
@@ -198,7 +197,6 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-circle spinning c1 c2"
-      fill="#5DD167"
       height={24}
       viewBox="0 0 66 66"
       width={24}
@@ -347,7 +345,6 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-circle spinning c1 c2"
-      fill="#5DD167"
       height={24}
       viewBox="0 0 66 66"
       width={24}
@@ -427,7 +424,6 @@ exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 <svg
   aria-hidden={true}
   className="kirk-icon kirk-icon-circle c0 c1"
-  fill="#00AFF5"
   height={24}
   viewBox="0 0 66 66"
   width={24}

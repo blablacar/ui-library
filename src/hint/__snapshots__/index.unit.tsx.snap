@@ -326,7 +326,6 @@ exports[`Hint Default rendering (above) 1`] = `
       <svg
         aria-hidden={true}
         className="kirk-icon c4"
-        fill="#FFF"
         height={18}
         viewBox="0 0 24 24"
         width={18}
@@ -679,7 +678,6 @@ exports[`Hint Default rendering (below) 1`] = `
       <svg
         aria-hidden={true}
         className="kirk-icon c4"
-        fill="#FFF"
         height={18}
         viewBox="0 0 24 24"
         width={18}

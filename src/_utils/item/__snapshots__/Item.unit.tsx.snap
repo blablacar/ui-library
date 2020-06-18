@@ -2,7 +2,7 @@
 
 exports[`Item Should not have changed 1`] = `
 .c2 {
-  stroke: currentColor;
+  stroke: #708C91;
 }
 
 .c2.kirk-icon-wrapper {
@@ -229,7 +229,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon c2"
-      fill="currentColor"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -241,7 +240,7 @@ button:focus:not(.focus-visible).c0 {
         fillRule="evenodd"
       >
         <g
-          stroke="currentColor"
+          stroke="#708C91"
           strokeLinecap="round"
           strokeLinejoin="round"
         >

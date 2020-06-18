@@ -276,7 +276,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-check c2 c3"
-      fill="#FFF"
       height={24}
       viewBox="0 0 24 24"
       width={24}
@@ -652,7 +651,6 @@ button:focus:not(.focus-visible).c0 {
         <svg
           aria-hidden={true}
           className="kirk-icon kirk-icon-circle spinning c3 c4"
-          fill="#5DD167"
           height={24}
           viewBox="0 0 66 66"
           width={24}
@@ -960,7 +958,6 @@ button:focus:not(.focus-visible).c0 {
     <svg
       aria-hidden={true}
       className="kirk-icon kirk-icon-circle c2 c3"
-      fill="#00AFF5"
       height={24}
       viewBox="0 0 66 66"
       width={24}
