@@ -202,6 +202,8 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   className="c0 kirk-loader--inline"
 >
   <div
+    aria-busy={true}
+    aria-live="polite"
     className=""
     style={
       Object {
@@ -350,6 +352,8 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   className="c0 kirk-loader--inline"
 >
   <div
+    aria-busy={true}
+    aria-live="polite"
     className=""
     style={
       Object {

@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add aria-busy, aria-live and aria-label on the `Loader` component
+  [...]
 
 # v34.4.0 (18/06/2020)
 

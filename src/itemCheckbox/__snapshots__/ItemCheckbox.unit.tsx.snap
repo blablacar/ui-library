@@ -640,6 +640,8 @@ button:focus:not(.focus-visible).c0 {
       className="c2 kirk-loader--inline"
     >
       <div
+        aria-busy={true}
+        aria-live="polite"
         className=""
         style={
           Object {

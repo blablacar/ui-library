@@ -1,64 +1,79 @@
 import React from 'react'
-import { mount } from 'enzyme'
 
-import { CheckIcon as StyledCheckIcon } from '../icon/checkIcon'
-import { CircleIcon as StyledCircleIcon } from '../icon/circleIcon'
+import { render, screen } from '@testing-library/react'
+
 import { Loader, LoaderLayoutMode } from './Loader'
 
 jest.useFakeTimers()
 
 describe('Loader', () => {
-  it('Should have a custom className', () => {
-    const customClassName = 'custom-loader'
-    const wrapper = mount(<Loader className={customClassName} />)
-    expect(wrapper.hasClass(customClassName)).toBe(true)
+  it('render the loader with aria attributes', () => {
+    render(<Loader done={false} ariaLabel="loader" />)
+
+    const loader = screen.getByLabelText('loader')
+    expect(loader).toHaveAttribute('aria-busy', 'true')
+    expect(loader).toHaveAttribute('aria-live', 'polite')
   })
 
-  it('Should have a custom size', () => {
-    const size = 100
-    const wrapper = mount(<Loader size={size} />)
-    expect(wrapper.find(StyledCircleIcon).prop('size')).toBe(size)
+  it('render the check icon with aria attributes', () => {
+    render(<Loader done ariaLabel="loader" />)
+
+    const loader = screen.getByLabelText('loader')
+    expect(loader).toHaveAttribute('aria-busy', 'false')
+    expect(loader).toHaveAttribute('aria-live', 'polite')
+  })
+
+  it('Should have a custom className', () => {
+    const customClassName = 'custom-loader'
+
+    render(<Loader className={customClassName} ariaLabel="loader" />)
+
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe(`${customClassName} kirk-loader--fullScreen`)
   })
 
   it('Should be fullscreen by default', () => {
-    const wrapper = mount(<Loader />)
-    expect(wrapper.find('.kirk-loader--fullScreen').exists()).toBe(true)
+    render(<Loader ariaLabel="loader" />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--fullScreen')
   })
 
   it('Should be inline when using the prop', () => {
-    const wrapper = mount(<Loader inline />)
-    expect(wrapper.find('.kirk-loader--inline').exists()).toBe(true)
+    render(<Loader ariaLabel="loader" inline />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--inline')
   })
 
   it('Should override layoutMode when inline prop is set', () => {
-    const wrapper = mount(<Loader inline layoutMode={LoaderLayoutMode.BLOCK} />)
-    expect(wrapper.find('.kirk-loader--inline').exists()).toBe(true)
+    render(<Loader ariaLabel="loader" inline layoutMode={LoaderLayoutMode.BLOCK} />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--inline')
   })
 
   it('Should use correctly inline layout mode', () => {
-    const wrapper = mount(<Loader layoutMode={LoaderLayoutMode.INLINE} />)
-    expect(wrapper.find('.kirk-loader--inline').exists()).toBe(true)
+    render(<Loader ariaLabel="loader" layoutMode={LoaderLayoutMode.INLINE} />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--inline')
   })
 
   it('Should use correctly block layout mode', () => {
-    const wrapper = mount(<Loader layoutMode={LoaderLayoutMode.BLOCK} />)
-    expect(wrapper.find('.kirk-loader--block').exists()).toBe(true)
+    render(<Loader ariaLabel="loader" layoutMode={LoaderLayoutMode.BLOCK} />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--block')
   })
 
   it('Should use correctly fullscreen layout mode', () => {
-    const wrapper = mount(<Loader layoutMode={LoaderLayoutMode.FULLSCREEN} />)
-    expect(wrapper.find('.kirk-loader--fullScreen').exists()).toBe(true)
-  })
-
-  it('Should show the done icon', () => {
-    const wrapper = mount(<Loader done />)
-    expect(wrapper.find(StyledCheckIcon).exists()).toBe(true)
+    render(<Loader ariaLabel="loader" layoutMode={LoaderLayoutMode.FULLSCREEN} />)
+    const loader = screen.getByLabelText('loader')
+    expect(loader.parentElement.className).toBe('kirk-loader--fullScreen')
   })
 
   it('Should fire the callback event when done', () => {
     const callback = jest.fn()
-    const wrapper = mount(<Loader onDoneAnimationEnd={callback} />)
-    wrapper.setProps({ done: true })
+    const { rerender } = render(<Loader onDoneAnimationEnd={callback} />)
+
+    rerender(<Loader onDoneAnimationEnd={callback} done />)
+
     expect(callback).not.toBeCalled()
     jest.advanceTimersByTime(1500)
     expect(callback).toBeCalled()

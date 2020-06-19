@@ -26,6 +26,7 @@ export interface LoaderProps {
   size?: number
   done?: boolean
   layoutMode?: LoaderLayoutMode
+  ariaLabel?: string
   onDoneAnimationEnd?: () => void
 }
 
@@ -79,7 +80,7 @@ export class Loader extends PureComponent<LoaderProps> {
   }
 
   render() {
-    const { className, size, done } = this.props
+    const { className, size, done, ariaLabel } = this.props
     const iconSize = {
       width: `${size}px`,
       height: `${size}px`,
@@ -87,7 +88,13 @@ export class Loader extends PureComponent<LoaderProps> {
 
     return (
       <div className={cc([className, this.computeLayoutClass()])}>
-        <div className={cc([{ 'kirk-loader--done': done }])} style={iconSize}>
+        <div
+          className={cc([{ 'kirk-loader--done': done }])}
+          aria-busy={!done}
+          aria-live="polite"
+          aria-label={ariaLabel}
+          style={iconSize}
+        >
           {!done && <CircleIcon iconColor={color.green} size={size} spinning />}
           {done && <CheckIcon iconColor={color.white} size={size / 2} validate />}
         </div>
