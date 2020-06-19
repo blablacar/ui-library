@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Make `Paragraph` layout resilient to long strings without spaces.
 [...]
 
 # v34.4.0 (18/06/2020)
