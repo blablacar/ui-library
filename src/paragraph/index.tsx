@@ -8,6 +8,7 @@ const StyledParagraph = styled(Paragraph)`
     display: flex;
     flex-direction: column;
     padding: ${space.m} 0;
+    word-break: break-word;
   }
 
   & .kirk-button {
