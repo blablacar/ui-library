@@ -115,7 +115,7 @@ exports[`Item Should not have changed 1`] = `
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;

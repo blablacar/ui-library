@@ -115,7 +115,7 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -407,7 +407,7 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -780,7 +780,7 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;

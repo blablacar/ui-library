@@ -19,7 +19,7 @@ export interface ItemProps extends A11yProps {
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean
-  readonly leftTitle?: React.ReactNode
+  readonly leftTitle?: string
   readonly leftTitleButtonAddon?: React.ReactElement<Button>
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
@@ -101,24 +101,6 @@ export const Item = (props: ItemProps) => {
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
-  const getLeftTitle = (value: React.ReactNode) => {
-    if (typeof value === 'object') {
-      return leftTitle
-    }
-    return (
-      <Text
-        className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
-        display={leftTitleDisplay}
-        textColor={getTextColor(leftTitleColor)}
-        tag={TextTagType.SPAN}
-      >
-        {leftTitle}
-        {/* In case of a clickable Item don't display the addon button */}
-        {!href && leftTitleButtonAddon}
-      </Text>
-    )
-  }
-
   return (
     <Tag
       {...tagProps}
@@ -140,7 +122,18 @@ export const Item = (props: ItemProps) => {
     >
       {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
       <span className="kirk-item-leftText">
-        {leftTitle && getLeftTitle(leftTitle)}
+        {leftTitle && (
+          <Text
+            className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
+            display={leftTitleDisplay}
+            textColor={getTextColor(leftTitleColor)}
+            tag={TextTagType.SPAN}
+          >
+            {leftTitle}
+            {/* In case of a clickable Item don't display the addon button */}
+            {!href && leftTitleButtonAddon}
+          </Text>
+        )}
         {leftBody && (
           <Text
             className="kirk-item-body"

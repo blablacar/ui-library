@@ -115,7 +115,7 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -427,7 +427,7 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -804,7 +804,7 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
   cursor: default;
 }
 
-.c0 {
+a.c0 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
