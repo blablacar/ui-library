@@ -2,18 +2,15 @@
 
 [...]
 
-# v34.4.2 (22/06/2020)
+- **[FIX]** Revert `ItemBigData`: no longer available
+
+# v34.4.2 (18/06/2020)
 
 - **[FIX]** Make `Paragraph` layout resilient to long strings without spaces.
 - **[FIX]** Fix `PetIcon` stroke fill color.
 
 # v34.4.1 (18/06/2020)
 
-Release created by accident. Do not use published npm package.
-
-# v34.4.0 (18/06/2020)
-
-- **[NEW]** `RideAxis` component to display origin-destination
 - **[NEW]** Component `ItemBigData` to display a specific and important data.
 - **[UPDATE]** Use named exports instead of default exports.
 - **[FIX]** Fix Focus issue on `ItemChoice` using `FocusVisibleContext`.
