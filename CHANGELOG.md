@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add invert animation in the `SearchForm`.
+  [...]
 
 # v34.4.2 (22/06/2020)
 

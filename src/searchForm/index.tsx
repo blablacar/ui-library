@@ -42,6 +42,17 @@ const StyledSearchForm = styled(SearchForm)`
     display: flex;
   }
 
+  & .kirk-searchForm-from,
+  & .kirk-searchForm-to {
+    /* Hide the overflowing parts of the button during the animation. */
+    overflow: hidden;
+  }
+
+  & .kirk-searchForm-to,
+  & .kirk-searchForm-seats {
+    border-left: 1px solid ${color.lightGray};
+  }
+
   & .kirk-searchForm-textfield .kirk-textField-wrapper {
     height: auto;
     background: none;
@@ -58,10 +69,6 @@ const StyledSearchForm = styled(SearchForm)`
 
   & .kirk-searchForm-button {
     color: ${color.lightMidnightGreen};
-  }
-
-  & .kirk-searchForm-invert {
-    border-right: 1px solid ${color.lightGray};
   }
 
   & .kirk-searchForm-invert .kirk-icon {
@@ -94,7 +101,6 @@ const StyledSearchForm = styled(SearchForm)`
   & .kirk-searchForm-from .kirk-search-button,
   & .kirk-searchForm-to .kirk-search-button {
     width: ${primaryFieldsWidth};
-    border-right: 1px solid ${color.lightGray};
     padding-left: ${space.m};
     line-height: ${componentSizes.bulletSizeSearch};
   }
@@ -116,12 +122,8 @@ const StyledSearchForm = styled(SearchForm)`
     padding-left: ${space.m};
   }
 
-  & .kirk-searchForm-from .kirk-search-button {
-    border-right: none;
-  }
-
-  & .kirk-searchForm-date .kirk-search-button {
-    border-right: 1px solid ${color.lightGray};
+  & .kirk-searchForm-date {
+    border-left: 1px solid ${color.lightGray};
   }
 
   & .kirk-searchForm-submit .kirk-search-button {
@@ -194,8 +196,8 @@ const StyledSearchForm = styled(SearchForm)`
       margin-right: 0;
     }
 
-    & .kirk-searchForm-date {
-      margin-right: ${space.m};
+    & .kirk-searchForm-seats {
+      padding-left: ${space.m};
     }
 
     & .kirk-searchForm-from {
@@ -205,10 +207,10 @@ const StyledSearchForm = styled(SearchForm)`
 
     & .kirk-searchForm-invert {
       padding: 0;
-      border: none;
     }
 
-    & .kirk-searchForm-to .kirk-search-button {
+    & .kirk-searchForm-to,
+    & .kirk-searchForm-date {
       border: none;
     }
 
