@@ -15,6 +15,9 @@ import { Overlay } from './Overlay'
  * Some of them are adding more transitions (e.g. stepperOverlay)
  */
 const StyledOverlay = styled(Overlay)`
+  /* Above the search form. */
+  z-index: 1;
+
   & .${TRANSITION_OVERLAY_CLASS_NAME}-enter {
     opacity: 0;
     width: 0;

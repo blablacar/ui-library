@@ -21,6 +21,7 @@ import { AutoCompleteSection } from './autoComplete/section'
 import { DatePickerOverlay, DatePickerOverlayProps } from './datePicker/overlay'
 import { DatePickerSection } from './datePicker/section'
 import { Overlay } from './overlay'
+import { SlideSwitchTransition, SlideSwitchTransitionSide } from './SlideSwitchTransition'
 import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
 import { TRANSITION_SECTION_CLASS_NAME, transitionSectionTimeout } from './transitionConfig'
@@ -83,6 +84,11 @@ export const SearchForm = ({
   const mediaSize = React.useContext(MediaSizeContext)
 
   const [elementOpened, setElementOpened] = useState('')
+
+  // Used as "trigger" each time the value is changed for the invert animation.
+  // Only the change resulting from the invert button should be animated.
+  const animationKey = React.useRef(0)
+
   const [formValues, setFormValues] = useState<SearchFormValues>({
     [SearchFormElements.STEPPER]: stepperProps.defaultValue,
     [SearchFormElements.DATEPICKER]: datepickerProps.defaultValue,
@@ -117,7 +123,12 @@ export const SearchForm = ({
     initialMonth: selectedDate,
     onChange: ({ value }: OnChangeParameters) => {
       closeOpenedElement()
-      setFormValues({ ...formValues, [SearchFormElements.DATEPICKER]: value as string })
+      setFormValues(
+        (currentFormValues: SearchFormValues): SearchFormValues => ({
+          ...currentFormValues,
+          [SearchFormElements.DATEPICKER]: value as string,
+        }),
+      )
     },
     renderDatePickerComponent,
   }
@@ -133,7 +144,12 @@ export const SearchForm = ({
     value: formValues[SearchFormElements.STEPPER],
     onChange: ({ value }: OnChangeParameters) => {
       closeOpenedElement()
-      setFormValues({ ...formValues, [SearchFormElements.STEPPER]: value as number })
+      setFormValues(
+        (currentFormValues: SearchFormValues): SearchFormValues => ({
+          ...currentFormValues,
+          [SearchFormElements.STEPPER]: value as number,
+        }),
+      )
     },
   }
 
@@ -142,7 +158,12 @@ export const SearchForm = ({
     placeholder: autocompleteFromPlaceholder,
     renderAutocompleteComponent: renderAutocompleteFrom,
     onSelect: (value: AutocompleteOnChange) => {
-      setFormValues({ ...formValues, [SearchFormElements.AUTOCOMPLETE_FROM]: value })
+      setFormValues(
+        (currentFormValues: SearchFormValues): SearchFormValues => ({
+          ...currentFormValues,
+          [SearchFormElements.AUTOCOMPLETE_FROM]: value,
+        }),
+      )
       closeOpenedElement()
     },
   }
@@ -152,7 +173,12 @@ export const SearchForm = ({
     placeholder: autocompleteToPlaceholder,
     renderAutocompleteComponent: renderAutocompleteTo,
     onSelect: (value: AutocompleteOnChange) => {
-      setFormValues({ ...formValues, [SearchFormElements.AUTOCOMPLETE_TO]: value })
+      setFormValues(
+        (currentFormValues: SearchFormValues): SearchFormValues => ({
+          ...currentFormValues,
+          [SearchFormElements.AUTOCOMPLETE_TO]: value,
+        }),
+      )
       closeOpenedElement()
     },
   }
@@ -165,11 +191,16 @@ export const SearchForm = ({
   }
 
   const invertFromTo = () => {
-    setFormValues({
-      ...formValues,
-      [SearchFormElements.AUTOCOMPLETE_FROM]: formValues[SearchFormElements.AUTOCOMPLETE_TO],
-      [SearchFormElements.AUTOCOMPLETE_TO]: formValues[SearchFormElements.AUTOCOMPLETE_FROM],
-    })
+    // Trigger the animation for the next update.
+    animationKey.current += 1
+
+    setFormValues(
+      (currentFormValues: SearchFormValues): SearchFormValues => ({
+        ...currentFormValues,
+        [SearchFormElements.AUTOCOMPLETE_FROM]: formValues[SearchFormElements.AUTOCOMPLETE_TO],
+        [SearchFormElements.AUTOCOMPLETE_TO]: formValues[SearchFormElements.AUTOCOMPLETE_FROM],
+      }),
+    )
   }
 
   const autocompleteFromValue = formValues[
@@ -195,24 +226,32 @@ export const SearchForm = ({
     >
       <div className="kirk-searchForm-from-container">
         <div className="kirk-searchForm-from">
-          <button
-            type="button"
-            className="kirk-search-button"
-            onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_FROM)}
+          <SlideSwitchTransition
+            side={
+              mediaSize === MediaSize.SMALL
+                ? SlideSwitchTransitionSide.BOTTOM
+                : SlideSwitchTransitionSide.RIGHT
+            }
+            childrenKey={animationKey.current}
           >
-            <span className="kirk-bullet--searchForm">
-              <Bullet type={BulletTypes.SEARCH} />
-            </span>
-            <TextTitle
-              className={cc([
-                'kirk-search-ellipsis',
-                { 'kirk-search-placeholder': !autocompleteFromValue },
-              ])}
+            <button
+              type="button"
+              className="kirk-search-button"
+              onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_FROM)}
             >
-              {autocompleteFromValue?.item.label || autocompleteFromPlaceholder}
-            </TextTitle>
-          </button>
-          {mediaSize === MediaSize.SMALL && <Divider />}
+              <span className="kirk-bullet--searchForm">
+                <Bullet type={BulletTypes.SEARCH} />
+              </span>
+              <TextTitle
+                className={cc([
+                  'kirk-search-ellipsis',
+                  { 'kirk-search-placeholder': !autocompleteFromValue },
+                ])}
+              >
+                {autocompleteFromValue?.item.label || autocompleteFromPlaceholder}
+              </TextTitle>
+            </button>
+          </SlideSwitchTransition>
         </div>
 
         <div className="kirk-searchForm-invert">
@@ -225,9 +264,10 @@ export const SearchForm = ({
           >
             <DoubleArrowIcon iconColor={color.blue} />
           </button>
-          {mediaSize === MediaSize.SMALL && <Divider />}
         </div>
       </div>
+
+      {mediaSize === MediaSize.SMALL && <Divider />}
 
       <Overlay
         shouldDisplay={
@@ -252,25 +292,35 @@ export const SearchForm = ({
         )}
 
       <div className="kirk-searchForm-to">
-        <button
-          type="button"
-          className="kirk-search-button"
-          onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_TO)}
+        <SlideSwitchTransition
+          side={
+            mediaSize === MediaSize.SMALL
+              ? SlideSwitchTransitionSide.TOP
+              : SlideSwitchTransitionSide.LEFT
+          }
+          childrenKey={animationKey.current}
         >
-          <span className="kirk-bullet--searchForm">
-            <Bullet type={BulletTypes.SEARCH} />
-          </span>
-          <TextTitle
-            className={cc([
-              'kirk-search-ellipsis',
-              { 'kirk-search-placeholder': !autocompleteToValue },
-            ])}
+          <button
+            type="button"
+            className="kirk-search-button"
+            onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_TO)}
           >
-            {autocompleteToValue?.item.label || autocompleteToPlaceholder}
-          </TextTitle>
-        </button>
-        {mediaSize === MediaSize.SMALL && <Divider />}
+            <span className="kirk-bullet--searchForm">
+              <Bullet type={BulletTypes.SEARCH} />
+            </span>
+            <TextTitle
+              className={cc([
+                'kirk-search-ellipsis',
+                { 'kirk-search-placeholder': !autocompleteToValue },
+              ])}
+            >
+              {autocompleteToValue?.item.label || autocompleteToPlaceholder}
+            </TextTitle>
+          </button>
+        </SlideSwitchTransition>
       </div>
+
+      {mediaSize === MediaSize.SMALL && <Divider />}
 
       <Overlay
         shouldDisplay={
@@ -350,7 +400,12 @@ export const SearchForm = ({
         <StepperOverlay
           {...stepperConfig}
           onChange={({ value }) => {
-            setFormValues({ ...formValues, [SearchFormElements.STEPPER]: value as number })
+            setFormValues(
+              (currentFormValues: SearchFormValues): SearchFormValues => ({
+                ...currentFormValues,
+                [SearchFormElements.STEPPER]: value as number,
+              }),
+            )
           }}
         />
       </Overlay>

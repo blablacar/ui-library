@@ -2,7 +2,9 @@ import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import { TransitionDuration } from '../_utils/branding'
 import { MediaSizeProvider } from '../_utils/mediaSizeProvider'
+import { knobEnum } from '../../.storybook/knobs'
 import { AutoCompleteExample } from '../autoComplete/story'
 import { DatePicker } from '../datePicker'
 import { CrossIcon } from '../icon/crossIcon'
@@ -12,6 +14,7 @@ import { AutoCompleteSection } from './autoComplete/section'
 import { DatePickerOverlay } from './datePicker/overlay'
 import { DatePickerSection } from './datePicker/section'
 import { SearchForm } from './index'
+import { SlideSwitchTransition, SlideSwitchTransitionSide } from './SlideSwitchTransition'
 import { searchFormDocumentation } from './specifications/searchForm.md'
 import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
@@ -111,3 +114,19 @@ stories.add(
     readme: { content: searchFormDocumentation },
   },
 )
+
+stories.add('SlideSwitchTransition', () => {
+  const children = text('children', 'Some text')
+
+  return (
+    <SlideSwitchTransition
+      transitionDuration={knobEnum('transitionDuration', TransitionDuration, {
+        isPropOptional: true,
+      })}
+      side={knobEnum('side', SlideSwitchTransitionSide, { isPropOptional: true })}
+      childrenKey={children}
+    >
+      {children}
+    </SlideSwitchTransition>
+  )
+})
