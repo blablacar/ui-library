@@ -1,11 +1,10 @@
 # Unreleased
 
 - **[UPDATE]** Add invert animation in the `SearchForm`.
-  [...]
-
 - **[FIX]** Revert `ItemBigData`: no longer available
+- [...]
 
-# v34.4.2 (18/06/2020)
+# v34.4.2-rc.0 (18/06/2020)
 
 - **[FIX]** Make `Paragraph` layout resilient to long strings without spaces.
 - **[FIX]** Fix `PetIcon` stroke fill color.
