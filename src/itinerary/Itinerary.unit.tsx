@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { ItineraryCollapsible } from '../_utils/itineraryCollapsible'
-import { ItineraryLocation } from '../_utils/itineraryLocation'
+import { ItineraryCollapsible } from '../_internals/itineraryCollapsible'
+import { ItineraryLocation } from '../_internals/itineraryLocation'
 import { Proximity } from '../proximity'
 import { Itinerary } from './Itinerary'
 

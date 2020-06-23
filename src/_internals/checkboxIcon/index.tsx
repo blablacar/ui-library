@@ -1,9 +1,9 @@
 import React from 'react'
 
+import { color } from '../../_utils/branding'
 import { CheckIcon } from '../../icon/checkIcon'
 import { CircleIcon } from '../../icon/circleIcon'
 import { Loader } from '../../loader'
-import { color } from '../branding'
 
 export interface CheckboxIconProps {
   readonly isChecked?: boolean

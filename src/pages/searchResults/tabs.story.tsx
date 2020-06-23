@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { Item } from '../../_utils/item'
+import { Item } from '../../_internals/item'
 import { BlankSeparator } from '../../blankSeparator'
 import { Button, ButtonStatus } from '../../button'
 import { Disclaimer } from '../../disclaimer'

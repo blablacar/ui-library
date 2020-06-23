@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 
-import { Item } from '../../../_utils/item'
-import { useFocusTrap } from '../../../_utils/useFocusTrap'
+import { Item } from '../../../_internals/item'
+import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
 import { Divider } from '../../../divider'
 import { ChevronIcon } from '../../../icon/chevronIcon'

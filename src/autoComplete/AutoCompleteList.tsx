@@ -4,8 +4,8 @@ import { canUseEventListeners } from 'exenv'
 import isEmpty from 'lodash.isempty'
 import isEqual from 'lodash.isequal'
 
+import { ItemStatus } from '../_internals/item'
 import { prefix } from '../_utils'
-import { ItemStatus } from '../_utils/item'
 import { ItemChoice, ItemChoiceStyle } from '../itemChoice'
 import { ItemsList } from '../itemsList'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Item from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import Item from '../_utils/item'
 import { TextDisplay2 } from '../typography/display2'
 
 export interface ItemBigDataProps extends A11yProps {

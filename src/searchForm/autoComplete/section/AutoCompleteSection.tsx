@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 
+import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { space } from '../../../_utils/branding'
-import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import { AutoCompleteProps } from '../../../autoComplete'
 import { Button, ButtonStatus } from '../../../button'
 import { ChevronIcon } from '../../../icon/chevronIcon'

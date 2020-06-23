@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { ItemStatus } from '../_utils/item'
+import { ItemStatus } from '../_internals/item'
 import { ComfortIcon } from '../icon/comfortIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'

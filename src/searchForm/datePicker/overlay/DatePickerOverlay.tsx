@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Item } from '../../../_utils/item'
+import { Item } from '../../../_internals/item'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
 import { Divider } from '../../../divider'
 import { CalendarIcon } from '../../../icon/calendarIcon'

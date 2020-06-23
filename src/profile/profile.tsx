@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Item } from '../_utils/item'
+import { Item } from '../_internals/item'
 import { Avatar } from '../avatar'
 import { Rating } from '../rating'
 import { TextDisplayType } from '../text'

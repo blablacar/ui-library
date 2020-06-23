@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import CSSTransition from 'react-transition-group/CSSTransition'
 
-import { useReducedMotion } from '../../_utils/useReducedMotion'
+import { useReducedMotion } from '../../_internals/useReducedMotion'
 import {
   reducedMotionTransitionDuration,
   TRANSITION_OVERLAY_CLASS_NAME,

@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import { CheckboxIcon } from '../_utils/checkboxIcon'
-import { Item } from '../_utils/item/index'
-import { ItemProps } from '../_utils/item/Item'
-import { OnChangeParameters } from '../_utils/onChange'
+import { CheckboxIcon } from '../_internals/checkboxIcon'
+import { Item } from '../_internals/item/index'
+import { ItemProps } from '../_internals/item/Item'
+import { OnChangeParameters } from '../_internals/onChange'
 
 export interface ToggleButtonProps extends ItemProps {
   readonly name: string

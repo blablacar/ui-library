@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Move non API components in an `_internal` folder
 - [...]
 
 # v35.0.0 (01/07/2020)

@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
-import { Item } from '../_utils/item'
 import { Button, ButtonStatus } from '../button'
 import { InfoIcon } from '../icon/infoIcon'
 import { QuestionIcon } from '../icon/questionIcon'

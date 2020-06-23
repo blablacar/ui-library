@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, space } from '../branding'
+import { color, componentSizes, space } from '../../_utils/branding'
 import { ItineraryLocation } from './ItineraryLocation'
 
 const totalTimeWidth = `${Math.ceil(

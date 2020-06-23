@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Item } from '../../../_utils/item'
+import { Item } from '../../../_internals/item'
 import { Divider } from '../../../divider'
 import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'

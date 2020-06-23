@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 
+import { Item } from '../../../_internals/item'
+import { OnChangeParameters } from '../../../_internals/onChange'
+import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { space } from '../../../_utils/branding'
-import { Item } from '../../../_utils/item'
-import { OnChangeParameters } from '../../../_utils/onChange'
-import { useFocusTrap } from '../../../_utils/useFocusTrap'
 import { Button, ButtonStatus } from '../../../button'
 import { Divider } from '../../../divider'
 import { ChevronIcon } from '../../../icon/chevronIcon'

@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react'
 import cc from 'classcat'
 import { canUseEventListeners } from 'exenv'
 
+import { color } from '../../_utils/branding'
+import { KEYCODES } from '../../_utils/keycodes'
+import { Place } from '../../_utils/place'
 import { Bullet, BulletTypes } from '../../bullet'
 import { Text, TextDisplayType, TextTagType } from '../../text'
-import { color } from '../branding'
 import { computeKeyFromPlace, ItineraryLocation } from '../itineraryLocation'
-import { KEYCODES } from '../keycodes'
-import { Place } from '../place'
 
 export interface ItineraryCollapsibleProps {
   readonly places: Place[]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import { Item } from '../_utils/item'
+import { Item } from '../_internals/item'
 import { Avatar } from '../avatar'
 import { Profile } from '../profile'
 import { Rating } from '../rating'

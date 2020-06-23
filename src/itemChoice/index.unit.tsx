@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import { Item } from '../_utils/item'
+import { Item } from '../_internals/item'
 import { ComfortIcon } from '../icon/comfortIcon'
 import { ItemChoice, ItemChoiceProps, ItemChoiceStatus, ItemChoiceStyle } from './index'
 

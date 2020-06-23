@@ -2,7 +2,7 @@ import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { color, font, space } from './branding'
+import { color, font, space } from '../_utils/branding'
 
 const stories = storiesOf('Brand|', module)
 stories.addDecorator(withKnobs)

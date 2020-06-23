@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, space } from '../branding'
+import { color, space } from '../../_utils/branding'
 import { Item } from './Item'
 
 const StyledItem = styled(Item)`
