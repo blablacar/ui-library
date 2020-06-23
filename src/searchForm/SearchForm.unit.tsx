@@ -55,7 +55,7 @@ describe('searchForm', () => {
 
       it('should open the autocomplete from overlay and close it on blur', () => {
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
+        wrapper.find('.kirk-searchForm-from .kirk-search-button').simulate('click')
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
         expect(
           wrapper
@@ -77,7 +77,7 @@ describe('searchForm', () => {
 
       it('should open the autocomplete to overlay', () => {
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
+        wrapper.find('.kirk-searchForm-to .kirk-search-button').simulate('click')
         expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
         expect(
           wrapper
@@ -113,7 +113,7 @@ describe('searchForm', () => {
             .first()
             .prop('in'),
         ).toBe(false)
-        wrapper.find('.kirk-searchForm-from > .kirk-search-button').simulate('click')
+        wrapper.find('.kirk-searchForm-from .kirk-search-button').simulate('click')
         expect(
           wrapper
             .find(CSSTransition)
@@ -129,7 +129,7 @@ describe('searchForm', () => {
             .at(1)
             .prop('in'),
         ).toBe(false)
-        wrapper.find('.kirk-searchForm-to > .kirk-search-button').simulate('click')
+        wrapper.find('.kirk-searchForm-to .kirk-search-button').simulate('click')
         expect(
           wrapper
             .find(CSSTransition)

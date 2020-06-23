@@ -81,10 +81,16 @@ export const radius: defaultBranding = {
   xl: '24px',
 }
 
+// In milliseconds.
+export enum TransitionDuration {
+  BASE = 200,
+  FAST = 500,
+}
+
 export const transition = {
   duration: {
-    base: '200ms',
-    fast: '500ms',
+    base: `${TransitionDuration.BASE}ms`,
+    fast: `${TransitionDuration.FAST}ms`,
   },
   easing: {
     default: 'ease-in',

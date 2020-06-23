@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add invert animation in the `SearchForm`.
+  [...]
 
 - **[FIX]** Revert `ItemBigData`: no longer available
 
