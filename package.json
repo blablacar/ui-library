@@ -24,7 +24,8 @@
     "bla": "bla",
     "prepublishOnly": "npm run eslint && npm run test && npm run build",
     "storybook-build": "export NODE_PATH=src && build-storybook -c .storybook -o storybook-build",
-    "storybook-deploy": "npm run storybook-build && gh-pages -d storybook-build"
+    "storybook-deploy": "npm run storybook-build && gh-pages -d storybook-build",
+    "publish-canary": "npm --no-git-tag-version version \"0.0.0-$(git rev-parse --short HEAD)\" && npm publish --tag canary"
   },
   "author": "@blablacar/spa",
   "keywords": [
