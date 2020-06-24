@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v34.5.0
+
 - **[UPDATE]** Add invert animation in the `SearchForm`.
 - **[FIX]** Revert `ItemBigData`: no longer available
-- [...]
 
 # v34.4.2 (22/06/2020)
 
