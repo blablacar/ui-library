@@ -29,9 +29,9 @@ const StyledTabs = styled(Tabs)`
 
   & .kirk-tab {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     width: 100%;
     height: 100%;
     outline: none;
@@ -41,10 +41,17 @@ const StyledTabs = styled(Tabs)`
     background-color: ${color.white};
     color: ${color.blue};
     font-size: ${font.base.size};
+  }
+
+  & .kirk-tab-content {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
     white-space: nowrap;
   }
 
-  & .kirk-tab > .kirk-icon {
+  & .kirk-tab-content > .kirk-icon {
     flex-shrink: 0;
   }
 
@@ -58,13 +65,21 @@ const StyledTabs = styled(Tabs)`
     text-align: left;
   }
 
+  & .kirk-tab-second-line {
+    margin-top: ${space.m};
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   & .kirk-tab-container {
     display: flex;
     justify-content: center;
     align-items: last baseline;
   }
 
-  & .kirk-tabs-fixed .kirk-tab {
+  & .kirk-tabs-fixed .kirk-tab-content {
     white-space: normal;
   }
 

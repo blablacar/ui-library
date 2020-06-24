@@ -94,6 +94,24 @@ describe('Rendering testing', () => {
     expect(getByRole(tab, 'img', { name: 'image' })).toBeInTheDocument()
   })
 
+  it('Should render the second line', () => {
+    const props: TabsProps = {
+      activeTabId: '1',
+      tabs: [
+        {
+          id: '1',
+          label: 'With second line',
+          panelContent: <div />,
+          secondLine: 'Second line',
+        },
+      ],
+    }
+
+    render(<Tabs {...props} />)
+    const tab = screen.getByRole('tab', { name: 'With second line' })
+    expect(tab).toHaveTextContent('With second lineSecond line')
+  })
+
   it('Should call onChange when a tab is selected', () => {
     const props = createProps({ onChange: jest.fn() })
     render(<Tabs {...props} />)

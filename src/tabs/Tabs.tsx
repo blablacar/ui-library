@@ -13,6 +13,7 @@ export interface Tab {
   readonly id: string
   readonly label: string
   readonly icon?: React.ReactElement<Icon>
+  readonly secondLine?: string
   readonly showIconOnly?: boolean
   readonly panelContent: JSX.Element
   readonly badgeContent?: string
@@ -207,21 +208,27 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                       onKeyDown={this.handleTabKeyDown}
                       className="kirk-tab"
                     >
-                      {tab.icon}
-                      {!tab.showIconOnly && (
-                        <span
-                          className={cc([
-                            'kirk-tab-text',
-                            { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
-                          ])}
-                        >
-                          {tab.label}
-                        </span>
-                      )}
-                      {tab.badgeContent && (
-                        <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
-                          {tab.badgeContent}
-                        </Badge>
+                      <span className="kirk-tab-content">
+                        {tab.icon}
+                        {!tab.showIconOnly && (
+                          <span
+                            className={cc([
+                              'kirk-tab-text',
+                              { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
+                            ])}
+                          >
+                            {tab.label}
+                          </span>
+                        )}
+                        {tab.badgeContent && (
+                          <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
+                            {tab.badgeContent}
+                          </Badge>
+                        )}
+                      </span>
+
+                      {tab.secondLine && (
+                        <span className="kirk-tab-second-line">{tab.secondLine}</span>
                       )}
                     </button>
                   </div>

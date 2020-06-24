@@ -7,7 +7,7 @@ import { Button } from '../button'
 import { BusIcon } from '../icon/busIcon'
 import { CarpoolIcon } from '../icon/carpoolIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
-import { Tabs, TabStatus } from '../tabs'
+import { Tabs, TabsProps, TabStatus } from '../tabs'
 
 const stories = storiesOf('Widgets|Tabs', module)
 stories.addDecorator(withKnobs)
@@ -110,6 +110,54 @@ stories.add('with icons', () => {
         activeTabId={iconTabsConfig.activeTabId}
         status={iconTabsConfig.status}
       />
+    </Section>
+  )
+})
+
+stories.add('with second line', () => {
+  const activeTabId = 'tab1'
+  const status = select('status', TabStatus, TabStatus.FIXED)
+  const tabs: TabsProps['tabs'] = [
+    {
+      id: 'tab1',
+      label: text('Tab label 1', 'Text only'),
+      panelContent: panels[0],
+      badgeContent: text('Badge content 1', ''),
+      secondLine: text('Second line 1', '11'),
+    },
+    {
+      id: 'tab2',
+      label: text('Tab label 2', 'Multiple words with an icon'),
+      icon: <CarpoolIcon size="32" />,
+      showIconOnly: boolean('showIconOnly Tab 2', false),
+      panelContent: panels[1],
+      badgeContent: text('Badge content 2', '2'),
+      badgeAriaLabel: 'Unread Message',
+      secondLine: text('Second line 2', '6'),
+    },
+    {
+      id: 'tab3',
+      label: text('Tab label 3', 'Tremendouslylongwording'),
+      icon: <BusIcon size="32" />,
+      showIconOnly: boolean('showIconOnly Tab 3', false),
+      panelContent: panels[2],
+      badgeContent: text('Badge content 3', ''),
+      secondLine: text('Second line 3', '-'),
+    },
+    {
+      id: 'tab4',
+      label: text('Tab label 4', 'Icon only'),
+      icon: <BusIcon size="32" />,
+      showIconOnly: boolean('showIconOnly Tab 4', true),
+      panelContent: panels[2],
+      badgeContent: text('Badge content 4', ''),
+      secondLine: text('Second line 4', '100 000 000 000 000 000'),
+    },
+  ]
+
+  return (
+    <Section>
+      <Tabs onChange={action('onChange')} tabs={tabs} activeTabId={activeTabId} status={status} />
     </Section>
   )
 })
