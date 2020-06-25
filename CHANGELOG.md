@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[FIX]** Revert icons `fill` properties instead of `strokes`.
 
 # v34.5.0 (24/06/2020)
 
