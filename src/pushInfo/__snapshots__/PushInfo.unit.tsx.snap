@@ -2,7 +2,7 @@
 
 exports[`Should also have the correct icon. 1`] = `
 .c1 {
-  stroke: #5DD167;
+  fill: #5DD167;
 }
 
 .c1.kirk-icon-wrapper {

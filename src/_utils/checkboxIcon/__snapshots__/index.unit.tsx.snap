@@ -2,7 +2,7 @@
 
 exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`] = `
 .c1 {
-  stroke: #FFF;
+  fill: #FFF;
 }
 
 .c1.kirk-icon-wrapper {
@@ -69,7 +69,7 @@ exports[`CheckboxIcon Should render a check icon if isChecked is set to true 1`]
 
 exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set to true 1`] = `
 .c2 {
-  stroke: #5DD167;
+  fill: #5DD167;
 }
 
 .c2.kirk-icon-wrapper {
@@ -217,7 +217,7 @@ exports[`CheckboxIcon Should render a loader if isLoading and isChecked are set 
 
 exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
 .c2 {
-  stroke: #5DD167;
+  fill: #5DD167;
 }
 
 .c2.kirk-icon-wrapper {
@@ -365,7 +365,7 @@ exports[`CheckboxIcon Should render a loader if isLoading is set to true 1`] = `
 
 exports[`CheckboxIcon Should render an empty circle by default 1`] = `
 .c1 {
-  stroke: #00AFF5;
+  fill: #00AFF5;
 }
 
 .c1.kirk-icon-wrapper {

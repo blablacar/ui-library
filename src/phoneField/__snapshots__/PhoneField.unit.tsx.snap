@@ -2,7 +2,7 @@
 
 exports[`PhoneField should have the expected markup in the DOM with custom settings 1`] = `
 .c2 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c2.kirk-icon-wrapper {
@@ -598,7 +598,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 
 exports[`PhoneField should have the expected markup in the DOM with default settings 1`] = `
 .c2 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c2.kirk-icon-wrapper {

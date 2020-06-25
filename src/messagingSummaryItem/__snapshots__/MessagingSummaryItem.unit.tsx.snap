@@ -2,7 +2,7 @@
 
 exports[`Should render properly with read messages 1`] = `
 .c3 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c3.kirk-icon-wrapper {
@@ -369,7 +369,7 @@ button:focus:not(.focus-visible).c0 {
 
 exports[`Should render properly with unread messages 1`] = `
 .c3 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c3.kirk-icon-wrapper {

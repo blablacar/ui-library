@@ -2,7 +2,7 @@
 
 exports[`ItemsList Should render an unordered list 1`] = `
 .c3 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c3.kirk-icon-wrapper {
@@ -370,7 +370,7 @@ button:focus:not(.focus-visible).c1 {
 
 exports[`ItemsList Should render an unordered list with some separators 1`] = `
 .c3 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c3.kirk-icon-wrapper {
@@ -755,7 +755,7 @@ button:focus:not(.focus-visible).c1 {
 
 exports[`ItemsList Should render an unordered list with the separators classname 1`] = `
 .c3 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c3.kirk-icon-wrapper {

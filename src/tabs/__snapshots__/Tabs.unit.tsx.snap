@@ -130,7 +130,7 @@ exports[`Rendering testing should render properly 1`] = `
 
 exports[`Rendering testing should render properly with icons 1`] = `
 .c0 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c0.kirk-icon-wrapper {

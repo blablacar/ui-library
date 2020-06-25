@@ -2,7 +2,7 @@
 
 exports[`Should highlight CLOSE and have a title 1`] = `
 .c1 {
-  stroke: #EDEDED;
+  fill: #EDEDED;
 }
 
 .c1.kirk-icon-wrapper {
@@ -22,7 +22,7 @@ exports[`Should highlight CLOSE and have a title 1`] = `
 }
 
 .c0 {
-  stroke: #5DD167;
+  fill: #5DD167;
 }
 
 .c0.kirk-icon-wrapper {
@@ -93,7 +93,7 @@ exports[`Should highlight CLOSE and have a title 1`] = `
 
 exports[`Should highlight FAR and have a title 1`] = `
 .c0 {
-  stroke: #EDEDED;
+  fill: #EDEDED;
 }
 
 .c0.kirk-icon-wrapper {
@@ -113,7 +113,7 @@ exports[`Should highlight FAR and have a title 1`] = `
 }
 
 .c1 {
-  stroke: #F78B00;
+  fill: #F78B00;
 }
 
 .c1.kirk-icon-wrapper {
@@ -184,7 +184,7 @@ exports[`Should highlight FAR and have a title 1`] = `
 
 exports[`Should highlight MIDDLE without a title 1`] = `
 .c0 {
-  stroke: #EDEDED;
+  fill: #EDEDED;
 }
 
 .c0.kirk-icon-wrapper {
@@ -204,7 +204,7 @@ exports[`Should highlight MIDDLE without a title 1`] = `
 }
 
 .c1 {
-  stroke: #FFCA0C;
+  fill: #FFCA0C;
 }
 
 .c1.kirk-icon-wrapper {

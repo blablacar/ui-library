@@ -2,7 +2,7 @@
 
 exports[`searchRecap Should display searchRecap component 1`] = `
 .c1 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c1.kirk-icon-wrapper {
