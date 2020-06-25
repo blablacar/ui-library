@@ -4,7 +4,7 @@ import { color, shadow } from '../branding'
 import { BaseIcon } from './BaseIcon'
 
 const StyledBaseIcon = styled(BaseIcon)`
-  stroke: ${props => props.iconColor ?? color.lightMidnightGreen};
+  fill: ${props => props.iconColor ?? color.lightMidnightGreen};
 
   &,
   & rect,
@@ -13,7 +13,7 @@ const StyledBaseIcon = styled(BaseIcon)`
   & polyline,
   & path,
   & g {
-    stroke: ${props => (props.isDisabled ? color.gray : '')};
+    fill: ${props => (props.isDisabled ? color.gray : '')};
   }
 
   &.kirk-icon-wrapper {
