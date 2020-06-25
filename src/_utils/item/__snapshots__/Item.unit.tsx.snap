@@ -2,7 +2,7 @@
 
 exports[`Item Should not have changed 1`] = `
 .c2 {
-  stroke: #708C91;
+  fill: #708C91;
 }
 
 .c2.kirk-icon-wrapper {

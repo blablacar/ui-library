@@ -2,7 +2,7 @@
 
 exports[`Modal should not have changed 1`] = `
 .c3 {
-  stroke: #00AFF5;
+  fill: #00AFF5;
 }
 
 .c3.kirk-icon-wrapper {

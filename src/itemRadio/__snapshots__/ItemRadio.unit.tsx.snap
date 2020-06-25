@@ -2,7 +2,7 @@
 
 exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input is checked 1`] = `
 .c3 {
-  stroke: #00AFF5;
+  fill: #00AFF5;
 }
 
 .c3.kirk-icon-wrapper {
@@ -317,7 +317,7 @@ button:focus:not(.focus-visible).c0 {
 
 exports[`ItemRadio Should display a Loader when the component is in loading status 1`] = `
 .c4 {
-  stroke: #5DD167;
+  fill: #5DD167;
 }
 
 .c4.kirk-icon-wrapper {
@@ -697,7 +697,7 @@ button:focus:not(.focus-visible).c0 {
 
 exports[`ItemRadio Should forward its props to the Item component 1`] = `
 .c3 {
-  stroke: #00AFF5;
+  fill: #00AFF5;
 }
 
 .c3.kirk-icon-wrapper {

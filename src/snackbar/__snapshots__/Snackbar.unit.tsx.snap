@@ -2,7 +2,7 @@
 
 exports[`Snackbar should not have changed 1`] = `
 .c4 {
-  stroke: #FFF;
+  fill: #FFF;
 }
 
 .c4.kirk-icon-wrapper {
