@@ -60,7 +60,7 @@ describe('Button', () => {
       </Button>,
     )
     expect(button.contains(<CrossIcon />)).toBe(false)
-    expect(button.text()).toEqual('')
+    expect(button.text().includes('blabla')).toBe(false)
   })
 
   it('Simulates a click action.', () => {
@@ -120,7 +120,7 @@ describe('Button', () => {
       </Button>,
     )
     expect(button.contains(<CrossIcon />)).toBe(false)
-    expect(button.text()).toEqual('')
+    expect(button.text().includes('blabla')).toBe(false)
   })
 
   describe('href', () => {

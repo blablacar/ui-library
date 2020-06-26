@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add basic a11y to `Loader` component
 [...]
 
 # v38.2.0 (31/07/2020)
