@@ -8,6 +8,11 @@ import { ItemRadioProps } from '../itemRadio/ItemRadio'
 
 export const ItemsListDivider: FunctionComponent = () => null
 
+// NOTE: react-hot-loader will update dynamically the type and break type comparisons.
+// A pre-rendered type need to be used to fix it.
+// See: https://github.com/gaearon/react-hot-loader#checking-element-types
+const ItemsListDividerType = (<ItemsListDivider />).type
+
 export type ItemsListChild =
   | React.ReactElement<ItemChoiceProps>
   | React.ReactElement<ItemRadioProps>
@@ -36,13 +41,13 @@ export class ItemsList extends Component<ItemsListProps> {
     return (
       <ul className={cc(['kirk-items-list', className])} {...otherProps}>
         {children.map((item, index) => {
-          if (item.type === ItemsListDivider || item.type === undefined) {
+          if (item.type === ItemsListDividerType || item.type === undefined) {
             return null
           }
 
           const isLast = children.length === index + 1
           const hasSeparator =
-            !isLast && (children[index + 1].type === ItemsListDivider || withSeparators)
+            !isLast && (children[index + 1].type === ItemsListDividerType || withSeparators)
 
           return (
             <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>

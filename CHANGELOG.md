@@ -1,7 +1,8 @@
 # Unreleased
 
-- [...]
 - **[FIX]** Revert icons `fill` properties instead of `strokes`.
+- **[FIX]** Fix `ItemsListDivider` type comparison with react-hot-loader.
+- [...]
 
 # v34.5.0 (24/06/2020)
 
