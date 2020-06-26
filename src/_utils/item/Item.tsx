@@ -102,7 +102,7 @@ export const Item = (props: ItemProps) => {
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
   const getLeftTitle = (value: React.ReactNode) => {
-    if (typeof value === 'object') {
+    if (React.isValidElement(value)) {
       return leftTitle
     }
     return (
