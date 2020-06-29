@@ -5,6 +5,7 @@ import { color } from '../../_utils/branding'
 import { A11yProps, pickA11yProps } from '../../_utils/interfaces'
 import { Button } from '../../button/Button'
 import { ChevronIcon } from '../../icon/chevronIcon'
+import { NormalizeProps } from '../../layout/layoutNormalizer'
 import { Text, TextDisplayType, TextTagType } from '../../text'
 
 export enum ItemStatus {
@@ -13,7 +14,7 @@ export enum ItemStatus {
   CHECKED = 'checked',
 }
 
-export interface ItemProps extends A11yProps {
+export interface ItemProps extends A11yProps, NormalizeProps {
   readonly chevron?: boolean
   readonly className?: string
   readonly href?: string | JSX.Element

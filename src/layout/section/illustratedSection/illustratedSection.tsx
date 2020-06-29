@@ -24,7 +24,12 @@ export const IllustratedSection: React.SFC<IllustratedSectionProps> = (
     <Avatar image={illustrationUrl} alt={illustrationAlt} isLarge />
   )
   return (
-    <BaseSection tagName="article" className={className} contentSize={SectionContentSize.LARGE}>
+    <BaseSection
+      tagName="article"
+      className={className}
+      contentSize={SectionContentSize.LARGE}
+      noHorizontalSpacing
+    >
       <div className="kirk-illustratedSection-illustration">{illu}</div>
       <div className="kirk-illustratedSection-content">{props.children}</div>
     </BaseSection>

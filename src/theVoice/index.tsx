@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { color, responsiveBreakpoints, space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 import { TheVoice } from './TheVoice'
 
 const StyledTheVoice = styled(TheVoice)`
@@ -14,6 +15,8 @@ const StyledTheVoice = styled(TheVoice)`
   padding: ${space.xl} 0 var(--space-bottom);
   color: ${props => (props.isInverted ? color.white : '')};
   white-space: pre-line;
+
+  ${normalizeHorizontally};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     text-align: center;

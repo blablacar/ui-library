@@ -107,12 +107,18 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -553,12 +559,18 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -969,12 +981,18 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -1342,12 +1360,18 @@ exports[`ItemChoice Should support a disabled state 1`] = `
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -1697,12 +1721,18 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
