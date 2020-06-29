@@ -6,14 +6,21 @@ import { space } from '../branding'
 
 const StyledRideAxis = styled.span`
   display: flex;
-  align-items: center;
+  align-items: self-end;
+
+  > span {
+    flex: 1;
+  }
 `
 
 const StyledArrowIcon = styled(ArrowIcon)`
   & {
     display: inline-block;
-    margin: 0 ${space.s};
+    margin: 0 ${space.m};
     height: 1em;
+    width: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
 `
 
