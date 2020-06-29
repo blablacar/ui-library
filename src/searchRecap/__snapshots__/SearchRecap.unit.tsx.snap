@@ -26,16 +26,30 @@ exports[`searchRecap Should display searchRecap component 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-items: self-end;
+  -webkit-box-align: self-end;
+  -ms-flex-align: self-end;
+  align-items: self-end;
+}
+
+.c3 > span {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .c4 {
   display: inline-block;
-  margin: 0 4px;
+  margin: 0 8px;
   height: 1em;
+  width: 1em;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
 }
 
 .c2 {

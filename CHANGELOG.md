@@ -1,6 +1,7 @@
 # Unreleased
 
 - [...]
+- **[UPDATE]** `RideAxis` alignment polish: when text goes from 1 to 2 lines.
 
 # v34.5.1 (26/06/2020)
 
