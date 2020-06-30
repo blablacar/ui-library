@@ -13,7 +13,7 @@ const StyledBaseIcon = styled(BaseIcon)`
   & polyline,
   & path,
   & g {
-    fill: ${props => (props.isDisabled ? color.gray : '')};
+    stroke: ${props => (props.isDisabled ? color.gray : '')};
   }
 
   &.kirk-icon-wrapper {
