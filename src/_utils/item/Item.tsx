@@ -26,7 +26,7 @@ export interface ItemProps extends A11yProps {
   readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
   readonly leftBodyColor?: string
-  readonly leftBodyAnnotation?: string | React.ReactNode
+  readonly leftBodyAnnotation?: React.ReactNode
   readonly leftBodyAnnotationDisplay?: TextDisplayType
   readonly leftBodyAnnotationColor?: string
   readonly leftAddon?: React.ReactNode
@@ -35,7 +35,7 @@ export interface ItemProps extends A11yProps {
   readonly rightTitleStrikeThrough?: boolean
   readonly rightTitleAriaLabel?: string
   readonly rightTitleColor?: string
-  readonly rightBody?: string | React.ReactNode
+  readonly rightBody?: React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
@@ -101,7 +101,7 @@ export const Item = (props: ItemProps) => {
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
-  const getLeftTitle = (value: React.ReactNode) => {
+  const getLeftTitle = (value: React.ReactNode): React.ReactNode => {
     if (React.isValidElement(value)) {
       return leftTitle
     }
