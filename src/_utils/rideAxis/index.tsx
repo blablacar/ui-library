@@ -5,8 +5,8 @@ import { ArrowIcon } from '../../icon'
 import { space } from '../branding'
 
 const StyledRideAxis = styled.span`
-  display: flex;
-  align-items: self-end;
+  display: inline-flex;
+  align-items: self-start;
 
   > span {
     flex: 1;
