@@ -19,14 +19,14 @@ export interface ItemProps extends A11yProps {
   readonly href?: string | JSX.Element
   readonly highlighted?: boolean
   readonly isClickable?: boolean
-  readonly leftTitle?: string
+  readonly leftTitle?: React.ReactNode
   readonly leftTitleButtonAddon?: React.ReactElement<Button>
   readonly leftTitleDisplay?: TextDisplayType
   readonly leftTitleColor?: string
   readonly leftBody?: string | React.ReactNode
   readonly leftBodyDisplay?: TextDisplayType
   readonly leftBodyColor?: string
-  readonly leftBodyAnnotation?: string | React.ReactNode
+  readonly leftBodyAnnotation?: React.ReactNode
   readonly leftBodyAnnotationDisplay?: TextDisplayType
   readonly leftBodyAnnotationColor?: string
   readonly leftAddon?: React.ReactNode
@@ -35,7 +35,7 @@ export interface ItemProps extends A11yProps {
   readonly rightTitleStrikeThrough?: boolean
   readonly rightTitleAriaLabel?: string
   readonly rightTitleColor?: string
-  readonly rightBody?: string | React.ReactNode
+  readonly rightBody?: React.ReactNode
   readonly rightBodyDisplay?: TextDisplayType
   readonly rightBodyColor?: string
   readonly rightAddon?: React.ReactNode
@@ -101,6 +101,24 @@ export const Item = (props: ItemProps) => {
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)
 
+  const getLeftTitle = (value: React.ReactNode): React.ReactNode => {
+    if (React.isValidElement(value)) {
+      return leftTitle
+    }
+    return (
+      <Text
+        className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
+        display={leftTitleDisplay}
+        textColor={getTextColor(leftTitleColor)}
+        tag={TextTagType.SPAN}
+      >
+        {leftTitle}
+        {/* In case of a clickable Item don't display the addon button */}
+        {!href && leftTitleButtonAddon}
+      </Text>
+    )
+  }
+
   return (
     <Tag
       {...tagProps}
@@ -122,18 +140,7 @@ export const Item = (props: ItemProps) => {
     >
       {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
       <span className="kirk-item-leftText">
-        {leftTitle && (
-          <Text
-            className={leftTitleButtonAddon ? 'kirk-item-title--withButtonAddon' : null}
-            display={leftTitleDisplay}
-            textColor={getTextColor(leftTitleColor)}
-            tag={TextTagType.SPAN}
-          >
-            {leftTitle}
-            {/* In case of a clickable Item don't display the addon button */}
-            {!href && leftTitleButtonAddon}
-          </Text>
-        )}
+        {leftTitle && getLeftTitle(leftTitle)}
         {leftBody && (
           <Text
             className="kirk-item-body"

@@ -72,7 +72,9 @@ stories.add('With html sublabel', () => (
       url={text('url', 'http://google.com')}
       pictureUrl={text('url', pictureUrl)}
       label={text('Label', 'Label')}
-      subLabel={<RideAxis from="Paris" to="Rennes" />}
+      subLabel={
+        <RideAxis from={text('from', 'Paris')} to={text('to', 'Cologne Bonn Airport, Köln')} />
+      }
       timeLabel={text('Time label', '3 hours ago')}
       hasUnreadMessages={boolean('hasUnreadMessages', true)}
     />

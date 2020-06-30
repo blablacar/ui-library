@@ -31,7 +31,10 @@ stories.add('Default', () => (
         color: color.lightMidnightGreen,
       }}
     >
-      <RideAxis from={text('from', 'Paris')} to={text('to', 'Lille')} />
+      <RideAxis
+        from={text('from2', 'Düsseldorf International Airport, Düsseldorf')}
+        to={text('to3', 'Cologne Bonn Airport, Köln')}
+      />
     </div>
     <div
       style={{
@@ -40,7 +43,10 @@ stories.add('Default', () => (
         color: color.midnightGreen,
       }}
     >
-      <RideAxis from={text('from', 'Paris')} to={text('to', 'Lille')} />
+      <RideAxis
+        from={text('from3', 'Düsseldorf International Airport, Düsseldorf')}
+        to={text('to3', 'Cologne Bonn Airport, Köln')}
+      />
     </div>
   </Section>
 ))
