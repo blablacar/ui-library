@@ -22,27 +22,11 @@ exports[`searchRecap Should display searchRecap component 1`] = `
 }
 
 .c3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: self-start;
-  -webkit-box-align: self-start;
-  -ms-flex-align: self-start;
-  align-items: self-start;
-}
-
-.c3 > span {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c4 {
   display: inline-block;
+  padding: 0.1em 0 0;
   margin: 0 8px;
-  height: 1em;
-  width: 1em;
+  height: 0.9em;
+  width: 0.9em;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -195,14 +179,14 @@ exports[`searchRecap Should display searchRecap component 1`] = `
         }
       >
         <span
-          className="c3"
+          className=""
         >
           <span>
             Middlesbrough
           </span>
           <svg
             aria-hidden={true}
-            className="kirk-icon c4 c1"
+            className="kirk-icon c3 c1"
             height={24}
             viewBox="0 0 24 24"
             width={24}
