@@ -6,7 +6,7 @@
 
 - **[BREAKING CHANGE]** `Item`: `leftTitle` attribute can receive `string` or `node`
 - **[NEW]** Introducing `ItemBigData` component
-- **[FIX]** Use `stroke` for disabled icons
+- **[FIX]** Use `stroke` for `disabled` icons
 - **[UPDATE]** `RideAxis` alignment polish: when text goes from 1 to 2 lines.
 - **[UPDATE]** `MessagingItemSummary` with `RideAxis`
 
