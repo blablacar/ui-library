@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git@github.com:blablacar/ui-library.git"
   },
+  "engines": {
+    "node": "^12.16.1",
+    "npm": "^6.13.4"
+  },
   "scripts": {
     "start": "export NODE_PATH=src && start-storybook",
     "build": "rimraf build && tsc && npm run build-babel && npm run build-rename-jsx-map && npm run build-cleanup",
@@ -137,7 +141,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "bla node && bla check && lint-staged && tsc --noEmit",
+      "pre-commit": "bla check && lint-staged && tsc --noEmit",
       "pre-push": "npm run eslint && npm test"
     }
   }
