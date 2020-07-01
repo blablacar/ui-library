@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v35.0.0 (01/07/2020)
+
 - **[BREAKING CHANGE]** `Item`: `leftTitle` attribute can receive `string` or `node`
 - **[NEW]** Introducing `ItemBigData` component
 - **[FIX]** Use `stroke` for disabled icons
