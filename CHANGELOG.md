@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[BREAKING CHANGE]** Move non API components in an `_internal` folder
 - [...]
+
+# v36.0.0 (03/07/2020)
+
+- **[BREAKING CHANGE]** Move non API components from `_utils` to `_internal` folder
 
 # v35.0.0 (01/07/2020)
 
