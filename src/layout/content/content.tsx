@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../../_utils/closest'
+import '../../_internals/closest'
 
 import { componentSizes, pxToInteger } from '../../_utils/branding'
 

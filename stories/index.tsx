@@ -1,6 +1,6 @@
 import './stories.css'
 // DESIGN TOKENS
-import '../src/_utils/story'
+import '../src/_internals/story'
 import '../src/typography/story'
 import '../src/typography/display2/story'
 import '../src/typography/display1/story'

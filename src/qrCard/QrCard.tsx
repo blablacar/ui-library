@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Card } from '../_utils/card'
+import { Card } from '../_internals/card'
 import { ItemInfo } from '../itemInfo'
 import { SubHeader } from '../subHeader'
 

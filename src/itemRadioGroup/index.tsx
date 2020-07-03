@@ -1,6 +1,6 @@
 import React, { cloneElement, PureComponent } from 'react'
 
-import { OnChangeParameters } from '../_utils/onChange'
+import { OnChangeParameters } from '../_internals/onChange'
 import { ItemRadioProps, ItemRadioStatus } from '../itemRadio/ItemRadio'
 import { ItemsList } from '../itemsList'
 

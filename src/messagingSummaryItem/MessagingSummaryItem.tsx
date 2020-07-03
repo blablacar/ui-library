@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
+import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
-import { Item } from '../_utils/item'
 import { Avatar } from '../avatar'
 import { TextDisplayType } from '../text'
 

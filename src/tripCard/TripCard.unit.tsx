@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import { Card } from '../_utils/card'
+import { Card } from '../_internals/card'
 import { Avatar } from '../avatar'
 import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
 import { ComfortIcon } from '../icon/comfortIcon'

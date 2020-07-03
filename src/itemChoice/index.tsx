@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
+import { Item, ItemStatus } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { FocusVisibleContext } from '../_utils/focusVisibleProvider'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import { Item, ItemStatus } from '../_utils/item'
 import { Loader } from '../loader'
 import { TextDisplayType } from '../text'
 

@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
+import { Item } from '../_internals/item'
+import { OnChangeParameters } from '../_internals/onChange'
+import { RadioIcon } from '../_internals/radioIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import { Item } from '../_utils/item'
-import { OnChangeParameters } from '../_utils/onChange'
-import { RadioIcon } from '../_utils/radioIcon'
 import { TextDisplayType } from '../text'
 
 export enum ItemRadioStatus {

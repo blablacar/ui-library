@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import { ItemStatus } from '../_utils/item'
+import { ItemStatus } from '../_internals/item'
 import { ItemChoice } from '../itemChoice'
 import { ItemInfo } from '../itemInfo'
 import { AutoComplete } from './AutoComplete'

@@ -2,11 +2,11 @@ import React, { Fragment, ReactNode } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
+import { color } from '../../_utils/branding'
+import { Place } from '../../_utils/place'
 import { Bullet, BulletTypes } from '../../bullet'
 import { ChevronIcon } from '../../icon/chevronIcon'
 import { Text, TextDisplayType, TextTagType } from '../../text'
-import { color } from '../branding'
-import { Place } from '../place'
 
 export interface ItineraryLocationProps {
   readonly place: Place

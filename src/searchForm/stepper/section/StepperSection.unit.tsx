@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Item } from '../../../_utils/item'
+import { Item } from '../../../_internals/item'
 import { Button } from '../../../button'
 import { ChevronIcon } from '../../../icon/chevronIcon'
 import { Stepper, StepperDisplay } from '../../../stepper'

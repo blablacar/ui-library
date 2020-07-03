@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Item } from '../../../_utils/item'
+import { Item } from '../../../_internals/item'
 import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
 import { Stepper, StepperDisplay } from '../../../stepper'
 import { StepperOverlay } from './StepperOverlay'

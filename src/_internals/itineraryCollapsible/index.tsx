@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, font, radius, space, transition } from '../branding'
+import { color, componentSizes, font, radius, space, transition } from '../../_utils/branding'
 import { ItineraryCollapsible } from './ItineraryCollapsible'
 
 const minHeight = '40px'
