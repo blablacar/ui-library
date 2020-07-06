@@ -31,10 +31,3 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-#story-root,
-.storybook-readme-story {
-  padding-top: 40px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
