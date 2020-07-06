@@ -13,6 +13,10 @@ module.exports = {
         },
         {
           loader: require.resolve('react-docgen-typescript-loader'),
+          options: {
+            tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+            shouldExtractLiteralValuesFromEnum: true,
+          },
         },
         {
           loader: require.resolve('@storybook/source-loader'),
@@ -27,6 +31,8 @@ module.exports = {
   },
   stories: ['../src/**/story.(tsx|mdx)', '../src/**/*.story.(tsx|mdx)'],
   addons: [
+    '@storybook/preset-typescript',
+
     '@storybook/addon-knobs',
     '@storybook/addon-actions',
     '@storybook/addon-links',

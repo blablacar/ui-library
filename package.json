@@ -114,6 +114,7 @@
     "react-test-renderer": "16.9.0",
     "renamer": "1.1.4",
     "rimraf": "2.6.3",
+    "storybook-addon-smart-knobs": "6.0.2",
     "storybook-readme": "5.0.8",
     "styled-components": "4.3.2",
     "ts-loader": "6.2.1",
