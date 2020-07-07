@@ -1,0 +1,13 @@
+import { Meta, ColorItem, ColorPalette } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+
+<Meta title="Design Tokens|Colors" />
+
+# Colors
+
+<ColorPalette>
+  {Object.keys(color).map(hue => (
+    <ColorItem title={hue} subtitle={`color.${hue}`} colors={[color[hue]]} />
+  ))}
+</ColorPalette>
