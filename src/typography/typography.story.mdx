@@ -1,0 +1,165 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks'
+import { space } from '../_utils/branding'
+
+import { TextBody } from './body'
+import { TextBodyStrong } from './bodyStrong'
+import { TextCaption } from './caption'
+import { TextDisplay1 } from './display1'
+import { TextDisplay2 } from './display2'
+
+import { TextSubHeader } from './subHeader'
+import { TextSubHeaderStrong } from './subHeaderStrong'
+import { TextTitle } from './title'
+import { TextTitleStrong } from './titleStrong'
+
+<Meta title="Design Tokens|Typography" />
+
+# Typography
+
+ <h1 style={{ marginBottom: space.xxl }}>
+    <p style={{ marginBottom: space.s }}>
+      <TextBody>Display2</TextBody>
+    </p>
+    <TextDisplay2>
+      Medium 82px <br /> Height 82px
+    </TextDisplay2>
+  </h1>
+  <h2 style={{ marginBottom: space.xxl }}>
+    <p style={{ marginBottom: space.s }}>
+      <TextBody>Display1</TextBody>
+    </p>
+    <TextDisplay1>
+      Medium 30px <br /> Height 32px
+    </TextDisplay1>
+  </h2>
+  <h3 style={{ marginBottom: space.xxl }}>
+    <p style={{ marginBottom: space.s }}>
+      <TextBody>SubHeader</TextBody>
+    </p>
+    <TextSubHeader>
+      Regular 22px <br /> Height 24px
+    </TextSubHeader>
+  </h3>
+  <h3 style={{ marginBottom: space.xxl }}>
+    <p style={{ marginBottom: space.s }}>
+      <TextBody>SubHeaderStrong</TextBody>
+    </p>
+    <TextSubHeaderStrong>
+      Medium 22px <br /> Height 24px
+    </TextSubHeaderStrong>
+  </h3>
+
+  <p style={{ marginBottom: space.s }}>
+    <TextBody>Title</TextBody>
+  </p>
+  <h4 style={{ marginTop: 0, marginBottom: space.xxl }}>
+    <TextTitle>
+      Regular 18px <br /> Height 20px
+    </TextTitle>
+  </h4>
+
+  <p style={{ marginBottom: space.s }}>
+    <TextBody>TitleStrong</TextBody>
+  </p>
+  <h4 style={{ marginTop: 0, marginBottom: space.xxl }}>
+    <TextTitleStrong>
+      Medium 18px <br /> Height 20px
+    </TextTitleStrong>
+  </h4>
+
+  <p style={{ marginBottom: space.xxl }}>
+    <TextBody>Body</TextBody>
+    <br />
+    <TextBody>
+      Regular 16px <br /> Height 20px
+    </TextBody>
+  </p>
+
+  <p style={{ marginBottom: space.xxl }}>
+    <TextBody>bodyStrong</TextBody>
+    <br />
+    <TextBodyStrong>
+      Medium 16px <br /> Height 20px
+    </TextBodyStrong>
+  </p>
+
+  <figcaption>
+    <p style={{ marginBottom: space.s }}>
+      <TextBody>Caption</TextBody>
+    </p>
+    <TextCaption>
+      Regular 13px <br /> Height 16px
+    </TextCaption>
+  </figcaption>
+
+## Usage
+
+_Text Components_ are text based components.
+
+`TextComponents` are exported individually.
+
+```js
+import TextBody from './typography/body'
+<TextBody>The quick brown fox jumps over the lazy dog</TextBody>
+```
+
+```js
+import TextBodyStrong from './typography/bodyStrong'
+<TextBodyStrong>The quick brown fox jumps over the lazy dog</TextBodyStrong>
+```
+
+```js
+import TextCaption from './typography/caption'
+<TextCaption>The quick brown fox jumps over the lazy dog</TextCaption>
+```
+
+```js
+import TextTitle from './typography/title'
+<TextTitle>The quick brown fox jumps over the lazy dog</TextTitle>
+```
+```js
+import TextTitleStrong from './typography/titleStrong'
+<TextTitleStrong>The quick brown fox jumps over the lazy dog</TextTitleStrong>
+```
+```js
+import TextSubHeader from './typography/subHeader'
+<TextSubHeader>The quick brown fox jumps over the lazy dog</TextSubHeader>
+```
+```js
+import TextSubHeaderStrong from './typography/subHeaderStrong'
+<TextSubHeaderStrong>The quick brown fox jumps over the lazy dog</TextSubHeaderStrong>
+```
+```js
+import TextDisplay2 from './typography/display2'
+<TextDisplay2>The quick brown fox jumps over the lazy dog</TextDisplay2>
+```
+```js
+import TextDisplay1 from './typography/display1'
+<TextDisplay1>The quick brown fox jumps over the lazy dog</TextDisplay1>
+```
+
+
+They are rendered wrapped on a `<span />` element and **should receive its semantics by its parent** as you can see on the example bellow
+
+```js
+// Declaration
+<h1>
+  <TextComponent>The quick brown fox jumps over the lazy dog</TextComponent>
+</h1>
+```
+```js
+// Render
+<h1>
+  <span>The quick brown fox jumps over the lazy dog</span>
+</h1>
+```
+
+## Props
+
+| **Props**    | **Value**       | **Description**                  |
+| ------------ | --------------- | -------------------------------- |
+| `isInverted` | `true`\|`false` | When applied to dark backgrounds |
+
+## Implementation details
+
+By default, a **TextComponent** accepts `\n` to create line breaks on the text.

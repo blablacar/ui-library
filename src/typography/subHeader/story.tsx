@@ -6,7 +6,7 @@ import { color } from '../../_utils/branding'
 import { BaseSection as Section } from '../../layout/section/baseSection'
 import { TextSubHeader } from './index'
 
-const stories = storiesOf('Brand|typography', module)
+const stories = storiesOf('Design Tokens|Typography/', module)
 stories.addDecorator(withKnobs)
 
 stories.add('TextSubHeader', () => (

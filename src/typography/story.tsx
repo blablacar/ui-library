@@ -14,7 +14,7 @@ import { TextSubHeaderStrong } from './subHeaderStrong'
 import { TextTitle } from './title'
 import { TextTitleStrong } from './titleStrong'
 
-const stories = storiesOf('Brand|typography', module)
+const stories = storiesOf('Design Tokens|Typography/', module)
 
 stories.add(
   'ALL',
