@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { color } from '../../_utils/branding'
@@ -7,7 +7,6 @@ import { BaseSection as Section } from '../../layout/section/baseSection'
 import { TextDisplay1 } from './index'
 
 const stories = storiesOf('Design Tokens|Typography/', module)
-stories.addDecorator(withKnobs)
 
 stories.add('TextDisplay1', () => (
   <Section>

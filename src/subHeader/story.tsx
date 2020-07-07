@@ -1,17 +1,12 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { SubHeader } from '../subHeader'
-import spec from './specifications/subHeader.md'
 
-const stories = storiesOf('Widgets|SubHeader', module)
-stories.addDecorator(withKnobs)
-const specTemplateFn = () => <SubHeader>SubHeader content</SubHeader>
-stories.add('Specifications', specTemplateFn, { readme: spec })
+const stories = storiesOf('Text|', module)
 
-stories.add('default', () => (
+stories.add('SubHeader', () => (
   <Section>
     <SubHeader>This is a SubHeader</SubHeader>
     Some content lead by a &lt;SubHeader&gt; widget.
