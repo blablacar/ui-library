@@ -1,11 +1,11 @@
 import React from 'react'
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Title } from '../title'
 
-const stories = storiesOf('Widgets|Title', module)
+const stories = storiesOf('Text|', module)
 const optionHeading = {
   1: '1',
   2: '2',
@@ -15,9 +15,7 @@ const optionHeading = {
   6: '6',
 }
 
-stories.addDecorator(withKnobs)
-
-stories.add('basic', () => (
+stories.add('Title', () => (
   <Section>
     <Title headingLevel={select('Heading', optionHeading, '1')}>
       {text('Title', 'Voice title')}

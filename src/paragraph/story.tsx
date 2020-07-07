@@ -1,12 +1,11 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Paragraph } from './index'
 
-const stories = storiesOf('Widgets|Paragraph', module)
-stories.addDecorator(withKnobs)
+const stories = storiesOf('Text|Paragraph', module)
 
 const shortText = 'Short text (below max char)'
 const longText = 'Long text (above max char) '.repeat(20)

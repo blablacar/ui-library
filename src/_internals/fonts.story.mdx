@@ -1,0 +1,16 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks'
+
+import { font, fontWeight } from '../_utils/branding'
+
+<Meta title="Design Tokens|Fonts" />
+
+# Font Scaling
+
+**Font:** GT-Eesti-Pro-Display-Medium
+
+**Weights:** 400(regular), 700(medium)
+
+<Typeset
+  fontSizes={Object.keys(font).map(scale => font[scale]['size'])}
+  sampleText="The quick brown fox jumps over lazy dog"
+/>

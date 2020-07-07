@@ -7,7 +7,7 @@ import { color, font } from '../branding'
 import { RideAxis } from './index'
 import readme from './specifications/index.md'
 
-const stories = storiesOf('Internal|RideAxis', module)
+const stories = storiesOf('Widgets|RideAxis', module)
 stories.addParameters({
   readme,
 })
