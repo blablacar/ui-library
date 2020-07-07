@@ -15,7 +15,6 @@ addParameters({
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
-    defaultViewport: 'iPhone 6',
   },
 })
 

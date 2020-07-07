@@ -18,12 +18,6 @@ module.exports = {
             shouldExtractLiteralValuesFromEnum: true,
           },
         },
-        {
-          loader: require.resolve('@storybook/source-loader'),
-          options: {
-            enforce: 'pre',
-          },
-        },
       ],
     })
     config.resolve.extensions.push('.ts', '.tsx')
@@ -31,8 +25,6 @@ module.exports = {
   },
   stories: ['../src/**/story.(tsx|mdx)', '../src/**/*.story.(tsx|mdx)'],
   addons: [
-    '@storybook/preset-typescript',
-
     '@storybook/addon-knobs',
     '@storybook/addon-actions',
     '@storybook/addon-links',
@@ -43,9 +35,6 @@ module.exports = {
       options: {
         configureJSX: true,
       },
-    },
-    {
-      name: '@storybook/addon-storysource',
     },
   ],
 }
