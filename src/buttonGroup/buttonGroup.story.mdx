@@ -1,12 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Button, ButtonStatus } from '../button'
+import { ButtonGroup } from './index'
+
+<Meta title="Buttons|" />
+
 # ButtonGroup
 
-```js
-import { ButtonGroup } from '@blablacar/ui-library'
-```
-
-## Playground
-
-<!-- STORY -->
+<Preview>
+  <Story name="ButtonGroup">
+    <ButtonGroup>
+      <Button>Hello</Button>
+      <Button status={ButtonStatus.TERTIARY}>there</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
 
 ## Specifications
 
@@ -17,13 +24,18 @@ On small devices button group become vertical and consists of Primary and Tertia
 On large devices it's horizontal and consists of Primary and Secondary buttons placed inline with reduced spacing between them: 16pt.
 Each button occupy 50% of the available space.
 
+## Usage
 
-```js
+```jsx
+import { ButtonGroup } from '@blablacar/ui-library'
+
 <ButtonGroup>
   <Button>Hello</Button>
   <Button status={ButtonStatus.TERTIARY}>there</Button>
 </ButtonGroup>
 ```
+
+<Props of={ButtonGroup} />
 
 ## When should I use it?
 
