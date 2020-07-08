@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
@@ -20,6 +21,12 @@ export interface DisclaimerProps {
   readonly deprecatedHelpUrl?: string
 }
 
+const StyledDisclaimer = styled(Item)`
+  .kirk-item {
+    color: ${color.lightMidningGreen};
+  }
+`
+
 const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => (
   <Button href={deprecatedHelpUrl} status={ButtonStatus.UNSTYLED} isBubble>
     <QuestionIcon iconColor={color.blue} />
@@ -32,7 +39,7 @@ export const Disclaimer = ({
   children,
   deprecatedHelpUrl = null,
 }: DisclaimerProps) => (
-  <Item
+  <StyledDisclaimer
     leftBody={children}
     leftBodyDisplay={isCaption ? TextDisplayType.CAPTION : TextDisplayType.BODY}
     leftAddon={useInfoIcon ? <InfoIcon /> : null}

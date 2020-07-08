@@ -1,0 +1,82 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Button, ButtonStatus } from '../button'
+
+import { Disclaimer } from './index'
+
+<Meta title="Text|Disclaimer" />
+
+# Disclaimer
+
+provide information that don’t need a bigger emphasis
+
+### Short Text and Info Icon
+
+<Preview>
+  <Story name="InfoIcon">
+    <Disclaimer useInfoIcon>
+      <span>
+        Some short disclaimer and&nbsp;
+        <Button status={ButtonStatus.UNSTYLED} href="#">
+          link
+        </Button>
+      </span>
+    </Disclaimer>
+  </Story>
+</Preview>
+
+### Long Text
+
+<Preview>
+  <Story name="LongText">
+    <Disclaimer useInfoIcon={false}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed utrum hortandus es nobis, Luci,
+      inquit, an etiam tua sponte propensus es? Ego autem tibi, Piso, assentior usu hoc venire, ut
+      acrius aliquanto et attentius de claris viris locorum admonitu cogitemus. Sed vobis voluptatum
+      perceptarum recordatio vitam beatam facit, et quidem corpore perceptarum. Re mihi non aeque
+      satisfacit, et quidem locis pluribus. Videmusne ut pueri ne verberibus quidem a contemplandis
+      rebus perquirendisque deterreantur?
+    </Disclaimer>
+  </Story>
+</Preview>
+
+### Not a Caption
+
+<Preview>
+  <Story name="NoCaption">
+    <Disclaimer isCaption={false} useInfoIcon>
+      Some short text disclaimer, not styled as a caption
+    </Disclaimer>
+  </Story>
+</Preview>
+
+### Deprecated Help URL
+
+<Preview>
+  <Story name="Deprecated">
+    <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
+      Some disclaimer with help button icon.
+    </Disclaimer>
+  </Story>
+</Preview>
+
+## Specifications
+
+> Behavior
+
+Use it to provide information that don’t need a bigger emphasis, like legal disclaimers (with or
+without links), footnotes or timestamps.
+
+> Long texts
+
+There’s no limitation on the number of lines.
+
+## Usage
+
+```jsx
+import { Disclaimer } from '@blablacar/ui-library'
+
+<Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>
+```
+
+<Props of={Disclaimer} />
