@@ -2,13 +2,37 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import { Button, ButtonStatus } from '../button'
 import { ButtonGroup } from './index'
 
-<Meta title="Buttons|" />
+<Meta title="Buttons|ButtonGroup" />
 
 # ButtonGroup
 
+### Stack
+
 <Preview>
-  <Story name="ButtonGroup">
+  <Story name="Stack">
     <ButtonGroup>
+      <Button>Hello</Button>
+      <Button status={ButtonStatus.TERTIARY}>there</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+### InLine
+
+<Preview>
+  <Story name="InLine">
+    <ButtonGroup isInline>
+      <Button>Hello</Button>
+      <Button status={ButtonStatus.TERTIARY}>there</Button>
+    </ButtonGroup>
+  </Story>
+</Preview>
+
+### Reverse
+
+<Preview>
+  <Story name="Reverse">
+    <ButtonGroup isReverse={true}>
       <Button>Hello</Button>
       <Button status={ButtonStatus.TERTIARY}>there</Button>
     </ButtonGroup>
@@ -28,7 +52,6 @@ Each button occupy 50% of the available space.
 
 ```jsx
 import { ButtonGroup } from '@blablacar/ui-library'
-
 <ButtonGroup>
   <Button>Hello</Button>
   <Button status={ButtonStatus.TERTIARY}>there</Button>
