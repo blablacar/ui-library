@@ -1,16 +1,28 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { ItemAction } from './index'
+
+<Meta title="Items|ItemAction" />
+
 # ItemAction
 
-```js
-import { ItemAction } from '@blablacar/ui-library'
-```
+<Preview>
+  <Story name="Default">
+    <ItemAction action="Action" subLabel="Secondary info" />
+  </Story>
+</Preview>
 
-## Playground
+### With
 
-<!-- STORY -->
+<Preview>
+  <Story name="withSomething">
+    <ItemAction action="Action" subLabel="Secondary info" />
+  </Story>
+</Preview>
 
 ## Specifications
 
-> Normal state
+### Normal state
 
 These items always activate subactions and modals (or sometimes native elements like a bottom sheet). We use them when the action is not part of the main flow it appears in (Contact the DRVR is a subaction of the booking flow, there’s a beginning and an end to it to then go back to the main flow)
 
@@ -19,15 +31,30 @@ If an “in product” subaction launches a modal that contains “out of produc
 
 They look like items choice but for designers needs the objective is different.
 
-> Behaviour
+### Behaviour
 
 We could display several items action on the same line.
 
-> Long texts
+### Long texts
 
 There’s no limitation on the number of lines for the main info or the title.
 When long text icons and chevrons are centred in height.
 
+## Usage
+
+```jsx
+import { ItemAction } from '@blablacar/ui-library'
+<ItemAction
+  action="Action"
+  subLabel="Secondary info"
+  onClick={() => 'click'}
+  onBlur={() => 'blur'}
+  onFocus={() => 'focus')
+  onMouseDown={() => 'mousedown'}
+/>
+```
+
+<Props of={ItemAction} />
 
 ## When should I use it?
 
@@ -36,5 +63,5 @@ Never used for final decisions.
 
 - ✅ Clickable. Launches a modal or native element such as a bottom sheet when tapped.
 - ℹ️ Unlimited number of lines of text.
-- 🖊 Topline: Max. 20 characters in EN, max. 30 in other 	languages (including spaces)
-- 🖊 Subtitle: Max. 60 characters in EN, max. 90 in other 	languages (including spaces)
+- 🖊 Topline: Max. 20 characters in EN, max. 30 in other languages (including spaces)
+- 🖊 Subtitle: Max. 60 characters in EN, max. 90 in other languages (including spaces)
