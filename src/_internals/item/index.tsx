@@ -1,13 +1,18 @@
 import styled from 'styled-components'
 
 import { color, space } from '../../_utils/branding'
+import { normalizeHorizontally } from '../../layout/layoutNormalizer'
 import { Item } from './Item'
 
 const StyledItem = styled(Item)`
+  /* HorizontalNormalization */
+  & {
+    ${normalizeHorizontally}
+  }
+
   & {
     position: relative;
     display: flex;
-    padding: 0;
     padding-top: ${space.l};
     padding-bottom: ${space.l};
     align-items: center;

@@ -47,6 +47,8 @@ stories.add('Default', () => (
         ]}
         small={false}
       />
+    </Section>
+    <Section noHorizontalSpacing>
       <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
       <Divider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
@@ -61,7 +63,11 @@ stories.add('Default', () => (
         <ItemInfo mainInfo="Pas d'animaux dans la voiture." icon={<PetIcon />} />
       </ul>
       <Divider />
+    </Section>
+    <Section>
       <SubHeader>Passagers</SubHeader>
+    </Section>
+    <Section noHorizontalSpacing>
       <ul>
         <ItemChoice
           label="Jessica"

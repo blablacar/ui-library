@@ -3,28 +3,34 @@ import cc from 'classcat'
 import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
+import { normalizeHorizontally, NormalizeProps } from '../layout/layoutNormalizer'
 
-export interface DividerProps {
+export interface DividerProps extends NormalizeProps {
   readonly className?: string
 }
 
 const StyledDivider = styled.div`
+  /* HorizontalNormalization */
   & {
-    // Height is used instead of margins to prevent collapsing margin issues with other
-    // margin-based components.
-    height: calc(2 * ${space.m});
-    position: relative;
+    ${normalizeHorizontally}
   }
 
-  &:after {
-    position: absolute;
-    top: ${space.m};
-    content: ' ';
-    border-top: solid ${color.lightGray} 1px;
-    width: 100%;
+  & {
+    /* Using padding to avoid collapsing margins with above and below components */
+    padding-top: ${space.m};
+    padding-bottom: ${space.m};
+  }
+
+  & > hr {
+    border: none;
+    background-color: ${color.lightGray};
+    height: 1px;
+    margin: 0;
   }
 `
 
 export const Divider = ({ className }: DividerProps) => (
-  <StyledDivider className={cc(className)} aria-hidden="true" />
+  <StyledDivider className={cc(className)} aria-hidden="true">
+    <hr />
+  </StyledDivider>
 )

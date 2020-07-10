@@ -87,12 +87,18 @@ exports[`Should render properly with read messages 1`] = `
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -454,12 +460,18 @@ exports[`Should render properly with unread messages 1`] = `
 }
 
 .c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
