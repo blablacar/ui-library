@@ -1,6 +1,11 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { boolean, text, action } from '@storybook/addon-knobs'
+
+import { color } from '../_utils/branding'
+import { BubbleIcon } from '../icon/bubbleIcon'
 
 import { ItemAction } from './index'
+import { Item, ItemStatus } from '../_internals/item'
 
 <Meta title="Items|ItemAction" />
 
@@ -8,15 +13,7 @@ import { ItemAction } from './index'
 
 <Preview>
   <Story name="Default">
-    <ItemAction action="Action" subLabel="Secondary info" />
-  </Story>
-</Preview>
-
-### With
-
-<Preview>
-  <Story name="withSomething">
-    <ItemAction action="Action" subLabel="Secondary info" />
+    <ItemAction action="Title" subLabel="Subtitle: secondary information" />
   </Story>
 </Preview>
 
@@ -43,13 +40,14 @@ When long text icons and chevrons are centred in height.
 ## Usage
 
 ```jsx
-import { ItemAction } from '@blablacar/ui-library'
+import { ItemAction } from '@blablacar/ui-library/build/itemBigData'
+
 <ItemAction
   action="Action"
   subLabel="Secondary info"
   onClick={() => 'click'}
   onBlur={() => 'blur'}
-  onFocus={() => 'focus')
+  onFocus={() => 'focus')}
   onMouseDown={() => 'mousedown'}
 />
 ```
