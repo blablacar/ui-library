@@ -13,7 +13,12 @@ import { Item, ItemStatus } from '../_internals/item'
 
 <Preview>
   <Story name="Default">
-    <ItemAction action="Title" subLabel="Subtitle: secondary information" />
+    <ItemAction
+      action="Title"
+      subLabel="Subtitle: secondary information"
+      leftAddon={<BubbleIcon />}
+      highlight={false}
+    />
   </Story>
 </Preview>
 
