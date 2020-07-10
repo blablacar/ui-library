@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** Added normalized horizontal padding/margin on `TheVoice`, `Divider`, all kind of `Item`
 
 # v36.0.0 (03/07/2020)
 

@@ -14,6 +14,7 @@ export interface BaseSectionProps {
   readonly role?: string
   readonly children: JSX.Element | string | React.ReactNode
   readonly contentSize?: SectionContentSize
+  readonly noHorizontalSpacing?: boolean
 }
 
 /**

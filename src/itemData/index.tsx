@@ -3,9 +3,10 @@ import React from 'react'
 import { Item } from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Button } from '../button/Button'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
-export interface ItemDataProps extends A11yProps {
+export interface ItemDataProps extends A11yProps, NormalizeProps {
   readonly data: string | JSX.Element
   readonly dataStrikeThrough?: boolean
   readonly dataAriaLabel?: string
@@ -32,6 +33,7 @@ export const ItemData = (props: ItemDataProps) => {
     tag,
     ariaLabel,
     disabled,
+    hasHorizontalSpacing = false,
   } = props
   const a11yAttrs = pickA11yProps<ItemDataProps>(props)
   return (
@@ -48,6 +50,7 @@ export const ItemData = (props: ItemDataProps) => {
       tag={tag}
       ariaLabel={ariaLabel}
       disabled={disabled}
+      hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}
     />
   )
