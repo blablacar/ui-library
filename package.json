@@ -1,6 +1,6 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "36.0.0",
+  "version": "37.0.0",
   "description": "BlaBlaCar React UI component library",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -85,7 +85,7 @@
     "babel-preset-react-app": "9.1.1",
     "caniuse-db": "1.0.30001016",
     "classcat": "4.0.2",
-    "del-cli": "3.0.0",
+    "del-cli": "3.0.1",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.15.1",
     "eslint": "6.7.2",
