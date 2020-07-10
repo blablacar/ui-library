@@ -5,6 +5,7 @@ import { Item } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { RadioIcon } from '../_internals/radioIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
 export enum ItemRadioStatus {
@@ -12,7 +13,7 @@ export enum ItemRadioStatus {
   LOADING = 'loading',
 }
 
-export interface ItemRadioProps extends A11yProps {
+export interface ItemRadioProps extends A11yProps, NormalizeProps {
   readonly className?: string
   readonly name: string
   readonly value: string | number
@@ -79,6 +80,7 @@ export class ItemRadio extends Component<ItemRadioProps> {
       chevron,
       highlighted,
       leftAddon,
+      hasHorizontalSpacing = false,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemRadioProps>(this.props)
     const isLoading = status === ItemRadioStatus.LOADING
@@ -122,6 +124,7 @@ export class ItemRadio extends Component<ItemRadioProps> {
           highlighted={highlighted}
           isClickable={!disabled}
           disabled={disabled}
+          hasHorizontalSpacing={hasHorizontalSpacing}
           {...a11yAttrs}
         />
       </Fragment>

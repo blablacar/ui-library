@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-import { componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { componentSizes, horizontalSpace, responsiveBreakpoints } from '../../../_utils/branding'
 import { BaseSection } from './baseSection'
 
 const StyledBaseSection = styled(BaseSection)`
   & .section-content {
-    padding-left: ${space.xl};
-    padding-right: ${space.xl};
+    padding-left: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
+    padding-right: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
   }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {

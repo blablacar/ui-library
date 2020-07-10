@@ -4,9 +4,10 @@ import cc from 'classcat'
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { Avatar } from '../avatar'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
-export interface MessagingSummaryItemProps {
+export interface MessagingSummaryItemProps extends NormalizeProps {
   readonly className?: string
   readonly url: string
   readonly pictureUrl: string
@@ -31,6 +32,7 @@ export const MessagingSummaryItem = ({
   subLabel,
   timeLabel,
   hasUnreadMessages,
+  hasHorizontalSpacing = false,
 }: MessagingSummaryItemProps) => (
   <Fragment>
     <Item
@@ -47,6 +49,7 @@ export const MessagingSummaryItem = ({
       chevron
       href={url}
       isClickable
+      hasHorizontalSpacing={hasHorizontalSpacing}
     />
   </Fragment>
 )

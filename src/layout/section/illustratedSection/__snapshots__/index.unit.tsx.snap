@@ -88,8 +88,8 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 }
 
 .c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .c0 .section-content {
@@ -103,8 +103,6 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 }
 
 .c0 .kirk-illustratedSection-illustration {
-  margin-left: -24px;
-  margin-right: -24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -188,8 +186,8 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 
 exports[`IllustratedSection should render default IllustratedSection section 1`] = `
 .c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .c0 .section-content {
@@ -203,8 +201,6 @@ exports[`IllustratedSection should render default IllustratedSection section 1`]
 }
 
 .c0 .kirk-illustratedSection-illustration {
-  margin-left: -24px;
-  margin-right: -24px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

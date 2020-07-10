@@ -3,9 +3,10 @@ import styled from 'styled-components'
 
 import Item from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplay2 } from '../typography/display2'
 
-export interface ItemBigDataProps extends A11yProps {
+export interface ItemBigDataProps extends NormalizeProps, A11yProps {
   readonly mainInfo?: string
   readonly className?: string
   readonly mainTitle?: string
@@ -27,7 +28,7 @@ const StyledItemBigData = styled(Item)`
 `
 
 export const ItemBigData = (props: ItemBigDataProps) => {
-  const { mainInfo, className, mainTitle, tag, ariaLabel } = props
+  const { mainInfo, className, mainTitle, tag, ariaLabel, hasHorizontalSpacing = false } = props
   const a11yAttrs = pickA11yProps<ItemBigDataProps>(props)
 
   return (
@@ -37,9 +38,8 @@ export const ItemBigData = (props: ItemBigDataProps) => {
       leftBody={mainInfo}
       tag={tag}
       ariaLabel={ariaLabel}
+      hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}
     />
   )
 }
-
-export default ItemBigData

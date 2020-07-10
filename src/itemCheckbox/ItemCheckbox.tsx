@@ -5,6 +5,7 @@ import { CheckboxIcon } from '../_internals/checkboxIcon'
 import { Item } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
 export enum ItemCheckboxStatus {
@@ -12,7 +13,7 @@ export enum ItemCheckboxStatus {
   LOADING = 'loading',
 }
 
-export interface ItemCheckboxProps extends A11yProps {
+export interface ItemCheckboxProps extends A11yProps, NormalizeProps {
   readonly className?: string
   readonly name: string
   readonly leftAddon?: React.ReactNode
@@ -50,6 +51,7 @@ export class ItemCheckbox extends Component<ItemCheckboxProps> {
       checked,
       disabled,
       status,
+      hasHorizontalSpacing = false,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemCheckboxProps>(this.props)
     const isLoading = status === ItemCheckboxStatus.LOADING
@@ -84,6 +86,7 @@ export class ItemCheckbox extends Component<ItemCheckboxProps> {
         rightAddon={checkbox}
         isClickable={!disabled}
         disabled={disabled}
+        hasHorizontalSpacing={hasHorizontalSpacing}
         {...a11yAttrs}
       />
     )

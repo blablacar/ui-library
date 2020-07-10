@@ -87,12 +87,18 @@ exports[`ItemsList Should render an unordered list 1`] = `
 }
 
 .c1 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c1 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -455,12 +461,18 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
 }
 
 .c1 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c1 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -575,16 +587,22 @@ button:focus:not(.focus-visible).c1 {
 }
 
 .c4 {
-  height: calc(2 * 8px);
-  position: relative;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.c4:after {
-  position: absolute;
-  top: 8px;
-  content: ' ';
-  border-top: solid #EDEDED 1px;
-  width: 100%;
+.c4 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.c4 > hr {
+  border: none;
+  background-color: #EDEDED;
+  height: 1px;
+  margin: 0;
 }
 
 .c0 {
@@ -700,7 +718,9 @@ button:focus:not(.focus-visible).c1 {
     <div
       aria-hidden="true"
       className="c4"
-    />
+    >
+      <hr />
+    </div>
   </li>
   <li
     className="kirk-items-list-item"
@@ -840,12 +860,18 @@ exports[`ItemsList Should render an unordered list with the separators classname
 }
 
 .c1 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c1 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -960,16 +986,22 @@ button:focus:not(.focus-visible).c1 {
 }
 
 .c4 {
-  height: calc(2 * 8px);
-  position: relative;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.c4:after {
-  position: absolute;
-  top: 8px;
-  content: ' ';
-  border-top: solid #EDEDED 1px;
-  width: 100%;
+.c4 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.c4 > hr {
+  border: none;
+  background-color: #EDEDED;
+  height: 1px;
+  margin: 0;
 }
 
 .c0 {
@@ -1037,7 +1069,9 @@ button:focus:not(.focus-visible).c1 {
     <div
       aria-hidden="true"
       className="c4"
-    />
+    >
+      <hr />
+    </div>
   </li>
   <li
     className="kirk-items-list-item"
@@ -1089,7 +1123,9 @@ button:focus:not(.focus-visible).c1 {
     <div
       aria-hidden="true"
       className="c4"
-    />
+    >
+      <hr />
+    </div>
   </li>
   <li
     className="kirk-items-list-item"

@@ -29,14 +29,16 @@ const notificationConfig = {
 }
 
 const panel1 = (
-  <ul>
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-    <MessagingSummaryItem {...messagingSummaryItemConfig} />
-  </ul>
+  <Section noHorizontalSpacing>
+    <ul>
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+    </ul>
+  </Section>
 )
 
 const panel2 = (

@@ -1,20 +1,30 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
+import { horizontalSpace } from '../_utils/branding'
+
+const horizontalPadding = (props: any): string =>
+  props.hasHorizontalSpacing ? horizontalSpace.inner : horizontalSpace.global
+
+const horizontalMargin = (props: any): string | number =>
+  props.hasHorizontalSpacing ? horizontalSpace.outer : 0
+
+export interface NormalizeProps {
+  readonly hasHorizontalSpacing?: boolean
+}
+/**
+ * Util method to normalize horizontal spacing
+ * using !important because this should never be overridden
+ */
+export const normalizeHorizontally = (props: NormalizeProps): string => `
+  padding-left: ${horizontalPadding(props)} !important;
+  padding-right: ${horizontalPadding(props)} !important;
+  margin-left: ${horizontalMargin(props)} !important;
+  margin-right: ${horizontalMargin(props)} !important;
+  `
+
 // Legacy layout rules from production BBC.
 const LegacyLayoutNormalizationGlobalStyles = createGlobalStyle`
-    /* Items negative margins from legacy layouts. */
-    .kirk-item.kirk-item--clickable {
-        margin-left: -24px;
-        margin-right: -24px;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
-    button.kirk-item.kirk-item--clickable {
-        width: calc(100% + 48px); /* fixes button width not scaling with negative margins */
-    }
-
     .home-column .kirk-item.kirk-item--clickable,
     .user-menu-item.kirk-item.kirk-item--clickable {
         margin-left: 0;

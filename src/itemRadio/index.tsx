@@ -11,7 +11,7 @@ const StyledItemRadio = styled(ItemRadio)`
   & {
     cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     border: ${inputBorderSize.focus} solid transparent;
-    padding: calc(${space.l} - ${inputBorderSize.focus}) 0;
+    padding: calc(${space.l} - ${inputBorderSize.focus}) auto;
   }
   &.focus {
     border: ${inputBorderSize.focus} solid ${color.blue};

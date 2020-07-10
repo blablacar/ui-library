@@ -4,9 +4,10 @@ import cc from 'classcat'
 import { Item, ItemStatus } from '../_internals/item'
 import { prefix } from '../_utils'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Loader } from '../loader/Loader'
 
-export interface ItemActionProps extends A11yProps {
+export interface ItemActionProps extends A11yProps, NormalizeProps {
   readonly highlighted?: boolean
   readonly tag?: JSX.Element
   readonly className?: string
@@ -48,6 +49,7 @@ export class ItemAction extends PureComponent<ItemActionProps> {
       onMouseDown,
       onDoneAnimationEnd,
       hideHoverBackground = false,
+      hasHorizontalSpacing = false,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemActionProps>(this.props)
 
@@ -91,6 +93,7 @@ export class ItemAction extends PureComponent<ItemActionProps> {
         tag={tag}
         isClickable
         hideHoverBackground={hideHoverBackground}
+        hasHorizontalSpacing={hasHorizontalSpacing}
         {...a11yAttrs}
       />
     )

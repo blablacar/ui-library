@@ -10,8 +10,6 @@ const StyledIllustratedSection = styled(IllustratedSection)`
   }
 
   & .kirk-illustratedSection-illustration {
-    margin-left: -${space.xl};
-    margin-right: -${space.xl};
     display: flex;
     flex-direction: row;
     justify-content: center;
