@@ -86,6 +86,36 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
   font-weight: 500;
 }
 
+.c2 {
+  background-color: #00AFF5;
+  border-radius: 100%;
+}
+
+.c2 path {
+  stroke: #FFF;
+}
+
+.c2.absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c2.validate path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  stroke-linecap: round;
+  -webkit-animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+  animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+}
+
+.c0 {
+  cursor: pointer;
+}
+
 .c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
@@ -212,30 +242,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
-.c2 {
-  background-color: #00AFF5;
-  border-radius: 100%;
-}
-
-.c2 path {
-  stroke: #FFF;
-}
-
-.c2.absolute {
+.c0 input {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.c2.validate path {
-  stroke-dasharray: 24;
-  stroke-dashoffset: 24;
-  stroke-linecap: round;
-  -webkit-animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
-  animation: dash 0.5s cubic-bezier(0.65,0,0.45,1) forwards;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
 }
 
 <label
@@ -387,6 +397,104 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
   font-weight: 500;
 }
 
+.c3.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c3 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c3.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c3 circle.outer {
+  stroke: #5DD167;
+}
+
+.c3 circle.inner {
+  stroke-width: 0;
+  fill: #5DD167;
+}
+
+.c3.thin circle {
+  stroke-width: 3;
+}
+
+.c3.absolute {
+  position: absolute;
+}
+
+.c2.kirk-loader--inline {
+  display: inline-block;
+}
+
+.c2.kirk-loader--fullScreen {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.85);
+  height: 100vh;
+  width: 100vw;
+  z-index: 4;
+}
+
+.c2.kirk-loader--block {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.c2 .kirk-loader--done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #5DD167;
+  color: #FFF;
+  border-radius: 50%;
+}
+
+.c0 {
+  cursor: pointer;
+}
+
 .c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
@@ -513,98 +621,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
-.c3.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c3 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c3.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c3 circle.outer {
-  stroke: #5DD167;
-}
-
-.c3 circle.inner {
-  stroke-width: 0;
-  fill: #5DD167;
-}
-
-.c3.thin circle {
-  stroke-width: 3;
-}
-
-.c3.absolute {
+.c0 input {
   position: absolute;
-}
-
-.c2.kirk-loader--inline {
-  display: inline-block;
-}
-
-.c2.kirk-loader--fullScreen {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,255,255,0.85);
-  height: 100vh;
-  width: 100vw;
-  z-index: 4;
-}
-
-.c2.kirk-loader--block {
-  display: block;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 16px 0;
-}
-
-.c2 .kirk-loader--done {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-color: #5DD167;
-  color: #FFF;
-  border-radius: 50%;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
 }
 
 <label
@@ -769,6 +789,47 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
   font-weight: 500;
 }
 
+.c2.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c2 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c2.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c2 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c2 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
+.c2.thin circle {
+  stroke-width: 3;
+}
+
+.c2.absolute {
+  position: absolute;
+}
+
+.c0 {
+  cursor: pointer;
+}
+
 .c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
@@ -895,41 +956,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
-.c2.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c2 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c2.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c2 circle.outer {
-  stroke: #00AFF5;
-}
-
-.c2 circle.inner {
-  stroke-width: 0;
-  fill: #00AFF5;
-}
-
-.c2.thin circle {
-  stroke-width: 3;
-}
-
-.c2.absolute {
+.c0 input {
   position: absolute;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
 }
 
 <label
