@@ -138,15 +138,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-@media (max-width:799px) {
-  .c0 .kirk-panels-section {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
 @media (min-width:800px) {
-  .c0 .kirk-panels-section,
   .c0 .kirk-tablist-wrapper {
     width: calc(662px - 2 * 24px);
     margin: 0 auto;

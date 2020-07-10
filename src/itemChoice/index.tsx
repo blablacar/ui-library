@@ -5,6 +5,7 @@ import { Item, ItemStatus } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { FocusVisibleContext } from '../_utils/focusVisibleProvider'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Loader } from '../loader'
 import { TextDisplayType } from '../text'
 
@@ -16,7 +17,7 @@ export enum ItemChoiceStyle {
 
 export const ItemChoiceStatus = ItemStatus
 
-export interface ItemChoiceProps extends A11yProps {
+export interface ItemChoiceProps extends A11yProps, NormalizeProps {
   readonly label?: string
   readonly labelInfo?: React.ReactNode
   readonly data?: string
@@ -91,6 +92,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
       disabled,
       ariaLabel,
       className,
+      hasHorizontalSpacing = false,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemChoiceProps>(this.props)
     const isRecommended = style === ItemChoiceStyle.RECOMMENDED
@@ -128,6 +130,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
             chevron={status === ItemStatus.DEFAULT}
             isClickable={!disabled}
             ariaLabel={ariaLabel}
+            hasHorizontalSpacing={hasHorizontalSpacing}
             {...a11yAttrs}
           />
         )}

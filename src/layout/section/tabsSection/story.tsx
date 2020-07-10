@@ -1,18 +1,20 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Button } from '../../../button'
+import ItemAction from '../../../itemAction'
 import { TabStatus } from '../../../tabs'
+import { BaseSection } from '../baseSection'
 import { TabsSection } from './index'
 
 const stories = storiesOf('Sections|TabsSection', module)
 stories.addDecorator(withKnobs)
 
 const panels = [
-  <div>Content for first tab</div>,
-  <div>
+  <BaseSection>Content for first tab</BaseSection>,
+  <BaseSection>
     <Button
       onClick={() => {
         action('onClickButton')
@@ -20,14 +22,15 @@ const panels = [
     >
       Button inside panel 2.
     </Button>
-  </div>,
-  <div>Content for tab3</div>,
+  </BaseSection>,
+  <BaseSection noHorizontalSpacing>
+    <ItemAction subLabel="Hello" />
+  </BaseSection>,
 ]
 
 const tabs = {
   activeTabId: 'tab1',
   status: select('status', TabStatus, TabStatus.FIXED),
-  isWrapped: boolean('isWrapped', false),
   tabs: [
     {
       id: 'tab1',

@@ -73,6 +73,12 @@ export const space: defaultBranding = {
   xxl: '48px',
 }
 
+export const horizontalSpace: defaultBranding = {
+  inner: '8px',
+  outer: '16px',
+  global: '24px',
+}
+
 export const radius: defaultBranding = {
   none: '0',
   s: '4px',

@@ -2,8 +2,9 @@ import React from 'react'
 
 import { Item } from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 
-export interface ItemInfoProps extends A11yProps {
+export interface ItemInfoProps extends A11yProps, NormalizeProps {
   readonly mainInfo?: string
   readonly className?: string
   readonly icon?: React.ReactNode
@@ -13,7 +14,15 @@ export interface ItemInfoProps extends A11yProps {
 }
 
 export const ItemInfo = (props: ItemInfoProps) => {
-  const { mainInfo, className, mainTitle, icon, tag, ariaLabel } = props
+  const {
+    mainInfo,
+    className,
+    mainTitle,
+    icon,
+    tag,
+    ariaLabel,
+    hasHorizontalSpacing = false,
+  } = props
   const a11yAttrs = pickA11yProps<ItemInfoProps>(props)
 
   return (
@@ -24,6 +33,7 @@ export const ItemInfo = (props: ItemInfoProps) => {
       leftAddon={icon}
       tag={tag}
       ariaLabel={ariaLabel}
+      hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}
     />
   )

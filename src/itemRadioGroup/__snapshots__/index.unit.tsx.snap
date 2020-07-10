@@ -87,12 +87,18 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 }
 
 .c2 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.c2 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   -webkit-align-items: center;
@@ -252,7 +258,7 @@ button:focus:not(.focus-visible).c2 {
 .c1 {
   cursor: pointer;
   border: 3px solid transparent;
-  padding: calc(16px - 3px) 0;
+  padding: calc(16px - 3px) auto;
 }
 
 .c1.focus {
