@@ -2,8 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
-import { Item } from '../_internals/item'
-import { ItemCheckbox, ItemCheckboxProps, ItemCheckboxStatus } from './ItemCheckbox'
+import { ItemCheckbox, ItemCheckboxProps, ItemCheckboxStatus } from './index'
 
 describe('ItemCheckbox', () => {
   const defaultProps: ItemCheckboxProps = {
@@ -22,7 +21,7 @@ describe('ItemCheckbox', () => {
 
   it('Should use the Item component', () => {
     const itemCheckbox = shallow(<ItemCheckbox {...defaultProps} />)
-    expect(itemCheckbox.find(Item).exists()).toBe(true)
+    expect(itemCheckbox.exists()).toBe(true)
   })
   it('Should forward its props to the Item component', () => {
     const itemCheckbox = renderer.create(<ItemCheckbox {...defaultProps} />).toJSON()
@@ -53,12 +52,12 @@ describe('ItemCheckbox', () => {
   })
   it('Should handle disabled prop', () => {
     const itemCheckbox = shallow(<ItemCheckbox {...defaultProps} />)
-    expect(itemCheckbox.find(Item).prop('isClickable')).toBeTruthy()
-    expect(itemCheckbox.find(Item).prop('disabled')).toBeFalsy()
+    expect(itemCheckbox.prop('isClickable')).toBeTruthy()
+    expect(itemCheckbox.prop('disabled')).toBeFalsy()
 
     itemCheckbox.setProps({ disabled: true })
-    expect(itemCheckbox.find(Item).prop('isClickable')).toBeFalsy()
-    expect(itemCheckbox.find(Item).prop('disabled')).toBeTruthy()
+    expect(itemCheckbox.prop('isClickable')).toBeFalsy()
+    expect(itemCheckbox.prop('disabled')).toBeTruthy()
   })
   it('Should call the onChange prop with name and value when the input changes (uncheck)', () => {
     const onChangeMock = jest.fn()
