@@ -42,10 +42,10 @@ export const Grip = (props: GripProps): JSX.Element => {
       touchEndListener(e.changedTouches.item(0).clientY, fingerYPosition, setFingerYPosition, props)
     window.addEventListener('touchend', delegatedTouchEndListener)
 
-    return function cleanup() {
+    return () => {
       window.removeEventListener('touchend', delegatedTouchEndListener)
     }
-  })
+  }, []) // empty second argument to emulate componentDidMount/WillUnmount
 
   return (
     <div
