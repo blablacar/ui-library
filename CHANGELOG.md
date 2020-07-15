@@ -21,6 +21,8 @@
 - **[UPDATE]** Add `initialFrom`, `initialTo`, `disabledFrom`, `disabledTo` props in `SearchForm` component
 - **[UPDATE]** Added `secondLine` prop on Tabs config
 
+- **[NEW]** `Grip` component
+
 # v37.0.0 (10/07/2020)
 
 - **[BREAKING CHANGE]** Added normalized horizontal padding/margin on `TheVoice`, `Divider`, all kind of `Item`
