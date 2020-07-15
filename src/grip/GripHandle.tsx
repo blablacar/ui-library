@@ -3,12 +3,11 @@ import styled from 'styled-components'
 import { color, space } from '../_utils/branding'
 
 export const GripHandle = styled.div`
-  & {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: ${space.xl};
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: ${space.xl};
+
   &::before {
     content: ' ';
     display: block;

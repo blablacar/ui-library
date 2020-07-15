@@ -1,19 +1,17 @@
-import React from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { ItemRadio } from '../itemRadio'
 import { ItemRadioGroup } from '../itemRadioGroup'
 import { TheVoice } from '../theVoice'
 import { Grip } from './index'
-import readme from './specifications/grip.md'
 
-const stories = storiesOf('Widgets|Grip', module).addDecorator(withKnobs)
+<Meta title="Widgets|Grip" />
 
-stories.add(
-  'default',
-  () => (
+# Grip
+
+<Preview>
+  <Story name="Default">
     <Grip onSlideUp={action('Slide Up')} onSlideDown={action('Slide Down')}>
       <TheVoice>What is your route?</TheVoice>
       <ItemRadioGroup>
@@ -21,8 +19,26 @@ stories.add(
         <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
       </ItemRadioGroup>
     </Grip>
-  ),
-  {
-    readme: { content: readme },
-  },
-)
+  </Story>
+</Preview>
+
+
+## Specifications
+
+Use it to indicate that a part of the screen is reactive to slide touch events.
+
+```jsx
+import Grip from '@blablacar/ui-library/build/grip'
+<Grip
+  onSlideUp={() => {
+    /* ... */
+  }}
+  onSlideDown={() => {
+    /* ... */
+  }}
+>
+  <TheVoice>What is your route?</TheVoice>
+</Grip>
+```
+
+<Props of={Grip} />
