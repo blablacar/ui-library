@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { GripHandle } from './GripHandle'
@@ -15,43 +15,53 @@ export const SLIDE_OFFSET = 20 // To get more precise with feeling/testing
 
 export const touchEndListener = (
   clientY: number,
-  fingerYPosition: number,
-  setFingerYPosition: React.Dispatch<number>,
+  fingerYPosition: React.MutableRefObject<number>,
+  resetFingerYPosition: () => void,
   props: GripProps,
 ) => {
-  const { onSlideDown, onSlideUp, disabled = false } = props
-  if (fingerYPosition !== null && !disabled) {
-    if (clientY < fingerYPosition - SLIDE_OFFSET) {
+  const { onSlideDown, onSlideUp } = props
+  if (fingerYPosition !== null) {
+    if (clientY < fingerYPosition.current - SLIDE_OFFSET) {
       onSlideUp()
-    } else if (clientY > fingerYPosition + SLIDE_OFFSET) {
+    } else if (clientY > fingerYPosition.current + SLIDE_OFFSET) {
       onSlideDown()
     }
-    setFingerYPosition(null)
+    resetFingerYPosition()
   }
 }
 
 export const Grip = (props: GripProps): JSX.Element => {
-  const { children = null, className = '' } = props
+  const { children = null, className = '', disabled = false } = props
   const a11yAttrs = pickA11yProps(props)
-  const [fingerYPosition, setFingerYPosition] = useState<number>(null)
+  const fingerYPosition = useRef<number | null>(null)
+  const resetFingerYPosition = () => {
+    fingerYPosition.current = null
+  }
 
   // Listening to finger being lift from the screen and check position
   // difference with starting point
   useEffect(() => {
-    const delegatedTouchEndListener = (e: TouchEvent) =>
-      touchEndListener(e.changedTouches.item(0).clientY, fingerYPosition, setFingerYPosition, props)
-    window.addEventListener('touchend', delegatedTouchEndListener)
-
-    return () => {
-      window.removeEventListener('touchend', delegatedTouchEndListener)
+    if (!disabled) {
+      const delegatedTouchEndListener = (e: TouchEvent) =>
+        touchEndListener(
+          e.changedTouches.item(0).clientY,
+          fingerYPosition,
+          resetFingerYPosition,
+          props,
+        )
+      window.addEventListener('touchend', delegatedTouchEndListener)
+      return () => {
+        window.removeEventListener('touchend', delegatedTouchEndListener)
+      }
     }
-  }, []) // empty second argument to emulate componentDidMount/WillUnmount
+    return null
+  }, [disabled])
 
   return (
     <div
       className={className}
       onTouchStart={e => {
-        setFingerYPosition(e.touches.item(0).clientY)
+        fingerYPosition.current = e.touches.item(0).clientY
       }}
       {...a11yAttrs}
     >
