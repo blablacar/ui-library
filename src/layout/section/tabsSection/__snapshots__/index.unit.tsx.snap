@@ -126,6 +126,10 @@ exports[`TabsSection should render default TabsSection 1`] = `
 
 .c1 .kirk-tabs-fixed .kirk-tab-content {
   white-space: normal;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c1 .kirk-tab-selected .kirk-tab {

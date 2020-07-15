@@ -81,6 +81,7 @@ const StyledTabs = styled(Tabs)`
 
   & .kirk-tabs-fixed .kirk-tab-content {
     white-space: normal;
+    flex-grow: 1;
   }
 
   & .kirk-tab-selected .kirk-tab {
