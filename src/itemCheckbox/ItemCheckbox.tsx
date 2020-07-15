@@ -2,18 +2,18 @@ import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
 import { CheckboxIcon } from '../_internals/checkboxIcon'
-import { Item } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
+import { StyledItemCheckbox } from './ItemCheckbox.style'
 
 export enum ItemCheckboxStatus {
   DEFAULT = 'default',
   LOADING = 'loading',
 }
 
-export interface ItemCheckboxProps extends A11yProps, NormalizeProps {
+export interface ItemCheckboxProps extends NormalizeProps, A11yProps {
   readonly className?: string
   readonly name: string
   readonly leftAddon?: React.ReactNode
@@ -69,7 +69,7 @@ export class ItemCheckbox extends Component<ItemCheckboxProps> {
     )
 
     return (
-      <Item
+      <StyledItemCheckbox
         className={cc(['kirk-item-checkbox', className])}
         leftTitle={labelTitle}
         leftBody={label}
