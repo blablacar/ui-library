@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { Icon } from '../_utils/icon'
 import { Badge } from '../badge'
+import { StyledTabs } from './tabs.style'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
@@ -175,7 +176,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
 
     return (
-      <div role="presentation" className={cc(className)}>
+      <StyledTabs role="presentation" className={cc(className)}>
         <div
           ref={this.tabsGroupRef}
           className={cc(['kirk-tabs', tabsClassName, { 'kirk-tabs-fixed': isFixedTabs }])}
@@ -254,7 +255,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
             )
           })}
         </div>
-      </div>
+      </StyledTabs>
     )
   }
 }
