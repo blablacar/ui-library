@@ -1,0 +1,65 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-knobs'
+
+import { CheckIcon } from '../icon/checkIcon'
+import { MyRidesIcon } from '../icon/myRides'
+import { ItemChoice, ItemChoiceStatus, ItemChoiceStyle } from './index'
+
+<Meta title="Items|ItemChoice" />
+
+# ItemChoice
+
+<Preview>
+  <Story name="Default">
+    <ItemChoice label="Title" labelInfo="Title Info" data="Data" dataInfo="Data Info" />
+  </Story>
+</Preview>
+
+## Specifications
+
+### Normal state
+
+These items are used when we want the user to make a decision between at least two choices and we want to recommend one option more than the others.
+
+### Behaviour
+
+There is no preselected state (visually). So if the user is coming back from a next step, nothing is selected.
+
+User can't select multiple options.
+
+### Long texts
+
+There is no limitation on the number of lines. When the text is long, icons and chevron are centred in height.
+
+### Loading state
+
+In the case of these Items, the loader is displayed on the right, hiding the chevron.
+
+When it's not the end of a flow, the loading state appears after one second (to answer user's impatience). Then it goes directly to the next step.
+When it's an end of flow, we show the loading state and then animate it into a check.
+
+We let the checked state for 0.5s and then we proceed with the redirection.
+
+## Usage
+
+```jsx
+import { ItemChoice } from '@blablacar/ui-library/build/ItemChoice'
+
+<ItemChoice
+  label="Title"
+  labelInfo="Title Info"
+  data="Data"
+  dataInfo="Data Info"
+  leftAddon={<CheckIcon isDisabled={false} />}
+  rightAddon={<MyRidesIcon active isDisabled={false} />}
+  status={ItemChoiceStatus.DEFAULT}
+  style={ItemChoiceStyle.PRIMARY}
+  onDoneAnimationEnd={action('onDoneAnimationEnd')}
+  onClick={action('onClick')}
+  href={<a href="#" />}
+  disabled={false}
+  ariaLabel="Aria label"
+/>
+```
+
+<Props of={ItemChoice} />

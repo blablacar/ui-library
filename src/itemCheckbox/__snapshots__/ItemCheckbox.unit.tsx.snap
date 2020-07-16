@@ -113,6 +113,10 @@ exports[`ItemCheckbox Should display a CheckIcon when the input is checked 1`] =
 }
 
 .c0 {
+  cursor: pointer;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0 !important;
@@ -236,10 +240,6 @@ button:focus:not(.focus-visible).c0 {
   height: 24px;
   margin-left: 4px;
   bottom: 0;
-}
-
-.c0 {
-  cursor: pointer;
 }
 
 .c0 input {
@@ -492,6 +492,10 @@ exports[`ItemCheckbox Should display a Loader when the component is in loading s
 }
 
 .c0 {
+  cursor: pointer;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0 !important;
@@ -615,10 +619,6 @@ button:focus:not(.focus-visible).c0 {
   height: 24px;
   margin-left: 4px;
   bottom: 0;
-}
-
-.c0 {
-  cursor: pointer;
 }
 
 .c0 input {
@@ -827,6 +827,10 @@ exports[`ItemCheckbox Should forward its props to the Item component 1`] = `
 }
 
 .c0 {
+  cursor: pointer;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0 !important;
@@ -950,10 +954,6 @@ button:focus:not(.focus-visible).c0 {
   height: 24px;
   margin-left: 4px;
   bottom: 0;
-}
-
-.c0 {
-  cursor: pointer;
 }
 
 .c0 input {

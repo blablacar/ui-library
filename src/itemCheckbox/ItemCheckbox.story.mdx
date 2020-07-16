@@ -1,8 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { action } from '@storybook/addon-knobs'
-
+import { action, boolean, select } from '@storybook/addon-actions'
 import { LadyIcon } from '../icon/ladyIcon'
-import { ItemCheckbox, ItemCheckboxStatus } from './index'
+import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
 
 <Meta title="Items|ItemCheckbox" />
 
@@ -12,14 +11,31 @@ import { ItemCheckbox, ItemCheckboxStatus } from './index'
   <Story name="Default">
     <ItemCheckbox
       name="InputName"
-      leftAddon={<LadyIcon isDisabled={false} />}
       labelTitle="Label title"
       label="Main information"
       data="Data"
       dataInfo="Data info"
-      checked={false}
+      checked={true}
       disabled={false}
-      onChange={() => console.log('click')}
+      leftAddon={<LadyIcon isDisabled={false} />}
+      status={ItemCheckboxStatus.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+# Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <ItemCheckbox
+      name="InputName"
+      labelTitle="Label title"
+      label="Main information"
+      data="Data"
+      dataInfo="Data info"
+      checked={true}
+      disabled={true}
+      leftAddon={<LadyIcon isDisabled={true} />}
       status={ItemCheckboxStatus.DEFAULT}
     />
   </Story>
@@ -39,18 +55,19 @@ There is no limitation on the number of lines. When the text is long, icons and 
 ## Usage
 
 ```jsx
-import { ItemCheckbox } from '@blablacar/ui-library/build/itemCheckbox'
+import { ItemCheckbox } from '@blablacar/ui-library/build/itemCheckItemCheckbox'
 
 <ItemCheckbox
   name="InputName"
-  leftAddon={<LadyIcon isDisabled={false} />}
-  labelTitle="Label title"
-  label="Main information"
-  data="Data"
-  dataInfo="Data info"
-  checked={false}
+  leftAddon={<LadyIcon isDisabled={disabled} />}
+  labelTitle='Title'
+  label='Subtilte: secondary information'
+  data='Data'
+  dataInfo='Data info'
+  onChange={() => 'changed')}
+  checked={true}
   disabled={false}
-  status={ItemCheckboxStatus.DEFAULT}
+  status={ItemCheckboxStatus.LOADING}
 />
 ```
 

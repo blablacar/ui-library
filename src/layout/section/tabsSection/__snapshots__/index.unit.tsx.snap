@@ -49,6 +49,9 @@ exports[`TabsSection should render default TabsSection 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -57,7 +60,6 @@ exports[`TabsSection should render default TabsSection 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative;
   width: 100%;
   height: 100%;
   outline: none;
@@ -67,10 +69,27 @@ exports[`TabsSection should render default TabsSection 1`] = `
   background-color: #FFF;
   color: #00AFF5;
   font-size: 16px;
-  white-space: nowrap;
 }
 
-.c1 .kirk-tab > .kirk-icon {
+.c1 .kirk-tab-content {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c1 .kirk-tab-content > .kirk-icon {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -84,6 +103,14 @@ exports[`TabsSection should render default TabsSection 1`] = `
 .c1 .kirk-tab-text--with-icon {
   margin-left: 16px;
   text-align: left;
+}
+
+.c1 .kirk-tab-second-line {
+  margin-top: 8px;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .c1 .kirk-tab-container {
@@ -101,8 +128,12 @@ exports[`TabsSection should render default TabsSection 1`] = `
   align-items: last baseline;
 }
 
-.c1 .kirk-tabs-fixed .kirk-tab {
+.c1 .kirk-tabs-fixed .kirk-tab-content {
   white-space: normal;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .c1 .kirk-tab-selected .kirk-tab {
@@ -180,17 +211,21 @@ exports[`TabsSection should render default TabsSection 1`] = `
             title="Tab label 1"
           >
             <span
-              className="kirk-tab-text"
-            >
-              Tab label 1
-            </span>
-            <span
-              className="kirk-badge kirk-tab-badge c2"
+              className="kirk-tab-content"
             >
               <span
-                aria-hidden={false}
+                className="kirk-tab-text"
               >
-                Badge content 1
+                Tab label 1
+              </span>
+              <span
+                className="kirk-badge kirk-tab-badge c2"
+              >
+                <span
+                  aria-hidden={false}
+                >
+                  Badge content 1
+                </span>
               </span>
             </span>
           </button>
@@ -211,18 +246,22 @@ exports[`TabsSection should render default TabsSection 1`] = `
             title="Tab label 2 Unread Message"
           >
             <span
-              className="kirk-tab-text"
-            >
-              Tab label 2
-            </span>
-            <span
-              aria-label="Unread Message"
-              className="kirk-badge kirk-tab-badge c2"
+              className="kirk-tab-content"
             >
               <span
-                aria-hidden={true}
+                className="kirk-tab-text"
               >
-                2
+                Tab label 2
+              </span>
+              <span
+                aria-label="Unread Message"
+                className="kirk-badge kirk-tab-badge c2"
+              >
+                <span
+                  aria-hidden={true}
+                >
+                  2
+                </span>
               </span>
             </span>
           </button>

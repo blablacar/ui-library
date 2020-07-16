@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { Icon } from '../_utils/icon'
 import { Badge } from '../badge'
+import { StyledTabs } from './tabs.style'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
@@ -13,6 +14,7 @@ export interface Tab {
   readonly id: string
   readonly label: string
   readonly icon?: React.ReactElement<Icon>
+  readonly secondLine?: string
   readonly showIconOnly?: boolean
   readonly panelContent: JSX.Element
   readonly badgeContent?: string
@@ -174,7 +176,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
     }
 
     return (
-      <div role="presentation" className={cc(className)}>
+      <StyledTabs role="presentation" className={cc(className)}>
         <div
           ref={this.tabsGroupRef}
           className={cc(['kirk-tabs', tabsClassName, { 'kirk-tabs-fixed': isFixedTabs }])}
@@ -207,21 +209,27 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                       onKeyDown={this.handleTabKeyDown}
                       className="kirk-tab"
                     >
-                      {tab.icon}
-                      {!tab.showIconOnly && (
-                        <span
-                          className={cc([
-                            'kirk-tab-text',
-                            { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
-                          ])}
-                        >
-                          {tab.label}
-                        </span>
-                      )}
-                      {tab.badgeContent && (
-                        <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
-                          {tab.badgeContent}
-                        </Badge>
+                      <span className="kirk-tab-content">
+                        {tab.icon}
+                        {!tab.showIconOnly && (
+                          <span
+                            className={cc([
+                              'kirk-tab-text',
+                              { 'kirk-tab-text--with-icon': tab.icon && !tab.showIconOnly },
+                            ])}
+                          >
+                            {tab.label}
+                          </span>
+                        )}
+                        {tab.badgeContent && (
+                          <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
+                            {tab.badgeContent}
+                          </Badge>
+                        )}
+                      </span>
+
+                      {tab.secondLine && (
+                        <span className="kirk-tab-second-line">{tab.secondLine}</span>
                       )}
                     </button>
                   </div>
@@ -247,7 +255,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
             )
           })}
         </div>
-      </div>
+      </StyledTabs>
     )
   }
 }
