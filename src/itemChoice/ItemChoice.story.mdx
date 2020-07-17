@@ -11,7 +11,13 @@ import { ItemChoice, ItemChoiceStatus, ItemChoiceStyle } from './index'
 
 <Preview>
   <Story name="Default">
-    <ItemChoice label="Title" labelInfo="Title Info" data="Data" dataInfo="Data Info" />
+    <ItemChoice
+      label="Title"
+      status={ItemChoiceStatus.DEFAULT}
+      labelInfo="Title Info"
+      data="Data"
+      dataInfo="Data Info"
+    />
   </Story>
 </Preview>
 
@@ -45,7 +51,7 @@ We let the checked state for 0.5s and then we proceed with the redirection.
 ```jsx
 import { ItemChoice } from '@blablacar/ui-library/build/ItemChoice'
 
-<ItemChoice
+;<ItemChoice
   label="Title"
   labelInfo="Title Info"
   data="Data"

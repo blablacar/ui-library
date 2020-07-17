@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { Icon } from '../_utils/icon'
 import { Badge } from '../badge'
-import { StyledTabs } from './tabs.style'
+import { StyledTabs } from './Tabs.style'
 
 export enum TabStatus {
   SCROLLABLE = 'scrollable',
