@@ -1,5 +1,5 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { TransitionDuration } from '../_utils/branding'
@@ -86,6 +86,10 @@ stories.add(
       <BaseSection contentSize={SectionContentSize.LARGE}>
         <SearchForm
           onSubmit={() => {}}
+          initialFrom={text('initialFrom')}
+          initialTo={text('initialTo')}
+          disabledFrom={boolean('disabledFrom', false)}
+          disabledTo={boolean('disabledTo', false)}
           autocompleteFromPlaceholder={text('autocompleteFromPlaceholder', 'Leaving From')}
           autocompleteToPlaceholder={text('autocompleteToPlaceholder', 'Going to')}
           renderAutocompleteFrom={props => (
