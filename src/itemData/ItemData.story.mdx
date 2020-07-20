@@ -1,0 +1,58 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+import { Button, ButtonStatus } from '../button'
+import { InfoIcon } from '../icon/infoIcon'
+
+import { ItemData } from './index'
+
+<Meta title="Items|ItemData" />
+
+# ItemData
+
+<Preview>
+  <Story name="Default">
+    <ItemData
+        mainTitle='Main title'
+        ariaLabel='Aria label'
+        mainInfo='Main info'
+        data='Data'
+        dataInfo='Data info'
+        dataAriaLabel='Data aria label'
+        dataStrikeThrough='Data strike through'
+        disabled={false}
+        mainTitleButtonAddon={
+            <Button status={ButtonStatus.UNSTYLED} isBubble onClick={() => 'Info clicked'}>
+              <InfoIcon iconColor={color.blue} title="More info" />
+            </Button>}
+        tag={<li />}
+      />
+  </Story>
+</Preview>
+
+## Specifications
+...
+
+## Usage
+
+```jsx
+import { ItemData } from '@blablacar/ui-library/build/itemData'
+
+<ItemData
+    mainTitle='Main title'
+    ariaLabel='Aria label'
+    mainInfo='Main info'
+    data='Data'
+    dataInfo='Data info'
+    dataAriaLabel='Data aria label'
+    dataStrikeThrough='Data strike through'
+    disabled={false}
+    mainTitleButtonAddon={
+        <Button status={ButtonStatus.UNSTYLED} isBubble onClick={() => 'Info clicked'}>
+            <InfoIcon iconColor={color.blue} title="More info" />
+        </Button>}
+    tag={<li />}
+/>
+```
+
+<Props of={ItemData} />

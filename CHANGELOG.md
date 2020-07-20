@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Added `secondLine` prop on Tabs config
 
 # v37.0.0 (10/07/2020)
 

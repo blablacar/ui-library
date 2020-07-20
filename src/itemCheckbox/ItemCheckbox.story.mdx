@@ -1,0 +1,74 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action, boolean, select } from '@storybook/addon-actions'
+import { LadyIcon } from '../icon/ladyIcon'
+import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
+
+<Meta title="Items|ItemCheckbox" />
+
+# ItemCheckbox
+
+<Preview>
+  <Story name="Default">
+    <ItemCheckbox
+      name="InputName"
+      labelTitle="Label title"
+      label="Main information"
+      data="Data"
+      dataInfo="Data info"
+      checked={true}
+      disabled={false}
+      leftAddon={<LadyIcon isDisabled={false} />}
+      status={ItemCheckboxStatus.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+# Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <ItemCheckbox
+      name="InputName"
+      labelTitle="Label title"
+      label="Main information"
+      data="Data"
+      dataInfo="Data info"
+      checked={true}
+      disabled={true}
+      leftAddon={<LadyIcon isDisabled={true} />}
+      status={ItemCheckboxStatus.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+### Normal state
+
+We use these Items when the user can choose more than one option before validating a choice.
+These components can also be used when there's a secondary question on a flow step that's doesn't require it's own step (ex. Terms and conditions). These cases should be exceptions though.
+
+### Long texts
+
+There is no limitation on the number of lines. When the text is long, icons and checkboxes are centred in height.
+
+## Usage
+
+```jsx
+import { ItemCheckbox } from '@blablacar/ui-library/build/itemCheckItemCheckbox'
+
+<ItemCheckbox
+  name="InputName"
+  leftAddon={<LadyIcon isDisabled={disabled} />}
+  labelTitle='Title'
+  label='Subtilte: secondary information'
+  data='Data'
+  dataInfo='Data info'
+  onChange={() => 'changed')}
+  checked={true}
+  disabled={false}
+  status={ItemCheckboxStatus.LOADING}
+/>
+```
+
+<Props of={ItemCheckbox} />

@@ -2,8 +2,8 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import { Button } from '../button'
-import { ItemData } from '../itemData'
 import { Text } from '../text'
+import { ItemData } from './index'
 
 const defaultProps = {
   mainInfo: 'Main information',
