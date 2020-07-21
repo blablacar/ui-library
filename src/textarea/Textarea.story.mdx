@@ -1,5 +1,8 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
+import { action } from '@storybook/addon-actions'
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+
 import { SendMessageIcon } from '../icon/sendMessageIcon'
 import { Textarea } from './index'
 
@@ -10,22 +13,22 @@ import { Textarea } from './index'
 <Preview>
   <Story name="Default">
     <Textarea
-      id={'id'}
-      name={'inputName'}
-      placeholder={'Some placeholder text'}
-      labelledBy={'aria label'}
-      disabled={false}
-      readOnly={false}
-      label={'label'}
-      error={''}
-      onChange={'changed'}
-      onFocus={'focused'}
-      onBlur={'blurred'}
-      focus={false}
-      required={false}
-      maxLength={'maxLength'}
-      autoComplete={'off'}
-      title={'accessibility text'}
+      id={text('id')}
+      name={text('name', 'inputName')}
+      placeholder={text('placeholder', 'Some placeholder text')}
+      labelledBy={text('aria label')}
+      disabled={boolean('disabled', false)}
+      readOnly={boolean('readOnly', false)}
+      label={text('label')}
+      error={text('error message', '')}
+      onChange={action('changed')}
+      onFocus={action('focused')}
+      onBlur={action('blurred')}
+      focus={boolean('focus', false)}
+      required={boolean('required', false)}
+      maxLength={number('maxLength')}
+      autoComplete={select('autocomplete', ['on', 'off'])}
+      title={text('title', 'accessibility text')}
     />
   </Story>
 </Preview>
@@ -35,22 +38,22 @@ import { Textarea } from './index'
 <Preview>
   <Story name="withIcon">
     <Textarea
-      id={'id'}
-      name={'inputName'}
-      placeholder={'Some placeholder text'}
-      labelledBy={'aria label'}
-      disabled={false}
-      readOnly={'readOnly', false}
-      label={'label'}
-      error={''}
-      onChange={'changed'}
-      onFocus={'focused'}
-      onBlur={'blurred'}
-      focus={false}
-      required={false}
-      maxLength={'maxLength'}
-      autoComplete={'off'}
-      title={'accessibility text'}
+      id={text('id')}
+      name={text('name', 'inputName')}
+      placeholder={text('placeholder', 'Some placeholder text')}
+      labelledBy={text('aria label')}
+      disabled={boolean('disabled', false)}
+      readOnly={boolean('readOnly', false)}
+      label={text('label')}
+      error={text('error message', '')}
+      onChange={action('changed')}
+      onFocus={action('focused')}
+      onBlur={action('blurred')}
+      focus={boolean('focus', false)}
+      required={boolean('required', false)}
+      maxLength={number('maxLength')}
+      autoComplete={select('autocomplete', ['on', 'off'])}
+      title={text('title', 'accessibility text')}
       buttonIcon={<SendMessageIcon />}
       buttonTitle="Button action"
       onButtonClick={() => {
@@ -65,24 +68,24 @@ import { Textarea } from './index'
 <Preview>
   <Story name="withIconFitContent">
     <Textarea
-      fitContent={true}
-      id={'id'}
-      defaultValue={''}
-      name={'inputName'}
-      placeholder={'Some placeholder text'}
-      labelledBy={'aria label'}
-      disabled={false}
-      readOnly={false}
-      label={'label'}
-      error={''}
-      onChange={'changed'}
-      onFocus={'focused'}
-      onBlur={'blurred'}
-      focus={false}
-      required={false}
-      maxLength={'maxLength'}
-      autoComplete={'off'}
-      title={'accessibility text'}
+      fitContent={boolean('fitContent', true)}
+      id={text('id')}
+      defaultValue={text('Value', '')}
+      name={text('name', 'inputName')}
+      placeholder={text('placeholder', 'Some placeholder text')}
+      labelledBy={text('aria label')}
+      disabled={boolean('disabled', false)}
+      readOnly={boolean('readOnly', false)}
+      label={text('label')}
+      error={text('error message', '')}
+      onChange={action('changed')}
+      onFocus={action('focused')}
+      onBlur={action('blurred')}
+      focus={boolean('focus', false)}
+      required={boolean('required', false)}
+      maxLength={number('maxLength')}
+      autoComplete={select('autocomplete', ['on', 'off'])}
+      title={text('title', 'accessibility text')}
       buttonIcon={<SendMessageIcon />}
       buttonTitle="Send"
       onButtonClick={() => {
