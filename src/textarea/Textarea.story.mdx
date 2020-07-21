@@ -1,0 +1,107 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { SendMessageIcon } from '../icon/sendMessageIcon'
+import { Textarea } from './index'
+
+<Meta title="Textarea" />
+
+# **Textarea**
+
+<Preview>
+  <Story name="Default">
+    <Textarea
+      id={'id'}
+      name={'inputName'}
+      placeholder={'Some placeholder text'}
+      labelledBy={'aria label'}
+      disabled={false}
+      readOnly={false}
+      label={'label'}
+      error={''}
+      onChange={'changed'}
+      onFocus={'focused'}
+      onBlur={'blurred'}
+      focus={false}
+      required={false}
+      maxLength={'maxLength'}
+      autoComplete={'off'}
+      title={'accessibility text'}
+    />
+  </Story>
+</Preview>
+
+### With icon
+
+<Preview>
+  <Story name="withIcon">
+    <Textarea
+      id={'id'}
+      name={'inputName'}
+      placeholder={'Some placeholder text'}
+      labelledBy={'aria label'}
+      disabled={false}
+      readOnly={'readOnly', false}
+      label={'label'}
+      error={''}
+      onChange={'changed'}
+      onFocus={'focused'}
+      onBlur={'blurred'}
+      focus={false}
+      required={false}
+      maxLength={'maxLength'}
+      autoComplete={'off'}
+      title={'accessibility text'}
+      buttonIcon={<SendMessageIcon />}
+      buttonTitle="Button action"
+      onButtonClick={() => {
+        window.alert('button clicked')
+      }}
+    />
+  </Story>
+</Preview>
+
+### With icon and fit to content
+
+<Preview>
+  <Story name="withIconFitContent">
+    <Textarea
+      fitContent={true}
+      id={'id'}
+      defaultValue={''}
+      name={'inputName'}
+      placeholder={'Some placeholder text'}
+      labelledBy={'aria label'}
+      disabled={false}
+      readOnly={false}
+      label={'label'}
+      error={''}
+      onChange={'changed'}
+      onFocus={'focused'}
+      onBlur={'blurred'}
+      focus={false}
+      required={false}
+      maxLength={'maxLength'}
+      autoComplete={'off'}
+      title={'accessibility text'}
+      buttonIcon={<SendMessageIcon />}
+      buttonTitle="Send"
+      onButtonClick={() => {
+        window.alert('button clicked')
+      }}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+This component is a text area and accept icons.
+
+## Usage
+
+```jsx
+import { Textarea } from '@blablacar/ui-library/build/Textarea'
+
+<Textarea />
+```
+
+<Props of={Textarea} />
