@@ -418,7 +418,7 @@ button:focus:not(.focus-visible).c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="c3 kirk-loader--inline"
+      className="kirk-loader--inline c3"
     >
       <div
         className=""
@@ -859,7 +859,7 @@ button:focus:not(.focus-visible).c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="c3 kirk-loader--inline"
+      className="kirk-loader--inline c3"
     >
       <div
         className="kirk-loader--done"

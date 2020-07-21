@@ -669,7 +669,7 @@ button:focus:not(.focus-visible).c0 {
       type="checkbox"
     />
     <div
-      className="c2 kirk-loader--inline"
+      className="kirk-loader--inline c2"
     >
       <div
         className=""
