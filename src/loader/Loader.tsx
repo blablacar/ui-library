@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { color, transition } from '../_utils/branding'
 import { CheckIcon } from '../icon/checkIcon'
 import { CircleIcon } from '../icon/circleIcon'
+import { StyledLoader } from './Loader.style'
 
 const FULLSCREEN_MODE_CSS_CLASSNAME = 'kirk-loader--fullScreen'
 const INLINE_MODE_CSS_CLASSNAME = 'kirk-loader--inline'
@@ -86,12 +87,12 @@ export class Loader extends PureComponent<LoaderProps> {
     }
 
     return (
-      <div className={cc([className, this.computeLayoutClass()])}>
+      <StyledLoader className={cc([className, this.computeLayoutClass()])}>
         <div className={cc([{ 'kirk-loader--done': done }])} style={iconSize}>
           {!done && <CircleIcon iconColor={color.green} size={size} spinning />}
           {done && <CheckIcon iconColor={color.white} size={size / 2} validate />}
         </div>
-      </div>
+      </StyledLoader>
     )
   }
 }

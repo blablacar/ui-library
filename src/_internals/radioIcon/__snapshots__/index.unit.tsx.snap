@@ -199,7 +199,7 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
 }
 
 <div
-  className="c0 kirk-loader--inline"
+  className="kirk-loader--inline c0"
 >
   <div
     className=""
@@ -347,7 +347,7 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
 }
 
 <div
-  className="c0 kirk-loader--inline"
+  className="kirk-loader--inline c0"
 >
   <div
     className=""
