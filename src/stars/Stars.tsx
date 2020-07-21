@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { StarIcon as Star } from '../icon/starIcon'
+import { StyledStars } from './Stars.style'
 
 export interface StarsProps {
   readonly className?: string
@@ -20,12 +21,12 @@ const StarIcon = ({ offset }: { offset: number }) => (
 )
 
 export const Stars = ({ stars, className }: StarsProps) => (
-  <div className={cc(className)}>
+  <StyledStars className={cc(className)}>
     {ValidateStars(stars) &&
       Array.from({ length: 5 }, (v, index) => {
         const filled = stars - index
         const result = filled > 0 ? Math.min(1, filled) : 0
         return <StarIcon key={index} offset={result} />
       })}
-  </div>
+  </StyledStars>
 )
