@@ -51,7 +51,7 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
       forwardedRef={forwardedRef}
       className={className}
       modalContentClassName={baseClassName}
-      ariaLabelledBy={successContentId}
+      aria-labelledBy={successContentId}
       data-test="success-modal"
     >
       <Media>

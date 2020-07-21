@@ -222,7 +222,7 @@ export class Tabs extends PureComponent<TabsProps, TabsState> {
                           </span>
                         )}
                         {tab.badgeContent && (
-                          <Badge ariaLabel={tab.badgeAriaLabel} className="kirk-tab-badge">
+                          <Badge aria-label={tab.badgeAriaLabel} className="kirk-tab-badge">
                             {tab.badgeContent}
                           </Badge>
                         )}
