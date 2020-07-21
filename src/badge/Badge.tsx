@@ -3,6 +3,7 @@ import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { StyledBadge } from './Badge.style'
 
 export interface BadgeProps extends A11yProps {
   readonly className?: string
@@ -17,8 +18,8 @@ export const Badge = (props: BadgeProps) => {
   }
 
   return (
-    <span className={cc(['kirk-badge', className])} {...a11yAttrs}>
+    <StyledBadge className={cc(['kirk-badge', className])} {...a11yAttrs}>
       <span aria-hidden={!!a11yAttrs['aria-label']}>{children}</span>
-    </span>
+    </StyledBadge>
   )
 }
