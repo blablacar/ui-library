@@ -3,9 +3,8 @@ import renderer from 'react-test-renderer'
 import { shallow } from 'enzyme'
 
 import { A11yProps } from '../_utils/interfaces'
-import { Hint } from './Hint'
 import { HintBubble } from './HintBubble'
-import { Hint as StyledHint, HintBubblePosition } from './index'
+import { Hint, HintBubblePosition } from './index'
 
 const testChild = (a11yAttrs: A11yProps): React.ReactNode => <p {...a11yAttrs}>I have an hint.</p>
 
@@ -17,15 +16,15 @@ const defaultProps = {
 
 describe('Hint', () => {
   it('Default rendering (above)', () => {
-    const hint = renderer.create(<StyledHint {...defaultProps}>{testChild}</StyledHint>).toJSON()
+    const hint = renderer.create(<Hint {...defaultProps}>{testChild}</Hint>).toJSON()
     expect(hint).toMatchSnapshot()
   })
   it('Default rendering (below)', () => {
     const hint = renderer
       .create(
-        <StyledHint {...defaultProps} position={HintBubblePosition.BELOW}>
+        <Hint {...defaultProps} position={HintBubblePosition.BELOW}>
           {testChild}
-        </StyledHint>,
+        </Hint>,
       )
       .toJSON()
     expect(hint).toMatchSnapshot()

@@ -1,0 +1,71 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { ItemChoice } from '../itemChoice'
+import { ItemsList } from '../itemsList'
+import { BaseSection } from '../layout/section/baseSection'
+import { HintBubblePosition } from './HintBubble'
+import { Hint } from './index'
+
+<Meta title="Widgets|Hint" />
+
+# **Hint**
+
+<Preview>
+  <Story name="Default">
+    <BaseSection>
+      <ItemsList>
+        <ItemChoice label="Itinerary, date and time" href="#" />
+        <ItemChoice label="Seats and options" href="#" />
+        <Hint
+          title="New settings"
+          description="Take more control of your ride!"
+          position={HintBubblePosition.ABOVE}
+          hidden={false}
+          closeButtonTitle="Close"
+        >
+          {a11yAttrs => (
+            <ItemChoice
+              label="Extra passengers"
+              labelInfo="Manage booking requests from extra passengers along your way."
+              href="#"
+              {...a11yAttrs}
+            />
+          )}
+        </Hint>
+        <ItemChoice
+          label="Price"
+          labelInfo="We'll transfer passenger contributions to you after the ride."
+          href="#"
+        />
+      </ItemsList>
+    </BaseSection>
+  </Story>
+</Preview>
+
+## Specifications
+
+Use it to show the member there’s a new action they can take on this page. Only use for actions that previously didn’t exist on this page.
+
+## Usage
+
+```jsx
+import { Hint } from '@blablacar/ui-library/build/Hint'
+
+;<Hint
+  title="New settings"
+  description="Take more control of your ride!"
+  position={HintBubblePosition.ABOVE}
+  closeButtonTitle="Close"
+>
+  {a11yAttrs => (
+    <ItemChoice
+      label="Extra passengers"
+      labelInfo="Manage booking requests from extra passengers along your way."
+      href="#"
+      {...a11yAttrs}
+    />
+  )}
+</Hint>
+```
+
+<Props of={Hint} />

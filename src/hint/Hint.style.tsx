@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
-import { Hint } from './Hint'
 import { HintBubble } from './HintBubble'
 
-const StyledHint = styled(Hint)`
+export const StyledHint = styled.div`
   & {
     position: relative;
   }
@@ -21,8 +20,3 @@ const StyledHint = styled(Hint)`
     top: 100%;
   }
 `
-
-export { HintProps } from './Hint'
-export { HintBubblePosition } from './HintBubble'
-export { StyledHint as Hint }
-export default StyledHint
