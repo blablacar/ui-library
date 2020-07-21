@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Loader, LoaderLayoutMode } from './index'
+
+<Meta title="Widgets|Loader" />
+
+# ** Loader **
+
+<Preview>
+  <Story name="Default">
+    <Loader
+      layoutMode={LoaderLayoutMode.BLOCK}
+      size={48}
+      done={false}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Loader } from '@blablacar/ui-library/build/Loader'
+
+<Loader />
+```
+
+<Props of={Loader} />
