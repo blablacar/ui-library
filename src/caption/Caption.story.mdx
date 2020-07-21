@@ -1,0 +1,50 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
+
+import { Caption } from './index'
+
+<Meta title="Text|Caption" />
+
+# Caption
+
+<Preview>
+  <Story name="Default">
+    <Caption secondaryText="Secondary text" isoDate="2017-08-07T14:10:40.526Z">
+      {text('children', '05 jul - 17:39')}
+    </Caption>
+  </Story>
+</Preview>
+
+## With a link
+
+<Preview>
+  <Story name="With a link">
+    <Caption
+      href="https://m.blablacar.fr"
+      secondaryText="Link Text"
+      isoDate="2017-08-07T14:10:40.526Z"
+    >
+      05 jul - 17:39
+    </Caption>
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Caption } from '@blablacar/ui-library/build/caption'
+
+<Caption
+  href="https://m.blablacar.fr"
+  secondaryText="Link Text"
+  isoDate="2017-08-07T14:10:40.526Z"
+>
+  05 jul - 17:39
+</Caption>
+```
+
+<Props of={Caption} />
