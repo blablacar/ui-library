@@ -1,0 +1,39 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action, boolean, select } from '@storybook/addon-actions'
+import { color } from '../_utils/branding'
+import { CarpoolIcon } from '../icon/carpoolIcon'
+import { BusIcon } from '../icon/busIcon'
+import { FilterBar, FilterBarProps } from '../filterBar'
+
+<Meta title="Widget|FilterBar" />
+
+# FilterBar
+
+export const supplyInfo = [
+  {
+    liquidity: 98,
+    icon: CarpoolIcon,
+    ariaLabel: 'Carpooling',
+  },
+  {
+    liquidity: 12,
+    icon: BusIcon,
+    isDisabled: true,
+    ariaLabel: 'Bus',
+  },
+]
+
+<Preview>
+  <Story name="Default">
+    <FilterBar supplyInfo={supplyInfo} ctaText="See rides" onClick={() => {}} />
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { FilterBar } from '@blablacar/ui-library/build/filterBar'
+;<FilterBar />
+```
+
+<Props of={FilterBar} />

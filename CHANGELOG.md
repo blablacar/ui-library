@@ -1,7 +1,11 @@
 # Unreleased
 
+<<<<<<< HEAD
 - **[UPDATE]** Add `noHorizontalSpacing` prop to disable horizontal padding on `Modal` component.
 [...]
+=======
+- **[NEW]** Added `FilterBar` component
+>>>>>>> FilterBar component
 
 # v37.1.1 (22/07/2020)
 
