@@ -1,0 +1,41 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { BlankSeparator, BlankSeparatorSize } from './index'
+
+<Meta title="Widgets|BlankSeparator" />
+
+# **BlankSeparator**
+
+<Preview>
+  <Story name="Default">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis amet eius sunt! Voluptatum
+      tenetur sit, suscipit velit aspernatur ab earum nam. Corrupti iste nostrum dolorum magni
+      officiis quae aspernatur consectetur.
+      <BlankSeparator size={BlankSeparatorSize.SMALL} />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis amet eius sunt! Voluptatum
+      tenetur sit, suscipit velit aspernatur ab earum nam. Corrupti iste nostrum dolorum magni
+      officiis quae aspernatur consectetur.
+    </div>
+  </Story>
+</Preview>
+
+## Specifications
+
+Helps the member find info on the screen by grouping elements into categories.
+
+## Usage
+
+```jsx
+import {
+  BlankSeparator,
+  BlankSeparatorProps,
+  BlankSeparatorSize,
+} from '@blablacar/ui-library/build/blankSeparator'
+```
+
+<Props of={BlankSeparator} />
+
+## When should I use it?
+
+- ✅ Use it in any screen when vertically stacked components don’t provide enough visual separation.
+- ⛔️ Stack multiple blank separators together.
