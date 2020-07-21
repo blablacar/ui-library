@@ -3,6 +3,7 @@ import cc from 'classcat'
 import uniqueid from 'lodash.uniqueid'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { StyledHint } from './Hint.style'
 import { HintBubble, HintBubblePosition } from './HintBubble'
 
 export interface HintProps extends A11yProps {
@@ -36,7 +37,7 @@ export const Hint = (props: HintProps): JSX.Element => {
   const a11yAttrs = pickA11yProps(props)
 
   return (
-    <div
+    <StyledHint
       className={cc([className, { 'hidden-bubble': hiddenBubble }])}
       {...a11yAttrs}
       aria-live="polite"
@@ -55,6 +56,6 @@ export const Hint = (props: HintProps): JSX.Element => {
         />
       )}
       {children(hiddenBubble ? {} : { 'aria-describedby': id })}
-    </div>
+    </StyledHint>
   )
 }
