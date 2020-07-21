@@ -18,5 +18,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["node_modules/@types", "src/**/*.tsx", "src/**/*.ts"],
-  "exclude": ["build", "node_modules", "src/**/*.unit.tsx"]
+  "exclude": ["build", "node_modules", "src/**/*.unit.tsx", "tools"]
 }

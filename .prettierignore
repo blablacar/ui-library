@@ -2,3 +2,4 @@ bin
 build
 coverage
 node_modules
+tools
