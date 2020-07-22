@@ -1,10 +1,7 @@
 import React from 'react'
-import cc from 'classcat'
+import styled from 'styled-components'
 
-export interface BlankSeparatorProps {
-  readonly className?: string
-  readonly size?: BlankSeparatorSize
-}
+import { space } from '../_utils/branding'
 
 export enum BlankSeparatorSize {
   SMALL = 'small',
@@ -12,6 +9,35 @@ export enum BlankSeparatorSize {
   LARGE = 'large',
 }
 
-export const BlankSeparator = ({ className }: BlankSeparatorProps) => (
-  <div className={cc(className)} aria-hidden="true" />
+type StyledBlankSeparatorProps = Readonly<{
+  size: BlankSeparatorSize
+}>
+
+export type BlankSeparatorProps = Readonly<{
+  className?: string
+  size?: StyledBlankSeparatorProps['size']
+}>
+
+const StyledBlankSeparator = styled.div<StyledBlankSeparatorProps>`
+  & {
+    /* No background color for blank separator. */
+    padding-top: ${({ size }) => {
+      switch (size) {
+        case BlankSeparatorSize.LARGE:
+          return space.xl
+        case BlankSeparatorSize.MEDIUM:
+          return space.l
+        case BlankSeparatorSize.SMALL:
+        default:
+          return space.m
+      }
+    }};
+  }
+`
+
+export const BlankSeparator = ({
+  size = BlankSeparatorSize.SMALL,
+  className,
+}: BlankSeparatorProps) => (
+  <StyledBlankSeparator size={size} className={className} aria-hidden="true" />
 )

@@ -673,7 +673,7 @@ button:focus:not(.focus-visible).c0 {
       value={0}
     />
     <div
-      className="c2 kirk-loader--inline"
+      className="kirk-loader--inline c2"
     >
       <div
         className=""
