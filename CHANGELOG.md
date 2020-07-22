@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** Missing props exports in index file for `ItemAction`, `ItemBigData`, `ItemData`, `ItemEditableInfo`
+
 # v37.1.0 (22/07/2020)
 
 - **[UPDATE]** Add `initialFrom`, `initialTo`, `disabledFrom`, `disabledTo` props in `SearchForm` component
