@@ -1,7 +1,9 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import { Caption, renderSecondary } from './index'
+/* internal function, no need to export it just for testing matters */
+import { renderSecondary } from './Caption'
+import { Caption } from './index'
 
 it('Should have the proper text & attributes with link', () => {
   const caption = mount(
