@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v37.1.0 (22/07/2020)
+
 - **[UPDATE]** Add `initialFrom`, `initialTo`, `disabledFrom`, `disabledTo` props in `SearchForm` component
 - **[UPDATE]** Added `secondLine` prop on Tabs config
 
