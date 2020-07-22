@@ -18,6 +18,8 @@ stories.add('default', () => (
     <Content>
       <Section>
         <SubHeader>Some Lorem ipsum content</SubHeader>
+      </Section>
+      <Section noHorizontalSpacing>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
           placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
@@ -40,12 +42,16 @@ stories.add('Inside a modal', () => (
   <Modal isOpen size={ModalSize.FULLSCREEN}>
     <MainContent>
       <Content>
-        <SubHeader>Some Lorem ipsum content</SubHeader>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
-          placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
-          molestie sapien justo nec orci.
-        </Paragraph>
+        <Section>
+          <SubHeader>Some Lorem ipsum content</SubHeader>
+        </Section>
+        <Section noHorizontalSpacing>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
+            placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor,
+            vel molestie sapien justo nec orci.
+          </Paragraph>
+        </Section>
       </Content>
       <BottomContent>
         <ButtonGroup>

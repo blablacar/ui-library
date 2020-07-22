@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 import { Paragraph } from './paragraph'
 
 const StyledParagraph = styled(Paragraph)`
@@ -9,6 +10,7 @@ const StyledParagraph = styled(Paragraph)`
     flex-direction: column;
     padding: ${space.m} 0;
     word-break: break-word;
+    ${normalizeHorizontally}
   }
 
   & .kirk-button {

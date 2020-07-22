@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Caption } from '../caption'
+import { BaseSection as Section } from '../layout/section/baseSection'
 import { Paragraph } from '../paragraph'
 import { TextTitle } from '../typography/title'
 
@@ -43,11 +44,17 @@ export const Review = (props: ReviewProps) => {
         },
       ])}
     >
-      <h2 className="kirk-review-title" {...titleMicroData}>
-        <TextTitle {...titleMicroDataContent}>{title}</TextTitle>
-      </h2>
-      <Paragraph itemProp="reviewBody">{text}</Paragraph>
-      <Caption isoDate={isoDatetime}>{formattedDatetime}</Caption>
+      <Section>
+        <h2 className="kirk-review-title" {...titleMicroData}>
+          <TextTitle {...titleMicroDataContent}>{title}</TextTitle>
+        </h2>
+      </Section>
+      <Section noHorizontalSpacing>
+        <Paragraph itemProp="reviewBody">{text}</Paragraph>
+      </Section>
+      <Section>
+        <Caption isoDate={isoDatetime}>{formattedDatetime}</Caption>
+      </Section>
     </blockquote>
   )
 }

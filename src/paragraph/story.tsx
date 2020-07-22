@@ -12,7 +12,7 @@ const longText = 'Long text (above max char) '.repeat(20)
 const longTextWithoutSpaces = `http://${'long_url_without_spaces'.repeat(20)}.com`
 
 stories.add('Long text', () => (
-  <Section>
+  <Section noHorizontalSpacing>
     <Paragraph
       isExpandable={boolean('isExpandable', true)}
       expandLabel={text('expandLabel', 'Expand')}
@@ -23,13 +23,13 @@ stories.add('Long text', () => (
 ))
 
 stories.add('Short text', () => (
-  <Section>
+  <Section noHorizontalSpacing>
     <Paragraph>{shortText}</Paragraph>
   </Section>
 ))
 
 stories.add('Long unbreakable text', () => (
-  <Section>
+  <Section noHorizontalSpacing>
     <Paragraph>{longTextWithoutSpaces}</Paragraph>
   </Section>
 ))

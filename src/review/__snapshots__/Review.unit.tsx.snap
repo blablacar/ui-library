@@ -2,84 +2,94 @@
 
 exports[`Should render review microdata annotations and HTML 1`] = `
 Array [
-  .c4 {
+  .c6 {
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
 }
 
-.c4 .kirk-link {
+.c6 .kirk-link {
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
 }
 
-.c3 {
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c3 .section-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c5 {
   margin: 0;
   font-weight: 400;
 }
 
-.c3.kirk-text-button {
+.c5.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-body,
-.c3.kirk-text-bodyStrong {
+.c5.kirk-text-body,
+.c5.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-caption {
+.c5.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-display2 {
+.c5.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c3.kirk-text-display1 {
+.c5.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c3.kirk-text-subheader,
-.c3.kirk-text-subheaderStrong {
+.c5.kirk-text-subheader,
+.c5.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-bodyStrong,
-.c3.kirk-text-subheaderStrong,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-bodyStrong,
+.c5.kirk-text-subheaderStrong,
+.c5.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -89,15 +99,19 @@ Array [
   flex-direction: column;
   padding: 8px 0;
   word-break: break-word;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.c2 .kirk-button {
+.c4 .kirk-button {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c1 {
+.c2 {
   color: #054752;
   font-size: 18px;
   font-weight: 400;
@@ -116,6 +130,30 @@ Array [
 .c0 .kirk-review-title {
   margin: 0;
   font-size: 1em;
+}
+
+@media (min-width:800px) {
+  .c1 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c1 .section-content.section-content--large {
+    max-width: 1016px;
+  }
+}
+
+@media (min-width:800px) {
+  .c3 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c3 .section-content.section-content--large {
+    max-width: 1016px;
+  }
 }
 
 <blockquote
@@ -123,118 +161,155 @@ Array [
     itemScope={true}
     itemType="http://schema.org/Review"
   >
-    <h2
-      className="kirk-review-title"
-      itemProp="reviewRating"
-      itemScope={true}
-      itemType="https://schema.org/Rating"
-    >
-      <span
-        className="c1"
-        itemProp="reviewRating"
-      >
-        Review title
-      </span>
-    </h2>
     <div
-      className="c2"
+      className="c1"
       role="presentation"
     >
-      <p
-        className="kirk-text kirk-text-body c3"
-        itemProp="reviewBody"
+      <div
+        className="section-content"
       >
-        Review content
-      </p>
+        <h2
+          className="kirk-review-title"
+          itemProp="reviewRating"
+          itemScope={true}
+          itemType="https://schema.org/Rating"
+        >
+          <span
+            className="c2"
+            itemProp="reviewRating"
+          >
+            Review title
+          </span>
+        </h2>
+      </div>
     </div>
     <div
-      className="kirk-caption c4"
+      className="c3"
+      role="presentation"
     >
-      <time
-        dateTime="2017-08-07T14:10:40.526Z"
+      <div
+        className="section-content"
       >
-        05 jul - 17:39
-      </time>
+        <div
+          className="c4"
+          role="presentation"
+        >
+          <p
+            className="kirk-text kirk-text-body c5"
+            itemProp="reviewBody"
+          >
+            Review content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c1"
+      role="presentation"
+    >
+      <div
+        className="section-content"
+      >
+        <div
+          className="kirk-caption c6"
+        >
+          <time
+            dateTime="2017-08-07T14:10:40.526Z"
+          >
+            05 jul - 17:39
+          </time>
+        </div>
+      </div>
     </div>
   </blockquote>,
-  .c4 {
+  .c6 {
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
 }
 
-.c4 .kirk-link {
+.c6 .kirk-link {
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
 }
 
-.c3 {
+.c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c3 .section-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c5 {
   margin: 0;
   font-weight: 400;
 }
 
-.c3.kirk-text-button {
+.c5.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-body,
-.c3.kirk-text-bodyStrong {
+.c5.kirk-text-body,
+.c5.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-caption {
+.c5.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-display2 {
+.c5.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c3.kirk-text-display1 {
+.c5.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c3.kirk-text-subheader,
-.c3.kirk-text-subheaderStrong {
+.c5.kirk-text-subheader,
+.c5.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-bodyStrong,
-.c3.kirk-text-subheaderStrong,
-.c3.kirk-text-titleStrong {
+.c5.kirk-text-bodyStrong,
+.c5.kirk-text-subheaderStrong,
+.c5.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c2 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -244,15 +319,19 @@ Array [
   flex-direction: column;
   padding: 8px 0;
   word-break: break-word;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.c2 .kirk-button {
+.c4 .kirk-button {
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.c1 {
+.c2 {
   color: #054752;
   font-size: 18px;
   font-weight: 400;
@@ -273,39 +352,90 @@ Array [
   font-size: 1em;
 }
 
+@media (min-width:800px) {
+  .c1 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c1 .section-content.section-content--large {
+    max-width: 1016px;
+  }
+}
+
+@media (min-width:800px) {
+  .c3 .section-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 662px;
+  }
+
+  .c3 .section-content.section-content--large {
+    max-width: 1016px;
+  }
+}
+
 <blockquote
     className="c0 kirk-is-review-response"
     itemScope={true}
     itemType="http://schema.org/Review"
   >
-    <h2
-      className="kirk-review-title"
-    >
-      <span
-        className="c1"
-      >
-        Review title
-      </span>
-    </h2>
     <div
-      className="c2"
+      className="c1"
       role="presentation"
     >
-      <p
-        className="kirk-text kirk-text-body c3"
-        itemProp="reviewBody"
+      <div
+        className="section-content"
       >
-        Review content
-      </p>
+        <h2
+          className="kirk-review-title"
+        >
+          <span
+            className="c2"
+          >
+            Review title
+          </span>
+        </h2>
+      </div>
     </div>
     <div
-      className="kirk-caption c4"
+      className="c3"
+      role="presentation"
     >
-      <time
-        dateTime="2017-08-07T14:10:40.526Z"
+      <div
+        className="section-content"
       >
-        05 jul - 17:39
-      </time>
+        <div
+          className="c4"
+          role="presentation"
+        >
+          <p
+            className="kirk-text kirk-text-body c5"
+            itemProp="reviewBody"
+          >
+            Review content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c1"
+      role="presentation"
+    >
+      <div
+        className="section-content"
+      >
+        <div
+          className="kirk-caption c6"
+        >
+          <time
+            dateTime="2017-08-07T14:10:40.526Z"
+          >
+            05 jul - 17:39
+          </time>
+        </div>
+      </div>
     </div>
   </blockquote>,
 ]

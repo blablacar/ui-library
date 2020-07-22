@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Added normalized horizontal padding/margin for `Paragraph` component
 
 # v37.1.0 (22/07/2020)
 

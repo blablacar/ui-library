@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { BaseSection as Section } from '../layout/section/baseSection'
 import { Review } from './index'
 
 const stories = storiesOf('Widgets|Review', module)
@@ -25,8 +24,8 @@ const reviewResponseProps = {
 }
 
 stories.add('default', () => (
-  <Section>
+  <Fragment>
     <Review {...reviewProps} />
     <Review {...reviewResponseProps} />
-  </Section>
+  </Fragment>
 ))
