@@ -2,6 +2,8 @@
 
 [...]
 
+# v37.1.1 (22/07/2020)
+
 - **[FIX]** Missing props exports in index file for `ItemAction`, `ItemBigData`, `ItemData`, `ItemEditableInfo`
 
 # v37.1.0 (22/07/2020)
