@@ -45,7 +45,6 @@ type errorField = string | JSX.Element
 export interface PhoneFieldProps extends A11yProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
-  readonly id?: string
   readonly className?: string
   readonly innerWrapperClassName?: string
   readonly selectFieldLabel?: string
@@ -260,7 +259,7 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
           <SelectField
             name={FIELDS.PHONEREGION}
             options={this.state.countryData}
-            ariaLabel={selectFieldLabel}
+            aria-label={selectFieldLabel}
             defaultValue={this.props.defaultRegionValue}
             onChange={this.handleChange}
             onFocus={this.onFocus}

@@ -6,7 +6,7 @@ import { SelectField as StyledSelectField } from './index'
 import { SelectField } from './SelectField'
 
 const options = [
-  { value: '1', label: 'val 1', ariaLabel: 'value 1' },
+  { value: '1', label: 'val 1', 'aria-label': 'value 1' },
   { value: '2', label: 'value 2' },
 ]
 
@@ -23,7 +23,7 @@ const customProps = {
   ...defaultProps,
   id: 'selectFieldId',
   className: 'customClass',
-  ariaLabel: 'selectLabel',
+  'aria-label': 'selectLabel',
   focus: true,
   autoFocus: true,
   disabled: false,
@@ -50,7 +50,7 @@ describe('SelectField', () => {
         .find('option')
         .first()
         .prop('aria-label'),
-    ).toBe(options[0].ariaLabel)
+    ).toBe(options[0]['aria-label'])
     expect(
       defaultWrapper
         .find('option')

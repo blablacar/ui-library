@@ -20,15 +20,15 @@ describe('ItemRadioGroup', () => {
     ],
   }
   it('Should map its children and render them with specific props', () => {
-    const itemRadioGroup = renderer.create(<ItemRadioGroup {...defaultProps} />).toJSON()
+    const itemRadioGroup = renderer
+      .create(<ItemRadioGroup {...defaultProps} aria-labelledby="my-div-id" />)
+      .toJSON()
     expect(itemRadioGroup).toMatchSnapshot()
   })
 
   describe('onChange', () => {
     it('Should listen to all children ItemRadio changes', () => {
-      const itemRadioGroup = shallow(
-        <ItemRadioGroup {...defaultProps} aria-labelledBy="My div ID" />,
-      )
+      const itemRadioGroup = shallow(<ItemRadioGroup {...defaultProps} />)
       const onChangeListener = itemRadioGroup.instance().onChange
       expect(itemRadioGroup.find({ value: 1 }).prop('onChange')).toEqual(onChangeListener)
       expect(itemRadioGroup.find({ value: 2 }).prop('onChange')).toEqual(onChangeListener)

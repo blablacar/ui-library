@@ -39,7 +39,7 @@ stories.add(
         id={text('id', 'phoneFieldId')}
         name={text('name', 'phoneField')}
         innerWrapperClassName={text('className', 'additionalClass')}
-        aria-labelledBy={text('ariaLabelledBy', 'labelId')}
+        aria-labelledby={text('ariaLabelledBy', 'labelId')}
         selectFieldLabel={text('selectFieldLabel', 'Phone country code')}
         textFieldTitle={text('textFieldTitle', 'Phone number')}
         textFieldPlaceholder={text('textFieldPlaceholder', 'Phone number')}

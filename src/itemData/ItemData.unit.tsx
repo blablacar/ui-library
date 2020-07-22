@@ -2,7 +2,6 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import { Button } from '../button'
-import { Text } from '../text'
 import { ItemData } from './index'
 
 const defaultProps = {
@@ -37,13 +36,4 @@ it("Shouldn't display left addon button if no main title", () => {
     />,
   )
   expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
-})
-
-it('Should display right data with aria-label attribute', () => {
-  const wrapper = mount(
-    <ItemData {...defaultProps} data="Data" dataAriaProps={{ 'aria-label': 'Data aria-label' }} />,
-  )
-  const text = wrapper.find(Text)
-  expect(text.hasClass('kirk-item-title')).toBe(true)
-  expect(text.prop('aria-label')).toBe('Data aria-label')
 })

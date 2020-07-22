@@ -29,7 +29,7 @@ const customProps = {
   ...defaultProps,
   id: 'selectFieldName',
   className: 'customClass',
-  ariaLabelledBy: 'labelId',
+  'aria-labelledby': 'labelId',
   selectFieldLabel: 'Phone Country code',
   textFieldTitle: 'Phone Number',
   textFieldPlaceholder: 'Phone number',

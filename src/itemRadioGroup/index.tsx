@@ -51,8 +51,8 @@ export class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadio
       <ItemsList
         withSeparators={withSeparators}
         className={className}
-        role="radiogroup"
         {...a11yAttrs}
+        role="radiogroup"
       >
         {children.map(item => {
           const itemProps: Partial<ItemRadioProps> = item.props

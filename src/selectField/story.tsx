@@ -10,7 +10,7 @@ const stories = storiesOf('Widgets|SelectField', module)
 stories.addDecorator(withKnobs)
 
 const phonePrefixOptions = [
-  { value: '+33', label: 'Fr +33', ariaLabel: 'France' },
+  { value: '+33', label: 'Fr +33', 'aria-label': 'France' },
   { value: '+34', label: 'Sp +34' },
 ]
 
@@ -23,7 +23,7 @@ stories.add('Default', () => (
       name={text('name', 'selectFieldName')}
       className={text('className', 'additionalClass')}
       options={phonePrefixOptions}
-      ariaLabel={text('ariaLabel', 'selectLabel')}
+      aria-label={text('ariaLabel', 'selectLabel')}
       defaultValue={text('defaultValue', phonePrefixOptions[0].value)}
       onFocus={action('focused')}
       onBlur={action('blured')}
