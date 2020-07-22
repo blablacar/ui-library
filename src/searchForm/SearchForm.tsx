@@ -29,6 +29,10 @@ import { TRANSITION_SECTION_CLASS_NAME, transitionSectionTimeout } from './trans
 export interface SearchFormProps {
   className?: string
   onSubmit: (formValues: SearchFormValues) => void
+  disabledFrom?: boolean
+  disabledTo?: boolean
+  initialFrom?: string
+  initialTo?: string
   autocompleteFromPlaceholder: AutoCompleteProps['placeholder']
   autocompleteToPlaceholder: AutoCompleteProps['placeholder']
   renderAutocompleteFrom: AutoCompleteOverlayProps['renderAutocompleteComponent']
@@ -68,9 +72,28 @@ export type SearchFormValues = {
   AUTOCOMPLETE_TO?: AutocompleteOnChange
 }
 
+const getPlaceholderText = (
+  initial: string,
+  autocompleted: string,
+  placeholder: string,
+): string => {
+  if (autocompleted) {
+    return autocompleted
+  }
+  if (initial) {
+    return initial
+  }
+
+  return placeholder
+}
+
 export const SearchForm = ({
   className,
   onSubmit,
+  initialFrom,
+  initialTo,
+  disabledFrom,
+  disabledTo,
   autocompleteFromPlaceholder,
   autocompleteToPlaceholder,
   renderAutocompleteFrom,
@@ -238,6 +261,7 @@ export const SearchForm = ({
               type="button"
               className="kirk-search-button"
               onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_FROM)}
+              disabled={disabledFrom}
             >
               <span className="kirk-bullet--searchForm">
                 <Bullet type={BulletTypes.SEARCH} />
@@ -245,10 +269,14 @@ export const SearchForm = ({
               <TextTitle
                 className={cc([
                   'kirk-search-ellipsis',
-                  { 'kirk-search-placeholder': !autocompleteFromValue },
+                  { 'kirk-search-placeholder': !autocompleteFromValue && !initialFrom },
                 ])}
               >
-                {autocompleteFromValue?.item.label || autocompleteFromPlaceholder}
+                {getPlaceholderText(
+                  initialFrom,
+                  autocompleteFromValue?.item.label,
+                  autocompleteFromPlaceholder,
+                )}
               </TextTitle>
             </button>
           </SlideSwitchTransition>
@@ -304,6 +332,7 @@ export const SearchForm = ({
             type="button"
             className="kirk-search-button"
             onClick={() => setElementOpened(SearchFormElements.AUTOCOMPLETE_TO)}
+            disabled={disabledTo}
           >
             <span className="kirk-bullet--searchForm">
               <Bullet type={BulletTypes.SEARCH} />
@@ -311,10 +340,14 @@ export const SearchForm = ({
             <TextTitle
               className={cc([
                 'kirk-search-ellipsis',
-                { 'kirk-search-placeholder': !autocompleteToValue },
+                { 'kirk-search-placeholder': !autocompleteToValue && !initialTo },
               ])}
             >
-              {autocompleteToValue?.item.label || autocompleteToPlaceholder}
+              {getPlaceholderText(
+                initialTo,
+                autocompleteToValue?.item.label,
+                autocompleteToPlaceholder,
+              )}
             </TextTitle>
           </button>
         </SlideSwitchTransition>

@@ -37,6 +37,18 @@ const defaultProps: SearchFormProps = {
   },
 }
 
+const withInitialFromTo: SearchFormProps = {
+  ...defaultProps,
+  initialFrom: 'Avignon',
+  initialTo: 'Marseille',
+}
+
+const withDisabledFromTo: SearchFormProps = {
+  ...defaultProps,
+  disabledFrom: true,
+  disabledTo: true,
+}
+
 describe('searchForm', () => {
   let wrapper
   const fakeEvent = { e: { relatedTarget: null } }
@@ -97,6 +109,26 @@ describe('searchForm', () => {
         expect(wrapper.find(StepperOverlay).exists()).toBe(false)
         wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
         expect(wrapper.find(StepperOverlay).exists()).toBe(true)
+      })
+
+      it('should have initial values for From & To', () => {
+        const wrapperWithInitialValues = mount(<SearchForm {...withInitialFromTo} />)
+        expect(wrapperWithInitialValues.find('.kirk-searchForm-from').text()).toBe('Avignon')
+        expect(wrapperWithInitialValues.find('.kirk-searchForm-to').text()).toBe('Marseille')
+      })
+
+      it('should have disabled fields From & To', () => {
+        const wrapperWithDisabledValues = mount(<SearchForm {...withDisabledFromTo} />)
+        expect(
+          wrapperWithDisabledValues
+            .find('.kirk-searchForm-from .kirk-search-button')
+            .prop('disabled'),
+        ).toBe(true)
+        expect(
+          wrapperWithDisabledValues
+            .find('.kirk-searchForm-to .kirk-search-button')
+            .prop('disabled'),
+        ).toBe(true)
       })
     })
 
@@ -167,6 +199,26 @@ describe('searchForm', () => {
             .find(CSSTransition)
             .at(3)
             .prop('in'),
+        ).toBe(true)
+      })
+
+      it('should have initial values for From & To', () => {
+        const wrapperWithInitialValues = mount(<SearchForm {...withInitialFromTo} />)
+        expect(wrapperWithInitialValues.find('.kirk-searchForm-from').text()).toBe('Avignon')
+        expect(wrapperWithInitialValues.find('.kirk-searchForm-to').text()).toBe('Marseille')
+      })
+
+      it('should have disabled fields From & To', () => {
+        const wrapperWithDisabledValues = mount(<SearchForm {...withDisabledFromTo} />)
+        expect(
+          wrapperWithDisabledValues
+            .find('.kirk-searchForm-from .kirk-search-button')
+            .prop('disabled'),
+        ).toBe(true)
+        expect(
+          wrapperWithDisabledValues
+            .find('.kirk-searchForm-to .kirk-search-button')
+            .prop('disabled'),
         ).toBe(true)
       })
     })
