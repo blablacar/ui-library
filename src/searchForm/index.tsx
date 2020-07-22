@@ -96,6 +96,10 @@ const StyledSearchForm = styled(SearchForm)`
     & > *:not(:first-child) {
       margin-left: ${space.m};
     }
+
+    &:disabled {
+      cursor: default;
+    }
   }
 
   & .kirk-searchForm-from .kirk-search-button,
