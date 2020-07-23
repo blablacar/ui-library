@@ -13,13 +13,15 @@ export const supplyInfo = [
   {
     liquidity: 98,
     icon: CarpoolIcon,
-    ariaLabel: 'Carpooling',
+    ariaLabel: 'Carpooling available',
+    iconTitle: 'Carpooling'
   },
   {
     liquidity: 12,
     icon: BusIcon,
+    iconTitle: 'Bus',
     isDisabled: true,
-    ariaLabel: 'Bus',
+    ariaLabel: 'Bus available',
   },
 ]
 
@@ -30,7 +32,6 @@ export const supplyInfo = [
 </Preview>
 
 ## Usage
-
 ```jsx
 import { FilterBar } from '@blablacar/ui-library/build/filterBar'
 ;<FilterBar />

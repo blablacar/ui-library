@@ -4,33 +4,44 @@ import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { Loader } from '../loader'
 import { TextTitle } from '../typography/title'
-import { StyledCta, StyledFilterBar, StyledSupplyInfo } from './FilterBar.style'
+import {
+  StyledCta,
+  StyledFilterBar,
+  StyledSupplyInfo,
+  StyledSupplyInfoItem,
+} from './FilterBar.style'
 
-export interface FilterBarProps {
-  readonly ctaText: string
-  readonly onClick: (event: React.MouseEvent<HTMLElement>) => void
-  readonly supplyInfo: Array<{
-    icon: Function
+export type FilterBarProps = Readonly<{
+  ctaText: string
+  onClick: (event: React.MouseEvent<HTMLElement>) => void
+  supplyInfo: Array<{
+    icon: React.ElementType
+    iconTitle: string
     liquidity: number
     ariaLabel: string
     isDisabled?: boolean
   }>
-  readonly isLoading?: boolean
-}
+  isLoading?: boolean
+}>
 
 export const FilterBar = ({ supplyInfo, isLoading = false, onClick, ctaText }: FilterBarProps) => (
   <StyledFilterBar>
     <StyledSupplyInfo>
       {isLoading ? (
-        <li>
+        <StyledSupplyInfoItem>
           <Loader inline size={32} />
-        </li>
+        </StyledSupplyInfoItem>
       ) : (
         supplyInfo.map(supply => (
-          <li aria-label={supply.ariaLabel} key={supply.ariaLabel}>
-            <supply.icon iconColor={color.midnightGreen} size="32" isDisabled={supply.isDisabled} />
+          <StyledSupplyInfoItem key={supply.ariaLabel} aria-label={supply.ariaLabel}>
+            <supply.icon
+              iconColor={color.midnightGreen}
+              size="32"
+              isDisabled={supply.isDisabled}
+              title={supply.iconTitle}
+            />
             <TextTitle isDisabled={supply.isDisabled}>{supply.liquidity}</TextTitle>
-          </li>
+          </StyledSupplyInfoItem>
         ))
       )}
     </StyledSupplyInfo>

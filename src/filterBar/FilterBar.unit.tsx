@@ -12,13 +12,15 @@ const defaultProps: FilterBarProps = {
     {
       liquidity: 98,
       icon: CarpoolIcon,
-      ariaLabel: 'Carpooling',
+      iconTitle: 'Carpooling',
+      ariaLabel: 'Carpooling available',
     },
     {
       liquidity: 12,
       icon: BusIcon,
+      iconTitle: 'Bus',
       isDisabled: true,
-      ariaLabel: 'Bus',
+      ariaLabel: 'Bus available',
     },
   ],
   onClick: () => {},
@@ -32,25 +34,26 @@ describe('FilterBar', () => {
   it('should render icons & liquidity and cta', () => {
     const props = createProps()
     render(<FilterBar {...props} />)
-    props.supplyInfo.map(supply => {
+    props.supplyInfo.forEach(supply => {
       const item = screen.getByLabelText(supply.ariaLabel)
       expect(item).toHaveTextContent(String(supply.liquidity))
-      return null
+      const icon = screen.getByTitle(supply.iconTitle)
+      expect(icon).toBeInTheDocument()
     })
-    expect(screen.getByText('See rides')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'See rides' })).toBeInTheDocument()
   })
 
   it('should call onCick when clicking on the button', () => {
     const props = createProps({ onClick: jest.fn() })
     render(<FilterBar {...props} />)
-    fireEvent.click(screen.getByText('See rides'))
+    fireEvent.click(screen.getByRole('button', { name: 'See rides' }))
     expect(props.onClick).toHaveBeenCalled()
   })
 
   it('should not call onCick when isLoading', () => {
     const props = createProps({ isLoading: true, onClick: jest.fn() })
     render(<FilterBar {...props} />)
-    fireEvent.click(screen.getByText('See rides'))
+    fireEvent.click(screen.getByRole('button', { name: 'See rides' }))
     expect(props.onClick).not.toHaveBeenCalled()
   })
 })
