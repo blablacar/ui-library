@@ -2,6 +2,7 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 
 import { Button } from '../button'
+import { Text } from '../text'
 import { ItemData } from './index'
 
 const defaultProps = {
@@ -36,4 +37,12 @@ it("Shouldn't display left addon button if no main title", () => {
     />,
   )
   expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
+})
+
+it('Should display left and right elements', () => {
+  const wrapper = mount(<ItemData {...defaultProps} />)
+  const text = wrapper.find(Text)
+  expect(text).toHaveLength(2)
+  expect(text.at(0).text()).toBe('Main information')
+  expect(text.at(1).text()).toBe('Data')
 })

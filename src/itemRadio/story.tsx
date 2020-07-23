@@ -73,7 +73,7 @@ stories.add('Multiple items with chevrons (form step with auto submit)', () => (
       onChange={action('changed group')}
       withSeparators
       withChevrons
-      aria-labelledBy="id-title"
+      aria-labelledby="id-title"
     >
       <ItemRadio
         labelTitle="Title 1"
