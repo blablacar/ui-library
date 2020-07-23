@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add `noHorizontalSpacing` prop to disable horizontal padding on `Modal` component.
 [...]
 
 # v37.1.1 (22/07/2020)

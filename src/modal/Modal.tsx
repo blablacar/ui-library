@@ -34,6 +34,7 @@ export type ModalProps = Readonly<{
   forwardedRef?: Ref<HTMLDivElement>
   ariaLabelledBy?: string
   ariaDescribedBy?: string
+  noHorizontalSpacing?: boolean
 }>
 
 export class Modal extends Component<ModalProps> {
