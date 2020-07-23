@@ -104,7 +104,24 @@ This component is a text area and accept icons.
 ```jsx
 import { Textarea } from '@blablacar/ui-library/build/textarea'
 
-<Textarea />
+<Textarea
+  id={id}
+  name={inputName}
+  placeholder={Some placeholder text}
+  labelledBy={aria label}
+  disabled={false}
+  readOnly={false}
+  label={label}
+  error={''}
+  onChange={changed}
+  onFocus={focused}
+  onBlur={blurred}
+  focus={false}
+  required={false}
+  maxLength={100}
+  autoComplete={off}
+  title={accessibility text}
+/>
 ```
 
 <Props of={Textarea} />
