@@ -232,7 +232,6 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
 
   render() {
     const {
-      id,
       selectFieldLabel,
       textFieldTitle,
       textFieldPlaceholder,
@@ -255,7 +254,7 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
 
     return (
       <div className={cc([baseClassName, prefix({ error: !!error }), this.props.className])}>
-        <div id={id} className={classNames} {...a11yAttrs}>
+        <div className={classNames} {...a11yAttrs}>
           <SelectField
             name={FIELDS.PHONEREGION}
             options={this.state.countryData}
