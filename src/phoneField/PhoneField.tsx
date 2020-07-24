@@ -7,6 +7,7 @@ import { allCountries, AllCountryPhoneData } from 'country-telephone-data'
 
 import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { SelectField } from '../selectField'
 import { inputTypes, TextField } from '../textField'
 
@@ -41,14 +42,11 @@ export interface PhoneFieldOnChangeParameters {
 }
 
 type errorField = string | JSX.Element
-
-export interface PhoneFieldProps {
+export interface PhoneFieldProps extends A11yProps {
   readonly name: string
   readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
-  readonly id?: string
   readonly className?: string
   readonly innerWrapperClassName?: string
-  readonly ariaLabelledBy?: string
   readonly selectFieldLabel?: string
   readonly textFieldTitle?: string
   readonly textFieldPlaceholder?: string
@@ -234,16 +232,16 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
 
   render() {
     const {
-      id,
       selectFieldLabel,
       textFieldTitle,
-      ariaLabelledBy,
       textFieldPlaceholder,
       defaultPhoneValue,
       isInline,
       selectAutoFocus,
       error,
     } = this.props
+
+    const a11yAttrs = pickA11yProps<PhoneFieldProps>(this.props)
 
     const baseClassName = cc([prefix({ phoneField: true })])
     const wrapperClassName = `${baseClassName}-wrapper`
@@ -256,11 +254,11 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
 
     return (
       <div className={cc([baseClassName, prefix({ error: !!error }), this.props.className])}>
-        <div id={id} className={classNames} aria-labelledby={ariaLabelledBy}>
+        <div className={classNames} {...a11yAttrs}>
           <SelectField
             name={FIELDS.PHONEREGION}
             options={this.state.countryData}
-            ariaLabel={selectFieldLabel}
+            aria-label={selectFieldLabel}
             defaultValue={this.props.defaultRegionValue}
             onChange={this.handleChange}
             onFocus={this.onFocus}

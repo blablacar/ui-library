@@ -7,6 +7,7 @@ import { canUseDOM, canUseEventListeners } from 'exenv'
 import createFocusTrap, { FocusTrap } from 'focus-trap'
 
 import { color } from '../_utils/branding'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { KEYCODES } from '../_utils/keycodes'
 import { Button } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
@@ -19,23 +20,22 @@ export enum ModalSize {
   FULLSCREEN = 'fullscreen',
 }
 
-export type ModalProps = Readonly<{
-  onClose: () => void
-  isOpen?: boolean
-  children?: React.ReactNode
-  className?: string
-  modalContentClassName?: string
-  closeOnEsc?: boolean
-  closeOnOutsideClick?: boolean
-  displayCloseButton?: boolean
-  size?: ModalSize
-  displayDimmer?: boolean
-  closeButtonTitle?: string
-  forwardedRef?: Ref<HTMLDivElement>
-  ariaLabelledBy?: string
-  ariaDescribedBy?: string
-  noHorizontalSpacing?: boolean
-}>
+export type ModalProps = A11yProps &
+  Readonly<{
+    onClose: () => void
+    isOpen?: boolean
+    children?: React.ReactNode
+    className?: string
+    modalContentClassName?: string
+    closeOnEsc?: boolean
+    closeOnOutsideClick?: boolean
+    displayCloseButton?: boolean
+    size?: ModalSize
+    displayDimmer?: boolean
+    closeButtonTitle?: string
+    forwardedRef?: Ref<HTMLDivElement>
+    noHorizontalSpacing?: boolean
+  }>
 
 export class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
@@ -142,6 +142,7 @@ export class Modal extends Component<ModalProps> {
 
   render() {
     const baseClassName = 'kirk-modal'
+    const a11yAttrs = pickA11yProps<ModalProps>(this.props)
 
     const dimmerClassNames = cc([
       this.props.className,
@@ -167,9 +168,8 @@ export class Modal extends Component<ModalProps> {
               <div
                 className={contentClassNames}
                 ref={this.props.forwardedRef}
+                {...a11yAttrs}
                 role="dialog"
-                aria-labelledby={this.props.ariaLabelledBy}
-                aria-describedby={this.props.ariaDescribedBy}
                 aria-modal="true"
               >
                 <div className={`${baseClassName}-dialog`}>

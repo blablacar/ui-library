@@ -36,11 +36,6 @@ describe('Item', () => {
     expect(wrapper.hasClass(customClassName)).toBe(true)
   })
 
-  it('Should accept `ariaLabel`', () => {
-    const wrapper = shallow(<Item ariaLabel="testLabel" />)
-    expect(wrapper.prop('aria-label')).toEqual('testLabel')
-  })
-
   it('Should be highlighted', () => {
     const wrapper = shallow(<Item highlighted />)
     expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)
@@ -148,8 +143,11 @@ describe('Item', () => {
 
   it('Should display aria-label on right title', () => {
     const wrapper = mount(
-      <Item rightTitle="Right title" rightTitleAriaLabel="Right title aria-label" />,
+      <Item
+        rightTitle="Right title"
+        rightTitleAriaProps={{ 'aria-label': 'Right title aria-label' }}
+      />,
     )
-    expect(wrapper.find(Text).prop('ariaLabel')).toBe('Right title aria-label')
+    expect(wrapper.find(Text).prop('aria-label')).toBe('Right title aria-label')
   })
 })

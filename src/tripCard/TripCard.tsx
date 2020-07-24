@@ -5,6 +5,7 @@ import isEmpty from 'lodash.isempty'
 import { Card } from '../_internals/card'
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Place } from '../_utils/place'
 import { Avatar } from '../avatar'
 import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
@@ -32,8 +33,7 @@ export interface User {
   rating?: string
 }
 
-export interface TripCardProps {
-  ariaLabel?: string
+export interface TripCardProps extends A11yProps {
   href: string | JSX.Element
   itinerary: Place[]
   driver?: User
@@ -76,21 +76,22 @@ const renderMorePassengers = (count: number) => (
   </li>
 )
 
-export const TripCard = ({
-  className,
-  ariaLabel,
-  href,
-  itinerary,
-  driver,
-  passengers = [],
-  price,
-  flags = {},
-  titles = {},
-  metaUrl = null,
-  statusInformation = null,
-  badge = null,
-  title = null,
-}: TripCardProps) => {
+export const TripCard = (props: TripCardProps) => {
+  const {
+    className,
+    href,
+    itinerary,
+    driver,
+    passengers = [],
+    price,
+    flags = {},
+    titles = {},
+    metaUrl = null,
+    statusInformation = null,
+    badge = null,
+    title = null,
+  } = props
+  const a11yAttrs = pickA11yProps<TripCardProps>(props)
   const departure = itinerary[0]
   const arrival = itinerary[itinerary.length - 1]
   const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
@@ -107,14 +108,14 @@ export const TripCard = ({
     componentProps = {
       ...href.props,
       rel: 'nofollow',
-      'aria-label': ariaLabel,
+      ...a11yAttrs,
     }
   } else {
     componentTag = 'a'
     componentProps = {
       href,
       rel: 'nofollow',
-      'aria-label': ariaLabel,
+      ...a11yAttrs,
     }
   }
 

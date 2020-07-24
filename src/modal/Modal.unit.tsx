@@ -14,7 +14,7 @@ describe('Modal', () => {
 
   it('Should have the correct a11y attributes', () => {
     const wrapper = mount(
-      <Modal isOpen ariaLabelledBy="labelledBy" ariaDescribedBy="describedBy" />,
+      <Modal isOpen aria-labelledby="labelledBy" aria-describedby="describedBy" />,
     )
     const modal = wrapper.find('[role="dialog"]')
     expect(modal.length).toBe(1)

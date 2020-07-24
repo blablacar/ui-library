@@ -40,13 +40,13 @@ describe('Itinerary component', () => {
   })
 
   it('Render with aria-labelledby', () => {
-    const itinerary = shallow(<Itinerary ariaLabelledBy="id" places={places} />)
+    const itinerary = shallow(<Itinerary aria-labelledby="id" places={places} />)
     expect(itinerary.prop('aria-labelledby')).toEqual('id')
   })
 
   it('Render with aria-label', () => {
     const itinerary = shallow(
-      <Itinerary ariaLabelledBy="id" ariaLabel="testLabel" places={places} />,
+      <Itinerary aria-labelledby="id" aria-label="testLabel" places={places} />,
     )
     expect(itinerary.prop('aria-label')).toEqual('testLabel')
     expect(itinerary.prop('aria-labelledby')).toEqual(undefined)

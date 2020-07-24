@@ -40,9 +40,9 @@ describe('Text', () => {
 
   it('Should have aria-label attribute when present and undefined otherwise', () => {
     const wrapper = shallow(<Text>test</Text>)
-    expect(wrapper.prop('ariaLabel')).toBeUndefined()
+    expect(wrapper.prop('aria-label')).toBeUndefined()
 
-    wrapper.setProps({ ariaLabel: 'Complementary description' })
+    wrapper.setProps({ 'aria-label': 'Complementary description' })
 
     expect(wrapper.prop('aria-label')).toBe('Complementary description')
   })

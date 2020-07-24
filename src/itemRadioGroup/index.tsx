@@ -1,10 +1,11 @@
 import React, { cloneElement, PureComponent } from 'react'
 
 import { OnChangeParameters } from '../_internals/onChange'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { ItemRadioProps, ItemRadioStatus } from '../itemRadio/ItemRadio'
 import { ItemsList } from '../itemsList'
 
-export interface ItemRadioGroupProps {
+export interface ItemRadioGroupProps extends A11yProps {
   readonly name: string
   readonly children: React.ReactElement<ItemRadioProps>[]
   readonly className?: string
@@ -14,7 +15,6 @@ export interface ItemRadioGroupProps {
   readonly status?: ItemRadioStatus
   readonly withSeparators?: boolean
   readonly withChevrons?: boolean
-  readonly ariaLabelledBy?: string
 }
 
 interface ItemRadioGroupState {
@@ -45,21 +45,14 @@ export class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadio
   }
 
   render() {
-    const {
-      children,
-      status,
-      name,
-      className,
-      withSeparators,
-      withChevrons,
-      ariaLabelledBy,
-    } = this.props
+    const { children, status, name, className, withSeparators, withChevrons } = this.props
+    const a11yAttrs = pickA11yProps<ItemRadioGroupProps>(this.props)
     return (
       <ItemsList
         withSeparators={withSeparators}
         className={className}
+        {...a11yAttrs}
         role="radiogroup"
-        aria-labelledby={ariaLabelledBy}
       >
         {children.map(item => {
           const itemProps: Partial<ItemRadioProps> = item.props

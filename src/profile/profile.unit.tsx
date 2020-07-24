@@ -22,8 +22,8 @@ describe('Profile default', () => {
     expect(defaultProfile.find(Item).prop('leftTitle')).toEqual('Jack Sparrow')
   })
 
-  it("Shouldn't have `ariaLabel` by default", () => {
-    expect(defaultProfile.find(Item).prop('ariaLabel')).toBeFalsy()
+  it("Shouldn't have `aria-label` by default", () => {
+    expect(defaultProfile.find(Item).prop('aria-label')).toBeFalsy()
   })
 
   it('Should pass a title prop to Item', () => {
@@ -39,9 +39,9 @@ describe('Profile default', () => {
 })
 
 describe('Profile', () => {
-  it('Should have `ariaLabel`', () => {
-    const profile = mount(<Profile {...defaultProps} ariaLabel="testLabel" />)
-    expect(profile.find(Item).prop('ariaLabel')).toEqual('testLabel')
+  it('Should have `aria-label`', () => {
+    const profile = mount(<Profile {...defaultProps} aria-label="testLabel" />)
+    expect(profile.find(Item).prop('aria-label')).toEqual('testLabel')
   })
 
   it('Should display info if no rating is provided', () => {

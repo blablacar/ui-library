@@ -1,11 +1,11 @@
 export interface CommonFieldsProps {
-  readonly id?: string
-  readonly name: string
-  readonly className?: string
-  readonly value: string
-  readonly disabled?: boolean
-  readonly autoFocus?: boolean
-  readonly required?: boolean
+  id?: string
+  name: string
+  className?: string
+  value: string
+  disabled?: boolean
+  autoFocus?: boolean
+  required?: boolean
 }
 
 export interface A11yProps {
