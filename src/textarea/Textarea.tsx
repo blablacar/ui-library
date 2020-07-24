@@ -8,6 +8,7 @@ import isEmpty from 'lodash.isempty'
 import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
 import { Button, ButtonStatus } from '../button'
+import { StyledTextarea } from './Textarea.style'
 
 export interface CommonFormFields {
   name: string
@@ -246,7 +247,9 @@ export class Textarea extends PureComponent<TextareaProps, TextAreaState> {
     attributes.className = cc(textareaFieldClassNames)
 
     return (
-      <div className={cc(['kirk-textarea', prefix({ error: !!error, disabled }), className])}>
+      <StyledTextarea
+        className={cc(['kirk-textarea', prefix({ error: !!error, disabled }), className])}
+      >
         {label && <label htmlFor={id}>{label}</label>}
         <div
           onClick={this.onWrapperClick}
@@ -280,7 +283,7 @@ export class Textarea extends PureComponent<TextareaProps, TextAreaState> {
           )}
         </div>
         {Boolean(error) && this.renderError()}
-      </div>
+      </StyledTextarea>
     )
   }
 }
