@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
+import {} from '@testing-library/react'
+
 import { Title } from './Title'
 
 describe('Title', () => {

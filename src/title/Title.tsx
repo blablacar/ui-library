@@ -1,5 +1,6 @@
-import React, { Fragment, ReactNode } from 'react'
-import cc from 'classcat'
+import React, { ElementType, ReactNode } from 'react'
+
+import { StyledTitle } from './Title.style'
 
 export interface TitleProps {
   readonly id?: string
@@ -14,12 +15,10 @@ export const Title = ({ id, className, children, headingLevel = 1 }: TitleProps)
   if (!isHeadingAvailable(Number(headingLevel))) {
     return null
   }
-  return React.createElement(
-    `h${headingLevel}`,
-    {
-      id,
-      className: cc(['kirk-title', className]),
-    },
-    <Fragment>{children}</Fragment>,
+
+  return (
+    <StyledTitle as={`h${headingLevel}` as ElementType<any>} id={id} className={className}>
+      {children}
+    </StyledTitle>
   )
 }
