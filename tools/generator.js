@@ -30,17 +30,18 @@ function renameFiles({ name, dir }) {
       if (err) {
         return reject(err)
       }
-      files.forEach(f => {
-        if (f === 'package.json') {
-          return
-        }
-        const rest = f
-          .split('.')
-          .splice(1)
-          .join('.')
-        fs.rename(`${dir}${f}`, `${dir}${name}.${rest}`, err => {
-          err ? reject(err) : resolve({ name, dir })
-        })
+
+
+      const components = [...files.slice(0, 5)]
+
+      components.forEach(f => {
+          const rest = f
+            .split('.')
+            .splice(1)
+            .join('.')
+          fs.rename(`${dir}${f}`, `${dir}${name}.${rest}`, err => {
+            err ? reject(err) : resolve({ name, dir })
+          })
       })
     })
   })
