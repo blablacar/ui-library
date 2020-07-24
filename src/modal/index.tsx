@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {
   color,
   componentSizes,
+  horizontalSpace,
   modalSize,
   radius,
   responsiveBreakpoints,
@@ -51,7 +52,10 @@ const StyledModal = styled(Modal)`
   & .kirk-modal-dialog {
     position: relative;
     display: flex;
-    padding: ${space.xl};
+    padding-top: ${space.xl};
+    padding-bottom: ${space.xl};
+    padding-left: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
+    padding-right: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
     margin: ${space.xl} auto;
     width: ${modalSize.m};
     background-color: ${color.white};

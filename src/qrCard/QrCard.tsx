@@ -2,11 +2,11 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Card } from '../_internals/card'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { ItemInfo } from '../itemInfo'
 import { SubHeader } from '../subHeader'
 
-export interface QrCardProps {
-  readonly ariaLabel?: string
+export interface QrCardProps extends A11yProps {
   readonly className?: string
   readonly imageUrl: string
   readonly itemMainTitle?: string
@@ -14,19 +14,17 @@ export interface QrCardProps {
   readonly title: string
 }
 
-export const QrCard = ({
-  ariaLabel,
-  className,
-  itemMainTitle,
-  imageUrl,
-  itemMainInfo,
-  title,
-}: QrCardProps) => (
-  <Card className={cc(['kirk-qrCard', className])}>
-    <SubHeader>{title}</SubHeader>
-    <img src={imageUrl} aria-label={ariaLabel} alt={ariaLabel} />
-    {(itemMainTitle || itemMainInfo) && (
-      <ItemInfo mainTitle={itemMainTitle} mainInfo={itemMainInfo} />
-    )}
-  </Card>
-)
+export const QrCard = (props: QrCardProps) => {
+  const { className, itemMainTitle, imageUrl, itemMainInfo, title } = props
+  const a11yAttrs = pickA11yProps<QrCardProps>(props)
+
+  return (
+    <Card className={cc(['kirk-qrCard', className])}>
+      <SubHeader>{title}</SubHeader>
+      <img src={imageUrl} {...a11yAttrs} alt={a11yAttrs['aria-label']} />
+      {(itemMainTitle || itemMainInfo) && (
+        <ItemInfo mainTitle={itemMainTitle} mainInfo={itemMainInfo} />
+      )}
+    </Card>
+  )
+}

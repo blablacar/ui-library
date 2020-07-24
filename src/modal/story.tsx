@@ -69,8 +69,8 @@ stories.add(
       displayDimmer={boolean('displayDimmer', true)}
       isOpen={false}
       closeButtonTitle={text('Close icon text', 'Close modal')}
-      ariaLabelledBy="label1"
-      ariaDescribedBy="description1"
+      aria-labelledby="label1"
+      aria-describedby="description1"
       size={select('size', ModalSize, ModalSize.MEDIUM)}
     />
   ),
@@ -87,8 +87,8 @@ stories.add('fullscreen', () => (
     displayDimmer={boolean('displayDimmer', false)}
     displayCloseButton={boolean('displayCloseButton', true)}
     isOpen={false}
-    ariaLabelledBy="label2"
-    ariaDescribedBy="description2"
+    aria-labelledby="label2"
+    aria-describedby="description2"
     size={select('size', ModalSize, ModalSize.FULLSCREEN)}
   />
 ))

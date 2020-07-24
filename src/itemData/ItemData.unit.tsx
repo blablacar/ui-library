@@ -39,9 +39,10 @@ it("Shouldn't display left addon button if no main title", () => {
   expect(wrapper.find('.kirk-item-title--withButtonAddon button').exists()).toBe(false)
 })
 
-it('Should display right data with aria-label attribute', () => {
-  const wrapper = mount(<ItemData data="Data" dataAriaLabel="Data aria-label" />)
+it('Should display left and right elements', () => {
+  const wrapper = mount(<ItemData {...defaultProps} />)
   const text = wrapper.find(Text)
-  expect(text.hasClass('kirk-item-title')).toBe(true)
-  expect(text.prop('ariaLabel')).toBe('Data aria-label')
+  expect(text).toHaveLength(2)
+  expect(text.at(0).text()).toBe('Main information')
+  expect(text.at(1).text()).toBe('Data')
 })

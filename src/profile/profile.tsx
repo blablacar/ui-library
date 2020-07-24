@@ -2,14 +2,14 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Item } from '../_internals/item'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Avatar } from '../avatar'
 import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
 import { TextBody } from '../typography/body'
 
-export interface ProfileProps {
+export interface ProfileProps extends A11yProps {
   readonly className?: string
-  readonly ariaLabel?: string
   readonly title: string
   readonly info?: string | JSX.Element
   readonly isLink?: boolean
@@ -27,25 +27,26 @@ export interface ProfileProps {
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export const Profile = ({
-  className,
-  ariaLabel,
-  title,
-  info,
-  picture,
-  alt,
-  isIdChecked,
-  isMedium,
-  isLink,
-  score,
-  ratings,
-  ratingsLabel,
-  href,
-  onClick,
-  onBlur,
-  onFocus,
-  onMouseDown,
-}: ProfileProps) => {
+export const Profile = (props: ProfileProps) => {
+  const {
+    className,
+    title,
+    info,
+    picture,
+    alt,
+    isIdChecked,
+    isMedium,
+    isLink,
+    score,
+    ratings,
+    ratingsLabel,
+    href,
+    onClick,
+    onBlur,
+    onFocus,
+    onMouseDown,
+  } = props
+  const a11yAttrs = pickA11yProps<ProfileProps>(props)
   const getLeftBody =
     ratings > 0 ? (
       <Rating ratings={ratings} score={score}>
@@ -60,7 +61,6 @@ export const Profile = ({
   return (
     <Item
       className={cc([className, { 'kirk-profile-size-medium': isMedium }])}
-      ariaLabel={ariaLabel}
       leftTitle={title}
       leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY1 : TextDisplayType.TITLE}
       leftBody={getLeftBody}
@@ -76,6 +76,7 @@ export const Profile = ({
       onFocus={onFocus}
       onMouseDown={onMouseDown}
       isClickable={showChevron}
+      {...a11yAttrs}
     />
   )
 }

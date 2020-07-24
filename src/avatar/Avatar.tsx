@@ -30,7 +30,7 @@ const unreadNotificationsBadge = (
 ) => (
   <Badge
     className="kirk-avatar-badge--unreadNotifications"
-    ariaLabel={unreadNotificationsCountAriaLabel}
+    aria-label={unreadNotificationsCountAriaLabel}
   >
     {unreadNotificationsCount}
   </Badge>

@@ -24,7 +24,7 @@ stories.add('with title and image', () => (
       title={text('Title', 'Jack James Dupont')}
       itemMainTitle={text('Label', '1st class')}
       itemMainInfo={text('SubLabel', 'Seat n°34')}
-      ariaLabel={text('AriaLabel', 'Seat QR code')}
+      aria-label={text('AriaLabel', 'Seat QR code')}
     />
   </Section>
 ))
@@ -42,7 +42,7 @@ stories.add('with a long description', () => (
         'SubLabel',
         'Can you add a case with a long text: Your seat number will be assigned to you 1 hour before departure.',
       )}
-      ariaLabel={text('AriaLabel', 'Seat QR code')}
+      aria-label={text('AriaLabel', 'Seat QR code')}
     />
   </Section>
 ))

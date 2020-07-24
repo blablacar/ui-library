@@ -113,7 +113,7 @@ stories.add('default', () => {
     <Section>
       <h1 id="titleId">Title example</h1>
       <Itinerary
-        ariaLabelledBy={ariaLabelledBy}
+        aria-labelledby={ariaLabelledBy}
         fromAddon={fromAddon}
         fromAddonAriaLabel={fromAddonLabel}
         toAddon={toAddon}
@@ -124,7 +124,9 @@ stories.add('default', () => {
         highlightRoad={highlightRoad}
         isCollapsible={boolean('isCollapsible', false)}
         collapsedLabel={text('collapsed label', `${placesWithStopovers.length} stops`)}
-        collapsedAriaLabel={text('collapsed aria label', 'Show or hide all stops')}
+        collapsedAriaProps={{
+          'aria-label': text('collapsed aria label', 'Show or hide all stops'),
+        }}
       />
     </Section>
   )
@@ -189,7 +191,7 @@ stories.add('with stopovers', () => {
   const highlightRoad = boolean('Highlight road', true)
   return (
     <Itinerary
-      ariaLabel={ariaLabel}
+      aria-label={ariaLabel}
       fromAddon={fromAddon}
       fromAddonAriaLabel={fromAddonLabel}
       toAddon={toAddon}

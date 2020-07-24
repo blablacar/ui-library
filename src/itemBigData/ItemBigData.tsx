@@ -11,7 +11,6 @@ export interface ItemBigDataProps extends NormalizeProps, A11yProps {
   readonly className?: string
   readonly mainTitle?: string
   readonly tag?: JSX.Element
-  readonly ariaLabel?: string
 }
 
 const StyledItemBigData = styled(Item)`
@@ -28,7 +27,7 @@ const StyledItemBigData = styled(Item)`
 `
 
 export const ItemBigData = (props: ItemBigDataProps) => {
-  const { mainInfo, className, mainTitle, tag, ariaLabel, hasHorizontalSpacing = false } = props
+  const { mainInfo, className, mainTitle, tag, hasHorizontalSpacing = false } = props
   const a11yAttrs = pickA11yProps<ItemBigDataProps>(props)
 
   return (
@@ -37,7 +36,6 @@ export const ItemBigData = (props: ItemBigDataProps) => {
       leftTitle={<TextDisplay2>{mainTitle}</TextDisplay2>}
       leftBody={mainInfo}
       tag={tag}
-      ariaLabel={ariaLabel}
       hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}
     />

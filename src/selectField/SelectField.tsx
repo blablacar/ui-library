@@ -3,19 +3,17 @@ import cc from 'classcat'
 
 import { OnChangeParameters } from '../_internals/onChange'
 import { color } from '../_utils/branding'
-import { CommonFieldsProps } from '../_utils/interfaces'
+import { A11yProps, CommonFieldsProps, pickA11yProps } from '../_utils/interfaces'
 import { ChevronIcon } from '../icon/chevronIcon'
 
 export const selectHeight = '52px'
 
-export interface SelectFieldItem {
+export interface SelectFieldItem extends A11yProps {
   readonly value: string | number
   readonly label: string
-  readonly ariaLabel?: string
 }
 
-export interface SelectFieldProps extends Partial<CommonFieldsProps> {
-  readonly ariaLabel?: string
+export interface SelectFieldProps extends Partial<CommonFieldsProps>, A11yProps {
   readonly options: SelectFieldItem[]
   readonly defaultValue?: string
   readonly onChange?: (obj: OnChangeParameters) => void
@@ -28,13 +26,11 @@ export interface SelectFieldProps extends Partial<CommonFieldsProps> {
 }
 
 export const SelectField = React.forwardRef(
-  (
-    {
-      id,
+  (props: SelectFieldProps, ref: RefObject<HTMLSelectElement>) => {
+    const {
       name,
       className,
       defaultValue,
-      ariaLabel,
       options,
       onChange,
       onFocus = () => {},
@@ -45,9 +41,8 @@ export const SelectField = React.forwardRef(
       autoFocus,
       autoComplete,
       focusBorder = true,
-    }: SelectFieldProps,
-    ref: RefObject<HTMLSelectElement>,
-  ) => {
+    } = props
+    const a11yAttrs = pickA11yProps<SelectFieldProps>(props)
     const baseClassName = 'kirk-selectField'
     const [hasFocus, setFocus] = useState(false)
 
@@ -66,9 +61,7 @@ export const SelectField = React.forwardRef(
         ])}
       >
         <select
-          id={id}
           name={name}
-          aria-label={ariaLabel}
           onChange={event => onChange({ name, value: event.target.value })}
           onFocus={event => {
             setFocus(true)
@@ -84,9 +77,10 @@ export const SelectField = React.forwardRef(
           autoFocus={autoFocus}
           autoComplete={autoComplete}
           ref={ref}
+          {...a11yAttrs}
         >
-          {options.map(({ value, label, ariaLabel: optionAriaLabel }: SelectFieldItem) => (
-            <option key={`${value}${label}`} value={value} aria-label={optionAriaLabel}>
+          {options.map(({ value, label, ...optionA11yAttrs }: SelectFieldItem) => (
+            <option key={`${value}${label}`} value={value} {...optionA11yAttrs}>
               {label}
             </option>
           ))}
