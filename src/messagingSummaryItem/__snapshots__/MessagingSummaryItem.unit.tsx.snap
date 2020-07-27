@@ -339,7 +339,7 @@ button:focus:not(.focus-visible).c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c2 kirk-avatar"
+      className="kirk-avatar--image kirk-avatar c2"
     >
       <img
         alt=""
@@ -712,7 +712,7 @@ button:focus:not(.focus-visible).c0 {
     className="kirk-item-rightAddon"
   >
     <div
-      className="kirk-avatar--image c2 kirk-avatar"
+      className="kirk-avatar--image kirk-avatar c2"
     >
       <img
         alt=""
