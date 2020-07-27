@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[FIX]** Removed margin bottom from `Tabs`
 
 # v38.0.0 (24/07/2020)
 
