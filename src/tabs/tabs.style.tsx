@@ -10,7 +10,6 @@ export const StyledTabs = styled.div`
   }
 
   & .kirk-tabs {
-    margin-bottom: ${space.l};
     border-bottom: 1px solid ${color.gray};
   }
 

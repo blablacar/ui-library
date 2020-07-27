@@ -22,7 +22,6 @@ exports[`TabsSection should render default TabsSection 1`] = `
 }
 
 .c1 .kirk-tabs {
-  margin-bottom: 16px;
   border-bottom: 1px solid #DDD;
 }
 
