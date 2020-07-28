@@ -2,7 +2,7 @@
 
 [...]
 
-# v38.0.0 (28/07/2020)
+# v38.1.0 (28/07/2020)
 
 - **[FIX]** Removed margin bottom from `Tabs`
 - **[NEW]** Added `RedCircleIcon`
