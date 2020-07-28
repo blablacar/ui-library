@@ -1,0 +1,44 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import { ItemRadio } from '../itemRadio'
+import { ItemRadioGroup } from '../itemRadioGroup'
+import { TheVoice } from '../theVoice'
+import { Grip } from './index'
+
+<Meta title="Widgets|Grip" />
+
+# Grip
+
+<Preview>
+  <Story name="Default">
+    <Grip onSlideUp={action('Slide Up')} onSlideDown={action('Slide Down')}>
+      <TheVoice>What is your route?</TheVoice>
+      <ItemRadioGroup>
+        <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
+        <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
+      </ItemRadioGroup>
+    </Grip>
+  </Story>
+</Preview>
+
+
+## Specifications
+
+Use it to indicate that a part of the screen is reactive to slide touch events.
+
+```jsx
+import Grip from '@blablacar/ui-library/build/grip'
+<Grip
+  onSlideUp={() => {
+    /* ... */
+  }}
+  onSlideDown={() => {
+    /* ... */
+  }}
+>
+  <TheVoice>What is your route?</TheVoice>
+</Grip>
+```
+
+<Props of={Grip} />
