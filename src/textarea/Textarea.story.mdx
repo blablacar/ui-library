@@ -3,6 +3,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
 
+import { BaseSection } from '../layout/section/baseSection'
 import { SendMessageIcon } from '../icon/sendMessageIcon'
 import { Textarea } from './index'
 
@@ -12,24 +13,26 @@ import { Textarea } from './index'
 
 <Preview>
   <Story name="Default">
-    <Textarea
-      id={text('id')}
-      name={text('name', 'inputName')}
-      placeholder={text('placeholder', 'Some placeholder text')}
-      labelledBy={text('aria label')}
-      disabled={boolean('disabled', false)}
-      readOnly={boolean('readOnly', false)}
-      label={text('label')}
-      error={text('error message', '')}
-      onChange={action('changed')}
-      onFocus={action('focused')}
-      onBlur={action('blurred')}
-      focus={boolean('focus', false)}
-      required={boolean('required', false)}
-      maxLength={number('maxLength')}
-      autoComplete={select('autocomplete', ['on', 'off'])}
-      title={text('title', 'accessibility text')}
-    />
+    <BaseSection>
+        <Textarea
+          id={text('id')}
+          name={text('name', 'inputName')}
+          placeholder={text('placeholder', 'Some placeholder text')}
+          labelledBy={text('aria label')}
+          disabled={boolean('disabled', false)}
+          readOnly={boolean('readOnly', false)}
+          label={text('label')}
+          error={text('error message', '')}
+          onChange={action('changed')}
+          onFocus={action('focused')}
+          onBlur={action('blurred')}
+          focus={boolean('focus', false)}
+          required={boolean('required', false)}
+          maxLength={number('maxLength')}
+          autoComplete={select('autocomplete', ['on', 'off'])}
+          title={text('title', 'accessibility text')}
+        />
+    </BaseSection>
   </Story>
 </Preview>
 
