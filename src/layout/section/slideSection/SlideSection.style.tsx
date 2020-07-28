@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { shadow } from '../../../_utils/branding'
+
 export const StyledSlideLayout = styled.div`
   position: relative;
   overflow: hidden;
@@ -18,6 +20,7 @@ export const StyledSlidePanel = styled.div<{
   left: 0;
   right: 0;
   transition: transform ease 300ms;
+  box-shadow: ${shadow.slideSection};
 
   &.default {
     transform: translateY(-${props => props.defaultHeight}px);
