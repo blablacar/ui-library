@@ -35,6 +35,8 @@ export type ModalProps = A11yProps &
     closeButtonTitle?: string
     forwardedRef?: Ref<HTMLDivElement>
     noHorizontalSpacing?: boolean
+    layoutModeEnabled?: boolean
+    isLoading?: boolean
   }>
 
 export class Modal extends Component<ModalProps> {
@@ -50,6 +52,11 @@ export class Modal extends Component<ModalProps> {
     size: ModalSize.MEDIUM,
     displayDimmer: true,
     forwardedRef: null,
+    isLoading: false,
+  }
+
+  state = {
+    showFooterBorder: true,
   }
 
   constructor(props: ModalProps) {
@@ -140,6 +147,14 @@ export class Modal extends Component<ModalProps> {
     this.focusTrap.activate()
   }
 
+  onScroll = (e: React.UIEvent<HTMLElement>): void => {
+    const element = e.currentTarget
+    const isAtBottom = element.clientHeight + element.scrollTop >= element.scrollHeight
+    this.setState({
+      showFooterBorder: !isAtBottom,
+    })
+  }
+
   render() {
     const baseClassName = 'kirk-modal'
     const a11yAttrs = pickA11yProps<ModalProps>(this.props)
@@ -171,6 +186,7 @@ export class Modal extends Component<ModalProps> {
                 {...a11yAttrs}
                 role="dialog"
                 aria-modal="true"
+                onScroll={this.onScroll}
               >
                 <div className={`${baseClassName}-dialog`}>
                   {this.props.displayCloseButton && (
@@ -183,7 +199,14 @@ export class Modal extends Component<ModalProps> {
                       <CrossIcon size="18" iconColor={color.blue} />
                     </Button>
                   )}
-                  <div className={`${baseClassName}-body`}>{this.props.children}</div>
+                  <div
+                    className={cc([
+                      `${baseClassName}-body`,
+                      this.state.showFooterBorder ? `${baseClassName}-modalFooterBorder` : '',
+                    ])}
+                  >
+                    {this.props.children}
+                  </div>
                 </div>
               </div>
             </CustomTransition>

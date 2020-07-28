@@ -69,8 +69,8 @@ exports[`ItemsSection should render default items section 1`] = `
 .c2 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -332,8 +332,8 @@ exports[`ItemsSection should render non-default items section 1`] = `
 .c2 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {

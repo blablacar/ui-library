@@ -53,7 +53,7 @@ const StyledModal = styled(Modal)`
     position: relative;
     display: flex;
     padding-top: ${space.xl};
-    padding-bottom: ${space.xl};
+    padding-bottom: ${props => (props.layoutModeEnabled ? 0 : space.xl)};
     padding-left: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
     padding-right: ${props => (props.noHorizontalSpacing ? 0 : horizontalSpace.global)};
     margin: ${space.xl} auto;
@@ -71,6 +71,8 @@ const StyledModal = styled(Modal)`
   }
 
   & .kirk-modal-body {
+    display: ${props => (props.layoutModeEnabled ? 'flex' : '')};
+    flex-direction: ${props => (props.layoutModeEnabled ? 'column' : '')};
     flex: 1;
   }
 
@@ -103,6 +105,45 @@ const StyledModal = styled(Modal)`
   }
 `
 
+const ModalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+`
+
+const ModalFooter = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: ${color.white};
+  flex-shrink: 0;
+  z-index: 2;
+
+  .kirk-modal-modalFooterBorder & {
+    border-top: 1px solid ${color.gray};
+  }
+`
+
+type ModalFogProps = {
+  isLoading?: boolean
+}
+
+const transitionDelay = '420ms'
+const transitionTimingFunction = 'ease-in-out'
+
+const ModalFog = styled.div<ModalFogProps>`
+  position: absolute;
+  background: ${color.white};
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: ${props => (props.isLoading ? 0.64 : 0)};
+  visibility: ${props => (props.isLoading ? '' : 'hidden')};
+  transition: opacity ${transitionDelay} ${transitionTimingFunction},
+    visibility ${transitionDelay} ${transitionTimingFunction};
+`
+
 export { ModalSize, ModalProps } from './Modal'
-export { StyledModal as Modal }
+export { StyledModal as Modal, ModalBody, ModalFooter, ModalFog }
 export default StyledModal
