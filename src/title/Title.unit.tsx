@@ -22,7 +22,6 @@ describe('Title', () => {
 
     render(<Title {...props} />)
 
-    expect(screen.getByRole('heading').className.toLowerCase()).toContain('kirk-title')
     expect(screen.getByRole('heading')).toHaveTextContent(title)
     expect(screen.getByRole('heading').nodeName.toLowerCase()).toBe('h1')
   })
