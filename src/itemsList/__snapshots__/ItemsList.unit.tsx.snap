@@ -89,8 +89,8 @@ exports[`ItemsList Should render an unordered list 1`] = `
 .c1 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c1 {
@@ -463,8 +463,8 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
 .c1 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c1 {
@@ -589,8 +589,8 @@ button:focus:not(.focus-visible).c1 {
 .c4 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c4 {
@@ -862,8 +862,8 @@ exports[`ItemsList Should render an unordered list with the separators classname
 .c1 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c1 {
@@ -988,8 +988,8 @@ button:focus:not(.focus-visible).c1 {
 .c4 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c4 {

@@ -1,7 +1,12 @@
 # Unreleased
 
+[...]
+
+# v38.1.0 (28/07/2020)
+
 - **[FIX]** Removed margin bottom from `Tabs`
 - **[NEW]** Added `RedCircleIcon`
+- **[UPDATE]** Added `ModalBody`, `ModalFooter`, `ModalFog` components, and `isLoading`, `layoutModeEnabled` props on `Modal`
 
 # v38.0.0 (24/07/2020)
 

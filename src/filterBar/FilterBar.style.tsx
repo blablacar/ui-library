@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { space } from '../_utils/branding'
+import { componentSizes, space } from '../_utils/branding'
 import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 const supplyItemHeight = '52px'
@@ -11,6 +11,8 @@ export const StyledFilterBar = styled.div`
   ${normalizeHorizontally};
   padding-top: ${space.xl};
   padding-bottom: ${space.xl};
+  max-width: ${componentSizes.smallSectionWidth};
+  margin: auto;
 `
 
 export const StyledSupplyInfo = styled.ul`
