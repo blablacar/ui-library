@@ -1,4 +1,5 @@
-import React, { ElementType, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
+import cc from 'classcat'
 
 import { StyledTitle } from './Title.style'
 
@@ -6,18 +7,25 @@ export interface TitleProps {
   readonly id?: string
   readonly className?: string
   readonly children: ReactNode
-  readonly headingLevel?: number | string
+  readonly headingLevel?: 1 | 2 | 3 | 4 | 5 | 6 | '1' | '2' | '3' | '4' | '5' | '6'
 }
 
-export const isHeadingAvailable = (level: number) => level >= 1 && level <= 6
+const HEADING_LEVEL_MAPPING = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const
 
 export const Title = ({ id, className, children, headingLevel = 1 }: TitleProps) => {
-  if (!isHeadingAvailable(Number(headingLevel))) {
-    return null
+  let headingLevelNumber: number
+  if (typeof headingLevel === 'string') {
+    headingLevelNumber = parseInt(headingLevel, 10)
+  } else {
+    headingLevelNumber = headingLevel
   }
 
   return (
-    <StyledTitle as={`h${headingLevel}` as ElementType<any>} id={id} className={className}>
+    <StyledTitle
+      as={HEADING_LEVEL_MAPPING[headingLevelNumber - 1]}
+      id={id}
+      className={cc(['kirk-title', className])}
+    >
       {children}
     </StyledTitle>
   )
