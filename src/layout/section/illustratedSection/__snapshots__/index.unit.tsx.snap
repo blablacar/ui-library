@@ -167,7 +167,7 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
       className="kirk-illustratedSection-illustration"
     >
       <div
-        className="kirk-avatar--large kirk-avatar--image c2 kirk-avatar"
+        className="kirk-avatar--large kirk-avatar--image kirk-avatar c2"
       >
         <img
           alt=""

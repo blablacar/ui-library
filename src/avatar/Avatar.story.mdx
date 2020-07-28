@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Avatar } from './index'
+
+<Meta title="Widgets|Avatar" />
+
+# Avatar
+
+<Preview>
+  <Story name="Default">
+    <Avatar
+      image="//placehold.it/80x80"
+      alt="alternative text"
+      isIdChecked={false}
+      unreadNotificationsCount="1"
+      unreadNotificationsCountAriaLabel="1"
+      isSmall={false}
+      isLarge={false}
+      isMedium={false}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Avatar } from '@blablacar/ui-library/build/avatar'
+
+<Avatar
+  image="//placehold.it/80x80"
+  alt="alternative text"
+  isIdChecked={false}
+  unreadNotificationsCount="1"
+  unreadNotificationsCountAriaLabel="1"
+  isSmall={false}
+  isLarge={false}
+  isMedium={false}
+/>
+```
+
+<Props of={Avatar} />
