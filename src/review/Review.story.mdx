@@ -1,0 +1,41 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Review } from './index'
+
+export const reviewResponseProps = {
+  title: "Reply's from Karen",
+  text: 'Thanks for the comment !',
+  formattedDatetime: '06 jul - 18:39',
+  isoDatetime: '2017-08-07T18:39:40.526Z',
+  isResponse: true,
+}
+
+<Meta title="Widgets|Review" />
+
+# Review
+
+<Preview>
+  <Story name="Default">
+    <Review {...reviewResponseProps} isResponse />
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Review } from '@blablacar/ui-library/build/Review'
+
+<Review
+  title="Reply's from Karen"
+  text="Thanks for the comment !"
+  formattedDatetime="06 jul - 18:39"
+  isoDatetime="2017-08-07T18:39:40.526Z"
+  isResponse={true}
+/>
+```
+
+<Props of={Review} />
