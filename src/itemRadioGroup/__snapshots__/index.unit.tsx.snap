@@ -89,8 +89,8 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 .c2 {
   padding-left: 24px !important;
   padding-right: 24px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
