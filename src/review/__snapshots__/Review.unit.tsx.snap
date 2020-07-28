@@ -115,7 +115,6 @@ Array [
 
 .c0 .kirk-review-title {
   margin: 0;
-  font-size: 1em;
 }
 
 <blockquote
@@ -270,11 +269,10 @@ Array [
 
 .c0 .kirk-review-title {
   margin: 0;
-  font-size: 1em;
 }
 
 <blockquote
-    className="c0 kirk-is-review-response"
+    className="kirk-is-review-response c0"
     itemScope={true}
     itemType="http://schema.org/Review"
   >
