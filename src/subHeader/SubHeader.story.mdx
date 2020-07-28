@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { SubHeader } from './index'
+
+<Meta title="Text|SubHeader" />
+
+# **SubHeader**
+
+<Preview>
+  <Story name="Default">
+    <SubHeader>SubHeader Title</SubHeader>
+  </Story>
+</Preview>
+
+## Specifications
+
+### Behavior
+
+Use it to categorize groups of information.
+Also used to give existing rides and bookings a date and chronological context.
+
+ - Max 2 lines of text
+ - Not clickable
+ - Can be a sticky header
+
+This component can appear as a sticky date separator on search results feed.
+
+### Dev Specifications
+
+**Normal state**
+This component can appear as a date separator on search results feed.
+In which case it should stick to the top of the page while scrolling.
+
+## Usage
+
+```jsx
+import { SubHeader } from '@blablacar/ui-library/build/subHeader'
+
+<SubHeader>SubHeader Title</SubHeader>
+```
+
+<Props of={SubHeader} />
