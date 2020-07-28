@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { Caption } from '../caption'
 import { Paragraph } from '../paragraph'
 import { TextTitle } from '../typography/title'
+import { StyledReview } from './Review.style'
 
 export interface ReviewProps {
   readonly className?: string
@@ -33,7 +34,7 @@ export const Review = (props: ReviewProps) => {
       }
 
   return (
-    <blockquote
+    <StyledReview
       itemScope
       itemType="http://schema.org/Review"
       className={cc([
@@ -48,6 +49,6 @@ export const Review = (props: ReviewProps) => {
       </h2>
       <Paragraph itemProp="reviewBody">{text}</Paragraph>
       <Caption isoDate={isoDatetime}>{formattedDatetime}</Caption>
-    </blockquote>
+    </StyledReview>
   )
 }
