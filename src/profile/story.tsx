@@ -14,7 +14,7 @@ stories.add('default', () => (
   <Section>
     <Profile
       title={text('name', 'Pepe le Pew (small size)')}
-      ariaLabel={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
+      aria-label={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
       info={text('info (if no rating)', 'Charism +10')}
       picture={text(
         'picture',
@@ -30,7 +30,7 @@ stories.add('default', () => (
     <Divider />
     <Profile
       title={text('name', 'Pepe le Pew (medium size)')}
-      ariaLabel={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
+      aria-label={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
       info={text('info (if no rating)', 'Charism +10')}
       picture={text(
         'picture',
@@ -57,7 +57,7 @@ stories.add('with ratings', () => (
   <Section>
     <Profile
       title={text('name', 'Pepe le Pew')}
-      ariaLabel={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
+      aria-label={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
       info={rating}
       picture={text(
         'picture',

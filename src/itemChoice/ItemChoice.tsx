@@ -34,7 +34,6 @@ export interface ItemChoiceProps extends A11yProps, NormalizeProps {
   readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
   readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   readonly onDoneAnimationEnd?: () => void
-  readonly ariaLabel?: string
 }
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {
@@ -90,7 +89,6 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
       style,
       status,
       disabled,
-      ariaLabel,
       className,
       hasHorizontalSpacing = false,
     } = this.props
@@ -129,7 +127,6 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
             highlighted={isRecommended}
             chevron={status === ItemStatus.DEFAULT}
             isClickable={!disabled}
-            ariaLabel={ariaLabel}
             hasHorizontalSpacing={hasHorizontalSpacing}
             {...a11yAttrs}
           />

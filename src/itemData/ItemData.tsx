@@ -9,14 +9,13 @@ import { TextDisplayType } from '../text'
 export interface ItemDataProps extends NormalizeProps, A11yProps {
   readonly data: string | JSX.Element
   readonly dataStrikeThrough?: boolean
-  readonly dataAriaLabel?: string
+  readonly dataAriaProps?: A11yProps
   readonly mainInfo: React.ReactNode
   readonly className?: string
   readonly mainTitle?: string
   readonly mainTitleButtonAddon?: React.ReactElement<Button>
   readonly dataInfo?: string
   readonly tag?: JSX.Element
-  readonly ariaLabel?: string
   readonly disabled?: boolean
 }
 
@@ -25,13 +24,12 @@ export const ItemData = (props: ItemDataProps) => {
     mainInfo,
     data,
     dataStrikeThrough,
-    dataAriaLabel,
+    dataAriaProps,
     className,
     mainTitle,
     mainTitleButtonAddon,
     dataInfo,
     tag,
-    ariaLabel,
     disabled,
     hasHorizontalSpacing = false,
   } = props
@@ -44,11 +42,10 @@ export const ItemData = (props: ItemDataProps) => {
       leftBody={mainInfo}
       rightTitle={data}
       rightTitleStrikeThrough={dataStrikeThrough}
-      rightTitleAriaLabel={dataAriaLabel}
+      rightTitleAriaProps={dataAriaProps}
       rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
       rightBody={dataInfo}
       tag={tag}
-      ariaLabel={ariaLabel}
       disabled={disabled}
       hasHorizontalSpacing={hasHorizontalSpacing}
       {...a11yAttrs}

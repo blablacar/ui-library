@@ -284,7 +284,10 @@ exports[`Modal should not have changed 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin: 24px auto;
   width: 662px;
   background-color: #FFF;

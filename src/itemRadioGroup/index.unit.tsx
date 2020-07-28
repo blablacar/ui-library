@@ -18,10 +18,11 @@ describe('ItemRadioGroup', () => {
       <ItemRadio label="2" value={2} />,
       <ItemRadio label="3" value={3} />,
     ],
-    ariaLabelledBy: 'my-div-id',
   }
   it('Should map its children and render them with specific props', () => {
-    const itemRadioGroup = renderer.create(<ItemRadioGroup {...defaultProps} />).toJSON()
+    const itemRadioGroup = renderer
+      .create(<ItemRadioGroup {...defaultProps} aria-labelledby="my-div-id" />)
+      .toJSON()
     expect(itemRadioGroup).toMatchSnapshot()
   })
 

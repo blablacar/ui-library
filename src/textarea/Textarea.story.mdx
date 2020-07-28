@@ -1,18 +1,18 @@
-import React from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
 import { SendMessageIcon } from '../icon/sendMessageIcon'
-import { BaseSection as Section } from '../layout/section/baseSection'
-import { Textarea as TextArea } from '../textarea'
+import { Textarea } from './index'
 
-const stories = storiesOf('Widgets|Textarea', module)
-stories.addDecorator(withKnobs)
+<Meta title="Forms|Textarea" />
 
-stories.add('Basic text area', () => (
-  <Section>
-    <TextArea
+# **Textarea**
+
+<Preview>
+  <Story name="Default">
+    <Textarea
       id={text('id')}
       name={text('name', 'inputName')}
       placeholder={text('placeholder', 'Some placeholder text')}
@@ -30,12 +30,14 @@ stories.add('Basic text area', () => (
       autoComplete={select('autocomplete', ['on', 'off'])}
       title={text('title', 'accessibility text')}
     />
-  </Section>
-))
+  </Story>
+</Preview>
 
-stories.add('Text area with icon', () => (
-  <Section>
-    <TextArea
+### With icon
+
+<Preview>
+  <Story name="withIcon">
+    <Textarea
       id={text('id')}
       name={text('name', 'inputName')}
       placeholder={text('placeholder', 'Some placeholder text')}
@@ -58,13 +60,15 @@ stories.add('Text area with icon', () => (
         window.alert('button clicked')
       }}
     />
-  </Section>
-))
+  </Story>
+</Preview>
 
-stories.add('Text area with icon and fit to content', () => (
-  <Section>
-    <TextArea
-      fitContent={boolean('fitContent', true)}
+### With icon and fit to content
+
+<Preview>
+  <Story name="withIconFitContent">
+    <Textarea
+      fitContent={true}
       id={text('id')}
       defaultValue={text('Value', '')}
       name={text('name', 'inputName')}
@@ -88,5 +92,36 @@ stories.add('Text area with icon and fit to content', () => (
         window.alert('button clicked')
       }}
     />
-  </Section>
-))
+  </Story>
+</Preview>
+
+## Specifications
+
+This component is a text area and accept icons.
+
+## Usage
+
+```jsx
+import { Textarea } from '@blablacar/ui-library/build/textarea'
+
+<Textarea
+  id={id}
+  name={inputName}
+  placeholder={Some placeholder text}
+  labelledBy={aria label}
+  disabled={false}
+  readOnly={false}
+  label={label}
+  error={''}
+  onChange={changed}
+  onFocus={focused}
+  onBlur={blurred}
+  focus={false}
+  required={false}
+  maxLength={100}
+  autoComplete={off}
+  title={accessibility text}
+/>
+```
+
+<Props of={Textarea} />

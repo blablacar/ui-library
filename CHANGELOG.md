@@ -1,6 +1,16 @@
 # Unreleased
 
-[...]
+- **[FIX]** Removed margin bottom from `Tabs`
+- **[NEW]** Added `RedCircleIcon`
+
+# v38.0.0 (24/07/2020)
+
+- **[BREAKING CHANGE]** Removed all `ariaX` props from components and switched to support all common `aria-x` attributes with `A11yProps` interface.
+
+# v37.2.0 (23/07/2020)
+
+- **[UPDATE]** Add `noHorizontalSpacing` prop to disable horizontal padding on `Modal` component.
+- **[NEW]** Added `FilterBar` component
 
 # v37.1.1 (22/07/2020)
 
@@ -10,6 +20,8 @@
 
 - **[UPDATE]** Add `initialFrom`, `initialTo`, `disabledFrom`, `disabledTo` props in `SearchForm` component
 - **[UPDATE]** Added `secondLine` prop on Tabs config
+
+- **[NEW]** `Grip` component
 
 # v37.0.0 (10/07/2020)
 

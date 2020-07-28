@@ -5,6 +5,7 @@ import { prefix } from '../_utils'
 import { color } from '../_utils/branding'
 import { Badge } from '../badge'
 import { CheckIcon } from '../icon/checkIcon'
+import { StyledAvatar } from './Avatar.style'
 
 export interface AvatarProps {
   readonly className?: string
@@ -30,7 +31,7 @@ const unreadNotificationsBadge = (
 ) => (
   <Badge
     className="kirk-avatar-badge--unreadNotifications"
-    ariaLabel={unreadNotificationsCountAriaLabel}
+    aria-label={unreadNotificationsCountAriaLabel}
   >
     {unreadNotificationsCount}
   </Badge>
@@ -47,7 +48,7 @@ export const Avatar = ({
   unreadNotificationsCount,
   unreadNotificationsCountAriaLabel,
 }: AvatarProps) => (
-  <div
+  <StyledAvatar
     className={cc([
       prefix({ small: isSmall, medium: isMedium, large: isLarge, image: !!image }, 'avatar-'),
       className,
@@ -58,5 +59,5 @@ export const Avatar = ({
     {unreadNotificationsCount &&
       unreadNotificationsBadge(unreadNotificationsCount, unreadNotificationsCountAriaLabel)}
     {isIdChecked && IdCheckBadge}
-  </div>
+  </StyledAvatar>
 )

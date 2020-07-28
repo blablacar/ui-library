@@ -4,7 +4,7 @@ import { color, font, fontWeight } from '../../_utils/branding'
 import { Text } from '../index'
 
 export const TextTitle = styled(Text)`
-  color: ${color.midnightGreen};
+  color: ${props => (props.isDisabled ? color.gray : color.midnightGreen)};
   font-size: ${font.m.size};
   font-weight: ${fontWeight.regular};
   line-height: ${font.m.lineHeight};

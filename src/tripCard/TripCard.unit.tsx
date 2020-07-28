@@ -64,11 +64,11 @@ describe('TripCard component', () => {
   it('Should have the base class and no aria attribute', () => {
     const tripCard = shallow(<TripCard {...mockedProps} />)
     expect(tripCard.hasClass('kirk-tripCard')).toBe(true)
-    expect(tripCard.prop('ariaLabel')).toBeFalsy()
+    expect(tripCard.prop('aria-label')).toBeFalsy()
   })
 
   it('Should have `aria-label` attribute on the wrapper link', () => {
-    const tripCard = shallow(<TripCard {...mockedProps} ariaLabel="testLabel" />)
+    const tripCard = shallow(<TripCard {...mockedProps} aria-label="testLabel" />)
     expect(tripCard.find('a').prop('aria-label')).toEqual('testLabel')
   })
 

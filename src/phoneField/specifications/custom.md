@@ -17,7 +17,7 @@ import { PhoneField } from '@blablacar/ui-library'
     id="phoneFieldId"
     name="phoneField"
     className="additionalClass"
-    ariaLabelledBy="labelId"
+    aria-labelledby="labelId"
     selectFieldLabel="Phone country code"
     textFieldTitle="Phone number"
     textFieldPlaceholder="Phone number"

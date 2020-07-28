@@ -1,6 +1,6 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "37.1.1",
+  "version": "38.0.0",
   "description": "BlaBlaCar React UI component library",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -14,7 +14,7 @@
     "npm": "^6.13.4"
   },
   "scripts": {
-    "start": "export NODE_PATH=src && start-storybook",
+    "start": "export NODE_PATH=src && start-storybook -p 4000",
     "build": "rimraf build && tsc && npm run build-babel && npm run build-rename-jsx-map && npm run build-cleanup",
     "build-babel": "babel build/src --copy-files --out-dir build",
     "build-rename-jsx-map": "renamer --find jsx.map --replace js.map \"build/**\"",
