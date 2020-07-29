@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import { Grip } from '../../../grip'
+import { GRIP_HANDLE_HEIGHT } from '../../../grip/GripHandle'
 import { StyledSlideLayout, StyledSlidePanel } from './SlideSection.style'
 
 export enum SlideSectionPosition {
@@ -57,7 +58,7 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   useEffect(() => {
     // Reduced height is the height of reducedContent element + GripHandle height
     const reducedContentHeight = reducedContentRef.current.clientHeight
-    setMinimalHeight(reducedContentHeight + 24)
+    setMinimalHeight(reducedContentHeight + GRIP_HANDLE_HEIGHT)
 
     // Default height is 50% of media height
     setDefaultHeight((layoutRef.current.clientHeight * 50) / 100)

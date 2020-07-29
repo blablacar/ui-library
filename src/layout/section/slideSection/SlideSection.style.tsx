@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-import { shadow } from '../../../_utils/branding'
+import { color, shadow, transition } from '../../../_utils/branding'
 
 export const StyledSlideLayout = styled.div`
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${color.gray};
 `
 
 export const StyledSlidePanel = styled.div<{
@@ -13,13 +13,13 @@ export const StyledSlidePanel = styled.div<{
   defaultHeight: number
   expandedHeight: number
 }>`
-  background-color: #fff;
+  background-color: ${color.white};
   height: ${props => props.expandedHeight}px;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  transition: transform ease 300ms;
+  transition: transform ease ${transition.duration.base};
   box-shadow: ${shadow.slideSection};
 
   &.default {
@@ -28,7 +28,7 @@ export const StyledSlidePanel = styled.div<{
 
   &.expanded {
     transform: translateY(-${props => props.expandedHeight}px);
-    overflow: scroll;
+    overflow: auto;
   }
 
   &.reduced {

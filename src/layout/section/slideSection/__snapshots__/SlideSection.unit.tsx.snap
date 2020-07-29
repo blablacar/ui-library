@@ -27,15 +27,15 @@ exports[`SlideSection Should change the position when calling the children metho
 }
 
 .c0 {
-  background-color: #fff;
+  background-color: #FFF;
   height: 0px;
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  -webkit-transition: -webkit-transform ease 300ms;
-  -webkit-transition: transform ease 300ms;
-  transition: transform ease 300ms;
+  -webkit-transition: -webkit-transform ease 200ms;
+  -webkit-transition: transform ease 200ms;
+  transition: transform ease 200ms;
   box-shadow: 0 4px 4px rgba(0,0,0,.25);
 }
 
@@ -49,7 +49,7 @@ exports[`SlideSection Should change the position when calling the children metho
   -webkit-transform: translateY(-0px);
   -ms-transform: translateY(-0px);
   transform: translateY(-0px);
-  overflow: scroll;
+  overflow: auto;
 }
 
 .c0.reduced {
@@ -92,7 +92,7 @@ exports[`SlideSection Should change the position when calling the children metho
 
 exports[`SlideSection Should change the position when calling the children methods 2`] = `
 <div
-  class="expanded sc-htpNat fxlGzn"
+  class="expanded sc-htpNat hQJVDA"
 >
   <div
     class=""
@@ -125,7 +125,7 @@ exports[`SlideSection Should change the position when calling the children metho
 
 exports[`SlideSection Should change the position when calling the children methods 3`] = `
 <div
-  class="default sc-htpNat fxlGzn"
+  class="default sc-htpNat hQJVDA"
 >
   <div
     class=""

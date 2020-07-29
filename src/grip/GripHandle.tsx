@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
 
+export const GRIP_HANDLE_HEIGHT = parseInt(space.xl, 10)
+
 export const GripHandle = styled.div`
   display: flex;
   justify-content: center;
