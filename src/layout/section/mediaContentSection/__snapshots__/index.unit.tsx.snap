@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MediaContentSection should render default MediaContentSection section 1`] = `
-.c7 {
+.c6 {
   position: relative;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -35,34 +35,34 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   white-space: nowrap;
 }
 
-.c7 svg,
-.c7 img {
+.c6 svg,
+.c6 img {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c7 svg {
+.c6 svg {
   margin-right: 4px;
   margin-left: -8px;
 }
 
-.c7.kirk-button-bubble svg {
+.c6.kirk-button-bubble svg {
   margin: 0;
 }
 
-.c7.kirk-itemChoice {
+.c6.kirk-itemChoice {
   border-radius: 0;
   overflow: visible;
   width: 100%;
 }
 
-.c7:hover,
-.c7:active {
+.c6:hover,
+.c6:active {
   outline: 0;
 }
 
-.c7.kirk-button-unstyled {
+.c6.kirk-button-unstyled {
   background-color: transparent;
   border-radius: inherit;
   color: #00AFF5;
@@ -75,94 +75,94 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   min-height: inherit;
 }
 
-.c7[disabled] {
+.c6[disabled] {
   opacity: 0.5;
   cursor: default;
 }
 
-.c7.kirk-button-unstyled[disabled] {
+.c6.kirk-button-unstyled[disabled] {
   opacity: 1;
 }
 
-.c7.kirk-button-primary {
+.c6.kirk-button-primary {
   background-color: #00AFF5;
   color: #FFF;
 }
 
-.c7.kirk-button-shadowed {
+.c6.kirk-button-shadowed {
   border: 2px solid #FFF;
   box-shadow: 0 2px 4px rgba(0,0,0,.3);
   box-sizing: border-box;
 }
 
-.c7.kirk-button-primary:hover,
-.c7.kirk-button-primary:focus,
-.c7.kirk-button-primary:active {
+.c6.kirk-button-primary:hover,
+.c6.kirk-button-primary:focus,
+.c6.kirk-button-primary:active {
   background-color: #008FC1;
 }
 
-.c7.kirk-button-secondary {
+.c6.kirk-button-secondary {
   background-color: #FFF;
   border-color: #DDD;
   color: #00AFF5;
 }
 
-.c7.kirk-button-secondary.kirk-button-shadowed {
+.c6.kirk-button-secondary.kirk-button-shadowed {
   border: none;
 }
 
-.c7.kirk-button-secondary:hover,
-.c7.kirk-button-secondary:focus,
-.c7.kirk-button-secondary:active {
+.c6.kirk-button-secondary:hover,
+.c6.kirk-button-secondary:focus,
+.c6.kirk-button-secondary:active {
   background-color: #DDD;
 }
 
-.c7.kirk-button-tertiary {
+.c6.kirk-button-tertiary {
   background-color: #FFF;
   border-color: transparent;
   color: #00AFF5;
 }
 
-.c7.kirk-button-tertiary:hover,
-.c7.kirk-button-tertiary:focus,
-.c7.kirk-button-tertiary:active {
+.c6.kirk-button-tertiary:hover,
+.c6.kirk-button-tertiary:focus,
+.c6.kirk-button-tertiary:active {
   background-color: #DDD;
 }
 
-.c7.kirk-button-loading {
+.c6.kirk-button-loading {
   background-color: transparent;
   max-width: initial;
   border: 0;
 }
 
-.c7.kirk-button-loading:hover,
-.c7.kirk-button-loading:focus,
-.c7.kirk-button-loading:active {
+.c6.kirk-button-loading:hover,
+.c6.kirk-button-loading:focus,
+.c6.kirk-button-loading:active {
   background-color: transparent;
 }
 
-.c7.kirk-button-loading[disabled],
-.c7.kirk-button-checked[disabled] {
+.c6.kirk-button-loading[disabled],
+.c6.kirk-button-checked[disabled] {
   opacity: 1;
 }
 
-.c7 svg.kirk-button-loader {
+.c6 svg.kirk-button-loader {
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -24px;
 }
 
-.c7.kirk-button-checked {
+.c6.kirk-button-checked {
   border: 0;
 }
 
-.c7.kirk-button-warning {
+.c6.kirk-button-warning {
   background-color: #F53F5B;
   color: #FFF;
 }
 
-.c7.kirk-button-bubble {
+.c6.kirk-button-bubble {
   display: inline-block;
   text-align: center;
   padding: 0;
@@ -171,7 +171,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   height: 48px;
 }
 
-.c7.kirk-button-bubble.kirk-button-shadowed {
+.c6.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
 }
@@ -204,93 +204,80 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 .c5 {
-  color: #054752;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.06;
-}
-
-.c4 {
-  font-size: 22px;
-  line-height: 24px;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  margin: 0;
-}
-
-.c6 {
   margin: 0;
   font-weight: 400;
 }
 
-.c6.kirk-text-button {
+.c5.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c6.kirk-text-body,
-.c6.kirk-text-bodyStrong {
+.c5.kirk-text-body,
+.c5.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c6.kirk-text-caption {
+.c5.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c6.kirk-text-display2 {
+.c5.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c6.kirk-text-display1 {
+.c5.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c6.kirk-text-subheader,
-.c6.kirk-text-subheaderStrong {
+.c5.kirk-text-subheader,
+.c5.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c6.kirk-text-bodyStrong,
-.c6.kirk-text-subheaderStrong,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-bodyStrong,
+.c5.kirk-text-subheaderStrong,
+.c5.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c4 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
   font-weight: 500;
 }
 
 .c0 {
   margin-top: 24px;
   margin-bottom: 24px;
-}
-
-.c0 .kirk-media-content-title {
-  font-size: 30px;
-  line-height: 1.06;
 }
 
 .c0 .kirk-media-content-wrapper {
@@ -326,7 +313,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 @media (hover:none),(hover:on-demand) {
-  .c7.kirk-button-secondary:hover {
+  .c6.kirk-button-secondary:hover {
     background-color: #FFF;
   }
 }
@@ -361,10 +348,6 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   .c0.kirk-media-content--flipped .kirk-media-content-img {
     margin-right: 0;
     margin-left: 24px;
-  }
-
-  .c0 .kirk-media-content-title {
-    padding-top: 0;
   }
 }
 
@@ -412,18 +395,18 @@ exports[`MediaContentSection should render default MediaContentSection section 1
         <div
           className="kirk-media-content-wrapper"
         >
-          <h2
-            className="kirk-title kirk-subheader kirk-media-content-title c4 c5"
+          <span
+            className="c4"
           >
             section title
-          </h2>
+          </span>
           <p
-            className="kirk-text kirk-text-body c6"
+            className="kirk-text kirk-text-body c5"
           >
             section content
           </p>
           <a
-            className="kirk-button kirk-button-primary kirk-media-content-button c7"
+            className="kirk-button kirk-button-primary kirk-media-content-button c6"
             disabled={false}
             href="http://blablacar.com"
             onBlur={[Function]}
@@ -444,7 +427,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 `;
 
 exports[`MediaContentSection should render flipped MediaContentSection section 1`] = `
-.c7 {
+.c6 {
   position: relative;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -478,34 +461,34 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   white-space: nowrap;
 }
 
-.c7 svg,
-.c7 img {
+.c6 svg,
+.c6 img {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.c7 svg {
+.c6 svg {
   margin-right: 4px;
   margin-left: -8px;
 }
 
-.c7.kirk-button-bubble svg {
+.c6.kirk-button-bubble svg {
   margin: 0;
 }
 
-.c7.kirk-itemChoice {
+.c6.kirk-itemChoice {
   border-radius: 0;
   overflow: visible;
   width: 100%;
 }
 
-.c7:hover,
-.c7:active {
+.c6:hover,
+.c6:active {
   outline: 0;
 }
 
-.c7.kirk-button-unstyled {
+.c6.kirk-button-unstyled {
   background-color: transparent;
   border-radius: inherit;
   color: #00AFF5;
@@ -518,94 +501,94 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   min-height: inherit;
 }
 
-.c7[disabled] {
+.c6[disabled] {
   opacity: 0.5;
   cursor: default;
 }
 
-.c7.kirk-button-unstyled[disabled] {
+.c6.kirk-button-unstyled[disabled] {
   opacity: 1;
 }
 
-.c7.kirk-button-primary {
+.c6.kirk-button-primary {
   background-color: #00AFF5;
   color: #FFF;
 }
 
-.c7.kirk-button-shadowed {
+.c6.kirk-button-shadowed {
   border: 2px solid #FFF;
   box-shadow: 0 2px 4px rgba(0,0,0,.3);
   box-sizing: border-box;
 }
 
-.c7.kirk-button-primary:hover,
-.c7.kirk-button-primary:focus,
-.c7.kirk-button-primary:active {
+.c6.kirk-button-primary:hover,
+.c6.kirk-button-primary:focus,
+.c6.kirk-button-primary:active {
   background-color: #008FC1;
 }
 
-.c7.kirk-button-secondary {
+.c6.kirk-button-secondary {
   background-color: #FFF;
   border-color: #DDD;
   color: #00AFF5;
 }
 
-.c7.kirk-button-secondary.kirk-button-shadowed {
+.c6.kirk-button-secondary.kirk-button-shadowed {
   border: none;
 }
 
-.c7.kirk-button-secondary:hover,
-.c7.kirk-button-secondary:focus,
-.c7.kirk-button-secondary:active {
+.c6.kirk-button-secondary:hover,
+.c6.kirk-button-secondary:focus,
+.c6.kirk-button-secondary:active {
   background-color: #DDD;
 }
 
-.c7.kirk-button-tertiary {
+.c6.kirk-button-tertiary {
   background-color: #FFF;
   border-color: transparent;
   color: #00AFF5;
 }
 
-.c7.kirk-button-tertiary:hover,
-.c7.kirk-button-tertiary:focus,
-.c7.kirk-button-tertiary:active {
+.c6.kirk-button-tertiary:hover,
+.c6.kirk-button-tertiary:focus,
+.c6.kirk-button-tertiary:active {
   background-color: #DDD;
 }
 
-.c7.kirk-button-loading {
+.c6.kirk-button-loading {
   background-color: transparent;
   max-width: initial;
   border: 0;
 }
 
-.c7.kirk-button-loading:hover,
-.c7.kirk-button-loading:focus,
-.c7.kirk-button-loading:active {
+.c6.kirk-button-loading:hover,
+.c6.kirk-button-loading:focus,
+.c6.kirk-button-loading:active {
   background-color: transparent;
 }
 
-.c7.kirk-button-loading[disabled],
-.c7.kirk-button-checked[disabled] {
+.c6.kirk-button-loading[disabled],
+.c6.kirk-button-checked[disabled] {
   opacity: 1;
 }
 
-.c7 svg.kirk-button-loader {
+.c6 svg.kirk-button-loader {
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -24px;
 }
 
-.c7.kirk-button-checked {
+.c6.kirk-button-checked {
   border: 0;
 }
 
-.c7.kirk-button-warning {
+.c6.kirk-button-warning {
   background-color: #F53F5B;
   color: #FFF;
 }
 
-.c7.kirk-button-bubble {
+.c6.kirk-button-bubble {
   display: inline-block;
   text-align: center;
   padding: 0;
@@ -614,7 +597,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   height: 48px;
 }
 
-.c7.kirk-button-bubble.kirk-button-shadowed {
+.c6.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
 }
@@ -647,93 +630,80 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 }
 
 .c5 {
-  color: #054752;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.06;
-}
-
-.c4 {
-  font-size: 22px;
-  line-height: 24px;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  margin: 0;
-}
-
-.c6 {
   margin: 0;
   font-weight: 400;
 }
 
-.c6.kirk-text-button {
+.c5.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c6.kirk-text-body,
-.c6.kirk-text-bodyStrong {
+.c5.kirk-text-body,
+.c5.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c6.kirk-text-caption {
+.c5.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c6.kirk-text-display2 {
+.c5.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c6.kirk-text-display1 {
+.c5.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c6.kirk-text-subheader,
-.c6.kirk-text-subheaderStrong {
+.c5.kirk-text-subheader,
+.c5.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c6.kirk-text-title,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-title,
+.c5.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c6.kirk-text-bodyStrong,
-.c6.kirk-text-subheaderStrong,
-.c6.kirk-text-titleStrong {
+.c5.kirk-text-bodyStrong,
+.c5.kirk-text-subheaderStrong,
+.c5.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c4 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
   font-weight: 500;
 }
 
 .c0 {
   margin-top: 24px;
   margin-bottom: 24px;
-}
-
-.c0 .kirk-media-content-title {
-  font-size: 30px;
-  line-height: 1.06;
 }
 
 .c0 .kirk-media-content-wrapper {
@@ -769,7 +739,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 }
 
 @media (hover:none),(hover:on-demand) {
-  .c7.kirk-button-secondary:hover {
+  .c6.kirk-button-secondary:hover {
     background-color: #FFF;
   }
 }
@@ -804,10 +774,6 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   .c0.kirk-media-content--flipped .kirk-media-content-img {
     margin-right: 0;
     margin-left: 24px;
-  }
-
-  .c0 .kirk-media-content-title {
-    padding-top: 0;
   }
 }
 
@@ -855,18 +821,18 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
         <div
           className="kirk-media-content-wrapper"
         >
-          <h2
-            className="kirk-title kirk-subheader kirk-media-content-title c4 c5"
+          <span
+            className="c4"
           >
             section title
-          </h2>
+          </span>
           <p
-            className="kirk-text kirk-text-body c6"
+            className="kirk-text kirk-text-body c5"
           >
             section content
           </p>
           <a
-            className="kirk-button kirk-button-primary kirk-media-content-button c7"
+            className="kirk-button kirk-button-primary kirk-media-content-button c6"
             disabled={false}
             href="http://blablacar.com"
             onBlur={[Function]}

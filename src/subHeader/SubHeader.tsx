@@ -1,15 +1,11 @@
 import React from 'react'
-import cc from 'classcat'
 
-import { Title } from '../title'
+import { StyledSubHeader } from './SubHeader.style'
 
 export interface SubHeaderProps {
-  readonly className?: string
   readonly children: string
 }
 
-export const SubHeader = ({ className, children }: SubHeaderProps) => (
-  <Title className={cc(['kirk-subheader', className])} headingLevel="2">
-    {children}
-  </Title>
+export const SubHeader = ({ children }: SubHeaderProps) => (
+  <StyledSubHeader headingLevel="2">{children}</StyledSubHeader>
 )
