@@ -68,6 +68,7 @@ export interface TextFieldProps extends CommonFormFields {
   format?: (value: string, previousValue: string) => string
   focusBorder?: boolean
   loader?: JSX.Element
+  adyenEncryptedName?: string
 }
 
 interface FormAttributes extends CommonFormFields {
@@ -78,6 +79,7 @@ interface FormAttributes extends CommonFormFields {
   pattern?: string
   ref?: (input: textfield) => void
   onChange?: (event: React.ChangeEvent<textfield>) => void
+  ['data-encrypted-name']?: string
 }
 
 export interface TextFieldState {
@@ -242,6 +244,7 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
       pattern,
       focusBorder,
       loader,
+      adyenEncryptedName,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
@@ -268,6 +271,7 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
       onBlur,
       onChange: this.onTextFieldChange,
       ref: this.ref,
+      'data-encrypted-name': adyenEncryptedName,
     }
 
     if (error) {

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Added `adyenEncryptedName` props on `TextField`
 [...]
 
 # v38.1.0 (28/07/2020)
