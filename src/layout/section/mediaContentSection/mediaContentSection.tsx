@@ -5,8 +5,8 @@ import { Button } from '../../../button'
 import { Column } from '../../../layout/column'
 import { Columns } from '../../../layout/columns'
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
-import { SubHeader } from '../../../subHeader'
 import { Text, TextTagType } from '../../../text'
+import { TextDisplay1 } from '../../../typography/display1'
 
 export interface MediaContentSectionProps {
   readonly className?: string
@@ -38,7 +38,7 @@ export const MediaContentSection = (props: MediaContentSectionProps) => {
         </Column>
         <Column>
           <div className="kirk-media-content-wrapper">
-            <SubHeader className="kirk-media-content-title">{title}</SubHeader>
+            <TextDisplay1>{title}</TextDisplay1>
             {showParagraph && <Text tag={TextTagType.PARAGRAPH}>{content}</Text>}
             {showButton && (
               <Button className="kirk-media-content-button" href={buttonHref}>
