@@ -19,8 +19,8 @@ export interface NormalizeProps {
 export const normalizeHorizontally = (props: NormalizeProps): string => `
   padding-left: ${horizontalPadding(props)} !important;
   padding-right: ${horizontalPadding(props)} !important;
-  margin-left: ${horizontalMargin(props)} !important;
-  margin-right: ${horizontalMargin(props)} !important;
+  margin-left: ${horizontalMargin(props)};
+  margin-right: ${horizontalMargin(props)};
   `
 
 // Legacy layout rules from production BBC.

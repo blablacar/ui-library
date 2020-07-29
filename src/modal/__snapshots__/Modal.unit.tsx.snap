@@ -349,6 +349,7 @@ exports[`Modal should not have changed 1`] = `
     <div
       aria-modal="true"
       className="c1 kirk-modal kirk-modal--medium kirk-modal--hasCloseButton slide-up slide-up-entered"
+      onScroll={[Function]}
       role="dialog"
     >
       <div
@@ -387,7 +388,7 @@ exports[`Modal should not have changed 1`] = `
           </svg>
         </button>
         <div
-          className="kirk-modal-body"
+          className="kirk-modal-body kirk-modal-modalFooterBorder"
         />
       </div>
     </div>

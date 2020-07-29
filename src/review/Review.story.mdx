@@ -1,0 +1,56 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Review } from './index'
+
+export const longComment =
+  'This is very long review which is cool and etc. Morbi id vestibulum justo. Cras non ligula quis quam blandit placerat at eu urna. Praesent ac molestie nisl, id porta quam. Phasellus vel quam justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ac ullamcorper quam. Suspendisse a dolor eu nisi fermentum ultrices. Nulla facilisi. Curabitur viverra finibus urna rutrum euismod. Integer lorem turpis, gravida non dictum ac, rutrum nec lectus.'
+export const reviewProps = {
+  title: 'Outstanding',
+  text: longComment,
+  formattedDatetime: '05 jul - 17:39',
+  isoDatetime: '2017-08-07T14:10:40.526Z',
+}
+
+<Meta title="Widgets|Review" />
+
+# Review
+
+<Preview>
+  <Story name="Default">
+    <Review {...reviewProps} />
+  </Story>
+</Preview>
+
+## Response
+
+<Preview>
+  <Story name="withResponse">
+    <Review
+      title="Reply from Karen"
+      text="Thanks for the comment!"
+      formattedDatetime="06 jul - 18:39"
+      isoDatetime="2017-08-07T18:39:40.526Z"
+      isResponse={true}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Review } from '@blablacar/ui-library/build/review'
+
+<Review
+  title="Reply from Karen"
+  text="Thanks for the comment!"
+  formattedDatetime="06 jul - 18:39"
+  isoDatetime="2017-08-07T18:39:40.526Z"
+  isResponse={true}
+/>
+```
+
+<Props of={Review} />

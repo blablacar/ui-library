@@ -2,8 +2,13 @@ import React, { Component, createRef } from 'react'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
+import FilterBar from '../filterBar'
+import { CarpoolIcon } from '../icon'
+import ItemCheckbox from '../itemCheckbox'
 import { BaseSection as Section } from '../layout/section/baseSection'
-import { Modal, ModalSize } from '../modal'
+import { Modal, ModalBody, ModalFog, ModalFooter, ModalSize } from '../modal'
+import { SubHeader } from '../subHeader/SubHeader'
+import { TheVoice } from '../theVoice'
 import { ModalProps } from './Modal'
 import modalDoc from './specifications/modal.md'
 
@@ -38,7 +43,7 @@ class ModalOpener extends Component<ModalProps> {
     return (
       <Section>
         <button onClick={this.openModal}>Open modal 1</button>
-        <button onClick={this.openModal2}>Open modal 2</button>
+        <button onClick={this.openModal2}>Open modal using Layout components</button>
         <Modal {...this.props} onClose={this.closeModal} isOpen={this.state.modalOpen}>
           <div>
             <h1 id="label1">Modal 1</h1>
@@ -47,12 +52,48 @@ class ModalOpener extends Component<ModalProps> {
           </div>
         </Modal>
 
-        <Modal {...this.props} onClose={this.closeModal2} isOpen={this.state.modalOpen2}>
-          <div>
-            <h1 id="label2">Modal 2</h1>
-            <p id="description2">This is the description of my modal</p>
-            <img src="http://placekitten.com/g/216/144" width="216" height="144" alt="A kitten" />
-          </div>
+        <Modal
+          {...this.props}
+          onClose={this.closeModal2}
+          isOpen={this.state.modalOpen2}
+          noHorizontalSpacing
+          layoutModeEnabled
+        >
+          <ModalBody>
+            <ModalFog aria-hidden="true" isLoading={this.props.isLoading} />
+            <TheVoice>Filters</TheVoice>
+            <Section>
+              <SubHeader>Amenities & Services</SubHeader>
+            </Section>
+            <Section noHorizontalSpacing>
+              <ItemCheckbox label="Ladies only" />
+              <ItemCheckbox label="Automatic Approval" />
+              <ItemCheckbox label="Wifi" />
+              <ItemCheckbox label="Air conditioning" />
+              <ItemCheckbox label="Reclining seats" />
+              <ItemCheckbox label="Personal power outlets" />
+              <ItemCheckbox label="Ladies only" />
+              <ItemCheckbox label="Automatic Approval" />
+              <ItemCheckbox label="Wifi" />
+              <ItemCheckbox label="Air conditioning" />
+              <ItemCheckbox label="Reclining seats" />
+              <ItemCheckbox label="Personal power outlets" />
+            </Section>
+          </ModalBody>
+          <ModalFooter>
+            <FilterBar
+              ctaText="See rides"
+              supplyInfo={[
+                {
+                  icon: CarpoolIcon,
+                  iconTitle: 'Carpooling',
+                  liquidity: 20,
+                  ariaLabel: 'Carpool available',
+                },
+              ]}
+              onClick={() => {}}
+            />
+          </ModalFooter>
         </Modal>
       </Section>
     )
@@ -72,6 +113,7 @@ stories.add(
       aria-labelledby="label1"
       aria-describedby="description1"
       size={select('size', ModalSize, ModalSize.MEDIUM)}
+      isLoading={boolean('isLoading', false)}
     />
   ),
   {
@@ -90,5 +132,6 @@ stories.add('fullscreen', () => (
     aria-labelledby="label2"
     aria-describedby="description2"
     size={select('size', ModalSize, ModalSize.FULLSCREEN)}
+    isLoading={boolean('isLoading', false)}
   />
 ))
