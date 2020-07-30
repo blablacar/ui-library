@@ -6,7 +6,7 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   padding-right: 24px;
 }
 
-.c2 {
+.c3 {
   color: #054752;
   font-size: 30px;
   font-weight: 500;
@@ -63,7 +63,7 @@ exports[`HighlightSection should add a classname to the content 1`] = `
     className="section-content some-content-class-name section-content--large"
   >
     <h2
-      className="kirk-title c2"
+      className="kirk-title c2 c3"
     >
       the title
     </h2>
@@ -78,7 +78,7 @@ exports[`HighlightSection should render default highlight section 1`] = `
   padding-right: 24px;
 }
 
-.c2 {
+.c3 {
   color: #054752;
   font-size: 30px;
   font-weight: 500;
@@ -135,7 +135,7 @@ exports[`HighlightSection should render default highlight section 1`] = `
     className="section-content section-content--large"
   >
     <h2
-      className="kirk-title c2"
+      className="kirk-title c2 c3"
     >
       the title
     </h2>

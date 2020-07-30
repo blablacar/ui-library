@@ -15,14 +15,20 @@ function createProps(props: Partial<TitleProps> = {}): TitleProps {
 
 describe('Title', () => {
   it('Should render the given title text', () => {
-    const title = 'blabla'
     const props = createProps({
-      children: title,
+      children: 'blabla',
     })
 
     render(<Title {...props} />)
 
-    expect(screen.getByRole('heading')).toHaveTextContent(title)
+    expect(screen.getByRole('heading')).toHaveTextContent(props.children.toString())
+  })
+
+  it('Should render a h1 when no headingLevel is specified', () => {
+    const props = createProps()
+
+    render(<Title {...props} />)
+
     expect(screen.getByRole('heading').nodeName.toLowerCase()).toBe('h1')
   })
 
@@ -55,6 +61,6 @@ describe('Title', () => {
     })
 
     render(<Title {...props} />)
-    expect(screen.getByRole('heading').id).toBe(id)
+    expect(screen.getByRole('heading')).toHaveAttribute('id', id)
   })
 })
