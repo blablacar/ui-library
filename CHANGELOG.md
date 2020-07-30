@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[FIX]** Fixed `highlightSection` title color
 
 # v38.1.0 (28/07/2020)
 

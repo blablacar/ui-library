@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
-import { SubHeader } from '../../../subHeader'
+import { StyledHighlightSectionSubHeader } from '.'
 
 export interface HighlightSectionProps {
   readonly className?: string
@@ -22,7 +22,7 @@ export const HighlightSection = (props: HighlightSectionProps) => {
       contentClassName={contentClassName}
       contentSize={SectionContentSize.LARGE}
     >
-      {title && <SubHeader>{title}</SubHeader>}
+      {title && <StyledHighlightSectionSubHeader>{title}</StyledHighlightSectionSubHeader>}
       {children}
     </BaseSection>
   )
