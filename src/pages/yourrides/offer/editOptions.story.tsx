@@ -74,6 +74,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
               leftAddon={<ComfortIcon />}
               labelTitle="Max. 2 in the back seats"
               checked={this.state.isComfort}
+              name="comfort"
             />
             <ItemCheckbox
               onChange={() =>
@@ -84,6 +85,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
               leftAddon={<LadyIcon />}
               labelTitle="Ladies only"
               checked={this.state.isLadyOnly}
+              name="ladies"
             />
             <ItemCheckbox
               onChange={() =>
@@ -94,6 +96,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
               leftAddon={<LightningIcon />}
               labelTitle="Instant booking"
               checked={this.state.isInstantBooking}
+              name="instant"
             />
 
             <Divider />

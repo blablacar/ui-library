@@ -14,9 +14,9 @@ describe('ItemRadioGroup', () => {
     onClick() {},
     status: ItemRadioStatus.DEFAULT,
     children: [
-      <ItemRadio label="1" value={1} />,
-      <ItemRadio label="2" value={2} />,
-      <ItemRadio label="3" value={3} />,
+      <ItemRadio name="name1" label="1" value={1} />,
+      <ItemRadio name="name1" label="2" value={2} />,
+      <ItemRadio name="name1" label="3" value={3} />,
     ],
   }
   it('Should map its children and render them with specific props', () => {
