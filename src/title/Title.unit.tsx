@@ -1,38 +1,66 @@
 import React from 'react'
-import { shallow } from 'enzyme'
 
-import { Title } from './Title'
+import { render, screen } from '@testing-library/react'
+
+import { Title, TitleProps } from './Title'
+
+const defaultProps: TitleProps = {
+  children: 'Hello',
+  headingLevel: 1,
+}
+
+function createProps(props: Partial<TitleProps> = {}): TitleProps {
+  return { ...defaultProps, ...props }
+}
 
 describe('Title', () => {
   it('Should render the given title text', () => {
-    const title = 'blabla'
-    const wrapper = shallow(<Title>{title}</Title>)
-    expect(wrapper.hasClass('kirk-title')).toBe(true)
-    expect(wrapper.text()).toContain(title)
-    expect(wrapper.name()).toBe('h1')
+    const props = createProps({
+      children: 'blabla',
+    })
+
+    render(<Title {...props} />)
+
+    expect(screen.getByRole('heading')).toHaveTextContent(props.children.toString())
+  })
+
+  it('Should render a h1 when no headingLevel is specified', () => {
+    const props = createProps()
+
+    render(<Title {...props} />)
+
+    expect(screen.getByRole('heading').nodeName.toLowerCase()).toBe('h1')
   })
 
   describe('#headingLevel', () => {
     it('Should render the correct heading level when passing a `number`', () => {
-      const wrapper = shallow(<Title headingLevel={5}>blabla</Title>)
-      expect(wrapper.name()).toBe('h5')
+      const props = createProps({
+        headingLevel: 5,
+      })
+
+      render(<Title {...props} />)
+      expect(screen.getByRole('heading').nodeName.toLowerCase()).toBe('h5')
     })
 
     it('Should render the correct heading level when passing a `string`', () => {
-      const wrapper = shallow(<Title headingLevel="5">blabla</Title>)
-      expect(wrapper.name()).toBe('h5')
-    })
+      const props = createProps({
+        headingLevel: '5',
+      })
 
-    it('Should render blank when heading level is invalid', () => {
-      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-      const wrapper = shallow(<Title headingLevel={10}>blabla</Title>)
-      expect(wrapper.type()).toBe(null)
-      consoleErrorSpy.mockRestore()
+      render(<Title {...props} />)
+      expect(screen.getByRole('heading').nodeName.toLowerCase()).toBe('h5')
     })
   })
 
   it('Should add id if provided', () => {
-    const wrapper = shallow(<Title id="my-id">blabla</Title>)
-    expect(wrapper.prop('id')).toBe('my-id')
+    const title = 'blabla'
+    const id = 'my-id'
+    const props = createProps({
+      children: title,
+      id,
+    })
+
+    render(<Title {...props} />)
+    expect(screen.getByRole('heading')).toHaveAttribute('id', id)
   })
 })
