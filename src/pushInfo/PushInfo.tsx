@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import cc from 'classcat'
 
-export const animationDuration = 700
-export const animationDelay = 300
+import { animationDelay, animationDuration, StyledPushInfo } from './PushInfo.style'
 
 export interface PushInfoProps {
   readonly className?: string
@@ -22,7 +21,7 @@ export class PushInfo extends Component<PushInfoProps> {
   render() {
     const { className, icon, headline, content } = this.props
     return (
-      <div className={cc(['kirk-pushInfo', className])}>
+      <StyledPushInfo className={cc(['kirk-pushInfo', className])}>
         {icon && <div className="kirk-pushInfo-icon">{icon}</div>}
         <div>
           <h2
@@ -35,7 +34,7 @@ export class PushInfo extends Component<PushInfoProps> {
           </h2>
           {content && <p className="kirk-pushInfo-content">{content}</p>}
         </div>
-      </div>
+      </StyledPushInfo>
     )
   }
 }

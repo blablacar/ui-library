@@ -2,6 +2,8 @@
 
 [...]
 
+- **[UPDATE]** Migrate `PushInfo` to new mdx story format
+
 # v39.0.1 (07/08/2020)
 
 - **[FIX]** Fixed non-displayed loader in Search Form `Autocomplete`
