@@ -30,6 +30,16 @@ describe('Loader', () => {
     expect(wrapper.find('.kirk-loader--inline').exists()).toBe(true)
   })
 
+  it('Should use custom loading announcements', () => {
+    const wrapper = mount(<Loader loadingAriaLabel="localized custom loading" />)
+    expect(wrapper.text()).toBe('localized custom loading')
+  })
+
+  it('Should use custom loaded announcements', () => {
+    const wrapper = mount(<Loader done loadedAriaLabel="localized custom loaded" />)
+    expect(wrapper.text()).toBe('localized custom loaded')
+  })
+
   it('Should override layoutMode when inline prop is set', () => {
     const wrapper = mount(<Loader inline layoutMode={LoaderLayoutMode.BLOCK} />)
     expect(wrapper.find('.kirk-loader--inline').exists()).toBe(true)
