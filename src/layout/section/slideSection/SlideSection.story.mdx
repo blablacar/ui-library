@@ -57,6 +57,20 @@ import { SlideSection } from './index'
 
 ## Specifications
 
-TODO
+Use it to make that part of the screen change size and position based on hand gestures.
+
+```jsx
+import { SlideSection } from '@blablacar/ui-library/build/grip'
+<SlideSection
+  media={/* another component, usually a map */}
+>
+  {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+    <ItemRadioGroup>
+      <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
+      <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
+    </ItemRadioGroup>
+  )}
+</SlideSection>
+```
 
 <Props of={SlideSection} />
