@@ -2,6 +2,8 @@
 
 [...]
 
+# v38.2.0 (31/07/2020)
+
 - **[NEW]** `Grip` component
 - **[NEW]** `SlideSection` component
 
