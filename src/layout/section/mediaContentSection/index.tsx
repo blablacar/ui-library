@@ -1,17 +1,12 @@
 import styled from 'styled-components'
 
-import { font, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { radius, responsiveBreakpoints, space } from '../../../_utils/branding'
 import { MediaContentSection } from './mediaContentSection'
 
 const StyledMediaContentSection = styled(MediaContentSection)`
   & {
     margin-top: ${space.xl};
     margin-bottom: ${space.xl};
-  }
-
-  & .kirk-media-content-title {
-    font-size: ${font.xl.size};
-    line-height: ${font.xl.lineHeight};
   }
 
   & .kirk-media-content-wrapper {
@@ -43,11 +38,6 @@ const StyledMediaContentSection = styled(MediaContentSection)`
     &.kirk-media-content--flipped .kirk-media-content-img {
       margin-right: 0;
       margin-left: ${space.xl};
-    }
-
-    & .kirk-media-content-title {
-      /* Remove padding top from subheader to allow proper vertical centering. */
-      padding-top: 0;
     }
   }
 

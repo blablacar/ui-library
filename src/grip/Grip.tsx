@@ -31,7 +31,7 @@ export const touchEndListener = (
 }
 
 export const Grip = (props: GripProps): JSX.Element => {
-  const { children = null, className = '', disabled = false } = props
+  const { onSlideUp, onSlideDown, children = null, className = '', disabled = false } = props
   const a11yAttrs = pickA11yProps(props)
   const fingerYPosition = useRef<number | null>(null)
   const resetFingerYPosition = () => {
@@ -55,7 +55,7 @@ export const Grip = (props: GripProps): JSX.Element => {
       }
     }
     return null
-  }, [disabled])
+  }, [disabled, onSlideUp, onSlideDown])
 
   return (
     <div

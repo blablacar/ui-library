@@ -141,6 +141,16 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   position: absolute;
 }
 
+.c0 .visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
 .c0.kirk-loader--inline {
   display: inline-block;
 }
@@ -202,31 +212,42 @@ exports[`RadioIcon Should render a loader if isLoading and isChecked are set to 
   className="kirk-loader--inline c0"
 >
   <div
-    className=""
-    style={
-      Object {
-        "height": "24px",
-        "width": "24px",
-      }
-    }
+    aria-valuetext="Loading"
+    role="progressbar"
   >
-    <svg
-      aria-hidden={true}
-      className="kirk-icon kirk-icon-circle spinning c1 c2"
-      height={24}
-      viewBox="0 0 66 66"
-      width={24}
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      className=""
+      style={
+        Object {
+          "height": "24px",
+          "width": "24px",
+        }
+      }
     >
-      
-      <circle
-        className="outer"
-        cx="33"
-        cy="33"
-        fill="none"
-        r="30"
-      />
-    </svg>
+      <svg
+        aria-hidden={true}
+        className="kirk-icon kirk-icon-circle spinning c1 c2"
+        height={24}
+        viewBox="0 0 66 66"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <circle
+          className="outer"
+          cx="33"
+          cy="33"
+          fill="none"
+          r="30"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="visually-hidden"
+    role="status"
+  >
+    Loading
   </div>
 </div>
 `;
@@ -289,6 +310,16 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   position: absolute;
 }
 
+.c0 .visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  -webkit-clip: rect(1px,1px,1px,1px);
+  clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
+
 .c0.kirk-loader--inline {
   display: inline-block;
 }
@@ -350,31 +381,42 @@ exports[`RadioIcon Should render a loader if isLoading is set to true 1`] = `
   className="kirk-loader--inline c0"
 >
   <div
-    className=""
-    style={
-      Object {
-        "height": "24px",
-        "width": "24px",
-      }
-    }
+    aria-valuetext="Loading"
+    role="progressbar"
   >
-    <svg
-      aria-hidden={true}
-      className="kirk-icon kirk-icon-circle spinning c1 c2"
-      height={24}
-      viewBox="0 0 66 66"
-      width={24}
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      className=""
+      style={
+        Object {
+          "height": "24px",
+          "width": "24px",
+        }
+      }
     >
-      
-      <circle
-        className="outer"
-        cx="33"
-        cy="33"
-        fill="none"
-        r="30"
-      />
-    </svg>
+      <svg
+        aria-hidden={true}
+        className="kirk-icon kirk-icon-circle spinning c1 c2"
+        height={24}
+        viewBox="0 0 66 66"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <circle
+          className="outer"
+          cx="33"
+          cy="33"
+          fill="none"
+          r="30"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="visually-hidden"
+    role="status"
+  >
+    Loading
   </div>
 </div>
 `;

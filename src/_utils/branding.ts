@@ -139,6 +139,7 @@ export const shadow: defaultBranding = {
   card: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
   cardHover: '0 2pt 8pt rgba(0, 0, 0, 0.08), 0 2pt 16pt rgba(0, 0, 0, 0.08)',
   searchForm: '0 1pt 4pt rgba(0, 0, 0, 0.16), 0 2pt 8pt rgba(0, 0, 0, 0.08)',
+  slideSection: '0 4px 4px rgba(0, 0, 0, .25)',
 }
 
 export const inputBorderSize = {

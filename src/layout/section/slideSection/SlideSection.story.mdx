@@ -1,0 +1,76 @@
+import { Fragment } from 'react'
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import { ItemRadio } from '../../../itemRadio'
+import { ItemRadioGroup } from '../../../itemRadioGroup'
+import { TheVoice } from '../../../theVoice'
+import { MainContent, Content, BottomContent } from '../../content'
+import { SlideSection } from './index'
+
+<Meta title="Sections|SlideSection" />
+
+# SlideSection
+
+<Preview>
+  <Story name="Default">
+    <MainContent>
+      <Content>
+        <SlideSection
+          media={<div style={{ backgroundColor: '#DDD', height: 'calc(100vh - 90px)' }} />}
+          reducedContent={<TheVoice>What is your return route?</TheVoice>}
+          onPositionChange={action('PositionChange')}
+        >
+          {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+            <ItemRadioGroup onChange={setReducedPosition}>
+              <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
+              <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
+            </ItemRadioGroup>
+          )}
+        </SlideSection>
+      </Content>
+    </MainContent>
+  </Story>
+  <Story name="With many routes">
+    <MainContent>
+      <Content>
+        <SlideSection
+          media={<div style={{ backgroundColor: '#DDD', height: 'calc(100vh - 90px)' }} />}
+          reducedContent={<TheVoice>What is your route?</TheVoice>}
+          onPositionChange={action('PositionChange')}
+        >
+          {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+            <ItemRadioGroup onChange={setReducedPosition}>
+              <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
+              <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
+              <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="3" />
+              <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="4" />
+              <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="5" />
+              <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="6" />
+            </ItemRadioGroup>
+          )}
+        </SlideSection>
+      </Content>
+    </MainContent>
+  </Story>
+</Preview>
+
+## Specifications
+
+Use it to make that part of the screen change size and position based on hand gestures.
+
+```jsx
+import { SlideSection } from '@blablacar/ui-library/build/grip'
+<SlideSection
+  media={/* another component, usually a map */}
+>
+  {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+    <ItemRadioGroup>
+      <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
+      <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
+    </ItemRadioGroup>
+  )}
+</SlideSection>
+```
+
+<Props of={SlideSection} />
