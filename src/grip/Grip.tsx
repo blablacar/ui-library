@@ -54,7 +54,7 @@ export const Grip = (props: GripProps): JSX.Element => {
         window.removeEventListener('touchend', delegatedTouchEndListener)
       }
     }
-    return null
+    return () => {}
   }, [disabled, onSlideUp, onSlideDown])
 
   return (
