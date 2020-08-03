@@ -2,7 +2,7 @@
 
 - **[UPDATE]** Add basic a11y to `Loader` component
 - **[FIX]** Fix Grip crashing with `useEffect` cleanup
-  [...]
+- **[FIX]** Fix `SearchForm` click area too small
 
 # v38.2.0 (31/07/2020)
 
