@@ -12,7 +12,7 @@ export enum SlideSwitchTransitionSide {
 }
 
 const DIRECTION_TRANSFORM_VALUES: {
-  [key in SlideSwitchTransitionSide]: AnimatedSpanProps['transform']
+  [key in SlideSwitchTransitionSide]: AnimatedDivProps['transform']
 } = {
   [SlideSwitchTransitionSide.TOP]: { in: 'translateY(0)', out: 'translateY(-100%)' },
   [SlideSwitchTransitionSide.RIGHT]: { in: 'translateX(0)', out: 'translateX(100%)' },
@@ -20,7 +20,7 @@ const DIRECTION_TRANSFORM_VALUES: {
   [SlideSwitchTransitionSide.LEFT]: { in: 'translateX(0)', out: 'translateX(-100%)' },
 }
 
-type AnimatedSpanProps = {
+type AnimatedDivProps = {
   transitionDuration: TransitionDuration
   transform: {
     /**
@@ -35,8 +35,7 @@ type AnimatedSpanProps = {
   }
 }
 
-const AnimatedSpan = styled.span<AnimatedSpanProps>`
-  display: inline-block;
+const AnimatedDiv = styled.div<AnimatedDivProps>`
   opacity: 1;
   transform: ${p => p.transform.in};
   transition-property: opacity, transform;
@@ -86,12 +85,12 @@ export function SlideSwitchTransition({
   return (
     <SwitchTransition>
       <CSSTransition key={childrenKey} timeout={transitionDuration} classNames="slide">
-        <AnimatedSpan
+        <AnimatedDiv
           transform={DIRECTION_TRANSFORM_VALUES[side]}
           transitionDuration={transitionDuration}
         >
           {children}
-        </AnimatedSpan>
+        </AnimatedDiv>
       </CSSTransition>
     </SwitchTransition>
   )
