@@ -1,7 +1,8 @@
 # Unreleased
 
 - **[UPDATE]** Add basic a11y to `Loader` component
-[...]
+- **[FIX]** Fix Grip crashing with `useEffect` cleanup
+  [...]
 
 # v38.2.0 (31/07/2020)
 
