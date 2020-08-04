@@ -124,6 +124,12 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 }
 
 .c1 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
+}
+
+.c1 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0;
@@ -253,12 +259,6 @@ button:focus:not(.focus-visible).c1 {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
-}
-
-.c1 {
-  cursor: pointer;
-  border: 3px solid transparent;
-  padding: calc(16px - 3px) auto;
 }
 
 .c1.focus {

@@ -124,6 +124,12 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
 }
 
 .c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0;
@@ -253,12 +259,6 @@ button:focus:not(.focus-visible).c0 {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
-}
-
-.c0 {
-  cursor: pointer;
-  border: 3px solid transparent;
-  padding: calc(16px - 3px) auto;
 }
 
 .c0.focus {
@@ -528,6 +528,12 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
 }
 
 .c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0;
@@ -657,12 +663,6 @@ button:focus:not(.focus-visible).c0 {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
-}
-
-.c0 {
-  cursor: pointer;
-  border: 3px solid transparent;
-  padding: calc(16px - 3px) auto;
 }
 
 .c0.focus {
@@ -884,6 +884,12 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 }
 
 .c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
+}
+
+.c0 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0;
@@ -1013,12 +1019,6 @@ button:focus:not(.focus-visible).c0 {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
-}
-
-.c0 {
-  cursor: pointer;
-  border: 3px solid transparent;
-  padding: calc(16px - 3px) auto;
 }
 
 .c0.focus {
