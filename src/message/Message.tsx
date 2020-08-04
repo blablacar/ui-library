@@ -4,6 +4,7 @@ import cc from 'classcat'
 import { prefix } from '../_utils'
 import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
 import { Text, TextDisplayType } from '../text'
+import { StyledMessage } from './Message.style'
 
 export interface MessageProps {
   readonly children: string
@@ -15,7 +16,7 @@ export interface MessageProps {
 }
 
 export const Message = ({ active, children, messageAnnotation, className }: MessageProps) => (
-  <div className={cc(['kirk-message', prefix({ active }), className])}>
+  <StyledMessage className={cc(['kirk-message', prefix({ active }), className])}>
     <div className="kirk-message-content">
       <blockquote>
         <div className="kirk-label">
@@ -31,5 +32,5 @@ export const Message = ({ active, children, messageAnnotation, className }: Mess
         <BlankSeparator size={BlankSeparatorSize.MEDIUM} />
       </Fragment>
     )}
-  </div>
+  </StyledMessage>
 )
