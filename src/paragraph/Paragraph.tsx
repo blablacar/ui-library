@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { Button, ButtonStatus } from '../button'
 import { Text, TextTagType } from '../text'
+import { StyledParagraph } from './Paragraph.style'
 
 const DEFAULT_MAX_CHAR_SIZE = 180
 
@@ -53,12 +54,12 @@ export class Paragraph extends PureComponent<ParagraphProps> {
     )
 
     return (
-      <div className={cc(className)} role="presentation">
+      <StyledParagraph className={cc(className)} role="presentation">
         <Text {...(itemProp && { itemProp })} tag={TextTagType.PARAGRAPH} newlineToBr>
           {content}
         </Text>
         {readMoreButton}
-      </div>
+      </StyledParagraph>
     )
   }
 }

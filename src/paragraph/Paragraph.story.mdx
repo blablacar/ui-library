@@ -1,0 +1,59 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Paragraph } from './index'
+import { BaseSection as Section } from '../layout/section/baseSection'
+
+<Meta title="Paragraph" />
+
+# **Paragraph**
+
+<Preview>
+  <Story name="Long text">
+    <Paragraph
+      isExpandable={true}
+      expandLabel="Expand"
+    >
+      {`${'Long text (above max char) '.repeat(20)}`}
+    </Paragraph>
+  </Story>
+</Preview>
+
+# **Paragraph short text**
+
+<Preview>
+  <Story name="Short text">
+    <Paragraph>Short text (below max char)</Paragraph>
+  </Story>
+</Preview>
+
+# **Paragraph long unbreakable text**
+
+<Preview>
+  <Story name="Long unbreakable text">
+    <Paragraph 
+      isExpandable={true}
+      expandLabel="Expand"
+    >
+      {`http://${'long_url_without_spaces'.repeat(20)}.com`}
+    </Paragraph>
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Paragraph } from '@blablacar/ui-library/build/paragraph'
+
+<Paragraph
+  isExpandable={true}
+  expandLabel="Expand"
+>
+  Some text.
+</Paragraph>
+```
+
+<Props of={Paragraph} />

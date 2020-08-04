@@ -1,8 +1,8 @@
 # Unreleased
 
-[...]
-
 - **[UPDATE]** Migrate `PushInfo` to new mdx story format
+- **[UPDATE]** Migrate `Paragraph` to new mdx story format
+[...]
 
 # v39.0.1 (07/08/2020)
 
