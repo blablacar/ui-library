@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
-import { Item } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { RadioIcon } from '../_internals/radioIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
@@ -105,30 +104,28 @@ export class ItemRadio extends Component<ItemRadioProps> {
     )
 
     return (
-      <StyledItemRadio disabled={disabled}>
-        <Item
-          className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
-          leftTitle={labelTitle}
-          leftBody={label}
-          rightTitle={data}
-          rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
-          rightBody={dataInfo}
-          /* No a11y issue here
+      <StyledItemRadio
+        className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
+        leftTitle={labelTitle}
+        leftBody={label}
+        rightTitle={data}
+        rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+        rightBody={dataInfo}
+        /* No a11y issue here
             - The input is well wrapped with the label
             - The linter can't access the complex components implementation
           */
-          // eslint-disable-next-line jsx-a11y/label-has-associated-control
-          tag={<label />}
-          leftAddon={leftAddon}
-          rightAddon={radio}
-          chevron={chevron && !isLoading}
-          highlighted={highlighted}
-          isClickable={!disabled}
-          disabled={disabled}
-          hasHorizontalSpacing={hasHorizontalSpacing}
-          {...a11yAttrs}
-        />
-      </StyledItemRadio>
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
+        tag={<label />}
+        leftAddon={leftAddon}
+        rightAddon={radio}
+        chevron={chevron && !isLoading}
+        highlighted={highlighted}
+        isClickable={!disabled}
+        disabled={disabled}
+        hasHorizontalSpacing={hasHorizontalSpacing}
+        {...a11yAttrs}
+      />
     )
   }
 }

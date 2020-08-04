@@ -1,99 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemRadioGroup Should map its children and render them with specific props 1`] = `
-.c5 {
+.c4 {
   fill: #00AFF5;
 }
 
-.c5.kirk-icon-wrapper {
+.c4.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
 
-.c5.kirk-icon-shadowed {
+.c4.kirk-icon-shadowed {
   border-radius: 50%;
   box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
-.c5 .kirk-icon-badge {
+.c4 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c3 {
+.c3.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c3 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c3.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c3 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c3 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
+.c3.thin circle {
+  stroke-width: 3;
+}
+
+.c3.absolute {
+  position: absolute;
+}
+
+.c2 {
   margin: 0;
   font-weight: 400;
 }
 
-.c3.kirk-text-button {
+.c2.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-body,
-.c3.kirk-text-bodyStrong {
+.c2.kirk-text-body,
+.c2.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-caption {
+.c2.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-display2 {
+.c2.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c3.kirk-text-display1 {
+.c2.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c3.kirk-text-subheader,
-.c3.kirk-text-subheaderStrong {
+.c2.kirk-text-subheader,
+.c2.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c2.kirk-text-title,
+.c2.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-bodyStrong,
-.c3.kirk-text-subheaderStrong,
-.c3.kirk-text-titleStrong {
+.c2.kirk-text-bodyStrong,
+.c2.kirk-text-subheaderStrong,
+.c2.kirk-text-titleStrong {
   font-weight: 500;
 }
 
-.c2 {
+.c1 {
   padding-left: 24px !important;
   padding-right: 24px !important;
   margin-left: 0;
   margin-right: 0;
 }
 
-.c2 {
+.c1 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -112,20 +149,20 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   background: none;
 }
 
-.c2.kirk-item--clickable:hover {
+.c1.kirk-item--clickable:hover {
   cursor: pointer;
   background: #EDEDED;
 }
 
-.c2.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+.c1.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
   background: none;
 }
 
-.c2:disabled {
+.c1:disabled {
   cursor: default;
 }
 
-a.c2 {
+a.c1 {
   background: none;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -137,7 +174,7 @@ a.c2 {
   -webkit-touch-callout: none;
 }
 
-button.c2 {
+button.c1 {
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -147,40 +184,40 @@ button.c2 {
   -webkit-touch-callout: none;
 }
 
-button:focus:not(.focus-visible).c2 {
+button:focus:not(.focus-visible).c1 {
   outline: none;
 }
 
-.c2 .kirk-item-leftText {
+.c1 .kirk-item-leftText {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c2 .kirk-item-rightText {
+.c1 .kirk-item-rightText {
   margin-left: 16px;
   text-align: right;
 }
 
-.c2 .kirk-text {
+.c1 .kirk-text {
   display: block;
 }
 
-.c2 .kirk-item-title--withBody {
+.c1 .kirk-item-title--withBody {
   margin-bottom: 4px;
 }
 
-.c2 .kirk-item--strikethrough {
+.c1 .kirk-item--strikethrough {
   -webkit-text-decoration: line-through;
   text-decoration: line-through;
 }
 
-.c2 .kirk-item-title--withButtonAddon {
+.c1 .kirk-item-title--withButtonAddon {
   position: relative;
 }
 
-.c2 .kirk-item-leftAddon,
-.c2 .kirk-item-rightAddon {
+.c1 .kirk-item-leftAddon,
+.c1 .kirk-item-rightAddon {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -192,61 +229,24 @@ button:focus:not(.focus-visible).c2 {
   align-items: center;
 }
 
-.c2 .kirk-item-leftAddon {
+.c1 .kirk-item-leftAddon {
   margin-right: 16px;
 }
 
-.c2 .kirk-item-rightAddon {
+.c1 .kirk-item-rightAddon {
   margin-left: 16px;
 }
 
-.c2.kirk-item--highlighted .kirk-text-title {
+.c1.kirk-item--highlighted .kirk-text-title {
   color: #00AFF5;
 }
 
-.c2 .kirk-item-title--withButtonAddon button {
+.c1 .kirk-item-title--withButtonAddon button {
   position: absolute;
   width: 24px;
   height: 24px;
   margin-left: 4px;
   bottom: 0;
-}
-
-.c4.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c4 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c4.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c4 circle.outer {
-  stroke: #00AFF5;
-}
-
-.c4 circle.inner {
-  stroke-width: 0;
-  fill: #00AFF5;
-}
-
-.c4.thin circle {
-  stroke-width: 3;
-}
-
-.c4.absolute {
-  position: absolute;
 }
 
 .c1 input {
@@ -285,13 +285,13 @@ button:focus:not(.focus-visible).c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-item--clickable kirk-item-radio c1"
     >
       <span
         className="kirk-item-leftText"
       >
         <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           1
         </span>
@@ -312,7 +312,7 @@ button:focus:not(.focus-visible).c2 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c4 c5"
+          className="kirk-icon kirk-icon-circle c3 c4"
           height={24}
           viewBox="0 0 66 66"
           width={24}
@@ -334,13 +334,13 @@ button:focus:not(.focus-visible).c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-item--clickable kirk-item-radio c1"
     >
       <span
         className="kirk-item-leftText"
       >
         <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           2
         </span>
@@ -361,7 +361,7 @@ button:focus:not(.focus-visible).c2 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c4 c5"
+          className="kirk-icon kirk-icon-circle c3 c4"
           height={24}
           viewBox="0 0 66 66"
           width={24}
@@ -389,13 +389,13 @@ button:focus:not(.focus-visible).c2 {
     className="kirk-items-list-item"
   >
     <label
-      className="kirk-item kirk-item--clickable kirk-item-radio c1 c2"
+      className="kirk-item kirk-item--clickable kirk-item-radio c1"
     >
       <span
         className="kirk-item-leftText"
       >
         <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
+          className="kirk-text kirk-text-body kirk-item-body c2"
         >
           3
         </span>
@@ -416,7 +416,7 @@ button:focus:not(.focus-visible).c2 {
         />
         <svg
           aria-hidden={true}
-          className="kirk-icon kirk-icon-circle c4 c5"
+          className="kirk-icon kirk-icon-circle c3 c4"
           height={24}
           viewBox="0 0 66 66"
           width={24}
