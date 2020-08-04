@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { ItemsList, ItemsListDivider } from './index'
+import { ItemChoice } from '../itemChoice'
+
+<Meta title="Items|ItemsList" />
+
+# **ItemsList**
+
+<Preview>
+  <Story name="With separators between each item">
+    <ItemsList withSeparators>
+      <ItemChoice label="Item 1" href="#1" />
+      <ItemChoice label="Item 2" href="#2" />
+      <ItemChoice label="Item 3" href="#3" />
+    </ItemsList>
+  </Story>
+  <Story name="With custom positioned separators">
+    <ItemsList>
+      <ItemChoice label="Item 1" href="#1" />
+      <ItemChoice label="Item 2" href="#2" />
+      <ItemChoice label="Item 3" href="#3" />
+      <ItemsListDivider />
+      <ItemChoice label="Item 4" href="#4" />
+    </ItemsList>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { ItemsList } from '@blablacar/ui-library/build/ItemsList'
+;<ItemsList withSeparators>
+  <ItemChoice label="Item 1" href="#1" />
+  <ItemChoice label="Item 2" href="#2" />
+  <ItemChoice label="Item 3" href="#3" />
+</ItemsList>
+```
+
+<Props of={ItemsList} />
