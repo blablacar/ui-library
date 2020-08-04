@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
+import { Caption } from '../caption'
 import { Review } from './index'
 
 const defaultReviewProps = {
@@ -22,7 +23,7 @@ function assertReview(
   expect(title.text()).toBe('Review title')
   const paragraph = review.find('p')
   expect(paragraph.text()).toBe('Review content')
-  const date = review.find('.kirk-caption')
+  const date = review.find(Caption)
   expect(date.text()).toBe('05 jul - 17:39')
   const reviewResponse = review.find('.kirk-is-review-response')
   expect(reviewResponse.exists()).toBe(isReviewResponse)
