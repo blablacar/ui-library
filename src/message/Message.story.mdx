@@ -1,0 +1,89 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
+import {Fragment} from 'react'
+
+import { Message } from './index'
+
+<Meta title="Widgets|Message" />
+
+# ** Message **
+
+## Basic message
+
+<Preview>
+  <Story name="Default">
+    <Message active={false}>{text('text', 'A simple message')}</Message>
+  </Story>
+</Preview>
+
+## Conversation
+
+<Preview>
+  <Story name="Conversation">
+    <Fragment>
+      <Message messageAnnotation="Delivered - 15:29" active={false}>
+        coucou
+      </Message>
+      <Message messageAnnotation="Delivered - 15:29" active={false}>
+        This is a long message that is basically a long message containing a lot of information and probably being on multiple lines, maybe three depending on the screen.
+      </Message>
+      <Message messageAnnotation="Delivered - 15:30" active={false}>
+        Thisisalongmessagethatisbasicallyalongmessagecontainingalotofinformationandprobablybeingonmultiplelinesandwithoutanyseparator.
+      </Message>
+      <Message messageAnnotation="Delivered - 15:32" active={false}>
+        Msg
+      </Message>
+      <Message messageAnnotation="Delivered - 15:35" active>
+        Thisisalongmessagethatisbasicallyalongmessagecontainingalotofinformationandprobablybeingonmultiplelinesandwithoutanyseparator.
+      </Message>
+      <Message active>Msg</Message>
+      <Message active>This is a long message that is basically a long message containing a lot of information and probably being on multiple lines, maybe three depending on the screen.</Message>
+      <Message messageAnnotation="Sent - 15:40" active>
+        Msg 2
+      </Message>
+      <Message messageAnnotation="Delivered - 15:45" active>
+        Msg 1
+      </Message>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Current user's message
+
+<Preview>
+  <Story name="Current user message">
+    <Message active>{text('text', 'A simple message')}</Message>
+  </Story>
+</Preview>
+
+## Message from author with message annotation
+
+<Preview>
+  <Story name="Message from author with message annotation">
+    <Message active messageAnnotation="Sent - 15:00">
+      {text('text', 'A simple message')}
+    </Message>
+  </Story>
+</Preview>
+
+## Message to author with message annotation
+
+<Preview>
+  <Story name="Message to author with message annotation">
+    <Message active={false} messageAnnotation="Delivered - 15:00">
+      {text('text', 'A simple message')}
+    </Message>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Message } from '@blablacar/ui-library/build/Message'
+
+<Message />
+```
+
+<Props of={Message} />
