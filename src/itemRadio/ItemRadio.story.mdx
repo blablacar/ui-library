@@ -1,0 +1,59 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { action } from '@storybook/addon-actions'
+
+import { ItemRadio, ItemRadioStatus } from './index'
+import { LadyIcon } from '../icon/ladyIcon'
+
+<Meta title="Items|ItemRadio" />
+
+# **ItemRadio**
+
+<Preview>
+  <Story name="Default">
+    <ItemRadio
+      name="InputName"
+      value="InputValue"
+      leftAddon={<LadyIcon />}
+      labelTitle="Label title"
+      label="Main information"
+      data="Data"
+      dataInfo="Data info"
+      onChange={action('changed')}
+      checked={false}
+      disabled={false}
+      status={ItemRadioStatus.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+We use these items when the user wants to modify a previously selected value. You can't select several choices.
+
+They appear in subflows.
+
+They can't be used as a pre-selected option in a one-screen one-action flow.
+
+There is no limitation on the number of lines for the main info or title. The text, icons and checkboxes are centered in height.
+
+## Usage
+
+```jsx
+import { ItemRadio } from '@blablacar/ui-library/build/itemRadio'
+
+<ItemRadio
+  name="InputName"
+  value="InputValue"
+  leftAddon={<LadyIcon />}
+  labelTitle="Label title"
+  label="Main information"
+  data="Data"
+  dataInfo="Data info"
+  onChange={() => {}}
+  checked={false}
+  disabled={false}
+  status={ItemRadioStatus.DEFAULT}
+/>
+```
+
+<Props of={ItemRadio} />
