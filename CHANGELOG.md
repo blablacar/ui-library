@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Cleaned unused props `HeroSection` and changed layout rules
+  [...]
 
 # v39.0.0 (07/08/2020)
 

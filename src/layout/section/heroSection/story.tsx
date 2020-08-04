@@ -10,67 +10,81 @@ import { HeroSection } from './index'
 const stories = storiesOf('Sections|HeroSection', module)
 stories.addDecorator(withKnobs)
 
-stories.add('default', () => (
+const bottomElement = (
+  <MediaSizeProvider>
+    <SearchForm
+      onSubmit={() => {}}
+      autocompleteFromPlaceholder="Leaving From"
+      autocompleteToPlaceholder="Going to"
+      renderAutocompleteFrom={props => <AutoCompleteExample {...props} />}
+      renderAutocompleteTo={props => <AutoCompleteExample {...props} />}
+      datepickerProps={{
+        defaultValue: new Date().toISOString(),
+        format: value => new Date(value).toLocaleDateString(),
+      }}
+      stepperProps={{
+        defaultValue: 1,
+        min: 1,
+        max: 8,
+        title: 'Choose your number of seats',
+        increaseLabel: 'Increase the number of seats by 1',
+        decreaseLabel: 'Decrease the number of seats by 1',
+        format: value => `${value} seat(s)`,
+        confirmLabel: 'Submit',
+      }}
+    />
+  </MediaSizeProvider>
+)
+
+stories.add('homepage', () => (
   <HeroSection
-    heroDescription={text(
-      'heroDescription',
-      'Bus ou covoiturage : choisissez le trajet qui vous convient le mieux',
-    )}
-    heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?')}
+    heroText={text('heroText', 'Your ride. Your choice.')}
     heroImageUrl={text(
       'heroImageUrl',
       'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign-1ea3207605913c1e26410e605a467eb7.jpg',
     )}
-    heroImageUrlLarge={text(
-      'heroImageUrlLarge',
-      'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign_large-240e0d9fe2123506cca634c2acedce24.jpg',
-    )}
-    buttonText={text('buttonText', 'Rechercher un trajet')}
-    buttonHref={text('buttonHref', 'http://google.fr')}
+    bottomElement={bottomElement}
   />
 ))
 
-stories.add('search form', () => (
+stories.add('bus homepage', () => (
   <MediaSizeProvider>
     <HeroSection
-      heroDescription={text(
-        'heroDescription',
-        'Bus ou covoiturage : choisissez le trajet qui vous convient le mieux',
+      heroText={text(
+        'heroText',
+        'BlaBlaBus vous emmène à petit prix vers plus de 300 destinations.',
       )}
-      heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?')}
       heroImageUrl={text(
         'heroImageUrl',
-        'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign-1ea3207605913c1e26410e605a467eb7.jpg',
+        'https://cdn.blablacar.com/kairos/assets/build/images/hero_home-18a20dcaeda85e47ced19504c6fe3d32.jpg',
       )}
-      heroImageUrlLarge={text(
-        'heroImageUrlLarge',
-        'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign_large-240e0d9fe2123506cca634c2acedce24.jpg',
+      bottomElement={bottomElement}
+    />
+  </MediaSizeProvider>
+))
+
+stories.add('bus homepage 2', () => (
+  <MediaSizeProvider>
+    <HeroSection
+      heroText={text('heroText', 'Новый способ путешествовать дешево на BlaBlaCar – автобусы!')}
+      heroImageUrl={text(
+        'heroImageUrl',
+        'https://cdn.blablacar.com/kairos/assets/build/images/hero_home_RU-d69e5f87881d6cc6b774d57ff97fc9dc.jpg',
       )}
-      bottomElement={
-        // This should not be needed...
-        // eslint-disable-next-line react/jsx-wrap-multilines
-        <SearchForm
-          onSubmit={() => {}}
-          autocompleteFromPlaceholder="Leaving From"
-          autocompleteToPlaceholder="Going to"
-          renderAutocompleteFrom={props => <AutoCompleteExample {...props} />}
-          renderAutocompleteTo={props => <AutoCompleteExample {...props} />}
-          datepickerProps={{
-            defaultValue: new Date().toISOString(),
-            format: value => new Date(value).toLocaleDateString(),
-          }}
-          stepperProps={{
-            defaultValue: 1,
-            min: 1,
-            max: 8,
-            title: 'Choose your number of seats',
-            increaseLabel: 'Increase the number of seats by 1',
-            decreaseLabel: 'Decrease the number of seats by 1',
-            format: value => `${value} seat(s)`,
-            confirmLabel: 'Submit',
-          }}
-        />
-      }
+      bottomElement={bottomElement}
+    />
+  </MediaSizeProvider>
+))
+
+stories.add('bus destination', () => (
+  <MediaSizeProvider>
+    <HeroSection
+      heroText={text('heroText', 'Bus Bordeaux - Toulouse dès X,XX €')}
+      heroImageUrl={text(
+        'heroImageUrl',
+        'https://cdn.blablacar.com/kairos/assets/build/images/hero-ca341b588121b495c3bf28a998e5440e.jpg',
+      )}
+      bottomElement={bottomElement}
     />
   </MediaSizeProvider>
 ))
