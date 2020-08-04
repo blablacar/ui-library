@@ -1,23 +1,2 @@
-import styled from 'styled-components'
-
-import { color, inputBorderSize, space } from '../_utils/branding'
-import { ItemRadio } from './ItemRadio'
-
-const StyledItemRadio = styled(ItemRadio)`
-  & input {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-  }
-  & {
-    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-    border: ${inputBorderSize.focus} solid transparent;
-    padding: calc(${space.l} - ${inputBorderSize.focus}) auto;
-  }
-  &.focus {
-    border: ${inputBorderSize.focus} solid ${color.blue};
-  }
-`
-
-export { ItemRadioProps, ItemRadioStatus } from './ItemRadio'
-export { StyledItemRadio as ItemRadio }
-export default StyledItemRadio
+export { ItemRadio, ItemRadioProps, ItemRadioStatus } from './ItemRadio'
+export { ItemRadio as default } from './ItemRadio'
