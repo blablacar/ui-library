@@ -1,10 +1,12 @@
-import React, { Component, FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 import cc from 'classcat'
 
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Divider } from '../divider'
 import { ItemCheckboxProps } from '../itemCheckbox/ItemCheckbox'
 import { ItemChoiceProps } from '../itemChoice'
 import { ItemRadioProps } from '../itemRadio/ItemRadio'
+import { StyledItemsList } from './ItemsList.style'
 
 export const ItemsListDivider: FunctionComponent = () => null
 
@@ -19,44 +21,40 @@ export type ItemsListChild =
   | React.ReactElement<ItemCheckboxProps>
   | null
 
-export interface ItemsListProps {
+export interface ItemsListProps extends A11yProps {
   readonly children: ItemsListChild[]
   readonly withSeparators?: boolean
   readonly className?: string
   readonly keyGenerator?: (index: number) => string | number
-  readonly role?: string
 }
 
-export class ItemsList extends Component<ItemsListProps> {
-  static defaultProps: Partial<ItemsListProps> = {
-    withSeparators: false,
-    className: '',
-    role: '',
-    keyGenerator: index => index,
-  }
+export const ItemsList = (props: ItemsListProps) => {
+  const {
+    children,
+    className = '',
+    withSeparators = false,
+    keyGenerator = (i: number) => i,
+  } = props
+  const a11yAttrs = pickA11yProps<ItemsListProps>(props)
 
-  render() {
-    const { children, className, withSeparators, keyGenerator, ...otherProps } = this.props
+  return (
+    <StyledItemsList className={cc(['kirk-items-list', className])} {...a11yAttrs}>
+      {children.map((item, index) => {
+        if (item.type === ItemsListDividerType || item.type === undefined) {
+          return null
+        }
 
-    return (
-      <ul className={cc(['kirk-items-list', className])} {...otherProps}>
-        {children.map((item, index) => {
-          if (item.type === ItemsListDividerType || item.type === undefined) {
-            return null
-          }
+        const isLast = children.length === index + 1
+        const hasSeparator =
+          !isLast && (children[index + 1].type === ItemsListDividerType || withSeparators)
 
-          const isLast = children.length === index + 1
-          const hasSeparator =
-            !isLast && (children[index + 1].type === ItemsListDividerType || withSeparators)
-
-          return (
-            <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>
-              {item}
-              {hasSeparator && <Divider />}
-            </li>
-          )
-        })}
-      </ul>
-    )
-  }
+        return (
+          <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>
+            {item}
+            {hasSeparator && <Divider />}
+          </li>
+        )
+      })}
+    </StyledItemsList>
+  )
 }
