@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
 import { Item } from '../_internals/item'
-import { ItemRadio, ItemRadioProps, ItemRadioStatus } from './ItemRadio'
+import { ItemRadio, ItemRadioProps, ItemRadioStatus } from './index'
 
 describe('ItemRadio', () => {
   const defaultProps: ItemRadioProps = {

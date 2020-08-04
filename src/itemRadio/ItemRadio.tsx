@@ -7,6 +7,7 @@ import { RadioIcon } from '../_internals/radioIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
+import { StyledItemRadio } from './ItemRadio.style'
 
 export enum ItemRadioStatus {
   DEFAULT = 'default',
@@ -104,7 +105,7 @@ export class ItemRadio extends Component<ItemRadioProps> {
     )
 
     return (
-      <Fragment>
+      <StyledItemRadio disabled={disabled}>
         <Item
           className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
           leftTitle={labelTitle}
@@ -127,7 +128,7 @@ export class ItemRadio extends Component<ItemRadioProps> {
           hasHorizontalSpacing={hasHorizontalSpacing}
           {...a11yAttrs}
         />
-      </Fragment>
+      </StyledItemRadio>
     )
   }
 }
