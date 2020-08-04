@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Button, ButtonStatus } from '../button'
+import { StyledCaption } from './Caption.style'
 
 export const renderSecondary = (href?: string, secondaryText?: string) =>
   href ? (
@@ -21,8 +22,8 @@ export interface CaptionProps {
 }
 
 export const Caption = ({ className, children, href, secondaryText, isoDate }: CaptionProps) => (
-  <div className={cc(['kirk-caption', className])}>
+  <StyledCaption className={cc(['kirk-caption', className])}>
     <time dateTime={isoDate || null}>{children}</time>
     {secondaryText && <span> - {renderSecondary(href, secondaryText)}</span>}
-  </div>
+  </StyledCaption>
 )
