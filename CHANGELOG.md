@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v39.0.1 (07/08/2020)
+
 - **[FIX]** Fixed non-displayed loader in Search Form `Autocomplete`
 
 # v39.0.0 (07/08/2020)
