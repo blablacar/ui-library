@@ -43,10 +43,8 @@ export const autoCompleteBaseStyle = `
       border-radius: 0;
     }
 
-    .kirk-loader {
-      position: absolute;
-      top: 12px;
-      right: 12px;
+    .kirk-autoComplete-loader {
+      padding-top: 12px;
     }
   }
 
