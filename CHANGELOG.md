@@ -2,7 +2,7 @@
 
 [...]
 
-# v38.2.1 (07/08/2020)
+# v39.0.0 (07/08/2020)
 
 - **[UPDATE]** Added `inputAttributes` props on `TextField` to redirect html input attributes to the child input
 - **[BREAKING CHANGE]** unit tests may need to be adapted to our recent Storybook + MDX changes
