@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[UPDATE]** Added `inputAttributes` props on `TextField` to redirect html input attributes to the child input
 [...]
+
+# v38.2.1 (07/08/2020)
+
+- **[UPDATE]** Added `inputAttributes` props on `TextField` to redirect html input attributes to the child input
 
 # v38.2.1 (04/08/2020)
 
