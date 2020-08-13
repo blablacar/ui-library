@@ -2,10 +2,9 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import { color } from '../_utils/branding'
 import { ProximityIcon } from '../icon/proximityIcon'
 import { PushInfo } from './index'
-import { animationDelay, animationDuration } from './PushInfo'
+import { animationDelay, animationDuration } from './PushInfo.style'
 
 it('Should have the correct attributes and text.', () => {
   const pushInfo = renderer
@@ -23,7 +22,7 @@ it('Should also have the correct icon.', () => {
   const pushInfo = renderer
     .create(
       <PushInfo
-        icon={<ProximityIcon iconColor={color.green} title="" />}
+        icon={<ProximityIcon title="" />}
         headline="If it's green it's a win!"
         content="Green icons show meeting points closest to you!"
       />,
