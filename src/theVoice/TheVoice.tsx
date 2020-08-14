@@ -2,12 +2,12 @@ import React, { ReactNode } from 'react'
 
 import { Title } from '../title'
 
-export interface TheVoiceProps {
-  readonly id?: string
-  readonly className?: string
-  readonly children: ReactNode
-  readonly isInverted?: boolean
-}
+export type TheVoiceProps = Readonly<{
+  id?: string
+  className?: string
+  children: ReactNode
+  isInverted?: boolean
+}>
 
 export const TheVoice = ({ id, className, children }: TheVoiceProps) => (
   <Title id={id} className={className} headingLevel="1">

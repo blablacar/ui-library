@@ -12,14 +12,15 @@ export enum HintBubblePosition {
   BELOW = 'below',
 }
 
-export interface HintBubbleProps extends A11yProps {
-  title: string
-  className?: string
-  onClose: () => void
-  closeButtonTitle?: string
-  description?: string
-  position?: HintBubblePosition
-}
+export type HintBubbleProps = A11yProps &
+  Readonly<{
+    title: string
+    className?: string
+    onClose: () => void
+    closeButtonTitle?: string
+    description?: string
+    position?: HintBubblePosition
+  }>
 
 const HintBubble = (props: HintBubbleProps): JSX.Element => {
   const a11yProps = pickA11yProps<HintBubbleProps>(props)

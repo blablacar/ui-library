@@ -3,11 +3,11 @@ import React from 'react'
 import { ItemInfoProps } from '../../../itemInfo'
 import { BaseSection } from '../../../layout/section/baseSection'
 
-export interface ItemsSectionProps {
-  readonly children: React.ReactElement<ItemInfoProps>[]
-  readonly className?: string
-  readonly tag?: JSX.Element
-}
+export type ItemsSectionProps = Readonly<{
+  children: React.ReactElement<ItemInfoProps>[]
+  className?: string
+  tag?: JSX.Element
+}>
 
 /**
  * Items Section: display a list of items in a display: flex.

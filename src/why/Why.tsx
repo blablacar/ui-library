@@ -4,12 +4,12 @@ import cc from 'classcat'
 import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { QuestionIcon } from '../icon/questionIcon'
 
-export interface WhyProps {
-  readonly children: string
-  readonly title: string
-  readonly className?: string
-  readonly onClick?: () => void
-}
+export type WhyProps = Readonly<{
+  children: string
+  title: string
+  className?: string
+  onClick?: () => void
+}>
 
 export const Why = ({ className, children, title, onClick }: WhyProps) => {
   const { focusVisible, onFocus, onBlur } = useFocusVisible()

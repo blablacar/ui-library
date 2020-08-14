@@ -7,15 +7,15 @@ import { BaseSection, SectionContentSize } from '../../../layout/section/baseSec
 import { Text, TextTagType } from '../../../text'
 import { Title } from '../../../title'
 
-export interface ColumnedContentSectionProps {
-  readonly className?: string
-  readonly title: string
-  readonly topLinkLabel?: string
-  readonly topLinkHref?: string | JSX.Element
-  readonly columnContentList: ColumnContent[]
-}
+export type ColumnedContentSectionProps = Readonly<{
+  className?: string
+  title: string
+  topLinkLabel?: string
+  topLinkHref?: string | JSX.Element
+  columnContentList: ColumnContent[]
+}>
 
-interface ColumnContent {
+export interface ColumnContent {
   readonly title: string
   readonly content: string
   readonly media?: Media

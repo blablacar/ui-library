@@ -23,28 +23,28 @@ export enum DatePickerOrientation {
   VERTICAL = 'vertical',
 }
 
-export interface DatePickerProps {
-  readonly name: string
-  readonly locale?: string
-  readonly weekdaysShort?: string[]
-  readonly weekdaysLong?: string[]
-  readonly months?: string[]
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly initialDate?: Date
-  readonly initialMonth?: Date
-  readonly className?: string
-  readonly numberOfMonths?: number
-  readonly orientation?: DatePickerOrientation
-  readonly isOutsideRange?: (day: Date) => boolean
-  readonly fromMonth?: Date
-  readonly toMonth?: Date
-  readonly firstDayOfWeek?: number
-  readonly stickyPositionTop?: number
-  readonly focus?: boolean
-}
+export type DatePickerProps = Readonly<{
+  name: string
+  locale?: string
+  weekdaysShort?: string[]
+  weekdaysLong?: string[]
+  months?: string[]
+  onChange?: (obj: OnChangeParameters) => void
+  initialDate?: Date
+  initialMonth?: Date
+  className?: string
+  numberOfMonths?: number
+  orientation?: DatePickerOrientation
+  isOutsideRange?: (day: Date) => boolean
+  fromMonth?: Date
+  toMonth?: Date
+  firstDayOfWeek?: number
+  stickyPositionTop?: number
+  focus?: boolean
+}>
 
-export interface DatePickerState {
-  readonly date: Date
+export type DatePickerState = {
+  date: Date
 }
 
 export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> {

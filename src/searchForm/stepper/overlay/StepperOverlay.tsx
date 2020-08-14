@@ -6,9 +6,10 @@ import { Divider } from '../../../divider'
 import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 
-export interface StepperOverlayProps extends StepperProps {
-  itemTitle: string
-}
+export type StepperOverlayProps = StepperProps &
+  Readonly<{
+    itemTitle: string
+  }>
 
 export const StepperOverlay = ({ itemTitle, className, ...props }: StepperOverlayProps) => (
   <div className={cc(['kirk-stepperOverlay', className])}>

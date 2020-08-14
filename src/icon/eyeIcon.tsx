@@ -3,9 +3,10 @@ import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface EyeIconProps extends Icon {
-  readonly off?: boolean
-}
+export type EyeIconProps = Icon &
+  Readonly<{
+    off?: boolean
+  }>
 
 export const EyeIcon = ({ off, ...props }: EyeIconProps) => (
   <BaseIcon {...props}>

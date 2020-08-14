@@ -23,15 +23,16 @@ export enum TextTagType {
   SPAN = 'span',
 }
 
-export interface TextProps extends A11yProps {
-  readonly className?: string
-  readonly children: string | number | React.ReactNode
-  readonly display?: TextDisplayType
-  readonly tag?: TextTagType
-  readonly textColor?: string
-  readonly newlineToBr?: boolean
-  readonly itemProp?: string
-}
+export type TextProps = A11yProps &
+  Readonly<{
+    className?: string
+    children: string | number | React.ReactNode
+    display?: TextDisplayType
+    tag?: TextTagType
+    textColor?: string
+    newlineToBr?: boolean
+    itemProp?: string
+  }>
 
 const baseClassName = 'kirk-text'
 const cssColorRegex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i

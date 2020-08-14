@@ -6,12 +6,13 @@ import styled, { keyframes } from 'styled-components'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface CircleIconProps extends Icon {
-  readonly absolute?: boolean
-  readonly spinning?: boolean
-  readonly thin?: boolean
-  readonly innerDisc?: boolean
-}
+export type CircleIconProps = Icon &
+  Readonly<{
+    absolute?: boolean
+    spinning?: boolean
+    thin?: boolean
+    innerDisc?: boolean
+  }>
 
 const offset = 187
 const duration = '1.4s'

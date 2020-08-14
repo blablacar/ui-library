@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-export interface HamburgerButtonProps {
+export type HamburgerButtonProps = Readonly<{
   onClick: (event: React.MouseEvent<HTMLElement>) => void
   open?: boolean
-  readonly className?: string
-}
+  className?: string
+}>
 
 export const HamburgerButton = ({ open = false, onClick, className }: HamburgerButtonProps) => (
   <button className={cc([className])} aria-expanded={open} onClick={onClick}>

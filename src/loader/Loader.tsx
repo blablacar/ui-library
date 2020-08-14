@@ -21,7 +21,7 @@ export enum LoaderLayoutMode {
   BLOCK = 'block',
 }
 
-export interface LoaderProps {
+export type LoaderProps = Readonly<{
   className?: string
   inline?: boolean // Deprecated, use layoutMode instead.
   size?: number
@@ -30,7 +30,7 @@ export interface LoaderProps {
   onDoneAnimationEnd?: () => void
   loadingAriaLabel?: string
   loadedAriaLabel?: string
-}
+}>
 
 export class Loader extends PureComponent<LoaderProps> {
   static defaultProps: Partial<LoaderProps> = {

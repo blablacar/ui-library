@@ -25,7 +25,7 @@ export const StepperButtonSize = {
   [StepperDisplay.LARGE]: 48,
 }
 
-export interface StepperProps {
+export type StepperProps = Readonly<{
   name: string
   increaseLabel: string
   decreaseLabel: string
@@ -42,9 +42,9 @@ export interface StepperProps {
   focus?: boolean
   leftAddon?: React.ReactNode
   disabled?: boolean
-}
+}>
 
-interface StepperState {
+type StepperState = {
   value: number
   fontSize?: number
 }

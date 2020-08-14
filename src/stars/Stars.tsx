@@ -4,10 +4,10 @@ import cc from 'classcat'
 import { StarIcon as Star } from '../icon/starIcon'
 import { StyledStars } from './Stars.style'
 
-export interface StarsProps {
-  readonly className?: string
-  readonly stars: number
-}
+export type StarsProps = Readonly<{
+  className?: string
+  stars: number
+}>
 
 const MIN_STARS = 0
 const MAX_STARS = 5

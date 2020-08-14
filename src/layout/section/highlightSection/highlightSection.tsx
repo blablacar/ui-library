@@ -3,12 +3,12 @@ import React from 'react'
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
 import { SubHeader } from '../../../subHeader'
 
-export interface HighlightSectionProps {
-  readonly className?: string
-  readonly contentClassName?: string
-  readonly children: React.ReactNode
-  readonly title?: string
-}
+export type HighlightSectionProps = Readonly<{
+  className?: string
+  contentClassName?: string
+  children: React.ReactNode
+  title?: string
+}>
 
 /**
  * A specialized section with an highlighting background color.

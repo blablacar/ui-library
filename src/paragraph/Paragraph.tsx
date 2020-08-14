@@ -7,16 +7,16 @@ import { StyledParagraph } from './Paragraph.style'
 
 const DEFAULT_MAX_CHAR_SIZE = 180
 
-export interface ParagraphProps {
-  readonly className?: string
-  readonly children: string
-  readonly isExpandable?: boolean
-  readonly expandLabel?: string
-  readonly itemProp?: string
-}
+export type ParagraphProps = Readonly<{
+  className?: string
+  children: string
+  isExpandable?: boolean
+  expandLabel?: string
+  itemProp?: string
+}>
 
-interface ParagraphState {
-  readonly isExpanded: boolean
+type ParagraphState = {
+  isExpanded: boolean
 }
 
 export class Paragraph extends PureComponent<ParagraphProps> {

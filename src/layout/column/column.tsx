@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-export interface ColumnProps {
-  readonly className?: string
-  readonly children?: React.ReactNode
-  readonly key?: string
-}
+export type ColumnProps = Readonly<{
+  className?: string
+  children?: React.ReactNode
+  key?: string
+}>
 
 /**
  * A child component for <Columns> parent component.

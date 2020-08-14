@@ -15,12 +15,14 @@ export enum ConfirmationModalStatus {
   WARNING = 'warning',
   REMINDER = 'reminder',
 }
-export interface ConfirmationModalProps extends ModalProps {
-  readonly status: ConfirmationModalStatus
-  readonly onConfirm?: () => void
-  readonly confirmLabel?: string
-  readonly confirmIsLoading?: boolean
-}
+
+export type ConfirmationModalProps = ModalProps &
+  Readonly<{
+    status: ConfirmationModalStatus
+    onConfirm?: () => void
+    confirmLabel?: string
+    confirmIsLoading?: boolean
+  }>
 
 export class ConfirmationModal extends Component<ConfirmationModalProps> {
   static defaultProps: Partial<ConfirmationModalProps> = {

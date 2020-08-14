@@ -17,24 +17,26 @@ export enum ItemChoiceStyle {
 
 export const ItemChoiceStatus = ItemStatus
 
-export interface ItemChoiceProps extends A11yProps, NormalizeProps {
-  readonly label?: string
-  readonly labelInfo?: React.ReactNode
-  readonly data?: string
-  readonly dataInfo?: string
-  readonly leftAddon?: JSX.Element
-  readonly rightAddon?: JSX.Element
-  readonly className?: string
-  readonly href?: string | JSX.Element
-  readonly status?: ItemStatus
-  readonly style?: ItemChoiceStyle
-  readonly disabled?: boolean
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onDoneAnimationEnd?: () => void
-}
+export type ItemChoiceProps = A11yProps &
+  NormalizeProps &
+  Readonly<{
+    label?: string
+    labelInfo?: React.ReactNode
+    data?: string
+    dataInfo?: string
+    leftAddon?: JSX.Element
+    rightAddon?: JSX.Element
+    className?: string
+    href?: string | JSX.Element
+    status?: ItemStatus
+    style?: ItemChoiceStyle
+    disabled?: boolean
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+    onDoneAnimationEnd?: () => void
+  }>
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {
   static defaultProps: Partial<ItemChoiceProps> = {

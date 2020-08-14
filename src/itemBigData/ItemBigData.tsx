@@ -6,12 +6,14 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplay2 } from '../typography/display2'
 
-export interface ItemBigDataProps extends NormalizeProps, A11yProps {
-  readonly mainInfo?: string
-  readonly className?: string
-  readonly mainTitle?: string
-  readonly tag?: JSX.Element
-}
+export type ItemBigDataProps = NormalizeProps &
+  A11yProps &
+  Readonly<{
+    mainInfo?: string
+    className?: string
+    mainTitle?: string
+    tag?: JSX.Element
+  }>
 
 const StyledItemBigData = styled(Item)`
   & .kirk-item-leftText {

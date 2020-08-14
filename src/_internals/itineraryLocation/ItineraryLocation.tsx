@@ -8,16 +8,16 @@ import { Bullet, BulletTypes } from '../../bullet'
 import { ChevronIcon } from '../../icon/chevronIcon'
 import { Text, TextDisplayType, TextTagType } from '../../text'
 
-export interface ItineraryLocationProps {
-  readonly place: Place
-  readonly className?: string
-  readonly isSmall?: boolean
-  readonly isArrival?: boolean
-  readonly hasBottomAddon?: boolean
-  readonly hasTime?: boolean
-  readonly hasSubLabel?: boolean
-  readonly displaySubLabelOnly?: boolean
-}
+export type ItineraryLocationProps = Readonly<{
+  place: Place
+  className?: string
+  isSmall?: boolean
+  isArrival?: boolean
+  hasBottomAddon?: boolean
+  hasTime?: boolean
+  hasSubLabel?: boolean
+  displaySubLabelOnly?: boolean
+}>
 
 export const computeKeyFromPlace = (place: Place) => {
   if (place.key && typeof place.key === 'string') {

@@ -10,10 +10,10 @@ export enum BulletTypes {
   SEARCH = 'search',
 }
 
-export interface BulletProps {
-  readonly className?: string
-  readonly type?: BulletTypes
-}
+export type BulletProps = Readonly<{
+  className?: string
+  type?: BulletTypes
+}>
 
 export const Bullet = ({ className, type }: BulletProps) => {
   const baseClassName = 'kirk-bullet'

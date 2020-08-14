@@ -26,7 +26,7 @@ import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
 import { TRANSITION_SECTION_CLASS_NAME, transitionSectionTimeout } from './transitionConfig'
 
-export interface SearchFormProps {
+export type SearchFormProps = Readonly<{
   className?: string
   onSubmit: (formValues: SearchFormValues) => void
   disabledFrom?: boolean
@@ -40,14 +40,14 @@ export interface SearchFormProps {
   renderDatePickerComponent?: DatePickerOverlayProps['renderDatePickerComponent']
   datepickerProps: SearchFormDatePickerProps
   stepperProps: SearchFormStepperProps
-}
+}>
 
-export interface SearchFormDatePickerProps {
+export type SearchFormDatePickerProps = Readonly<{
   defaultValue: string
   format?: (value: string) => string
-}
+}>
 
-export interface SearchFormStepperProps {
+export type SearchFormStepperProps = Readonly<{
   min: number
   max: number
   defaultValue: number
@@ -56,7 +56,7 @@ export interface SearchFormStepperProps {
   title: string
   confirmLabel: string
   format?: (value: number) => string
-}
+}>
 
 export enum SearchFormElements {
   DATEPICKER = 'DATEPICKER',

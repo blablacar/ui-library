@@ -6,12 +6,13 @@ import styled from 'styled-components'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface CheckIconProps extends Icon {
-  readonly absolute?: boolean
-  readonly validate?: boolean
-  readonly backgroundColor?: string
-  readonly thin?: boolean
-}
+export type CheckIconProps = Icon &
+  Readonly<{
+    absolute?: boolean
+    validate?: boolean
+    backgroundColor?: string
+    thin?: boolean
+  }>
 
 const defaultBackgroundColor = 'transparent'
 

@@ -7,15 +7,16 @@ import { Avatar } from '../avatar'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
-export interface MessagingSummaryItemProps extends NormalizeProps {
-  readonly className?: string
-  readonly url: string
-  readonly pictureUrl: string
-  readonly label: string
-  readonly subLabel: string | JSX.Element
-  readonly timeLabel: string
-  readonly hasUnreadMessages: boolean
-}
+export type MessagingSummaryItemProps = NormalizeProps &
+  Readonly<{
+    className?: string
+    url: string
+    pictureUrl: string
+    label: string
+    subLabel: string | JSX.Element
+    timeLabel: string
+    hasUnreadMessages: boolean
+  }>
 
 const UNREAD_COLOR = color.midnightGreen
 const READ_COLOR = color.lightMidnightGreen

@@ -4,11 +4,11 @@ import { color } from '../../_utils/branding'
 import { CircleIcon } from '../../icon/circleIcon'
 import { Loader } from '../../loader'
 
-export interface RadioIconProps {
-  readonly isChecked?: boolean
-  readonly isLoading?: boolean
-  readonly isDisabled?: boolean
-}
+export type RadioIconProps = Readonly<{
+  isChecked?: boolean
+  isLoading?: boolean
+  isDisabled?: boolean
+}>
 
 export const RadioIcon = ({
   isChecked = false,

@@ -16,7 +16,7 @@ export interface AutocompleteItem {
   readonly leftAddon?: JSX.Element
 }
 
-export interface AutoCompleteListProps {
+export type AutoCompleteListProps = Readonly<{
   name: string
   onSelect?: (item: AutocompleteItem) => void
   className?: string
@@ -28,11 +28,11 @@ export interface AutoCompleteListProps {
   visible?: boolean
   selectedItemStatus?: ItemStatus
   withSeparators?: boolean
-}
+}>
 
-interface AutoCompleteListState {
-  readonly highlightedIndex: number
-  readonly selectedIndex: number
+type AutoCompleteListState = {
+  highlightedIndex: number
+  selectedIndex: number
 }
 
 export class AutoCompleteList extends Component<AutoCompleteListProps, AutoCompleteListState> {

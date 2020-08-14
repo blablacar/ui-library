@@ -5,19 +5,20 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { ItemRadioProps, ItemRadioStatus } from '../itemRadio/ItemRadio'
 import { ItemsList } from '../itemsList'
 
-export interface ItemRadioGroupProps extends A11yProps {
-  readonly name: string
-  readonly children: React.ReactElement<ItemRadioProps>[]
-  readonly className?: string
-  readonly value?: string | number | boolean
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly onClick?: (obj: OnChangeParameters) => void
-  readonly status?: ItemRadioStatus
-  readonly withSeparators?: boolean
-  readonly withChevrons?: boolean
-}
+export type ItemRadioGroupProps = A11yProps &
+  Readonly<{
+    name: string
+    children: React.ReactElement<ItemRadioProps>[]
+    className?: string
+    value?: string | number | boolean
+    onChange?: (obj: OnChangeParameters) => void
+    onClick?: (obj: OnChangeParameters) => void
+    status?: ItemRadioStatus
+    withSeparators?: boolean
+    withChevrons?: boolean
+  }>
 
-interface ItemRadioGroupState {
+type ItemRadioGroupState = {
   value: string | number | boolean
 }
 

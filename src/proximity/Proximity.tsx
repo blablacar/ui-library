@@ -45,11 +45,11 @@ const getColorAndTitle = (index: string, value: string, title: string) => {
   }
 }
 
-export interface ProximityProps {
-  readonly className?: string
-  readonly value: Distances
-  readonly title?: string
-}
+export type ProximityProps = Readonly<{
+  className?: string
+  value: Distances
+  title?: string
+}>
 
 export const Proximity = ({ value, title, className }: ProximityProps) => (
   <div className={cc(['kirk-proximity', className])}>

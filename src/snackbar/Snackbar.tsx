@@ -10,13 +10,13 @@ import { CrossIcon } from '../icon/crossIcon'
 import { Text, TextDisplayType } from '../text'
 import { AnimationType, Transitions as CustomTransition } from '../transitions'
 
-export interface SnackbarProps {
-  readonly close: () => void
-  readonly isOpen: boolean
-  readonly className?: string
-  readonly extraClassName?: string
-  readonly children: JSX.Element
-}
+export type SnackbarProps = Readonly<{
+  close: () => void
+  isOpen: boolean
+  className?: string
+  extraClassName?: string
+  children: JSX.Element
+}>
 
 export class Snackbar extends PureComponent<SnackbarProps> {
   private portalNode: HTMLElement

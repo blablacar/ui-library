@@ -10,14 +10,15 @@ import { Bullet, BulletTypes } from '../../bullet'
 import { Text, TextDisplayType, TextTagType } from '../../text'
 import { computeKeyFromPlace, ItineraryLocation } from '../itineraryLocation'
 
-export interface ItineraryCollapsibleProps extends A11yProps {
-  readonly places: Place[]
-  readonly className?: string
-  readonly label?: string
-}
+export type ItineraryCollapsibleProps = A11yProps &
+  Readonly<{
+    places: Place[]
+    className?: string
+    label?: string
+  }>
 
-interface ItineraryCollapsibleState {
-  readonly collapsed: boolean
+type ItineraryCollapsibleState = {
+  collapsed: boolean
 }
 
 const collapsibleLocationSize = 32 // default size of a collapsible ItineraryLocation

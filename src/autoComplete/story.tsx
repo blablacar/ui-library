@@ -21,21 +21,21 @@ const places: AutocompleteItem[] = [
   { id: '3', label: 'Paris Rive Gauche' },
 ]
 
-interface AutoCompleteExampleProps {
-  readonly searchOnMount?: boolean
-  readonly searchForItemsDelay?: number
-  readonly renderEmptySearch?: AutocompleteItem[]
-  readonly className?: string
-  readonly inputAddon?: React.ReactElement
-  readonly onSelect?: (obj: AutocompleteOnChange) => void
-  readonly autoFocus?: boolean
-  readonly placeholder?: string
-  readonly embeddedInSearchForm?: boolean
-}
+type AutoCompleteExampleProps = Readonly<{
+  searchOnMount?: boolean
+  searchForItemsDelay?: number
+  renderEmptySearch?: AutocompleteItem[]
+  className?: string
+  inputAddon?: React.ReactElement
+  onSelect?: (obj: AutocompleteOnChange) => void
+  autoFocus?: boolean
+  placeholder?: string
+  embeddedInSearchForm?: boolean
+}>
 
-interface AutoCompleteExampleState {
-  readonly isSearching: boolean
-  readonly items: AutocompleteItem[]
+type AutoCompleteExampleState = {
+  isSearching: boolean
+  items: AutocompleteItem[]
 }
 
 export class AutoCompleteExample extends Component<

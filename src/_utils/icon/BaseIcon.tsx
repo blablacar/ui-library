@@ -16,10 +16,11 @@ export interface Icon {
   readonly isDisabled?: boolean
 }
 
-export interface IconProps extends Icon {
-  readonly children: JSX.Element
-  readonly viewBox?: string
-}
+export type IconProps = Icon &
+  Readonly<{
+    children: JSX.Element
+    viewBox?: string
+  }>
 
 export const BaseIconDefaultProps = {
   className: '',

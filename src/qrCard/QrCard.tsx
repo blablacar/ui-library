@@ -6,13 +6,14 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { ItemInfo } from '../itemInfo'
 import { SubHeader } from '../subHeader'
 
-export interface QrCardProps extends A11yProps {
-  readonly className?: string
-  readonly imageUrl: string
-  readonly itemMainTitle?: string
-  readonly itemMainInfo?: string
-  readonly title: string
-}
+export type QrCardProps = A11yProps &
+  Readonly<{
+    className?: string
+    imageUrl: string
+    itemMainTitle?: string
+    itemMainInfo?: string
+    title: string
+  }>
 
 export const QrCard = (props: QrCardProps) => {
   const { className, itemMainTitle, imageUrl, itemMainInfo, title } = props

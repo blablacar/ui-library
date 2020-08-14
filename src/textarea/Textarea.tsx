@@ -10,7 +10,7 @@ import { prefix } from '../_utils'
 import { Button, ButtonStatus } from '../button'
 import { StyledTextarea } from './Textarea.style'
 
-export interface CommonFormFields {
+export type CommonFormFields = Readonly<{
   name: string
   id?: string
   placeholder?: string
@@ -24,30 +24,31 @@ export interface CommonFormFields {
   title?: string
   onFocus?: (event: React.FocusEvent<HTMLTextAreaElement>) => void
   onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void
-}
+}>
 
 type errorField = string | JSX.Element
 
-export interface TextareaProps extends CommonFormFields {
-  defaultValue?: string
-  labelledBy?: string
-  onChange?: (obj: OnChangeParameters) => void
-  className?: string
-  errorClassName?: string
-  error?: errorField
-  label?: string
-  focus?: boolean
-  pattern?: string
-  fieldRef?: (textarea: HTMLTextAreaElement) => void
-  focusBorder?: boolean
-  fitContent?: boolean // Allow the textarea to grow/shrink with its content.
-  // To display the buttom, you need to specify onButtonClick, buttonIcon and buttonTitle.
-  onButtonClick?: (event: React.MouseEvent<HTMLElement>) => void
-  buttonIcon?: JSX.Element
-  buttonTitle?: string
-}
+export type TextareaProps = CommonFormFields &
+  Readonly<{
+    defaultValue?: string
+    labelledBy?: string
+    onChange?: (obj: OnChangeParameters) => void
+    className?: string
+    errorClassName?: string
+    error?: errorField
+    label?: string
+    focus?: boolean
+    pattern?: string
+    fieldRef?: (textarea: HTMLTextAreaElement) => void
+    focusBorder?: boolean
+    fitContent?: boolean // Allow the textarea to grow/shrink with its content.
+    // To display the buttom, you need to specify onButtonClick, buttonIcon and buttonTitle.
+    onButtonClick?: (event: React.MouseEvent<HTMLElement>) => void
+    buttonIcon?: JSX.Element
+    buttonTitle?: string
+  }>
 
-interface TextAreaAttributes extends CommonFormFields {
+type TextAreaAttributes = CommonFormFields & {
   className?: string
   value: string
   ['aria-invalid']?: 'true' | 'false'
@@ -56,10 +57,10 @@ interface TextAreaAttributes extends CommonFormFields {
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export interface TextAreaState {
-  readonly value: string
-  readonly defaultValue: string
-  readonly hasFocus: boolean
+export type TextAreaState = {
+  value: string
+  defaultValue: string
+  hasFocus: boolean
 }
 
 export class Textarea extends PureComponent<TextareaProps, TextAreaState> {

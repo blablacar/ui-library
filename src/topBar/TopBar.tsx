@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
-export interface TopBarProps {
-  readonly className?: string
-  readonly leftItem?: JSX.Element
-  readonly rightItem?: JSX.Element
-  readonly centerItem?: JSX.Element
-  readonly fixed?: boolean
-  readonly bgTransparent?: boolean
-  readonly bgShadedTransparent?: boolean
-  readonly innerWrapperClassName?: string
-}
+export type TopBarProps = Readonly<{
+  className?: string
+  leftItem?: JSX.Element
+  rightItem?: JSX.Element
+  centerItem?: JSX.Element
+  fixed?: boolean
+  bgTransparent?: boolean
+  bgShadedTransparent?: boolean
+  innerWrapperClassName?: string
+}>
 
 export const TopBar = ({
   className,

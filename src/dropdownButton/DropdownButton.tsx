@@ -4,13 +4,13 @@ import cc from 'classcat'
 import { color } from '../_utils/branding'
 import { ChevronIcon } from '../icon/chevronIcon'
 
-export interface DropdownButtonProps {
+export type DropdownButtonProps = Readonly<{
   onClick: (event: React.MouseEvent<HTMLElement>) => void
   children: JSX.Element | string
   open?: boolean
   className?: string
   iconPosition?: 'left' | 'right'
-}
+}>
 
 export const DropdownButton = ({
   open = false,

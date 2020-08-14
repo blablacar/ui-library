@@ -3,10 +3,11 @@ import React from 'react'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface PinIconProps extends Icon {
-  readonly bgColor?: string
-  readonly strokeColor?: string
-}
+export type PinIconProps = Icon &
+  Readonly<{
+    bgColor?: string
+    strokeColor?: string
+  }>
 
 export const PinIcon = ({ bgColor, strokeColor, isDisabled, ...props }: PinIconProps) => (
   <BaseIcon {...props}>

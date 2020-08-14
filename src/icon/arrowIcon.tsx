@@ -2,9 +2,10 @@ import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface ArrowIconProps extends Icon {
-  readonly right?: boolean
-}
+export type ArrowIconProps = Icon &
+  Readonly<{
+    right?: boolean
+  }>
 
 export const ArrowIcon = ({ right, ...props }: ArrowIconProps) => (
   <BaseIcon {...props}>

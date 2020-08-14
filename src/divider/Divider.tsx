@@ -5,9 +5,10 @@ import styled from 'styled-components'
 import { color, space } from '../_utils/branding'
 import { normalizeHorizontally, NormalizeProps } from '../layout/layoutNormalizer'
 
-export interface DividerProps extends NormalizeProps {
-  readonly className?: string
-}
+export type DividerProps = NormalizeProps &
+  Readonly<{
+    className?: string
+  }>
 
 const StyledDivider = styled.div`
   /* HorizontalNormalization */

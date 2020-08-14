@@ -6,14 +6,14 @@ import { Paragraph } from '../paragraph'
 import { TextTitle } from '../typography/title'
 import { StyledReview } from './Review.style'
 
-export interface ReviewProps {
-  readonly className?: string
-  readonly isResponse?: boolean
-  readonly title: string
-  readonly text: string
-  readonly formattedDatetime: string
-  readonly isoDatetime: string
-}
+export type ReviewProps = Readonly<{
+  className?: string
+  isResponse?: boolean
+  title: string
+  text: string
+  formattedDatetime: string
+  isoDatetime: string
+}>
 
 export const Review = (props: ReviewProps) => {
   const { className, title, text, formattedDatetime, isoDatetime, isResponse = false } = props

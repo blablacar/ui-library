@@ -5,13 +5,13 @@ import { prefix } from '../_utils'
 import { ButtonProps, ButtonStatus } from '../button'
 import { StyledButtonGroup } from './ButtonGroup.style'
 
-export interface ButtonGroupProps {
-  readonly children: React.ReactElement<ButtonProps>[]
-  readonly className?: string
-  readonly isInline?: boolean
-  readonly isReverse?: boolean
-  readonly loadingIndex?: string
-}
+export type ButtonGroupProps = Readonly<{
+  children: React.ReactElement<ButtonProps>[]
+  className?: string
+  isInline?: boolean
+  isReverse?: boolean
+  loadingIndex?: string
+}>
 
 const BASE_CLASSNAME = 'button-group'
 

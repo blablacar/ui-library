@@ -11,16 +11,16 @@ const DrawerGlobalStyles = createGlobalStyle`
   }
 `
 
-export interface DrawerProps {
-  readonly children: string | JSX.Element
-  readonly className?: string
-  readonly innerClassName?: string
-  readonly onOpen?: () => void
-  readonly onClose?: () => void
-  readonly onTransitionEnd?: (open: boolean) => void
-  readonly width?: string
-  readonly open?: boolean
-}
+export type DrawerProps = Readonly<{
+  children: string | JSX.Element
+  className?: string
+  innerClassName?: string
+  onOpen?: () => void
+  onClose?: () => void
+  onTransitionEnd?: (open: boolean) => void
+  width?: string
+  open?: boolean
+}>
 
 export class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
