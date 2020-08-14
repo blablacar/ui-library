@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import { Paragraph } from './paragraph'
+import { Paragraph } from './index'
 
 const shortText = 'text'
 const longText = 'text '.repeat(100)
