@@ -225,7 +225,6 @@ button:focus:not(.focus-visible).c1 {
 
 <ul
   className="kirk-items-list c0"
-  role=""
 >
   <li
     className="kirk-items-list-item"
@@ -618,7 +617,6 @@ button:focus:not(.focus-visible).c1 {
 
 <ul
   className="kirk-items-list c0"
-  role=""
 >
   <li
     className="kirk-items-list-item"
@@ -1017,7 +1015,6 @@ button:focus:not(.focus-visible).c1 {
 
 <ul
   className="kirk-items-list c0"
-  role=""
 >
   <li
     className="kirk-items-list-item"

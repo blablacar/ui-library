@@ -290,7 +290,9 @@ export class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState
     const shouldDisplayDivider =
       this.props.embeddedInSearchForm && (listItems.length > 0 || shouldDisplayNoResults)
     const loader =
-      this.props.embeddedInSearchForm && this.state.isSearching ? <Loader size={24} inline /> : null
+      this.props.embeddedInSearchForm && this.state.isSearching ? (
+        <Loader className="kirk-autoComplete-loader" size={24} inline />
+      ) : null
 
     return (
       /* TODO: BBC-7413 fix a11y issue */

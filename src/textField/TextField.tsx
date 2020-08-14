@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { InputHTMLAttributes, PureComponent } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
@@ -68,16 +68,7 @@ export interface TextFieldProps extends CommonFormFields {
   format?: (value: string, previousValue: string) => string
   focusBorder?: boolean
   loader?: JSX.Element
-}
-
-interface FormAttributes extends CommonFormFields {
-  value: string
-  ['aria-invalid']?: 'true' | 'false'
-  ['aria-labelledby']?: string
-  inputMode?: inputModes
-  pattern?: string
-  ref?: (input: textfield) => void
-  onChange?: (event: React.ChangeEvent<textfield>) => void
+  inputAttributes: InputHTMLAttributes<HTMLInputElement>
 }
 
 export interface TextFieldState {
@@ -242,10 +233,14 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
       pattern,
       focusBorder,
       loader,
+      inputAttributes,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
-    const attrs: FormAttributes = {
+    const attrs: InputHTMLAttributes<HTMLInputElement> & {
+      ref: any
+    } = {
+      ...inputAttributes,
       type,
       placeholder,
       name,

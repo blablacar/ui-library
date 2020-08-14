@@ -2,8 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
-import { Item } from '../_internals/item'
-import { ItemRadio, ItemRadioProps, ItemRadioStatus } from './ItemRadio'
+import { ItemRadio, ItemRadioProps, ItemRadioStatus } from './index'
 
 describe('ItemRadio', () => {
   const defaultProps: ItemRadioProps = {
@@ -23,8 +22,8 @@ describe('ItemRadio', () => {
   }
 
   it('Should use the Item component', () => {
-    const itemRadio = shallow(<ItemRadio {...defaultProps} />)
-    expect(itemRadio.find(Item).exists()).toBe(true)
+    const itemRadio = mount(<ItemRadio {...defaultProps} />)
+    expect(itemRadio.exists()).toBe(true)
   })
   it('Should forward its props to the Item component', () => {
     const itemRadio = renderer.create(<ItemRadio {...defaultProps} />).toJSON()
@@ -42,12 +41,12 @@ describe('ItemRadio', () => {
   })
   it('Should handle disabled prop', () => {
     const itemRadio = shallow(<ItemRadio {...defaultProps} />)
-    expect(itemRadio.find(Item).prop('isClickable')).toBeTruthy()
-    expect(itemRadio.find(Item).prop('disabled')).toBeFalsy()
+    expect(itemRadio.prop('isClickable')).toBeTruthy()
+    expect(itemRadio.prop('disabled')).toBeFalsy()
 
     itemRadio.setProps({ disabled: true })
-    expect(itemRadio.find(Item).prop('isClickable')).toBeFalsy()
-    expect(itemRadio.find(Item).prop('disabled')).toBeTruthy()
+    expect(itemRadio.prop('isClickable')).toBeFalsy()
+    expect(itemRadio.prop('disabled')).toBeTruthy()
   })
 
   describe('a11y', () => {

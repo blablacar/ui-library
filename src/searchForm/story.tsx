@@ -7,7 +7,6 @@ import { MediaSizeProvider } from '../_utils/mediaSizeProvider'
 import { knobEnum } from '../../.storybook/knobs'
 import { AutoCompleteExample } from '../autoComplete/story'
 import { DatePicker } from '../datePicker'
-import { CrossIcon } from '../icon/crossIcon'
 import { BaseSection, SectionContentSize } from '../layout/section/baseSection'
 import { AutoCompleteOverlay } from './autoComplete/overlay'
 import { AutoCompleteSection } from './autoComplete/section'
@@ -92,10 +91,8 @@ stories.add(
           disabledTo={boolean('disabledTo', false)}
           autocompleteFromPlaceholder={text('autocompleteFromPlaceholder', 'Leaving From')}
           autocompleteToPlaceholder={text('autocompleteToPlaceholder', 'Going to')}
-          renderAutocompleteFrom={props => (
-            <AutoCompleteExample inputAddon={<CrossIcon />} autoFocus={false} {...props} />
-          )}
-          renderAutocompleteTo={props => <AutoCompleteExample {...props} />}
+          renderAutocompleteFrom={props => <AutoCompleteExample {...props} embeddedInSearchForm />}
+          renderAutocompleteTo={props => <AutoCompleteExample {...props} embeddedInSearchForm />}
           datepickerProps={{
             defaultValue: new Date().toISOString(),
             format: value => new Date(value).toLocaleDateString(),

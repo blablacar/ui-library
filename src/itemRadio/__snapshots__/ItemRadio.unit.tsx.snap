@@ -21,6 +21,43 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
   left: 12px;
 }
 
+.c2.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c2 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c2.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c2 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c2 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
+.c2.thin circle {
+  stroke-width: 3;
+}
+
+.c2.absolute {
+  position: absolute;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -84,6 +121,12 @@ exports[`ItemRadio Should display a CircleIcon with an innerDisc when the input 
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
 }
 
 .c0 {
@@ -212,41 +255,14 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
-.c2.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c2 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c2.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c2 circle.outer {
-  stroke: #00AFF5;
-}
-
-.c2 circle.inner {
-  stroke-width: 0;
-  fill: #00AFF5;
-}
-
-.c2.thin circle {
-  stroke-width: 3;
-}
-
-.c2.absolute {
+.c0 input {
   position: absolute;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c0.focus {
+  border: 3px solid #00AFF5;
 }
 
 <label
@@ -340,197 +356,6 @@ exports[`ItemRadio Should display a Loader when the component is in loading stat
   position: absolute;
   bottom: 12px;
   left: 12px;
-}
-
-.c1 {
-  margin: 0;
-  font-weight: 400;
-}
-
-.c1.kirk-text-button {
-  color: #054752;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-body,
-.c1.kirk-text-bodyStrong {
-  color: #708C91;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-caption {
-  color: #708C91;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-display2 {
-  color: #054752;
-  font-size: 82px;
-  line-height: 82px;
-  font-weight: 500;
-}
-
-.c1.kirk-text-display1 {
-  color: #054752;
-  font-size: 30px;
-  line-height: 1.06;
-  font-weight: 500;
-}
-
-.c1.kirk-text-subheader,
-.c1.kirk-text-subheaderStrong {
-  color: #054752;
-  font-size: 22px;
-  line-height: 24px;
-}
-
-.c1.kirk-text-title,
-.c1.kirk-text-titleStrong {
-  color: #054752;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.c1.kirk-text-bodyStrong,
-.c1.kirk-text-subheaderStrong,
-.c1.kirk-text-titleStrong {
-  font-weight: 500;
-}
-
-.c0 {
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c0 {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  border: 0;
-  background: none;
-}
-
-.c0.kirk-item--clickable:hover {
-  cursor: pointer;
-  background: #EDEDED;
-}
-
-.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
-  background: none;
-}
-
-.c0:disabled {
-  cursor: default;
-}
-
-a.c0 {
-  background: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(221,221,221,.4);
-  -webkit-touch-callout: none;
-}
-
-button.c0 {
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  font-family: inherit;
-  background-color: transparent;
-  -webkit-tap-highlight-color: rgba(221,221,221,.4);
-  -webkit-touch-callout: none;
-}
-
-button:focus:not(.focus-visible).c0 {
-  outline: none;
-}
-
-.c0 .kirk-item-leftText {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c0 .kirk-item-rightText {
-  margin-left: 16px;
-  text-align: right;
-}
-
-.c0 .kirk-text {
-  display: block;
-}
-
-.c0 .kirk-item-title--withBody {
-  margin-bottom: 4px;
-}
-
-.c0 .kirk-item--strikethrough {
-  -webkit-text-decoration: line-through;
-  text-decoration: line-through;
-}
-
-.c0 .kirk-item-title--withButtonAddon {
-  position: relative;
-}
-
-.c0 .kirk-item-leftAddon,
-.c0 .kirk-item-rightAddon {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  min-width: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 .kirk-item-leftAddon {
-  margin-right: 16px;
-}
-
-.c0 .kirk-item-rightAddon {
-  margin-left: 16px;
-}
-
-.c0.kirk-item--highlighted .kirk-text-title {
-  color: #00AFF5;
-}
-
-.c0 .kirk-item-title--withButtonAddon button {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  margin-left: 4px;
-  bottom: 0;
 }
 
 .c3.spinning {
@@ -635,6 +460,213 @@ button:focus:not(.focus-visible).c0 {
   background-color: #5DD167;
   color: #FFF;
   border-radius: 50%;
+}
+
+.c1 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.c1.kirk-text-button {
+  color: #054752;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-body,
+.c1.kirk-text-bodyStrong {
+  color: #708C91;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-caption {
+  color: #708C91;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-display2 {
+  color: #054752;
+  font-size: 82px;
+  line-height: 82px;
+  font-weight: 500;
+}
+
+.c1.kirk-text-display1 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+}
+
+.c1.kirk-text-subheader,
+.c1.kirk-text-subheaderStrong {
+  color: #054752;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.c1.kirk-text-title,
+.c1.kirk-text-titleStrong {
+  color: #054752;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.c1.kirk-text-bodyStrong,
+.c1.kirk-text-subheaderStrong,
+.c1.kirk-text-titleStrong {
+  font-weight: 500;
+}
+
+.c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
+}
+
+.c0 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  background: none;
+}
+
+.c0.kirk-item--clickable:hover {
+  cursor: pointer;
+  background: #EDEDED;
+}
+
+.c0.kirk-item--hideHoverBackground.kirk-item--clickable:hover {
+  background: none;
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+a.c0 {
+  background: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button.c0 {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  background-color: transparent;
+  -webkit-tap-highlight-color: rgba(221,221,221,.4);
+  -webkit-touch-callout: none;
+}
+
+button:focus:not(.focus-visible).c0 {
+  outline: none;
+}
+
+.c0 .kirk-item-leftText {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 .kirk-item-rightText {
+  margin-left: 16px;
+  text-align: right;
+}
+
+.c0 .kirk-text {
+  display: block;
+}
+
+.c0 .kirk-item-title--withBody {
+  margin-bottom: 4px;
+}
+
+.c0 .kirk-item--strikethrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+.c0 .kirk-item-title--withButtonAddon {
+  position: relative;
+}
+
+.c0 .kirk-item-leftAddon,
+.c0 .kirk-item-rightAddon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .kirk-item-leftAddon {
+  margin-right: 16px;
+}
+
+.c0 .kirk-item-rightAddon {
+  margin-left: 16px;
+}
+
+.c0.kirk-item--highlighted .kirk-text-title {
+  color: #00AFF5;
+}
+
+.c0 .kirk-item-title--withButtonAddon button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  bottom: 0;
+}
+
+.c0 input {
+  position: absolute;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c0.focus {
+  border: 3px solid #00AFF5;
 }
 
 <label
@@ -749,6 +781,43 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
   left: 12px;
 }
 
+.c2.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c2 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c2.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c2 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c2 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
+.c2.thin circle {
+  stroke-width: 3;
+}
+
+.c2.absolute {
+  position: absolute;
+}
+
 .c1 {
   margin: 0;
   font-weight: 400;
@@ -812,6 +881,12 @@ exports[`ItemRadio Should forward its props to the Item component 1`] = `
 .c1.kirk-text-subheaderStrong,
 .c1.kirk-text-titleStrong {
   font-weight: 500;
+}
+
+.c0 {
+  cursor: pointer;
+  border: 3px solid transparent;
+  padding: calc(16px - 3px) auto;
 }
 
 .c0 {
@@ -940,41 +1015,14 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
-.c2.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c2 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c2.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c2 circle.outer {
-  stroke: #00AFF5;
-}
-
-.c2 circle.inner {
-  stroke-width: 0;
-  fill: #00AFF5;
-}
-
-.c2.thin circle {
-  stroke-width: 3;
-}
-
-.c2.absolute {
+.c0 input {
   position: absolute;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+}
+
+.c0.focus {
+  border: 3px solid #00AFF5;
 }
 
 <label

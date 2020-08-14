@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import cc from 'classcat'
 
-import { Item } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { RadioIcon } from '../_internals/radioIcon'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
+import { StyledItemRadio } from './ItemRadio.style'
 
 export enum ItemRadioStatus {
   DEFAULT = 'default',
@@ -104,30 +104,28 @@ export class ItemRadio extends Component<ItemRadioProps> {
     )
 
     return (
-      <Fragment>
-        <Item
-          className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
-          leftTitle={labelTitle}
-          leftBody={label}
-          rightTitle={data}
-          rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
-          rightBody={dataInfo}
-          /* No a11y issue here
+      <StyledItemRadio
+        className={cc(['kirk-item-radio', className, { focus: this.state.focus }])}
+        leftTitle={labelTitle}
+        leftBody={label}
+        rightTitle={data}
+        rightTitleDisplay={TextDisplayType.SUBHEADERSTRONG}
+        rightBody={dataInfo}
+        /* No a11y issue here
             - The input is well wrapped with the label
             - The linter can't access the complex components implementation
           */
-          // eslint-disable-next-line jsx-a11y/label-has-associated-control
-          tag={<label />}
-          leftAddon={leftAddon}
-          rightAddon={radio}
-          chevron={chevron && !isLoading}
-          highlighted={highlighted}
-          isClickable={!disabled}
-          disabled={disabled}
-          hasHorizontalSpacing={hasHorizontalSpacing}
-          {...a11yAttrs}
-        />
-      </Fragment>
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
+        tag={<label />}
+        leftAddon={leftAddon}
+        rightAddon={radio}
+        chevron={chevron && !isLoading}
+        highlighted={highlighted}
+        isClickable={!disabled}
+        disabled={disabled}
+        hasHorizontalSpacing={hasHorizontalSpacing}
+        {...a11yAttrs}
+      />
     )
   }
 }

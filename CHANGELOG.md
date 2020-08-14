@@ -2,6 +2,17 @@
 
 [...]
 
+- **[UPDATE]** Migrate `PushInfo` to new mdx story format
+
+# v39.0.1 (07/08/2020)
+
+- **[FIX]** Fixed non-displayed loader in Search Form `Autocomplete`
+
+# v39.0.0 (07/08/2020)
+
+- **[UPDATE]** Added `inputAttributes` props on `TextField` to redirect html input attributes to the child input
+- **[BREAKING CHANGE]** unit tests may need to be adapted to our recent Storybook + MDX changes
+
 # v38.2.1 (04/08/2020)
 
 - **[UPDATE]** Add basic a11y to `Loader` component
