@@ -6,14 +6,14 @@ import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
 import { Text, TextDisplayType } from '../text'
 import { StyledMessage } from './Message.style'
 
-export interface MessageProps {
-  readonly children: string
-  readonly date?: string
-  readonly active?: boolean
-  readonly author?: string | JSX.Element
-  readonly className?: string
-  readonly messageAnnotation?: string
-}
+export type MessageProps = Readonly<{
+  children: string
+  date?: string
+  active?: boolean
+  author?: string | JSX.Element
+  className?: string
+  messageAnnotation?: string
+}>
 
 export const Message = ({ active, children, messageAnnotation, className }: MessageProps) => (
   <StyledMessage className={cc(['kirk-message', prefix({ active }), className])}>

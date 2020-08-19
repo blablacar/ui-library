@@ -2,9 +2,10 @@ import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface SearchIconProps extends Icon {
-  readonly strokeWidth?: string
-}
+export type SearchIconProps = Icon &
+  Readonly<{
+    strokeWidth?: string
+  }>
 
 export const SearchIcon = ({ strokeWidth, ...props }: SearchIconProps) => (
   <BaseIcon {...props}>

@@ -8,15 +8,15 @@ import { BaseSection, SectionContentSize } from '../../../layout/section/baseSec
 import { Text, TextTagType } from '../../../text'
 import { TextDisplay1 } from '../../../typography/display1'
 
-export interface MediaContentSectionProps {
-  readonly className?: string
-  readonly mediaUrl: string
-  readonly title: string
-  readonly content?: string
-  readonly buttonLabel?: string
-  readonly buttonHref?: string | JSX.Element
-  readonly flipped?: boolean
-}
+export type MediaContentSectionProps = Readonly<{
+  className?: string
+  mediaUrl: string
+  title: string
+  content?: string
+  buttonLabel?: string
+  buttonHref?: string | JSX.Element
+  flipped?: boolean
+}>
 
 /**
  * A specialized section which show some marketing content associated with a picture.

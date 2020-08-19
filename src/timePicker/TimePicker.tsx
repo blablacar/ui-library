@@ -28,18 +28,18 @@ export const getTodayDate = () => {
   return date
 }
 
-export interface TimePickerProps {
-  readonly name: string
-  readonly className?: string
-  readonly defaultValue?: string
-  readonly disabled?: boolean
-  readonly minuteStep?: number
-  readonly renderTime?: (dt: Date) => string
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly timeStart?: string
-  readonly focus?: boolean
-  readonly small?: boolean
-}
+export type TimePickerProps = Readonly<{
+  name: string
+  className?: string
+  defaultValue?: string
+  disabled?: boolean
+  minuteStep?: number
+  renderTime?: (dt: Date) => string
+  onChange?: (obj: OnChangeParameters) => void
+  timeStart?: string
+  focus?: boolean
+  small?: boolean
+}>
 
 type Steps = { [propName: string]: string }
 
@@ -48,10 +48,10 @@ type TimeSteps = {
   timeStart?: string
 }
 
-interface TimePickerState {
-  readonly value: string
-  readonly steps: Steps
-  readonly isFocused: boolean
+type TimePickerState = {
+  value: string
+  steps: Steps
+  isFocused: boolean
 }
 
 export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {

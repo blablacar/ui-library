@@ -7,12 +7,12 @@ import { SearchIcon } from '../icon/searchIcon'
 import { Text, TextTagType } from '../text'
 import { UneditableTextField } from '../uneditableTextField'
 
-export interface SearchRecapProps {
+export type SearchRecapProps = Readonly<{
   className?: string
   from?: string
   to?: string
   info?: string
-}
+}>
 
 export const separatorWidth: number = 14
 

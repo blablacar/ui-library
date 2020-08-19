@@ -3,13 +3,13 @@ import React from 'react'
 import { Avatar } from '../../../avatar'
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
 
-export interface IllustratedSectionProps {
-  readonly children: React.ReactNode
-  readonly className?: string
-  readonly illustrationUrl: string
-  readonly illustrationAlt?: string
-  readonly isAvatar?: boolean
-}
+export type IllustratedSectionProps = Readonly<{
+  children: React.ReactNode
+  className?: string
+  illustrationUrl: string
+  illustrationAlt?: string
+  isAvatar?: boolean
+}>
 
 /**
  * A specialized section which show some content with an illustration.

@@ -6,16 +6,16 @@ export enum SectionContentSize {
   LARGE = 'large',
 }
 
-export interface BaseSectionProps {
-  readonly className?: string
-  readonly contentClassName?: string
-  readonly backgroundStyle?: object
-  readonly tagName?: string
-  readonly role?: string
-  readonly children: JSX.Element | string | React.ReactNode
-  readonly contentSize?: SectionContentSize
-  readonly noHorizontalSpacing?: boolean
-}
+export type BaseSectionProps = Readonly<{
+  className?: string
+  contentClassName?: string
+  backgroundStyle?: object
+  tagName?: string
+  role?: string
+  children: JSX.Element | string | React.ReactNode
+  contentSize?: SectionContentSize
+  noHorizontalSpacing?: boolean
+}>
 
 /**
  * The core section: It sections horizontally a page while fitting its

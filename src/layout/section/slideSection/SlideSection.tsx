@@ -10,13 +10,13 @@ export enum SlideSectionPosition {
   EXPANDED = 'expanded',
 }
 
-export interface SlideSectionProps {
+export type SlideSectionProps = Readonly<{
   children: (d: () => void, r: () => void, e: () => void) => React.ReactNode
   media: React.ReactNode
   reducedContent?: React.ReactNode
   onPositionChange?: (p: SlideSectionPosition) => void
   disabledGestures?: boolean
-}
+}>
 
 export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   const {

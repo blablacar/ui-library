@@ -6,18 +6,19 @@ import { Item } from '../_internals/item/index'
 import { ItemProps } from '../_internals/item/Item'
 import { OnChangeParameters } from '../_internals/onChange'
 
-export interface ToggleButtonProps extends ItemProps {
-  readonly name: string
-  readonly label: string
-  readonly sublabel?: string
-  readonly status?: ToggleButtonStatus
-  readonly checked?: boolean
-  readonly disabled?: boolean
-  readonly onChange?: (obj: OnChangeParameters) => void
-}
+export type ToggleButtonProps = ItemProps &
+  Readonly<{
+    name: string
+    label: string
+    sublabel?: string
+    status?: ToggleButtonStatus
+    checked?: boolean
+    disabled?: boolean
+    onChange?: (obj: OnChangeParameters) => void
+  }>
 
-interface ToggleButtonState {
-  readonly checked: boolean
+type ToggleButtonState = {
+  checked: boolean
 }
 
 export enum ToggleButtonStatus {

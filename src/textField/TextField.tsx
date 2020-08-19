@@ -31,7 +31,7 @@ export enum inputModes {
   URL = 'url',
 }
 
-export interface CommonFormFields {
+export type CommonFormFields = Readonly<{
   name: string
   id?: string
   type?: inputTypes
@@ -46,37 +46,38 @@ export interface CommonFormFields {
   title?: string
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-}
+}>
 
 type errorField = string | JSX.Element
 
-export interface TextFieldProps extends CommonFormFields {
-  defaultValue?: string
-  labelledBy?: string
-  onChange?: (obj: OnChangeParameters) => void
-  onClear?: () => void
-  className?: string
-  errorClassName?: string
-  error?: errorField
-  addon?: JSX.Element
-  label?: string
-  buttonTitle?: string
-  focus?: boolean
-  inputMode?: inputModes
-  pattern?: string
-  inputRef?: (input: textfield) => void
-  format?: (value: string, previousValue: string) => string
-  focusBorder?: boolean
-  loader?: JSX.Element
-  inputAttributes: InputHTMLAttributes<HTMLInputElement>
-}
+export type TextFieldProps = CommonFormFields &
+  Readonly<{
+    defaultValue?: string
+    labelledBy?: string
+    onChange?: (obj: OnChangeParameters) => void
+    onClear?: () => void
+    className?: string
+    errorClassName?: string
+    error?: errorField
+    addon?: JSX.Element
+    label?: string
+    buttonTitle?: string
+    focus?: boolean
+    inputMode?: inputModes
+    pattern?: string
+    inputRef?: (input: textfield) => void
+    format?: (value: string, previousValue: string) => string
+    focusBorder?: boolean
+    loader?: JSX.Element
+    inputAttributes: InputHTMLAttributes<HTMLInputElement>
+  }>
 
-export interface TextFieldState {
-  readonly value: string
-  readonly previousValue: string
-  readonly defaultValue: string
-  readonly showPassword: boolean
-  readonly hasFocus: boolean
+export type TextFieldState = {
+  value: string
+  previousValue: string
+  defaultValue: string
+  showPassword: boolean
+  hasFocus: boolean
 }
 
 export class TextField extends PureComponent<TextFieldProps, TextFieldState> {

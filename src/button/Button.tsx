@@ -16,36 +16,37 @@ export enum ButtonStatus {
   CHECKED = 'checked',
 }
 
-export interface ButtonProps extends A11yProps {
-  readonly children: string | number | React.ReactNode
-  readonly type?: string
-  readonly href?: string | JSX.Element
-  readonly className?: string
-  readonly title?: string
-  readonly status?: ButtonStatus
-  readonly focus?: boolean
-  readonly isBubble?: boolean
-  readonly shadowed?: boolean
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
-  readonly onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
-  readonly onDoneAnimationEnd?: () => void
-  readonly tabIndex?: string
-  readonly disabled?: boolean
-  readonly index?: string
-  buttonRef?: (button: HTMLButtonElement) => void
-}
+export type ButtonProps = A11yProps &
+  Readonly<{
+    children: string | number | React.ReactNode
+    type?: string
+    href?: string | JSX.Element
+    className?: string
+    title?: string
+    status?: ButtonStatus
+    focus?: boolean
+    isBubble?: boolean
+    shadowed?: boolean
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+    onMouseUp?: (event: React.MouseEvent<HTMLElement>) => void
+    onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
+    onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
+    onDoneAnimationEnd?: () => void
+    tabIndex?: string
+    disabled?: boolean
+    index?: string
+    buttonRef?: (button: HTMLButtonElement) => void
+  }>
 
-export interface ButtonState {
-  readonly value: {
+export type ButtonState = Readonly<{
+  value: {
     name: string
     value: string
   }
-}
+}>
 
 type ButtonActionEvents =
   | React.MouseEvent<HTMLElement>

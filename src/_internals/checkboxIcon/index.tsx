@@ -5,11 +5,11 @@ import { CheckIcon } from '../../icon/checkIcon'
 import { CircleIcon } from '../../icon/circleIcon'
 import { Loader } from '../../loader'
 
-export interface CheckboxIconProps {
-  readonly isChecked?: boolean
-  readonly isLoading?: boolean
-  readonly isDisabled?: boolean
-}
+export type CheckboxIconProps = Readonly<{
+  isChecked?: boolean
+  isLoading?: boolean
+  isDisabled?: boolean
+}>
 
 export const CheckboxIcon = ({
   isChecked = false,

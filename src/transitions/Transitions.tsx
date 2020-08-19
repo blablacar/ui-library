@@ -9,15 +9,15 @@ export enum AnimationType {
   SLIDE_UP = 'slide-up',
 }
 
-export interface TransitionsProps {
-  readonly className?: string
-  readonly children: JSX.Element
-  readonly animationName?: AnimationType
-  readonly delayEnter?: number
-  readonly delayLeave?: number
-  readonly in?: boolean
-  readonly onEntered?: () => void
-}
+export type TransitionsProps = Readonly<{
+  className?: string
+  children: JSX.Element
+  animationName?: AnimationType
+  delayEnter?: number
+  delayLeave?: number
+  in?: boolean
+  onEntered?: () => void
+}>
 
 export class Transitions extends PureComponent<TransitionsProps> {
   static defaultProps: Partial<TransitionsProps> = {

@@ -3,13 +3,14 @@ import React, { useEffect, useRef } from 'react'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { GripHandle } from './GripHandle'
 
-export interface GripProps extends A11yProps {
-  children?: React.ReactNode
-  onSlideUp: () => void
-  onSlideDown: () => void
-  className?: string
-  disabled?: boolean
-}
+export type GripProps = A11yProps &
+  Readonly<{
+    children?: React.ReactNode
+    onSlideUp: () => void
+    onSlideDown: () => void
+    className?: string
+    disabled?: boolean
+  }>
 
 export const SLIDE_OFFSET = 20 // To get more precise with feeling/testing
 

@@ -4,9 +4,10 @@ import React from 'react'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface MyRidesIconProps extends Icon {
-  readonly active?: boolean
-}
+export type MyRidesIconProps = Icon &
+  Readonly<{
+    active?: boolean
+  }>
 
 export const MyRidesIcon = ({ active, ...props }: MyRidesIconProps) => (
   <BaseIcon {...props} viewBox="0 0 24 20">

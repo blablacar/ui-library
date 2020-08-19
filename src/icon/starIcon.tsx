@@ -3,10 +3,11 @@ import React from 'react'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface StarIconProps extends Icon {
-  readonly bgColor?: string
-  readonly fill?: number
-}
+export type StarIconProps = Icon &
+  Readonly<{
+    bgColor?: string
+    fill?: number
+  }>
 
 export const StarIcon = ({ bgColor, fill, ...props }: StarIconProps) => {
   // needs to be unique, otherwise all stars will use the first defined linear gradient

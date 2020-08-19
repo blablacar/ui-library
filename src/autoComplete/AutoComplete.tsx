@@ -28,57 +28,57 @@ export interface AutocompleteItemToRender {
   readonly index: number
 }
 
-export interface AutoCompleteProps {
-  readonly name: string
-  readonly searchForItems: (query: query) => void
-  readonly isSearching?: boolean
-  readonly searchOnMount?: boolean
-  readonly onInputChange?: (params: Partial<OnChangeParameters>) => void
-  readonly searchForItemsMinChars?: number
-  readonly defaultValue?: string
-  readonly onSelect?: (obj: AutocompleteOnChange) => void
-  readonly onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
-  readonly onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
-  readonly onClear?: () => void
-  readonly className?: string
-  readonly inputClassName?: string
-  readonly itemClassName?: string
-  readonly bodyClassName?: string
-  readonly items?: AutocompleteItem[]
-  readonly maxItems?: number
-  readonly itemKey?: (item: AutocompleteItem) => string
-  readonly renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
-  readonly renderNoResults?: ({ query }: { query: query }) => string
-  readonly renderQuery?: (item: AutocompleteItem) => string
-  readonly renderEmptySearch?: AutocompleteItem[]
-  readonly getItemValue?: (item: AutocompleteItem) => string
-  readonly inputAddon?: React.ReactElement<any>
-  readonly placeholder?: string
-  readonly busyTimeout?: number
-  readonly debounceTimeout?: number
-  readonly autoFocus?: boolean
-  readonly focus?: boolean
-  readonly buttonTitle?: string
-  readonly showList?: boolean
-  readonly onDoneAnimationEnd?: () => void
-  readonly autoCorrect?: 'on' | 'off'
-  readonly disabled?: boolean
-  readonly readOnly?: boolean
-  readonly required?: boolean
-  readonly error?: string | JSX.Element
-  readonly selectedItemStatus?: ItemStatus
-  readonly embeddedInSearchForm?: boolean
-}
+export type AutoCompleteProps = Readonly<{
+  name: string
+  searchForItems: (query: query) => void
+  isSearching?: boolean
+  searchOnMount?: boolean
+  onInputChange?: (params: Partial<OnChangeParameters>) => void
+  searchForItemsMinChars?: number
+  defaultValue?: string
+  onSelect?: (obj: AutocompleteOnChange) => void
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
+  onClear?: () => void
+  className?: string
+  inputClassName?: string
+  itemClassName?: string
+  bodyClassName?: string
+  items?: AutocompleteItem[]
+  maxItems?: number
+  itemKey?: (item: AutocompleteItem) => string
+  renderBusy?: ({ query }: { query: query }) => React.ReactElement<any>
+  renderNoResults?: ({ query }: { query: query }) => string
+  renderQuery?: (item: AutocompleteItem) => string
+  renderEmptySearch?: AutocompleteItem[]
+  getItemValue?: (item: AutocompleteItem) => string
+  inputAddon?: React.ReactElement<any>
+  placeholder?: string
+  busyTimeout?: number
+  debounceTimeout?: number
+  autoFocus?: boolean
+  focus?: boolean
+  buttonTitle?: string
+  showList?: boolean
+  onDoneAnimationEnd?: () => void
+  autoCorrect?: 'on' | 'off'
+  disabled?: boolean
+  readOnly?: boolean
+  required?: boolean
+  error?: string | JSX.Element
+  selectedItemStatus?: ItemStatus
+  embeddedInSearchForm?: boolean
+}>
 
-interface AutoCompleteState {
-  readonly busy: boolean
-  readonly items: AutocompleteItem[]
-  readonly formattedValue: string
-  readonly textfieldValue: string
-  readonly lastDefaultValue: string
-  readonly query: query
-  readonly noResults: boolean
-  readonly isSearching: boolean
+type AutoCompleteState = {
+  busy: boolean
+  items: AutocompleteItem[]
+  formattedValue: string
+  textfieldValue: string
+  lastDefaultValue: string
+  query: query
+  noResults: boolean
+  isSearching: boolean
 }
 
 const initialState: AutoCompleteState = {

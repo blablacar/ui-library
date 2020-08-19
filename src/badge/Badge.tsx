@@ -5,10 +5,11 @@ import isEmpty from 'lodash.isempty'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { StyledBadge } from './Badge.style'
 
-export interface BadgeProps extends A11yProps {
-  readonly className?: string
-  readonly children: string | JSX.Element | number
-}
+export type BadgeProps = A11yProps &
+  Readonly<{
+    className?: string
+    children: string | JSX.Element | number
+  }>
 
 export const Badge = (props: BadgeProps) => {
   const { className, children } = props

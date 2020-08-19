@@ -6,11 +6,11 @@ import { TripCardProps } from '../../../tripCard'
 
 type CardsProps = TripCardProps | QrCardProps
 
-export interface CardsSectionProps {
-  readonly children: React.ReactElement<CardsProps>[] | React.ReactElement<CardsProps>
-  readonly className?: string
-  readonly width?: string
-}
+export type CardsSectionProps = Readonly<{
+  children: React.ReactElement<CardsProps>[] | React.ReactElement<CardsProps>
+  className?: string
+  width?: string
+}>
 
 export const CardsSection = ({ children, className = '' }: CardsSectionProps) => (
   <div className={cc(['kirk-cardsSection-wrapper', className])}>

@@ -12,12 +12,13 @@ import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 import { TransitionSection } from '../../baseStyles'
 
-export interface StepperSectionProps extends StepperProps {
-  itemTitle: string
-  confirmLabel: string
-  onClose: () => void
-  onConfirm?: (event: React.MouseEvent<HTMLElement>) => void
-}
+export type StepperSectionProps = StepperProps &
+  Readonly<{
+    itemTitle: string
+    confirmLabel: string
+    onClose: () => void
+    onConfirm?: (event: React.MouseEvent<HTMLElement>) => void
+  }>
 
 const FullHeightSection = styled(Section)`
   height: 100%;

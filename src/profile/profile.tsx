@@ -8,24 +8,25 @@ import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
 import { TextBody } from '../typography/body'
 
-export interface ProfileProps extends A11yProps {
-  readonly className?: string
-  readonly title: string
-  readonly info?: string | JSX.Element
-  readonly isLink?: boolean
-  readonly picture?: string
-  readonly alt?: string
-  readonly isIdChecked?: boolean
-  readonly isMedium?: boolean
-  readonly score?: number
-  readonly ratings?: number
-  readonly ratingsLabel?: string
-  readonly href?: string | JSX.Element
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-}
+export type ProfileProps = A11yProps &
+  Readonly<{
+    className?: string
+    title: string
+    info?: string | JSX.Element
+    isLink?: boolean
+    picture?: string
+    alt?: string
+    isIdChecked?: boolean
+    isMedium?: boolean
+    score?: number
+    ratings?: number
+    ratingsLabel?: string
+    href?: string | JSX.Element
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+  }>
 
 export const Profile = (props: ProfileProps) => {
   const {

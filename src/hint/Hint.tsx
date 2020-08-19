@@ -6,20 +6,17 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { StyledHint } from './Hint.style'
 import { HintBubble, HintBubblePosition } from './HintBubble'
 
-export interface HintProps extends A11yProps {
-  children: (a11yAttrs: A11yProps) => React.ReactNode
-  title: string
-  closeButtonTitle?: string
-  description?: string
-  position?: HintBubblePosition
-  className?: string
-  onClose?: () => void
-  hidden?: boolean
-}
-
-export interface HintState {
-  hiddenBubble: boolean
-}
+export type HintProps = A11yProps &
+  Readonly<{
+    children: (a11yAttrs: A11yProps) => React.ReactNode
+    title: string
+    closeButtonTitle?: string
+    description?: string
+    position?: HintBubblePosition
+    className?: string
+    onClose?: () => void
+    hidden?: boolean
+  }>
 
 export const Hint = (props: HintProps): JSX.Element => {
   const {

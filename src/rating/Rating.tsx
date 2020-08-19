@@ -3,12 +3,12 @@ import cc from 'classcat'
 
 import { Stars } from '../stars'
 
-export interface RatingProps {
+export type RatingProps = Readonly<{
   className?: string
   score?: number
   ratings: number
   children: string
-}
+}>
 
 export const Rating = ({
   className = '',

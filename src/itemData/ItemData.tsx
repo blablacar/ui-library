@@ -6,18 +6,20 @@ import { Button } from '../button/Button'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 
-export interface ItemDataProps extends NormalizeProps, A11yProps {
-  readonly data: string | JSX.Element
-  readonly dataStrikeThrough?: boolean
-  readonly dataAriaProps?: A11yProps
-  readonly mainInfo: React.ReactNode
-  readonly className?: string
-  readonly mainTitle?: string
-  readonly mainTitleButtonAddon?: React.ReactElement<Button>
-  readonly dataInfo?: string
-  readonly tag?: JSX.Element
-  readonly disabled?: boolean
-}
+export type ItemDataProps = NormalizeProps &
+  A11yProps &
+  Readonly<{
+    data: string | JSX.Element
+    dataStrikeThrough?: boolean
+    dataAriaProps?: A11yProps
+    mainInfo: React.ReactNode
+    className?: string
+    mainTitle?: string
+    mainTitleButtonAddon?: React.ReactElement<Button>
+    dataInfo?: string
+    tag?: JSX.Element
+    disabled?: boolean
+  }>
 
 export const ItemData = (props: ItemDataProps) => {
   const {

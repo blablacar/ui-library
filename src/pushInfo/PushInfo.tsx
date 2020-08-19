@@ -3,13 +3,13 @@ import cc from 'classcat'
 
 import { animationDelay, animationDuration, StyledPushInfo } from './PushInfo.style'
 
-export interface PushInfoProps {
-  readonly className?: string
-  readonly icon?: React.ReactNode
-  readonly headline: string
-  readonly content?: string
-  readonly onAnimationEnd?: Function
-}
+export type PushInfoProps = Readonly<{
+  className?: string
+  icon?: React.ReactNode
+  headline: string
+  content?: string
+  onAnimationEnd?: Function
+}>
 
 export class PushInfo extends Component<PushInfoProps> {
   componentDidMount() {

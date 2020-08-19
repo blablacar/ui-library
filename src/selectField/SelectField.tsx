@@ -8,22 +8,25 @@ import { ChevronIcon } from '../icon/chevronIcon'
 
 export const selectHeight = '52px'
 
-export interface SelectFieldItem extends A11yProps {
-  readonly value: string | number
-  readonly label: string
-}
+export type SelectFieldItem = A11yProps &
+  Readonly<{
+    value: string | number
+    label: string
+  }>
 
-export interface SelectFieldProps extends Partial<CommonFieldsProps>, A11yProps {
-  readonly options: SelectFieldItem[]
-  readonly defaultValue?: string
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  readonly onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
-  readonly focus?: boolean
-  readonly focusBorder?: boolean
-  readonly autoFocus?: boolean
-  readonly autoComplete?: string
-}
+export type SelectFieldProps = Partial<CommonFieldsProps> &
+  A11yProps &
+  Readonly<{
+    options: SelectFieldItem[]
+    defaultValue?: string
+    onChange?: (obj: OnChangeParameters) => void
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void
+    focus?: boolean
+    focusBorder?: boolean
+    autoFocus?: boolean
+    autoComplete?: string
+  }>
 
 export const SelectField = React.forwardRef(
   (props: SelectFieldProps, ref: RefObject<HTMLSelectElement>) => {

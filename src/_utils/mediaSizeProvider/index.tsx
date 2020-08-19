@@ -8,9 +8,9 @@ export enum MediaSize {
   LARGE = 'large',
 }
 
-interface MediaSizeProviderProps {
+export type MediaSizeProviderProps = Readonly<{
   children: ReactNode
-}
+}>
 
 export const MediaSizeContext = React.createContext(MediaSize.SMALL)
 

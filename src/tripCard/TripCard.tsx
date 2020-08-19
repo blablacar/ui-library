@@ -33,34 +33,35 @@ export interface User {
   rating?: string
 }
 
-export interface TripCardProps extends A11yProps {
-  href: string | JSX.Element
-  itinerary: Place[]
-  driver?: User
-  passengers?: User[]
-  price?: string
-  flags?: {
-    ladiesOnly?: boolean
-    aloneInTheBack?: boolean
-    maxTwo?: boolean
-    autoApproval?: boolean
-  }
-  titles?: {
-    ladiesOnly?: string
-    aloneInTheBack?: string
-    maxTwo?: string
-    autoApproval?: string
-  }
-  metaUrl?: string
-  className?: string
-  statusInformation?: {
-    icon: JSX.Element
-    text: string
-    highlighted?: boolean
-  }
-  badge?: string
-  title?: string
-}
+export type TripCardProps = A11yProps &
+  Readonly<{
+    href: string | JSX.Element
+    itinerary: Place[]
+    driver?: User
+    passengers?: User[]
+    price?: string
+    flags?: {
+      ladiesOnly?: boolean
+      aloneInTheBack?: boolean
+      maxTwo?: boolean
+      autoApproval?: boolean
+    }
+    titles?: {
+      ladiesOnly?: string
+      aloneInTheBack?: string
+      maxTwo?: string
+      autoApproval?: string
+    }
+    metaUrl?: string
+    className?: string
+    statusInformation?: {
+      icon: JSX.Element
+      text: string
+      highlighted?: boolean
+    }
+    badge?: string
+    title?: string
+  }>
 
 const renderPassenger = (passenger: User) => (
   <li className="kirk-tripCard-avatar" key={`${passenger.firstName}-${passenger.avatarUrl}`}>

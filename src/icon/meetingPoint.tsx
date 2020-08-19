@@ -5,10 +5,11 @@ import cc from 'classcat'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export interface MeetingPointIconProps extends Icon {
-  readonly active?: boolean
-  readonly shadowed?: boolean
-}
+export type MeetingPointIconProps = Icon &
+  Readonly<{
+    active?: boolean
+    shadowed?: boolean
+  }>
 
 export const MeetingPointIcon = ({ active, shadowed, ...props }: MeetingPointIconProps) => {
   const strokeColor = active ? color.white : color.blue

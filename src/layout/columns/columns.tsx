@@ -3,10 +3,10 @@ import cc from 'classcat'
 
 import { ColumnProps } from '../../layout/column'
 
-export interface ColumnsProps {
-  readonly className?: string
-  readonly children: React.ReactElement<ColumnProps>[]
-}
+export type ColumnsProps = Readonly<{
+  className?: string
+  children: React.ReactElement<ColumnProps>[]
+}>
 
 /**
  * A parent component for <Column> component.

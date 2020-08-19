@@ -9,9 +9,10 @@ const horizontalPadding = (props: any): string =>
 const horizontalMargin = (props: any): string | number =>
   props.hasHorizontalSpacing ? horizontalSpace.outer : 0
 
-export interface NormalizeProps {
-  readonly hasHorizontalSpacing?: boolean
-}
+export type NormalizeProps = Readonly<{
+  hasHorizontalSpacing?: boolean
+}>
+
 /**
  * Util method to normalize horizontal spacing
  * using !important because this should never be overridden
@@ -41,9 +42,9 @@ const LayoutNormalizationGlobalStyles = createGlobalStyle`
   // Add normalization styles.
 `
 
-export interface LayoutNormalizerProps {
-  readonly useLegacyNormalization?: boolean
-}
+export type LayoutNormalizerProps = Readonly<{
+  useLegacyNormalization?: boolean
+}>
 
 export const LayoutNormalizer = ({ useLegacyNormalization = true }: LayoutNormalizerProps) => {
   if (useLegacyNormalization) {

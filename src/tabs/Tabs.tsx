@@ -21,16 +21,16 @@ export interface Tab {
   readonly badgeAriaLabel?: string
 }
 
-export interface TabsProps {
-  readonly tabs: Tab[]
-  readonly activeTabId: string
-  readonly onChange?: Function
-  readonly status?: TabStatus
-  readonly className?: string
-  readonly tabsClassName?: string
-}
+export type TabsProps = Readonly<{
+  tabs: Tab[]
+  activeTabId: string
+  onChange?: Function
+  status?: TabStatus
+  className?: string
+  tabsClassName?: string
+}>
 
-interface TabsState {
+type TabsState = {
   // The currently selected tab id
   activeTabId: string
   // A map from tab ids to refs, this is to allow focusing the next or previous tab when

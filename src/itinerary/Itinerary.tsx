@@ -13,20 +13,21 @@ import { Bullet, BulletTypes } from '../bullet'
 import { SubHeader } from '../subHeader'
 import { Text, TextDisplayType, TextTagType } from '../text'
 
-export interface ItineraryProps extends A11yProps {
-  readonly places: Place[]
-  readonly className?: string
-  readonly fromAddon?: string
-  readonly toAddon?: string
-  readonly fromAddonAriaLabel?: string
-  readonly toAddonAriaLabel?: string
-  readonly small?: boolean
-  readonly headline?: string
-  readonly highlightRoad?: boolean
-  readonly isCollapsible?: boolean
-  readonly collapsedLabel?: string
-  readonly collapsedAriaProps?: A11yProps
-}
+export type ItineraryProps = A11yProps &
+  Readonly<{
+    places: Place[]
+    className?: string
+    fromAddon?: string
+    toAddon?: string
+    fromAddonAriaLabel?: string
+    toAddonAriaLabel?: string
+    small?: boolean
+    headline?: string
+    highlightRoad?: boolean
+    isCollapsible?: boolean
+    collapsedLabel?: string
+    collapsedAriaProps?: A11yProps
+  }>
 
 interface RootA11yProps {
   'aria-label'?: string

@@ -13,20 +13,22 @@ export enum ItemCheckboxStatus {
   LOADING = 'loading',
 }
 
-export interface ItemCheckboxProps extends NormalizeProps, A11yProps {
-  readonly className?: string
-  readonly name: string
-  readonly leftAddon?: React.ReactNode
-  readonly labelTitle?: string
-  readonly label: string
-  readonly data?: string
-  readonly dataInfo?: string
-  readonly checked?: boolean
-  readonly disabled?: boolean
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly status?: ItemCheckboxStatus
-  readonly key?: string | number
-}
+export type ItemCheckboxProps = NormalizeProps &
+  A11yProps &
+  Readonly<{
+    className?: string
+    name: string
+    leftAddon?: React.ReactNode
+    labelTitle?: string
+    label: string
+    data?: string
+    dataInfo?: string
+    checked?: boolean
+    disabled?: boolean
+    onChange?: (obj: OnChangeParameters) => void
+    status?: ItemCheckboxStatus
+    key?: string | number
+  }>
 
 export class ItemCheckbox extends Component<ItemCheckboxProps> {
   static defaultProps: Partial<ItemCheckboxProps> = {

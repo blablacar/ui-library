@@ -7,22 +7,24 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Loader } from '../loader/Loader'
 
-export interface ItemActionProps extends NormalizeProps, A11yProps {
-  readonly highlighted?: boolean
-  readonly tag?: JSX.Element
-  readonly className?: string
-  readonly href?: string | JSX.Element
-  readonly action?: string
-  readonly subLabel?: string
-  readonly status?: ItemStatus
-  readonly leftAddon?: React.ReactNode
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onDoneAnimationEnd?: () => void
-  readonly hideHoverBackground?: boolean
-}
+export type ItemActionProps = NormalizeProps &
+  A11yProps &
+  Readonly<{
+    highlighted?: boolean
+    tag?: JSX.Element
+    className?: string
+    href?: string | JSX.Element
+    action?: string
+    subLabel?: string
+    status?: ItemStatus
+    leftAddon?: React.ReactNode
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+    onDoneAnimationEnd?: () => void
+    hideHoverBackground?: boolean
+  }>
 
 export class ItemAction extends PureComponent<ItemActionProps> {
   static defaultProps: Partial<ItemActionProps> = {

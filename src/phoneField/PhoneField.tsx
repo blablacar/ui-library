@@ -42,25 +42,26 @@ export interface PhoneFieldOnChangeParameters {
 }
 
 type errorField = string | JSX.Element
-export interface PhoneFieldProps extends A11yProps {
-  readonly name: string
-  readonly onChange: (obj: PhoneFieldOnChangeParameters) => void
-  readonly className?: string
-  readonly innerWrapperClassName?: string
-  readonly selectFieldLabel?: string
-  readonly textFieldTitle?: string
-  readonly textFieldPlaceholder?: string
-  readonly defaultRegionValue?: string
-  readonly defaultPhoneValue?: string
-  readonly countryWhitelist?: string[]
-  readonly customCountryNames?: PhoneFieldCustomCountryNames
-  readonly isInline?: boolean
-  readonly focus?: boolean
-  readonly selectAutoFocus?: boolean
-  error?: errorField
-}
+export type PhoneFieldProps = A11yProps &
+  Readonly<{
+    name: string
+    onChange: (obj: PhoneFieldOnChangeParameters) => void
+    className?: string
+    innerWrapperClassName?: string
+    selectFieldLabel?: string
+    textFieldTitle?: string
+    textFieldPlaceholder?: string
+    defaultRegionValue?: string
+    defaultPhoneValue?: string
+    countryWhitelist?: string[]
+    customCountryNames?: PhoneFieldCustomCountryNames
+    isInline?: boolean
+    focus?: boolean
+    selectAutoFocus?: boolean
+    error?: errorField
+  }>
 
-interface PhoneFieldState {
+type PhoneFieldState = {
   countryData: MappedCountryPhoneData[]
   countryWhitelist: string[]
   phonePrefix: string

@@ -21,12 +21,13 @@ export type ItemsListChild =
   | React.ReactElement<ItemCheckboxProps>
   | null
 
-export interface ItemsListProps extends A11yProps {
-  readonly children: ItemsListChild[]
-  readonly withSeparators?: boolean
-  readonly className?: string
-  readonly keyGenerator?: (index: number) => string | number
-}
+export type ItemsListProps = A11yProps &
+  Readonly<{
+    children: ItemsListChild[]
+    withSeparators?: boolean
+    className?: string
+    keyGenerator?: (index: number) => string | number
+  }>
 
 export const ItemsList = (props: ItemsListProps) => {
   const {

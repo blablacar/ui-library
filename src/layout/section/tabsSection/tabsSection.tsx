@@ -3,10 +3,10 @@ import cc from 'classcat'
 
 import { Tabs, TabsProps } from '../../../tabs'
 
-export interface TabsSectionProps {
-  readonly className?: string
-  readonly tabsProps: TabsProps
-}
+export type TabsSectionProps = Readonly<{
+  className?: string
+  tabsProps: TabsProps
+}>
 
 /**
  * A specialized section based on the Tabs component.

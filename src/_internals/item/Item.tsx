@@ -14,40 +14,42 @@ export enum ItemStatus {
   CHECKED = 'checked',
 }
 
-export interface ItemProps extends A11yProps, NormalizeProps {
-  readonly chevron?: boolean
-  readonly className?: string
-  readonly href?: string | JSX.Element
-  readonly highlighted?: boolean
-  readonly isClickable?: boolean
-  readonly leftTitle?: React.ReactNode
-  readonly leftTitleButtonAddon?: React.ReactElement<Button>
-  readonly leftTitleDisplay?: TextDisplayType
-  readonly leftTitleColor?: string
-  readonly leftBody?: string | React.ReactNode
-  readonly leftBodyDisplay?: TextDisplayType
-  readonly leftBodyColor?: string
-  readonly leftBodyAnnotation?: React.ReactNode
-  readonly leftBodyAnnotationDisplay?: TextDisplayType
-  readonly leftBodyAnnotationColor?: string
-  readonly leftAddon?: React.ReactNode
-  readonly rightTitle?: string | JSX.Element
-  readonly rightTitleDisplay?: TextDisplayType
-  readonly rightTitleStrikeThrough?: boolean
-  readonly rightTitleAriaProps?: A11yProps
-  readonly rightTitleColor?: string
-  readonly rightBody?: React.ReactNode
-  readonly rightBodyDisplay?: TextDisplayType
-  readonly rightBodyColor?: string
-  readonly rightAddon?: React.ReactNode
-  readonly tag?: JSX.Element
-  readonly onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
-  readonly onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
-  readonly hideHoverBackground?: boolean
-  readonly disabled?: boolean
-}
+export type ItemProps = A11yProps &
+  NormalizeProps &
+  Readonly<{
+    chevron?: boolean
+    className?: string
+    href?: string | JSX.Element
+    highlighted?: boolean
+    isClickable?: boolean
+    leftTitle?: React.ReactNode
+    leftTitleButtonAddon?: React.ReactElement<Button>
+    leftTitleDisplay?: TextDisplayType
+    leftTitleColor?: string
+    leftBody?: string | React.ReactNode
+    leftBodyDisplay?: TextDisplayType
+    leftBodyColor?: string
+    leftBodyAnnotation?: React.ReactNode
+    leftBodyAnnotationDisplay?: TextDisplayType
+    leftBodyAnnotationColor?: string
+    leftAddon?: React.ReactNode
+    rightTitle?: string | JSX.Element
+    rightTitleDisplay?: TextDisplayType
+    rightTitleStrikeThrough?: boolean
+    rightTitleAriaProps?: A11yProps
+    rightTitleColor?: string
+    rightBody?: React.ReactNode
+    rightBodyDisplay?: TextDisplayType
+    rightBodyColor?: string
+    rightAddon?: React.ReactNode
+    tag?: JSX.Element
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onBlur?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
+    onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
+    hideHoverBackground?: boolean
+    disabled?: boolean
+  }>
 
 export const Item = (props: ItemProps) => {
   const {

@@ -13,27 +13,29 @@ export enum ItemRadioStatus {
   LOADING = 'loading',
 }
 
-export interface ItemRadioProps extends A11yProps, NormalizeProps {
-  readonly className?: string
-  readonly name: string
-  readonly value: string | number
-  readonly leftAddon?: React.ReactNode
-  readonly labelTitle?: string
-  readonly label: string
-  readonly data?: string
-  readonly dataInfo?: string
-  readonly checked?: boolean
-  readonly disabled?: boolean
-  readonly chevron?: boolean
-  readonly highlighted?: boolean
-  readonly onChange?: (obj: OnChangeParameters) => void
-  readonly onClick?: (obj: OnChangeParameters) => void
-  readonly status?: ItemRadioStatus
-  readonly key?: string | number
-}
+export type ItemRadioProps = A11yProps &
+  NormalizeProps &
+  Readonly<{
+    className?: string
+    name: string
+    value: string | number
+    leftAddon?: React.ReactNode
+    labelTitle?: string
+    label: string
+    data?: string
+    dataInfo?: string
+    checked?: boolean
+    disabled?: boolean
+    chevron?: boolean
+    highlighted?: boolean
+    onChange?: (obj: OnChangeParameters) => void
+    onClick?: (obj: OnChangeParameters) => void
+    status?: ItemRadioStatus
+    key?: string | number
+  }>
 
-interface ItemRadioState {
-  readonly focus: boolean
+type ItemRadioState = {
+  focus: boolean
 }
 
 export class ItemRadio extends Component<ItemRadioProps> {

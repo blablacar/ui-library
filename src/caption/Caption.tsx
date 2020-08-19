@@ -13,13 +13,13 @@ export const renderSecondary = (href?: string, secondaryText?: string) =>
     <span>{secondaryText}</span>
   )
 
-export interface CaptionProps {
-  readonly className?: string
-  readonly children: any
-  readonly isoDate: string
-  readonly href?: string
-  readonly secondaryText?: string
-}
+export type CaptionProps = Readonly<{
+  className?: string
+  children: any
+  isoDate: string
+  href?: string
+  secondaryText?: string
+}>
 
 export const Caption = ({ className, children, href, secondaryText, isoDate }: CaptionProps) => (
   <StyledCaption className={cc(['kirk-caption', className])}>

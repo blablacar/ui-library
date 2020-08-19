@@ -2,13 +2,13 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-export interface UneditableTextFieldProps {
-  readonly children: JSX.Element | string
-  readonly className?: string
-  readonly addOn?: JSX.Element
-  readonly href?: JSX.Element | string
-  readonly ellipsis?: boolean
-}
+export type UneditableTextFieldProps = Readonly<{
+  children: JSX.Element | string
+  className?: string
+  addOn?: JSX.Element
+  href?: JSX.Element | string
+  ellipsis?: boolean
+}>
 
 export const UneditableTextField = ({
   children,

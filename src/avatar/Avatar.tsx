@@ -7,17 +7,17 @@ import { Badge } from '../badge'
 import { CheckIcon } from '../icon/checkIcon'
 import { StyledAvatar } from './Avatar.style'
 
-export interface AvatarProps {
-  readonly className?: string
-  readonly image?: string
-  readonly alt?: string
-  readonly isSmall?: boolean
-  readonly isMedium?: boolean
-  readonly isLarge?: boolean
-  readonly isIdChecked?: boolean
-  readonly unreadNotificationsCount?: string
-  readonly unreadNotificationsCountAriaLabel?: string
-}
+export type AvatarProps = Readonly<{
+  className?: string
+  image?: string
+  alt?: string
+  isSmall?: boolean
+  isMedium?: boolean
+  isLarge?: boolean
+  isIdChecked?: boolean
+  unreadNotificationsCount?: string
+  unreadNotificationsCountAriaLabel?: string
+}>
 
 const IdCheckBadge = (
   <Badge className="kirk-avatar-badge--idCheck">

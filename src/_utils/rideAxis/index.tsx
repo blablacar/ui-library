@@ -19,10 +19,10 @@ const StyledArrowIcon = styled(ArrowIcon)`
   }
 `
 
-export interface RideAxisProps {
-  readonly from?: string
-  readonly to?: string
-}
+export type RideAxisProps = Readonly<{
+  from?: string
+  to?: string
+}>
 
 export const RideAxis = ({ from, to, ...props }: RideAxisProps) => (
   <StyledRideAxis {...props}>

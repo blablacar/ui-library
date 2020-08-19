@@ -8,18 +8,18 @@ import { InfoIcon } from '../icon/infoIcon'
 import { QuestionIcon } from '../icon/questionIcon'
 import { TextDisplayType } from '../text'
 
-export interface DisclaimerProps {
+export type DisclaimerProps = Readonly<{
   // Whether to use a decoration Info icon on the left side of the Disclaimer or not.
-  readonly useInfoIcon?: boolean
-  readonly children: string | JSX.Element
+  useInfoIcon?: boolean
+  children: string | JSX.Element
   // Whether this Disclaimer will be used as caption to another fragment of UI. In that case, it
   // will use some caption visual styles (e.g. smaller font)
-  readonly isCaption?: boolean
+  isCaption?: boolean
   // Whether to use a clickable Question mark blue icon on the right side of the Disclaimer or
   // not. Activating this affordance will redirect to deprecatedHelpUrl.
   // This is deprecated, you should use inline links inside the Disclaimer content instead.
-  readonly deprecatedHelpUrl?: string
-}
+  deprecatedHelpUrl?: string
+}>
 
 const StyledDisclaimer = styled(Item)`
   .kirk-item {

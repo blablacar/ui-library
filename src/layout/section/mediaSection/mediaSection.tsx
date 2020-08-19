@@ -1,11 +1,11 @@
 import React from 'react'
 import cc from 'classcat'
 
-export interface MediaSectionProps {
-  readonly className?: string
-  readonly role?: string
-  readonly children: React.ReactNode
-}
+export type MediaSectionProps = Readonly<{
+  className?: string
+  role?: string
+  children: React.ReactNode
+}>
 
 /**
  * The media section: Renders a fullscreen div without margins on small devices
