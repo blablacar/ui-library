@@ -1,73 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
 import { HeroSection, HeroSectionProps } from './heroSection'
-
-// Remove these deprecated styles once all the button content parts have been removed.
-const DEPRECATED_STYLES = css`
-  & {
-    margin-bottom: 0;
-    height: initial;
-  }
-
-  & .hero-image {
-    position: static;
-    height: 136px;
-    background-image: ${(props: HeroSectionProps) => `url(${props.heroImageUrl})`};
-  }
-
-  & .hero-image::after {
-    content: none;
-  }
-
-  & .hero-info {
-    padding-top: ${space.xl};
-  }
-
-  & .hero-info-title--display1 {
-    color: ${color.midnightGreen};
-  }
-
-  & .hero-info-text-title {
-    color: ${color.lightMidnightGreen};
-    font-size: ${font.base.size};
-    line-height: ${font.base.lineHeight};
-  }
-
-  & .hero-content {
-    align-items: center;
-  }
-`
-
-const DEPRECATED_LARGE_MEDIA_STYLES = css`
-  & {
-    margin-bottom: ${space.xl};
-    justify-content: flex-end;
-  }
-
-  & .hero-image {
-    position: absolute;
-    background-image: ${(props: HeroSectionProps) => `url(${props.heroImageUrlLarge})`};
-  }
-
-  & .hero-image::after {
-    content: '';
-  }
-
-  & .hero-info {
-    padding-top: 0;
-    padding-bottom: ${space.xl};
-    margin-bottom: ${space.xl};
-  }
-
-  & .hero-info-title--display1 {
-    color: ${color.white};
-  }
-
-  & .hero-info-text-title {
-    color: ${color.white};
-  }
-`
 
 const StyledHeroSection = styled(HeroSection)`
   & {
@@ -91,7 +25,7 @@ const StyledHeroSection = styled(HeroSection)`
     height: 80%;
     background-size: cover;
     background-position: center;
-    background-image: ${props => `url(${props.heroImageUrlLarge})`};
+    background-image: ${props => `url(${props.heroImageUrl})`};
 
     /* Hide the shadow. */
     overflow: hidden;
@@ -152,8 +86,6 @@ const StyledHeroSection = styled(HeroSection)`
     align-items: stretch;
   }
 
-  ${props => (props.bottomElement == null ? DEPRECATED_STYLES : null)}
-
   @media (${responsiveBreakpoints.isMediaLarge}) {
     & {
       height: 75vh;
@@ -187,8 +119,6 @@ const StyledHeroSection = styled(HeroSection)`
     & .hero-content {
       align-items: center;
     }
-
-    ${props => (props.bottomElement == null ? DEPRECATED_LARGE_MEDIA_STYLES : null)}
   }
 `
 

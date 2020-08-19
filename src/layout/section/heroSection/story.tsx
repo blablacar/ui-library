@@ -11,26 +11,6 @@ const stories = storiesOf('Sections|HeroSection', module)
 stories.addDecorator(withKnobs)
 
 stories.add('default', () => (
-  <HeroSection
-    heroDescription={text(
-      'heroDescription',
-      'Bus ou covoiturage : choisissez le trajet qui vous convient le mieux',
-    )}
-    heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?')}
-    heroImageUrl={text(
-      'heroImageUrl',
-      'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign-1ea3207605913c1e26410e605a467eb7.jpg',
-    )}
-    heroImageUrlLarge={text(
-      'heroImageUrlLarge',
-      'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign_large-240e0d9fe2123506cca634c2acedce24.jpg',
-    )}
-    buttonText={text('buttonText', 'Rechercher un trajet')}
-    buttonHref={text('buttonHref', 'http://google.fr')}
-  />
-))
-
-stories.add('search form', () => (
   <MediaSizeProvider>
     <HeroSection
       heroDescription={text(
@@ -40,10 +20,6 @@ stories.add('search form', () => (
       heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?')}
       heroImageUrl={text(
         'heroImageUrl',
-        'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign-1ea3207605913c1e26410e605a467eb7.jpg',
-      )}
-      heroImageUrlLarge={text(
-        'heroImageUrlLarge',
         'https://cdn.blablacar.com/kairos/assets/build/images/home_summer_campaign_large-240e0d9fe2123506cca634c2acedce24.jpg',
       )}
       bottomElement={

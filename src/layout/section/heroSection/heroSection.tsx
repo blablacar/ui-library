@@ -1,17 +1,13 @@
 import React from 'react'
 
-import { Button, ButtonProps } from '../../../button'
 import { TextDisplay1 } from '../../../typography/display1'
 import { TextTitle } from '../../../typography/title'
 
 export type HeroSectionProps = {
   className?: string
-  heroImageUrl?: string
-  heroImageUrlLarge: string
+  heroImageUrl: string
   heroText?: string
   heroDescription?: string
-  buttonText?: string
-  buttonHref?: ButtonProps['href']
   bottomElement?: React.ReactElement
 }
 
@@ -19,8 +15,6 @@ export function HeroSection({
   className,
   heroText,
   heroDescription,
-  buttonText,
-  buttonHref,
   bottomElement,
 }: HeroSectionProps) {
   return (
@@ -40,9 +34,7 @@ export function HeroSection({
           )}
         </div>
 
-        <div className="hero-content">
-          {bottomElement ?? <Button href={buttonHref}>{buttonText}</Button>}
-        </div>
+        <div className="hero-content">{bottomElement}</div>
       </div>
     </div>
   )
