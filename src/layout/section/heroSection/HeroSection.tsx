@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { BusHeroSection, BusHeroSectionProps } from './busHeroSection'
-import { HomeHeroSection, HomeHeroSectionProps } from './homeHeroSection'
+import { BusHeroSection, BusHeroSectionProps } from './BusHeroSection'
+import { HomeHeroSection, HomeHeroSectionProps } from './HomeHeroSection'
 
 export type HeroSectionProps = HomeHeroSectionProps | BusHeroSectionProps
 

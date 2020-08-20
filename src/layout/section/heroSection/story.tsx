@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { MediaSizeProvider } from '../../../_utils/mediaSizeProvider'
 import { AutoCompleteExample } from '../../../autoComplete/story'
 import { SearchForm } from '../../../searchForm'
+import { HeroSection } from './HeroSection'
 import carpoolBlaBlaBusLarge from './images-for-stories/carpool-bbb-large.svg'
 import carpoolBlaBlaBusSmall from './images-for-stories/carpool-bbb-small.svg'
 import carpoolBlueBusLarge from './images-for-stories/carpool-blue-bus-large.svg'
@@ -13,7 +14,6 @@ import carpoolCoralBusLarge from './images-for-stories/carpool-coral-bus-large.s
 import carpoolCoralBusSmall from './images-for-stories/carpool-coral-bus-small.svg'
 import carpoolOnlyLarge from './images-for-stories/carpool-large.svg'
 import carpoolOnlySmall from './images-for-stories/carpool-small.svg'
-import { HeroSection } from './index'
 
 const stories = storiesOf('Sections|HeroSection', module)
 stories.addDecorator(withKnobs)

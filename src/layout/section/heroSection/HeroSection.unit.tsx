@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import { BusHeroSectionProps, HeroSection, HomeHeroSectionProps } from './heroSection'
+import { BusHeroSectionProps, HeroSection, HomeHeroSectionProps } from './HeroSection'
 
 function createHomeProps(props: Partial<HomeHeroSectionProps> = {}): HomeHeroSectionProps {
   return {

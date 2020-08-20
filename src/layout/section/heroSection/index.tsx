@@ -1,1 +1,1 @@
-export * from './heroSection'
+export * from './HeroSection'
