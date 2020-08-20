@@ -1,41 +1,20 @@
 import React from 'react'
 
-import { TextDisplay1 } from '../../../typography/display1'
-import { TextTitle } from '../../../typography/title'
+import { BusHeroSection, BusHeroSectionProps } from './busHeroSection'
+import { HomeHeroSection, HomeHeroSectionProps } from './homeHeroSection'
 
-export type HeroSectionProps = {
-  className?: string
-  heroImageUrl: string
-  heroText?: string
-  heroDescription?: string
-  bottomElement?: React.ReactElement
+export type HeroSectionProps = HomeHeroSectionProps | BusHeroSectionProps
+
+function isHomeHeroSectionProps(props: HeroSectionProps): props is HomeHeroSectionProps {
+  return (props as HomeHeroSectionProps).heroImageUrlLarge != null
 }
 
-export function HeroSection({
-  className,
-  heroText,
-  heroDescription,
-  bottomElement,
-}: HeroSectionProps) {
-  return (
-    <div className={className}>
-      <div className="hero-image" aria-hidden="true" />
+export function HeroSection(props: HeroSectionProps) {
+  if (isHomeHeroSectionProps(props)) {
+    return <HomeHeroSection {...props} />
+  }
 
-      <div className="hero-info">
-        <div className="hero-info-title-wrapper">
-          <h1 className="hero-info-title">
-            <TextDisplay1 className="hero-info-title--display1">{heroText}</TextDisplay1>
-          </h1>
-
-          {heroDescription && (
-            <p className="hero-info-text">
-              <TextTitle className="hero-info-text-title">{heroDescription}</TextTitle>
-            </p>
-          )}
-        </div>
-
-        <div className="hero-content">{bottomElement}</div>
-      </div>
-    </div>
-  )
+  return <BusHeroSection {...props} />
 }
+
+export { BusHeroSectionProps, HomeHeroSectionProps }
