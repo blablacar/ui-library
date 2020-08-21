@@ -23,7 +23,7 @@ const IMAGE_CLEARED_OUT_PART_HEIGHT = IMAGE_HEIGHT * 0.35
 // It is allowed to overflow by the bottom.
 const BOTTOM_CONTENT_HEIGHT = IMAGE_HEIGHT * 0.3
 
-const StyledHomeHeroSection = styled.div`
+const StyledIllustrationHeroSection = styled.div`
   position: relative;
   z-index: 1;
   margin-bottom: ${space.xl};
@@ -113,19 +113,19 @@ const HeroTextDisplay1 = styled(TextDisplay1)`
   }
 `
 
-export type HomeHeroSectionProps = HeroImageProps & {
+export type IllustrationHeroSectionProps = HeroImageProps & {
   heroText?: string
   bottomElement: React.ReactElement
 }
 
-export function HomeHeroSection({
+export function IllustrationHeroSection({
   heroText,
   bottomElement,
   heroImageUrlSmall,
   heroImageUrlLarge,
-}: HomeHeroSectionProps) {
+}: IllustrationHeroSectionProps) {
   return (
-    <StyledHomeHeroSection>
+    <StyledIllustrationHeroSection>
       <HeroImage heroImageUrlSmall={heroImageUrlSmall} heroImageUrlLarge={heroImageUrlLarge} />
 
       <HeroContent>
@@ -135,6 +135,6 @@ export function HomeHeroSection({
 
         <HeroBottomElement>{bottomElement}</HeroBottomElement>
       </HeroContent>
-    </StyledHomeHeroSection>
+    </StyledIllustrationHeroSection>
   )
 }

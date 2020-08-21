@@ -5,7 +5,7 @@ import { color, componentSizes, font, responsiveBreakpoints, space } from '../..
 import { TextDisplay1 } from '../../../typography/display1'
 import { TextTitle } from '../../../typography/title'
 
-export type BusHeroSectionProps = {
+export type ClassicHeroSectionProps = {
   className?: string
   heroImageUrl: string
   heroText?: string
@@ -13,12 +13,12 @@ export type BusHeroSectionProps = {
   bottomElement?: React.ReactElement
 }
 
-function BusHeroSection({
+function ClassicHeroSection({
   className,
   heroText,
   heroDescription,
   bottomElement,
-}: BusHeroSectionProps) {
+}: ClassicHeroSectionProps) {
   return (
     <div className={className}>
       <div className="hero-image" aria-hidden="true" />
@@ -42,7 +42,7 @@ function BusHeroSection({
   )
 }
 
-const StyledBusHeroSection = styled(BusHeroSection)`
+const StyledClassicHeroSection = styled(ClassicHeroSection)`
   & {
     background-color: ${color.white};
     position: relative;
@@ -161,4 +161,4 @@ const StyledBusHeroSection = styled(BusHeroSection)`
   }
 `
 
-export { StyledBusHeroSection as BusHeroSection }
+export { StyledClassicHeroSection as ClassicHeroSection }

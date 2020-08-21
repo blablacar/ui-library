@@ -1,20 +1,22 @@
 import React from 'react'
 
-import { BusHeroSection, BusHeroSectionProps } from './BusHeroSection'
-import { HomeHeroSection, HomeHeroSectionProps } from './HomeHeroSection'
+import { ClassicHeroSection, ClassicHeroSectionProps } from './ClassicHeroSection'
+import { IllustrationHeroSection, IllustrationHeroSectionProps } from './IllustrationHeroSection'
 
-export type HeroSectionProps = HomeHeroSectionProps | BusHeroSectionProps
+export type HeroSectionProps = IllustrationHeroSectionProps | ClassicHeroSectionProps
 
-function isHomeHeroSectionProps(props: HeroSectionProps): props is HomeHeroSectionProps {
-  return (props as HomeHeroSectionProps).heroImageUrlLarge != null
+function isIllustrationHeroSectionProps(
+  props: HeroSectionProps,
+): props is IllustrationHeroSectionProps {
+  return (props as IllustrationHeroSectionProps).heroImageUrlLarge != null
 }
 
 export function HeroSection(props: HeroSectionProps) {
-  if (isHomeHeroSectionProps(props)) {
-    return <HomeHeroSection {...props} />
+  if (isIllustrationHeroSectionProps(props)) {
+    return <IllustrationHeroSection {...props} />
   }
 
-  return <BusHeroSection {...props} />
+  return <ClassicHeroSection {...props} />
 }
 
-export { BusHeroSectionProps, HomeHeroSectionProps }
+export { ClassicHeroSectionProps, IllustrationHeroSectionProps }
