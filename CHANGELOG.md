@@ -1,10 +1,13 @@
 # Unreleased
 
+[...]
+
+# v40.0.0 (24/08/2020)
+
 - **[UPDATE]** Migrate `PushInfo` to new mdx story format
 - **[UPDATE]** Migrate `Paragraph` to new mdx story format
 - **[BREAKING CHANGE]** Remove deprecated button from `HeroSection`
 - **[UPDATE]** Add a new variant for the `HeroSection`
-  [...]
 
 # v39.0.1 (07/08/2020)
 
