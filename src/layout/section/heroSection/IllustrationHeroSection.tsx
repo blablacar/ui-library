@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { color, componentSizes, responsiveBreakpoints, space } from '../../../_utils/branding'
-import { TextDisplay1 } from '../../../typography/display1'
+import {
+  color,
+  componentSizes,
+  fontWeight,
+  responsiveBreakpoints,
+  space,
+} from '../../../_utils/branding'
 
 // The image should always be 45% of the screen size.
 const IMAGE_HEIGHT = 45
@@ -74,6 +79,10 @@ const HeroContent = styled.div`
   padding: 0 ${space.xl};
 `
 
+// These are custom font sizes which are only used for the hero section.
+const SMALL_FONT_HEIGHT_TITLE = 32
+const LARGE_FONT_HEIGHT_TITLE = 60
+
 const HeroTitle = styled.h1`
   margin: ${TITLE_MARGIN_TOP}vh 0 0;
   width: 100%;
@@ -82,6 +91,15 @@ const HeroTitle = styled.h1`
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: ${color.white};
+  font-size: ${SMALL_FONT_HEIGHT_TITLE}px;
+  line-height: ${SMALL_FONT_HEIGHT_TITLE}px;
+  font-weight: ${fontWeight.medium};
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    font-size: ${LARGE_FONT_HEIGHT_TITLE}px;
+    line-height: ${LARGE_FONT_HEIGHT_TITLE}px;
+  }
 `
 
 const HeroBottomElement = styled.div`
@@ -95,21 +113,6 @@ const HeroBottomElement = styled.div`
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     align-items: center;
-  }
-`
-
-// These are custom font sizes which are only used for the hero section.
-const SMALL_FONT_HEIGHT_TITLE = 32
-const LARGE_FONT_HEIGHT_TITLE = 60
-
-const HeroTextDisplay1 = styled(TextDisplay1)`
-  color: ${color.white};
-  font-size: ${SMALL_FONT_HEIGHT_TITLE}px;
-  line-height: ${SMALL_FONT_HEIGHT_TITLE}px;
-
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    font-size: ${LARGE_FONT_HEIGHT_TITLE}px;
-    line-height: ${LARGE_FONT_HEIGHT_TITLE}px;
   }
 `
 
@@ -129,9 +132,7 @@ export function IllustrationHeroSection({
       <HeroImage heroImageUrlSmall={heroImageUrlSmall} heroImageUrlLarge={heroImageUrlLarge} />
 
       <HeroContent>
-        <HeroTitle>
-          <HeroTextDisplay1>{heroText}</HeroTextDisplay1>
-        </HeroTitle>
+        <HeroTitle>{heroText}</HeroTitle>
 
         <HeroBottomElement>{bottomElement}</HeroBottomElement>
       </HeroContent>
