@@ -1,0 +1,130 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { select, text } from '@storybook/addon-knobs'
+import { MediaSizeProvider } from '../../../_utils/mediaSizeProvider'
+import { AutoCompleteExample } from '../../../autoComplete/story'
+import { SearchForm } from '../../../searchForm'
+import { HeroSection } from './HeroSection'
+import carpoolBlaBlaBusLarge from './images-for-stories/carpool-bbb-large.svg'
+import carpoolBlaBlaBusSmall from './images-for-stories/carpool-bbb-small.svg'
+import carpoolBlueBusLarge from './images-for-stories/carpool-blue-bus-large.svg'
+import carpoolBlueBusSmall from './images-for-stories/carpool-blue-bus-small.svg'
+import carpoolCoralBusLarge from './images-for-stories/carpool-coral-bus-large.svg'
+import carpoolCoralBusSmall from './images-for-stories/carpool-coral-bus-small.svg'
+import carpoolOnlyLarge from './images-for-stories/carpool-large.svg'
+import carpoolOnlySmall from './images-for-stories/carpool-small.svg'
+
+<Meta title="Sections|HeroSection" />
+
+# **HeroSection**
+
+The hero section for a landing page.
+
+export const bottomElement = (
+  <SearchForm
+    onSubmit={() => {}}
+    autocompleteFromPlaceholder="Leaving From"
+    autocompleteToPlaceholder="Going to"
+    renderAutocompleteFrom={props => <AutoCompleteExample {...props} />}
+    renderAutocompleteTo={props => <AutoCompleteExample {...props} />}
+    datepickerProps={{
+      defaultValue: new Date().toISOString(),
+      format: value => new Date(value).toLocaleDateString(),
+    }}
+    stepperProps={{
+      defaultValue: 1,
+      min: 1,
+      max: 8,
+      title: 'Choose your number of seats',
+      increaseLabel: 'Increase the number of seats by 1',
+      decreaseLabel: 'Decrease the number of seats by 1',
+      format: value => `${value} seat(s)`,
+      confirmLabel: 'Submit',
+    }}
+  />
+)
+
+<Preview>
+  <Story name="Default">
+    <MediaSizeProvider>
+      <HeroSection
+        heroText={text(
+          'heroText',
+          'BlaBlaBus vous emmène à petit prix vers plus de 300 destinations.',
+          'Default',
+        )}
+        heroImageUrl={text(
+          'heroImageUrl',
+          'https://cdn.blablacar.com/kairos/assets/build/images/hero_home_large-6dc40c07f51bd669fca3ce7719826f02.jpg',
+          'Default',
+        )}
+        bottomElement={bottomElement}
+      />
+    </MediaSizeProvider>
+  </Story>
+</Preview>
+
+## Variant for illustrations
+
+It is possible to render the component with an alternative layout more suitable for illustrations.
+Instead of using the prop `heroImageUrl`, provide `heroImageUrlSmall` and `heroImageUrlLarge`.
+
+export const ILLUSTRATIONS = {
+  'carpool-bla-bla-bus': {
+    large: carpoolBlaBlaBusLarge,
+    small: carpoolBlaBlaBusSmall,
+  },
+  'carpool-blue-bus': {
+    large: carpoolBlueBusLarge,
+    small: carpoolBlueBusSmall,
+  },
+  'carpool-coral-bus': {
+    large: carpoolCoralBusLarge,
+    small: carpoolCoralBusSmall,
+  },
+  'carpool-only': {
+    large: carpoolOnlyLarge,
+    small: carpoolOnlySmall,
+  },
+}
+
+export const Component = ({ content }) => content()
+
+<Preview>
+  <Story name="Illustrations">
+    <Component
+      content={() => {
+        const illustration = select(
+          'Illustration',
+          ILLUSTRATIONS,
+          ILLUSTRATIONS['carpool-bla-bla-bus'],
+          'Illustrations',
+        )
+        return (
+          <MediaSizeProvider>
+            <HeroSection
+              heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?', 'Illustrations')}
+              heroImageUrlSmall={illustration.small}
+              heroImageUrlLarge={illustration.large}
+              bottomElement={bottomElement}
+            />
+          </MediaSizeProvider>
+        )
+      }}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import {
+  HeroSection,
+  HeroSectionProps,
+  ClassicHeroSectionProps,
+  IllustrationHeroSectionProps,
+} from '@blablacar/ui-library/build/heroSection'
+```
+
+<Props of={HeroSection} />
