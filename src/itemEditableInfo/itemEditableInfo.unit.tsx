@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 
 import { ItemEditableInfo } from './index'
 
-it('Should render a basic ItemEditableInfo', () => {
+it('Should render a basic ItemEditableInfo as link', () => {
   const props = {
     label: 'My label',
     value: 'My value',
@@ -16,7 +16,7 @@ it('Should render a basic ItemEditableInfo', () => {
   expect(wrapper.text()).toBe('My labelMy value')
 })
 
-it('Should render an onClick ItemEditableInfo', () => {
+it('Should render an ItemEditableInfo as button', () => {
   const onClickFn = () => {}
   const props = {
     label: 'My label',
@@ -24,6 +24,8 @@ it('Should render an onClick ItemEditableInfo', () => {
     onClick: onClickFn,
   }
   const wrapper = mount(<ItemEditableInfo {...props} />)
+  const button = wrapper.find('button')
+  expect(button).toHaveLength(1)
   expect(wrapper.text()).toBe('My labelMy value')
   expect(wrapper.props().onClick).toBe(onClickFn)
 })
