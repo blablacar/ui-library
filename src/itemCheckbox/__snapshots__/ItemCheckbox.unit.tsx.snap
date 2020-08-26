@@ -242,6 +242,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
+.c0.focus-visible {
+  outline: 3px solid #00AFF5;
+}
+
 .c0 input {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
@@ -249,7 +253,7 @@ button:focus:not(.focus-visible).c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-item-checkbox custom-class-name c0"
 >
   <span
     className="kirk-item-leftText"
@@ -286,7 +290,9 @@ button:focus:not(.focus-visible).c0 {
       checked={true}
       disabled={false}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="checkbox"
     />
     <svg
@@ -631,6 +637,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
+.c0.focus-visible {
+  outline: 3px solid #00AFF5;
+}
+
 .c0 input {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
@@ -638,7 +648,7 @@ button:focus:not(.focus-visible).c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-item-checkbox custom-class-name c0"
 >
   <span
     className="kirk-item-leftText"
@@ -675,7 +685,9 @@ button:focus:not(.focus-visible).c0 {
       checked={false}
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="checkbox"
     />
     <div
@@ -977,6 +989,10 @@ button:focus:not(.focus-visible).c0 {
   bottom: 0;
 }
 
+.c0.focus-visible {
+  outline: 3px solid #00AFF5;
+}
+
 .c0 input {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
@@ -984,7 +1000,7 @@ button:focus:not(.focus-visible).c0 {
 }
 
 <label
-  className="kirk-item kirk-item--clickable kirk-item-checkbox custom-class-name c0"
+  className="kirk-item kirk-item-checkbox custom-class-name c0"
 >
   <span
     className="kirk-item-leftText"
@@ -1021,7 +1037,9 @@ button:focus:not(.focus-visible).c0 {
       checked={false}
       disabled={false}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       type="checkbox"
     />
     <svg
