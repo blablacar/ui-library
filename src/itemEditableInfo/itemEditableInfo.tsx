@@ -1,7 +1,9 @@
 import React from 'react'
+import cc from 'classcat'
 
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
+import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { TextDisplayType } from '../text'
 
@@ -14,6 +16,7 @@ export type ItemEditableInfoProps = A11yProps &
     value: string
     // A href to follow if the modifiable value is activated
     href?: string | JSX.Element
+    tag?: JSX.Element
     onClick?: (event: React.MouseEvent<HTMLElement>) => void
     // Prevent modification of the user input.
     // Used to trigger the behavior of the 'ItemEditableInfo non-editable' from the specs.
@@ -21,12 +24,14 @@ export type ItemEditableInfoProps = A11yProps &
   }>
 
 export const ItemEditableInfo = (props: ItemEditableInfoProps) => {
-  const { className, label, value, href = null, readonly = false, onClick } = props
+  const { className, label, value, href = null, tag, readonly = false, onClick } = props
   const a11yAttrs = pickA11yProps<ItemEditableInfoProps>(props)
+  const { focusVisible, onFocus, onBlur } = useFocusVisible()
 
   const extraProps = {
     isClickable: true,
     href,
+    tag,
     // For the ItemEditableInfo, the value (entered previously by the user)
     // is the most important info and is visually bigger than the
     // label for it.
@@ -47,13 +52,20 @@ export const ItemEditableInfo = (props: ItemEditableInfoProps) => {
   }
 
   if (onClick && !href) {
-    a11yAttrs.role = 'button'
+    extraProps.tag = <button />
   }
 
   return (
     <Item
       onClick={onClick}
-      className={className}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      className={cc([
+        className,
+        {
+          'focus-visible': focusVisible,
+        },
+      ])}
       leftTitle={label}
       leftBody={value}
       {...extraProps}

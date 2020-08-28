@@ -1,21 +1,39 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 
 import { ItemEditableInfo } from './index'
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 
 <Meta title="Items|ItemEditableInfo" />
 
 # ItemEditableInfo
 
+### Link
+
 <Preview>
-  <Story name="Default">
-    <ItemEditableInfo
-      href="http://google.fr`"
-      label="First name"
-      value="John"
-      onClick={() => {
-        window.alert('Clicked')
-      }}
-    />
+  <Story name="Link">
+    <FocusVisibleProvider>
+      <ItemEditableInfo
+        href="http://google.fr`"
+        label="First name"
+        value="John"
+      />
+    </FocusVisibleProvider>
+  </Story>
+</Preview>
+
+### button
+
+<Preview>
+  <Story name="Button">
+    <FocusVisibleProvider>
+      <ItemEditableInfo
+        label="First name"
+        value="John"
+        onClick={() => {
+          window.alert('Clicked')
+        }}
+      />
+    </FocusVisibleProvider>
   </Story>
 </Preview>
 
@@ -23,7 +41,9 @@ import { ItemEditableInfo } from './index'
 
 <Preview>
   <Story name="Read Only">
-    <ItemEditableInfo label="Gender (readonly)" value="Female" readonly />
+    <FocusVisibleProvider>
+      <ItemEditableInfo label="Gender (readonly)" value="Female" readonly />
+    </FocusVisibleProvider>
   </Story>
 </Preview>
 
