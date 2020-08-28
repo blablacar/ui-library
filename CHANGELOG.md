@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fixed `ItemCheckbox` a11y focus ring display for keyboard navigation
 [...]
 
 # v40.0.0 (24/08/2020)

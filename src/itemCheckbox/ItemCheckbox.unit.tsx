@@ -51,12 +51,10 @@ describe('ItemCheckbox', () => {
     })
   })
   it('Should handle disabled prop', () => {
-    const itemCheckbox = shallow(<ItemCheckbox {...defaultProps} />)
-    expect(itemCheckbox.prop('isClickable')).toBeTruthy()
+    const itemCheckbox = mount(<ItemCheckbox {...defaultProps} />)
     expect(itemCheckbox.prop('disabled')).toBeFalsy()
 
     itemCheckbox.setProps({ disabled: true })
-    expect(itemCheckbox.prop('isClickable')).toBeFalsy()
     expect(itemCheckbox.prop('disabled')).toBeTruthy()
   })
   it('Should call the onChange prop with name and value when the input changes (uncheck)', () => {
