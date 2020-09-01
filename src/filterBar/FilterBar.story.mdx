@@ -1,9 +1,8 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { action, boolean, select } from '@storybook/addon-actions'
-import { color } from '../_utils/branding'
-import { CarpoolIcon } from '../icon/carpoolIcon'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { FilterBar } from '../filterBar'
 import { BusIcon } from '../icon/busIcon'
-import { FilterBar, FilterBarProps } from '../filterBar'
+import { CarpoolIcon } from '../icon/carpoolIcon'
 
 <Meta title="Widget|FilterBar" />
 
@@ -14,7 +13,7 @@ export const supplyInfo = [
     liquidity: 98,
     icon: CarpoolIcon,
     ariaLabel: 'Carpooling available',
-    iconTitle: 'Carpooling'
+    iconTitle: 'Carpooling',
   },
   {
     liquidity: 12,
