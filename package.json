@@ -149,6 +149,9 @@
     "*.{ts,tsx}": [
       "prettier --write",
       "eslint --fix"
+    ],
+    "*.mdx": [
+      "eslint --fix"
     ]
   },
   "husky": {
