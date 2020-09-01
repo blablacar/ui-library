@@ -70,7 +70,7 @@
     "semi": ["error", "never"],
     "react/button-has-type": 0,
     "react/destructuring-assignment": 0,
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".mdx"] }],
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-props-no-spreading": 0,
     "react/jsx-fragments": ["error", "element"],
@@ -89,6 +89,17 @@
         "no-alert": 0,
         "jsx-a11y/anchor-is-valid": 0,
         "jsx-a11y/anchor-has-content": 0
+      }
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": [
+        "plugin:mdx/recommended"
+      ],
+      "rules": {
+        "max-len": 0,
+        "react/jsx-indent": 0,
+        "prettier/prettier": 0
       }
     }
   ]
