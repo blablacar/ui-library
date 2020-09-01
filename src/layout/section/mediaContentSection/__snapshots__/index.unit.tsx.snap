@@ -273,6 +273,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .c0 {
@@ -335,6 +336,12 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 
   .c1 .section-content.section-content--large {
     max-width: 1016px;
+  }
+}
+
+@media (max-width:799px) {
+  .c4 {
+    margin-top: 24px;
   }
 }
 
@@ -699,6 +706,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .c0 {
@@ -761,6 +769,12 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 
   .c1 .section-content.section-content--large {
     max-width: 1016px;
+  }
+}
+
+@media (max-width:799px) {
+  .c4 {
+    margin-top: 24px;
   }
 }
 
