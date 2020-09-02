@@ -1,6 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { StyledMediaSection } from './MediaSection.style'
+
 export type MediaSectionProps = Readonly<{
   className?: string
   role?: string
@@ -15,8 +17,8 @@ export const MediaSection = (props: MediaSectionProps) => {
   const { children, className, role = 'presentation' } = props
 
   return (
-    <div role={role} className={cc(['media-section', className])}>
+    <StyledMediaSection role={role} className={cc(['media-section', className])}>
       {children}
-    </div>
+    </StyledMediaSection>
   )
 }

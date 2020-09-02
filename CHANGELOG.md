@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `MediaSection` to new mdx story format
 - **[FIX]** Fixed `MediaContentSection` margins on the title
 [...]
 

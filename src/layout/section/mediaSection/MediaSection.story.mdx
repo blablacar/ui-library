@@ -1,0 +1,43 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Modal, ModalSize } from '../../../modal'
+import { MediaSection } from './index'
+
+<Meta title="sections|MediaSection" />
+
+# **MediaSection**
+
+<Preview>
+  <Story name="Default">
+    <MediaSection className="" role="presentation">
+      <img
+        src="https://s.abcnews.com/images/International/kangaroo-stock-gty-jef-191003_hpMain_16x9_992.jpg"
+        alt="Kangaroo"
+        width="100%"
+      />
+    </MediaSection>
+  </Story>
+  <Story name="Inside a modal">
+    <Modal isOpen size={ModalSize.FULLSCREEN}>
+      <MediaSection className="" role="presentation">
+        <img
+          src="https://s.abcnews.com/images/International/kangaroo-stock-gty-jef-191003_hpMain_16x9_992.jpg"
+          alt="Kangaroo"
+          width="100%"
+        />
+      </MediaSection>
+    </Modal>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { MediaSection } from '@blablacar/ui-library/build/layout/section/mediaSection'
+
+<MediaSection />
+```
+
+<Props of={MediaSection} />
