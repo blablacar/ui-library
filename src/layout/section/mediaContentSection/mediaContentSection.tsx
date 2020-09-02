@@ -6,7 +6,7 @@ import { Column } from '../../../layout/column'
 import { Columns } from '../../../layout/columns'
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
 import { Text, TextTagType } from '../../../text'
-import { TextDisplay1 } from '../../../typography/display1'
+import { MediaContentTitle } from './mediaContentTitle'
 
 export type MediaContentSectionProps = Readonly<{
   className?: string
@@ -38,7 +38,7 @@ export const MediaContentSection = (props: MediaContentSectionProps) => {
         </Column>
         <Column>
           <div className="kirk-media-content-wrapper">
-            <TextDisplay1>{title}</TextDisplay1>
+            <MediaContentTitle>{title}</MediaContentTitle>
             {showParagraph && <Text tag={TextTagType.PARAGRAPH}>{content}</Text>}
             {showButton && (
               <Button className="kirk-media-content-button" href={buttonHref}>

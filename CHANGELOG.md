@@ -1,11 +1,12 @@
 # Unreleased
 
+- **[FIX]** Fixed `MediaContentSection` margins on the title
 [...]
 
 # v40.0.1 (28/08/2020)
 
 - **[FIX]** Fixed `ItemCheckbox` a11y focus ring display for keyboard navigation
-- **[FIX]** Fixed `ItemEditableInfo` a11y keyboard navigation by Providing a focus ring 
+- **[FIX]** Fixed `ItemEditableInfo` a11y keyboard navigation by Providing a focus ring
 
 # v40.0.0 (24/08/2020)
 
