@@ -268,14 +268,6 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   font-weight: 500;
 }
 
-.c4 {
-  color: #054752;
-  font-size: 30px;
-  line-height: 1.06;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
 .c0 {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -313,6 +305,14 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   margin-top: 16px;
 }
 
+.c4 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
 @media (hover:none),(hover:on-demand) {
   .c6.kirk-button-secondary:hover {
     background-color: #FFF;
@@ -336,12 +336,6 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 
   .c1 .section-content.section-content--large {
     max-width: 1016px;
-  }
-}
-
-@media (max-width:799px) {
-  .c4 {
-    margin-top: 24px;
   }
 }
 
@@ -374,62 +368,72 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   }
 }
 
+@media (max-width:799px) {
+  .c4 {
+    margin-top: 24px;
+  }
+}
+
 <div
-  className="kirk-media-content c0 c1"
-  role="presentation"
+  className="c0"
 >
-  <article
-    className="section-content section-content--large"
+  <div
+    className="kirk-media-content c1"
+    role="presentation"
   >
-    <ul
-      className="c2"
+    <article
+      className="section-content section-content--large"
     >
-      <li
-        className="kirk-column kirk-media-content-img-column c3"
+      <ul
+        className="c2"
       >
-        <div
-          className="kirk-media-content-img"
-          style={
-            Object {
-              "backgroundImage": "url(http://blablacar.com/pic.jpg)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="kirk-column c3"
-      >
-        <div
-          className="kirk-media-content-wrapper"
+        <li
+          className="kirk-column kirk-media-content-img-column c3"
         >
-          <span
-            className="c4"
+          <div
+            className="kirk-media-content-img"
+            style={
+              Object {
+                "backgroundImage": "url(http://blablacar.com/pic.jpg)",
+              }
+            }
+          />
+        </li>
+        <li
+          className="kirk-column c3"
+        >
+          <div
+            className="kirk-media-content-wrapper"
           >
-            section title
-          </span>
-          <p
-            className="kirk-text kirk-text-body c5"
-          >
-            section content
-          </p>
-          <a
-            className="kirk-button kirk-button-primary kirk-media-content-button c6"
-            disabled={false}
-            href="http://blablacar.com"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-          >
-            button label
-          </a>
-        </div>
-      </li>
-    </ul>
-  </article>
+            <span
+              className="c4"
+            >
+              section title
+            </span>
+            <p
+              className="kirk-text kirk-text-body c5"
+            >
+              section content
+            </p>
+            <a
+              className="kirk-button kirk-button-primary kirk-media-content-button c6"
+              disabled={false}
+              href="http://blablacar.com"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              button label
+            </a>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </div>
 </div>
 `;
 
@@ -701,14 +705,6 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   font-weight: 500;
 }
 
-.c4 {
-  color: #054752;
-  font-size: 30px;
-  line-height: 1.06;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
 .c0 {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -746,6 +742,14 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   margin-top: 16px;
 }
 
+.c4 {
+  color: #054752;
+  font-size: 30px;
+  line-height: 1.06;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
 @media (hover:none),(hover:on-demand) {
   .c6.kirk-button-secondary:hover {
     background-color: #FFF;
@@ -769,12 +773,6 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 
   .c1 .section-content.section-content--large {
     max-width: 1016px;
-  }
-}
-
-@media (max-width:799px) {
-  .c4 {
-    margin-top: 24px;
   }
 }
 
@@ -807,61 +805,71 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   }
 }
 
+@media (max-width:799px) {
+  .c4 {
+    margin-top: 24px;
+  }
+}
+
 <div
-  className="kirk-media-content c0 kirk-media-content--flipped c1"
-  role="presentation"
+  className="c0"
 >
-  <article
-    className="section-content section-content--large"
+  <div
+    className="kirk-media-content kirk-media-content--flipped c1"
+    role="presentation"
   >
-    <ul
-      className="c2"
+    <article
+      className="section-content section-content--large"
     >
-      <li
-        className="kirk-column kirk-media-content-img-column c3"
+      <ul
+        className="c2"
       >
-        <div
-          className="kirk-media-content-img"
-          style={
-            Object {
-              "backgroundImage": "url(http://blablacar.com/pic.jpg)",
-            }
-          }
-        />
-      </li>
-      <li
-        className="kirk-column c3"
-      >
-        <div
-          className="kirk-media-content-wrapper"
+        <li
+          className="kirk-column kirk-media-content-img-column c3"
         >
-          <span
-            className="c4"
+          <div
+            className="kirk-media-content-img"
+            style={
+              Object {
+                "backgroundImage": "url(http://blablacar.com/pic.jpg)",
+              }
+            }
+          />
+        </li>
+        <li
+          className="kirk-column c3"
+        >
+          <div
+            className="kirk-media-content-wrapper"
           >
-            section title
-          </span>
-          <p
-            className="kirk-text kirk-text-body c5"
-          >
-            section content
-          </p>
-          <a
-            className="kirk-button kirk-button-primary kirk-media-content-button c6"
-            disabled={false}
-            href="http://blablacar.com"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-          >
-            button label
-          </a>
-        </div>
-      </li>
-    </ul>
-  </article>
+            <span
+              className="c4"
+            >
+              section title
+            </span>
+            <p
+              className="kirk-text kirk-text-body c5"
+            >
+              section content
+            </p>
+            <a
+              className="kirk-button kirk-button-primary kirk-media-content-button c6"
+              disabled={false}
+              href="http://blablacar.com"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+            >
+              button label
+            </a>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </div>
 </div>
 `;

@@ -6,7 +6,8 @@ import { Column } from '../../../layout/column'
 import { Columns } from '../../../layout/columns'
 import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
 import { Text, TextTagType } from '../../../text'
-import { MediaContentTitle } from './mediaContentTitle'
+import { StyledMediaContentSection } from './MediaContentSection.style'
+import { MediaContentTitle } from './MediaContentTitle'
 
 export type MediaContentSectionProps = Readonly<{
   className?: string
@@ -31,23 +32,28 @@ export const MediaContentSection = (props: MediaContentSectionProps) => {
   const showButton = Boolean(buttonHref && buttonLabel)
   const showParagraph = Boolean(content)
   return (
-    <BaseSection tagName="article" className={classNames} contentSize={SectionContentSize.LARGE}>
-      <Columns>
-        <Column className="kirk-media-content-img-column">
-          <div className="kirk-media-content-img" style={{ backgroundImage: `url(${mediaUrl})` }} />
-        </Column>
-        <Column>
-          <div className="kirk-media-content-wrapper">
-            <MediaContentTitle>{title}</MediaContentTitle>
-            {showParagraph && <Text tag={TextTagType.PARAGRAPH}>{content}</Text>}
-            {showButton && (
-              <Button className="kirk-media-content-button" href={buttonHref}>
-                {buttonLabel}
-              </Button>
-            )}
-          </div>
-        </Column>
-      </Columns>
-    </BaseSection>
+    <StyledMediaContentSection>
+      <BaseSection tagName="article" className={classNames} contentSize={SectionContentSize.LARGE}>
+        <Columns>
+          <Column className="kirk-media-content-img-column">
+            <div
+              className="kirk-media-content-img"
+              style={{ backgroundImage: `url(${mediaUrl})` }}
+            />
+          </Column>
+          <Column>
+            <div className="kirk-media-content-wrapper">
+              <MediaContentTitle>{title}</MediaContentTitle>
+              {showParagraph && <Text tag={TextTagType.PARAGRAPH}>{content}</Text>}
+              {showButton && (
+                <Button className="kirk-media-content-button" href={buttonHref}>
+                  {buttonLabel}
+                </Button>
+              )}
+            </div>
+          </Column>
+        </Columns>
+      </BaseSection>
+    </StyledMediaContentSection>
   )
 }
