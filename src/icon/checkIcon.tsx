@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import React from 'react'
 import cc from 'classcat'
 import styled from 'styled-components'

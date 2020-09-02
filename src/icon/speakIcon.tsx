@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import React, { Fragment } from 'react'
 
 import { BaseIcon } from '../_utils/icon'

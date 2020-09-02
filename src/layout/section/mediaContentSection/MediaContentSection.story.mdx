@@ -1,14 +1,13 @@
-import React, { Fragment } from 'react'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { MediaContentSection } from './index'
 
-const stories = storiesOf('Sections|MediaContentSection', module)
-stories.addDecorator(withKnobs)
+<Meta title="Sections|MediaContentSection" />
 
-stories.add('default', () => (
-  <Fragment>
+# **MediaContentSection**
+
+<Preview>
+  <Story name="Default">
     <MediaContentSection
       title="Where do you want to drive to?"
       content="Let's make this your least expensive journey ever."
@@ -22,7 +21,7 @@ stories.add('default', () => (
       buttonLabel="Découvrez notre offre de bus"
       buttonHref="https://www.blablacar.fr/bus"
       mediaUrl="https://cdn.blablacar.com/kairos/assets/build/images/blablabus2_large-611071cd4e9502579e94f6bc24391eda.jpg"
-      flipped={boolean('Flip middle section', false)}
+      flipped={false}
     />
     <MediaContentSection
       title="Ouibus devient BlaBlaBus"
@@ -31,5 +30,17 @@ stories.add('default', () => (
       buttonHref="https://www.blablacar.fr/bus"
       mediaUrl="https://cdn.blablacar.com/kairos/assets/build/images/blablabus_bus_logo_large-4717a333c3a2184a5849b0cbb6da75cb.png"
     />
-  </Fragment>
-))
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { MediaContentSection } from '@blablacar/ui-library/build/layout/section/mediaContentSection'
+
+<MediaContentSection />
+```
+
+<Props of={MediaContentSection} />
