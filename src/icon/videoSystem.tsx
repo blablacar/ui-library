@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import React from 'react'
 
 import { IconPropsWithStatus, StatusIcon } from '../_utils/icon/status'
