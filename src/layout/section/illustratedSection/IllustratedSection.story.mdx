@@ -1,0 +1,46 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { ItemRadio } from '../../../itemRadio'
+import { ItemRadioGroup } from '../../../itemRadioGroup'
+import { TheVoice } from '../../../theVoice'
+import { IllustratedSection } from './index'
+
+<Meta title="Sections|IllustratedSection" />
+
+# **IllustratedSection**
+
+<Preview>
+  <Story name="With illustration">
+    <IllustratedSection illustrationUrl="https://cdn.blablacar.com/kairos/assets/build/images/max_2_in_the_back-d1b1da56d9d48d78e0365ff586c68f92.svg">
+      <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
+      <ItemRadioGroup name="2mitb" withSeparators withChevrons>
+        <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
+        <ItemRadio name="2mitb" value="false" labelTitle="No, I'll squeeze in 3." />
+      </ItemRadioGroup>
+    </IllustratedSection>
+  </Story>
+  <Story name="With avatar">
+    <IllustratedSection
+      illustrationUrl="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg"
+      isAvatar
+    >
+      <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
+      <ItemRadioGroup name="2mitb" withSeparators withChevrons>
+        <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
+        <ItemRadio name="2mitb" value="false" labelTitle="No, I'll squeeze in 3." />
+      </ItemRadioGroup>
+    </IllustratedSection>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { IllustratedSection } from '@blablacar/ui-library/build/layout/section/illustratedSection'
+
+<IllustratedSection />
+```
+
+<Props of={IllustratedSection} />

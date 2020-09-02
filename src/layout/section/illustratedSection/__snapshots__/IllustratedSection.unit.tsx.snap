@@ -157,30 +157,34 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 }
 
 <div
-  className="c0 c1"
-  role="presentation"
+  className="c0"
 >
-  <article
-    className="section-content section-content--large"
+  <div
+    className="c1"
+    role="presentation"
   >
-    <div
-      className="kirk-illustratedSection-illustration"
+    <article
+      className="section-content section-content--large"
     >
       <div
-        className="kirk-avatar--large kirk-avatar--image kirk-avatar c2"
+        className="kirk-illustratedSection-illustration"
       >
-        <img
-          alt=""
-          src="http://blablacar.com/pic.jpg"
-        />
+        <div
+          className="kirk-avatar--large kirk-avatar--image kirk-avatar c2"
+        >
+          <img
+            alt=""
+            src="http://blablacar.com/pic.jpg"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="kirk-illustratedSection-content"
-    >
-      Hello World
-    </div>
-  </article>
+      <div
+        className="kirk-illustratedSection-content"
+      >
+        Hello World
+      </div>
+    </article>
+  </div>
 </div>
 `;
 
@@ -255,25 +259,29 @@ exports[`IllustratedSection should render default IllustratedSection section 1`]
 }
 
 <div
-  className="c0 c1"
-  role="presentation"
+  className="c0"
 >
-  <article
-    className="section-content section-content--large"
+  <div
+    className="c1"
+    role="presentation"
   >
-    <div
-      className="kirk-illustratedSection-illustration"
+    <article
+      className="section-content section-content--large"
     >
-      <img
-        alt=""
-        src="http://blablacar.com/pic.jpg"
-      />
-    </div>
-    <div
-      className="kirk-illustratedSection-content"
-    >
-      Hello World
-    </div>
-  </article>
+      <div
+        className="kirk-illustratedSection-illustration"
+      >
+        <img
+          alt=""
+          src="http://blablacar.com/pic.jpg"
+        />
+      </div>
+      <div
+        className="kirk-illustratedSection-content"
+      >
+        Hello World
+      </div>
+    </article>
+  </div>
 </div>
 `;
