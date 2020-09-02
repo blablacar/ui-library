@@ -1,7 +1,6 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-
 import { action } from '@storybook/addon-actions'
-import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 
 import { SendMessageIcon } from '../icon/sendMessageIcon'
 import { Textarea } from './index'
@@ -68,7 +67,7 @@ import { Textarea } from './index'
 <Preview>
   <Story name="withIconFitContent">
     <Textarea
-      fitContent={true}
+      fitContent
       id={text('id')}
       defaultValue={text('Value', '')}
       name={text('name', 'inputName')}

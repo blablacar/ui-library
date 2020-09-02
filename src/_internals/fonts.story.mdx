@@ -1,6 +1,6 @@
 import { Meta, Typeset } from '@storybook/addon-docs/blocks'
 
-import { font, fontWeight } from '../_utils/branding'
+import { font } from '../_utils/branding'
 
 <Meta title="Design Tokens|Fonts" />
 
@@ -11,6 +11,6 @@ import { font, fontWeight } from '../_utils/branding'
 **Weights:** 400(regular), 700(medium)
 
 <Typeset
-  fontSizes={Object.keys(font).map(scale => font[scale]['size'])}
+  fontSizes={Object.keys(font).map(scale => font[scale].size)}
   sampleText="The quick brown fox jumps over lazy dog"
 />

@@ -1,8 +1,8 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { action, boolean, select } from '@storybook/addon-actions'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { LadyIcon } from '../icon/ladyIcon'
 import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
-import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 
 <Meta title="Items|ItemCheckbox" />
 
@@ -17,7 +17,7 @@ import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
         label="Main information"
         data="Data"
         dataInfo="Data info"
-        checked={true}
+        checked
         disabled={false}
         leftAddon={<LadyIcon isDisabled={false} />}
         status={ItemCheckboxStatus.DEFAULT}
@@ -36,9 +36,9 @@ import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
       label="Main information"
       data="Data"
       dataInfo="Data info"
-      checked={true}
-      disabled={true}
-      leftAddon={<LadyIcon isDisabled={true} />}
+      checked
+      disabled
+      leftAddon={<LadyIcon isDisabled />}
       status={ItemCheckboxStatus.DEFAULT}
     />
   </Story>

@@ -1,11 +1,10 @@
-import { Fragment } from 'react'
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemRadio } from '../../../itemRadio'
 import { ItemRadioGroup } from '../../../itemRadioGroup'
 import { TheVoice } from '../../../theVoice'
-import { MainContent, Content, BottomContent } from '../../content'
+import { Content, MainContent } from '../../content'
 import { SlideSection } from './index'
 
 <Meta title="Sections|SlideSection" />
@@ -21,7 +20,7 @@ import { SlideSection } from './index'
           reducedContent={<TheVoice>What is your return route?</TheVoice>}
           onPositionChange={action('PositionChange')}
         >
-          {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+          {(setDefaultPosition, setReducedPosition) => (
             <ItemRadioGroup onChange={setReducedPosition}>
               <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
               <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
@@ -39,7 +38,7 @@ import { SlideSection } from './index'
           reducedContent={<TheVoice>What is your route?</TheVoice>}
           onPositionChange={action('PositionChange')}
         >
-          {(setDefaultPosition, setReducedPosition, setExpandedPosition) => (
+          {(setDefaultPosition, setReducedPosition) => (
             <ItemRadioGroup onChange={setReducedPosition}>
               <ItemRadio labelTitle="Via A10" label="Tolls" name="foo" value="1" />
               <ItemRadio labelTitle="Via N200" label="No tolls" name="foo" value="2" />
