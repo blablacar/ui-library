@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import React from 'react'
 
 import { color } from '../_utils/branding'

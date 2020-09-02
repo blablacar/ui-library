@@ -2,7 +2,6 @@ import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-// tslint:disable:max-line-length
 export const ExclamationIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
