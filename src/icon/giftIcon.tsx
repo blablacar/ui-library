@@ -2,7 +2,6 @@ import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-// tslint:disable:max-line-length
 export const GiftIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <g

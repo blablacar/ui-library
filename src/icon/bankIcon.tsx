@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import React from 'react'
 
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
