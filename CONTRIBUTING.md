@@ -66,4 +66,4 @@ To automatically prepend the branch name to your commit name on every commit, pl
 
 # Editor Setup
 
-We recommend you to add to your text-editor some plugins such as `tslint` or `stylelint` to immediately get the errors without waiting for the precommit-hook crash.
+We recommend you to add to your text-editor some plugins such as `eslint` or `stylelint` to immediately get the errors without waiting for the precommit-hook crash.
