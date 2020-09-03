@@ -1,10 +1,13 @@
 # Unreleased
 
 - **[UPDATE]** Migrate `MediaSection` to new mdx story format
+[...]
+
+# v40.0.2 (03/09/2020)
+
 - **[UPDATE]** Migrate `MediaContentSection` to new mdx story format
 - **[UPDATE]** Migrate `IllustratedSection` to new mdx story format
 - **[FIX]** Fixed `MediaContentSection` margins on the title
-[...]
 
 # v40.0.1 (28/08/2020)
 
