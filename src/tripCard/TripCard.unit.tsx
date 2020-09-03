@@ -1,7 +1,6 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import { Card } from '../_internals/card'
 import { Avatar } from '../avatar'
 import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
 import { ComfortIcon } from '../icon/comfortIcon'
@@ -10,6 +9,7 @@ import { LightningIcon } from '../icon/lightningIcon'
 import { WarningIcon } from '../icon/warningIcon'
 import { Text } from '../text'
 import { TripCard } from './TripCard'
+import { StyledTripCard } from './TripCard.style'
 
 const mockedProps = {
   href: '#',
@@ -58,7 +58,7 @@ describe('TripCard component', () => {
   it('Should wrap the content in a Card', () => {
     const tripCard = shallow(<TripCard {...mockedProps} />)
 
-    expect(tripCard.first().type()).toBe(Card)
+    expect(tripCard.first().type()).toBe(StyledTripCard)
   })
 
   it('Should have the base class and no aria attribute', () => {

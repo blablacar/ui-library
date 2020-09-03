@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Migrate `TripCard` to new mdx story format
 
 # v40.0.2 (03/09/2020)
 
