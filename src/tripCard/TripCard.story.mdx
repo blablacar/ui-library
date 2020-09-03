@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { WarningIcon } from '../icon/warningIcon'
 import { TripCard } from '.'
@@ -14,16 +14,16 @@ import { TripCard } from '.'
       href="/"
       itinerary={[
         {
-          mainLabel:  'Paris',
-          subLabel:  'Porte de Vincennes',
-          time:  '09:00',
+          mainLabel: 'Paris',
+          subLabel: 'Porte de Vincennes',
+          time: '09:00',
           isoDate: '2017-12-11T09:00',
           distanceFromPoint: '1,5km',
         },
         {
-          mainLabel:  'Bordeaux',
+          mainLabel: 'Bordeaux',
           subLabel: 'Gare Bordeaux Saint-Jean',
-          time:  '12:00',
+          time: '12:00',
           isoDate: '2017-12-11T12:00',
           distanceFromPoint: '8km',
         },
@@ -52,8 +52,9 @@ import { TripCard } from '.'
       driver={{
           avatarUrl: '//placehold.it/500x500',
             firstName: 'Jane',
-            rating:  '4.9',
-        }} />
+            rating: '4.9',
+        }}
+    />
   </Story>
 </Preview>
 

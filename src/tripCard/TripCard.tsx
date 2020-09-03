@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import { Card } from '../_internals/card'
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
@@ -16,6 +15,7 @@ import { StarIcon as Star } from '../icon/starIcon'
 import { Itinerary } from '../itinerary'
 import { Text, TextDisplayType, TextTagType } from '../text'
 import { TextBody } from '../typography/body'
+import { StyledTripCard } from './TripCard.style'
 
 /**
  * Display 5 passengers max.
@@ -121,7 +121,7 @@ export const TripCard = (props: TripCardProps) => {
   }
 
   return (
-    <Card
+    <StyledTripCard
       className={cc([
         'kirk-tripCard',
         {
@@ -240,6 +240,6 @@ export const TripCard = (props: TripCardProps) => {
           </div>
         </Fragment>,
       )}
-    </Card>
+    </StyledTripCard>
   )
 }

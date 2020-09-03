@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
+import { Card } from '../_internals/card'
 import { color, font, radius, space } from '../_utils/branding'
-import { TripCard } from './TripCard'
 
-const StyledTripCard = styled(TripCard)`
+export const StyledTripCard = styled(Card)`
   & a {
     display: block;
     height: 100%;
@@ -154,6 +154,3 @@ const StyledTripCard = styled(TripCard)`
     margin-left: ${space.m};
   }
 `
-
-export { StyledTripCard as TripCard }
-export { TripCardProps } from './TripCard'
