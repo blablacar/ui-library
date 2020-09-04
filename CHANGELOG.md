@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `MediaSection` to new mdx story format
 [...]
 
 # v40.0.3 (03/09/2020)
