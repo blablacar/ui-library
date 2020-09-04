@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `Rating` to new mdx story format
 - **[UPDATE]** Migrate `MediaSection` to new mdx story format
 [...]
 
