@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
 
 import { Button } from '../button'
 import { EmptyState } from './index'
@@ -7,11 +8,35 @@ import { EmptyState } from './index'
 
 # EmptyState
 
+### with simple text
+
 <Preview>
-  <Story name="WithButton">
+  <Story name="With simple text">
     <EmptyState
       image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
-      text="Nothing here!"
+      text={text('text', 'Nothing there...')}
+    />
+  </Story>
+</Preview>
+
+### with JSX text
+
+<Preview>
+  <Story name="With JSX text">
+    <EmptyState
+      image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+      text={<h1>This H1 contains a span!<span style={{ color: 'gray' }}> But nothing else.</span></h1>}
+    />
+  </Story>
+</Preview>
+
+### with button
+
+<Preview>
+  <Story name="With button">
+    <EmptyState
+      image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+      text={text('text', 'Please click the button below:')}
       button={<Button>Go there!</Button>}
     />
   </Story>
