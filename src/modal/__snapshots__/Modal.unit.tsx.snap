@@ -63,8 +63,7 @@ exports[`Modal should not have changed 1`] = `
 }
 
 .c2 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c2.kirk-button-bubble svg {

@@ -63,8 +63,7 @@ exports[`Hint Default rendering (above) 1`] = `
 }
 
 .c3 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c3.kirk-button-bubble svg {
@@ -415,8 +414,7 @@ exports[`Hint Default rendering (below) 1`] = `
 }
 
 .c3 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c3.kirk-button-bubble svg {

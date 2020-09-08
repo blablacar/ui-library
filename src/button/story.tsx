@@ -7,6 +7,7 @@ import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
 import { LockIcon } from '../icon/lockIcon'
+import { RedCircleIcon } from '../icon/redCircleIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { primaryDoc } from './specifications/primary.md'
 import { secondaryDoc } from './specifications/secondary.md'
@@ -143,6 +144,15 @@ stories.add('icon + text', () => (
   <Section>
     <Button status={ButtonStatus.PRIMARY} {...commonProps}>
       <LockIcon iconColor={color.white} />
+      {label('Content')}
+    </Button>
+  </Section>
+))
+
+stories.add('red circle icon + text', () => (
+  <Section>
+    <Button status={ButtonStatus.PRIMARY} {...commonProps}>
+      <RedCircleIcon iconColor={color.white} />
       {label('Content')}
     </Button>
   </Section>
