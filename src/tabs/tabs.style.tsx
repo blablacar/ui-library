@@ -20,6 +20,7 @@ export const StyledTabs = styled.div`
     -ms-overflow-style: none; /* Remove scrollbar visually IE 10+ */
     scrollbar-width: none; /* Remove scrollbar visually Firefox */
   }
+
   /* Remove scrollbar */
   & .kirk-tablist::-webkit-scrollbar {
     display: none;
@@ -38,6 +39,10 @@ export const StyledTabs = styled.div`
     border: none;
     background-color: ${color.white};
     color: ${color.blue};
+
+    /* Make sure the diacritics are not cropped. */
+    line-height: normal;
+
     font-size: ${font.base.size};
   }
 
