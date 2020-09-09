@@ -43,8 +43,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 .c6 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c6.kirk-button-bubble svg {
@@ -480,8 +479,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 }
 
 .c6 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c6.kirk-button-bubble svg {

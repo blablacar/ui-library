@@ -63,8 +63,7 @@ exports[`Snackbar should not have changed 1`] = `
 }
 
 .c3 svg {
-  margin-right: 4px;
-  margin-left: -8px;
+  margin-right: 8px;
 }
 
 .c3.kirk-button-bubble svg {

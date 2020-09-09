@@ -36,8 +36,7 @@ const StyledButton = styled(Button)`
   }
 
   & svg {
-    margin-right: ${space.s};
-    margin-left: -${space.m};
+    margin-right: ${space.m};
   }
 
   &.kirk-button-bubble svg {
