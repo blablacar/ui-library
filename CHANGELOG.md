@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
+  [...]
 
 # v40.1.0 (09/09/2020)
 
