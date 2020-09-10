@@ -1,93 +1,51 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { mount, shallow } from 'enzyme'
+
+import { fireEvent, render, screen } from '@testing-library/react'
 
 import { ItemRadio, ItemRadioProps, ItemRadioStatus } from './index'
 
+const defaultProps: ItemRadioProps = {
+  label: 'Label',
+  name: 'name',
+  value: 0,
+  className: 'custom-class-name',
+  labelTitle: 'Label title',
+  data: 'Data',
+  dataInfo: 'Data info',
+  checked: false,
+  disabled: false,
+  onChange() {},
+  onClick() {},
+  status: ItemRadioStatus.DEFAULT,
+  key: 0,
+}
+
+function createProps(props: Partial<ItemRadioProps> = {}): ItemRadioProps {
+  return { ...defaultProps, ...props }
+}
+
 describe('ItemRadio', () => {
-  const defaultProps: ItemRadioProps = {
-    label: 'Label',
-    name: 'name',
-    value: 0,
-    className: 'custom-class-name',
-    labelTitle: 'Label title',
-    data: 'Data',
-    dataInfo: 'Data info',
-    checked: false,
-    disabled: false,
-    onChange() {},
-    onClick() {},
-    status: ItemRadioStatus.DEFAULT,
-    key: 0,
-  }
+  it('Should have a label around the input', () => {
+    const props = createProps({
+      label: 'This is the field label',
+      labelTitle: '',
+      data: '',
+      dataInfo: '',
+    })
+    render(<ItemRadio {...props} />)
+    expect(screen.getByRole('radio', { name: 'This is the field label' })).toBeInTheDocument()
+  })
 
-  it('Should use the Item component', () => {
-    const itemRadio = mount(<ItemRadio {...defaultProps} />)
-    expect(itemRadio.exists()).toBe(true)
-  })
-  it('Should forward its props to the Item component', () => {
-    const itemRadio = renderer.create(<ItemRadio {...defaultProps} />).toJSON()
-    expect(itemRadio).toMatchSnapshot()
-  })
-  it('Should display a CircleIcon with an innerDisc when the input is checked', () => {
-    const itemRadio = renderer.create(<ItemRadio {...defaultProps} checked />).toJSON()
-    expect(itemRadio).toMatchSnapshot()
-  })
   it('Should display a Loader when the component is in loading status', () => {
-    const itemRadio = renderer
-      .create(<ItemRadio {...defaultProps} status={ItemRadioStatus.LOADING} />)
-      .toJSON()
-    expect(itemRadio).toMatchSnapshot()
-  })
-  it('Should handle disabled prop', () => {
-    const itemRadio = shallow(<ItemRadio {...defaultProps} />)
-    expect(itemRadio.prop('isClickable')).toBeTruthy()
-    expect(itemRadio.prop('disabled')).toBeFalsy()
-
-    itemRadio.setProps({ disabled: true })
-    expect(itemRadio.prop('isClickable')).toBeFalsy()
-    expect(itemRadio.prop('disabled')).toBeTruthy()
+    const props = createProps({ status: ItemRadioStatus.LOADING })
+    render(<ItemRadio {...props} />)
+    expect(screen.getByRole('progressbar')).toBeInTheDocument()
   })
 
-  describe('a11y', () => {
-    it('Should have a label tag as wrapper to associate content text to input radio', () => {
-      const itemRadio = mount(<ItemRadio {...defaultProps} />)
-      const labelTag = itemRadio.find('label input[type="radio"]')
-      expect(labelTag.exists()).toBe(true)
-    })
-  })
-
-  describe('onChange', () => {
-    it('Should bind the onChange callback of the input', () => {
-      const itemRadio = mount(<ItemRadio {...defaultProps} />)
-      expect(itemRadio.find('input').prop('onChange')).toEqual(itemRadio.instance().onChange)
-    })
-
-    it('Should call the onChange prop with name and value when the input changes', () => {
-      const onChangeMock = jest.fn()
-      const itemRadio = shallow(<ItemRadio {...defaultProps} onChange={onChangeMock} />)
-      itemRadio.instance().onChange()
-      expect(onChangeMock).toHaveBeenCalledWith({
-        name: defaultProps.name,
-        value: defaultProps.value,
-      })
-    })
-  })
-
-  describe('onClick', () => {
-    it('Should bind the onClick callback of the input', () => {
-      const itemRadio = mount(<ItemRadio {...defaultProps} />)
-      expect(itemRadio.find('input').prop('onClick')).toEqual(itemRadio.instance().onClick)
-    })
-
-    it('Should call the onClick prop with name and value when the input changes', () => {
-      const onClickMock = jest.fn()
-      const itemRadio = shallow(<ItemRadio {...defaultProps} onClick={onClickMock} />)
-      itemRadio.instance().onClick()
-      expect(onClickMock).toHaveBeenCalledWith({
-        name: defaultProps.name,
-        value: defaultProps.value,
-      })
-    })
+  it('Should call onChange when clicking on the radio', () => {
+    const props = createProps({ onChange: jest.fn() })
+    render(<ItemRadio {...props} />)
+    fireEvent.click(screen.getByRole('radio'))
+    expect(props.onChange).toHaveBeenCalledWith({ name: 'name', value: 0 })
   })
 })

@@ -1,7 +1,10 @@
 import { action } from '@storybook/addon-actions'
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
+import { ComfortIcon } from '../icon/comfortIcon'
 import { LadyIcon } from '../icon/ladyIcon'
+import { ItemRadioGroup } from '../itemRadioGroup'
 import { ItemRadio, ItemRadioStatus } from './index'
 
 <Meta title="Items|ItemRadio" />
@@ -10,19 +13,34 @@ import { ItemRadio, ItemRadioStatus } from './index'
 
 <Preview>
   <Story name="Default">
-    <ItemRadio
-      name="InputName"
-      value="InputValue"
-      leftAddon={<LadyIcon />}
-      labelTitle="Label title"
-      label="Main information"
-      data="Data"
-      dataInfo="Data info"
-      onChange={action('changed')}
-      checked={false}
-      disabled={false}
-      status={ItemRadioStatus.DEFAULT}
-    />
+    <FocusVisibleProvider>
+      <ItemRadioGroup onChange={action('group changed')}>
+        <ItemRadio
+          name2="inputName"
+          value="InputValue"
+          leftAddon={<LadyIcon />}
+          labelTitle="Label title"
+          label="Main information"
+          data="Data"
+          dataInfo="Data info"
+          checked={false}
+          disabled={false}
+          status={ItemRadioStatus.DEFAULT}
+        />
+        <ItemRadio
+          name2="InputName2"
+          value="InputValue2"
+          leftAddon={<ComfortIcon />}
+          labelTitle="Label title"
+          label="Main information"
+          data="Data"
+          dataInfo="Data info"
+          checked={false}
+          disabled={false}
+          status={ItemRadioStatus.DEFAULT}
+        />
+      </ItemRadioGroup>
+    </FocusVisibleProvider>
   </Story>
 </Preview>
 
