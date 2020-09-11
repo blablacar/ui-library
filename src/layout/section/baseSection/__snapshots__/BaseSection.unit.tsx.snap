@@ -6,6 +6,11 @@ exports[`BaseSection should render default basic section 1`] = `
   padding-right: 24px;
 }
 
+.c0 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 @media (min-width:800px) {
   .c0 .section-content {
     margin-left: auto;
@@ -34,6 +39,11 @@ exports[`BaseSection should render non-default section 1`] = `
 .c0 .section-content {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.c0 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media (min-width:800px) {

@@ -202,6 +202,11 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   padding-right: 24px;
 }
 
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .c5 {
   margin: 0;
   font-weight: 400;
@@ -636,6 +641,11 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 .c1 .section-content {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .c5 {

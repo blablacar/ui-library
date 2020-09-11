@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { BaseSection as BasicSection, SectionContentSize } from './index'
+import { BaseSection, SectionContentSize } from './index'
 
 describe('BaseSection', () => {
   it('should render default basic section', () => {
-    const section = <BasicSection>default section</BasicSection>
+    const section = <BaseSection>default section</BaseSection>
     const renderedSection = renderer.create(section).toJSON()
     expect(renderedSection).toMatchSnapshot()
   })
@@ -16,7 +16,7 @@ describe('BaseSection', () => {
       role: 'contentinfo',
       contentSize: SectionContentSize.LARGE,
     }
-    const section = <BasicSection {...props}>large section</BasicSection>
+    const section = <BaseSection {...props}>large section</BaseSection>
     const renderedSection = renderer.create(section).toJSON()
     expect(renderedSection).toMatchSnapshot()
   })

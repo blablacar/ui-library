@@ -1,6 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { StyledBaseSection } from './BaseSection.style'
+
 export enum SectionContentSize {
   SMALL = 'small',
   LARGE = 'large',
@@ -30,6 +32,7 @@ export const BaseSection = (props: BaseSectionProps) => {
     children,
     role,
     contentSize = SectionContentSize.SMALL,
+    noHorizontalSpacing,
   } = props
 
   const contentClassNames = cc([
@@ -37,6 +40,7 @@ export const BaseSection = (props: BaseSectionProps) => {
     contentClassName,
     {
       'section-content--large': contentSize === SectionContentSize.LARGE,
+      'section-content--noHorizontalSpacing': noHorizontalSpacing,
     },
   ])
 
@@ -48,8 +52,8 @@ export const BaseSection = (props: BaseSectionProps) => {
   }
 
   return (
-    <div role="presentation" className={cc([className])} style={backgroundStyle}>
+    <StyledBaseSection role="presentation" className={cc([className])} style={backgroundStyle}>
       <ContentElement {...contentProps}>{children}</ContentElement>
-    </div>
+    </StyledBaseSection>
   )
 }

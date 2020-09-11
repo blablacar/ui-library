@@ -197,6 +197,11 @@ button:focus:not(.focus-visible).c2 {
   padding-right: 24px;
 }
 
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .c0 .kirk-items-section-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -458,6 +463,11 @@ button:focus:not(.focus-visible).c2 {
 .c1 .section-content {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .c0 .kirk-items-section-content {
