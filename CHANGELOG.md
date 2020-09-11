@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `Rating` to new mdx story format
 - **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
   [...]
 
