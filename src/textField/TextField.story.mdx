@@ -1,12 +1,36 @@
-# Textfield
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
-```js
-import { TextField } from '@blablacar/ui-library'
-```
+import { inputModes, inputTypes, TextField } from './index'
 
-## Playground
+<Meta title="Widgets|TextField" />
 
-<!-- STORY -->
+# **TextField**
+
+<Preview>
+  <Story name="Default">
+    <TextField
+      type={inputTypes.TEXT}
+      id="id"
+      name="inputName"
+      inputMode={inputModes.TEXT}
+      pattern="pattern"
+      placeholder="Placeholder"
+      labelledBy="aria label"
+      disabled={false}
+      readOnly={false}
+      label=""
+      error=""
+      onChange={() => {}}
+      onFocus={() => {}}
+      onBlur={() => {}}
+      focus={false}
+      required={false}
+      maxLength={1000}
+      autoComplete="off"
+      title="accessibility text"
+    />
+  </Story>
+</Preview>
 
 ## Specifications
 
@@ -33,7 +57,7 @@ When user re-taps on the input we place the cursor after the last character type
 
 > Behaviour
 
-If users come back to a previous step in which there was an input, we remember what the user input in the field (and so display the next button for example when needed). 
+If users come back to a previous step in which there was an input, we remember what the user input in the field (and so display the next button for example when needed).
 
 > Long texts
 
@@ -51,3 +75,12 @@ They don’t have a focused state and don’t contain the clear button.
 > Focus state
 
 Active input field should have a 2pt blue inner border.
+
+## Usage
+
+```jsx
+import { TextField } from '@blablacar/ui-library/build/TextField'
+;<TextField />
+```
+
+<Props of={TextField} />

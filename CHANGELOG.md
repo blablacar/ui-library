@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Migrate `TextField` to new mdx story format
 
 # v40.1.0 (11/09/2020)
 

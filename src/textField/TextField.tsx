@@ -8,6 +8,7 @@ import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
 import { EyeIcon } from '../icon/eyeIcon'
+import { StyledTextField } from './TextField.style'
 
 export type textfield = HTMLInputElement | HTMLTextAreaElement
 
@@ -285,7 +286,9 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
     const shouldDisplayButton = !disabled && value
 
     return (
-      <div className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}>
+      <StyledTextField
+        className={cc(['kirk-textField', prefix({ error: !!error, disabled }), className])}
+      >
         {label && <label htmlFor={id}>{label}</label>}
         <div
           className={cc([
@@ -325,7 +328,7 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
           )}
         </div>
         {Boolean(error) && this.renderError()}
-      </div>
+      </StyledTextField>
     )
   }
 }
