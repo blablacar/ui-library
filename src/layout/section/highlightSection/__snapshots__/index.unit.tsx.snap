@@ -6,6 +6,11 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   padding-right: 24px;
 }
 
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .c3 {
   color: #054752;
   font-size: 30px;
@@ -76,6 +81,11 @@ exports[`HighlightSection should render default highlight section 1`] = `
 .c1 .section-content {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.c1 .section-content--noHorizontalSpacing {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .c3 {

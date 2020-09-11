@@ -88,6 +88,11 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 }
 
 .c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c1 .section-content--noHorizontalSpacing {
   padding-left: 0;
   padding-right: 0;
 }
@@ -164,7 +169,7 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
     role="presentation"
   >
     <article
-      className="section-content section-content--large"
+      className="section-content section-content--large section-content--noHorizontalSpacing"
     >
       <div
         className="kirk-illustratedSection-illustration"
@@ -190,6 +195,11 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 
 exports[`IllustratedSection should render default IllustratedSection section 1`] = `
 .c1 .section-content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c1 .section-content--noHorizontalSpacing {
   padding-left: 0;
   padding-right: 0;
 }
@@ -266,7 +276,7 @@ exports[`IllustratedSection should render default IllustratedSection section 1`]
     role="presentation"
   >
     <article
-      className="section-content section-content--large"
+      className="section-content section-content--large section-content--noHorizontalSpacing"
     >
       <div
         className="kirk-illustratedSection-illustration"

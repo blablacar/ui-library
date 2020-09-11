@@ -1,0 +1,33 @@
+import { Fragment } from 'react'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { BaseSection, SectionContentSize } from './index'
+
+<Meta title="Sections|BaseSection" />
+
+# **BaseSection**
+
+<Preview>
+  <Story name="Default">
+    <Fragment>
+      <BaseSection>
+        <div style={{ height: '100%', backgroundColor: 'lime' }}>Section 1 with small content</div>
+      </BaseSection>
+      <BaseSection contentSize={SectionContentSize.LARGE}>
+        <div style={{ height: '100%', backgroundColor: 'lime' }}>Section 2 with large content</div>
+      </BaseSection>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { BaseSection } from '@blablacar/ui-library/build/layout/section/baseSection'
+
+<BaseSection />
+```
+
+<Props of={BaseSection} />
