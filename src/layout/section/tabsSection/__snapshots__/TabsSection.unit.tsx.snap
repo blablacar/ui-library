@@ -177,120 +177,124 @@ exports[`TabsSection should render default TabsSection 1`] = `
 }
 
 <div
-  className="c0 c1"
-  role="presentation"
+  className="c0"
 >
   <div
-    className="kirk-tabs"
-  >
-    <div
-      className="kirk-tablist-wrapper"
-    >
-      <div
-        className="kirk-tab-highlight"
-      />
-      <div
-        aria-multiselectable="false"
-        aria-orientation="horizontal"
-        className="kirk-tablist"
-        role="tablist"
-      >
-        <div
-          className="kirk-tab-container kirk-tab-selected"
-          style={null}
-        >
-          <button
-            aria-controls="tab1_panel"
-            aria-selected="true"
-            className="kirk-tab"
-            id="tab1"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="tab"
-            tabIndex={0}
-            title="Tab label 1"
-          >
-            <span
-              className="kirk-tab-content"
-            >
-              <span
-                className="kirk-tab-text"
-              >
-                Tab label 1
-              </span>
-              <span
-                className="kirk-badge kirk-tab-badge c2"
-              >
-                <span
-                  aria-hidden={false}
-                >
-                  Badge content 1
-                </span>
-              </span>
-            </span>
-          </button>
-        </div>
-        <div
-          className="kirk-tab-container"
-          style={null}
-        >
-          <button
-            aria-controls="tab2_panel"
-            aria-selected="false"
-            className="kirk-tab"
-            id="tab2"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="tab"
-            tabIndex={-1}
-            title="Tab label 2 Unread Message"
-          >
-            <span
-              className="kirk-tab-content"
-            >
-              <span
-                className="kirk-tab-text"
-              >
-                Tab label 2
-              </span>
-              <span
-                aria-label="Unread Message"
-                className="kirk-badge kirk-tab-badge c2"
-              >
-                <span
-                  aria-hidden={true}
-                >
-                  2
-                </span>
-              </span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="kirk-panels-section"
+    className="c1"
     role="presentation"
   >
     <div
-      aria-labelledby="tab1"
-      className="kirk-tab-panel"
-      hidden={false}
-      id="tab1_panel"
-      role="tabpanel"
+      className="kirk-tabs"
     >
-      <div>
-        panel 1
+      <div
+        className="kirk-tablist-wrapper"
+      >
+        <div
+          className="kirk-tab-highlight"
+        />
+        <div
+          aria-multiselectable="false"
+          aria-orientation="horizontal"
+          className="kirk-tablist"
+          role="tablist"
+        >
+          <div
+            className="kirk-tab-container kirk-tab-selected"
+            style={null}
+          >
+            <button
+              aria-controls="tab1_panel"
+              aria-selected="true"
+              className="kirk-tab"
+              id="tab1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={0}
+              title="Tab label 1"
+            >
+              <span
+                className="kirk-tab-content"
+              >
+                <span
+                  className="kirk-tab-text"
+                >
+                  Tab label 1
+                </span>
+                <span
+                  className="kirk-badge kirk-tab-badge c2"
+                >
+                  <span
+                    aria-hidden={false}
+                  >
+                    Badge content 1
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+          <div
+            className="kirk-tab-container"
+            style={null}
+          >
+            <button
+              aria-controls="tab2_panel"
+              aria-selected="false"
+              className="kirk-tab"
+              id="tab2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="tab"
+              tabIndex={-1}
+              title="Tab label 2 Unread Message"
+            >
+              <span
+                className="kirk-tab-content"
+              >
+                <span
+                  className="kirk-tab-text"
+                >
+                  Tab label 2
+                </span>
+                <span
+                  aria-label="Unread Message"
+                  className="kirk-badge kirk-tab-badge c2"
+                >
+                  <span
+                    aria-hidden={true}
+                  >
+                    2
+                  </span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div
-      aria-labelledby="tab2"
-      className="kirk-tab-panel"
-      hidden={true}
-      id="tab2_panel"
-      role="tabpanel"
-    />
+      className="kirk-panels-section"
+      role="presentation"
+    >
+      <div
+        aria-labelledby="tab1"
+        className="kirk-tab-panel"
+        hidden={false}
+        id="tab1_panel"
+        role="tabpanel"
+      >
+        <div>
+          panel 1
+        </div>
+      </div>
+      <div
+        aria-labelledby="tab2"
+        className="kirk-tab-panel"
+        hidden={true}
+        id="tab2_panel"
+        role="tabpanel"
+      />
+    </div>
   </div>
 </div>
 `;

@@ -1,0 +1,70 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Button } from '../../../button'
+import ItemAction from '../../../itemAction'
+import { TabStatus } from '../../../tabs'
+import { BaseSection } from '../baseSection'
+import { TabsSection } from './index'
+
+<Meta title="Sections|TabsSection" />
+
+# **TabsSection**
+
+<Preview>
+  <Story name="Default">
+    <TabsSection tabsProps={{
+      activeTabId: 'tab1',
+      status: TabStatus.FIXED,
+      tabs: [
+        {
+          id: 'tab1',
+          label: 'Tab 1',
+          panelContent: (
+            <BaseSection>Content for first tab</BaseSection>
+          ),
+          badgeContent: '',
+        },
+        {
+          id: 'tab2',
+          label: 'Very Very Long Tab 2',
+          panelContent: (
+            <BaseSection>
+              <Button
+                onClick={() => {
+                  console.log('onClickButton')
+                }}
+              >
+                Button inside panel 2.
+              </Button>
+            </BaseSection>
+          ),
+          badgeContent: '2',
+          badgeAriaLabel: 'Unread Message',
+        },
+        {
+          id: 'tab3',
+          label: 'Tab 3',
+          panelContent: (
+            <BaseSection noHorizontalSpacing>
+              <ItemAction subLabel="Hello" />
+            </BaseSection>
+          ),
+          badgeContent: '',
+        },
+      ],
+    }}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { TabsSection } from '@blablacar/ui-library/build/layout/section/tabsSection'
+
+<TabsSection />
+```
+
+<Props of={TabsSection} />
