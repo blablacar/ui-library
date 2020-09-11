@@ -66,18 +66,18 @@ class ModalOpener extends Component<ModalProps> {
               <SubHeader>Amenities & Services</SubHeader>
             </Section>
             <Section noHorizontalSpacing>
-              <ItemCheckbox label="Ladies only" />
-              <ItemCheckbox label="Automatic Approval" />
-              <ItemCheckbox label="Wifi" />
-              <ItemCheckbox label="Air conditioning" />
-              <ItemCheckbox label="Reclining seats" />
-              <ItemCheckbox label="Personal power outlets" />
-              <ItemCheckbox label="Ladies only" />
-              <ItemCheckbox label="Automatic Approval" />
-              <ItemCheckbox label="Wifi" />
-              <ItemCheckbox label="Air conditioning" />
-              <ItemCheckbox label="Reclining seats" />
-              <ItemCheckbox label="Personal power outlets" />
+              <ItemCheckbox name="ladies" label="Ladies only" />
+              <ItemCheckbox name="automatic" label="Automatic Approval" />
+              <ItemCheckbox name="wifi" label="Wifi" />
+              <ItemCheckbox name="air" label="Air conditioning" />
+              <ItemCheckbox name="reclining" label="Reclining seats" />
+              <ItemCheckbox name="personal" label="Personal power outlets" />
+              <ItemCheckbox name="ladies" label="Ladies only" />
+              <ItemCheckbox name="automatic" label="Automatic Approval" />
+              <ItemCheckbox name="wifi" label="Wifi" />
+              <ItemCheckbox name="air" label="Air conditioning" />
+              <ItemCheckbox name="reclining" label="Reclining seats" />
+              <ItemCheckbox name="personal" label="Personal power outlets" />
             </Section>
           </ModalBody>
           <ModalFooter>

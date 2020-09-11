@@ -21,43 +21,6 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
   left: 12px;
 }
 
-.c3.spinning {
-  -webkit-animation: cqjtzU 1.4s linear infinite;
-  animation: cqjtzU 1.4s linear infinite;
-}
-
-.c3 circle {
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.c3.spinning circle {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
-  animation: hqYbNG 1.4s ease-in-out infinite;
-}
-
-.c3 circle.outer {
-  stroke: #00AFF5;
-}
-
-.c3 circle.inner {
-  stroke-width: 0;
-  fill: #00AFF5;
-}
-
-.c3.thin circle {
-  stroke-width: 3;
-}
-
-.c3.absolute {
-  position: absolute;
-}
-
 .c2 {
   margin: 0;
   font-weight: 400;
@@ -121,12 +84,6 @@ exports[`ItemRadioGroup Should map its children and render them with specific pr
 .c2.kirk-text-subheaderStrong,
 .c2.kirk-text-titleStrong {
   font-weight: 500;
-}
-
-.c1 {
-  cursor: pointer;
-  border: 3px solid transparent;
-  padding: calc(16px - 3px) auto;
 }
 
 .c1 {
@@ -255,14 +212,56 @@ button:focus:not(.focus-visible).c1 {
   bottom: 0;
 }
 
+.c1 {
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.c1.focus-visible {
+  outline: 3px solid #00AFF5;
+}
+
 .c1 input {
   position: absolute;
   -webkit-clip: rect(0,0,0,0);
   clip: rect(0,0,0,0);
 }
 
-.c1.focus {
-  border: 3px solid #00AFF5;
+.c3.spinning {
+  -webkit-animation: cqjtzU 1.4s linear infinite;
+  animation: cqjtzU 1.4s linear infinite;
+}
+
+.c3 circle {
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.c3.spinning circle {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: hqYbNG 1.4s ease-in-out infinite;
+  animation: hqYbNG 1.4s ease-in-out infinite;
+}
+
+.c3 circle.outer {
+  stroke: #00AFF5;
+}
+
+.c3 circle.inner {
+  stroke-width: 0;
+  fill: #00AFF5;
+}
+
+.c3.thin circle {
+  stroke-width: 3;
+}
+
+.c3.absolute {
+  position: absolute;
 }
 
 .c0 {

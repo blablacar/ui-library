@@ -1,8 +1,14 @@
 # Unreleased
 
 - **[UPDATE]** Migrate `Rating` to new mdx story format
+- **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
+  [...]
+
+# v40.1.0 (09/09/2020)
+
+- **[UPDATE]** Update `EmptyState` component type for `text` prop (`string | JSX.Element`)
 - **[UPDATE]** Migrate `MediaSection` to new mdx story format
-[...]
+- **[FIX]** Fixed wrong spacing between icon & text in `Button`
 
 # v40.0.3 (03/09/2020)
 

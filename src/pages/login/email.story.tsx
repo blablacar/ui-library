@@ -22,7 +22,7 @@ stories.add('Default', () => (
           <TheVoice>What's your email and password?</TheVoice>
           <TextField />
           <TextField />
-          <ItemCheckbox labelTitle="Remember me" />
+          <ItemCheckbox name="rememberme" labelTitle="Remember me" />
           <ItemAction href="#" action="Forgot password?" />
         </Section>
       </Content>

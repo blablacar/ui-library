@@ -18,6 +18,12 @@ describe('EmptyState', () => {
     expect(wrapper.find(Button).exists()).toBe(false)
   })
 
+  it('Should render a JSX element instead of a title if text is not provided as a string', () => {
+    const wrapper = shallow(<EmptyState {...defaultProps} text={<h2>not a Title</h2>} />)
+    expect(wrapper.find(Title).exists()).toBe(false)
+    expect(wrapper.find('h2').exists()).toBe(true)
+  })
+
   it('Should render button if provided', () => {
     const wrapper = shallow(<EmptyState {...defaultProps} button={<Button>Action</Button>} />)
     expect(wrapper.find(Button).exists()).toBe(true)

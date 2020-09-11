@@ -67,6 +67,7 @@ exports[`TabsSection should render default TabsSection 1`] = `
   border: none;
   background-color: #FFF;
   color: #00AFF5;
+  line-height: normal;
   font-size: 16px;
 }
 
