@@ -1,8 +1,10 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `RideAxis` to new mdx story format
 - **[UPDATE]** Migrate `BaseSection` to new mdx story format
 - **[UPDATE]** Migrate `Rating` to new mdx story format
 - **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
+
   [...]
 
 # v40.1.0 (09/09/2020)
