@@ -1,0 +1,34 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { RideAxis } from './index'
+
+<Meta title="Rides|RideAxis" />
+
+# RideAxis
+
+<Preview>
+  <Story name="Default">
+    <RideAxis from="Düsseldorf International Airport, Düsseldorf" to="Cologne Bonn Airport, Köln" />
+  </Story>
+</Preview>
+
+## Specifications
+
+> ⚠️ Not a official component from PIXAR
+
+- `Font-size` is _inherit from parent_
+- `From` and `To` properties are optional
+- `ArrowIcon` is **always** `color.lightMidnightGreen`
+
+### When should I use it?
+
+When a origin-destination info appears on the layout
+
+## Usage
+
+```jsx
+import { RideAxis } from '@blablacar/ui-library/build/rideAxis'
+;<RideAxis from="Paris" to="Lille" />
+```
+
+<Props of={RideAxis} />
