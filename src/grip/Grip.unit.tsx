@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { TheVoice } from '../theVoice'
-import { Grip, SLIDE_OFFSET, touchEndListener } from './Grip'
+import { Grip, SLIDE_OFFSET, touchEndListener, touchMoveListener } from './Grip'
 import { GripHandle } from './GripHandle'
 
 describe('Grip', () => {
@@ -74,6 +74,17 @@ describe('Grip', () => {
       )
       expect(slideDownMock).not.toHaveBeenCalled()
       expect(slideUpMock).not.toHaveBeenCalled()
+    })
+  })
+  describe('touchMoveListener', () => {
+    const fingerYPosition = { current: 100 }
+    it('Should call onTouchMove with the offset between current finger position and initial', () => {
+      const touchMoveMock = jest.fn()
+      touchMoveListener(fingerYPosition.current - 10, fingerYPosition, {
+        ...defaultProps,
+        onTouchMove: touchMoveMock,
+      })
+      expect(touchMoveMock).toHaveBeenCalledWith(-10)
     })
   })
 })
