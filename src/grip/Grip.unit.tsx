@@ -9,6 +9,8 @@ describe('Grip', () => {
   const defaultProps = {
     onSlideUp: jest.fn(),
     onSlideDown: jest.fn(),
+    onTouchMove: jest.fn(),
+    onTouchEnd: jest.fn(),
   }
   it('Should render a GripHandle', () => {
     const grip = shallow(<Grip {...defaultProps} />)
