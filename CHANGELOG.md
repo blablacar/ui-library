@@ -1,11 +1,14 @@
 # Unreleased
 
+- **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 - **[UPDATE]** Migrate `RideAxis` to new mdx story format
+
+# v40.1.0 (11/09/2020)
+
 - **[UPDATE]** Migrate `BaseSection` to new mdx story format
 - **[UPDATE]** Migrate `Rating` to new mdx story format
 - **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
-
-  [...]
+- **[UPDATE]** Added focus state on ItemCheckbox
 
 # v40.1.0 (09/09/2020)
 
