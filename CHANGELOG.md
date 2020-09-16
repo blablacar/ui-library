@@ -2,7 +2,7 @@
 
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 
-# v40.1.0 (11/09/2020)
+# v40.2.0 (11/09/2020)
 
 - **[UPDATE]** Migrate `BaseSection` to new mdx story format
 - **[UPDATE]** Migrate `Rating` to new mdx story format
