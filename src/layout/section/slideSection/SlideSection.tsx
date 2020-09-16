@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import cc from 'classcat'
 
 import { Grip } from '../../../grip'
 import { GRIP_HANDLE_HEIGHT } from '../../../grip/GripHandle'
@@ -27,6 +28,8 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     disabledGestures = false,
   } = props
   const [position, setPosition] = useState<SlideSectionPosition>(SlideSectionPosition.DEFAULT)
+  const [fingerOffset, setFingerOffset] = useState<number>(0)
+  const [snapTransition, setSnapTransition] = useState<boolean>(false)
   const reducedContentRef = useRef(null)
   const layoutRef = useRef(null)
 
@@ -36,6 +39,7 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     } else if (position === SlideSectionPosition.REDUCED) {
       setPosition(SlideSectionPosition.DEFAULT)
     }
+    setFingerOffset(0)
   }, [position])
 
   const slideDown = useCallback(() => {
@@ -44,7 +48,13 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     } else if (position === SlideSectionPosition.EXPANDED) {
       setPosition(SlideSectionPosition.DEFAULT)
     }
+    setFingerOffset(0)
   }, [position])
+
+  const onGripTouchEnd = useCallback(() => {
+    setSnapTransition(true)
+    setFingerOffset(0)
+  }, [])
 
   // Methods to manually set the panel position from other components
   const setDefaultPosition = useRef(() => setPosition(SlideSectionPosition.DEFAULT))
@@ -63,7 +73,7 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     // Default height is 50% of media height
     setDefaultHeight((layoutRef.current.clientHeight * 50) / 100)
 
-    // Expanded height height is 100% of media height
+    // Expanded height is 100% of media height
     setExpandedHeight(layoutRef.current.clientHeight)
   })
 
@@ -74,16 +84,39 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     }
   }, [position])
 
+  // Calculating true position of the list (position and finger offset on move)
+  let topOffset = 0
+  if (position === SlideSectionPosition.DEFAULT) {
+    topOffset = 0 - defaultHeight + fingerOffset
+  } else if (position === SlideSectionPosition.EXPANDED) {
+    topOffset = 0 - expandedHeight + fingerOffset
+  } else if (position === SlideSectionPosition.REDUCED) {
+    topOffset = 0 - minimalHeight + fingerOffset
+  }
+  if (topOffset > 0) {
+    topOffset = 0
+  } else if (topOffset < 0 - expandedHeight) {
+    topOffset = 0 - expandedHeight
+  }
+
   return (
     <StyledSlideLayout ref={layoutRef}>
       {media}
       <StyledSlidePanel
-        className={position}
-        minimalHeight={minimalHeight}
-        defaultHeight={defaultHeight}
+        className={cc([position, { animated: snapTransition }])}
         expandedHeight={expandedHeight}
+        style={{ transform: `translateY(${topOffset}px)` }}
+        onTransitionEnd={() => {
+          setSnapTransition(false)
+        }}
       >
-        <Grip onSlideUp={slideUp} onSlideDown={slideDown} disabled={disabledGestures}>
+        <Grip
+          onSlideUp={slideUp}
+          onSlideDown={slideDown}
+          onTouchMove={setFingerOffset}
+          onTouchEnd={onGripTouchEnd}
+          disabled={disabledGestures}
+        >
           <div ref={reducedContentRef}>{reducedContent}</div>
           {children(
             setDefaultPosition.current,
