@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Remove aditionnal spacing on Canvas
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 
 # v40.2.0 (11/09/2020)
