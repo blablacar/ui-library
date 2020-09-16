@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `TextField` to new mdx story format
 - **[FIX]** Remove aditionnal spacing on Canvas
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 - **[UPDATE]** Migrate `RideAxis` to new mdx story format
