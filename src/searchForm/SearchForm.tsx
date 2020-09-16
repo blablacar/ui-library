@@ -226,10 +226,8 @@ export const SearchForm = ({
     )
   }
 
-  const autocompleteFromValue = formValues[
-    SearchFormElements.AUTOCOMPLETE_FROM
-  ] as AutocompleteOnChange
-  const autocompleteToValue = formValues[SearchFormElements.AUTOCOMPLETE_TO] as AutocompleteOnChange
+  const autocompleteFromValue = formValues[SearchFormElements.AUTOCOMPLETE_FROM]
+  const autocompleteToValue = formValues[SearchFormElements.AUTOCOMPLETE_TO]
 
   const showInvertButton =
     formValues[SearchFormElements.AUTOCOMPLETE_FROM] != null ||
@@ -266,6 +264,7 @@ export const SearchForm = ({
               <span className="kirk-bullet--searchForm">
                 <Bullet type={BulletTypes.SEARCH} />
               </span>
+
               <TextTitle
                 className={cc([
                   'kirk-search-ellipsis',
