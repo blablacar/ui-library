@@ -2,13 +2,15 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { TheVoice } from '../theVoice'
-import { Grip, SLIDE_OFFSET, touchEndListener } from './Grip'
+import { Grip, SLIDE_OFFSET, touchEndListener, touchMoveListener } from './Grip'
 import { GripHandle } from './GripHandle'
 
 describe('Grip', () => {
   const defaultProps = {
     onSlideUp: jest.fn(),
     onSlideDown: jest.fn(),
+    onTouchMove: jest.fn(),
+    onTouchEnd: jest.fn(),
   }
   it('Should render a GripHandle', () => {
     const grip = shallow(<Grip {...defaultProps} />)
@@ -59,6 +61,7 @@ describe('Grip', () => {
         fingerYPosition,
         resetFingerYPosition,
         {
+          ...defaultProps,
           onSlideUp: slideUpMock,
           onSlideDown: slideDownMock,
         },
@@ -68,12 +71,24 @@ describe('Grip', () => {
         fingerYPosition,
         resetFingerYPosition,
         {
+          ...defaultProps,
           onSlideUp: slideUpMock,
           onSlideDown: slideDownMock,
         },
       )
       expect(slideDownMock).not.toHaveBeenCalled()
       expect(slideUpMock).not.toHaveBeenCalled()
+    })
+  })
+  describe('touchMoveListener', () => {
+    const fingerYPosition = { current: 100 }
+    it('Should call onTouchMove with the offset between current finger position and initial', () => {
+      const touchMoveMock = jest.fn()
+      touchMoveListener(fingerYPosition.current - 10, fingerYPosition, {
+        ...defaultProps,
+        onTouchMove: touchMoveMock,
+      })
+      expect(touchMoveMock).toHaveBeenCalledWith(-10)
     })
   })
 })

@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 
 # v40.1.0 (11/09/2020)
 
