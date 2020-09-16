@@ -61,6 +61,7 @@ describe('Grip', () => {
         fingerYPosition,
         resetFingerYPosition,
         {
+          ...defaultProps,
           onSlideUp: slideUpMock,
           onSlideDown: slideDownMock,
         },
@@ -70,6 +71,7 @@ describe('Grip', () => {
         fingerYPosition,
         resetFingerYPosition,
         {
+          ...defaultProps,
           onSlideUp: slideUpMock,
           onSlideDown: slideDownMock,
         },
