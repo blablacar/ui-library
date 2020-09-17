@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Add ability to update `ItemRadioGroup` value programatically
 
 # v40.3.0 (17/09/2020)
 
