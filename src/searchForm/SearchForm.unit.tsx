@@ -42,14 +42,14 @@ describe('SearchForm', () => {
     jestDateMock.clear()
   })
 
-  describe('From', () => {
+  describe('"From" field', () => {
     it('should hide the autocomplete by default', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.queryByRole('combobox')).not.toBeInTheDocument()
     })
 
-    it('should display the button', () => {
+    it('should display the value in a button', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.getByRole('button', { name: 'Leaving from' })).toBeInTheDocument()
@@ -82,14 +82,14 @@ describe('SearchForm', () => {
     })
   })
 
-  describe('To', () => {
+  describe('"To" field', () => {
     it('should hide the autocomplete by default', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.queryByRole('combobox')).not.toBeInTheDocument()
     })
 
-    it('should display the button', () => {
+    it('should display the value in a button', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.getByRole('button', { name: 'Going to' })).toBeInTheDocument()
@@ -122,14 +122,14 @@ describe('SearchForm', () => {
     })
   })
 
-  describe('Date', () => {
+  describe('"Date" field', () => {
     it('should hide the dialog by default', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     })
 
-    it('should display the button', () => {
+    it('should display the value in a button', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.getByRole('button', { name: '2020-01-01T00:00:00.000Z' })).toBeInTheDocument()
@@ -165,14 +165,14 @@ describe('SearchForm', () => {
     })
   })
 
-  describe('Seat count', () => {
+  describe('"Seat count" field', () => {
     it('should hide the dialog by default', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     })
 
-    it('should display the button', () => {
+    it('should display the value in a button', () => {
       const props = createProps()
       render(<SearchForm {...props} />)
       expect(screen.getByRole('button', { name: '1 seat(s)' })).toBeInTheDocument()
