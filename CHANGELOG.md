@@ -1,8 +1,11 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `TextField` to new mdx story format
+- **[FIX]** Remove aditionnal spacing on Canvas
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
 - **[UPDATE]** `Tabs` Increased font-size on tab
 - **[FIX]** `FilterBar` align `Loader` with `Button`
+- **[UPDATE]** Migrate `RideAxis` to new mdx story format
 
 # v40.2.0 (11/09/2020)
 
