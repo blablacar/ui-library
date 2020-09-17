@@ -43,7 +43,7 @@ export const StyledTabs = styled.div`
     /* Make sure the diacritics are not cropped. */
     line-height: normal;
 
-    font-size: ${font.base.size};
+    font-size: ${font.m.size};
   }
 
   & .kirk-tab-content {
