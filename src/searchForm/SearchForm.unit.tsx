@@ -1,300 +1,217 @@
 import React from 'react'
-import { CSSTransition } from 'react-transition-group'
-import { mount, shallow } from 'enzyme'
 
 import '../../__mocks__/matchMedia'
+import { fireEvent, render, screen } from '@testing-library/react'
+import * as jestDateMock from 'jest-date-mock'
 
-import { MediaSize } from '../_utils/mediaSizeProvider'
 import { AutoComplete } from '../autoComplete/AutoComplete'
-import { TextTitle } from '../typography/title'
-import { AutoCompleteOverlay } from './autoComplete/overlay'
-import { DatePickerOverlay } from './datePicker/overlay'
-import { Overlay } from './overlay'
 import { SearchForm, SearchFormProps } from './SearchForm'
-import { StepperOverlay } from './stepper/overlay'
 
-const today = new Date().toISOString()
+function createProps(props: Partial<SearchFormProps> = {}): SearchFormProps {
+  const today = new Date().toISOString()
 
-const defaultProps: SearchFormProps = {
-  onSubmit: () => {},
-  autocompleteFromPlaceholder: 'Leaving from',
-  autocompleteToPlaceholder: 'Going to',
-  renderAutocompleteFrom: props => <AutoComplete {...props} />,
-  renderAutocompleteTo: props => <AutoComplete {...props} />,
-  datepickerProps: {
-    defaultValue: today,
-    format: value => `Date: ${new Date(value).toISOString()}`,
-  },
-  stepperProps: {
-    defaultValue: 1,
-    min: 1,
-    max: 8,
-    increaseLabel: 'Increase',
-    decreaseLabel: 'Decrease',
-    title: 'Choose your number of seats',
-    format: value => `${value} seat(s)`,
-    confirmLabel: 'Submit',
-  },
+  return {
+    onSubmit: () => {},
+    autocompleteFromPlaceholder: 'Leaving from',
+    autocompleteToPlaceholder: 'Going to',
+    renderAutocompleteFrom: p => <AutoComplete {...p} />,
+    renderAutocompleteTo: p => <AutoComplete {...p} />,
+    datepickerProps: {
+      defaultValue: today,
+    },
+    stepperProps: {
+      defaultValue: 1,
+      min: 1,
+      max: 8,
+      increaseLabel: 'Increase',
+      decreaseLabel: 'Decrease',
+      title: 'Choose your number of seats',
+      format: value => `${value} seat(s)`,
+      confirmLabel: 'Submit',
+    },
+    ...props,
+  }
 }
 
-const withInitialFromTo: SearchFormProps = {
-  ...defaultProps,
-  initialFrom: 'Avignon',
-  initialTo: 'Marseille',
-}
+describe('SearchForm', () => {
+  beforeEach(() => {
+    jestDateMock.advanceTo(Date.UTC(2020, 0, 1))
+  })
 
-const withDisabledFromTo: SearchFormProps = {
-  ...defaultProps,
-  disabledFrom: true,
-  disabledTo: true,
-}
+  afterEach(() => {
+    jestDateMock.clear()
+  })
 
-describe('searchForm', () => {
-  let wrapper
-  const fakeEvent = { e: { relatedTarget: null } }
-
-  describe('interactions', () => {
-    describe('large', () => {
-      beforeEach(() => {
-        jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
-        wrapper = mount(<SearchForm {...defaultProps} />)
-      })
-
-      it('should have the autocomplete placeholder', () => {
-        expect(wrapper.find('.kirk-searchForm-from').text()).toBe('Leaving from')
-        expect(wrapper.find('.kirk-searchForm-to').text()).toBe('Going to')
-      })
-
-      it('should open the autocomplete from overlay and close it on blur', () => {
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-from .kirk-search-button').simulate('click')
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
-        expect(
-          wrapper
-            .find(Overlay)
-            .first()
-            .hasClass('kirk-searchForm-autocomplete-from'),
-        ).toBe(true)
-        wrapper
-          .find(Overlay)
-          .first()
-          .simulate('blur', fakeEvent)
-        expect(
-          wrapper
-            .find(Overlay)
-            .first()
-            .prop('shouldDisplay'),
-        ).toBe(false)
-      })
-
-      it('should open the autocomplete to overlay', () => {
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-to .kirk-search-button').simulate('click')
-        expect(wrapper.find(AutoCompleteOverlay).exists()).toBe(true)
-        expect(
-          wrapper
-            .find(Overlay)
-            .at(1)
-            .hasClass('kirk-searchForm-autocomplete-to'),
-        ).toBe(true)
-      })
-
-      it('should open the datepicker overlay', () => {
-        expect(wrapper.find(DatePickerOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
-        expect(wrapper.find(DatePickerOverlay).exists()).toBe(true)
-      })
-
-      it('should open the stepper overlay', () => {
-        expect(wrapper.find(StepperOverlay).exists()).toBe(false)
-        wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
-        expect(wrapper.find(StepperOverlay).exists()).toBe(true)
-      })
-
-      it('should have initial values for From & To', () => {
-        const wrapperWithInitialValues = mount(<SearchForm {...withInitialFromTo} />)
-        expect(wrapperWithInitialValues.find('.kirk-searchForm-from').text()).toBe('Avignon')
-        expect(wrapperWithInitialValues.find('.kirk-searchForm-to').text()).toBe('Marseille')
-      })
-
-      it('should have disabled fields From & To', () => {
-        const wrapperWithDisabledValues = mount(<SearchForm {...withDisabledFromTo} />)
-        expect(
-          wrapperWithDisabledValues
-            .find('.kirk-searchForm-from .kirk-search-button')
-            .prop('disabled'),
-        ).toBe(true)
-        expect(
-          wrapperWithDisabledValues
-            .find('.kirk-searchForm-to .kirk-search-button')
-            .prop('disabled'),
-        ).toBe(true)
-      })
+  describe('"From" field', () => {
+    it('should hide the autocomplete by default', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.queryByRole('combobox')).not.toBeInTheDocument()
     })
 
-    describe('small', () => {
-      beforeEach(() => {
-        jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.SMALL)
-        wrapper = shallow(<SearchForm {...defaultProps} />)
-      })
+    it('should display the value in a button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Leaving from' })).toBeInTheDocument()
+    })
 
-      it('should open the autocomplete from section', () => {
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .first()
-            .prop('in'),
-        ).toBe(false)
-        wrapper.find('.kirk-searchForm-from .kirk-search-button').simulate('click')
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .first()
-            .prop('in'),
-        ).toBe(true)
-      })
+    it('should open the autocomplete on click on the button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: 'Leaving from' }))
+      expect(screen.getByRole('combobox')).toBeInTheDocument()
+    })
 
-      it('should open the autocomplete to section', () => {
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(1)
-            .prop('in'),
-        ).toBe(false)
-        wrapper.find('.kirk-searchForm-to .kirk-search-button').simulate('click')
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(1)
-            .prop('in'),
-        ).toBe(true)
-      })
+    it('should autofocus the input in the autocomplete', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: 'Leaving from' }))
+      expect(screen.getByRole('searchbox')).toHaveFocus()
+    })
 
-      it('should open the datepicker section', () => {
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(2)
-            .prop('in'),
-        ).toBe(false)
-        wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(2)
-            .prop('in'),
-        ).toBe(true)
-      })
+    it('should display the given initial value', () => {
+      const props = createProps({ initialFrom: 'Avignon' })
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Avignon' })).toBeInTheDocument()
+    })
 
-      it('should open the stepper section', () => {
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(3)
-            .prop('in'),
-        ).toBe(false)
-        wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
-        expect(
-          wrapper
-            .find(CSSTransition)
-            .at(3)
-            .prop('in'),
-        ).toBe(true)
-      })
-
-      it('should have initial values for From & To', () => {
-        const wrapperWithInitialValues = mount(<SearchForm {...withInitialFromTo} />)
-        expect(wrapperWithInitialValues.find('.kirk-searchForm-from').text()).toBe('Avignon')
-        expect(wrapperWithInitialValues.find('.kirk-searchForm-to').text()).toBe('Marseille')
-      })
-
-      it('should have disabled fields From & To', () => {
-        const wrapperWithDisabledValues = mount(<SearchForm {...withDisabledFromTo} />)
-        expect(
-          wrapperWithDisabledValues
-            .find('.kirk-searchForm-from .kirk-search-button')
-            .prop('disabled'),
-        ).toBe(true)
-        expect(
-          wrapperWithDisabledValues
-            .find('.kirk-searchForm-to .kirk-search-button')
-            .prop('disabled'),
-        ).toBe(true)
-      })
+    it('should disable the field when disabledFrom is true', () => {
+      const props = createProps({ disabledFrom: true })
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Leaving from' })).toBeDisabled()
     })
   })
 
-  describe('invert from to', () => {
-    // TODO: implement test when autocomplete list will be available
-    // beforeEach(() => {
-    //   wrapper = shallow(<SearchForm {...defaultProps} />)
-    // })
+  describe('"To" field', () => {
+    it('should hide the autocomplete by default', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.queryByRole('combobox')).not.toBeInTheDocument()
+    })
+
+    it('should display the value in a button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Going to' })).toBeInTheDocument()
+    })
+
+    it('should open the autocomplete on click on the button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: 'Going to' }))
+      expect(screen.getByRole('combobox')).toBeInTheDocument()
+    })
+
+    it('should autofocus the input in the autocomplete', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: 'Going to' }))
+      expect(screen.getByRole('searchbox')).toHaveFocus()
+    })
+
+    it('should display the given initial value', () => {
+      const props = createProps({ initialTo: 'Marseille' })
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Marseille' })).toBeInTheDocument()
+    })
+
+    it('should disable the field when disabledTo is true', () => {
+      const props = createProps({ disabledTo: true })
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: 'Going to' })).toBeDisabled()
+    })
   })
 
-  describe('format', () => {
-    beforeEach(() => {
-      jest.spyOn(React, 'useContext').mockImplementation(() => MediaSize.LARGE)
+  describe('"Date" field', () => {
+    it('should hide the dialog by default', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     })
 
-    it('should format the stepper & datepicker values into human readable strings', () => {
-      expect(
-        wrapper
-          .find('.kirk-searchForm-seats')
-          .find(TextTitle)
-          .text(),
-      ).toEqual('1 seat(s)')
-      expect(
-        wrapper
-          .find('.kirk-searchForm-date')
-          .find(TextTitle)
-          .text(),
-      ).toEqual(`Date: ${today}`)
+    it('should display the value in a button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: '2020-01-01T00:00:00.000Z' })).toBeInTheDocument()
     })
 
-    it('should update the datepicker value after changing it', () => {
-      // Expected date is the first day of next month
-      const todayDate = new Date(today)
-
-      const expectedDate = new Date(
-        Date.UTC(todayDate.getFullYear(), todayDate.getMonth() + 1, 1, 0, 0, 0),
-      ).toISOString()
-
-      wrapper = mount(<SearchForm {...defaultProps} />)
-      wrapper.find('.kirk-searchForm-date > .kirk-search-button').simulate('click')
-
-      wrapper
-        .find('.kirk-datepicker-next-month')
-        .at(0)
-        .simulate('click')
-
-      wrapper
-        .find('.DayPicker-Day[aria-disabled=false]')
-        .at(0) // Click on the first day of next month
-        .simulate('click')
-
-      expect(
-        wrapper
-          .find('.kirk-searchForm-date')
-          .find(TextTitle)
-          .text(),
-      ).toEqual(`Date: ${expectedDate}`)
+    it('should open the datepicker on click on the button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: '2020-01-01T00:00:00.000Z' }))
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
     })
 
-    it('should update the stepper value after changing it', () => {
-      wrapper = mount(<SearchForm {...defaultProps} />)
-      wrapper.find('.kirk-searchForm-seats > .kirk-search-button').simulate('click')
+    it('should update to the selected date', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: '2020-01-01T00:00:00.000Z' }))
+      fireEvent.click(screen.getByRole('gridcell', { name: 'Sat Jan 11 2020' }))
+      expect(screen.getByRole('button', { name: '2020-01-11' })).toBeInTheDocument()
+    })
 
-      wrapper
-        .find('.kirk-stepper-increment')
-        .at(0)
-        .simulate('click')
+    it('should format the date using the given formatter', () => {
+      const props = createProps({
+        datepickerProps: {
+          defaultValue: new Date().toISOString(),
+          format: value => new Date(value).toUTCString(),
+        },
+      })
 
+      render(<SearchForm {...props} />)
       expect(
-        wrapper
-          .find('.kirk-searchForm-seats')
-          .find(TextTitle)
-          .text(),
-      ).toEqual('2 seat(s)')
+        screen.getByRole('button', { name: 'Wed, 01 Jan 2020 00:00:00 GMT' }),
+      ).toBeInTheDocument()
+    })
+  })
+
+  describe('"Seat count" field', () => {
+    it('should hide the dialog by default', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    })
+
+    it('should display the value in a button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      expect(screen.getByRole('button', { name: '1 seat(s)' })).toBeInTheDocument()
+    })
+
+    it('should open the stepper on click on the button', () => {
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: '1 seat(s)' }))
+      expect(screen.getByRole('dialog')).toBeInTheDocument()
+    })
+
+    it('should update the value when clicking on the "Increase" button', () => {
+      // Using small screen to force the "Submit" button.
+      window.innerWidth = 360
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: '1 seat(s)' }))
+
+      fireEvent.click(screen.getByRole('button', { name: 'Increase' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Increase' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Submit' }))
+
+      expect(screen.getByRole('button', { name: '3 seat(s)' })).toBeInTheDocument()
+    })
+
+    it('should update the value when clicking on the "Decrease" button', () => {
+      // Using small screen to force the "Submit" button.
+      window.innerWidth = 360
+      const props = createProps()
+      render(<SearchForm {...props} />)
+      fireEvent.click(screen.getByRole('button', { name: '1 seat(s)' }))
+
+      fireEvent.click(screen.getByRole('button', { name: 'Increase' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Increase' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Decrease' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Submit' }))
+
+      expect(screen.getByRole('button', { name: '2 seat(s)' })).toBeInTheDocument()
     })
   })
 })
