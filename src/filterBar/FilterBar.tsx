@@ -26,13 +26,11 @@ export type FilterBarProps = Readonly<{
 
 export const FilterBar = ({ supplyInfo, isLoading = false, onClick, ctaText }: FilterBarProps) => (
   <StyledFilterBar>
-    <StyledSupplyInfo>
-      {isLoading ? (
-        <StyledSupplyInfoItem>
-          <Loader inline size={32} />
-        </StyledSupplyInfoItem>
-      ) : (
-        supplyInfo.map(supply => (
+    {isLoading ? (
+      <Loader inline size={32} />
+    ) : (
+      <StyledSupplyInfo>
+        {supplyInfo.map(supply => (
           <StyledSupplyInfoItem key={supply.ariaLabel} aria-label={supply.ariaLabel}>
             <supply.icon
               iconColor={color.midnightGreen}
@@ -42,9 +40,9 @@ export const FilterBar = ({ supplyInfo, isLoading = false, onClick, ctaText }: F
             />
             <TextTitle isDisabled={supply.isDisabled}>{supply.liquidity}</TextTitle>
           </StyledSupplyInfoItem>
-        ))
-      )}
-    </StyledSupplyInfo>
+        ))}
+      </StyledSupplyInfo>
+    )}
     <StyledCta>
       <Button
         status={ButtonStatus.PRIMARY}

@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
+- **[UPDATE]** `Tabs` Increased font-size on tab
+- **[FIX]** `FilterBar` align `Loader` with `Button`
 
 # v40.2.0 (11/09/2020)
 
