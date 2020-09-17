@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v40.3.0 (17/09/2020)
+
 - **[UPDATE]** Migrate `TextField` to new mdx story format
 - **[FIX]** Remove aditionnal spacing on Canvas
 - **[UPDATE]** `Grip` now has a snap effect when moving the finger around
