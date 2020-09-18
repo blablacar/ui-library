@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, shadow, transition } from '../../../_utils/branding'
+import { color, shadow } from '../../../_utils/branding'
 
 export const StyledSlideLayout = styled.div`
   position: relative;
@@ -9,8 +9,6 @@ export const StyledSlideLayout = styled.div`
 `
 
 export const StyledSlidePanel = styled.div<{
-  minimalHeight: number
-  defaultHeight: number
   expandedHeight: number
 }>`
   background-color: ${color.white};
@@ -19,19 +17,14 @@ export const StyledSlidePanel = styled.div<{
   top: 100%;
   left: 0;
   right: 0;
-  transition: transform ease ${transition.duration.base};
   box-shadow: ${shadow.slideSection};
-
-  &.default {
-    transform: translateY(-${props => props.defaultHeight}px);
-  }
+  transition: width ease 200ms;
 
   &.expanded {
-    transform: translateY(-${props => props.expandedHeight}px);
     overflow: auto;
   }
 
-  &.reduced {
-    transform: translateY(-${props => props.minimalHeight}px);
+  &.animated {
+    transition: transform ease 200ms;
   }
 `

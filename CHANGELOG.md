@@ -1,10 +1,23 @@
 # Unreleased
 
 - **[UPDATE]** Migrate `TabsSection` to new mdx story format
+[...]
+
+# v40.3.0 (17/09/2020)
+
+- **[UPDATE]** Migrate `TextField` to new mdx story format
+- **[FIX]** Remove aditionnal spacing on Canvas
+- **[UPDATE]** `Grip` now has a snap effect when moving the finger around
+- **[UPDATE]** `Tabs` Increased font-size on tab
+- **[FIX]** `FilterBar` align `Loader` with `Button`
+- **[UPDATE]** Migrate `RideAxis` to new mdx story format
+
+# v40.2.0 (11/09/2020)
+
 - **[UPDATE]** Migrate `BaseSection` to new mdx story format
 - **[UPDATE]** Migrate `Rating` to new mdx story format
 - **[UPDATE]** Set line height to `normal` in `Tabs` to support all diacritics
-  [...]
+- **[UPDATE]** Added focus state on ItemCheckbox
 
 # v40.1.0 (09/09/2020)
 
