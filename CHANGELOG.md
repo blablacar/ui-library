@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `DatePicker` to new mdx story format
 - **[UPDATE]** Migrate `TimePicker` to new mdx story format
 - **[UPDATE]** Migrate `SelectField` to new mdx story format
 - **[UPDATE]** Migrate `SearchRecap` to new mdx story format
