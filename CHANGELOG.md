@@ -1,6 +1,8 @@
 # Unreleased
 
 - **[UPDATE]** Migrate `SelectField` to new mdx story format
+- **[UPDATE]** Migrate `SearchRecap` to new mdx story format
+- **[UPDATE]** Migrate `TopBar` to new mdx story format
 - **[UPDATE]** Migrate `TabsSection` to new mdx story format
 [...]
 

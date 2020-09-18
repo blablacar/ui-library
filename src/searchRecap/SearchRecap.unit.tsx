@@ -10,7 +10,7 @@ const defaultProps = {
   large: false,
 }
 
-describe('searchRecap', () => {
+describe('SearchRecap', () => {
   it('Should display searchRecap component', () => {
     const component = renderer.create(<SearchRecap {...defaultProps} />).toJSON()
     expect(component).toMatchSnapshot()
