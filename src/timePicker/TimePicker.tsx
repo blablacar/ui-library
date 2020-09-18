@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
+import { StyledTimePicker } from './TimePicker.style'
 
 /**
  * Format given dateTime in the format HH:MM.
@@ -55,6 +56,10 @@ type TimePickerState = {
 }
 
 export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> {
+  static defaultProps: Partial<TimePickerProps> = {
+    renderTime: formatTimeValue,
+  }
+
   /**
    * Returns a map of `{timeValue: timeLabel}` used to build the select options.
    * E.g. `{ '00:00': '12:00 AM', '08:00': '8:00 AM', '16:00': '4:00 PM' }`.
@@ -64,7 +69,7 @@ export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> 
     // Taking today as reference to loop through hours
     const dt = this.referenceDate
     const day = this.referenceDate.getDate()
-    const { renderTime = formatTimeValue } = this.props
+    const { renderTime } = this.props
     while (dt.getDate() === day) {
       if (formatTimeValue(dt) >= timeStart) {
         steps[formatTimeValue(dt)] = renderTime(dt)
@@ -128,7 +133,7 @@ export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> 
     const { className = '', disabled = false, name, small = false } = this.props
     const { steps } = this.state
     return (
-      <div
+      <StyledTimePicker
         className={cc([
           prefix({ timePicker: true }),
           { focus: this.state.isFocused },
@@ -153,7 +158,7 @@ export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> 
             </option>
           ))}
         </select>
-      </div>
+      </StyledTimePicker>
     )
   }
 }

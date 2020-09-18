@@ -1,0 +1,31 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { TimePicker } from './index'
+
+<Meta title="Forms|TimePicker" />
+
+# **TimePicker**
+
+<Preview>
+  <Story name="Default">
+    <TimePicker
+      name="departure-time"
+      minuteStep={30}
+      disabled={false}
+      focus
+      small={false}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { TimePicker } from '@blablacar/ui-library/build/timePicker'
+
+<TimePicker />
+```
+
+<Props of={TimePicker} />

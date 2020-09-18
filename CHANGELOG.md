@@ -1,6 +1,12 @@
 # Unreleased
 
 - **[UPDATE]** Add ability to update `ItemRadioGroup` value programatically
+- **[UPDATE]** Migrate `TimePicker` to new mdx story format
+- **[UPDATE]** Migrate `SelectField` to new mdx story format
+- **[UPDATE]** Migrate `SearchRecap` to new mdx story format
+- **[UPDATE]** Migrate `TopBar` to new mdx story format
+- **[UPDATE]** Migrate `TabsSection` to new mdx story format
+[...]
 
 # v40.3.0 (17/09/2020)
 

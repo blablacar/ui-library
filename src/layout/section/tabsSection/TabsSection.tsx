@@ -2,6 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Tabs, TabsProps } from '../../../tabs'
+import { StyledTabsSection } from './TabsSection.style'
 
 export type TabsSectionProps = Readonly<{
   className?: string
@@ -18,5 +19,9 @@ export type TabsSectionProps = Readonly<{
  */
 export const TabsSection = (props: TabsSectionProps) => {
   const { className, tabsProps } = props
-  return <Tabs className={cc(className)} {...tabsProps} />
+  return (
+    <StyledTabsSection>
+      <Tabs className={cc(className)} {...tabsProps} />
+    </StyledTabsSection>
+  )
 }
