@@ -155,6 +155,8 @@ export const responsiveBreakpoints = {
   isMediaSmall: `max-width: ${smallBreakPointThreshold}`,
 }
 
+export const selectHeight = '52px'
+
 export const pxToInteger = (size: string): number => parseInt(size.replace('px', ''), 10)
 
 export const branding = {

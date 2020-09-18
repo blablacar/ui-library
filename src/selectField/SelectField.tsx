@@ -5,8 +5,7 @@ import { OnChangeParameters } from '../_internals/onChange'
 import { color } from '../_utils/branding'
 import { A11yProps, CommonFieldsProps, pickA11yProps } from '../_utils/interfaces'
 import { ChevronIcon } from '../icon/chevronIcon'
-
-export const selectHeight = '52px'
+import { StyledSelectField } from './SelectField.style'
 
 export type SelectFieldItem = A11yProps &
   Readonly<{
@@ -56,7 +55,7 @@ export const SelectField = React.forwardRef(
     }, [disabled, focus])
 
     return (
-      <div
+      <StyledSelectField
         className={cc([
           baseClassName,
           className,
@@ -89,7 +88,7 @@ export const SelectField = React.forwardRef(
           ))}
         </select>
         <ChevronIcon iconColor={color.lightMidnightGreen} down />
-      </div>
+      </StyledSelectField>
     )
   },
 )
