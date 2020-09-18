@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `SearchRecap` to new mdx story format
 - **[UPDATE]** Migrate `TabsSection` to new mdx story format
 [...]
 

@@ -6,6 +6,7 @@ import { RideAxis } from '../_utils/rideAxis'
 import { SearchIcon } from '../icon/searchIcon'
 import { Text, TextTagType } from '../text'
 import { UneditableTextField } from '../uneditableTextField'
+import { StyledSearchRecap } from './SearchRecap.style'
 
 export type SearchRecapProps = Readonly<{
   className?: string
@@ -14,10 +15,8 @@ export type SearchRecapProps = Readonly<{
   info?: string
 }>
 
-export const separatorWidth: number = 14
-
 export const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => (
-  <div className={cc(['kirk-searchRecap', className])}>
+  <StyledSearchRecap className={cc(['kirk-searchRecap', className])}>
     <UneditableTextField addOn={<SearchIcon />} ellipsis>
       <Fragment>
         <Text
@@ -34,5 +33,5 @@ export const SearchRecap = ({ className, from, to, info }: SearchRecapProps) => 
         )}
       </Fragment>
     </UneditableTextField>
-  </div>
+  </StyledSearchRecap>
 )
