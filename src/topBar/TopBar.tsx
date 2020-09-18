@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import cc from 'classcat'
 
+import { StyledTopBar } from './TopBar.style'
+
 export type TopBarProps = Readonly<{
   className?: string
   leftItem?: JSX.Element
@@ -50,7 +52,7 @@ export const TopBar = ({
     )
   }
   return (
-    <header
+    <StyledTopBar
       className={cc([
         'kirk-topBar',
         {
@@ -62,6 +64,6 @@ export const TopBar = ({
       ])}
     >
       {React.cloneElement(Wrapper, {}, children)}
-    </header>
+    </StyledTopBar>
   )
 }
