@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `TabsSection` to new mdx story format
 [...]
 
 # v40.3.0 (17/09/2020)
