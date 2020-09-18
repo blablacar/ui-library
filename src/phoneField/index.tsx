@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { color, inputBorderSize, radius, space, transition } from '../_utils/branding'
-import { selectHeight } from '../selectField/SelectField'
+import { color, inputBorderSize, radius, selectHeight, space, transition } from '../_utils/branding'
 import { PhoneField } from './PhoneField'
 
 const StyledPhoneField = styled(PhoneField)`

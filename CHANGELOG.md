@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `SelectField` to new mdx story format
 - **[UPDATE]** Migrate `TabsSection` to new mdx story format
 [...]
 
