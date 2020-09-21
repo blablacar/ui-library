@@ -18,7 +18,7 @@ export type ItemRadioProps = A11yProps &
   NormalizeProps &
   Readonly<{
     className?: string
-    name: string
+    name?: string
     value: string | number
     leftAddon?: React.ReactNode
     labelTitle?: string
