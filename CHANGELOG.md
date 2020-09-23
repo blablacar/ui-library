@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Added `Breadcrumb`
-  [...]
+[...]
+
+# v40.5.0 (23/09/2020)
+
+- **[NEW]** Added `Breadcrumb` component
 
 # v40.4.0 (21/09/2020)
 
