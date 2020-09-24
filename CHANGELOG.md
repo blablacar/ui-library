@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
 [...]
 
 # v40.5.0 (23/09/2020)
