@@ -13,6 +13,8 @@ export const StyledFilterBar = styled.div`
   padding-bottom: ${space.xl};
   max-width: ${componentSizes.smallSectionWidth};
   margin: auto;
+  /* Make the button not moving up & down when Loader becomes visible */
+  min-height: 100px;
 `
 
 export const StyledSupplyInfo = styled.ul`
