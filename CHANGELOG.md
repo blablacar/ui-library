@@ -1,6 +1,9 @@
 # Unreleased
 
 - **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
+- **[FIX]** Add normalized horizontal padding to `Review` component
+- **[UPDATE]** Add support for reply link to `Review` component
+- **[UPDATE]** Update `Caption` to support additional links properly.
 [...]
 
 # v40.5.0 (23/09/2020)

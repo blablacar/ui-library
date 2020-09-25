@@ -13,10 +13,21 @@ export type ReviewProps = Readonly<{
   text: string
   formattedDatetime: string
   isoDatetime: string
+  replyLinkLabel?: string
+  replyLinkHref?: string | JSX.Element
 }>
 
 export const Review = (props: ReviewProps) => {
-  const { className, title, text, formattedDatetime, isoDatetime, isResponse = false } = props
+  const {
+    className,
+    title,
+    text,
+    formattedDatetime,
+    isoDatetime,
+    isResponse = false,
+    replyLinkLabel,
+    replyLinkHref,
+  } = props
 
   // For responses, the title is not a rating but the name of the person replying.
   const titleMicroData = isResponse
@@ -33,6 +44,14 @@ export const Review = (props: ReviewProps) => {
         itemProp: 'reviewRating',
       }
 
+  const replyLinkProps =
+    replyLinkLabel && replyLinkHref
+      ? {
+          secondaryText: replyLinkLabel,
+          href: replyLinkHref,
+        }
+      : {}
+
   return (
     <StyledReview
       itemScope
@@ -44,11 +63,15 @@ export const Review = (props: ReviewProps) => {
         },
       ])}
     >
-      <h2 className="kirk-review-title" {...titleMicroData}>
-        <TextTitle {...titleMicroDataContent}>{title}</TextTitle>
-      </h2>
-      <Paragraph itemProp="reviewBody">{text}</Paragraph>
-      <Caption isoDate={isoDatetime}>{formattedDatetime}</Caption>
+      <div className="kirk-review-inner">
+        <h2 className="kirk-review-title" {...titleMicroData}>
+          <TextTitle {...titleMicroDataContent}>{title}</TextTitle>
+        </h2>
+        <Paragraph itemProp="reviewBody">{text}</Paragraph>
+        <Caption isoDate={isoDatetime} {...replyLinkProps}>
+          {formattedDatetime}
+        </Caption>
+      </div>
     </StyledReview>
   )
 }
