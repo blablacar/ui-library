@@ -3,6 +3,9 @@
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
 [...]
 
+# v40.6.1 (25/09/2020)
+- **[FIX]** Do not add type"button" to anchor-based Items.
+
 # v40.6.0 (25/09/2020)
 
 - **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
