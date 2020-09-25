@@ -1,7 +1,8 @@
 # Unreleased
-
-- **[FIX]** Do not add type"button" to anchor-based Items.
 [...]
+
+# v40.6.1 (25/09/2020)
+- **[FIX]** Do not add type"button" to anchor-based Items.
 
 # v40.6.0 (25/09/2020)
 
@@ -9,7 +10,6 @@
 - **[FIX]** Add normalized horizontal padding to `Review` component
 - **[UPDATE]** Add support for reply link to `Review` component
 - **[UPDATE]** Update `Caption` to support additional links properly.
-
 
 # v40.5.0 (23/09/2020)
 
