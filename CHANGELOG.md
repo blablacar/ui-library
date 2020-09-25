@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `QrCard` to new mdx story format
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
 [...]
 

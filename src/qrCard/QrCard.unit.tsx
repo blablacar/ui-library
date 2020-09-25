@@ -11,18 +11,18 @@ const mockedProps = {
   imageUrl: 'http://link',
 }
 
-describe('QrCard component', () => {
+describe('QrCard', () => {
   it('Should have the base class and use a Card component', () => {
     const qrCard = shallow(<QrCard {...mockedProps} />)
 
-    expect(qrCard.hasClass('kirk-qrCard')).toBe(true)
+    expect(qrCard.find(Card).hasClass('kirk-qrCard')).toBe(true)
     expect(qrCard.find(Card).exists()).toBe(true)
   })
 
   it('Should have the test class', () => {
     const qrCard = shallow(<QrCard {...mockedProps} className="test" />)
 
-    expect(qrCard.hasClass('test')).toBe(true)
+    expect(qrCard.find(Card).hasClass('test')).toBe(true)
   })
 
   it('Should render the title in a TextSubHeaderStrong', () => {
