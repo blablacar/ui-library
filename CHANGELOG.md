@@ -1,4 +1,6 @@
 # Unreleased
+
+- **[UPDATE]** Migrate `DatePicker` to new mdx story format
 [...]
 
 # v40.6.1 (25/09/2020)

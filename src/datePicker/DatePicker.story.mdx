@@ -1,0 +1,145 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { DatePicker, DatePickerOrientation } from './index'
+
+<Meta title="Widgets|DatePicker" />
+
+# **DatePicker**
+
+export const weekdaysShort = (locale) => {
+  const options = { weekday: 'short' }
+  return [0, 1, 2, 3, 4, 5, 6].map(i =>
+    new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, 0, i))),
+  )
+}
+
+export const weekdaysLong = (locale) => {
+  const options = { weekday: 'long' }
+  return [0, 1, 2, 3, 4, 5, 6].map(i =>
+    new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, 0, i))),
+  )
+}
+
+export const months = (locale) => {
+  const options = { month: 'long' }
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i =>
+    new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, i, 1))),
+  )
+}
+
+export const firstDayOfWeek = {
+  'en-GB': 0,
+  'fr-FR': 1,
+  'ru-RU': 0,
+}
+
+export const testLocales = ['en-GB', 'fr-FR', 'ru-RU']
+
+export const initialeDate = new Date()
+initialeDate.setMonth(initialeDate.getMonth() + 6)
+
+<Preview>
+  <Story name="Default">
+    <DatePicker
+      initialDate={new Date()}
+      name="datepicker"
+      orientation={DatePickerOrientation.HORIZONTAL}
+      locale="fr-FR"
+      weekdaysShort={weekdaysShort('fr-FR')}
+      weekdaysLong={weekdaysLong('fr-FR')}
+      months={months('fr-FR')}
+      firstDayOfWeek={firstDayOfWeek['fr-FR']}
+      numberOfMonths="1"
+      stickyPositionTop="0"
+    />
+  </Story>
+  <Story name="example horizontal (2 months)">
+    <DatePicker
+      initialDate={new Date()}
+      name="datepicker"
+      orientation={DatePickerOrientation.HORIZONTAL}
+      numberOfMonths={2}
+    />
+  </Story>
+  <Story name="example vertical (6 months)">
+    <DatePicker
+      initialDate={new Date()}
+      name="datepicker"
+      orientation={DatePickerOrientation.VERTICAL}
+      numberOfMonths={6}
+    />
+  </Story>
+  <Story name="example vertical (12 months - selected date in 6 months)">
+    <DatePicker
+      initialDate={initialeDate}
+      name="datepicker"
+      orientation={DatePickerOrientation.VERTICAL}
+      numberOfMonths={12}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+
+> Normal state
+
+Depending on the country the days at the top should adapt to it (e.g. in some countries weeks start with Sunday).
+We can’t see previous months.
+
+> Scrolling state
+
+When scrolling, days stick to the top bar (vertical mode only).
+
+> Past days
+
+We display past days (days before the actual one) in light grey (#EDEDED). These dates can’t be tapped. If user taps on it nothing happens.
+
+> Next year
+
+When user scrolls from one year to another we display the year next to the month for every month of the next year.
+
+> User selected date
+
+The selected date by the user is decorated with a blue disc.
+
+> Today's date
+
+Today's date cell has a light gray circle decoration.
+If today's date is selected by the user, we only show the blue disc, not the light gray circle.
+
+## Localization
+
+The DatePicker component comes with a default english configuration, but if you need to use it with other languages, you can override all names through props: `locale`, `months`, `weekdaysShort`, `weekdaysLong` and `firstDayOfWeek`.
+
+> How to get localized months and days with Intl API
+
+You can easily retrieve months and weekdays for any existing language with the web Intl API (which is supported by all modern browsers, and can also be polyfilled for larger support).
+
+```ts
+const weekdaysShort = (locale: string): string[] => {
+  const options = { weekday: 'short' }
+  return [0, 1, 2, 3, 4, 5, 6].map(i =>
+    new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, 0, i))),
+  )
+}
+
+const months = (locale: string): string[] => {
+  const options = { month: 'long' }
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i =>
+    new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, i, 1))),
+  )
+}
+```
+
+Only the first day of the week would need some kind of config or different source. You can also use any other library that would provide you these informations if you use one in your project.
+
+## Usage
+
+```jsx
+import { DatePicker } from '@blablacar/ui-library/build/datePicker'
+
+<DatePicker />
+```
+
+<Props of={DatePicker} />
