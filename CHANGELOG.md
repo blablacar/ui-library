@@ -1,4 +1,6 @@
 # Unreleased
+
+- **[FIX]** Do not add type"button" to anchor-based Items.
 [...]
 
 # v40.6.0 (25/09/2020)
