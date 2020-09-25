@@ -9,20 +9,12 @@ import { color, delay, font, pxToInteger, space } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { MinusIcon } from '../icon/minusIcon'
 import { PlusIcon } from '../icon/plusIcon'
-
-export enum StepperDisplay {
-  SMALL = 'small',
-  LARGE = 'large',
-}
+import { StepperButtonSize, StepperDisplay } from './constants'
+import { StyledStepper } from './Stepper.style'
 
 const StepperValueSize = {
   [StepperDisplay.SMALL]: pxToInteger(font.l.size),
   [StepperDisplay.LARGE]: pxToInteger(font.xxl.size),
-}
-
-export const StepperButtonSize = {
-  [StepperDisplay.SMALL]: 24,
-  [StepperDisplay.LARGE]: 48,
 }
 
 export type StepperProps = Readonly<{
@@ -199,7 +191,7 @@ export class Stepper extends PureComponent<StepperProps, StepperState> {
     const hasLeftAddon = display === StepperDisplay.SMALL && !isEmpty(leftAddon)
 
     return (
-      <div className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
+      <StyledStepper className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
         {hasLeftAddon && <div className="kirk-stepper-left-addon">{leftAddon}</div>}
 
         <div
@@ -239,7 +231,7 @@ export class Stepper extends PureComponent<StepperProps, StepperState> {
             <PlusIcon iconColor={color.blue} size={buttonSize} isDisabled={disabled || isMax} />
           </Button>
         </div>
-      </div>
+      </StyledStepper>
     )
   }
 }

@@ -1,0 +1,111 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Itinerary } from '../itinerary'
+import { Stepper, StepperDisplay } from './index'
+
+<Meta title="Widgets|Stepper" />
+
+# **Stepper**
+
+<Preview>
+  <Story name="Default">
+    <Stepper
+      name="stepper1"
+      min={Number.MIN_SAFE_INTEGER}
+      max={Number.MAX_SAFE_INTEGER}
+      step={2}
+      value={5}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      display={StepperDisplay.SMALL}
+      title="Number of seats"
+      disabled={false}
+    />
+  </Story>
+  <Story name="with formatted value">
+    <Stepper
+      name="stepper2"
+      min={0}
+      max={10}
+      step={2}
+      value={5}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      format={value => `${value} €`}
+      display={StepperDisplay.SMALL}
+      title="Edit the price"
+      disabled={false}
+    />
+  </Story>
+  <Story name="with large formatted value">
+    <Stepper
+      name="stepper3"
+      min={0}
+      max={99999}
+      step={100}
+      value={8400}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      format={value => `${value} грн.`}
+      display={StepperDisplay.LARGE}
+      title="Edit the price"
+      disabled={false}
+    />
+  </Story>
+  <Story name="with left addon">
+    <Stepper
+      name="stepper4"
+      min={0}
+      max={99999}
+      step={100}
+      value={8400}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      format={value => `${value} грн.`}
+      display={StepperDisplay.SMALL}
+      title="Edit the price"
+      disabled={false}
+      leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+> Normal state
+
+This stepper is used in one screen one action pages.
+
+> Behaviour
+
+When reaching the highest value the “increase” button is disabled. Same thing when reaching the lowest value, the “decrease” button is disabled.
+
+We can’t display more than 1 stepper on the same line.
+
+When user is coming back from the next step, we remember the value.
+
+> Long texts
+
+It can’t go on more than 1 line. If data is too long we reduce the font size.
+
+## Usage
+
+```jsx
+import { Stepper } from '@blablacar/ui-library/build/stepper'
+
+<Stepper
+  name="price"
+  min={1}
+  max={100}
+  step={2}
+  value={5}
+  increaseLabel="Increment"
+  decreaseLabel="Decrement"
+  format={value => `${value} €`}
+  onChange={onChange}
+  display={StepperDisplay.SMALL}
+  title="Edit the price"
+/>
+```
+
+<Props of={Stepper} />
