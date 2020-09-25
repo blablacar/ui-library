@@ -36,6 +36,15 @@ export class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadio
     value: this.props.value,
   }
 
+  static getDerivedStateFromProps(props: ItemRadioGroupProps, state: ItemRadioGroupState) {
+    if (props.value !== state.value) {
+      return {
+        value: props.value,
+      }
+    }
+    return null
+  }
+
   onChange = ({ name, value }: OnChangeParameters) => {
     this.props.onChange({ name, value })
     this.setState({ value })
