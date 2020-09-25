@@ -39,6 +39,19 @@ it('Should render review response', () => {
   assertReview(review, 'Review title', 'Review content', '05 jul - 17:39', true)
 })
 
+it('Should render basic review', () => {
+  const review = mount(
+    <Review
+      {...defaultReviewProps}
+      replyLinkLabel="Reply to this review"
+      replyLinkHref="/edit_review"
+    />,
+  )
+  const replyReviewLink = review.find('.kirk-button')
+  expect(replyReviewLink.exists()).toBe(true)
+  expect(replyReviewLink.text()).toBe('Reply to this review')
+})
+
 it('Should render review microdata annotations and HTML', () => {
   const reviewAndResponse = (
     <Fragment>

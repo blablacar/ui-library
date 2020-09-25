@@ -61,6 +61,27 @@ describe('Item', () => {
     expect(onButtonClick).toHaveBeenCalledTimes(1)
   })
 
+  it('Should use correct button type for normal buttons', () => {
+    const wrapper = mount(<Item tag={<button />} />)
+    expect(wrapper.find('button[type="button"]').exists()).toBe(true)
+  })
+
+  it('Should not add type=button to anchors', () => {
+    // The Item uses a <button> tag and href. Because of the href using an anchor, the item will be
+    // transformed into an HTML anchor, not HTML button.
+    const wrapper = mount(<Item tag={<button />} href={<a href="slug_link" />} />)
+
+    // Verify that there is a proper generated anchor element.
+    expect(wrapper.find('button[type="button"]').exists()).toBe(false)
+    expect(wrapper.find('a[type="button"]').exists()).toBe(false)
+    expect(wrapper.find('a').exists()).toBe(true)
+  })
+
+  it('Should use correct button type for submit buttons', () => {
+    const wrapper = mount(<Item tag={<button type="submit" />} />)
+    expect(wrapper.find('button[type="submit"]').exists()).toBe(true)
+  })
+
   it("Should't display left button addon if no title", () => {
     const wrapper = mount(
       <Item leftTitleButtonAddon={<Button onClick={() => {}}>More info</Button>} />,

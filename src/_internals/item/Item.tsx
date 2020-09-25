@@ -89,6 +89,7 @@ export const Item = (props: ItemProps) => {
   const a11yAttrs = pickA11yProps<ItemProps>(props)
   let Tag = tag.type
   let tagProps = tag.props
+
   if (href) {
     if (typeof href !== 'string') {
       Tag = href.type
@@ -98,6 +99,17 @@ export const Item = (props: ItemProps) => {
       tagProps = { href }
     }
   }
+
+  if (Tag === 'button') {
+    // The code below make sure that if we use a HTML button, a proper type='button' or
+    // type='submit' is added. type='button' is the default.
+    // This type=button is needed to make sure non-submit buttons are not activated when
+    // submitting forms.
+    // See: https://stackoverflow.com/questions/4763638/enter-triggers-button-click
+    const buttonType = tag.props.type || 'button'
+    tagProps = { ...tagProps, type: buttonType }
+  }
+
   const hasRightText = rightTitle || rightBody
 
   const getTextColor = (textColor: string) => (disabled ? color.gray : textColor)

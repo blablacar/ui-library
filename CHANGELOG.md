@@ -1,8 +1,31 @@
 # Unreleased
 
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
-- **[UPDATE]** Migrate `TabsSection` to new mdx story format
+- **[UPDATE]** Migrate `DatePicker` to new mdx story format
 [...]
+
+# v40.6.1 (25/09/2020)
+- **[FIX]** Do not add type"button" to anchor-based Items.
+
+# v40.6.0 (25/09/2020)
+
+- **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
+- **[FIX]** Add normalized horizontal padding to `Review` component
+- **[UPDATE]** Add support for reply link to `Review` component
+- **[UPDATE]** Update `Caption` to support additional links properly.
+
+# v40.5.0 (23/09/2020)
+
+- **[NEW]** Added `Breadcrumb` component
+
+# v40.4.0 (21/09/2020)
+
+- **[UPDATE]** Add ability to update `ItemRadioGroup` value programatically
+- **[UPDATE]** Migrate `TimePicker` to new mdx story format
+- **[UPDATE]** Migrate `SelectField` to new mdx story format
+- **[UPDATE]** Migrate `SearchRecap` to new mdx story format
+- **[UPDATE]** Migrate `TopBar` to new mdx story format
+- **[UPDATE]** Migrate `TabsSection` to new mdx story format
 
 # v40.3.0 (17/09/2020)
 

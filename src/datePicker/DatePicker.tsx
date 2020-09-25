@@ -7,6 +7,7 @@ import { prefix } from '../_utils'
 import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
+import { StyledDatePicker } from './DatePicker.style'
 
 const BASE_CLASSNAME = 'datepicker'
 
@@ -213,7 +214,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
     const layoutClassName = `months-grid-${numberOfMonths}`
 
     return (
-      <div
+      <StyledDatePicker
         ref={this.dayPickerContainer}
         className={cc([
           `kirk-${BASE_CLASSNAME}`,
@@ -240,7 +241,7 @@ export class DatePicker extends PureComponent<DatePickerProps, DatePickerState> 
           initialMonth={initialMonth}
           toMonth={toMonth}
         />
-      </div>
+      </StyledDatePicker>
     )
   }
 }

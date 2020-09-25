@@ -3,11 +3,11 @@ import { shallow } from 'enzyme'
 
 import { getTodayDate, TimePicker } from './TimePicker'
 
-const defaultProps = {
-  name: 'departure-time',
-}
+describe('TimePicker', () => {
+  const defaultProps = {
+    name: 'departure-time',
+  }
 
-describe('<TimePicker />', () => {
   it('Renders TimePicker with a custom className', () => {
     const wrapper = shallow(<TimePicker {...defaultProps} className="custom" />)
     expect(wrapper.hasClass('custom')).toBe(true)
