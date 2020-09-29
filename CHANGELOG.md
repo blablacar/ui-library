@@ -1,8 +1,11 @@
 # Unreleased
 
+- **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
+- **[FIX]** Make `FilterBar` button not moving when `Loader` is visible
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
 [...]
+
 
 # v40.6.1 (25/09/2020)
 - **[FIX]** Do not add type"button" to anchor-based Items.
