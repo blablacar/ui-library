@@ -35,6 +35,18 @@ export const reviewProps = {
   </Story>
 </Preview>
 
+## With reply link
+
+<Preview>
+  <Story name="withReplyLink">
+    <Review
+      {...reviewProps}
+      replyLinkLabel="Reply to ratings"
+      replyLinkHref={<a href="/edit_ratings">edit_ratings</a>}
+    />
+  </Story>
+</Preview>
+
 ## Specifications
 
 ...

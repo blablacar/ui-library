@@ -6,12 +6,25 @@ Array [
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c4 .kirk-link {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
+.c4 .kirk-button {
+  display: inline;
+}
+
+.c4 .kirk-caption-time,
+.c4 .kirk-caption-secondary-content {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c4 .kirk-caption-secondary-content {
+  text-align: right;
 }
 
 .c3 {
@@ -105,11 +118,15 @@ Array [
 }
 
 .c0 {
-  padding: 8px 0;
-  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.c0.kirk-is-review-response {
+.c0.kirk-is-review-response .kirk-review-inner {
   padding-left: 24px;
 }
 
@@ -122,50 +139,68 @@ Array [
     itemScope={true}
     itemType="http://schema.org/Review"
   >
-    <h2
-      className="kirk-review-title"
-      itemProp="reviewRating"
-      itemScope={true}
-      itemType="https://schema.org/Rating"
+    <div
+      className="kirk-review-inner"
     >
-      <span
-        className="c1"
+      <h2
+        className="kirk-review-title"
         itemProp="reviewRating"
+        itemScope={true}
+        itemType="https://schema.org/Rating"
       >
-        Review title
-      </span>
-    </h2>
-    <div
-      className="c2"
-      role="presentation"
-    >
-      <p
-        className="kirk-text kirk-text-body c3"
-        itemProp="reviewBody"
+        <span
+          className="c1"
+          itemProp="reviewRating"
+        >
+          Review title
+        </span>
+      </h2>
+      <div
+        className="c2"
+        role="presentation"
       >
-        Review content
-      </p>
-    </div>
-    <div
-      className="kirk-caption c4"
-    >
-      <time
-        dateTime="2017-08-07T14:10:40.526Z"
+        <p
+          className="kirk-text kirk-text-body c3"
+          itemProp="reviewBody"
+        >
+          Review content
+        </p>
+      </div>
+      <div
+        className="kirk-caption c4"
       >
-        05 jul - 17:39
-      </time>
+        <time
+          className="kirk-caption-time"
+          dateTime="2017-08-07T14:10:40.526Z"
+        >
+          05 jul - 17:39
+        </time>
+      </div>
     </div>
   </blockquote>,
   .c4 {
   font-size: 13px;
   line-height: 16px;
   color: #708C91;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.c4 .kirk-link {
-  font-size: 13px;
-  line-height: 16px;
-  color: #708C91;
+.c4 .kirk-button {
+  display: inline;
+}
+
+.c4 .kirk-caption-time,
+.c4 .kirk-caption-secondary-content {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c4 .kirk-caption-secondary-content {
+  text-align: right;
 }
 
 .c3 {
@@ -259,11 +294,15 @@ Array [
 }
 
 .c0 {
-  padding: 8px 0;
-  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.c0.kirk-is-review-response {
+.c0.kirk-is-review-response .kirk-review-inner {
   padding-left: 24px;
 }
 
@@ -276,34 +315,39 @@ Array [
     itemScope={true}
     itemType="http://schema.org/Review"
   >
-    <h2
-      className="kirk-review-title"
-    >
-      <span
-        className="c1"
-      >
-        Review title
-      </span>
-    </h2>
     <div
-      className="c2"
-      role="presentation"
+      className="kirk-review-inner"
     >
-      <p
-        className="kirk-text kirk-text-body c3"
-        itemProp="reviewBody"
+      <h2
+        className="kirk-review-title"
       >
-        Review content
-      </p>
-    </div>
-    <div
-      className="kirk-caption c4"
-    >
-      <time
-        dateTime="2017-08-07T14:10:40.526Z"
+        <span
+          className="c1"
+        >
+          Review title
+        </span>
+      </h2>
+      <div
+        className="c2"
+        role="presentation"
       >
-        05 jul - 17:39
-      </time>
+        <p
+          className="kirk-text kirk-text-body c3"
+          itemProp="reviewBody"
+        >
+          Review content
+        </p>
+      </div>
+      <div
+        className="kirk-caption c4"
+      >
+        <time
+          className="kirk-caption-time"
+          dateTime="2017-08-07T14:10:40.526Z"
+        >
+          05 jul - 17:39
+        </time>
+      </div>
     </div>
   </blockquote>,
 ]
