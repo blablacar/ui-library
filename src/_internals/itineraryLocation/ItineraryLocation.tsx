@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode } from 'react'
+import React, { Fragment, ReactNode, useLayoutEffect, useRef, useState } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
@@ -6,7 +6,9 @@ import { color } from '../../_utils/branding'
 import { Place } from '../../_utils/place'
 import { Bullet, BulletTypes } from '../../bullet'
 import { ChevronIcon } from '../../icon/chevronIcon'
+import { ConnectionIcon } from '../../icon/connectionIcon'
 import { Text, TextDisplayType, TextTagType } from '../../text'
+import { TextCaption } from '../../typography/caption'
 
 export type ItineraryLocationProps = Readonly<{
   place: Place
@@ -17,6 +19,7 @@ export type ItineraryLocationProps = Readonly<{
   hasTime?: boolean
   hasSubLabel?: boolean
   displaySubLabelOnly?: boolean
+  displayConnection?: boolean
 }>
 
 export const computeKeyFromPlace = (place: Place) => {
@@ -83,6 +86,7 @@ export const ItineraryLocation = ({
   hasTime = false,
   hasSubLabel = false,
   displaySubLabelOnly = false,
+  displayConnection = false,
 }: ItineraryLocationProps) => {
   const baseClassName = 'kirk-itineraryLocation'
   const classNames = cc([
@@ -134,6 +138,12 @@ export const ItineraryLocation = ({
     return renderSubLabel(subLabel)
   }
 
+  const refConnection = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState(0)
+  useLayoutEffect(() => {
+    setHeight(refConnection.current?.clientHeight)
+  }, [])
+
   return (
     <li
       className={classNames}
@@ -150,10 +160,30 @@ export const ItineraryLocation = ({
             className="kirk-itineraryLocation-bullet"
             type={isSmall ? BulletTypes.SMALL : BulletTypes.DEFAULT}
           />
-          {hasRoad && <div className="kirk-itineraryLocation-road" />}
+          {displayConnection && (
+            <svg className="kirk-itineraryLocation-connectionRoad" width={8} height={height}>
+              <line
+                x1="5"
+                x2="5"
+                y1="0"
+                y2="100%"
+                stroke={color.lightMidnightGreen}
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeDasharray=".001, 10"
+              />
+            </svg>
+          )}
+          {!displayConnection && hasRoad && <div className="kirk-itineraryLocation-road" />}
         </div>
-        <div className="kirk-itineraryLocation-label">
+        <div className="kirk-itineraryLocation-label" ref={refConnection}>
           {renderLabel(place.mainLabel, place.subLabel)}
+          {displayConnection && (
+            <div className="kirk-itineraryLocation-connection">
+              <ConnectionIcon />
+              <TextCaption>{place.connectionLabel}</TextCaption>
+            </div>
+          )}
         </div>
         {hasChevron && (
           <div className="kirk-itineraryLocation-chevron">

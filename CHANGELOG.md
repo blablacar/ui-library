@@ -4,10 +4,12 @@
 - **[FIX]** Make `FilterBar` button not moving when `Loader` is visible
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
-[...]
-
+- **[UPDATE]** Update `Itinerary` to handle segments and connections
+- **[NEW]** Add `ConnectionIcon`
+  [...]
 
 # v40.6.1 (25/09/2020)
+
 - **[FIX]** Do not add type"button" to anchor-based Items.
 
 # v40.6.0 (25/09/2020)

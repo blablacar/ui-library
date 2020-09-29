@@ -76,6 +76,12 @@ const StyledItinerary = styled(Itinerary)`
     font-size: ${font.s.size};
   }
 
+  & .kirk-itineraryLocation-chevron {
+    /* Because right now it's not possible to add a new item in the Itinerary list without being a place.
+     The hack is to have the "Change of vehicle" inside the place where the connection occurs. */
+    align-self: ${props => (props.segments ? 'baseline' : 'center')};
+  }
+
   & .kirk-itineraryLocation-smallLabel {
     margin-left: calc(${totalTimeWidth} + ${smallBulletPositionDifference});
   }
