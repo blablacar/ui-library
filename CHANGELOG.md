@@ -4,6 +4,7 @@
 - **[FIX]** Make `FilterBar` button not moving when `Loader` is visible
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
+- **[NEW]** Add `LoadingPage` component
 [...]
 
 
