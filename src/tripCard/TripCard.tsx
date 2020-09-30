@@ -65,7 +65,7 @@ export type TripCardProps = A11yProps &
 
 const renderPassenger = (passenger: User) => (
   <li className="kirk-tripCard-avatar" key={`${passenger.firstName}-${passenger.avatarUrl}`}>
-    <Avatar image={passenger.avatarUrl} isSmall />
+    <Avatar image={passenger.avatarUrl} alt={passenger.firstName} isSmall />
   </li>
 )
 
@@ -190,7 +190,11 @@ export const TripCard = (props: TripCardProps) => {
                   <div className="kirk-tripCard-bottom-left">
                     {driver && (
                       <div className="kirk-tripCard-driver">
-                        <Avatar className="kirk-tripCard-avatar" image={driver.avatarUrl} />
+                        <Avatar
+                          className="kirk-tripCard-avatar"
+                          image={driver.avatarUrl}
+                          alt={driver.firstName}
+                        />
                         <div className="kirk-tripCard-driver-info">
                           <Text
                             className="kirk-tripCard-driver-name"
