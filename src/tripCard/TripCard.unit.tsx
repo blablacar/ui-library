@@ -173,6 +173,19 @@ describe('TripCard', () => {
     expect(screen.getByAltText('Jane')).toBeInTheDocument()
   })
 
+  it('Should render driver sub text', () => {
+    const props = createProps({
+      driver: {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'BlaBlaCar',
+        subText: '3 changes',
+      },
+    })
+
+    render(<TripCard {...props} />)
+    expect(screen.getByText('3 changes')).toBeInTheDocument()
+  })
+
   it('Should render 3 passengers', () => {
     const props = createProps({ passengers: createPassengers(3) })
     render(<TripCard {...props} />)
