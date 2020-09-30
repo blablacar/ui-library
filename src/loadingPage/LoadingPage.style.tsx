@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { color } from '../_utils/branding'
+
 export const StyledLoadingPage = styled.div`
     {
         position: absolute;
@@ -10,6 +12,7 @@ export const StyledLoadingPage = styled.div`
         display: flex
         align-items: center;
         justify-content: center;
+        background-color: ${color.white}
     }
 
     .content-container {

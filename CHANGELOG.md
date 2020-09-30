@@ -5,6 +5,7 @@
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
 - **[NEW]** Add `LoadingPage` component
+- **[UPDATE]** Add white background to `LoadingPage` component to enable superposition
 [...]
 
 
