@@ -58,6 +58,7 @@ exports[`Should have the correct attributes and text when all props. 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  background-color: #FFF;
 }
 
 .c0 .content-container {
@@ -174,6 +175,7 @@ exports[`Should have the correct attributes and text when no icon. 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  background-color: #FFF;
 }
 
 .c0 .content-container {
