@@ -98,7 +98,6 @@ export const Grip = (props: GripProps): JSX.Element => {
     <div
       className={className}
       onTouchStart={e => {
-        console.log('START')
         fingerYPosition.current = e.touches.item(0).clientY
       }}
       {...a11yAttrs}
