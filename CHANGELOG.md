@@ -7,10 +7,11 @@
 - **[UPDATE]** Migrate `DatePicker` to new mdx story format
 - **[NEW]** Add `LoadingPage` component
 - **[UPDATE]** Add white background to `LoadingPage` component to enable superposition
-[...]
-
+- **[FIX]** Prevent all touch events from triggering `Grip` `onTouchMove` and `onTouchEnd` callbacks
+  [...]
 
 # v40.6.1 (25/09/2020)
+
 - **[FIX]** Do not add type"button" to anchor-based Items.
 
 # v40.6.0 (25/09/2020)
