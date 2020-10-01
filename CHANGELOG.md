@@ -1,5 +1,9 @@
 # Unreleased
 
+  [...]
+
+# v40.7.0 (01/10/2020)
+
 - **[FIX]** Fix `statusInformation` position in `TripCard`
 - **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
 - **[FIX]** Make `FilterBar` button not moving when `Loader` is visible
@@ -8,7 +12,6 @@
 - **[NEW]** Add `LoadingPage` component
 - **[UPDATE]** Add white background to `LoadingPage` component to enable superposition
 - **[FIX]** Prevent all touch events from triggering `Grip` `onTouchMove` and `onTouchEnd` callbacks
-  [...]
 
 # v40.6.1 (25/09/2020)
 
