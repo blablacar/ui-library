@@ -26,6 +26,7 @@ export const StyledTripCard = styled(Card)`
 
   & .kirk-item.kirk-tripCard-top-item {
     padding-top: 0;
+    padding-left: 0 !important;
   }
 
   & .kirk-item--highlighted .kirk-text-body {

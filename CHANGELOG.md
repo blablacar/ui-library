@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `statusInformation` position in `TripCard`
 - **[FIX]** Add explicit type"button" to Item using an HTML button to avoid accidental activation on form submit.
 - **[FIX]** Make `FilterBar` button not moving when `Loader` is visible
 - **[UPDATE]** Migrate `QrCard` to new mdx story format
