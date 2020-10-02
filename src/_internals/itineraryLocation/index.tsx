@@ -51,7 +51,6 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
 
   & .kirk-itineraryLocation-chevron {
     display: flex;
-    align-self: center;
   }
 
   & .kirk-itineraryLocation-city {
@@ -61,6 +60,15 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
   & .kirk-itineraryLocation-label {
     flex: 1;
     min-width: 0; /* reset flex default to allow shrinking below content width */
+  }
+
+  & .kirk-itineraryLocation-connection {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  & .kirk-itineraryLocation-connection .kirk-itineraryLocation-connectionRoad {
+    margin-right: ${space.s};
   }
 
   & .kirk-itineraryLocation-label-text {

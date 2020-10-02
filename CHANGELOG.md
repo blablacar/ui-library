@@ -1,6 +1,7 @@
 # Unreleased
 
-  [...]
+- **[UPDATE]** Update `Itinerary` to handle segments and connections
+- **[NEW]** Add `ConnectionIcon`
 
 # v40.7.0 (01/10/2020)
 

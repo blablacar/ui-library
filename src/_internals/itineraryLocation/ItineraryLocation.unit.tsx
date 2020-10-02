@@ -1,9 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
+import { Place } from '../../_utils/place'
 import { Bullet, BulletTypes } from '../../bullet'
-import { Proximity } from '../../proximity'
-import { Place } from '../place'
+import { ConnectionIcon } from '../../icon/connectionIcon'
+import { Distances, Proximity } from '../../proximity'
+import { TextCaption } from '../../typography/caption'
 import { ItineraryLocation } from './ItineraryLocation'
 
 const place: Place = {
@@ -16,7 +18,7 @@ const place: Place = {
 
 const placeWithProximity: Place = {
   ...place,
-  subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+  subLabel: <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />,
 }
 
 const placeWithLink: Place = {
@@ -33,6 +35,11 @@ const placeWithButton: Place = {
 
 const placeWithKey: Place = {
   ...place,
+}
+
+const placeWithConnection = {
+  ...place,
+  connectionLabel: 'Change of station',
 }
 
 describe('ItineraryLocation', () => {
@@ -89,5 +96,16 @@ describe('ItineraryLocation', () => {
     expect(wrapper.hasClass('kirk-itineraryLocation--arrival')).toBe(true)
     expect(wrapper.hasClass('kirk-itineraryLocation--withToAddon')).toBe(true)
     expect(wrapper.find('.kirk-itineraryLocation-road').exists()).toBe(true)
+  })
+
+  it('Should display connection icon and transfer label', () => {
+    const wrapper = shallow(<ItineraryLocation place={placeWithConnection} displayConnection />)
+    expect(wrapper.find(ConnectionIcon).exists()).toBe(true)
+    expect(
+      wrapper
+        .find('.kirk-itineraryLocation-connection')
+        .find(TextCaption)
+        .text(),
+    ).toEqual('Change of station')
   })
 })
