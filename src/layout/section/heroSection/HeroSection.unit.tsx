@@ -2,11 +2,9 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import { ClassicHeroSectionProps, HeroSection, IllustrationHeroSectionProps } from './HeroSection'
+import { HeroSection, HeroSectionProps } from './HeroSection'
 
-function createIllustrationProps(
-  props: Partial<IllustrationHeroSectionProps> = {},
-): IllustrationHeroSectionProps {
+function createHeroSectionProps(props: Partial<HeroSectionProps> = {}): HeroSectionProps {
   return {
     heroText: 'hero text',
     heroImageUrlSmall: 'http://heroImageUrlSmall',
@@ -16,48 +14,16 @@ function createIllustrationProps(
   }
 }
 
-function createClassicProps(props: Partial<ClassicHeroSectionProps> = {}): ClassicHeroSectionProps {
-  return {
-    heroText: 'hero text',
-    heroImageUrl: 'http://heroImageUrl',
-    bottomElement: null,
-    ...props,
-  }
-}
-
 describe('HeroSection', () => {
   describe('illustration', () => {
     it('should render the title', () => {
-      const props = createIllustrationProps()
+      const props = createHeroSectionProps()
       render(<HeroSection {...props} />)
       expect(screen.getByText('hero text')).toBeInTheDocument()
     })
 
     it('should render a search form', () => {
-      const props = createIllustrationProps({
-        bottomElement: <div data-testid="bottom-element">Bottom element</div>,
-      })
-
-      render(<HeroSection {...props} />)
-      expect(screen.getByTestId('bottom-element')).toBeInTheDocument()
-    })
-  })
-
-  describe('classic', () => {
-    it('should render the title', () => {
-      const props = createClassicProps()
-      render(<HeroSection {...props} />)
-      expect(screen.getByText('hero text')).toBeInTheDocument()
-    })
-
-    it('should render the desciption', () => {
-      const props = createClassicProps({ heroDescription: 'hero desciption' })
-      render(<HeroSection {...props} />)
-      expect(screen.getByText('hero desciption')).toBeInTheDocument()
-    })
-
-    it('should render a search form', () => {
-      const props = createClassicProps({
+      const props = createHeroSectionProps({
         bottomElement: <div data-testid="bottom-element">Bottom element</div>,
       })
 

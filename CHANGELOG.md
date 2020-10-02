@@ -1,6 +1,8 @@
 # Unreleased
 
-[...]
+- **[FIX]** Improved position of the title of `HeroSection`
+- **[BREAKING CHANGE]** Remove `ClassicHeroSection` variant of `HeroSection` and make `IllustrationHeroSection` the default case
+  [...]
 
 # v40.8.0 (02/10/2020)
 
