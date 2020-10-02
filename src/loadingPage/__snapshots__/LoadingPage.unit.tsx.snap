@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should have the correct attributes and text when all props. 1`] = `
+.c1 {
+  fill: #FFF;
+}
+
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c3 {
+  color: #054752;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.c2 {
+  --space-bottom: 32px;
+  --font-size-desktop: 40px;
+  margin: 0;
+  padding: 24px 0 var(--space-bottom);
+  white-space: pre-line;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #FFF;
+}
+
+.c0 .content-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .content-container .logo {
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.c0 .content-container .logo svg {
+  margin: 8px 9px;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width:800px) {
+  .c2 {
+    text-align: center;
+    font-size: var(--font-size-desktop);
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="logo"
+      style={
+        Object {
+          "backgroundColor": "#5DD167",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c1"
+        height={24}
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        
+        <path
+          d="M7.5 9.5v-3a4.5 4.5 0 019 0v3H18a1 1 0 011 1V21a1 1 0 01-1 1H6a1 1 0 01-1-1V10.5a1 1 0 011-1h1.5zm1 0h7v-3a3.5 3.5 0 00-7 0v3zm-2.5 1V21h12V10.5H6zm5.5 6.45a2.5 2.5 0 111 0v1.55a.5.5 0 11-1 0v-1.55zM12 16a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+          fill="#FFF"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <h1
+      className="kirk-title c2 c3"
+    >
+      Entering a secure page
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Should have the correct attributes and text when no icon. 1`] = `
+.c2 {
+  color: #054752;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.c1 {
+  --space-bottom: 32px;
+  --font-size-desktop: 40px;
+  margin: 0;
+  padding: 24px 0 var(--space-bottom);
+  white-space: pre-line;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #FFF;
+}
+
+.c0 .content-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .content-container .logo {
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.c0 .content-container .logo svg {
+  margin: 8px 9px;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width:800px) {
+  .c1 {
+    text-align: center;
+    font-size: var(--font-size-desktop);
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="kirk-title c1 c2"
+    >
+      Entering a secure page
+    </h1>
+  </div>
+</div>
+`;

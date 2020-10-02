@@ -1,0 +1,17 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+import LockIcon from '../icon/lockIcon'
+import { LoadingPage } from './index'
+
+<Meta title="Widgets|LoadingPage" />
+
+# ** LoadingPage **
+
+## LoadingPage with text and logo
+
+<Preview>
+  <Story name="Default">
+    <LoadingPage icon={LockIcon} iconColor={color.white} iconBackground={color.green} title="Entering a secure page" />
+  </Story>
+</Preview>

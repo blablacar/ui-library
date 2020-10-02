@@ -23,7 +23,7 @@ export const touchEndListener = (
   props: GripProps,
 ) => {
   const { onSlideDown, onSlideUp, onTouchEnd } = props
-  if (fingerYPosition !== null) {
+  if (fingerYPosition.current !== null) {
     onTouchEnd()
     if (clientY < fingerYPosition.current - SLIDE_OFFSET) {
       onSlideUp()
@@ -40,7 +40,7 @@ export const touchMoveListener = (
   props: GripProps,
 ) => {
   const { onTouchMove } = props
-  if (fingerYPosition !== null) {
+  if (fingerYPosition.current !== null) {
     onTouchMove(clientY - fingerYPosition.current)
   }
 }
