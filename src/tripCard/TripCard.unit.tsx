@@ -161,7 +161,7 @@ describe('TripCard', () => {
     ).toBeInTheDocument()
   })
 
-  it('Should show driver avatar', () => {
+  it("Should show the driver's name", () => {
     const props = createProps({
       driver: {
         avatarUrl: '//placehold.it/500x500',
@@ -170,7 +170,19 @@ describe('TripCard', () => {
     })
 
     render(<TripCard {...props} />)
-    expect(screen.getByAltText('Jane')).toBeInTheDocument()
+    expect(screen.getByText('Jane')).toBeInTheDocument()
+  })
+
+  it("Should show the driver's avatar", () => {
+    const props = createProps({
+      driver: {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'Jane',
+      },
+    })
+
+    const { container } = render(<TripCard {...props} />)
+    expect(container.querySelector('img[src="//placehold.it/500x500"]')).toBeInTheDocument()
   })
 
   it('Should render driver sub text', () => {

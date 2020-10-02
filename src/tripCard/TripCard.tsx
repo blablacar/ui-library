@@ -211,11 +211,7 @@ export const TripCard = (props: TripCardProps) => {
                   <div className="kirk-tripCard-bottom-left">
                     {driver && (
                       <div className="kirk-tripCard-driver">
-                        <Avatar
-                          className="kirk-tripCard-avatar"
-                          image={driver.avatarUrl}
-                          alt={driver.firstName}
-                        />
+                        <Avatar className="kirk-tripCard-avatar" image={driver.avatarUrl} />
                         <div className="kirk-tripCard-driver-info">
                           <Text
                             className="kirk-tripCard-driver-name"
