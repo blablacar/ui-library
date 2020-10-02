@@ -1,9 +1,12 @@
 # Unreleased
 
+[...]
+
+# v40.8.0 (02/10/2020)
+
 - **[UPDATE]** Update `Itinerary` to handle segments and connections
 - **[NEW]** Add `ConnectionIcon`
 - **[UPDATE]** Add `subText` to `TripCard`'s driver
-  [...]
 
 # v40.7.0 (01/10/2020)
 
