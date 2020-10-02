@@ -27,17 +27,21 @@ import { StyledTripCard } from './TripCard.style'
  */
 const PASSENGERS_TO_DISPLAY = 5
 
-export interface User {
+export type User = {
   avatarUrl: string
   firstName: string
   rating?: string
+}
+
+export type Driver = User & {
+  subText?: string
 }
 
 export type TripCardProps = A11yProps &
   Readonly<{
     href: string | JSX.Element
     itinerary: Place[]
-    driver?: User
+    driver?: Driver
     passengers?: User[]
     price?: string
     flags?: {
@@ -65,7 +69,7 @@ export type TripCardProps = A11yProps &
 
 const renderPassenger = (passenger: User) => (
   <li className="kirk-tripCard-avatar" key={`${passenger.firstName}-${passenger.avatarUrl}`}>
-    <Avatar image={passenger.avatarUrl} isSmall />
+    <Avatar image={passenger.avatarUrl} alt={passenger.firstName} isSmall />
   </li>
 )
 
@@ -117,6 +121,23 @@ export const TripCard = (props: TripCardProps) => {
       href,
       rel: 'nofollow',
       ...a11yAttrs,
+    }
+  }
+
+  let driverSubText: React.ReactElement | null = null
+
+  if (shouldDisplayBottom && driver != null) {
+    if (driver.subText != null) {
+      driverSubText = (
+        <TextBody className="kirk-tripCard-ratingContainer">{driver.subText}</TextBody>
+      )
+    } else if (driver.rating != null) {
+      driverSubText = (
+        <TextBody className="kirk-tripCard-ratingContainer">
+          <Star fill={1} size={16} />
+          <span className="kirk-tripCard-rating">{driver.rating}</span>
+        </TextBody>
+      )
     }
   }
 
@@ -199,12 +220,7 @@ export const TripCard = (props: TripCardProps) => {
                           >
                             {driver.firstName}
                           </Text>
-                          {driver.rating && (
-                            <TextBody className="kirk-tripCard-ratingContainer">
-                              <Star fill={1} size={16} />
-                              <span className="kirk-tripCard-rating">{driver.rating}</span>
-                            </TextBody>
-                          )}
+                          {driverSubText}
                         </div>
                       </div>
                     )}
