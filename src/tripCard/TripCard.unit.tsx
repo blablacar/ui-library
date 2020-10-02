@@ -185,7 +185,20 @@ describe('TripCard', () => {
     expect(container.querySelector('img[src="//placehold.it/500x500"]')).toBeInTheDocument()
   })
 
-  it('Should render driver sub text', () => {
+  it("Should show the driver's ratings", () => {
+    const props = createProps({
+      driver: {
+        avatarUrl: '//placehold.it/500x500',
+        firstName: 'Jane',
+        rating: '3 stars',
+      },
+    })
+
+    render(<TripCard {...props} />)
+    expect(screen.getByText('3 stars')).toBeInTheDocument()
+  })
+
+  it("Should render driver's sub text", () => {
     const props = createProps({
       driver: {
         avatarUrl: '//placehold.it/500x500',
