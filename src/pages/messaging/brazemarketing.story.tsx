@@ -3,8 +3,8 @@ import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Avatar } from '../../avatar'
-import { BlankSeparator, BlankSeparatorSize } from '../../blankSeparator'
 import { Button } from '../../button'
+import { SpacingDivider, SpacingDividerSize } from '../../divider/spacingDivider'
 import { ItemInfo } from '../../itemInfo'
 import { LayoutNormalizer } from '../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../layout/section/baseSection'
@@ -28,7 +28,7 @@ stories.add('Default', () => (
           This is a simple multiline marketing message.
           {longContent}
         </Text>
-        <BlankSeparator size={BlankSeparatorSize.LARGE} />
+        <SpacingDivider size={SpacingDividerSize.LARGE} />
         <div style={{ textAlign: 'center' }}>
           <Button>Marketing button</Button>
         </div>

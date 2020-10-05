@@ -1,6 +1,8 @@
 # Unreleased
 
-[...]
+- **[BREAKING CHANGE]** Rename `BlankSeparator` to `divider/spacingDivider`
+- **[BREAKING CHANGE]** Rename `Divider` to `divider/contentDivider`
+- **[NEW]** Create `divider/sectionDivider`
 
 # v40.8.0 (02/10/2020)
 

@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 
 import { Item } from '../../../_internals/item'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { StandardSeatIcon as StandardSeat } from '../../../icon/standardSeat'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 
@@ -14,7 +14,7 @@ export type StepperOverlayProps = StepperProps &
 export const StepperOverlay = ({ itemTitle, className, ...props }: StepperOverlayProps) => (
   <div className={cc(['kirk-stepperOverlay', className])}>
     <Item leftAddon={<StandardSeat />} leftTitle={itemTitle} />
-    <Divider />
+    <ContentDivider />
     <Stepper
       {...props}
       className="kirk-stepperOverlay-stepper"

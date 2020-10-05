@@ -8,8 +8,8 @@ import { computeKeyFromPlace, ItineraryLocation } from '../_internals/itineraryL
 import { color } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Place } from '../_utils/place'
-import { BlankSeparator } from '../blankSeparator'
 import { Bullet, BulletTypes } from '../bullet'
+import { SpacingDivider } from '../divider/spacingDivider'
 import { SubHeader } from '../subHeader'
 import { Text, TextDisplayType, TextTagType } from '../text'
 
@@ -181,7 +181,7 @@ export const Itinerary = (props: ItineraryProps) => {
       {isNonEmptyString(headline) && (
         <Fragment>
           <SubHeader>{headline}</SubHeader>
-          <BlankSeparator />
+          <SpacingDivider />
         </Fragment>
       )}
       <ul

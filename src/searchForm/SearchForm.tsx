@@ -10,7 +10,7 @@ import { MediaSize, MediaSizeContext } from '../_utils/mediaSizeProvider'
 import { AutocompleteOnChange, AutoCompleteProps } from '../autoComplete'
 import { Bullet, BulletTypes } from '../bullet'
 import { DatePicker } from '../datePicker'
-import { Divider } from '../divider'
+import { ContentDivider } from '../divider/contentDivider'
 import { CalendarIcon } from '../icon/calendarIcon'
 import { DoubleArrowIcon } from '../icon/doubleArrowIcon'
 import { SearchIcon } from '../icon/searchIcon'
@@ -294,7 +294,7 @@ export const SearchForm = ({
         </div>
       </div>
 
-      {mediaSize === MediaSize.SMALL && <Divider />}
+      {mediaSize === MediaSize.SMALL && <ContentDivider />}
 
       <Overlay
         shouldDisplay={
@@ -352,7 +352,7 @@ export const SearchForm = ({
         </SlideSwitchTransition>
       </div>
 
-      {mediaSize === MediaSize.SMALL && <Divider />}
+      {mediaSize === MediaSize.SMALL && <ContentDivider />}
 
       <Overlay
         shouldDisplay={

@@ -3,9 +3,9 @@ import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
 import { Item } from '../../_internals/item'
-import { BlankSeparator } from '../../blankSeparator'
 import { Button, ButtonStatus } from '../../button'
 import { Disclaimer } from '../../disclaimer'
+import { SpacingDivider } from '../../divider/spacingDivider'
 import { BusIcon } from '../../icon/busIcon'
 import { CarpoolIcon } from '../../icon/carpoolIcon'
 import { LayoutNormalizer } from '../../layout/layoutNormalizer'
@@ -65,7 +65,7 @@ const tabPanel = (
       leftBodyAnnotation="101 trajets complets"
       rightAddon={filterButton}
     />
-    <BlankSeparator />
+    <SpacingDivider />
     <ul>
       <TripCard {...createTripCardConfig()} />
       <TripCard {...createTripCardConfig()} />

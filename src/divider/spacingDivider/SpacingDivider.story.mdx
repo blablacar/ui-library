@@ -1,0 +1,46 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { BaseSection } from '../../layout/section/baseSection'
+import { SpacingDivider, SpacingDividerSize } from './index'
+
+<Meta title="Widgets|Dividers" />
+
+# **SpacingDivider**
+
+<Preview>
+  <Story name="SpacingDivider">
+    <BaseSection>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis amet eius sunt! Voluptatum
+      tenetur sit, suscipit velit aspernatur ab earum nam. Corrupti iste nostrum dolorum magni
+      officiis quae aspernatur consectetur.
+      <SpacingDivider size={SpacingDividerSize.LARGE} />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis amet eius sunt! Voluptatum
+      tenetur sit, suscipit velit aspernatur ab earum nam. Corrupti iste nostrum dolorum magni
+      officiis quae aspernatur consectetur.
+    </BaseSection>
+  </Story>
+</Preview>
+
+## Specifications
+
+Use blank dividers when vertically stacked components don’t provide enough visual separation.
+
+⛔️ Stack multiple blank separators together.
+
+### Devs specs
+
+Normal state
+Spacing dividers can be displayed before and after any component.
+In a list of choices the last choice is not followed by a divider, unless there’s is another component after it.
+
+## Usage
+
+```jsx
+import {
+  SpacingDivider,
+  SpacingDividerProps,
+  SpacingDividerSize,
+} from '@blablacar/ui-library/build/divider/spacingDivider'
+```
+
+<Props of={SpacingDivider} />
