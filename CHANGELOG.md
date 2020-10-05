@@ -3,6 +3,8 @@
 - **[BREAKING CHANGE]** Rename `BlankSeparator` to `divider/spacingDivider`
 - **[BREAKING CHANGE]** Rename `Divider` to `divider/contentDivider`
 - **[NEW]** Create `divider/sectionDivider`
+- **[FIX]** Improved position of the title of `HeroSection`
+- **[BREAKING CHANGE]** Remove `ClassicHeroSection` variant of `HeroSection` and make `IllustrationHeroSection` the default case
 
 # v40.8.0 (02/10/2020)
 
