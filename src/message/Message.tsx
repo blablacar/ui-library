@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { prefix } from '../_utils'
-import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
+import { SpacingDivider, SpacingDividerSize } from '../divider/spacingDivider'
 import { Text, TextDisplayType } from '../text'
 import { StyledMessage } from './Message.style'
 
@@ -29,7 +29,7 @@ export const Message = ({ active, children, messageAnnotation, className }: Mess
         <Text className="kirk-message-annotation" display={TextDisplayType.CAPTION}>
           {messageAnnotation}
         </Text>
-        <BlankSeparator size={BlankSeparatorSize.MEDIUM} />
+        <SpacingDivider size={SpacingDividerSize.MEDIUM} />
       </Fragment>
     )}
   </StyledMessage>

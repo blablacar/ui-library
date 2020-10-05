@@ -7,7 +7,7 @@ import isEmpty from 'lodash.isempty'
 import { ItemStatus } from '../_internals/item'
 import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
-import { Divider } from '../divider'
+import { ContentDivider } from '../divider/contentDivider'
 import { ItemInfo } from '../itemInfo'
 import { Loader } from '../loader'
 import { inputTypes, TextField } from '../textField'
@@ -322,7 +322,7 @@ export class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState
           focusBorder={false}
           loader={loader}
         />
-        {shouldDisplayDivider && <Divider />}
+        {shouldDisplayDivider && <ContentDivider />}
         {shouldDisplayBusyState && (
           <div className={cc([prefix({ 'autoComplete-body': true }), this.props.bodyClassName])}>
             {this.props.renderBusy({ query: this.state.query })}

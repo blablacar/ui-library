@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { Divider } from '../divider'
+import { ContentDivider } from '../divider/contentDivider'
 import { StarIcon } from '../icon/starIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Profile } from '../profile'
@@ -27,7 +27,7 @@ stories.add('default', () => (
       ratings={number('ratings', null)}
       ratingsLabel={text('ratingsLabel', null)}
     />
-    <Divider />
+    <ContentDivider />
     <Profile
       title={text('name', 'Pepe le Pew (medium size)')}
       aria-label={text('ariaLabel', 'Driver: Pepe le Pew, Charism +10')}
