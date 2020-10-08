@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v41.1.0 (08/10/2020)
+
 - **[UPDATE]** Migrate `Stepper` to new mdx story format
 - **[FIX]** Set `label` as an optional field in `ItemRadio`
-[...]
 
 # v41.0.0 (05/10/2020)
 
