@@ -18,6 +18,7 @@ addParameters({
   },
 })
 
-addDecorator(withSmartKnobs())
+// Ignore leftAddon as it breaks previews.
+addDecorator(withSmartKnobs({ ignoreProps: ['leftAddon'] }))
 addDecorator(withKnobs)
 addDecorator(withA11y)

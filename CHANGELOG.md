@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `Stepper` to new mdx story format
 - **[FIX]** Set `label` as an optional field in `ItemRadio`
 [...]
 
