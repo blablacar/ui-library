@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Set `label` as an optional field in `ItemRadio`
 [...]
 
 # v41.0.0 (05/10/2020)
