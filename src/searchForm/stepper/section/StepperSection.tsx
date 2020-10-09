@@ -6,7 +6,7 @@ import { OnChangeParameters } from '../../../_internals/onChange'
 import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { space } from '../../../_utils/branding'
 import { Button, ButtonStatus } from '../../../button'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { ChevronIcon } from '../../../icon/chevronIcon'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
@@ -67,7 +67,7 @@ export const StepperSection = ({
             tag={<button type="button" />}
             onClick={onClose}
           />
-          <Divider />
+          <ContentDivider />
           <Stepper {...props} onChange={setStepperValue} display={StepperDisplay.LARGE} />
         </SectionContent>
 

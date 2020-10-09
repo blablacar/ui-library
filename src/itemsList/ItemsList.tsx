@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import cc from 'classcat'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import { Divider } from '../divider'
+import { ContentDivider } from '../divider/contentDivider'
 import { ItemCheckboxProps } from '../itemCheckbox/ItemCheckbox'
 import { ItemChoiceProps } from '../itemChoice'
 import { ItemRadioProps } from '../itemRadio/ItemRadio'
@@ -52,7 +52,7 @@ export const ItemsList = (props: ItemsListProps) => {
         return (
           <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>
             {item}
-            {hasSeparator && <Divider />}
+            {hasSeparator && <ContentDivider />}
           </li>
         )
       })}

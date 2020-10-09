@@ -8,8 +8,8 @@ import { computeKeyFromPlace, ItineraryLocation } from '../_internals/itineraryL
 import { color } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Place } from '../_utils/place'
-import { BlankSeparator } from '../blankSeparator'
 import { Bullet, BulletTypes } from '../bullet'
+import { SpacingDivider } from '../divider/spacingDivider'
 import { SubHeader } from '../subHeader'
 import { Text, TextDisplayType, TextTagType } from '../text'
 
@@ -27,7 +27,17 @@ export type ItineraryProps = A11yProps &
     isCollapsible?: boolean
     collapsedLabel?: string
     collapsedAriaProps?: A11yProps
+    segments?: Array<Array<Place>>
   }>
+
+type StopoverProps = Readonly<{
+  isCollapsible?: boolean
+  intermediatePlaces: Array<Place>
+  collapsedLabel: string
+  collapsedAriaProps?: A11yProps
+  small: boolean
+  withTime: boolean
+}>
 
 interface RootA11yProps {
   'aria-label'?: string
@@ -59,6 +69,7 @@ const renderLocation = (
   small: boolean,
   withTime: boolean,
   hasBottomAddon: boolean,
+  displayConnection?: boolean,
 ) => {
   // if there's only one place, we display it as Arrival, not Departure
   if (places.length === 1 && !isArrival) {
@@ -74,6 +85,7 @@ const renderLocation = (
       hasTime={!small && withTime}
       hasSubLabel={!small && !isEmpty(place.subLabel)}
       hasBottomAddon={isArrival ? hasBottomAddon : false}
+      displayConnection={displayConnection}
     />
   )
 }
@@ -101,6 +113,44 @@ const renderAddon = (type: string, addon: string, ariaLabel: string) => {
   )
 }
 
+const renderStopover = ({
+  isCollapsible,
+  intermediatePlaces,
+  collapsedLabel,
+  collapsedAriaProps,
+  small,
+  withTime,
+}: StopoverProps) => {
+  if (isCollapsible) {
+    if (intermediatePlaces.length > STOPOVER_COUNT_TO_COLLAPSE_FROM) {
+      return (
+        <ItineraryCollapsible
+          places={intermediatePlaces}
+          label={collapsedLabel}
+          {...collapsedAriaProps}
+        />
+      )
+    }
+    return intermediatePlaces.map(place => (
+      <ItineraryLocation
+        place={place}
+        displaySubLabelOnly
+        isSmall
+        className="kirk-itineraryLocation-smallLabel"
+        key={`${computeKeyFromPlace(place)}`}
+      />
+    ))
+  }
+  return intermediatePlaces.map(place => (
+    <ItineraryLocation
+      place={place}
+      hasTime={!small && withTime}
+      hasSubLabel={!small && Boolean(place.subLabel)}
+      key={computeKeyFromPlace(place)}
+    />
+  ))
+}
+
 export const Itinerary = (props: ItineraryProps) => {
   const {
     className,
@@ -115,6 +165,7 @@ export const Itinerary = (props: ItineraryProps) => {
     isCollapsible = false,
     collapsedLabel,
     collapsedAriaProps,
+    segments,
   } = props
   const a11yAttrs = pickA11yProps<ItineraryProps>(props)
   // Add the small class if we don't have "time" to prevent empty content
@@ -130,7 +181,7 @@ export const Itinerary = (props: ItineraryProps) => {
       {isNonEmptyString(headline) && (
         <Fragment>
           <SubHeader>{headline}</SubHeader>
-          <BlankSeparator />
+          <SpacingDivider />
         </Fragment>
       )}
       <ul
@@ -142,37 +193,47 @@ export const Itinerary = (props: ItineraryProps) => {
         ])}
       >
         {renderAddon('from', fromAddon, fromAddonAriaLabel)}
-        {renderLocation(places, false, small, withTime, false)}
+        {isEmpty(segments) ? (
+          <Fragment>
+            {renderLocation(places, false, small, withTime, false)}
+            {renderStopover({
+              isCollapsible,
+              intermediatePlaces,
+              collapsedLabel,
+              collapsedAriaProps,
+              small,
+              withTime,
+            })}
+            {renderLocation(places, true, small, withTime, isNonEmptyString(toAddon))}
+          </Fragment>
+        ) : (
+          segments.map((segmentPlaces, index) => {
+            const segmentIntermediatePlaces = getIntermediatePlaces(segmentPlaces)
+            const displayConnection = segments.length !== index + 1
+            return (
+              <Fragment>
+                {renderLocation(segmentPlaces, false, small, withTime, false)}
+                {renderStopover({
+                  isCollapsible,
+                  intermediatePlaces: segmentIntermediatePlaces,
+                  collapsedLabel,
+                  collapsedAriaProps,
+                  small,
+                  withTime,
+                })}
+                {renderLocation(
+                  segmentPlaces,
+                  true,
+                  small,
+                  withTime,
+                  isNonEmptyString(toAddon),
+                  displayConnection,
+                )}
+              </Fragment>
+            )
+          })
+        )}
 
-        {isCollapsible &&
-          (intermediatePlaces.length > STOPOVER_COUNT_TO_COLLAPSE_FROM ? (
-            <ItineraryCollapsible
-              places={intermediatePlaces}
-              label={collapsedLabel}
-              {...collapsedAriaProps}
-            />
-          ) : (
-            intermediatePlaces.map(place => (
-              <ItineraryLocation
-                place={place}
-                displaySubLabelOnly
-                isSmall
-                className="kirk-itineraryLocation-smallLabel"
-                key={`${computeKeyFromPlace(place)}`}
-              />
-            ))
-          ))}
-
-        {!isCollapsible &&
-          intermediatePlaces.map(place => (
-            <ItineraryLocation
-              place={place}
-              hasTime={!small && withTime}
-              hasSubLabel={!small && Boolean(place.subLabel)}
-              key={computeKeyFromPlace(place)}
-            />
-          ))}
-        {renderLocation(places, true, small, withTime, isNonEmptyString(toAddon))}
         {renderAddon('to', toAddon, toAddonAriaLabel)}
       </ul>
     </div>

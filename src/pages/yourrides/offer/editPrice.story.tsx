@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../../../button'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { Itinerary } from '../../../itinerary'
 import { BottomContent, Content, MainContent } from '../../../layout/content'
 import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
@@ -53,7 +53,7 @@ class EditPrice extends Component<EditPriceProps, EditPriceState> {
         leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Marseilles' }]} />}
       />
 
-      <Divider />
+      <ContentDivider />
 
       <Stepper
         {...smallStepperProps}

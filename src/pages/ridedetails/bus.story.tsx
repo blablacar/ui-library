@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { Avatar } from '../../avatar'
-import { Divider } from '../../divider'
+import { ContentDivider } from '../../divider/contentDivider'
 import { ItemData } from '../../itemData'
 import { Itinerary } from '../../itinerary'
 import { BaseSection as Section } from '../../layout/section/baseSection'
@@ -48,7 +48,7 @@ stories.add('Default', () => (
         small={false}
       />
       <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
-      <Divider />
+      <ContentDivider />
       <ItemData
         mainInfo="BlaBlaBus"
         data={<Avatar image="http://placehold.it/144x144" alt="Bus Logo" />}

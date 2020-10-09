@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Divider } from '../divider'
+import { ContentDivider } from '../divider/contentDivider'
 import { TextCaption } from '../typography/caption'
 import { StyledBreadcrumb } from './Breadcrumb.style'
 
@@ -41,7 +41,7 @@ export const Breadcrumb = ({ crumbs }: BreadcrumbProps) => (
 
               {position < crumbs.length && (
                 <span role="separator" className="breadcrumb-separator">
-                  {' > '}
+                  {' › '}
                 </span>
               )}
             </TextCaption>
@@ -50,6 +50,6 @@ export const Breadcrumb = ({ crumbs }: BreadcrumbProps) => (
         )
       })}
     </StyledBreadcrumb>
-    <Divider />
+    <ContentDivider />
   </Fragment>
 )

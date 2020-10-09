@@ -1,6 +1,27 @@
 # Unreleased
 
-  [...]
+[...]
+
+- **[UPDATE]** Change separator character used in `Breadcrumb`
+
+# v41.1.0 (08/10/2020)
+
+- **[UPDATE]** Migrate `Stepper` to new mdx story format
+- **[FIX]** Set `label` as an optional field in `ItemRadio`
+
+# v41.0.0 (05/10/2020)
+
+- **[BREAKING CHANGE]** Rename `BlankSeparator` to `divider/spacingDivider`
+- **[BREAKING CHANGE]** Rename `Divider` to `divider/contentDivider`
+- **[NEW]** Create `divider/sectionDivider`
+- **[FIX]** Improved position of the title of `HeroSection`
+- **[BREAKING CHANGE]** Remove `ClassicHeroSection` variant of `HeroSection` and make `IllustrationHeroSection` the default case
+
+# v40.8.0 (02/10/2020)
+
+- **[UPDATE]** Update `Itinerary` to handle segments and connections
+- **[NEW]** Add `ConnectionIcon`
+- **[UPDATE]** Add `subText` to `TripCard`'s driver
 
 # v40.7.0 (01/10/2020)
 

@@ -44,31 +44,6 @@ export const bottomElement = (
   />
 )
 
-<Preview>
-  <Story name="Default">
-    <MediaSizeProvider>
-      <HeroSection
-        heroText={text(
-          'heroText',
-          'BlaBlaBus vous emmène à petit prix vers plus de 300 destinations.',
-          'Default',
-        )}
-        heroImageUrl={text(
-          'heroImageUrl',
-          'https://cdn.blablacar.com/kairos/assets/build/images/hero_home_large-6dc40c07f51bd669fca3ce7719826f02.jpg',
-          'Default',
-        )}
-        bottomElement={bottomElement}
-      />
-    </MediaSizeProvider>
-  </Story>
-</Preview>
-
-## Variant for illustrations
-
-It is possible to render the component with an alternative layout more suitable for illustrations.
-Instead of using the prop `heroImageUrl`, provide `heroImageUrlSmall` and `heroImageUrlLarge`.
-
 export const ILLUSTRATIONS = {
   'carpool-bla-bla-bus': {
     large: carpoolBlaBlaBusLarge,
@@ -91,7 +66,7 @@ export const ILLUSTRATIONS = {
 export const Component = ({ content }) => content()
 
 <Preview>
-  <Story name="Illustrations">
+  <Story name="Default">
     <Component
       content={() => {
         const illustration = select(
@@ -120,12 +95,7 @@ export const Component = ({ content }) => content()
 ## Usage
 
 ```jsx
-import {
-  HeroSection,
-  HeroSectionProps,
-  ClassicHeroSectionProps,
-  IllustrationHeroSectionProps,
-} from '@blablacar/ui-library/build/heroSection'
+import { HeroSection, HeroSectionProps } from '@blablacar/ui-library/build/heroSection'
 ```
 
 <Props of={HeroSection} />

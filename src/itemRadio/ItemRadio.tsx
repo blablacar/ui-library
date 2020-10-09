@@ -22,7 +22,7 @@ export type ItemRadioProps = A11yProps &
     value: string | number
     leftAddon?: React.ReactNode
     labelTitle?: string
-    label: string
+    label?: string
     data?: string
     dataInfo?: string
     checked?: boolean

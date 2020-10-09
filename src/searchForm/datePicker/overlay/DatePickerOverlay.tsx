@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { Item } from '../../../_internals/item'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { CalendarIcon } from '../../../icon/calendarIcon'
 
 export type DatePickerOverlayProps = Omit<
@@ -26,7 +26,7 @@ export const DatePickerOverlay = ({
   <div className={cc(['kirk-datePickerOverlay', className])}>
     <Item leftAddon={<CalendarIcon />} leftTitle={title} />
 
-    <Divider />
+    <ContentDivider />
 
     {renderDatePickerComponent({
       ...props,

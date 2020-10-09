@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { Item } from '../../../_internals/item'
 import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { ChevronIcon } from '../../../icon/chevronIcon'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
@@ -35,7 +35,7 @@ export const DatePickerSection = ({
           onClick={onClose}
         />
 
-        <Divider />
+        <ContentDivider />
 
         {renderDatePickerComponent({
           ...props,

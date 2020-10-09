@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { Button, ButtonStatus } from '../../../button'
-import { Divider } from '../../../divider'
+import { ContentDivider } from '../../../divider/contentDivider'
 import { ComfortIcon } from '../../../icon/comfortIcon'
 import { LadyIcon } from '../../../icon/ladyIcon'
 import { LightningIcon } from '../../../icon/lightningIcon'
@@ -63,7 +63,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
               />
             </div>
 
-            <Divider />
+            <ContentDivider />
 
             <ItemCheckbox
               onChange={() =>
@@ -99,7 +99,7 @@ class EditOptions extends Component<{}, EditOptionsState> {
               name="instant"
             />
 
-            <Divider />
+            <ContentDivider />
             <ItemInfo mainTitle="Additional details" id="textarea-label" />
             <Textarea
               placeholder="Flexible about where and when to meet? Not taking the motorway? Got limited space in your boot? Keep passengers in the loop."

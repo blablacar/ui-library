@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { color } from '../../_utils/branding'
 import { RideAxis } from '../../_utils/rideAxis'
 import { Avatar } from '../../avatar'
-import { Divider } from '../../divider'
+import { ContentDivider } from '../../divider/contentDivider'
 import { BubbleIcon } from '../../icon/bubbleIcon'
 import { PetIcon } from '../../icon/pet'
 import { SmokeIcon } from '../../icon/smokeIcon'
@@ -50,19 +50,19 @@ stories.add('Default', () => (
     </Section>
     <Section noHorizontalSpacing>
       <ItemData data="17,50 €" mainInfo="Prix total pour 1 passager" />
-      <Divider />
+      <ContentDivider />
       <ItemChoice label="Vince" rightAddon={<Avatar />} href="#" />
       <ItemAction
         action="Contacter Vince"
         leftAddon={<BubbleIcon iconColor={color.blue} />}
         href="#"
       />
-      <Divider />
+      <ContentDivider />
       <ul>
         <ItemInfo mainInfo="Fumer nest pas autporisé dans la voiture." icon={<SmokeIcon />} />
         <ItemInfo mainInfo="Pas d'animaux dans la voiture." icon={<PetIcon />} />
       </ul>
-      <Divider />
+      <ContentDivider />
     </Section>
     <Section>
       <SubHeader>Passagers</SubHeader>
@@ -82,7 +82,7 @@ stories.add('Default', () => (
           href="#"
         />
       </ul>
-      <Divider />
+      <ContentDivider />
       <ItemAction action="Signaler ce trajet" href="#" />
     </Section>
   </Fragment>

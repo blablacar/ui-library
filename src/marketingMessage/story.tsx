@@ -2,8 +2,8 @@ import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 
-import { BlankSeparator, BlankSeparatorSize } from '../blankSeparator'
 import { Button } from '../button'
+import { SpacingDivider, SpacingDividerSize } from '../divider/spacingDivider'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { MarketingMessage } from '../marketingMessage'
 import { SubHeader } from '../subHeader'
@@ -21,7 +21,7 @@ stories.add('Basic message', () => (
         This is a simple multiline marketing message.
         {longContent}
       </Text>
-      <BlankSeparator size={BlankSeparatorSize.LARGE} />
+      <SpacingDivider size={SpacingDividerSize.LARGE} />
       <div style={{ textAlign: 'center' }}>
         <Button>Marketing button</Button>
       </div>

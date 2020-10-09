@@ -8,4 +8,5 @@ export interface Place {
   distanceFromPoint?: string
   href?: string | JSX.Element
   key?: string
+  connectionLabel?: string
 }

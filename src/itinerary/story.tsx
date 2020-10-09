@@ -25,6 +25,34 @@ const places = [
     stepAriaLabel: 'Dropoff location',
     mainLabel: 'Gare Bordeaux Saint-Jean',
     subLabel: 'Bordeaux',
+    href: '#',
+    connectionLabel: 'Change of vehicle',
+  },
+]
+
+const places2 = [
+  {
+    time: '15:00',
+    isoDate: '2017-12-11T15:00',
+    stepAriaLabel: 'Pickup location',
+    mainLabel: 'Gare Bordeaux Saint-Jean',
+    subLabel: 'Bordeaux',
+  },
+  {
+    time: '16:00',
+    isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: "Gare d'Agen",
+    subLabel: 'Agen',
+  },
+  {
+    time: '19:00',
+    isoDate: '2017-12-11T19:00',
+    stepAriaLabel: 'Dropoff location',
+    mainLabel: 'Gare De Toulouse',
+    subLabel: 'Toulouse',
+    href: '#',
+    actionAriaLabel: '19:00 Gare De Toulouse (New page with a map)',
   },
 ]
 const placesWithOneStopover = [
@@ -44,7 +72,6 @@ const placesWithOneStopover = [
     mainLabel: 'Gare de Tours',
     subLabel: 'Tours',
     actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
-    href: '#',
   },
   {
     time: '19:00',
@@ -52,6 +79,7 @@ const placesWithOneStopover = [
     stepAriaLabel: 'Pick up/drop off location',
     mainLabel: 'Gare Bordeaux Saint-Jean',
     subLabel: 'Bordeaux',
+    href: '#',
   },
 ]
 
@@ -190,17 +218,46 @@ stories.add('with stopovers', () => {
   const headline = text('Headline', 'Mon 11 December')
   const highlightRoad = boolean('Highlight road', true)
   return (
-    <Itinerary
-      aria-label={ariaLabel}
-      fromAddon={fromAddon}
-      fromAddonAriaLabel={fromAddonLabel}
-      toAddon={toAddon}
-      toAddonAriaLabel={toAddonLabel}
-      places={placesWithStopovers}
-      small={boolean('small', false)}
-      headline={headline}
-      highlightRoad={highlightRoad}
-    />
+    <Section>
+      <Itinerary
+        aria-label={ariaLabel}
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={placesWithStopovers}
+        small={boolean('small', false)}
+        headline={headline}
+        highlightRoad={highlightRoad}
+      />
+    </Section>
+  )
+})
+
+stories.add('with segments and stopovers', () => {
+  const ariaLabel = text('ariaLabel', 'Ride plan')
+  const fromAddon = text('From addon', 'Lille')
+  const fromAddonLabel = text('From addon label', 'Driver departure')
+  const toAddon = text('To addon', 'Biarritz')
+  const toAddonLabel = text('To addon label', 'Driver arrival')
+  const headline = text('Headline', 'Mon 11 December')
+  const highlightRoad = boolean('Highlight road', true)
+  return (
+    <Section>
+      <Itinerary
+        aria-label={ariaLabel}
+        fromAddon={fromAddon}
+        fromAddonAriaLabel={fromAddonLabel}
+        toAddon={toAddon}
+        toAddonAriaLabel={toAddonLabel}
+        places={placesWithStopovers}
+        segments={[places, places2]}
+        small={boolean('small', false)}
+        headline={headline}
+        highlightRoad={highlightRoad}
+        isCollapsible
+      />
+    </Section>
   )
 })
 
