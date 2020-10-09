@@ -23,6 +23,6 @@ describe('Breadcrumb', () => {
   it('renders with 2 links and a separator', () => {
     render(<Breadcrumb crumbs={[crumb1, crumb2]} />)
     expect(screen.getAllByRole('listitem')).toHaveLength(2)
-    expect(screen.getByRole('list')).toHaveTextContent('Fhtagn > Cthulhu')
+    expect(screen.getByRole('list')).toHaveTextContent('Fhtagn › Cthulhu')
   })
 })

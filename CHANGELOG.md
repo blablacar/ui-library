@@ -2,6 +2,8 @@
 
 [...]
 
+- **[UPDATE]** Change separator character used in `Breadcrumb`
+
 # v41.1.0 (08/10/2020)
 
 - **[UPDATE]** Migrate `Stepper` to new mdx story format
