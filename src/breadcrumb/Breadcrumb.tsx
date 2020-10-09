@@ -41,7 +41,7 @@ export const Breadcrumb = ({ crumbs }: BreadcrumbProps) => (
 
               {position < crumbs.length && (
                 <span role="separator" className="breadcrumb-separator">
-                  {' > '}
+                  {' › '}
                 </span>
               )}
             </TextCaption>
