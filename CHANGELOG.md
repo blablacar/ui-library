@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Create `TextFieldsSection` to enable multiple `TextField` in the same row
 [...]
+
+# v41.3.0 (12/10/2020)
+
+- **[NEW]** Create `TextFieldsSection` to enable multiple `TextField` in the same row
 
 # v41.2.0 (12/10/2020)
 
