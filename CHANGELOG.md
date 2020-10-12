@@ -1,7 +1,7 @@
 # Unreleased
 
 [...]
-
+- **[UPDATE]** Add `spellCheck` prop to `TextField` type
 - **[UPDATE]** Change separator character used in `Breadcrumb`
 
 # v41.1.0 (08/10/2020)

@@ -40,6 +40,7 @@ export type CommonFormFields = Readonly<{
   maxLength?: number
   autoCorrect?: 'on' | 'off'
   autoComplete?: string
+  spellCheck?: 'true' | 'false'
   disabled?: boolean
   readOnly?: boolean
   autoFocus?: boolean
