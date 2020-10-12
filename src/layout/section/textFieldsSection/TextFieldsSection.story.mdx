@@ -1,0 +1,40 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { TextField } from '../../../textField'
+import { TextFieldsSection } from './index'
+
+
+<Meta title="Sections|TextFieldsSection" />
+
+# ** TextFieldsSection **
+
+<Preview>
+  <Story name="Default">
+    <TextFieldsSection>
+        <TextField
+          name="firstInputSecondRow"
+          placeholder="In-section input"
+          onChange={() => null}
+        />
+        <TextField
+          name="secondInputSecondRow"
+          placeholder="In-section input"
+          onChange={() => null}
+        />
+    </TextFieldsSection>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextFieldsSection } from '@blablacar/ui-library/build/layout/section/textFieldsSection'
+import { TextField } from '@blablacar/ui-library/build/textField'
+
+<TextFieldsSection>
+    <TextField />
+    <TextField />
+</TextFieldsSection>
+```
+
+<Props of={TextFieldsSection} />
