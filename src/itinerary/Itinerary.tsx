@@ -168,8 +168,13 @@ export const Itinerary = (props: ItineraryProps) => {
     segments,
   } = props
   const a11yAttrs = pickA11yProps<ItineraryProps>(props)
+
+  let withTime = true
   // Add the small class if we don't have "time" to prevent empty content
-  const withTime = places.filter(p => !isEmpty(p.time)).length > 0
+  // This is a quick fix and only applies for places prop not for segments.
+  if (!isEmpty(places)) {
+    withTime = places.filter(p => !isEmpty(p.time)).length > 0
+  }
 
   // Remove aria-labelledby attribute if aria-label already used
   const rootA11yProps = computeRootA11yProps(a11yAttrs['aria-label'], a11yAttrs['aria-labelledby'])

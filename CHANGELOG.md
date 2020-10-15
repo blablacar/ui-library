@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[FIX]** Always display time in Itinerary` with segments
 
 # v41.3.0 (12/10/2020)
 
@@ -10,7 +10,7 @@
 
 - **[UPDATE]** Add `spellCheck` prop to `TextField` type
 - **[UPDATE]** Change separator character used in `Breadcrumb`
-- **[UPDATE]** Update credit card icon to squared icon 
+- **[UPDATE]** Update credit card icon to squared icon
 
 # v41.1.0 (08/10/2020)
 
