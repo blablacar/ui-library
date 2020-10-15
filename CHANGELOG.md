@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v41.3.1 (15/10/2020)
+
 - **[FIX]** Always display time in Itinerary` with segments
 
 # v41.3.0 (12/10/2020)
