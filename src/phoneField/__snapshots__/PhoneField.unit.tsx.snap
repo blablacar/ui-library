@@ -153,6 +153,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   text-align: left;
   min-width: inherit;
   min-height: inherit;
+  height: auto;
 }
 
 .c4[disabled] {

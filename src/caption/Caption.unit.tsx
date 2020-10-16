@@ -5,7 +5,7 @@ import { mount, shallow } from 'enzyme'
 import { renderSecondary } from './Caption'
 import { Caption } from './index'
 
-it('Should have the proper text & attributes with link', () => {
+it('Should have the proper text & attributes with href link', () => {
   const caption = mount(
     <Caption
       href="https://blablacar.com"
@@ -21,6 +21,16 @@ it('Should have the proper text & attributes with link', () => {
   expect(caption.find('span')).toHaveLength(1)
   expect(caption.find('a')).toHaveLength(1)
   expect(caption.find('a').prop('href')).toBe('https://blablacar.com')
+})
+
+it('Should have the proper text & attributes with onClick link', () => {
+  const caption = mount(
+    <Caption onClick={jest.fn()} secondaryText="Go to blablacar" isoDate="2017-08-07T14:10:40.526Z">
+      08th August 2017
+    </Caption>,
+  )
+  expect(caption.find('button')).toHaveLength(1)
+  expect(caption.find('button').prop('onClick')).toEqual(expect.any(Function))
 })
 
 it('Should not have a datetime attribute', () => {

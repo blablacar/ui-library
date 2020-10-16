@@ -108,6 +108,7 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
   text-align: left;
   min-width: inherit;
   min-height: inherit;
+  height: auto;
 }
 
 .c0[disabled] {

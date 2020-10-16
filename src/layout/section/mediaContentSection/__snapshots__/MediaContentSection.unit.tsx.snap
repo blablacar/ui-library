@@ -72,6 +72,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   text-align: left;
   min-width: inherit;
   min-height: inherit;
+  height: auto;
 }
 
 .c6[disabled] {
@@ -513,6 +514,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
   text-align: left;
   min-width: inherit;
   min-height: inherit;
+  height: auto;
 }
 
 .c6[disabled] {

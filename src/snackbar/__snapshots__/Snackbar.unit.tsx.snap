@@ -92,6 +92,7 @@ exports[`Snackbar should not have changed 1`] = `
   text-align: left;
   min-width: inherit;
   min-height: inherit;
+  height: auto;
 }
 
 .c3[disabled] {

@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[NEW]** Add support for onClick handler for `Caption` link.
+- **[NEW]** Add support for replyLinkOnClick handler for `Review` reply link.
+- **[FIX]** Fix `Button` height when using an HTML unstyled button.
 [...]
 
 # v41.3.1 (15/10/2020)

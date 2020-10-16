@@ -35,14 +35,26 @@ export const reviewProps = {
   </Story>
 </Preview>
 
-## With reply link
+## With href reply link
 
 <Preview>
   <Story name="withReplyLink">
     <Review
       {...reviewProps}
       replyLinkLabel="Reply to ratings"
-      replyLinkHref={<a href="/edit_ratings">edit_ratings</a>}
+      replyLinkHref={<a target="_blank" href="/reply_ratings">edit_ratings</a>}
+    />
+  </Story>
+</Preview>
+
+## With onClick reply link
+
+<Preview>
+  <Story name="withOnClickLink">
+    <Review
+      {...reviewProps}
+      replyLinkLabel="Reply to ratings"
+      replyLinkOnClick={() => { window.alert('Click!') }}
     />
   </Story>
 </Preview>
