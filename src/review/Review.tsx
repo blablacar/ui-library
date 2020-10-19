@@ -15,6 +15,7 @@ export type ReviewProps = Readonly<{
   isoDatetime: string
   replyLinkLabel?: string
   replyLinkHref?: string | JSX.Element
+  replyLinkOnClick?: (event: React.MouseEvent<HTMLElement>) => void
 }>
 
 export const Review = (props: ReviewProps) => {
@@ -27,6 +28,7 @@ export const Review = (props: ReviewProps) => {
     isResponse = false,
     replyLinkLabel,
     replyLinkHref,
+    replyLinkOnClick,
   } = props
 
   // For responses, the title is not a rating but the name of the person replying.
@@ -45,10 +47,11 @@ export const Review = (props: ReviewProps) => {
       }
 
   const replyLinkProps =
-    replyLinkLabel && replyLinkHref
+    replyLinkLabel && (replyLinkHref || replyLinkOnClick)
       ? {
           secondaryText: replyLinkLabel,
           href: replyLinkHref,
+          onClick: replyLinkOnClick,
         }
       : {}
 

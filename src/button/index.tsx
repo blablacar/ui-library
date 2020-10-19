@@ -65,6 +65,7 @@ const StyledButton = styled(Button)`
     text-align: left;
     min-width: inherit;
     min-height: inherit;
+    height: auto;
   }
 
   &[disabled] {
