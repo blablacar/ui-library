@@ -5,6 +5,8 @@ import { Grip } from '../../../grip'
 import { GRIP_HANDLE_HEIGHT } from '../../../grip/GripHandle'
 import { StyledSlideLayout, StyledSlidePanel } from './SlideSection.style'
 
+const SMALL_SCREEN_BREAKPOINT = 450
+
 export enum SlideSectionPosition {
   DEFAULT = 'default',
   REDUCED = 'reduced',
@@ -33,10 +35,20 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   const reducedContentRef = useRef(null)
   const layoutRef = useRef(null)
 
+  const isScreenTooSmall =
+    layoutRef.current && layoutRef.current.clientHeight <= SMALL_SCREEN_BREAKPOINT
+  useEffect(() => {
+    if (isScreenTooSmall && position === SlideSectionPosition.DEFAULT) {
+      setPosition(SlideSectionPosition.EXPANDED)
+    }
+  }, [position, isScreenTooSmall])
+
   const slideUp = useCallback(() => {
     if (position === SlideSectionPosition.DEFAULT) {
       setPosition(SlideSectionPosition.EXPANDED)
-    } else if (position === SlideSectionPosition.REDUCED) {
+    } else if (position === SlideSectionPosition.REDUCED && isScreenTooSmall) {
+      setPosition(SlideSectionPosition.EXPANDED)
+    } else if (position === SlideSectionPosition.REDUCED && !isScreenTooSmall) {
       setPosition(SlideSectionPosition.DEFAULT)
     }
     setFingerOffset(0)
@@ -45,7 +57,9 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   const slideDown = useCallback(() => {
     if (position === SlideSectionPosition.DEFAULT) {
       setPosition(SlideSectionPosition.REDUCED)
-    } else if (position === SlideSectionPosition.EXPANDED) {
+    } else if (position === SlideSectionPosition.EXPANDED && isScreenTooSmall) {
+      setPosition(SlideSectionPosition.REDUCED)
+    } else if (position === SlideSectionPosition.EXPANDED && !isScreenTooSmall) {
       setPosition(SlideSectionPosition.DEFAULT)
     }
     setFingerOffset(0)
@@ -67,7 +81,8 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   const [expandedHeight, setExpandedHeight] = useState<number>(0)
   useEffect(() => {
     // Reduced height is the height of reducedContent element + GripHandle height
-    const reducedContentHeight = reducedContentRef.current.clientHeight
+    // On small screen, we only show a 48px height element for touch control
+    const reducedContentHeight = isScreenTooSmall ? 16 : reducedContentRef.current.clientHeight
     setMinimalHeight(reducedContentHeight + GRIP_HANDLE_HEIGHT)
 
     // Default height is 50% of media height
