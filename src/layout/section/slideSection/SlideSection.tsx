@@ -71,7 +71,15 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   }, [])
 
   // Methods to manually set the panel position from other components
-  const setDefaultPosition = useRef(() => setPosition(SlideSectionPosition.DEFAULT))
+  const setDefaultPosition = useRef(() => {
+    if (isScreenTooSmall && position === SlideSectionPosition.EXPANDED) {
+      setPosition(SlideSectionPosition.REDUCED)
+    } else if (isScreenTooSmall && position === SlideSectionPosition.REDUCED) {
+      setPosition(SlideSectionPosition.EXPANDED)
+    } else {
+      setPosition(SlideSectionPosition.DEFAULT)
+    }
+  })
   const setReducedPosition = useRef(() => setPosition(SlideSectionPosition.REDUCED))
   const setExpandedPosition = useRef(() => setPosition(SlideSectionPosition.EXPANDED))
 
@@ -82,7 +90,9 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
   useEffect(() => {
     // Reduced height is the height of reducedContent element + GripHandle height
     // On small screen, we only show a 48px height element for touch control
-    const reducedContentHeight = isScreenTooSmall ? 16 : reducedContentRef.current.clientHeight
+    const reducedContentHeight = isScreenTooSmall
+      ? GRIP_HANDLE_HEIGHT
+      : reducedContentRef.current.clientHeight
     setMinimalHeight(reducedContentHeight + GRIP_HANDLE_HEIGHT)
 
     // Default height is 50% of media height
