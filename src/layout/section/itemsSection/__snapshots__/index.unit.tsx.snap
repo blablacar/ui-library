@@ -226,7 +226,7 @@ button:focus:not(.focus-visible).c2 {
   role="presentation"
 >
   <div
-    className="section-content kirk-items-section-content"
+    className="section-content kirk-items-section-content section-content--noHorizontalSpacing"
   >
     <div
       className="kirk-item c2"
@@ -494,7 +494,7 @@ button:focus:not(.focus-visible).c2 {
   role="presentation"
 >
   <div
-    className="section-content kirk-items-section-content"
+    className="section-content kirk-items-section-content section-content--noHorizontalSpacing"
   >
     <div
       className="kirk-item c2"

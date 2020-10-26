@@ -1,6 +1,6 @@
 # Unreleased
 
-- **[UPDATE]** Add noHorizontalSpacing props on ItemsSection component
+- **[UPDATE]** Remove horizontal spacing on ItemsSection component
   [...]
 
 - **[FIX]** Fixed `ConnectionIcon` spacing on `Itinerary`

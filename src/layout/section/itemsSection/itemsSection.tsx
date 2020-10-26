@@ -6,7 +6,6 @@ import { BaseSection } from '../../../layout/section/baseSection'
 export type ItemsSectionProps = Readonly<{
   children: React.ReactElement<ItemInfoProps>[]
   className?: string
-  noHorizontalSpacing?: boolean
   tag?: JSX.Element
 }>
 
@@ -15,14 +14,14 @@ export type ItemsSectionProps = Readonly<{
  * Use with two items.
  */
 export const ItemsSection = (props: ItemsSectionProps) => {
-  const { className, children, noHorizontalSpacing, tag = <div /> } = props
+  const { className, children, tag = <div /> } = props
 
   return (
     <BaseSection
       tagName={tag.type}
       className={className}
       contentClassName="kirk-items-section-content"
-      noHorizontalSpacing={noHorizontalSpacing}
+      noHorizontalSpacing
     >
       {children}
     </BaseSection>
