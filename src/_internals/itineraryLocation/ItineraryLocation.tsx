@@ -180,7 +180,7 @@ export const ItineraryLocation = ({
           {renderLabel(place.mainLabel, place.subLabel)}
           {displayConnection && (
             <div className="kirk-itineraryLocation-connection">
-              <ConnectionIcon />
+              <ConnectionIcon className="kirk-itineraryLocation-connectionIcon" />
               <TextCaption>{place.connectionLabel}</TextCaption>
             </div>
           )}
