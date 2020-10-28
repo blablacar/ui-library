@@ -71,6 +71,10 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
     margin-right: ${space.s};
   }
 
+  & .kirk-itineraryLocation-connection .kirk-itineraryLocation-connectionIcon {
+    margin-right: ${space.s};
+  }
+
   & .kirk-itineraryLocation-label-text {
     text-overflow: ellipsis;
     overflow: hidden;

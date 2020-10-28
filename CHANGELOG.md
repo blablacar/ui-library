@@ -2,6 +2,7 @@
 
 [...]
 
+- **[FIX]** Fixed `ConnectionIcon` spacing on `Itinerary`
 - **[UPDATE]** `SlideSection` behavior changed for small screens
 
 # v41.4.0 (19/10/2020)
