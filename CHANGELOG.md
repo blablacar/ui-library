@@ -1,8 +1,10 @@
 # Unreleased
 
-- **[UPDATE]** Remove horizontal spacing on ItemsSection component
-  [...]
+[...]
 
+# v41.5.0 (29/10/2020)
+
+- **[UPDATE]** Remove horizontal spacing on ItemsSection component
 - **[FIX]** Fixed `ConnectionIcon` spacing on `Itinerary`
 - **[UPDATE]** `SlideSection` behavior changed for small screens
 
