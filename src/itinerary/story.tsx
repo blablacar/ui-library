@@ -20,6 +20,20 @@ const places = [
     href: '#',
   },
   {
+    time: '10:00',
+    isoDate: '2017-12-11T10:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: 'Poitiers',
+    subLabel: 'Poitiers',
+  },
+  {
+    time: '11:00',
+    isoDate: '2017-12-11T10:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: 'Angouleme',
+    subLabel: 'Angouleme',
+  },
+  {
     time: '15:00',
     isoDate: '2017-12-11T15:00',
     stepAriaLabel: 'Dropoff location',
@@ -42,8 +56,29 @@ const places2 = [
     time: '16:00',
     isoDate: '2017-12-11T12:00',
     stepAriaLabel: 'Stopover',
-    mainLabel: "Gare d'Agen",
-    subLabel: 'Agen',
+    mainLabel: 'Agen',
+    subLabel: "Gare d'Agen",
+  },
+  {
+    time: '16:00',
+    isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: 'Agen',
+    subLabel: "Hotel de ville d'Agen",
+  },
+  {
+    time: '17:00',
+    isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: 'Langon',
+    subLabel: 'Langon Hotel de ville',
+  },
+  {
+    time: '16:00',
+    isoDate: '2017-12-11T12:00',
+    stepAriaLabel: 'Stopover',
+    mainLabel: 'Langon',
+    subLabel: 'Gare de Langon',
   },
   {
     time: '19:00',
@@ -251,6 +286,7 @@ stories.add('with segments and stopovers', () => {
         toAddon={toAddon}
         toAddonAriaLabel={toAddonLabel}
         places={[]}
+        segmentCollapsedLabels={['2 stops', '4 stops']}
         segments={[places, places2]}
         small={boolean('small', false)}
         headline={headline}

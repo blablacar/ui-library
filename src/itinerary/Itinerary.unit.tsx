@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
+import { render, screen } from '@testing-library/react'
+
 import { ItineraryCollapsible } from '../_internals/itineraryCollapsible'
 import { ItineraryLocation } from '../_internals/itineraryLocation'
 import { Proximity } from '../proximity'
@@ -151,6 +153,28 @@ describe('Itinerary component', () => {
 
       const itinerary = shallow(<Itinerary places={placesWithMultipleStopover} isCollapsible />)
       expect(itinerary.find(ItineraryCollapsible).exists()).toBe(true)
+    })
+
+    it('should render ItineraryCollapsible when more than 1 stopover', () => {
+      const placesWithMultipleStopover = [
+        ...places,
+        {
+          time: '12:00',
+          isoDate: '2017-12-11T12:00',
+          stepAriaLabel: 'Pick up/drop off location',
+          mainLabel: 'Tours',
+        },
+      ]
+
+      render(
+        <Itinerary
+          segments={[placesWithMultipleStopover, placesWithMultipleStopover]}
+          segmentCollapsedLabels={['2 stops', '3 stops']}
+          isCollapsible
+        />,
+      )
+      expect(screen.getByText('2 stops')).toBeInTheDocument()
+      expect(screen.getByText('3 stops')).toBeInTheDocument()
     })
   })
 })
