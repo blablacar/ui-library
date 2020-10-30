@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v41.6.0 (30/10/2020)
+
 - **[UPDATE]** Added new prop `segmentCollapsedLabels` on `Itinerary` to show the correct number of stopovers per segment
 
 # v41.5.0 (29/10/2020)
