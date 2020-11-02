@@ -1,14 +1,70 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { RideAxis } from '_utils/rideAxis'
 
 import { MessagingSummaryItem } from './index'
 
-<Meta title="MessagingSummaryItem" />
+export const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
+
+<Meta title="Items|MessagingSummaryItem" />
 
 # **MessagingSummaryItem**
 
 <Preview>
-  <Story name="Default">
-    <MessagingSummaryItem />
+  <Story name="Unread messages">
+    <MessagingSummaryItem
+      url="http://blablacar.com"
+      pictureUrl={pictureUrl}
+      label="Label"
+      subLabel="A long sub label here"
+      timeLabel="4 hours ago"
+      hasUnreadMessages
+    />
+  </Story>
+</Preview>
+
+### All messages read
+
+<Preview>
+  <Story name="All messages read">
+    <MessagingSummaryItem
+      url="http://blablacar.com"
+      pictureUrl={pictureUrl}
+      label="Label"
+      subLabel="A long sub label here"
+      timeLabel="3 hours ago"
+      hasUnreadMessages={false}
+    />
+  </Story>
+</Preview>
+
+### SubLabel as a Component
+
+<Preview>
+  <Story name="SubLabel as a Component">
+    <MessagingSummaryItem
+      url="http://blablacar.com"
+      pictureUrl={pictureUrl}
+      label="Label"
+      subLabel={<RideAxis from="Paris" to="Cologne Bonn Airport, Köln" />}
+      timeLabel="3 hours ago"
+      hasUnreadMessages
+    />
+  </Story>
+</Preview>
+
+### SubLabel as Text
+
+<Preview>
+  <Story name="SubLabel as Text">
+    <MessagingSummaryItem
+      url="http://blablacar.com"
+      pictureUrl={pictureUrl}
+      label="Lorem ipsum dolor sit amet"
+      subLabel="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      timeLabel="3 hours ago"
+      hasUnreadMessages
+    />
   </Story>
 </Preview>
 
@@ -17,9 +73,16 @@ import { MessagingSummaryItem } from './index'
 ## Usage
 
 ```jsx
-import { MessagingSummaryItem } from '@blablacar/ui-library/build/MessagingSummaryItem'
+import { MessagingSummaryItem } from '@blablacar/ui-library/build/messagingSummaryItem'
 
-<MessagingSummaryItem />
+<MessagingSummaryItem
+  url="http://blablacar.com"
+  pictureUrl="../img/pic.svg"
+  label="Label"
+  subLabel="A long sub label here"
+  timeLabel="3 hours ago"
+  hasUnreadMessages={false}
+/>
 ```
 
 <Props of={MessagingSummaryItem} />
