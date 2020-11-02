@@ -2,6 +2,13 @@
 
 [...]
 
+# v41.6.0 (30/10/2020)
+
+- **[UPDATE]** Added new prop `segmentCollapsedLabels` on `Itinerary` to show the correct number of stopovers per segment
+
+# v41.5.0 (29/10/2020)
+
+- **[UPDATE]** Remove horizontal spacing on ItemsSection component
 - **[FIX]** Fixed `ConnectionIcon` spacing on `Itinerary`
 - **[UPDATE]** `SlideSection` behavior changed for small screens
 

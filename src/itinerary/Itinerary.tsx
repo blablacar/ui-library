@@ -15,7 +15,7 @@ import { Text, TextDisplayType, TextTagType } from '../text'
 
 export type ItineraryProps = A11yProps &
   Readonly<{
-    places: Place[]
+    places?: Place[]
     className?: string
     fromAddon?: string
     toAddon?: string
@@ -26,6 +26,7 @@ export type ItineraryProps = A11yProps &
     highlightRoad?: boolean
     isCollapsible?: boolean
     collapsedLabel?: string
+    segmentCollapsedLabels?: Array<string>
     collapsedAriaProps?: A11yProps
     segments?: Array<Array<Place>>
   }>
@@ -154,7 +155,7 @@ const renderStopover = ({
 export const Itinerary = (props: ItineraryProps) => {
   const {
     className,
-    places,
+    places = [],
     fromAddon,
     toAddon,
     fromAddonAriaLabel,
@@ -166,6 +167,7 @@ export const Itinerary = (props: ItineraryProps) => {
     collapsedLabel,
     collapsedAriaProps,
     segments,
+    segmentCollapsedLabels,
   } = props
   const a11yAttrs = pickA11yProps<ItineraryProps>(props)
 
@@ -221,7 +223,7 @@ export const Itinerary = (props: ItineraryProps) => {
                 {renderStopover({
                   isCollapsible,
                   intermediatePlaces: segmentIntermediatePlaces,
-                  collapsedLabel,
+                  collapsedLabel: segmentCollapsedLabels[index],
                   collapsedAriaProps,
                   small,
                   withTime,

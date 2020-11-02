@@ -21,6 +21,7 @@ export const ItemsSection = (props: ItemsSectionProps) => {
       tagName={tag.type}
       className={className}
       contentClassName="kirk-items-section-content"
+      noHorizontalSpacing
     >
       {children}
     </BaseSection>
