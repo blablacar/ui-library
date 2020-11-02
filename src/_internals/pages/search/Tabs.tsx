@@ -1,23 +1,19 @@
 import React, { Fragment } from 'react'
-import { boolean } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
-import { Item } from '../../_internals/item'
-import { Button, ButtonStatus } from '../../button'
-import { Disclaimer } from '../../disclaimer'
-import { SpacingDivider } from '../../divider/spacingDivider'
-import { BusIcon } from '../../icon/busIcon'
-import { CarpoolIcon } from '../../icon/carpoolIcon'
-import { LayoutNormalizer } from '../../layout/layoutNormalizer'
-import { BaseSection as Section } from '../../layout/section/baseSection'
-import { CardsSection } from '../../layout/section/cardsSection'
-import { TabsSection } from '../../layout/section/tabsSection'
-import { SearchRecap } from '../../searchRecap'
-import { SubHeader } from '../../subHeader'
-import { TabStatus } from '../../tabs'
-import { TripCard } from '../../tripCard'
-
-const stories = storiesOf('Pages|Search results/With tabs', module)
+import { Item } from '../../../_internals/item'
+import { Button, ButtonStatus } from '../../../button'
+import { Disclaimer } from '../../../disclaimer'
+import { SpacingDivider } from '../../../divider/spacingDivider'
+import { BusIcon } from '../../../icon/busIcon'
+import { CarpoolIcon } from '../../../icon/carpoolIcon'
+import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
+import { BaseSection as Section } from '../../../layout/section/baseSection'
+import { CardsSection } from '../../../layout/section/cardsSection'
+import { TabsSection } from '../../../layout/section/tabsSection'
+import { SearchRecap } from '../../../searchRecap'
+import { SubHeader } from '../../../subHeader'
+import { TabStatus } from '../../../tabs'
+import { TripCard } from '../../../tripCard'
 
 const createTripCardConfig = ({ highlighted = false } = {}) => ({
   href: '/',
@@ -113,9 +109,9 @@ const defaultTabsConfig = {
   ],
 }
 
-stories.add('Default', () => (
+export const Tabs = (): JSX.Element => (
   <Fragment>
-    <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
+    <LayoutNormalizer useLegacyNormalization={false} />
 
     <Section>
       <SearchRecap {...defaultSearchRecapConfig} />
@@ -126,4 +122,4 @@ stories.add('Default', () => (
     </CardsSection>
     <TabsSection tabsProps={defaultTabsConfig} />
   </Fragment>
-))
+)

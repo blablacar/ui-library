@@ -1,18 +1,16 @@
-import React, { Fragment } from 'react'
-import { boolean } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
 
-import { ClockIcon } from '../../icon/clockIcon'
-import { ItemAction } from '../../itemAction'
-import { LayoutNormalizer } from '../../layout/layoutNormalizer'
-import { BaseSection as Section } from '../../layout/section/baseSection'
-import { TabsSection } from '../../layout/section/tabsSection'
-import { MessagingSummaryItem } from '../../messagingSummaryItem'
-import { TheVoice } from '../../theVoice'
+import { ClockIcon } from '../../../icon/clockIcon'
+import { ItemAction } from '../../../itemAction'
+import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
+import { BaseSection } from '../../../layout/section/baseSection'
+import { TabsSection } from '../../../layout/section/tabsSection'
+import { MessagingSummaryItem } from '../../../messagingSummaryItem'
+import { TheVoice } from '../../../theVoice'
 
-const stories = storiesOf('Pages|Messaging/Inbox', module)
+<Meta title="Pages|Messaging/Inbox" />
 
-const messagingSummaryItemConfig = {
+export const messagingSummaryItemConfig = {
   url: '#',
   pictureUrl: 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg',
   label: 'Some conversation title',
@@ -21,15 +19,15 @@ const messagingSummaryItemConfig = {
   hasUnreadMessages: true,
 }
 
-const notificationConfig = {
+export const notificationConfig = {
   leftAddon: <ClockIcon />,
   action: 'Add a photo',
   subLabel: 'People like to put a face to a name.',
   href: '#',
 }
 
-const panel1 = (
-  <Section noHorizontalSpacing>
+export const panel1 = (
+  <BaseSection noHorizontalSpacing>
     <ul>
       <MessagingSummaryItem {...messagingSummaryItemConfig} />
       <MessagingSummaryItem {...messagingSummaryItemConfig} />
@@ -38,10 +36,10 @@ const panel1 = (
       <MessagingSummaryItem {...messagingSummaryItemConfig} />
       <MessagingSummaryItem {...messagingSummaryItemConfig} />
     </ul>
-  </Section>
+  </BaseSection>
 )
 
-const panel2 = (
+export const panel2 = (
   <ul>
     <ItemAction {...notificationConfig} />
     <ItemAction {...notificationConfig} />
@@ -53,7 +51,7 @@ const panel2 = (
   </ul>
 )
 
-const defaultTabsConfig = {
+export const defaultTabsConfig = {
   activeTabId: 'tab1',
   tabs: [
     {
@@ -69,12 +67,14 @@ const defaultTabsConfig = {
   ],
 }
 
-stories.add('Default', () => (
-  <Fragment>
-    <LayoutNormalizer useLegacyNormalization={boolean('Use legacy normalization', false)} />
-    <Section>
-      <TheVoice>Inbox</TheVoice>
-    </Section>
-    <TabsSection tabsProps={defaultTabsConfig} />
-  </Fragment>
-))
+<Preview>
+  <Story name="Inbox">
+    <React.Fragment>
+      <LayoutNormalizer useLegacyNormalization={false} />
+      <BaseSection>
+        <TheVoice>Inbox</TheVoice>
+      </BaseSection>
+      <TabsSection tabsProps={defaultTabsConfig} />
+    </React.Fragment>
+  </Story>
+</Preview>
