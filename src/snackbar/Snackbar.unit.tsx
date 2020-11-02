@@ -1,9 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import exenv from 'exenv'
 
-import { Button } from '../button'
+import { fireEvent, render, screen } from '@testing-library/react'
+
 import { Snackbar as StyledSnackbar } from './index'
 import { Snackbar } from './Snackbar'
 
@@ -24,18 +25,33 @@ describe('Snackbar', () => {
   })
 
   it('should show the snackbar when isOpen is true', () => {
-    const wrapper = shallow(<Snackbar isOpen close={close} />)
-    expect(wrapper.find('.kirk-snackbar').exists()).toBe(true)
+    render(
+      <Snackbar isOpen close={close}>
+        Oups
+      </Snackbar>,
+    )
+
+    const snackbar = screen.getByRole('alert')
+    expect(snackbar).toBeInTheDocument()
+    expect(snackbar).toHaveTextContent('Oups')
   })
 
-  it('should not show the snackbar when isOpen is false', () => {
-    const wrapper = shallow(<Snackbar isOpen={false} close={close} />)
-    expect(wrapper.find('.kirk-snackbar').exists()).toBe(false)
+  it('should npt show the snackbar when isOpen is false', () => {
+    render(
+      <Snackbar isOpen={false} close={close}>
+        Oups
+      </Snackbar>,
+    )
+
+    const snackbar = screen.queryByRole('alert')
+    expect(snackbar).not.toBeInTheDocument()
   })
 
   it('should call close method when click on cross button', () => {
-    const wrapper = shallow(<Snackbar isOpen close={close} />)
-    wrapper.find(Button).simulate('click')
+    render(<Snackbar isOpen close={close} />)
+
+    fireEvent.click(screen.getByRole('button'))
+
     expect(close).toHaveBeenCalled()
   })
 
