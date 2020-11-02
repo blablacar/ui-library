@@ -2,16 +2,13 @@ import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { Paragraph } from './index'
 
-<Meta title="Paragraph" />
+<Meta title="Text|Paragraph" />
 
 # **Paragraph**
 
 <Preview>
   <Story name="Long text">
-    <Paragraph
-      isExpandable
-      expandLabel="Expand"
-    >
+    <Paragraph isExpandable expandLabel="Expand">
       {`${'Long text (above max char) '.repeat(20)}`}
     </Paragraph>
   </Story>
@@ -29,10 +26,7 @@ import { Paragraph } from './index'
 
 <Preview>
   <Story name="Long unbreakable text">
-    <Paragraph
-      isExpandable
-      expandLabel="Expand"
-    >
+    <Paragraph isExpandable expandLabel="Expand">
       {`http://${'long_url_without_spaces'.repeat(20)}.com`}
     </Paragraph>
   </Story>
@@ -47,10 +41,7 @@ import { Paragraph } from './index'
 ```jsx
 import { Paragraph } from '@blablacar/ui-library/build/paragraph'
 
-<Paragraph
-  isExpandable={true}
-  expandLabel="Expand"
->
+;<Paragraph isExpandable={true} expandLabel="Expand">
   Some text.
 </Paragraph>
 ```
