@@ -1,0 +1,33 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../../_utils/branding'
+import { TextBody } from '.'
+
+<Meta title="Design Tokens|Typography/" />
+
+# **TextBody**
+
+<Preview>
+  <Story name="TextBody">
+    <React.Fragment>
+      <h1>
+        <TextBody isInverted={false}>
+          {'The quick\n brown fox jumps\n over the lazy\n dog'}
+        </TextBody>
+      </h1>
+      <h1 style={{ backgroundColor: color.blue }}>
+        <TextBody isInverted>The quick brown fox jumps over the lazy dog</TextBody>
+      </h1>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextBody } from '@blablacar/ui-library/build/typography/body'
+
+<TextBody>The quick brown fox jumps over the lazy dog</TextBody>
+```
+
+<Props of={TextBody} />
