@@ -1,6 +1,8 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { StyledBullet } from './Bullet.style'
+
 export enum BulletTypes {
   DEFAULT = 'default',
   SMALL = 'small',
@@ -18,7 +20,7 @@ export type BulletProps = Readonly<{
 export const Bullet = ({ className, type }: BulletProps) => {
   const baseClassName = 'kirk-bullet'
   const classNames = cc([baseClassName, `${baseClassName}--${type}`, className])
-  return <div className={classNames} aria-hidden="true" />
+  return <StyledBullet className={classNames} aria-hidden="true" />
 }
 
 Bullet.defaultProps = {
