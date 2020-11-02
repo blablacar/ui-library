@@ -3,6 +3,7 @@ const path = require('path')
 const log = require('pretty-log')
 const replace = require('replace')
 const readline = require('readline')
+const { Component } = require('react')
 
 const reader = readline.createInterface({
   input: process.stdin,
@@ -30,15 +31,16 @@ function renameFiles({ name, dir }) {
       if (err) {
         return reject(err)
       }
-      files.forEach(f => {
-        if (f === 'package.json') {
-          return
-        }
+
+      const components = files.filter((f) => f !== 'index.tsx')
+      const componentName = name.charAt(0).toUpperCase() + name.slice(1)
+
+      components.forEach(f => {
         const rest = f
           .split('.')
           .splice(1)
           .join('.')
-        fs.rename(`${dir}${f}`, `${dir}${name}.${rest}`, err => {
+        fs.rename(`${dir}${f}`, `${dir}${componentName}.${rest}`, err => {
           err ? reject(err) : resolve({ name, dir })
         })
       })
@@ -90,7 +92,10 @@ function scaffoldComponent({ name, dir }) {
 
 reader.question(query, name => {
   reader.close()
-  const dir = path.join(destination, name, '/')
+
+  const dirName = name.charAt(0).toLowerCase() + name.slice(1)
+
+  const dir = path.join(destination, dirName, '/')
   if (directoryExists(dir)) {
     return log.error(`Component "${name}" already exists. Aborting..`)
   }
