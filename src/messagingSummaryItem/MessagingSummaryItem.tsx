@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cc from 'classcat'
 
-import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { Avatar } from '../avatar'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
+import { StyledMessagingSummaryItem } from './MessagingSummaryItem.style'
 
 export type MessagingSummaryItemProps = NormalizeProps &
   Readonly<{
@@ -35,22 +35,20 @@ export const MessagingSummaryItem = ({
   hasUnreadMessages,
   hasHorizontalSpacing = false,
 }: MessagingSummaryItemProps) => (
-  <Fragment>
-    <Item
-      className={cc(['kirk-messaging-summary-item', className])}
-      leftTitle={label}
-      leftTitleDisplay={TextDisplayType.TITLESTRONG}
-      leftTitleColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
-      leftBody={generateSubLabel(subLabel)}
-      leftBodyDisplay={TextDisplayType.BODYSTRONG}
-      leftBodyColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
-      leftBodyAnnotation={timeLabel}
-      leftBodyAnnotationDisplay={TextDisplayType.CAPTION}
-      rightAddon={<Avatar image={pictureUrl} />}
-      chevron
-      href={url}
-      isClickable
-      hasHorizontalSpacing={hasHorizontalSpacing}
-    />
-  </Fragment>
+  <StyledMessagingSummaryItem
+    className={cc(['kirk-messaging-summary-item', className])}
+    leftTitle={label}
+    leftTitleDisplay={TextDisplayType.TITLESTRONG}
+    leftTitleColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
+    leftBody={generateSubLabel(subLabel)}
+    leftBodyDisplay={TextDisplayType.BODYSTRONG}
+    leftBodyColor={hasUnreadMessages ? UNREAD_COLOR : READ_COLOR}
+    leftBodyAnnotation={timeLabel}
+    leftBodyAnnotationDisplay={TextDisplayType.CAPTION}
+    rightAddon={<Avatar image={pictureUrl} />}
+    chevron
+    href={url}
+    isClickable
+    hasHorizontalSpacing={hasHorizontalSpacing}
+  />
 )
