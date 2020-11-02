@@ -1,13 +1,13 @@
 import React, { Fragment, useState } from 'react'
 
-import { Button, ButtonStatus } from 'button'
-import { ContentDivider } from 'divider/contentDivider'
-import { Itinerary } from 'itinerary'
-import { BottomContent, Content, MainContent } from 'layout/content'
-import { LayoutNormalizer } from 'layout/layoutNormalizer'
-import { BaseSection } from 'layout/section/baseSection'
-import { Stepper, StepperDisplay } from 'stepper'
-import { TheVoice } from 'theVoice'
+import { Button, ButtonStatus } from '../../../../button'
+import { ContentDivider } from '../../../../divider/contentDivider'
+import { Itinerary } from '../../../../itinerary'
+import { BottomContent, Content, MainContent } from '../../../../layout/content'
+import { LayoutNormalizer } from '../../../../layout/layoutNormalizer'
+import { BaseSection } from '../../../../layout/section/baseSection'
+import { Stepper, StepperDisplay } from '../../../../stepper'
+import { TheVoice } from '../../../../theVoice'
 
 type EditPriceProps = Readonly<{
   withStopovers?: boolean

@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 
-import { BanIcon } from 'icon/banIcon'
-import { HourglassIcon } from 'icon/hourglassIcon'
-import { StarIcon } from 'icon/starIcon'
-import { ItemChoice } from 'itemChoice'
-import { LayoutNormalizer } from 'layout/layoutNormalizer'
-import { BaseSection } from 'layout/section/baseSection'
-import { TheVoice } from 'theVoice'
-import { TripCard } from 'tripCard'
+import { BanIcon } from '../../../icon/banIcon'
+import { HourglassIcon } from '../../../icon/hourglassIcon'
+import { StarIcon } from '../../../icon/starIcon'
+import { ItemChoice } from '../../../itemChoice'
+import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
+import { BaseSection } from '../../../layout/section/baseSection'
+import { TheVoice } from '../../../theVoice'
+import { TripCard } from '../../../tripCard'
 
 const createRideCardConfig = () => ({
   href: '/',
