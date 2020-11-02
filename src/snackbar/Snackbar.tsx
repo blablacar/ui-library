@@ -9,13 +9,14 @@ import { Button, ButtonStatus } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
 import { Text, TextDisplayType } from '../text'
 import { AnimationType, Transitions as CustomTransition } from '../transitions'
+import { StyledSnackbar } from './Snackbar.style'
 
 export type SnackbarProps = Readonly<{
   close: () => void
   isOpen: boolean
   className?: string
   extraClassName?: string
-  children: JSX.Element
+  children: React.ReactNode
 }>
 
 export class Snackbar extends PureComponent<SnackbarProps> {
@@ -42,7 +43,7 @@ export class Snackbar extends PureComponent<SnackbarProps> {
   render() {
     const modalElement = (
       <TransitionGroup
-        component="div"
+        component={StyledSnackbar}
         className={cc(['transition-wrapper kirk-snackbar-container', this.props.className])}
       >
         {this.props.isOpen && (
