@@ -1,21 +1,14 @@
 import React, { Component, createRef } from 'react'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 
-import FilterBar from '../filterBar'
-import { CarpoolIcon } from '../icon'
-import ItemCheckbox from '../itemCheckbox'
-import { BaseSection as Section } from '../layout/section/baseSection'
-import { Modal, ModalBody, ModalFog, ModalFooter, ModalSize } from '../modal'
-import { SubHeader } from '../subHeader/SubHeader'
-import { TheVoice } from '../theVoice'
-import { ModalProps } from './Modal'
-import modalDoc from './specifications/modal.md'
+import FilterBar from '../../filterBar'
+import { CarpoolIcon } from '../../icon'
+import ItemCheckbox from '../../itemCheckbox'
+import { BaseSection as Section } from '../../layout/section/baseSection'
+import { SubHeader } from '../../subHeader/SubHeader'
+import { TheVoice } from '../../theVoice'
+import { Modal, ModalBody, ModalFog, ModalFooter, ModalProps } from '../index'
 
-const stories = storiesOf('Widgets|Modal', module)
-stories.addDecorator(withKnobs)
-
-class ModalOpener extends Component<ModalProps> {
+export class ModalOpener extends Component<ModalProps> {
   state = {
     modalOpen: false,
     modalOpen2: false,
@@ -99,39 +92,3 @@ class ModalOpener extends Component<ModalProps> {
     )
   }
 }
-
-stories.add(
-  'default',
-  () => (
-    <ModalOpener
-      onClose={() => {}}
-      closeOnEsc={boolean('closeOnEsc', true)}
-      closeOnOutsideClick={boolean('closeOnOutsideClick', true)}
-      displayDimmer={boolean('displayDimmer', true)}
-      isOpen={false}
-      closeButtonTitle={text('Close icon text', 'Close modal')}
-      aria-labelledby="label1"
-      aria-describedby="description1"
-      size={select('size', ModalSize, ModalSize.MEDIUM)}
-      isLoading={boolean('isLoading', false)}
-    />
-  ),
-  {
-    readme: { content: modalDoc },
-  },
-)
-
-stories.add('fullscreen', () => (
-  <ModalOpener
-    onClose={() => {}}
-    closeOnEsc={boolean('closeOnEsc', true)}
-    closeOnOutsideClick={boolean('closeOnOutsideClick', false)}
-    displayDimmer={boolean('displayDimmer', false)}
-    displayCloseButton={boolean('displayCloseButton', true)}
-    isOpen={false}
-    aria-labelledby="label2"
-    aria-describedby="description2"
-    size={select('size', ModalSize, ModalSize.FULLSCREEN)}
-    isLoading={boolean('isLoading', false)}
-  />
-))
