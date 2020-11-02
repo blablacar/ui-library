@@ -1,0 +1,18 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+
+import { EditOptions } from './EditOptions'
+import { EditPrices } from './EditPrices'
+
+<Meta title="Pages|Your rides/Offer/Edit" />
+
+<Preview>
+  <Story name="Options">
+    <EditOptions />
+  </Story>
+  <Story name="Prices With stopovers">
+    <EditPrices withStopovers />
+  </Story>
+  <Story name="Prices Without stopovers">
+    <EditPrices />
+  </Story>
+</Preview>
