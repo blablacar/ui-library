@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Migrate `Bullet` to new mdx story format
 [...]
 
 # v41.6.1 (05/11/2020)
