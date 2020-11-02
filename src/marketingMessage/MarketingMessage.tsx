@@ -1,11 +1,13 @@
 import React from 'react'
 import cc from 'classcat'
 
+import { StyledMarketingMessage } from './MarketingMessage.style'
+
 export type MarketingMessageProps = Readonly<{
   children: React.ReactNode
   className?: string
 }>
 
 export const MarketingMessage = ({ children, className }: MarketingMessageProps) => (
-  <div className={cc(className)}>{children}</div>
+  <StyledMarketingMessage className={cc(className)}>{children}</StyledMarketingMessage>
 )
