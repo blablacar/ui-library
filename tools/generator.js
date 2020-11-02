@@ -3,7 +3,6 @@ const path = require('path')
 const log = require('pretty-log')
 const replace = require('replace')
 const readline = require('readline')
-const { Component } = require('react')
 
 const reader = readline.createInterface({
   input: process.stdin,
