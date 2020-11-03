@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import '../../_internals/closest'
 
 import { componentSizes, pxToInteger } from '../../_utils/branding'
-import { StyledContent } from './Content.style'
 
 export type MainContentProps = Readonly<{
   readonly children: React.ReactNode
@@ -68,7 +67,7 @@ export class MainContent extends Component<MainContentProps> {
   render(): JSX.Element {
     const { children, tag = 'div', topBarSelector, topBarHeight, ...props } = this.props
 
-    const Element = React.createElement(
+    return React.createElement(
       tag,
       {
         ref: this.mainContentRef,
@@ -77,6 +76,5 @@ export class MainContent extends Component<MainContentProps> {
       },
       children,
     )
-    return <StyledContent>{Element}</StyledContent>
   }
 }

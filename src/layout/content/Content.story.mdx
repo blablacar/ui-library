@@ -1,0 +1,79 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { Content } from './index'
+import { Button, ButtonStatus } from '../../button'
+import { ButtonGroup } from '../../buttonGroup'
+import { BaseSection as Section } from '../section/baseSection'
+import { Modal, ModalSize } from '../../modal'
+import { Paragraph } from '../../paragraph'
+import { SubHeader } from '../../subHeader'
+import { BottomContent, MainContent } from '.'
+
+<Meta title="Sections|MainContent" />
+
+# **Content**
+
+<Preview>
+  <Story name="Default">
+    <MainContent onSubmit={() => {}} noValidate="" method="POST">
+      <Content>
+        <Section>
+          <SubHeader>Some Lorem ipsum content</SubHeader>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
+            placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
+            molestie sapien justo nec orci.
+          </Paragraph>
+        </Section>
+      </Content>
+      <BottomContent>
+        <Section>
+          <ButtonGroup>
+            <Button status={ButtonStatus.PRIMARY}>Primary button</Button>
+            <Button status={ButtonStatus.TERTIARY}>Secondary button</Button>
+          </ButtonGroup>
+        </Section>
+      </BottomContent>
+    </MainContent>
+  </Story>
+</Preview>
+
+### Inside a Modal
+
+<Preview>
+  <Story name="Inside a Modal">
+    <Modal isOpen size={ModalSize.FULLSCREEN}>
+      <MainContent>
+        <Content>
+          <SubHeader>Some Lorem ipsum content</SubHeader>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
+            placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor,
+            vel molestie sapien justo nec orci.
+          </Paragraph>
+        </Content>
+        <BottomContent>
+          <ButtonGroup>
+            <Button status={ButtonStatus.PRIMARY}>Primary button</Button>
+            <Button status={ButtonStatus.TERTIARY}>Secondary button</Button>
+          </ButtonGroup>
+        </BottomContent>
+      </MainContent>
+    </Modal>
+  </Story>
+</Preview>
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { Content } from '@blablacar/ui-library/build/Content'
+<Content>
+  {Children}
+</Content>
+```
+
+<Props of={Content} />
