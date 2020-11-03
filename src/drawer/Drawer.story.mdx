@@ -1,0 +1,53 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { HamburgerButton } from '../hamburgerButton'
+import { BellIcon } from '../icon/bellIcon'
+import { BubbleIcon } from '../icon/bubbleIcon'
+import { HomeIcon } from '../icon/homeIcon'
+import { NewspaperIcon } from '../icon/newspaperIcon'
+import { TicketIcon } from '../icon/ticketIcon'
+import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
+import { Menu } from '../menu'
+import { Drawer } from './index'
+
+<Meta title="Widgets|Drawer" />
+
+# **Drawer**
+
+<Preview>
+  <Story name="Demo">
+    <div>
+      <nav>
+        <HamburgerButton />
+      </nav>
+      <main>
+        <Drawer width="400px">
+          <Menu withSeparators>
+            <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
+            <ItemChoice
+              label="Rides offered (loading)"
+              leftAddon={<NewspaperIcon />}
+              status={ItemChoiceStatus.LOADING}
+              href="#"
+            />
+            <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
+            <ItemChoice label="Messages" leftAddon={<BubbleIcon />} href="#" />
+            <ItemChoice label="Ride alerts" leftAddon={<BellIcon />} href="#" />
+            <ItemChoice label="Menu item with onClick" href="#" />
+          </Menu>
+        </Drawer>
+      </main>
+    </div>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Drawer } from '@blablacar/ui-library/build/Drawer'
+;<Drawer />
+```
+
+<Props of={Drawer} />

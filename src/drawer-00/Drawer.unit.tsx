@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Drawer } from './index'
+import { Drawer } from './Drawer'
 
 const defaultProps = {
   onClick() {},
