@@ -8,7 +8,6 @@ import { PhoneField } from './index'
 
 <Preview>
   <Story name="Default">
-    {/* eslint-disable jsx-a11y/label-has-associated-control */}
     <label id="phoneFieldLabel">Accessibility label</label>
     <PhoneField
       id="phoneFieldDefault"
@@ -24,7 +23,6 @@ import { PhoneField } from './index'
 <Preview>
   <Story name="Custom">
     <React.Fragment>
-      {/* eslint-disable jsx-a11y/label-has-associated-control */}
       <label id="labelIdCustom">Accessibility label</label>
       <PhoneField
         id="phoneFieldIdCustom"
@@ -74,8 +72,8 @@ If the name is longer than available field it should get truncated.
 ```jsx
 import { PhoneField } from '@blablacar/ui-library/build/phoneField'
 
-<label id="labelId">Label</label>
-<PhoneField
+  <label id="labelId">Label</label>
+  <PhoneField
     id="PhoneFieldId"
     name="PhoneFieldId"
     className="additionalClass"
