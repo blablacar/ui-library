@@ -2,25 +2,25 @@ import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { DatePicker, DatePickerOrientation } from './index'
 
-<Meta title="Widgets|DatePicker" />
+<Meta title="Forms|DatePicker" />
 
 # **DatePicker**
 
-export const weekdaysShort = (locale) => {
+export const weekdaysShort = locale => {
   const options = { weekday: 'short' }
   return [0, 1, 2, 3, 4, 5, 6].map(i =>
     new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, 0, i))),
   )
 }
 
-export const weekdaysLong = (locale) => {
+export const weekdaysLong = locale => {
   const options = { weekday: 'long' }
   return [0, 1, 2, 3, 4, 5, 6].map(i =>
     new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, 0, i))),
   )
 }
 
-export const months = (locale) => {
+export const months = locale => {
   const options = { month: 'long' }
   return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i =>
     new Intl.DateTimeFormat(locale, options).format(new Date(Date.UTC(0, i, 1))),
@@ -53,6 +53,11 @@ initialeDate.setMonth(initialeDate.getMonth() + 6)
       stickyPositionTop="0"
     />
   </Story>
+</Preview>
+
+### Example horizontal (2 months)
+
+<Preview>
   <Story name="example horizontal (2 months)">
     <DatePicker
       initialDate={new Date()}
@@ -61,6 +66,11 @@ initialeDate.setMonth(initialeDate.getMonth() + 6)
       numberOfMonths={2}
     />
   </Story>
+</Preview>
+
+### Example vertical (6 months)
+
+<Preview>
   <Story name="example vertical (6 months)">
     <DatePicker
       initialDate={new Date()}
@@ -69,6 +79,11 @@ initialeDate.setMonth(initialeDate.getMonth() + 6)
       numberOfMonths={6}
     />
   </Story>
+</Preview>
+
+### Eexample vertical (12 months - selected date in 6 months)
+
+<Preview>
   <Story name="example vertical (12 months - selected date in 6 months)">
     <DatePicker
       initialDate={initialeDate}
@@ -80,7 +95,6 @@ initialeDate.setMonth(initialeDate.getMonth() + 6)
 </Preview>
 
 ## Specifications
-
 
 > Normal state
 
@@ -138,8 +152,7 @@ Only the first day of the week would need some kind of config or different sourc
 
 ```jsx
 import { DatePicker } from '@blablacar/ui-library/build/datePicker'
-
-<DatePicker />
+;<DatePicker />
 ```
 
 <Props of={DatePicker} />
