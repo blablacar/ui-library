@@ -1,0 +1,33 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../../_utils/branding'
+import { TextTitle } from '.'
+
+<Meta title="Design Tokens|Typography/" />
+
+# **TextTitle**
+
+<Preview>
+  <Story name="TextTitle">
+    <React.Fragment>
+      <h1>
+        <TextTitle isInverted={false}>
+          {'The quick\n brown fox jumps\n over the lazy\n dog'}
+        </TextTitle>
+      </h1>
+      <h1 style={{ backgroundColor: color.blue }}>
+        <TextTitle isInverted>The quick brown fox jumps over the lazy dog</TextTitle>
+      </h1>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextTitle } from '@blablacar/ui-library/build/typography/title'
+
+<TextTitle>The quick brown fox jumps over the lazy dog</TextTitle>
+```
+
+<Props of={TextTitle} />
