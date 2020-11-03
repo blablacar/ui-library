@@ -16,6 +16,7 @@ export const StyledUneditableTextField = styled.div`
     font-size: ${font.base.size};
     line-height: ${inputHeight};
     text-decoration: none;
+    cursor: not-allowed;
   }
 
   & .kirk-uneditableTextField-label:not(:first-child) {
