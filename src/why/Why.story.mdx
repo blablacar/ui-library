@@ -1,0 +1,34 @@
+import { action } from '@storybook/addon-actions'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
+import { Why } from './index'
+
+<Meta title="Widgets|Why" />
+
+# **Why**
+
+<Preview>
+  <Story name="Default">
+    <FocusVisibleProvider>
+      <Why
+        onClick={action('clicked')}
+        title="Why this is a text that is so long ? (new window)"
+      >
+        Why this is a text that is so long ?
+      </Why>
+    </FocusVisibleProvider>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Why } from '@blablacar/ui-library/build/Why'
+
+<Why title="Title">Content</Why>
+```
+
+<Props of={Why} />

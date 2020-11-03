@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { QuestionIcon } from '../icon/questionIcon'
+import { StyledWhy } from './Why.style'
 
 export type WhyProps = Readonly<{
   children: string
@@ -14,7 +15,7 @@ export type WhyProps = Readonly<{
 export const Why = ({ className, children, title, onClick }: WhyProps) => {
   const { focusVisible, onFocus, onBlur } = useFocusVisible()
   return (
-    <button
+    <StyledWhy
       type="button"
       className={cc([
         'kirk-why',
@@ -30,6 +31,6 @@ export const Why = ({ className, children, title, onClick }: WhyProps) => {
     >
       <QuestionIcon />
       <span>{children}</span>
-    </button>
+    </StyledWhy>
   )
 }
