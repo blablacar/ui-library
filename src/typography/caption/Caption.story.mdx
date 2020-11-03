@@ -1,0 +1,33 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../../_utils/branding'
+import { TextCaption } from '.'
+
+<Meta title="Design Tokens|Typography/" />
+
+# **TextCaption**
+
+<Preview>
+  <Story name="TextCaption">
+    <React.Fragment>
+      <h1>
+        <TextCaption isInverted={false}>
+          {'The quick\n brown fox jumps\n over the lazy\n dog'}
+        </TextCaption>
+      </h1>
+      <h1 style={{ backgroundColor: color.blue }}>
+        <TextCaption isInverted>The quick brown fox jumps over the lazy dog</TextCaption>
+      </h1>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextCaption } from '@blablacar/ui-library/build/typography/caption'
+
+<TextCaption>The quick brown fox jumps over the lazy dog</TextCaption>
+```
+
+<Props of={TextCaption} />

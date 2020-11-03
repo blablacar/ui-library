@@ -1,0 +1,33 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../../_utils/branding'
+import { TextSubHeader } from '.'
+
+<Meta title="Design Tokens|Typography/" />
+
+# **TextSubHeader**
+
+<Preview>
+  <Story name="TextSubHeader">
+    <React.Fragment>
+      <h1>
+        <TextSubHeader isInverted={false}>
+          {'The quick\n brown fox jumps\n over the lazy\n dog'}
+        </TextSubHeader>
+      </h1>
+      <h1 style={{ backgroundColor: color.blue }}>
+        <TextSubHeader isInverted>The quick brown fox jumps over the lazy dog</TextSubHeader>
+      </h1>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextSubHeader } from '@blablacar/ui-library/build/typography/subHeader'
+
+<TextSubHeader>The quick brown fox jumps over the lazy dog</TextSubHeader>
+```
+
+<Props of={TextSubHeader} />
