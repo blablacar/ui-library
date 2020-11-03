@@ -7,7 +7,7 @@ import { ButtonStatus } from '../button'
 // Must use relative path since alias is broken
 import { ModalProps } from '../modal'
 import { TextDisplay1 } from '../typography/display1'
-import { SuccessModalElements } from './elements'
+import { SuccessModalElements } from './SuccessModal.style'
 
 export type SuccessModalProps = ModalProps &
   Readonly<{
@@ -30,15 +30,14 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
 
   const baseClassName = 'kirk-successModal'
   const successContentId = `${baseClassName}-content-${uuidv4()}`
-
   const {
-    StyledSuccessModal,
-    Media,
-    Figure,
     Content,
-    SuccessTitle,
+    Figure,
+    Media,
+    StyledSuccessModal,
     SuccessAction,
     SuccessButton,
+    SuccessTitle,
   } = SuccessModalElements
 
   return (
