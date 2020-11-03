@@ -1,0 +1,38 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { SpacingDivider } from '../../../divider/spacingDivider'
+import { HighlightSection } from './index'
+
+<Meta title="Sections|HighlightSection" />
+
+# **HighlightSection**
+
+<Preview>
+  <Story name="Default">
+    <React.Fragment>
+      <SpacingDivider />
+      <HighlightSection title="Section title">
+        This some content for the highlighted section!
+        <br />
+        Some more content.
+        <br />
+        Some more more content.
+      </HighlightSection>
+      <SpacingDivider />
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
+
+<HighlightSection title="Section title">
+  Section content
+</HighlightSection>
+```
+
+<Props of={HighlightSection} />
