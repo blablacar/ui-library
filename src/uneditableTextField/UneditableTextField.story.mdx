@@ -10,7 +10,7 @@ import { UneditableTextField } from './index'
 <Preview>
   <Story name="Default">
     <UneditableTextField ellipsis>
-      TextField Value
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </UneditableTextField>
   </Story>
 </Preview>
@@ -20,7 +20,17 @@ import { UneditableTextField } from './index'
 <Preview>
   <Story name="With Icon">
     <UneditableTextField addOn={<IconSearch />} ellipsis>
-      TextField Value
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </UneditableTextField>
+  </Story>
+</Preview>
+
+### With Anchor
+
+<Preview>
+  <Story name="With Anchor">
+    <UneditableTextField href="#anchor" ellipsis={false}>
+      Anchor
     </UneditableTextField>
   </Story>
 </Preview>
@@ -33,7 +43,15 @@ import { UneditableTextField } from './index'
 ## Usage
 
 ```jsx
-import { UneditableTextField } from '@blablacar/ui-library/build/UneditableTextField'
+import { UneditableTextField } from '@blablacar/ui-library/build/uneditableTextField'
+
+<UneditableTextField
+  addOn={<IconSearch />}
+  href="#anchor"
+  ellipsis={false}
+>
+  UneditableTextField Value
+</UneditableTextField>
 
 ```
 
