@@ -1,13 +1,2 @@
-import styled from 'styled-components'
-
-import { ItemsSection } from './itemsSection'
-
-const StyledItemsSection = styled(ItemsSection)`
-  & .kirk-items-section-content {
-    display: flex;
-  }
-`
-
-export { ItemsSectionProps } from './itemsSection'
-export { StyledItemsSection as ItemsSection }
-export default StyledItemsSection
+export { ItemsSection, ItemsSectionProps } from './ItemsSection'
+export { ItemsSection as default } from './ItemsSection'

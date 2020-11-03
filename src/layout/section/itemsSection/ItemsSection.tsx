@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ItemInfoProps } from '../../../itemInfo'
-import { BaseSection } from '../../../layout/section/baseSection'
+import { StyledItemsSection } from './ItemsSection.style'
 
 export type ItemsSectionProps = Readonly<{
   children: React.ReactElement<ItemInfoProps>[]
@@ -17,13 +17,13 @@ export const ItemsSection = (props: ItemsSectionProps) => {
   const { className, children, tag = <div /> } = props
 
   return (
-    <BaseSection
+    <StyledItemsSection
       tagName={tag.type}
       className={className}
       contentClassName="kirk-items-section-content"
       noHorizontalSpacing
     >
       {children}
-    </BaseSection>
+    </StyledItemsSection>
   )
 }
