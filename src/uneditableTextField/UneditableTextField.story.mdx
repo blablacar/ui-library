@@ -1,0 +1,36 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { SearchIcon as IconSearch } from '../icon/searchIcon'
+import { UneditableTextField } from './index'
+
+<Meta title="Forms|UneditableTextField" />
+
+# **UneditableTextField**
+
+<Preview>
+  <Story name="Default">
+    <UneditableTextField ellipsis />
+  </Story>
+</Preview>
+
+### With Icon
+
+<Preview>
+  <Story name="With Icon">
+    <UneditableTextField addOn={<IconSearch />} ellipsis />
+  </Story>
+</Preview>
+
+
+## Specifications
+
+...
+
+## Usage
+
+```jsx
+import { UneditableTextField } from '@blablacar/ui-library/build/UneditableTextField'
+
+```
+
+<Props of={UneditableTextField} />
