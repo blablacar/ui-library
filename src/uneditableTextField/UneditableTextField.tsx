@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
+
+import { StyledUneditableTextField } from './UneditableTextField.style'
 
 export type UneditableTextFieldProps = Readonly<{
   children: JSX.Element | string
@@ -35,7 +37,7 @@ export const UneditableTextField = ({
       className: cc(['kirk-uneditableTextField', className]),
       ...props,
     },
-    <Fragment>
+    <StyledUneditableTextField>
       {addOn}
       <div
         className={cc([
@@ -45,6 +47,6 @@ export const UneditableTextField = ({
       >
         {children}
       </div>
-    </Fragment>,
+    </StyledUneditableTextField>,
   )
 }
