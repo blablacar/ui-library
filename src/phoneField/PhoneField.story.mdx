@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { PhoneField } from './index'
 
@@ -8,10 +8,14 @@ import { PhoneField } from './index'
 
 <Preview>
   <Story name="Default">
-    <label id="phoneField" htmlFor="phoneField">
-      Accessibility label
-    </label>
-    <PhoneField id="phoneField" name="phoneField" onChange={() => {}} />
+    {/* eslint-disable jsx-a11y/label-has-associated-control */}
+    <label id="phoneFieldLabel">Accessibility label</label>
+    <PhoneField
+      id="phoneFieldDefault"
+      name="phoneFieldDefault"
+      aria-labelledby="phoneFieldLabel"
+      onChange={() => {}}
+    />
   </Story>
 </Preview>
 
@@ -20,14 +24,13 @@ import { PhoneField } from './index'
 <Preview>
   <Story name="Custom">
     <React.Fragment>
-      <label id="phoneFieldId" htmlFor="phoneFieldId">
-        Accessibility label
-      </label>
+      {/* eslint-disable jsx-a11y/label-has-associated-control */}
+      <label id="labelIdCustom">Accessibility label</label>
       <PhoneField
-        id="phoneFieldId"
-        name="phoneField"
+        id="phoneFieldIdCustom"
+        name="phoneFieldCustom"
         className="additionalClass"
-        aria-labelledby="labelId"
+        aria-labelledby="labelIdCustom"
         selectFieldLabel="Phone country code"
         textFieldTitle="Phone number"
         textFieldPlaceholder="Phone number"
@@ -71,11 +74,10 @@ If the name is longer than available field it should get truncated.
 ```jsx
 import { PhoneField } from '@blablacar/ui-library/build/phoneField'
 
-<label><PhoneField name="phoneField" onChange={() => {}} /></label>
-<label htmlFor="ID">
-  <PhoneField
-    id="ID"
-    name="ID"
+<label id="labelId">Label</label>
+<PhoneField
+    id="PhoneFieldId"
+    name="PhoneFieldId"
     className="additionalClass"
     aria-labelledby="labelId"
     selectFieldLabel="Phone country code"
@@ -89,8 +91,8 @@ import { PhoneField } from '@blablacar/ui-library/build/phoneField'
       ES: 'es label',
     }}
     isInline={false}
+    onChange={() => {}}
   />
-</label>
 ```
 
 <Props of={PhoneField} />
