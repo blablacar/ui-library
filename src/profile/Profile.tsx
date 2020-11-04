@@ -1,12 +1,12 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Item } from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Avatar } from '../avatar'
 import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
 import { TextBody } from '../typography/body'
+import { StyledProfile } from './Profile.style'
 
 export type ProfileProps = A11yProps &
   Readonly<{
@@ -48,6 +48,7 @@ export const Profile = (props: ProfileProps) => {
     onMouseDown,
   } = props
   const a11yAttrs = pickA11yProps<ProfileProps>(props)
+  const showChevron = isLink || !!href || !!onClick
   const getLeftBody =
     ratings > 0 ? (
       <Rating ratings={ratings} score={score}>
@@ -57,10 +58,8 @@ export const Profile = (props: ProfileProps) => {
       info && <TextBody>{info}</TextBody>
     )
 
-  const showChevron = isLink || !!href || !!onClick
-
   return (
-    <Item
+    <StyledProfile
       className={cc([className, { 'kirk-profile-size-medium': isMedium }])}
       leftTitle={title}
       leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY1 : TextDisplayType.TITLE}

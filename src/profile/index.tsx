@@ -1,13 +1,2 @@
-import styled from 'styled-components'
-
-import { Profile } from './profile'
-
-const StyledProfile = styled(Profile)`
-  &.kirk-profile-size-medium .kirk-item-leftText {
-    align-self: flex-end;
-  }
-`
-
-export { ProfileProps } from './profile'
-export { StyledProfile as Profile }
-export default StyledProfile
+export { Profile, ProfileProps } from './Profile'
+export { Profile as default } from './Profile'
