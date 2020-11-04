@@ -7,9 +7,10 @@ import { Button, ButtonStatus } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
 import { InfoIcon } from '../icon/infoIcon'
 import { WarningIcon } from '../icon/warningIcon'
-import { Modal, ModalSize } from '../modal'
+import { ModalSize } from '../modal'
 import { ModalProps } from '../modal/Modal'
 import { TheVoice } from '../theVoice'
+import { StyledConfirmationModal } from './ConfirmationModal.style'
 
 export enum ConfirmationModalStatus {
   WARNING = 'warning',
@@ -72,12 +73,11 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
       }
       return <InfoIcon {...iconProps} iconColor={color.blue} />
     }
-
     let confirmButtonStatus = isWarning ? ButtonStatus.WARNING : ButtonStatus.PRIMARY
     confirmButtonStatus = confirmIsLoading ? ButtonStatus.LOADING : confirmButtonStatus
 
     return (
-      <Modal
+      <StyledConfirmationModal
         onClose={onClose}
         isOpen={isOpen}
         displayCloseButton={false}
@@ -112,7 +112,7 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
             </Button>
           </footer>
         </div>
-      </Modal>
+      </StyledConfirmationModal>
     )
   }
 }
