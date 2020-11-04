@@ -1,0 +1,32 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Distances, Proximity } from './index'
+
+<Meta title="Widgets|Proximity" />
+
+# **Proximity**
+
+<Preview>
+  <Story name="Default">
+    <Proximity
+      value={Distances.FAR}
+      title="Distance to your position"
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Distances, Proximity } from '@blablacar/ui-library/build/proximity'
+
+<Proximity
+  value={Distances.FAR}
+  title="Distance to your position"
+/>
+
+```
+
+<Props of={Proximity} />
