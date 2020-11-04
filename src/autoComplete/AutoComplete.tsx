@@ -11,6 +11,7 @@ import { ContentDivider } from '../divider/contentDivider'
 import { ItemInfo } from '../itemInfo'
 import { Loader } from '../loader'
 import { inputTypes, TextField } from '../textField'
+import { StyledAutoComplete } from './AutoComplete.style'
 import { AutocompleteItem, AutoCompleteList } from './AutoCompleteListStyle'
 
 type query = string | number | boolean
@@ -297,7 +298,10 @@ export class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState
     return (
       /* TODO: BBC-7413 fix a11y issue */
       // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
-      <div role="combobox" className={cc([prefix({ autoComplete: true }), this.props.className])}>
+      <StyledAutoComplete
+        role="combobox"
+        className={cc([prefix({ autoComplete: true }), this.props.className])}
+      >
         <TextField
           type={inputTypes.SEARCH}
           className={this.props.inputClassName}
@@ -346,7 +350,7 @@ export class AutoComplete extends Component<AutoCompleteProps, AutoCompleteState
           itemKey={this.props.itemKey}
           withSeparators={!this.props.embeddedInSearchForm}
         />
-      </div>
+      </StyledAutoComplete>
     )
   }
 }
