@@ -1,0 +1,254 @@
+import { useState } from 'react'
+import { action } from '@storybook/addon-actions'
+import { Meta, Preview, Props } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+import { ArrowIcon } from '../icon/arrowIcon'
+import { Button, ButtonStatus } from './index'
+
+export const commonProps = {
+  onClick: action('clicked'),
+  onMouseDown: action('mouseDown'),
+  onMouseUp: action('mouseUp'),
+  onTouchStart: action('touchStart'),
+  onTouchEnd: action('touchEnd'),
+  onFocus: action('focused'),
+  onBlur: action('blured'),
+}
+
+export const renderPrimaryButton = () => {
+  const [buttonStatus, setButtonStatus] = useState(ButtonStatus.PRIMARY)
+  return (
+    <Button
+      status={buttonStatus}
+      {...commonProps}
+      onClick={() => {
+        setButtonStatus(ButtonStatus.LOADING)
+        setTimeout(() => setButtonStatus(ButtonStatus.CHECKED), 2000)
+        setTimeout(() => setButtonStatus(ButtonStatus.PRIMARY), 5000)
+      }}
+    >
+      Click to animate
+    </Button>
+  )
+}
+
+<Meta title="Buttons|Button" />
+
+# Button
+
+## Primary button
+
+> With text
+
+These buttons are always centred in the page, unless it’s displayed next to a secondary button (e.g. Accept / Refuse).
+
+When user taps on it there’s a pressed state.
+After tapping if request is already loaded we either go to the next page or close the modal or if it’s a final decision we display the checked state.
+If request is not loaded we display the loading state of these buttons. When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
+
+<Preview>
+  {renderPrimaryButton()}
+</Preview>
+
+> With an icon
+
+Continue buttons
+These buttons are used in the middle of the flow and never at the end of it.
+
+When user taps on it there’s a pressed state.
+After tapping if request is already loaded we go to the next page.
+If request is not loaded we display the loading state of these buttons. When loaded, we go to the next page. There’s no validated state for this component as it’s never a final decision button.
+
+<Preview>
+  <Button
+    status={ButtonStatus.PRIMARY}
+    {...commonProps}
+  >
+    <ArrowIcon right iconColor={color.white} /> Go there
+  </Button>
+</Preview>
+
+### When should I use it?
+
+> With text
+
+Use it at the end of a flow. Allows the member to make a final decision.
+
+- ✅ Use when making a final decision
+- ✅ Always centred in the page
+- ⛔️ Can’t go on 2 lines. If too long we use “…”
+- ⛔️ Not always sticky
+- ℹ️ No minimum size.
+- 🖊 Max. 20 characters in EN, max. 30 in other languages (including spaces)
+
+> With an icon
+
+Use it in the middle of a flow. Allows the member to continue to the next screen.
+
+- ✅ Always at bottom right of screen
+- ✅ Always displayed when keyboard is also displayed
+- ⛔️ Not always sticky.
+- 🖊 No text in this component.
+
+### Behaviour
+
+> With Text
+
+These buttons can either be sticky or not depending on the need.
+
+If sticky they appear above the keyboard and above other components in the page.
+
+When there’s an error that blocks the user to move forward, we hide these buttons.
+
+> With an icon
+
+These buttons are always displayed on the bottom right of the screen. They can either be sticky or not depending on the need.
+
+If sticky they appear above the keyboard and above other components in the page.
+
+When there’s an error that blocks the user to move forward, we hide these buttons.
+
+### Long texts
+
+If text is too long we can’t go on 2 lines. If too long we display “…” at the end.
+
+## Secondary button
+
+These buttons can be used as a secondary option when there’s already a primary button action.
+
+When user taps on it there’s a pressed state.
+After tapping if request is already loaded we either go to the next page or close the modal or if it’s a final decision we display the checked state then close the page (in some cases we don’t change the page like create alert in Search Results).
+If request is not loaded we display the loading state of these buttons. When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
+
+<Preview>
+  <Button
+    status={ButtonStatus.SECONDARY}
+    {...commonProps}
+  >
+    Secondary button
+  </Button>
+</Preview>
+
+### When should I use it?
+
+- ✅ Always centred in the page
+- ⛔️ Can’t go on 2 lines. If too long we use “…”
+- ⛔️ Not always sticky
+- ℹ️ No minimum size.
+
+### Behaviour
+
+These buttons are always displayed on the bottom right of the screen. They can either be sticky or not depending on the need.
+
+If sticky they appear above the keyboard and above other components in the page.
+
+When there’s an error that blocks the user to move forward, we hide these buttons.
+
+### Long texts
+
+If text is too long we can’t go on 2 lines. If too long we display “…” at the end.
+
+## Tertiary button
+
+Least prominent button with no background and reduced padding.
+
+When user taps on it there’s a pressed state.
+After tapping if request is already loaded we either go to the next page or close the modal or if it’s a final decision we display the checked state then close the page.
+
+If request is not loaded we display the loading state of these buttons.
+When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
+
+<Preview>
+  <Button
+    status={ButtonStatus.TERTIARY}
+    {...commonProps}
+  >
+    Tertiary button
+  </Button>
+</Preview>
+
+### When should I use it?
+
+- ✅ Always centred in the page
+- ℹ️ No minimum size.
+
+### Behaviour
+
+These buttons are used in button group for reduced component size on mobile devices.
+
+### Long texts
+
+If text is too long we can’t go on 2 lines. If too long we display “…” at the end.
+
+## Variants
+
+### Warning button
+<Preview>
+  <Button
+    status={ButtonStatus.WARNING}
+    {...commonProps}
+  >
+    Warning button
+  </Button>
+</Preview>
+
+### Unstyled button
+<Preview>
+  <Button
+    status={ButtonStatus.UNSTYLED}
+    {...commonProps}
+  >
+    Unstyled button
+  </Button>
+</Preview>
+
+### Bubble button
+<Preview>
+  <Button
+    status={ButtonStatus.PRIMARY}
+    isBubble
+    {...commonProps}
+  >
+    <ArrowIcon right iconColor={color.white} />
+  </Button>
+</Preview>
+
+### Shadowed button
+<Preview>
+  <Button
+    status={ButtonStatus.PRIMARY}
+    isBubble
+    shadowed
+    {...commonProps}
+  >
+    <ArrowIcon right iconColor={color.white} />
+  </Button>
+</Preview>
+
+## Usage
+
+```jsx
+import { Button, ButtonStatus } from '@blablacar/ui-library/build/button'
+
+<Button status={ButtonStatus.TERTIARY}>OK</Button>
+
+# Button with loading/checked statuses
+export const renderPrimaryButton = () => {
+  const [buttonStatus, setButtonStatus] = useState(ButtonStatus.PRIMARY)
+  return (
+    <Button
+      status={buttonStatus}
+      onClick={() => {
+        setButtonStatus(ButtonStatus.LOADING)
+        setTimeout(() => setButtonStatus(ButtonStatus.CHECKED), 2000)
+        setTimeout(() => setButtonStatus(ButtonStatus.PRIMARY), 5000)
+      }}
+    >
+      Click to animate
+    </Button>
+  )
+}
+```
+
+<Props of={Button} />
