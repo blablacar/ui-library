@@ -3,9 +3,10 @@ import React from 'react'
 import { Button, ButtonStatus } from '../../../button'
 import { Column } from '../../../layout/column'
 import { Columns } from '../../../layout/columns'
-import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
+import { SectionContentSize } from '../../../layout/section/baseSection'
 import { Text, TextTagType } from '../../../text'
 import { Title } from '../../../title'
+import { StyledColumnedContentSection } from './ColumnedContentSection.style'
 
 export type ColumnedContentSectionProps = Readonly<{
   className?: string
@@ -135,7 +136,7 @@ export const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
   const showTopLink = Boolean(topLinkLabel && topLinkHref)
 
   return (
-    <BaseSection
+    <StyledColumnedContentSection
       tagName="article"
       contentClassName="kirk-columned-content-section-content"
       className={className}
@@ -158,6 +159,6 @@ export const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
           renderColumnContent(columnContent, String(index)),
         )}
       </Columns>
-    </BaseSection>
+    </StyledColumnedContentSection>
   )
 }
