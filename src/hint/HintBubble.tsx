@@ -2,7 +2,7 @@ import React from 'react'
 import cc from 'classcat'
 import styled from 'styled-components'
 
-import { color, fontWeight, radius, shadow, space } from '../_utils/branding'
+import { color, fontWeight, horizontalSpace, radius, shadow, space } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Button, ButtonStatus } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
@@ -55,6 +55,9 @@ const StyledHintBubble = styled(HintBubble)`
     color: ${color.white};
     border-radius: ${radius.l};
     box-shadow: ${shadow.icon};
+    /* Normalization */
+    margin-left: ${horizontalSpace.global};
+    margin-right: ${horizontalSpace.global};
   }
 
   & strong {

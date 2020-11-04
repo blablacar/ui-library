@@ -218,6 +218,8 @@ exports[`Hint Default rendering (above) 1`] = `
   color: #FFF;
   border-radius: 16px;
   box-shadow: 0 0 2px rgba(0,0,0,.3);
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .c2 strong {
@@ -570,6 +572,8 @@ exports[`Hint Default rendering (below) 1`] = `
   color: #FFF;
   border-radius: 16px;
   box-shadow: 0 0 2px rgba(0,0,0,.3);
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .c2 strong {
