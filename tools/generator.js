@@ -49,10 +49,18 @@ function renameFiles({ name, dir }) {
 
 function updateFiles({ name, dir }) {
   const componentName = name.charAt(0).toUpperCase() + name.slice(1)
+  const componentDirectory = name.charAt(0).toLowerCase() + name.slice(1)
   log.debug(`Updating ${componentName} files..`)
   replace({
     regex: '__COMPONENT_NAME__',
     replacement: componentName,
+    paths: [dir],
+    recursive: true,
+    silent: true,
+  })
+  replace({
+    regex: '__COMPONENT_DIRECTORY__',
+    replacement: componentDirectory,
     paths: [dir],
     recursive: true,
     silent: true,
