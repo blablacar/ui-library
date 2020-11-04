@@ -1,4 +1,5 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { useState } from 'react'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
 import { HamburgerButton } from '../hamburgerButton'
 import { BellIcon } from '../icon/bellIcon'
@@ -12,16 +13,25 @@ import { Drawer } from './index'
 
 <Meta title="Widgets|Drawer" />
 
-# **Drawer**
-
-<Preview>
-  <Story name="Demo">
+export const DrawerDemo = () => {
+  const [isOpen, toggleIsOpen] = useState(false)
+  return (
     <div>
       <nav>
-        <HamburgerButton />
+        <HamburgerButton
+          onClick={() => {
+            toggleIsOpen(!isOpen)
+          }}
+          open={isOpen}
+        />
       </nav>
       <main>
-        <Drawer width="400px">
+        <Drawer
+          open={isOpen}
+          onOpen={() => toggleIsOpen(true)}
+          onClose={() => toggleIsOpen(false)}
+          width="400px"
+        >
           <Menu withSeparators>
             <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
             <ItemChoice
@@ -38,16 +48,62 @@ import { Drawer } from './index'
         </Drawer>
       </main>
     </div>
+  )
+}
+
+# **Drawer**
+
+<Preview>
+  <Story name="Demo">
+    <DrawerDemo />
   </Story>
 </Preview>
 
 ## Specifications
 
+...
+
 ## Usage
 
 ```jsx
-import { Drawer } from '@blablacar/ui-library/build/Drawer'
-;<Drawer />
+import { Drawer } from '@blablacar/ui-library/build/drawer'
+
+const [isOpen, toggleIsOpen] = useState(false)
+  return (
+    <div>
+      <nav>
+        <HamburgerButton
+          onClick={() => {
+            toggleIsOpen(!isOpen)
+          }}
+          open={isOpen}
+        />
+      </nav>
+      <main>
+        <Drawer
+          open={isOpen}
+          onOpen={() => toggleIsOpen(true)}
+          onClose={() => toggleIsOpen(false)}
+          width="400px"
+        >
+          <Menu withSeparators>
+            <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
+            <ItemChoice
+              label="Rides offered (loading)"
+              leftAddon={<NewspaperIcon />}
+              status={ItemChoiceStatus.LOADING}
+              href="#"
+            />
+            <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
+            <ItemChoice label="Messages" leftAddon={<BubbleIcon />} href="#" />
+            <ItemChoice label="Ride alerts" leftAddon={<BellIcon />} href="#" />
+            <ItemChoice label="Menu item with onClick" href="#" />
+          </Menu>
+        </Drawer>
+      </main>
+    </div>
+  )
+}
 ```
 
 <Props of={Drawer} />

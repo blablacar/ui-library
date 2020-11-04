@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { color, transition } from '../_utils/branding'
 
-export const StyledDrawer = styled.div`
+export const StyledDrawer = styled.aside`
   &.kirk-drawer--open {
     position: fixed;
     top: 0;
