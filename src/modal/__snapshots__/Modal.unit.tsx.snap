@@ -341,7 +341,7 @@ exports[`Modal should not have changed 1`] = `
 }
 
 <div
-  className="c0 kirk-modal-dimmer kirk-modal-dimmer--visible kirk-modal-dimmer--active"
+  className="kirk-modal-dimmer kirk-modal-dimmer--visible kirk-modal-dimmer--active c0"
 >
   <div
     className="transition-wrapper"
