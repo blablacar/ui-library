@@ -12,6 +12,7 @@ import { KEYCODES } from '../_utils/keycodes'
 import { Button } from '../button'
 import { CrossIcon } from '../icon/crossIcon'
 import { AnimationType, Transitions as CustomTransition } from '../transitions'
+import { StyledModal } from './Modal.style'
 
 export enum ModalSize {
   SMALL = 'small',
@@ -176,7 +177,11 @@ export class Modal extends Component<ModalProps> {
     ])
 
     const modalElement = (
-      <div className={dimmerClassNames}>
+      <StyledModal
+        noHorizontalSpacing={this.props.noHorizontalSpacing}
+        layoutModeEnabled={this.props.layoutModeEnabled}
+        className={dimmerClassNames}
+      >
         <TransitionGroup component="div" className="transition-wrapper">
           {this.props.isOpen && (
             <CustomTransition animationName={AnimationType.SLIDE_UP} onEntered={this.onEntered}>
@@ -212,7 +217,7 @@ export class Modal extends Component<ModalProps> {
             </CustomTransition>
           )}
         </TransitionGroup>
-      </div>
+      </StyledModal>
     )
 
     return this.portalNode ? createPortal(modalElement, this.portalNode) : modalElement

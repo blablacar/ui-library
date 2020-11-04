@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import exenv from 'exenv'
 
 import { Button } from '../button'
-import { Modal, ModalSize } from '../modal'
+import { Modal, ModalSize } from './index'
 
 describe('Modal', () => {
   it('Should have default dimmer with default props', () => {
