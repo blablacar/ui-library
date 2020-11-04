@@ -81,7 +81,7 @@ initialeDate.setMonth(initialeDate.getMonth() + 6)
   </Story>
 </Preview>
 
-### Eexample vertical (12 months - selected date in 6 months)
+### Example vertical (12 months - selected date in 6 months)
 
 <Preview>
   <Story name="example vertical (12 months - selected date in 6 months)">
@@ -152,7 +152,12 @@ Only the first day of the week would need some kind of config or different sourc
 
 ```jsx
 import { DatePicker } from '@blablacar/ui-library/build/datePicker'
-;<DatePicker />
+<DatePicker
+  initialDate={initialeDate}
+  name="datepicker"
+  orientation={DatePickerOrientation.VERTICAL}
+  numberOfMonths={12}
+/>
 ```
 
 <Props of={DatePicker} />
