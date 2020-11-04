@@ -10,6 +10,7 @@ import { prefix } from '../_utils'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { SelectField } from '../selectField'
 import { inputTypes, TextField } from '../textField'
+import { StyledPhoneField } from './PhoneField.style'
 
 type FormattedCountryPhoneData = {
   name: string
@@ -254,7 +255,9 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
     ])
 
     return (
-      <div className={cc([baseClassName, prefix({ error: !!error }), this.props.className])}>
+      <StyledPhoneField
+        className={cc([baseClassName, prefix({ error: !!error }), this.props.className])}
+      >
         <div className={classNames} {...a11yAttrs}>
           <SelectField
             name={FIELDS.PHONEREGION}
@@ -283,7 +286,7 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
           />
         </div>
         {!!error && DisplayError(error)}
-      </div>
+      </StyledPhoneField>
     )
   }
 }
