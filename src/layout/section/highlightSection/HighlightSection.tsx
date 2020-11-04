@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { BaseSection, SectionContentSize } from '../../../layout/section/baseSection'
+import { SectionContentSize } from '../../../layout/section/baseSection'
 import { SubHeader } from '../../../subHeader'
+import { StyledHighlightSection } from './HighlightSection.style'
 
 export type HighlightSectionProps = Readonly<{
   className?: string
@@ -16,7 +17,7 @@ export type HighlightSectionProps = Readonly<{
 export const HighlightSection = (props: HighlightSectionProps) => {
   const { className, children, contentClassName, title } = props
   return (
-    <BaseSection
+    <StyledHighlightSection
       tagName="article"
       className={className}
       contentClassName={contentClassName}
@@ -24,6 +25,6 @@ export const HighlightSection = (props: HighlightSectionProps) => {
     >
       {title && <SubHeader>{title}</SubHeader>}
       {children}
-    </BaseSection>
+    </StyledHighlightSection>
   )
 }
