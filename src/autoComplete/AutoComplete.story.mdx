@@ -1,0 +1,193 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Button, ButtonStatus } from '../button'
+import { SearchIcon } from '../icon'
+import { BaseSection } from '../layout/section/baseSection'
+import { AutoCompleteExample } from './AutoCompleteExample'
+import { AutoComplete } from './index'
+
+<Meta title="Forms|AutoComplete" />
+
+# **AutoComplete**
+
+### Basic example
+
+<Preview>
+  <Story name="Default">
+    <BaseSection>
+      <p>
+        Type <code>Paris</code> to test auto-completion.
+      </p>
+      <AutoCompleteExample />
+    </BaseSection>
+  </Story>
+</Preview>
+
+### Default value
+When `defaultValue` is set and `searchOnMount` is `true` then the results are shown when the component is mounted.
+<Preview>
+  <Story name="Default value">
+    <BaseSection>
+      <p>
+        Type <code>Paris</code> to test auto-completion.
+      </p>
+      <AutoCompleteExample defaultValue="Paris" />
+    </BaseSection>
+  </Story>
+</Preview>
+
+### Display a loader when the search query is longer than a threshold
+To configure the threshold use the `busyTimeout` props which takes a number of milliseconds.
+
+<Preview>
+  <Story name="With busy state">
+    <BaseSection>
+      <p>
+        Type <code>Paris</code> to test auto-completion.
+      </p>
+      <AutoCompleteExample searchForItemsDelay={1500} />
+    </BaseSection>
+  </Story>
+</Preview>
+
+### Display default results when the results list is empty
+To display default items gives a list of `AutocompleteItem` to the `renderEmptySearch` props.
+
+<Preview>
+  <Story name="With empty search">
+    <BaseSection>
+      <p>
+        Type <code>Paris</code> to test auto-completion.
+      </p>
+      <AutoCompleteExample
+        renderEmptySearch={[
+          { id: '1', label: 'Get my location', labelInfo: '' },
+          { id: '2', label: 'Favorite address', labelInfo: '' },
+        ]}
+      />
+    </BaseSection>
+  </Story>
+</Preview>
+
+### Display an error message
+Set a text or a React element to the `error` props.
+
+<Preview>
+  <Story name="With errors">
+    <BaseSection>
+      <AutoCompleteExample defaultValue="Parix" error="Oups something went wrong" />
+    </BaseSection>
+  </Story>
+</Preview>
+
+### With inputAddon
+Set a React element to the `inputAddon` props, here is an example with a button.
+
+<Preview>
+  <Story name="With inputAddon">
+    <BaseSection>
+      <AutoCompleteExample inputAddon={(
+        <Button
+          status={ButtonStatus.UNSTYLED}
+          isBubble
+          tabIndex="-1"
+          aria-hidden="true"
+        >
+          <SearchIcon size="18" />
+        </Button>
+      )}
+      />
+    </BaseSection>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { AutoComplete } from '@blablacar/ui-library/build/AutoComplete'
+import React, { useState } from 'react'
+
+import { ItemStatus } from '../_internals/item'
+import { ComfortIcon } from '../icon'
+import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './AutoComplete'
+
+const places: AutocompleteItem[] = [
+  {
+    id: '1',
+    label: 'Paris Saint Lazare',
+    labelInfo: 'Rue d’Amsterdam, Paris',
+    leftAddon: <ComfortIcon />,
+  },
+  { id: '2', label: 'Paris Gare de Lyon', labelInfo: 'Rue d’Amsterdam, Paris' },
+  { id: '3', label: 'Paris Rive Gauche' },
+]
+
+type AutoCompleteExampleProps = Readonly<{
+  defaultValue?: string
+  searchOnMount?: boolean
+  searchForItemsDelay?: number
+  renderEmptySearch?: AutocompleteItem[]
+  inputAddon?: React.ReactElement
+  onSelect?: (obj: AutocompleteOnChange) => void
+  error?: string
+}>
+
+export const AutoCompleteExample = ({
+  searchForItemsDelay = 0,
+  renderEmptySearch = [],
+  onSelect,
+  inputAddon,
+  error,
+  defaultValue,
+}: AutoCompleteExampleProps) => {
+  const [items, setItems] = useState([])
+  const [isSearching, setSearching] = useState(false)
+
+  const searchForItems = (query: string) => {
+    setSearching(true)
+    setTimeout(() => {
+      setItems(places.filter(place => place.label.startsWith(query)))
+      setSearching(false)
+    }, searchForItemsDelay)
+  }
+
+  return (
+    <AutoComplete
+      name="city"
+      placeholder="Search here"
+      // indicates whether it should display a loading state
+      isSearching={isSearching}
+      // The default query
+      defaultValue={defaultValue}
+      // define if searchForItems is called on mount.
+      // If a default value is present it will search for it.
+      searchOnMount
+      searchForItems={searchForItems} // method to trigger a search
+      items={items} // Results of the search
+      busyTimeout={500} // milliseconds before showing a loading state
+      // custom loading display
+      renderBusy={() => <Loader size={36} layoutMode={LoaderLayoutMode.INLINE} />}
+      // allow to display default results when there is no results.
+      renderEmptySearch={renderEmptySearch}
+      // method called when an item is selected
+      onSelect={onSelect}
+      // Format the autocomplete selected value
+      getItemValue={item => item.id}
+      // Format the autocomplete display based on the selected item
+      renderQuery={item => item.label}
+      // An error message to display
+      error={error}
+      // max number of results that are display
+      maxItems={5}
+      // number of charachers required to trigger a search
+      searchForItemsMinChars={3}
+      // Display the status of the selected item, it can be loading or check
+      selectedItemStatus={ItemStatus.DEFAULT}
+      // Display a given icon in the input field
+      inputAddon={inputAddon}
+    />
+  )
+}
+```
+
+<Props of={AutoComplete} />
