@@ -1,11 +1,10 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import { Meta, Preview } from '@storybook/addon-docs/blocks'
 
 import { space } from '../_utils/branding'
 
-const stories = storiesOf('Design Tokens|Spacing', module)
+<Meta title="Design Tokens|Spacing" />
 
-const styles: { [name: string]: React.CSSProperties } = {
+export const styles = {
   main: {
     margin: '20px',
     overflow: 'hidden',
@@ -28,14 +27,16 @@ const styles: { [name: string]: React.CSSProperties } = {
   },
 }
 
-const renderTabSpacing = (s: string) => (
+export const renderTabSpacing = (s) => (
   <tr key={s}>
     <td>{s}</td>
     <td>{space[s]}</td>
   </tr>
 )
 
-stories.add('Default', () => (
+# Spacing
+
+<Preview>
   <div style={styles.main}>
     <table style={styles.fontTableTile}>
       <tbody>
@@ -47,4 +48,4 @@ stories.add('Default', () => (
       </tbody>
     </table>
   </div>
-))
+</Preview>
