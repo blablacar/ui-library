@@ -12,7 +12,7 @@ import { Hint } from './index'
 
 <Preview>
   <Story name="Default">
-    <BaseSection>
+    <BaseSection noHorizontalSpacing>
       <ItemsList>
         <ItemChoice label="Itinerary, date and time" href="#" />
         <ItemChoice label="Seats and options" href="#" />
@@ -50,7 +50,6 @@ Use it to show the member there’s a new action they can take on this page. Onl
 
 ```jsx
 import { Hint } from '@blablacar/ui-library/build/Hint'
-
 ;<Hint
   title="New settings"
   description="Take more control of your ride!"
