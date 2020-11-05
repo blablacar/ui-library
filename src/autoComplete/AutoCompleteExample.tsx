@@ -17,6 +17,7 @@ const places: AutocompleteItem[] = [
 ]
 
 type AutoCompleteExampleProps = Readonly<{
+  className?: string
   defaultValue?: string
   searchOnMount?: boolean
   searchForItemsDelay?: number
@@ -28,6 +29,7 @@ type AutoCompleteExampleProps = Readonly<{
 }>
 
 export const AutoCompleteExample = ({
+  className,
   searchForItemsDelay = 0,
   renderEmptySearch = [],
   onSelect,
@@ -49,6 +51,7 @@ export const AutoCompleteExample = ({
 
   return (
     <AutoComplete
+      className={className}
       name="city"
       placeholder="Search here"
       // indicates whether it should display a loading state
