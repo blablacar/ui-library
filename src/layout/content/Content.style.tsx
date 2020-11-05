@@ -12,21 +12,17 @@ export const BottomContent = styled.div.attrs(() => ({
 }))``
 
 export const StyledMainContent = styled(MainContent)`
-  & {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - ${props => props.topBarHeight});
-    min-height: stretch;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - ${props => props.topBarHeight});
+  min-height: stretch;
+  justify-content: space-between;
+
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    justify-content: flex-start;
   }
 
   & > *:not(${Content}, ${BottomContent}) {
     flex-grow: 1;
-  }
-
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    & {
-      justify-content: flex-start;
-    }
   }
 `
