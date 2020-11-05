@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { ToggleButton, ToggleButtonStatus } from './ToggleButton'
+import { ToggleButton, ToggleButtonStatus } from './index'
 
 const defaultProps = {
   name: 'foo',
@@ -18,8 +18,7 @@ describe('ToggleButton', () => {
   })
 
   it('Should render a button html component with the aria-pressed attribute', () => {
-    const btn = toggleButton.find('button')
-    expect(btn.prop('aria-pressed')).toBeDefined()
+    expect(toggleButton.prop('aria-pressed')).toBeDefined()
   })
 
   it('Should change the checked state when clicking on it', () => {
@@ -41,8 +40,7 @@ describe('ToggleButton', () => {
     })
 
     it('Should have the aria-pressed attribute to true', () => {
-      const btn = toggleButton.find('button')
-      expect(btn.prop('aria-pressed')).toBe(true)
+      expect(toggleButton.prop('aria-pressed')).toBe(true)
     })
   })
 
@@ -52,8 +50,7 @@ describe('ToggleButton', () => {
     })
 
     it('Should have the aria-pressed attribute to false', () => {
-      const btn = toggleButton.find('button')
-      expect(btn.prop('aria-pressed')).toBe(false)
+      expect(toggleButton.prop('aria-pressed')).toBe(false)
     })
   })
 
@@ -63,8 +60,7 @@ describe('ToggleButton', () => {
     })
 
     it('Should be disabled', () => {
-      const btn = toggleButton.find('button')
-      expect(btn.prop('disabled')).toBe(true)
+      expect(toggleButton.prop('disabled')).toBe(true)
     })
   })
 })
