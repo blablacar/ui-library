@@ -2,6 +2,10 @@
 
 [...]
 
+# v41.6.1 (05/11/2020)
+
+- **[FIX]** Horizontal Normalization for `Hint` & `Paragraph`
+
 # v41.6.0 (30/10/2020)
 
 - **[UPDATE]** Added new prop `segmentCollapsedLabels` on `Itinerary` to show the correct number of stopovers per segment
