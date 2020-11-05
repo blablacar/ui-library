@@ -3,14 +3,6 @@ import React, { useState } from 'react'
 import { BaseSection } from '../layout/section/baseSection'
 import { ConfirmationModal, ConfirmationModalProps } from './index'
 
-// <Story> needs to have a JSX element wrapping
-// the component in the story otherwise the smart knobs
-// will override the props passed.
-type DivProps = Readonly<{
-  children: React.ReactNode
-}>
-export const Div = ({ children }: DivProps) => <div>{children}</div>
-
 export const ConfirmationModalWithButton = ({ status }: ConfirmationModalProps) => {
   const [isOpened, setOpened] = useState(false)
   return (

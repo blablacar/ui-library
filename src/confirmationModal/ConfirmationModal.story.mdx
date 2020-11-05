@@ -1,29 +1,25 @@
 import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
 
-import { ConfirmationModalWithButton, Div } from './ConfirmationModalExample.story'
+import { ConfirmationModalWithButton } from './ConfirmationModalExample.story'
 import { ConfirmationModal, ConfirmationModalStatus } from './index'
 
 <Meta title="Screens|ConfirmationModal" />
 
 # **ConfirmationModal**
 
-## Warning
-
-<Preview>
-  <Story name="Reminder">
-    <Div>
-      <ConfirmationModalWithButton status={ConfirmationModalStatus.REMINDER} />
-    </Div>
-  </Story>
-</Preview>
-
 ## Reminder
 
 <Preview>
+  <Story name="Reminder">
+    <ConfirmationModalWithButton status={ConfirmationModalStatus.REMINDER} />
+  </Story>
+</Preview>
+
+## Warning
+
+<Preview>
   <Story name="Warning">
-    <Div>
-      <ConfirmationModalWithButton status={ConfirmationModalStatus.WARNING} />
-    </Div>
+    <ConfirmationModalWithButton status={ConfirmationModalStatus.WARNING} />
   </Story>
 </Preview>
 
