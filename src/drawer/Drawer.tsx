@@ -4,6 +4,7 @@ import { canUseDOM } from 'exenv'
 import { createGlobalStyle } from 'styled-components'
 
 import { KEYCODES } from '../_utils/keycodes'
+import { StyledDrawer } from './Drawer.style'
 
 const DrawerGlobalStyles = createGlobalStyle`
   .kirk-scroll-lock {
@@ -93,7 +94,7 @@ export class Drawer extends PureComponent<DrawerProps> {
   render() {
     const { open, className, innerClassName, onTransitionEnd, children, width } = this.props
     return (
-      <aside
+      <StyledDrawer
         className={cc([
           'kirk-drawer',
           {
@@ -112,7 +113,7 @@ export class Drawer extends PureComponent<DrawerProps> {
           {children}
         </div>
         <DrawerGlobalStyles />
-      </aside>
+      </StyledDrawer>
     )
   }
 }
