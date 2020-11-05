@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { ToggleButton, ToggleButtonStatus } from './ToggleButton'
+import { ToggleButton, ToggleButtonStatus } from './index'
 
 const defaultProps = {
   name: 'foo',
