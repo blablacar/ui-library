@@ -1,0 +1,42 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+import { Text, TextDisplayType, TextTagType } from './index'
+
+<Meta title="Text" />
+
+# **Text**
+
+<Preview>
+  <Story name="Default">
+    <Text
+      display={TextDisplayType.BODY}
+      tag={TextTagType.SPAN}
+      textColor={color.primary}
+      aria-label="Aria label"
+      newlineToBr
+    >
+      This is an example
+    </Text>
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Text, TextDisplayType, TextTagType } from '@blablacar/ui-library/build/text'
+
+<Text
+  display={TextDisplayType.BODY}
+  tag={TextTagType.SPAN}
+  textColor={color.primary}
+  aria-label="Aria label"
+  newlineToBr
+>
+  This is an example
+</Text>
+```
+
+<Props of={Text} />
