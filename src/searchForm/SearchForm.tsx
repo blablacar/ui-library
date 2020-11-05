@@ -21,6 +21,7 @@ import { AutoCompleteSection } from './autoComplete/section'
 import { DatePickerOverlay, DatePickerOverlayProps } from './datePicker/overlay'
 import { DatePickerSection } from './datePicker/section'
 import { Overlay } from './overlay'
+import { StyledSearchForm } from './SearchForm.style'
 import { SlideSwitchTransition, SlideSwitchTransitionSide } from './SlideSwitchTransition'
 import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
@@ -234,7 +235,7 @@ export const SearchForm = ({
     formValues[SearchFormElements.AUTOCOMPLETE_TO] != null
 
   return (
-    <form
+    <StyledSearchForm
       action=""
       noValidate
       className={cc(['kirk-searchForm', className])}
@@ -463,6 +464,6 @@ export const SearchForm = ({
           <SearchIcon iconColor={color.white} strokeWidth="2" />
         </button>
       </div>
-    </form>
+    </StyledSearchForm>
   )
 }

@@ -37,29 +37,29 @@ type AnimatedDivProps = {
 
 const AnimatedDiv = styled.div<AnimatedDivProps>`
   opacity: 1;
-  transform: ${p => p.transform.in};
+  transform: ${p => p.transform?.in};
   transition-property: opacity, transform;
   transition-duration: ${p => p.transitionDuration}ms;
 
   &.slide-enter {
     opacity: 0;
-    transform: ${p => p.transform.out};
+    transform: ${p => p.transform?.out};
   }
 
   &.slide-enter-active {
     opacity: 1;
-    transform: ${p => p.transform.in};
+    transform: ${p => p.transform?.in};
     transition-timing-function: ease-out;
   }
 
   &.slide-exit {
     opacity: 1;
-    transform: ${p => p.transform.in};
+    transform: ${p => p.transform?.in};
   }
 
   &.slide-exit-active {
     opacity: 0;
-    transform: ${p => p.transform.out};
+    transform: ${p => p.transform?.out};
     transition-timing-function: ease-in;
   }
 `
