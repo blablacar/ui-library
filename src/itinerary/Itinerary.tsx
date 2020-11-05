@@ -12,6 +12,7 @@ import { Bullet, BulletTypes } from '../bullet'
 import { SpacingDivider } from '../divider/spacingDivider'
 import { SubHeader } from '../subHeader'
 import { Text, TextDisplayType, TextTagType } from '../text'
+import { StyledItinerary } from './Itinerary.style'
 
 export type ItineraryProps = A11yProps &
   Readonly<{
@@ -184,7 +185,7 @@ export const Itinerary = (props: ItineraryProps) => {
   const intermediatePlaces = getIntermediatePlaces(places)
 
   return (
-    <div className={cc(['kirk-itinerary-root', className])} {...rootA11yProps}>
+    <StyledItinerary className={cc(['kirk-itinerary-root', className])} {...rootA11yProps}>
       {isNonEmptyString(headline) && (
         <Fragment>
           <SubHeader>{headline}</SubHeader>
@@ -243,6 +244,6 @@ export const Itinerary = (props: ItineraryProps) => {
 
         {renderAddon('to', toAddon, toAddonAriaLabel)}
       </ul>
-    </div>
+    </StyledItinerary>
   )
 }
