@@ -1,0 +1,89 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Profile } from './index'
+
+<Meta title="Widgets|Profile" />
+
+# **Profile**
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Profile
+      title="Pepe le Pew (small size)"
+      aria-label="Driver: Pepe le Pew, Charism +10"
+      info="Charism +10 (if no rating)"
+      picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
+    />
+  </Story>
+</Preview>
+
+## Size
+
+<Preview>
+  <Story name="Size">
+    <Profile
+      title="Pepe le Pew (medium size)"
+      aria-label="Driver: Pepe le Pew, Charism +20"
+      info="Charism +20 (if no rating)"
+      picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
+      isMedium
+    />
+  </Story>
+</Preview>
+
+## With ratings
+
+<Preview>
+  <Story name="With  ratings">
+    <Profile
+      title="Pepe le Pew (with ratings)"
+      aria-label="Driver: Pepe le Pew, Charism +10"
+      info="Charism +10 (if no rating)"
+      picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
+      score={2}
+      ratings={4}
+      ratingsLabel="ratingsLabel"
+    />
+  </Story>
+</Preview>
+
+## With link
+
+<Preview>
+  <Story name="With link">
+    <Profile
+      title="Pepe le Pew (with link)"
+      aria-label="Driver: Pepe le Pew, Charism +10"
+      info="Charism +10 (if no rating)"
+      picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
+      href="#"
+      isLink
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Profile } from '@blablacar/ui-library/build/profile'
+<Profile
+  title="Pepe le Pew"
+  aria-label="Driver: Pepe le Pew, Charism +10"
+  info="Charism +10 (if no rating)"
+  picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
+  alt="Alt text for picture"
+  score={2}
+  ratings={4}
+  ratingsLabel="ratingsLabel"
+  href="#"
+  isLink
+  isMedium
+  isIdChecked
+/>
+```
+
+<Props of={Profile} />

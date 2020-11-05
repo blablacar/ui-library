@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import { Item } from '../_internals/item'
+import { Item } from '../_internals/item/Item'
 import { Avatar } from '../avatar'
 import { Profile } from '../profile'
 import { Rating } from '../rating'
@@ -26,7 +26,7 @@ describe('Profile default', () => {
     expect(defaultProfile.find(Item).prop('aria-label')).toBeFalsy()
   })
 
-  it('Should pass a title prop to Item', () => {
+  it('Should change the leftTitleDisplay prop if isMedium', () => {
     expect(defaultProfile.find(Item).prop('leftTitleDisplay')).toEqual(TextDisplayType.TITLE)
 
     const profileMedium = mount(<Profile {...defaultProps} isMedium />)
