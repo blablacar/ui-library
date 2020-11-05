@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { Button, ButtonStatus } from '../../button'
 import { ButtonGroup } from '../../buttonGroup'
 import { BottomContent, Content, MainContent } from '../../layout/content'
-import { BaseSection as Section } from '../../layout/section/baseSection'
+import { BaseSection } from '../../layout/section/baseSection'
 import { Modal, ModalSize } from '../../modal'
 import { Paragraph } from '../../paragraph'
 import { SubHeader } from '../../subHeader'
@@ -16,22 +16,24 @@ stories.addDecorator(withKnobs)
 stories.add('default', () => (
   <MainContent onSubmit={() => {}} noValidate="" method="POST">
     <Content>
-      <Section>
+      <BaseSection>
         <SubHeader>Some Lorem ipsum content</SubHeader>
+      </BaseSection>
+      <BaseSection noHorizontalSpacing>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
           placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
           molestie sapien justo nec orci.
         </Paragraph>
-      </Section>
+      </BaseSection>
     </Content>
     <BottomContent>
-      <Section>
+      <BaseSection>
         <ButtonGroup>
           <Button status={ButtonStatus.PRIMARY}>Primary button</Button>
           <Button status={ButtonStatus.TERTIARY}>Secondary button</Button>
         </ButtonGroup>
-      </Section>
+      </BaseSection>
     </BottomContent>
   </MainContent>
 ))
@@ -40,12 +42,16 @@ stories.add('Inside a modal', () => (
   <Modal isOpen size={ModalSize.FULLSCREEN}>
     <MainContent>
       <Content>
-        <SubHeader>Some Lorem ipsum content</SubHeader>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
-          placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
-          molestie sapien justo nec orci.
-        </Paragraph>
+        <BaseSection>
+          <SubHeader>Some Lorem ipsum content</SubHeader>
+        </BaseSection>
+        <BaseSection noHorizontalSpacing>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
+            placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor,
+            vel molestie sapien justo nec orci.
+          </Paragraph>
+        </BaseSection>
       </Content>
       <BottomContent>
         <ButtonGroup>
