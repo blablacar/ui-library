@@ -5,6 +5,7 @@ import { CheckboxIcon } from '../_internals/checkboxIcon'
 import { Item } from '../_internals/item/index'
 import { ItemProps } from '../_internals/item/Item'
 import { OnChangeParameters } from '../_internals/onChange'
+import { StyledToggleButton } from './ToggleButton.style'
 
 export type ToggleButtonProps = ItemProps &
   Readonly<{
@@ -49,7 +50,7 @@ export class ToggleButton extends PureComponent<ToggleButtonProps> {
     const isDisabled = this.props.disabled || isLoading
 
     return (
-      <button
+      <StyledToggleButton
         className={cc(['kirk-toggle-button', this.props.className])}
         type="button"
         aria-pressed={isChecked}
@@ -61,7 +62,7 @@ export class ToggleButton extends PureComponent<ToggleButtonProps> {
           leftBody={this.props.sublabel}
           rightAddon={<CheckboxIcon isChecked={isChecked} isLoading={isLoading} />}
         />
-      </button>
+      </StyledToggleButton>
     )
   }
 }
