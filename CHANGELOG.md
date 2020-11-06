@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[FIX]** Removed `cursor: not-allowed` from `UneditableTextField`
+
 # v41.6.2 (06/11/2020)
 
 - **[UPDATE]** Migrate [all stories](https://github.com/blablacar/ui-library/milestones) to MDX (PR #938)
