@@ -20,10 +20,14 @@ module.exports = {
         },
       ],
     })
+
     config.resolve.extensions.push('.ts', '.tsx')
+    // https://github.com/storybookjs/storybook/issues/11255#issuecomment-713083086
+    config.resolve.alias['core-js/modules'] = '@storybook/core/node_modules/core-js/modules'
+    config.resolve.alias['core-js/features'] = '@storybook/core/node_modules/core-js/features'
     return config
   },
-  stories: ['../src/**/story.(tsx|mdx)', '../src/**/*.story.(tsx|mdx)'],
+  stories: ['../src/**/*.story.mdx'],
   addons: [
     '@storybook/addon-knobs',
     '@storybook/addon-actions',
