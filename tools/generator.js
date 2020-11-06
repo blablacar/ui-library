@@ -30,15 +30,16 @@ function renameFiles({ name, dir }) {
       if (err) {
         return reject(err)
       }
-      files.forEach(f => {
-        if (f === 'package.json') {
-          return
-        }
+
+      const components = files.filter((f) => f !== 'index.tsx')
+      const componentName = name.charAt(0).toUpperCase() + name.slice(1)
+
+      components.forEach(f => {
         const rest = f
           .split('.')
           .splice(1)
           .join('.')
-        fs.rename(`${dir}${f}`, `${dir}${name}.${rest}`, err => {
+        fs.rename(`${dir}${f}`, `${dir}${componentName}.${rest}`, err => {
           err ? reject(err) : resolve({ name, dir })
         })
       })
@@ -47,10 +48,19 @@ function renameFiles({ name, dir }) {
 }
 
 function updateFiles({ name, dir }) {
-  log.debug(`Updating ${name} files..`)
+  const componentName = name.charAt(0).toUpperCase() + name.slice(1)
+  const componentDirectory = name.charAt(0).toLowerCase() + name.slice(1)
+  log.debug(`Updating ${componentName} files..`)
   replace({
     regex: '__COMPONENT_NAME__',
-    replacement: name,
+    replacement: componentName,
+    paths: [dir],
+    recursive: true,
+    silent: true,
+  })
+  replace({
+    regex: '__COMPONENT_DIRECTORY__',
+    replacement: componentDirectory,
     paths: [dir],
     recursive: true,
     silent: true,
@@ -90,7 +100,10 @@ function scaffoldComponent({ name, dir }) {
 
 reader.question(query, name => {
   reader.close()
-  const dir = path.join(destination, name, '/')
+
+  const dirName = name.charAt(0).toLowerCase() + name.slice(1)
+
+  const dir = path.join(destination, dirName, '/')
   if (directoryExists(dir)) {
     return log.error(`Component "${name}" already exists. Aborting..`)
   }

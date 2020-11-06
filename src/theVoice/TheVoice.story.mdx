@@ -1,0 +1,70 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../_utils/branding'
+import { TheVoice } from './index'
+
+<Meta title="Text|TheVoice" />
+
+# **TheVoice**
+
+<Preview>
+  <Story name="Default">
+    <TheVoice>
+      TheVoice Content
+    </TheVoice>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="isInverted">
+    <div style={{ backgroundColor: color.green }}>
+      <TheVoice isInverted>This is inverted TheVoice!</TheVoice>
+    </div>
+  </Story>
+</Preview>
+
+## Specifications
+
+### Behaviour
+
+This component is the core of our **conversational approach**.
+Use it to guide the member on what to do in the screen.
+
+`TheVoice` is not clickable.
+
+It’s not sticky but when scrolling it slides under the topbar.
+
+### Sizing & position
+
+#### Viewport variation
+
+_Mobile (below `799px`)_
+
+- Text aligned left
+- Font-size same as `Title`
+
+_Desktop (above `800px`)_
+
+- Text is centered
+- Font-size up to `40px`
+
+#### Text rules
+
+- There’s no limitation on the _number of lines_
+
+#### Colors
+
+It can switch colors (`white` or `midnightGreen`) when applied to darker backgrounds.
+
+
+## Usage
+
+```jsx
+import { TheVoice } from '@blablacar/ui-library/build/theVoice'
+
+<TheVoice>
+  TheVoice Content
+</TheVoice>
+```
+
+<Props of={TheVoice} />

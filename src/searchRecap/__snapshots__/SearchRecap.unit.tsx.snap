@@ -119,6 +119,7 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   line-height: 54px;
   -webkit-text-decoration: none;
   text-decoration: none;
+  cursor: not-allowed;
 }
 
 .c1 .kirk-uneditableTextField-label:not(:first-child) {
@@ -197,91 +198,95 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   className="kirk-searchRecap c0"
 >
   <div
-    className="kirk-uneditableTextField c1"
+    className="kirk-uneditableTextField"
   >
-    <svg
-      aria-hidden={true}
-      className="kirk-icon c2"
-      height={24}
-      viewBox="0 0 24 24"
-      width={24}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      
-      <g
-        fill="none"
-        stroke="#708C91"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeMiterlimit="10"
-        strokeWidth="1"
-      >
-        <line
-          x1="22"
-          x2="16.4"
-          y1="22"
-          y2="16.4"
-        />
-        <circle
-          cx="10"
-          cy="10"
-          r="9"
-        />
-      </g>
-    </svg>
     <div
-      className="kirk-uneditableTextField-label kirk-uneditableTextField-label--ellipsis"
+      className="c1"
     >
-      <p
-        className="kirk-text kirk-text-body kirk-requestRecap-route c3"
-        style={
-          Object {
-            "color": "#054752",
-          }
-        }
+      <svg
+        aria-hidden={true}
+        className="kirk-icon c2"
+        height={24}
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <span
-          className=""
+        
+        <g
+          fill="none"
+          stroke="#708C91"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          strokeWidth="1"
         >
-          <span>
-            Middlesbrough
-          </span>
-          <svg
-            aria-hidden={true}
-            className="kirk-icon c4 c2"
-            height={24}
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            
-            <g
-              fill="none"
-              stroke="#708C91"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeMiterlimit="10"
-              strokeWidth="2"
-              transform="rotate(180 12 12)"
-            >
-              <path
-                d="M9 19l-7-7 7-7"
-              />
-              <path
-                d="M22 12H2"
-              />
-            </g>
-          </svg>
-          <span>
-            Stoke-on-Trent, city center
-          </span>
-        </span>
-      </p>
-      <span
-        className="kirk-text kirk-text-body kirk-requestRecap-info c3"
+          <line
+            x1="22"
+            x2="16.4"
+            y1="22"
+            y2="16.4"
+          />
+          <circle
+            cx="10"
+            cy="10"
+            r="9"
+          />
+        </g>
+      </svg>
+      <div
+        className="kirk-uneditableTextField-label kirk-uneditableTextField-label--ellipsis"
       >
-        Today 2:30pm, 2 passengers
-      </span>
+        <p
+          className="kirk-text kirk-text-body kirk-requestRecap-route c3"
+          style={
+            Object {
+              "color": "#054752",
+            }
+          }
+        >
+          <span
+            className=""
+          >
+            <span>
+              Middlesbrough
+            </span>
+            <svg
+              aria-hidden={true}
+              className="kirk-icon c4 c2"
+              height={24}
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              
+              <g
+                fill="none"
+                stroke="#708C91"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                strokeWidth="2"
+                transform="rotate(180 12 12)"
+              >
+                <path
+                  d="M9 19l-7-7 7-7"
+                />
+                <path
+                  d="M22 12H2"
+                />
+              </g>
+            </svg>
+            <span>
+              Stoke-on-Trent, city center
+            </span>
+          </span>
+        </p>
+        <span
+          className="kirk-text kirk-text-body kirk-requestRecap-info c3"
+        >
+          Today 2:30pm, 2 passengers
+        </span>
+      </div>
     </div>
   </div>
 </div>

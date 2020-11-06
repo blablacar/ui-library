@@ -30,7 +30,7 @@ const places = [
 describe('ItineraryCollapsible component', () => {
   it('Should render with a label if provided', () => {
     const wrapper = shallow(<ItineraryCollapsible places={places} label="unit test" />)
-    expect(wrapper.find('.kirk-itineraryCollapsible-collapsed').text()).toBe('unit test')
+    expect(wrapper.find('.kirk-itineraryCollapsible-collapsed').text()).toContain('unit test')
   })
 
   it('Should rendered as collapsed, extend on click, collapse on click again', () => {

@@ -1,0 +1,33 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { color } from '../../_utils/branding'
+import { TextDisplay1 } from '.'
+
+<Meta title="Design Tokens|Typography/" />
+
+# **TextDisplay1**
+
+<Preview>
+  <Story name="TextDisplay1">
+    <React.Fragment>
+      <h1>
+        <TextDisplay1 isInverted={false}>
+          {'The quick\n brown fox jumps\n over the lazy\n dog'}
+        </TextDisplay1>
+      </h1>
+      <h1 style={{ backgroundColor: color.blue }}>
+        <TextDisplay1 isInverted>The quick brown fox jumps over the lazy dog</TextDisplay1>
+      </h1>
+    </React.Fragment>
+  </Story>
+</Preview>
+
+## Usage
+
+```jsx
+import { TextDisplay1 } from '@blablacar/ui-library/build/typography/display1'
+
+<TextDisplay1>The quick brown fox jumps over the lazy dog</TextDisplay1>
+```
+
+<Props of={TextDisplay1} />

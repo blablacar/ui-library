@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { color } from '../_utils/branding'
 import { ChevronIcon } from '../icon/chevronIcon'
+import { StyledDropdownButton } from './DropdownButton.style'
 
 export type DropdownButtonProps = Readonly<{
   onClick: (event: React.MouseEvent<HTMLElement>) => void
@@ -19,7 +20,7 @@ export const DropdownButton = ({
   className = '',
   iconPosition = 'right',
 }: DropdownButtonProps) => (
-  <div
+  <StyledDropdownButton
     className={cc([
       'kirk-dropdownButton',
       {
@@ -33,5 +34,5 @@ export const DropdownButton = ({
       {children}
       {iconPosition === 'right' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
     </button>
-  </div>
+  </StyledDropdownButton>
 )

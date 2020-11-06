@@ -1,0 +1,31 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Bullet, BulletTypes } from './index'
+
+<Meta title="Widgets|Bullet" />
+
+# **Bullet**
+
+<Preview>
+  <Story name="Default">
+    <Bullet
+      className="custom-class"
+      type={BulletTypes.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Bullet, BulletTypes } from '@blablacar/ui-library/build/bullet'
+
+<Bullet
+  className="additionnal-class"
+  type={BulletTypes.DEFAULT}
+/>
+```
+
+<Props of={Bullet} />

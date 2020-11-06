@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react'
 
 import { ItineraryCollapsible } from '../_internals/itineraryCollapsible'
 import { ItineraryLocation } from '../_internals/itineraryLocation'
-import { Proximity } from '../proximity'
+import { Distances, Proximity } from '../proximity'
 import { Itinerary } from './Itinerary'
 
 const places = [
@@ -14,14 +14,16 @@ const places = [
     time: '09:00',
     isoDate: '2017-12-11T09:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: <Proximity value="FAR" title="Pick up point is quite far fom your place" />,
+    subLabel: <Proximity value={Distances.FAR} title="Pick up point is quite far fom your place" />,
     mainLabel: 'Paris',
   },
   {
     time: '12:00',
     isoDate: '2017-12-11T12:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: <Proximity value="MIDDLE" title="Pick up point is not that far fom your place" />,
+    subLabel: (
+      <Proximity value={Distances.MIDDLE} title="Pick up point is not that far fom your place" />
+    ),
     mainLabel: 'Tours',
   },
   {
@@ -29,7 +31,7 @@ const places = [
     time: '15:00',
     isoDate: '2017-12-11T15:00',
     stepAriaLabel: 'Pick up/drop off location',
-    subLabel: <Proximity value="CLOSE" title="Pick up point is close to your place" />,
+    subLabel: <Proximity value={Distances.CLOSE} title="Pick up point is close to your place" />,
     mainLabel: 'Bordeaux',
   },
 ]
@@ -145,7 +147,10 @@ describe('Itinerary component', () => {
           isoDate: '2017-12-11T12:00',
           stepAriaLabel: 'Pick up/drop off location',
           subLabel: (
-            <Proximity value="MIDDLE" title="Pick up point is not that far fom your place" />
+            <Proximity
+              value={Distances.MIDDLE}
+              title="Pick up point is not that far fom your place"
+            />
           ),
           mainLabel: 'Tours',
         },

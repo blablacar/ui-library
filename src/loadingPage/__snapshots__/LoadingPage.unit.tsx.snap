@@ -40,6 +40,10 @@ exports[`Should have the correct attributes and text when all props. 1`] = `
   margin-right: 0;
 }
 
+.c2.kirk-thevoice--inverted {
+  color: #FFF;
+}
+
 .c0 {
   position: absolute;
   top: 0;
@@ -155,6 +159,10 @@ exports[`Should have the correct attributes and text when no icon. 1`] = `
   padding-right: 24px !important;
   margin-left: 0;
   margin-right: 0;
+}
+
+.c1.kirk-thevoice--inverted {
+  color: #FFF;
 }
 
 .c0 {

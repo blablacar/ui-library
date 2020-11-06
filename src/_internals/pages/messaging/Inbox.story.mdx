@@ -1,0 +1,80 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+
+import { ClockIcon } from '../../../icon/clockIcon'
+import { ItemAction } from '../../../itemAction'
+import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
+import { BaseSection } from '../../../layout/section/baseSection'
+import { TabsSection } from '../../../layout/section/tabsSection'
+import { MessagingSummaryItem } from '../../../messagingSummaryItem'
+import { TheVoice } from '../../../theVoice'
+
+<Meta title="Pages|Messaging/Inbox" />
+
+export const messagingSummaryItemConfig = {
+  url: '#',
+  pictureUrl: 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg',
+  label: 'Some conversation title',
+  subLabel: 'Paris vers Lyon',
+  timeLabel: 'Il y a 3 heures',
+  hasUnreadMessages: true,
+}
+
+export const notificationConfig = {
+  leftAddon: <ClockIcon />,
+  action: 'Add a photo',
+  subLabel: 'People like to put a face to a name.',
+  href: '#',
+}
+
+export const panel1 = (
+  <BaseSection noHorizontalSpacing>
+    <ul>
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+      <MessagingSummaryItem {...messagingSummaryItemConfig} />
+    </ul>
+  </BaseSection>
+)
+
+export const panel2 = (
+  <ul>
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+    <ItemAction {...notificationConfig} />
+  </ul>
+)
+
+export const defaultTabsConfig = {
+  activeTabId: 'tab1',
+  tabs: [
+    {
+      id: 'tab1',
+      label: 'Messages',
+      panelContent: panel1,
+    },
+    {
+      id: 'tab2',
+      label: 'Notifications',
+      panelContent: panel2,
+    },
+  ],
+}
+
+<Preview>
+  <Story name="Inbox">
+    <React.Fragment>
+      <LayoutNormalizer useLegacyNormalization={false} />
+      <BaseSection>
+        <TheVoice>Inbox</TheVoice>
+      </BaseSection>
+      <TabsSection tabsProps={defaultTabsConfig} />
+    </React.Fragment>
+  </Story>
+</Preview>

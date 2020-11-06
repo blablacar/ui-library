@@ -3,6 +3,7 @@ import cc from 'classcat'
 
 import { color } from '../_utils/branding'
 import { ProximityIcon } from '../icon/proximityIcon'
+import { StyledProximity } from './Proximity.style'
 
 export enum Distances {
   NONE = 'NONE',
@@ -52,9 +53,9 @@ export type ProximityProps = Readonly<{
 }>
 
 export const Proximity = ({ value, title, className }: ProximityProps) => (
-  <div className={cc(['kirk-proximity', className])}>
+  <StyledProximity className={cc(['kirk-proximity', className])}>
     {[Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance => (
       <ProximityIcon key={distance} size={size} {...getColorAndTitle(distance, value, title)} />
     ))}
-  </div>
+  </StyledProximity>
 )

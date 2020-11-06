@@ -1,0 +1,42 @@
+import { action } from '@storybook/addon-actions'
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { ToggleButton, ToggleButtonStatus } from './index'
+
+<Meta title="Forms|ToggleButton" />
+
+# **ToggleButton**
+
+<Preview>
+  <Story name="Default">
+    <ToggleButton
+      name="toggle"
+      onChange={action('ToggleButton changed')}
+      checked={false}
+      disabled={false}
+      label="label"
+      sublabel="sublabel"
+      status={ToggleButtonStatus.DEFAULT}
+    />
+  </Story>
+</Preview>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { ToggleButton } from '@blablacar/ui-library/build/toggleButton'
+
+<ToggleButton
+  name="toggle"
+  onChange={action('ToggleButton changed')}
+  checked={false}
+  disabled={false}
+  label="label"
+  sublabel="sublabel"
+  status={ToggleButtonStatus.DEFAULT}
+/>
+```
+
+<Props of={ToggleButton} />

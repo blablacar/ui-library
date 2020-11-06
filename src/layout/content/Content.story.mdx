@@ -1,0 +1,58 @@
+import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+
+import { Button, ButtonStatus } from '../../button'
+import { ButtonGroup } from '../../buttonGroup'
+import { Paragraph } from '../../paragraph'
+import { SubHeader } from '../../subHeader'
+import { BaseSection } from '../section/baseSection'
+import { BottomContent, Content, MainContent } from './index'
+
+<Meta title="Layout|MainContent" />
+
+# **MainContent**
+
+<Preview>
+  <Story name="Default">
+    <MainContent onSubmit={() => {}} noValidate="" method="POST">
+      <Content>
+        <BaseSection>
+          <SubHeader>Some Lorem ipsum content</SubHeader>
+        </BaseSection>
+        <BaseSection noHorizontalSpacing>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec tristique sapien, eu
+            placerat justo. Donec tempor, risus ac cursus fringilla, lorem ipsum facilisis tortor, vel
+            molestie sapien justo nec orci.
+          </Paragraph>
+        </BaseSection>
+      </Content>
+      <BottomContent>
+        <BaseSection>
+          <ButtonGroup>
+            <Button status={ButtonStatus.PRIMARY}>Primary button</Button>
+            <Button status={ButtonStatus.TERTIARY}>Secondary button</Button>
+          </ButtonGroup>
+        </BaseSection>
+      </BottomContent>
+    </MainContent>
+  </Story>
+</Preview>
+
+## Specifications
+
+Adapative layout component. Based on javascript to calculate contents hight.
+It takes into account window height and the `TopBar` to size it correctly
+
+`BottomContent` is stacked and fixed on Page bottom on small screens. `Content` takes the rest of page size.
+
+## Usage
+
+```jsx
+import { MainContent, Content, BottomContent } from '@blablacar/ui-library/build/layout/content'
+<MainContent>
+  <Content>Content here</Content>
+  <BottomContent>Bottom Content here. Usually buttons</BottomContent>
+</MainContent>
+```
+
+<Props of={MainContent} />
