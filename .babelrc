@@ -13,6 +13,7 @@
   ],
   "plugins": [
     "@babel/plugin-transform-react-jsx",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     [
       "module-resolver",
       {
