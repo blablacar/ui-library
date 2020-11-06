@@ -1,7 +1,6 @@
 # Unreleased
 
-- **[UPDATE]** Migrate `Bullet` to new mdx story format
-[...]
+- **[UPDATE]** Migrate all stories to MDX (PR #938)
 
 # v41.6.1 (05/11/2020)
 
