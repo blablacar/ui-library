@@ -1,5 +1,7 @@
 # Unreleased
 
+# v41.6.2 (06/11/2020)
+
 - **[UPDATE]** Migrate [all stories](https://github.com/blablacar/ui-library/milestones) to MDX (PR #938)
 
 # v41.6.1 (05/11/2020)
