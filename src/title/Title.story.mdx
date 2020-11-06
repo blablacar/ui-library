@@ -1,9 +1,9 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { select, text } from '@storybook/addon-knobs'
 
 import { Title } from './index'
 
-<Meta title="Text|Title" />
+<Meta title="Text/Title" />
 
 # **Title**
 
@@ -16,13 +16,13 @@ export const optionHeading = {
   6: '6',
 }
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Title headingLevel={select('Heading', optionHeading, '1')}>
       {text('Title', 'Voice title')}
     </Title>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -36,4 +36,4 @@ import { Title } from '@blablacar/ui-library/build/Title'
 </Title>
 ```
 
-<Props of={Title} />
+<ArgsTable of={Title} />

@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { PhoneField } from './index'
 
-<Meta title="Forms|PhoneField" />
+<Meta title="Forms/PhoneField" />
 
 # **PhoneField**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <p id="phoneFieldLabel">Accessibility label</p>
     <PhoneField
@@ -16,11 +16,11 @@ import { PhoneField } from './index'
       onChange={() => {}}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Custom
 
-<Preview>
+<Canvas>
   <Story name="Custom">
     <React.Fragment>
       <p id="labelIdCustom">Accessibility label</p>
@@ -43,7 +43,7 @@ import { PhoneField } from './index'
       />
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -93,4 +93,4 @@ import { PhoneField } from '@blablacar/ui-library/build/phoneField'
   />
 ```
 
-<Props of={PhoneField} />
+<ArgsTable of={PhoneField} />

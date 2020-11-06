@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Review } from './index'
 
@@ -11,19 +11,19 @@ export const reviewProps = {
   isoDatetime: '2017-08-07T14:10:40.526Z',
 }
 
-<Meta title="Widgets|Review" />
+<Meta title="Widgets/Review" />
 
 # Review
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Review {...reviewProps} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Response
 
-<Preview>
+<Canvas>
   <Story name="withResponse">
     <Review
       title="Reply from Karen"
@@ -33,11 +33,11 @@ export const reviewProps = {
       isResponse
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With href reply link
 
-<Preview>
+<Canvas>
   <Story name="withReplyLink">
     <Review
       {...reviewProps}
@@ -45,11 +45,11 @@ export const reviewProps = {
       replyLinkHref={<a target="_blank" href="/reply_ratings">edit_ratings</a>}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With onClick reply link
 
-<Preview>
+<Canvas>
   <Story name="withOnClickLink">
     <Review
       {...reviewProps}
@@ -57,7 +57,7 @@ export const reviewProps = {
       replyLinkOnClick={() => { window.alert('Click!') }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -77,4 +77,4 @@ import { Review } from '@blablacar/ui-library/build/review'
 />
 ```
 
-<Props of={Review} />
+<ArgsTable of={Review} />

@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemRadio } from '../../../itemRadio'
 import { ItemRadioGroup } from '../../../itemRadioGroup'
@@ -7,11 +7,11 @@ import { TheVoice } from '../../../theVoice'
 import { Content, MainContent } from '../../content'
 import { SlideSection } from './index'
 
-<Meta title="Sections|SlideSection" />
+<Meta title="Sections/SlideSection" />
 
 # SlideSection
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <MainContent>
       <Content>
@@ -52,7 +52,7 @@ import { SlideSection } from './index'
       </Content>
     </MainContent>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -72,4 +72,4 @@ import { SlideSection } from '@blablacar/ui-library/build/grip'
 </SlideSection>
 ```
 
-<Props of={SlideSection} />
+<ArgsTable of={SlideSection} />

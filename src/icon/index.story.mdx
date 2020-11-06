@@ -1,4 +1,4 @@
-import { IconGallery, IconItem, Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, IconGallery, IconItem, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseIcon } from '../_utils/icon/BaseIcon'
 import * as allIcons from './index'
@@ -7,7 +7,7 @@ import * as allIcons from './index'
 
 # ** Icons **
 
-<Preview>
+<Canvas>
   <Story name="Icons">
     <IconGallery>
       {Object.entries(allIcons).map(([name, Component]) => (
@@ -15,7 +15,7 @@ import * as allIcons from './index'
       ))}
     </IconGallery>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -54,4 +54,4 @@ import { WarningIcon } from '@blablacar/ui-library/icons/warningIcon'
 <WarningIcon/>
 ```
 
-<Props of={BaseIcon} />
+<ArgsTable of={BaseIcon} />

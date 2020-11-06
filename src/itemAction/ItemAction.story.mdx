@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BubbleIcon } from '../icon/bubbleIcon'
 import { ItemAction } from './index'
 
-<Meta title="Items|ItemAction" />
+<Meta title="Items/ItemAction" />
 
 # ItemAction
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ItemAction
       action="Title"
@@ -16,7 +16,7 @@ import { ItemAction } from './index'
       highlight={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -53,7 +53,7 @@ import { ItemAction } from '@blablacar/ui-library/build/itemBigData'
 />
 ```
 
-<Props of={ItemAction} />
+<ArgsTable of={ItemAction} />
 
 ## When should I use it?
 

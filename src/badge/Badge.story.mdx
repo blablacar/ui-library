@@ -1,17 +1,17 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { text } from '@storybook/addon-knobs'
 
 import { Badge } from './index'
 
-<Meta title="Widgets|Badge" />
+<Meta title="Widgets/Badge" />
 
 # **Badge**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Badge ariaLabel="Unread messages">{text('children', '456')}</Badge>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -22,6 +22,6 @@ import { Badge } from '@blablacar/ui-library/build/badge'
 <Badge ariaLabel="Unread messages">456</Badge>
 ```
 
-<Props of={Badge} />
+<ArgsTable of={Badge} />
 
 Content of `Badge` is whatever `children` element you want, provided it is of type `string | JSX.Element | number`

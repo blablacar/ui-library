@@ -1,26 +1,26 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ProximityIcon } from '../icon/proximityIcon'
 import { PushInfo } from './index'
 
-<Meta title="Widgets|PushInfo" />
+<Meta title="Widgets/PushInfo" />
 
 # **PushInfo**
 
 ### Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <PushInfo
       headline="This is the headline!"
       content="But we can also give you more explanations here"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With icon
 
-<Preview>
+<Canvas>
   <Story name="With icon">
     <PushInfo
       icon={<ProximityIcon title="" />}
@@ -28,7 +28,7 @@ import { PushInfo } from './index'
       content="But we can also give you more explanations here"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -45,4 +45,4 @@ import { PushInfo } from '@blablacar/ui-library/build/pushInfo'
 <PushInfo headline="" />
 ```
 
-<Props of={PushInfo} />
+<ArgsTable of={PushInfo} />

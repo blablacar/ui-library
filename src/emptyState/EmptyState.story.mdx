@@ -1,38 +1,38 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { text } from '@storybook/addon-knobs'
 
 import { Button } from '../button'
 import { EmptyState } from './index'
 
-<Meta title="Screens|EmptyState" />
+<Meta title="Screens/EmptyState" />
 
 # EmptyState
 
 ### with simple text
 
-<Preview>
+<Canvas>
   <Story name="With simple text">
     <EmptyState
       image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
       text={text('text', 'Nothing there...')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### with JSX text
 
-<Preview>
+<Canvas>
   <Story name="With JSX text">
     <EmptyState
       image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
       text={<h1>This H1 contains a span!<span style={{ color: 'gray' }}> But nothing else.</span></h1>}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### with button
 
-<Preview>
+<Canvas>
   <Story name="With button">
     <EmptyState
       image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
@@ -40,7 +40,7 @@ import { EmptyState } from './index'
       button={<Button>Go there!</Button>}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -76,4 +76,4 @@ import { EmptyState } from '@blablacar/ui-library'
 />
 ```
 
-<Props of={EmptyState} />
+<ArgsTable of={EmptyState} />

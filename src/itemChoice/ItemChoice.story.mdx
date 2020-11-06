@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemChoice, ItemChoiceStatus } from './index'
 
-<Meta title="Items|ItemChoice" />
+<Meta title="Items/ItemChoice" />
 
 # ItemChoice
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ItemChoice
       label="Title"
@@ -16,7 +16,7 @@ import { ItemChoice, ItemChoiceStatus } from './index'
       dataInfo="Data Info"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -64,4 +64,4 @@ import { ItemChoice } from '@blablacar/ui-library/build/ItemChoice'
 />
 ```
 
-<Props of={ItemChoice} />
+<ArgsTable of={ItemChoice} />

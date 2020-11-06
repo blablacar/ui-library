@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseSection } from '../layout/section/baseSection'
 import { Snackbar } from './index'
@@ -26,11 +26,11 @@ export const SnackbarWithButton = () => {
   )
 }
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <SnackbarWithButton />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -86,4 +86,4 @@ export const SnackbarWithButton = () => {
 }
 ```
 
-<Props of={Snackbar} />
+<ArgsTable of={Snackbar} />

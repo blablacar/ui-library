@@ -1,13 +1,13 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ToggleButton, ToggleButtonStatus } from './index'
 
-<Meta title="Forms|ToggleButton" />
+<Meta title="Forms/ToggleButton" />
 
 # **ToggleButton**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ToggleButton
       name="toggle"
@@ -19,7 +19,7 @@ import { ToggleButton, ToggleButtonStatus } from './index'
       status={ToggleButtonStatus.DEFAULT}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -39,4 +39,4 @@ import { ToggleButton } from '@blablacar/ui-library/build/toggleButton'
 />
 ```
 
-<Props of={ToggleButton} />
+<ArgsTable of={ToggleButton} />

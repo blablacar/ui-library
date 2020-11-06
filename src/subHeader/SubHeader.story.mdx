@@ -1,16 +1,16 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SubHeader } from './index'
 
-<Meta title="Text|SubHeader" />
+<Meta title="Text/SubHeader" />
 
 # **SubHeader**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <SubHeader>SubHeader Title</SubHeader>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -39,4 +39,4 @@ import { SubHeader } from '@blablacar/ui-library/build/subHeader'
 <SubHeader>SubHeader Title</SubHeader>
 ```
 
-<Props of={SubHeader} />
+<ArgsTable of={SubHeader} />

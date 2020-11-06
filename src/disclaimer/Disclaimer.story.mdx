@@ -1,9 +1,9 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button, ButtonStatus } from '../button'
 import { Disclaimer } from './index'
 
-<Meta title="Text|Disclaimer" />
+<Meta title="Text/Disclaimer" />
 
 # Disclaimer
 
@@ -11,7 +11,7 @@ provide information that don’t need a bigger emphasis
 
 ### Short Text and Info Icon
 
-<Preview>
+<Canvas>
   <Story name="InfoIcon">
     <Disclaimer useInfoIcon>
       <span>
@@ -22,11 +22,11 @@ provide information that don’t need a bigger emphasis
       </span>
     </Disclaimer>
   </Story>
-</Preview>
+</Canvas>
 
 ### Long Text
 
-<Preview>
+<Canvas>
   <Story name="LongText">
     <Disclaimer useInfoIcon={false}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed utrum hortandus es nobis, Luci,
@@ -37,27 +37,27 @@ provide information that don’t need a bigger emphasis
       rebus perquirendisque deterreantur?
     </Disclaimer>
   </Story>
-</Preview>
+</Canvas>
 
 ### Not a Caption
 
-<Preview>
+<Canvas>
   <Story name="NoCaption">
     <Disclaimer isCaption={false} useInfoIcon>
       Some short text disclaimer, not styled as a caption
     </Disclaimer>
   </Story>
-</Preview>
+</Canvas>
 
 ### Deprecated Help URL
 
-<Preview>
+<Canvas>
   <Story name="Deprecated">
     <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
       Some disclaimer with help button icon.
     </Disclaimer>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -78,4 +78,4 @@ import { Disclaimer } from '@blablacar/ui-library'
 <Disclaimer useInfoIcon>My disclaimer text here</Disclaimer>
 ```
 
-<Props of={Disclaimer} />
+<ArgsTable of={Disclaimer} />

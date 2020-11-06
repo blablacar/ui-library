@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../../_utils/branding'
 import { TextDisplay2 } from '.'
 
-<Meta title="Design Tokens|Typography/" />
+<Meta title="Design Tokens/Typography" />
 
 # **TextDisplay2**
 
-<Preview>
+<Canvas>
   <Story name="TextDisplay2">
     <React.Fragment>
       <h1>
@@ -20,7 +20,7 @@ import { TextDisplay2 } from '.'
       </h1>
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -30,4 +30,4 @@ import { TextDisplay2 } from '@blablacar/ui-library/build/typography/display2'
 <TextDisplay2>The quick brown fox jumps over the lazy dog</TextDisplay2>
 ```
 
-<Props of={TextDisplay2} />
+<ArgsTable of={TextDisplay2} />

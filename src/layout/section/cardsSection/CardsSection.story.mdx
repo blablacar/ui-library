@@ -1,10 +1,10 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { QrCard } from '../../../qrCard'
 import { TripCard } from '../../../tripCard'
 import { CardsSection } from './index'
 
-<Meta title="Sections|CardsSection" />
+<Meta title="Sections/CardsSection" />
 
 export const tripCardConfig = {
   'aria-label': 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',
@@ -41,7 +41,7 @@ export const qrUrl =
 
 # **CardsSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <CardsSection>
       <TripCard {...tripCardConfig} />
@@ -109,7 +109,7 @@ export const qrUrl =
       />
     </CardsSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -125,4 +125,4 @@ import { CardsSection } from '@blablacar/ui-library/build/layout/section/cardsSe
 </CardsSection>
 ```
 
-<Props of={CardsSection} />
+<ArgsTable of={CardsSection} />

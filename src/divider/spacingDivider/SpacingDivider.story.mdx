@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseSection } from '../../layout/section/baseSection'
 import { SpacingDivider, SpacingDividerSize } from './index'
 
-<Meta title="Widgets|Dividers" />
+<Meta title="Widgets/Dividers" />
 
 # **SpacingDivider**
 
-<Preview>
+<Canvas>
   <Story name="SpacingDivider">
     <BaseSection>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis amet eius sunt! Voluptatum
@@ -19,7 +19,7 @@ import { SpacingDivider, SpacingDividerSize } from './index'
       officiis quae aspernatur consectetur.
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -43,4 +43,4 @@ import {
 } from '@blablacar/ui-library/build/divider/spacingDivider'
 ```
 
-<Props of={SpacingDivider} />
+<ArgsTable of={SpacingDivider} />

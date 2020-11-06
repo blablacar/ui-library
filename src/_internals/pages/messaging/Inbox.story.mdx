@@ -1,4 +1,4 @@
-import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ClockIcon } from '../../../icon/clockIcon'
 import { ItemAction } from '../../../itemAction'
@@ -8,7 +8,7 @@ import { TabsSection } from '../../../layout/section/tabsSection'
 import { MessagingSummaryItem } from '../../../messagingSummaryItem'
 import { TheVoice } from '../../../theVoice'
 
-<Meta title="Pages|Messaging/Inbox" />
+<Meta title="Pages/Messaging/Inbox" />
 
 export const messagingSummaryItemConfig = {
   url: '#',
@@ -67,7 +67,7 @@ export const defaultTabsConfig = {
   ],
 }
 
-<Preview>
+<Canvas>
   <Story name="Inbox">
     <React.Fragment>
       <LayoutNormalizer useLegacyNormalization={false} />
@@ -77,4 +77,4 @@ export const defaultTabsConfig = {
       <TabsSection tabsProps={defaultTabsConfig} />
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>

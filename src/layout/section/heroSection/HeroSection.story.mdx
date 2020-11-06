@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { select, text } from '@storybook/addon-knobs'
 
 import { MediaSizeProvider } from '../../../_utils/mediaSizeProvider'
@@ -14,7 +14,7 @@ import carpoolCoralBusSmall from './images-for-stories/carpool-coral-bus-small.s
 import carpoolOnlyLarge from './images-for-stories/carpool-large.svg'
 import carpoolOnlySmall from './images-for-stories/carpool-small.svg'
 
-<Meta title="Sections|HeroSection" />
+<Meta title="Sections/HeroSection" />
 
 # **HeroSection**
 
@@ -65,7 +65,7 @@ export const ILLUSTRATIONS = {
 
 export const Component = ({ content }) => content()
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Component
       content={() => {
@@ -88,7 +88,7 @@ export const Component = ({ content }) => content()
       }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -98,4 +98,4 @@ export const Component = ({ content }) => content()
 import { HeroSection, HeroSectionProps } from '@blablacar/ui-library/build/heroSection'
 ```
 
-<Props of={HeroSection} />
+<ArgsTable of={HeroSection} />

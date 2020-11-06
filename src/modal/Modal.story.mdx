@@ -1,16 +1,16 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Modal, ModalSize } from './index'
 import { ModalOpener } from './storyUtils/ModalOpener'
 
-<Meta title="Widgets|Modal" />
+<Meta title="Widgets/Modal" />
 
 
 # **Modal**
 
 ### Default
 
-<Preview>
+<Canvas>
   <Story name="default">
     <ModalOpener
       onClose={() => {}}
@@ -25,11 +25,11 @@ import { ModalOpener } from './storyUtils/ModalOpener'
       isLoading={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### FullScreen
 
-<Preview>
+<Canvas>
   <Story name="fullscreen">
     <ModalOpener
       onClose={() => {}}
@@ -44,7 +44,7 @@ import { ModalOpener } from './storyUtils/ModalOpener'
       isLoading={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -59,4 +59,4 @@ import { Modal } from '@blablacar/ui-library/build/modal'
 <Modal onClose={() => null} isOpen isLoading={false} />
 ```
 
-<Props of={Modal} />
+<ArgsTable of={Modal} />

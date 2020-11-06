@@ -1,16 +1,16 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Stars } from './index'
 
-<Meta title="Widgets|Stars" />
+<Meta title="Widgets/Stars" />
 
 # **Stars**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Stars stars={3} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -21,4 +21,4 @@ import { Stars } from '@blablacar/ui-library/build/stars'
 ;<Stars />
 ```
 
-<Props of={Stars} />
+<ArgsTable of={Stars} />

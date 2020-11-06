@@ -1,14 +1,14 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { Why } from './index'
 
-<Meta title="Widgets|Why" />
+<Meta title="Widgets/Why" />
 
 # **Why**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <FocusVisibleProvider>
       <Why
@@ -19,7 +19,7 @@ import { Why } from './index'
       </Why>
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -31,4 +31,4 @@ import { Why } from '@blablacar/ui-library/build/Why'
 <Why title="Title">Content</Why>
 ```
 
-<Props of={Why} />
+<ArgsTable of={Why} />

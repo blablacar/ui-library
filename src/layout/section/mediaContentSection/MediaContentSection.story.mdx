@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { MediaContentSection } from './index'
 
-<Meta title="Sections|MediaContentSection" />
+<Meta title="Sections/MediaContentSection" />
 
 # **MediaContentSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <MediaContentSection
       title="Where do you want to drive to?"
@@ -31,7 +31,7 @@ import { MediaContentSection } from './index'
       mediaUrl="https://cdn.blablacar.com/kairos/assets/build/images/blablabus_bus_logo_large-4717a333c3a2184a5849b0cbb6da75cb.png"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -43,4 +43,4 @@ import { MediaContentSection } from '@blablacar/ui-library/build/layout/section/
 <MediaContentSection />
 ```
 
-<Props of={MediaContentSection} />
+<ArgsTable of={MediaContentSection} />

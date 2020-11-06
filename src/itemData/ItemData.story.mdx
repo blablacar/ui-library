@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
 import { InfoIcon } from '../icon/infoIcon'
 import { ItemData } from './index'
 
-<Meta title="Items|ItemData" />
+<Meta title="Items/ItemData" />
 
 # ItemData
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ItemData
       mainTitle="Main title"
@@ -28,7 +28,7 @@ import { ItemData } from './index'
       tag={<li />}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 ...
@@ -55,4 +55,4 @@ import { ItemData } from '@blablacar/ui-library/build/itemData'
 />
 ```
 
-<Props of={ItemData} />
+<ArgsTable of={ItemData} />

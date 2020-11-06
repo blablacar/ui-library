@@ -1,44 +1,44 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button, ButtonStatus } from '../button'
 import { ButtonGroup } from './index'
 
-<Meta title="Buttons|ButtonGroup" />
+<Meta title="Buttons/ButtonGroup" />
 
 # ButtonGroup
 
 ### Stack
 
-<Preview>
+<Canvas>
   <Story name="Stack">
     <ButtonGroup>
       <Button>Hello</Button>
       <Button status={ButtonStatus.TERTIARY}>there</Button>
     </ButtonGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ### InLine
 
-<Preview>
+<Canvas>
   <Story name="InLine">
     <ButtonGroup isInline>
       <Button>Hello</Button>
       <Button status={ButtonStatus.TERTIARY}>there</Button>
     </ButtonGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ### Reverse
 
-<Preview>
+<Canvas>
   <Story name="Reverse">
     <ButtonGroup isReverse>
       <Button>Hello</Button>
       <Button status={ButtonStatus.TERTIARY}>there</Button>
     </ButtonGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -60,7 +60,7 @@ import { ButtonGroup } from '@blablacar/ui-library/build/buttonGroup'
 </ButtonGroup>
 ```
 
-<Props of={ButtonGroup} />
+<ArgsTable of={ButtonGroup} />
 
 ## When should I use it?
 

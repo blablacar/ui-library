@@ -1,10 +1,10 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseSection } from '../layout/section/baseSection'
 import { Distances, Proximity } from '../proximity'
 import { Itinerary } from './index'
 
-<Meta title="Widgets|Itinerary" />
+<Meta title="Widgets/Itinerary" />
 
 export const places = [
   {
@@ -157,7 +157,7 @@ export const placesWithStopovers = [
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <BaseSection>
       <h1 id="titleId">Title example</h1>
@@ -172,11 +172,11 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## With proximity
 
-<Preview>
+<Canvas>
   <Story name="With proximity">
     <BaseSection>
       <Itinerary
@@ -207,11 +207,11 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## With proximity pills
 
-<Preview>
+<Canvas>
   <Story name="With stopovers">
     <BaseSection>
       <Itinerary
@@ -225,13 +225,13 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## With segments & stopovers
 
 `segments` is an array of itinerary `places`. It's used to show connection between multiples vehicles.
 
-<Preview>
+<Canvas>
   <Story name="With segments & stopovers">
     <BaseSection>
       <Itinerary
@@ -248,11 +248,11 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## With single stopover
 
-<Preview>
+<Canvas>
   <Story name="With single stopover">
     <BaseSection>
       <Itinerary
@@ -270,11 +270,11 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Without time
 
-<Preview>
+<Canvas>
   <Story name="Without time">
     <BaseSection>
       <Itinerary
@@ -296,11 +296,11 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Small
 
-<Preview>
+<Canvas>
   <Story name="Small">
     <BaseSection>
       <Itinerary
@@ -326,7 +326,7 @@ export const placesWithStopovers = [
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -376,4 +376,4 @@ import { Itinerary } from '@blablacar/ui-library/build/Itinerary'
 </div>
 ```
 
-<Props of={Itinerary} />
+<ArgsTable of={Itinerary} />

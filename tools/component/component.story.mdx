@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
 import { __COMPONENT_NAME__ } from './index'
 
@@ -6,11 +6,11 @@ import { __COMPONENT_NAME__ } from './index'
 
 # **__COMPONENT_NAME__**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <__COMPONENT_NAME__ />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -22,4 +22,4 @@ import { __COMPONENT_NAME__ } from '@blablacar/ui-library/build/__COMPONENT_DIRE
 <__COMPONENT_NAME__ />
 ```
 
-<Props of={__COMPONENT_NAME__} />
+<ArgsTable of={__COMPONENT_NAME__} />

@@ -1,24 +1,24 @@
 import { Fragment } from 'react'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { text } from '@storybook/addon-knobs'
 
 import { Message } from './index'
 
-<Meta title="Widgets|Message" />
+<Meta title="Widgets/Message" />
 
 # ** Message **
 
 ## Basic message
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Message active={false}>{text('text', 'A simple message')}</Message>
   </Story>
-</Preview>
+</Canvas>
 
 ## Conversation
 
-<Preview>
+<Canvas>
   <Story name="Conversation">
     <Fragment>
       <Message messageAnnotation="Delivered - 15:29" active={false}>
@@ -46,35 +46,35 @@ import { Message } from './index'
       </Message>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Current user's message
 
-<Preview>
+<Canvas>
   <Story name="Current user message">
     <Message active>{text('text', 'A simple message')}</Message>
   </Story>
-</Preview>
+</Canvas>
 
 ## Message from author with message annotation
 
-<Preview>
+<Canvas>
   <Story name="Message from author with message annotation">
     <Message active messageAnnotation="Sent - 15:00">
       {text('text', 'A simple message')}
     </Message>
   </Story>
-</Preview>
+</Canvas>
 
 ## Message to author with message annotation
 
-<Preview>
+<Canvas>
   <Story name="Message to author with message annotation">
     <Message active={false} messageAnnotation="Delivered - 15:00">
       {text('text', 'A simple message')}
     </Message>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -86,4 +86,4 @@ import { Message } from '@blablacar/ui-library/build/Message'
 <Message />
 ```
 
-<Props of={Message} />
+<ArgsTable of={Message} />

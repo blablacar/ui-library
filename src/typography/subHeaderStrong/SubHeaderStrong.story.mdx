@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../../_utils/branding'
 import { TextSubHeaderStrong } from '.'
 
-<Meta title="Design Tokens|Typography/" />
+<Meta title="Design Tokens/Typography" />
 
 # **TextSubHeaderStrong**
 
-<Preview>
+<Canvas>
   <Story name="TextSubHeaderStrong">
     <React.Fragment>
       <h1>
@@ -20,7 +20,7 @@ import { TextSubHeaderStrong } from '.'
       </h1>
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -30,4 +30,4 @@ import { TextSubHeaderStrong } from '@blablacar/ui-library/build/typography/subH
 <TextSubHeaderStrong>The quick brown fox jumps over the lazy dog</TextSubHeaderStrong>
 ```
 
-<Props of={TextSubHeaderStrong} />
+<ArgsTable of={TextSubHeaderStrong} />

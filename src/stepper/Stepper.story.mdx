@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Itinerary } from '../itinerary'
 import { Stepper, StepperDisplay } from './index'
 
-<Meta title="Widgets|Stepper" />
+<Meta title="Widgets/Stepper" />
 
 # **Stepper**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Stepper
       name="stepper1"
@@ -68,7 +68,7 @@ import { Stepper, StepperDisplay } from './index'
       leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -108,4 +108,4 @@ import { Stepper } from '@blablacar/ui-library/build/stepper'
 />
 ```
 
-<Props of={Stepper} />
+<ArgsTable of={Stepper} />

@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Loader, LoaderLayoutMode } from './index'
 
-<Meta title="Widgets|Loader" />
+<Meta title="Widgets/Loader" />
 
 # ** Loader **
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Loader
       layoutMode={LoaderLayoutMode.BLOCK}
@@ -14,7 +14,7 @@ import { Loader, LoaderLayoutMode } from './index'
       done={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -26,4 +26,4 @@ import { Loader } from '@blablacar/ui-library/build/Loader'
 <Loader />
 ```
 
-<Props of={Loader} />
+<ArgsTable of={Loader} />

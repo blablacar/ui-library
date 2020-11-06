@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { MediaSizeProvider } from '../_utils/mediaSizeProvider'
 import { AutoCompleteExample } from '../autoComplete/AutoCompleteExample'
 import { BaseSection, SectionContentSize } from '../layout/section/baseSection'
 import { SearchForm } from './index'
 
-<Meta title="Widgets|SearchForm" />
+<Meta title="Widgets/SearchForm" />
 
 # **SearchForm**
 
-<Preview>
+<Canvas>
   <Story name="SearchForm">
     <MediaSizeProvider>
       <BaseSection contentSize={SectionContentSize.LARGE}>
@@ -41,7 +41,7 @@ import { SearchForm } from './index'
       </BaseSection>
     </MediaSizeProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -78,4 +78,4 @@ import { AutoCompleteExample } from './AutoCompleteExample'
 />
 ```
 
-<Props of={SearchForm} />
+<ArgsTable of={SearchForm} />

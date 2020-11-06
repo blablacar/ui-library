@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../../_utils/branding'
 import { TextBodyStrong } from '.'
 
-<Meta title="Design Tokens|Typography/" />
+<Meta title="Design Tokens/Typography" />
 
 # **TextBodyStrong**
 
-<Preview>
+<Canvas>
   <Story name="TextBodyStrong">
     <React.Fragment>
       <h1>
@@ -20,7 +20,7 @@ import { TextBodyStrong } from '.'
       </h1>
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -30,4 +30,4 @@ import { TextBodyStrong } from '@blablacar/ui-library/build/typography/bodyStron
 <TextBodyStrong>The quick brown fox jumps over the lazy dog</TextBodyStrong>
 ```
 
-<Props of={TextBodyStrong} />
+<ArgsTable of={TextBodyStrong} />

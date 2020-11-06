@@ -1,20 +1,20 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Avatar } from '../avatar'
 import { DropdownButton } from './index'
 
-<Meta title="Forms|DropdownButton" />
+<Meta title="Forms/DropdownButton" />
 
 # **DropdownButton**
 
-<Preview>
+<Canvas>
   <Story name="Default">
    <DropdownButton onClick={action('onClick')} open={false}>
       <Avatar />
    </DropdownButton>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 ...
@@ -28,4 +28,4 @@ import { DropdownButton } from '@blablacar/ui-library/build/DropdownButton'
   </DropdownButton>
 ```
 
-<Props of={DropdownButton} />
+<ArgsTable of={DropdownButton} />

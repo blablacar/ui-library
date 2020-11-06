@@ -1,15 +1,15 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 
 import { SendMessageIcon } from '../icon/sendMessageIcon'
 import { Textarea } from './index'
 
-<Meta title="Forms|Textarea" />
+<Meta title="Forms/Textarea" />
 
 # **Textarea**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Textarea
       id={text('id')}
@@ -30,11 +30,11 @@ import { Textarea } from './index'
       title={text('title', 'accessibility text')}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With icon
 
-<Preview>
+<Canvas>
   <Story name="withIcon">
     <Textarea
       id={text('id')}
@@ -60,11 +60,11 @@ import { Textarea } from './index'
       }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### With icon and fit to content
 
-<Preview>
+<Canvas>
   <Story name="withIconFitContent">
     <Textarea
       fitContent
@@ -92,7 +92,7 @@ import { Textarea } from './index'
       }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -123,4 +123,4 @@ import { Textarea } from '@blablacar/ui-library/build/textarea'
 />
 ```
 
-<Props of={Textarea} />
+<ArgsTable of={Textarea} />

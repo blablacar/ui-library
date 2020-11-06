@@ -1,17 +1,17 @@
-import { Meta, Preview, Props } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs/blocks'
 
 import { CheckShieldIcon } from '../../../icon/checkShieldIcon'
 import { DirectionIcon } from '../../../icon/directionIcon'
 import { IdCardVerifiedIcon } from '../../../icon/idCardVerifiedIcon'
 import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index'
 
-<Meta title="Sections|ColumnedContentSection" />
+<Meta title="Sections/ColumnedContentSection" />
 
 # **ColumnedContentSection**
 
 ### Simple
 
-<Preview>
+<Canvas>
     <ColumnedContentSection
       title="Allez où vous voulez. D'où vous voulez."
       topLinkLabel="En savoir plus"
@@ -34,11 +34,11 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
-</Preview>
+</Canvas>
 
 ### Blog section
 
-<Preview>
+<Canvas>
     <ColumnedContentSection
       title="Allez où vous voulez. D'où vous voulez."
       topLinkLabel="En savoir plus"
@@ -91,11 +91,11 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
-</Preview>
+</Canvas>
 
 ### Pro section
 
-<Preview>
+<Canvas>
     <ColumnedContentSection
       title="Gain access to more than 20 million travellers across the whole country"
       columnContentList={[
@@ -130,11 +130,11 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
-</Preview>
+</Canvas>
 
 ### Simple with icons
 
-<Preview>
+<Canvas>
     <ColumnedContentSection
       title="Ce qui va vous plaire"
       columnContentList={[
@@ -176,7 +176,7 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -211,4 +211,4 @@ const items = [
 />
 ```
 
-<Props of={ColumnedContentSection} />
+<ArgsTable of={ColumnedContentSection} />

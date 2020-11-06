@@ -1,14 +1,14 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Profile } from './index'
 
-<Meta title="Widgets|Profile" />
+<Meta title="Widgets/Profile" />
 
 # **Profile**
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Profile
       title="Pepe le Pew (small size)"
@@ -17,11 +17,11 @@ import { Profile } from './index'
       picture="https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Size
 
-<Preview>
+<Canvas>
   <Story name="Size">
     <Profile
       title="Pepe le Pew (medium size)"
@@ -31,11 +31,11 @@ import { Profile } from './index'
       isMedium
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With ratings
 
-<Preview>
+<Canvas>
   <Story name="With  ratings">
     <Profile
       title="Pepe le Pew (with ratings)"
@@ -47,11 +47,11 @@ import { Profile } from './index'
       ratingsLabel="ratingsLabel"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With link
 
-<Preview>
+<Canvas>
   <Story name="With link">
     <Profile
       title="Pepe le Pew (with link)"
@@ -62,7 +62,7 @@ import { Profile } from './index'
       isLink
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -86,4 +86,4 @@ import { Profile } from '@blablacar/ui-library/build/profile'
 />
 ```
 
-<Props of={Profile} />
+<ArgsTable of={Profile} />
