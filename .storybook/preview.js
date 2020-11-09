@@ -19,6 +19,7 @@ addParameters({
 })
 
 // Ignore leftAddon as it breaks previews.
-addDecorator(withSmartKnobs({ ignoreProps: ['leftAddon'] }))
+// https://blablacar.atlassian.net/browse/BBC-9382
+addDecorator(withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] }))
 addDecorator(withKnobs)
 addDecorator(withA11y)
