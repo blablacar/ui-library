@@ -4,14 +4,17 @@ import { color } from '../_utils/branding'
 import LockIcon from '../icon/lockIcon'
 import { LoadingPage } from './index'
 
-<Meta title="Widgets/LoadingPage" />
+<Meta title="Screens/LoadingPage" />
 
 # ** LoadingPage **
 
-## LoadingPage with text and logo
-
 <Canvas>
   <Story name="Default">
-    <LoadingPage icon={LockIcon} iconColor={color.white} iconBackground={color.green} title="Entering a secure page" />
+    <LoadingPage
+      icon={LockIcon}
+      iconColor={color.white}
+      iconBackground={color.green}
+      title="Entering a secure page"
+    />
   </Story>
 </Canvas>
