@@ -1,10 +1,10 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FilterBar } from '../filterBar'
 import { BusIcon } from '../icon/busIcon'
 import { CarpoolIcon } from '../icon/carpoolIcon'
 
-<Meta title="Widget|FilterBar" />
+<Meta title="Widgets/FilterBar" />
 
 # FilterBar
 
@@ -24,16 +24,17 @@ export const supplyInfo = [
   },
 ]
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <FilterBar supplyInfo={supplyInfo} ctaText="See rides" onClick={() => {}} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
+
 ```jsx
 import { FilterBar } from '@blablacar/ui-library/build/filterBar'
 ;<FilterBar />
 ```
 
-<Props of={FilterBar} />
+<ArgsTable of={FilterBar} />

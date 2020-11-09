@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button, ButtonStatus } from '../button'
 import { SearchIcon } from '../icon'
@@ -6,13 +6,13 @@ import { BaseSection } from '../layout/section/baseSection'
 import { AutoCompleteExample } from './AutoCompleteExample'
 import { AutoComplete } from './index'
 
-<Meta title="Forms|AutoComplete" />
+<Meta title="Forms/AutoComplete" />
 
 # **AutoComplete**
 
 ### Basic example
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <BaseSection>
       <p>
@@ -21,11 +21,11 @@ import { AutoComplete } from './index'
       <AutoCompleteExample />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ### Default value
 When `defaultValue` is set and `searchOnMount` is `true` then the results are shown when the component is mounted.
-<Preview>
+<Canvas>
   <Story name="Default value">
     <BaseSection>
       <p>
@@ -34,12 +34,12 @@ When `defaultValue` is set and `searchOnMount` is `true` then the results are sh
       <AutoCompleteExample defaultValue="Paris" />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ### Display a loader when the search query is longer than a threshold
 To configure the threshold use the `busyTimeout` props which takes a number of milliseconds.
 
-<Preview>
+<Canvas>
   <Story name="With busy state">
     <BaseSection>
       <p>
@@ -48,12 +48,12 @@ To configure the threshold use the `busyTimeout` props which takes a number of m
       <AutoCompleteExample searchForItemsDelay={1500} />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ### Display default results when the results list is empty
 To display default items gives a list of `AutocompleteItem` to the `renderEmptySearch` props.
 
-<Preview>
+<Canvas>
   <Story name="With empty search">
     <BaseSection>
       <p>
@@ -67,23 +67,23 @@ To display default items gives a list of `AutocompleteItem` to the `renderEmptyS
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ### Display an error message
 Set a text or a React element to the `error` props.
 
-<Preview>
+<Canvas>
   <Story name="With errors">
     <BaseSection>
       <AutoCompleteExample defaultValue="Parix" error="Oups something went wrong" />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ### With inputAddon
 Set a React element to the `inputAddon` props, here is an example with a button.
 
-<Preview>
+<Canvas>
   <Story name="With inputAddon">
     <BaseSection>
       <AutoCompleteExample inputAddon={(
@@ -99,7 +99,7 @@ Set a React element to the `inputAddon` props, here is an example with a button.
       />
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -190,4 +190,4 @@ export const AutoCompleteExample = ({
 }
 ```
 
-<Props of={AutoComplete} />
+<ArgsTable of={AutoComplete} />

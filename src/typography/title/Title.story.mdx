@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../../_utils/branding'
 import { TextTitle } from '.'
 
-<Meta title="Design Tokens|Typography/" />
+<Meta title="Design Tokens/Typography" />
 
 # **TextTitle**
 
-<Preview>
+<Canvas>
   <Story name="TextTitle">
     <React.Fragment>
       <h1>
@@ -20,7 +20,7 @@ import { TextTitle } from '.'
       </h1>
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -30,4 +30,4 @@ import { TextTitle } from '@blablacar/ui-library/build/typography/title'
 <TextTitle>The quick brown fox jumps over the lazy dog</TextTitle>
 ```
 
-<Props of={TextTitle} />
+<ArgsTable of={TextTitle} />

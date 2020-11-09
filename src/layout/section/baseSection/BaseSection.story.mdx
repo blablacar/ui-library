@@ -1,13 +1,13 @@
 import { Fragment } from 'react'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseSection, SectionContentSize } from './index'
 
-<Meta title="Sections|BaseSection" />
+<Meta title="Sections/BaseSection" />
 
 # **BaseSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Fragment>
       <BaseSection>
@@ -18,7 +18,7 @@ import { BaseSection, SectionContentSize } from './index'
       </BaseSection>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -30,4 +30,4 @@ import { BaseSection } from '@blablacar/ui-library/build/layout/section/baseSect
 <BaseSection />
 ```
 
-<Props of={BaseSection} />
+<ArgsTable of={BaseSection} />

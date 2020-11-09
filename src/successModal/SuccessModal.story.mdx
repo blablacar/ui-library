@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BaseSection } from '../layout/section/baseSection'
 import { SuccessModal } from './index'
 
-<Meta title="Screens|SuccessModal" />
+<Meta title="Screens/SuccessModal" />
 
 # **SuccessModal**
 
@@ -35,11 +35,11 @@ export const ModalWithButton = () => {
   )
 }
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ModalWithButton />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -93,4 +93,4 @@ export const ModalWithButton = () => {
 }
 ```
 
-<Props of={SuccessModal} />
+<ArgsTable of={SuccessModal} />

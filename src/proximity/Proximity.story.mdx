@@ -1,19 +1,19 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Distances, Proximity } from './index'
 
-<Meta title="Widgets|Proximity" />
+<Meta title="Widgets/Proximity" />
 
 # **Proximity**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Proximity
       value={Distances.FAR}
       title="Distance to your position"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -29,4 +29,4 @@ import { Distances, Proximity } from '@blablacar/ui-library/build/proximity'
 
 ```
 
-<Props of={Proximity} />
+<ArgsTable of={Proximity} />

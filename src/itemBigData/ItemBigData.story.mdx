@@ -1,20 +1,20 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemBigData } from './index'
 
-<Meta title="Items|ItemBigData" />
+<Meta title="Items/ItemBigData" />
 
 # ItemBigData
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ItemBigData mainTitle="23452,2500000000" />
   </Story>
-</Preview>
+</Canvas>
 
 ### With Additional Info
 
-<Preview>
+<Canvas>
   <Story name="withAdditionalInfo">
     <ItemBigData
       mainTitle="23452,2500000000"
@@ -22,7 +22,7 @@ import { ItemBigData } from './index'
       aria-label="Additional"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ---
 
@@ -49,4 +49,4 @@ import { ItemBigData } from '@blablacar/ui-library/build/itemBigData'
 />
 ```
 
-<Props of={ItemBigData} />
+<ArgsTable of={ItemBigData} />

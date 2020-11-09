@@ -1,27 +1,27 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ConfirmationModalWithButton } from './ConfirmationModalExample.story'
 import { ConfirmationModal, ConfirmationModalStatus } from './index'
 
-<Meta title="Screens|ConfirmationModal" />
+<Meta title="Screens/ConfirmationModal" />
 
 # **ConfirmationModal**
 
 ## Reminder
 
-<Preview>
+<Canvas>
   <Story name="Reminder">
     <ConfirmationModalWithButton status={ConfirmationModalStatus.REMINDER} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Warning
 
-<Preview>
+<Canvas>
   <Story name="Warning">
     <ConfirmationModalWithButton status={ConfirmationModalStatus.WARNING} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -88,4 +88,4 @@ const ConfirmationModalWithButton = () => {
 }
 ```
 
-<Props of={ConfirmationModal} />
+<ArgsTable of={ConfirmationModal} />

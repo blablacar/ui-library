@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ClockIcon } from '../icon/clockIcon'
 import { ItemInfo } from './index'
 
-<Meta title="Items|ItemInfo" />
+<Meta title="Items/ItemInfo" />
 
 # ItemInfo
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ItemInfo
       mainTitle="Main title"
@@ -17,7 +17,7 @@ import { ItemInfo } from './index'
       aria-label="Custom aria label"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -37,4 +37,4 @@ import { ItemInfo } from '@blablacar/ui-library/build/itemInfo'
 />
 ```
 
-<Props of={ItemInfo} />
+<ArgsTable of={ItemInfo} />

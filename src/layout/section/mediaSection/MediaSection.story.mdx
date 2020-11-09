@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Modal, ModalSize } from '../../../modal'
 import { MediaSection } from './index'
 
-<Meta title="Sections|MediaSection" />
+<Meta title="Sections/MediaSection" />
 
 # **MediaSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <MediaSection className="" role="presentation">
       <img
@@ -28,7 +28,7 @@ import { MediaSection } from './index'
       </MediaSection>
     </Modal>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -40,4 +40,4 @@ import { MediaSection } from '@blablacar/ui-library/build/layout/section/mediaSe
 <MediaSection />
 ```
 
-<Props of={MediaSection} />
+<ArgsTable of={MediaSection} />

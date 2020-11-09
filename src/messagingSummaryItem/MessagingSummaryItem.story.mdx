@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { RideAxis } from '_utils/rideAxis'
 
@@ -6,11 +6,11 @@ import { MessagingSummaryItem } from './index'
 
 export const pictureUrl = 'https://pbs.twimg.com/profile_images/749446875162505218/6r6-9wDn.jpg'
 
-<Meta title="Items|MessagingSummaryItem" />
+<Meta title="Items/MessagingSummaryItem" />
 
 # **MessagingSummaryItem**
 
-<Preview>
+<Canvas>
   <Story name="Unread messages">
     <MessagingSummaryItem
       url="http://blablacar.com"
@@ -21,11 +21,11 @@ export const pictureUrl = 'https://pbs.twimg.com/profile_images/7494468751625052
       hasUnreadMessages
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### All messages read
 
-<Preview>
+<Canvas>
   <Story name="All messages read">
     <MessagingSummaryItem
       url="http://blablacar.com"
@@ -36,11 +36,11 @@ export const pictureUrl = 'https://pbs.twimg.com/profile_images/7494468751625052
       hasUnreadMessages={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### SubLabel as a Component
 
-<Preview>
+<Canvas>
   <Story name="SubLabel as a Component">
     <MessagingSummaryItem
       url="http://blablacar.com"
@@ -51,11 +51,11 @@ export const pictureUrl = 'https://pbs.twimg.com/profile_images/7494468751625052
       hasUnreadMessages
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### SubLabel as Text
 
-<Preview>
+<Canvas>
   <Story name="SubLabel as Text">
     <MessagingSummaryItem
       url="http://blablacar.com"
@@ -66,7 +66,7 @@ export const pictureUrl = 'https://pbs.twimg.com/profile_images/7494468751625052
       hasUnreadMessages
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -85,4 +85,4 @@ import { MessagingSummaryItem } from '@blablacar/ui-library/build/messagingSumma
 />
 ```
 
-<Props of={MessagingSummaryItem} />
+<ArgsTable of={MessagingSummaryItem} />

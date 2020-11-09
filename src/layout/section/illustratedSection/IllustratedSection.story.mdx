@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemRadio } from '../../../itemRadio'
 import { ItemRadioGroup } from '../../../itemRadioGroup'
 import { TheVoice } from '../../../theVoice'
 import { IllustratedSection } from './index'
 
-<Meta title="Sections|IllustratedSection" />
+<Meta title="Sections/IllustratedSection" />
 
 # **IllustratedSection**
 
-<Preview>
+<Canvas>
   <Story name="With illustration">
     <IllustratedSection illustrationUrl="https://cdn.blablacar.com/kairos/assets/build/images/max_2_in_the_back-d1b1da56d9d48d78e0365ff586c68f92.svg">
       <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
@@ -31,7 +31,7 @@ import { IllustratedSection } from './index'
       </ItemRadioGroup>
     </IllustratedSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -43,4 +43,4 @@ import { IllustratedSection } from '@blablacar/ui-library/build/layout/section/i
 <IllustratedSection />
 ```
 
-<Props of={IllustratedSection} />
+<ArgsTable of={IllustratedSection} />

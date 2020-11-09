@@ -1,8 +1,8 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SelectField } from './index'
 
-<Meta title="Forms|SelectField" />
+<Meta title="Forms/SelectField" />
 
 # **SelectField**
 
@@ -11,7 +11,7 @@ export const phonePrefixOptions = [
   { value: '+34', label: 'Sp +34' },
 ]
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <SelectField
       id="selectFieldId"
@@ -26,7 +26,7 @@ export const phonePrefixOptions = [
       autoFocus={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -38,4 +38,4 @@ import { SelectField } from '@blablacar/ui-library/build/selectField'
 <SelectField />
 ```
 
-<Props of={SelectField} />
+<ArgsTable of={SelectField} />

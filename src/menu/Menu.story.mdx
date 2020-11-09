@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs/blocks'
 
 import { BellIcon } from '../icon/bellIcon'
 import { BubbleIcon } from '../icon/bubbleIcon'
@@ -11,37 +11,35 @@ import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
 import { Text } from '../text'
 import { Menu } from './index'
 
-<Meta title="Widgets|Menu" />
+<Meta title="Widgets/Menu" />
 
 # **Menu**
 
 ### With separators
 
-<Preview>
-  <Menu withSeparators>
-    <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
-    <ItemChoice
-      label="Rides offered (loading)"
-      leftAddon={<NewspaperIcon />}
-      status={ItemChoiceStatus.LOADING}
-      href="#"
-    />
-    <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
-    <ItemChoice label="Messages" leftAddon={<BubbleIcon />} href="#" />
-    <ItemChoice label="Ride alerts" leftAddon={<BellIcon />} href="#" />
-    <ItemChoice
-      label="Profile"
-      leftAddon={<CheckShieldIcon />}
-      rightAddon={<Text>NEW</Text>}
-      href="#"
-    />
-    <ItemChoice label="Menu item with onClick" onClick={action('onClick')} href="#" />
-  </Menu>
-</Preview>
+<Canvas>
+  <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
+  <ItemChoice
+    label="Rides offered (loading)"
+    leftAddon={<NewspaperIcon />}
+    status={ItemChoiceStatus.LOADING}
+    href="#"
+  />
+  <ItemChoice label="Rides booked" leftAddon={<TicketIcon />} href="#" />
+  <ItemChoice label="Messages" leftAddon={<BubbleIcon />} href="#" />
+  <ItemChoice label="Ride alerts" leftAddon={<BellIcon />} href="#" />
+  <ItemChoice
+    label="Profile"
+    leftAddon={<CheckShieldIcon />}
+    rightAddon={<Text>NEW</Text>}
+    href="#"
+  />
+  <ItemChoice label="Menu item with onClick" onClick={action('onClick')} href="#" />
+</Canvas>
 
 ### With custom separators
 
-<Preview>
+<Canvas>
   <Menu>
     <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} href="#" />
     <Menu.Divider />
@@ -65,7 +63,7 @@ import { Menu } from './index'
     <Menu.Divider />
     <ItemChoice label="Menu item with onClick" onClick={action('onClick')} href="#" />
   </Menu>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -81,4 +79,4 @@ import { Menu } from '@blablacar/ui-library/build/menu'
 </Menu>
 ```
 
-<Props of={Menu} />
+<ArgsTable of={Menu} />

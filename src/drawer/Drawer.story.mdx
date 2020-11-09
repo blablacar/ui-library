@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { HamburgerButton } from '../hamburgerButton'
 import { BellIcon } from '../icon/bellIcon'
@@ -11,7 +11,7 @@ import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
 import { Menu } from '../menu'
 import { Drawer } from './index'
 
-<Meta title="Widgets|Drawer" />
+<Meta title="Widgets/Drawer" />
 
 export const DrawerDemo = () => {
   const [isOpen, toggleIsOpen] = useState(false)
@@ -53,11 +53,11 @@ export const DrawerDemo = () => {
 
 # **Drawer**
 
-<Preview>
+<Canvas>
   <Story name="Demo">
     <DrawerDemo />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -106,4 +106,4 @@ const [isOpen, toggleIsOpen] = useState(false)
 }
 ```
 
-<Props of={Drawer} />
+<ArgsTable of={Drawer} />

@@ -1,16 +1,16 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { RideAxis } from './index'
 
-<Meta title="Rides|RideAxis" />
+<Meta title="Widgets/RideAxis" />
 
 # RideAxis
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <RideAxis from="Düsseldorf International Airport, Düsseldorf" to="Cologne Bonn Airport, Köln" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -32,4 +32,4 @@ import { RideAxis } from '@blablacar/ui-library/build/_utils/rideAxis'
 <RideAxis from="Paris" to="Lille" />
 ```
 
-<Props of={RideAxis} />
+<ArgsTable of={RideAxis} />

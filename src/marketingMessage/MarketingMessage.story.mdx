@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button } from '../button'
 import { SpacingDivider, SpacingDividerSize } from '../divider/spacingDivider'
@@ -7,11 +7,11 @@ import { SubHeader } from '../subHeader'
 import { Text } from '../text'
 import { MarketingMessage } from './index'
 
-<Meta title="Widgets|MarketingMessage" />
+<Meta title="Widgets/MarketingMessage" />
 
 # **MarketingMessage**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Section>
       <MarketingMessage>
@@ -27,7 +27,7 @@ import { MarketingMessage } from './index'
       </MarketingMessage>
     </Section>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -39,4 +39,4 @@ import { MarketingMessage } from '@blablacar/ui-library/build/marketingMessage'
 <MarketingMessage />
 ```
 
-<Props of={MarketingMessage} />
+<ArgsTable of={MarketingMessage} />

@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button, ButtonStatus } from '../../button'
 import { ButtonGroup } from '../../buttonGroup'
@@ -7,11 +7,11 @@ import { SubHeader } from '../../subHeader'
 import { BaseSection } from '../section/baseSection'
 import { BottomContent, Content, MainContent } from './index'
 
-<Meta title="Layout|MainContent" />
+<Meta title="Layout/MainContent" />
 
 # **MainContent**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <MainContent onSubmit={() => {}} noValidate="" method="POST">
       <Content>
@@ -36,7 +36,7 @@ import { BottomContent, Content, MainContent } from './index'
       </BottomContent>
     </MainContent>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -55,4 +55,4 @@ import { MainContent, Content, BottomContent } from '@blablacar/ui-library/build
 </MainContent>
 ```
 
-<Props of={MainContent} />
+<ArgsTable of={MainContent} />

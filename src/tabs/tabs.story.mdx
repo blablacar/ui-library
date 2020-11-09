@@ -1,4 +1,4 @@
-import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button } from '../button'
 import { BusIcon } from '../icon/busIcon'
@@ -6,7 +6,7 @@ import { CarpoolIcon } from '../icon/carpoolIcon'
 import { BaseSection as Section } from '../layout/section/baseSection'
 import { Tabs, TabStatus } from './index'
 
-<Meta title="Widgets|Tabs" />
+<Meta title="Widgets/Tabs" />
 
 export const panels = [
   <div>Content for first tab</div>,
@@ -50,7 +50,7 @@ export const defaultTabsConfig = {
   ],
 }
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Section>
       <Tabs
@@ -60,7 +60,7 @@ export const defaultTabsConfig = {
       />
     </Section>
   </Story>
-</Preview>
+</Canvas>
 
 # Tabs 1
 
@@ -102,7 +102,7 @@ export const iconTabsConfig = {
   ],
 }
 
-<Preview>
+<Canvas>
   <Story name="With Icons">
     <Section>
       <Tabs
@@ -112,7 +112,7 @@ export const iconTabsConfig = {
       />
     </Section>
   </Story>
-</Preview>
+</Canvas>
 
 export const tabsWithSecondLine = [
   {
@@ -152,7 +152,7 @@ export const tabsWithSecondLine = [
   },
 ]
 
-<Preview>
+<Canvas>
   <Story name="With second line">
     <Section>
       <Tabs
@@ -162,4 +162,4 @@ export const tabsWithSecondLine = [
       />
     </Section>
   </Story>
-</Preview>
+</Canvas>

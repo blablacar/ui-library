@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs/blocks'
 
 import { color } from '../_utils/branding'
 import { ArrowIcon } from '../icon/arrowIcon'
@@ -33,7 +33,7 @@ export const renderPrimaryButton = () => {
   )
 }
 
-<Meta title="Buttons|Button" />
+<Meta title="Buttons/Button" />
 
 # Button
 
@@ -47,9 +47,9 @@ When user taps on it there’s a pressed state.
 After tapping if request is already loaded we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 If request is not loaded we display the loading state of these buttons. When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 
-<Preview>
+<Canvas>
   {renderPrimaryButton()}
-</Preview>
+</Canvas>
 
 > With an icon
 
@@ -60,14 +60,14 @@ When user taps on it there’s a pressed state.
 After tapping if request is already loaded we go to the next page.
 If request is not loaded we display the loading state of these buttons. When loaded, we go to the next page. There’s no validated state for this component as it’s never a final decision button.
 
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.PRIMARY}
     {...commonProps}
   >
     <ArrowIcon right iconColor={color.white} /> Go there
   </Button>
-</Preview>
+</Canvas>
 
 ### When should I use it?
 
@@ -121,14 +121,14 @@ When user taps on it there’s a pressed state.
 After tapping if request is already loaded we either go to the next page or close the modal or if it’s a final decision we display the checked state then close the page (in some cases we don’t change the page like create alert in Search Results).
 If request is not loaded we display the loading state of these buttons. When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.SECONDARY}
     {...commonProps}
   >
     Secondary button
   </Button>
-</Preview>
+</Canvas>
 
 ### When should I use it?
 
@@ -159,14 +159,14 @@ After tapping if request is already loaded we either go to the next page or clos
 If request is not loaded we display the loading state of these buttons.
 When loaded, we either go to the next page or close the modal or if it’s a final decision we display the checked state.
 
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.TERTIARY}
     {...commonProps}
   >
     Tertiary button
   </Button>
-</Preview>
+</Canvas>
 
 ### When should I use it?
 
@@ -184,27 +184,27 @@ If text is too long we can’t go on 2 lines. If too long we display “…” a
 ## Variants
 
 ### Warning button
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.WARNING}
     {...commonProps}
   >
     Warning button
   </Button>
-</Preview>
+</Canvas>
 
 ### Unstyled button
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.UNSTYLED}
     {...commonProps}
   >
     Unstyled button
   </Button>
-</Preview>
+</Canvas>
 
 ### Bubble button
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.PRIMARY}
     isBubble
@@ -212,10 +212,10 @@ If text is too long we can’t go on 2 lines. If too long we display “…” a
   >
     <ArrowIcon right iconColor={color.white} />
   </Button>
-</Preview>
+</Canvas>
 
 ### Shadowed button
-<Preview>
+<Canvas>
   <Button
     status={ButtonStatus.PRIMARY}
     isBubble
@@ -224,7 +224,7 @@ If text is too long we can’t go on 2 lines. If too long we display “…” a
   >
     <ArrowIcon right iconColor={color.white} />
   </Button>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -251,4 +251,4 @@ export const renderPrimaryButton = () => {
 }
 ```
 
-<Props of={Button} />
+<ArgsTable of={Button} />

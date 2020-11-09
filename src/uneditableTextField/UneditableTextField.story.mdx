@@ -1,39 +1,39 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SearchIcon as IconSearch } from '../icon/searchIcon'
 import { UneditableTextField } from './index'
 
-<Meta title="Forms|UneditableTextField" />
+<Meta title="Forms/UneditableTextField" />
 
 # **UneditableTextField**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <UneditableTextField ellipsis>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </UneditableTextField>
   </Story>
-</Preview>
+</Canvas>
 
 ### With Icon
 
-<Preview>
+<Canvas>
   <Story name="With Icon">
     <UneditableTextField addOn={<IconSearch />} ellipsis>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </UneditableTextField>
   </Story>
-</Preview>
+</Canvas>
 
 ### With Anchor
 
-<Preview>
+<Canvas>
   <Story name="With Anchor">
     <UneditableTextField href="#anchor" ellipsis={false}>
       Anchor
     </UneditableTextField>
   </Story>
-</Preview>
+</Canvas>
 
 
 ## Specifications
@@ -55,4 +55,4 @@ import { UneditableTextField } from '@blablacar/ui-library/build/uneditableTextF
 
 ```
 
-<Props of={UneditableTextField} />
+<ArgsTable of={UneditableTextField} />

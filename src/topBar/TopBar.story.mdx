@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { boolean } from '@storybook/addon-knobs'
 
 import { color, font } from '../_utils/branding'
@@ -6,7 +6,7 @@ import { Button, ButtonStatus } from '../button'
 import { ArrowIcon } from '../icon/arrowIcon'
 import { TopBar } from './index'
 
-<Meta title="Widgets|TopBar" />
+<Meta title="Widgets/TopBar" />
 
 # **TopBar**
 
@@ -50,7 +50,7 @@ export const centerContent = (
   </div>
 )
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TopBar
       leftItem={boolean('With leftItem', true) && leftAction}
@@ -61,7 +61,7 @@ export const centerContent = (
       bgShadedTransparent={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -73,4 +73,4 @@ import { TopBar } from '@blablacar/ui-library/build/topBar'
 <TopBar />
 ```
 
-<Props of={TopBar} />
+<ArgsTable of={TopBar} />

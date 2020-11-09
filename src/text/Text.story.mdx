@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../_utils/branding'
 import { Text, TextDisplayType, TextTagType } from './index'
@@ -7,7 +7,7 @@ import { Text, TextDisplayType, TextTagType } from './index'
 
 # **Text**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Text
       display={TextDisplayType.BODY}
@@ -19,7 +19,7 @@ import { Text, TextDisplayType, TextTagType } from './index'
       This is an example
     </Text>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -39,4 +39,4 @@ import { Text, TextDisplayType, TextTagType } from '@blablacar/ui-library/build/
 </Text>
 ```
 
-<Props of={Text} />
+<ArgsTable of={Text} />

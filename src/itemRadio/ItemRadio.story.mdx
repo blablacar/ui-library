@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { ComfortIcon } from '../icon/comfortIcon'
@@ -7,11 +7,11 @@ import { LadyIcon } from '../icon/ladyIcon'
 import { ItemRadioGroup } from '../itemRadioGroup'
 import { ItemRadio, ItemRadioStatus } from './index'
 
-<Meta title="Items|ItemRadio" />
+<Meta title="Items/ItemRadio" />
 
 # **ItemRadio**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <FocusVisibleProvider>
       <ItemRadioGroup onChange={action('group changed')}>
@@ -42,7 +42,7 @@ import { ItemRadio, ItemRadioStatus } from './index'
       </ItemRadioGroup>
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -74,4 +74,4 @@ import { ItemRadio } from '@blablacar/ui-library/build/itemRadio'
 />
 ```
 
-<Props of={ItemRadio} />
+<ArgsTable of={ItemRadio} />

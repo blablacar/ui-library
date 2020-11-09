@@ -1,27 +1,27 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../_utils/branding'
 import { TheVoice } from './index'
 
-<Meta title="Text|TheVoice" />
+<Meta title="Text/TheVoice" />
 
 # **TheVoice**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TheVoice>
       TheVoice Content
     </TheVoice>
   </Story>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <Story name="isInverted">
     <div style={{ backgroundColor: color.green }}>
       <TheVoice isInverted>This is inverted TheVoice!</TheVoice>
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -67,4 +67,4 @@ import { TheVoice } from '@blablacar/ui-library/build/theVoice'
 </TheVoice>
 ```
 
-<Props of={TheVoice} />
+<ArgsTable of={TheVoice} />

@@ -1,4 +1,4 @@
-import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../../../_utils/branding'
 import { RideAxis } from '../../../_utils/rideAxis'
@@ -17,9 +17,9 @@ import { BaseSection } from '../../../layout/section/baseSection'
 import { SubHeader } from '../../../subHeader'
 import { TheVoice } from '../../../theVoice'
 
-<Meta title="Pages|Search results/Ride details" />
+<Meta title="Pages/Search results/Ride details" />
 
-<Preview>
+<Canvas>
   <Story name="Carpool">
     <React.Fragment>
       <LayoutNormalizer useLegacyNormalization={false} />
@@ -88,4 +88,4 @@ import { TheVoice } from '../../../theVoice'
       </BaseSection>
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>

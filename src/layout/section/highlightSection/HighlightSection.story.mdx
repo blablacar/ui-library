@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SpacingDivider } from '../../../divider/spacingDivider'
 import { HighlightSection } from './index'
 
-<Meta title="Sections|HighlightSection" />
+<Meta title="Sections/HighlightSection" />
 
 # **HighlightSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <React.Fragment>
       <SpacingDivider />
@@ -21,7 +21,7 @@ import { HighlightSection } from './index'
       <SpacingDivider />
     </React.Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -35,4 +35,4 @@ import { HighlightSection } from '@blablacar/ui-library/build/layout/section/hig
 </HighlightSection>
 ```
 
-<Props of={HighlightSection} />
+<ArgsTable of={HighlightSection} />

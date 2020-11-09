@@ -1,36 +1,36 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Paragraph } from './index'
 
-<Meta title="Text|Paragraph" />
+<Meta title="Text/Paragraph" />
 
 # **Paragraph**
 
-<Preview>
+<Canvas>
   <Story name="Long text">
     <Paragraph isExpandable expandLabel="Expand">
       {`${'Long text (above max char) '.repeat(20)}`}
     </Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 # **Paragraph short text**
 
-<Preview>
+<Canvas>
   <Story name="Short text">
     <Paragraph>Short text (below max char)</Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 # **Paragraph long unbreakable text**
 
-<Preview>
+<Canvas>
   <Story name="Long unbreakable text">
     <Paragraph isExpandable expandLabel="Expand">
       {`http://${'long_url_without_spaces'.repeat(20)}.com`}
     </Paragraph>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -46,4 +46,4 @@ import { Paragraph } from '@blablacar/ui-library/build/paragraph'
 </Paragraph>
 ```
 
-<Props of={Paragraph} />
+<ArgsTable of={Paragraph} />

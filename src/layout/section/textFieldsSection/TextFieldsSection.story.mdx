@@ -1,14 +1,14 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { TextField } from '../../../textField'
 import { TextFieldsSection } from './index'
 
 
-<Meta title="Sections|TextFieldsSection" />
+<Meta title="Sections/TextFieldsSection" />
 
 # ** TextFieldsSection **
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TextFieldsSection>
         <TextField
@@ -23,7 +23,7 @@ import { TextFieldsSection } from './index'
         />
     </TextFieldsSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Usage
 
@@ -37,4 +37,4 @@ import { TextField } from '@blablacar/ui-library/build/textField'
 </TextFieldsSection>
 ```
 
-<Props of={TextFieldsSection} />
+<ArgsTable of={TextFieldsSection} />

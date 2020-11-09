@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemChoice } from '../itemChoice'
 import { ItemsList, ItemsListDivider } from './index'
 
-<Meta title="Items|ItemsList" />
+<Meta title="Items/ItemsList" />
 
 # **ItemsList**
 
-<Preview>
+<Canvas>
   <Story name="With separators between each item">
     <ItemsList withSeparators>
       <ItemChoice label="Item 1" href="#1" />
@@ -24,7 +24,7 @@ import { ItemsList, ItemsListDivider } from './index'
       <ItemChoice label="Item 4" href="#4" />
     </ItemsList>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -39,4 +39,4 @@ import { ItemsList } from '@blablacar/ui-library/build/itemsList'
 </ItemsList>
 ```
 
-<Props of={ItemsList} />
+<ArgsTable of={ItemsList} />

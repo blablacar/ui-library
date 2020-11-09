@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Avatar } from './index'
 
-<Meta title="Widgets|Avatar" />
+<Meta title="Widgets/Avatar" />
 
 # Avatar
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Avatar
       image="//placehold.it/80x80"
@@ -19,7 +19,7 @@ import { Avatar } from './index'
       isMedium={false}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -42,4 +42,4 @@ import { Avatar } from '@blablacar/ui-library/build/avatar'
 />
 ```
 
-<Props of={Avatar} />
+<ArgsTable of={Avatar} />

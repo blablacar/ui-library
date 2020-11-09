@@ -1,16 +1,16 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { HamburgerButton } from './index'
 
-<Meta title="Widgets|HamburgerButton" />
+<Meta title="Widgets/HamburgerButton" />
 
 # **HamburgerButton**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <HamburgerButton onClick={() => null} open={false} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -22,4 +22,4 @@ import { HamburgerButton } from '@blablacar/ui-library/build/hamburgerButton'
 <HamburgerButton onClick={() => null} open={false} />
 ```
 
-<Props of={HamburgerButton} />
+<ArgsTable of={HamburgerButton} />

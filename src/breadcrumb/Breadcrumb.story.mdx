@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import { Breadcrumb } from './index'
 
-<Meta title="Widgets|Breadcrumb" decorators={[withKnobs({ escapeHTML: false })]} />
+<Meta title="Widgets/Breadcrumb" decorators={[withKnobs({ escapeHTML: false })]} />
 
 # **Breadcrumb**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Breadcrumb
       crumbs={[
@@ -22,7 +22,7 @@ import { Breadcrumb } from './index'
       ]}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -35,4 +35,4 @@ import { Breadcrumb } from '@blablacar/ui-library/build/breadcrumb'
 ;<Breadcrumb />
 ```
 
-<Props of={Breadcrumb} />
+<ArgsTable of={Breadcrumb} />

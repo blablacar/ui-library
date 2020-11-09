@@ -1,14 +1,14 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { LadyIcon } from '../icon/ladyIcon'
 import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
 
-<Meta title="Items|ItemCheckbox" />
+<Meta title="Items/ItemCheckbox" />
 
 # ItemCheckbox
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <FocusVisibleProvider>
       <ItemCheckbox
@@ -24,11 +24,11 @@ import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
       />
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 # Disabled
 
-<Preview>
+<Canvas>
   <Story name="Disabled">
     <ItemCheckbox
       name="InputName"
@@ -42,7 +42,7 @@ import { ItemCheckbox, ItemCheckboxStatus } from '../itemCheckbox'
       status={ItemCheckboxStatus.DEFAULT}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -74,4 +74,4 @@ import { ItemCheckbox } from '@blablacar/ui-library/build/itemCheckItemCheckbox'
 />
 ```
 
-<Props of={ItemCheckbox} />
+<ArgsTable of={ItemCheckbox} />

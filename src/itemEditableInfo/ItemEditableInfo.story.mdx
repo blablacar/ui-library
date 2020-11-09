@@ -1,15 +1,15 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
 import { ItemEditableInfo } from './index'
 
-<Meta title="Items|ItemEditableInfo" />
+<Meta title="Items/ItemEditableInfo" />
 
 # ItemEditableInfo
 
 ### Link
 
-<Preview>
+<Canvas>
   <Story name="Link">
     <FocusVisibleProvider>
       <ItemEditableInfo
@@ -19,11 +19,11 @@ import { ItemEditableInfo } from './index'
       />
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ### button
 
-<Preview>
+<Canvas>
   <Story name="Button">
     <FocusVisibleProvider>
       <ItemEditableInfo
@@ -35,17 +35,17 @@ import { ItemEditableInfo } from './index'
       />
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ### Read Only
 
-<Preview>
+<Canvas>
   <Story name="Read Only">
     <FocusVisibleProvider>
       <ItemEditableInfo label="Gender (readonly)" value="Female" readonly />
     </FocusVisibleProvider>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -81,4 +81,4 @@ import { ItemEditableInfo } from '@blablacar/ui-library/build/itemEditableInfo'
 />
 ```
 
-<Props of={ItemEditableInfo} />
+<ArgsTable of={ItemEditableInfo} />

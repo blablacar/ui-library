@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { inputModes, inputTypes, TextField } from './index'
 
-<Meta title="Forms|TextField" />
+<Meta title="Forms/TextField" />
 
 # **TextField**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TextField
       type={inputTypes.TEXT}
@@ -30,7 +30,7 @@ import { inputModes, inputTypes, TextField } from './index'
       title="accessibility text"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -83,4 +83,4 @@ import { TextField } from '@blablacar/ui-library/build/textField'
 ;<TextField />
 ```
 
-<Props of={TextField} />
+<ArgsTable of={TextField} />

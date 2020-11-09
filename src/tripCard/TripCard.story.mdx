@@ -1,13 +1,13 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { WarningIcon } from '../icon/warningIcon'
 import { TripCard } from '.'
 
-<Meta title="Widgets|TripCard" />
+<Meta title="Widgets/TripCard" />
 
 # **TripCard**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TripCard
       aria-label="Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning"
@@ -56,7 +56,7 @@ import { TripCard } from '.'
       }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -91,4 +91,4 @@ import { TripCard } from '@blablacar/ui-library/build/tripCard'
 const card = <TripCard />
 ```
 
-<Props of={TripCard} />
+<ArgsTable of={TripCard} />

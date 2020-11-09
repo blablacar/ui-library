@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemChoice } from '../itemChoice'
 import { ItemsList } from '../itemsList'
@@ -6,11 +6,11 @@ import { BaseSection } from '../layout/section/baseSection'
 import { HintBubblePosition } from './HintBubble'
 import { Hint } from './index'
 
-<Meta title="Widgets|Hint" />
+<Meta title="Widgets/Hint" />
 
 # **Hint**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <BaseSection noHorizontalSpacing>
       <ItemsList>
@@ -40,7 +40,7 @@ import { Hint } from './index'
       </ItemsList>
     </BaseSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -67,4 +67,4 @@ import { Hint } from '@blablacar/ui-library/build/Hint'
 </Hint>
 ```
 
-<Props of={Hint} />
+<ArgsTable of={Hint} />

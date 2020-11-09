@@ -1,12 +1,12 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SearchRecap } from './index'
 
-<Meta title="Widgets|SearchRecap" />
+<Meta title="Widgets/SearchRecap" />
 
 # **SearchRecap**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <SearchRecap
       from="Middlesbrough"
@@ -14,7 +14,7 @@ import { SearchRecap } from './index'
       info="Today 2:30pm, 2 passengers"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -26,4 +26,4 @@ import { SearchRecap } from '@blablacar/ui-library/build/searchRecap'
 <SearchRecap />
 ```
 
-<Props of={SearchRecap} />
+<ArgsTable of={SearchRecap} />

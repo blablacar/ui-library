@@ -1,4 +1,4 @@
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button } from '../../../button'
 import ItemAction from '../../../itemAction'
@@ -6,11 +6,11 @@ import { TabStatus } from '../../../tabs'
 import { BaseSection } from '../baseSection'
 import { TabsSection } from './index'
 
-<Meta title="Sections|TabsSection" />
+<Meta title="Sections/TabsSection" />
 
 # **TabsSection**
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TabsSection tabsProps={{
       activeTabId: 'tab1',
@@ -55,7 +55,7 @@ import { TabsSection } from './index'
     }}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Specifications
 
@@ -67,4 +67,4 @@ import { TabsSection } from '@blablacar/ui-library/build/layout/section/tabsSect
 <TabsSection />
 ```
 
-<Props of={TabsSection} />
+<ArgsTable of={TabsSection} />

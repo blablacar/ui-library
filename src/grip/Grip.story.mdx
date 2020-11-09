@@ -1,16 +1,16 @@
 import { action } from '@storybook/addon-actions'
-import { Meta, Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { ItemRadio } from '../itemRadio'
 import { ItemRadioGroup } from '../itemRadioGroup'
 import { TheVoice } from '../theVoice'
 import { Grip } from './index'
 
-<Meta title="Widgets|Grip" />
+<Meta title="Widgets/Grip" />
 
 # Grip
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Grip onSlideUp={action('Slide Up')} onSlideDown={action('Slide Down')}>
       <TheVoice>What is your route?</TheVoice>
@@ -20,7 +20,7 @@ import { Grip } from './index'
       </ItemRadioGroup>
     </Grip>
   </Story>
-</Preview>
+</Canvas>
 
 
 ## Specifications
@@ -41,4 +41,4 @@ import Grip from '@blablacar/ui-library/build/grip'
 </Grip>
 ```
 
-<Props of={Grip} />
+<ArgsTable of={Grip} />
