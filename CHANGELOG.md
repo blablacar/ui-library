@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v41.6.3 (09/11/2020)
+
 - **[FIX]** Removed `cursor: not-allowed` from `UneditableTextField`
 
 # v41.6.2 (06/11/2020)
