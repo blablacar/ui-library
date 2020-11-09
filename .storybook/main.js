@@ -17,11 +17,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport',
     '@storybook/addon-a11y',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        configureJSX: true,
-      },
-    },
+    '@storybook/addon-docs',
   ],
 }
