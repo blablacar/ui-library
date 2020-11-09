@@ -4,7 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import '../stories/stories.css'
 
-export const paramenteters = {
+export const parameters = {
   options: {
     showPanel: true,
     isToolshown: true,
