@@ -14,8 +14,14 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
+  a11y: {
+    element: '#root',
+    config: {},
+    options: {},
+    manual: true,
+  },
 }
 
 // Ignore leftAddon as it breaks previews.
 // https://blablacar.atlassian.net/browse/BBC-9382
-export const decorators = [withA11y, withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] })]
+export const decorators = [withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] })]
