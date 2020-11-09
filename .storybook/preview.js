@@ -1,6 +1,5 @@
 import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 import { addDecorator, addParameters } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
@@ -21,5 +20,4 @@ addParameters({
 // Ignore leftAddon as it breaks previews.
 // https://blablacar.atlassian.net/browse/BBC-9382
 addDecorator(withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] }))
-addDecorator(withKnobs)
 addDecorator(withA11y)

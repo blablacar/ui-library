@@ -12,7 +12,7 @@ module.exports = {
   },
   stories: ['../src/**/*.story.mdx'],
   addons: [
-    '@storybook/addon-knobs',
+    '@storybook/addon-knobs/preset',
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-viewport',
