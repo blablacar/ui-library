@@ -1,9 +1,9 @@
 import React, { RefObject, useEffect, useState } from 'react'
 import cc from 'classcat'
 
-import { OnChangeParameters } from '../_internals/onChange'
 import { color } from '../_utils/branding'
 import { A11yProps, CommonFieldsProps, pickA11yProps } from '../_utils/interfaces'
+import { OnChangeParameters } from '../_utils/onChange'
 import { ChevronIcon } from '../icon/chevronIcon'
 import { StyledSelectField } from './SelectField.style'
 

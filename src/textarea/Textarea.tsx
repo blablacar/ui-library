@@ -5,8 +5,8 @@ import React, { PureComponent, RefObject } from 'react'
 import cc from 'classcat'
 import isEmpty from 'lodash.isempty'
 
-import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
+import { OnChangeParameters } from '../_utils/onChange'
 import { Button, ButtonStatus } from '../button'
 import { StyledTextarea } from './Textarea.style'
 

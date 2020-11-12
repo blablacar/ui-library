@@ -4,7 +4,7 @@ import cc from 'classcat'
 import { CheckboxIcon } from '../_internals/checkboxIcon'
 import { Item } from '../_internals/item/index'
 import { ItemProps } from '../_internals/item/Item'
-import { OnChangeParameters } from '../_internals/onChange'
+import { OnChangeParameters } from '../_utils/onChange'
 import { StyledToggleButton } from './ToggleButton.style'
 
 export type ToggleButtonProps = ItemProps &
