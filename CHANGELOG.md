@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[FIX]** Make `OnChangeParameters` part of the public API.
+- **[NEW]** Add `SupportIcon`
   [...]
 
 # v41.6.3 (09/11/2020)
