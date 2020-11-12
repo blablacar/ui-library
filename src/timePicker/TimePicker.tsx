@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import cc from 'classcat'
 
-import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
+import { OnChangeParameters } from '../_utils/onChange'
 import { StyledTimePicker } from './TimePicker.style'
 
 /**

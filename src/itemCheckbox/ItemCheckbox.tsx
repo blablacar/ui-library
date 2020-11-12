@@ -3,9 +3,9 @@ import cc from 'classcat'
 
 import { CheckboxIcon } from '../_internals/checkboxIcon'
 import { ItemRadioCheckbox } from '../_internals/item/ItemRadioCheckbox.style'
-import { OnChangeParameters } from '../_internals/onChange'
 import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { OnChangeParameters } from '../_utils/onChange'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplayType } from '../text'
 

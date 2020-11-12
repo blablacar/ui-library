@@ -5,9 +5,9 @@ import isEqual from 'lodash.isequal'
 
 import { allCountries, AllCountryPhoneData } from 'country-telephone-data'
 
-import { OnChangeParameters } from '../_internals/onChange'
 import { prefix } from '../_utils'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { OnChangeParameters } from '../_utils/onChange'
 import { SelectField } from '../selectField'
 import { inputTypes, TextField } from '../textField'
 import { StyledPhoneField } from './PhoneField.style'
