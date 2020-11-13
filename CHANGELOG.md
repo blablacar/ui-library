@@ -1,7 +1,8 @@
 # Unreleased
 
+- **[UPDATE]** New hooks for `MediaSizeProvider` and add a `mediaSizeForTestsOnly` override for test setup.
 - **[FIX]** Make `OnChangeParameters` part of the public API.
-  [...]
+[...]
 
 # v41.6.3 (09/11/2020)
 
