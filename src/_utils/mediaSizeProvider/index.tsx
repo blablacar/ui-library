@@ -10,14 +10,26 @@ export enum MediaSize {
 
 export type MediaSizeProviderProps = Readonly<{
   children: ReactNode
+  mediaSizeForTestsOnly?: MediaSize
 }>
 
-export const MediaSizeContext = React.createContext(MediaSize.SMALL)
+const DEFAULT_MEDIA_SIZE = MediaSize.SMALL
+export const MediaSizeContext = React.createContext(DEFAULT_MEDIA_SIZE)
 
 const DEBOUNCE_VALUE = 500
 
-export const MediaSizeProvider = ({ children }: MediaSizeProviderProps) => {
-  const [mediaSize, setMediaSize] = useState(MediaSize.SMALL)
+export const useIsSmallMediaSize = (): boolean => {
+  const mediaSize = React.useContext(MediaSizeContext)
+  return mediaSize === MediaSize.SMALL
+}
+
+export const useIsLargeMediaSize = (): boolean => {
+  const mediaSize = React.useContext(MediaSizeContext)
+  return mediaSize === MediaSize.LARGE
+}
+
+export const MediaSizeProvider = ({ children, mediaSizeForTestsOnly }: MediaSizeProviderProps) => {
+  const [mediaSize, setMediaSize] = useState(DEFAULT_MEDIA_SIZE)
 
   const handleResize = () => {
     const isSmall = window.innerWidth <= parseInt(responsiveBreakpoints.small, 10)
@@ -29,6 +41,14 @@ export const MediaSizeProvider = ({ children }: MediaSizeProviderProps) => {
     window.addEventListener('resize', debounce(handleResize, DEBOUNCE_VALUE))
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  if (mediaSizeForTestsOnly) {
+    return (
+      <MediaSizeContext.Provider value={mediaSizeForTestsOnly}>
+        {children}
+      </MediaSizeContext.Provider>
+    )
+  }
 
   return <MediaSizeContext.Provider value={mediaSize}>{children}</MediaSizeContext.Provider>
 }
