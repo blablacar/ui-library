@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Horizontal (and vertical) normalization for `ButtonGroup`
 - [...]
 
 # v41.7.0 (16/11/2020)
