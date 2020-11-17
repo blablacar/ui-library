@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 import { space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 export const StyledButtonGroup = styled.div`
-  & {
-    display: flex;
-  }
+  display: flex;
+  ${normalizeHorizontally};
+  padding-top: ${space.m};
+  padding-bottom: ${space.m};
 
   &.kirk-button-group-column {
     flex-direction: column;
@@ -33,6 +35,8 @@ export const StyledButtonGroup = styled.div`
   &.kirk-button-group-row {
     flex-direction: row;
     justify-content: space-between;
+    padding-top: ${space.xl};
+    padding-bottom: ${space.xl};
   }
   &.kirk-button-group-row > .kirk-button {
     flex-grow: 1;
