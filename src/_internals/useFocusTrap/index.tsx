@@ -14,11 +14,18 @@ import { KEYS } from '../../_utils/keycodes'
  */
 export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: () => void) => {
   const elementToReturnFocusTo = useRef(document.activeElement as HTMLElement)
+
+  // Use a Ref to avoid deactivating/activating the trap each time onClose changes.
+  const onCloseRef = useRef(onClose)
+  useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
+
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
       if (event.code === KEYS.ESCAPE) {
         event.stopPropagation()
-        onClose()
+        onCloseRef.current()
       }
     }
 
@@ -36,7 +43,7 @@ export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: 
       ref.current.removeEventListener('keydown', handleKeydown)
       document.querySelector('html').style.overflow = 'visible'
     }
-  }, [onClose])
+  }, [])
 }
 
 export default useFocusTrap

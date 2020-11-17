@@ -37,9 +37,24 @@ describe('useFocusTrap', () => {
 
   it('Should deactivate focus trap on unmount', () => {
     renderHook(() => useFocusTrap(ref, jest.fn())).unmount()
+    expect(createFocusTrapMock).toHaveBeenCalledTimes(1)
+    expect(createFocusTrapMock).toHaveBeenCalledWith(ref.current)
     const trap: FocusTrap = createFocusTrapMock.mock.results[0].value
     expect(trap.deactivate).toHaveBeenCalledTimes(1)
     expect(trap.deactivate).toHaveBeenCalledWith()
+  })
+
+  it('Should not deactivate/re-activate when onClose reference changes', () => {
+    const { rerender } = renderHook<jest.Mock, void>(onClose => useFocusTrap(ref, onClose), {
+      initialProps: jest.fn(),
+    })
+
+    rerender(jest.fn())
+
+    expect(createFocusTrapMock).toHaveBeenCalledTimes(1)
+    expect(createFocusTrapMock).toHaveBeenCalledWith(ref.current)
+    const trap: FocusTrap = createFocusTrapMock.mock.results[0].value
+    expect(trap.deactivate).not.toHaveBeenCalled()
   })
 
   it('Should set overflow hidden on html tag and reset it to visible when unmounting', () => {
