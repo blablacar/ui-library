@@ -1,62 +1,52 @@
-import React, { useRef } from 'react'
-import { mount } from 'enzyme'
+import React from 'react'
 
-import createFocusTrap from 'focus-trap'
+import { fireEvent } from '@testing-library/react'
+import { renderHook } from '@testing-library/react-hooks'
+import createFocusTrap, { FocusTrap } from 'focus-trap'
 
 import { useFocusTrap } from './index'
 
-let TestComponent
-const activate = jest.fn()
-const deactivate = jest.fn()
+const createFocusTrapMock = createFocusTrap as jest.Mock
 
 describe('useFocusTrap', () => {
-  const onClose = jest.fn()
+  const ref: React.MutableRefObject<HTMLElement> = { current: null! }
 
-  const mockFocusTrap = createFocusTrap as jest.Mock
-  mockFocusTrap.mockReturnValue({
-    activate,
-    deactivate,
-  })
   beforeEach(() => {
-    TestComponent = () => {
-      const ref = useRef<HTMLDivElement>(null)
-      useFocusTrap(ref, onClose)
-      return (
-        <div ref={ref}>
-          <button type="button">1</button>
-          <button type="button">2</button>
-          <button type="button">3</button>
-        </div>
-      )
-    }
+    ref.current = document.createElement('div')
+  })
+
+  afterEach(() => {
+    createFocusTrapMock.mockClear()
   })
 
   it('Should activate focus trap', () => {
-    mount(<TestComponent />)
-    expect(createFocusTrap).toHaveBeenCalled()
-    expect(activate).toHaveBeenCalled()
+    renderHook(() => useFocusTrap(ref, jest.fn()))
+    expect(createFocusTrapMock).toHaveBeenCalledTimes(1)
+    expect(createFocusTrapMock).toHaveBeenCalledWith(ref.current)
+    const trap: FocusTrap = createFocusTrapMock.mock.results[0].value
+    expect(trap.activate).toHaveBeenCalledTimes(1)
+    expect(trap.activate).toHaveBeenCalledWith()
   })
 
   it('Should call onClose when pressing ESC key focus trap', () => {
-    const wrapper = mount(<TestComponent />)
-    const event = new KeyboardEvent('keydown', {
-      code: 'Escape',
-    })
-    wrapper.getDOMNode().dispatchEvent(event)
+    const onClose = jest.fn()
+    renderHook(() => useFocusTrap(ref, onClose))
+    fireEvent.keyDown(ref.current, { code: 'Escape' })
     expect(onClose).toHaveBeenCalled()
   })
 
   it('Should deactivate focus trap on unmount', () => {
-    const wrapper = mount(<TestComponent />)
-    wrapper.unmount()
-    expect(deactivate).toHaveBeenCalled()
+    renderHook(() => useFocusTrap(ref, jest.fn())).unmount()
+    const trap: FocusTrap = createFocusTrapMock.mock.results[0].value
+    expect(trap.deactivate).toHaveBeenCalledTimes(1)
+    expect(trap.deactivate).toHaveBeenCalledWith()
   })
 
   it('Should set overflow hidden on html tag and reset it to visible when unmounting', () => {
-    const wrapper = mount(<TestComponent />)
+    const { unmount } = renderHook(() => useFocusTrap(ref, jest.fn()))
     const htmlNode = document.querySelector('html')
     expect(htmlNode.style.overflow).toEqual('hidden')
-    wrapper.unmount()
+    unmount()
     expect(htmlNode.style.overflow).toEqual('visible')
   })
 })
