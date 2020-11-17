@@ -101,6 +101,7 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
   }
 `
 
-export { ItineraryLocationProps, computeKeyFromPlace } from './ItineraryLocation'
+export { computeKeyFromPlace } from './ItineraryLocation'
+export type ItineraryLocationProps = ItineraryLocationProps
 export { StyledItineraryLocation as ItineraryLocation }
 export default StyledItineraryLocation

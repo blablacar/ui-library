@@ -1,1 +1,3 @@
-export { SpacingDivider, SpacingDividerProps, SpacingDividerSize } from './SpacingDivider'
+export { SpacingDivider, SpacingDividerSize } from './SpacingDivider'
+
+export type SpacingDividerProps = SpacingDividerProps

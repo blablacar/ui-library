@@ -1,1 +1,2 @@
-export { GripProps, Grip } from './Grip'
+export { Grip } from './Grip'
+export type GripProps = GripProps

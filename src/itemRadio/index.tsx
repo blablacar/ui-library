@@ -1,2 +1,3 @@
-export { ItemRadio, ItemRadioProps, ItemRadioStatus } from './ItemRadio'
+export { ItemRadio, ItemRadioStatus } from './ItemRadio'
+export type ItemRadioProps = ItemRadioProps
 export { ItemRadio as default } from './ItemRadio'

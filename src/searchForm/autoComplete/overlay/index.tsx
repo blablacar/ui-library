@@ -25,7 +25,7 @@ const StyledAutoComplete = styled(AutoCompleteOverlay)`
   }
 `
 
-export { AutoCompleteOverlayProps } from './AutoCompleteOverlay'
+export type AutoCompleteOverlayProps = AutoCompleteOverlayProps
 
 export { StyledAutoComplete as AutoCompleteOverlay }
 export default StyledAutoComplete

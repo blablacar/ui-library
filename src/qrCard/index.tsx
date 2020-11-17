@@ -1,2 +1,3 @@
-export { QrCard, QrCardProps } from './QrCard'
+export { QrCard } from './QrCard'
+export type QrCardProps = QrCardProps
 export { QrCard as default } from './QrCard'

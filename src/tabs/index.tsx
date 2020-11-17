@@ -1,2 +1,3 @@
-export { Tabs, TabsProps, TabStatus } from './Tabs'
+export { Tabs, TabStatus } from './Tabs'
+export type TabsProps = TabsProps
 export { Tabs as default } from './Tabs'

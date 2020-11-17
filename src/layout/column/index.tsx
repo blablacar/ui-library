@@ -11,6 +11,6 @@ const StyledColumn = styled(Column)`
   }
 `
 
-export { ColumnProps } from './column'
+export type ColumnProps = ColumnProps
 export { StyledColumn as Column }
 export default StyledColumn

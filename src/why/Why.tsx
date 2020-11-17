@@ -5,7 +5,7 @@ import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { QuestionIcon } from '../icon/questionIcon'
 import { StyledWhy } from './Why.style'
 
-export type WhyProps = Readonly<{
+type WhyProps = Readonly<{
   children: string
   title: string
   className?: string

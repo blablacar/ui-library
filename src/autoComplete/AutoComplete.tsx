@@ -12,11 +12,9 @@ import { ItemInfo } from '../itemInfo'
 import { Loader } from '../loader'
 import { inputTypes, TextField } from '../textField'
 import { StyledAutoComplete } from './AutoComplete.style'
-import { AutocompleteItem, AutoCompleteList } from './AutoCompleteListStyle'
+import { AutoCompleteList } from './AutoCompleteListStyle'
 
 type query = string | number | boolean
-
-export { AutocompleteItem }
 
 export interface AutocompleteOnChange {
   readonly name: string

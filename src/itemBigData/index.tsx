@@ -1,2 +1,3 @@
-export { ItemBigData, ItemBigDataProps } from './ItemBigData'
+export { ItemBigData } from './ItemBigData'
+export type ItemBigDataProps = ItemBigDataProps
 export { ItemBigData as default } from './ItemBigData'

@@ -94,6 +94,6 @@ const StyledItineraryCollapsible = styled(ItineraryCollapsible)`
     padding: 0;
   }
 `
-export { ItineraryCollapsibleProps } from './ItineraryCollapsible'
+export type ItineraryCollapsibleProps = ItineraryCollapsibleProps
 export { StyledItineraryCollapsible as ItineraryCollapsible }
 export default StyledItineraryCollapsible

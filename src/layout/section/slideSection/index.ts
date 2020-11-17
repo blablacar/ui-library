@@ -1,1 +1,2 @@
-export { SlideSectionProps, SlideSectionPosition, SlideSection } from './SlideSection'
+export { SlideSectionPosition, SlideSection } from './SlideSection'
+export type SlideSectionProps = SlideSectionProps
