@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Don't deactivate/activate the trap in `useFocusTrap` each time `onClose` changes.
 - [...]
 
 # v41.7.1 (17/11/2020)
