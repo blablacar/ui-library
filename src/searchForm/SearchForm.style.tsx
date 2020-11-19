@@ -14,8 +14,7 @@ const formWidth = '928px'
 const formHeight = '56px'
 const primaryFieldsWidth = '240px'
 const secondaryFieldsWidth = '160px'
-const buttonHeight = '48px'
-const buttonHeightSmall = '40px'
+export const buttonHeight = '40px'
 const submitButtonWidth = '88px'
 const positionAutocompleteFrom = '-8px'
 const positionAutocompleteTo = '268px'
@@ -43,11 +42,6 @@ export const StyledSearchForm = styled.form`
   .kirk-searchForm-to {
     /* Hide the overflowing parts of the button during the animation. */
     overflow: hidden;
-  }
-
-  .kirk-searchForm-to,
-  .kirk-searchForm-seats {
-    border-left: 1px solid ${color.lightGray};
   }
 
   .kirk-searchForm-textfield .kirk-textField-wrapper {
@@ -123,10 +117,6 @@ export const StyledSearchForm = styled.form`
     padding-left: ${space.m};
   }
 
-  .kirk-searchForm-date {
-    border-left: 1px solid ${color.lightGray};
-  }
-
   .kirk-searchForm-submit .kirk-search-button {
     width: ${submitButtonWidth};
     height: ${formHeight};
@@ -185,7 +175,7 @@ export const StyledSearchForm = styled.form`
     .kirk-searchForm-seats .kirk-search-button {
       padding: 0;
       width: 100%;
-      height: ${buttonHeightSmall};
+      height: ${buttonHeight};
       padding-top: ${space.m};
       padding-bottom: ${space.m};
     }
@@ -206,11 +196,6 @@ export const StyledSearchForm = styled.form`
 
     .kirk-searchForm-invert {
       padding: 0;
-    }
-
-    .kirk-searchForm-to,
-    .kirk-searchForm-date {
-      border: none;
     }
 
     .kirk-searchForm-date,
