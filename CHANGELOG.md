@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `EditIcon`
 - **[UPDATE]** Don't deactivate/activate the trap in `useFocusTrap` each time `onClose` changes.
 - [...]
 
