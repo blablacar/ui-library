@@ -72,6 +72,7 @@ export type TextFieldProps = CommonFormFields &
     focusBorder?: boolean
     loader?: JSX.Element
     inputAttributes: InputHTMLAttributes<HTMLInputElement>
+    dataEncryptedName?: string
   }>
 
 export type TextFieldState = {
@@ -237,11 +238,13 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
       focusBorder,
       loader,
       inputAttributes,
+      dataEncryptedName,
     } = this.props
     const value = this.state.value ? format(this.state.value, this.state.previousValue) : ''
 
     const attrs: InputHTMLAttributes<HTMLInputElement> & {
       ref: any
+      'data-encrypted-name'?: string
     } = {
       ...inputAttributes,
       type,
@@ -270,6 +273,10 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
 
     if (error) {
       attrs['aria-invalid'] = 'true'
+    }
+
+    if (dataEncryptedName) {
+      attrs['data-encrypted-name'] = dataEncryptedName
     }
 
     const iconProps = {
