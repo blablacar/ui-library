@@ -1,6 +1,5 @@
 import React from 'react'
 
-import '../../__mocks__/matchMedia'
 import { fireEvent, render, screen } from '@testing-library/react'
 import * as jestDateMock from 'jest-date-mock'
 
