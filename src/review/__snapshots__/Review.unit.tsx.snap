@@ -10,6 +10,10 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c5 .kirk-button {
@@ -205,15 +209,6 @@ Array [
               Review content
             </p>
           </div>
-        </div>
-      </div>
-      <div
-        className="c1"
-        role="presentation"
-      >
-        <div
-          className="section-content"
-        >
           <div
             className="kirk-caption c5"
           >
@@ -236,6 +231,10 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c5 .kirk-button {
@@ -427,15 +426,6 @@ Array [
               Review content
             </p>
           </div>
-        </div>
-      </div>
-      <div
-        className="c1"
-        role="presentation"
-      >
-        <div
-          className="section-content"
-        >
           <div
             className="kirk-caption c5"
           >

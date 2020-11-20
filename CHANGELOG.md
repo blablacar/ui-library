@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[FIX]** Horizontal normalization for `Caption`
 
 # v41.8.0 (20/11/2020)
 
