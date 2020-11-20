@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Add missing `SelectFieldItem` type export
 - [...]
 
 # v41.8.0 (20/11/2020)
