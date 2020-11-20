@@ -5,12 +5,11 @@ import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 
 import { color } from '../_utils/branding'
-import { MediaSize, MediaSizeContext } from '../_utils/mediaSizeProvider'
+import { useIsLargeMediaSize } from '../_utils/mediaSizeProvider'
 import { OnChangeParameters } from '../_utils/onChange'
 import { AutocompleteOnChange, AutoCompleteProps } from '../autoComplete'
 import { Bullet, BulletTypes } from '../bullet'
 import { DatePicker } from '../datePicker'
-import { ContentDivider } from '../divider/contentDivider'
 import { CalendarIcon } from '../icon/calendarIcon'
 import { DoubleArrowIcon } from '../icon/doubleArrowIcon'
 import { SearchIcon } from '../icon/searchIcon'
@@ -22,6 +21,7 @@ import { DatePickerOverlay, DatePickerOverlayProps } from './datePicker/overlay'
 import { DatePickerSection } from './datePicker/section'
 import { Overlay } from './overlay'
 import { StyledSearchForm } from './SearchForm.style'
+import { ResponsiveDivider, VerticalDivider } from './SearchFormDivider'
 import { SlideSwitchTransition, SlideSwitchTransitionSide } from './SlideSwitchTransition'
 import { StepperOverlay } from './stepper/overlay'
 import { StepperSection } from './stepper/section'
@@ -103,9 +103,8 @@ export const SearchForm = ({
   datepickerProps,
   stepperProps,
 }: SearchFormProps) => {
-  // Use React.useContext syntax so we can mock it
-  // https://github.com/enzymejs/enzyme/issues/2176#issuecomment-533582429
-  const mediaSize = React.useContext(MediaSizeContext)
+  const isLargeMediaSize = useIsLargeMediaSize()
+  const isSmallMediaSize = !isLargeMediaSize
 
   const [elementOpened, setElementOpened] = useState('')
 
@@ -250,9 +249,7 @@ export const SearchForm = ({
         <div className="kirk-searchForm-from">
           <SlideSwitchTransition
             side={
-              mediaSize === MediaSize.SMALL
-                ? SlideSwitchTransitionSide.BOTTOM
-                : SlideSwitchTransitionSide.RIGHT
+              isSmallMediaSize ? SlideSwitchTransitionSide.BOTTOM : SlideSwitchTransitionSide.RIGHT
             }
             childrenKey={animationKey.current}
           >
@@ -295,19 +292,17 @@ export const SearchForm = ({
         </div>
       </div>
 
-      {mediaSize === MediaSize.SMALL && <ContentDivider />}
+      <ResponsiveDivider />
 
       <Overlay
-        shouldDisplay={
-          mediaSize === MediaSize.LARGE && elementOpened === SearchFormElements.AUTOCOMPLETE_FROM
-        }
+        shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.AUTOCOMPLETE_FROM}
         closeOnBlur={closeOpenedElement}
         className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
       >
         <AutoCompleteOverlay {...autocompleteFromConfig} />
       </Overlay>
 
-      {mediaSize === MediaSize.SMALL &&
+      {isSmallMediaSize &&
         canUseDOM &&
         createPortal(
           <CSSTransition
@@ -321,11 +316,7 @@ export const SearchForm = ({
 
       <div className="kirk-searchForm-to">
         <SlideSwitchTransition
-          side={
-            mediaSize === MediaSize.SMALL
-              ? SlideSwitchTransitionSide.TOP
-              : SlideSwitchTransitionSide.LEFT
-          }
+          side={isSmallMediaSize ? SlideSwitchTransitionSide.TOP : SlideSwitchTransitionSide.LEFT}
           childrenKey={animationKey.current}
         >
           <button
@@ -353,19 +344,17 @@ export const SearchForm = ({
         </SlideSwitchTransition>
       </div>
 
-      {mediaSize === MediaSize.SMALL && <ContentDivider />}
+      <ResponsiveDivider />
 
       <Overlay
-        shouldDisplay={
-          mediaSize === MediaSize.LARGE && elementOpened === SearchFormElements.AUTOCOMPLETE_TO
-        }
+        shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.AUTOCOMPLETE_TO}
         closeOnBlur={closeOpenedElement}
         className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
       >
         <AutoCompleteOverlay {...autocompleteToConfig} />
       </Overlay>
 
-      {mediaSize === MediaSize.SMALL &&
+      {isSmallMediaSize &&
         canUseDOM &&
         createPortal(
           <CSSTransition
@@ -390,16 +379,14 @@ export const SearchForm = ({
         </div>
 
         <Overlay
-          shouldDisplay={
-            mediaSize === MediaSize.LARGE && elementOpened === SearchFormElements.DATEPICKER
-          }
+          shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.DATEPICKER}
           closeOnBlur={closeOpenedElement}
           className="kirk-searchForm-overlay kirk-searchForm-datepicker"
         >
           <DatePickerOverlay {...datepickerConfig} />
         </Overlay>
 
-        {mediaSize === MediaSize.SMALL &&
+        {isSmallMediaSize &&
           canUseDOM &&
           createPortal(
             <CSSTransition
@@ -410,6 +397,8 @@ export const SearchForm = ({
             </CSSTransition>,
             document.body,
           )}
+
+        <VerticalDivider />
 
         <div className="kirk-searchForm-seats">
           <button
@@ -424,9 +413,7 @@ export const SearchForm = ({
       </div>
 
       <Overlay
-        shouldDisplay={
-          mediaSize === MediaSize.LARGE && elementOpened === SearchFormElements.STEPPER
-        }
+        shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.STEPPER}
         closeOnBlur={closeOpenedElement}
         className="kirk-searchForm-overlay kirk-searchForm-stepper"
       >
@@ -443,7 +430,7 @@ export const SearchForm = ({
         />
       </Overlay>
 
-      {mediaSize === MediaSize.SMALL &&
+      {isSmallMediaSize &&
         canUseDOM &&
         createPortal(
           <CSSTransition

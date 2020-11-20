@@ -1,8 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import '../../../__mocks__/matchMedia'
-
 import { useReducedMotion } from './index'
 
 let TestComponent
