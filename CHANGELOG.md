@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `ColorIcon`
 - **[UPDATE]** Don't deactivate/activate the trap in `useFocusTrap` each time `onClose` changes.
 - **[FIX]** The `SearchForm` no longer wobble on mount.
 - [...]

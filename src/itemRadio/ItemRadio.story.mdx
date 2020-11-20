@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions'
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
+import { ColorIcon } from '../icon/colorIcon'
 import { ComfortIcon } from '../icon/comfortIcon'
 import { LadyIcon } from '../icon/ladyIcon'
 import { ItemRadioGroup } from '../itemRadioGroup'
@@ -41,6 +42,37 @@ import { ItemRadio, ItemRadioStatus } from './index'
         />
       </ItemRadioGroup>
     </FocusVisibleProvider>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Color choice">
+    <ItemRadioGroup onChange={action('group changed')} withChevrons>
+      <ItemRadio
+        name2="color"
+        value="black"
+        leftAddon={<ColorIcon iconColor="#000000" />}
+        labelTitle="Black"
+      />
+      <ItemRadio
+        name2="color"
+        value="white"
+        leftAddon={<ColorIcon iconColor="#FFFFFF" borderColor="#000000" />}
+        labelTitle="White"
+      />
+      <ItemRadio
+        name2="color"
+        value="darkblue"
+        leftAddon={<ColorIcon iconColor="#0B2742" />}
+        labelTitle="Dark blue"
+      />
+      <ItemRadio
+        name2="color"
+        value="orange"
+        leftAddon={<ColorIcon iconColor="#FA6600" />}
+        labelTitle="Orange"
+      />
+    </ItemRadioGroup>
   </Story>
 </Canvas>
 
