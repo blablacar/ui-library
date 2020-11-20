@@ -2,6 +2,7 @@
 
 - **[NEW]** Add `EditIcon`
 - **[UPDATE]** Don't deactivate/activate the trap in `useFocusTrap` each time `onClose` changes.
+- **[FIX]** The `SearchForm` no longer wobble on mount.
 - [...]
 
 # v41.7.1 (17/11/2020)
