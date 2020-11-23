@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `ColorIcon`
 - **[NEW]** Add `CarConvertibleIcon`, `CarBreakIcon`, `CarHatchbackIcon`, `CarMinivanIcon`, `CarMvpIcon`, `CarSaloonIcon`, `CarSuvIcon`, `CarVanIcon`
 - **[FIX]** Add missing `SelectFieldItem` type export
 - [...]
