@@ -1,10 +1,13 @@
 # Unreleased
 
-- **[FIX]** Horizontal normalization for `Caption`
+- [...]
+
+# v41.9.0 (23/11/2020)
+
 - **[NEW]** Add `ColorIcon`
 - **[NEW]** Add `CarConvertibleIcon`, `CarBreakIcon`, `CarHatchbackIcon`, `CarMinivanIcon`, `CarMvpIcon`, `CarSaloonIcon`, `CarSuvIcon`, `CarVanIcon`
 - **[FIX]** Add missing `SelectFieldItem` type export
-- [...]
+- **[FIX]** Horizontal normalization for `Caption`
 
 # v41.8.0 (20/11/2020)
 
