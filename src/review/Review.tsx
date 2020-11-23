@@ -75,8 +75,6 @@ export const Review = (props: ReviewProps) => {
         </BaseSection>
         <BaseSection noHorizontalSpacing>
           <Paragraph itemProp="reviewBody">{text}</Paragraph>
-        </BaseSection>
-        <BaseSection>
           <Caption isoDate={isoDatetime} {...replyLinkProps}>
             {formattedDatetime}
           </Caption>
