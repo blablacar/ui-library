@@ -1,7 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { withKnobs } from '@storybook/addon-knobs'
 
-import { Breadcrumb } from './index'
+import { Breadcrumb, DividerPosition } from './index'
 
 <Meta title="Widgets/Breadcrumb" decorators={[withKnobs({ escapeHTML: false })]} />
 
@@ -24,6 +24,46 @@ import { Breadcrumb } from './index'
   </Story>
 </Canvas>
 
+### With top divider
+
+<Canvas>
+  <Story name="With top divider">
+    <Breadcrumb
+      crumbs={[
+        {
+          url: 'http://www.goominet.com/unspeakable-vault/',
+          name: 'Fhtagn',
+        },
+        {
+          url: 'http://www.goominet.com/unspeakable-vault/vault/1/',
+          name: 'Cthulhu',
+        },
+      ]}
+      divider={DividerPosition.TOP}
+    />
+  </Story>
+</Canvas>
+
+### With bottom divider
+
+<Canvas>
+  <Story name="With bottom divider">
+    <Breadcrumb
+      crumbs={[
+        {
+          url: 'http://www.goominet.com/unspeakable-vault/',
+          name: 'Fhtagn',
+        },
+        {
+          url: 'http://www.goominet.com/unspeakable-vault/vault/1/',
+          name: 'Cthulhu',
+        },
+      ]}
+      divider={DividerPosition.BOTTOM}
+    />
+  </Story>
+</Canvas>
+
 ## Specifications
 
 The breadcrumb component uses structured data. It validates https://search.google.com/test/rich-results
@@ -31,8 +71,8 @@ The breadcrumb component uses structured data. It validates https://search.googl
 ## Usage
 
 ```jsx
-import { Breadcrumb } from '@blablacar/ui-library/build/breadcrumb'
-;<Breadcrumb />
+import { Breadcrumb, DividerPosition } from '@blablacar/ui-library/build/breadcrumb'
+<Breadcrumb crumbs={[{ name: string; url: string; }]} divider={DividerPosition} />
 ```
 
 <ArgsTable of={Breadcrumb} />

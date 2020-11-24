@@ -10,13 +10,22 @@ export type CrumbProps = Readonly<{
   url: string
 }>
 
-export type BreadcrumbProps = {
-  crumbs: Array<CrumbProps>
+export enum DividerPosition {
+  TOP = 'top',
+  BOTTOM = 'bottom',
+  NONE = 'none',
 }
 
-export const Breadcrumb = ({ crumbs }: BreadcrumbProps) => (
+export type BreadcrumbProps = {
+  crumbs: Array<CrumbProps>
+  divider?: DividerPosition
+}
+
+export const Breadcrumb = ({ crumbs, divider }: BreadcrumbProps) => (
   <Fragment>
-    <StyledBreadcrumb itemScope itemType="https://schema.org/BreadcrumbList">
+    {divider === DividerPosition.TOP && <ContentDivider />}
+
+    <StyledBreadcrumb divider={divider} itemScope itemType="https://schema.org/BreadcrumbList">
       {crumbs.map((crumb, index) => {
         const position = Number(index + 1)
 
@@ -50,6 +59,11 @@ export const Breadcrumb = ({ crumbs }: BreadcrumbProps) => (
         )
       })}
     </StyledBreadcrumb>
-    <ContentDivider />
+
+    {divider === DividerPosition.BOTTOM && <ContentDivider />}
   </Fragment>
 )
+
+Breadcrumb.defaultProps = {
+  divider: DividerPosition.NONE,
+}
