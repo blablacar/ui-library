@@ -2,7 +2,7 @@
 
 - [...]
 
-# v41.9.1 (24/11/2020)
+# v41.9.1 (25/11/2020)
 
 - **[FIX]** Fixed `SearchForm` autocomplete styles
 
