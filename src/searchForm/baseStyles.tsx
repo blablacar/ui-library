@@ -32,9 +32,9 @@ export const sectionBaseStyle = `
 
 export const autoCompleteBaseStyle = `
   .kirk-textField-wrapper {
-    background: transparent;
-    border-radius: 0;
-    border: 0;
+    background: transparent !important;
+    border-radius: 0 !important;
+    border: 0 !important;
 
     input {
       font-size: ${font.m.size};
