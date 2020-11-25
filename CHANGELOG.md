@@ -2,6 +2,10 @@
 
 - [...]
 
+# v41.9.1 (24/11/2020)
+
+- **[FIX]** Fixed `SearchForm` autocomplete styles
+
 # v41.9.0 (23/11/2020)
 
 - **[NEW]** Add `ColorIcon`
