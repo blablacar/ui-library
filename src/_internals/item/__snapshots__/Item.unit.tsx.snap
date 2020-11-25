@@ -121,6 +121,28 @@ exports[`Item Should not have changed 1`] = `
   background: none;
 }
 
+.c0.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c0:disabled {
   cursor: default;
 }
@@ -149,6 +171,21 @@ button.c0 {
 
 button:focus:not(.focus-visible).c0 {
   outline: none;
+}
+
+.c0 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 .kirk-item-leftText {
@@ -216,17 +253,21 @@ button:focus:not(.focus-visible).c0 {
   className="kirk-item custom c0"
 >
   <span
-    className="kirk-item-leftText"
+    className="kirk-item-leftWrapper"
   >
     <span
-      className="kirk-text kirk-text-title c1"
+      className="kirk-item-leftText"
     >
-      Test
-    </span>
-    <span
-      className="kirk-text kirk-text-body kirk-item-body c1"
-    >
-      Test
+      <span
+        className="kirk-text kirk-text-title c1"
+      >
+        Test
+      </span>
+      <span
+        className="kirk-text kirk-text-body kirk-item-body c1"
+      >
+        Test
+      </span>
     </span>
   </span>
   <span

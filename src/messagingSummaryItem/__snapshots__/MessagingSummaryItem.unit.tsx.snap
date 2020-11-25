@@ -207,6 +207,28 @@ exports[`Should render properly with read messages 1`] = `
   background: none;
 }
 
+.c0.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c0:disabled {
   cursor: default;
 }
@@ -235,6 +257,21 @@ button.c0 {
 
 button:focus:not(.focus-visible).c0 {
   outline: none;
+}
+
+.c0 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 .kirk-item-leftText {
@@ -313,36 +350,40 @@ button:focus:not(.focus-visible).c0 {
   href="http_test.url"
 >
   <span
-    className="kirk-item-leftText"
+    className="kirk-item-leftWrapper"
   >
     <span
-      className="kirk-text kirk-text-titleStrong c1"
-      style={
-        Object {
-          "color": "#708C91",
-        }
-      }
-    >
-      A label
-    </span>
-    <span
-      className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
-      style={
-        Object {
-          "color": "#708C91",
-        }
-      }
+      className="kirk-item-leftText"
     >
       <span
-        className="kirk-messaging-summary-item-sub-label"
+        className="kirk-text kirk-text-titleStrong c1"
+        style={
+          Object {
+            "color": "#708C91",
+          }
+        }
       >
-        A sub label
+        A label
       </span>
-    </span>
-    <span
-      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
-    >
-      3 days ago
+      <span
+        className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
+        style={
+          Object {
+            "color": "#708C91",
+          }
+        }
+      >
+        <span
+          className="kirk-messaging-summary-item-sub-label"
+        >
+          A sub label
+        </span>
+      </span>
+      <span
+        className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
+      >
+        3 days ago
+      </span>
     </span>
   </span>
   <span
@@ -590,6 +631,28 @@ exports[`Should render properly with unread messages 1`] = `
   background: none;
 }
 
+.c0.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c0.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c0:disabled {
   cursor: default;
 }
@@ -618,6 +681,21 @@ button.c0 {
 
 button:focus:not(.focus-visible).c0 {
   outline: none;
+}
+
+.c0 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c0 .kirk-item-leftText {
@@ -696,36 +774,40 @@ button:focus:not(.focus-visible).c0 {
   href="http_test.url"
 >
   <span
-    className="kirk-item-leftText"
+    className="kirk-item-leftWrapper"
   >
     <span
-      className="kirk-text kirk-text-titleStrong c1"
-      style={
-        Object {
-          "color": "#054752",
-        }
-      }
-    >
-      A label
-    </span>
-    <span
-      className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
-      style={
-        Object {
-          "color": "#054752",
-        }
-      }
+      className="kirk-item-leftText"
     >
       <span
-        className="kirk-messaging-summary-item-sub-label"
+        className="kirk-text kirk-text-titleStrong c1"
+        style={
+          Object {
+            "color": "#054752",
+          }
+        }
       >
-        A sub label
+        A label
       </span>
-    </span>
-    <span
-      className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
-    >
-      3 days ago
+      <span
+        className="kirk-text kirk-text-bodyStrong kirk-item-body c1"
+        style={
+          Object {
+            "color": "#054752",
+          }
+        }
+      >
+        <span
+          className="kirk-messaging-summary-item-sub-label"
+        >
+          A sub label
+        </span>
+      </span>
+      <span
+        className="kirk-text kirk-text-caption kirk-item-body-annotation c1"
+      >
+        3 days ago
+      </span>
     </span>
   </span>
   <span
