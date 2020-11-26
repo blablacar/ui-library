@@ -1,7 +1,9 @@
 # Unreleased
 
-- **[UPDATE]** Add prop `divider` with `DividerPosition` enum to  `Breadcrumb` 
 - [...]
+# v41.9.2 (26/11/2020)
+
+- **[UPDATE]** Add prop `divider` with `DividerPosition` enum to  `Breadcrumb` 
 
 # v41.9.1 (25/11/2020)
 
