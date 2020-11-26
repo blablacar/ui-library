@@ -23,14 +23,12 @@ const placeWithProximity: Place = {
 
 const placeWithLink: Place = {
   ...place,
-  actionAriaLabel: 'New page with a map',
-  href: '#test',
+  href: <a href="#" aria-label="New page with a map" />,
 }
 
 const placeWithButton: Place = {
   ...place,
-  actionAriaLabel: 'New page with a map',
-  href: <button type="button" />,
+  href: <button type="button" aria-label="New page with a map" />,
 }
 
 const placeWithKey: Place = {

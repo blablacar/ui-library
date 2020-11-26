@@ -153,7 +153,7 @@ export const ItineraryLocation = ({
       aria-label={place.stepAriaLabel}
     >
       {renderMeta(place.mainLabel, place.subLabel)}
-      <Component {...hrefProps} aria-label={place.actionAriaLabel}>
+      <Component aria-label={place.actionAriaLabel} {...hrefProps}>
         {hasTime && renderTime(place.isoDate, place.time)}
         <div className="kirk-itineraryLocation-roadContainer" aria-hidden="true">
           <Bullet
