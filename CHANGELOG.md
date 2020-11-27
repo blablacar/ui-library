@@ -1,4 +1,7 @@
 # Unreleased
+- [...]
+
+# v41.9.3 (27/11/2020)
 
 - **[FIX]** Stopped `aria-*` props from getting overriden in `Item`
 
