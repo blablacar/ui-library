@@ -10,11 +10,11 @@ import { StyledMessagingSummaryItem } from './MessagingSummaryItem.style'
 export type MessagingSummaryItemProps = NormalizeProps &
   Readonly<{
     className?: string
-    url: string
+    url: string | JSX.Element
     pictureUrl: string
     label: string
     subLabel: string | JSX.Element
-    timeLabel: string
+    timeLabel: string | JSX.Element
     hasUnreadMessages: boolean
   }>
 
