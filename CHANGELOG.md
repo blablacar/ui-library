@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix bad parameters on `MessagingSummaryItem` widget
 - [...]
+
+# v41.9.4 (30/11/2020)
+
+- **[FIX]** Fix bad parameters on `MessagingSummaryItem` widget
 
 # v41.9.3 (27/11/2020)
 
