@@ -11,6 +11,7 @@ export interface CommonFieldsProps {
 export interface A11yProps {
   id?: string
   role?: string
+  title?: string
   'aria-label'?: string
   'aria-labelledby'?: string
   'aria-describedby'?: string
@@ -24,6 +25,7 @@ export function pickA11yProps<T extends A11yProps>(source: T): Pick<T, A11yKeys>
   const keys: A11yKeys[] = [
     'id',
     'role',
+    'title',
     'aria-label',
     'aria-labelledby',
     'aria-describedby',

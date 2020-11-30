@@ -2,6 +2,8 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { mount, shallow } from 'enzyme'
 
+import { render, screen } from '@testing-library/react'
+
 import { Button } from '../../button'
 import { ChevronIcon } from '../../icon/chevronIcon'
 import { ClockIcon } from '../../icon/clockIcon'
@@ -39,6 +41,16 @@ describe('Item', () => {
   it('Should be highlighted', () => {
     const wrapper = shallow(<Item highlighted />)
     expect(wrapper.hasClass('kirk-item--highlighted')).toBe(true)
+  })
+
+  it("Shouldn't be wrappable by default", () => {
+    render(<Item leftTitle="Test" tag={<button />} />)
+    expect(screen.getByRole('button', { name: 'Test' })).not.toHaveClass('kirk-item--wrappable')
+  })
+
+  it('Should be wrappable', () => {
+    render(<Item leftTitle="Test" tag={<button />} isWrappable />)
+    expect(screen.getByRole('button', { name: 'Test' })).toHaveClass('kirk-item--wrappable')
   })
 
   it('Should deactivate background hover color properly', () => {

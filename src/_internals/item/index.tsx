@@ -30,6 +30,26 @@ const StyledItem = styled(Item)`
     background: none;
   }
 
+  &.kirk-item--wrappable {
+    flex-flow: wrap;
+    padding-bottom: ${space.m};
+
+    .kirk-item-leftWrapper {
+      padding-bottom: ${space.m};
+    }
+
+    .kirk-item-leftText {
+      margin-right: ${space.xl};
+    }
+
+    .kirk-item-rightText {
+      margin-left: 0;
+      margin-top: ${space.m};
+      margin-bottom: ${space.m};
+      text-align: left;
+    }
+  }
+
   &:disabled {
     cursor: default;
     background-color: ${color.defaultBackground};
@@ -58,6 +78,13 @@ const StyledItem = styled(Item)`
   }
 
   /* Text areas */
+
+  & .kirk-item-leftWrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+  }
+
   & .kirk-item-leftText {
     flex: 1;
   }

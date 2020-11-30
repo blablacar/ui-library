@@ -101,6 +101,28 @@ exports[`ItemsSection should render default items section 1`] = `
   background: none;
 }
 
+.c2.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c2:disabled {
   cursor: default;
 }
@@ -129,6 +151,21 @@ button.c2 {
 
 button:focus:not(.focus-visible).c2 {
   outline: none;
+}
+
+.c2 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c2 .kirk-item-leftText {
@@ -232,17 +269,21 @@ button:focus:not(.focus-visible).c2 {
       className="kirk-item c2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c3"
+          className="kirk-item-leftText"
         >
-          First item
-        </span>
-        <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
-        >
-          First info
+          <span
+            className="kirk-text kirk-text-title c3"
+          >
+            First item
+          </span>
+          <span
+            className="kirk-text kirk-text-body kirk-item-body c3"
+          >
+            First info
+          </span>
         </span>
       </span>
     </div>
@@ -250,17 +291,21 @@ button:focus:not(.focus-visible).c2 {
       className="kirk-item c2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c3"
+          className="kirk-item-leftText"
         >
-          Second item
-        </span>
-        <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
-        >
-          Second info
+          <span
+            className="kirk-text kirk-text-title c3"
+          >
+            Second item
+          </span>
+          <span
+            className="kirk-text kirk-text-body kirk-item-body c3"
+          >
+            Second info
+          </span>
         </span>
       </span>
     </div>
@@ -369,6 +414,28 @@ exports[`ItemsSection should render non-default items section 1`] = `
   background: none;
 }
 
+.c2.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c2.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c2:disabled {
   cursor: default;
 }
@@ -397,6 +464,21 @@ button.c2 {
 
 button:focus:not(.focus-visible).c2 {
   outline: none;
+}
+
+.c2 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c2 .kirk-item-leftText {
@@ -500,17 +582,21 @@ button:focus:not(.focus-visible).c2 {
       className="kirk-item c2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c3"
+          className="kirk-item-leftText"
         >
-          First item
-        </span>
-        <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
-        >
-          First info
+          <span
+            className="kirk-text kirk-text-title c3"
+          >
+            First item
+          </span>
+          <span
+            className="kirk-text kirk-text-body kirk-item-body c3"
+          >
+            First info
+          </span>
         </span>
       </span>
     </div>
@@ -518,17 +604,21 @@ button:focus:not(.focus-visible).c2 {
       className="kirk-item c2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c3"
+          className="kirk-item-leftText"
         >
-          Second item
-        </span>
-        <span
-          className="kirk-text kirk-text-body kirk-item-body c3"
-        >
-          Second info
+          <span
+            className="kirk-text kirk-text-title c3"
+          >
+            Second item
+          </span>
+          <span
+            className="kirk-text kirk-text-body kirk-item-body c3"
+          >
+            Second info
+          </span>
         </span>
       </span>
     </div>

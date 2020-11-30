@@ -121,6 +121,28 @@ exports[`ItemsList Should render an unordered list 1`] = `
   background: none;
 }
 
+.c1.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c1:disabled {
   cursor: default;
 }
@@ -149,6 +171,21 @@ button.c1 {
 
 button:focus:not(.focus-visible).c1 {
   outline: none;
+}
+
+.c1 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 .kirk-item-leftText {
@@ -234,19 +271,23 @@ button:focus:not(.focus-visible).c1 {
       href="#1"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 1
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 1
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -282,19 +323,23 @@ button:focus:not(.focus-visible).c1 {
       href="#2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 2
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 2
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -330,19 +375,23 @@ button:focus:not(.focus-visible).c1 {
       href="#3"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 3
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 3
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -494,6 +543,28 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   background: none;
 }
 
+.c1.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c1:disabled {
   cursor: default;
 }
@@ -522,6 +593,21 @@ button.c1 {
 
 button:focus:not(.focus-visible).c1 {
   outline: none;
+}
+
+.c1 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 .kirk-item-leftText {
@@ -623,19 +709,23 @@ button:focus:not(.focus-visible).c1 {
       href="#1"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 1
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 1
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -671,19 +761,23 @@ button:focus:not(.focus-visible).c1 {
       href="#2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 2
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 2
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -724,19 +818,23 @@ button:focus:not(.focus-visible).c1 {
       href="#3"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 3
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 3
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -888,6 +986,28 @@ exports[`ItemsList Should render an unordered list with the separators classname
   background: none;
 }
 
+.c1.kirk-item--wrappable {
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-bottom: 8px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-leftText {
+  margin-right: 24px;
+}
+
+.c1.kirk-item--wrappable .kirk-item-rightText {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
 .c1:disabled {
   cursor: default;
 }
@@ -916,6 +1036,21 @@ button.c1 {
 
 button:focus:not(.focus-visible).c1 {
   outline: none;
+}
+
+.c1 .kirk-item-leftWrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c1 .kirk-item-leftText {
@@ -1017,19 +1152,23 @@ button:focus:not(.focus-visible).c1 {
       href="#1"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 1
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 1
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -1070,19 +1209,23 @@ button:focus:not(.focus-visible).c1 {
       href="#2"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 2
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 2
+          </span>
+          
         </span>
-        
       </span>
       
       <span
@@ -1123,19 +1266,23 @@ button:focus:not(.focus-visible).c1 {
       href="#3"
     >
       <span
-        className="kirk-item-leftText"
+        className="kirk-item-leftWrapper"
       >
         <span
-          className="kirk-text kirk-text-title c2"
-          style={
-            Object {
-              "color": "#054752",
-            }
-          }
+          className="kirk-item-leftText"
         >
-          Item 3
+          <span
+            className="kirk-text kirk-text-title c2"
+            style={
+              Object {
+                "color": "#054752",
+              }
+            }
+          >
+            Item 3
+          </span>
+          
         </span>
-        
       </span>
       
       <span

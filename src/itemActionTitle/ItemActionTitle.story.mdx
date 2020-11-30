@@ -1,0 +1,71 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { BubbleIcon } from '../icon/bubbleIcon'
+import { ItemActionTitle } from './index'
+
+<Meta title="Items/ItemActionTitle" />
+
+# ItemActionTitle
+
+### Default
+
+<Canvas>
+  <Story name="Default">
+    <ItemActionTitle
+      labelTitle="Title: primary information"
+      subLabel="Subtitle: secondary information"
+      action="Complete action"
+    />
+  </Story>
+</Canvas>
+
+### Link with leftAddon
+
+<Canvas>
+  <Story name="Link witn leftAddon">
+    <ItemActionTitle
+      leftAddon={<BubbleIcon />}
+      labelTitle="Title: primary information"
+      subLabel="Subtitle: secondary information"
+      action="Complete action"
+      href="#"
+    />
+  </Story>
+</Canvas>
+
+## Specifications
+
+### Normal state
+
+These items launch modals. We use them when the action is not part of the main flow.
+
+### Behaviour
+
+Like all ITEMS, the whole zone of the component is clickable.
+
+### Long texts
+
+There’s no limitation on the number of lines for the `Title` and `Additional info`.
+
+### Responsiveness
+
+The minimum spacing between the `Title` and the `Action` text is `24px`.
+As soon as both elements cannot respect this `24px`, the `Action` text goes on the second line.
+
+## Usage
+
+```jsx
+import { ItemActionTitle } from '@blablacar/ui-library/build/itemActionTitle'
+
+<ItemActionTitle
+  leftAddon={<BubbleIcon />}
+  labelTitle="Primary info"
+  subLabel="Secondary info"
+  action="Action"
+  href="#"
+  onClick={() => 'click'}
+  onMouseDown={() => 'mousedown'}
+/>
+```
+
+<ArgsTable of={ItemActionTitle} />

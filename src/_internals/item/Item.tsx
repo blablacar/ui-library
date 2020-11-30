@@ -22,6 +22,7 @@ export type ItemProps = A11yProps &
     href?: string | JSX.Element
     highlighted?: boolean
     isClickable?: boolean
+    isWrappable?: boolean
     leftTitle?: React.ReactNode
     leftTitleButtonAddon?: React.ReactElement<Button>
     leftTitleDisplay?: TextDisplayType
@@ -62,6 +63,7 @@ export const Item = (props: ItemProps) => {
     onMouseDown,
     highlighted,
     isClickable,
+    isWrappable,
     leftTitle,
     leftTitleButtonAddon,
     rightTitleStrikeThrough,
@@ -144,35 +146,38 @@ export const Item = (props: ItemProps) => {
         {
           'kirk-item--highlighted': highlighted,
           'kirk-item--clickable': isClickable,
+          'kirk-item--wrappable': isWrappable,
           'kirk-item--hideHoverBackground': hideHoverBackground,
         },
         className,
       ])}
       {...a11yAttrs}
     >
-      {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
-      <span className="kirk-item-leftText">
-        {leftTitle && getLeftTitle(leftTitle)}
-        {leftBody && (
-          <Text
-            className="kirk-item-body"
-            display={leftBodyDisplay}
-            textColor={getTextColor(leftBodyColor)}
-            tag={TextTagType.SPAN}
-          >
-            {leftBody}
-          </Text>
-        )}
-        {leftBodyAnnotation && (
-          <Text
-            className="kirk-item-body-annotation"
-            display={leftBodyAnnotationDisplay}
-            textColor={getTextColor(leftBodyAnnotationColor)}
-            tag={TextTagType.SPAN}
-          >
-            {leftBodyAnnotation}
-          </Text>
-        )}
+      <span className="kirk-item-leftWrapper">
+        {leftAddon && <span className="kirk-item-leftAddon">{leftAddon}</span>}
+        <span className="kirk-item-leftText">
+          {leftTitle && getLeftTitle(leftTitle)}
+          {leftBody && (
+            <Text
+              className="kirk-item-body"
+              display={leftBodyDisplay}
+              textColor={getTextColor(leftBodyColor)}
+              tag={TextTagType.SPAN}
+            >
+              {leftBody}
+            </Text>
+          )}
+          {leftBodyAnnotation && (
+            <Text
+              className="kirk-item-body-annotation"
+              display={leftBodyAnnotationDisplay}
+              textColor={getTextColor(leftBodyAnnotationColor)}
+              tag={TextTagType.SPAN}
+            >
+              {leftBodyAnnotation}
+            </Text>
+          )}
+        </span>
       </span>
       {hasRightText && (
         <span className="kirk-item-rightText">

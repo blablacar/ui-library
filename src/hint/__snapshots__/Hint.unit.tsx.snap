@@ -300,10 +300,12 @@ exports[`Hint Default rendering (above) 1`] = `
 <div
   aria-live="polite"
   className="c0"
+  title="Hint Title"
 >
   <aside
     className="c1 c2 bubble-arrow--above"
     id="kirk-hint-1"
+    title="Hint Title"
   >
     <p>
       <strong>
@@ -654,10 +656,12 @@ exports[`Hint Default rendering (below) 1`] = `
 <div
   aria-live="polite"
   className="c0"
+  title="Hint Title"
 >
   <aside
     className="c1 c2 bubble-arrow--below"
     id="kirk-hint-2"
+    title="Hint Title"
   >
     <p>
       <strong>
