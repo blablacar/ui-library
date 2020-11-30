@@ -1,8 +1,11 @@
 # Unreleased
 
+- [...]
+
+# v41.10.0 (30/11/2020)
+
 - **[NEW]** Add `ItemActionTitle`
 - **[UPDATE]** Provide `title` attribute to `A11yProps`
-- [...]
 
 # v41.9.4 (30/11/2020)
 
