@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `FlexibilityIcon`
 - **[UPDATE]** Optional title prop and layout changes for `ColumnedContentSection`
 - **[UPDATE]** Use click event to select an item in `AutoCompleteList`
 - [...]
