@@ -40,17 +40,6 @@ describe('ItemActionTitle', () => {
       expect(screen.getByRole('button', { name: 'Screen reader content' })).toBeInTheDocument()
     })
 
-    it('Should have a complementary content', () => {
-      // Screen reader read it in addition
-      const props = createProps({
-        title: 'Screen reader complementary content',
-      })
-      render(<ItemActionTitle {...props} />)
-      expect(
-        screen.getByRole('button', { name: 'Screen reader complementary content' }),
-      ).toBeInTheDocument()
-    })
-
     it('Should pass aria props', () => {
       const props = createProps({
         'aria-controls': 'elem-ref',
