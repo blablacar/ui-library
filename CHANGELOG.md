@@ -1,7 +1,11 @@
 # Unreleased
 
-- **[FIX]** Remove `title` attribute from `A11yProps`
 - [...]
+
+# v41.10.1 (01/12/2020)
+
+- **[FIX]** Remove `title` attribute from `A11yProps`
+
 
 # v41.10.0 (30/11/2020)
 
