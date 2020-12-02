@@ -32,9 +32,11 @@ const StyledItem = styled(Item)`
 
   &.kirk-item--wrappable {
     flex-flow: wrap;
+    padding-top: ${space.m};
     padding-bottom: ${space.m};
 
     .kirk-item-leftWrapper {
+      padding-top: ${space.m};
       padding-bottom: ${space.m};
     }
 

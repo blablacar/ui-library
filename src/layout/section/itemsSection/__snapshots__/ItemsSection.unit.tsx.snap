@@ -105,10 +105,12 @@ exports[`ItemsSection should render default items section 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c2.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -418,10 +420,12 @@ exports[`ItemsSection should render non-default items section 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c2.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
