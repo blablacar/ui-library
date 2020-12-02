@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[FIX]** Fix `ItemActionTitle` vertical alignment
 - [...]
+
+# v41.10.2 (02/12/2020)
+
+- **[FIX]** Fix `ItemActionTitle` vertical alignment
 
 # v41.10.1 (01/12/2020)
 
