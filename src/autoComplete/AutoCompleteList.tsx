@@ -159,7 +159,7 @@ export class AutoCompleteList extends Component<AutoCompleteListProps, AutoCompl
                 className={this.props.itemClassName}
                 style={isHighlighted ? ItemChoiceStyle.RECOMMENDED : ItemChoiceStyle.PRIMARY}
                 status={status}
-                onMouseDown={() => {
+                onClick={() => {
                   this.onSelect(index, item)
                 }}
                 onDoneAnimationEnd={this.props.onDoneAnimationEnd}
