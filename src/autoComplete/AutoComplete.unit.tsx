@@ -78,7 +78,7 @@ describe('AutoComplete', () => {
     wrapper
       .find(ItemChoice)
       .first()
-      .simulate('mousedown')
+      .simulate('click')
 
     expect(event).not.toBeCalled()
     jest.advanceTimersByTime(3000)
@@ -266,7 +266,7 @@ describe('AutoComplete', () => {
       wrapper
         .find(ItemChoice)
         .first()
-        .simulate('mousedown')
+        .simulate('click')
       expect(onSelectSpy).toHaveBeenCalledWith({
         name: defaultProps.name,
         value: items[0].label,
@@ -300,7 +300,7 @@ describe('AutoComplete', () => {
       wrapper
         .find('ItemChoice')
         .first()
-        .simulate('mousedown')
+        .simulate('click')
       expect(onSelectSpy).toHaveBeenCalledWith({
         name: defaultProps.name,
         value: items[0].id,
@@ -323,7 +323,7 @@ describe('AutoComplete', () => {
       wrapper
         .find('ItemChoice')
         .first()
-        .simulate('mousedown')
+        .simulate('click')
       expect(wrapper.find('TextField').prop('defaultValue')).toBe(items[0].id)
     })
   })
