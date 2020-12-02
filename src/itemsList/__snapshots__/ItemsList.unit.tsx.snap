@@ -125,10 +125,12 @@ exports[`ItemsList Should render an unordered list 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -547,10 +549,12 @@ exports[`ItemsList Should render an unordered list with some separators 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -990,10 +994,12 @@ exports[`ItemsList Should render an unordered list with the separators classname
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c1.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 

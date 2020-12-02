@@ -145,10 +145,12 @@ exports[`ItemChoice Should display a Loader when the component is in loading sta
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -659,10 +661,12 @@ exports[`ItemChoice Should display a done Loader when the component is in checke
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -1143,10 +1147,12 @@ exports[`ItemChoice Should forward its props to the Item component 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -1563,10 +1569,12 @@ exports[`ItemChoice Should support a disabled state 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -1965,10 +1973,12 @@ exports[`ItemChoice Should use a button tag if no href is given 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
