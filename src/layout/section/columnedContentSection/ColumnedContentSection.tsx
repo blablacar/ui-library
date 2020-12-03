@@ -4,13 +4,14 @@ import { Button, ButtonStatus } from '../../../button'
 import { Column } from '../../../layout/column'
 import { Columns } from '../../../layout/columns'
 import { SectionContentSize } from '../../../layout/section/baseSection'
-import { Text, TextTagType } from '../../../text'
-import { Title } from '../../../title'
+import { TextBody } from '../../../typography/body'
+import { TextDisplay1 } from '../../../typography/display1'
+import { TextTitle } from '../../../typography/title'
 import { StyledColumnedContentSection } from './ColumnedContentSection.style'
 
 export type ColumnedContentSectionProps = Readonly<{
   className?: string
-  title: string
+  title?: string
   topLinkLabel?: string
   topLinkHref?: string | JSX.Element
   columnContentList: ColumnContent[]
@@ -106,12 +107,13 @@ const renderColumnContent = (columnContent: ColumnContent, index: string): JSX.E
   return (
     <Column className="kirk-columned-content-section-column" key={index}>
       {media && renderMedia(media)}
+      <p className="kirk-columned-content-section-subtitle">
+        <TextTitle>{title}</TextTitle>
+      </p>
+      <p className="kirk-columned-content-section-subcontent">
+        <TextBody>{content}</TextBody>
+      </p>
 
-      <Title className="kirk-columned-content-section-subtitle" headingLevel={3}>
-        {title}
-      </Title>
-
-      <Text tag={TextTagType.PARAGRAPH}>{content}</Text>
       {showFooterLink && (
         <span>
           <Button
@@ -123,6 +125,7 @@ const renderColumnContent = (columnContent: ColumnContent, index: string): JSX.E
           </Button>
         </span>
       )}
+
       {deprecatedExtraFooter}
     </Column>
   )
@@ -142,9 +145,11 @@ export const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
       className={className}
       contentSize={SectionContentSize.LARGE}
     >
-      <Title headingLevel={2} className="kirk-columned-content-section-title">
-        {title}
-      </Title>
+      {title && (
+        <h2 className="kirk-columned-content-section-title">
+          <TextDisplay1>{title}</TextDisplay1>
+        </h2>
+      )}
       {showTopLink && (
         <Button
           className="kirk-columned-content-section-top-link"

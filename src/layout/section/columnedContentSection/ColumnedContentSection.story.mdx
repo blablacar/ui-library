@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { CheckShieldIcon } from '../../../icon/checkShieldIcon'
 import { DirectionIcon } from '../../../icon/directionIcon'
@@ -9,9 +9,36 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
 
 # **ColumnedContentSection**
 
-### Simple
+### Default
 
 <Canvas>
+  <Story name="Default">
+    <ColumnedContentSection
+      columnContentList={[
+        {
+          title: 'Pratique',
+          content:
+            'Trouvez rapidement un covoiturage ou un bus à proximité parmi les millions de trajets proposés.',
+        },
+        {
+          title: 'Facile',
+          content:
+            'Trouvez le trajet parfait ! Il vous suffit d’entrer votre adresse exacte, de choisir le voyage qui vous convient le mieux, et de réserver.',
+        },
+        {
+          title: 'Direct',
+          content:
+            'Que vous prévoyiez à l’avance ou réserviez en dernière minute, vous trouverez toujours un tarif avantageux.',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+### With top link
+
+<Canvas>
+  <Story name="With top link">
     <ColumnedContentSection
       title="Allez où vous voulez. D'où vous voulez."
       topLinkLabel="En savoir plus"
@@ -34,11 +61,13 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
+  </Story>
 </Canvas>
 
-### Blog section
+### With media cover (blog)
 
 <Canvas>
+  <Story name="With media cover (blog)">
     <ColumnedContentSection
       title="Allez où vous voulez. D'où vous voulez."
       topLinkLabel="En savoir plus"
@@ -91,11 +120,13 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
+  </Story>
 </Canvas>
 
-### Pro section
+### With media fit (pro)
 
 <Canvas>
+  <Story name="With media fit (pro)">
     <ColumnedContentSection
       title="Gain access to more than 20 million travellers across the whole country"
       columnContentList={[
@@ -105,7 +136,7 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
           media: {
             kind: ColumnedSectionContentMediaKind.FIT,
             pictureUrl:
-              'https://cdn.blablacar.com/kairos/assets/build/images/item_presentation_1-b0786829cd9fdc76581d2ca07d4e9357.svg',
+              'https://cdn.blablacar.com/kairos/assets/build/images/presentation_item_1-b0786829cd9fdc76581d2ca07d4e9357.svg',
           },
         },
         {
@@ -115,7 +146,7 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
           media: {
             kind: ColumnedSectionContentMediaKind.FIT,
             pictureUrl:
-              'https://cdn.blablacar.com/kairos/assets/build/images/item_presentation_2-1a58d466645859b86d9bef6e454c7e9b.svg',
+              'https://cdn.blablacar.com/kairos/assets/build/images/presentation_item_2-1a58d466645859b86d9bef6e454c7e9b.svg',
           },
         },
         {
@@ -125,23 +156,25 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
           media: {
             kind: ColumnedSectionContentMediaKind.FIT,
             pictureUrl:
-              'https://cdn.blablacar.com/kairos/assets/build/images/item_presentation_3-28b79c781e8f536d800aa31254286333.svg',
+              'https://cdn.blablacar.com/kairos/assets/build/images/presentation_item_3-28b79c781e8f536d800aa31254286333.svg',
           },
         },
       ]}
     />
+  </Story>
 </Canvas>
 
-### Simple with icons
+### With media element
 
 <Canvas>
+  <Story name="With media element">
     <ColumnedContentSection
       title="Ce qui va vous plaire"
       columnContentList={[
         {
           media: {
             kind: ColumnedSectionContentMediaKind.ELEMENT,
-            element: <DirectionIcon size={90} />,
+            element: <DirectionIcon size={40} />,
           },
           title: 'Avoir le choix',
           content:
@@ -150,7 +183,7 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         {
           media: {
             kind: ColumnedSectionContentMediaKind.ELEMENT,
-            element: <IdCardVerifiedIcon size={90} />,
+            element: <IdCardVerifiedIcon size={40} />,
           },
           title: 'Communauté',
           content:
@@ -159,7 +192,7 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         {
           media: {
             kind: ColumnedSectionContentMediaKind.ELEMENT,
-            element: <CheckShieldIcon size={90} />,
+            element: <CheckShieldIcon size={40} />,
           },
           title: 'Assurance',
           content:
@@ -176,6 +209,75 @@ import { ColumnedContentSection, ColumnedSectionContentMediaKind } from './index
         },
       ]}
     />
+  </Story>
+</Canvas>
+
+### One column
+
+<Canvas>
+  <Story name="One column">
+    <ColumnedContentSection
+      columnContentList={[
+        {
+          title: 'Pratique',
+          content:
+            'Trouvez rapidement un covoiturage ou un bus à proximité parmi les millions de trajets proposés.',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+### Two columns
+
+<Canvas>
+  <Story name="Two columns">
+    <ColumnedContentSection
+      columnContentList={[
+        {
+          title: 'Pratique',
+          content:
+            'Trouvez rapidement un covoiturage ou un bus à proximité parmi les millions de trajets proposés.',
+        },
+        {
+          title: 'Facile',
+          content:
+            'Trouvez le trajet parfait ! Il vous suffit d’entrer votre adresse exacte, de choisir le voyage qui vous convient le mieux, et de réserver.',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+### Four columns
+
+<Canvas>
+  <Story name="Four columns">
+    <ColumnedContentSection
+      columnContentList={[
+        {
+          title: 'Pratique',
+          content:
+            'Trouvez rapidement un covoiturage ou un bus à proximité parmi les millions de trajets proposés.',
+        },
+        {
+          title: 'Facile',
+          content:
+            'Trouvez le trajet parfait ! Il vous suffit d’entrer votre adresse exacte, de choisir le voyage qui vous convient le mieux, et de réserver.',
+        },
+        {
+          title: 'Direct',
+          content:
+            'Que vous prévoyiez à l’avance ou réserviez en dernière minute, vous trouverez toujours un tarif avantageux.',
+        },
+        {
+          title: 'Pratique',
+          content:
+            'Trouvez rapidement un covoiturage ou un bus à proximité parmi les millions de trajets proposés.',
+        },
+      ]}
+    />
+  </Story>
 </Canvas>
 
 ## Specifications
