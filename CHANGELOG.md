@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v41.11.0 (04/12/2020)
+
 - **[NEW]** Add `FlexibilityIcon`
 - **[UPDATE]** Optional title prop and layout changes for `ColumnedContentSection`
 - **[UPDATE]** Use click event to select an item in `AutoCompleteList`
-- [...]
 
 # v41.10.2 (02/12/2020)
 
