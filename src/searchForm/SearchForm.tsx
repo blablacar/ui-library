@@ -106,7 +106,7 @@ export const SearchForm = ({
   const isLargeMediaSize = useIsLargeMediaSize()
   const isSmallMediaSize = !isLargeMediaSize
 
-  const [elementOpened, setElementOpened] = useState('')
+  const [elementOpened, setElementOpened] = useState<SearchFormElements | null>(null)
 
   // Used as "trigger" each time the value is changed for the invert animation.
   // Only the change resulting from the invert button should be animated.
@@ -135,8 +135,16 @@ export const SearchForm = ({
 
   const selectedDate = new Date(formValues[SearchFormElements.DATEPICKER])
 
-  const closeOpenedElement = () => {
-    setElementOpened(null)
+  const closeElement = (elementToClose: SearchFormElements) => {
+    setElementOpened(openedElement => {
+      // Make sure we are still on the element we want to close.
+      // We don't want to close another element.
+      if (openedElement === elementToClose) {
+        return null
+      }
+
+      return openedElement
+    })
   }
 
   const datepickerConfig = {
@@ -145,7 +153,7 @@ export const SearchForm = ({
     initialDate: selectedDate,
     initialMonth: selectedDate,
     onChange: ({ value }: OnChangeParameters) => {
-      closeOpenedElement()
+      closeElement(SearchFormElements.DATEPICKER)
       setFormValues(
         (currentFormValues: SearchFormValues): SearchFormValues => ({
           ...currentFormValues,
@@ -166,7 +174,7 @@ export const SearchForm = ({
     decreaseLabel: stepperProps.decreaseLabel,
     value: formValues[SearchFormElements.STEPPER],
     onChange: ({ value }: OnChangeParameters) => {
-      closeOpenedElement()
+      closeElement(SearchFormElements.STEPPER)
       setFormValues(
         (currentFormValues: SearchFormValues): SearchFormValues => ({
           ...currentFormValues,
@@ -187,7 +195,13 @@ export const SearchForm = ({
           [SearchFormElements.AUTOCOMPLETE_FROM]: value,
         }),
       )
-      closeOpenedElement()
+
+      // We only open the destination when it doesn't have a value on large media.
+      if (isLargeMediaSize && !initialTo && !formValues[SearchFormElements.AUTOCOMPLETE_TO]) {
+        setElementOpened(SearchFormElements.AUTOCOMPLETE_TO)
+      } else {
+        closeElement(SearchFormElements.AUTOCOMPLETE_FROM)
+      }
     },
   }
 
@@ -202,7 +216,14 @@ export const SearchForm = ({
           [SearchFormElements.AUTOCOMPLETE_TO]: value,
         }),
       )
-      closeOpenedElement()
+
+      // As the date have a default value we cannot check whether it was
+      // changed by the user.
+      if (isLargeMediaSize) {
+        setElementOpened(SearchFormElements.DATEPICKER)
+      } else {
+        closeElement(SearchFormElements.AUTOCOMPLETE_TO)
+      }
     },
   }
 
@@ -296,7 +317,7 @@ export const SearchForm = ({
 
       <Overlay
         shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.AUTOCOMPLETE_FROM}
-        closeOnBlur={closeOpenedElement}
+        closeOnBlur={() => closeElement(SearchFormElements.AUTOCOMPLETE_FROM)}
         className="kirk-searchForm-overlay kirk-searchForm-autocomplete-from"
       >
         <AutoCompleteOverlay {...autocompleteFromConfig} />
@@ -309,7 +330,10 @@ export const SearchForm = ({
             in={elementOpened === SearchFormElements.AUTOCOMPLETE_FROM}
             {...transitionSectionConfig}
           >
-            <AutoCompleteSection {...autocompleteFromConfig} onClose={closeOpenedElement} />
+            <AutoCompleteSection
+              {...autocompleteFromConfig}
+              onClose={() => closeElement(SearchFormElements.AUTOCOMPLETE_FROM)}
+            />
           </CSSTransition>,
           document.body,
         )}
@@ -348,7 +372,7 @@ export const SearchForm = ({
 
       <Overlay
         shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.AUTOCOMPLETE_TO}
-        closeOnBlur={closeOpenedElement}
+        closeOnBlur={() => closeElement(SearchFormElements.AUTOCOMPLETE_TO)}
         className="kirk-searchForm-overlay kirk-searchForm-autocomplete-to"
       >
         <AutoCompleteOverlay {...autocompleteToConfig} />
@@ -361,7 +385,10 @@ export const SearchForm = ({
             in={elementOpened === SearchFormElements.AUTOCOMPLETE_TO}
             {...transitionSectionConfig}
           >
-            <AutoCompleteSection {...autocompleteToConfig} onClose={closeOpenedElement} />
+            <AutoCompleteSection
+              {...autocompleteToConfig}
+              onClose={() => closeElement(SearchFormElements.AUTOCOMPLETE_TO)}
+            />
           </CSSTransition>,
           document.body,
         )}
@@ -380,7 +407,7 @@ export const SearchForm = ({
 
         <Overlay
           shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.DATEPICKER}
-          closeOnBlur={closeOpenedElement}
+          closeOnBlur={() => closeElement(SearchFormElements.DATEPICKER)}
           className="kirk-searchForm-overlay kirk-searchForm-datepicker"
         >
           <DatePickerOverlay {...datepickerConfig} />
@@ -393,7 +420,10 @@ export const SearchForm = ({
               in={elementOpened === SearchFormElements.DATEPICKER}
               {...transitionSectionConfig}
             >
-              <DatePickerSection {...datepickerConfig} onClose={closeOpenedElement} />
+              <DatePickerSection
+                {...datepickerConfig}
+                onClose={() => closeElement(SearchFormElements.DATEPICKER)}
+              />
             </CSSTransition>,
             document.body,
           )}
@@ -414,7 +444,7 @@ export const SearchForm = ({
 
       <Overlay
         shouldDisplay={isLargeMediaSize && elementOpened === SearchFormElements.STEPPER}
-        closeOnBlur={closeOpenedElement}
+        closeOnBlur={() => closeElement(SearchFormElements.STEPPER)}
         className="kirk-searchForm-overlay kirk-searchForm-stepper"
       >
         <StepperOverlay
@@ -440,7 +470,7 @@ export const SearchForm = ({
             <StepperSection
               {...stepperConfig}
               confirmLabel={stepperProps.confirmLabel}
-              onClose={closeOpenedElement}
+              onClose={() => closeElement(SearchFormElements.STEPPER)}
             />
           </CSSTransition>,
           document.body,

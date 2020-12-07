@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Autofucs next field in `SearchForm` on large media
 - [...]
 
 # v41.11.0 (04/12/2020)
