@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[UPDATE]** Allow change of `defaultValue` in `SelectField`
 - [...]
+
+# v41.13.0 (10/12/2020)
+
+- **[UPDATE]** Allow change of `defaultValue` in `SelectField`
 
 # v41.12.0 (08/12/2020)
 
