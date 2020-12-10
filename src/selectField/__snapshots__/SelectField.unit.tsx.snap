@@ -91,6 +91,7 @@ exports[`SelectField should have the expected markup in the DOM 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    value="1"
   >
     <option
       aria-label="value 1"

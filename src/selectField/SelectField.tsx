@@ -47,12 +47,21 @@ export const SelectField = React.forwardRef(
     const a11yAttrs = pickA11yProps<SelectFieldProps>(props)
     const baseClassName = 'kirk-selectField'
     const [hasFocus, setFocus] = useState(false)
+    const [previousDefaultValue, setPreviousDefaultValue] = useState(defaultValue)
+    const [currentValue, setCurrentValue] = useState(defaultValue)
 
     useEffect(() => {
       if (ref && !disabled && focus) {
         ref.current.focus()
       }
     }, [disabled, focus])
+
+    useEffect(() => {
+      if (defaultValue !== previousDefaultValue) {
+        setPreviousDefaultValue(defaultValue)
+        setCurrentValue(defaultValue)
+      }
+    }, [defaultValue])
 
     return (
       <StyledSelectField
@@ -64,7 +73,10 @@ export const SelectField = React.forwardRef(
       >
         <select
           name={name}
-          onChange={event => onChange({ name, value: event.target.value })}
+          onChange={event => {
+            setCurrentValue(event.target.value)
+            onChange({ name, value: event.target.value })
+          }}
           onFocus={event => {
             setFocus(true)
             onFocus(event)
@@ -74,6 +86,7 @@ export const SelectField = React.forwardRef(
             onBlur(event)
           }}
           defaultValue={defaultValue}
+          value={currentValue}
           disabled={disabled}
           required={required}
           autoFocus={autoFocus}
