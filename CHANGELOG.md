@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Rename `ItemActionTitle` to `ItemActionLabel`
 - [...]
 
 # v41.13.0 (10/12/2020)
