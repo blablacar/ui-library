@@ -7,7 +7,7 @@ import { useFocusVisible } from '../_utils/focusVisibleProvider/useFocusVisible'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 
-export type ItemActionTitleProps = NormalizeProps &
+export type ItemActionLabelProps = NormalizeProps &
   A11yProps &
   Readonly<{
     className?: string
@@ -20,7 +20,7 @@ export type ItemActionTitleProps = NormalizeProps &
     onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
   }>
 
-export const ItemActionTitle = (props: ItemActionTitleProps) => {
+export const ItemActionLabel = (props: ItemActionLabelProps) => {
   const {
     className,
     labelTitle,
@@ -32,7 +32,7 @@ export const ItemActionTitle = (props: ItemActionTitleProps) => {
     onMouseDown,
     hasHorizontalSpacing = false,
   } = props
-  const a11yAttrs = pickA11yProps<ItemActionTitleProps>(props)
+  const a11yAttrs = pickA11yProps<ItemActionLabelProps>(props)
   const { focusVisible, onFocus, onBlur } = useFocusVisible()
   return (
     <Item
