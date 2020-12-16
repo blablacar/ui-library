@@ -1,17 +1,17 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { BubbleIcon } from '../icon/bubbleIcon'
-import { ItemActionTitle } from './index'
+import { ItemActionLabel } from './index'
 
-<Meta title="Items/ItemActionTitle" />
+<Meta title="Items/ItemActionLabel" />
 
-# ItemActionTitle
+# ItemActionLabel
 
 ### Default
 
 <Canvas>
   <Story name="Default">
-    <ItemActionTitle
+    <ItemActionLabel
       labelTitle="Title: primary information"
       subLabel="Subtitle: secondary information"
       action="Complete action"
@@ -23,7 +23,7 @@ import { ItemActionTitle } from './index'
 
 <Canvas>
   <Story name="Link witn leftAddon">
-    <ItemActionTitle
+    <ItemActionLabel
       leftAddon={<BubbleIcon />}
       labelTitle="Title: primary information"
       subLabel="Subtitle: secondary information"
@@ -55,9 +55,9 @@ As soon as both elements cannot respect this `24px`, the `Action` text goes on t
 ## Usage
 
 ```jsx
-import { ItemActionTitle } from '@blablacar/ui-library/build/itemActionTitle'
+import { ItemActionLabel } from '@blablacar/ui-library/build/ItemActionLabel'
 
-<ItemActionTitle
+<ItemActionLabel
   leftAddon={<BubbleIcon />}
   labelTitle="Primary info"
   subLabel="Secondary info"
@@ -68,4 +68,4 @@ import { ItemActionTitle } from '@blablacar/ui-library/build/itemActionTitle'
 />
 ```
 
-<ArgsTable of={ItemActionTitle} />
+<ArgsTable of={ItemActionLabel} />

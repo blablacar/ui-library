@@ -211,10 +211,12 @@ exports[`Should render properly with read messages 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
@@ -635,10 +637,12 @@ exports[`Should render properly with unread messages 1`] = `
   -webkit-flex-flow: wrap;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .c0.kirk-item--wrappable .kirk-item-leftWrapper {
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 

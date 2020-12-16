@@ -506,6 +506,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
+        value="ES"
       >
         <option
           value="ES"
@@ -917,6 +918,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
+        value=""
       >
         <option
           value="FR"

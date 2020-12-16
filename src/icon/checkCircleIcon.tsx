@@ -15,7 +15,7 @@ const CheckCircleIcon = (props: Icon) => (
 )
 
 const StyledCheckCircleIcon = styled(CheckCircleIcon)`
-  & path {
+  path {
     fill: ${props => (props.iconColor ? props.iconColor : color.green)};
   }
 `

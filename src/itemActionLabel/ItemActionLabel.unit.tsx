@@ -2,9 +2,9 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import { ItemActionTitle, ItemActionTitleProps } from './index'
+import { ItemActionLabel, ItemActionLabelProps } from './index'
 
-const defaultProps: ItemActionTitleProps = {
+const defaultProps: ItemActionLabelProps = {
   className: 'custom-class-name',
   labelTitle: 'Title',
   subLabel: 'Secondary info',
@@ -13,13 +13,13 @@ const defaultProps: ItemActionTitleProps = {
   onMouseDown() {},
 }
 
-function createProps(props: Partial<ItemActionTitleProps> = {}): ItemActionTitleProps {
+function createProps(props: Partial<ItemActionLabelProps> = {}): ItemActionLabelProps {
   return { ...defaultProps, ...props }
 }
 
-describe('ItemActionTitle', () => {
+describe('ItemActionLabel', () => {
   it('Should have button tag by default with provided content', () => {
-    render(<ItemActionTitle {...defaultProps} />)
+    render(<ItemActionLabel {...defaultProps} />)
     expect(screen.getByRole('button', { name: 'Title Secondary info Action' })).toBeInTheDocument()
   })
 
@@ -27,7 +27,7 @@ describe('ItemActionTitle', () => {
     const props = createProps({
       href: '#',
     })
-    render(<ItemActionTitle {...props} />)
+    render(<ItemActionLabel {...props} />)
     expect(screen.getByRole('link', { name: 'Title Secondary info Action' })).toBeInTheDocument()
   })
   describe('A11y props', () => {
@@ -36,7 +36,7 @@ describe('ItemActionTitle', () => {
       const props = createProps({
         'aria-label': 'Screen reader content',
       })
-      render(<ItemActionTitle {...props} />)
+      render(<ItemActionLabel {...props} />)
       expect(screen.getByRole('button', { name: 'Screen reader content' })).toBeInTheDocument()
     })
 
@@ -46,7 +46,7 @@ describe('ItemActionTitle', () => {
         'aria-describedby': 'elem-ref',
         'aria-labelledby': 'elem-ref',
       })
-      render(<ItemActionTitle {...props} />)
+      render(<ItemActionLabel {...props} />)
       const button = screen.getByRole('button', { name: 'Title Secondary info Action' })
       expect(button).toHaveAttribute('aria-controls', 'elem-ref')
       expect(button).toHaveAttribute('aria-describedby', 'elem-ref')

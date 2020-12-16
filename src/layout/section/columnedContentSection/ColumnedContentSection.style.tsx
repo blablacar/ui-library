@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { font, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { font, fontWeight, radius, responsiveBreakpoints, space } from '../../../_utils/branding'
 import { BaseSection } from '../baseSection'
 
 export const StyledColumnedContentSection = styled(BaseSection)`
@@ -24,10 +24,16 @@ export const StyledColumnedContentSection = styled(BaseSection)`
   }
 
   & .kirk-columned-content-section-subtitle {
-    font-size: ${font.m.size};
-    line-height: ${font.m.lineHeight};
     padding-top: ${space.m};
     padding-bottom: ${space.s};
+    margin: 0;
+  }
+
+  & .kirk-columned-content-section-subtitle span {
+    font-weight: ${fontWeight.medium};
+  }
+
+  & .kirk-columned-content-section-subcontent {
     margin: 0;
   }
 
@@ -45,16 +51,19 @@ export const StyledColumnedContentSection = styled(BaseSection)`
   }
 
   & .kirk-columned-content-section-media-element {
-    text-align: center;
+    text-align: left;
+    margin-bottom: ${space.m};
   }
 
   & .kirk-columned-content-section-media-fit {
     text-align: center;
+    margin-bottom: ${space.m};
   }
 
   & .kirk-columned-content-section-media-fit img {
     width: 60%;
     border-radius: ${radius.s};
+    margin-bottom: ${space.m};
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {
@@ -74,11 +83,14 @@ export const StyledColumnedContentSection = styled(BaseSection)`
     & .kirk-columned-content-section-column {
       text-align: center;
     }
+
+    & .kirk-columned-content-section-media-element {
+      text-align: center;
+    }
   }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    & .kirk-columned-content-section-column:not(:first-child):not(:last-child) {
-      margin-left: ${space.xxl};
+    & .kirk-columned-content-section-column:not(:last-child) {
       margin-right: ${space.xxl};
     }
   }

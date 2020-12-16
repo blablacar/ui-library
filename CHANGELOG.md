@@ -3,6 +3,28 @@
 - **[NEW]** Add `CheckCircleIcon`
 - [...]
 
+# v42.0.0 (14/12/2020)
+
+- **[BREAKING CHANGE]** Rename `ItemActionTitle` to `ItemActionLabel`
+
+# v41.13.0 (10/12/2020)
+
+- **[UPDATE]** Allow change of `defaultValue` in `SelectField`
+
+# v41.12.0 (08/12/2020)
+
+- **[UPDATE]** Autofocus next field in `SearchForm` on large media
+
+# v41.11.0 (04/12/2020)
+
+- **[NEW]** Add `FlexibilityIcon`
+- **[UPDATE]** Optional title prop and layout changes for `ColumnedContentSection`
+- **[UPDATE]** Use click event to select an item in `AutoCompleteList`
+
+# v41.10.2 (02/12/2020)
+
+- **[FIX]** Fix `ItemActionTitle` vertical alignment
+
 # v41.10.1 (01/12/2020)
 
 - **[FIX]** Remove `title` attribute from `A11yProps`

@@ -1,6 +1,8 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
+import { render, screen } from '@testing-library/react'
+
 import {
   ColumnedContentSection,
   ColumnedContentSectionProps,
@@ -45,18 +47,25 @@ describe('MediaContentSection', () => {
   })
 
   it('should render title', () => {
-    const wrapper = mount(<ColumnedContentSection {...defaultProps} />)
-    expect(wrapper.find('Title.kirk-columned-content-section-title').exists()).toBe(true)
+    render(<ColumnedContentSection {...defaultProps} />)
+    expect(screen.getByRole('heading', { level: 2, name: 'section title' })).toBeInTheDocument()
   })
 
-  it('should render basic columns', () => {
-    const wrapper = mount(<ColumnedContentSection {...defaultProps} />)
-    const columns = wrapper.find('li.kirk-columned-content-section-column')
-    expect(columns.length).toBe(3)
+  it('should not render title', () => {
+    render(<ColumnedContentSection {...defaultProps} title={null} />)
+    expect(
+      screen.queryByRole('heading', { level: 2, name: 'section title' }),
+    ).not.toBeInTheDocument()
+  })
+
+  it('should render 3 basic columns', () => {
+    render(<ColumnedContentSection {...defaultProps} />)
+    const columns = screen.getAllByRole('listitem')
+    expect(columns).toHaveLength(3)
 
     columns.forEach(column => {
-      expect(column.find('Title.kirk-columned-content-section-subtitle').text()).toBe('title')
-      expect(column.find('p').text()).toBe('content')
+      expect(column).toHaveTextContent('title')
+      expect(column).toHaveTextContent('content')
     })
   })
 
