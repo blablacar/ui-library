@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove `ToggleButton`. Use `ItemCheckbox` instead.
 - [...]
 
 # v42.0.0 (14/12/2020)
