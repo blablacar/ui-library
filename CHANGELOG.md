@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `CheckCircleIcon`
 - [...]
 
 # v42.0.0 (14/12/2020)
