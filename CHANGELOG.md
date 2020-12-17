@@ -3,6 +3,10 @@
 - **[BREAKING CHANGE]** Remove `ToggleButton`. Use `ItemCheckbox` instead.
 - [...]
 
+# v42.1.0 (17/12/2020)
+
+- **[NEW]** Add `CheckCircleIcon`
+
 # v42.0.0 (14/12/2020)
 
 - **[BREAKING CHANGE]** Rename `ItemActionTitle` to `ItemActionLabel`
