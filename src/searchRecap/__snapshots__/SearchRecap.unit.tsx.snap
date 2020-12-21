@@ -131,6 +131,10 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   overflow: hidden;
 }
 
+.c1 .kirk-uneditableTextField-label--placeholder {
+  color: #708C91;
+}
+
 .c0 .kirk-uneditableTextField {
   width: 100%;
   padding: 8px 16px;

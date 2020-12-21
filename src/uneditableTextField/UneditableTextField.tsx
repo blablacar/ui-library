@@ -10,6 +10,7 @@ export type UneditableTextFieldProps = Readonly<{
   addOn?: JSX.Element
   href?: JSX.Element | string
   ellipsis?: boolean
+  isPlaceholder?: boolean
 }>
 
 export const UneditableTextField = ({
@@ -17,6 +18,7 @@ export const UneditableTextField = ({
   className = '',
   addOn = null,
   ellipsis = false,
+  isPlaceholder = false,
   href,
 }: UneditableTextFieldProps) => {
   let componentType
@@ -43,6 +45,7 @@ export const UneditableTextField = ({
         className={cc([
           'kirk-uneditableTextField-label',
           { 'kirk-uneditableTextField-label--ellipsis': ellipsis },
+          { 'kirk-uneditableTextField-label--placeholder': isPlaceholder },
         ])}
       >
         {children}

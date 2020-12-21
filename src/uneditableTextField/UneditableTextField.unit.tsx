@@ -24,7 +24,7 @@ describe('UneditableTextField', () => {
     expect(screen.getByText(props.children as string)).toHaveClass('kirk-uneditableTextField-label')
   })
 
-  it('Should not add CSS class for text ellipsis by default', () => {
+  it('should not add CSS class for text ellipsis by default', () => {
     const props = createProps()
     render(<UneditableTextField {...props} />)
 
@@ -33,12 +33,30 @@ describe('UneditableTextField', () => {
     )
   })
 
-  it('Should add CSS class for text ellipsis', () => {
+  it('should add CSS class for text ellipsis', () => {
     const props = createProps({ ellipsis: true })
     render(<UneditableTextField {...props} />)
 
     expect(screen.getByText(props.children as string)).toHaveClass(
       'kirk-uneditableTextField-label--ellipsis',
+    )
+  })
+
+  it('should not add CSS class for grey text by default', () => {
+    const props = createProps()
+    render(<UneditableTextField {...props} />)
+
+    expect(screen.getByText(props.children as string)).not.toHaveClass(
+      'kirk-uneditableTextField-label--placeholder',
+    )
+  })
+
+  it('should add CSS class for grey text with isPlaceholder prop', () => {
+    const props = createProps({ isPlaceholder: true })
+    render(<UneditableTextField {...props} />)
+
+    expect(screen.getByText(props.children as string)).toHaveClass(
+      'kirk-uneditableTextField-label--placeholder',
     )
   })
 
@@ -62,7 +80,7 @@ describe('UneditableTextField', () => {
     expect(link).toHaveTextContent(props.children as string)
   })
 
-  it('Should support component links', () => {
+  it('should support component links', () => {
     const props = createProps({ href: <a href="#bar" /> })
     render(<UneditableTextField {...props} />)
 
