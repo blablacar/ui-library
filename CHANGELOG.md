@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[BREAKING CHANGE]** Remove `ToggleButton`. Use `ItemCheckbox` instead.
+- **[UPDATE]** Add `isPlaceholder` prop to `UneditableTextField`.
 - [...]
 
 # v42.1.0 (17/12/2020)

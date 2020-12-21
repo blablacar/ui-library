@@ -27,4 +27,8 @@ export const StyledUneditableTextField = styled.div`
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  & .kirk-uneditableTextField-label--placeholder {
+    color: ${color.lightMidnightGreen};
+  }
 `
