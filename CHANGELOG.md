@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add missing exports from `PhoneField`
 - [...]
 
 # v43.0.0 (28/12/2020)
