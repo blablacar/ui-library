@@ -1,8 +1,8 @@
+import React from 'react'
 import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 import { withA11y } from '@storybook/addon-a11y'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-
-import '../stories/stories.css'
+import { ThemeProvider } from '../src/_utils/themeProvider'
 
 export const parameters = {
   options: {
@@ -21,6 +21,15 @@ export const parameters = {
   },
 }
 
-// Ignore leftAddon as it breaks previews.
-// https://blablacar.atlassian.net/browse/BBC-9382
-export const decorators = [withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] })]
+export const decorators = [
+  // Ignore leftAddon as it breaks previews.
+  // https://blablacar.atlassian.net/browse/BBC-9382
+  withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] }),
+
+  // Provide default Pixar theme for all stories
+  (Story) => (
+    <ThemeProvider>
+      <Story />
+    </ThemeProvider>
+  ),
+]
