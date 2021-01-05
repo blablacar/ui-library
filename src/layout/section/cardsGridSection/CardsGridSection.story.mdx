@@ -1,0 +1,88 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { SectionContentSize } from '../../../layout/section/baseSection'
+import { TripCard } from '../../../tripCard'
+import { CardsGridSection } from './index'
+
+<Meta title="Sections/CardsGridSection" />
+
+export const tripCardConfig = {
+  'aria-label': 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',
+  href: '/',
+  itinerary: [
+    {
+      mainLabel: 'Paris',
+      subLabel: 'Porte de Vincennes',
+      time: '09:00',
+      isoDate: '2017-12-11T09:00',
+      distanceFromPoint: '1,5km',
+    },
+    {
+      mainLabel: 'Bordeaux',
+      subLabel: 'Gare Bordeaux Saint-Jean',
+      time: '12:00',
+      isoDate: '2017-12-11T12:00',
+      distanceFromPoint: '8km',
+    },
+  ],
+  price: '8,00€',
+  flags: {
+    ladiesOnly: true,
+    maxTwo: true,
+    autoApproval: true,
+  },
+  metaUrl: 'Meta URL',
+  badge: 'Cheapest',
+  title: '',
+}
+
+export const buttonProps = {
+  buttonTitle: 'Search more',
+  buttonHref: '#',
+}
+
+export const titleProps = {
+  title: 'Available rides',
+}
+
+# **CardsGridSection**
+
+<Canvas>
+  <Story name="with contentSize SMALL">
+    <CardsGridSection {...titleProps} {...buttonProps}>
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+    </CardsGridSection>
+  </Story>
+  <Story name="with contentSize LARGE">
+    <CardsGridSection contentSize={SectionContentSize.LARGE} {...titleProps} {...buttonProps}>
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+    </CardsGridSection>
+  </Story>
+</Canvas>
+
+## Specifications
+
+Used to display multiple TripCards in a grid pattern. Behaves the same as `CardsSection` on small devices.
+
+## Usage
+
+```jsx
+import { CardsGridSection } from '@blablacar/ui-library/build/layout/section/cardsGridSection'
+;<CardsGridSection>
+  <TripCard />
+  <TripCard />
+  <TripCard />
+</CardsGridSection>
+```
+
+<ArgsTable of={CardsGridSection} />

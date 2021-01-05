@@ -1,5 +1,6 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
+import { SectionContentSize } from '../../../layout/section/baseSection'
 import { QrCard } from '../../../qrCard'
 import { TripCard } from '../../../tripCard'
 import { CardsSection } from './index'
@@ -109,6 +110,15 @@ export const qrUrl =
       />
     </CardsSection>
   </Story>
+  <Story name="with contentSize LARGE">
+    <CardsSection contentSize={SectionContentSize.LARGE}>
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+    </CardsSection>
+  </Story>
 </Canvas>
 
 ## Specifications
@@ -117,8 +127,7 @@ export const qrUrl =
 
 ```jsx
 import { CardsSection } from '@blablacar/ui-library/build/layout/section/cardsSection'
-
-<CardsSection>
+;<CardsSection>
   <TripCard />
   <TripCard />
   <TripCard />

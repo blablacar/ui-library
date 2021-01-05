@@ -1,9 +1,12 @@
 # Unreleased
 
 - **[NEW]** Add `RideIcon`
+- **[NEW]** Add `CardsGridSection`
+- **[BREAKING CHANGE]** Replace `maxWidth` prop with `contentSize` prop for `CardsSection`
 - [...]
 
 # v43.1.1 (06/01/2021)
+
 - **[FIX]** Fix font base url for `ThemeProvider`
 
 # v43.1.0 (06/01/2021)
