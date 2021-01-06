@@ -9,17 +9,13 @@ import { HighlightSection } from './index'
 
 <Canvas>
   <Story name="Default">
-    <React.Fragment>
-      <SpacingDivider />
-      <HighlightSection title="Section title">
-        This some content for the highlighted section!
-        <br />
-        Some more content.
-        <br />
-        Some more more content.
-      </HighlightSection>
-      <SpacingDivider />
-    </React.Fragment>
+    <HighlightSection title="Section title">
+      This some content for the highlighted section!
+      <br />
+      Some more content.
+      <br />
+      Some more more content.
+    </HighlightSection>
   </Story>
 </Canvas>
 
@@ -29,10 +25,7 @@ import { HighlightSection } from './index'
 
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
-
-<HighlightSection title="Section title">
-  Section content
-</HighlightSection>
+;<HighlightSection title="Section title">Section content</HighlightSection>
 ```
 
 <ArgsTable of={HighlightSection} />
