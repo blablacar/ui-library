@@ -32,7 +32,7 @@ type defaultBranding = {
   [key: string]: string
 }
 
-export const CDN_FONTS_BASE_URL = 'https://cdn.blablacar.com/kairos/assets/fonts'
+export const CDN_FONTS_BASE_URL = 'https://cdn.blablacar.com/kairos/assets/build/fonts'
 
 export const font: Font = {
   s: {
