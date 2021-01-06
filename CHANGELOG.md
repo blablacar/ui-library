@@ -1,10 +1,13 @@
 # Unreleased
 
+- [...]
+
+# v43.1.0 (06/01/2021)
+
 - **[NEW]** Create new `ThemeProvider` with base app CSS reset/fonts and use it for all stories
 - **[UPDATE]** Update Storybook version to 6.11+ and run `npm audit fix`
 - **[UPDATE]** Add missing exports from `PhoneField`
 - **[FIX]** Add `inMotion` prop in `SlideSection` as sanity check to help define the default position
-- [...]
 
 # v43.0.0 (28/12/2020)
 
