@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Update Storybook version to 6.11+ and run `npm audit fix`
 - **[UPDATE]** Add missing exports from `PhoneField`
 - [...]
 
