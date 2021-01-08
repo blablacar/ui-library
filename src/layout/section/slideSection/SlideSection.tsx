@@ -19,6 +19,7 @@ export type SlideSectionProps = Readonly<{
   reducedContent?: React.ReactNode
   onPositionChange?: (p: SlideSectionPosition) => void
   disabledGestures?: boolean
+  inMotion?: boolean
 }>
 
 export const SlideSection = (props: SlideSectionProps): JSX.Element => {
@@ -28,6 +29,7 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
     reducedContent = null,
     onPositionChange,
     disabledGestures = false,
+    inMotion = false,
   } = props
   const [position, setPosition] = useState<SlideSectionPosition>(SlideSectionPosition.DEFAULT)
   const [fingerOffset, setFingerOffset] = useState<number>(0)
@@ -37,11 +39,14 @@ export const SlideSection = (props: SlideSectionProps): JSX.Element => {
 
   const isScreenTooSmall =
     layoutRef.current && layoutRef.current.clientHeight <= SMALL_SCREEN_BREAKPOINT
+
   useEffect(() => {
-    if (isScreenTooSmall && position === SlideSectionPosition.DEFAULT) {
+    // On mobile devices, transitions time induce delay in the screen resizing: we should wait
+    // for the transition to be done before deciding if the screen is too small.
+    if (!inMotion && isScreenTooSmall && position === SlideSectionPosition.DEFAULT) {
       setPosition(SlideSectionPosition.EXPANDED)
     }
-  }, [position, isScreenTooSmall])
+  }, [inMotion, position, isScreenTooSmall])
 
   const slideUp = useCallback(() => {
     if (position === SlideSectionPosition.DEFAULT) {

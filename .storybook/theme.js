@@ -6,7 +6,7 @@ export default create({
   brandUrl: 'https://www.blablacar.fr/',
   brandImage:
     'https://dxxbxu0f802py.cloudfront.net/wp-content/uploads/2020/03/17104851/BLOG%20THUMBNAIL-300x300.png',
-  fontBase: 'gt-eesti, sans-serif',
+  fontBase: 'sans-serif',
   colorPrimary: 'hotpink',
   colorSecondary: '#00AFF5',
   textColor: '#708c91',
