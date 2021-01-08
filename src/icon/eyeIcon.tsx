@@ -36,5 +36,3 @@ EyeIcon.defaultProps = {
   ...BaseIconDefaultProps,
   off: false,
 }
-
-EyeIcon

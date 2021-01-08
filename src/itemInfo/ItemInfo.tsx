@@ -30,5 +30,3 @@ export const ItemInfo = (props: ItemInfoProps) => {
     />
   )
 }
-
-ItemInfo

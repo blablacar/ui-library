@@ -13,4 +13,3 @@ export const LockIcon = (props: Icon) => (
 )
 
 LockIcon.defaultProps = BaseIconDefaultProps
-LockIcon

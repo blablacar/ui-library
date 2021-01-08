@@ -28,5 +28,3 @@ ArrowIcon.defaultProps = {
   ...BaseIconDefaultProps,
   right: false,
 }
-
-ArrowIcon

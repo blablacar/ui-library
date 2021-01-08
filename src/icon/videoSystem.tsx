@@ -13,4 +13,3 @@ export const VideoSystemIcon = (props: IconPropsWithStatus) => (
 )
 
 VideoSystemIcon.defaultProps = StatusIcon.defaultProps
-VideoSystemIcon

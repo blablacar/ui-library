@@ -9,4 +9,3 @@ export const DirectionIcon = (props: Icon) => (
 )
 
 DirectionIcon.defaultProps = BaseIconDefaultProps
-DirectionIcon

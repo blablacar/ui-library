@@ -23,5 +23,3 @@ PinIcon.defaultProps = {
   bgColor: 'none',
   strokeColor: color.lightMidnightGreen,
 }
-
-PinIcon

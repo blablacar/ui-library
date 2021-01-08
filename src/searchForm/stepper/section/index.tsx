@@ -10,4 +10,3 @@ const StyledStepperSection = styled(StepperSection)`
 `
 
 export { StyledStepperSection as StepperSection }
-StyledStepperSection

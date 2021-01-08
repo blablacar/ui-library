@@ -10,4 +10,3 @@ const StyledDatePickerSection = styled(DatePickerSection)`
 `
 
 export { StyledDatePickerSection as DatePickerSection }
-StyledDatePickerSection

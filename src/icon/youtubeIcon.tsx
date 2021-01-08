@@ -13,4 +13,3 @@ export const YoutubeIcon = (props: Icon) => (
 )
 
 YoutubeIcon.defaultProps = BaseIconDefaultProps
-YoutubeIcon

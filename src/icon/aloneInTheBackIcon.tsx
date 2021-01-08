@@ -13,4 +13,3 @@ export const AloneInTheBackIcon = (props: Icon) => (
 )
 
 AloneInTheBackIcon.defaultProps = BaseIconDefaultProps
-AloneInTheBackIcon

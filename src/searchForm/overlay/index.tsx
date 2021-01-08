@@ -51,4 +51,3 @@ const StyledOverlay = styled(Overlay)`
   }
 `
 export { StyledOverlay as Overlay }
-StyledOverlay

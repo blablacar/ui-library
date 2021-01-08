@@ -54,5 +54,3 @@ export const ItemData = (props: ItemDataProps) => {
     />
   )
 }
-
-ItemData

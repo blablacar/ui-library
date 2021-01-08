@@ -74,5 +74,3 @@ export const MediaSizeProvider = (props: MediaSizeProviderProps) => {
   }
   return <MediaSizeContext.Provider value={mediaSize}>{children}</MediaSizeContext.Provider>
 }
-
-MediaSizeProvider

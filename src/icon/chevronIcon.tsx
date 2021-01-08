@@ -29,5 +29,3 @@ ChevronIcon.defaultProps = {
   down: false,
   left: false,
 }
-
-ChevronIcon

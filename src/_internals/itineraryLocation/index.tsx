@@ -103,4 +103,3 @@ const StyledItineraryLocation = styled(ItineraryLocation)`
 
 export { ItineraryLocationProps, computeKeyFromPlace } from './ItineraryLocation'
 export { StyledItineraryLocation as ItineraryLocation }
-StyledItineraryLocation

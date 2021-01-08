@@ -14,4 +14,3 @@ export const MailIcon = (props: Icon) => (
 )
 
 MailIcon.defaultProps = BaseIconDefaultProps
-MailIcon

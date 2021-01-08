@@ -14,4 +14,3 @@ export const CreditCardIcon = (props: Icon) => (
 )
 
 CreditCardIcon.defaultProps = BaseIconDefaultProps
-CreditCardIcon

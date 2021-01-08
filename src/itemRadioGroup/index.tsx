@@ -83,5 +83,3 @@ export class ItemRadioGroup extends PureComponent<ItemRadioGroupProps, ItemRadio
     )
   }
 }
-
-ItemRadioGroup

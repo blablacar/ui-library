@@ -18,5 +18,3 @@ VkontakteIcon.defaultProps = {
   ...BaseIconDefaultProps,
   iconColor: color.vkBrand,
 }
-
-VkontakteIcon

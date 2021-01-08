@@ -9,4 +9,3 @@ export const MusicIcon = (props: IconPropsWithStatus) => (
 )
 
 MusicIcon.defaultProps = StatusIcon.defaultProps
-MusicIcon

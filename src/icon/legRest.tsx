@@ -13,4 +13,3 @@ export const LegRestIcon = (props: IconPropsWithStatus) => (
 )
 
 LegRestIcon.defaultProps = StatusIcon.defaultProps
-LegRestIcon

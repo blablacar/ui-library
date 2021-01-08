@@ -40,5 +40,3 @@ MeetingPointIcon.defaultProps = {
   active: false,
   shadowed: false,
 }
-
-MeetingPointIcon

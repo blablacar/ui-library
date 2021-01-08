@@ -17,4 +17,3 @@ export const ComfortSeatIcon = (props: IconPropsWithStatus) => (
 )
 
 ComfortSeatIcon.defaultProps = StatusIcon.defaultProps
-ComfortSeatIcon

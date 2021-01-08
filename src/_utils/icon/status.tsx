@@ -42,5 +42,3 @@ StatusIcon.defaultProps = {
   ...BaseIconDefaultProps,
   status: status.DEFAULT,
 }
-
-StatusIcon

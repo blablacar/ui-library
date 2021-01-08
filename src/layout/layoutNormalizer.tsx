@@ -53,5 +53,3 @@ export const LayoutNormalizer = ({ useLegacyNormalization = true }: LayoutNormal
 
   return <LayoutNormalizationGlobalStyles />
 }
-
-LayoutNormalizer

@@ -13,4 +13,3 @@ export const SnackIcon = (props: IconPropsWithStatus) => (
 )
 
 SnackIcon.defaultProps = StatusIcon.defaultProps
-SnackIcon

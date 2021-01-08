@@ -13,4 +13,3 @@ export const AirConditioningIcon = (props: IconPropsWithStatus) => (
 )
 
 AirConditioningIcon.defaultProps = StatusIcon.defaultProps
-AirConditioningIcon

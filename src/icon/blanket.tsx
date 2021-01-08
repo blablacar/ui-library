@@ -13,4 +13,3 @@ export const BlanketIcon = (props: IconPropsWithStatus) => (
 )
 
 BlanketIcon.defaultProps = StatusIcon.defaultProps
-BlanketIcon

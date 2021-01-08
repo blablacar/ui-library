@@ -13,4 +13,3 @@ export const DepartureIcon = (props: Icon) => (
 )
 
 DepartureIcon.defaultProps = BaseIconDefaultProps
-DepartureIcon

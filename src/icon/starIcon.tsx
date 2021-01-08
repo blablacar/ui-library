@@ -39,5 +39,3 @@ StarIcon.defaultProps = {
   bgColor: color.white,
   fill: 0,
 }
-
-StarIcon

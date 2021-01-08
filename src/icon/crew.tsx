@@ -13,4 +13,3 @@ export const CrewIcon = (props: IconPropsWithStatus) => (
 )
 
 CrewIcon.defaultProps = StatusIcon.defaultProps
-CrewIcon

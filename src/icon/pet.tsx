@@ -9,4 +9,3 @@ export const PetIcon = (props: IconPropsWithStatus) => (
 )
 
 PetIcon.defaultProps = StatusIcon.defaultProps
-PetIcon

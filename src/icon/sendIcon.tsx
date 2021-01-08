@@ -18,4 +18,3 @@ export const SendIcon = (props: Icon) => (
 )
 
 SendIcon.defaultProps = BaseIconDefaultProps
-SendIcon

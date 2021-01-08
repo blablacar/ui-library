@@ -19,4 +19,3 @@ export const MinusIcon = (props: Icon) => (
 )
 
 MinusIcon.defaultProps = BaseIconDefaultProps
-MinusIcon

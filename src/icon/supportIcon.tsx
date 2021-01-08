@@ -17,4 +17,3 @@ export const SupportIcon = (props: Icon) => (
 )
 
 SupportIcon.defaultProps = BaseIconDefaultProps
-SupportIcon

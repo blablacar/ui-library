@@ -29,5 +29,3 @@ export const replaceNewLineWithBR = (str: string): React.ReactNode =>
         {curr}
       </Fragment>
     ))
-
-prefix

@@ -12,4 +12,3 @@ export const ZoomInIcon = (props: Icon) => (
 )
 
 ZoomInIcon.defaultProps = BaseIconDefaultProps
-ZoomInIcon

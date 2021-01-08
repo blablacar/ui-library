@@ -14,4 +14,3 @@ export const WarningIcon = (props: Icon) => (
 )
 
 WarningIcon.defaultProps = BaseIconDefaultProps
-WarningIcon

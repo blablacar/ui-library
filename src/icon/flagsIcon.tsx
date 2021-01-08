@@ -22,4 +22,3 @@ export const FlagsIcon = (props: Icon) => (
 )
 
 FlagsIcon.defaultProps = BaseIconDefaultProps
-FlagsIcon

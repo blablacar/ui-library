@@ -39,4 +39,3 @@ StyledBusIcon.defaultProps = {
 }
 
 export { StyledBusIcon as BusIcon }
-StyledBusIcon

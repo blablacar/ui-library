@@ -9,4 +9,3 @@ export const BellIcon = (props: Icon) => (
 )
 
 BellIcon.defaultProps = BaseIconDefaultProps
-BellIcon

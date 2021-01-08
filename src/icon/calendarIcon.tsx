@@ -27,4 +27,3 @@ export const CalendarIcon = (props: Icon) => (
 )
 
 CalendarIcon.defaultProps = BaseIconDefaultProps
-CalendarIcon
