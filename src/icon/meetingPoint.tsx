@@ -41,4 +41,4 @@ MeetingPointIcon.defaultProps = {
   shadowed: false,
 }
 
-export default MeetingPointIcon
+MeetingPointIcon

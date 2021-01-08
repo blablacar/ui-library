@@ -29,4 +29,4 @@ ArrowIcon.defaultProps = {
   right: false,
 }
 
-export default ArrowIcon
+ArrowIcon

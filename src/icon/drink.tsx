@@ -13,4 +13,4 @@ export const DrinkIcon = (props: IconPropsWithStatus) => (
 )
 
 DrinkIcon.defaultProps = StatusIcon.defaultProps
-export default DrinkIcon
+DrinkIcon

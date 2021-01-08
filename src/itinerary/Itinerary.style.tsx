@@ -116,4 +116,4 @@ export const StyledItinerary = styled.div`
 
 export { ItineraryProps } from './Itinerary'
 export { StyledItinerary as Itinerary }
-export default StyledItinerary
+StyledItinerary

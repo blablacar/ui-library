@@ -13,4 +13,4 @@ export const SeatBeltIcon = (props: IconPropsWithStatus) => (
 )
 
 SeatBeltIcon.defaultProps = StatusIcon.defaultProps
-export default SeatBeltIcon
+SeatBeltIcon

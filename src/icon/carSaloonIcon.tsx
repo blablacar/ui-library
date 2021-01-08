@@ -14,4 +14,4 @@ export const CarSaloonIcon = (props: Icon) => (
 )
 
 CarSaloonIcon.defaultProps = BaseIconDefaultProps
-export default CarSaloonIcon
+CarSaloonIcon

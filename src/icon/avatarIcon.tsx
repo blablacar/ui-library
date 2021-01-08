@@ -14,4 +14,4 @@ export const AvatarIcon = (props: Icon) => (
 )
 
 AvatarIcon.defaultProps = BaseIconDefaultProps
-export default AvatarIcon
+AvatarIcon

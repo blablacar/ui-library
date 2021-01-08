@@ -21,4 +21,4 @@ export const IdCardVerifiedIcon = (props: Icon) => (
 )
 
 IdCardVerifiedIcon.defaultProps = BaseIconDefaultProps
-export default IdCardVerifiedIcon
+IdCardVerifiedIcon

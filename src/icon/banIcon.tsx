@@ -15,4 +15,4 @@ export const BanIcon = (props: Icon) => (
 )
 
 BanIcon.defaultProps = BaseIconDefaultProps
-export default BanIcon
+BanIcon

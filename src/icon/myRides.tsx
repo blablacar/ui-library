@@ -37,4 +37,4 @@ MyRidesIcon.defaultProps = {
   active: false,
 }
 
-export default MyRidesIcon
+MyRidesIcon

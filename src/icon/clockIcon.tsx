@@ -14,4 +14,4 @@ export const ClockIcon = (props: Icon) => (
 )
 
 ClockIcon.defaultProps = BaseIconDefaultProps
-export default ClockIcon
+ClockIcon

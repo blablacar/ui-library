@@ -22,4 +22,4 @@ export const ColorIcon = (props: ColorIconProps) => (
 )
 
 ColorIcon.defaultProps = BaseIconDefaultProps
-export default ColorIcon
+ColorIcon

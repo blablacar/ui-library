@@ -15,4 +15,4 @@ export const ConnectionIcon = (props: Icon) => (
 )
 
 ConnectionIcon.defaultProps = BaseIconDefaultProps
-export default ConnectionIcon
+ConnectionIcon

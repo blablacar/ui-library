@@ -13,4 +13,4 @@ export const PriorityServiceIcon = (props: IconPropsWithStatus) => (
 )
 
 PriorityServiceIcon.defaultProps = StatusIcon.defaultProps
-export default PriorityServiceIcon
+PriorityServiceIcon

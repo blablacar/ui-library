@@ -95,4 +95,4 @@ StyledCheckIcon.defaultProps = {
 }
 
 export { StyledCheckIcon as CheckIcon }
-export default StyledCheckIcon
+StyledCheckIcon

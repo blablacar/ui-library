@@ -30,4 +30,4 @@ ChevronIcon.defaultProps = {
   left: false,
 }
 
-export default ChevronIcon
+ChevronIcon

@@ -12,4 +12,4 @@ export const HomeIcon = (props: Icon) => (
 )
 
 HomeIcon.defaultProps = BaseIconDefaultProps
-export default HomeIcon
+HomeIcon

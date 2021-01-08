@@ -14,4 +14,4 @@ export const TrashIcon = (props: Icon) => (
 )
 
 TrashIcon.defaultProps = BaseIconDefaultProps
-export default TrashIcon
+TrashIcon

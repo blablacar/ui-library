@@ -23,4 +23,4 @@ export const CoinIcon = (props: Icon) => (
 )
 
 CoinIcon.defaultProps = BaseIconDefaultProps
-export default CoinIcon
+CoinIcon

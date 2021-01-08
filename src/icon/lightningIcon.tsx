@@ -17,4 +17,4 @@ export const LightningIcon = (props: Icon) => (
 )
 
 LightningIcon.defaultProps = BaseIconDefaultProps
-export default LightningIcon
+LightningIcon

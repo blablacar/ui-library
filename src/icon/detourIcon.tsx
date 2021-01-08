@@ -24,4 +24,4 @@ export const DetourIcon = (props: Icon) => (
 )
 
 DetourIcon.defaultProps = BaseIconDefaultProps
-export default DetourIcon
+DetourIcon

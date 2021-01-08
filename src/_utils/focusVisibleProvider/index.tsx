@@ -117,4 +117,4 @@ export const FocusVisibleProvider = ({
   )
 }
 
-export default FocusVisibleProvider
+FocusVisibleProvider

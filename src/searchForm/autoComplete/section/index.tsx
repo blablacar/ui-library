@@ -11,4 +11,4 @@ const StyledAutoComplete = styled(AutoCompleteSection)`
 `
 
 export { StyledAutoComplete as AutoCompleteSection }
-export default StyledAutoComplete
+StyledAutoComplete

@@ -13,4 +13,4 @@ export const BikeAreaIcon = (props: IconPropsWithStatus) => (
 )
 
 BikeAreaIcon.defaultProps = StatusIcon.defaultProps
-export default BikeAreaIcon
+BikeAreaIcon

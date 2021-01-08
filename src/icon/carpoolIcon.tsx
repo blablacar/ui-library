@@ -31,4 +31,4 @@ StyledCarpoolIcon.defaultProps = {
 }
 
 export { StyledCarpoolIcon as CarpoolIcon }
-export default StyledCarpoolIcon
+StyledCarpoolIcon

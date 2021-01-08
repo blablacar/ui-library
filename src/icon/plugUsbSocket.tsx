@@ -13,4 +13,4 @@ export const PlugUsbSocketIcon = (props: IconPropsWithStatus) => (
 )
 
 PlugUsbSocketIcon.defaultProps = StatusIcon.defaultProps
-export default PlugUsbSocketIcon
+PlugUsbSocketIcon

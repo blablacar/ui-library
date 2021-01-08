@@ -30,4 +30,4 @@ export const replaceNewLineWithBR = (str: string): React.ReactNode =>
       </Fragment>
     ))
 
-export default prefix
+prefix

@@ -13,4 +13,4 @@ export const SeatSlidingIcon = (props: IconPropsWithStatus) => (
 )
 
 SeatSlidingIcon.defaultProps = StatusIcon.defaultProps
-export default SeatSlidingIcon
+SeatSlidingIcon

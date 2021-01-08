@@ -10,4 +10,4 @@ const StyledDatePickerSection = styled(DatePickerSection)`
 `
 
 export { StyledDatePickerSection as DatePickerSection }
-export default StyledDatePickerSection
+StyledDatePickerSection

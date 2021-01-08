@@ -13,4 +13,4 @@ export const DoubleArrowIcon = (props: Icon) => (
 )
 
 DoubleArrowIcon.defaultProps = BaseIconDefaultProps
-export default DoubleArrowIcon
+DoubleArrowIcon

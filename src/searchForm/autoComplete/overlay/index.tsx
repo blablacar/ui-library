@@ -28,4 +28,4 @@ const StyledAutoComplete = styled(AutoCompleteOverlay)`
 export { AutoCompleteOverlayProps } from './AutoCompleteOverlay'
 
 export { StyledAutoComplete as AutoCompleteOverlay }
-export default StyledAutoComplete
+StyledAutoComplete

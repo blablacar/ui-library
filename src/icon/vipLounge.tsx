@@ -13,4 +13,4 @@ export const VipLoungeIcon = (props: IconPropsWithStatus) => (
 )
 
 VipLoungeIcon.defaultProps = StatusIcon.defaultProps
-export default VipLoungeIcon
+VipLoungeIcon

@@ -15,4 +15,4 @@ export const SmokeIcon = (props: IconPropsWithStatus) => (
 )
 
 SmokeIcon.defaultProps = StatusIcon.defaultProps
-export default SmokeIcon
+SmokeIcon

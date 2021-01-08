@@ -19,4 +19,4 @@ export const MinusIcon = (props: Icon) => (
 )
 
 MinusIcon.defaultProps = BaseIconDefaultProps
-export default MinusIcon
+MinusIcon

@@ -14,4 +14,4 @@ export const ShareIcon = (props: Icon) => (
 )
 
 ShareIcon.defaultProps = BaseIconDefaultProps
-export default ShareIcon
+ShareIcon

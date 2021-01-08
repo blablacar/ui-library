@@ -75,4 +75,4 @@ export const SpeakIcon = (props: IconPropsWithStatus) => (
 )
 
 SpeakIcon.defaultProps = StatusIcon.defaultProps
-export default SpeakIcon
+SpeakIcon

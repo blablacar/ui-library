@@ -13,4 +13,4 @@ export const FlexibilityIcon = (props: Icon) => (
 )
 
 FlexibilityIcon.defaultProps = BaseIconDefaultProps
-export default FlexibilityIcon
+FlexibilityIcon

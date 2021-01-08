@@ -46,4 +46,4 @@ export const useFocusTrap = (ref: React.MutableRefObject<HTMLElement>, onClose: 
   }, [])
 }
 
-export default useFocusTrap
+useFocusTrap

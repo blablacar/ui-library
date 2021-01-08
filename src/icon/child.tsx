@@ -14,4 +14,4 @@ export const ChildIcon = (props: IconPropsWithStatus) => (
 )
 
 ChildIcon.defaultProps = StatusIcon.defaultProps
-export default ChildIcon
+ChildIcon

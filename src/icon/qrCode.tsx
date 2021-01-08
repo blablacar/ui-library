@@ -13,4 +13,4 @@ export const QrCodeIcon = (props: IconPropsWithStatus) => (
 )
 
 QrCodeIcon.defaultProps = StatusIcon.defaultProps
-export default QrCodeIcon
+QrCodeIcon

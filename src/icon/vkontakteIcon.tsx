@@ -19,4 +19,4 @@ VkontakteIcon.defaultProps = {
   iconColor: color.vkBrand,
 }
 
-export default VkontakteIcon
+VkontakteIcon

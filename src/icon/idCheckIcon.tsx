@@ -31,4 +31,4 @@ export const IdCheckIcon = (props: Icon) => (
 )
 
 IdCheckIcon.defaultProps = BaseIconDefaultProps
-export default IdCheckIcon
+IdCheckIcon

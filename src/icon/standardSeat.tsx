@@ -13,4 +13,4 @@ export const StandardSeatIcon = (props: IconPropsWithStatus) => (
 )
 
 StandardSeatIcon.defaultProps = StatusIcon.defaultProps
-export default StandardSeatIcon
+StandardSeatIcon

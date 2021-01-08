@@ -13,4 +13,4 @@ export const QuestionIcon = (props: Icon) => (
 )
 
 QuestionIcon.defaultProps = BaseIconDefaultProps
-export default QuestionIcon
+QuestionIcon

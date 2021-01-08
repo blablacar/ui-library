@@ -15,4 +15,4 @@ export const EditIcon = (props: Icon) => (
 )
 
 EditIcon.defaultProps = BaseIconDefaultProps
-export default EditIcon
+EditIcon

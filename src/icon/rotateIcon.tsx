@@ -18,4 +18,4 @@ export const RotateIcon = (props: Icon) => (
 )
 
 RotateIcon.defaultProps = BaseIconDefaultProps
-export default RotateIcon
+RotateIcon

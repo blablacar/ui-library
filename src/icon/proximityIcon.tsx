@@ -12,4 +12,4 @@ export const ProximityIcon = (props: Icon) => (
 )
 
 ProximityIcon.defaultProps = BaseIconDefaultProps
-export default ProximityIcon
+ProximityIcon

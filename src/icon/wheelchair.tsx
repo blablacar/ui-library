@@ -13,4 +13,4 @@ export const WheelchairIcon = (props: IconPropsWithStatus) => (
 )
 
 WheelchairIcon.defaultProps = StatusIcon.defaultProps
-export default WheelchairIcon
+WheelchairIcon

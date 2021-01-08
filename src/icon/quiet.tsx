@@ -13,4 +13,4 @@ export const QuietIcon = (props: IconPropsWithStatus) => (
 )
 
 QuietIcon.defaultProps = StatusIcon.defaultProps
-export default QuietIcon
+QuietIcon

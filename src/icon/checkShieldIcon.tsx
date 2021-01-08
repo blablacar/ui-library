@@ -12,4 +12,4 @@ export const CheckShieldIcon = (props: Icon) => (
 )
 
 CheckShieldIcon.defaultProps = BaseIconDefaultProps
-export default CheckShieldIcon
+CheckShieldIcon

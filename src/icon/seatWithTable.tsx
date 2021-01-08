@@ -13,4 +13,4 @@ export const SeatWithTableIcon = (props: Icon) => (
 )
 
 SeatWithTableIcon.defaultProps = BaseIconDefaultProps
-export default SeatWithTableIcon
+SeatWithTableIcon

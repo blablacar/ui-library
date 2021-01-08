@@ -28,4 +28,4 @@ SearchIcon.defaultProps = {
   strokeWidth: '1',
 }
 
-export default SearchIcon
+SearchIcon

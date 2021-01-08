@@ -9,4 +9,4 @@ export const BubbleIcon = (props: Icon) => (
 )
 
 BubbleIcon.defaultProps = BaseIconDefaultProps
-export default BubbleIcon
+BubbleIcon

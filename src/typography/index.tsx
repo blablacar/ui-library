@@ -10,4 +10,4 @@ const StyledText = styled(Text)`
 `
 
 export { StyledText as Text }
-export default StyledText
+StyledText

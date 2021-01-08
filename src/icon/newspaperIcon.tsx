@@ -16,4 +16,4 @@ export const NewspaperIcon = (props: Icon) => (
 )
 
 NewspaperIcon.defaultProps = BaseIconDefaultProps
-export default NewspaperIcon
+NewspaperIcon

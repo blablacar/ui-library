@@ -40,4 +40,4 @@ StarIcon.defaultProps = {
   fill: 0,
 }
 
-export default StarIcon
+StarIcon

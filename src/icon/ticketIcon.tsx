@@ -19,4 +19,4 @@ export const TicketIcon = (props: Icon) => (
 )
 
 TicketIcon.defaultProps = BaseIconDefaultProps
-export default TicketIcon
+TicketIcon

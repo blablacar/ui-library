@@ -18,4 +18,4 @@ export const GiftIcon = (props: Icon) => (
 )
 
 GiftIcon.defaultProps = BaseIconDefaultProps
-export default GiftIcon
+GiftIcon

@@ -13,4 +13,4 @@ export const WifiIcon = (props: IconPropsWithStatus) => (
 )
 
 WifiIcon.defaultProps = StatusIcon.defaultProps
-export default WifiIcon
+WifiIcon

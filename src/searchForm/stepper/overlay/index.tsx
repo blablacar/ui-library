@@ -27,4 +27,4 @@ const StyledStepperOverlay = styled(StepperOverlay)`
 `
 
 export { StyledStepperOverlay as StepperOverlay }
-export default StyledStepperOverlay
+StyledStepperOverlay

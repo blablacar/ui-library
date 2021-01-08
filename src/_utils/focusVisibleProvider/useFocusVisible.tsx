@@ -21,4 +21,4 @@ export const useFocusVisible = () => {
   }
 }
 
-export default useFocusVisible
+useFocusVisible

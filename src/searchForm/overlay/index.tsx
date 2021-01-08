@@ -51,4 +51,4 @@ const StyledOverlay = styled(Overlay)`
   }
 `
 export { StyledOverlay as Overlay }
-export default StyledOverlay
+StyledOverlay

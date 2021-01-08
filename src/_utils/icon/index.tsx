@@ -36,4 +36,4 @@ const StyledBaseIcon = styled(BaseIcon)`
 export * from './BaseIcon'
 
 export { StyledBaseIcon as BaseIcon }
-export default StyledBaseIcon
+StyledBaseIcon

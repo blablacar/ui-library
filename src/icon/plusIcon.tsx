@@ -19,4 +19,4 @@ export const PlusIcon = (props: Icon) => (
 )
 
 PlusIcon.defaultProps = BaseIconDefaultProps
-export default PlusIcon
+PlusIcon

@@ -43,4 +43,4 @@ StatusIcon.defaultProps = {
   status: status.DEFAULT,
 }
 
-export default StatusIcon
+StatusIcon

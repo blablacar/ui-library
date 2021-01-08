@@ -13,4 +13,4 @@ export const HoldLuggageIcon = (props: IconPropsWithStatus) => (
 )
 
 HoldLuggageIcon.defaultProps = StatusIcon.defaultProps
-export default HoldLuggageIcon
+HoldLuggageIcon

@@ -17,4 +17,4 @@ export const BankIcon = (props: Icon) => (
 )
 
 BankIcon.defaultProps = BaseIconDefaultProps
-export default BankIcon
+BankIcon

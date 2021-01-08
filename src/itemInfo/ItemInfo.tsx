@@ -31,4 +31,4 @@ export const ItemInfo = (props: ItemInfoProps) => {
   )
 }
 
-export default ItemInfo
+ItemInfo

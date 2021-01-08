@@ -21,4 +21,4 @@ export const InfoIcon = (props: Icon) => (
 )
 
 InfoIcon.defaultProps = BaseIconDefaultProps
-export default InfoIcon
+InfoIcon

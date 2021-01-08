@@ -170,4 +170,4 @@ export const branding = {
   shadow,
 }
 
-export default branding
+branding

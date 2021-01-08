@@ -13,4 +13,4 @@ export const SleepIcon = (props: IconPropsWithStatus) => (
 )
 
 SleepIcon.defaultProps = StatusIcon.defaultProps
-export default SleepIcon
+SleepIcon

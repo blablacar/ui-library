@@ -27,4 +27,4 @@ export const ExclamationIcon = (props: Icon) => (
 )
 
 ExclamationIcon.defaultProps = BaseIconDefaultProps
-export default ExclamationIcon
+ExclamationIcon

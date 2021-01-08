@@ -13,4 +13,4 @@ export const ProfileIcon = (props: Icon) => (
 )
 
 ProfileIcon.defaultProps = BaseIconDefaultProps
-export default ProfileIcon
+ProfileIcon

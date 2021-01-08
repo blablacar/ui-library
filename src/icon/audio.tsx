@@ -13,4 +13,4 @@ export const AudioIcon = (props: IconPropsWithStatus) => (
 )
 
 AudioIcon.defaultProps = StatusIcon.defaultProps
-export default AudioIcon
+AudioIcon

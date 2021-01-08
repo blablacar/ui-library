@@ -55,4 +55,4 @@ export const ItemData = (props: ItemDataProps) => {
   )
 }
 
-export default ItemData
+ItemData

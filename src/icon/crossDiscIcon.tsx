@@ -12,4 +12,4 @@ export const CrossDiscIcon = (props: Icon) => (
 )
 
 CrossDiscIcon.defaultProps = BaseIconDefaultProps
-export default CrossDiscIcon
+CrossDiscIcon

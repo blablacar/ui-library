@@ -18,4 +18,4 @@ const StyledCard = styled(Card)`
 `
 
 export { StyledCard as Card }
-export default StyledCard
+StyledCard
