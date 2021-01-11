@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `RideIcon`
 - [...]
 
 # v43.1.1 (06/01/2021)
