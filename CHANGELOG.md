@@ -1,9 +1,12 @@
 # Unreleased
 
+- [...]
+
+# v44.0.0 (11/01/2021)
+
 - **[NEW]** Add `RideIcon`
 - **[NEW]** Add `CardsGridSection`
 - **[BREAKING CHANGE]** Replace `maxWidth` prop with `contentSize` prop for `CardsSection`
-- [...]
 
 # v43.1.1 (06/01/2021)
 
