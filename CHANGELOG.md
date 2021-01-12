@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `headline` display in `Itinerary`
 - [...]
 
 # v45.0.0 (12/01/2021)
