@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove `title` prop from `HighlightSection`
+- **[UPDATE]** Normalize `SubHeader`
 - [...]
 
 # v44.0.0 (11/01/2021)

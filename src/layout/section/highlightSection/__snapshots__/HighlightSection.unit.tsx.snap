@@ -11,21 +11,6 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   padding-right: 0;
 }
 
-.c3 {
-  color: #054752;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.06;
-}
-
-.c2 {
-  font-size: 22px;
-  line-height: 24px;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  margin: 0;
-}
-
 .c0 {
   background-color: #5DD167;
   padding-bottom: 24px;
@@ -33,13 +18,6 @@ exports[`HighlightSection should add a classname to the content 1`] = `
 
 .c0 .section-content {
   position: relative;
-}
-
-.c0 .kirk-subheader {
-  color: #FFF;
-  font-size: 30px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 @media (min-width:800px) {
@@ -54,12 +32,6 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   }
 }
 
-@media (max-width:799px) {
-  .c0 .kirk-subheader {
-    text-align: center;
-  }
-}
-
 <div
   className="c0 c1"
   role="presentation"
@@ -67,11 +39,6 @@ exports[`HighlightSection should add a classname to the content 1`] = `
   <article
     className="section-content some-content-class-name section-content--large"
   >
-    <h2
-      className="kirk-title c2 c3"
-    >
-      the title
-    </h2>
     default highlight section
   </article>
 </div>
@@ -88,21 +55,6 @@ exports[`HighlightSection should render default highlight section 1`] = `
   padding-right: 0;
 }
 
-.c3 {
-  color: #054752;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 1.06;
-}
-
-.c2 {
-  font-size: 22px;
-  line-height: 24px;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  margin: 0;
-}
-
 .c0 {
   background-color: #5DD167;
   padding-bottom: 24px;
@@ -110,13 +62,6 @@ exports[`HighlightSection should render default highlight section 1`] = `
 
 .c0 .section-content {
   position: relative;
-}
-
-.c0 .kirk-subheader {
-  color: #FFF;
-  font-size: 30px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 @media (min-width:800px) {
@@ -131,12 +76,6 @@ exports[`HighlightSection should render default highlight section 1`] = `
   }
 }
 
-@media (max-width:799px) {
-  .c0 .kirk-subheader {
-    text-align: center;
-  }
-}
-
 <div
   className="c0 c1"
   role="presentation"
@@ -144,11 +83,6 @@ exports[`HighlightSection should render default highlight section 1`] = `
   <article
     className="section-content section-content--large"
   >
-    <h2
-      className="kirk-title c2 c3"
-    >
-      the title
-    </h2>
     default highlight section
   </article>
 </div>
