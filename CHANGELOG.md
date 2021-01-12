@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove `title` prop from `HighlightSection`
 - **[UPDATE]** Normalize `SubHeader`
 - [...]
 
