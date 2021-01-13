@@ -7,7 +7,7 @@ const qrCardMaxWidth = '450px'
 export const StyledQrCard = styled.div`
   & .kirk-card {
     display: block;
-    padding: ${space.none} ${space.xl};
+    padding: ${space.none};
     max-width: ${qrCardMaxWidth};
   }
 
