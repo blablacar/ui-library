@@ -20,6 +20,11 @@ export const StyledItinerary = styled.div`
     padding-top: ${space.m};
   }
 
+  & .kirk-itinerary--headline {
+    padding-top: ${space.xl};
+    padding-bottom: ${space.m};
+  }
+
   & .kirk-itinerary--highlightRoad .kirk-itineraryLocation-road {
     background-color: ${color.midnightGreen};
   }

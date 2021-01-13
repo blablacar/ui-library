@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `headline` display in `Itinerary`
 - **[FIX]** Fix `QrCard` spacings issues due to normalization 
 - [...]
 
