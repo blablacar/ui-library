@@ -1,8 +1,11 @@
 # Unreleased
 
-- **[FIX]** Fix `headline` display in `Itinerary`
-- **[FIX]** Fix `QrCard` spacings issues due to normalization 
 - [...]
+
+# v45.0.1 (13/01/2021)
+
+- **[FIX]** Fix `headline` display in `Itinerary`
+- **[FIX]** Fix `QrCard` spacings issues due to normalization
 
 # v45.0.0 (12/01/2021)
 
