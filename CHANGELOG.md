@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `QrCard` spacings issues due to normalization 
 - [...]
 
 # v45.0.0 (12/01/2021)
