@@ -28,7 +28,8 @@ const StyledAutoCompleteList = styled(AutoCompleteList)`
   }
 
   & .kirk-item-choice:hover,
-  & .kirk-item-choice[aria-selected='true'] {
+  & .kirk-item-choice[aria-selected='true'],
+  & .kirk-item-choice.highlight {
     background-color: ${color.lightGray};
   }
 `

@@ -380,6 +380,7 @@ button:focus:not(.focus-visible).c0 {
   disabled={false}
   href="#"
   onClick={[Function]}
+  tabIndex={null}
   type="button"
 >
   <span
@@ -885,6 +886,7 @@ button:focus:not(.focus-visible).c0 {
   disabled={false}
   href="#"
   onClick={[Function]}
+  tabIndex={null}
   type="button"
 >
   <span
@@ -1278,6 +1280,7 @@ button:focus:not(.focus-visible).c0 {
   disabled={false}
   href="#"
   onClick={[Function]}
+  tabIndex={null}
   type="button"
 >
   <span
@@ -1702,6 +1705,7 @@ button:focus:not(.focus-visible).c0 {
   onClick={null}
   onFocus={null}
   onMouseDown={null}
+  tabIndex={null}
   type="button"
 >
   <span
@@ -2103,6 +2107,7 @@ button:focus:not(.focus-visible).c0 {
   className="kirk-item kirk-item--clickable kirk-item-choice custom-class-name c0"
   disabled={false}
   onClick={[Function]}
+  tabIndex={null}
   type="button"
 >
   <span
