@@ -87,12 +87,6 @@ export const HighlightSection = (props: HighlightSectionProps) => {
       href: <a href="#" />,
       ariaLabel: 'Aria label',
     },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
   ]
   return (
     <StyledHighlightSection className={className}>

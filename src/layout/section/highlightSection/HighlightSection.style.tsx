@@ -43,14 +43,15 @@ export const HighlightSectionItem = styled(ItemChoice)`
     color: ${color.midnightGreen};
     font-size: ${font.m.size};
     line-height: ${font.m.lineHeight};
-    align-items: flex-start;
+    align-items: center;
 
     & .kirk-item-leftWrapper {
-      max-height: 2.4em;
+      max-height: 2.3em;
       overflow: hidden;
       text-overflow: ellipsis;
       max-lines: 2;
       line-clamp: 2;
+      align-items: flex-start;
       -webkit-line-clamp: 2;
     }
 
@@ -67,6 +68,8 @@ export const HighlightSectionLink = styled(Button).attrs({
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
+    //grid issue
+    margin-right: ${space.m};
   }
 `
 
@@ -74,7 +77,6 @@ export const HighlightSectionLink = styled(Button).attrs({
 export const Grid = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-content: stretch;
 `
 export const Col = styled.li`
@@ -83,7 +85,7 @@ export const Col = styled.li`
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     flex: 0 0 calc(33.333% - ${space.m});
-    margin: ${space.m} 0;
+    /* margin: ${space.m} 0; */
 
     // Remove margin to last item per row
     &:nth-child(3n) {
