@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { RideAxis } from '_utils/rideAxis/index'
 
-import { Button, ButtonStatus } from '../../../button'
-import { ItemChoiceStyle } from '../../../itemChoice'
-import { TextDisplay1 } from '../../../typography/display1'
 import {
+  Col,
+  Grid,
   HighlightSectionContent,
   HighlightSectionItem,
+  HighlightSectionLink,
+  HighlightSectionTitle,
   StyledHighlightSection,
 } from './HighlightSection.style'
 
@@ -19,29 +20,87 @@ export type HighlightSectionProps = Readonly<{
 /**
  * A specialized section with an highlighting background color.
  */
+export const GridListItems = ({ items }) => {
+  const listItems = items.map(({ id, label, data, href, ariaLabel }) => (
+    <Col key={id}>
+      <HighlightSectionItem label={label} data={data} href={href} ariaLabel={ariaLabel} />
+    </Col>
+  ))
+  return <Grid>{listItems}</Grid>
+}
 
-export const GridListItems = () => (
-  <ul>
-    <li>
-      <HighlightSectionItem
-        label={<RideAxis from="Bus Bordeaux" to="Toulouse" />}
-        data="8,99 €"
-        style={ItemChoiceStyle.PRIMARY}
-        href={<a href="#" />}
-        aria-label="Aria label"
-      />
-    </li>
-  </ul>
+export const HighlightContentItems = ({ heading, items, ...props }) => (
+  <Fragment>
+    <HighlightSectionTitle as="h2">{heading}</HighlightSectionTitle>
+    <GridListItems items={items} />
+  </Fragment>
 )
+
 export const HighlightSection = (props: HighlightSectionProps) => {
   const { className, children } = props
+  const items = [
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+    {
+      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
+      data: '8,99 €',
+      href: <a href="#" />,
+      ariaLabel: 'Aria label',
+    },
+  ]
   return (
     <StyledHighlightSection className={className}>
       <HighlightSectionContent>
-        <TextDisplay1>Nos top Trajets en bus</TextDisplay1>
-        <GridListItems />
-        <Button status={ButtonStatus.UNSTYLED}>Show more</Button>
-        {children}
+        <HighlightContentItems heading="Nos top Trajets en bus" items={items} />
+        <HighlightContentItems heading="Nos top Trajets en bus 2" items={items} />
+        <HighlightSectionLink>Show more</HighlightSectionLink>
+        {/* {children} */}
       </HighlightSectionContent>
     </StyledHighlightSection>
   )
