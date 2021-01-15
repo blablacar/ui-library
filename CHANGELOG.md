@@ -2,7 +2,24 @@
 
 - [...]
 
+# v45.0.1 (13/01/2021)
+
+- **[FIX]** Fix `headline` display in `Itinerary`
+- **[FIX]** Fix `QrCard` spacings issues due to normalization
+
+# v45.0.0 (12/01/2021)
+
+- **[BREAKING CHANGE]** Remove `title` prop from `HighlightSection`
+- **[UPDATE]** Normalize `SubHeader`
+
+# v44.0.0 (11/01/2021)
+
+- **[NEW]** Add `RideIcon`
+- **[NEW]** Add `CardsGridSection`
+- **[BREAKING CHANGE]** Replace `maxWidth` prop with `contentSize` prop for `CardsSection`
+
 # v43.1.1 (06/01/2021)
+
 - **[FIX]** Fix font base url for `ThemeProvider`
 
 # v43.1.0 (06/01/2021)

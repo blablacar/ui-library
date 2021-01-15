@@ -60,6 +60,10 @@ export const StyledCardsSection = styled.div`
       max-width: ${componentSizes.smallSectionWidth};
       justify-content: center;
     }
+
+    &.kirk-cardsSection-wrapper--large .kirk-cardsSection {
+      max-width: ${componentSizes.largeSectionWidth};
+    }
   }
 
   @media (${responsiveBreakpoints.isMediaSmall}) {
