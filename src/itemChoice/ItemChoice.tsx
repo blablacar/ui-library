@@ -36,6 +36,7 @@ export type ItemChoiceProps = A11yProps &
     onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
     onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
     onDoneAnimationEnd?: () => void
+    tabIndex?: number
   }>
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {
@@ -49,6 +50,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
     status: ItemStatus.DEFAULT,
     style: ItemChoiceStyle.PRIMARY,
     disabled: false,
+    tabIndex: null,
   }
 
   get rightAddon() {
@@ -93,6 +95,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
       disabled,
       className,
       hasHorizontalSpacing = false,
+      tabIndex,
     } = this.props
     const a11yAttrs = pickA11yProps<ItemChoiceProps>(this.props)
     const isRecommended = style === ItemChoiceStyle.RECOMMENDED
@@ -121,7 +124,7 @@ export class ItemChoice extends PureComponent<ItemChoiceProps> {
             leftAddon={leftAddon}
             rightAddon={this.rightAddon}
             href={!disabled ? href : ''}
-            tag={<button type="button" disabled={disabled} />}
+            tag={<button type="button" disabled={disabled} tabIndex={tabIndex} />}
             onClick={!disabled ? onClick : null}
             onFocus={!disabled ? onFocus : null}
             onBlur={!disabled ? onBlur : null}
