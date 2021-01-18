@@ -38,16 +38,24 @@ export const ItemsList = (props: ItemsListProps) => {
   } = props
   const a11yAttrs = pickA11yProps<ItemsListProps>(props)
 
+  // Remove all falsy items.
+  // Falsy items can be added when using this pattern:
+  // <ItemsList>
+  //   <SomeItem />
+  //   {shouldShowListItem && <SomeItem>} // shouldShowListItem value will be inserted in the list
+  //   <SomeItem />
+  // </ItemsList>
+  const filteredChildren = children.filter(Boolean)
   return (
     <StyledItemsList className={cc(['kirk-items-list', className])} {...a11yAttrs}>
-      {children.map((item, index) => {
+      {filteredChildren.map((item, index) => {
         if (item.type === ItemsListDividerType || item.type === undefined) {
           return null
         }
 
-        const isLast = children.length === index + 1
+        const isLast = filteredChildren.length === index + 1
         const hasSeparator =
-          !isLast && (children[index + 1].type === ItemsListDividerType || withSeparators)
+          !isLast && (filteredChildren[index + 1].type === ItemsListDividerType || withSeparators)
 
         return (
           <li className={cc(['kirk-items-list-item'])} key={keyGenerator(index)}>

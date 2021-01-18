@@ -17,6 +17,19 @@ describe('ItemsList', () => {
       .toJSON()
     expect(itemChoice).toMatchSnapshot()
   })
+  it('Should not throw for falsy items', () => {
+    const item: JSX.Element = null
+    const itemChoice = renderer
+      .create(
+        <ItemsList>
+          <ItemChoice label="Item 1" href="#1" />
+          {item && <div>undefined list item</div>}
+          <ItemChoice label="Item 3" href="#3" />
+        </ItemsList>,
+      )
+      .toJSON()
+    expect(itemChoice).toMatchSnapshot()
+  })
   it('Should render an unordered list with the separators classname', () => {
     const itemChoice = renderer
       .create(

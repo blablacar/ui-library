@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, ReactNode } from 'react'
 import cc from 'classcat'
 
 import { StyledTopBar } from './TopBar.style'
 
 export type TopBarProps = Readonly<{
   className?: string
-  leftItem?: JSX.Element
-  rightItem?: JSX.Element
-  centerItem?: JSX.Element
+  leftItem?: ReactNode
+  rightItem?: ReactNode
+  centerItem?: ReactNode
   fixed?: boolean
   bgTransparent?: boolean
   bgShadedTransparent?: boolean
