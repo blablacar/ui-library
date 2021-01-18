@@ -1,6 +1,10 @@
 # Unreleased
 
-- [...]
+[...]
+
+# v45.0.1 (18/01/2021)
+
+- **[FIX]** Fix `Autocomplete` keyboard navigation
 
 # v45.0.1 (13/01/2021)
 
