@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix falsy values in `ItemsList`
 [...]
 
 # v45.0.1 (18/01/2021)
