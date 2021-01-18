@@ -1,10 +1,13 @@
 # Unreleased
 
-- **[FIX]** Fix falsy values in `ItemsList`
-- **[FIX]** Make input types in `TopBar` more flexible
 [...]
 
-# v45.0.1 (18/01/2021)
+# v45.0.3 (18/01/2021)
+
+- **[FIX]** Fix falsy values in `ItemsList`
+- **[FIX]** Make input types in `TopBar` more flexible
+
+# v45.0.2 (18/01/2021)
 
 - **[FIX]** Fix `Autocomplete` keyboard navigation
 
