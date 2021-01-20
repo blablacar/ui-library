@@ -1,7 +1,10 @@
 # Unreleased
 
-- **[NEW]** Add `background` variation to `CheckCircleIcon`
 [...]
+
+# v45.1.0 (20/01/2021)
+
+- **[NEW]** Add `background` variation to `CheckCircleIcon`
 
 # v45.0.3 (18/01/2021)
 
