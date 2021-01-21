@@ -1,8 +1,10 @@
 # Unreleased
 
+[...]
+
+# v45.2.0 (21/01/2021)
 - **[FIX]** Fix `MediaSizeProvider` first render state
 - **[NEW]** New serverSideMediaSize attribute for `MediaSizeProvider`
-[...]
 
 # v45.1.0 (20/01/2021)
 
