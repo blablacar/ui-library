@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { mount } from 'enzyme'
+
+import { render, screen } from '@testing-library/react'
 
 import {
   MediaSize,
@@ -32,47 +33,40 @@ describe('MediaSizeProvider', () => {
       )
     }
   })
+
   it('Should provide "small" value when screen is under `responsiveBreakpoints.small`', () => {
     mockWindowInnerWidth(300)
-    const wrapper = mount(
+    render(
       <MediaSizeProvider>
         <ChildComponent />
       </MediaSizeProvider>,
     )
-
-    const expected = 'context: small | isSmall: true | isLarge: false'
-    expect(wrapper.find('div').text()).toEqual(expected)
+    screen.getByText('context: small | isSmall: true | isLarge: false')
   })
 
   it('Should provide "large" value when screen is above `responsiveBreakpoints.small`', () => {
     mockWindowInnerWidth(900)
-    const wrapper = mount(
+    render(
       <MediaSizeProvider>
         <ChildComponent />
       </MediaSizeProvider>,
     )
-
-    const expected = 'context: large | isSmall: false | isLarge: true'
-    expect(wrapper.find('div').text()).toEqual(expected)
+    screen.getByText('context: large | isSmall: false | isLarge: true')
   })
 
   it('Should provide "small" when no provider', () => {
     mockWindowInnerWidth(900)
-    const wrapper = mount(<ChildComponent />)
-
-    const expected = 'context: small | isSmall: true | isLarge: false'
-    expect(wrapper.find('div').text()).toEqual(expected)
+    render(<ChildComponent />)
+    screen.getByText('context: small | isSmall: true | isLarge: false')
   })
 
   it('Should respect the mediaSizeForTestsOnly override`', () => {
     mockWindowInnerWidth(300)
-    const wrapper = mount(
+    render(
       <MediaSizeProvider mediaSizeForTestsOnly={MediaSize.LARGE}>
         <ChildComponent />
       </MediaSizeProvider>,
     )
-
-    const expected = 'context: large | isSmall: false | isLarge: true'
-    expect(wrapper.find('div').text()).toEqual(expected)
+    screen.getByText('context: large | isSmall: false | isLarge: true')
   })
 })
