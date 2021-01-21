@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-import { color, space } from '../../../_utils/branding'
-import { BaseSection } from '../baseSection'
+import { color, componentSizes, space } from '../../../_utils/branding'
 
-export const StyledHighlightSection = styled(BaseSection)`
-  background-color: ${color.green};
-  padding-bottom: ${space.xl};
-
-  & .section-content {
-    position: relative;
-  }
+const StyledHighlightSection = styled.section`
+  padding: ${space.xl};
+  background-color: ${color.midnightGreen};
+  color: ${color.white};
 `
+const HighlightSectionContent = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${componentSizes.largeSectionWidth};
+`
+export { StyledHighlightSection, HighlightSectionContent }

@@ -1,89 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HighlightSection should add a classname to the content 1`] = `
-.c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c1 .section-content--noHorizontalSpacing {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.c0 {
-  background-color: #5DD167;
-  padding-bottom: 24px;
-}
-
-.c0 .section-content {
-  position: relative;
-}
-
-@media (min-width:800px) {
-  .c1 .section-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 662px;
-  }
-
-  .c1 .section-content.section-content--large {
-    max-width: 1016px;
-  }
-}
-
-<div
-  className="c0 c1"
-  role="presentation"
->
-  <article
-    className="section-content some-content-class-name section-content--large"
-  >
-    default highlight section
-  </article>
-</div>
-`;
-
 exports[`HighlightSection should render default highlight section 1`] = `
-.c1 .section-content {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c1 .section-content--noHorizontalSpacing {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .c0 {
-  background-color: #5DD167;
-  padding-bottom: 24px;
+  padding: 24px;
+  background-color: #054752;
+  color: #FFF;
 }
 
-.c0 .section-content {
-  position: relative;
+.c1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1016px;
 }
 
-@media (min-width:800px) {
-  .c1 .section-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 662px;
-  }
-
-  .c1 .section-content.section-content--large {
-    max-width: 1016px;
-  }
-}
-
-<div
-  className="c0 c1"
-  role="presentation"
+<section
+  className="c0"
 >
-  <article
-    className="section-content section-content--large"
+  <div
+    className="c1"
   >
     default highlight section
-  </article>
-</div>
+  </div>
+</section>
 `;
