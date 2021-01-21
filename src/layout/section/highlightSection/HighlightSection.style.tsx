@@ -12,17 +12,19 @@ import { Button, ButtonStatus } from '../../../button'
 import ItemChoice from '../../../itemChoice'
 import { TextDisplay1 } from '../../../typography/display1'
 
-export const StyledHighlightSection = styled.article`
+const StyledHighlightSection = styled.section`
   padding: ${space.xl};
   background-color: ${color.midnightGreen};
   color: ${color.white};
 `
-export const HighlightSectionContent = styled.div`
+const HighlightSectionContent = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${componentSizes.largeSectionWidth};
 `
-export const HighlightSectionTitle = styled(TextDisplay1).attrs({
+
+// Override TextDisplay1
+const HighlightSectionTitle = styled(TextDisplay1).attrs({
   isInverted: true,
 })`
   // @note: Space is applied to section
@@ -33,17 +35,20 @@ export const HighlightSectionTitle = styled(TextDisplay1).attrs({
     margin-top: 0;
   }
 `
-export const HighlightSectionItem = styled(ItemChoice)`
+
+// Override ItemChoice
+const HighlightSectionItem = styled(ItemChoice)`
   border-radius: ${radius.m};
 
   // increase specificity to override sytles from ItemChoice
   && {
     display: flex;
+    min-height: 76px;
+    align-items: center;
     background-color: ${color.white};
     color: ${color.midnightGreen};
     font-size: ${font.m.size};
     line-height: ${font.m.lineHeight};
-    align-items: center;
 
     & .kirk-item-leftWrapper {
       max-height: 2.3em;
@@ -61,15 +66,18 @@ export const HighlightSectionItem = styled(ItemChoice)`
     }
   }
 `
-export const HighlightSectionLink = styled(Button).attrs({
+
+// Override Button
+const HighlightSectionLink = styled(Button).attrs({
   status: ButtonStatus.UNSTYLED,
 })`
   && {
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
+
     //grid issue
-    margin-right: ${space.m};
+    margin-right: ${space.l};
   }
 `
 
@@ -78,14 +86,18 @@ export const Grid = styled.ul`
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
+
+  & + ul {
+    padding-top: 0;
+  }
 `
 export const Col = styled.li`
   flex: 1;
-  margin: ${space.m} ${space.m} ${space.m} 0;
+  margin: ${space.m} ${space.m};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     flex: 0 0 calc(33.333% - ${space.m});
-    /* margin: ${space.m} 0; */
+    margin: ${space.m} ${space.m} ${space.m} 0;
 
     // Remove margin to last item per row
     &:nth-child(3n) {
@@ -96,5 +108,18 @@ export const Col = styled.li`
     &:nth-child(n + 4) {
       margin-top: 0;
     }
+
+    // Remove margin from 1st
+    &:nth-child(1n + 3) {
+      margin-left: 0;
+    }
   }
 `
+
+export {
+  StyledHighlightSection,
+  HighlightSectionContent,
+  HighlightSectionTitle,
+  HighlightSectionItem,
+  HighlightSectionLink,
+}

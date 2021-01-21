@@ -1,7 +1,113 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
+import { RideAxis } from '_utils/rideAxis/index.tsx'
 import { SpacingDivider } from '../../../divider/spacingDivider'
-import { HighlightSection } from './index'
+import { HighlightSection, HighlightContentItems, HighlightSectionLink } from './index'
+import { Toggle } from './Accordion'
+
+export const initialItems = [
+  {
+    id: '1',
+    label: <RideAxis from="Bus Bordeaux" to="Toulouse" />,
+    data: '8,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '2',
+    label: <RideAxis from="Grenoble" to="Aéroport Lyon-Saint Exupéry" />,
+    data: '16,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '3',
+    label: <RideAxis from="Bus Paris" to="Lille" />,
+    data: '18,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+]
+
+export const restItems = [
+  {
+    id: '1',
+    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Lyon" />,
+    data: '8,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '2',
+    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Cannes" />,
+    data: '8,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '3',
+    label: 'Tous les trajet en bus',
+    data: '8,99 €',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+]
+
+export const items = [
+  {
+    id: '1',
+    label: 'Lyon',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '2',
+    label: 'Cannes',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '3',
+    label: 'Toulouse',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '4',
+    label: 'Paris',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '5',
+    label: 'Nantes',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '6',
+    label: 'Bruxelles',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '7',
+    label: 'Amsterdam',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '8',
+    label: 'Aéroport Lyon-Saint Exupéry',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+]
+
+export const content = [
+  {heading: "Top trajets en bus", items: items},
+  {heading: "Top villes en bus", items: items}
+]
 
 <Meta title="Sections/HighlightSection" />
 
@@ -9,23 +115,37 @@ import { HighlightSection } from './index'
 
 <Canvas>
   <Story name="Default">
-    <HighlightSection title="Section title">
-      This some content for the highlighted section!
-      <br />
-      Some more content.
-      <br />
-      Some more more content.
-    </HighlightSection>
+    <HighlightSection
+      content={content}
+      toggleLabel={{
+        on: "Show more",
+        off: "Show less"
+      }}
+    >Aqui</HighlightSection>
   </Story>
 </Canvas>
 
 ## Specifications
 
+Highlight Section applied mainly on Landing Pages
+Follows a _3 columns Grid System_: stacked moving up to equal columns
+
+#### HighlightContentItems
+
+Heading + Items
+SEO: Items are a list of elements `li`
+
+#### HighlightItems
+
+Override `ItemChoice` with highlight specifications: 2 lignes, overflow, centered alignement;
+
 ## Usage
 
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
-;<HighlightSection title="Section title">Section content</HighlightSection>
+
+const items = [{}]
+<HighlightSection title="Section title"  items={items}>Section content</HighlightSection>
 ```
 
 <ArgsTable of={HighlightSection} />

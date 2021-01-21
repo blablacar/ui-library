@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { RideAxis } from '_utils/rideAxis/index'
-
+import { Toggle, useToggleContext } from './Accordion'
 import {
   Col,
   Grid,
@@ -15,6 +14,8 @@ import {
 export type HighlightSectionProps = Readonly<{
   className?: string
   children: React.ReactNode
+  content: Array<Object>
+  toggleLabel: Object
 }>
 
 /**
@@ -31,70 +32,48 @@ export const GridListItems = ({ items }) => {
 
 export const HighlightContentItems = ({ heading, items, ...props }) => (
   <Fragment>
-    <HighlightSectionTitle as="h2">{heading}</HighlightSectionTitle>
+    {heading && <HighlightSectionTitle as="h2">{heading}</HighlightSectionTitle>}
     <GridListItems items={items} />
   </Fragment>
 )
+export const HighlightSection = ({
+  content,
+  toggleLabel,
+  className,
+  children,
+}: HighlightSectionProps) => {
+  const DEFAULT_ITEMS_SIZE = 3
+  const handleStartItems = (startItems: Array<Object>) => {
+    const { on } = useToggleContext()
+    console.log('on', on)
+    const defaultItems = startItems.filter((item, index) =>
+      index < DEFAULT_ITEMS_SIZE ? item : null,
+    )
+    return on ? defaultItems : startItems
+  }
 
-export const HighlightSection = (props: HighlightSectionProps) => {
-  const { className, children } = props
-  const items = [
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-    {
-      label: <RideAxis from="Aéroport Lyon-Saint Exupéry" />,
-      data: '8,99 €',
-      href: <a href="#" />,
-      ariaLabel: 'Aria label',
-    },
-  ]
   return (
     <StyledHighlightSection className={className}>
       <HighlightSectionContent>
-        <HighlightContentItems heading="Nos top Trajets en bus" items={items} />
-        <HighlightContentItems heading="Nos top Trajets en bus 2" items={items} />
-        <HighlightSectionLink>Show more</HighlightSectionLink>
-        {/* {children} */}
+        <Toggle onToggle={on => handleStartItems(content[0].items)}>
+          <HighlightContentItems
+            key="bus"
+            heading={content[0].heading}
+            items={handleStartItems(content[0].items)}
+          />
+          <Toggle.On>
+            <HighlightContentItems
+              key="trajets"
+              heading={content[1].heading}
+              items={content[1].items}
+            />
+          </Toggle.On>
+          <Toggle.Button element={HighlightSectionLink} ariaLabel>
+            <Toggle.Off>{toggleLabel.off}</Toggle.Off>
+            <Toggle.On>{toggleLabel.on}</Toggle.On>
+          </Toggle.Button>
+        </Toggle>
+        {children}
       </HighlightSectionContent>
     </StyledHighlightSection>
   )

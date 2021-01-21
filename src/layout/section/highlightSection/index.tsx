@@ -1,2 +1,2 @@
-export { HighlightSection, HighlightSectionProps } from './HighlightSection'
-export { HighlightSection as default } from './HighlightSection'
+export { HighlightSection, HighlightContentItems, HighlightSectionProps } from './HighlightSection'
+export { HighlightSectionLink } from './HighlightSection.style'
