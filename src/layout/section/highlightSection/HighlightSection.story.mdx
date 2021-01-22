@@ -1,9 +1,8 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { RideAxis } from '_utils/rideAxis/index.tsx'
-import { SpacingDivider } from '../../../divider/spacingDivider'
-import { HighlightSection, HighlightContentItems, HighlightSectionLink } from './index'
-import { Toggle } from './Accordion'
+import { HighlightSection, HighlightSectionElements } from './index'
+import { Toggle } from './Toggle'
 
 export const initialItems = [
   {
@@ -27,9 +26,6 @@ export const initialItems = [
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
-]
-
-export const restItems = [
   {
     id: '1',
     label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Lyon" />,
@@ -97,6 +93,12 @@ export const items = [
     ariaLabel: 'Aria label',
   },
   {
+    id: '7',
+    label: 'Amsterdam',
+    href: <a href="#" />,
+    ariaLabel: 'Aria label',
+  },
+  {
     id: '8',
     label: 'Aéroport Lyon-Saint Exupéry',
     href: <a href="#" />,
@@ -105,8 +107,8 @@ export const items = [
 ]
 
 export const content = [
-  {heading: "Top trajets en bus", items: items},
-  {heading: "Top villes en bus", items: items}
+  { heading: 'Top trajets en bus', items: initialItems },
+  { heading: 'Top villes en bus', items: items },
 ]
 
 <Meta title="Sections/HighlightSection" />
@@ -118,34 +120,78 @@ export const content = [
     <HighlightSection
       content={content}
       toggleLabel={{
-        on: "Show more",
-        off: "Show less"
+        on: 'Show more',
+        off: 'Show less',
       }}
-    >Aqui</HighlightSection>
+    />
   </Story>
 </Canvas>
 
 ## Specifications
 
-Highlight Section applied mainly on Landing Pages
-Follows a _3 columns Grid System_: stacked moving up to equal columns
+`HighlightSection` is applied mainly on Landing Pages to highlight common rides.
+It's divided on two main sections. It receives rides data and handles its display.
 
-#### HighlightContentItems
+> _SEO_
+> Content should not be completly hidden from the DOM. It uses CSS to handle visibility
 
-Heading + Items
-SEO: Items are a list of elements `li`
+### Behavior
 
-#### HighlightItems
+It follows a _Grid System_: from 1 column stacked moving up to 3 equal columns.
 
-Override `ItemChoice` with highlight specifications: 2 lignes, overflow, centered alignement;
+## Components
+
+`HighlightSection` was split in several small components: `HighlightSectionElements`
+
+#### Title
+
+`HighlightSection` is always inverted and has been overriden `Display1`
+
+#### ContentItems
+
+`HighlightSectionTitle` plus a list of `HightlightItems`
+
+> _SEO_:
+>
+> - Heading is always `H2`
+> - `Items` are a list `ul` of `li` elements
+
+#### Items
+
+Override `ItemChoice` with highlight specifity:
+
+- Only 2 lignes,
+- Text overflow is hidden
+- Centered alignement;
+
+#### Link
+
+Action button/link for collapsing mode. It has on/off state
+
+#### Toggle
+
+Hide and Show content on a collapsable mode
+
+<ArgsTable of={Toggle} />
 
 ## Usage
 
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
 
-const items = [{}]
-<HighlightSection title="Section title"  items={items}>Section content</HighlightSection>
+export const content = [
+  {heading: "Top trajets en bus", items: initialItems},
+  {heading: "Top villes en bus", items: items}
+]
+
+<HighlightSection
+  content={content}
+  toggleLabel={{
+    on: "Show more",
+    off: "Show less"
+  }}>
+    Section content
+</HighlightSection>
 ```
 
 <ArgsTable of={HighlightSection} />

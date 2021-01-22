@@ -12,19 +12,19 @@ import { Button, ButtonStatus } from '../../../button'
 import ItemChoice from '../../../itemChoice'
 import { TextDisplay1 } from '../../../typography/display1'
 
-const StyledHighlightSection = styled.section`
+const Section = styled.section`
   padding: ${space.xl};
   background-color: ${color.midnightGreen};
   color: ${color.white};
 `
-const HighlightSectionContent = styled.div`
+const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${componentSizes.largeSectionWidth};
 `
 
 // Override TextDisplay1
-const HighlightSectionTitle = styled(TextDisplay1).attrs({
+const Title = styled(TextDisplay1).attrs({
   isInverted: true,
 })`
   // @note: Space is applied to section
@@ -37,13 +37,13 @@ const HighlightSectionTitle = styled(TextDisplay1).attrs({
 `
 
 // Override ItemChoice
-const HighlightSectionItem = styled(ItemChoice)`
+const Item = styled(ItemChoice)`
   border-radius: ${radius.m};
 
   // increase specificity to override sytles from ItemChoice
   && {
     display: flex;
-    min-height: 76px;
+    min-height: 4.75em;
     align-items: center;
     background-color: ${color.white};
     color: ${color.midnightGreen};
@@ -68,7 +68,7 @@ const HighlightSectionItem = styled(ItemChoice)`
 `
 
 // Override Button
-const HighlightSectionLink = styled(Button).attrs({
+const Link = styled(Button).attrs({
   status: ButtonStatus.UNSTYLED,
 })`
   && {
@@ -94,6 +94,7 @@ export const Grid = styled.ul`
 export const Col = styled.li`
   flex: 1;
   margin: ${space.m} ${space.m};
+  display: ${props => props.hidden && 'none'};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     flex: 0 0 calc(33.333% - ${space.m});
@@ -116,10 +117,10 @@ export const Col = styled.li`
   }
 `
 
-export {
-  StyledHighlightSection,
-  HighlightSectionContent,
-  HighlightSectionTitle,
-  HighlightSectionItem,
-  HighlightSectionLink,
+export const HighlightSectionElements = {
+  Section,
+  Content,
+  Title,
+  Item,
+  Link,
 }

@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[NEW]** Brand new `HighlightSection` component.
 
 # v45.0.1 (13/01/2021)
 
