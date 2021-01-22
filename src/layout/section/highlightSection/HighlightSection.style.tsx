@@ -75,46 +75,22 @@ const Link = styled(Button).attrs({
     display: flex;
     flex-direction: row-reverse;
     margin-left: auto;
-
-    //grid issue
-    margin-right: ${space.l};
   }
 `
 
 /* GRID SYSTEM: 3 Columns */
 export const Grid = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: ${space.m};
+  grid-auto-rows: minmax(100px, auto);
 
-  & + ul {
-    padding-top: 0;
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `
 export const Col = styled.li`
-  flex: 1;
-  margin: ${space.m} ${space.m};
   display: ${props => props.hidden && 'none'};
-
-  @media (${responsiveBreakpoints.isMediaLarge}) {
-    flex: 0 0 calc(33.333% - ${space.m});
-    margin: ${space.m} ${space.m} ${space.m} 0;
-
-    // Remove margin to last item per row
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-
-    // Remove margin from the 2nd row since its not collapsing
-    &:nth-child(n + 4) {
-      margin-top: 0;
-    }
-
-    // Remove margin from 1st
-    &:nth-child(1n + 3) {
-      margin-left: 0;
-    }
-  }
 `
 
 export const HighlightSectionElements = {
