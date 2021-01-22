@@ -1,124 +1,17 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { RideAxis } from '_utils/rideAxis/index.tsx'
-import { HighlightSection, HighlightSectionElements } from './index'
-import { Toggle } from './Toggle'
-
-export const initialItems = [
-  {
-    id: '1',
-    label: <RideAxis from="Bus Bordeaux" to="Toulouse" />,
-    data: '8,99 €',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '2',
-    label: <RideAxis from="Grenoble" to="Aéroport Lyon-Saint Exupéry" />,
-    data: '16,99 €',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '3',
-    label: <RideAxis from="Bus Paris" to="Lille" />,
-    data: '18,99 €',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '1',
-    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Lyon" />,
-    data: '8,99 €',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '2',
-    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Cannes" />,
-    data: '8,99 €',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '3',
-    label: 'Tous les trajet en bus',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-]
-
-export const items = [
-  {
-    id: '1',
-    label: 'Lyon',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '2',
-    label: 'Cannes',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '3',
-    label: 'Toulouse',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '4',
-    label: 'Paris',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '5',
-    label: 'Nantes',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '6',
-    label: 'Bruxelles',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '7',
-    label: 'Amsterdam',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '7',
-    label: 'Amsterdam',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '8',
-    label: 'Aéroport Lyon-Saint Exupéry',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-]
-
-export const content = [
-  { heading: 'Top trajets en bus', items: initialItems },
-  { heading: 'Top villes en bus', items: items },
-]
+import { highlights } from './HighlightSection.unit.tsx'
+import { HighlightSection } from './index'
 
 <Meta title="Sections/HighlightSection" />
 
-# **HighlightSection**
+# HighlightSection
 
 <Canvas>
   <Story name="Default">
     <HighlightSection
-      content={content}
-      toggleLabel={{
+      highlights={highlights}
+      toggle={{
         on: 'Show more',
         off: 'Show less',
       }}
@@ -132,6 +25,7 @@ export const content = [
 It's divided on two main sections. It receives rides data and handles its display.
 
 > _SEO_
+>
 > Content should not be completly hidden from the DOM. It uses CSS to handle visibility
 
 ### Behavior
@@ -142,55 +36,24 @@ It follows a _Grid System_: from 1 column stacked moving up to 3 equal columns.
 
 `HighlightSection` was split in several small components: `HighlightSectionElements`
 
-#### Title
-
-`HighlightSection` is always inverted and has been overriden `Display1`
-
-#### ContentItems
-
-`HighlightSectionTitle` plus a list of `HightlightItems`
-
-> _SEO_:
->
-> - Heading is always `H2`
-> - `Items` are a list `ul` of `li` elements
-
-#### Items
-
-Override `ItemChoice` with highlight specifity:
-
-- Only 2 lignes,
-- Text overflow is hidden
-- Centered alignement;
-
 #### Link
 
-Action button/link for collapsing mode. It has on/off state
-
-#### Toggle
-
-Hide and Show content on a collapsable mode
-
-<ArgsTable of={Toggle} />
+Action button/link for toggling collapse mode. It has on/off state
 
 ## Usage
 
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
 
-export const content = [
-  {heading: "Top trajets en bus", items: initialItems},
-  {heading: "Top villes en bus", items: items}
-]
+const highlight = {cities: {}, rides: {}}
 
 <HighlightSection
-  content={content}
-  toggleLabel={{
-    on: "Show more",
-    off: "Show less"
-  }}>
-    Section content
-</HighlightSection>
+  highlights={highlights}
+  toggle={{
+    on: 'Show more',
+    off: 'Show less',
+  }}
+/>
 ```
 
 <ArgsTable of={HighlightSection} />

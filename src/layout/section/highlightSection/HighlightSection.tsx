@@ -1,70 +1,68 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 
+import { ItemChoiceProps } from '../../../itemChoice'
 import { Col, Grid, HighlightSectionElements } from './HighlightSection.style'
-import { Toggle } from './Toggle'
 
-export type HighlightSectionProps = Readonly<{
-  className?: string
-  children: React.ReactNode
-  content: Array<Object>
-  toggleLabel: Object
-}>
+type ContentItemsType = ItemChoiceProps &
+  Readonly<{
+    hidden: boolean
+  }>
 
-/**
- * A specialized section with an highlighting background color.
- */
-export const GridListItems = ({ items }) => {
-  const listItems = items.map(({ id, label, data, hidden, href, ariaLabel }) => (
+type GridListItemsProps = { items: Array<ContentItemsType> }
+export const GridListItems = ({ items }: GridListItemsProps) => {
+  const listItems = items.map(({ id, label, data, hidden, href }) => (
     <Col key={id} hidden={hidden}>
-      <HighlightSectionElements.Item label={label} data={data} href={href} ariaLabel={ariaLabel} />
+      <HighlightSectionElements.Item label={label} data={data} href={href} />
     </Col>
   ))
   return <Grid>{listItems}</Grid>
 }
 
-export const HighlightContentItems = ({ heading, items, ...props }) => (
-  <Fragment>
+type HighlightContentItemsProps = { heading: string; items: Array<ContentItemsType> }
+export const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) => (
+  <article>
     {heading && <HighlightSectionElements.Title as="h2">{heading}</HighlightSectionElements.Title>}
     <GridListItems items={items} />
-  </Fragment>
+  </article>
 )
 
-export const HighlightSection = ({
-  content,
-  toggleLabel,
-  className,
-  children,
-}: HighlightSectionProps) => {
+/**
+ * A specialized section with an highlighting background color.
+ */
+type highlightsType = { heading: string; items: Array<ContentItemsType> }
+export type HighlightSectionProps = Readonly<{
+  className?: string
+  highlights: { rides: highlightsType; cities: highlightsType }
+  toggle: { on: string; off: string }
+}>
+export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
+  const [showAll, setShowAll] = useState(false)
+  const { rides, cities } = highlights
+
   const DEFAULT_ITEMS_SIZE = 3
-  const [isToggled, setOnToggle] = useState(false)
-  const startItems = content[0].items
-
-  const defaultItems = startItems.filter((item, index) => {
+  const defaultRides = rides.items.map((item, index) => {
     if (index < DEFAULT_ITEMS_SIZE) {
-      item.hidden = !isToggled
+      return { ...item, hidden: false }
     }
-    return item
+    return { ...item, hidden: true }
   })
-
-  const items = isToggled ? defaultItems : startItems
+  const displayedItems = showAll ? rides.items : defaultRides
 
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
-        <Toggle onToggle={on => setOnToggle(on)}>
-          <HighlightContentItems key="bus" heading={content[0].heading} items={items} />
-          <Toggle.On aria-expanded={isToggled}>
-            <HighlightContentItems
-              key="trajets"
-              heading={content[1].heading}
-              items={content[1].items}
-            />
-          </Toggle.On>
-          <Toggle.Button element={HighlightSectionElements.Link} role="button">
-            <Toggle.Off>{toggleLabel.off}</Toggle.Off>
-            <Toggle.On>{toggleLabel.on}</Toggle.On>
-          </Toggle.Button>
-        </Toggle>
+        <HighlightContentItems key="rides" heading={rides.heading} items={displayedItems} />
+        {showAll && (
+          <HighlightContentItems
+            key="cities"
+            heading={cities.heading}
+            items={cities.items}
+            aria-expanded={showAll}
+          />
+        )}
+        <HighlightSectionElements.Link onClick={() => setShowAll(!showAll)} role="button">
+          {toggle[showAll ? 'off' : 'on']}
+        </HighlightSectionElements.Link>
       </HighlightSectionElements.Content>
     </HighlightSectionElements.Section>
   )
