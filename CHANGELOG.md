@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 [...]
 
 # v45.2.0 (21/01/2021)
