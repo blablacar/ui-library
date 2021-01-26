@@ -19,4 +19,3 @@ export const LadyIcon = (props: Icon) => (
 )
 
 LadyIcon.defaultProps = BaseIconDefaultProps
-export default LadyIcon

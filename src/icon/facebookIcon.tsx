@@ -16,5 +16,3 @@ FacebookIcon.defaultProps = {
   ...BaseIconDefaultProps,
   iconColor: color.facebookBrand,
 }
-
-export default FacebookIcon

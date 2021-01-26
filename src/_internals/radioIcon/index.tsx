@@ -23,5 +23,3 @@ export const RadioIcon = ({
   }
   return <CircleIcon iconColor={color.blue} isDisabled={isDisabled} />
 }
-
-export default RadioIcon

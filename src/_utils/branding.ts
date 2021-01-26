@@ -169,5 +169,3 @@ export const branding = {
   radius,
   shadow,
 }
-
-export default branding

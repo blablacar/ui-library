@@ -61,6 +61,7 @@
     "import/order": 0,
     "curly": [2, "all"],
     "import/prefer-default-export": 0,
+    "import/no-default-export": ["error"],
     "indent": 0,
     "lines-between-class-members": 0,
     "object-curly-newline": 0,

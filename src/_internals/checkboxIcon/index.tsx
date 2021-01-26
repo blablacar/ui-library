@@ -31,5 +31,3 @@ export const CheckboxIcon = ({
   }
   return <CircleIcon iconColor={color.blue} isDisabled={isDisabled} />
 }
-
-export default CheckboxIcon

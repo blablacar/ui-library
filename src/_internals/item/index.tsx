@@ -148,4 +148,3 @@ const StyledItem = styled(Item)`
 
 export { ItemStatus } from './Item'
 export { StyledItem as Item }
-export default StyledItem

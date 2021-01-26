@@ -20,5 +20,3 @@ export const useFocusVisible = () => {
     onBlur,
   }
 }
-
-export default useFocusVisible

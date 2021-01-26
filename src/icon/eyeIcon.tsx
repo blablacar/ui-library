@@ -36,5 +36,3 @@ EyeIcon.defaultProps = {
   ...BaseIconDefaultProps,
   off: false,
 }
-
-export default EyeIcon

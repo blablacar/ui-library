@@ -13,4 +13,3 @@ export const RecliningSeatIcon = (props: IconPropsWithStatus) => (
 )
 
 RecliningSeatIcon.defaultProps = StatusIcon.defaultProps
-export default RecliningSeatIcon

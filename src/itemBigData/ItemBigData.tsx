@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Item from '../_internals/item'
+import { Item } from '../_internals/item'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { TextDisplay2 } from '../typography/display2'

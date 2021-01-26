@@ -1,8 +1,8 @@
 import React, { Component, createRef } from 'react'
 
-import FilterBar from '../../filterBar'
+import { FilterBar } from '../../filterBar'
 import { CarpoolIcon } from '../../icon'
-import ItemCheckbox from '../../itemCheckbox'
+import { ItemCheckbox } from '../../itemCheckbox'
 import { BaseSection as Section } from '../../layout/section/baseSection'
 import { SubHeader } from '../../subHeader/SubHeader'
 import { TheVoice } from '../../theVoice'

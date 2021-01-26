@@ -16,4 +16,3 @@ export const CrosshairIcon = (props: Icon) => (
 )
 
 CrosshairIcon.defaultProps = BaseIconDefaultProps
-export default CrosshairIcon

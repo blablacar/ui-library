@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove default exports
 - **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 [...]
 

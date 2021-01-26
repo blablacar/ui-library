@@ -14,4 +14,3 @@ export const CarHatchbackIcon = (props: Icon) => (
 )
 
 CarHatchbackIcon.defaultProps = BaseIconDefaultProps
-export default CarHatchbackIcon

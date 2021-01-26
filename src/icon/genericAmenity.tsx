@@ -13,4 +13,3 @@ export const GenericAmenityIcon = (props: IconPropsWithStatus) => (
 )
 
 GenericAmenityIcon.defaultProps = StatusIcon.defaultProps
-export default GenericAmenityIcon
