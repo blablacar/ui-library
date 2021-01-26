@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v46.0.0 (26/01/2021)
+
 - **[BREAKING CHANGE]** Remove default exports
 - **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
-[...]
 
 # v45.2.0 (21/01/2021)
 - **[FIX]** Fix `MediaSizeProvider` first render state
