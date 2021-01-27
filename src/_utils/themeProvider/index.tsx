@@ -107,6 +107,10 @@ const CssResetGlobalStyles = createGlobalStyle`
   body {
     line-height: 1;
     color: ${DEFAULT_TEXT_COLOR};
+    height: 100%;
+  }
+  #root {
+    height: 100%;
   }
   ol,
   ul {

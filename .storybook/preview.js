@@ -5,6 +5,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { ThemeProvider } from '../src/_utils/themeProvider'
 
 export const parameters = {
+  layout: 'fullscreen',
   options: {
     showPanel: true,
     isToolshown: true,
@@ -27,7 +28,7 @@ export const decorators = [
   withSmartKnobs({ ignoreProps: ['leftAddon', 'icon'] }),
 
   // Provide default Pixar theme for all stories
-  (Story) => (
+  Story => (
     <ThemeProvider>
       <Story />
     </ThemeProvider>
