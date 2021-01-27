@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `PaypalIcon`
 [...]
 
 # v46.0.0 (26/01/2021)
