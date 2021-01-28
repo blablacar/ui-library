@@ -196,6 +196,16 @@ exports[`Snackbar should not have changed 1`] = `
   height: calc(48px - 2px * 2);
 }
 
+.c3.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c3.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 .c2 {
   margin: 0;
   font-weight: 400;

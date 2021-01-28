@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
 - **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
 - **[NEW]** Add `PaypalIcon`
 [...]
