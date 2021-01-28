@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
 - **[NEW]** Add `PaypalIcon`
 [...]
 

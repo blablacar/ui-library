@@ -16,8 +16,8 @@ export const color: Color = {
   yellow: '#FFCA0C',
   red: '#F53F5B',
   lightRed: '#FDD8DE',
-  facebookBrand: '#4267B2',
-  vkBrand: '#4680C2',
+  facebookBrand: '#1877F2',
+  vkBrand: '#2787F5',
   tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
