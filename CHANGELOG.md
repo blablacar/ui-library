@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
 [...]
 
 # v46.2.0 (01/02/2021)
