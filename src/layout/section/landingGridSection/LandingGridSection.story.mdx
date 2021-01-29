@@ -1,0 +1,93 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { Button } from 'button/index'
+import { ButtonGroup } from 'buttonGroup/index'
+import { Disclaimer } from 'disclaimer/index'
+import { ItemActionLabel } from 'itemActionLabel/index'
+import { Itinerary } from 'itinerary/index'
+import carpoolBlaBlaBusLarge from 'layout/section/heroSection/images-for-stories/carpool-bbb-large.svg'
+import carpoolBlaBlaBusSmall from 'layout/section/heroSection/images-for-stories/carpool-bbb-small.svg'
+
+import { LandingGridSection } from './index'
+
+export const ILLUSTRATIONS = {
+  'carpool-bla-bla-bus': {
+    large: carpoolBlaBlaBusLarge,
+    small: carpoolBlaBlaBusSmall,
+  },
+}
+
+export const Body = (
+<React.Fragment>
+  <Itinerary
+    places={[
+      {
+        time: '09:00',
+        isoDate: '2017-12-11T09:00',
+        stepAriaLabel: 'Pickup location',
+        mainLabel: 'Porte de Vincennes',
+        subLabel: 'Paris',
+        actionAriaLabel: '09:00 Paris Porte de Vincennes (New page with a map)',
+      },
+      {
+        time: '15:00',
+        isoDate: '2017-12-11T15:00',
+        stepAriaLabel: 'Dropoff location',
+        mainLabel: 'Gare Bordeaux Saint-Jean',
+        subLabel: 'Bordeaux',
+        connectionLabel: 'Change of vehicle',
+      },
+    ]}
+    small
+  />
+  <ButtonGroup>
+    <Button> Register with email </Button>
+    <Button> Register with Facebook </Button>
+  </ButtonGroup>
+  <Disclaimer as="p">
+    By clicking in register with email or Facebook you accept the terms of CGU and certify you
+    are older than 18.
+  </Disclaimer>
+  <ItemActionLabel labelTitle="Already a member?" action="Sign In" />
+</React.Fragment>
+)
+
+<Meta title="Pages/SEA/Landing" />
+
+# ** SEA Landing Pages **
+## 2 Column Vertical Grid
+
+<Canvas>
+  <Story name="Default">
+    <LandingGridSection
+      heroText="Et vous, qui allez-vous retrouver ?"
+      heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
+      heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
+    >
+      {Body}
+    </LandingGridSection>
+  </Story>
+</Canvas>
+
+## Specifications
+
+SEA Landing Pages Half Width Column Vertical Grid.
+
+`Body` tracker has max-with `375px` and is vertical/horizontally centered
+`Figure` tracker is always `HeroSection`
+
+## Usage
+
+```jsx
+import { LandingGridSection } from '@blablacar/ui-library/build/halfSection'
+
+ <LandingGridSection
+    heroText="Et vous, qui allez-vous retrouver ?"
+    heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
+    heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
+  >
+    // Content here {children}
+  </LandingGridSection>
+```
+
+<ArgsTable of={LandingGridSection} />
