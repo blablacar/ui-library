@@ -212,6 +212,16 @@ exports[`DatePicker renderNavbar Should render the previous/next buttons in hori
   height: calc(48px - 2px * 2);
 }
 
+.c0.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c0.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 @media (hover:none),(hover:on-demand) {
   .c0.kirk-button-secondary:hover {
     background-color: #FFF;

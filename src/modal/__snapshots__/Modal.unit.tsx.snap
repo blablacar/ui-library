@@ -196,6 +196,16 @@ exports[`Modal should not have changed 1`] = `
   height: calc(48px - 2px * 2);
 }
 
+.c2.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c2.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 .c1.fade {
   -webkit-transition: ease-in-out 200ms;
   transition: ease-in-out 200ms;

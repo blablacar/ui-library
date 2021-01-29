@@ -11,6 +11,8 @@ export enum ButtonStatus {
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
   WARNING = 'warning',
+  FACEBOOK = 'facebook',
+  VKONTAKTE = 'vkontakte',
   UNSTYLED = 'unstyled',
   LOADING = 'loading',
   CHECKED = 'checked',

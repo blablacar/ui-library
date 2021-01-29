@@ -257,6 +257,16 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   height: calc(48px - 2px * 2);
 }
 
+.c4.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c4.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 .c3 {
   position: relative;
   box-sizing: border-box;
