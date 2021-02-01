@@ -23,4 +23,3 @@ export const ComfortIcon = (props: Icon) => (
 )
 
 ComfortIcon.defaultProps = BaseIconDefaultProps
-export default ComfortIcon

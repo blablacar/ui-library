@@ -43,4 +43,3 @@ const StyledTransitions = styled(Transitions)`
 
 export { AnimationType, TransitionsProps } from './Transitions'
 export { StyledTransitions as Transitions }
-export default StyledTransitions

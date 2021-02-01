@@ -1,6 +1,40 @@
 # Unreleased
 
 - **[BREAKING CHANGE]** Brand new `HighlightSection` component.
+- **[UPDATE]** `Storybook` version `6.1.15`
+
+# v46.2.0 (01/02/2021)
+
+- **[NEW]** Add illustrations
+- **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
+- **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
+
+# v46.1.0 (27/01/2021)
+
+- **[NEW]** Add `PaypalIcon`
+
+# v46.0.0 (26/01/2021)
+
+- **[BREAKING CHANGE]** Remove default exports
+- **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
+
+# v45.2.0 (21/01/2021)
+
+- **[FIX]** Fix `MediaSizeProvider` first render state
+- **[NEW]** New serverSideMediaSize attribute for `MediaSizeProvider`
+
+# v45.1.0 (20/01/2021)
+
+- **[NEW]** Add `background` variation to `CheckCircleIcon`
+
+# v45.0.3 (18/01/2021)
+
+- **[FIX]** Fix falsy values in `ItemsList`
+- **[FIX]** Make input types in `TopBar` more flexible
+
+# v45.0.2 (18/01/2021)
+
+- **[FIX]** Fix `Autocomplete` keyboard navigation
 
 # v45.0.1 (13/01/2021)
 

@@ -196,6 +196,16 @@ exports[`Hint Default rendering (above) 1`] = `
   height: calc(48px - 2px * 2);
 }
 
+.c3.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c3.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 .c2 {
   position: relative;
   display: -webkit-box;
@@ -548,6 +558,16 @@ exports[`Hint Default rendering (below) 1`] = `
 .c3.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
+}
+
+.c3.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c3.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
 }
 
 .c2 {

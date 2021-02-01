@@ -176,6 +176,16 @@ exports[`MediaContentSection should render default MediaContentSection section 1
   height: calc(48px - 2px * 2);
 }
 
+.c6.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c6.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
+}
+
 .c3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -616,6 +626,16 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 .c6.kirk-button-bubble.kirk-button-shadowed {
   width: calc(48px - 2px * 2);
   height: calc(48px - 2px * 2);
+}
+
+.c6.kirk-button-facebook {
+  background-color: #1877F2;
+  color: #FFF;
+}
+
+.c6.kirk-button-vkontakte {
+  background-color: #2787F5;
+  color: #FFF;
 }
 
 .c3 {

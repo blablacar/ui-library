@@ -6,8 +6,10 @@ import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 export const FacebookIcon = (props: Icon) => (
   <BaseIcon {...props}>
     <path
+      fillRule="evenodd"
+      clipRule="evenodd"
       fill={props.isDisabled ? color.gray : props.iconColor}
-      d="M22 0H2C.895 0 0 .895 0 2v20c0 1.105.895 2 2 2h11v-9h-3v-4h3V8.413c0-3.1 1.893-4.788 4.66-4.788 1.324 0 2.462.1 2.794.143v3.24h-1.918c-1.504 0-1.795.716-1.795 1.764V11h4.44l-1 4h-3.44v9H22c1.105 0 2-.895 2-2V2c0-1.105-.895-2-2-2z"
+      d="M12 0C5.37 0 0 5.4 0 12.07 0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07 24 5.41 18.63 0 12 0z"
     />
   </BaseIcon>
 )
@@ -16,5 +18,3 @@ FacebookIcon.defaultProps = {
   ...BaseIconDefaultProps,
   iconColor: color.facebookBrand,
 }
-
-export default FacebookIcon

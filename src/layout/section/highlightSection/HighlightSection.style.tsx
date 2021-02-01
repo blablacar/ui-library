@@ -9,7 +9,7 @@ import {
   space,
 } from '../../../_utils/branding'
 import { Button, ButtonStatus } from '../../../button'
-import ItemChoice from '../../../itemChoice'
+import { ItemChoice } from '../../../itemChoice'
 import { TextDisplay1 } from '../../../typography/display1'
 
 const Section = styled.section`

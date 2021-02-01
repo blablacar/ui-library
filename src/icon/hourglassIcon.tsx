@@ -16,4 +16,3 @@ export const HourglassIcon = (props: Icon) => (
 )
 
 HourglassIcon.defaultProps = BaseIconDefaultProps
-export default HourglassIcon

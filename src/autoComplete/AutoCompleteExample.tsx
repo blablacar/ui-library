@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { ItemStatus } from '../_internals/item'
 import { ComfortIcon } from '../icon'
-import Loader, { LoaderLayoutMode } from '../loader'
+import { Loader, LoaderLayoutMode } from '../loader'
 import { AutoComplete, AutocompleteItem, AutocompleteOnChange } from './index'
 
 const places: AutocompleteItem[] = [

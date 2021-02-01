@@ -13,4 +13,3 @@ export const PinterestIcon = (props: Icon) => (
 )
 
 PinterestIcon.defaultProps = BaseIconDefaultProps
-export default PinterestIcon

@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 import { color } from '../_utils/branding'
-import LockIcon from '../icon/lockIcon'
+import { LockIcon } from '../icon/lockIcon'
 import { LoadingPage } from './LoadingPage'
 
 it('Should have the correct attributes and text when all props.', () => {

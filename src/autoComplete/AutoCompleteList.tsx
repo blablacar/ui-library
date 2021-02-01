@@ -6,7 +6,7 @@ import isEqual from 'lodash.isequal'
 
 import { ItemStatus } from '../_internals/item'
 import { prefix } from '../_utils'
-import { ItemChoice, ItemChoiceStyle } from '../itemChoice'
+import { ItemChoice } from '../itemChoice'
 import { ItemsList } from '../itemsList'
 
 export interface AutocompleteItem {
@@ -48,14 +48,13 @@ export class AutoCompleteList extends Component<AutoCompleteListProps, AutoCompl
     selectedIndex: null,
   }
 
-  componentDidUpdate(prevProps: AutoCompleteListProps) {
-    if (canUseEventListeners && prevProps.visible !== this.props.visible) {
-      if (this.props.visible) {
-        document.addEventListener('keydown', this.handleKeydown)
-      } else {
-        document.removeEventListener('keydown', this.handleKeydown)
-      }
+  componentDidMount() {
+    if (canUseEventListeners) {
+      document.addEventListener('keydown', this.handleKeydown)
     }
+  }
+
+  componentDidUpdate(prevProps: AutoCompleteListProps) {
     if (!isEqual(prevProps.items, this.props.items)) {
       this.setState({
         highlightedIndex: null,
@@ -64,7 +63,7 @@ export class AutoCompleteList extends Component<AutoCompleteListProps, AutoCompl
   }
 
   componentWillUnmount() {
-    if (this.props.visible && canUseEventListeners) {
+    if (canUseEventListeners) {
       document.removeEventListener('keydown', this.handleKeydown)
     }
   }
@@ -156,14 +155,14 @@ export class AutoCompleteList extends Component<AutoCompleteListProps, AutoCompl
             return (
               <ItemChoice
                 {...itemChoiceProps}
-                className={this.props.itemClassName}
-                style={isHighlighted ? ItemChoiceStyle.RECOMMENDED : ItemChoiceStyle.PRIMARY}
+                className={cc([this.props.itemClassName, { highlight: isHighlighted }])}
                 status={status}
                 onClick={() => {
                   this.onSelect(index, item)
                 }}
                 onDoneAnimationEnd={this.props.onDoneAnimationEnd}
                 key={this.props.itemKey(item)}
+                tabIndex={-1}
               />
             )
           })}

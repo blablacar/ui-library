@@ -116,5 +116,3 @@ export const FocusVisibleProvider = ({
     <FocusVisibleContext.Provider value={hadKeyboardEvent}>{children}</FocusVisibleContext.Provider>
   )
 }
-
-export default FocusVisibleProvider
