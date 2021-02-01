@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- [...]
+- **[UPDATE]** `Storybook` version `6.1.15`
 
 # v46.2.0 (01/02/2021)
 
@@ -11,6 +12,10 @@
 # v46.1.0 (27/01/2021)
 
 - **[NEW]** Add `PaypalIcon`
+  <<<<<<< HEAD
+  [...]
+  =======
+  > > > > > > > master
 
 # v46.0.0 (26/01/2021)
 
@@ -18,6 +23,7 @@
 - **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 
 # v45.2.0 (21/01/2021)
+
 - **[FIX]** Fix `MediaSizeProvider` first render state
 - **[NEW]** New serverSideMediaSize attribute for `MediaSizeProvider`
 
