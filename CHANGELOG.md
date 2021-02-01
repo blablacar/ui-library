@@ -2,7 +2,7 @@
 
 [...]
 
-# v46.1.0 (01/02/2021)
+# v46.2.0 (01/02/2021)
 
 - **[NEW]** Add illustrations
 - **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
