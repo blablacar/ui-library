@@ -18,51 +18,49 @@ export const GridListItems = ({ items }: GridListItemsProps) => {
   return <Grid>{listItems}</Grid>
 }
 
-type HighlightContentItemsProps = { heading: string; items: Array<ContentItemsType> }
+type HighlightContentItemsProps = {
+  heading?: string
+  items: Array<ContentItemsType>
+}
 export const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) => (
-  <article>
+  <HighlightSectionElements.Article>
     {heading && <HighlightSectionElements.Title as="h2">{heading}</HighlightSectionElements.Title>}
     <GridListItems items={items} />
-  </article>
+  </HighlightSectionElements.Article>
 )
 
-/**
- * A specialized section with an highlighting background color.
- */
 type highlightsType = { heading: string; items: Array<ContentItemsType> }
 export type HighlightSectionProps = Readonly<{
   className?: string
   highlights: { rides: highlightsType; cities: highlightsType }
   toggle: { on: string; off: string }
 }>
+
+const DEFAULT_ITEMS_SIZE = 3
+
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
-  const [showAll, setShowAll] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
   const { rides, cities } = highlights
 
-  const DEFAULT_ITEMS_SIZE = 3
-  const defaultRides = rides.items.map((item, index) => {
-    if (index < DEFAULT_ITEMS_SIZE) {
-      return { ...item, hidden: false }
-    }
-    return { ...item, hidden: true }
-  })
-  const displayedItems = showAll ? rides.items : defaultRides
+  const displayedItems = rides.items.map((item, index) => ({
+    ...item,
+    hidden: collapsed && index >= DEFAULT_ITEMS_SIZE,
+  }))
 
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
-        <HighlightContentItems key="rides" heading={rides.heading} items={displayedItems} />
-        {showAll && (
+        <HighlightContentItems heading={rides.heading} items={displayedItems} />
+        <div hidden={collapsed}>
           <HighlightContentItems
-            key="cities"
             heading={cities.heading}
             items={cities.items}
-            aria-expanded={showAll}
+            aria-hidden={collapsed}
           />
-        )}
-        <HighlightSectionElements.Link onClick={() => setShowAll(!showAll)} role="button">
-          {toggle[showAll ? 'off' : 'on']}
-        </HighlightSectionElements.Link>
+        </div>
+        <HighlightSectionElements.Button onClick={() => setCollapsed(!collapsed)} role="button">
+          {toggle[collapsed ? 'on' : 'off']}
+        </HighlightSectionElements.Button>
       </HighlightSectionElements.Content>
     </HighlightSectionElements.Section>
   )

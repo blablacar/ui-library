@@ -92,11 +92,14 @@ export const Grid = styled.ul`
 export const Col = styled.li`
   display: ${props => props.hidden && 'none'};
 `
-
+export const Article = styled.article`
+  display: ${props => props.hidden && 'none'};
+`
 export const HighlightSectionElements = {
   Section,
   Content,
+  Article,
   Title,
   Item,
-  Link,
+  Button: Link,
 }

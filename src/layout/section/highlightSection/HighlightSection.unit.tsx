@@ -1,8 +1,8 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 
-import { RideAxis } from '_utils/rideAxis/index.tsx'
+import { fireEvent, render } from '@testing-library/react'
 
+import { RideAxis } from '../../../_utils/rideAxis'
 import { HighlightSection } from './index'
 
 export const rides = [
@@ -113,17 +113,78 @@ export const highlights = {
 }
 
 describe('HighlightSection', () => {
-  it('should render default highlight section', () => {
-    const section = (
-      <HighlightSection
-        highlights={highlights}
-        toggle={{
-          on: 'Show more',
-          off: 'Show less',
-        }}
-      />
-    )
-    const renderedSection = renderer.create(section).toJSON()
-    expect(renderedSection).toMatchSnapshot()
+  describe('rides', () => {
+    it('should render ONLY highlighted items', () => {
+      const view = render(
+        <HighlightSection
+          highlights={{
+            rides: { heading: 'Top trajets en bus', items: rides },
+            cities: { heading: 'Top villes en bus', items: [] },
+          }}
+          toggle={{
+            on: 'Show more',
+            off: 'Show less',
+          }}
+        />,
+      )
+
+      expect(view.getByText('Toulouse')).toBeVisible()
+      expect(view.getByText('Tous les trajet en bus')).not.toBeVisible()
+    })
+
+    it('should expand the items/section', () => {
+      const view = render(
+        <HighlightSection
+          highlights={{
+            rides: { heading: 'Top trajets en bus', items: rides },
+            cities: { heading: 'Top villes en bus', items: [] },
+          }}
+          toggle={{
+            on: 'Show more',
+            off: 'Show less',
+          }}
+        />,
+      )
+
+      fireEvent.click(view.getByRole('button'))
+      expect(view.getByText('Tous les trajet en bus')).toBeVisible()
+    })
+  })
+
+  describe('cities', () => {
+    it('should not render cities by default', () => {
+      const view = render(
+        <HighlightSection
+          highlights={{
+            rides: { heading: 'Top trajets en bus', items: [] },
+            cities: { heading: 'Top villes en bus', items: cities },
+          }}
+          toggle={{
+            on: 'Show more',
+            off: 'Show less',
+          }}
+        />,
+      )
+
+      expect(view.getByText('Lyon')).not.toBeVisible()
+    })
+
+    it('should render cities when expanded', () => {
+      const view = render(
+        <HighlightSection
+          highlights={{
+            rides: { heading: 'Top trajets en bus', items: [] },
+            cities: { heading: 'Top villes en bus', items: cities },
+          }}
+          toggle={{
+            on: 'Show more',
+            off: 'Show less',
+          }}
+        />,
+      )
+
+      fireEvent.click(view.getByRole('button'))
+      expect(view.getByText('Lyon')).toBeVisible()
+    })
   })
 })

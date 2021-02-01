@@ -1,7 +1,12 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { highlights } from './HighlightSection.unit.tsx'
+import { cities, rides } from './HighlightSection.unit.tsx'
 import { HighlightSection } from './index'
+
+export const highlights = {
+  rides: { heading: 'Top trajets en bus', items: rides },
+  cities: { heading: 'Top villes en bus', items: cities },
+}
 
 <Meta title="Sections/HighlightSection" />
 
@@ -21,7 +26,7 @@ import { HighlightSection } from './index'
 
 ## Specifications
 
-`HighlightSection` is applied mainly on Landing Pages to highlight common rides.
+`HighlightSection` is applied mainly on Landing Pages to **highlight common rides**.
 It's divided on two main sections. It receives rides data and handles its display.
 
 > _SEO_
