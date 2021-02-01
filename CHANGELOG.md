@@ -1,10 +1,11 @@
 # Unreleased
 
+- **[UPDATE]** `Storybook` version
 - **[NEW]** Add illustrations
 - **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
 - **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
 - **[NEW]** Add `PaypalIcon`
-[...]
+  [...]
 
 # v46.0.0 (26/01/2021)
 
@@ -12,6 +13,7 @@
 - **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 
 # v45.2.0 (21/01/2021)
+
 - **[FIX]** Fix `MediaSizeProvider` first render state
 - **[NEW]** New serverSideMediaSize attribute for `MediaSizeProvider`
 
