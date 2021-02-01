@@ -1,10 +1,16 @@
 # Unreleased
 
+[...]
+
+# v46.2.0 (01/02/2021)
+
 - **[NEW]** Add illustrations
 - **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
 - **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
+
+# v46.1.0 (27/01/2021)
+
 - **[NEW]** Add `PaypalIcon`
-[...]
 
 # v46.0.0 (26/01/2021)
 
