@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
 [...]
 
 # v46.2.0 (01/02/2021)
