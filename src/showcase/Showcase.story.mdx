@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { Paragraph } from '../paragraph'
+import { Showcase } from './index'
+
+<Meta title="Widgets/Showcase" />
+
+# Showcase
+
+<Canvas>
+  <Story name="Default">
+    <Showcase>
+      <div>Lists and loops</div>
+      <div>through all children</div>
+      <div>regardless of their number</div>
+      <div>or their type</div>
+      <Paragraph>(here's a Paragraph)</Paragraph>
+    </Showcase>
+  </Story>
+</Canvas>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { Showcase } from '@blablacar/ui-library/build/showcase'
+<Showcase>
+  <div>div</div>
+  <Paragraph>Paragraph</Paragraph>
+</Showcase>
+```
+
+<ArgsTable of={Showcase} />
