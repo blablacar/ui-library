@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
 - **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
 - **[UPDATE]** `Storybook` version `6.1.15`
 [...]
