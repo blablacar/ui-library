@@ -2,19 +2,19 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
-import { Paragraph } from '../paragraph'
-import { Showcase } from './index'
+import { Marquee } from './index'
 
-describe('Showcase', () => {
+describe('Marquee', () => {
   it('Should render', () => {
     render(
-      <Showcase>
-        <div>fhtagn</div>
-        <div>cthulhu</div>
-        <Paragraph>Paragraph</Paragraph>
-      </Showcase>,
+      <Marquee>
+        <h1>First</h1>
+        <h2>Second</h2>
+        <h3>Third</h3>
+      </Marquee>,
     )
     expect(screen.getByRole('list')).toBeInTheDocument()
     expect(screen.getAllByRole('listitem')).toHaveLength(3)
+    // TODO test that when an element is displayed, the others are not
   })
 })
