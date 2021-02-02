@@ -1,7 +1,8 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
 - **[UPDATE]** `Storybook` version `6.1.15`
+[...]
 
 # v46.2.0 (01/02/2021)
 
