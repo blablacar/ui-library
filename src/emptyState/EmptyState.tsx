@@ -6,12 +6,12 @@ import { StyledEmptyState } from './EmptyState.style'
 
 export type EmptyStateProps = Readonly<{
   className?: string
-  image: string
+  illustration: JSX.Element
   text: string | JSX.Element
   button?: JSX.Element
 }>
 
-export const EmptyState = ({ className, image, text, button }: EmptyStateProps) => {
+export const EmptyState = ({ className, illustration, text, button }: EmptyStateProps) => {
   let title
   if (typeof text === 'string') {
     title = <Title>{text}</Title>
@@ -21,7 +21,7 @@ export const EmptyState = ({ className, image, text, button }: EmptyStateProps) 
 
   return (
     <StyledEmptyState className={cc(['kirk-empty-state', className])}>
-      <img src={image} alt="" />
+      {illustration}
       {title}
       {button}
     </StyledEmptyState>

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Replaced `image` by `illustration` in `EmptyState`
 [...]
 
 # v46.2.0 (01/02/2021)
