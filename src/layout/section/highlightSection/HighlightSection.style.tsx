@@ -13,7 +13,7 @@ import { ItemChoice } from '../../../itemChoice'
 import { TextDisplay1 } from '../../../typography/display1'
 
 const Section = styled.section`
-  padding: ${space.xl};
+  padding: 0 ${space.xl};
   background-color: ${color.midnightGreen};
   color: ${color.white};
 `
@@ -22,18 +22,16 @@ const Content = styled.div`
   margin-right: auto;
   max-width: ${componentSizes.largeSectionWidth};
 `
+export const Article = styled.article`
+  display: ${props => props.hidden && 'none'};
+`
 
 // Override TextDisplay1
 const Title = styled(TextDisplay1).attrs({
   isInverted: true,
 })`
   // @note: Space is applied to section
-  // There is no 32px on spacing spec
-  margin: ${space.xl} 0;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
+  padding: ${space.xl} 0;
 `
 
 // Override ItemChoice
@@ -72,18 +70,24 @@ const Link = styled(Button).attrs({
   status: ButtonStatus.UNSTYLED,
 })`
   && {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-left: auto;
+    padding: 0;
   }
+`
+
+const Actions = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  padding: ${space.m} 0 ${space.xl};
+  margin-left: auto;
 `
 
 /* GRID SYSTEM: 3 Columns */
 export const Grid = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${space.m};
-  grid-auto-rows: minmax(100px, auto);
+  grid-gap: ${space.l};
+  row-gap: ${space.m};
+  grid-auto-rows: minmax(4.75em, auto);
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -91,15 +95,16 @@ export const Grid = styled.ul`
 `
 export const Col = styled.li`
   display: ${props => props.hidden && 'none'};
+  padding: 0;
+  margin: 0;
 `
-export const Article = styled.article`
-  display: ${props => props.hidden && 'none'};
-`
+
 export const HighlightSectionElements = {
   Section,
   Content,
   Article,
   Title,
   Item,
+  Actions,
   Button: Link,
 }

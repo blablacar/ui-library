@@ -9,7 +9,7 @@ type ContentItemsType = ItemChoiceProps &
   }>
 
 type GridListItemsProps = { items: Array<ContentItemsType> }
-export const GridListItems = ({ items }: GridListItemsProps) => {
+const GridListItems = ({ items }: GridListItemsProps) => {
   const listItems = items.map(({ id, label, data, hidden, href }) => (
     <Col key={id} hidden={hidden}>
       <HighlightSectionElements.Item label={label} data={data} href={href} />
@@ -19,15 +19,17 @@ export const GridListItems = ({ items }: GridListItemsProps) => {
 }
 
 type HighlightContentItemsProps = {
-  heading?: string
+  heading: string
   items: Array<ContentItemsType>
 }
-export const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) => (
+const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) => (
   <HighlightSectionElements.Article>
-    {heading && <HighlightSectionElements.Title as="h2">{heading}</HighlightSectionElements.Title>}
+    <HighlightSectionElements.Title as="h2">{heading}</HighlightSectionElements.Title>
     <GridListItems items={items} />
   </HighlightSectionElements.Article>
 )
+
+const DEFAULT_ITEMS_SIZE = 3
 
 type highlightsType = { heading: string; items: Array<ContentItemsType> }
 export type HighlightSectionProps = Readonly<{
@@ -35,9 +37,6 @@ export type HighlightSectionProps = Readonly<{
   highlights: { rides: highlightsType; cities: highlightsType }
   toggle: { on: string; off: string }
 }>
-
-const DEFAULT_ITEMS_SIZE = 3
-
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
   const [collapsed, setCollapsed] = useState(true)
   const { rides, cities } = highlights
@@ -58,9 +57,11 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
             aria-hidden={collapsed}
           />
         </div>
-        <HighlightSectionElements.Button onClick={() => setCollapsed(!collapsed)} role="button">
-          {toggle[collapsed ? 'on' : 'off']}
-        </HighlightSectionElements.Button>
+        <HighlightSectionElements.Actions>
+          <HighlightSectionElements.Button onClick={() => setCollapsed(!collapsed)} role="button">
+            {toggle[collapsed ? 'on' : 'off']}
+          </HighlightSectionElements.Button>
+        </HighlightSectionElements.Actions>
       </HighlightSectionElements.Content>
     </HighlightSectionElements.Section>
   )
