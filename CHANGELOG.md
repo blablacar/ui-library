@@ -1,10 +1,13 @@
 # Unreleased
 
+[...]
+
+# v47.0.0 (02/02/2021)
+
 - **[BREAKING CHANGE]** New `illustration` prop replacing `image` in `EmptyState`
 - **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
 - **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
 - **[UPDATE]** `Storybook` version `6.1.15`
-[...]
 
 # v46.2.0 (01/02/2021)
 
