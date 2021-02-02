@@ -6,8 +6,7 @@ import { SuccessModal } from './index'
 const defaultProps = {
   isOpen: false,
   confirmLabel: 'Confirm',
-  imageSrc: 'https://svgshare.com/i/AGz.svg',
-  imageText: 'Illustration description',
+  illustration: <img src="https://svgshare.com/i/AGz.svg" alt="Illustration description" />,
   closeOnEsc: true,
   onClose: () => {},
   forwardedRef: null,

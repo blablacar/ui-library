@@ -1,6 +1,9 @@
 # Unreleased
 
-- **[BREAKING CHANGE]** Replaced `image` by `illustration` in `EmptyState`
+- **[BREAKING CHANGE]** New `illustration` prop replacing `image` in `EmptyState`
+- **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
+- **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
+- **[UPDATE]** `Storybook` version `6.1.15`
 [...]
 
 # v46.2.0 (01/02/2021)
@@ -19,6 +22,7 @@
 - **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 
 # v45.2.0 (21/01/2021)
+
 - **[FIX]** Fix `MediaSizeProvider` first render state
 - **[NEW]** New serverSideMediaSize attribute for `MediaSizeProvider`
 
