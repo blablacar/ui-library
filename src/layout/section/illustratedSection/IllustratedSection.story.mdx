@@ -1,5 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
+import { Avatar } from '../../../avatar'
+import { InstantApprovalIllustration } from '../../../illustration/instantApproval'
 import { ItemRadio } from '../../../itemRadio'
 import { ItemRadioGroup } from '../../../itemRadioGroup'
 import { TheVoice } from '../../../theVoice'
@@ -10,8 +12,8 @@ import { IllustratedSection } from './index'
 # **IllustratedSection**
 
 <Canvas>
-  <Story name="With illustration">
-    <IllustratedSection illustrationUrl="https://cdn.blablacar.com/kairos/assets/build/images/max_2_in_the_back-d1b1da56d9d48d78e0365ff586c68f92.svg">
+  <Story name="With image">
+    <IllustratedSection illustration={<img src="https://cdn.blablacar.com/kairos/assets/build/images/max_2_in_the_back-d1b1da56d9d48d78e0365ff586c68f92.svg" alt="using img element" />}>
       <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
       <ItemRadioGroup name="2mitb" withSeparators withChevrons>
         <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
@@ -20,10 +22,16 @@ import { IllustratedSection } from './index'
     </IllustratedSection>
   </Story>
   <Story name="With avatar">
-    <IllustratedSection
-      illustrationUrl="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg"
-      isAvatar
-    >
+    <IllustratedSection illustration={<Avatar image="https://cdn.blablacar.com/comuto3/images/avatar/pixar/passenger-f-02.svg" isLarge alt="using avatar component" />}>
+      <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
+      <ItemRadioGroup name="2mitb" withSeparators withChevrons>
+        <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
+        <ItemRadio name="2mitb" value="false" labelTitle="No, I'll squeeze in 3." />
+      </ItemRadioGroup>
+    </IllustratedSection>
+  </Story>
+  <Story name="With illustration">
+    <IllustratedSection illustration={<InstantApprovalIllustration title="using illustration component" />}>
       <TheVoice>Keep the middle seat empty so that your passengers are comfortable</TheVoice>
       <ItemRadioGroup name="2mitb" withSeparators withChevrons>
         <ItemRadio name="2mitb" value="true" labelTitle="Yes, sure!" highlighted />
@@ -40,7 +48,9 @@ import { IllustratedSection } from './index'
 ```jsx
 import { IllustratedSection } from '@blablacar/ui-library/build/layout/section/illustratedSection'
 
-<IllustratedSection />
+<IllustratedSection illustration={<img src="" />}/>
+<IllustratedSection illustration={<Avatar image="" isLarge />}/>
+<IllustratedSection illustration={<MaxTwoInTheBackIllustration />}/>
 ```
 
 <ArgsTable of={IllustratedSection} />
