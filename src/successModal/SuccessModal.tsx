@@ -12,8 +12,7 @@ import { SuccessModalElements } from './SuccessModal.style'
 export type SuccessModalProps = ModalProps &
   Readonly<{
     confirmLabel?: string
-    imageSrc: string
-    imageText?: string
+    illustration: JSX.Element
   }>
 
 export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
@@ -22,8 +21,7 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
     onClose = () => {},
     forwardedRef = null,
     confirmLabel,
-    imageSrc,
-    imageText = '',
+    illustration,
     children,
     className,
   } = props
@@ -54,9 +52,7 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
       data-test="success-modal"
     >
       <Media>
-        <Figure>
-          <img src={imageSrc} alt={imageText} />
-        </Figure>
+        <Figure>{illustration}</Figure>
         <Content>
           <SuccessTitle data-test="success-title">
             <TextDisplay1 isInverted>{children}</TextDisplay1>
