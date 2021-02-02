@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** New `illustration` prop replacing `image` in `EmptyState`
 - **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
 - **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
 - **[UPDATE]** `Storybook` version `6.1.15`
@@ -14,10 +15,6 @@
 # v46.1.0 (27/01/2021)
 
 - **[NEW]** Add `PaypalIcon`
-  <<<<<<< HEAD
-  [...]
-  =======
-  > > > > > > > master
 
 # v46.0.0 (26/01/2021)
 
