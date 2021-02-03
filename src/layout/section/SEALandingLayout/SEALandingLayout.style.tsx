@@ -39,7 +39,7 @@ const Figure = styled.figure`
   }
 `
 
-export const LandingGridSectionElements = {
+export const SEALandingLayoutElements = {
   Grid,
   Body,
   Figure,

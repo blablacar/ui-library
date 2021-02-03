@@ -5,10 +5,10 @@ import { ButtonGroup } from 'buttonGroup/index'
 import { Disclaimer } from 'disclaimer/index'
 import { ItemActionLabel } from 'itemActionLabel/index'
 import { Itinerary } from 'itinerary/index'
-import carpoolBlaBlaBusLarge from './carpool-coral-bus-small.svg'
 import carpoolBlaBlaBusSmall from 'layout/section/heroSection/images-for-stories/carpool-bbb-small.svg'
 
-import { LandingGridSection } from './index'
+import carpoolBlaBlaBusLarge from './carpool-coral-bus-small.svg'
+import { SEALandingLayout } from './index'
 
 export const ILLUSTRATIONS = {
   'carpool-bla-bla-bus': {
@@ -59,13 +59,13 @@ export const Body = (
 
 <Canvas>
   <Story name="Default">
-    <LandingGridSection
+    <SEALandingLayout
       heroText="Et vous, qui allez-vous retrouver ?"
       heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
       heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
     >
       {Body}
-    </LandingGridSection>
+    </SEALandingLayout>
   </Story>
 </Canvas>
 
@@ -79,15 +79,15 @@ SEA Landing Pages Half Width Column Vertical Grid.
 ## Usage
 
 ```jsx
-import { LandingGridSection } from '@blablacar/ui-library/build/halfSection'
+import { SEALandingLayout } from '@blablacar/ui-library/build/halfSection'
 
- <LandingGridSection
+ <SEALandingLayout
     heroText="Et vous, qui allez-vous retrouver ?"
     heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
     heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
   >
     // Content here {children}
-  </LandingGridSection>
+  </SEALandingLayout>
 ```
 
-<ArgsTable of={LandingGridSection} />
+<ArgsTable of={SEALandingLayout} />
