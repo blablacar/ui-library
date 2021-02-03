@@ -7,8 +7,8 @@ import { ItemActionLabel } from 'itemActionLabel/index'
 import { Itinerary } from 'itinerary/index'
 import carpoolBlaBlaBusSmall from 'layout/section/heroSection/images-for-stories/carpool-bbb-small.svg'
 
-import carpoolBlaBlaBusLarge from './carpool-coral-bus-small.svg'
-import { SEALandingLayout } from './index'
+import carpoolBlaBlaBusLarge from './carpool-coral-bus-large.svg'
+import { SEASection } from './index'
 
 export const ILLUSTRATIONS = {
   'carpool-bla-bla-bus': {
@@ -55,39 +55,43 @@ export const Body = (
 <Meta title="Pages/SEA/Landing" />
 
 # ** SEA Landing Pages **
-## 2 Column Vertical Grid
-
 <Canvas>
   <Story name="Default">
-    <SEALandingLayout
-      heroText="Et vous, qui allez-vous retrouver ?"
-      heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
-      heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
+    <SEASection
+      leading="Et vous, qui allez-vous retrouver ?"
+      illustationUrl={{
+        small: ILLUSTRATIONS['carpool-bla-bla-bus'].small,
+        large: ILLUSTRATIONS['carpool-bla-bla-bus'].large,
+      }}
     >
       {Body}
-    </SEALandingLayout>
+    </SEASection>
   </Story>
 </Canvas>
 
 ## Specifications
 
-SEA Landing Pages Half Width Column Vertical Grid.
+SEA Landing Pages responsive 2 Column Vertical Grid
 
-`Body` tracker has max-with `375px` and is vertical/horizontally centered
-`Figure` tracker is always `HeroSection`
+**Large**
+
+- `Media` tracker has 100%;
+- `Body` tracker has max-with `375px` and is vertical/horizontally centered
 
 ## Usage
 
 ```jsx
-import { SEALandingLayout } from '@blablacar/ui-library/build/halfSection'
+import { SEASection } from '@blablacar/ui-library/build/seaSection'
 
- <SEALandingLayout
-    heroText="Et vous, qui allez-vous retrouver ?"
-    heroImageUrlSmall={ILLUSTRATIONS['carpool-bla-bla-bus'].small}
-    heroImageUrlLarge={ILLUSTRATIONS['carpool-bla-bla-bus'].large}
+ <SEASection
+    leading="Et vous, qui allez-vous retrouver ?"
+    illustationUrl={{
+        small: ILLUSTRATIONS['carpool-bla-bla-bus'].small,
+        large: ILLUSTRATIONS['carpool-bla-bla-bus'].large
+      }}
   >
     // Content here {children}
-  </SEALandingLayout>
+  </SEASection>
 ```
 
-<ArgsTable of={SEALandingLayout} />
+<ArgsTable of={SEASection} />
