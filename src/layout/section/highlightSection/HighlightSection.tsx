@@ -34,14 +34,14 @@ const DEFAULT_ITEMS_SIZE = 3
 type highlightsType = { heading: string; items: Array<ContentItemsType> }
 export type HighlightSectionProps = Readonly<{
   className?: string
-  highlights: { rides: highlightsType; cities: highlightsType }
+  highlights: { axes: highlightsType; cities: highlightsType }
   toggle: { on: string; off: string }
 }>
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
   const [collapsed, setCollapsed] = useState(true)
-  const { rides, cities } = highlights
+  const { axes, cities } = highlights
 
-  const displayedItems = rides.items.map((item, index) => ({
+  const displayedItems = axes.items.map((item, index) => ({
     ...item,
     hidden: collapsed && index >= DEFAULT_ITEMS_SIZE,
   }))
@@ -49,7 +49,7 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
-        <HighlightContentItems heading={rides.heading} items={displayedItems} />
+        <HighlightContentItems heading={axes.heading} items={displayedItems} />
         <div hidden={collapsed}>
           <HighlightContentItems
             heading={cities.heading}

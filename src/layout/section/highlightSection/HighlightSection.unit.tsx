@@ -5,7 +5,7 @@ import { fireEvent, render } from '@testing-library/react'
 import { RideAxis } from '../../../_utils/rideAxis'
 import { HighlightSection } from './index'
 
-export const rides = [
+export const axes = [
   {
     id: '11',
     label: 'Toulouse',
@@ -108,17 +108,17 @@ export const cities = [
 ]
 
 export const highlights = {
-  rides: { heading: 'Top trajets en bus', items: rides },
+  axes: { heading: 'Top trajets en bus', items: axes },
   cities: { heading: 'Top villes en bus', items: cities },
 }
 
 describe('HighlightSection', () => {
-  describe('rides', () => {
+  describe('axes', () => {
     it('should render ONLY highlighted items', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            rides: { heading: 'Top trajets en bus', items: rides },
+            axes: { heading: 'Top trajets en bus', items: axes },
             cities: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
@@ -136,7 +136,7 @@ describe('HighlightSection', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            rides: { heading: 'Top trajets en bus', items: rides },
+            axes: { heading: 'Top trajets en bus', items: axes },
             cities: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
@@ -156,7 +156,7 @@ describe('HighlightSection', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            rides: { heading: 'Top trajets en bus', items: [] },
+            axes: { heading: 'Top trajets en bus', items: [] },
             cities: { heading: 'Top villes en bus', items: cities },
           }}
           toggle={{
@@ -173,7 +173,7 @@ describe('HighlightSection', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            rides: { heading: 'Top trajets en bus', items: [] },
+            axes: { heading: 'Top trajets en bus', items: [] },
             cities: { heading: 'Top villes en bus', items: cities },
           }}
           toggle={{
