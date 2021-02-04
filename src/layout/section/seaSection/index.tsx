@@ -1,1 +1,1 @@
-export { SEASection, SEASectionProps } from './SeaSection'
+export { SeaSection, SeaSectionProps } from './SeaSection'

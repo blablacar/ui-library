@@ -8,7 +8,7 @@ import { Itinerary } from 'itinerary/index'
 import carpoolBlaBlaBusSmall from 'layout/section/heroSection/images-for-stories/carpool-bbb-small.svg'
 
 import carpoolBlaBlaBusLarge from './carpool-coral-bus-large.svg'
-import { SEASection } from './index'
+import { SeaSection } from './index'
 
 export const ILLUSTRATIONS = {
   'carpool-bla-bla-bus': {
@@ -52,12 +52,12 @@ export const Body = (
 </React.Fragment>
 )
 
-<Meta title="Sections/SEASection" />
+<Meta title="Sections/SeaSection" />
 
 # ** SEA Landing Pages **
 <Canvas>
   <Story name="Default">
-    <SEASection
+    <SeaSection
       leading="Et vous, qui allez-vous retrouver ?"
       illustationUrl={{
         small: ILLUSTRATIONS['carpool-bla-bla-bus'].small,
@@ -65,7 +65,7 @@ export const Body = (
       }}
     >
       {Body}
-    </SEASection>
+    </SeaSection>
   </Story>
 </Canvas>
 
@@ -81,9 +81,9 @@ SEA Landing Pages responsive 2 Column Vertical Grid
 ## Usage
 
 ```jsx
-import { SEASection } from '@blablacar/ui-library/build/seaSection'
+import { SeaSection } from '@blablacar/ui-library/build/SeaSection'
 
- <SEASection
+ <SeaSection
     leading="Et vous, qui allez-vous retrouver ?"
     illustationUrl={{
         small: ILLUSTRATIONS['carpool-bla-bla-bus'].small,
@@ -91,7 +91,7 @@ import { SEASection } from '@blablacar/ui-library/build/seaSection'
       }}
   >
     // Content here {children}
-  </SEASection>
+  </SeaSection>
 ```
 
-<ArgsTable of={SEASection} />
+<ArgsTable of={SeaSection} />

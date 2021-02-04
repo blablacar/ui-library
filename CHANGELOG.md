@@ -1,8 +1,9 @@
 # Unreleased
 
-- **[NEW]** `SEASection` holds SEA Page layout
+- **[NEW]** `SeaSection` holds SEA Page layout
 
 [...]
+
 - **[NEW]** Add `Marquee`
 - **[NEW]** Add `TripCardSample`
 

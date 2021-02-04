@@ -59,7 +59,7 @@ const Leading = styled(TextSubHeader).attrs({ isInverted: true })`
   }
 `
 
-export const SEASectionElements = {
+export const SeaSectionElements = {
   Wrapper,
   Body,
   Media,
