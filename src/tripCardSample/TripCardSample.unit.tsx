@@ -18,7 +18,7 @@ describe('TripCardSample', () => {
   })
 
   it('should render with Price', () => {
-    render(<TripCardSample {...props} priceFromLabel="from" price="8,00 €" />)
+    render(<TripCardSample {...props} priceLabel="from" price="8,00 €" />)
 
     expect(screen.getByText('from')).toBeInTheDocument()
     expect(screen.getByText('8,00 €')).toBeInTheDocument()
