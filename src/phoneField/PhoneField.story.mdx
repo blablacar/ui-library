@@ -1,5 +1,6 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
+import { Paragraph } from '../paragraph'
 import { PhoneField } from './index'
 
 <Meta title="Forms/PhoneField" />
@@ -8,7 +9,7 @@ import { PhoneField } from './index'
 
 <Canvas>
   <Story name="Default">
-    <p id="phoneFieldLabel">Accessibility label</p>
+    <Paragraph id="phoneFieldLabel">Accessibility label</Paragraph>
     <PhoneField
       id="phoneFieldDefault"
       name="phoneFieldDefault"
@@ -72,7 +73,7 @@ If the name is longer than available field it should get truncated.
 ```jsx
 import { PhoneField } from '@blablacar/ui-library/build/phoneField'
 
-  <p id="labelId">Label</p>
+  <Paragraph id="labelId">Label</Paragraph>
   <PhoneField
     id="PhoneFieldId"
     name="PhoneFieldId"

@@ -1,5 +1,9 @@
 # Unreleased
 
+- **[UPDATE]** Normalize `AutoComplete` vertically and horizontally
+- **[UPDATE]** Normalize `PhoneField` vertically and horizontally
+- **[UPDATE]** Normalize `SelectField` vertically and horizontally
+- **[UPDATE]** Normalize `TextField` vertically and horizontally
 [...]
 
 # v47.0.0 (02/02/2021)

@@ -71,36 +71,38 @@ export const SelectField = React.forwardRef(
           hasFocus && focusBorder && `${baseClassName}--hasFocus`,
         ])}
       >
-        <select
-          name={name}
-          onChange={event => {
-            setCurrentValue(event.target.value)
-            onChange({ name, value: event.target.value })
-          }}
-          onFocus={event => {
-            setFocus(true)
-            onFocus(event)
-          }}
-          onBlur={event => {
-            setFocus(false)
-            onBlur(event)
-          }}
-          defaultValue={defaultValue}
-          value={currentValue}
-          disabled={disabled}
-          required={required}
-          autoFocus={autoFocus}
-          autoComplete={autoComplete}
-          ref={ref}
-          {...a11yAttrs}
-        >
-          {options.map(({ value, label, ...optionA11yAttrs }: SelectFieldItem) => (
-            <option key={`${value}${label}`} value={value} {...optionA11yAttrs}>
-              {label}
-            </option>
-          ))}
-        </select>
-        <ChevronIcon iconColor={color.lightMidnightGreen} down />
+        <div className="kirk-selectField-background">
+          <select
+            name={name}
+            onChange={event => {
+              setCurrentValue(event.target.value)
+              onChange({ name, value: event.target.value })
+            }}
+            onFocus={event => {
+              setFocus(true)
+              onFocus(event)
+            }}
+            onBlur={event => {
+              setFocus(false)
+              onBlur(event)
+            }}
+            defaultValue={defaultValue}
+            value={currentValue}
+            disabled={disabled}
+            required={required}
+            autoFocus={autoFocus}
+            autoComplete={autoComplete}
+            ref={ref}
+            {...a11yAttrs}
+          >
+            {options.map(({ value, label, ...optionA11yAttrs }: SelectFieldItem) => (
+              <option key={`${value}${label}`} value={value} {...optionA11yAttrs}>
+                {label}
+              </option>
+            ))}
+          </select>
+          <ChevronIcon iconColor={color.lightMidnightGreen} down />
+        </div>
       </StyledSelectField>
     )
   },
