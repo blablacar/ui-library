@@ -13,7 +13,7 @@ export const StyledMarquee = styled.ul`
 `
 
 export const StyledMarqueeItem = styled.li<{
-  delay: number
+  position: number
   totalItems: number
 }>`
   /* animation steps defined by how many items are passed */
@@ -45,12 +45,13 @@ export const StyledMarqueeItem = styled.li<{
     }
   }
 
-  position: absolute;
+  /* first item is relative to set a proper height */
+  position: ${props => (props.position === 0 ? 'relative' : 'absolute')};
   top: 0;
   left: 0;
   opacity: 0;
   animation-name: slideInOutWait;
   animation-duration: ${props => `${animationDuration * props.totalItems}ms`};
   animation-iteration-count: infinite;
-  animation-delay: ${props => `${animationDuration * props.delay}ms`};
+  animation-delay: ${props => `${animationDuration * props.position}ms`};
 `
