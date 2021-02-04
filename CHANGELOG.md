@@ -1,6 +1,7 @@
 # Unreleased
 
 [...]
+- **[NEW]** Add `Marquee`
 
 # v47.0.0 (02/02/2021)
 
