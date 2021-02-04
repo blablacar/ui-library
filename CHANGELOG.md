@@ -2,6 +2,7 @@
 
 [...]
 - **[NEW]** Add `Marquee`
+- **[NEW]** Add `TripCardSample`
 
 # v47.0.0 (02/02/2021)
 
