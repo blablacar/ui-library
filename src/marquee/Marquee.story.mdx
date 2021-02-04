@@ -1,0 +1,35 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { Paragraph } from '../paragraph'
+import { Marquee } from './index'
+
+<Meta title="Widgets/Marquee" />
+
+# Marquee
+
+<Canvas>
+  <Story name="Default">
+    <Marquee>
+      <div>Lists and loops</div>
+      <div>through all children</div>
+      <div>regardless of their number</div>
+      <div>or their type</div>
+      <Paragraph>(here, a Paragraph)</Paragraph>
+    </Marquee>
+  </Story>
+</Canvas>
+
+## Specifications
+Simple component that loops through the children it is given and has them slide into view one after the other using CSS animations.
+
+## Usage
+
+```jsx
+import { Marquee } from '@blablacar/ui-library/build/marquee'
+<Marquee className="optional">
+  <div>div</div>
+  <Paragraph>Paragraph</Paragraph>
+</Marquee>
+```
+
+<ArgsTable of={Marquee} />

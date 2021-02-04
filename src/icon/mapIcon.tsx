@@ -16,4 +16,3 @@ export const MapIcon = (props: Icon) => (
 )
 
 MapIcon.defaultProps = BaseIconDefaultProps
-export default MapIcon

@@ -1,0 +1,32 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { TripCardSample } from '.'
+
+<Meta title="Widgets/TripCardSample" />
+
+# **TripCardSample**
+
+<Canvas>
+  <Story name="Default">
+    <TripCardSample
+      departure="Paris"
+      arrival="Bordeaux"
+      price="8,00 €"
+      priceLabel="from"
+    />
+  </Story>
+</Canvas>
+
+## Specifications
+
+Found on SEA landing pages inside a `Marquee` component to demonstrate what kind of rides are available with the most crucial info for a ride: itinerary and price
+
+## Usage
+
+```jsx
+import { TripCardSample } from '@blablacar/ui-library/build/tripCardSample'
+
+const card = <TripCardSample departure="" arrival="" priceLabel="" price=""/>
+```
+
+<ArgsTable of={TripCardSample} />

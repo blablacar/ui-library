@@ -2,6 +2,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { text } from '@storybook/addon-knobs'
 
 import { Button } from '../button'
+import { EmptyStateIllustration } from '../illustration/emptyState'
 import { EmptyState } from './index'
 
 <Meta title="Screens/EmptyState" />
@@ -13,7 +14,7 @@ import { EmptyState } from './index'
 <Canvas>
   <Story name="With simple text">
     <EmptyState
-      image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+      illustration={<img src="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg" alt="" />}
       text={text('text', 'Nothing there...')}
     />
   </Story>
@@ -24,7 +25,7 @@ import { EmptyState } from './index'
 <Canvas>
   <Story name="With JSX text">
     <EmptyState
-      image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+      illustration={<img src="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg" alt="" />}
       text={<h1>This H1 contains a span!<span style={{ color: 'gray' }}> But nothing else.</span></h1>}
     />
   </Story>
@@ -35,7 +36,19 @@ import { EmptyState } from './index'
 <Canvas>
   <Story name="With button">
     <EmptyState
-      image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+      illustration={<img src="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg" alt="" />}
+      text={text('text', 'Please click the button below:')}
+      button={<Button>Go there!</Button>}
+    />
+  </Story>
+</Canvas>
+
+### with illustration
+
+<Canvas>
+  <Story name="With illustration">
+    <EmptyState
+      illustration={<EmptyStateIllustration title="Empty illustration" />}
       text={text('text', 'Please click the button below:')}
       button={<Button>Go there!</Button>}
     />
@@ -68,9 +81,18 @@ Illustrations should have the max possible size (full width) and keep the W:H ra
 
 ```jsx
 import { EmptyState } from '@blablacar/ui-library'
+import { EmptyStateIllustration } from '../illustration/emptyState'
 
+// With a HTML <img/>
 <EmptyState
-  image="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg"
+  illustration={<img src="https://cdn.blablacar.com/kairos/assets/build/images/astronaut-79c2cfcb1a66f7c9afc1bbc50f0037fd.svg" alt="" />}
+  text="Nothing here!"
+  button={<Button>Go there!</Button>}
+/>
+
+// With an illustration
+<EmptyState
+  illustration={<EmptyStateIllustration title="" />}
   text="Nothing here!"
   button={<Button>Go there!</Button>}
 />

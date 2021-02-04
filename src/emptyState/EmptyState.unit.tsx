@@ -2,11 +2,12 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { Button } from '../button'
+import { EmptyStateIllustration } from '../illustration/emptyState'
 import { Title } from '../title'
 import { EmptyState } from './EmptyState'
 
 const defaultProps = {
-  image: 'my-image-url',
+  illustration: <img src="my-image-url" alt="" />,
   text: 'Explanation text.',
 }
 
@@ -27,5 +28,10 @@ describe('EmptyState', () => {
   it('Should render button if provided', () => {
     const wrapper = shallow(<EmptyState {...defaultProps} button={<Button>Action</Button>} />)
     expect(wrapper.find(Button).exists()).toBe(true)
+  })
+
+  it('Should render an illustration', () => {
+    const wrapper = shallow(<EmptyState illustration={<EmptyStateIllustration />} text="Yolo" />)
+    expect(wrapper.find(EmptyStateIllustration).exists()).toBe(true)
   })
 })

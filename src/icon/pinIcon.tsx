@@ -23,5 +23,3 @@ PinIcon.defaultProps = {
   bgColor: 'none',
   strokeColor: color.lightMidnightGreen,
 }
-
-export default PinIcon

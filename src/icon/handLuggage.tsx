@@ -13,4 +13,3 @@ export const HandLuggageIcon = (props: IconPropsWithStatus) => (
 )
 
 HandLuggageIcon.defaultProps = StatusIcon.defaultProps
-export default HandLuggageIcon

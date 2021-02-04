@@ -105,4 +105,3 @@ StyledCircleIcon.defaultProps = {
 }
 
 export { StyledCircleIcon as CircleIcon }
-export default StyledCircleIcon

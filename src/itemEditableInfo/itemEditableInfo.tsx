@@ -73,5 +73,3 @@ export const ItemEditableInfo = (props: ItemEditableInfoProps) => {
     />
   )
 }
-
-export default ItemEditableInfo

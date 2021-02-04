@@ -12,4 +12,3 @@ export const ZoomOutIcon = (props: Icon) => (
 )
 
 ZoomOutIcon.defaultProps = BaseIconDefaultProps
-export default ZoomOutIcon

@@ -14,4 +14,3 @@ export const OdnoklassnikiIcon = (props: Icon) => (
 )
 
 OdnoklassnikiIcon.defaultProps = BaseIconDefaultProps
-export default OdnoklassnikiIcon

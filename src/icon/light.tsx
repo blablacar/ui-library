@@ -13,4 +13,3 @@ export const LightIcon = (props: IconPropsWithStatus) => (
 )
 
 LightIcon.defaultProps = StatusIcon.defaultProps
-export default LightIcon

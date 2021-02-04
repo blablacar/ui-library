@@ -24,8 +24,8 @@ export type ItemChoiceProps = A11yProps &
     labelInfo?: React.ReactNode
     data?: string
     dataInfo?: string
-    leftAddon?: JSX.Element
-    rightAddon?: JSX.Element
+    leftAddon?: React.ReactNode
+    rightAddon?: React.ReactNode
     className?: string
     href?: string | JSX.Element
     status?: ItemStatus

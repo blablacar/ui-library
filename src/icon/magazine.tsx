@@ -26,4 +26,3 @@ export const MagazineIcon = (props: IconPropsWithStatus) => (
 )
 
 MagazineIcon.defaultProps = StatusIcon.defaultProps
-export default MagazineIcon

@@ -13,4 +13,3 @@ export const TwitterIcon = (props: Icon) => (
 )
 
 TwitterIcon.defaultProps = BaseIconDefaultProps
-export default TwitterIcon

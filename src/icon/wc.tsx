@@ -13,4 +13,3 @@ export const WcIcon = (props: IconPropsWithStatus) => (
 )
 
 WcIcon.defaultProps = StatusIcon.defaultProps
-export default WcIcon

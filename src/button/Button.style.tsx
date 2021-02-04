@@ -169,6 +169,16 @@ export const StyledButton = styled(Button)`
     height: calc(${componentSizes.buttonIconSize} - ${borderSize} * 2);
   }
 
+  &.kirk-button-facebook {
+    background-color: ${color.facebookBrand};
+    color: ${color.white};
+  }
+
+  &.kirk-button-vkontakte {
+    background-color: ${color.vkBrand};
+    color: ${color.white};
+  }
+
   @media (hover: none), (hover: on-demand) {
     &.kirk-button-secondary:hover {
       background-color: ${color.white};

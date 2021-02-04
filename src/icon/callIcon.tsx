@@ -16,4 +16,3 @@ export const CallIcon = (props: Icon) => (
 )
 
 CallIcon.defaultProps = BaseIconDefaultProps
-export default CallIcon

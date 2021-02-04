@@ -3,6 +3,30 @@
 - **[NEW]** `SEASection` holds SEA Page layout
 
 [...]
+- **[NEW]** Add `Marquee`
+- **[NEW]** Add `TripCardSample`
+
+# v47.0.0 (02/02/2021)
+
+- **[BREAKING CHANGE]** New `illustration` prop replacing `image` in `EmptyState`
+- **[BREAKING CHANGE]** New `illustration` prop replacing `imageSrc`, `imageText` in `SuccessModal`
+- **[BREAKING CHANGE]** New `illustration` prop replacing `illustrationUrl`, `illustrationAlt`, `isAvatar` in `IllustratedSection`
+- **[UPDATE]** `Storybook` version `6.1.15`
+
+# v46.2.0 (01/02/2021)
+
+- **[NEW]** Add illustrations
+- **[UPDATE]** Add `ButtonStatus` values for Facebook and VKontakte branded buttons
+- **[UPDATE]** Update Facebook color and icon as well as the color for VKontakte
+
+# v46.1.0 (27/01/2021)
+
+- **[NEW]** Add `PaypalIcon`
+
+# v46.0.0 (26/01/2021)
+
+- **[BREAKING CHANGE]** Remove default exports
+- **[FIX]** Fix `leftAddon` and `rightAddon` types on `ItemChoice` to allow strings
 
 # v45.2.0 (21/01/2021)
 

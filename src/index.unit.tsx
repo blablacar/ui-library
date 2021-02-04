@@ -12,6 +12,7 @@ const getSrcComponentDirectories = () =>
     file =>
       !file.startsWith('_') &&
       !file.startsWith('icon') &&
+      !file.startsWith('illustration') &&
       !file.startsWith('typings') &&
       !file.startsWith('layout') &&
       !file.startsWith('typography') &&
