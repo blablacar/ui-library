@@ -11,9 +11,9 @@ export type SeaSectionProps = Readonly<{
 
 export const SeaSection = ({ children, heading, illustationUrl }: SeaSectionProps) => (
   <SeaSectionElements.Wrapper>
-    <SeaSectionElements.Body>{children}</SeaSectionElements.Body>
     <SeaSectionElements.Media small={illustationUrl.small} large={illustationUrl.large}>
       <SeaSectionElements.Heading as="h1">{heading}</SeaSectionElements.Heading>
     </SeaSectionElements.Media>
+    <SeaSectionElements.Body>{children}</SeaSectionElements.Body>
   </SeaSectionElements.Wrapper>
 )

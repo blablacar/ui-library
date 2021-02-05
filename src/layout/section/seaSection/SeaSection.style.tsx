@@ -1,21 +1,21 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
-import { TextSubHeader } from '../../../typography/subHeader'
+import { color, font, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { TextDisplay1 } from '../../../typography/display1'
 
-// Common content width with used on the app
-const CONTENT_WIDTH = componentSizes.searchOverlayWidth
+// Common content width with used on the app: `componentSizes.searchOverlayWidth`
+const CONTENT_WIDTH = '375px'
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-areas:
     'media'
     'body';
-  grid-template-rows: minmax(33vh, 33vh) auto;
+  grid-template-rows: 33vh auto;
   background-color: ${color.white};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    height: 100vh; //@todo: strech to parent
+    height: 100vh;
     grid-template-areas: 'body media';
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -47,7 +47,7 @@ const Media = styled.div<{ small: string; large: string }>`
   }
 `
 
-const Heading = styled(TextSubHeader).attrs({ isInverted: true })`
+const Heading = styled(TextDisplay1).attrs({ isInverted: true })`
   padding: ${space.xl} ${space.xl};
   text-align: center;
 
