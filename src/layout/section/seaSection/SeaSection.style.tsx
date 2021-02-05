@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-import { color, font, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
 import { TextSubHeader } from '../../../typography/subHeader'
 
-const CONTENT_WIDTH = '375px' // iPhone6 width same as componentSizes.searchOverlayWidth
+// Common content width with used on the app
+const CONTENT_WIDTH = componentSizes.searchOverlayWidth
 
 const Wrapper = styled.div`
   display: grid;
@@ -46,7 +47,7 @@ const Media = styled.div<{ small: string; large: string }>`
   }
 `
 
-const Leading = styled(TextSubHeader).attrs({ isInverted: true })`
+const Heading = styled(TextSubHeader).attrs({ isInverted: true })`
   padding: ${space.xl} ${space.xl};
   text-align: center;
 
@@ -63,5 +64,5 @@ export const SeaSectionElements = {
   Wrapper,
   Body,
   Media,
-  Leading,
+  Heading,
 }

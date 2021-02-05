@@ -5,15 +5,15 @@ import { SeaSectionElements } from './SeaSection.style'
 type IllustrationType = { small: string; large: string }
 export type SeaSectionProps = Readonly<{
   children: React.ReactNode
-  leading: string
+  heading: string
   illustationUrl: IllustrationType
 }>
 
-export const SeaSection = ({ children, leading, illustationUrl }: SeaSectionProps) => (
+export const SeaSection = ({ children, heading, illustationUrl }: SeaSectionProps) => (
   <SeaSectionElements.Wrapper>
     <SeaSectionElements.Body>{children}</SeaSectionElements.Body>
     <SeaSectionElements.Media small={illustationUrl.small} large={illustationUrl.large}>
-      <SeaSectionElements.Leading as="h1">{leading}</SeaSectionElements.Leading>
+      <SeaSectionElements.Heading as="h1">{heading}</SeaSectionElements.Heading>
     </SeaSectionElements.Media>
   </SeaSectionElements.Wrapper>
 )
