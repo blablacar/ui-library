@@ -23,11 +23,11 @@ const Wrapper = styled.div`
 `
 const Body = styled.div`
   grid-area: body;
+  align-self: center;
+  justify-self: center;
+  max-width: ${CONTENT_WIDTH};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    align-self: center;
-    justify-self: center;
-    max-width: ${CONTENT_WIDTH};
     grid-row-start: 1;
   }
 `
