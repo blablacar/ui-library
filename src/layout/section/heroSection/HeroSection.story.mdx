@@ -1,5 +1,5 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
-import { select } from '@storybook/addon-knobs'
+import { select, text } from '@storybook/addon-knobs'
 
 import { MediaSizeProvider } from '../../../_utils/mediaSizeProvider'
 import { AutoCompleteExample } from '../../../autoComplete/AutoCompleteExample'
@@ -78,7 +78,7 @@ export const Component = ({ content }) => content()
         return (
           <MediaSizeProvider>
             <HeroSection
-              heroText="Et vous, qui allez-vous retrouver ?"
+              heroText={text('heroText', 'Et vous, qui allez-vous retrouver ?', 'Illustrations')}
               heroImageUrlSmall={illustration.small}
               heroImageUrlLarge={illustration.large}
               bottomElement={bottomElement}
