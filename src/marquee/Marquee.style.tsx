@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { normalizeHorizontally, NormalizeProps } from '../layout/layoutNormalizer'
+
 // Total animation duration:
 // 3400ms fully visible + 320ms slideInOut
 const animationDuration = 3720
@@ -12,10 +14,13 @@ export const StyledMarquee = styled.ul`
   }
 `
 
-export const StyledMarqueeItem = styled.li<{
-  position: number
-  totalItems: number
-}>`
+type MarqueeItemProps = NormalizeProps &
+  Readonly<{
+    position: number
+    totalItems: number
+  }>
+
+export const StyledMarqueeItem = styled.li<MarqueeItemProps>`
   /* animation steps defined by how many items are passed */
   @keyframes slideInOutWait {
     0% {
@@ -54,4 +59,6 @@ export const StyledMarqueeItem = styled.li<{
   animation-duration: ${props => `${animationDuration * props.totalItems}ms`};
   animation-iteration-count: infinite;
   animation-delay: ${props => `${animationDuration * props.position}ms`};
+  width: 100%;
+  ${normalizeHorizontally};
 `
