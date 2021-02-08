@@ -2,37 +2,38 @@ import React from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { ChevronIcon } from '../icon/chevronIcon'
 import { StyledDropdownButton } from './DropdownButton.style'
 
-export type DropdownButtonProps = Readonly<{
-  onClick: (event: React.MouseEvent<HTMLElement>) => void
-  children: JSX.Element | string
-  open?: boolean
-  className?: string
-  iconPosition?: 'left' | 'right'
-}>
+export type DropdownButtonProps = A11yProps &
+  Readonly<{
+    onClick: (event: React.MouseEvent<HTMLElement>) => void
+    children: JSX.Element | string
+    open?: boolean
+    className?: string
+    iconPosition?: 'left' | 'right'
+  }>
 
-export const DropdownButton = ({
-  open = false,
-  children,
-  onClick,
-  className = '',
-  iconPosition = 'right',
-}: DropdownButtonProps) => (
-  <StyledDropdownButton
-    className={cc([
-      'kirk-dropdownButton',
-      {
-        'kirk-dropdownButton--open': open,
-      },
-      className,
-    ])}
-  >
-    <button aria-expanded={open} type="button" onClick={onClick}>
-      {iconPosition === 'left' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
-      {children}
-      {iconPosition === 'right' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
-    </button>
-  </StyledDropdownButton>
-)
+export const DropdownButton = (props: DropdownButtonProps) => {
+  const { open = false, children, onClick, className = '', iconPosition = 'right' } = props
+  const a11yAttrs = pickA11yProps<DropdownButtonProps>(props)
+
+  return (
+    <StyledDropdownButton
+      className={cc([
+        'kirk-dropdownButton',
+        {
+          'kirk-dropdownButton--open': open,
+        },
+        className,
+      ])}
+    >
+      <button {...a11yAttrs} aria-expanded={open} type="button" onClick={onClick}>
+        {iconPosition === 'left' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
+        {children}
+        {iconPosition === 'right' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
+      </button>
+    </StyledDropdownButton>
+  )
+}
