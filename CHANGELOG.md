@@ -2,6 +2,8 @@
 
 [...]
 
+# v47.1.0 (07/02/2021)
+
 - **[NEW]** `SeaPage` holds SEA Page layout
 - **[UPDATE]** Typographic elmements get `pre` formating
 
