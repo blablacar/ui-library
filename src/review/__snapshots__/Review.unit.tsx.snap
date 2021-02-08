@@ -129,6 +129,7 @@ Array [
 }
 
 .c2 {
+  white-space: pre-line;
   color: #054752;
   font-size: 18px;
   font-weight: 400;
@@ -350,6 +351,7 @@ Array [
 }
 
 .c2 {
+  white-space: pre-line;
   color: #054752;
   font-size: 18px;
   font-weight: 400;
