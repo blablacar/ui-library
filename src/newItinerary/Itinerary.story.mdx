@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+
+import { Itinerary, Lines } from './index'
+import { Place } from './Place'
+import { Addon } from './Addon'
+import { Collapsible } from './Collapsible'
+import { CircleIcon } from '../icon/circleIcon'
+import { BulletTypes } from '../bullet'
+
+<Meta title="Widgets/NewItinerary" />
+
+# **NewItinerary**
+
+<Canvas>
+  <Story name="Default">
+    <Itinerary headline="Fri 22th June">
+      <Addon line={Lines.INACTIVE} label="Lille" />
+      <Place
+        time="09:00"
+        line={Lines.ACTIVE}
+        label="Paris"
+        subLabel="Gare de lyon"
+        bullet={<CircleIcon size={20} />} {/* Testing 20px icon for Boost feature */}
+      />
+      <Collapsible label="2 stopovers">
+        <Place
+          line={Lines.ACTIVE}
+          label="Paris"
+          subLabel="Gare de lyon"
+          bulletType={BulletTypes.SMALL}
+        />
+        <Place
+          line={Lines.ACTIVE}
+          label="Lyon"
+          subLabel="Gare Perrache"
+          bulletType={BulletTypes.SMALL}
+        />
+      </Collapsible>
+      <Place time="12:00" line={Lines.INACTIVE} label="Lyon" subLabel="Gare Perrache" />
+      <Addon label="Marseille" />
+    </Itinerary>
+  </Story>
+</Canvas>
+
+## Specifications ## Usage
+
+```jsx
+import { NewItinerary } from '@blablacar/ui-library/build/newItinerary'
+;<NewItinerary />
+```
+
+<ArgsTable of={NewItinerary} />
