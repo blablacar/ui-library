@@ -190,11 +190,11 @@ exports[`TextFieldsSection should render default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:first-child {
-  padding-right: 4px!important;
+  padding-right: 4px !important;
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:last-child {
-  padding-left: 4px!important;
+  padding-left: 4px !important;
 }
 
 @media (min-width:800px) {
@@ -446,11 +446,11 @@ exports[`TextFieldsSection should render non-default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:first-child {
-  padding-right: 4px!important;
+  padding-right: 4px !important;
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:last-child {
-  padding-left: 4px!important;
+  padding-left: 4px !important;
 }
 
 @media (min-width:800px) {
