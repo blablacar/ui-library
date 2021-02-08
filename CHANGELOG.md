@@ -2,7 +2,11 @@
 
 [...]
 
-- **[NEW]** `SeaSection` holds SEA Page layout
+- **[NEW]** `SeaPage` holds SEA Page layout
+- **[UPDATE]** Typographic elmements get `pre` formating
+
+# v47.1.0 (05/02/2021)
+
 - **[NEW]** Add `Marquee`
 - **[NEW]** Add `TripCardSample`
 
