@@ -6,6 +6,11 @@
 - **[UPDATE]** Normalize `TextField` vertically and horizontally
 [...]
 
+# v47.1.0 (05/02/2021)
+
+- **[NEW]** Add `Marquee`
+- **[NEW]** Add `TripCardSample`
+
 # v47.0.0 (02/02/2021)
 
 - **[BREAKING CHANGE]** New `illustration` prop replacing `image` in `EmptyState`
