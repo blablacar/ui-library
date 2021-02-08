@@ -6,6 +6,9 @@
 - **[UPDATE]** Normalize `TextField` vertically and horizontally
 [...]
 
+# v47.2.0 (08/02/2021)
+
+- **[NEW]** `SeaPage` holds SEA Page layout
 - **[UPDATE]** Typographic elmements get `pre` formating
 
 # v47.1.0 (05/02/2021)
