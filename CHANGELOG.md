@@ -6,6 +6,8 @@
 - **[UPDATE]** Normalize `TextField` vertically and horizontally
 [...]
 
+- **[UPDATE]** Typographic elmements get `pre` formating
+
 # v47.1.0 (05/02/2021)
 
 - **[NEW]** Add `Marquee`
