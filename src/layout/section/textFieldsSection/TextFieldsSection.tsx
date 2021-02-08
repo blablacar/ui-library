@@ -44,10 +44,10 @@ export const TextFieldsSection = styled(TextFieldsSectionDefinition)`
   }
 
   & .kirk-textfields-section-content .kirk-textField:first-child {
-    padding-right: ${space.s}!important;
+    padding-right: ${space.s} !important;
   }
 
   & .kirk-textfields-section-content .kirk-textField:last-child {
-    padding-left: ${space.s}!important;
+    padding-left: ${space.s} !important;
   }
 `
