@@ -48,11 +48,11 @@ const Media = styled.div<{ small: string; large: string }>`
 `
 
 const Heading = styled(TextDisplay1).attrs({ isInverted: true })`
-  padding: 2% ${space.xl};
+  padding: ${space.m} ${space.xl};
   text-align: center;
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    padding: 12% ${space.xl};
+    padding: ${space.xxl} ${space.xl};
 
     // Display 2
     font-size: ${font.xxl.size};
