@@ -1,6 +1,7 @@
 # Unreleased
 
 [...]
+- **[UPDATE]** Export `FilterBarSupplyInfo` type from `FilterBar`
 
 # v47.2.0 (08/02/2021)
 
