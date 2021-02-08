@@ -32,7 +32,8 @@ export * from './layout/section/illustratedSection'
 export * from './layout/section/mediaSection'
 export * from './layout/section/slideSection'
 export * from './layout/section/textFieldsSection'
-export * from './layout/section/seaSection'
+
+export * from './layout/pages/seaPage'
 
 export * from './loadingPage'
 export * from './itemAction'

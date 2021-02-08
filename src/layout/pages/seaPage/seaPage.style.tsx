@@ -60,7 +60,7 @@ const Heading = styled(TextDisplay1).attrs({ isInverted: true })`
   }
 `
 
-export const SeaSectionElements = {
+export const SeaPageElements = {
   Wrapper,
   Body,
   Media,
