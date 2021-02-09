@@ -9,7 +9,7 @@ import { StyledDropdownButton } from './DropdownButton.style'
 export type DropdownButtonProps = A11yProps &
   Readonly<{
     onClick: (event: React.MouseEvent<HTMLElement>) => void
-    children: JSX.Element | string
+    children: React.ReactNode
     open?: boolean
     className?: string
     iconPosition?: 'left' | 'right'
