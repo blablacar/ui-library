@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, radius, selectHeight, space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 export const StyledSelectField = styled.div`
-  & {
-    display: block;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  ${normalizeHorizontally};
+  padding: ${space.m} 0;
+
+  .kirk-selectField-background {
     position: relative;
-    width: 100%;
-    padding: 0 0 0 ${space.l};
-    box-sizing: border-box;
     color: ${color.midnightGreen};
     background-color: ${color.lightGray};
     border-radius: ${radius.l};
     border: solid 1px ${color.lightGray};
     box-shadow: none;
+    padding: 0 0 0 ${space.l};
   }
 
   & select {
