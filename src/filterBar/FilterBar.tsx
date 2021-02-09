@@ -11,16 +11,18 @@ import {
   StyledSupplyInfoItem,
 } from './FilterBar.style'
 
+export type FilterBarSupplyInfo = {
+  icon: React.ElementType
+  iconTitle: string
+  liquidity: React.ReactNode
+  ariaLabel: string
+  isDisabled?: boolean
+}
+
 export type FilterBarProps = Readonly<{
   ctaText: string
   onClick: (event: React.MouseEvent<HTMLElement>) => void
-  supplyInfo: Array<{
-    icon: React.ElementType
-    iconTitle: string
-    liquidity: number
-    ariaLabel: string
-    isDisabled?: boolean
-  }>
+  supplyInfo: Array<FilterBarSupplyInfo>
   isLoading?: boolean
 }>
 
