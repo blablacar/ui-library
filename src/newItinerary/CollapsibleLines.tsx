@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Bullet, BulletTypes } from '../bullet'
 import { Lines } from './Itinerary'
-import { LinePlacement } from './Line'
-import { StyledLine, StyledLineWrapper } from './Line.style'
+import { LinePlacement } from './internals/Line'
+import { StyledLine, StyledLineWrapper } from './internals/Line.style'
 
 export type LineProps = Readonly<{
   line: Lines

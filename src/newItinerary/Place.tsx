@@ -1,37 +1,30 @@
 import React, { Fragment } from 'react'
 
-import { BulletTypes } from '../bullet'
-import { TextCaption } from '../typography/caption'
+import { Bullet, BulletTypes } from '../bullet'
 import { TextTitleStrong } from '../typography/titleStrong'
-import { Lines } from './Itinerary'
-import { Line } from './Line'
-import { StyledLabel, StyledPlace } from './Place.style'
+import { StyledLabel, StyledSubLabel, StyledChevronIcon } from './Place.style'
+import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 
-export type PlaceProps = Readonly<{
-  line: Lines
+export type PlaceProps = Omit<ItineraryItemProps, 'children'> & Readonly<{
   label: string
   subLabel: string
-  time: string
-  bullet?: JSX.Element
-  bulletType?: BulletTypes
+  href?: JSX.Element
 }>
 
-export const Place = ({ line, label, subLabel, time, bullet, bulletType }: PlaceProps) => (
-  <StyledPlace>
-    <time dateTime={time} style={{ width: 52 }}>
-      <TextTitleStrong>{time}</TextTitleStrong>
-    </time>
+export const Place = ({ line, label, subLabel, time, bullet = <Bullet type={BulletTypes.DEFAULT}/>, href }: PlaceProps) => {
+  return (
+    <ItineraryItem line={line} time={time} bullet={bullet}>
+      <StyledLabel>
+        <TextTitleStrong>{label}</TextTitleStrong>
+        {subLabel && (
+          <Fragment>
+            <br />
+            <StyledSubLabel>{subLabel}</StyledSubLabel>
+          </Fragment>
+        )}
 
-    <Line line={line} bullet={bullet} bulletType={bulletType} />
-    <StyledLabel>
-      <TextTitleStrong>{label}</TextTitleStrong>
-      {subLabel && (
-        <Fragment>
-          <br />
-          {/** @TODO Override color of TextCaption */}
-          <TextCaption>{subLabel}</TextCaption>
-        </Fragment>
-      )}
-    </StyledLabel>
-  </StyledPlace>
-)
+        {href && <StyledChevronIcon/>}
+      </StyledLabel>
+    </ItineraryItem>
+  )
+}

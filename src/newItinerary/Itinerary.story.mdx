@@ -1,15 +1,33 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
-import { Itinerary, Lines } from './index'
-import { Place } from './Place'
-import { Addon } from './Addon'
-import { Collapsible } from './Collapsible'
+import { Itinerary, Lines, Place, Addon, Collapsible } from './index'
 import { CircleIcon } from '../icon/circleIcon'
 import { BulletTypes } from '../bullet'
 
 <Meta title="Widgets/NewItinerary" />
 
 # **NewItinerary**
+
+<Canvas>
+  <Story name="Ride Plan">
+    <Itinerary headline="Tue 28th september">
+      <Place
+        line={Lines.ACTIVE}
+        label="Paris"
+        subLabel="6 rue Ménars"
+        time="00:00"
+        href="https://blablacar.fr"
+      />
+      <Place
+        line={Lines.NONE}
+        label="Caen"
+        subLabel="Esplanade Jean-Marie Louvel"
+        time="03:00"
+        href="https://blablacar.fr"
+      />
+    </Itinerary>
+  </Story>
+</Canvas>
 
 <Canvas>
   <Story name="Default">
@@ -20,7 +38,7 @@ import { BulletTypes } from '../bullet'
         line={Lines.ACTIVE}
         label="Paris"
         subLabel="Gare de lyon"
-        bullet={<CircleIcon size={20} />} {/* Testing 20px icon for Boost feature */}
+        bullet={<CircleIcon size={20} />}
       />
       <Collapsible label="2 stopovers">
         <Place

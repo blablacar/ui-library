@@ -15,6 +15,7 @@ export const StyledLine = styled.div`
   background-color: ${(props: LineProps) => props.line};
   width: 4px;
   flex: 1;
+  height: calc(100% + 4px);
 
   ${(props: LineProps) =>
     props.placement === LinePlacement.TOP
@@ -25,4 +26,9 @@ export const StyledLine = styled.div`
     props.placement === LinePlacement.BOTTOM
       ? 'margin-top: 4px; border-radius: 4px 4px 0 0'
       : null};
+`
+
+export const StyledBullet = styled.div`
+   position: relative;
+   top: 4px;
 `

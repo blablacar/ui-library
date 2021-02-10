@@ -2,6 +2,7 @@ import React from 'react'
 
 import { TheVoice } from '../theVoice'
 import { StyledItinerary } from './Itinerary.style'
+import { NormalizeProps } from '../layout/layoutNormalizer'
 
 export enum Lines {
   NONE = 'none',
@@ -9,14 +10,15 @@ export enum Lines {
   ACTIVE = '#054752',
 }
 
-export type ItineraryProps = Readonly<{
+export type ItineraryProps = NormalizeProps & Readonly<{
   children: React.ReactNode
   headline?: string
+  small?: boolean
 }>
 
-export const Itinerary = ({ children, headline }: ItineraryProps) => (
-  <StyledItinerary>
+export const Itinerary = ({ children, headline, small = false }: ItineraryProps) => (
+  <StyledItinerary small={small}>
     {headline && <TheVoice>{headline}</TheVoice>}
-    {children}
+    <ul>{children}</ul>
   </StyledItinerary>
 )

@@ -22,7 +22,7 @@ export const Collapsible = ({ children, label }: CollapsibleProps) => {
     >
       <StyledWrapper>
         {/* We don't display time for collapsible */}
-        <div style={{ width: 52 }} aria-hidden="true" />
+        <time aria-hidden="true" />
 
         <CollapsibleLines line={Lines.ACTIVE} />
         <StyledLabel>

@@ -1,24 +1,17 @@
 import React from 'react'
 
-import { BulletTypes } from '../bullet'
 import { TextCaption } from '../typography/caption'
-import { StyledAddon, StyledLabel } from './Addon.style'
-import { Lines } from './Itinerary'
-import { Line } from './Line'
+import { StyledLabel } from './Addon.style'
+import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 
-export type AddonProps = Readonly<{
-  line: Lines
+export type AddonProps = Omit<ItineraryItemProps, 'children'> & Readonly<{
   label: string
 }>
 
 export const Addon = ({ line, label }: AddonProps) => (
-  <StyledAddon>
-    {/* Use isSmall props from Itinerary to display or not this empty div */}
-    <div style={{ width: 52 }} aria-hidden="true" />
-
-    <Line line={line} bulletType={BulletTypes.ADDON} />
+  <ItineraryItem line={line}>
     <StyledLabel>
       <TextCaption>{label}</TextCaption>
     </StyledLabel>
-  </StyledAddon>
+  </ItineraryItem>
 )
