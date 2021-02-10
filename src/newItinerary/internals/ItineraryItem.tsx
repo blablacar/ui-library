@@ -12,10 +12,11 @@ export type ItineraryItemProps = Readonly<{
   time?: string
   bullet?: JSX.Element
   children: React.ReactNode
+  minHeight?: number
 }>
 
-export const ItineraryItem = ({ time = null, line, children, bullet = <Bullet/> }: ItineraryItemProps) => (
-  <StyledItineraryItem>
+export const ItineraryItem = ({ time = null, line, children, bullet = <Bullet/>, minHeight = 32 }: ItineraryItemProps) => (
+  <StyledItineraryItem minHeight={minHeight}>
     <TextTitleStrong as="time" aria-hidden={isEmpty(time)}>{time}</TextTitleStrong>
     <Line line={line} bullet={bullet} />
     {children}

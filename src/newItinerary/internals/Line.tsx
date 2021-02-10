@@ -10,7 +10,7 @@ export type LineProps = Readonly<{
 
 export const Line = ({ line, bullet }: LineProps) => (
   <StyledLineWrapper aria-hidden="true">
-    <StyledLine line={line} />
+    <StyledLine line={line}/>
     {bullet && <StyledBullet line={line}>{bullet}</StyledBullet>}
   </StyledLineWrapper>
 )

@@ -8,6 +8,7 @@ export enum Lines {
   NONE = 'none',
   INACTIVE = '#DDD',
   ACTIVE = '#054752',
+  CONNECTION = 'connection',
   HIDDEN_STOPS_TOP = 'hidden_stops_top',
   HIDDEN_STOPS_BOTTOM = 'hidden_stops_bottom',
 }

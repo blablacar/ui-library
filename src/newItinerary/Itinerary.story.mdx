@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
-import { Itinerary, Lines, Place, Addon, HiddenStops, HiddenStop } from './index'
+import { Itinerary, Lines, Place, Addon, HiddenStops, HiddenStop, Connection } from './index'
 import { CircleIcon } from '../icon/circleIcon'
 import { BulletTypes } from '../bullet'
 
@@ -30,7 +30,7 @@ import { BulletTypes } from '../bullet'
 </Canvas>
 
 <Canvas>
-  <Story name="Default">
+  <Story name="Bus">
     <Itinerary headline="Fri 22th June">
       <Addon line={Lines.INACTIVE} label="Lille" />
       <Place
@@ -41,10 +41,17 @@ import { BulletTypes } from '../bullet'
       />
       <HiddenStops label="2 stopovers">
         <HiddenStop label="Paris" />
-        <HiddenStop label="Lyon" />
+        <HiddenStop label="Dijon" />
       </HiddenStops>
-      <Place time="12:00" line={Lines.INACTIVE} label="Lyon" subLabel="Gare Perrache" />
-      <Addon label="Marseille" />
+      <Place time="12:00" line={Lines.CONNECTION} label="Lyon" subLabel="Gare Perrache" />
+      <Connection label="Change of vehicle" />
+      <Place time="12:30" line={Lines.ACTIVE} label="Lyon" subLabel="Gare Perrache" />
+      <HiddenStops label="2 stopovers">
+        <HiddenStop label="Grenoble" />
+        <HiddenStop label="Aix-en-Provence" />
+      </HiddenStops>
+      <Place time="16:00" line={Lines.INACTIVE} label="Marseille" />
+      <Addon label="Montpellier" />
     </Itinerary>
   </Story>
 </Canvas>
