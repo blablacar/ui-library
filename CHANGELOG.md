@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** Adapt `SEAPage` to take header into account
+
 # v47.3.0 (09/02/2021)
 
 - **[UPDATE]** Normalize `AutoComplete` vertically and horizontally
