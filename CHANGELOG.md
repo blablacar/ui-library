@@ -1,7 +1,9 @@
 # Unreleased
 
-- **[UPDATE]** Add A11Y props to `DropdownButton` & `HamburgerButton`
 [...]
+
+- **[UPDATE]** Add A11Y props to `DropdownButton` & `HamburgerButton`
+- **[FIX]** Adapt `SEAPage` to take header into account
 
 # v47.3.0 (09/02/2021)
 
