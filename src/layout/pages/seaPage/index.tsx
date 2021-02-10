@@ -1,1 +1,1 @@
-export { SeaPage, SeaPageProps } from './seaPage'
+export { SeaPage, SeaPageProps, IllustrationType } from './seaPage'

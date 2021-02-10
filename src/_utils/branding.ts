@@ -127,6 +127,10 @@ export const componentSizes = {
   largeSectionWidth: '1016px',
   modalTopPadding: '70px',
   searchOverlayWidth: '375px',
+  headerHeight: {
+    small: '56px',
+    large: '72px',
+  },
 }
 
 export const modalSize = {

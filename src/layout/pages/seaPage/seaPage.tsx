@@ -2,7 +2,7 @@ import React from 'react'
 
 import { SeaPageElements } from './seaPage.style'
 
-type IllustrationType = { small: string; large: string }
+export type IllustrationType = { small: string; large: string }
 export type SeaPageProps = Readonly<{
   children: React.ReactNode
   heading: string

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font, responsiveBreakpoints, space } from '../../../_utils/branding'
+import { color, componentSizes, font, responsiveBreakpoints, space } from '../../../_utils/branding'
 import { TextDisplay1 } from '../../../typography/display1'
 
 // Common content width with used on the app: `componentSizes.searchOverlayWidth`
@@ -15,7 +15,8 @@ const Wrapper = styled.div`
   background-color: ${color.white};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-    height: 100vh;
+    // @note: Avoid scroll by taking into account Header (topBar)
+    height: calc(100vh - ${componentSizes.headerHeight.large});
     grid-template-areas: 'body media';
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -26,9 +27,11 @@ const Body = styled.div`
   align-self: center;
   justify-self: center;
   max-width: ${CONTENT_WIDTH};
+  margin-top: ${space.xl};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     grid-row-start: 1;
+    margin-top: 0;
   }
 `
 const Media = styled.div<{ small: string; large: string }>`
