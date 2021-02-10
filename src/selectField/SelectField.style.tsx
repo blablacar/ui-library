@@ -36,8 +36,9 @@ export const StyledSelectField = styled.div`
     outline: 0;
     box-shadow: none;
     border: none;
+    border-radius: ${radius.l};
     cursor: pointer;
-    z-index: 1;
+    z-index: 0;
   }
 
   /* Remove native select arrow on Internet Explorer 10 and 11  */

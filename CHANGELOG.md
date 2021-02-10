@@ -4,6 +4,8 @@
 
 - **[UPDATE]** Add A11Y props to `DropdownButton` & `HamburgerButton`
 - **[FIX]** Adapt `SEAPage` to take header into account
+- **[UPDATE]** Update `SelectField` display used for `PhoneField` error state
+- **[FIX]** Fix `PhoneField` error state display
 
 # v47.3.0 (09/02/2021)
 

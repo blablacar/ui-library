@@ -46,6 +46,22 @@ import { PhoneField } from './index'
   </Story>
 </Canvas>
 
+### Error
+
+<Canvas>
+  <Story name="Error">
+    <Paragraph id="phoneFieldLabel">Accessibility label</Paragraph>
+    <PhoneField
+      id="phoneFieldDefault"
+      name="phoneFieldDefault"
+      aria-labelledby="phoneFieldLabel"
+      onChange={() => {}}
+      error="Error example"
+    />
+  </Story>
+</Canvas>
+
+
 ## Specifications
 
 This field consists of the input select field and regular input field.
@@ -91,6 +107,7 @@ import { PhoneField } from '@blablacar/ui-library/build/phoneField'
     }}
     isInline={false}
     onChange={() => {}}
+    error='Error example'
   />
 ```
 
