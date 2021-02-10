@@ -2,6 +2,16 @@
 
 [...]
 
+# v47.3.0 (09/02/2021)
+
+- **[UPDATE]** Normalize `AutoComplete` vertically and horizontally
+- **[UPDATE]** Normalize `PhoneField` vertically and horizontally
+- **[UPDATE]** Normalize `SelectField` vertically and horizontally
+- **[UPDATE]** Normalize `TextField` vertically and horizontally
+- **[UPDATE]** Export `FilterBarSupplyInfo` type from `FilterBar`
+
+# v47.2.0 (08/02/2021)
+
 - **[NEW]** `SeaPage` holds SEA Page layout
 - **[UPDATE]** Typographic elmements get `pre` formating
 

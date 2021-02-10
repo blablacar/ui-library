@@ -24,6 +24,7 @@ const TextFieldsSectionDefinition = (props: TextFieldsSectionProps) => {
       tagName={tagName}
       className={className}
       contentClassName="kirk-textfields-section-content"
+      noHorizontalSpacing
     >
       {children}
     </BaseSection>
@@ -38,16 +39,15 @@ export const TextFieldsSection = styled(TextFieldsSectionDefinition)`
   }
 
   & .kirk-textfields-section-content .kirk-textField {
-    padding: 0 ${space.s};
     flex-grow: 1;
     flex: 1;
   }
 
   & .kirk-textfields-section-content .kirk-textField:first-child {
-    padding: 0 ${space.s} 0 0;
+    padding-right: ${space.s} !important;
   }
 
   & .kirk-textfields-section-content .kirk-textField:last-child {
-    padding: 0 0 0 ${space.s};
+    padding-left: ${space.s} !important;
   }
 `

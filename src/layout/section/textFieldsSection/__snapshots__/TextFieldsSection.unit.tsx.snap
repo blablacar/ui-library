@@ -4,6 +4,11 @@ exports[`TextFieldsSection should render default textField section 1`] = `
 .c2 {
   position: relative;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
 }
 
 .c2 .kirk-textField-wrapper {
@@ -175,7 +180,6 @@ exports[`TextFieldsSection should render default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField {
-  padding: 0 4px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -186,11 +190,11 @@ exports[`TextFieldsSection should render default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:first-child {
-  padding: 0 4px 0 0;
+  padding-right: 4px !important;
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:last-child {
-  padding: 0 0 0 4px;
+  padding-left: 4px !important;
 }
 
 @media (min-width:800px) {
@@ -210,7 +214,7 @@ exports[`TextFieldsSection should render default textField section 1`] = `
   role="presentation"
 >
   <div
-    className="section-content kirk-textfields-section-content"
+    className="section-content kirk-textfields-section-content section-content--noHorizontalSpacing"
   >
     <div
       className="kirk-textField c2"
@@ -256,6 +260,11 @@ exports[`TextFieldsSection should render non-default textField section 1`] = `
 .c2 {
   position: relative;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
 }
 
 .c2 .kirk-textField-wrapper {
@@ -427,7 +436,6 @@ exports[`TextFieldsSection should render non-default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField {
-  padding: 0 4px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -438,11 +446,11 @@ exports[`TextFieldsSection should render non-default textField section 1`] = `
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:first-child {
-  padding: 0 4px 0 0;
+  padding-right: 4px !important;
 }
 
 .c0 .kirk-textfields-section-content .kirk-textField:last-child {
-  padding: 0 0 0 4px;
+  padding-left: 4px !important;
 }
 
 @media (min-width:800px) {
@@ -462,7 +470,7 @@ exports[`TextFieldsSection should render non-default textField section 1`] = `
   role="presentation"
 >
   <span
-    className="section-content kirk-textfields-section-content"
+    className="section-content kirk-textfields-section-content section-content--noHorizontalSpacing"
   >
     <div
       className="kirk-textField c2"

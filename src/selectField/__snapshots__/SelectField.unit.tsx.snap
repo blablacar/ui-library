@@ -23,15 +23,23 @@ exports[`SelectField should have the expected markup in the DOM 1`] = `
 
 .c0 {
   display: block;
-  position: relative;
   width: 100%;
-  padding: 0 0 0 16px;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
+}
+
+.c0 .kirk-selectField-background {
+  position: relative;
   color: #054752;
   background-color: #EDEDED;
   border-radius: 16px;
   border: solid 1px #EDEDED;
   box-shadow: none;
+  padding: 0 0 0 16px;
 }
 
 .c0 select {
@@ -85,45 +93,49 @@ exports[`SelectField should have the expected markup in the DOM 1`] = `
 <div
   className="kirk-selectField c0"
 >
-  <select
-    defaultValue="1"
-    name="selectFieldName"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value="1"
+  <div
+    className="kirk-selectField-background"
   >
-    <option
-      aria-label="value 1"
+    <select
+      defaultValue="1"
+      name="selectFieldName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
       value="1"
     >
-      val 1
-    </option>
-    <option
-      value="2"
+      <option
+        aria-label="value 1"
+        value="1"
+      >
+        val 1
+      </option>
+      <option
+        value="2"
+      >
+        value 2
+      </option>
+    </select>
+    <svg
+      aria-hidden={true}
+      className="kirk-icon c1"
+      height={24}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
     >
-      value 2
-    </option>
-  </select>
-  <svg
-    aria-hidden={true}
-    className="kirk-icon c1"
-    height={24}
-    viewBox="0 0 24 24"
-    width={24}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    
-    <polyline
-      fill="none"
-      points="9 18 15 12 9 6"
-      stroke="#708C91"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeMiterlimit="10"
-      strokeWidth="2"
-      transform="rotate(90 12 12)"
-    />
-  </svg>
+      
+      <polyline
+        fill="none"
+        points="9 18 15 12 9 6"
+        stroke="#708C91"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
+        strokeWidth="2"
+        transform="rotate(90 12 12)"
+      />
+    </svg>
+  </div>
 </div>
 `;

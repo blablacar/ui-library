@@ -3,6 +3,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { Button, ButtonStatus } from '../button'
 import { SearchIcon } from '../icon'
 import { BaseSection } from '../layout/section/baseSection'
+import { Paragraph } from '../paragraph'
 import { AutoCompleteExample } from './AutoCompleteExample'
 import { AutoComplete } from './index'
 
@@ -14,10 +15,10 @@ import { AutoComplete } from './index'
 
 <Canvas>
   <Story name="Default">
-    <BaseSection>
-      <p>
+    <BaseSection noHorizontalSpacing>
+      <Paragraph>
         Type <code>Paris</code> to test auto-completion.
-      </p>
+      </Paragraph>
       <AutoCompleteExample />
     </BaseSection>
   </Story>
@@ -27,10 +28,10 @@ import { AutoComplete } from './index'
 When `defaultValue` is set and `searchOnMount` is `true` then the results are shown when the component is mounted.
 <Canvas>
   <Story name="Default value">
-    <BaseSection>
-      <p>
+    <BaseSection noHorizontalSpacing>
+      <Paragraph>
         Type <code>Paris</code> to test auto-completion.
-      </p>
+      </Paragraph>
       <AutoCompleteExample defaultValue="Paris" />
     </BaseSection>
   </Story>
@@ -41,10 +42,10 @@ To configure the threshold use the `busyTimeout` props which takes a number of m
 
 <Canvas>
   <Story name="With busy state">
-    <BaseSection>
-      <p>
+    <BaseSection noHorizontalSpacing>
+      <Paragraph>
         Type <code>Paris</code> to test auto-completion.
-      </p>
+      </Paragraph>
       <AutoCompleteExample searchForItemsDelay={1500} />
     </BaseSection>
   </Story>
@@ -55,10 +56,10 @@ To display default items gives a list of `AutocompleteItem` to the `renderEmptyS
 
 <Canvas>
   <Story name="With empty search">
-    <BaseSection>
-      <p>
+    <BaseSection noHorizontalSpacing>
+      <Paragraph>
         Type <code>Paris</code> to test auto-completion.
-      </p>
+      </Paragraph>
       <AutoCompleteExample
         renderEmptySearch={[
           { id: '1', label: 'Get my location', labelInfo: '' },
@@ -74,7 +75,7 @@ Set a text or a React element to the `error` props.
 
 <Canvas>
   <Story name="With errors">
-    <BaseSection>
+    <BaseSection noHorizontalSpacing>
       <AutoCompleteExample defaultValue="Parix" error="Oups something went wrong" />
     </BaseSection>
   </Story>
