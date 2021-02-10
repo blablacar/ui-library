@@ -21,8 +21,7 @@ export const HiddenStops = ({ children, label }: HiddenStopsProps) => {
       {hidden && (
         <StyledWrapper>
           <time aria-hidden="true" />
-          <Line line={Lines.HIDDEN_STOPS_TOP} bullet={<Bullet type={BulletTypes.DEFAULT} />} />
-          <Line line={Lines.HIDDEN_STOPS_BOTTOM} bullet={null} />
+          <Line line={Lines.HIDDEN_STOPS} bullet={<Bullet type={BulletTypes.DEFAULT} />} />
           <StyledStopsCount>{label}</StyledStopsCount>
         </StyledWrapper>
       )}

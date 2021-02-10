@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color } from '../_utils/branding'
+import { color, space } from '../_utils/branding'
 import { TextBody } from '../typography/body'
 
 export const StyledHiddenStops = styled.li`
@@ -11,10 +11,10 @@ export const StyledWrapper = styled.div`
   display: flex;
 `
 export const StyledLabel = styled.div`
-  padding-left: 8px;
 `
 
 export const StyledStopsCount = styled(TextBody)`
+  padding: ${space.m} 0;
   color: ${color.blue};
   cursor: pointer;
 `

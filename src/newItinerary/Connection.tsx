@@ -11,7 +11,7 @@ export type ConnectionProps = Readonly<{
 
 // FIXME don't hardcode the height here. Make improvements in ItineraryItem
 export const Connection = ({ label }: ConnectionProps) => (
-  <ItineraryItem line={Lines.CONNECTION} bullet={null} minHeight={56}>
+  <ItineraryItem line={Lines.CONNECTION} bullet={null}>
     <StyledConnection><ConnectionIcon/>{label}</StyledConnection>
   </ItineraryItem>
 )

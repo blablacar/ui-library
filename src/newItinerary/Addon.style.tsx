@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
+import { space } from '../_utils/branding'
+
 export const StyledLabel = styled.div`
-  flex: 1;
-  padding-left: 8px;
-  padding-bottom: 16px;
+  padding: ${space.m} 0;
 `

@@ -6,8 +6,7 @@ import { ChevronIcon } from '../icon/chevronIcon'
 
 export const StyledContent = styled.div`
   flex: 1;
-  padding-left: 8px;
-  padding-bottom: 16px;
+  padding: ${space.m} 0;
 `
 
 export const StyledLabel = styled.div`
