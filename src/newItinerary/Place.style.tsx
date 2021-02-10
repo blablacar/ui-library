@@ -4,11 +4,14 @@ import { color, space } from '../_utils/branding'
 import { TextCaption } from '../typography/caption'
 import { ChevronIcon } from '../icon/chevronIcon'
 
-export const StyledLabel = styled.div`
-  position: relative;
+export const StyledContent = styled.div`
   flex: 1;
   padding-left: 8px;
   padding-bottom: 16px;
+`
+
+export const StyledLabel = styled.div`
+  position: relative;
 `
 
 export const StyledSubLabel = styled(TextCaption)`

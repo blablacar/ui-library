@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
-import { Itinerary, Lines, Place, Addon, Collapsible } from './index'
+import { Itinerary, Lines, Place, Addon, HiddenStops, HiddenStop } from './index'
 import { CircleIcon } from '../icon/circleIcon'
 import { BulletTypes } from '../bullet'
 
@@ -38,22 +38,11 @@ import { BulletTypes } from '../bullet'
         line={Lines.ACTIVE}
         label="Paris"
         subLabel="Gare de lyon"
-        bullet={<CircleIcon size={20} />}
       />
-      <Collapsible label="2 stopovers">
-        <Place
-          line={Lines.ACTIVE}
-          label="Paris"
-          subLabel="Gare de lyon"
-          bulletType={BulletTypes.SMALL}
-        />
-        <Place
-          line={Lines.ACTIVE}
-          label="Lyon"
-          subLabel="Gare Perrache"
-          bulletType={BulletTypes.SMALL}
-        />
-      </Collapsible>
+      <HiddenStops label="2 stopovers">
+        <HiddenStop label="Paris" />
+        <HiddenStop label="Lyon" />
+      </HiddenStops>
       <Place time="12:00" line={Lines.INACTIVE} label="Lyon" subLabel="Gare Perrache" />
       <Addon label="Marseille" />
     </Itinerary>

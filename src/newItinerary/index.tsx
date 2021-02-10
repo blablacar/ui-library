@@ -1,4 +1,5 @@
 export { Itinerary, ItineraryProps, Lines } from './Itinerary'
 export { Addon } from './Addon'
-export { Collapsible } from './Collapsible'
+export { HiddenStops } from './HiddenStops'
 export { Place } from './Place'
+export { HiddenStop } from './HiddenStop'

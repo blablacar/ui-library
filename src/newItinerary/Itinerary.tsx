@@ -8,6 +8,8 @@ export enum Lines {
   NONE = 'none',
   INACTIVE = '#DDD',
   ACTIVE = '#054752',
+  HIDDEN_STOPS_TOP = 'hidden_stops_top',
+  HIDDEN_STOPS_BOTTOM = 'hidden_stops_bottom',
 }
 
 export type ItineraryProps = NormalizeProps & Readonly<{
