@@ -11,8 +11,8 @@ export const StyledAvatar = styled.div`
   height: 48px;
 
   &.kirk-avatar--small {
-    height: 40px;
-    width: 40px;
+    height: 24px;
+    width: 24px;
   }
 
   &.kirk-avatar--medium {

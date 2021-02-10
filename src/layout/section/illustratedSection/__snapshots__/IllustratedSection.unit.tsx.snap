@@ -11,8 +11,8 @@ exports[`IllustratedSection should render an IllustratedSection section with an 
 }
 
 .c2.kirk-avatar--small {
-  height: 40px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
 }
 
 .c2.kirk-avatar--medium {
