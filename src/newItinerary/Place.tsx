@@ -2,7 +2,6 @@ import React from 'react'
 
 import { Bullet, BulletTypes } from '../bullet'
 import { Proximity } from '../proximity'
-import { TextTitleStrong } from '../typography/titleStrong'
 import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 import {
   StyledChevronIcon,
@@ -31,12 +30,11 @@ export const Place = ({
   proximity,
   highlighted = false,
 }: PlaceProps) => (
-  <ItineraryItem line={line} time={time} bullet={bullet}>
+  <ItineraryItem line={line} time={time} bullet={bullet} href={href}>
     <StyledContent>
       <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
       {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}
       {proximity && <StyledProximity>{proximity}</StyledProximity>}
-
       {href && <StyledChevronIcon />}
     </StyledContent>
   </ItineraryItem>

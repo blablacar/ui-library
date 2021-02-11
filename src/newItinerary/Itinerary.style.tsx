@@ -9,9 +9,8 @@ export const StyledItinerary = styled.div<ItineraryProps>`
     list-style: none;
   }
 
-  // On li for now, but it probably need to be on <button> or <a>
-  // to have a proper hover on the clickable element
-  > ul > li {
+  // On li sub-element to have a proper hover on clickable elements
+  > ul > li > * {
     ${normalizeHorizontally};
   }
 
