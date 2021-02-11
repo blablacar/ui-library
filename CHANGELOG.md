@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Added `display` prop to `Proximity`
 - **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
 [...]
 - **[NEW]** Add `Marquee`
