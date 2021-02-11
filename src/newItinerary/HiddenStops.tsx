@@ -17,20 +17,14 @@ export const HiddenStops = ({ children, label }: HiddenStopsProps) => {
   const [hidden, setHidden] = useState(true)
 
   return (
-    <StyledHiddenStops onClick={(): void => setHidden(!hidden)} role="button" aria-expanded={!hidden}>
-      {hidden && (
-        <StyledWrapper>
-          <time aria-hidden="true" />
-          <Line line={Lines.HIDDEN_STOPS} bullet={<Bullet type={BulletTypes.DEFAULT} />} />
-          <StyledStopsCount>{label}</StyledStopsCount>
-        </StyledWrapper>
-      )}
+    <StyledHiddenStops onClick={(): void => setHidden(!hidden)} role="button" aria-expanded={!hidden} stops={children.length}>
+      <StyledWrapper>
+        <time aria-hidden="true" />
+        <Line line={Lines.HIDDEN_STOPS} bullet={<Bullet type={BulletTypes.DEFAULT} />} />
+        <StyledStopsCount>{label}</StyledStopsCount>
+      </StyledWrapper>
 
-      {!hidden && (
-        <ul>
-          {children}
-        </ul>
-      )}
+      <ul>{children}</ul>
     </StyledHiddenStops>
   )
 }
