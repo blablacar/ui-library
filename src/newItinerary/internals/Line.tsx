@@ -10,7 +10,7 @@ export type LineProps = Readonly<{
 }>
 
 export const Line = ({ line, bullet }: LineProps) => {
-
+  // For icons, let's force the size to 16px.
   const icon = (bullet && bullet.type !== Bullet)
     ? cloneElement(bullet, { ...bullet.props, size: 16 })
     : bullet

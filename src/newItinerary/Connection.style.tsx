@@ -10,6 +10,6 @@ export const StyledConnection = styled(TextCaption)`
   align-items: center;
 
   svg {
-    margin-right: 6px;
+    margin-right: ${space.s};
   }
 `

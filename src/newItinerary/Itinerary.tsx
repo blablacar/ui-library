@@ -6,15 +6,14 @@ import { NormalizeProps } from '../layout/layoutNormalizer'
 
 export enum Lines {
   NONE = 'none',
-  INACTIVE = '#DDD',
-  ACTIVE = '#054752',
+  INACTIVE = 'inactive',
+  ACTIVE = 'active',
   CONNECTION = 'connection',
   HIDDEN_STOPS = 'hidden_stops_top',
-  HIDDEN_STOPS_BOTTOM = 'hidden_stops_bottom',
 }
 
 export type ItineraryProps = NormalizeProps & Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode[]
   headline?: string
   small?: boolean
 }>

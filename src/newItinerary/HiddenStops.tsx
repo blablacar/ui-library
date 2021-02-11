@@ -1,4 +1,4 @@
-import React, { Fragment, useState, cloneElement } from 'react'
+import React, { useState } from 'react'
 
 import { StyledHiddenStops, StyledWrapper, StyledStopsCount } from './HiddenStops.style'
 import { Lines } from './Itinerary'
@@ -11,8 +11,6 @@ export type HiddenStopsProps = Readonly<{
   label: string
 }>
 
-// FIXME animation
-// FIXME filter to only allow HiddenStop
 export const HiddenStops = ({ children, label }: HiddenStopsProps) => {
   const [hidden, setHidden] = useState(true)
 
