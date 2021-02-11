@@ -1,6 +1,9 @@
 # Unreleased
 
 [...]
+
+# v47.4.1 (11/02/2021)
+
 - **[UPDATE]** Change size of `<Avatar isSmall />`
 
 # v47.4.0 (11/02/2021)
