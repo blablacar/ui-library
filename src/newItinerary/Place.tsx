@@ -18,6 +18,7 @@ export type PlaceProps = Omit<ItineraryItemProps, 'children'> &
     subLabel: string
     href?: JSX.Element
     proximity?: typeof Proximity
+    highlighted?: boolean
   }>
 
 export const Place = ({
@@ -28,16 +29,15 @@ export const Place = ({
   bullet = <Bullet type={BulletTypes.DEFAULT} />,
   href,
   proximity,
+  highlighted = false,
 }: PlaceProps) => (
   <ItineraryItem line={line} time={time} bullet={bullet}>
     <StyledContent>
-      <StyledLabel>
-        <TextTitleStrong>{label}</TextTitleStrong>
-        {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}
-        {proximity && <StyledProximity>{proximity}</StyledProximity>}
+      <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
+      {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}
+      {proximity && <StyledProximity>{proximity}</StyledProximity>}
 
-        {href && <StyledChevronIcon />}
-      </StyledLabel>
+      {href && <StyledChevronIcon />}
     </StyledContent>
   </ItineraryItem>
 )

@@ -1,11 +1,15 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
+import { color } from '../_utils/branding'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
+import { MeetingPointIcon } from '../icon/meetingPoint'
 import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
 
-# **NewItinerary**
+# **Itinerary**
+
+### Search result
 
 <Canvas>
   <Story name="Search">
@@ -25,6 +29,8 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
     </Itinerary>
   </Story>
 </Canvas>
+
+### Ride details - carpooling
 
 <Canvas>
   <Story name="Ride details - Carpool">
@@ -47,6 +53,8 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
     </Itinerary>
   </Story>
 </Canvas>
+
+### Ride details - bus
 
 <Canvas>
   <Story name="Ride details - Bus">
@@ -75,6 +83,8 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
   </Story>
 </Canvas>
 
+### Ride Plan
+
 <Canvas>
   <Story name="Carpooling Ride Plan">
     <Itinerary headline="Tue 28th september">
@@ -90,6 +100,32 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
         label="Caen"
         subLabel="Esplanade Jean-Marie Louvel"
         time="03:00"
+        href="https://blablacar.fr"
+      />
+    </Itinerary>
+  </Story>
+</Canvas>
+
+### Booking request - boost version
+
+<Canvas>
+  <Story name="Booking request boost">
+    <Itinerary>
+      <Addon label="Caen" line={Lines.INACTIVE} />
+      <Place
+        line={Lines.ACTIVE}
+        label="Evreux"
+        subLabel="67 avenue du président Wilson"
+        time="12:00"
+        href="https://blablacar.fr"
+        bullet={<MeetingPointIcon iconColor={color.blue}/>}
+        highlighted
+      />
+      <Place
+        line={Lines.NONE}
+        label="Paris"
+        subLabel="6 rue ménars"
+        time="17:00"
         href="https://blablacar.fr"
       />
     </Itinerary>

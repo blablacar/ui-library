@@ -15,6 +15,6 @@ export const StyledProximity = styled.div`
 `
 
 export const StyledCaption = styled(TextCaption)<{ color: string }>`
-  padding-left: ${space.m};
+  padding-left: ${space.s};
   color: ${props => props.color};
 `

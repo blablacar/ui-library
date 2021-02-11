@@ -51,4 +51,10 @@ export const StyledLine = styled.div<LineProps>`
 export const StyledBullet = styled.div`
    position: absolute;
    top: 4px;
+
+   svg {
+     position: relative;
+     top: -3px;
+     left: -3px;
+   }
 `
