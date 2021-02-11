@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
 [...]
 - **[NEW]** Add `Marquee`
 - **[NEW]** Add `TripCardSample`

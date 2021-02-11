@@ -365,7 +365,7 @@ exports[`Should render proximity with text 1`] = `
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
-  padding-left: 8px;
+  padding-left: 4px;
   color: #5DD167;
 }
 
