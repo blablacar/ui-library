@@ -3,6 +3,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { color } from '../_utils/branding'
 import { MeetingPointIcon } from '../icon/meetingPoint'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
+import { Stepper, StepperDisplay } from '../stepper'
 import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
@@ -145,6 +146,22 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
       />
       <Addon label="Paris" />
     </Itinerary>
+  </Story>
+</Canvas>
+
+### Price choice during publication
+
+<Canvas>
+  <Story name="Price choice during publication">
+    <Stepper
+      display={StepperDisplay.SMALL}
+      leftAddon={(
+        <Itinerary small>
+          <Place label="Paris" />
+          <Place label="Nantes" />
+        </Itinerary>
+      )}
+    />
   </Story>
 </Canvas>
 
