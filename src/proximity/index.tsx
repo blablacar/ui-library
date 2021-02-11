@@ -1,1 +1,1 @@
-export { Proximity, ProximityProps, Distances } from './Proximity'
+export { Proximity, ProximityDisplay, ProximityProps, Distances } from './Proximity'

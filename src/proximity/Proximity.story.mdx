@@ -1,16 +1,27 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { Distances, Proximity } from './index'
+import { Distances, Proximity, ProximityDisplay } from './index'
 
 <Meta title="Widgets/Proximity" />
 
 # **Proximity**
 
 <Canvas>
-  <Story name="Default">
+  <Story name="Pills">
     <Proximity
       value={Distances.FAR}
       title="Distance to your position"
+      display={ProximityDisplay.PILLS}
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Distance">
+    <Proximity
+      value={Distances.MIDDLE}
+      title="3.2 km from your departure"
+      display={ProximityDisplay.LABEL}
     />
   </Story>
 </Canvas>
@@ -20,11 +31,12 @@ import { Distances, Proximity } from './index'
 ## Usage
 
 ```jsx
-import { Distances, Proximity } from '@blablacar/ui-library/build/proximity'
+import { Distances, Proximity, ProximityDisplay } from '@blablacar/ui-library/build/proximity'
 
 <Proximity
   value={Distances.FAR}
   title="Distance to your position"
+  display={ProximityDisplay.PILLS}
 />
 
 ```

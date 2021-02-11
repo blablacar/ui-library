@@ -42,12 +42,16 @@ exports[`Should highlight CLOSE and have a title 1`] = `
 }
 
 .c0 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 0;
-}
-
-.c0 svg {
-  margin-top: 4px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 4px;
 }
 
 .c0 svg + svg {
@@ -146,12 +150,16 @@ exports[`Should highlight FAR and have a title 1`] = `
 }
 
 .c0 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 0;
-}
-
-.c0 svg {
-  margin-top: 4px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 4px;
 }
 
 .c0 svg + svg {
@@ -250,12 +258,16 @@ exports[`Should highlight MIDDLE without a title 1`] = `
 }
 
 .c0 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 0;
-}
-
-.c0 svg {
-  margin-top: 4px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 4px;
 }
 
 .c0 svg + svg {
@@ -307,5 +319,78 @@ exports[`Should highlight MIDDLE without a title 1`] = `
       fill="#EDEDED"
     />
   </svg>
+</div>
+`;
+
+exports[`Should render proximity with text 1`] = `
+.c1 {
+  fill: #5DD167;
+}
+
+.c1.kirk-icon-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.c1.kirk-icon-shadowed {
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+.c1 .kirk-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.c0 svg + svg {
+  margin-left: 4px;
+}
+
+.c2 {
+  color: #708C91;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  padding-left: 8px;
+  color: #5DD167;
+}
+
+<div
+  className="kirk-proximity c0"
+>
+  <svg
+    aria-hidden={true}
+    className="kirk-icon c1"
+    height="20px"
+    viewBox="0 0 20 20"
+    width="20px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    
+    <path
+      d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm1.202-14.863a1.568 1.568 0 1 0 0-3.136 1.568 1.568 0 0 0 0 3.136zm.94 1.868h-.005a1.568 1.568 0 0 0-1.563-1.554h-.007c-2.252 0-3.896 1.32-4.288 2.692L5.5 11.051H6.926l.723-2.72 1.166-.825-.874 3.264L6.003 18h1.569l1.83-5.661 1.526 1.269.314 4.392h1.528v-5.02l-1.757-1.756.473-1.767a3.753 3.753 0 0 0 2.853 1.313h.314V9.515a2.51 2.51 0 0 1-2.51-2.51z"
+      fill="#5DD167"
+    />
+  </svg>
+  <span
+    className="c2"
+    color="#5DD167"
+  >
+    Pretty close to your place
+  </span>
 </div>
 `;

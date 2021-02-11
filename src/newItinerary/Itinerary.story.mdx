@@ -1,36 +1,55 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { Itinerary, Lines, Place, Addon, HiddenStops, HiddenStop, Connection } from './index'
-import { CircleIcon } from '../icon/circleIcon'
-import { BulletTypes } from '../bullet'
+import { Distances, Proximity, ProximityDisplay } from '../proximity'
+import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
 
 # **NewItinerary**
 
 <Canvas>
-  <Story name="Ride Plan">
-    <Itinerary headline="Tue 28th september">
+  <Story name="Search">
+    <Itinerary>
       <Place
         line={Lines.ACTIVE}
-        label="Paris"
-        subLabel="6 rue Ménars"
-        time="00:00"
-        href="https://blablacar.fr"
+        label="Villepinte"
+        time="12:50"
+        proximity={<Proximity value={Distances.FAR} title="You'll have to take transports" />}
       />
       <Place
         line={Lines.NONE}
-        label="Caen"
-        subLabel="Esplanade Jean-Marie Louvel"
-        time="03:00"
-        href="https://blablacar.fr"
+        label="Lyon"
+        time="18:00"
+        proximity={<Proximity value={Distances.CLOSE} title="You'll get there by foot" />}
       />
     </Itinerary>
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Bus">
+  <Story name="Ride details - Carpool">
+    <Itinerary>
+      <Place
+        line={Lines.ACTIVE}
+        label="Villepinte"
+        time="12:50"
+        proximity={<Proximity value={Distances.FAR} title="3.7 km from your departure" display={ProximityDisplay.LABEL} />}
+        href="https://blablacar.fr"
+      />
+      <Place
+        line={Lines.INACTIVE}
+        label="Lyon"
+        time="18:00"
+        proximity={<Proximity value={Distances.CLOSE} title="400m from your arrival" display={ProximityDisplay.LABEL} />}
+        href="https://blablacar.fr"
+      />
+      <Addon label="Marseille" />
+    </Itinerary>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Ride details - Bus">
     <Itinerary headline="Fri 22th June">
       <Addon line={Lines.INACTIVE} label="Lille" />
       <Place
@@ -56,11 +75,34 @@ import { BulletTypes } from '../bullet'
   </Story>
 </Canvas>
 
-## Specifications ## Usage
+<Canvas>
+  <Story name="Carpooling Ride Plan">
+    <Itinerary headline="Tue 28th september">
+      <Place
+        line={Lines.ACTIVE}
+        label="Paris"
+        subLabel="6 rue Ménars"
+        time="00:00"
+        href="https://blablacar.fr"
+      />
+      <Place
+        line={Lines.NONE}
+        label="Caen"
+        subLabel="Esplanade Jean-Marie Louvel"
+        time="03:00"
+        href="https://blablacar.fr"
+      />
+    </Itinerary>
+  </Story>
+</Canvas>
+
+## Specifications
+
+## Usage
 
 ```jsx
-import { NewItinerary } from '@blablacar/ui-library/build/newItinerary'
-;<NewItinerary />
+import { Itinerary } from '@blablacar/ui-library/build/newItinerary'
+;<Itinerary />
 ```
 
-<ArgsTable of={NewItinerary} />
+<ArgsTable of={Itinerary} />

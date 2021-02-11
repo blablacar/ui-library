@@ -1,32 +1,43 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { Bullet, BulletTypes } from '../bullet'
+import { Proximity } from '../proximity'
 import { TextTitleStrong } from '../typography/titleStrong'
-import { StyledLabel, StyledSubLabel, StyledChevronIcon, StyledContent } from './Place.style'
 import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
+import {
+  StyledChevronIcon,
+  StyledContent,
+  StyledLabel,
+  StyledProximity,
+  StyledSubLabel,
+} from './Place.style'
 
-export type PlaceProps = Omit<ItineraryItemProps, 'children'> & Readonly<{
-  label: string
-  subLabel: string
-  href?: JSX.Element
-}>
+export type PlaceProps = Omit<ItineraryItemProps, 'children'> &
+  Readonly<{
+    label: string
+    subLabel: string
+    href?: JSX.Element
+    proximity?: typeof Proximity
+  }>
 
-export const Place = ({ line, label, subLabel, time, bullet = <Bullet type={BulletTypes.DEFAULT}/>, href }: PlaceProps) => {
-  return (
-    <ItineraryItem line={line} time={time} bullet={bullet}>
-      <StyledContent>
-        <StyledLabel>
-          <TextTitleStrong>{label}</TextTitleStrong>
-          {subLabel && (
-            <Fragment>
-              <br />
-              <StyledSubLabel>{subLabel}</StyledSubLabel>
-            </Fragment>
-          )}
+export const Place = ({
+  line,
+  label,
+  subLabel,
+  time,
+  bullet = <Bullet type={BulletTypes.DEFAULT} />,
+  href,
+  proximity,
+}: PlaceProps) => (
+  <ItineraryItem line={line} time={time} bullet={bullet}>
+    <StyledContent>
+      <StyledLabel>
+        <TextTitleStrong>{label}</TextTitleStrong>
+        {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}
+        {proximity && <StyledProximity>{proximity}</StyledProximity>}
 
-          {href && <StyledChevronIcon/>}
-        </StyledLabel>
-      </StyledContent>
-    </ItineraryItem>
-  )
-}
+        {href && <StyledChevronIcon />}
+      </StyledLabel>
+    </StyledContent>
+  </ItineraryItem>
+)
