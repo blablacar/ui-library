@@ -1,8 +1,8 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { color } from '../_utils/branding'
-import { Distances, Proximity, ProximityDisplay } from '../proximity'
 import { MeetingPointIcon } from '../icon/meetingPoint'
+import { Distances, Proximity, ProximityDisplay } from '../proximity'
 import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
@@ -118,7 +118,7 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
         subLabel="67 avenue du président Wilson"
         time="12:00"
         href="https://blablacar.fr"
-        bullet={<MeetingPointIcon iconColor={color.blue}/>}
+        bullet={<MeetingPointIcon iconColor={color.blue} />}
         highlighted
       />
       <Place
@@ -133,6 +133,32 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
 </Canvas>
 
 ## Specifications
+
+Use it to show existing rides/bookings.
+Never use it to show a member’s travel intent.
+
+### Behaviour
+
+- ✅ Can be clickable
+- ℹ️ Unlimited number of lines of text
+- 🖊 No editable text. The text in this component is pulled directly from the database.
+
+### Hidden Stops
+
+For bus trips we’ll show the tappable number of stops in between DEPARTURE/DESTINATION itinerary elements on ride details.
+
+After tapping on the number of stops the itinerary should expand to reveal all the stops.
+Even though it’s not visually suggested, tapping on any of the revealed stops should make the itinerary collapse again.
+
+### Connection
+
+Use it in order to indicate to users that there is change between 2 intermediary stops.
+
+- ✅ Use when you want to indicate a change of vehicle
+- ✅ Use when you want to indicate a change of station
+- ⛔️ Do not use to at the beginning of an Itinerary
+- ⛔️ Do not use to after an Itinerary departure with proximity
+- ⛔️ Do not use to before an Itinerary destination with proximity
 
 ## Usage
 
