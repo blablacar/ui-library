@@ -15,9 +15,9 @@ export const StyledLabel = styled(TextTitleStrong)<{ highlighted?: boolean }>`
   ${props => (props.highlighted ? `color: ${color.blue}` : '')};
 `
 
-export const StyledSubLabel = styled(TextCaption)`
+export const StyledSubLabel = styled(TextCaption)<{ highlighted?: boolean }>`
   display: block;
-  color: ${color.midnightGreen};
+  color: ${({ highlighted }) => (highlighted ? color.blue : color.midnightGreen)};
   margin-top: ${space.s};
 `
 

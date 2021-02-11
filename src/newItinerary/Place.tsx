@@ -34,7 +34,7 @@ export const Place = ({
   <ItineraryItem prevLine={prevLine} nextLine={nextLine} time={time} bullet={bullet} href={href}>
     <StyledContent>
       <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
-      {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}
+      {subLabel && <StyledSubLabel highlighted={highlighted}>{subLabel}</StyledSubLabel>}
       {proximity && <StyledProximity>{proximity}</StyledProximity>}
       {href && <StyledChevronIcon />}
     </StyledContent>
