@@ -60,8 +60,9 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   outline: 0;
   box-shadow: none;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
 }
 
 .c1 select::-ms-expand {
@@ -489,16 +490,17 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   padding-left: 0 !important;
 }
 
-.c0.kirk-error .kirk-phoneField-wrapper--inline {
+.c0.kirk-error .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   background: #FDD8DE;
   -webkit-animation: phoneFieldError 500ms ease-in-out;
   animation: phoneFieldError 500ms ease-in-out;
 }
 
-.c0.kirk-error .kirk-selectField,
-.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-selectField-background,
+.c0.kirk-error select,
+.c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
-.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+.c0.kirk-error input {
   background: #FDD8DE;
   border-color: #FDD8DE;
 }
@@ -506,7 +508,9 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 .c0.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
-  padding: 8px;
+  padding-right: calc(8px + 24px);
+  padding-left: calc(8px + 24px);
+  padding-bottom: 8px;
 }
 
 @media (hover:none),(hover:on-demand) {
@@ -694,8 +698,9 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   outline: 0;
   box-shadow: none;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
 }
 
 .c1 select::-ms-expand {
@@ -938,16 +943,17 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   padding-left: 0 !important;
 }
 
-.c0.kirk-error .kirk-phoneField-wrapper--inline {
+.c0.kirk-error .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   background: #FDD8DE;
   -webkit-animation: phoneFieldError 500ms ease-in-out;
   animation: phoneFieldError 500ms ease-in-out;
 }
 
-.c0.kirk-error .kirk-selectField,
-.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-selectField-background,
+.c0.kirk-error select,
+.c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
-.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+.c0.kirk-error input {
   background: #FDD8DE;
   border-color: #FDD8DE;
 }
@@ -955,7 +961,9 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 .c0.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
-  padding: 8px;
+  padding-right: calc(8px + 24px);
+  padding-left: calc(8px + 24px);
+  padding-bottom: 8px;
 }
 
 <div
