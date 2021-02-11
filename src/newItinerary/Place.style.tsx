@@ -12,7 +12,7 @@ export const StyledContent = styled.div`
 `
 
 export const StyledLabel = styled(TextTitleStrong)<{ highlighted?: boolean }>`
-  ${props => props.highlighted ? `color: ${color.blue}` : ''};
+  ${props => (props.highlighted ? `color: ${color.blue}` : '')};
 `
 
 export const StyledSubLabel = styled(TextCaption)`

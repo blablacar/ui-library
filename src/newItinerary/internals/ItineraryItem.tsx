@@ -1,11 +1,11 @@
 import React from 'react'
 import isEmpty from 'lodash.isempty'
 
-import { Bullet, BulletTypes } from '../../bullet'
-import { Lines } from '../Itinerary'
-import { Line } from './Line'
-import { StyledItineraryItem } from './ItineraryItem.style'
+import { Bullet } from '../../bullet'
 import { TextTitleStrong } from '../../typography/titleStrong'
+import { Lines } from '../Itinerary'
+import { StyledItineraryItem } from './ItineraryItem.style'
+import { Line } from './Line'
 
 export type ItineraryItemProps = Readonly<{
   line: Lines
@@ -15,8 +15,13 @@ export type ItineraryItemProps = Readonly<{
   href?: string | JSX.Element
 }>
 
-
-export const ItineraryItem = ({ time = null, line, children, bullet = <Bullet/>, href = null }: ItineraryItemProps) => {
+export const ItineraryItem = ({
+  time = null,
+  line,
+  children,
+  bullet = <Bullet />,
+  href = null,
+}: ItineraryItemProps) => {
   // Renders <a>, custom component (SlugLink) or div based on href
   let Wrapper
   let wrapperProps = {}
@@ -34,7 +39,9 @@ export const ItineraryItem = ({ time = null, line, children, bullet = <Bullet/>,
   return (
     <StyledItineraryItem>
       <Wrapper {...wrapperProps}>
-        <TextTitleStrong as="time" aria-hidden={isEmpty(time)}>{time}</TextTitleStrong>
+        <TextTitleStrong as="time" aria-hidden={isEmpty(time)}>
+          {time}
+        </TextTitleStrong>
         <Line line={line} bullet={bullet} />
         {children}
       </Wrapper>

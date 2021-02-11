@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Bullet, BulletTypes } from '../bullet'
-import { Lines } from './Itinerary'
 import { StyledLabel } from './HiddenStop.style'
 import { ItineraryItem } from './internals/ItineraryItem'
+import { Lines } from './Itinerary'
 
 export type HiddenStopProps = Readonly<{
   label: string

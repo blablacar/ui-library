@@ -10,15 +10,15 @@ export const StyledHiddenStops = styled.li<{ stops: number }>`
 
   ul {
     // TODO improve animation
-    overflow: ${props => props['aria-expanded'] ? 'initial' : 'hidden'};
+    overflow: ${props => (props['aria-expanded'] ? 'initial' : 'hidden')};
 
     // Each stop has the same height. We need to compute the final height to have a proper animation
-    height: ${props => props['aria-expanded'] ? `${props.stops * ELEMENT_HEIGHT}px`: '0'};
+    height: ${props => (props['aria-expanded'] ? `${props.stops * ELEMENT_HEIGHT}px` : '0')};
     transition: height ${transition.duration.base} ease-in-out;
   }
 
   > div {
-    display: ${props => props['aria-expanded'] ? 'none' : 'flex'};
+    display: ${props => (props['aria-expanded'] ? 'none' : 'flex')};
   }
 `
 

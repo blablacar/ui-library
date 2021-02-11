@@ -11,14 +11,12 @@ export const StyledLineWrapper = styled.div<LineProps>`
   margin-right: ${space.m};
   top: ${space.m};
 
-  ${(props: LineProps) =>
-    props.line === Lines.HIDDEN_STOPS
-     ? 'background: white;'
-     : ''};
+  ${(props: LineProps) => (props.line === Lines.HIDDEN_STOPS ? 'background: white;' : '')};
 `
 
 // Using background-image to display the dashed line for connection
-const base64EncodedDash = 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMDAiPjxsaW5lIHgxPSIyIiB4Mj0iMiIgeTE9IjUiIHkyPSIxMDAlIiBzdHJva2U9IiM3MDhDOTEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIuMDAxLCAxMCIvPjwvc3ZnPg=='
+const base64EncodedDash =
+  'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMDAiPjxsaW5lIHgxPSIyIiB4Mj0iMiIgeTE9IjUiIHkyPSIxMDAlIiBzdHJva2U9IiM3MDhDOTEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtZGFzaGFycmF5PSIuMDAxLCAxMCIvPjwvc3ZnPg=='
 
 export const StyledLine = styled.div<LineProps>`
   position: relative;
@@ -27,8 +25,10 @@ export const StyledLine = styled.div<LineProps>`
   left: 3px;
   top: 4px;
 
-  ${(props: LineProps) => props.line === Lines.ACTIVE ? `background-color: ${color.midnightGreen};` : ''};
-  ${(props: LineProps) => props.line === Lines.INACTIVE ? `background-color: ${color.gray};` : ''};
+  ${(props: LineProps) =>
+    props.line === Lines.ACTIVE ? `background-color: ${color.midnightGreen};` : ''};
+  ${(props: LineProps) =>
+    props.line === Lines.INACTIVE ? `background-color: ${color.gray};` : ''};
 
   ${(props: LineProps) =>
     props.line === Lines.HIDDEN_STOPS
@@ -44,17 +44,17 @@ export const StyledLine = styled.div<LineProps>`
 
   ${(props: LineProps) =>
     props.line === Lines.CONNECTION
-      ? 'background-image: url("data:image/svg+xml;base64,'+ base64EncodedDash +'");background-repeat: repeat-y;'
+      ? `background-image: url("data:image/svg+xml;base64,${base64EncodedDash}");background-repeat: repeat-y;`
       : ''};
 `
 
 export const StyledBullet = styled.div`
-   position: absolute;
-   top: 4px;
+  position: absolute;
+  top: 4px;
 
-   svg {
-     position: relative;
-     top: -3px;
-     left: -3px;
-   }
+  svg {
+    position: relative;
+    top: -3px;
+    left: -3px;
+  }
 `

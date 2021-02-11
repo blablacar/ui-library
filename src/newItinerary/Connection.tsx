@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Lines } from './Itinerary'
+import { ConnectionIcon } from '../icon/connectionIcon'
 import { StyledConnection } from './Connection.style'
 import { ItineraryItem } from './internals/ItineraryItem'
-import { ConnectionIcon } from '../icon/connectionIcon'
+import { Lines } from './Itinerary'
 
 export type ConnectionProps = Readonly<{
   label: string
@@ -11,6 +11,9 @@ export type ConnectionProps = Readonly<{
 
 export const Connection = ({ label }: ConnectionProps) => (
   <ItineraryItem line={Lines.CONNECTION} bullet={null}>
-    <StyledConnection><ConnectionIcon/>{label}</StyledConnection>
+    <StyledConnection>
+      <ConnectionIcon />
+      {label}
+    </StyledConnection>
   </ItineraryItem>
 )

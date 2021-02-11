@@ -16,6 +16,6 @@ export const StyledItinerary = styled.div<ItineraryProps>`
   time {
     width: ${TIME_WIDTH};
     padding-top: ${space.m};
-    display: ${(props: ItineraryProps) => props.small ? 'none' : 'initial'};
+    display: ${(props: ItineraryProps) => (props.small ? 'none' : 'initial')};
   }
 `

@@ -5,7 +5,8 @@ import { color } from '../../_utils/branding'
 export const StyledItineraryItem = styled.li`
   min-height: 32px;
 
-  > div, > a {
+  > div,
+  > a {
     display: flex;
   }
 
