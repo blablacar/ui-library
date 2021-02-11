@@ -76,7 +76,11 @@ const createChildrenWithLines = (
     }
   }
 
-  return cloneElement(child, { ...child.props, nextLine, prevLine })
+  return cloneElement(child, {
+    ...child.props,
+    nextLine: child.props.nextLine ?? nextLine,
+    prevLine: child.props.prevLine ?? prevLine,
+  })
 }
 
 export const Itinerary = ({ children, headline, small = false }: ItineraryProps) => (

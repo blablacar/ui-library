@@ -3,7 +3,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { color } from '../_utils/branding'
 import { MeetingPointIcon } from '../icon/meetingPoint'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
-import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Place } from './index'
+import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
 
@@ -119,6 +119,31 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Place } from './
         time="17:00"
         href="https://blablacar.fr"
       />
+    </Itinerary>
+  </Story>
+</Canvas>
+
+### Meeting points during publication
+
+<Canvas>
+  <Story name="Meeting points">
+    <Itinerary small>
+      <Addon label="Carnac" />
+      <Place
+        label="Parking rue de Lorient"
+        subLabel="Rennes"
+        href="https://blablacar.fr"
+        prevLine={Lines.INACTIVE}
+        nextLine={Lines.INACTIVE}
+      />
+      <Place
+        label="Aire de covoiturage de Saint-Saturnin"
+        subLabel="Saint-Saturnin"
+        href="https://blablacar.fr"
+        prevLine={Lines.INACTIVE}
+        nextLine={Lines.INACTIVE}
+      />
+      <Addon label="Paris" />
     </Itinerary>
   </Story>
 </Canvas>
