@@ -1,24 +1,25 @@
 import React, { cloneElement } from 'react'
 
 import { Bullet } from '../../bullet'
-import { Lines } from '../Itinerary'
+import { Lines } from '../Lines'
 import { StyledBullet, StyledLine, StyledLineWrapper } from './Line.style'
 
 export type LineProps = Readonly<{
-  line: Lines
+  prevLine?: Lines
+  nextLine?: Lines
   bullet?: JSX.Element
 }>
 
-export const Line = ({ line, bullet }: LineProps) => {
+export const Line = ({ prevLine, nextLine, bullet }: LineProps) => {
   // For icons, let's force the size to 16px.
   const icon =
     bullet && bullet.type !== Bullet ? cloneElement(bullet, { ...bullet.props, size: 16 }) : bullet
 
   return (
-    <StyledLineWrapper aria-hidden="true" line={line}>
-      <StyledLine line={line} />
-      {line === Lines.HIDDEN_STOPS && <StyledLine line={line} />}
+    <StyledLineWrapper aria-hidden="true">
+      <StyledLine line={prevLine} />
       {icon && <StyledBullet>{icon}</StyledBullet>}
+      <StyledLine line={nextLine} />
     </StyledLineWrapper>
   )
 }

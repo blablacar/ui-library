@@ -3,15 +3,15 @@ import React, { useState } from 'react'
 import { Bullet, BulletTypes } from '../bullet'
 import { HiddenStopProps } from './HiddenStop'
 import { StyledHiddenStops, StyledStopsCount, StyledWrapper } from './HiddenStops.style'
-import { Line } from './internals/Line'
-import { Lines } from './Itinerary'
+import { Line, LineProps } from './internals/Line'
 
-export type HiddenStopsProps = Readonly<{
-  children: React.ReactElement<HiddenStopProps>[]
-  label: string
-}>
+export type HiddenStopsProps = LineProps &
+  Readonly<{
+    children: React.ReactElement<HiddenStopProps>[]
+    label: string
+  }>
 
-export const HiddenStops = ({ children, label }: HiddenStopsProps) => {
+export const HiddenStops = ({ prevLine, nextLine, children, label }: HiddenStopsProps) => {
   const [hidden, setHidden] = useState(true)
 
   return (
@@ -23,7 +23,11 @@ export const HiddenStops = ({ children, label }: HiddenStopsProps) => {
     >
       <StyledWrapper>
         <time aria-hidden="true" />
-        <Line line={Lines.HIDDEN_STOPS} bullet={<Bullet type={BulletTypes.DEFAULT} />} />
+        <Line
+          prevLine={prevLine}
+          nextLine={nextLine}
+          bullet={<Bullet type={BulletTypes.DEFAULT} />}
+        />
         <StyledStopsCount>{label}</StyledStopsCount>
       </StyledWrapper>
 

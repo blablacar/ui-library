@@ -21,7 +21,8 @@ export type PlaceProps = Omit<ItineraryItemProps, 'children'> &
   }>
 
 export const Place = ({
-  line,
+  prevLine,
+  nextLine,
   label,
   subLabel,
   time,
@@ -30,7 +31,7 @@ export const Place = ({
   proximity,
   highlighted = false,
 }: PlaceProps) => (
-  <ItineraryItem line={line} time={time} bullet={bullet} href={href}>
+  <ItineraryItem prevLine={prevLine} nextLine={nextLine} time={time} bullet={bullet} href={href}>
     <StyledContent>
       <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
       {subLabel && <StyledSubLabel>{subLabel}</StyledSubLabel>}

@@ -9,9 +9,7 @@ export const StyledHiddenStops = styled.li<{ stops: number }>`
   min-height: ${ELEMENT_HEIGHT}px;
 
   ul {
-    // TODO improve animation
-    overflow: ${props => (props['aria-expanded'] ? 'initial' : 'hidden')};
-
+    overflow: hidden;
     // Each stop has the same height. We need to compute the final height to have a proper animation
     height: ${props => (props['aria-expanded'] ? `${props.stops * ELEMENT_HEIGHT}px` : '0')};
     transition: height ${transition.duration.base} ease-in-out;

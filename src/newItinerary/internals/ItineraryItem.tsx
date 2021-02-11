@@ -3,21 +3,20 @@ import isEmpty from 'lodash.isempty'
 
 import { Bullet } from '../../bullet'
 import { TextTitleStrong } from '../../typography/titleStrong'
-import { Lines } from '../Itinerary'
 import { StyledItineraryItem } from './ItineraryItem.style'
-import { Line } from './Line'
+import { Line, LineProps } from './Line'
 
-export type ItineraryItemProps = Readonly<{
-  line: Lines
-  time?: string
-  bullet?: JSX.Element
-  children: React.ReactNode
-  href?: string | JSX.Element
-}>
+export type ItineraryItemProps = LineProps &
+  Readonly<{
+    time?: string
+    children: React.ReactNode
+    href?: string | JSX.Element
+  }>
 
 export const ItineraryItem = ({
   time = null,
-  line,
+  prevLine,
+  nextLine,
   children,
   bullet = <Bullet />,
   href = null,
@@ -42,7 +41,7 @@ export const ItineraryItem = ({
         <TextTitleStrong as="time" aria-hidden={isEmpty(time)}>
           {time}
         </TextTitleStrong>
-        <Line line={line} bullet={bullet} />
+        <Line prevLine={prevLine} nextLine={nextLine} bullet={bullet} />
         {children}
       </Wrapper>
     </StyledItineraryItem>

@@ -3,7 +3,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { color } from '../_utils/branding'
 import { MeetingPointIcon } from '../icon/meetingPoint'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
-import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
+import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Place } from './index'
 
 <Meta title="Widgets/NewItinerary" />
 
@@ -15,13 +15,11 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
   <Story name="Search">
     <Itinerary>
       <Place
-        line={Lines.ACTIVE}
         label="Villepinte"
         time="12:50"
         proximity={<Proximity value={Distances.FAR} title="You'll have to take transports" />}
       />
       <Place
-        line={Lines.NONE}
         label="Lyon"
         time="18:00"
         proximity={<Proximity value={Distances.CLOSE} title="You'll get there by foot" />}
@@ -36,14 +34,12 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
   <Story name="Ride details - Carpool">
     <Itinerary>
       <Place
-        line={Lines.ACTIVE}
         label="Villepinte"
         time="12:50"
         proximity={<Proximity value={Distances.FAR} title="3.7 km from your departure" display={ProximityDisplay.LABEL} />}
         href="https://blablacar.fr"
       />
       <Place
-        line={Lines.INACTIVE}
         label="Lyon"
         time="18:00"
         proximity={<Proximity value={Distances.CLOSE} title="400m from your arrival" display={ProximityDisplay.LABEL} />}
@@ -59,10 +55,9 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
 <Canvas>
   <Story name="Ride details - Bus">
     <Itinerary headline="Fri 22th June">
-      <Addon line={Lines.INACTIVE} label="Lille" />
+      <Addon label="Lille" />
       <Place
         time="09:00"
-        line={Lines.ACTIVE}
         label="Paris"
         subLabel="Gare de lyon"
       />
@@ -70,14 +65,14 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
         <HiddenStop label="Paris" />
         <HiddenStop label="Dijon" />
       </HiddenStops>
-      <Place time="12:00" line={Lines.CONNECTION} label="Lyon" subLabel="Gare Perrache" />
+      <Place time="12:00" label="Lyon" subLabel="Gare Perrache" />
       <Connection label="Change of vehicle" />
-      <Place time="12:30" line={Lines.ACTIVE} label="Lyon" subLabel="Gare Perrache" />
+      <Place time="12:30" label="Lyon" subLabel="Gare Perrache" />
       <HiddenStops label="2 stopovers">
         <HiddenStop label="Grenoble" />
         <HiddenStop label="Aix-en-Provence" />
       </HiddenStops>
-      <Place time="16:00" line={Lines.INACTIVE} label="Marseille" />
+      <Place time="16:00" label="Marseille" />
       <Addon label="Montpellier" />
     </Itinerary>
   </Story>
@@ -89,14 +84,12 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
   <Story name="Carpooling Ride Plan">
     <Itinerary headline="Tue 28th september">
       <Place
-        line={Lines.ACTIVE}
         label="Paris"
         subLabel="6 rue Ménars"
         time="00:00"
         href="https://blablacar.fr"
       />
       <Place
-        line={Lines.NONE}
         label="Caen"
         subLabel="Esplanade Jean-Marie Louvel"
         time="03:00"
@@ -111,9 +104,8 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
 <Canvas>
   <Story name="Booking request boost">
     <Itinerary>
-      <Addon label="Caen" line={Lines.INACTIVE} />
+      <Addon label="Caen" />
       <Place
-        line={Lines.ACTIVE}
         label="Evreux"
         subLabel="67 avenue du président Wilson"
         time="12:00"
@@ -122,7 +114,6 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
         highlighted
       />
       <Place
-        line={Lines.NONE}
         label="Paris"
         subLabel="6 rue ménars"
         time="17:00"

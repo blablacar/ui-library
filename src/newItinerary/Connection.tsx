@@ -3,14 +3,15 @@ import React from 'react'
 import { ConnectionIcon } from '../icon/connectionIcon'
 import { StyledConnection } from './Connection.style'
 import { ItineraryItem } from './internals/ItineraryItem'
-import { Lines } from './Itinerary'
+import { LineProps } from './internals/Line'
 
-export type ConnectionProps = Readonly<{
-  label: string
-}>
+export type ConnectionProps = LineProps &
+  Readonly<{
+    label: string
+  }>
 
-export const Connection = ({ label }: ConnectionProps) => (
-  <ItineraryItem line={Lines.CONNECTION} bullet={null}>
+export const Connection = ({ prevLine, nextLine, label }: ConnectionProps) => (
+  <ItineraryItem prevLine={prevLine} nextLine={nextLine} bullet={null}>
     <StyledConnection>
       <ConnectionIcon />
       {label}
