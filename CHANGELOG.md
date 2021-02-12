@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `CheckCircleIcon` display when it has a title
 [...]
 
 # v47.4.1 (11/02/2021)
