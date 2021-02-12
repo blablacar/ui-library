@@ -11,6 +11,7 @@ export const color: Color = {
   lightMidnightGreen: '#708C91',
   blue: '#00AFF5',
   darkBlue: '#008FC1',
+  boostBlue: '#2ED1FF',
   green: '#5DD167',
   orange: '#F78B00',
   yellow: '#FFCA0C',
