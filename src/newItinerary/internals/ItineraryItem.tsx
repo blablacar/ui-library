@@ -39,7 +39,7 @@ export const ItineraryItem = ({
   }
 
   return (
-    <StyledItineraryItem {...pickA11yProps(props)}>
+    <StyledItineraryItem {...pickA11yProps(props)} hasLink={!!href}>
       <Wrapper {...wrapperProps}>
         <TextTitleStrong as="time" aria-hidden={isEmpty(time)}>
           {time}
