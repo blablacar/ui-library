@@ -18,7 +18,7 @@ export const Line = ({ prevLine, nextLine, bullet }: LineProps) => {
   return (
     <StyledLineWrapper aria-hidden="true">
       <StyledLine line={prevLine} />
-      {icon && <StyledBullet>{icon}</StyledBullet>}
+      {icon && <StyledBullet isIcon={bullet.type !== Bullet}>{icon}</StyledBullet>}
       <StyledLine line={nextLine} />
     </StyledLineWrapper>
   )

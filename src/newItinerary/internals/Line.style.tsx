@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 
-import { color, space } from '../../_utils/branding'
+import { color, componentSizes, radius, space } from '../../_utils/branding'
+import { ITINERARY_ITEM_BASE_HEIGHT } from '../Itinerary.style'
 import { Lines } from '../Lines'
+
+const LINE_WIDTH = '4px'
+const LINE_HEIGHT = '12px' // First line is 12px long, the second is flex.
 
 export const StyledLineWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 32px;
-  width: 10px;
-  margin-right: ${space.m};
+  min-height: ${ITINERARY_ITEM_BASE_HEIGHT}px;
+  margin: 0 ${space.m};
 `
 
 // Using background-image to display the dashed line for connection
@@ -26,8 +29,8 @@ const lineToBackground: Readonly<{ [key in Lines]: string }> = {
 }
 
 export const StyledLine = styled.div<{ line: Lines }>`
-  width: 4px;
-  height: 12px;
+  width: ${LINE_WIDTH};
+  height: ${LINE_HEIGHT};
   background: ${({ line }) => lineToBackground[line]};
 
   &:last-child {
@@ -39,25 +42,20 @@ export const StyledLine = styled.div<{ line: Lines }>`
     line === Lines.HIDDEN_STOPS &&
     `
     &:first-child {
-      height: 8px;
-      margin-bottom: 6px;
-      border-radius: 0 0 4px 4px;
+      height: calc(${LINE_HEIGHT} - ${space.s}); // 4px margin before the icon
+      border-radius: 0 0 ${radius.s} ${radius.s};
     }
 
     &:last-child {
-      margin-top: 12px;
-      border-radius: 4px 4px 0 0;
+      margin-top: calc(${componentSizes.bulletSize} + ${space.s} + ${space.s}); // 10px bullet height + 4px margins each side
+      border-radius: ${radius.s} ${radius.s} 0 0;
     }
   `}
 `
 
-export const StyledBullet = styled.div`
+export const StyledBullet = styled.div<{ isIcon: boolean }>`
   // Use absolute position to make sure the bullet goes over the line nicely.
   position: absolute;
-  top: 12px;
-
-  svg {
-    position: relative;
-    top: -3px;
-  }
+  // Magic numbers to align the icon/bullet with the text
+  top: ${({ isIcon }) => (isIcon ? '9px' : '12px')};
 `

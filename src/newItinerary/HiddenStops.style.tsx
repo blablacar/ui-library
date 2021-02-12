@@ -2,16 +2,16 @@ import styled from 'styled-components'
 
 import { color, space, transition } from '../_utils/branding'
 import { TextBody } from '../typography/body'
-
-const ELEMENT_HEIGHT = 32
+import { ITINERARY_ITEM_BASE_HEIGHT } from './Itinerary.style'
 
 export const StyledHiddenStops = styled.li<{ stops: number }>`
-  min-height: ${ELEMENT_HEIGHT}px;
+  min-height: ${ITINERARY_ITEM_BASE_HEIGHT}px;
 
   ul {
     overflow: hidden;
     // Each stop has the same height. We need to compute the final height to have a proper animation
-    height: ${props => (props['aria-expanded'] ? `${props.stops * ELEMENT_HEIGHT}px` : '0')};
+    height: ${props =>
+      props['aria-expanded'] ? `${props.stops * ITINERARY_ITEM_BASE_HEIGHT}px` : '0'};
     transition: height ${transition.duration.base} ease-in-out;
   }
 
