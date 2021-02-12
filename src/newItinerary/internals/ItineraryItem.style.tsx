@@ -15,7 +15,6 @@ export const StyledItineraryItem = styled.li<{ hasLink: boolean }>`
     `
     > * {
       -webkit-tap-highlight-color: ${color.tapHighlight};
-      -webkit-touch-callout: none;
 
       &:hover {
         background-color: ${color.tapHighlight};
