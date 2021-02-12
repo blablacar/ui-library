@@ -135,8 +135,8 @@ describe('PhoneField', () => {
       expect(wrapper.find('span').text()).toBe(errorText)
     })
 
-    it('Should not have an error state when passing a boolean `false`', () => {
-      const wrapper = shallow(<PhoneField {...defaultProps} error={false} />)
+    it('Should not have an error state when passing a `null` value', () => {
+      const wrapper = shallow(<PhoneField {...defaultProps} error={null} />)
       expect(wrapper.hasClass('kirk-error')).toBe(false)
       expect(wrapper.find('.kirk-error-message')).toHaveLength(0)
     })

@@ -3,6 +3,38 @@
 - **[NEW]** Added `display` prop to `Proximity`
 - **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
 [...]
+
+# v47.5.0 (12/02/2021)
+
+- **[FIX]** Fix `CheckCircleIcon` display when it has a title
+- **[NEW]** Add `BoostIcon`
+
+# v47.4.1 (11/02/2021)
+
+- **[UPDATE]** Change size of `<Avatar isSmall />`
+
+# v47.4.0 (11/02/2021)
+
+- **[UPDATE]** Add A11Y props to `DropdownButton` & `HamburgerButton`
+- **[FIX]** Adapt `SEAPage` to take header into account
+- **[UPDATE]** Update `SelectField` display used for `PhoneField` error state
+- **[FIX]** Fix `PhoneField` error state display
+
+# v47.3.0 (09/02/2021)
+
+- **[UPDATE]** Normalize `AutoComplete` vertically and horizontally
+- **[UPDATE]** Normalize `PhoneField` vertically and horizontally
+- **[UPDATE]** Normalize `SelectField` vertically and horizontally
+- **[UPDATE]** Normalize `TextField` vertically and horizontally
+- **[UPDATE]** Export `FilterBarSupplyInfo` type from `FilterBar`
+
+# v47.2.0 (08/02/2021)
+
+- **[NEW]** `SeaPage` holds SEA Page layout
+- **[UPDATE]** Typographic elmements get `pre` formating
+
+# v47.1.0 (05/02/2021)
+
 - **[NEW]** Add `Marquee`
 - **[NEW]** Add `TripCardSample`
 

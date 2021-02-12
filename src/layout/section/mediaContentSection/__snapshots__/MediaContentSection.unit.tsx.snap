@@ -321,6 +321,7 @@ exports[`MediaContentSection should render default MediaContentSection section 1
 }
 
 .c4 {
+  white-space: pre-line;
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
@@ -773,6 +774,7 @@ exports[`MediaContentSection should render flipped MediaContentSection section 1
 }
 
 .c4 {
+  white-space: pre-line;
   color: #054752;
   font-size: 30px;
   line-height: 1.06;

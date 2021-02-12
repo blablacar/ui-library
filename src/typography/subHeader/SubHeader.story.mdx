@@ -1,24 +1,28 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
 
 import { color } from '../../_utils/branding'
 import { TextSubHeader } from '.'
 
-<Meta title="Design Tokens/Typography" />
+<Meta title="Design Tokens/Typography/TextSubHeader" />
 
 # **TextSubHeader**
 
 <Canvas>
-  <Story name="TextSubHeader">
-    <React.Fragment>
-      <h1>
-        <TextSubHeader isInverted={false}>
-          {'The quick\n brown fox jumps\n over the lazy\n dog'}
-        </TextSubHeader>
-      </h1>
-      <h1 style={{ backgroundColor: color.blue }}>
-        <TextSubHeader isInverted>The quick brown fox jumps over the lazy dog</TextSubHeader>
-      </h1>
-    </React.Fragment>
+  <Story name="Default">
+    <TextSubHeader isInverted={false} as="h1">
+      {text('children', 'The quick\n brown fox jumps\n over the lazy\n dog')}
+    </TextSubHeader>
+  </Story>
+</Canvas>
+
+### **isInverted**
+
+<Canvas>
+  <Story name="isInverted">
+    <h1 style={{ backgroundColor: color.blue }}>
+      <TextSubHeader isInverted>The quick brown fox jumps over the lazy dog</TextSubHeader>
+    </h1>
   </Story>
 </Canvas>
 

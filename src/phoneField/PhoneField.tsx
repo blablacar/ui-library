@@ -259,31 +259,33 @@ export class PhoneField extends PureComponent<PhoneFieldProps, PhoneFieldState> 
         className={cc([baseClassName, prefix({ error: !!error }), this.props.className])}
       >
         <div className={classNames} {...a11yAttrs}>
-          <SelectField
-            name={FIELDS.PHONEREGION}
-            options={this.state.countryData}
-            aria-label={selectFieldLabel}
-            defaultValue={this.props.defaultRegionValue}
-            onChange={this.handleChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            focusBorder={!isInline}
-            autoFocus={selectAutoFocus}
-            autoComplete="tel-country-code"
-            ref={this.ref}
-          />
-          <TextField
-            type={inputTypes.TEL}
-            name={FIELDS.PHONENUMBER}
-            placeholder={textFieldPlaceholder}
-            defaultValue={defaultPhoneValue}
-            onChange={this.handleChange}
-            title={textFieldTitle}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            focusBorder={!isInline}
-            autoComplete="tel-national"
-          />
+          <div className={`${wrapperClassName}--background`}>
+            <SelectField
+              name={FIELDS.PHONEREGION}
+              options={this.state.countryData}
+              aria-label={selectFieldLabel}
+              defaultValue={this.props.defaultRegionValue}
+              onChange={this.handleChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              focusBorder={!isInline}
+              autoFocus={selectAutoFocus}
+              autoComplete="tel-country-code"
+              ref={this.ref}
+            />
+            <TextField
+              type={inputTypes.TEL}
+              name={FIELDS.PHONENUMBER}
+              placeholder={textFieldPlaceholder}
+              defaultValue={defaultPhoneValue}
+              onChange={this.handleChange}
+              title={textFieldTitle}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              focusBorder={!isInline}
+              autoComplete="tel-national"
+            />
+          </div>
         </div>
         {!!error && DisplayError(error)}
       </StyledPhoneField>

@@ -1,6 +1,6 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { Paragraph } from '../paragraph'
+import { TripCardSample } from '../tripCardSample'
 import { Marquee } from './index'
 
 <Meta title="Widgets/Marquee" />
@@ -10,11 +10,9 @@ import { Marquee } from './index'
 <Canvas>
   <Story name="Default">
     <Marquee>
-      <div>Lists and loops</div>
-      <div>through all children</div>
-      <div>regardless of their number</div>
-      <div>or their type</div>
-      <Paragraph>(here's a Paragraph)</Paragraph>
+      <TripCardSample departure="Ajaccio" arrival="Amsterdam" priceLabel="from" price="€90" />
+      <TripCardSample departure="London" arrival="Manchester" priceLabel="from" price="€10" />
+      <TripCardSample departure="London" arrival="Paris" priceLabel="from" price="€50" />
     </Marquee>
   </Story>
 </Canvas>
@@ -26,9 +24,9 @@ Simple component that loops through the children it is given and has them slide 
 
 ```jsx
 import { Marquee } from '@blablacar/ui-library/build/marquee'
-<Marquee>
-  <div>div</div>
-  <Paragraph>Paragraph</Paragraph>
+<Marquee className="optional">
+  <div>child</div>
+  <div>child</div>
 </Marquee>
 ```
 

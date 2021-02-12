@@ -23,15 +23,23 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 
 .c1 {
   display: block;
-  position: relative;
   width: 100%;
-  padding: 0 0 0 16px;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
+}
+
+.c1 .kirk-selectField-background {
+  position: relative;
   color: #054752;
   background-color: #EDEDED;
   border-radius: 16px;
   border: solid 1px #EDEDED;
   box-shadow: none;
+  padding: 0 0 0 16px;
 }
 
 .c1 select {
@@ -52,8 +60,9 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   outline: 0;
   box-shadow: none;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
 }
 
 .c1 select::-ms-expand {
@@ -270,6 +279,11 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 .c3 {
   position: relative;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
 }
 
 .c3 .kirk-textField-wrapper {
@@ -420,6 +434,15 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 }
 
 .c0 .kirk-phoneField-wrapper--inline {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -428,11 +451,11 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   background-color: #EDEDED;
 }
 
-.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-phoneField-wrapper--background {
   border: 3px solid #00AFF5;
 }
 
-.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-phoneField-wrapper--background .kirk-selectField select {
   height: calc(52px - 3px * 2);
 }
 
@@ -446,6 +469,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  padding: 0 !important;
 }
 
 .c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
@@ -466,20 +490,17 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   padding-left: 0 !important;
 }
 
-.c0 .kirk-phoneField-wrapper .kirk-textField {
-  margin-top: 16px;
-}
-
-.c0.kirk-error .kirk-phoneField-wrapper--inline {
+.c0.kirk-error .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   background: #FDD8DE;
   -webkit-animation: phoneFieldError 500ms ease-in-out;
   animation: phoneFieldError 500ms ease-in-out;
 }
 
-.c0.kirk-error .kirk-selectField,
-.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-selectField-background,
+.c0.kirk-error select,
+.c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
-.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+.c0.kirk-error input {
   background: #FDD8DE;
   border-color: #FDD8DE;
 }
@@ -487,7 +508,9 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 .c0.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
-  padding: 8px;
+  padding-right: calc(8px + 24px);
+  padding-left: calc(8px + 24px);
+  padding-bottom: 8px;
 }
 
 @media (hover:none),(hover:on-demand) {
@@ -505,102 +528,110 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
     id="selectFieldName"
   >
     <div
-      className="kirk-selectField c1"
-    >
-      <select
-        aria-label="Phone Country code"
-        autoComplete="tel-country-code"
-        autoFocus={true}
-        defaultValue="ES"
-        name="phoneRegion"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        value="ES"
-      >
-        <option
-          value="ES"
-        >
-          Custom es label +34
-        </option>
-        <option
-          value="FR"
-        >
-          Custom fr label +33
-        </option>
-      </select>
-      <svg
-        aria-hidden={true}
-        className="kirk-icon c2"
-        height={24}
-        viewBox="0 0 24 24"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        
-        <polyline
-          fill="none"
-          points="9 18 15 12 9 6"
-          stroke="#708C91"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-          strokeWidth="2"
-          transform="rotate(90 12 12)"
-        />
-      </svg>
-    </div>
-    <div
-      className="kirk-textField c3"
+      className="kirk-phoneField-wrapper--background"
     >
       <div
-        className="kirk-textField-wrapper"
+        className="kirk-selectField c1"
       >
-        <input
-          autoComplete="tel-national"
-          name="phoneNumber"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Phone number"
-          title="Phone Number"
-          type="tel"
-          value="0765455667"
-        />
-        <button
-          aria-hidden={true}
-          className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button c4"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          tabIndex="-1"
-          type="button"
+        <div
+          className="kirk-selectField-background"
         >
+          <select
+            aria-label="Phone Country code"
+            autoComplete="tel-country-code"
+            autoFocus={true}
+            defaultValue="ES"
+            name="phoneRegion"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value="ES"
+          >
+            <option
+              value="ES"
+            >
+              Custom es label +34
+            </option>
+            <option
+              value="FR"
+            >
+              Custom fr label +33
+            </option>
+          </select>
           <svg
             aria-hidden={true}
             className="kirk-icon c2"
-            height="18"
+            height={24}
             viewBox="0 0 24 24"
-            width="18"
+            width={24}
             xmlns="http://www.w3.org/2000/svg"
           >
             
-            <path
-              d="M19 5L5 19M19 19L5 5"
+            <polyline
               fill="none"
+              points="9 18 15 12 9 6"
               stroke="#708C91"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeMiterlimit="10"
               strokeWidth="2"
+              transform="rotate(90 12 12)"
             />
           </svg>
-        </button>
+        </div>
+      </div>
+      <div
+        className="kirk-textField c3"
+      >
+        <div
+          className="kirk-textField-wrapper"
+        >
+          <input
+            autoComplete="tel-national"
+            name="phoneNumber"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Phone number"
+            title="Phone Number"
+            type="tel"
+            value="0765455667"
+          />
+          <button
+            aria-hidden={true}
+            className="kirk-button kirk-button-unstyled kirk-button-bubble kirk-textField-button c4"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            tabIndex="-1"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="kirk-icon c2"
+              height="18"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              
+              <path
+                d="M19 5L5 19M19 19L5 5"
+                fill="none"
+                stroke="#708C91"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeMiterlimit="10"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -630,15 +661,23 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 
 .c1 {
   display: block;
-  position: relative;
   width: 100%;
-  padding: 0 0 0 16px;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
+}
+
+.c1 .kirk-selectField-background {
+  position: relative;
   color: #054752;
   background-color: #EDEDED;
   border-radius: 16px;
   border: solid 1px #EDEDED;
   box-shadow: none;
+  padding: 0 0 0 16px;
 }
 
 .c1 select {
@@ -659,8 +698,9 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   outline: 0;
   box-shadow: none;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 0;
 }
 
 .c1 select::-ms-expand {
@@ -692,6 +732,11 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 .c3 {
   position: relative;
   box-sizing: border-box;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 8px 0;
 }
 
 .c3 .kirk-textField-wrapper {
@@ -842,6 +887,15 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 }
 
 .c0 .kirk-phoneField-wrapper--inline {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c0 .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -850,11 +904,11 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   background-color: #EDEDED;
 }
 
-.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-phoneField-wrapper--background {
   border: 3px solid #00AFF5;
 }
 
-.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+.c0 .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-phoneField-wrapper--background .kirk-selectField select {
   height: calc(52px - 3px * 2);
 }
 
@@ -868,6 +922,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  padding: 0 !important;
 }
 
 .c0 .kirk-phoneField-wrapper--inline .kirk-selectField {
@@ -888,20 +943,17 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   padding-left: 0 !important;
 }
 
-.c0 .kirk-phoneField-wrapper .kirk-textField {
-  margin-top: 16px;
-}
-
-.c0.kirk-error .kirk-phoneField-wrapper--inline {
+.c0.kirk-error .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
   background: #FDD8DE;
   -webkit-animation: phoneFieldError 500ms ease-in-out;
   animation: phoneFieldError 500ms ease-in-out;
 }
 
-.c0.kirk-error .kirk-selectField,
-.c0.kirk-error .kirk-selectField .kirk-icon,
+.c0.kirk-error .kirk-selectField-background,
+.c0.kirk-error select,
+.c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
-.c0.kirk-error .kirk-textField .kirk-textField-wrapper input {
+.c0.kirk-error input {
   background: #FDD8DE;
   border-color: #FDD8DE;
 }
@@ -909,7 +961,9 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 .c0.kirk-error .kirk-error-message {
   color: #F53F5B;
   display: block;
-  padding: 8px;
+  padding-right: calc(8px + 24px);
+  padding-left: calc(8px + 24px);
+  padding-bottom: 8px;
 }
 
 <div
@@ -919,65 +973,73 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
     className="kirk-phoneField-wrapper--inline"
   >
     <div
-      className="kirk-selectField c1"
-    >
-      <select
-        autoComplete="tel-country-code"
-        defaultValue=""
-        name="phoneRegion"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        value=""
-      >
-        <option
-          value="FR"
-        >
-          France +33
-        </option>
-        <option
-          value="ES"
-        >
-          Spain (España) +34
-        </option>
-      </select>
-      <svg
-        aria-hidden={true}
-        className="kirk-icon c2"
-        height={24}
-        viewBox="0 0 24 24"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        
-        <polyline
-          fill="none"
-          points="9 18 15 12 9 6"
-          stroke="#708C91"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeMiterlimit="10"
-          strokeWidth="2"
-          transform="rotate(90 12 12)"
-        />
-      </svg>
-    </div>
-    <div
-      className="kirk-textField c3"
+      className="kirk-phoneField-wrapper--background"
     >
       <div
-        className="kirk-textField-wrapper"
+        className="kirk-selectField c1"
       >
-        <input
-          autoComplete="tel-national"
-          name="phoneNumber"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          type="tel"
-          value=""
-        />
-        
+        <div
+          className="kirk-selectField-background"
+        >
+          <select
+            autoComplete="tel-country-code"
+            defaultValue=""
+            name="phoneRegion"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value=""
+          >
+            <option
+              value="FR"
+            >
+              France +33
+            </option>
+            <option
+              value="ES"
+            >
+              Spain (España) +34
+            </option>
+          </select>
+          <svg
+            aria-hidden={true}
+            className="kirk-icon c2"
+            height={24}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            
+            <polyline
+              fill="none"
+              points="9 18 15 12 9 6"
+              stroke="#708C91"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              transform="rotate(90 12 12)"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="kirk-textField c3"
+      >
+        <div
+          className="kirk-textField-wrapper"
+        >
+          <input
+            autoComplete="tel-national"
+            name="phoneNumber"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="tel"
+            value=""
+          />
+          
+        </div>
       </div>
     </div>
   </div>
