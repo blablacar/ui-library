@@ -37,7 +37,7 @@ export const HiddenStops = ({
           nextLine={nextLine}
           bullet={<Bullet type={BulletTypes.DEFAULT} />}
         />
-        <StyledStopsCount>{label}</StyledStopsCount>
+        <StyledStopsCount as="button">{label}</StyledStopsCount>
       </StyledWrapper>
 
       <ul aria-hidden={hidden}>{children}</ul>

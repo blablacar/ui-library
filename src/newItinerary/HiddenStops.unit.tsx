@@ -14,6 +14,7 @@ describe('HiddenStops', () => {
       </HiddenStops>,
     )
     expect(screen.getByText('2 stops')).toBeInTheDocument()
+    expect(screen.getByRole('button')).toBeInTheDocument()
 
     // Toggle stops.
     // Note: aria-ignore makes .toBeInTheDocument() return false

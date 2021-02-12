@@ -25,6 +25,7 @@ export const StyledWrapper = styled.div`
 `
 
 export const StyledStopsCount = styled(TextBody)`
+  background: transparent;
   padding: ${space.m} 0;
   color: ${color.blue};
   cursor: pointer;
