@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** Add `BoostIcon`
 [...]
 
 # v47.4.1 (11/02/2021)
