@@ -35,7 +35,7 @@ const StyledCheckCircleIcon = styled(CheckCircleIcon)`
     fill: ${props => (props.iconColor ? props.iconColor : color.green)};
   }
 
-  path:nth-child(2) {
+  path + path {
     fill: ${color.white};
   }
 `

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `CheckCircleIcon` display when it has a title
 - **[NEW]** Add `BoostIcon`
 [...]
 
