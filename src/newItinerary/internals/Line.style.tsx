@@ -14,6 +14,7 @@ export const StyledLineWrapper = styled.div`
   align-items: center;
   min-height: ${ITINERARY_ITEM_BASE_HEIGHT}px;
   margin: 0 ${space.m};
+  width: ${space.m};
 `
 
 // Using background-image to display the dashed line for connection
@@ -57,5 +58,5 @@ export const StyledBullet = styled.div<{ isIcon: boolean }>`
   // Use absolute position to make sure the bullet goes over the line nicely.
   position: absolute;
   // Magic numbers to align the icon/bullet with the text
-  top: ${({ isIcon }) => (isIcon ? '9px' : '12px')};
+  top: ${({ isIcon }) => (isIcon ? '7px' : '12px')};
 `

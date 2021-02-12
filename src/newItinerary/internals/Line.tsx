@@ -4,6 +4,8 @@ import { Bullet } from '../../bullet'
 import { Lines } from '../Lines'
 import { StyledBullet, StyledLine, StyledLineWrapper } from './Line.style'
 
+const CUSTOM_ICON_SIZE = 20
+
 export type LineProps = Readonly<{
   prevLine?: Lines
   nextLine?: Lines
@@ -11,9 +13,11 @@ export type LineProps = Readonly<{
 }>
 
 export const Line = ({ prevLine, nextLine, bullet }: LineProps) => {
-  // For icons, let's force the size to 16px.
+  // For icons, let's force the size to 20px.
   const icon =
-    bullet && bullet.type !== Bullet ? cloneElement(bullet, { ...bullet.props, size: 16 }) : bullet
+    bullet && bullet.type !== Bullet
+      ? cloneElement(bullet, { ...bullet.props, size: CUSTOM_ICON_SIZE })
+      : bullet
 
   return (
     <StyledLineWrapper aria-hidden="true">
