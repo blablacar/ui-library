@@ -1,7 +1,6 @@
 import React, { cloneElement } from 'react'
 
 import { NormalizeProps } from '../layout/layoutNormalizer'
-import { TheVoice } from '../theVoice'
 import { Addon } from './Addon'
 import { Connection } from './Connection'
 import { HiddenStops } from './HiddenStops'
@@ -12,7 +11,6 @@ import { Place } from './Place'
 export type ItineraryProps = NormalizeProps &
   Readonly<{
     children: JSX.Element[]
-    headline?: string
     small?: boolean
   }>
 
@@ -83,9 +81,6 @@ const createChildrenWithLines = (
   })
 }
 
-export const Itinerary = ({ children, headline, small = false }: ItineraryProps) => (
-  <StyledItinerary small={small}>
-    {headline && <TheVoice>{headline}</TheVoice>}
-    <ul>{children.map(createChildrenWithLines)}</ul>
-  </StyledItinerary>
+export const Itinerary = ({ children, small = false }: ItineraryProps) => (
+  <StyledItinerary small={small}>{children.map(createChildrenWithLines)}</StyledItinerary>
 )

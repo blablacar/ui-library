@@ -7,9 +7,9 @@ import { ItineraryProps } from './Itinerary'
 export const ITINERARY_ITEM_BASE_HEIGHT = 32
 const ITINERARY_TIME_WIDTH = '48px'
 
-export const StyledItinerary = styled.div<ItineraryProps>`
+export const StyledItinerary = styled.ul<ItineraryProps>`
   // On li sub-element to have a proper hover on clickable elements
-  > ul > li > * {
+  > li > * {
     ${normalizeHorizontally};
   }
 
