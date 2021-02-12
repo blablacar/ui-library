@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v47.5.0 (12/02/2021)
+
 - **[FIX]** Fix `CheckCircleIcon` display when it has a title
 - **[NEW]** Add `BoostIcon`
-[...]
 
 # v47.4.1 (11/02/2021)
 
