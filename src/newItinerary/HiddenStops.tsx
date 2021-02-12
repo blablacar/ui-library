@@ -1,17 +1,25 @@
 import React, { useState } from 'react'
 
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Bullet, BulletTypes } from '../bullet'
 import { HiddenStopProps } from './HiddenStop'
 import { StyledHiddenStops, StyledStopsCount, StyledWrapper } from './HiddenStops.style'
 import { Line, LineProps } from './internals/Line'
 
-export type HiddenStopsProps = LineProps &
+export type HiddenStopsProps = A11yProps &
+  LineProps &
   Readonly<{
     children: React.ReactElement<HiddenStopProps>[]
     label: string
   }>
 
-export const HiddenStops = ({ prevLine, nextLine, children, label }: HiddenStopsProps) => {
+export const HiddenStops = ({
+  prevLine,
+  nextLine,
+  children,
+  label,
+  ...props
+}: HiddenStopsProps) => {
   const [hidden, setHidden] = useState(true)
 
   return (
@@ -20,6 +28,7 @@ export const HiddenStops = ({ prevLine, nextLine, children, label }: HiddenStops
       role="button"
       aria-expanded={!hidden}
       stops={children.length}
+      {...pickA11yProps(props)}
     >
       <StyledWrapper>
         <time aria-hidden="true" />
@@ -31,7 +40,7 @@ export const HiddenStops = ({ prevLine, nextLine, children, label }: HiddenStops
         <StyledStopsCount>{label}</StyledStopsCount>
       </StyledWrapper>
 
-      <ul>{children}</ul>
+      <ul aria-hidden={hidden}>{children}</ul>
     </StyledHiddenStops>
   )
 }

@@ -1,5 +1,6 @@
 import React, { cloneElement } from 'react'
 
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Addon } from './Addon'
 import { Connection } from './Connection'
@@ -8,7 +9,8 @@ import { StyledItinerary } from './Itinerary.style'
 import { Lines } from './Lines'
 import { Place } from './Place'
 
-export type ItineraryProps = NormalizeProps &
+export type ItineraryProps = A11yProps &
+  NormalizeProps &
   Readonly<{
     children: JSX.Element[]
     small?: boolean
@@ -81,6 +83,8 @@ const createChildrenWithLines = (
   })
 }
 
-export const Itinerary = ({ children, small = false }: ItineraryProps) => (
-  <StyledItinerary small={small}>{children.map(createChildrenWithLines)}</StyledItinerary>
+export const Itinerary = ({ children, small = false, ...props }: ItineraryProps) => (
+  <StyledItinerary small={small} {...pickA11yProps(props)}>
+    {children.map(createChildrenWithLines)}
+  </StyledItinerary>
 )

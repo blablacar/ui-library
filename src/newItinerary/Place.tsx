@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Bullet, BulletTypes } from '../bullet'
 import { Proximity } from '../proximity'
 import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
@@ -11,7 +12,8 @@ import {
   StyledSubLabel,
 } from './Place.style'
 
-export type PlaceProps = Omit<ItineraryItemProps, 'children'> &
+export type PlaceProps = A11yProps &
+  Omit<ItineraryItemProps, 'children'> &
   Readonly<{
     label: string
     subLabel: string
@@ -30,8 +32,16 @@ export const Place = ({
   href,
   proximity,
   highlighted = false,
+  ...props
 }: PlaceProps) => (
-  <ItineraryItem prevLine={prevLine} nextLine={nextLine} time={time} bullet={bullet} href={href}>
+  <ItineraryItem
+    prevLine={prevLine}
+    nextLine={nextLine}
+    time={time}
+    bullet={bullet}
+    href={href}
+    {...pickA11yProps(props)}
+  >
     <StyledContent>
       <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
       {subLabel && <StyledSubLabel highlighted={highlighted}>{subLabel}</StyledSubLabel>}
