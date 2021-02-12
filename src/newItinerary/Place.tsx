@@ -2,7 +2,7 @@ import React from 'react'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Bullet, BulletTypes } from '../bullet'
-import { Proximity } from '../proximity'
+import { ProximityProps } from '../proximity'
 import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 import {
   StyledChevronIcon,
@@ -16,9 +16,9 @@ export type PlaceProps = A11yProps &
   Omit<ItineraryItemProps, 'children'> &
   Readonly<{
     label: string
-    subLabel: string
-    href?: JSX.Element
-    proximity?: typeof Proximity
+    subLabel?: string
+    href?: string | JSX.Element
+    proximity?: React.ReactElement<ProximityProps>
     highlighted?: boolean
   }>
 
