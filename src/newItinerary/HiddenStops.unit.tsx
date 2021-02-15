@@ -31,7 +31,7 @@ describe('HiddenStops', () => {
         <HiddenStop label="Paris" />
       </HiddenStops>,
     )
-    expect(screen.getByRole('button')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
     expect(screen.getByRole('list')).toBeInTheDocument()
   })
 
