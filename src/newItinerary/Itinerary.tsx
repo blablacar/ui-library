@@ -4,6 +4,7 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Addon } from './Addon'
 import { Connection } from './Connection'
+import { HiddenStop } from './HiddenStop'
 import { HiddenStops } from './HiddenStops'
 import { StyledItinerary } from './Itinerary.style'
 import { Lines } from './Lines'
@@ -16,6 +17,19 @@ export type ItineraryProps = A11yProps &
     small?: boolean
   }>
 
+// NOTE: react-hot-loader will update dynamically the type and break type comparisons.
+// A pre-rendered type need to be used to fix it.
+// See: https://github.com/gaearon/react-hot-loader#checking-element-types
+const AddonType = (<Addon label="" />).type
+const ConnectionType = (<Connection label="" />).type
+const HiddenStopsType = (
+  <HiddenStops label="">
+    <HiddenStop label="" />
+    <HiddenStop label="" />
+  </HiddenStops>
+).type
+const PlaceType = (<Place label="" />).type
+
 // Magic to avoid having to define lines manually
 const createChildrenWithLines = (
   child: JSX.Element,
@@ -25,7 +39,9 @@ const createChildrenWithLines = (
   let prevLine = Lines.NONE
   let nextLine = Lines.NONE
 
-  if (child.type === Addon) {
+  console.log(child.type)
+
+  if (child.type === AddonType) {
     if (index === 0) {
       nextLine = Lines.INACTIVE
     }
@@ -34,43 +50,43 @@ const createChildrenWithLines = (
     }
   }
 
-  if (child.type === Connection) {
+  if (child.type === ConnectionType) {
     prevLine = Lines.CONNECTION
     nextLine = Lines.CONNECTION
   }
 
-  if (child.type === HiddenStops) {
+  if (child.type === HiddenStopsType) {
     prevLine = Lines.HIDDEN_STOPS
     nextLine = Lines.HIDDEN_STOPS
   }
 
   // Prev line for Place
-  if (child.type === Place && index > 0) {
+  if (child.type === PlaceType && index > 0) {
     switch (children[index - 1].type) {
-      case Addon:
+      case AddonType:
         prevLine = Lines.INACTIVE
         break
-      case Place:
-      case HiddenStops:
+      case PlaceType:
+      case HiddenStopsType:
         prevLine = Lines.ACTIVE
         break
-      case Connection:
+      case ConnectionType:
         prevLine = Lines.CONNECTION
         break
     }
   }
 
   // Next line for Place
-  if (child.type === Place && index + 1 < children.length) {
+  if (child.type === PlaceType && index + 1 < children.length) {
     switch (children[index + 1].type) {
-      case Addon:
+      case AddonType:
         nextLine = Lines.INACTIVE
         break
-      case Place:
-      case HiddenStops:
+      case PlaceType:
+      case HiddenStopsType:
         nextLine = Lines.ACTIVE
         break
-      case Connection:
+      case ConnectionType:
         nextLine = Lines.CONNECTION
         break
     }

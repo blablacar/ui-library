@@ -12,17 +12,20 @@ export type LineProps = Readonly<{
   bullet?: JSX.Element
 }>
 
+// NOTE: react-hot-loader will update dynamically the type and break type comparisons.
+// A pre-rendered type need to be used to fix it.
+// See: https://github.com/gaearon/react-hot-loader#checking-element-types
+const BulletType = (<Bullet />).type
+
 export const Line = ({ prevLine, nextLine, bullet }: LineProps) => {
+  const isIcon = bullet && bullet.type !== BulletType
   // For icons, let's force the size to 20px.
-  const icon =
-    bullet && bullet.type !== Bullet
-      ? cloneElement(bullet, { ...bullet.props, size: CUSTOM_ICON_SIZE })
-      : bullet
+  const icon = isIcon ? cloneElement(bullet, { ...bullet.props, size: CUSTOM_ICON_SIZE }) : bullet
 
   return (
     <StyledLineWrapper aria-hidden="true">
       <StyledLine line={prevLine} />
-      {icon && <StyledBullet isIcon={bullet.type !== Bullet}>{icon}</StyledBullet>}
+      {icon && <StyledBullet isIcon={isIcon}>{icon}</StyledBullet>}
       <StyledLine line={nextLine} />
     </StyledLineWrapper>
   )
