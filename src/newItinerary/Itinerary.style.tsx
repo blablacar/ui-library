@@ -19,4 +19,14 @@ export const StyledItinerary = styled.ul<ItineraryProps>`
     padding-top: ${space.m};
     display: ${({ small }) => (small ? 'none' : 'initial')};
   }
+
+  // Remove line/icons left margin if small display
+  ${({ small }) =>
+    small
+      ? `
+    time + * {
+      margin-left: 0;
+    }
+  `
+      : ''};
 `
