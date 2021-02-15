@@ -97,8 +97,12 @@ const createChildrenWithLines = (
   })
 }
 
-export const Itinerary = ({ children, small = false, ...props }: ItineraryProps) => (
-  <StyledItinerary small={small} {...pickA11yProps(props)}>
-    {children.filter(Boolean).map(createChildrenWithLines)}
-  </StyledItinerary>
-)
+export const Itinerary = ({ children, small = false, ...props }: ItineraryProps) => {
+  const childs = Array.isArray(children) ? children.filter(Boolean) : [children]
+
+  return (
+    <StyledItinerary small={small} {...pickA11yProps(props)}>
+      {childs.map(createChildrenWithLines)}
+    </StyledItinerary>
+  )
+}

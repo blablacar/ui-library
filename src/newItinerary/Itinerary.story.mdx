@@ -7,7 +7,251 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
 
 <Meta title="Widgets/NewItinerary" />
 
+export const h1Styles = {
+  fontSize: '22px',
+  lineHeight: '24px',
+  textTransform: 'uppercase',
+  paddingLeft: '24px',
+  marginTop: '48px',
+  marginBottom: '24px',
+}
+export const h2Styles = {
+  fontSize: '18px',
+  lineHeight: '20px',
+  textTransform: 'uppercase',
+  paddingLeft: '24px',
+  color: '#708C91',
+  marginTop: '24px',
+  marginBottom: '24px',
+}
+
 # **Itinerary**
+
+### Variations
+
+<Canvas>
+  <Story name="default">
+    <React.Fragment>
+      <h1 style={h1Styles}>Itinerary/City/Proximity</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Departure</h2>
+          <Itinerary>
+            <Place
+              label="Aix-en-Provence"
+              time="12:00"
+              proximity={<Proximity value={Distances.CLOSE} />}
+              nextLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+          <Itinerary>
+            <Place
+              label="Aix-en-Provence"
+              time="12:00"
+              proximity={<Proximity value={Distances.FAR} />}
+              nextLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Destination</h2>
+          <Itinerary>
+            <Place
+              label="Aix-en-Provence"
+              time="12:00"
+              proximity={<Proximity value={Distances.MIDDLE} />}
+              prevLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+          <Itinerary>
+            <Place
+              label="Aix-en-Provence"
+              time="12:00"
+              proximity={<Proximity value={Distances.FAR} />}
+              prevLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>Itinerary/City/Context</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Departure</h2>
+          <Itinerary>
+            <Addon
+              label="Avignon"
+              prevLine={Lines.NONE}
+              nextLine={Lines.INACTIVE}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Destination</h2>
+          <Itinerary>
+            <Addon
+              label="Avignon"
+              prevLine={Lines.INACTIVE}
+              nextLine={Lines.NONE}
+            />
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>Itinerary/City/No Time</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Departure</h2>
+          <Itinerary small>
+            <Place
+              label="Avignon"
+              prevLine={Lines.NONE}
+              nextLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Stopover</h2>
+          <Itinerary small>
+            <Place
+              label="Avignon"
+              prevLine={Lines.ACTIVE}
+              nextLine={Lines.ACTIVE}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Destination</h2>
+          <Itinerary small>
+            <Place
+              label="Avignon"
+              prevLine={Lines.ACTIVE}
+              nextLine={Lines.NONE}
+            />
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>Itinerary/Address/Proximity</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Departure</h2>
+          <Itinerary>
+            <Place
+              label="Avenue de Saint-Chamand"
+              subLabel="Avignon"
+              time="12:00"
+              prevLine={Lines.NONE}
+              nextLine={Lines.ACTIVE}
+              proximity={<Proximity value={Distances.CLOSE} title="1.4 km from your departure" display={ProximityDisplay.LABEL} />}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Pickup</h2>
+          <Itinerary>
+            <Place
+              label="Avenue de Saint-Chamand"
+              subLabel="Avignon"
+              time="12:00"
+              prevLine={Lines.INACTIVE}
+              nextLine={Lines.ACTIVE}
+              proximity={<Proximity value={Distances.CLOSE} title="1.4 km from your departure" display={ProximityDisplay.LABEL} />}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Dropoff</h2>
+          <Itinerary>
+            <Place
+              label="Avenue de Saint-Chamand"
+              subLabel="Avignon"
+              time="12:00"
+              prevLine={Lines.ACTIVE}
+              nextLine={Lines.INACTIVE}
+              proximity={<Proximity value={Distances.CLOSE} title="1.4 km from your departure" display={ProximityDisplay.LABEL} />}
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Destination</h2>
+          <Itinerary>
+            <Place
+              label="Avenue de Saint-Chamand"
+              subLabel="Avignon"
+              time="12:00"
+              prevLine={Lines.ACTIVE}
+              nextLine={Lines.NONE}
+              proximity={<Proximity value={Distances.CLOSE} title="1.4 km from your departure" display={ProximityDisplay.LABEL} />}
+            />
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>ITINERARY/ADDRESS/OPTIMISED STOPOVER</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Pickup</h2>
+          <Itinerary>
+            <Place
+              label="Évreux"
+              subLabel="67 Avenue du Président Wilson"
+              time="07:15"
+              prevLine={Lines.INACTIVE}
+              nextLine={Lines.ACTIVE}
+              bullet={<BoostIcon />}
+              highlighted
+            />
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Dropoff</h2>
+          <Itinerary>
+            <Place
+              label="Évreux"
+              subLabel="67 Avenue du Président Wilson"
+              time="07:15"
+              prevLine={Lines.ACTIVE}
+              nextLine={Lines.INACTIVE}
+              bullet={<BoostIcon />}
+              highlighted
+            />
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>Hidden Stop</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Multiple hidden stops</h2>
+          <Itinerary>
+            <HiddenStops label="3 stops">
+              <HiddenStop label="Auxerre" />
+              <HiddenStop label="Beaune" />
+              <HiddenStop label="Mâcon" />
+            </HiddenStops>
+          </Itinerary>
+        </div>
+        <div style={{ width: '25%' }}>
+          <h2 style={h2Styles}>Single hidden stop</h2>
+          <Itinerary>
+            <HiddenStops label="1 stop">
+              <HiddenStop label="Avignon" />
+            </HiddenStops>
+          </Itinerary>
+        </div>
+      </div>
+      <h1 style={h1Styles}>Connection</h1>
+      <div>
+        <div>
+          <Itinerary>
+            <Connection label="Change of vehicle" />
+          </Itinerary>
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <Itinerary>
+            <Connection label="Change of station" />
+          </Itinerary>
+        </div>
+      </div>
+    </React.Fragment>
+  </Story>
+</Canvas>
 
 ### Search result
 
