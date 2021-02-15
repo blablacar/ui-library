@@ -55,26 +55,26 @@ import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } f
 <Canvas>
   <Story name="Ride details - Bus">
     <Itinerary aria-label="Your ride from Paris to Marseille">
-      <Addon label="Lille" aria-label="Bus comes from Lille" />
+      <Addon label="Lille" aria-label="Bus comes from" />
       <Place
-        aria-label="Pickup at 09:00 at Gare de Lyon, Paris"
+        aria-label="Pickup:"
         time="09:00"
         label="Paris"
         subLabel="Gare de lyon"
       />
-      <HiddenStops label="2 stopovers" aria-label="Click to show intermediate stops">
+      <HiddenStops label="2 stopovers">
         <HiddenStop label="Auxerre" aria-label="Bus stops in Auxerre" />
         <HiddenStop label="Dijon" aria-label="Bus stops in Dijon" />
       </HiddenStops>
-      <Place time="12:00" label="Lyon" subLabel="Gare Perrache" aria-label="Drop off the vehicle at 12:00 at Gare Perrache, Lyon" />
+      <Place time="12:00" label="Lyon" subLabel="Gare Perrache" aria-label="Drop off:" />
       <Connection label="Change of vehicle" />
-      <Place time="12:30" label="Lyon" subLabel="Gare Perrache" aria-label="Get in the bus at 12:30 at Gare Perrache, Lyon" />
-      <HiddenStops label="2 stopovers" aria-label="Click to show intermediate stops">
+      <Place time="12:30" label="Lyon" subLabel="Gare Perrache" aria-label="Get in:" />
+      <HiddenStops label="2 stopovers">
         <HiddenStop label="Grenoble" />
         <HiddenStop label="Aix-en-Provence" />
       </HiddenStops>
-      <Place time="16:00" label="Marseille" aria-label="Arrival at Marseille at 16:00" />
-      <Addon label="Montpellier" aria-label="Bus continues to Montpellier" />
+      <Place time="16:00" label="Marseille" aria-label="Arrival:" />
+      <Addon label="Montpellier" aria-label="Bus continues to" />
     </Itinerary>
   </Story>
 </Canvas>
