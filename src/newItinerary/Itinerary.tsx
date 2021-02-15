@@ -39,8 +39,6 @@ const createChildrenWithLines = (
   let prevLine = Lines.NONE
   let nextLine = Lines.NONE
 
-  console.log(child.type)
-
   if (child.type === AddonType) {
     if (index === 0) {
       nextLine = Lines.INACTIVE
