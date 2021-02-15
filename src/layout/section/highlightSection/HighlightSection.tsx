@@ -50,12 +50,8 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
         <HighlightContentItems heading={axes.heading} items={displayedItems} />
-        <div hidden={collapsed}>
-          <HighlightContentItems
-            heading={cities.heading}
-            items={cities.items}
-            aria-hidden={collapsed}
-          />
+        <div hidden={collapsed} aria-hidden={collapsed}>
+          <HighlightContentItems heading={cities.heading} items={cities.items} />
         </div>
         <HighlightSectionElements.Actions>
           <HighlightSectionElements.Button onClick={() => setCollapsed(!collapsed)} role="button">
