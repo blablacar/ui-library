@@ -37,7 +37,6 @@ const Body = styled.div`
 const Media = styled.div<{ small: string; large: string }>`
   grid-area: media;
   grid-column-start: 1;
-  background-color: ${color.blue};
   overflow: hidden;
   background-size: cover;
   background-position: center;
