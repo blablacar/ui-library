@@ -59,4 +59,7 @@ export const StyledBullet = styled.div<{ isIcon: boolean }>`
   position: absolute;
   // Magic numbers to align the icon/bullet with the text
   top: ${({ isIcon }) => (isIcon ? '7px' : '12px')};
+  // IE 11 needs a left position. Let's center the bullet with CSS then
+  left: 50%;
+  transform: translateX(-50%);
 `
