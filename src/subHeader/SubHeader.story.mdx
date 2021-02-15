@@ -1,4 +1,5 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
 
 import { SubHeader } from './index'
 
@@ -8,7 +9,7 @@ import { SubHeader } from './index'
 
 <Canvas>
   <Story name="Default">
-    <SubHeader>SubHeader Title</SubHeader>
+    <SubHeader>{text('children', 'SubHeader Title')}</SubHeader>
   </Story>
 </Canvas>
 
@@ -19,9 +20,9 @@ import { SubHeader } from './index'
 Use it to categorize groups of information.
 Also used to give existing rides and bookings a date and chronological context.
 
- - Max 2 lines of text
- - Not clickable
- - Can be a sticky header
+- Max 2 lines of text
+- Not clickable
+- Can be a sticky header
 
 This component can appear as a sticky date separator on search results feed.
 
@@ -36,7 +37,7 @@ In which case it should stick to the top of the page while scrolling.
 ```jsx
 import { SubHeader } from '@blablacar/ui-library/build/subHeader'
 
-<SubHeader>SubHeader Title</SubHeader>
+;<SubHeader>SubHeader Title</SubHeader>
 ```
 
 <ArgsTable of={SubHeader} />

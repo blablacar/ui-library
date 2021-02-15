@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 import { color, font, inputBorderSize, radius, space, transition } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 export const StyledTextField = styled.div`
-  & {
-    position: relative;
-    box-sizing: border-box;
-  }
+  position: relative;
+  box-sizing: border-box;
+  ${normalizeHorizontally};
+  padding: ${space.m} 0;
 
   & .kirk-textField-wrapper {
     position: relative;

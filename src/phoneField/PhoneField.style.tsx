@@ -1,19 +1,32 @@
 import styled from 'styled-components'
 
 import { color, inputBorderSize, radius, selectHeight, space, transition } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 export const StyledPhoneField = styled.div`
   & .kirk-phoneField-wrapper--inline {
+    ${normalizeHorizontally};
+    margin-top: ${space.m};
+    margin-bottom: ${space.m};
+  }
+
+  & .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
     display: flex;
     border-radius: ${radius.l};
     background-color: ${color.lightGray};
   }
 
-  & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus {
+  &
+    .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus
+    .kirk-phoneField-wrapper--background {
     border: ${inputBorderSize.focus} solid ${color.blue};
   }
 
-  & .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus .kirk-selectField select {
+  &
+    .kirk-phoneField-wrapper--inline.kirk-phoneField-wrapper--hasFocus
+    .kirk-phoneField-wrapper--background
+    .kirk-selectField
+    select {
     height: calc(${selectHeight} - ${inputBorderSize.focus} * 2);
   }
 
@@ -28,6 +41,7 @@ export const StyledPhoneField = styled.div`
   & .kirk-phoneField-wrapper--inline .kirk-selectField,
   & .kirk-phoneField-wrapper--inline .kirk-textField {
     flex: 1;
+    padding: 0 !important; // Counters normalization
   }
 
   & .kirk-phoneField-wrapper--inline .kirk-selectField {
@@ -42,19 +56,16 @@ export const StyledPhoneField = styled.div`
     padding-left: 0 !important;
   }
 
-  & .kirk-phoneField-wrapper .kirk-textField {
-    margin-top: ${space.l};
-  }
-
-  &.kirk-error .kirk-phoneField-wrapper--inline {
+  &.kirk-error .kirk-phoneField-wrapper--inline .kirk-phoneField-wrapper--background {
     background: ${color.lightRed};
     animation: phoneFieldError ${transition.duration.fast} ease-in-out;
   }
 
-  &.kirk-error .kirk-selectField,
-  &.kirk-error .kirk-selectField .kirk-icon,
+  &.kirk-error .kirk-selectField-background,
+  &.kirk-error select,
+  &.kirk-error .kirk-selectField-background .kirk-icon,
   &.kirk-error .kirk-textField-wrapper,
-  &.kirk-error .kirk-textField .kirk-textField-wrapper input {
+  &.kirk-error input {
     background: ${color.lightRed};
     border-color: ${color.lightRed};
   }
@@ -62,7 +73,9 @@ export const StyledPhoneField = styled.div`
   &.kirk-error .kirk-error-message {
     color: ${color.red};
     display: block;
-    padding: ${space.m};
+    padding-right: calc(${space.m} + ${space.xl});
+    padding-left: calc(${space.m} + ${space.xl});
+    padding-bottom: ${space.m};
   }
 
   @keyframes phoneFieldError {
