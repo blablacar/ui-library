@@ -9,7 +9,7 @@ import { Line, LineProps } from './internals/Line'
 export type HiddenStopsProps = A11yProps &
   LineProps &
   Readonly<{
-    children: React.ReactElement<HiddenStopProps>[]
+    children: React.ReactElement<HiddenStopProps> | Array<React.ReactElement<HiddenStopProps>>
     label: string
   }>
 
@@ -20,14 +20,15 @@ export const HiddenStops = ({
   label,
   ...props
 }: HiddenStopsProps) => {
-  const [hidden, setHidden] = useState(true)
+  const stops = Array.isArray(children) ? children.length : 1
+  const [hidden, setHidden] = useState(stops > 1)
 
   return (
     <StyledHiddenStops
-      onClick={(): void => setHidden(!hidden)}
+      onClick={(): void => stops > 1 && setHidden(!hidden)}
       role="button"
       aria-expanded={!hidden}
-      stops={children.length}
+      stops={stops}
       {...pickA11yProps(props)}
     >
       <StyledWrapper>

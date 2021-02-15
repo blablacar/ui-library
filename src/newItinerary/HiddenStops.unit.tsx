@@ -25,6 +25,16 @@ describe('HiddenStops', () => {
     expect(screen.queryByRole('list')).not.toBeInTheDocument()
   })
 
+  it('Should render expanded stops if only one stop', () => {
+    render(
+      <HiddenStops label="1 stop">
+        <HiddenStop label="Paris" />
+      </HiddenStops>,
+    )
+    expect(screen.getByRole('button')).not.toBeInTheDocument()
+    expect(screen.getByRole('list')).toBeInTheDocument()
+  })
+
   it('Should use a11y attributes', () => {
     render(
       <HiddenStops label="2 stops" aria-label="Click to show all stops">
