@@ -81,6 +81,9 @@ const Content = styled.div`
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     height: auto;
+    /* gutter */
+    margin-left: ${space.l};
+    max-width: 537px; /*Magic number from spec*/
   }
 `
 
@@ -90,7 +93,7 @@ const SuccessTitle = styled.h1`
   flex: 1;
   justify-content: center;
   margin: 0; /*reset h1*/
-  padding: ${space.xl} 0 32px; /* TheVoice spacing*/
+  padding: ${space.xl} ${space.xl} 32px; /* TheVoice spacing*/
   white-space: pre-line;
 `
 
