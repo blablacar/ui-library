@@ -31,7 +31,7 @@ const lineToBackground: Readonly<{ [key in Lines]: string }> = {
 
 export const StyledLine = styled.div<{ line: Lines }>`
   width: ${LINE_WIDTH};
-  height: ${LINE_HEIGHT};
+  height: calc(${LINE_HEIGHT} + 1px); // Adding 1 magic px to have the line go under the bullet
   background: ${({ line }) => lineToBackground[line]};
 
   &:last-child {
