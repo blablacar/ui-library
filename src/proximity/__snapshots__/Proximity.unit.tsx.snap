@@ -361,6 +361,7 @@ exports[`Should render proximity with text 1`] = `
 }
 
 .c2 {
+  white-space: pre-line;
   color: #708C91;
   font-size: 13px;
   font-weight: 400;
