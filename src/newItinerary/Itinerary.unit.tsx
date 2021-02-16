@@ -3,16 +3,16 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { Addon } from './Addon'
+import { Address } from './Address'
 import { Itinerary } from './Itinerary'
-import { Place } from './Place'
 
 describe('Itinerary', () => {
   it('Should render the itinerary', () => {
     render(
       <Itinerary>
         <Addon label="Brest" />
-        <Place label="Paris" time="09:00" />
-        <Place label="Lyon" time="13:00" />
+        <Address label="Paris" time="09:00" />
+        <Address label="Lyon" time="13:00" />
         <Addon label="Grenoble" />
       </Itinerary>,
     )
@@ -25,8 +25,8 @@ describe('Itinerary', () => {
     render(
       <Itinerary aria-label="Your trip from Paris to Lyon">
         <Addon label="Brest" />
-        <Place label="Paris" time="09:00" />
-        <Place label="Lyon" time="13:00" />
+        <Address label="Paris" time="09:00" />
+        <Address label="Lyon" time="13:00" />
         <Addon label="Grenoble" />
       </Itinerary>,
     )
@@ -38,8 +38,8 @@ describe('Itinerary', () => {
     render(
       <Itinerary small>
         <Addon label="Brest" />
-        <Place label="Paris" time="09:00" />
-        <Place label="Lyon" time="13:00" />
+        <Address label="Paris" time="09:00" />
+        <Address label="Lyon" time="13:00" />
         <Addon label="Grenoble" />
       </Itinerary>,
     )

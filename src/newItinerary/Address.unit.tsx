@@ -4,20 +4,20 @@ import { render, screen } from '@testing-library/react'
 
 import { MeetingPointIcon } from '../icon/meetingPoint'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
-import { Place } from './Place'
+import { Address } from './Address'
 
 const CustomLinkElement = ({ href }: Readonly<{ href: string }>): JSX.Element => <a href={href} />
 
-describe('Place', () => {
+describe('Address', () => {
   it('Should render the list item', () => {
-    render(<Place label="Paris" time="09:00" />)
+    render(<Address label="Paris" time="09:00" />)
     expect(screen.getByRole('listitem')).toBeInTheDocument()
     expect(screen.getByText('Paris')).toBeInTheDocument()
     expect(screen.getByText('09:00')).toBeInTheDocument()
   })
 
   it('Should render sublabel', () => {
-    render(<Place label="6 rue ménars" time="09:00" subLabel="Paris" />)
+    render(<Address label="6 rue ménars" time="09:00" subLabel="Paris" />)
     expect(screen.getByRole('listitem')).toBeInTheDocument()
     expect(screen.getByText('6 rue ménars')).toBeInTheDocument()
     expect(screen.getByText('Paris')).toBeInTheDocument()
@@ -25,21 +25,25 @@ describe('Place', () => {
   })
 
   it('Should use a11y attributes', () => {
-    render(<Place label="Paris" time="09:00" aria-label="Departure at 09:00 from Paris" />)
+    render(<Address label="Paris" time="09:00" aria-label="Departure at 09:00 from Paris" />)
     expect(
       screen.getByRole('listitem', { name: 'Departure at 09:00 from Paris' }),
     ).toBeInTheDocument()
   })
 
   it('Should render a link', () => {
-    render(<Place label="Paris" time="09:00" href="https://blablacar.fr" />)
+    render(<Address label="Paris" time="09:00" href="https://blablacar.fr" />)
     expect(screen.getByRole('link')).toBeInTheDocument()
     expect(screen.getByRole('link')).toHaveAttribute('href', 'https://blablacar.fr')
   })
 
   it('Should render a custom element as link', () => {
     render(
-      <Place label="Paris" time="09:00" href={<CustomLinkElement href="https://blablacar.ru" />} />,
+      <Address
+        label="Paris"
+        time="09:00"
+        href={<CustomLinkElement href="https://blablacar.ru" />}
+      />,
     )
     expect(screen.getByRole('link')).toBeInTheDocument()
     expect(screen.getByRole('link')).toHaveAttribute('href', 'https://blablacar.ru')
@@ -47,7 +51,7 @@ describe('Place', () => {
 
   it('Should render proximity pills', () => {
     const proximity = <Proximity value={Distances.FAR} title="You'll have to take transports" />
-    render(<Place label="6 rue ménars" time="09:00" proximity={proximity} />)
+    render(<Address label="6 rue ménars" time="09:00" proximity={proximity} />)
     expect(screen.getByText("You'll have to take transports")).toBeInTheDocument()
   })
 
@@ -59,12 +63,12 @@ describe('Place', () => {
         display={ProximityDisplay.LABEL}
       />
     )
-    render(<Place label="6 rue ménars" time="09:00" proximity={proximity} />)
+    render(<Address label="6 rue ménars" time="09:00" proximity={proximity} />)
     expect(screen.getByText("You'll get there by foot")).toBeInTheDocument()
   })
 
   it('Should render a custom icon', () => {
-    render(<Place label="6 rue ménars" time="09:00" bullet={<MeetingPointIcon title="Here" />} />)
+    render(<Address label="6 rue ménars" time="09:00" bullet={<MeetingPointIcon title="Here" />} />)
     expect(screen.getByText('Here')).toBeInTheDocument()
   })
 })

@@ -1,7 +1,7 @@
 export { Itinerary, ItineraryProps } from './Itinerary'
 export { Addon } from './Addon'
 export { HiddenStops } from './HiddenStops'
-export { Place } from './Place'
+export { Address } from './Address'
 export { HiddenStop } from './HiddenStop'
 export { Connection } from './Connection'
 export { Lines } from './Lines'

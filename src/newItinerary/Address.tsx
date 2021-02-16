@@ -3,16 +3,16 @@ import React from 'react'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Bullet, BulletTypes } from '../bullet'
 import { ProximityProps } from '../proximity'
-import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 import {
   StyledChevronIcon,
   StyledContent,
   StyledLabel,
   StyledProximity,
   StyledSubLabel,
-} from './Place.style'
+} from './Address.style'
+import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
 
-export type PlaceProps = A11yProps &
+export type AddressProps = A11yProps &
   Omit<ItineraryItemProps, 'children'> &
   Readonly<{
     label: string
@@ -22,7 +22,7 @@ export type PlaceProps = A11yProps &
     highlighted?: boolean
   }>
 
-export const Place = ({
+export const Address = ({
   prevLine,
   nextLine,
   label,
@@ -33,7 +33,7 @@ export const Place = ({
   proximity,
   highlighted = false,
   ...props
-}: PlaceProps) => (
+}: AddressProps) => (
   <ItineraryItem
     prevLine={prevLine}
     nextLine={nextLine}

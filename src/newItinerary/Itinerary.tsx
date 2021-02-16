@@ -3,12 +3,12 @@ import React, { cloneElement } from 'react'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Addon } from './Addon'
+import { Address } from './Address'
 import { Connection } from './Connection'
 import { HiddenStop } from './HiddenStop'
 import { HiddenStops } from './HiddenStops'
 import { StyledItinerary } from './Itinerary.style'
 import { Lines } from './Lines'
-import { Place } from './Place'
 
 export type ItineraryProps = A11yProps &
   NormalizeProps &
@@ -28,7 +28,7 @@ const HiddenStopsType = (
     <HiddenStop label="" />
   </HiddenStops>
 ).type
-const PlaceType = (<Place label="" />).type
+const AddressType = (<Address label="" />).type
 
 // Magic to avoid having to define lines manually
 const createChildrenWithLines = (
@@ -58,13 +58,13 @@ const createChildrenWithLines = (
     nextLine = Lines.HIDDEN_STOPS
   }
 
-  // Prev line for Place
-  if (child.type === PlaceType && index > 0) {
+  // Prev line for Address
+  if (child.type === AddressType && index > 0) {
     switch (children[index - 1].type) {
       case AddonType:
         prevLine = Lines.INACTIVE
         break
-      case PlaceType:
+      case AddressType:
       case HiddenStopsType:
         prevLine = Lines.ACTIVE
         break
@@ -74,13 +74,13 @@ const createChildrenWithLines = (
     }
   }
 
-  // Next line for Place
-  if (child.type === PlaceType && index + 1 < children.length) {
+  // Next line for Address
+  if (child.type === AddressType && index + 1 < children.length) {
     switch (children[index + 1].type) {
       case AddonType:
         nextLine = Lines.INACTIVE
         break
-      case PlaceType:
+      case AddressType:
       case HiddenStopsType:
         nextLine = Lines.ACTIVE
         break

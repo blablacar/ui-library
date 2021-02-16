@@ -3,7 +3,7 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { BoostIcon } from '../icon/boostIcon'
 import { Distances, Proximity, ProximityDisplay } from '../proximity'
 import { Stepper, StepperDisplay } from '../stepper'
-import { Addon, Connection, HiddenStop, HiddenStops, Itinerary, Lines, Place } from './index'
+import { Addon, Address, Connection, HiddenStop, HiddenStops, Itinerary, Lines } from './index'
 
 <Meta title="Widgets/NewItinerary" />
 
@@ -37,7 +37,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Departure</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Aix-en-Provence"
               time="12:00"
               proximity={<Proximity value={Distances.CLOSE} />}
@@ -45,7 +45,7 @@ export const h2Styles = {
             />
           </Itinerary>
           <Itinerary>
-            <Place
+            <Address
               label="Aix-en-Provence"
               time="12:00"
               proximity={<Proximity value={Distances.FAR} />}
@@ -56,7 +56,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Destination</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Aix-en-Provence"
               time="12:00"
               proximity={<Proximity value={Distances.MIDDLE} />}
@@ -64,7 +64,7 @@ export const h2Styles = {
             />
           </Itinerary>
           <Itinerary>
-            <Place
+            <Address
               label="Aix-en-Provence"
               time="12:00"
               proximity={<Proximity value={Distances.FAR} />}
@@ -101,7 +101,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Departure</h2>
           <Itinerary small>
-            <Place
+            <Address
               label="Avignon"
               prevLine={Lines.NONE}
               nextLine={Lines.ACTIVE}
@@ -111,7 +111,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Stopover</h2>
           <Itinerary small>
-            <Place
+            <Address
               label="Avignon"
               prevLine={Lines.ACTIVE}
               nextLine={Lines.ACTIVE}
@@ -121,7 +121,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Destination</h2>
           <Itinerary small>
-            <Place
+            <Address
               label="Avignon"
               prevLine={Lines.ACTIVE}
               nextLine={Lines.NONE}
@@ -134,7 +134,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Departure</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Avenue de Saint-Chamand"
               subLabel="Avignon"
               time="12:00"
@@ -147,7 +147,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Pickup</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Avenue de Saint-Chamand"
               subLabel="Avignon"
               time="12:00"
@@ -160,7 +160,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Dropoff</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Avenue de Saint-Chamand"
               subLabel="Avignon"
               time="12:00"
@@ -173,7 +173,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Destination</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Avenue de Saint-Chamand"
               subLabel="Avignon"
               time="12:00"
@@ -189,7 +189,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Pickup</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Évreux"
               subLabel="67 Avenue du Président Wilson"
               time="07:15"
@@ -203,7 +203,7 @@ export const h2Styles = {
         <div style={{ width: '25%' }}>
           <h2 style={h2Styles}>Dropoff</h2>
           <Itinerary>
-            <Place
+            <Address
               label="Évreux"
               subLabel="67 Avenue du Président Wilson"
               time="07:15"
@@ -258,12 +258,12 @@ export const h2Styles = {
 <Canvas>
   <Story name="Search">
     <Itinerary>
-      <Place
+      <Address
         label="Villepinte"
         time="12:50"
         proximity={<Proximity value={Distances.FAR} title="You'll have to take transports" />}
       />
-      <Place
+      <Address
         label="Lyon"
         time="18:00"
         proximity={<Proximity value={Distances.CLOSE} title="You'll get there by foot" />}
@@ -277,13 +277,13 @@ export const h2Styles = {
 <Canvas>
   <Story name="Ride details - Carpool">
     <Itinerary>
-      <Place
+      <Address
         label="Villepinte"
         time="12:50"
         proximity={<Proximity value={Distances.FAR} title="3.7 km from your departure" display={ProximityDisplay.LABEL} />}
         href="https://blablacar.fr"
       />
-      <Place
+      <Address
         label="Lyon"
         time="18:00"
         proximity={<Proximity value={Distances.CLOSE} title="400m from your arrival" display={ProximityDisplay.LABEL} />}
@@ -300,7 +300,7 @@ export const h2Styles = {
   <Story name="Ride details - Bus">
     <Itinerary aria-label="Your ride from Paris to Marseille">
       <Addon label="Lille" aria-label="Bus comes from" />
-      <Place
+      <Address
         aria-label="Pickup:"
         time="09:00"
         label="Paris"
@@ -310,13 +310,13 @@ export const h2Styles = {
         <HiddenStop label="Auxerre" aria-label="Bus stops in Auxerre" />
         <HiddenStop label="Dijon" aria-label="Bus stops in Dijon" />
       </HiddenStops>
-      <Place time="12:00" label="Lyon" subLabel="Gare Perrache" aria-label="Drop off:" />
+      <Address time="12:00" label="Lyon" subLabel="Gare Perrache" aria-label="Drop off:" />
       <Connection label="Change of vehicle" />
-      <Place time="12:30" label="Lyon" subLabel="Gare Perrache" aria-label="Get in:" />
+      <Address time="12:30" label="Lyon" subLabel="Gare Perrache" aria-label="Get in:" />
       <HiddenStops label="1 stopover">
         <HiddenStop label="Grenoble" />
       </HiddenStops>
-      <Place time="16:00" label="Marseille" aria-label="Arrival:" />
+      <Address time="16:00" label="Marseille" aria-label="Arrival:" />
       <Addon label="Montpellier" aria-label="Bus continues to" />
     </Itinerary>
   </Story>
@@ -327,13 +327,13 @@ export const h2Styles = {
 <Canvas>
   <Story name="Carpooling Ride Plan">
     <Itinerary>
-      <Place
+      <Address
         label="Paris"
         subLabel="6 rue Ménars"
         time="00:00"
         href="https://blablacar.fr"
       />
-      <Place
+      <Address
         label="Caen"
         subLabel="Esplanade Jean-Marie Louvel"
         time="03:00"
@@ -349,7 +349,7 @@ export const h2Styles = {
   <Story name="Booking request boost">
     <Itinerary>
       <Addon label="Caen" />
-      <Place
+      <Address
         label="Evreux"
         subLabel="67 avenue du président Wilson"
         time="12:00"
@@ -357,7 +357,7 @@ export const h2Styles = {
         bullet={<BoostIcon />}
         highlighted
       />
-      <Place
+      <Address
         label="Paris"
         subLabel="6 rue ménars"
         time="17:00"
@@ -373,14 +373,14 @@ export const h2Styles = {
   <Story name="Meeting points">
     <Itinerary small>
       <Addon label="Carnac" />
-      <Place
+      <Address
         label="Parking rue de Lorient"
         subLabel="Rennes"
         href="https://blablacar.fr"
         prevLine={Lines.INACTIVE}
         nextLine={Lines.INACTIVE}
       />
-      <Place
+      <Address
         label="Aire de covoiturage de Saint-Saturnin"
         subLabel="Saint-Saturnin"
         href="https://blablacar.fr"
@@ -400,8 +400,8 @@ export const h2Styles = {
       display={StepperDisplay.SMALL}
       leftAddon={(
         <Itinerary small>
-          <Place label="Paris" />
-          <Place label="Nantes" />
+          <Address label="Paris" />
+          <Address label="Nantes" />
         </Itinerary>
       )}
     />
@@ -446,8 +446,8 @@ import { Itinerary } from '@blablacar/ui-library/build/newItinerary'
 ### Itinerary props
 <ArgsTable of={Itinerary} />
 
-### Place props
-<ArgsTable of={Place} />
+### Address props
+<ArgsTable of={Address} />
 
 ### Addon props
 <ArgsTable of={Addon} />
