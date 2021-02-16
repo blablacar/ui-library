@@ -22,6 +22,10 @@ export const color: Color = {
   tapHighlight: 'rgba(221, 221, 221, .4)', // gray, 40%
 }
 
+export const gradientColors = {
+  blueGradient: `linear-gradient(80.19deg, ${color.boostBlue} 4.92%, ${color.blue} 95.98%)`,
+}
+
 type Font = {
   [key: string]: {
     size: string
@@ -55,6 +59,10 @@ export const font: Font = {
   xl: {
     size: '30px',
     lineHeight: String(Math.floor((32 / 30) * 100) / 100),
+  },
+  brand: {
+    size: '56px',
+    lineHeight: '56px',
   },
   xxl: {
     size: '82px',

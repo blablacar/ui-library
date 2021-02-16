@@ -1,13 +1,21 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/addon-docs/blocks'
 
-import { color } from '../_utils/branding'
+import { color, gradientColors } from '../_utils/branding'
 
 <Meta title="Design Tokens/Colors" />
 
-# Colors
+# Fixed colors
 
 <ColorPalette>
   {Object.keys(color).map(hue => (
     <ColorItem title={hue} subtitle={`color.${hue}`} colors={[color[hue]]} />
+  ))}
+</ColorPalette>
+
+# Gradient colors
+
+<ColorPalette>
+  {Object.keys(gradientColors).map(hue => (
+    <ColorItem title={hue} subtitle={`gradientColors.${hue}`} colors={[gradientColors[hue]]} />
   ))}
 </ColorPalette>

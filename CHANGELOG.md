@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[NEW]** Add `BlueGradient` in colors
+- **[NEW]** Add `Brand` in typography
+- **[NEW]** Add `BrandedVoice` component
 [...]
 
 - **[FIX]** Remove background from `SEA Pages`

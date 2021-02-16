@@ -3,10 +3,15 @@ import React from 'react'
 import { color } from '../_utils/branding'
 import { BaseIcon, BaseIconDefaultProps, Icon } from '../_utils/icon'
 
-export const BoostIcon = (props: Icon) => (
+export type BoostIconProps = Icon &
+  Readonly<{
+    noBackground?: boolean
+  }>
+
+export const BoostIcon = ({ noBackground, ...props }: BoostIconProps) => (
   <BaseIcon {...props}>
     <g>
-      <circle cx="12" cy="12" r="11" fill="url(#paint0_linear)" />
+      <circle cx="12" cy="12" r="11" fill={noBackground ? 'transparent' : 'url(#paint0_linear)'} />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
