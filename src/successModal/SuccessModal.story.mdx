@@ -11,17 +11,15 @@ import { ModalWithButton } from './SuccessModal.example'
 
 <Canvas>
   <Story name="Default">
-     <SuccessModal
-        isOpen={true}
-        onClose={() => {
-          setOpened(false)
-        }}
-        illustration={<RidePublishedIllustration />}
-        confirmLabel="Got it!"
-        closeOnEsc
-      >
-        {text('children', 'Booking approved! Buddy will travel with you')}
-      </SuccessModal>
+    <SuccessModal
+      isOpen
+      onClose={() => {}}
+      illustration={<RidePublishedIllustration />}
+      confirmLabel="Got it!"
+      closeOnEsc
+    >
+      {text('children', 'Booking approved! Buddy will travel with you')}
+    </SuccessModal>
   </Story>
 </Canvas>
 
@@ -30,19 +28,18 @@ import { ModalWithButton } from './SuccessModal.example'
 <Canvas>
   <Story name="with a HTML image">
     <ModalWithButton
-      illustration={
+      illustration={(
         <img
           src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg"
           alt="Illustation description"
         />
-      }
+      )}
     />
   </Story>
   <Story name="with an illustration">
     <ModalWithButton illustration={<RidePublishedIllustration />} />
   </Story>
 </Canvas>
-
 
 
 ## Specifications

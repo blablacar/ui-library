@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { color, componentSizes, responsiveBreakpoints, space } from '../_utils/branding'
 import { Button } from '../button'
 import { Modal } from '../modal'
+import { TheVoice } from '../theVoice'
 
 const StyledSuccessModal = styled(Modal)`
   padding: 0;
@@ -83,17 +84,15 @@ const Content = styled.div`
     height: auto;
     /* gutter */
     margin-left: ${space.l};
-    max-width: 537px; /*Magic number from spec*/
+    max-width: ${componentSizes.smallSectionWidth};
   }
 `
 
 /* SuccessModal Spacements */
-const SuccessTitle = styled.h1`
+const SuccessTitle = styled(TheVoice).attrs({ isInverted: true })`
   display: flex;
   flex: 1;
   justify-content: center;
-  margin: 0; /*reset h1*/
-  padding: ${space.xl} ${space.xl} 32px; /* TheVoice spacing*/
   white-space: pre-line;
 `
 
