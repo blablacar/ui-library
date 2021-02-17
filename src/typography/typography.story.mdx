@@ -3,6 +3,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
 import { space } from '../_utils/branding'
 import { TextBody } from './body'
 import { TextBodyStrong } from './bodyStrong'
+import { TextBrand } from './brand'
 import { TextCaption } from './caption'
 import { TextDisplay1 } from './display1'
 import { TextDisplay2 } from './display2'
@@ -23,14 +24,22 @@ import { TextTitleStrong } from './titleStrong'
       Medium 82px <br /> Height 82px
     </TextDisplay2>
 </h1>
-  <h2 style={{ marginBottom: space.xxl }}>
+<h1 style={{ marginBottom: space.xxl }}>
+   <p style={{ marginBottom: space.s }}>
+     <TextBody>Brand</TextBody>
+   </p>
+   <TextBrand>
+     Medium 56px <br /> Height 56px
+   </TextBrand>
+</h1>
+  <h1 style={{ marginBottom: space.xxl }}>
     <p style={{ marginBottom: space.s }}>
       <TextBody>Display1</TextBody>
     </p>
     <TextDisplay1>
       Medium 30px <br /> Height 32px
     </TextDisplay1>
-</h2>
+</h1>
   <h3 style={{ marginBottom: space.xxl }}>
     <p style={{ marginBottom: space.s }}>
       <TextBody>SubHeader</TextBody>
@@ -99,6 +108,11 @@ _Text Components_ are text based components.
 ```js
 import { TextBody } from './typography/body'
 <TextBody>The quick brown fox jumps over the lazy dog</TextBody>
+```
+
+```js
+import { TextBrand } from './typography/brand'
+<TextBrand>The quick brown fox jumps over the lazy dog</TextBrand>
 ```
 
 ```js
