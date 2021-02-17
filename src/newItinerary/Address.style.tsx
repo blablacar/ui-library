@@ -5,10 +5,10 @@ import { ChevronIcon } from '../icon/chevronIcon'
 import { TextCaption } from '../typography/caption'
 import { TextTitleStrong } from '../typography/titleStrong'
 
-export const StyledContent = styled.div`
+export const StyledContent = styled.div<{ hasLink: boolean }>`
   position: relative;
   flex: 1;
-  padding: ${space.m} 0;
+  padding: ${space.m} ${props => (props.hasLink ? space.xl : 0)} ${space.m} 0;
 `
 
 export const StyledLabel = styled(TextTitleStrong)<{ highlighted?: boolean }>`
