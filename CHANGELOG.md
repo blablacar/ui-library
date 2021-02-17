@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v47.6.0 (17/02/2021)
+
 - **[NEW]** Added `display` prop to `Proximity`
 - **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
 - **[NEW]** Add `BlueGradient` in colors
@@ -7,7 +11,6 @@
 - **[NEW]** Add `BrandedVoice` component
 - **[FIX]** Fix `Success Screen` gutter for large screens
 - **[FIX]** Remove background from `SEA Pages`
-[...]
 
 # v47.5.0 (12/02/2021)
 
