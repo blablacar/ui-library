@@ -1,4 +1,5 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
 
 import { RidePublishedIllustration } from '../illustration/ridePublished'
 import { SuccessModal } from './index'
@@ -6,16 +7,40 @@ import { ModalWithButton } from './SuccessModal.example'
 
 <Meta title="Screens/SuccessModal" />
 
-# **SuccessModal**
+# **SuccessModal **
+
+<Canvas>
+  <Story name="Default">
+    <SuccessModal
+      isOpen
+      onClose={() => {}}
+      illustration={<RidePublishedIllustration />}
+      confirmLabel="Got it!"
+      closeOnEsc
+    >
+      {text('children', 'Booking approved! Buddy will travel with you')}
+    </SuccessModal>
+  </Story>
+</Canvas>
+
+# **Behavior**
 
 <Canvas>
   <Story name="with a HTML image">
-    <ModalWithButton illustration={<img src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg" alt="Illustation description" />} />
+    <ModalWithButton
+      illustration={(
+        <img
+          src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg"
+          alt="Illustation description"
+        />
+      )}
+    />
   </Story>
   <Story name="with an illustration">
     <ModalWithButton illustration={<RidePublishedIllustration />} />
   </Story>
 </Canvas>
+
 
 ## Specifications
 
@@ -57,11 +82,16 @@ export const ModalWithButton = () => {
         onClose={() => {
           setOpened(false)
         }}
-        illustration={<img src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg" alt="Illustation description" />}
+        illustration={
+          <img
+            src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg"
+            alt="Illustation description"
+          />
+        }
         confirmLabel="Got it!"
         closeOnEsc
       >
-        Booking approved! Buddy will travel with you
+        {text('children', 'Booking approved! Buddy will travel with you')}
       </SuccessModal>
     </BaseSection>
   )
@@ -73,13 +103,17 @@ You can also use illustration component instead of an image:
 ```jsx
 import { SuccessModal } from '@blablacar/ui-library/build/successModal'
 import { RidePublishedIllustration } from '@blablacar/ui-library/build/illustration/ridePublished'
-
-<SuccessModal
+;<SuccessModal
   isOpen={isOpened}
   onClose={() => {
     setOpened(false)
   }}
-  illustration={<img src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg" alt="Illustation description" />}
+  illustration={
+    <img
+      src="https://cdn.blablacar.com/insurance/assets/2b950c73301c3b8526772644de550035.svg"
+      alt="Illustation description"
+    />
+  }
   confirmLabel="Got it!"
   closeOnEsc
 >

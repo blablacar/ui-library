@@ -3,10 +3,7 @@ import React from 'react'
 import uuidv4 from 'uuid/v4'
 
 import { ButtonStatus } from '../button'
-// TODO: fix alias resolving path on build
-// Must use relative path since alias is broken
 import { ModalProps } from '../modal'
-import { TextDisplay1 } from '../typography/display1'
 import { SuccessModalElements } from './SuccessModal.style'
 
 export type SuccessModalProps = ModalProps &
@@ -54,9 +51,7 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
       <Media>
         <Figure>{illustration}</Figure>
         <Content>
-          <SuccessTitle data-test="success-title">
-            <TextDisplay1 isInverted>{children}</TextDisplay1>
-          </SuccessTitle>
+          <SuccessTitle data-test="success-title">{children}</SuccessTitle>
           <SuccessAction>
             <SuccessButton
               status={ButtonStatus.SECONDARY}
