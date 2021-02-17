@@ -1,24 +1,28 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+import { text } from '@storybook/addon-knobs'
 
 import { color } from '../../_utils/branding'
 import { TextBrand } from '.'
 
-<Meta title="Design Tokens/Typography" />
+<Meta title="Design Tokens/Typography/TextBrand" />
 
 # **TextBrand**
 
 <Canvas>
-  <Story name="TextBrand">
-    <React.Fragment>
-      <h1>
-        <TextBrand isInverted={false}>
-          {'The quick\n brown fox jumps\n over the lazy\n dog'}
-        </TextBrand>
-      </h1>
-      <h1 style={{ backgroundColor: color.blue }}>
-        <TextBrand isInverted>The quick brown fox jumps over the lazy dog</TextBrand>
-      </h1>
-    </React.Fragment>
+  <Story name="Default">
+    <TextBrand isInverted={false} as="h1">
+      {text('children', 'The quick\n brown fox jumps\n over the lazy\n dog')}
+    </TextBrand>
+  </Story>
+</Canvas>
+
+### **isInverted**
+
+<Canvas>
+  <Story name="isInverted">
+    <h1 style={{ backgroundColor: color.blue }}>
+      <TextBrand isInverted>{text('children', 'The quick brown fox jumps over the lazy dog')}</TextBrand>
+    </h1>
   </Story>
 </Canvas>
 
