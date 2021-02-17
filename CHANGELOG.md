@@ -4,7 +4,9 @@
 - **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
 [...]
 
+- **[FIX]** Fix `Success Screen` gutter for large screens
 - **[FIX]** Remove background from `SEA Pages`
+
 
 # v47.5.0 (12/02/2021)
 
