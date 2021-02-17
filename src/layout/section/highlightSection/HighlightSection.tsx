@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { ItemChoiceProps } from '../../../itemChoice'
 import { Col, Grid, HighlightSectionElements } from './HighlightSection.style'
@@ -37,6 +37,24 @@ export type HighlightSectionProps = Readonly<{
   highlights: { axes: highlightsType; cities: highlightsType }
   toggle: { on: string; off: string }
 }>
+
+const setFocus = (collapsed: Boolean) => {
+  const collapsibleRegionWrapper = useRef()
+
+  const focusCollapsibleRegion = (): void => {
+    const collapsibleRegion = collapsibleRegionWrapper.current as HTMLDivElement
+    collapsibleRegion.focus()
+  }
+
+  useEffect(() => {
+    if (!collapsed) {
+      focusCollapsibleRegion()
+    }
+  }, [collapsed])
+
+  return [collapsibleRegionWrapper]
+}
+
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
   const [collapsed, setCollapsed] = useState(true)
   const { axes, cities } = highlights
@@ -46,15 +64,29 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
     hidden: collapsed && index >= DEFAULT_ITEMS_SIZE,
   }))
 
+  // Set Focus
+  const [collapsibleRegionWrapper] = setFocus(collapsed)
+
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
         <HighlightContentItems heading={axes.heading} items={displayedItems} />
-        <div hidden={collapsed} aria-hidden={collapsed}>
+        <div
+          id="collapsible_region"
+          ref={collapsibleRegionWrapper}
+          hidden={collapsed}
+          aria-hidden={collapsed}
+          role="region"
+          tabIndex={-1}
+        >
           <HighlightContentItems heading={cities.heading} items={cities.items} />
         </div>
         <HighlightSectionElements.Actions>
-          <HighlightSectionElements.Button onClick={() => setCollapsed(!collapsed)} role="button">
+          <HighlightSectionElements.Button
+            onClick={() => setCollapsed(!collapsed)}
+            aria-expanded={!collapsed}
+            aria-controls="collapsible_region"
+          >
             {toggle[collapsed ? 'on' : 'off']}
           </HighlightSectionElements.Button>
         </HighlightSectionElements.Actions>
