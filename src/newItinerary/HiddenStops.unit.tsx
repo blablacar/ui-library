@@ -17,7 +17,7 @@ describe('HiddenStops', () => {
     expect(screen.getByRole('button')).toBeInTheDocument()
 
     // Toggle stops.
-    // Note: aria-ignore makes .toBeInTheDocument() return false
+    // Note: aria-hidden makes .toBeInTheDocument() return false
     expect(screen.queryByRole('list')).not.toBeInTheDocument()
     fireEvent.click(screen.getAllByRole('listitem')[0])
     expect(screen.getByRole('list')).toBeInTheDocument()
