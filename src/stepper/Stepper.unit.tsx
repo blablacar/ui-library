@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import { Button } from '../button'
 import { MinusIcon } from '../icon/minusIcon'
 import { PlusIcon } from '../icon/plusIcon'
-import { Itinerary } from '../itinerary'
+import { Itinerary, Address } from '../newItinerary'
 import { StepperDisplay } from './constants'
 import { Stepper } from './Stepper'
 
@@ -210,7 +210,12 @@ describe('Stepper', () => {
   })
 
   describe('leftAddon', () => {
-    const itinerary = <Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />
+    const itinerary = (
+      <Itinerary>
+        <Address label="Paris"/>
+        <Address label="Nantes"/>
+      </Itinerary>
+    )
 
     it('should not render leftAddon if not provided', () => {
       const stepper = shallow(<Stepper {...defaultProps} display={StepperDisplay.SMALL} />)
@@ -230,7 +235,6 @@ describe('Stepper', () => {
       const stepper = shallow(
         <Stepper {...defaultProps} display={StepperDisplay.SMALL} leftAddon={itinerary} />,
       )
-      expect(stepper.find('.kirk-stepper-left-addon').exists()).toBe(true)
       expect(stepper.find(Itinerary).exists()).toBe(true)
     })
   })

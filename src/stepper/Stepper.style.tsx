@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { color, space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 import { StepperButtonSize, StepperDisplay } from './constants'
 
 // These components have a 12px vertical padding. We probably took a shortcut when creating our
@@ -8,28 +9,14 @@ import { StepperButtonSize, StepperDisplay } from './constants'
 const betweenMandL = '12px'
 
 export const StyledStepper = styled.div`
-  & {
-    display: flex;
-    position: relative;
-  }
+  ${normalizeHorizontally};
+  display: flex;
+  position: relative;
 
   & .kirk-stepper-content {
     display: flex;
     position: relative;
     flex: 1;
-  }
-
-  & .kirk-stepper-left-addon {
-    // Vertical align the addon
-    display: flex;
-    align-items: center;
-
-    // Addon is expending, while stepper has a fixed size
-    flex: 1;
-  }
-
-  & .kirk-stepper-left-addon + .kirk-stepper-content {
-    flex: 0;
   }
 
   & .kirk-stepper-value {
@@ -58,9 +45,19 @@ export const StyledStepper = styled.div`
     width: calc(100% - ${StepperButtonSize[StepperDisplay.LARGE]}px * 2);
     flex-grow: 0;
   }
+`
 
-  // Don't add the itinerary arrival padding to the one we handle with the Stepper
-  & .kirk-stepper-left-addon .kirk-itineraryLocation--arrival .kirk-itineraryLocation-label {
-    padding-bottom: 0;
+export const StyledAddon = styled.div<{ fixNormalization: boolean }>`
+  // Vertical align the addon
+  display: flex;
+  align-items: center;
+
+  // Addon is expending, while stepper has a fixed size
+  flex: 1;
+  & + .kirk-stepper-content {
+    flex: 0;
   }
+
+  // Left addon can be a normalized component (with 24px horizontal padding). Let's counter it.
+  margin-left: ${props => (props.fixNormalization ? `-${space.xl}` : 0)};
 `

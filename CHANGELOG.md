@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[UPDATE]** Normalize `Stepper` component
+- **[FIX]** Use new `Itinerary` on `Stepper` component
 [...]
 
 # v47.6.0 (17/02/2021)

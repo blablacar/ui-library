@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { Itinerary } from '../itinerary'
+import { Address, Itinerary } from '../newItinerary'
+import { TextTitle } from '../typography/title'
 import { Stepper, StepperDisplay } from './index'
 
 <Meta title="Widgets/Stepper" />
@@ -52,7 +53,7 @@ import { Stepper, StepperDisplay } from './index'
       disabled={false}
     />
   </Story>
-  <Story name="with left addon">
+  <Story name="with itinerary leftAddon">
     <Stepper
       name="stepper4"
       min={0}
@@ -65,7 +66,22 @@ import { Stepper, StepperDisplay } from './index'
       display={StepperDisplay.SMALL}
       title="Edit the price"
       disabled={false}
-      leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
+      leftAddon={<Itinerary small><Address label="Paris" /><Address label="Nantes" /></Itinerary>}
+    />
+  </Story>
+  <Story name="with text leftAddon">
+    <Stepper
+      name="stepper5"
+      min={1}
+      max={8}
+      step={1}
+      value={3}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      display={StepperDisplay.SMALL}
+      title="Edit passengers count"
+      disabled={false}
+      leftAddon={<TextTitle>Passengers</TextTitle>}
     />
   </Story>
 </Canvas>

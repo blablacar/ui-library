@@ -9,8 +9,9 @@ import { OnChangeParameters } from '../_utils/onChange'
 import { Button, ButtonStatus } from '../button'
 import { MinusIcon } from '../icon/minusIcon'
 import { PlusIcon } from '../icon/plusIcon'
+import { Itinerary } from '../newItinerary'
 import { StepperButtonSize, StepperDisplay } from './constants'
-import { StyledStepper } from './Stepper.style'
+import { StyledAddon, StyledStepper } from './Stepper.style'
 
 const StepperValueSize = {
   [StepperDisplay.SMALL]: pxToInteger(font.l.size),
@@ -32,7 +33,7 @@ export type StepperProps = Readonly<{
   onChange?: (obj: OnChangeParameters) => void
   display?: StepperDisplay
   focus?: boolean
-  leftAddon?: React.ReactNode
+  leftAddon?: JSX.Element
   disabled?: boolean
 }>
 
@@ -44,6 +45,12 @@ type StepperState = {
 // Support IE. Same value returned with Number.MAX_SAFE_INTEGER / Number.MIN_SAFE_INTEGER
 const defaultInteger = 2 ** 53 - 1
 const isTouchScreen = isTouchEventsAvailable()
+
+// NOTE: react-hot-loader will update dynamically the type and break type comparisons.
+// A pre-rendered type need to be used to fix it.
+// See: https://github.com/gaearon/react-hot-loader#checking-element-types
+// @ts-ignore
+const ItineraryType = (<Itinerary />).type
 
 export class Stepper extends PureComponent<StepperProps, StepperState> {
   private valueElementRef: RefObject<HTMLDivElement>
@@ -189,10 +196,13 @@ export class Stepper extends PureComponent<StepperProps, StepperState> {
     const isMin = this.state.value <= min
     const buttonSize = StepperButtonSize[display]
     const hasLeftAddon = display === StepperDisplay.SMALL && !isEmpty(leftAddon)
+    const isLeftAddonItinerary = hasLeftAddon && leftAddon.type === ItineraryType
 
     return (
       <StyledStepper className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
-        {hasLeftAddon && <div className="kirk-stepper-left-addon">{leftAddon}</div>}
+        {hasLeftAddon && (
+          <StyledAddon fixNormalization={isLeftAddonItinerary}>{leftAddon}</StyledAddon>
+        )}
 
         <div
           className="kirk-stepper-content"
