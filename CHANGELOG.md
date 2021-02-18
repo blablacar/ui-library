@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Normalize `TextArea`
 [...]
 
 # v47.6.0 (17/02/2021)
