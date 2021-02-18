@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-import { color, space } from '../_utils/branding'
-import { normalizeHorizontally } from '../layout/layoutNormalizer'
+import { space } from '../_utils/branding'
+import { normalizeHorizontally, NormalizeProps } from '../layout/layoutNormalizer'
 import { StepperButtonSize, StepperDisplay } from './constants'
 
 // These components have a 12px vertical padding. We probably took a shortcut when creating our
 // sizes, as we should have handled 4px multiples (checked with @wakooka)
 const betweenMandL = '12px'
 
-export const StyledStepper = styled.div`
+export const StyledStepper = styled.div<NormalizeProps & { valueColor: string }>`
   ${normalizeHorizontally};
   display: flex;
   position: relative;
@@ -24,7 +24,7 @@ export const StyledStepper = styled.div`
     padding: 0 ${space.l};
     margin: 0;
     border: none;
-    color: ${color.midnightGreen};
+    color: ${props => props.valueColor};
     text-align: center;
     flex-grow: 1;
     align-self: center;

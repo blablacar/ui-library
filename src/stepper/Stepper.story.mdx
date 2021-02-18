@@ -84,6 +84,22 @@ import { Stepper, StepperDisplay } from './index'
       leftAddon={<TextTitle>Passengers</TextTitle>}
     />
   </Story>
+  <Story name="with price thresholds">
+    <Stepper
+      name="stepper6"
+      min={1}
+      max={8}
+      threshold={{ medium: 5, high: 7 }}
+      step={1}
+      value={3}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      format={value => `${value} €`}
+      display={StepperDisplay.LARGE}
+      title="Edit passengers count"
+      disabled={false}
+    />
+  </Story>
 </Canvas>
 
 ## Specifications

@@ -29,6 +29,10 @@ export type StepperProps = Readonly<{
   step?: number
   max?: number
   min?: number
+  threshold?: Readonly<{
+    medium: number
+    high: number
+  }>
   format?: (value: string | number) => string | number
   onChange?: (obj: OnChangeParameters) => void
   display?: StepperDisplay
@@ -166,6 +170,26 @@ export class Stepper extends PureComponent<StepperProps, StepperState> {
     this.update(this.props.max)
   }
 
+  getValueColor = () => {
+    const { threshold, max } = this.props
+
+    if (!threshold) {
+      return color.midnightGreen
+    }
+
+    const { medium, high } = threshold
+    const { value } = this.state
+
+    if (value === max || value > high) {
+      return color.red
+    }
+    if (value > medium) {
+      return color.orange
+    }
+
+    return color.green
+  }
+
   createButtonListeners(callback: () => void) {
     return isTouchScreen
       ? { onTouchStart: this.handleButtonDown(callback), onTouchEnd: this.handleButtonUp(callback) }
@@ -199,7 +223,10 @@ export class Stepper extends PureComponent<StepperProps, StepperState> {
     const isLeftAddonItinerary = hasLeftAddon && leftAddon.type === ItineraryType
 
     return (
-      <StyledStepper className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}>
+      <StyledStepper
+        valueColor={this.getValueColor()}
+        className={cc(['kirk-stepper', `kirk-stepper-${display}`, className])}
+      >
         {hasLeftAddon && (
           <StyledAddon fixNormalization={isLeftAddonItinerary}>{leftAddon}</StyledAddon>
         )}
