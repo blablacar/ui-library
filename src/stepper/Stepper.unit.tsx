@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import { Button } from '../button'
 import { MinusIcon } from '../icon/minusIcon'
 import { PlusIcon } from '../icon/plusIcon'
-import { Itinerary, Address } from '../newItinerary'
+import { Address, Itinerary } from '../newItinerary'
 import { StepperDisplay } from './constants'
 import { Stepper } from './Stepper'
 
@@ -212,8 +212,8 @@ describe('Stepper', () => {
   describe('leftAddon', () => {
     const itinerary = (
       <Itinerary>
-        <Address label="Paris"/>
-        <Address label="Nantes"/>
+        <Address label="Paris" />
+        <Address label="Nantes" />
       </Itinerary>
     )
 
