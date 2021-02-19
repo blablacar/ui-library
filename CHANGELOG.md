@@ -2,6 +2,8 @@
 
 [...]
 
+- **[FIX]** `Icons` display on Storybook Canvas
+
 # v47.6.0 (17/02/2021)
 
 - **[NEW]** Added `display` prop to `Proximity`
