@@ -1,2 +1,2 @@
-export { HighlightSection, HighlightSectionProps } from './HighlightSection'
+export { HighlightSection, HighlightSectionProps, highlightsType } from './HighlightSection'
 export { HighlightSectionElements } from './HighlightSection.style'

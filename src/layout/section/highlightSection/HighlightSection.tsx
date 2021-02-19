@@ -31,10 +31,10 @@ const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) =
 
 const DEFAULT_ITEMS_SIZE = 3
 
-type highlightsType = { heading: string; items: Array<ContentItemsType> }
+export type highlightsType = { heading: string; items: Array<ContentItemsType> }
 export type HighlightSectionProps = Readonly<{
   className?: string
-  highlights: { axes: highlightsType; cities: highlightsType }
+  highlights: { axes: highlightsType; cities?: highlightsType }
   toggle: { on: string; off: string }
 }>
 
