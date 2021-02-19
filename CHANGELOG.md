@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix `SelectField` and `PhoneField` unclickable down arrow
 [...]
 
 - **[FIX]** `Icons` display on Storybook Canvas

@@ -62,7 +62,6 @@ export const StyledPhoneField = styled.div`
   }
 
   &.kirk-error .kirk-selectField-background,
-  &.kirk-error select,
   &.kirk-error .kirk-selectField-background .kirk-icon,
   &.kirk-error .kirk-textField-wrapper,
   &.kirk-error input {
