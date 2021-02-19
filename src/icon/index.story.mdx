@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, IconGallery, IconItem, Meta, Story } from '@storybook/addon-docs/blocks'
+import { ArgsTable, Canvas, IconGallery, IconItem, Meta } from '@storybook/addon-docs/blocks'
 
 import { BaseIcon } from '../_utils/icon/BaseIcon'
 import * as allIcons from './index'
@@ -8,13 +8,13 @@ import * as allIcons from './index'
 # ** Icons **
 
 <Canvas>
-  <Story name="Icons">
-    <IconGallery>
-      {Object.entries(allIcons).map(([name, Component]) => (
-        <IconItem name={name}><Component /></IconItem>
-      ))}
-    </IconGallery>
-  </Story>
+  <IconGallery>
+    {Object.entries(allIcons).map(([name, Component]) => (
+      <IconItem name={name}>
+        <Component />
+      </IconItem>
+    ))}
+  </IconGallery>
 </Canvas>
 
 ## Specifications
@@ -22,6 +22,7 @@ import * as allIcons from './index'
 ### Icon size
 
 Icons should be displayed in two sizes only, with a 2px padding:
+
 - 18px
 - 24px
 
@@ -32,7 +33,8 @@ Icons should be displayed in two sizes only, with a 2px padding:
 - Clickable icons: 1px stroke
 
 Exceptions:
-  - Loading icon: 2px stroke
+
+- Loading icon: 2px stroke
 
 ### Colors
 
@@ -40,6 +42,7 @@ Exceptions:
 - When subaction: Icon blue
 
 Exceptions:
+
 - Tab bar: Grey actionable / Blue active
 - Checkmark: Green
 - Highway: Blue
@@ -50,8 +53,7 @@ Exceptions:
 
 ```js
 import { WarningIcon } from '@blablacar/ui-library/icons/warningIcon'
-
-<WarningIcon/>
+;<WarningIcon />
 ```
 
 <ArgsTable of={BaseIcon} />
