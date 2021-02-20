@@ -8,13 +8,15 @@ import * as allIcons from './index'
 # ** Icons **
 
 <Canvas>
-  <IconGallery>
-    {Object.entries(allIcons).map(([name, Component]) => (
-      <IconItem name={name}>
-        <Component />
-      </IconItem>
-    ))}
-  </IconGallery>
+  <Story>
+    <IconGallery>
+      {Object.entries(allIcons).map(([name, Component]) => (
+        <IconItem name={name}>
+          <Component />
+        </IconItem>
+      ))}
+    </IconGallery>
+  </Story>
 </Canvas>
 
 ## Specifications

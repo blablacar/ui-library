@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
+import uniqueId from 'lodash.uniqueid'
 
 import { ItemChoiceProps } from '../../../itemChoice'
 import { Col, Grid, HighlightSectionElements } from './HighlightSection.style'
 
-type ContentItemsType = ItemChoiceProps &
+export type HighlightItemsType = ItemChoiceProps &
   Readonly<{
     hidden: boolean
   }>
 
-type GridListItemsProps = { items: Array<ContentItemsType> }
+type GridListItemsProps = { items: Array<HighlightItemsType> }
 const GridListItems = ({ items }: GridListItemsProps) => {
   const listItems = items.map(({ id, label, data, hidden, href }) => (
     <Col key={id} hidden={hidden}>
@@ -20,7 +21,7 @@ const GridListItems = ({ items }: GridListItemsProps) => {
 
 type HighlightContentItemsProps = {
   heading: string
-  items: Array<ContentItemsType>
+  items: Array<HighlightItemsType>
 }
 const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) => (
   <HighlightSectionElements.Article>
@@ -31,10 +32,10 @@ const HighlightContentItems = ({ heading, items }: HighlightContentItemsProps) =
 
 const DEFAULT_ITEMS_SIZE = 3
 
-export type highlightsType = { heading: string; items: Array<ContentItemsType> }
+export type HighlightsType = { heading: string; items: Array<HighlightItemsType> }
 export type HighlightSectionProps = Readonly<{
   className?: string
-  highlights: { axes: highlightsType; cities?: highlightsType }
+  highlights: { axes: HighlightsType; destinations?: HighlightsType }
   toggle: { on: string; off: string }
 }>
 
@@ -57,7 +58,7 @@ const setFocus = (collapsed: Boolean) => {
 
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
   const [collapsed, setCollapsed] = useState(true)
-  const { axes, cities } = highlights
+  const { axes, destinations } = highlights
 
   const displayedItems = axes.items.map((item, index) => ({
     ...item,
@@ -66,26 +67,29 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
 
   // Set Focus
   const [collapsibleRegionWrapper] = setFocus(collapsed)
+  const collapsibleRegionId = uniqueId('region-')
 
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
         <HighlightContentItems heading={axes.heading} items={displayedItems} />
-        <div
-          id="collapsible_region"
-          ref={collapsibleRegionWrapper}
-          hidden={collapsed}
-          aria-hidden={collapsed}
-          role="region"
-          tabIndex={-1}
-        >
-          <HighlightContentItems heading={cities.heading} items={cities.items} />
-        </div>
+        {destinations && (
+          <div
+            id={collapsibleRegionId}
+            ref={collapsibleRegionWrapper}
+            hidden={collapsed}
+            aria-hidden={collapsed}
+            role="region"
+            tabIndex={-1}
+          >
+            <HighlightContentItems heading={destinations.heading} items={destinations.items} />
+          </div>
+        )}
         <HighlightSectionElements.Actions>
           <HighlightSectionElements.Button
             onClick={() => setCollapsed(!collapsed)}
             aria-expanded={!collapsed}
-            aria-controls="collapsible_region"
+            aria-controls={collapsibleRegionId}
           >
             {toggle[collapsed ? 'on' : 'off']}
           </HighlightSectionElements.Button>

@@ -50,7 +50,7 @@ export const axes = [
   },
 ]
 
-export const cities = [
+export const destinations = [
   {
     id: '1',
     label: 'Lyon',
@@ -109,7 +109,7 @@ export const cities = [
 
 export const highlights = {
   axes: { heading: 'Top trajets en bus', items: axes },
-  cities: { heading: 'Top villes en bus', items: cities },
+  destinations: { heading: 'Top villes en bus', items: destinations },
 }
 
 describe('HighlightSection', () => {
@@ -119,7 +119,7 @@ describe('HighlightSection', () => {
         <HighlightSection
           highlights={{
             axes: { heading: 'Top trajets en bus', items: axes },
-            cities: { heading: 'Top villes en bus', items: [] },
+            destinations: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
             on: 'Show more',
@@ -137,7 +137,7 @@ describe('HighlightSection', () => {
         <HighlightSection
           highlights={{
             axes: { heading: 'Top trajets en bus', items: axes },
-            cities: { heading: 'Top villes en bus', items: [] },
+            destinations: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
             on: 'Show more',
@@ -151,13 +151,13 @@ describe('HighlightSection', () => {
     })
   })
 
-  describe('cities', () => {
-    it('should not render cities by default', () => {
+  describe('destinations', () => {
+    it('should not render destinations by default', () => {
       const view = render(
         <HighlightSection
           highlights={{
             axes: { heading: 'Top trajets en bus', items: [] },
-            cities: { heading: 'Top villes en bus', items: cities },
+            destinations: { heading: 'Top villes en bus', items: destinations },
           }}
           toggle={{
             on: 'Show more',
@@ -169,12 +169,12 @@ describe('HighlightSection', () => {
       expect(view.getByText('Lyon')).not.toBeVisible()
     })
 
-    it('should render cities when expanded', () => {
+    it('should render destinations when expanded', () => {
       const view = render(
         <HighlightSection
           highlights={{
             axes: { heading: 'Top trajets en bus', items: [] },
-            cities: { heading: 'Top villes en bus', items: cities },
+            destinations: { heading: 'Top villes en bus', items: destinations },
           }}
           toggle={{
             on: 'Show more',

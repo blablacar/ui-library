@@ -1,7 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { RideAxis } from '../../../_utils/rideAxis'
-import { HighlightSection, highlightsType } from './index'
+import { HighlightSection } from './index'
 
 export const axes = [
   {
@@ -48,7 +48,7 @@ export const axes = [
   },
 ]
 
-export const cities = [
+export const destinations = [
   {
     id: '1',
     label: 'Lyon',
@@ -107,7 +107,7 @@ export const cities = [
 
 export const highlights = {
   axes: { heading: 'Top trajets en bus', items: axes },
-  cities: { heading: 'Top villes en bus', items: cities },
+  destinations: { heading: 'Top villes en bus', items: destinations },
 }
 
 <Meta title="Sections/HighlightSection" />
@@ -152,10 +152,27 @@ Action button/link for toggling collapse mode. It has on/off state
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
 
-const highlight = {cities: {
-  heading: ''
-  items: []
-}, axes: {}}
+const highlight = {
+  destinations: {
+    heading: 'Destinations heading'
+    items: [ {
+    id: '11',
+    label: 'Toulouse',
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  }]
+},
+axes: {
+   heading: 'Axes heading'
+    items: [ {
+    id: '11',
+    label: 'Toulouse',
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  }]
+}}
 
 <HighlightSection
   highlights={highlights}
