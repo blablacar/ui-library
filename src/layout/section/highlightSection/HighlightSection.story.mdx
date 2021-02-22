@@ -110,6 +110,10 @@ export const highlights = {
   destinations: { heading: 'Top villes en bus', items: destinations },
 }
 
+export const axesOnly = {
+  axes: { heading: 'Top trajets en bus', items: axes },
+}
+
 <Meta title="Sections/HighlightSection" />
 
 # HighlightSection
@@ -118,6 +122,20 @@ export const highlights = {
   <Story name="Default">
     <HighlightSection
       highlights={highlights}
+      toggle={{
+        on: 'Show more',
+        off: 'Show less',
+      }}
+    />
+  </Story>
+</Canvas>
+
+## Axes
+
+<Canvas>
+  <Story name="with only Axes">
+    <HighlightSection
+      highlights={axesOnly}
       toggle={{
         on: 'Show more',
         off: 'Show less',

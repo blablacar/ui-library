@@ -53,7 +53,7 @@ const setFocus = (collapsed: Boolean) => {
     }
   }, [collapsed])
 
-  return [collapsibleRegionWrapper]
+  return collapsibleRegionWrapper
 }
 
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
@@ -65,9 +65,11 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
     hidden: collapsed && index >= DEFAULT_ITEMS_SIZE,
   }))
 
-  // Set Focus
-  const [collapsibleRegionWrapper] = setFocus(collapsed)
   const collapsibleRegionId = uniqueId('region-')
+
+  // Set Focus
+
+  const collapsibleRegionWrapper = destinations ? setFocus(collapsed) : null
 
   return (
     <HighlightSectionElements.Section className={className}>
