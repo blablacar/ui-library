@@ -1,8 +1,11 @@
 # Unreleased
 
+[...]
+
+# v47.6.1 (22/02/2021)
+
 - **[FIX]** `Icons` display on Storybook Canvas
 - **[FIX]** `SelectField` and `PhoneField` unclickable down arrow
-[...]
 
 # v47.6.0 (17/02/2021)
 
