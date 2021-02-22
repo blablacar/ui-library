@@ -2,7 +2,8 @@
 
 - **[FIX]** `Icons` display on Storybook Canvas
 - **[FIX]** `SelectField` and `PhoneField` unclickable down arrow
-[...]
+- **[BREAKING CHANGE]** Brand new `HighlightSection` component.
+  [...]
 
 # v47.6.0 (17/02/2021)
 
@@ -13,7 +14,6 @@
 - **[NEW]** Add `BrandedVoice` component
 - **[FIX]** Fix `Success Screen` gutter for large screens
 - **[FIX]** Remove background from `SEA Pages`
-- **[BREAKING CHANGE]** Brand new `HighlightSection` component.
 
 # v47.5.0 (12/02/2021)
 
