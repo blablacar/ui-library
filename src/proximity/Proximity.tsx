@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cc from 'classcat'
 
 import { color } from '../_utils/branding'
 import { ProximityIcon } from '../icon/proximityIcon'
-import { StyledProximity } from './Proximity.style'
+import { StyledCaption, StyledProximity } from './Proximity.style'
 
 export enum Distances {
   NONE = 'NONE',
   CLOSE = 'CLOSE',
   MIDDLE = 'MIDDLE',
   FAR = 'FAR',
+}
+
+export enum ProximityDisplay {
+  PILLS = 'PILLS',
+  LABEL = 'LABEL',
 }
 
 const size = '20px'
@@ -50,12 +55,25 @@ export type ProximityProps = Readonly<{
   className?: string
   value: Distances
   title?: string
+  display?: ProximityDisplay
 }>
 
-export const Proximity = ({ value, title, className }: ProximityProps) => (
+export const Proximity = ({
+  value,
+  title,
+  className,
+  display = ProximityDisplay.PILLS,
+}: ProximityProps) => (
   <StyledProximity className={cc(['kirk-proximity', className])}>
-    {[Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance => (
-      <ProximityIcon key={distance} size={size} {...getColorAndTitle(distance, value, title)} />
-    ))}
+    {display === ProximityDisplay.PILLS &&
+      [Distances.CLOSE, Distances.MIDDLE, Distances.FAR].map(distance => (
+        <ProximityIcon key={distance} size={size} {...getColorAndTitle(distance, value, title)} />
+      ))}
+    {display === ProximityDisplay.LABEL && (
+      <Fragment>
+        <ProximityIcon size={size} {...getColorAndTitle(value, value, '')} />
+        <StyledCaption color={getColorAndTitle(value, value, '').iconColor}>{title}</StyledCaption>
+      </Fragment>
+    )}
   </StyledProximity>
 )

@@ -1,7 +1,17 @@
 # Unreleased
 
+- **[FIX]** `Icons` display on Storybook Canvas
+- **[FIX]** `SelectField` and `PhoneField` unclickable down arrow
 [...]
 
+# v47.6.0 (17/02/2021)
+
+- **[NEW]** Added `display` prop to `Proximity`
+- **[NEW]** Brand new `Itinerary` component (under `newItinerary` folder)
+- **[NEW]** Add `BlueGradient` in colors
+- **[NEW]** Add `Brand` in typography
+- **[NEW]** Add `BrandedVoice` component
+- **[FIX]** Fix `Success Screen` gutter for large screens
 - **[FIX]** Remove background from `SEA Pages`
 - **[BREAKING CHANGE]** Brand new `HighlightSection` component.
 
