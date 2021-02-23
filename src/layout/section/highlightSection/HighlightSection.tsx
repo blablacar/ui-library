@@ -6,7 +6,7 @@ import { Col, Grid, HighlightSectionElements } from './HighlightSection.style'
 
 export type HighlightItemsType = ItemChoiceProps &
   Readonly<{
-    hidden: boolean
+    hidden?: boolean
   }>
 
 type GridListItemsProps = { items: Array<HighlightItemsType> }

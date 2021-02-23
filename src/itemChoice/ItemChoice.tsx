@@ -20,7 +20,7 @@ export const ItemChoiceStatus = ItemStatus
 export type ItemChoiceProps = A11yProps &
   NormalizeProps &
   Readonly<{
-    label?: string
+    label?: string | JSX.Element
     labelInfo?: React.ReactNode
     data?: string
     dataInfo?: string
