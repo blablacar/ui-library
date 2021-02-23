@@ -1,38 +1,204 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { SpacingDivider } from '../../../divider/spacingDivider'
+import { RideAxis } from '../../../_utils/rideAxis'
 import { HighlightSection } from './index'
+
+export const axes = [
+  {
+    id: '11',
+    label: 'Toulouse',
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '22',
+    label: <RideAxis from="Grenoble" to="Aéroport Lyon-Saint Exupéry" />,
+    data: '16,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '33',
+    label: <RideAxis from="Bus Paris" to="Lille" />,
+    data: '18,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '44',
+    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Lyon" />,
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '55',
+    label: <RideAxis from="Aéroport Lyon-Saint Exupéry" to="Cannes" />,
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '66',
+    label: 'Tous les trajet en bus',
+    data: '',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+]
+
+export const destinations = [
+  {
+    id: '1',
+    label: 'Lyon',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '2',
+    label: 'Cannes',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '3',
+    label: 'Toulouse',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '4',
+    label: 'Paris',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '5',
+    label: 'Nantes',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '6',
+    label: 'Bruxelles',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '7',
+    label: 'Amsterdam',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '8',
+    label: 'Amsterdam',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+  {
+    id: '9',
+    label: 'Tous les villes en bus',
+    href: '#',
+    ariaLabel: 'Aria label',
+  },
+]
+
+export const highlights = {
+  axes: { heading: 'Top trajets en bus', items: axes },
+  destinations: { heading: 'Top villes en bus', items: destinations },
+}
+
+export const axesOnly = {
+  axes: { heading: 'Top trajets en bus', items: axes },
+}
 
 <Meta title="Sections/HighlightSection" />
 
-# **HighlightSection**
+# HighlightSection
 
 <Canvas>
   <Story name="Default">
-    <React.Fragment>
-      <SpacingDivider />
-      <HighlightSection title="Section title">
-        This some content for the highlighted section!
-        <br />
-        Some more content.
-        <br />
-        Some more more content.
-      </HighlightSection>
-      <SpacingDivider />
-    </React.Fragment>
+    <HighlightSection
+      highlights={highlights}
+      toggle={{
+        on: 'Show more',
+        off: 'Show less',
+      }}
+    />
+  </Story>
+</Canvas>
+
+## Axes
+
+<Canvas>
+  <Story name="with only Axes">
+    <HighlightSection
+      highlights={axesOnly}
+      toggle={{
+        on: 'Show more',
+        off: 'Show less',
+      }}
+    />
   </Story>
 </Canvas>
 
 ## Specifications
+
+`HighlightSection` is applied mainly on Landing Pages to **highlight common axes**.
+It's divided on two main sections. It receives axes data and handles its display.
+
+> _SEO_
+>
+> Content should not be completly hidden from the DOM. It uses CSS to handle visibility
+
+### Behavior
+
+It follows a _Grid System_: from 1 column stacked moving up to 3 equal columns.
+
+## Components
+
+`HighlightSection` was split in several small components: `HighlightSectionElements`
+
+#### Link
+
+Action button/link for toggling collapse mode. It has on/off state
 
 ## Usage
 
 ```jsx
 import { HighlightSection } from '@blablacar/ui-library/build/layout/section/highlightSection'
 
-<HighlightSection title="Section title">
-  Section content
-</HighlightSection>
+const highlight = {
+  destinations: {
+    heading: 'Destinations heading'
+    items: [ {
+    id: '11',
+    label: 'Toulouse',
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  }]
+},
+axes: {
+   heading: 'Axes heading'
+    items: [ {
+    id: '11',
+    label: 'Toulouse',
+    data: '8,99 €',
+    href: '#',
+    ariaLabel: 'Aria label',
+  }]
+}}
+
+<HighlightSection
+  highlights={highlights}
+  toggle={{
+    on: 'Show more',
+    off: 'Show less',
+  }}
+/>
 ```
 
 <ArgsTable of={HighlightSection} />
