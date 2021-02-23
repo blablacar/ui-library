@@ -1,8 +1,20 @@
+import React from 'react'
+import cc from 'classcat'
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 const inputHeight = '54px'
+
+export const StyledUneditableContainer = styled(({ componentType, className, ...props }) =>
+  React.createElement(componentType, {
+    className: cc(['kirk-uneditableTextField', className]),
+    ...props,
+  }),
+)`
+  ${normalizeHorizontally}
+`
 
 export const StyledUneditableTextField = styled.div`
   & {

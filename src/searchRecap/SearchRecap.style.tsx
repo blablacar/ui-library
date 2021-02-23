@@ -7,7 +7,8 @@ const separatorWidthPx = '14px'
 export const StyledSearchRecap = styled.div`
   & .kirk-uneditableTextField {
     width: 100%;
-    padding: ${space.m} ${space.l};
+    padding-top: ${space.m};
+    padding-bottom: ${space.m};
   }
 
   & .kirk-uneditableTextField .kirk-icon {

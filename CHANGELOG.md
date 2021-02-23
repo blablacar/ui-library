@@ -9,6 +9,7 @@
 - **[FIX]** Use new `Itinerary` on `Stepper` component
 - **[UPDATE]** Normalize `TextArea`
 - **[UPDATE]** Update `ItemData` `data` prop to be nullable
+- **[UPDATE]** Horizontal Normalization on `UneditableTextField` and `SearchRecap`
 
 # v48.0.0 (23/02/2021)
 
