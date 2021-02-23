@@ -2,6 +2,10 @@
 
 - **[UPDATE]** Update `ItemData` `data` prop to be nullable
 
+# v48.0.0 (23/02/2021)
+
+- **[BREAKING CHANGE]** Brand new `HighlightSection` component.
+
 # v47.6.1 (22/02/2021)
 
 - **[FIX]** `Icons` display on Storybook Canvas
