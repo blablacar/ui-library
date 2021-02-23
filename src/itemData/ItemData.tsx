@@ -9,7 +9,7 @@ import { TextDisplayType } from '../text'
 export type ItemDataProps = NormalizeProps &
   A11yProps &
   Readonly<{
-    data: string | JSX.Element
+    data?: string | JSX.Element
     dataStrikeThrough?: boolean
     dataAriaProps?: A11yProps
     mainInfo: React.ReactNode
