@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Update `ItemData` `data` prop to be nullable
 
 # v47.6.1 (22/02/2021)
 
