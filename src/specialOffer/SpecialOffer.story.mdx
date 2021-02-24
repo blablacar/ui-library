@@ -1,0 +1,208 @@
+import { action } from '@storybook/addon-actions'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { SpecialOffer } from './index'
+
+<Meta title="Widgets/SpecialOffer" />
+
+# **SpecialOffer**
+
+<Canvas>
+  <Story name="Default">
+    <SpecialOffer
+      picture={{
+        url: 'https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg',
+        alt: 'The BlaBlaSur offer logo',
+      }}
+      title="A wonderful offer"
+      description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+      informationLink={{
+        label: 'Learn more about the conditions',
+        url: 'http://example.com/learn-more',
+      }}
+      actions={[
+        {
+          label: 'Register for option 1!',
+          url: 'http://example.com/register1',
+        },
+        {
+          label: 'Register for option 2!',
+          url: 'http://example.com/register2',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+
+## Specifications
+
+This component should be use to represent one Special Offer (also called a Good
+Deal).
+
+Note that there is two variants: you can use link or button actions (0, 1 or 2)
+
+## Usage
+
+```jsx
+import { SpecialOffer } from '@blablacar/ui-library/build/specialOffer'
+```
+
+To create a SpecialOffer without any CTAs:
+
+```jsx
+<SpecialOffer
+  picture={{
+    url: "https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg",
+    alt: "The BlaBlaSur offer logo",
+  }}
+  title="A wonderful offer"
+  description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+/>
+```
+
+<Canvas>
+  <Story name="no CTAs">
+    <SpecialOffer
+      picture={{
+        url: 'https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg',
+        alt: 'The BlaBlaSur offer logo',
+      }}
+      title="A wonderful offer"
+      description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+      actions={[]}
+    />
+  </Story>
+</Canvas>
+
+To create a SpecialOffer with links as CTAs, pass links properties to the `actions` props (1 or 2 links)
+
+```jsx
+<SpecialOffer
+  picture={{
+    url: "https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg",
+    alt: "The BlaBlaSur offer logo",
+  }}
+  title="A wonderful offer"
+  description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+  actions={[
+    {
+      label: "Register for option 1!",
+      url: "http://example.com/register1",
+    },
+  ]}
+/>
+```
+
+<Canvas>
+  <Story name="links as CTAs">
+    <SpecialOffer
+      picture={{
+        url: 'https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg',
+        alt: 'The BlaBlaSur offer logo',
+      }}
+      title="A wonderful offer"
+      description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+      actions={[
+        {
+          label: 'Register for option 1!',
+          url: 'http://example.com/register1',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+To create a SpecialOffer with buttons as CTAs, pass buttons properties to `actions` props (1 or 2 buttons)
+
+```jsx
+<SpecialOffer
+  picture={{
+    url: "https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg",
+    alt: "The BlaBlaSur offer logo",
+  }}
+  title="A wonderful offer"
+  description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+  actions={[
+    {
+      label: "Click for option 1!",
+      onClick: action('clicked 1'),
+    },
+    {
+      label: "Click for option 2!",
+      onClick: action('clicked 2'),
+    },
+  ]}
+/>
+```
+
+<Canvas>
+  <Story name="buttons as CTAs">
+    <SpecialOffer
+      picture={{
+        url: 'https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg',
+        alt: 'The BlaBlaSur offer logo',
+      }}
+      title="A wonderful offer"
+      description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+      actions={[
+        {
+          label: 'Click for option 1!',
+          onClick: action('clicked 1'),
+        },
+        {
+          label: 'Click for option 2!',
+          onClick: action('clicked 2'),
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+You can also provide one optional informational link
+
+```jsx
+<SpecialOffer
+  picture={{
+    url: "https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg",
+    alt: "The BlaBlaSur offer logo",
+  }}
+  title="A wonderful offer"
+  description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+  informationLink={{
+    label: "Learn more about the conditions",
+    url: "http://example.com/learn-more",
+  }}
+  actions={[
+    {
+      label: "Register for option 1!",
+      url: "http://example.com/register1",
+    },
+  ]}
+/>
+```
+
+<Canvas>
+  <Story name="with information link">
+    <SpecialOffer
+      picture={{
+        url: 'https://cdn.blablacar.com/kairos/assets/build/images/blablasure_logo-459e4b952a6cc04b72ea0e12f98ec673.svg',
+        alt: 'The BlaBlaSur offer logo',
+      }}
+      title="A wonderful offer"
+      description="Once you receive your first rating, receive a 30€ voucher on Total spring green electricity offer for your home. So come back here to enjoy it !"
+      informationLink={{
+        label: 'Learn more about the conditions',
+        url: 'http://example.com/learn-more',
+      }}
+      actions={[
+        {
+          label: 'Register for option 1!',
+          url: 'http://example.com/register1',
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+<ArgsTable of={SpecialOffer} />
