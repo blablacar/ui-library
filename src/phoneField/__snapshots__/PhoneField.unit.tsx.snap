@@ -62,7 +62,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
   border: none;
   border-radius: 16px;
   cursor: pointer;
-  z-index: 0;
+  z-index: 1;
 }
 
 .c1 select::-ms-expand {
@@ -497,7 +497,6 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
 }
 
 .c0.kirk-error .kirk-selectField-background,
-.c0.kirk-error select,
 .c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
 .c0.kirk-error input {
@@ -700,7 +699,7 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
   border: none;
   border-radius: 16px;
   cursor: pointer;
-  z-index: 0;
+  z-index: 1;
 }
 
 .c1 select::-ms-expand {
@@ -950,7 +949,6 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
 }
 
 .c0.kirk-error .kirk-selectField-background,
-.c0.kirk-error select,
 .c0.kirk-error .kirk-selectField-background .kirk-icon,
 .c0.kirk-error .kirk-textField-wrapper,
 .c0.kirk-error input {
