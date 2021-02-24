@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
-import { Itinerary } from '../itinerary'
+import { Address, Itinerary } from '../newItinerary'
+import { TextTitle } from '../typography/title'
 import { Stepper, StepperDisplay } from './index'
 
 <Meta title="Widgets/Stepper" />
@@ -22,6 +23,11 @@ import { Stepper, StepperDisplay } from './index'
       disabled={false}
     />
   </Story>
+</Canvas>
+
+### With formatted value
+
+<Canvas>
   <Story name="with formatted value">
     <Stepper
       name="stepper2"
@@ -37,6 +43,11 @@ import { Stepper, StepperDisplay } from './index'
       disabled={false}
     />
   </Story>
+</Canvas>
+
+### With large formatted value
+
+<Canvas>
   <Story name="with large formatted value">
     <Stepper
       name="stepper3"
@@ -52,7 +63,12 @@ import { Stepper, StepperDisplay } from './index'
       disabled={false}
     />
   </Story>
-  <Story name="with left addon">
+</Canvas>
+
+### With `Itinerary` as left addon
+
+<Canvas>
+  <Story name="with itinerary leftAddon">
     <Stepper
       name="stepper4"
       min={0}
@@ -65,7 +81,48 @@ import { Stepper, StepperDisplay } from './index'
       display={StepperDisplay.SMALL}
       title="Edit the price"
       disabled={false}
-      leftAddon={<Itinerary places={[{ mainLabel: 'Paris' }, { mainLabel: 'Nantes' }]} />}
+      leftAddon={<Itinerary small><Address label="Paris" /><Address label="Nantes" /></Itinerary>}
+    />
+  </Story>
+</Canvas>
+
+### With text as left addon
+
+<Canvas>
+  <Story name="with text leftAddon">
+    <Stepper
+      name="stepper5"
+      min={1}
+      max={8}
+      step={1}
+      value={3}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      display={StepperDisplay.SMALL}
+      title="Edit passengers count"
+      disabled={false}
+      leftAddon={<TextTitle>Passengers</TextTitle>}
+    />
+  </Story>
+</Canvas>
+
+### With colors thresholds
+
+<Canvas>
+  <Story name="with price thresholds">
+    <Stepper
+      name="stepper6"
+      min={1}
+      max={8}
+      threshold={{ medium: 5, high: 7 }}
+      step={1}
+      value={3}
+      increaseLabel="Increment"
+      decreaseLabel="Decrement"
+      format={value => `${value} €`}
+      display={StepperDisplay.LARGE}
+      title="Edit passengers count"
+      disabled={false}
     />
   </Story>
 </Canvas>

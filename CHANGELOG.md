@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[NEW]** Add `threshold` prop to `Stepper` to handle color
+- **[UPDATE]** Normalize `Stepper` component
+- **[FIX]** Use new `Itinerary` on `Stepper` component
 - **[UPDATE]** Normalize `TextArea`
 - **[UPDATE]** Update `ItemData` `data` prop to be nullable
 [...]
