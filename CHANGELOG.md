@@ -1,11 +1,14 @@
 # Unreleased
 
+[...]
+
+# v48.1.0 (24/02/2021)
+
 - **[NEW]** Add `threshold` prop to `Stepper` to handle color
 - **[UPDATE]** Normalize `Stepper` component
 - **[FIX]** Use new `Itinerary` on `Stepper` component
 - **[UPDATE]** Normalize `TextArea`
 - **[UPDATE]** Update `ItemData` `data` prop to be nullable
-[...]
 
 # v48.0.0 (23/02/2021)
 
