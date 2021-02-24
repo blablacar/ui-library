@@ -9,12 +9,12 @@ import {
   space,
   transition,
 } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 export const StyledTextarea = styled.div`
-  & {
-    position: relative;
-    box-sizing: border-box;
-  }
+  ${normalizeHorizontally};
+  position: relative;
+  box-sizing: border-box;
 
   & .kirk-textarea-wrapper {
     position: relative;

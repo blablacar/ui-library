@@ -79,9 +79,7 @@ export const EditOptions = () => {
 
             <ContentDivider />
             <ItemInfo mainTitle="Additional details" id="textarea-label" />
-          </BaseSection>
 
-          <BaseSection>
             <Textarea
               placeholder="Flexible about where and when to meet? Not taking the motorway? Got limited space in your boot? Keep passengers in the loop."
               onChange={() => {}}
