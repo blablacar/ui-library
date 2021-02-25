@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v49.0.0 (25/02/2021)
+
 - **[UPDATE]** Horizontal Normalization on `SearchRecap`
 - **[BREAKING CHANGE]** Removed `href` prop on `UneditableTextField` and Horizontal Normalization
 
