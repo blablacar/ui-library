@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 
 import { color, font, radius, space } from '../_utils/branding'
+import { normalizeHorizontally, NormalizeProps } from '../layout/layoutNormalizer'
 
 const inputHeight = '54px'
+
+export const StyledUneditableContainer = styled.div<NormalizeProps>`
+  ${normalizeHorizontally};
+`
 
 export const StyledUneditableTextField = styled.div`
   & {

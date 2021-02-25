@@ -69,24 +69,4 @@ describe('UneditableTextField', () => {
 
     expect(screen.getByTestId(props.addOn.props['data-testid'])).toBeInTheDocument()
   })
-
-  it('should support simple links', () => {
-    const props = createProps({ href: '#foo' })
-    render(<UneditableTextField {...props} />)
-
-    const link = screen.getByRole('link')
-    expect(link).toBeInTheDocument()
-    expect(link).toHaveAttribute('href', props.href)
-    expect(link).toHaveTextContent(props.children as string)
-  })
-
-  it('should support component links', () => {
-    const props = createProps({ href: <a href="#bar" /> })
-    render(<UneditableTextField {...props} />)
-
-    const link = screen.getByRole('link')
-    expect(link).toBeInTheDocument()
-    expect(link).toHaveAttribute('href', (props.href as JSX.Element).props.href)
-    expect(link).toHaveTextContent(props.children as string)
-  })
 })

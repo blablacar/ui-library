@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchRecap Should display searchRecap component 1`] = `
-.c2 {
+.c3 {
   fill: #708C91;
 }
 
-.c2.kirk-icon-wrapper {
+.c3.kirk-icon-wrapper {
   display: inline-block;
   position: relative;
 }
 
-.c2.kirk-icon-shadowed {
+.c3.kirk-icon-shadowed {
   border-radius: 50%;
   box-shadow: 0 0 2px rgba(0,0,0,.3);
 }
 
-.c2 .kirk-icon-badge {
+.c3 .kirk-icon-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   padding: 0.1em 0 0;
   margin: 0 8px;
@@ -36,72 +36,79 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   flex-grow: 0;
 }
 
-.c3 {
+.c4 {
   margin: 0;
   font-weight: 400;
 }
 
-.c3.kirk-text-button {
+.c4.kirk-text-button {
   color: #054752;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-body,
-.c3.kirk-text-bodyStrong {
+.c4.kirk-text-body,
+.c4.kirk-text-bodyStrong {
   color: #708C91;
   font-size: 16px;
   line-height: 20px;
 }
 
-.c3.kirk-text-caption {
+.c4.kirk-text-caption {
   color: #708C91;
   font-size: 13px;
   line-height: 16px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c4.kirk-text-title,
+.c4.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-display2 {
+.c4.kirk-text-display2 {
   color: #054752;
   font-size: 82px;
   line-height: 82px;
   font-weight: 500;
 }
 
-.c3.kirk-text-display1 {
+.c4.kirk-text-display1 {
   color: #054752;
   font-size: 30px;
   line-height: 1.06;
   font-weight: 500;
 }
 
-.c3.kirk-text-subheader,
-.c3.kirk-text-subheaderStrong {
+.c4.kirk-text-subheader,
+.c4.kirk-text-subheaderStrong {
   color: #054752;
   font-size: 22px;
   line-height: 24px;
 }
 
-.c3.kirk-text-title,
-.c3.kirk-text-titleStrong {
+.c4.kirk-text-title,
+.c4.kirk-text-titleStrong {
   color: #054752;
   font-size: 18px;
   line-height: 20px;
 }
 
-.c3.kirk-text-bodyStrong,
-.c3.kirk-text-subheaderStrong,
-.c3.kirk-text-titleStrong {
+.c4.kirk-text-bodyStrong,
+.c4.kirk-text-subheaderStrong,
+.c4.kirk-text-titleStrong {
   font-weight: 500;
 }
 
 .c1 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,23 +128,24 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   text-decoration: none;
 }
 
-.c1 .kirk-uneditableTextField-label:not(:first-child) {
+.c2 .kirk-uneditableTextField-label:not(:first-child) {
   margin-left: 16px;
 }
 
-.c1 .kirk-uneditableTextField-label--ellipsis {
+.c2 .kirk-uneditableTextField-label--ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.c1 .kirk-uneditableTextField-label--placeholder {
+.c2 .kirk-uneditableTextField-label--placeholder {
   color: #708C91;
 }
 
 .c0 .kirk-uneditableTextField {
   width: 100%;
-  padding: 8px 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .c0 .kirk-uneditableTextField .kirk-icon {
@@ -201,14 +209,14 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
   className="kirk-searchRecap c0"
 >
   <div
-    className="kirk-uneditableTextField"
+    className="kirk-uneditableTextField c1"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <svg
         aria-hidden={true}
-        className="kirk-icon c2"
+        className="kirk-icon c3"
         height={24}
         viewBox="0 0 24 24"
         width={24}
@@ -240,7 +248,7 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
         className="kirk-uneditableTextField-label kirk-uneditableTextField-label--ellipsis"
       >
         <p
-          className="kirk-text kirk-text-body kirk-requestRecap-route c3"
+          className="kirk-text kirk-text-body kirk-requestRecap-route c4"
           style={
             Object {
               "color": "#054752",
@@ -255,7 +263,7 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
             </span>
             <svg
               aria-hidden={true}
-              className="kirk-icon c4 c2"
+              className="kirk-icon c5 c3"
               height={24}
               viewBox="0 0 24 24"
               width={24}
@@ -285,7 +293,7 @@ exports[`SearchRecap Should display searchRecap component 1`] = `
           </span>
         </p>
         <span
-          className="kirk-text kirk-text-body kirk-requestRecap-info c3"
+          className="kirk-text kirk-text-body kirk-requestRecap-info c4"
         >
           Today 2:30pm, 2 passengers
         </span>
