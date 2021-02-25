@@ -6,6 +6,8 @@
 
 - **[UPDATE]** Horizontal Normalization on `SearchRecap`
 - **[BREAKING CHANGE]** Removed `href` prop on `UneditableTextField` and Horizontal Normalization
+- **[NEW]** Add `SpecialOffer` component
+
 
 # v48.1.0 (24/02/2021)
 
