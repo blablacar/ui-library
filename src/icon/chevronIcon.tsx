@@ -6,9 +6,10 @@ export type ChevronIconProps = Icon &
   Readonly<{
     down?: boolean
     left?: boolean
+    up?: boolean
   }>
 
-export const ChevronIcon = ({ down, left, ...props }: ChevronIconProps) => (
+export const ChevronIcon = ({ down, left, up, ...props }: ChevronIconProps) => (
   <BaseIcon {...props}>
     <polyline
       fill="none"
@@ -20,6 +21,7 @@ export const ChevronIcon = ({ down, left, ...props }: ChevronIconProps) => (
       points="9 18 15 12 9 6"
       {...(down && { transform: 'rotate(90 12 12)' })}
       {...(left && { transform: 'rotate(180 12 12)' })}
+      {...(up && { transform: 'rotate(-90 12 12)' })}
     />
   </BaseIcon>
 )

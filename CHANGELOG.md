@@ -1,6 +1,6 @@
 # Unreleased
 
-[...]
+- **[UPDATE]** Added `up` prop on `ChevronIcon`
 
 # v51.0.0 (02/03/2021)
 
