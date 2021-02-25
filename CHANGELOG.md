@@ -2,6 +2,13 @@
 
 [...]
 
+# v49.0.0 (25/02/2021)
+
+- **[UPDATE]** Horizontal Normalization on `SearchRecap`
+- **[BREAKING CHANGE]** Removed `href` prop on `UneditableTextField` and Horizontal Normalization
+- **[NEW]** Add `SpecialOffer` component
+
+
 # v48.1.0 (24/02/2021)
 
 - **[NEW]** Add `threshold` prop to `Stepper` to handle color
@@ -9,8 +16,6 @@
 - **[FIX]** Use new `Itinerary` on `Stepper` component
 - **[UPDATE]** Normalize `TextArea`
 - **[UPDATE]** Update `ItemData` `data` prop to be nullable
-- **[UPDATE]** Horizontal Normalization on `SearchRecap`
-- **[BREAKING CHANGE]** Removed `href` prop on `UneditableTextField` and Horizontal Normalization
 
 # v48.0.0 (23/02/2021)
 
