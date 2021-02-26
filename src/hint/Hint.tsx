@@ -9,7 +9,7 @@ import { HintBubble, HintBubblePosition } from './HintBubble'
 export type HintProps = A11yProps &
   Readonly<{
     children: (a11yAttrs: A11yProps) => React.ReactNode
-    title: string
+    mainTitle: string
     closeButtonTitle?: string
     description?: string
     position?: HintBubblePosition
@@ -20,7 +20,7 @@ export type HintProps = A11yProps &
 
 export const Hint = (props: HintProps): JSX.Element => {
   const {
-    title,
+    mainTitle,
     children,
     className = '',
     description = '',
@@ -41,7 +41,7 @@ export const Hint = (props: HintProps): JSX.Element => {
     >
       {!hiddenBubble && (
         <HintBubble
-          title={title}
+          mainTitle={mainTitle}
           description={description}
           closeButtonTitle={closeButtonTitle}
           position={position}

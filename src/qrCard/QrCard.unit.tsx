@@ -7,7 +7,7 @@ import { SubHeader } from '../subHeader'
 import { QrCard } from './QrCard'
 
 const mockedProps = {
-  title: 'Title',
+  mainTitle: 'Title',
   imageUrl: 'http://link',
 }
 

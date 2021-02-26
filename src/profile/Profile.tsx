@@ -11,7 +11,7 @@ import { Rating } from './rating'
 export type ProfileProps = A11yProps &
   Readonly<{
     className?: string
-    title: string
+    mainTitle: string
     info?: string | JSX.Element
     isLink?: boolean
     picture?: string
@@ -31,7 +31,7 @@ export type ProfileProps = A11yProps &
 export const Profile = (props: ProfileProps) => {
   const {
     className,
-    title,
+    mainTitle,
     info,
     picture,
     alt,
@@ -61,7 +61,7 @@ export const Profile = (props: ProfileProps) => {
   return (
     <StyledProfile
       className={cc([className, { 'kirk-profile-size-medium': isMedium }])}
-      leftTitle={title}
+      leftTitle={mainTitle}
       leftTitleDisplay={isMedium ? TextDisplayType.DISPLAY1 : TextDisplayType.TITLE}
       leftBody={getLeftBody}
       rightAddon={

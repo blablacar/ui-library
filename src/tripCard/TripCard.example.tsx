@@ -37,7 +37,7 @@ export const TripCardExample = () => (
       highlighted: false,
     }}
     badge="The Closest"
-    title="Sun march 8th, 18:00"
+    mainTitle="Sun march 8th, 18:00"
     driver={{
       avatarUrl: '//placehold.it/500x500',
       firstName: 'Jane',
