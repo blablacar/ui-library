@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { prefix } from '../_utils'
 import { OnChangeParameters } from '../_utils/onChange'
-import { StyledTimePicker } from './TimePicker.style'
+import { StyledTimePicker, StyledTimePickerWrapper } from './TimePicker.style'
 
 /**
  * Format given dateTime in the format HH:MM.
@@ -39,7 +39,6 @@ export type TimePickerProps = Readonly<{
   onChange?: (obj: OnChangeParameters) => void
   timeStart?: string
   focus?: boolean
-  small?: boolean
 }>
 
 type Steps = { [propName: string]: string }
@@ -130,35 +129,31 @@ export class TimePicker extends PureComponent<TimePickerProps, TimePickerState> 
   onSelectBlur = () => this.setState({ isFocused: false })
 
   render() {
-    const { className = '', disabled = false, name, small = false } = this.props
+    const { className = '', disabled = false, name } = this.props
     const { steps } = this.state
     return (
-      <StyledTimePicker
-        className={cc([
-          prefix({ timePicker: true }),
-          { focus: this.state.isFocused },
-          { small },
-          className,
-        ])}
-        aria-disabled={disabled}
+      <StyledTimePickerWrapper
+        className={cc([prefix({ timePicker: true }), { focus: this.state.isFocused }, className])}
       >
-        <time>{steps[this.state.value]}</time>
-        <select
-          name={name}
-          value={this.state.value}
-          disabled={disabled}
-          onChange={this.onChange}
-          onFocus={this.onSelectFocus}
-          onBlur={this.onSelectBlur}
-          ref={this.selectRef}
-        >
-          {Object.keys(steps).map(key => (
-            <option key={key} value={key}>
-              {steps[key]}
-            </option>
-          ))}
-        </select>
-      </StyledTimePicker>
+        <StyledTimePicker aria-disabled={disabled}>
+          <time>{steps[this.state.value]}</time>
+          <select
+            name={name}
+            value={this.state.value}
+            disabled={disabled}
+            onChange={this.onChange}
+            onFocus={this.onSelectFocus}
+            onBlur={this.onSelectBlur}
+            ref={this.selectRef}
+          >
+            {Object.keys(steps).map(key => (
+              <option key={key} value={key}>
+                {steps[key]}
+              </option>
+            ))}
+          </select>
+        </StyledTimePicker>
+      </StyledTimePickerWrapper>
     )
   }
 }

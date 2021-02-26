@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Removed `small` prop on `TimePicker`
+- **[UPDATE]** Normalize `TimePicker` component
 [...]
 
 # v49.0.0 (25/02/2021)
