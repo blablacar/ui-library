@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Normalize `DatePicker`
 [...]
 
 # v49.0.0 (25/02/2021)
