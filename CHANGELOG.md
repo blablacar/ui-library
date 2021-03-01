@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Move `Proximity` to `newItinerary`
 [...]
 
 # v49.0.0 (25/02/2021)

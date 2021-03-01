@@ -3,8 +3,8 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { MeetingPointIcon } from '../icon/meetingPoint'
-import { Distances, Proximity, ProximityDisplay } from '../proximity'
 import { Address } from './Address'
+import { Distances, Proximity, ProximityDisplay } from './Proximity'
 
 const CustomLinkElement = ({ href }: Readonly<{ href: string }>): JSX.Element => <a href={href} />
 

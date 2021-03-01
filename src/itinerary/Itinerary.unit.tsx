@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react'
 
 import { ItineraryCollapsible } from '../_internals/itineraryCollapsible'
 import { ItineraryLocation } from '../_internals/itineraryLocation'
-import { Distances, Proximity } from '../proximity'
+import { Distances, Proximity } from '../newItinerary'
 import { Itinerary } from './Itinerary'
 
 const places = [

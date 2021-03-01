@@ -2,7 +2,6 @@ import React from 'react'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Bullet, BulletTypes } from '../bullet'
-import { ProximityProps } from '../proximity'
 import {
   StyledChevronIcon,
   StyledContent,
@@ -11,6 +10,7 @@ import {
   StyledSubLabel,
 } from './Address.style'
 import { ItineraryItem, ItineraryItemProps } from './internals/ItineraryItem'
+import { ProximityProps } from './Proximity'
 
 export type AddressProps = A11yProps &
   Omit<ItineraryItemProps, 'children'> &
