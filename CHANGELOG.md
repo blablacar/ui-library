@@ -2,6 +2,8 @@
 
 [...]
 
+# v49.1.0 (01/03/2021)
+
 - **[UPDATE]** Allow `Paragraph` to receive `ReactNode`
 
 # v49.0.0 (25/02/2021)
