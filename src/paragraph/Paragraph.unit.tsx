@@ -12,8 +12,10 @@ it('should truncate long text', () => {
   const props = {
     isExpandable: true,
     expandLabel: 'Read more',
-  }
+  } as const
+
   const paragraph = mount(<Paragraph {...props}>{longText}</Paragraph>)
+
   const expandButton = paragraph.find('Button')
   expect(expandButton.exists()).toBe(true)
   expect(expandButton.text()).toBe('Read more')
@@ -27,8 +29,10 @@ it('should never truncate short text', () => {
   const props = {
     isExpandable: true,
     expandLabel: 'Read more',
-  }
+  } as const
+
   const paragraph = mount(<Paragraph {...props}>{shortText}</Paragraph>)
+
   const expandButton = paragraph.find('Button')
   expect(expandButton.exists()).toBe(false)
 
@@ -41,7 +45,8 @@ it('should expand truncated long text', () => {
   const props = {
     isExpandable: true,
     expandLabel: 'Read more',
-  }
+  } as const
+
   const paragraph = mount(<Paragraph {...props}>{longText}</Paragraph>)
   const expandButton = paragraph.find('Button')
 
