@@ -9,8 +9,13 @@ export const StyledParagraph = styled.div`
   padding: ${space.m} 0;
   word-break: break-word;
   ${normalizeHorizontally};
+`
 
-  & .kirk-button {
-    align-self: flex-end;
+export const ButtonWrapper = styled.div`
+  margin-top: ${space.m};
+  text-align: right;
+
+  & > .kirk-button {
+    display: inline-block;
   }
 `

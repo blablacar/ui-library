@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import cc from 'classcat'
 
 import { Button, ButtonStatus } from '../button'
-import { Text, TextTagType } from '../text'
-import { StyledParagraph } from './Paragraph.style'
+import { TextBody } from '../typography/body'
+import { ButtonWrapper, StyledParagraph } from './Paragraph.style'
 
 const DEFAULT_MAX_CHAR_SIZE = 180
 
@@ -14,7 +14,7 @@ type ParagraphBaseProps = Readonly<{
 
 export type ParagraphSimpleProps = ParagraphBaseProps &
   Readonly<{
-    children: string
+    children: React.ReactNode
   }>
 
 export type ParagraphExpandableProps = ParagraphBaseProps &
@@ -33,9 +33,9 @@ function SimpleParagraph(props: ParagraphSimpleProps): JSX.Element {
 
   return (
     <StyledParagraph className={cc(className)} role="presentation">
-      <Text itemProp={itemProp} tag={TextTagType.PARAGRAPH} newlineToBr>
+      <TextBody as="p" itemProp={itemProp}>
         {children}
-      </Text>
+      </TextBody>
     </StyledParagraph>
   )
 }
@@ -53,13 +53,15 @@ function ExpandableParagraph(props: ParagraphExpandableProps): JSX.Element {
 
   return (
     <StyledParagraph className={cc(className)} role="presentation">
-      <Text itemProp={itemProp} tag={TextTagType.PARAGRAPH} newlineToBr>
+      <TextBody as="p" itemProp={itemProp}>
         {content}
-      </Text>
+      </TextBody>
       {!isExpanded && (
-        <Button status={ButtonStatus.UNSTYLED} onClick={expandParagraph} className="mt-s">
-          {expandLabel}
-        </Button>
+        <ButtonWrapper>
+          <Button status={ButtonStatus.UNSTYLED} onClick={expandParagraph}>
+            {expandLabel}
+          </Button>
+        </ButtonWrapper>
       )}
     </StyledParagraph>
   )

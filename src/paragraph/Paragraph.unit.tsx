@@ -59,3 +59,13 @@ it('should expand truncated long text', () => {
   // Verify button has been removed
   expect(screen.queryByRole('button')).not.toBeInTheDocument()
 })
+
+it('should allow JSX.Element as children for isExpandable=false version', () => {
+  render(
+    <Paragraph>
+      Hello <a href="http://blablacar.com">BBC</a>!
+    </Paragraph>,
+  )
+
+  expect(screen.getByRole('link')).toBeInTheDocument()
+})
