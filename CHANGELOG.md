@@ -1,5 +1,8 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Rename `Why` to `TheWhy`
+- **[UPDATE]** Normalize `Why`
+- **[FIX]** Fix `Why` overflow
 [...]
 
 # v49.0.0 (25/02/2021)
