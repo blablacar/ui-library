@@ -1,12 +1,8 @@
 import React from 'react'
 
-import { Button, ButtonStatus } from '../../../button'
-import { Column } from '../../../layout/column'
+import { ButtonStatus } from '../../../button'
 import { Columns } from '../../../layout/columns'
 import { SectionContentSize } from '../../../layout/section/baseSection'
-import { TextBody } from '../../../typography/body'
-import { TextDisplay1 } from '../../../typography/display1'
-import { TextTitle } from '../../../typography/title'
 import { StyledColumnedContentSection } from './ColumnedContentSection.style'
 
 export type ColumnedContentSectionProps = Readonly<{
@@ -23,7 +19,6 @@ export interface ColumnContent {
   readonly media?: Media
   readonly footerLinkLabel?: string
   readonly footerLinkHref?: string | JSX.Element
-  readonly deprecatedExtraFooter?: JSX.Element // Do not use.
 }
 
 type Media = MediaElement | MediaPictureCover | MediaPictureFit
@@ -70,64 +65,56 @@ interface MediaPictureFit {
 
 const renderMedia = (media: Media): JSX.Element => {
   if (isMediaElement(media)) {
-    return <div className="kirk-columned-content-section-media-element">{media.element}</div>
+    return (
+      <StyledColumnedContentSection.MediaElement>
+        {media.element}
+      </StyledColumnedContentSection.MediaElement>
+    )
   }
 
   if (isMediaCover(media)) {
     return (
-      <a
-        className="kirk-columned-content-section-media-cover"
+      <StyledColumnedContentSection.MediaCover
         target="_blank"
         rel="noopener noreferrer"
         href={media.href}
       >
         <img src={media.pictureUrl} alt="" />
-      </a>
+      </StyledColumnedContentSection.MediaCover>
     )
   }
 
   return (
-    <div className="kirk-columned-content-section-media-fit">
+    <StyledColumnedContentSection.MediaFit>
       <img src={media.pictureUrl} alt="" />
-    </div>
+    </StyledColumnedContentSection.MediaFit>
   )
 }
 
 const renderColumnContent = (columnContent: ColumnContent, index: string): JSX.Element => {
-  const {
-    title,
-    content,
-    media,
-    footerLinkHref,
-    footerLinkLabel,
-    deprecatedExtraFooter,
-  } = columnContent
+  const { title, content, media, footerLinkHref, footerLinkLabel } = columnContent
   const showFooterLink = Boolean(footerLinkHref && footerLinkLabel)
 
   return (
-    <Column className="kirk-columned-content-section-column" key={index}>
+    <StyledColumnedContentSection.Column key={index}>
       {media && renderMedia(media)}
-      <p className="kirk-columned-content-section-subtitle">
-        <TextTitle>{title}</TextTitle>
-      </p>
-      <p className="kirk-columned-content-section-subcontent">
-        <TextBody>{content}</TextBody>
-      </p>
+
+      <StyledColumnedContentSection.ColumnTitle as="p">
+        {title}
+      </StyledColumnedContentSection.ColumnTitle>
+      <StyledColumnedContentSection.ColumnContent as="p">
+        {content}
+      </StyledColumnedContentSection.ColumnContent>
 
       {showFooterLink && (
-        <span>
-          <Button
-            className="kirk-columned-content-section-footer-link"
-            href={footerLinkHref}
-            status={ButtonStatus.UNSTYLED}
-          >
-            {footerLinkLabel}
-          </Button>
-        </span>
+        <StyledColumnedContentSection.ColumnFooter
+          href={footerLinkHref}
+          status={ButtonStatus.UNSTYLED}
+        >
+          {footerLinkLabel}
+        </StyledColumnedContentSection.ColumnFooter>
       )}
-
-      {deprecatedExtraFooter}
-    </Column>
+    </StyledColumnedContentSection.Column>
   )
 }
 
@@ -139,31 +126,26 @@ export const ColumnedContentSection = (props: ColumnedContentSectionProps) => {
   const showTopLink = Boolean(topLinkLabel && topLinkHref)
 
   return (
-    <StyledColumnedContentSection
+    <StyledColumnedContentSection.Section
       tagName="article"
-      contentClassName="kirk-columned-content-section-content"
       className={className}
       contentSize={SectionContentSize.LARGE}
     >
       {title && (
-        <h2 className="kirk-columned-content-section-title">
-          <TextDisplay1>{title}</TextDisplay1>
-        </h2>
-      )}
-      {showTopLink && (
-        <Button
-          className="kirk-columned-content-section-top-link"
-          href={topLinkHref}
-          status={ButtonStatus.UNSTYLED}
-        >
-          {topLinkLabel}
-        </Button>
+        <StyledColumnedContentSection.Header>
+          <StyledColumnedContentSection.Title as="h2">{title}</StyledColumnedContentSection.Title>
+          {showTopLink && (
+            <StyledColumnedContentSection.TopLink href={topLinkHref} status={ButtonStatus.UNSTYLED}>
+              {topLinkLabel}
+            </StyledColumnedContentSection.TopLink>
+          )}
+        </StyledColumnedContentSection.Header>
       )}
       <Columns>
         {columnContentList.map((columnContent, index) =>
           renderColumnContent(columnContent, String(index)),
         )}
       </Columns>
-    </StyledColumnedContentSection>
+    </StyledColumnedContentSection.Section>
   )
 }

@@ -2,6 +2,9 @@
 
 [...]
 - **[BREAKING CHANGE]** rename `HighlightSection` props
+- **[BREAKING CHANGE]** Removed `deprecatedExtraFooter` prop on `ColumnedContentSection`
+- **[UPDATE]** Refactor `ColumnedContentSection` following a compound component approach
+- **[FIX]** Fix top link position on `ColumnedContentSection` and grouping it with the title
 
 # v50.0.0 (02/03/2021)
 
@@ -25,7 +28,6 @@
 - **[UPDATE]** Horizontal Normalization on `SearchRecap`
 - **[BREAKING CHANGE]** Removed `href` prop on `UneditableTextField` and Horizontal Normalization
 - **[NEW]** Add `SpecialOffer` component
-
 
 # v48.1.0 (24/02/2021)
 
