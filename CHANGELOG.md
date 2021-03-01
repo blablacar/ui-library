@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Move `Drawer`, `DropdownButton`, `HamburgerButton` and `Menu` to `TopBar`
 [...]
 
 # v49.0.0 (25/02/2021)

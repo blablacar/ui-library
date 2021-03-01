@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { ChevronIcon } from '../icon/chevronIcon'
+import { ChevronIcon } from '../../icon/chevronIcon'
 import { DropdownButton } from './index'
 
 const defaultProps = {
