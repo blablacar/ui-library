@@ -7,6 +7,14 @@ import { Paragraph } from './index'
 # **Paragraph**
 
 <Canvas>
+  <Story name="Simple usage">
+    <Paragraph>
+      Some text with a link, please go on <a href="http://blablacar.com">blablacar.com</a>
+    </Paragraph>
+  </Story>
+</Canvas>
+
+<Canvas>
   <Story name="Long text">
     <Paragraph isExpandable expandLabel="Expand">
       {`${'Long text (above max char) '.repeat(20)}`}
