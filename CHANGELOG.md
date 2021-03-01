@@ -5,6 +5,7 @@
 - **[BREAKING CHANGE]** Removed `deprecatedExtraFooter` prop on `ColumnedContentSection`
 - **[UPDATE]** Refactor `ColumnedContentSection` following a compound component approach
 - **[FIX]** Fix top link position on `ColumnedContentSection` and grouping it with the title
+- **[NEW]** Add `FaqSection` component
 
 # v50.0.0 (02/03/2021)
 
