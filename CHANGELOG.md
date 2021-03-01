@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `Stars` and `Rating` components are now private
 [...]
 
 # v49.0.0 (25/02/2021)

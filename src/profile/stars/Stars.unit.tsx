@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
 import { Stars } from './Stars'
 
@@ -33,9 +33,4 @@ it('Should display 2.5 stars', () => {
   const starsArray = stars.find('.star')
   expect(starsArray).toHaveLength(5)
   testStars(nbStars, starsArray)
-})
-
-it('Should allow for a custom className', () => {
-  const stars = shallow(<Stars stars={5} className="test-class" />)
-  expect(stars.hasClass('test-class')).toBe(true)
 })
