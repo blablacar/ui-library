@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v50.0.0 (02/03/2021)
+
 - **[BREAKING CHANGE]** Move `Drawer`, `DropdownButton`, `HamburgerButton` and `Menu` to `TopBar`
 - **[BREAKING CHANGE]** Move `Proximity` to `newItinerary`
 - **[BREAKING CHANGE]** Removed `small` prop on `TimePicker`
@@ -10,7 +14,6 @@
 - **[UPDATE]** Normalize `TimePicker` component
 - **[UPDATE]** Normalize `PushInfo`
 - **[FIX]** Fix `Why` overflow
-[...]
 
 # v49.1.0 (01/03/2021)
 
