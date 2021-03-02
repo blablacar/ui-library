@@ -1,9 +1,11 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Removed `small` prop on `TimePicker`
 - **[BREAKING CHANGE]** `Stars` and `Rating` components are now private
 - **[BREAKING CHANGE]** Rename `Why` to `TheWhy`
 - **[UPDATE]** Normalize `Why`
 - **[UPDATE]** Normalize `DatePicker`
+- **[UPDATE]** Normalize `TimePicker` component
 - **[FIX]** Fix `Why` overflow
 [...]
 
