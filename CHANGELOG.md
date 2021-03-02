@@ -1,6 +1,9 @@
 # Unreleased
 
 [...]
+
+# v51.0.0 (02/03/2021)
+
 - **[BREAKING CHANGE]** rename `HighlightSection` props
 - **[BREAKING CHANGE]** Removed `deprecatedExtraFooter` prop on `ColumnedContentSection`
 - **[UPDATE]** Refactor `ColumnedContentSection` following a compound component approach
