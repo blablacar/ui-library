@@ -1,58 +1,71 @@
 import React from 'react'
-import { mount } from 'enzyme'
+
+import { fireEvent, render, screen } from '@testing-library/react'
 
 import { Paragraph } from './index'
 
 const shortText = 'text'
-const longText = 'text '.repeat(100)
+const longText = 'text '.repeat(100).trim()
 const expectedTruncatedLongText =
   'text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text …'
 
 it('should truncate long text', () => {
-  const props = {
-    isExpandable: true,
-    expandLabel: 'Read more',
-  }
-  const paragraph = mount(<Paragraph {...props}>{longText}</Paragraph>)
-  const expandButton = paragraph.find('Button')
-  expect(expandButton.exists()).toBe(true)
-  expect(expandButton.text()).toBe('Read more')
+  const buttonLabel = 'Read more'
 
-  const text = paragraph.find('Text')
-  expect(text.exists()).toBe(true)
-  expect(text.text()).toBe(expectedTruncatedLongText)
+  render(
+    <Paragraph isExpandable expandLabel={buttonLabel}>
+      {longText}
+    </Paragraph>,
+  )
+
+  expect(screen.getByRole('button', { name: buttonLabel })).toBeInTheDocument()
+
+  expect(screen.getByText(expectedTruncatedLongText)).toBeInTheDocument()
 })
 
 it('should never truncate short text', () => {
-  const props = {
-    isExpandable: true,
-    expandLabel: 'Read more',
-  }
-  const paragraph = mount(<Paragraph {...props}>{shortText}</Paragraph>)
-  const expandButton = paragraph.find('Button')
-  expect(expandButton.exists()).toBe(false)
+  const buttonLabel = 'Read more'
 
-  const text = paragraph.find('Text')
-  expect(text.exists()).toBe(true)
-  expect(text.text()).toBe(shortText)
+  render(
+    <Paragraph isExpandable expandLabel={buttonLabel}>
+      {shortText}
+    </Paragraph>,
+  )
+
+  expect(screen.queryByText('button')).not.toBeInTheDocument()
+
+  expect(screen.getByText(shortText)).toBeInTheDocument()
 })
 
 it('should expand truncated long text', () => {
-  const props = {
-    isExpandable: true,
-    expandLabel: 'Read more',
-  }
-  const paragraph = mount(<Paragraph {...props}>{longText}</Paragraph>)
-  const expandButton = paragraph.find('Button')
+  const buttonLabel = 'Read more'
+
+  render(
+    <Paragraph isExpandable expandLabel={buttonLabel}>
+      {longText}
+    </Paragraph>,
+  )
+
+  const button = screen.getByRole('button', { name: buttonLabel })
+  expect(button).toBeInTheDocument()
 
   // Initially the text is truncated and the button to expand is visible:
-  expect(paragraph.find('Text').text()).toBe(expectedTruncatedLongText)
-  expect(paragraph.find('Button').exists()).toBe(true)
+  expect(screen.getByText(expectedTruncatedLongText)).toBeInTheDocument()
 
   // Verify that truncated text is expanded after clicking the toggle
-  expandButton.simulate('click')
-  expect(paragraph.find('Text').text()).toBe(longText)
+  fireEvent.click(button)
+  expect(screen.getByText(longText)).toBeInTheDocument()
 
   // Verify button has been removed
-  expect(paragraph.find('Button').exists()).toBe(false)
+  expect(screen.queryByRole('button')).not.toBeInTheDocument()
+})
+
+it('should allow JSX.Element as children for isExpandable=false version', () => {
+  render(
+    <Paragraph>
+      Hello <a href="http://blablacar.com">BBC</a>!
+    </Paragraph>,
+  )
+
+  expect(screen.getByRole('link')).toBeInTheDocument()
 })
