@@ -4,9 +4,9 @@ import { mount } from 'enzyme'
 import { Item } from '../_internals/item/Item'
 import { Avatar } from '../avatar'
 import { Profile } from '../profile'
-import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
 import { TextBody } from '../typography/body'
+import { Rating } from './rating'
 
 const defaultProps = {
   title: 'Jack Sparrow',

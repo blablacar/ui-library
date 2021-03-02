@@ -1,26 +1,37 @@
 import styled from 'styled-components'
 
-import { color, font, inputBorderSize, space } from '../_utils/branding'
+import { color, font, inputBorderSize, responsiveBreakpoints } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
+
+export const StyledTimePickerWrapper = styled.div`
+  width: 100%;
+  ${normalizeHorizontally};
+
+  // On large media, let's fix the size and center the component
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    position: relative;
+    width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`
 
 export const StyledTimePicker = styled.div`
-  & {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 320px;
-    max-width: 100%;
-    font-size: 4em;
-    font-weight: 500;
-    line-height: 1;
-    background-color: ${color.white};
-    color: ${color.midnightGreen};
-    border: 1px solid ${color.gray};
-    border-radius: 2em;
-    box-sizing: border-box;
-    cursor: pointer;
-    padding: ${inputBorderSize.focus};
-  }
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-weight: 500;
+  line-height: 1;
+  background-color: ${color.white};
+  color: ${color.midnightGreen};
+  border: 1px solid ${color.gray};
+  border-radius: 2em;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: ${inputBorderSize.focus};
 
   &:hover {
     background-color: ${color.lightGray};
@@ -53,6 +64,10 @@ export const StyledTimePicker = styled.div`
     border-color: transparent;
   }
 
+  &[aria-disabled='true']:hover {
+    background-color: ${color.white};
+  }
+
   &[aria-disabled='true']::after {
     border-color: ${color.lightGray};
   }
@@ -77,13 +92,5 @@ export const StyledTimePicker = styled.div`
     display: inline-block;
     padding-top: 6px;
     vertical-align: middle;
-  }
-
-  &.small {
-    font-size: ${font.xl.size};
-
-    & > time {
-      padding-top: ${space.s};
-    }
   }
 `
