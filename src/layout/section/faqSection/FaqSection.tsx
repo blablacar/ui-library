@@ -15,7 +15,7 @@ export type FaqItemProps = {
 
 export type FaqSectionProps = Readonly<{
   className?: string
-  title?: string
+  mainTitle?: string
   items: Array<FaqItemProps>
   expandLabel: string
   buttonLabel?: string
@@ -26,7 +26,7 @@ export type FaqSectionProps = Readonly<{
  * A specialized section with multiple expandable paragraphs with Questions & Answers.
  */
 export const FaqSection = (props: FaqSectionProps) => {
-  const { className, items, title, buttonLabel, buttonHref, expandLabel } = props
+  const { className, items, mainTitle, buttonLabel, buttonHref, expandLabel } = props
 
   const renderFaqItem = ({ question, answer }: FaqItemProps): JSX.Element => {
     const id = uniqueId('faq-item-')
@@ -50,7 +50,7 @@ export const FaqSection = (props: FaqSectionProps) => {
       noHorizontalSpacing
       className={className}
     >
-      {title && <StyledFaqSection.Title as="h2">{title}</StyledFaqSection.Title>}
+      {mainTitle && <StyledFaqSection.Title as="h2">{mainTitle}</StyledFaqSection.Title>}
 
       <StyledFaqSection.List>{items.map(item => renderFaqItem(item))}</StyledFaqSection.List>
 

@@ -30,7 +30,7 @@ const minimalProps: FaqSectionProps = {
 
 const allProps: FaqSectionProps = {
   ...minimalProps,
-  title: 'section title',
+  mainTitle: 'section title',
   buttonLabel: 'button label',
   buttonHref: 'https://blablacar.com',
 }
