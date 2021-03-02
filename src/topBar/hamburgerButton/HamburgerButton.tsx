@@ -1,7 +1,7 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { A11yProps, pickA11yProps } from '../_utils/interfaces'
+import { A11yProps, pickA11yProps } from '../../_utils/interfaces'
 import { StyledHamburgerButton } from './HamburgerButton.style'
 
 export type HamburgerButtonProps = A11yProps &

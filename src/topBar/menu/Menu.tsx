@@ -1,9 +1,9 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import { ItemChoiceProps } from '../itemChoice'
-import { ItemsList, ItemsListDivider } from '../itemsList'
+import { A11yProps, pickA11yProps } from '../../_utils/interfaces'
+import { ItemChoiceProps } from '../../itemChoice'
+import { ItemsList, ItemsListDivider } from '../../itemsList'
 
 export type MenuProps = A11yProps &
   Readonly<{

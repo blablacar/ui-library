@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, transition } from '../_utils/branding'
+import { color, transition } from '../../_utils/branding'
 
 export const StyledDrawer = styled.aside`
   &.kirk-drawer--open {

@@ -1,10 +1,10 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 
-import { CheckShieldIcon } from '../icon/checkShieldIcon'
-import { HomeIcon } from '../icon/homeIcon'
-import { NewspaperIcon } from '../icon/newspaperIcon'
-import { ItemChoice } from '../itemChoice'
+import { CheckShieldIcon } from '../../icon/checkShieldIcon'
+import { HomeIcon } from '../../icon/homeIcon'
+import { NewspaperIcon } from '../../icon/newspaperIcon'
+import { ItemChoice } from '../../itemChoice'
 import { Menu } from '../menu'
 
 let children = []

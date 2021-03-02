@@ -1,65 +1,27 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
-import { boolean } from '@storybook/addon-knobs'
 
-import { color, font } from '../_utils/branding'
-import { Button, ButtonStatus } from '../button'
-import { ArrowIcon } from '../icon/arrowIcon'
-import { TopBar } from './index'
+import { Drawer, DropdownButton, Menu, TopBar } from './index'
+import { LoggedInTopBar, LoggedOutTopBar, SimpleTopBar } from './TopBar.example'
 
 <Meta title="Widgets/TopBar" />
 
 # **TopBar**
 
-export const leftAction = (
-  <Button isBubble status={ButtonStatus.UNSTYLED} onClick={() => {}} aria-label="back">
-    <ArrowIcon iconColor={color.blue} />
-  </Button>
-)
-
-export const rightAction = (
-  <span
-    style={{
-      ...font.m,
-      padding: '12px',
-      color: color.blue,
-    }}
-  >
-    Need help?
-  </span>
-)
-
-export const centerContent = (
-  <div>
-    <span
-      style={{
-        ...font.m,
-        color: color.midnightGreen,
-      }}
-    >
-      Trip
-    </span>
-    <span
-      style={{
-        ...font.s,
-        display: 'block',
-        color: color.lightMidnightGreen,
-      }}
-    >
-      Paris → Lyon
-    </span>
-  </div>
-)
-
 <Canvas>
   <Story name="Default">
-    <TopBar
-      leftItem={boolean('With leftItem', true) && leftAction}
-      centerItem={boolean('With centerItem', true) && centerContent}
-      rightItem={boolean('With rightItem', true) && rightAction}
-      fixed={false}
-      bgTransparent={false}
-      bgShadedTransparent={false}
-    />
+    <SimpleTopBar />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Logged out">
+    <LoggedOutTopBar />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Logged in">
+    <LoggedInTopBar />
   </Story>
 </Canvas>
 
@@ -68,9 +30,43 @@ export const centerContent = (
 ## Usage
 
 ```jsx
-import { TopBar } from '@blablacar/ui-library/build/topBar'
+import { Avatar } from '@blablacar/ui-library/build/avatar'
+import { TopBar, DropdownButton, Drawer, Menu } from '@blablacar/ui-library/build/topBar'
 
-<TopBar />
+export const LoggedOutTopBar = (): JSX.Element => {
+  const [drawerOpened, setDrawerOpened] = useState(false)
+
+  return (
+    <Fragment>
+      <TopBar
+        leftItem={(
+          <DropdownButton onClick={(): void => setDrawerOpened(!drawerOpened)}>
+            <Avatar
+              isSmall
+              image=""
+            />
+          </DropdownButton>
+        )}
+      />
+      <Drawer open={drawerOpened} onClose={(): void => setDrawerOpened(false)}>
+        <Menu>
+          <ItemChoice label="Log in"/>
+          <ItemChoice label="Sign up"/>
+        </Menu>
+      </Drawer>
+    </Fragment>
+  )
+}
 ```
 
+### TopBar props
 <ArgsTable of={TopBar} />
+
+### DropdownButton props
+<ArgsTable of={DropdownButton} />
+
+### Drawer props
+<ArgsTable of={Drawer} />
+
+### Menu props
+<ArgsTable of={Menu} />
