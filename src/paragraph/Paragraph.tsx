@@ -1,65 +1,76 @@
-import React, { PureComponent } from 'react'
+import React, { useState } from 'react'
 import cc from 'classcat'
 
 import { Button, ButtonStatus } from '../button'
-import { Text, TextTagType } from '../text'
-import { StyledParagraph } from './Paragraph.style'
+import { TextBody } from '../typography/body'
+import { ButtonWrapper, StyledParagraph } from './Paragraph.style'
 
 const DEFAULT_MAX_CHAR_SIZE = 180
 
-export type ParagraphProps = Readonly<{
+type ParagraphBaseProps = Readonly<{
   className?: string
-  children: string
-  isExpandable?: boolean
-  expandLabel?: string
   itemProp?: string
 }>
 
-type ParagraphState = {
-  isExpanded: boolean
+export type ParagraphSimpleProps = ParagraphBaseProps &
+  Readonly<{
+    children: React.ReactNode
+  }>
+
+export type ParagraphExpandableProps = ParagraphBaseProps &
+  Readonly<{
+    isExpandable: true
+    expandLabel: string
+    children: string
+  }>
+
+export type ParagraphProps = ParagraphSimpleProps | ParagraphExpandableProps
+
+const truncateText = (text: string) => `${text.substring(0, DEFAULT_MAX_CHAR_SIZE)}…`
+
+function SimpleParagraph(props: ParagraphSimpleProps): JSX.Element {
+  const { className, itemProp, children } = props
+
+  return (
+    <StyledParagraph className={cc(className)} role="presentation">
+      <TextBody as="p" itemProp={itemProp}>
+        {children}
+      </TextBody>
+    </StyledParagraph>
+  )
 }
 
-export class Paragraph extends PureComponent<ParagraphProps> {
-  static defaultProps: Partial<ParagraphProps> = {
-    className: '',
-    isExpandable: false,
-    expandLabel: '',
-    itemProp: null,
+function ExpandableParagraph(props: ParagraphExpandableProps): JSX.Element {
+  const { className, itemProp, expandLabel, children: originalContent } = props
+
+  const [isExpanded, setIsExpanded] = useState(originalContent.length < DEFAULT_MAX_CHAR_SIZE)
+
+  const expandParagraph = () => {
+    setIsExpanded(true)
   }
 
-  state: ParagraphState = {
-    isExpanded: false,
+  const content = isExpanded ? originalContent : truncateText(originalContent)
+
+  return (
+    <StyledParagraph className={cc(className)} role="presentation">
+      <TextBody as="p" itemProp={itemProp}>
+        {content}
+      </TextBody>
+      {!isExpanded && (
+        <ButtonWrapper>
+          <Button status={ButtonStatus.UNSTYLED} onClick={expandParagraph}>
+            {expandLabel}
+          </Button>
+        </ButtonWrapper>
+      )}
+    </StyledParagraph>
+  )
+}
+
+export function Paragraph(props: ParagraphProps) {
+  if ('isExpandable' in props && props.isExpandable) {
+    return <ExpandableParagraph {...props} />
   }
 
-  expandParagraph = () => {
-    this.setState({ isExpanded: true })
-  }
-
-  getTruncatedText() {
-    return `${this.props.children.substring(0, DEFAULT_MAX_CHAR_SIZE)}…`
-  }
-
-  render() {
-    const { className, children: originalContent, isExpandable, expandLabel, itemProp } = this.props
-    const { isExpanded } = this.state
-
-    const isContentTruncated =
-      isExpandable && !isExpanded && originalContent.length > DEFAULT_MAX_CHAR_SIZE
-    const content = isContentTruncated ? this.getTruncatedText() : originalContent
-
-    const readMoreButton = isContentTruncated && (
-      <Button status={ButtonStatus.UNSTYLED} onClick={this.expandParagraph} className="mt-s">
-        {expandLabel}
-      </Button>
-    )
-
-    return (
-      <StyledParagraph className={cc(className)} role="presentation">
-        <Text {...(itemProp && { itemProp })} tag={TextTagType.PARAGRAPH} newlineToBr>
-          {content}
-        </Text>
-        {readMoreButton}
-      </StyledParagraph>
-    )
-  }
+  return <SimpleParagraph {...props} />
 }
