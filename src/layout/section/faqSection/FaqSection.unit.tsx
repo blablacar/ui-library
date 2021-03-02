@@ -39,20 +39,20 @@ describe('FaqSection', () => {
   it('should render FaqSection section with minimal props', () => {
     render(<FaqSection {...minimalProps} />)
 
-    expect(screen.getByText('Question 1')).toBeInTheDocument()
-    expect(screen.getByText('Question 2')).toBeInTheDocument()
-    expect(screen.getByText('Question 3')).toBeInTheDocument()
-    expect(screen.getByText('Question 4')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Question 1' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Question 2' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Question 3' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Question 4' })).toBeInTheDocument()
     expect(screen.getAllByText('Read more')).toHaveLength(3)
 
-    expect(screen.queryByText('section title')).not.toBeInTheDocument()
-    expect(screen.queryByText('button label')).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'section title' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: 'button label' })).not.toBeInTheDocument()
   })
 
   it('should render FaqSection section with all props', () => {
     render(<FaqSection {...allProps} />)
 
-    expect(screen.getByText('section title')).toBeInTheDocument()
-    expect(screen.getByText('button label')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'section title' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'button label' })).toBeInTheDocument()
   })
 })

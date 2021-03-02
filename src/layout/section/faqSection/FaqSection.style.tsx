@@ -11,9 +11,29 @@ const StyledSection = styled(BaseSection)`
   margin-bottom: ${space.xl};
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
-  }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-  @media (${responsiveBreakpoints.isMediaSmall}) {
+    li {
+      min-width: 50%;
+      max-width: 50%;
+    }
+  }
+`
+
+const StyledList = styled.ul`
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`
+
+const StyledListItem = styled.li`
+  @media (${responsiveBreakpoints.isMediaLarge}) {
+    min-width: 50%;
+    max-width: 50%;
   }
 `
 
@@ -34,6 +54,8 @@ const StyledQuestion = styled(TextTitleStrong)`
 
 export const StyledFaqSection = {
   Section: StyledSection,
+  List: StyledList,
+  ListItem: StyledListItem,
   ButtonWrapper: StyledButtonWrapper,
   Title: StyledTitle,
   Question: StyledQuestion,
