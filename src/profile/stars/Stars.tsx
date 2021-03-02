@@ -1,11 +1,9 @@
 import React from 'react'
-import cc from 'classcat'
 
-import { StarIcon as Star } from '../icon/starIcon'
+import { StarIcon as Star } from '../../icon/starIcon'
 import { StyledStars } from './Stars.style'
 
 export type StarsProps = Readonly<{
-  className?: string
   stars: number
 }>
 
@@ -20,8 +18,8 @@ const StarIcon = ({ offset }: { offset: number }) => (
   </div>
 )
 
-export const Stars = ({ stars, className }: StarsProps) => (
-  <StyledStars className={cc(className)}>
+export const Stars = ({ stars }: StarsProps) => (
+  <StyledStars>
     {ValidateStars(stars) &&
       Array.from({ length: 5 }, (v, index) => {
         const filled = stars - index

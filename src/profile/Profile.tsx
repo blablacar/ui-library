@@ -3,10 +3,10 @@ import cc from 'classcat'
 
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { Avatar } from '../avatar'
-import { Rating } from '../rating'
 import { TextDisplayType } from '../text'
 import { TextBody } from '../typography/body'
 import { StyledProfile } from './Profile.style'
+import { Rating } from './rating'
 
 export type ProfileProps = A11yProps &
   Readonly<{

@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `Stars` and `Rating` components are now private
 - **[BREAKING CHANGE]** Rename `Why` to `TheWhy`
 - **[UPDATE]** Normalize `Why`
 - **[UPDATE]** Normalize `DatePicker`
