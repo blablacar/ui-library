@@ -1,47 +1,43 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
+
+import { render, screen } from '@testing-library/react'
 
 import { ProximityIcon } from '../icon/proximityIcon'
 import { PushInfo } from './index'
 import { animationDelay, animationDuration } from './PushInfo.style'
 
-it('Should have the correct attributes and text.', () => {
-  const pushInfo = renderer
-    .create(
+describe('PushInfo', () => {
+  it('Should have the correct attributes and text.', () => {
+    render(
       <PushInfo
         headline="If it's green it's a win!"
         content="Green icons show meeting points closest to you!"
       />,
     )
-    .toJSON()
-  expect(pushInfo).toMatchSnapshot()
-})
 
-it('Should also have the correct icon.', () => {
-  const pushInfo = renderer
-    .create(
+    expect(screen.getByRole('heading', { name: "If it's green it's a win!" })).toBeInTheDocument()
+    expect(screen.getByText('Green icons show meeting points closest to you!')).toBeInTheDocument()
+  })
+
+  it('Should also have the correct icon.', () => {
+    render(
       <PushInfo
-        icon={<ProximityIcon title="" />}
+        icon={<ProximityIcon title="Proximity icon" />}
         headline="If it's green it's a win!"
         content="Green icons show meeting points closest to you!"
       />,
     )
-    .toJSON()
-  expect(pushInfo).toMatchSnapshot()
-})
 
-it('Should call the onAnimationEnd prop after some time', () => {
-  jest.useFakeTimers()
-  const onAnimationEnd = jest.fn()
-  mount(
-    <PushInfo
-      headline="If it's green it's a win!"
-      content="Green icons show meeting points closest to you!"
-      onAnimationEnd={onAnimationEnd}
-    />,
-  )
+    expect(screen.getByText('Proximity icon')).toBeInTheDocument()
+  })
 
-  expect(setTimeout).toHaveBeenCalledTimes(1)
-  expect(setTimeout).toHaveBeenLastCalledWith(onAnimationEnd, animationDuration + animationDelay)
+  it('Should call the onAnimationEnd prop after some time', () => {
+    jest.useFakeTimers()
+    const onAnimationEnd = jest.fn()
+
+    render(<PushInfo headline="If it's green it's a win!" onAnimationEnd={onAnimationEnd} />)
+
+    expect(setTimeout).toHaveBeenCalledTimes(1)
+    expect(setTimeout).toHaveBeenLastCalledWith(onAnimationEnd, animationDuration + animationDelay)
+  })
 })

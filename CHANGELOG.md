@@ -6,6 +6,7 @@
 - **[UPDATE]** Normalize `Why`
 - **[UPDATE]** Normalize `DatePicker`
 - **[UPDATE]** Normalize `TimePicker` component
+- **[UPDATE]** Normalize `PushInfo`
 - **[FIX]** Fix `Why` overflow
 [...]
 
