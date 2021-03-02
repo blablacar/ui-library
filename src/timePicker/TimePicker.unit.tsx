@@ -16,7 +16,7 @@ describe('TimePicker', () => {
   describe('#disabled', () => {
     it('Can be disabled', () => {
       const wrapper = shallow(<TimePicker {...defaultProps} disabled />)
-      expect(wrapper.prop('aria-disabled')).toBe(true)
+      expect(wrapper.find('[aria-disabled]').exists()).toBe(true)
       expect(wrapper.find('select').prop('disabled')).toBe(true)
     })
   })
