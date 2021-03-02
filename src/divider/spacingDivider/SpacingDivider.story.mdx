@@ -3,9 +3,9 @@ import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 import { BaseSection } from '../../layout/section/baseSection'
 import { SpacingDivider, SpacingDividerSize } from './index'
 
-<Meta title="Widgets/Dividers" />
+<Meta title="Widgets/Dividers/SpacingDivider" />
 
-# **SpacingDivider**
+# SpacingDivider
 
 <Canvas>
   <Story name="SpacingDivider">
@@ -25,7 +25,7 @@ import { SpacingDivider, SpacingDividerSize } from './index'
 
 Use blank dividers when vertically stacked components don’t provide enough visual separation.
 
-⛔️ Stack multiple blank separators together.
+- ⛔️ Stack multiple blank separators together.
 
 ### Devs specs
 
@@ -38,9 +38,12 @@ In a list of choices the last choice is not followed by a divider, unless there�
 ```jsx
 import {
   SpacingDivider,
-  SpacingDividerProps,
   SpacingDividerSize,
 } from '@blablacar/ui-library/build/divider/spacingDivider'
+
+Some section to divide...
+<SpacingDivider size={SpacingDividerSize.LARGE} />
+...Rest of the divided section.
 ```
 
 <ArgsTable of={SpacingDivider} />
