@@ -1,7 +1,6 @@
 import React from 'react'
-import { mount } from 'enzyme'
 
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 
 import {
   ColumnedContentSection,
@@ -21,29 +20,23 @@ const defaultProps: ColumnedContentSectionProps = {
   columnContentList: [columnContent, columnContent, columnContent],
 }
 
-const assertTopLink = (wrapper: any, exists: boolean) => {
-  const link = wrapper.find('Button.kirk-columned-content-section-top-link')
-  expect(link.exists()).toBe(exists)
-  if (exists === true) {
-    expect(link.text()).toBe(DEFAULT_TOP_LINK_LABEL)
-    expect(link.prop('href')).toBe(DEFAULT_TOP_LINK_HREF)
-  }
-}
-
-describe('MediaContentSection', () => {
+describe('ColumnedContentSection', () => {
   it('should render top link', () => {
     const props = {
       ...defaultProps,
       topLinkHref: DEFAULT_TOP_LINK_HREF,
       topLinkLabel: DEFAULT_TOP_LINK_LABEL,
     }
-    const wrapper = mount(<ColumnedContentSection {...props} />)
-    assertTopLink(wrapper, true)
+    render(<ColumnedContentSection {...props} />)
+    const link = screen.getByRole('link', { name: DEFAULT_TOP_LINK_LABEL })
+
+    expect(link).toBeInTheDocument()
+    expect(link).toHaveAttribute('href', DEFAULT_TOP_LINK_HREF)
   })
 
   it('should not render top link', () => {
-    const wrapper = mount(<ColumnedContentSection {...defaultProps} />)
-    assertTopLink(wrapper, false)
+    render(<ColumnedContentSection {...defaultProps} />)
+    expect(screen.queryByText('top link label')).not.toBeInTheDocument()
   })
 
   it('should render title', () => {
@@ -74,7 +67,7 @@ describe('MediaContentSection', () => {
       ...columnContent,
       media: {
         kind: ColumnedSectionContentMediaKind.ELEMENT,
-        element: <svg />,
+        element: <svg role="img" />,
       },
     }
 
@@ -99,29 +92,15 @@ describe('MediaContentSection', () => {
       ...defaultProps,
       columnContentList: [column1, column2, column3],
     }
-    const wrapper = mount(<ColumnedContentSection {...props} />)
-    const columns = wrapper.find('li.kirk-columned-content-section-column')
-    expect(columns.length).toBe(3)
 
-    // column 1: ELEMENT media: Verify <svg> element:
-    const contentColumn1 = columns.at(0)
-    expect(contentColumn1.find('svg').length).toBe(1)
+    render(<ColumnedContentSection {...props} />)
+    const images = screen.getAllByRole('img')
+    expect(images).toHaveLength(3)
+    expect(images[0]).toHaveAttribute('role', 'img')
+    expect(images[1]).toHaveAttribute('src', 'http://pic2')
+    expect(images[2]).toHaveAttribute('src', 'http://pic3')
 
-    // column 2: COVER media: Verify image nested in an anchor:
-    const contentColumn2 = columns.at(1)
-    // Verify anchor inside column.
-    const link = contentColumn2.find('a')
-    expect(link.length).toBe(1)
-    expect(link.prop('href')).toBe('http://link2')
-    // Verify image inside anchor
-    const img2 = link.find('img')
-    expect(img2.length).toBe(1)
-    expect(img2.prop('src')).toBe('http://pic2')
-
-    // column 3: FIT media: Verify image existence:
-    const contentColumn3 = columns.at(2)
-    const img3 = contentColumn3.find('img')
-    expect(img3.length).toBe(1)
-    expect(img3.prop('src')).toBe('http://pic3')
+    const columns = screen.getAllByRole('listitem')
+    expect(within(columns[1]).getByRole('link')).toHaveAttribute('href', 'http://link2')
   })
 })
