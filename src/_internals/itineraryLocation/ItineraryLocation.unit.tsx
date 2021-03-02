@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import { Place } from '../../_utils/place'
 import { Bullet, BulletTypes } from '../../bullet'
 import { ConnectionIcon } from '../../icon/connectionIcon'
-import { Distances, Proximity } from '../../proximity'
+import { Distances, Proximity } from '../../newItinerary'
 import { TextCaption } from '../../typography/caption'
 import { ItineraryLocation } from './ItineraryLocation'
 

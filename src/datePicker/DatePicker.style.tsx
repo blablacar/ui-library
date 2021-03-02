@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 
-import { color, font, space } from '../_utils/branding'
+import { color, font, horizontalSpace, space } from '../_utils/branding'
+import { normalizeHorizontally } from '../layout/layoutNormalizer'
 
 const horizontalMonthsGutter = parseInt(space.xl, 10)
 
 export const StyledDatePicker = styled.div`
-  & {
-    display: block;
-    text-align: center;
-    position: relative;
-    font-size: ${font.base.size};
-    line-height: ${font.base.lineHeight};
-    color: ${color.midnightGreen};
-    background-color: ${color.white};
-  }
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: ${font.base.size};
+  line-height: ${font.base.lineHeight};
+  color: ${color.midnightGreen};
+  background-color: ${color.white};
+  ${normalizeHorizontally};
 
   & .DayPicker-Month {
     display: table;
@@ -124,12 +124,12 @@ export const StyledDatePicker = styled.div`
   &.kirk-datepicker-horizontal .kirk-datepicker-previous-month {
     position: absolute;
     top: -12px;
-    left: 0;
+    left: ${horizontalSpace.global};
   }
   &.kirk-datepicker-horizontal .kirk-datepicker-next-month {
     position: absolute;
     top: -12px;
-    right: 0;
+    right: ${horizontalSpace.global};
   }
 
   &.kirk-datepicker-vertical .DayPicker-Weekdays {

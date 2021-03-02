@@ -1,7 +1,12 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import cc from 'classcat'
 
-import { animationDelay, animationDuration, StyledPushInfo } from './PushInfo.style'
+import {
+  animationDelay,
+  animationDuration,
+  StyledPushInfo,
+  StyledPushInfoWrapper,
+} from './PushInfo.style'
 
 export type PushInfoProps = Readonly<{
   className?: string
@@ -11,17 +16,22 @@ export type PushInfoProps = Readonly<{
   onAnimationEnd?: Function
 }>
 
-export class PushInfo extends Component<PushInfoProps> {
-  componentDidMount() {
-    if (this.props.onAnimationEnd) {
-      setTimeout(this.props.onAnimationEnd, animationDuration + animationDelay)
+export const PushInfo = ({
+  className,
+  icon,
+  headline,
+  content,
+  onAnimationEnd,
+}: PushInfoProps): JSX.Element => {
+  useEffect(() => {
+    if (onAnimationEnd) {
+      setTimeout(onAnimationEnd, animationDuration + animationDelay)
     }
-  }
+  }, [onAnimationEnd])
 
-  render() {
-    const { className, icon, headline, content } = this.props
-    return (
-      <StyledPushInfo className={cc(['kirk-pushInfo', className])}>
+  return (
+    <StyledPushInfoWrapper className={cc(['kirk-pushInfo', className])}>
+      <StyledPushInfo>
         {icon && <div className="kirk-pushInfo-icon">{icon}</div>}
         <div>
           <h2
@@ -35,6 +45,6 @@ export class PushInfo extends Component<PushInfoProps> {
           {content && <p className="kirk-pushInfo-content">{content}</p>}
         </div>
       </StyledPushInfo>
-    )
-  }
+    </StyledPushInfoWrapper>
+  )
 }
