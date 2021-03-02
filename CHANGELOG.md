@@ -1,6 +1,9 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Rename `Why` to `TheWhy`
+- **[UPDATE]** Normalize `Why`
 - **[UPDATE]** Normalize `DatePicker`
+- **[FIX]** Fix `Why` overflow
 [...]
 
 # v49.1.0 (01/03/2021)
