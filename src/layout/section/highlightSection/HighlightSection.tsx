@@ -35,11 +35,11 @@ const DEFAULT_ITEMS_SIZE = 3
 export type HighlightsType = { heading: string; items: Array<HighlightItemsType> }
 export type HighlightSectionProps = Readonly<{
   className?: string
-  highlights: { axes: HighlightsType; destinations?: HighlightsType }
+  highlights: { featured: HighlightsType; optional?: HighlightsType }
   toggle: { on: string; off: string }
 }>
 
-const setFocus = (collapsed: Boolean) => {
+const setFocus = (collapsed: boolean) => {
   const collapsibleRegionWrapper = useRef()
 
   const focusCollapsibleRegion = (): void => {
@@ -58,9 +58,9 @@ const setFocus = (collapsed: Boolean) => {
 
 export const HighlightSection = ({ highlights, toggle, className }: HighlightSectionProps) => {
   const [collapsed, setCollapsed] = useState(true)
-  const { axes, destinations } = highlights
+  const { featured, optional } = highlights
 
-  const displayedItems = axes.items.map((item, index) => ({
+  const displayedItems = featured.items.map((item, index) => ({
     ...item,
     hidden: collapsed && index >= DEFAULT_ITEMS_SIZE,
   }))
@@ -69,13 +69,13 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
 
   // Set Focus
 
-  const collapsibleRegionWrapper = destinations ? setFocus(collapsed) : null
+  const collapsibleRegionWrapper = optional ? setFocus(collapsed) : null
 
   return (
     <HighlightSectionElements.Section className={className}>
       <HighlightSectionElements.Content>
-        <HighlightContentItems heading={axes.heading} items={displayedItems} />
-        {destinations && (
+        <HighlightContentItems heading={featured.heading} items={displayedItems} />
+        {optional && (
           <div
             id={collapsibleRegionId}
             ref={collapsibleRegionWrapper}
@@ -84,7 +84,7 @@ export const HighlightSection = ({ highlights, toggle, className }: HighlightSec
             role="region"
             tabIndex={-1}
           >
-            <HighlightContentItems heading={destinations.heading} items={destinations.items} />
+            <HighlightContentItems heading={optional.heading} items={optional.items} />
           </div>
         )}
         <HighlightSectionElements.Actions>

@@ -5,7 +5,7 @@ import { fireEvent, render } from '@testing-library/react'
 import { RideAxis } from '../../../_utils/rideAxis'
 import { HighlightSection } from './index'
 
-export const axes = [
+export const featured = [
   {
     id: '11',
     label: 'Toulouse',
@@ -50,57 +50,39 @@ export const axes = [
   },
 ]
 
-export const destinations = [
+export const optional = [
   {
     id: '1',
-    label: 'Lyon',
+    label: 'Madrid',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
   {
     id: '2',
-    label: 'Cannes',
+    label: 'Barcelona',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
   {
     id: '3',
-    label: 'Toulouse',
+    label: 'Guernica',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
   {
     id: '4',
-    label: 'Paris',
+    label: 'Alicante',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
   {
     id: '5',
-    label: 'Nantes',
+    label: 'Sevilla',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
   },
   {
     id: '6',
-    label: 'Bruxelles',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '7',
-    label: 'Amsterdam',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '8',
-    label: 'Amsterdam',
-    href: <a href="#" />,
-    ariaLabel: 'Aria label',
-  },
-  {
-    id: '9',
     label: 'Tous les villes en bus',
     href: <a href="#" />,
     ariaLabel: 'Aria label',
@@ -108,18 +90,18 @@ export const destinations = [
 ]
 
 export const highlights = {
-  axes: { heading: 'Top trajets en bus', items: axes },
-  destinations: { heading: 'Top villes en bus', items: destinations },
+  featured: { heading: 'Top trajets en bus', items: featured },
+  optional: { heading: 'Top villes en bus', items: optional },
 }
 
 describe('HighlightSection', () => {
-  describe('axes', () => {
-    it('should render ONLY highlighted items', () => {
+  describe('featured items', () => {
+    it('should render ONLY featured highlighted items', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            axes: { heading: 'Top trajets en bus', items: axes },
-            destinations: { heading: 'Top villes en bus', items: [] },
+            featured: { heading: 'Top trajets en bus', items: featured },
+            optional: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
             on: 'Show more',
@@ -136,8 +118,8 @@ describe('HighlightSection', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            axes: { heading: 'Top trajets en bus', items: axes },
-            destinations: { heading: 'Top villes en bus', items: [] },
+            featured: { heading: 'Top trajets en bus', items: featured },
+            optional: { heading: 'Top villes en bus', items: [] },
           }}
           toggle={{
             on: 'Show more',
@@ -151,13 +133,13 @@ describe('HighlightSection', () => {
     })
   })
 
-  describe('destinations', () => {
-    it('should not render destinations by default', () => {
+  describe('optional items', () => {
+    it('should not render the "optional" items by default', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            axes: { heading: 'Top trajets en bus', items: [] },
-            destinations: { heading: 'Top villes en bus', items: destinations },
+            featured: { heading: 'Top trajets en bus', items: [] },
+            optional: { heading: 'Top villes en bus', items: optional },
           }}
           toggle={{
             on: 'Show more',
@@ -166,15 +148,15 @@ describe('HighlightSection', () => {
         />,
       )
 
-      expect(view.getByText('Lyon')).not.toBeVisible()
+      expect(view.getByText('Tous les villes en bus')).not.toBeVisible()
     })
 
-    it('should render destinations when expanded', () => {
+    it('should render the "optional" items when expanded', () => {
       const view = render(
         <HighlightSection
           highlights={{
-            axes: { heading: 'Top trajets en bus', items: [] },
-            destinations: { heading: 'Top villes en bus', items: destinations },
+            featured: { heading: 'Top trajets en bus', items: [] },
+            optional: { heading: 'Top villes en bus', items: optional },
           }}
           toggle={{
             on: 'Show more',
@@ -184,7 +166,7 @@ describe('HighlightSection', () => {
       )
 
       fireEvent.click(view.getByRole('button'))
-      expect(view.getByText('Lyon')).toBeVisible()
+      expect(view.getByText('Tous les villes en bus')).toBeVisible()
     })
   })
 })
