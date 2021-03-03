@@ -5,7 +5,7 @@ import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { space } from '../../../_utils/branding'
 import { AutoCompleteProps } from '../../../autoComplete'
 import { Button, ButtonStatus } from '../../../button'
-import { ChevronIcon } from '../../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../../icon/chevronIcon'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
 
@@ -41,7 +41,7 @@ export const AutoCompleteSection = ({
 
   const backButton = (
     <BackButton status={ButtonStatus.UNSTYLED} isBubble onClick={onClose}>
-      <ChevronIcon size="24" left />
+      <ChevronIcon size="24" direction={ChevronIconDirections.LEFT} />
     </BackButton>
   )
 
