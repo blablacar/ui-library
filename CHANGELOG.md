@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `Caption` is now private (the component, not the typography element)
 [...]
 
 # v52.0.0 (03/03/2021)
