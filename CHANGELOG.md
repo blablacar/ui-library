@@ -1,5 +1,9 @@
 # Unreleased
 
+[...]
+
+# v52.0.0 (03/03/2021)
+
 - **[BREAKING CHANGE]** Added enum `direction` prop on `ChevronIcon`
 
 # v51.0.0 (02/03/2021)
