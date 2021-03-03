@@ -3,6 +3,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { WarningIcon } from '../icon/warningIcon'
+import { Address, Itinerary } from '../newItinerary'
 import { TripCard, TripCardProps, User } from './TripCard'
 
 function createPassengers(count: number): User[] {
@@ -21,22 +22,12 @@ function createPassengers(count: number): User[] {
 function createProps(props: Partial<TripCardProps> = {}): TripCardProps {
   return {
     href: '#',
-    itinerary: [
-      {
-        mainLabel: 'Paris',
-        subLabel: 'Porte de Vincennes',
-        time: '09:00',
-        isoDate: '2017-12-11T09:00',
-        distanceFromPoint: '1,5km',
-      },
-      {
-        mainLabel: 'Bordeaux',
-        subLabel: 'Gare Bordeaux Saint-Jean',
-        time: '12:00',
-        isoDate: '2017-12-11T12:00',
-        distanceFromPoint: '8km',
-      },
-    ],
+    itinerary: (
+      <Itinerary>
+        <Address label="Paris" subLabel="Porte de Vincennes" time="09:00" />
+        <Address label="Bordeaux" subLabel="Gare Bordeaux Saint-Jean" time="12:00" />
+      </Itinerary>
+    ),
     ...props,
   }
 }
@@ -135,30 +126,6 @@ describe('TripCard', () => {
 
     render(<TripCard {...props} />)
     expect(screen.getByText('Auto approval')).toBeInTheDocument()
-  })
-
-  it('Should not render meta tags by default', () => {
-    const props = createProps()
-    render(<TripCard {...props} />)
-    expect(screen.queryByRole('meta')).not.toBeInTheDocument()
-  })
-
-  it('Should render meta tags if provided', () => {
-    const props = createProps({ metaUrl: 'blablacar.fr' })
-    const { container } = render(<TripCard {...props} />)
-
-    expect(
-      container.querySelector('meta[itemprop="url"][content="blablacar.fr"]'),
-    ).toBeInTheDocument()
-    expect(
-      container.querySelector('meta[itemprop="name"][content="Paris → Bordeaux"]'),
-    ).toBeInTheDocument()
-    expect(
-      container.querySelector('meta[itemprop="startDate"][content="2017-12-11T09:00"]'),
-    ).toBeInTheDocument()
-    expect(
-      container.querySelector('meta[itemprop="endDate"][content="2017-12-11T12:00"]'),
-    ).toBeInTheDocument()
   })
 
   it("Should show the driver's name", () => {

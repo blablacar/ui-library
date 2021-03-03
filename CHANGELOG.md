@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove Microdata from `TripCard`
+- **[BREAKING CHANGE]** Use new `Itinerary` in `TripCard`
 [...]
 
 # v52.0.0 (03/03/2021)

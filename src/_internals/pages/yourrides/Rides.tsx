@@ -6,20 +6,18 @@ import { StarIcon } from '../../../icon/starIcon'
 import { ItemChoice } from '../../../itemChoice'
 import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
 import { BaseSection } from '../../../layout/section/baseSection'
+import { Address, Itinerary } from '../../../newItinerary'
 import { TheVoice } from '../../../theVoice'
 import { TripCard } from '../../../tripCard'
 
 const createRideCardConfig = () => ({
   href: '/',
-  itinerary: [
-    {
-      mainLabel: 'Paris',
-    },
-    {
-      mainLabel: 'Bordeaux',
-    },
-  ],
-  metaUrl: 'Meta URL',
+  itinerary: (
+    <Itinerary small>
+      <Address label="Paris" />
+      <Address label="Bordeaux" />
+    </Itinerary>
+  ),
   title: 'Sun march 8th, 18:00',
   passengers: [
     {
@@ -58,15 +56,12 @@ export const Rides = (): JSX.Element => (
 
 const createRideHistoryCardConfig = () => ({
   href: '/',
-  itinerary: [
-    {
-      mainLabel: 'Paris',
-    },
-    {
-      mainLabel: 'Bordeaux',
-    },
-  ],
-  metaUrl: 'Meta URL',
+  itinerary: (
+    <Itinerary small>
+      <Address label="Paris" />
+      <Address label="Bordeaux" />
+    </Itinerary>
+  ),
   title: 'Sun march 8th, 18:00',
   passengers: [
     {

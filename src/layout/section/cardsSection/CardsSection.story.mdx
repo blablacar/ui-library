@@ -1,6 +1,7 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { SectionContentSize } from '../../../layout/section/baseSection'
+import { Address, Itinerary } from '../../../newItinerary'
 import { QrCard } from '../../../qrCard'
 import { TripCard } from '../../../tripCard'
 import { CardsSection } from './index'
@@ -10,29 +11,18 @@ import { CardsSection } from './index'
 export const tripCardConfig = {
   'aria-label': 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',
   href: '/',
-  itinerary: [
-    {
-      mainLabel: 'Paris',
-      subLabel: 'Porte de Vincennes',
-      time: '09:00',
-      isoDate: '2017-12-11T09:00',
-      distanceFromPoint: '1,5km',
-    },
-    {
-      mainLabel: 'Bordeaux',
-      subLabel: 'Gare Bordeaux Saint-Jean',
-      time: '12:00',
-      isoDate: '2017-12-11T12:00',
-      distanceFromPoint: '8km',
-    },
-  ],
+  itinerary: (
+    <Itinerary>
+      <Address label="Paris" subLabel="Porte de Vincennes" time="09:00" />
+      <Address label="Bordeaux" subLabel="Gare Bordeaux Saint-Jean" time="12:00" />
+    </Itinerary>
+  ),
   price: '8,00€',
   flags: {
     ladiesOnly: true,
     maxTwo: true,
     autoApproval: true,
   },
-  metaUrl: 'Meta URL',
   badge: 'Cheapest',
   title: '',
 }
