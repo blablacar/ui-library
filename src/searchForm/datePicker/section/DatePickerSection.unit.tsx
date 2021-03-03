@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import { Item } from '../../../_internals/item'
 import { DatePicker, DatePickerOrientation } from '../../../datePicker'
-import { ChevronIcon } from '../../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../../icon/chevronIcon'
 import { DatePickerSection } from './DatePickerSection'
 
 describe('DatePickerSection', () => {
@@ -19,7 +19,9 @@ describe('DatePickerSection', () => {
     )
 
     expect(wrapper.find(Item).prop('leftTitle')).toEqual('Today')
-    expect(wrapper.find(Item).prop('leftAddon')).toEqual(<ChevronIcon left />)
+    expect(wrapper.find(Item).prop('leftAddon')).toEqual(
+      <ChevronIcon direction={ChevronIconDirections.LEFT} />,
+    )
     expect(wrapper.find(Item).prop('tag')).toEqual(<button type="button" />)
     wrapper.find(Item).simulate('click')
     expect(onClick).toHaveBeenCalled()

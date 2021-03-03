@@ -3,7 +3,7 @@ import cc from 'classcat'
 
 import { color } from '../../_utils/branding'
 import { A11yProps, pickA11yProps } from '../../_utils/interfaces'
-import { ChevronIcon } from '../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../icon/chevronIcon'
 import { StyledDropdownButton } from './DropdownButton.style'
 
 export type DropdownButtonProps = A11yProps &
@@ -30,9 +30,19 @@ export const DropdownButton = (props: DropdownButtonProps) => {
       ])}
     >
       <button {...a11yAttrs} aria-expanded={open} type="button" onClick={onClick}>
-        {iconPosition === 'left' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
+        {iconPosition === 'left' && (
+          <ChevronIcon
+            iconColor={color.lightMidnightGreen}
+            direction={ChevronIconDirections.DOWN}
+          />
+        )}
         {children}
-        {iconPosition === 'right' && <ChevronIcon iconColor={color.lightMidnightGreen} down />}
+        {iconPosition === 'right' && (
+          <ChevronIcon
+            iconColor={color.lightMidnightGreen}
+            direction={ChevronIconDirections.DOWN}
+          />
+        )}
       </button>
     </StyledDropdownButton>
   )

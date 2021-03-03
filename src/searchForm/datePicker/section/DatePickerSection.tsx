@@ -4,7 +4,7 @@ import { Item } from '../../../_internals/item'
 import { useFocusTrap } from '../../../_internals/useFocusTrap'
 import { DatePickerOrientation, DatePickerProps } from '../../../datePicker'
 import { ContentDivider } from '../../../divider/contentDivider'
-import { ChevronIcon } from '../../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../../icon/chevronIcon'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { TransitionSection } from '../../baseStyles'
 
@@ -29,7 +29,7 @@ export const DatePickerSection = ({
     <TransitionSection ref={ref} role="dialog" className={className}>
       <Section>
         <Item
-          leftAddon={<ChevronIcon left />}
+          leftAddon={<ChevronIcon direction={ChevronIconDirections.LEFT} />}
           leftTitle={title}
           tag={<button type="button" />}
           onClick={onClose}

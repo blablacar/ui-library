@@ -7,7 +7,7 @@ import { space } from '../../../_utils/branding'
 import { OnChangeParameters } from '../../../_utils/onChange'
 import { Button, ButtonStatus } from '../../../button'
 import { ContentDivider } from '../../../divider/contentDivider'
-import { ChevronIcon } from '../../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../../icon/chevronIcon'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { Stepper, StepperDisplay, StepperProps } from '../../../stepper'
 import { TransitionSection } from '../../baseStyles'
@@ -62,7 +62,7 @@ export const StepperSection = ({
       <FullHeightSection>
         <SectionContent>
           <Item
-            leftAddon={<ChevronIcon left />}
+            leftAddon={<ChevronIcon direction={ChevronIconDirections.LEFT} />}
             leftTitle={itemTitleState}
             tag={<button type="button" />}
             onClick={onClose}

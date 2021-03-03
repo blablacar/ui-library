@@ -574,7 +574,6 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
               strokeLinejoin="round"
               strokeMiterlimit="10"
               strokeWidth="2"
-              transform="rotate(90 12 12)"
             />
           </svg>
         </div>
@@ -1016,7 +1015,6 @@ exports[`PhoneField should have the expected markup in the DOM with default sett
               strokeLinejoin="round"
               strokeMiterlimit="10"
               strokeWidth="2"
-              transform="rotate(90 12 12)"
             />
           </svg>
         </div>
