@@ -54,7 +54,7 @@ export const StyledTripCard = styled(Card)`
   & .kirk-tripCard-itinerary {
     min-width: 0; /* reset flex default to allow shrinking below content width */
     position: relative;
-    left: -${space.xl};
+    left: -${space.xl}; // Counters normalization of Itinerary component
   }
 
   & .kirk-tripCard-price {

@@ -5,7 +5,7 @@ import { Address, Itinerary } from '../newItinerary'
 import { TripCard } from '.'
 
 // Needs to be outside of the .mdx file, cause the parser changes object types
-// and mess with the iti display
+// and mess with the itinerary display
 const itinerary = (
   <Itinerary>
     <Address label="Paris" subLabel="Porte de Vincennes" time="09:00" />

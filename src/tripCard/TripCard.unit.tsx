@@ -46,6 +46,13 @@ describe('TripCard', () => {
     expect(container.firstChild).toHaveClass('test')
   })
 
+  it('should render itinerary', () => {
+    const props = createProps({})
+    render(<TripCard {...props} />)
+    expect(screen.getByText('Porte de Vincennes')).toBeInTheDocument()
+    expect(screen.getByText('Gare Bordeaux Saint-Jean')).toBeInTheDocument()
+  })
+
   it('Should use the right element (specified in href prop)', () => {
     const props = createProps({ href: <div data-testid="href" /> })
     render(<TripCard {...props} />)
