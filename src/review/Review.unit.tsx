@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import renderer from 'react-test-renderer'
 import { mount } from 'enzyme'
 
-import { Caption } from '../caption'
+import { Caption } from './caption'
 import { Review } from './index'
 
 const defaultReviewProps = {

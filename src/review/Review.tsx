@@ -1,10 +1,10 @@
 import React from 'react'
 import cc from 'classcat'
 
-import { Caption } from '../caption'
 import { BaseSection } from '../layout/section/baseSection'
 import { Paragraph } from '../paragraph'
 import { TextTitle } from '../typography/title'
+import { Caption } from './caption'
 import { StyledReview } from './Review.style'
 
 export type ReviewProps = Readonly<{
