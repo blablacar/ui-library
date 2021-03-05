@@ -1,0 +1,65 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { FaqSection } from './index'
+
+<Meta title="Sections/FaqSection" />
+
+# **FaqSection**
+
+<Canvas>
+  <Story name="Default">
+    <FaqSection
+      mainTitle="FAQ"
+      items={[
+        {
+          question: 'Question 1',
+          answer: `${'Answer to the question '.repeat(30)}`,
+        },
+        {
+          question: 'Question 2',
+          answer: 'A short answer.',
+        },
+        {
+          question: 'Question 3',
+          answer: `${'Answer to the question '.repeat(50)}`,
+        },
+        {
+          question: 'Question 4',
+          answer: `${'Another answer '.repeat(50)}`,
+        },
+      ]}
+      expandLabel="Read more"
+      buttonLabel="Link to complete FAQ"
+      buttonHref="https://www.blablacar.com"
+    />
+  </Story>
+</Canvas>
+
+## Specifications
+
+## Usage
+
+```jsx
+import { FaqSection } from '@blablacar/ui-library/build/layout/section/faqSection'
+
+<FaqSection
+  mainTitle="FAQ"
+  items={[
+    {
+      question: 'Question 1',
+      answer: 'Answer to the first question.',
+    },{
+      question: 'Question 2',
+      answer: 'Answer to the second question.',
+    },{
+      question: 'Question 3',
+      answer: 'Answer to the third question.',
+    },
+  ]}
+  expandLabel="Read more"
+  buttonLabel="Link to complete FAQ"
+  buttonHref="/"
+/>
+```
+
+<ArgsTable of={FaqSection} />

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 
 import { Item } from '../../../_internals/item'
 import { Button } from '../../../button'
-import { ChevronIcon } from '../../../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../../../icon/chevronIcon'
 import { Stepper, StepperDisplay } from '../../../stepper'
 import { StepperSection } from './StepperSection'
 
@@ -14,7 +14,9 @@ describe('StepperSection', () => {
       <StepperSection itemTitle="1 seat" onClose={onClick} confirmLabel="Submit" />,
     )
     expect(wrapper.find(Item).prop('leftTitle')).toEqual('1 seat')
-    expect(wrapper.find(Item).prop('leftAddon')).toEqual(<ChevronIcon left />)
+    expect(wrapper.find(Item).prop('leftAddon')).toEqual(
+      <ChevronIcon direction={ChevronIconDirections.LEFT} />,
+    )
     expect(wrapper.find(Item).prop('tag')).toEqual(<button type="button" />)
     expect(wrapper.find(Button).prop('children')).toEqual('Submit')
     wrapper.find(Item).simulate('click')
