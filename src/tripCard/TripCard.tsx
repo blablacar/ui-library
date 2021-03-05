@@ -5,14 +5,12 @@ import isEmpty from 'lodash.isempty'
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { A11yProps, pickA11yProps } from '../_utils/interfaces'
-import { Place } from '../_utils/place'
 import { Avatar } from '../avatar'
 import { AloneInTheBackIcon } from '../icon/aloneInTheBackIcon'
 import { ComfortIcon } from '../icon/comfortIcon'
 import { LadyIcon } from '../icon/ladyIcon'
 import { LightningIcon } from '../icon/lightningIcon'
 import { StarIcon as Star } from '../icon/starIcon'
-import { Itinerary } from '../itinerary'
 import { Text, TextDisplayType, TextTagType } from '../text'
 import { TextBody } from '../typography/body'
 import { StyledTripCard } from './TripCard.style'
@@ -40,7 +38,7 @@ export type Driver = User & {
 export type TripCardProps = A11yProps &
   Readonly<{
     href: string | JSX.Element
-    itinerary: Place[]
+    itinerary: JSX.Element
     driver?: Driver
     passengers?: User[]
     price?: string
@@ -56,7 +54,6 @@ export type TripCardProps = A11yProps &
       maxTwo?: string
       autoApproval?: string
     }
-    metaUrl?: string
     className?: string
     statusInformation?: {
       icon: JSX.Element
@@ -91,15 +88,11 @@ export const TripCard = (props: TripCardProps) => {
     price,
     flags = {},
     titles = {},
-    metaUrl = null,
     statusInformation = null,
     badge = null,
     title = null,
   } = props
   const a11yAttrs = pickA11yProps<TripCardProps>(props)
-  const departure = itinerary[0]
-  const arrival = itinerary[itinerary.length - 1]
-  const itemPropName = `${departure.mainLabel} → ${arrival.mainLabel}`
   const shouldDisplayBottomLeft = driver || !isEmpty(passengers)
   const shouldDisplayBottomRight = !isEmpty(flags)
   const shouldDisplayBottom = shouldDisplayBottomLeft || shouldDisplayBottomRight
@@ -154,21 +147,8 @@ export const TripCard = (props: TripCardProps) => {
     >
       {React.createElement(
         componentTag,
-        {
-          ...componentProps,
-          itemScope: true,
-          itemType: 'http://schema.org/Event',
-        },
+        componentProps,
         <Fragment>
-          {metaUrl && (
-            <Fragment>
-              <meta itemProp="url" content={metaUrl} />
-              <meta itemProp="name" content={itemPropName} />
-              <meta itemProp="startDate" content={departure.isoDate} />
-              <meta itemProp="endDate" content={arrival.isoDate} />
-            </Fragment>
-          )}
-
           {badge && (
             <Text className="kirk-tripCard-badge" textColor={color.white}>
               {badge}
@@ -194,7 +174,7 @@ export const TripCard = (props: TripCardProps) => {
           )}
           <div className="kirk-tripCard-mainContainer">
             <div className="kirk-tripCard-main">
-              <Itinerary className="kirk-tripCard-itinerary" places={itinerary} />
+              <div className="kirk-tripCard-itinerary">{itinerary}</div>
               <Text className="kirk-tripCard-price" display={TextDisplayType.TITLESTRONG}>
                 {price}
               </Text>

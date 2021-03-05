@@ -10,6 +10,7 @@ import { LayoutNormalizer } from '../../../layout/layoutNormalizer'
 import { BaseSection as Section } from '../../../layout/section/baseSection'
 import { CardsSection } from '../../../layout/section/cardsSection'
 import { TabsSection } from '../../../layout/section/tabsSection'
+import { Address, Itinerary } from '../../../newItinerary'
 import { SearchRecap } from '../../../searchRecap'
 import { SubHeader } from '../../../subHeader'
 import { TabStatus } from '../../../tabs'
@@ -17,22 +18,12 @@ import { TripCard } from '../../../tripCard'
 
 const createTripCardConfig = ({ highlighted = false } = {}) => ({
   href: '/',
-  itinerary: [
-    {
-      mainLabel: 'Paris',
-      subLabel: 'Porte de Vincennes',
-      time: '09:00',
-      isoDate: '2017-12-11T09:00',
-      distanceFromPoint: '1,5km',
-    },
-    {
-      mainLabel: 'Bordeaux',
-      subLabel: 'Gare Bordeaux Saint-Jean',
-      time: '12:00',
-      isoDate: '2017-12-11T12:00',
-      distanceFromPoint: '8km',
-    },
-  ],
+  itinerary: (
+    <Itinerary>
+      <Address label="Paris" subLabel="Porte de Vincennes" time="09:00" />
+      <Address label="Bordeaux" subLabel="Gare Bordeaux Saint-Jean" time="12:00" />
+    </Itinerary>
+  ),
   price: '8,00€',
   flags: {
     ladiesOnly: true,
@@ -40,7 +31,6 @@ const createTripCardConfig = ({ highlighted = false } = {}) => ({
     autoApproval: true,
   },
   highlighted: highlighted ? 'Closest match' : '',
-  metaUrl: 'Meta URL',
 })
 
 const defaultSearchRecapConfig = {

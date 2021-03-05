@@ -1,5 +1,7 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Remove Microdata from `TripCard`
+- **[BREAKING CHANGE]** Use new `Itinerary` in `TripCard`
 - **[BREAKING CHANGE]** `Caption` is now private (the component, not the typography element)
 - **[FIX]** Fix broken docs for dividers
 [...]

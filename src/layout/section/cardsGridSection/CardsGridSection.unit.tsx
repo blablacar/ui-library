@@ -2,35 +2,25 @@ import React from 'react'
 
 import { render, screen } from '@testing-library/react'
 
+import { Address, Itinerary } from '../../../newItinerary'
 import { TripCard } from '../../../tripCard'
 import { CardsGridSection } from './CardsGridSection'
 
 const tripCardConfig = {
   'aria-label': 'Pick-up point: Paris, Drop-off point: Bordeaux, Departure time: 09:00, warning',
   href: '/',
-  itinerary: [
-    {
-      mainLabel: 'Paris',
-      subLabel: 'Porte de Vincennes',
-      time: '09:00',
-      isoDate: '2017-12-11T09:00',
-      distanceFromPoint: '1,5km',
-    },
-    {
-      mainLabel: 'Bordeaux',
-      subLabel: 'Gare Bordeaux Saint-Jean',
-      time: '12:00',
-      isoDate: '2017-12-11T12:00',
-      distanceFromPoint: '8km',
-    },
-  ],
+  itinerary: (
+    <Itinerary>
+      <Address label="Paris" subLabel="Porte de Vincennes" time="09:00" />
+      <Address label="Bordeaux" subLabel="Gare Bordeaux Saint-Jean" time="12:00" />
+    </Itinerary>
+  ),
   price: '8,00€',
   flags: {
     ladiesOnly: true,
     maxTwo: true,
     autoApproval: true,
   },
-  metaUrl: 'Meta URL',
   badge: 'Cheapest',
   title: '',
 }
