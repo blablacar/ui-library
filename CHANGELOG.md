@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** `Caption` is now private (the component, not the typography element)
 - **[FIX]** Fix broken docs for dividers
 [...]
 
