@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[FIX]** Fix broken docs for dividers
 [...]
 
 # v52.0.0 (03/03/2021)
