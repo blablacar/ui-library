@@ -7,7 +7,7 @@ import { ItemsList, ItemsListDivider } from '../../itemsList'
 
 export type MenuProps = A11yProps &
   Readonly<{
-    children: React.ReactElement<ItemChoiceProps>[]
+    children: React.ReactElement<ItemChoiceProps> | React.ReactElement<ItemChoiceProps>[]
     className?: string
     withSeparators?: boolean
   }>

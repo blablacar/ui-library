@@ -21,9 +21,11 @@ export type ItemsListChild =
   | React.ReactElement<ItemCheckboxProps>
   | null
 
+type ChildrenType = ItemsListChild | ItemsListChild[]
+
 export type ItemsListProps = A11yProps &
   Readonly<{
-    children: ItemsListChild[]
+    children: ChildrenType
     withSeparators?: boolean
     className?: string
     keyGenerator?: (index: number) => string | number
@@ -45,7 +47,8 @@ export const ItemsList = (props: ItemsListProps) => {
   //   {shouldShowListItem && <SomeItem>} // shouldShowListItem value will be inserted in the list
   //   <SomeItem />
   // </ItemsList>
-  const filteredChildren = children.filter(Boolean)
+  const items = Array.isArray(children) ? children : [children]
+  const filteredChildren = items.filter(Boolean)
   return (
     <StyledItemsList className={cc(['kirk-items-list', className])} {...a11yAttrs}>
       {filteredChildren.map((item, index) => {

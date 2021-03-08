@@ -47,4 +47,32 @@ describe('Menu', () => {
     expect(wrapper.find(HomeIcon)).toHaveLength(1)
     expect(wrapper.find(CheckShieldIcon)).toHaveLength(1)
   })
+
+  it('Should render menu even with a single item', () => {
+    const wrapper = mount(
+      <Menu>
+        <ItemChoice
+          label="Rides offered"
+          leftAddon={<NewspaperIcon />}
+          rightAddon={<CheckShieldIcon />}
+          href="/rides"
+          key="/rides"
+        />
+      </Menu>,
+    )
+    expect(wrapper.find(ItemChoice)).toHaveLength(1)
+    expect(
+      wrapper
+        .find(ItemChoice)
+        .first()
+        .prop('href'),
+    ).toEqual('/rides')
+    expect(
+      wrapper
+        .find(ItemChoice)
+        .first()
+        .text(),
+    ).toEqual('Rides offered')
+    expect(wrapper.find(CheckShieldIcon)).toHaveLength(1)
+  })
 })
