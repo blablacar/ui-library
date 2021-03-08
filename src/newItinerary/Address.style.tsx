@@ -11,13 +11,13 @@ export const StyledContent = styled.div<{ hasLink: boolean }>`
   padding: ${space.m} ${props => (props.hasLink ? space.xl : 0)} ${space.m} 0;
 `
 
-export const StyledLabel = styled(TextTitleStrong)<{ highlighted?: boolean }>`
-  ${props => (props.highlighted ? `color: ${color.blue}` : '')};
+export const StyledLabel = styled(TextTitleStrong)<{ $highlighted?: boolean }>`
+  ${props => (props.$highlighted ? `color: ${color.blue}` : '')};
 `
 
-export const StyledSubLabel = styled(TextCaption)<{ highlighted?: boolean }>`
+export const StyledSubLabel = styled(TextCaption)<{ $highlighted?: boolean }>`
   display: block;
-  color: ${({ highlighted }) => (highlighted ? color.blue : color.midnightGreen)};
+  color: ${({ $highlighted }) => ($highlighted ? color.blue : color.midnightGreen)};
   margin-top: ${space.s};
 `
 
