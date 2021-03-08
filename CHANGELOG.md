@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Update `TopBar/Menu` and `ItemsList` to support a single child item
 [...]
 
 # v53.0.0 (05/03/2021)
