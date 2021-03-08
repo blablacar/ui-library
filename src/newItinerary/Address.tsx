@@ -43,8 +43,8 @@ export const Address = ({
     {...pickA11yProps(props)}
   >
     <StyledContent hasLink={!!href}>
-      <StyledLabel highlighted={highlighted}>{label}</StyledLabel>
-      {subLabel && <StyledSubLabel highlighted={highlighted}>{subLabel}</StyledSubLabel>}
+      <StyledLabel $highlighted={highlighted}>{label}</StyledLabel>
+      {subLabel && <StyledSubLabel $highlighted={highlighted}>{subLabel}</StyledSubLabel>}
       {proximity && <StyledProximity>{proximity}</StyledProximity>}
       {href && <StyledChevronIcon />}
     </StyledContent>
