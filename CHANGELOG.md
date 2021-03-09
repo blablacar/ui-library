@@ -1,8 +1,10 @@
 # Unreleased
 
+[...]
+# v54.0.0 (09/03/2021)
+
 - **[UPDATE]** Update `TopBar/Menu` and `ItemsList` to support a single child item
 - **[BREAKING CHANGE]** Update `title` prop to `mainTitle` for `Hint`, `Profil`, `TripCard` and `QrCard`
-[...]
 
 # v53.0.0 (05/03/2021)
 
