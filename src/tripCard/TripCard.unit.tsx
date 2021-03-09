@@ -217,7 +217,7 @@ describe('TripCard', () => {
   })
 
   it('Should render title', () => {
-    const props = createProps({ title: 'Sun 3 march, 18:00' })
+    const props = createProps({ mainTitle: 'Sun 3 march, 18:00' })
     render(<TripCard {...props} />)
     expect(screen.getByText('Sun 3 march, 18:00')).toBeInTheDocument()
   })

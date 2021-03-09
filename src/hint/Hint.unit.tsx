@@ -9,7 +9,7 @@ import { Hint, HintBubblePosition } from './index'
 const testChild = (a11yAttrs: A11yProps): React.ReactNode => <p {...a11yAttrs}>I have an hint.</p>
 
 const defaultProps = {
-  title: 'Hint Title',
+  mainTitle: 'Hint Title',
   closeButtonTitle: 'Close',
   description: 'Hint Description',
 }

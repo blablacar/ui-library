@@ -14,7 +14,7 @@ export enum HintBubblePosition {
 
 export type HintBubbleProps = A11yProps &
   Readonly<{
-    title: string
+    mainTitle: string
     className?: string
     onClose: () => void
     closeButtonTitle?: string
@@ -24,11 +24,11 @@ export type HintBubbleProps = A11yProps &
 
 const HintBubble = (props: HintBubbleProps): JSX.Element => {
   const a11yProps = pickA11yProps<HintBubbleProps>(props)
-  const { title, description, closeButtonTitle, position, className, onClose } = props
+  const { mainTitle, description, closeButtonTitle, position, className, onClose } = props
   return (
     <aside className={cc([className, `bubble-arrow--${position}`])} {...a11yProps}>
       <p>
-        <strong>{title}</strong>
+        <strong>{mainTitle}</strong>
         {description}
       </p>
       <Button

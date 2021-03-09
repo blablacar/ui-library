@@ -13,17 +13,17 @@ export type QrCardProps = A11yProps &
     imageUrl: string
     itemMainTitle?: string
     itemMainInfo?: string
-    title: string
+    mainTitle: string
   }>
 
 export const QrCard = (props: QrCardProps) => {
-  const { className, itemMainTitle, imageUrl, itemMainInfo, title } = props
+  const { className, itemMainTitle, imageUrl, itemMainInfo, mainTitle } = props
   const a11yAttrs = pickA11yProps<QrCardProps>(props)
 
   return (
     <StyledQrCard>
       <Card className={cc(['kirk-qrCard', className])}>
-        <SubHeader>{title}</SubHeader>
+        <SubHeader>{mainTitle}</SubHeader>
         <img src={imageUrl} {...a11yAttrs} alt={a11yAttrs['aria-label']} />
         {(itemMainTitle || itemMainInfo) && (
           <ItemInfo mainTitle={itemMainTitle} mainInfo={itemMainInfo} />

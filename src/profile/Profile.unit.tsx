@@ -9,7 +9,7 @@ import { TextBody } from '../typography/body'
 import { Rating } from './rating'
 
 const defaultProps = {
-  title: 'Jack Sparrow',
+  mainTitle: 'Jack Sparrow',
 }
 describe('Profile default', () => {
   let defaultProfile: any

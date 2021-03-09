@@ -61,7 +61,7 @@ export type TripCardProps = A11yProps &
       highlighted?: boolean
     }
     badge?: string
-    title?: string
+    mainTitle?: string
   }>
 
 const renderPassenger = (passenger: User) => (
@@ -90,7 +90,7 @@ export const TripCard = (props: TripCardProps) => {
     titles = {},
     statusInformation = null,
     badge = null,
-    title = null,
+    mainTitle = null,
   } = props
   const a11yAttrs = pickA11yProps<TripCardProps>(props)
   const shouldDisplayBottomLeft = driver || !isEmpty(passengers)
@@ -167,9 +167,9 @@ export const TripCard = (props: TripCardProps) => {
             />
           )}
 
-          {title && (
+          {mainTitle && (
             <Text display={TextDisplayType.SUBHEADERSTRONG} className="kirk-tripCard-title">
-              {title}
+              {mainTitle}
             </Text>
           )}
           <div className="kirk-tripCard-mainContainer">
