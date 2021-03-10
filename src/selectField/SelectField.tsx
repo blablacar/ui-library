@@ -4,7 +4,7 @@ import cc from 'classcat'
 import { color } from '../_utils/branding'
 import { A11yProps, CommonFieldsProps, pickA11yProps } from '../_utils/interfaces'
 import { OnChangeParameters } from '../_utils/onChange'
-import { ChevronIcon } from '../icon/chevronIcon'
+import { ChevronIcon, ChevronIconDirections } from '../icon/chevronIcon'
 import { StyledSelectField } from './SelectField.style'
 
 export type SelectFieldItem = A11yProps &
@@ -101,7 +101,10 @@ export const SelectField = React.forwardRef(
               </option>
             ))}
           </select>
-          <ChevronIcon iconColor={color.lightMidnightGreen} down />
+          <ChevronIcon
+            iconColor={color.lightMidnightGreen}
+            direction={ChevronIconDirections.DOWN}
+          />
         </div>
       </StyledSelectField>
     )
