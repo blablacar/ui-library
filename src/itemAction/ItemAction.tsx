@@ -7,6 +7,8 @@ import { A11yProps, pickA11yProps } from '../_utils/interfaces'
 import { NormalizeProps } from '../layout/layoutNormalizer'
 import { Loader } from '../loader/Loader'
 
+export const ItemActionStatus = ItemStatus
+
 export type ItemActionProps = NormalizeProps &
   A11yProps &
   Readonly<{
