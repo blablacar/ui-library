@@ -1,6 +1,7 @@
 # Unreleased
 
-[...]
+- **[FIX]** Fixed `ChevronIcon` direction on `SelectField`
+
 # v54.0.0 (09/03/2021)
 
 - **[UPDATE]** Update `TopBar/Menu` and `ItemsList` to support a single child item

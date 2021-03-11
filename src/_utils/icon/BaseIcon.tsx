@@ -5,16 +5,16 @@ import isEmpty from 'lodash.isempty'
 import { Badge } from '../../badge'
 import { color } from '../branding'
 
-export interface Icon {
-  readonly size?: number | string
-  readonly className?: string
-  readonly iconClassName?: string
-  readonly title?: string
-  readonly iconColor?: string
-  readonly badgeAriaLabel?: string
-  readonly badgeContent?: string
-  readonly isDisabled?: boolean
-}
+export type Icon = Readonly<{
+  size?: number | string
+  className?: string
+  iconClassName?: string
+  title?: string
+  iconColor?: string
+  badgeAriaLabel?: string
+  badgeContent?: string
+  isDisabled?: boolean
+}>
 
 export type IconProps = Icon &
   Readonly<{

@@ -32,6 +32,5 @@ export const ChevronIcon = ({ direction, ...props }: ChevronIconProps) => (
 
 ChevronIcon.defaultProps = {
   ...BaseIconDefaultProps,
-  down: false,
-  left: false,
+  direction: null,
 }
