@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[UPDATE]** Allow polymorphism with `as` prop for `SubHeader`
 - **[FIX]** Fixed `ChevronIcon` direction on `SelectField`
 - **[FIX]** Export `ItemActionStatus`
 

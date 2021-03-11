@@ -8,8 +8,14 @@ import { SubHeader } from './index'
 # **SubHeader**
 
 <Canvas>
-  <Story name="Default">
+  <Story name="As h2 (default)">
     <SubHeader>{text('children', 'SubHeader Title')}</SubHeader>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="As paragraph">
+    <SubHeader as="p">{text('children', 'SubHeader Title')}</SubHeader>
   </Story>
 </Canvas>
 
