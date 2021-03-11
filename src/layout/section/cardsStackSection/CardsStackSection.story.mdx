@@ -1,0 +1,40 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+
+import { TripCard } from '../../../tripCard'
+import { tripCardConfig } from './CardsStackSection.example'
+import { CardsStackSection } from './index'
+
+<Meta title="Sections/CardsStackSection" />
+
+
+# **CardsStackSection**
+
+<Canvas>
+  <Story name="default">
+    <CardsStackSection>
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+      <TripCard {...tripCardConfig} />
+    </CardsStackSection>
+  </Story>
+</Canvas>
+
+## Specifications
+
+Used to display stacked TripCards.
+
+## Usage
+
+```jsx
+import { CardsStackSection } from '@blablacar/ui-library/build/layout/section/cardsGridSection'
+;<CardsStackSection>
+  <TripCard />
+  <TripCard />
+  <TripCard />
+</CardsStackSection>
+```
+
+<ArgsTable of={CardsStackSection} />

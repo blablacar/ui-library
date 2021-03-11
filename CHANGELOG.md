@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[NEW]** New `CardsStackSection`
 - **[FIX]** Fixed `ChevronIcon` direction on `SelectField`
 
 # v54.0.0 (09/03/2021)
