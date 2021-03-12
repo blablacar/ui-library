@@ -1,4 +1,7 @@
 # Unreleased
+- [...]
+
+# v54.0.1 (12/03/2021)
 
 - **[FIX]** Fixed `ChevronIcon` direction on `SelectField`
 - **[FIX]** Export `ItemActionStatus`
