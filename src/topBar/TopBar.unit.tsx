@@ -13,26 +13,6 @@ describe('TopBar', () => {
     expect(topBar.hasClass('kirk-topBar--bgShadedTransparent')).toBe(false)
   })
 
-  it('should have the custom class on inner wrapper', () => {
-    const topBar = shallow(<TopBar innerWrapperClassName="test" />)
-    expect(topBar.find('.test').exists()).toBe(true)
-  })
-
-  it('should have the fixed modifier class', () => {
-    const topBar = shallow(<TopBar fixed />)
-    expect(topBar.hasClass('kirk-topBar--fixed')).toBe(true)
-  })
-
-  it('should have the bgTransparent modifier class', () => {
-    const topBar = shallow(<TopBar bgTransparent />)
-    expect(topBar.hasClass('kirk-topBar--bgTransparent')).toBe(true)
-  })
-
-  it('should have the bgShadedTransparent modifier class', () => {
-    const topBar = shallow(<TopBar bgShadedTransparent />)
-    expect(topBar.hasClass('kirk-topBar--bgShadedTransparent')).toBe(true)
-  })
-
   it('should have a clickable button ', () => {
     const onClick = jest.fn()
     const topBar = mount(<TopBar leftItem={<Button onClick={onClick} />} />)
