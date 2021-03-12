@@ -1,6 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
+import { render, screen } from '@testing-library/react'
+
 import { Drawer } from './index'
 
 const defaultProps = {
@@ -10,12 +12,10 @@ const defaultProps = {
 describe('Drawer', () => {
   it('Renders with a custom className', () => {
     const customClassName = 'custom-drawer'
-    const wrapper = shallow(
-      <Drawer {...defaultProps} className={customClassName}>
-        body
-      </Drawer>,
-    )
-    expect(wrapper.hasClass(customClassName)).toBe(true)
+    render(<Drawer {...defaultProps} className={customClassName} />)
+    // getByRole('complementary') should match <aside>, but it doesn't...
+    const items = screen.getAllByText('')
+    expect(items[2]).toHaveClass(customClassName)
   })
 
   it('Should call `onOpen` and `scrollLock` after open', () => {

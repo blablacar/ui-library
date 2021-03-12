@@ -60,9 +60,6 @@ export const SimpleTopBar = (): JSX.Element => (
     leftItem={boolean('With leftItem', true) && leftAction}
     centerItem={boolean('With centerItem', true) && centerContent}
     rightItem={boolean('With rightItem', true) && rightAction}
-    fixed={false}
-    bgTransparent={false}
-    bgShadedTransparent={false}
   />
 )
 

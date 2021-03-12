@@ -1,6 +1,7 @@
 # Unreleased
 - [...]
 - **[BREAKING CHANGE]** Remove root exports 
+- **[BREAKING CHANGE]** Update `TopBar` and `Drawer` APIs and styles
 
 # v54.0.1 (12/03/2021)
 
