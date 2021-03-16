@@ -1,5 +1,6 @@
 # Unreleased
 - [...]
+- **[BREAKING CHANGE]** Remove root exports 
 
 # v54.0.1 (12/03/2021)
 
