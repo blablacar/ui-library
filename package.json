@@ -2,8 +2,6 @@
   "name": "@blablacar/ui-library",
   "version": "54.0.1",
   "description": "BlaBlaCar React UI component library",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
   "homepage": "https://blablacar.github.io/ui-library",
   "repository": {
     "type": "git",
