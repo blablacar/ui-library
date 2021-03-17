@@ -105,7 +105,7 @@ export class Drawer extends PureComponent<DrawerProps> {
             },
             className,
           ])}
-          zIndex={zIndex}
+          $zIndex={zIndex}
         >
           <div
             ref={this.refContent}
@@ -119,7 +119,7 @@ export class Drawer extends PureComponent<DrawerProps> {
         </StyledDrawer>
         <StyledDimmer
           className={cc([['kirk-drawer-dimmer', { 'kirk-drawer-dimmer--active': open }]])}
-          zIndex={zIndex - 1}
+          $zIndex={zIndex - 1}
           aria-hidden="true"
         />
       </Fragment>
