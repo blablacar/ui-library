@@ -9,9 +9,17 @@ export type TopBarProps = Readonly<{
   leftItem?: ReactNode
   rightItem?: ReactNode
   centerItem?: ReactNode
+  hasScrolled?: boolean
 }>
 
-export const TopBar = ({ className, leftItem, rightItem, centerItem, zIndex }: TopBarProps) => {
+export const TopBar = ({
+  className,
+  leftItem,
+  rightItem,
+  centerItem,
+  zIndex,
+  hasScrolled,
+}: TopBarProps) => {
   const children = []
   if (leftItem) {
     children.push(
@@ -35,7 +43,10 @@ export const TopBar = ({ className, leftItem, rightItem, centerItem, zIndex }: T
     )
   }
   return (
-    <StyledTopBar className={cc(['kirk-topBar', className])} $zIndex={zIndex}>
+    <StyledTopBar
+      className={cc(['kirk-topBar', { 'kirk-topBar--scrolled': hasScrolled }, className])}
+      $zIndex={zIndex}
+    >
       <div className="kirk-topBar-inner">{children}</div>
     </StyledTopBar>
   )

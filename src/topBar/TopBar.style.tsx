@@ -1,16 +1,21 @@
 import styled from 'styled-components'
 
-import { color, componentSizes, responsiveBreakpoints } from '../_utils/branding'
+import { color, componentSizes, responsiveBreakpoints, space } from '../_utils/branding'
 
 export const StyledTopBar = styled.header<{ $zIndex: number }>`
   position: fixed;
   width: 100%;
+  height: ${componentSizes.headerHeight.small};
+  padding: 0 ${space.l};
   background-color: ${color.white};
   display: flex;
   align-items: center;
   top: 0;
-  height: ${componentSizes.headerHeight.small};
   z-index: ${props => props.$zIndex}; /* z-index defined in main application, above drawer */
+
+  &.kirk-topBar--scrolled {
+    border-bottom: 1px solid ${color.gray};
+  }
 
   .kirk-topBar-inner {
     display: flex;
@@ -43,6 +48,7 @@ export const StyledTopBar = styled.header<{ $zIndex: number }>`
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     height: ${componentSizes.headerHeight.large};
+    padding: 0 ${space.xl};
 
     .kirk-topBar-inner {
       width: 1280px;

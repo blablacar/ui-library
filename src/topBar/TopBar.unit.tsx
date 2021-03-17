@@ -5,12 +5,14 @@ import { Button } from '../button'
 import { TopBar } from './TopBar'
 
 describe('TopBar', () => {
-  it('should not have any modifier classes', () => {
+  it('should not have the scrolled class if hasScrolled is false or null', () => {
     const topBar = shallow(<TopBar zIndex={50} />)
-    expect(topBar.hasClass('kirk-topBar--fixed')).toBe(false)
-    expect(topBar.hasClass('kirk-topBar--overlayed')).toBe(false)
-    expect(topBar.hasClass('kirk-topBar--bgTransparent')).toBe(false)
-    expect(topBar.hasClass('kirk-topBar--bgShadedTransparent')).toBe(false)
+    expect(topBar.hasClass('kirk-topBar--scrolled')).toBe(false)
+  })
+
+  it('should not have the scrolled class if hasScrolled is true', () => {
+    const topBar = shallow(<TopBar zIndex={50} hasScrolled />)
+    expect(topBar.hasClass('kirk-topBar--scrolled')).toBe(true)
   })
 
   it('should have a clickable button ', () => {

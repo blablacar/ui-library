@@ -17,31 +17,10 @@ export const StyledDrawer = styled.aside<{ $zIndex?: number }>`
     transition-delay: 0;
   }
 
-  &::after {
-    content: '';
-    font-size: 0;
-  }
-
-  &.kirk-drawer--open::after {
-    content: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2; /* z-index overridden in main application, above dimmer - below topBar */
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color ${transition.duration.base} linear;
-  }
-
   &.kirk-drawer--close {
     visibility: hidden; /* Hiding the drawer when closed, otherwise on mac/ios we can scroll top off screen and see it */
     transition-delay: 300ms;
     transition-property: visibility;
-  }
-
-  &.kirk-drawer--close::after {
-    background-color: rgba(0, 0, 0, 0);
   }
 
   & .kirk-drawer-scrollableContent {

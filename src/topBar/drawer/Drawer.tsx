@@ -121,6 +121,7 @@ export class Drawer extends PureComponent<DrawerProps> {
           className={cc([['kirk-drawer-dimmer', { 'kirk-drawer-dimmer--active': open }]])}
           $zIndex={zIndex - 1}
           aria-hidden="true"
+          onClick={() => this.close()} // close Drawer when clicking outside the <aside> element too
         />
       </Fragment>
     )
