@@ -57,6 +57,7 @@ const centerContent = (
 
 export const SimpleTopBar = (): JSX.Element => (
   <TopBar
+    zIndex={50}
     leftItem={boolean('With leftItem', true) && leftAction}
     centerItem={boolean('With centerItem', true) && centerContent}
     rightItem={boolean('With rightItem', true) && rightAction}
@@ -76,8 +77,8 @@ export const LoggedOutTopBar = (): JSX.Element => {
 
   return (
     <Fragment>
-      <TopBar leftItem={dropdownButton} />
-      <Drawer open={drawerOpened} onClose={(): void => setDrawerOpened(false)}>
+      <TopBar zIndex={50} leftItem={dropdownButton} />
+      <Drawer zIndex={40} open={drawerOpened} onClose={(): void => setDrawerOpened(false)}>
         <Menu>
           <ItemChoice label="Log in" />
           <ItemChoice label="Sign up" />
@@ -100,8 +101,8 @@ export const LoggedInTopBar = (): JSX.Element => {
 
   return (
     <Fragment>
-      <TopBar leftItem={dropdownButton} />
-      <Drawer open={drawerOpened} onClose={(): void => setDrawerOpened(false)}>
+      <TopBar zIndex={50} leftItem={dropdownButton} />
+      <Drawer zIndex={40} open={drawerOpened} onClose={(): void => setDrawerOpened(false)}>
         <Menu>
           <ItemChoice label="Dashboard" leftAddon={<HomeIcon />} />
           <ItemChoice label="Your rides" leftAddon={<MyRidesIcon />} />

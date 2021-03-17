@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { color, componentSizes, responsiveBreakpoints } from '../_utils/branding'
 
-export const StyledTopBar = styled.header<{ zIndex?: number }>`
+export const StyledTopBar = styled.header<{ $zIndex: number }>`
   position: fixed;
   width: 100%;
   background-color: ${color.white};
@@ -10,7 +10,7 @@ export const StyledTopBar = styled.header<{ zIndex?: number }>`
   align-items: center;
   top: 0;
   height: ${componentSizes.headerHeight.small};
-  z-index: ${props => props.zIndex || 3}; /* z-index overridden in main application, above drawer */
+  z-index: ${props => props.$zIndex}; /* z-index defined in main application, above drawer */
 
   .kirk-topBar-inner {
     display: flex;

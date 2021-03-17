@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { color, componentSizes, responsiveBreakpoints, transition } from '../../_utils/branding'
 
-export const StyledDrawer = styled.aside<{ zIndex?: number }>`
+export const StyledDrawer = styled.aside<{ $zIndex?: number }>`
   /* z-index handled in main application */
 
   &.kirk-drawer--open {
@@ -12,7 +12,7 @@ export const StyledDrawer = styled.aside<{ zIndex?: number }>`
     bottom: 0;
     right: 0;
     z-index: ${props =>
-      props.zIndex || 2}; /* z-index overridden in main application, above dimmer - below topBar */
+      props.$zIndex}; /* z-index defined in main application, above dimmer - below topBar */
     visibility: visible;
     transition-delay: 0;
   }
@@ -95,7 +95,7 @@ export const StyledDrawer = styled.aside<{ zIndex?: number }>`
   }
 `
 
-export const StyledDimmer = styled.div<{ zIndex?: number }>`
+export const StyledDimmer = styled.div<{ $zIndex: number }>`
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -108,7 +108,6 @@ export const StyledDimmer = styled.div<{ zIndex?: number }>`
   &.kirk-drawer-dimmer--active {
     visibility: visible;
     opacity: 0.07;
-    z-index: ${props =>
-      props.zIndex || 1}; /* z-index overridden in main application, below drawer */
+    z-index: ${props => props.$zIndex}; /* z-index defined in main application, below drawer */
   }
 `

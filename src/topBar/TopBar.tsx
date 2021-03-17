@@ -5,7 +5,7 @@ import { StyledTopBar } from './TopBar.style'
 
 export type TopBarProps = Readonly<{
   className?: string
-  zIndex?: number
+  zIndex: number
   leftItem?: ReactNode
   rightItem?: ReactNode
   centerItem?: ReactNode
@@ -35,7 +35,7 @@ export const TopBar = ({ className, leftItem, rightItem, centerItem, zIndex }: T
     )
   }
   return (
-    <StyledTopBar className={cc(['kirk-topBar', className])} zIndex={zIndex}>
+    <StyledTopBar className={cc(['kirk-topBar', className])} $zIndex={zIndex}>
       <div className="kirk-topBar-inner">{children}</div>
     </StyledTopBar>
   )
