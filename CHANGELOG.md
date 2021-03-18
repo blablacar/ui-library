@@ -1,6 +1,11 @@
 # Unreleased
+
 - [...]
-- **[BREAKING CHANGE]** Remove root exports 
+
+# v55.0.0 (18/03/2021)
+
+- **[BREAKING CHANGE]** Remove root exports
+- **[UPDATE]** Allow newer node/npm version
 
 # v54.0.1 (12/03/2021)
 
