@@ -8,8 +8,8 @@
     "url": "git@github.com:blablacar/ui-library.git"
   },
   "engines": {
-    "node": "^15.11.0",
-    "npm": "^7.6.0"
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
   },
   "scripts": {
     "start": "export NODE_PATH=src && start-storybook -p 4000",
