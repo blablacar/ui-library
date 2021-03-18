@@ -126,22 +126,3 @@ export const ModalFooter = styled.div`
     border-top: 1px solid ${color.gray};
   }
 `
-
-type ModalFogProps = {
-  isLoading?: boolean
-}
-
-const transitionDelay = '420ms'
-const transitionTimingFunction = 'ease-in-out'
-
-export const ModalFog = styled.div<ModalFogProps>`
-  position: absolute;
-  background: ${color.white};
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: ${props => (props.isLoading ? 0.64 : 0)};
-  visibility: ${props => (props.isLoading ? '' : 'hidden')};
-  transition: opacity ${transitionDelay} ${transitionTimingFunction},
-    visibility ${transitionDelay} ${transitionTimingFunction};
-`

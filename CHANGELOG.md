@@ -1,6 +1,6 @@
 # Unreleased
 
-- [...]
+- **[BREAKING CHANGE]** Replaced `ModalFog` by a new `Fog` component
 
 # v55.0.0 (18/03/2021)
 
