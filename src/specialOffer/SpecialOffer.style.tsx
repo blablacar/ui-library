@@ -7,6 +7,7 @@ export const StyledSpecialOffer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: ${space.m};
+  align-items: center;
 `
 
 export const StyledSpecialOfferContent = styled.div`
@@ -20,12 +21,16 @@ export const StyledSpecialOfferContent = styled.div`
 `
 
 export const StyledSpecialOfferFigure = styled.figure`
-  width: 70%;
   padding-top: ${space.xl};
   padding-bottom: ${space.m};
-  margin: 0;
 
   ${normalizeHorizontally}
+
+  & > img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+  }
 `
 
 export const StyledSpecialOfferText = styled.div`
