@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-import { color, responsiveBreakpoints, space } from '../_utils/branding'
+import { responsiveBreakpoints, space } from '../_utils/branding'
 import { normalizeHorizontally } from '../layout/layoutNormalizer'
-import { Title } from '../title'
+import { TextDisplay1 } from '../typography/display1'
 
-export const StyledTheVoice = styled(Title)`
+export const StyledTheVoice = styled(TextDisplay1)`
   /* @TODO: Align scale and spec
   /* 32px it's not part of current scale. 4 it could be calculated by the base unit space.s  */
   --space-bottom: 32px;
@@ -13,13 +13,7 @@ export const StyledTheVoice = styled(Title)`
 
   margin: 0;
   padding: ${space.xl} 0 var(--space-bottom);
-  white-space: pre-line;
-
   ${normalizeHorizontally};
-
-  &.kirk-thevoice--inverted {
-    color: ${color.white};
-  }
 
   @media (${responsiveBreakpoints.isMediaLarge}) {
     text-align: center;
