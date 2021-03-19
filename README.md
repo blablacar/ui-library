@@ -25,27 +25,10 @@ Import the package into your `package.json`. You will also need the following pe
 ```
 then all you need to do is:
 ```javascript
-import { Button, Input } from '@blablacar/ui-library'
+import { Button } from '@blablacar/ui-library/build/button'
 ```
 But again, don't forget that you need to have React to make it work.
 
-
-For server-rendering purposes, just use the `flushToHTML` from styled-jsx that we export from the `ui-library`
-```javascript
-import { flushToHTML } from '@blablacar/ui-library'
-
-const index = `
-  <!doctype html>
-  <html>
-    <head>
-      ${title}
-      ${flushToHTML()}
-    </head>
-    ...
-  </html>
-`
-```
-For more information, see directly the [styled-jsx documentation](https://github.com/zeit/styled-jsx#server-side-rendering)
 
 ## Changelog
 Check the [changelog](https://github.com/blablacar/ui-library/blob/master/CHANGELOG.md) to stay informed on all updates

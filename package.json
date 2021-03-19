@@ -1,17 +1,15 @@
 {
   "name": "@blablacar/ui-library",
-  "version": "54.0.0",
+  "version": "55.0.0",
   "description": "BlaBlaCar React UI component library",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
   "homepage": "https://blablacar.github.io/ui-library",
   "repository": {
     "type": "git",
     "url": "git@github.com:blablacar/ui-library.git"
   },
   "engines": {
-    "node": "^12.16.1",
-    "npm": "^6.13.4"
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
   },
   "scripts": {
     "start": "export NODE_PATH=src && start-storybook -p 4000",
@@ -141,10 +139,10 @@
     "uuid": "3.3.3"
   },
   "peerDependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "styled-components": "4.3.2",
-    "classcat": "4.0.2"
+    "classcat": "4.0.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "styled-components": "4.4.1"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
