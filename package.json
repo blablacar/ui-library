@@ -136,7 +136,8 @@
     "lodash.uniqueid": "4.0.1",
     "react-day-picker": "7.3.0",
     "react-transition-group": "4.4.1",
-    "uuid": "3.3.3"
+    "uuid": "3.3.3",
+    "wicg-inert": "3.1.1"
   },
   "peerDependencies": {
     "classcat": "4.0.2",

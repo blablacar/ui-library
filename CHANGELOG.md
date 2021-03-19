@@ -1,5 +1,6 @@
 # Unreleased
 
+- **[BREAKING CHANGE]** Replaced `ModalFog` by a new `Fog` component
 - **[NEW]** New `CardsStackSection`
 - **[UPDATE]** Allow polymorphism with `as` prop for `SubHeader`
 - **[UPDATE]** Allow polymorphism with `as` prop for `TheVoice`

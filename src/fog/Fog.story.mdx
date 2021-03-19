@@ -1,0 +1,51 @@
+import { Fragment } from 'react'
+import { action } from '@storybook/addon-actions'
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
+import { boolean } from '@storybook/addon-knobs'
+
+import { FocusVisibleProvider } from '../_utils/focusVisibleProvider'
+import { ItemChoice, ItemChoiceStatus } from '../itemChoice'
+import { Paragraph } from '../paragraph'
+import { TheVoice } from '../theVoice'
+import { Fog } from './index'
+
+<Meta title="Fog" />
+
+# **Fog**
+
+<Canvas>
+  <Story name="Default">
+    <FocusVisibleProvider>
+      <Fragment>
+        <ItemChoice
+          label="Outside of the Fog"
+          status={ItemChoiceStatus.DEFAULT}
+          onClick={action('click outside the fog')}
+        />
+        <Fog isLoading={boolean('isLoading', false)}>
+          <TheVoice>Fog Component</TheVoice>
+          <Paragraph>
+            When fog has isLoading set to true the Fog component will be displayed above its children
+            with semi-transparent background, making any interaction with the layer under impossible.
+            Check the isLoading checkbox for trying it out, and test the keyboard navigation.
+            It should be impossible to click on the ItemChoice inside the Fog is in isLoading mode
+          </Paragraph>
+          <ItemChoice
+            label="Inside the Fog"
+            status={ItemChoiceStatus.DEFAULT}
+            onClick={action('click inside the fog')}
+          />
+        </Fog>
+      </Fragment>
+    </FocusVisibleProvider>
+  </Story>
+</Canvas>
+
+## Usage
+
+```jsx
+import { Fog } from '@blablacar/ui-library/build/fog'
+<Fog />
+```
+
+<ArgsTable of={Fog} />
