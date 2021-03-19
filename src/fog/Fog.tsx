@@ -13,9 +13,12 @@ export const Fog = ({ isLoading, children }: FogProps) => (
   <StyledFogContainer>
     <Fragment>
       <StyledFog $isLoading={isLoading} aria-hidden="true" />
-      <section ref={node => node && isLoading && node.setAttribute('inert', '')}>
+      <div
+        ref={node => node && isLoading && node.setAttribute('inert', '')}
+        aria-hidden={isLoading}
+      >
         {children}
-      </section>
+      </div>
     </Fragment>
   </StyledFogContainer>
 )

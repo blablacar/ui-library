@@ -26,7 +26,6 @@ describe('Fog', () => {
       </Fog>,
     )
 
-    const button = screen.getByRole('button')
-    expect(onClick).not.toHaveBeenCalled()
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
   })
 })
