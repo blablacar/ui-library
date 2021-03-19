@@ -12,6 +12,8 @@ export type FogProps = Readonly<{
 export const Fog = ({ isLoading, children }: FogProps) => (
   <StyledFogContainer>
     <StyledFog $isLoading={isLoading} aria-hidden="true" />
-    <div ref={node => node && isLoading && node.setAttribute('inert', '')}>{children}</div>
+    <div ref={node => node && isLoading && node.setAttribute('inert', '')} aria-hidden={isLoading}>
+      {children}
+    </div>
   </StyledFogContainer>
 )
