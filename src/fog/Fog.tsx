@@ -12,7 +12,13 @@ export type FogProps = Readonly<{
 export const Fog = ({ isLoading, children }: FogProps) => (
   <StyledFogContainer>
     <StyledFog $isLoading={isLoading} aria-hidden="true" />
-    <div ref={node => node && isLoading && node.setAttribute('inert', '')} aria-hidden={isLoading}>
+    <div
+      ref={
+        node => node && (isLoading ? node.setAttribute('inert', '') : node.removeAttribute('inert'))
+        // eslint-disable-next-line react/jsx-curly-newline
+      }
+      aria-hidden={isLoading}
+    >
       {children}
     </div>
   </StyledFogContainer>
