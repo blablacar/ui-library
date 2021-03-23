@@ -607,7 +607,7 @@ exports[`PhoneField should have the expected markup in the DOM with custom setti
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
-            tabIndex="-1"
+            tabIndex={-1}
             type="button"
           >
             <svg

@@ -36,7 +36,6 @@ export type ItemChoiceProps = A11yProps &
     onFocus?: (event: React.FocusEventHandler<HTMLElement>) => void
     onMouseDown?: (event: React.MouseEvent<HTMLElement>) => void
     onDoneAnimationEnd?: () => void
-    tabIndex?: number
   }>
 
 export class ItemChoice extends PureComponent<ItemChoiceProps> {

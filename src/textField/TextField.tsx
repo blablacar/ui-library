@@ -313,7 +313,7 @@ export class TextField extends PureComponent<TextFieldProps, TextFieldState> {
               status={ButtonStatus.UNSTYLED}
               isBubble
               onClick={buttonOnClick}
-              tabIndex="-1"
+              tabIndex={-1}
               title={buttonTitle}
               aria-hidden={isEmpty(buttonTitle)}
               buttonRef={(elem: HTMLButtonElement) => {
