@@ -1,0 +1,62 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+
+import { Banner } from './index'
+import { Button, ButtonStatus } from '../button'
+
+<Meta title="Pages/Landing/Banner" />
+
+# **Banner**
+
+<Canvas>
+  <Story name="Default">
+    <Banner
+      copy={{
+        heading: 'Enjoy a better travel experience with the BlaBlaCar app',
+        paragraph:
+          'All your rides and tickets in one place, up-to-date info and exclusive mobile-only features.',
+      }}
+      actions={[
+        <Button status={ButtonStatus.SECONDARY}>Google</Button>,
+        <Button status={ButtonStatus.SECONDARY}>Apple</Button>,
+      ]}
+      qrcode={{
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png',
+        mainTitle: 'Jack Jones',
+      }}
+    />
+  </Story>
+</Canvas>
+
+## Specifications
+
+Banner to promote Apps.
+
+- Any `JSX element` for `actions`
+- Any `JSX element` for `media`
+- If `qrcode` applied use `QrCard` component API
+
+## Usage
+
+```jsx
+import { Banner } from '@blablacar/ui-library/build/banner'
+
+;<Banner
+  copy={{
+    heading: 'Enjoy a better travel experience with the BlaBlaCar app',
+    paragraph:
+      'All your rides and tickets in one place, up-to-date info and exclusive mobile-only features.',
+  }}
+  actions={[
+    <Button status={ButtonStatus.SECONDARY}>Google</Button>,
+    <Button status={ButtonStatus.SECONDARY}>Apple</Button>,
+  ]}
+  qrcode={{
+    imageUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png',
+    mainTitle: 'Jack Jones',
+  }}
+/>
+```
+
+<ArgsTable of={Banner} />
