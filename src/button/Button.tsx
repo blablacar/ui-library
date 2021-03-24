@@ -24,7 +24,6 @@ export type ButtonProps = A11yProps &
     type?: string
     href?: string | JSX.Element
     className?: string
-    title?: string
     status?: ButtonStatus
     focus?: boolean
     isBubble?: boolean
@@ -37,7 +36,6 @@ export type ButtonProps = A11yProps &
     onTouchStart?: (event: React.TouchEvent<HTMLElement>) => void
     onTouchEnd?: (event: React.TouchEvent<HTMLElement>) => void
     onDoneAnimationEnd?: () => void
-    tabIndex?: string
     disabled?: boolean
     index?: string
     buttonRef?: (button: HTMLButtonElement) => void

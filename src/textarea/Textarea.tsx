@@ -273,7 +273,7 @@ export class Textarea extends PureComponent<TextareaProps, TextAreaState> {
               status={ButtonStatus.UNSTYLED}
               isBubble
               onClick={onButtonClick}
-              tabIndex="0"
+              tabIndex={0}
               title={buttonTitle}
               buttonRef={(elem: HTMLButtonElement) => {
                 this.buttonRef = elem
