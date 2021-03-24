@@ -1,7 +1,8 @@
 # Unreleased
+- [...]
+# v57.0.0 (24/03/2021)
 
 - **[BREAKING CHANGE]** Add `title` and `tabIndex` props to `A11yProps` interface and `pickA11yProps` function
-- [...]
 
 # v56.0.0 (22/03/2021)
 
