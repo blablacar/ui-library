@@ -140,6 +140,14 @@ export const componentSizes = {
     small: '56px',
     large: '72px',
   },
+  headerWidth: {
+    small: '100%',
+    large: '1280px',
+  },
+  drawerWidth: {
+    small: '100%',
+    large: '350px',
+  },
 }
 
 export const modalSize = {

@@ -1,5 +1,8 @@
 # Unreleased
+
 - [...]
+- **[BREAKING CHANGE]** Update `TopBar` and `Drawer` APIs and styles
+
 # v57.0.0 (24/03/2021)
 
 - **[BREAKING CHANGE]** Add `title` and `tabIndex` props to `A11yProps` interface and `pickA11yProps` function

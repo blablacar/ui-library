@@ -1,17 +1,15 @@
-import React, { Fragment, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import cc from 'classcat'
 
 import { StyledTopBar } from './TopBar.style'
 
 export type TopBarProps = Readonly<{
   className?: string
+  zIndex: number
   leftItem?: ReactNode
   rightItem?: ReactNode
   centerItem?: ReactNode
-  fixed?: boolean
-  bgTransparent?: boolean
-  bgShadedTransparent?: boolean
-  innerWrapperClassName?: string
+  hasScrolled?: boolean
 }>
 
 export const TopBar = ({
@@ -19,16 +17,9 @@ export const TopBar = ({
   leftItem,
   rightItem,
   centerItem,
-  fixed = false,
-  bgShadedTransparent = false,
-  bgTransparent = false,
-  innerWrapperClassName = null,
+  zIndex,
+  hasScrolled,
 }: TopBarProps) => {
-  const Wrapper = innerWrapperClassName ? (
-    <div className={cc([innerWrapperClassName])} />
-  ) : (
-    <Fragment />
-  )
   const children = []
   if (leftItem) {
     children.push(
@@ -53,17 +44,10 @@ export const TopBar = ({
   }
   return (
     <StyledTopBar
-      className={cc([
-        'kirk-topBar',
-        {
-          'kirk-topBar--fixed': fixed,
-          'kirk-topBar--bgShadedTransparent': bgShadedTransparent,
-          'kirk-topBar--bgTransparent': bgTransparent,
-        },
-        className,
-      ])}
+      className={cc(['kirk-topBar', { 'kirk-topBar--scrolled': hasScrolled }, className])}
+      $zIndex={zIndex}
     >
-      {React.cloneElement(Wrapper, {}, children)}
+      <div className="kirk-topBar-inner">{children}</div>
     </StyledTopBar>
   )
 }

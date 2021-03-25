@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import cc from 'classcat'
 import { canUseDOM } from 'exenv'
 import { createGlobalStyle } from 'styled-components'
 
 import { KEYCODES } from '../../_utils/keycodes'
-import { StyledDrawer } from './Drawer.style'
+import { StyledDimmer, StyledDrawer } from './Drawer.style'
 
 const DrawerGlobalStyles = createGlobalStyle`
   .kirk-scroll-lock {
@@ -15,7 +15,7 @@ const DrawerGlobalStyles = createGlobalStyle`
 export type DrawerProps = Readonly<{
   children: string | JSX.Element
   className?: string
-  innerClassName?: string
+  zIndex?: number
   onOpen?: () => void
   onClose?: () => void
   onTransitionEnd?: (open: boolean) => void
@@ -27,6 +27,7 @@ export class Drawer extends PureComponent<DrawerProps> {
   private contentNode: HTMLDivElement
   static defaultProps: Partial<DrawerProps> = {
     width: '400px',
+    zIndex: 2,
     onOpen() {},
     onClose() {},
     onTransitionEnd() {},
@@ -92,28 +93,37 @@ export class Drawer extends PureComponent<DrawerProps> {
   }
 
   render() {
-    const { open, className, innerClassName, onTransitionEnd, children, width } = this.props
+    const { open, className, zIndex, onTransitionEnd, children, width } = this.props
     return (
-      <StyledDrawer
-        className={cc([
-          'kirk-drawer',
-          {
-            'kirk-drawer--open': open,
-            'kirk-drawer--close': !open,
-          },
-          className,
-        ])}
-      >
-        <div
-          ref={this.refContent}
-          className={cc(['kirk-drawer-scrollableContent', innerClassName])}
-          style={{ width }}
-          onTransitionEnd={() => onTransitionEnd(open)}
+      <Fragment>
+        <StyledDrawer
+          className={cc([
+            'kirk-drawer',
+            {
+              'kirk-drawer--open': open,
+              'kirk-drawer--close': !open,
+            },
+            className,
+          ])}
+          $zIndex={zIndex}
         >
-          {children}
-        </div>
-        <DrawerGlobalStyles />
-      </StyledDrawer>
+          <div
+            ref={this.refContent}
+            className="kirk-drawer-scrollableContent"
+            style={{ width }}
+            onTransitionEnd={() => onTransitionEnd(open)}
+          >
+            {children}
+          </div>
+          <DrawerGlobalStyles />
+        </StyledDrawer>
+        <StyledDimmer
+          className={cc([['kirk-drawer-dimmer', { 'kirk-drawer-dimmer--active': open }]])}
+          $zIndex={zIndex - 1}
+          aria-hidden="true"
+          onClick={() => this.close()} // close Drawer when clicking outside the <aside> element too
+        />
+      </Fragment>
     )
   }
 }
