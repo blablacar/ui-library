@@ -1,6 +1,9 @@
 # Unreleased
 
 - [...]
+
+# v58.0.0 (25/03/2021)
+
 - **[BREAKING CHANGE]** Update `TopBar` and `Drawer` APIs and styles
 
 # v57.0.0 (24/03/2021)
