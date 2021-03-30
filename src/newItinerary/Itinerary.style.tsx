@@ -18,6 +18,7 @@ export const StyledItinerary = styled.ul<ItineraryProps>`
     width: ${ITINERARY_TIME_WIDTH};
     padding-top: ${space.m};
     display: ${({ small }) => (small ? 'none' : 'initial')};
+    flex-shrink: 0;
   }
 
   // Remove line/icons left margin if small display

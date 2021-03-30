@@ -15,6 +15,7 @@ export const StyledLineWrapper = styled.div`
   min-height: ${ITINERARY_ITEM_BASE_HEIGHT}px;
   margin: 0 ${space.m};
   width: ${space.m};
+  flex-shrink: 0;
 `
 
 // Using background-image to display the dashed line for connection
