@@ -10,16 +10,14 @@ const disclaimerContent = 'Disclaimer content'
 
 describe('Disclaimer', () => {
   it('Should render the disclaimer with Info icon', () => {
-    const wrapper = mount(<Disclaimer useInfoIcon>{disclaimerContent}</Disclaimer>)
+    const wrapper = mount(<Disclaimer icon={<InfoIcon />}>{disclaimerContent}</Disclaimer>)
     expect(wrapper.text()).toBe('Disclaimer content')
     expect(wrapper.find(InfoIcon).exists()).toBe(true)
   })
 
   it('Should render the deprecated question mark icon link disclaimer', () => {
     const wrapper = mount(
-      <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
-        {disclaimerContent}
-      </Disclaimer>,
+      <Disclaimer deprecatedHelpUrl="http://google.fr">{disclaimerContent}</Disclaimer>,
     )
     expect(wrapper.text()).toBe('Disclaimer content')
 
@@ -30,7 +28,7 @@ describe('Disclaimer', () => {
   })
 
   it('Should render the disclaimer without icon', () => {
-    const wrapper = mount(<Disclaimer useInfoIcon={false}>{disclaimerContent}</Disclaimer>)
+    const wrapper = mount(<Disclaimer>{disclaimerContent}</Disclaimer>)
     expect(wrapper.text()).toBe('Disclaimer content')
     expect(wrapper.find(InfoIcon).exists()).toBe(false)
   })
@@ -41,7 +39,7 @@ describe('Disclaimer', () => {
         Disclaimer content <Button>link</Button>
       </span>
     )
-    const wrapper = mount(<Disclaimer useInfoIcon={false}>{htmlDisclaimer}</Disclaimer>)
+    const wrapper = mount(<Disclaimer>{htmlDisclaimer}</Disclaimer>)
     expect(wrapper.text()).toBe('Disclaimer content link')
     expect(wrapper.find(InfoIcon).exists()).toBe(false)
     expect(wrapper.find(Button).exists()).toBe(true)

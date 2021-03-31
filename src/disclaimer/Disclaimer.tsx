@@ -4,13 +4,11 @@ import styled from 'styled-components'
 import { Item } from '../_internals/item'
 import { color } from '../_utils/branding'
 import { Button, ButtonStatus } from '../button'
-import { InfoIcon } from '../icon/infoIcon'
 import { QuestionIcon } from '../icon/questionIcon'
 import { TextDisplayType } from '../text'
 
 export type DisclaimerProps = Readonly<{
-  // Whether to use a decoration Info icon on the left side of the Disclaimer or not.
-  useInfoIcon?: boolean
+  icon?: React.ReactNode
   children: string | JSX.Element
   // Whether this Disclaimer will be used as caption to another fragment of UI. In that case, it
   // will use some caption visual styles (e.g. smaller font)
@@ -34,7 +32,7 @@ const deprecatedHelpButtonIcon = (deprecatedHelpUrl: string): JSX.Element => (
 )
 
 export const Disclaimer = ({
-  useInfoIcon = true,
+  icon,
   isCaption = true,
   children,
   deprecatedHelpUrl = null,
@@ -42,7 +40,7 @@ export const Disclaimer = ({
   <StyledDisclaimer
     leftBody={children}
     leftBodyDisplay={isCaption ? TextDisplayType.CAPTION : TextDisplayType.BODY}
-    leftAddon={useInfoIcon ? <InfoIcon /> : null}
+    leftAddon={icon}
     rightAddon={deprecatedHelpUrl ? deprecatedHelpButtonIcon(deprecatedHelpUrl) : null}
   />
 )

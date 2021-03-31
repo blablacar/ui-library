@@ -1,9 +1,10 @@
 # Unreleased
 
-- [...]
 - **[UPDATE]** Add `background` prop to `CheckShieldIcon`
 - **[NEW]** New `ScamsEducationIllustration`
 - **[FIX]** Prevent `NewItinerary` from visually breaking with long names
+- **[BREAKING CHANGE]** Remove `useInfoIcon` prop and add `icon` prop to `Disclamer`
+- [...]
 
 # v58.0.0 (25/03/2021)
 

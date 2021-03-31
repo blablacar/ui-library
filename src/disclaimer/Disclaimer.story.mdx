@@ -1,6 +1,8 @@
 import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs/blocks'
 
 import { Button, ButtonStatus } from '../button'
+import { CheckShieldIcon } from '../icon/checkShieldIcon'
+import { InfoIcon } from '../icon/infoIcon'
 import { Disclaimer } from './index'
 
 <Meta title="Text/Disclaimer" />
@@ -9,11 +11,11 @@ import { Disclaimer } from './index'
 
 provide information that don’t need a bigger emphasis
 
-### Short Text and Info Icon
+### Short Text with icon
 
 <Canvas>
-  <Story name="InfoIcon">
-    <Disclaimer useInfoIcon>
+  <Story name="Icon">
+    <Disclaimer icon={<InfoIcon />}>
       <span>
         Some short disclaimer and&nbsp;
         <Button status={ButtonStatus.UNSTYLED} href="#">
@@ -24,11 +26,11 @@ provide information that don’t need a bigger emphasis
   </Story>
 </Canvas>
 
-### Long Text
+### Long Text with icon
 
 <Canvas>
   <Story name="LongText">
-    <Disclaimer useInfoIcon={false}>
+    <Disclaimer icon={<CheckShieldIcon />}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed utrum hortandus es nobis, Luci,
       inquit, an etiam tua sponte propensus es? Ego autem tibi, Piso, assentior usu hoc venire, ut
       acrius aliquanto et attentius de claris viris locorum admonitu cogitemus. Sed vobis voluptatum
@@ -43,7 +45,7 @@ provide information that don’t need a bigger emphasis
 
 <Canvas>
   <Story name="NoCaption">
-    <Disclaimer isCaption={false} useInfoIcon>
+    <Disclaimer isCaption={false}>
       Some short text disclaimer, not styled as a caption
     </Disclaimer>
   </Story>
@@ -53,7 +55,7 @@ provide information that don’t need a bigger emphasis
 
 <Canvas>
   <Story name="Deprecated">
-    <Disclaimer useInfoIcon={false} deprecatedHelpUrl="http://google.fr">
+    <Disclaimer deprecatedHelpUrl="http://google.fr">
       Some disclaimer with help button icon.
     </Disclaimer>
   </Story>

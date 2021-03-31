@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Button, ButtonStatus } from '../button'
 import { Disclaimer } from '../disclaimer'
+import { InfoIcon } from '../icon/infoIcon'
 import { Paragraph } from '../paragraph'
 import { SubHeader } from '../subHeader'
 import {
@@ -54,7 +55,7 @@ export const SpecialOffer = (props: SpecialOfferProps) => {
           <SubHeader>{title}</SubHeader>
           <Paragraph>{description}</Paragraph>
           {informationLink && (
-            <Disclaimer useInfoIcon>
+            <Disclaimer icon={<InfoIcon />}>
               <Button status={ButtonStatus.UNSTYLED} href={informationLink.url}>
                 {informationLink.label}
               </Button>
