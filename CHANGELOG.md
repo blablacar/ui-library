@@ -1,6 +1,7 @@
 # Unreleased
 
 - **[UPDATE]** Add `background` prop to `CheckShieldIcon`
+- **[NEW]** New `ScamsEducationIllustration`
 - [...]
 
 # v58.0.0 (25/03/2021)
