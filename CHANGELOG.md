@@ -1,8 +1,11 @@
 # Unreleased
+- [...]
+
+# v59.1.0 (01/04/2021)
 
 - **[FIX]** Fix `ModalFooter` border top and border radius display
 - **[UPDATE]** Remove `forwardedRef` prop to `Modal`, `SuccessModal` and `ConfirmationModal`
-- [...]
+
 # v59.0.0 (31/03/2021)
 
 - **[UPDATE]** Add `background` prop to `CheckShieldIcon`
