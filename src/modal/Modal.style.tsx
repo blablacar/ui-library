@@ -117,6 +117,8 @@ export const ModalBody = styled.div`
 export const ModalFooter = styled.div`
   position: -webkit-sticky;
   position: sticky;
+  border-bottom-right-radius: ${radius.m};
+  border-bottom-left-radius: ${radius.m};
   bottom: 0;
   background-color: ${color.white};
   flex-shrink: 0;

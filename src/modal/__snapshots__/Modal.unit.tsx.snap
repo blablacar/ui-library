@@ -398,7 +398,7 @@ exports[`Modal should not have changed 1`] = `
           </svg>
         </button>
         <div
-          className="kirk-modal-body kirk-modal-modalFooterBorder"
+          className="kirk-modal-body"
         />
       </div>
     </div>

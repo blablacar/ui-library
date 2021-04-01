@@ -9,7 +9,6 @@ const defaultProps = {
   illustration: <img src="https://svgshare.com/i/AGz.svg" alt="Illustration description" />,
   closeOnEsc: true,
   onClose: () => {},
-  forwardedRef: null,
 }
 
 describe('<SuccessModal>', () => {

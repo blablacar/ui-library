@@ -16,7 +16,6 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
   const {
     isOpen = false,
     onClose = () => {},
-    forwardedRef = null,
     confirmLabel,
     illustration,
     children,
@@ -42,7 +41,6 @@ export const SuccessModal = (props: SuccessModalProps): JSX.Element => {
       closeOnEsc={false}
       displayCloseButton={false}
       displayDimmer={false}
-      forwardedRef={forwardedRef}
       className={className}
       modalContentClassName={baseClassName}
       aria-labelledby={successContentId}

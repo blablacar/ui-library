@@ -1,4 +1,7 @@
 # Unreleased
+
+- **[FIX]** Fix `ModalFooter` border top and border radius display
+- **[UPDATE]** Remove `forwardedRef` prop to `Modal`, `SuccessModal` and `ConfirmationModal`
 - [...]
 # v59.0.0 (31/03/2021)
 

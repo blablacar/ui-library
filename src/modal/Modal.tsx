@@ -1,4 +1,4 @@
-import React, { Component, Ref } from 'react'
+import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import cc from 'classcat'
@@ -34,7 +34,6 @@ export type ModalProps = A11yProps &
     size?: ModalSize
     displayDimmer?: boolean
     closeButtonTitle?: string
-    forwardedRef?: Ref<HTMLDivElement>
     noHorizontalSpacing?: boolean
     layoutModeEnabled?: boolean
     isLoading?: boolean
@@ -44,6 +43,7 @@ export class Modal extends Component<ModalProps> {
   private portalNode: HTMLElement
   private contentNode: HTMLElement
   private focusTrap: FocusTrap
+  private setModalRef: (elem: HTMLDivElement) => void
 
   static defaultProps: Partial<ModalProps> = {
     isOpen: false,
@@ -52,17 +52,23 @@ export class Modal extends Component<ModalProps> {
     displayCloseButton: true,
     size: ModalSize.MEDIUM,
     displayDimmer: true,
-    forwardedRef: null,
     isLoading: false,
   }
 
   state = {
-    showFooterBorder: true,
+    showFooterBorder: false,
   }
 
   constructor(props: ModalProps) {
     super(props)
     if (canUseDOM) {
+      this.setModalRef = element => {
+        // Trigger the onScroll function in case of scrollable content
+        // to update the showFooterBorder state
+        if (element) {
+          element.dispatchEvent(new CustomEvent('scroll'))
+        }
+      }
       this.portalNode = document.createElement('div')
       document.body.appendChild(this.portalNode)
       this.focusTrap = createFocusTrap(this.portalNode)
@@ -140,10 +146,6 @@ export class Modal extends Component<ModalProps> {
     }
   }
 
-  refContent = (contentNode: HTMLElement) => {
-    this.contentNode = contentNode
-  }
-
   onEntered = () => {
     this.focusTrap.activate()
   }
@@ -187,7 +189,7 @@ export class Modal extends Component<ModalProps> {
             <CustomTransition animationName={AnimationType.SLIDE_UP} onEntered={this.onEntered}>
               <div
                 className={contentClassNames}
-                ref={this.props.forwardedRef}
+                ref={this.setModalRef}
                 {...a11yAttrs}
                 role="dialog"
                 aria-modal="true"
