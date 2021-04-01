@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import { FilterBar } from '../../filterBar'
 import { Fog } from '../../fog'
@@ -30,8 +30,6 @@ export class ModalOpener extends Component<ModalProps> {
   closeModal2 = () => {
     this.setState({ modalOpen2: false })
   }
-
-  ref = createRef<HTMLDivElement>()
 
   render() {
     return (

@@ -43,7 +43,6 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
       closeButtonTitle,
       onConfirm,
       confirmLabel,
-      forwardedRef,
       confirmIsLoading,
     } = this.props
 
@@ -82,7 +81,6 @@ export class ConfirmationModal extends Component<ConfirmationModalProps> {
         isOpen={isOpen}
         displayCloseButton={false}
         displayDimmer={false}
-        forwardedRef={forwardedRef}
         modalContentClassName={classNames}
         {...a11yAttrs}
       >
