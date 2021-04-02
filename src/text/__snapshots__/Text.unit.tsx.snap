@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Text should have change the DOM 1`] = `
-<span
-  className="kirk-text kirk-text-body"
->
-  text
-</span>
-`;
