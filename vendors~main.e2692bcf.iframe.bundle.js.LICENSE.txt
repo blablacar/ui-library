@@ -56,12 +56,12 @@ object-assign
  */
 
 /*!
-* focus-trap 6.8.0
+* focus-trap 6.8.1
 * @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
 */
 
 /*!
-* tabbable 5.3.0
+* tabbable 5.3.1
 * @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
 */
 
