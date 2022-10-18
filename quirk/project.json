@@ -1,0 +1,1 @@
+{"generatedAt":1666088452712,"builder":{"name":"webpack5"},"hasCustomBabel":false,"hasCustomWebpack":false,"hasStaticDirs":false,"hasStorybookEslint":false,"refCount":0,"packageManager":{"type":"pnpm","version":"7.5.2"},"language":"typescript","storybookPackages":{},"framework":{},"addons":{"@blablacar/storybook":{"version":null}}}
